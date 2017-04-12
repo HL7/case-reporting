@@ -21,7 +21,7 @@ You will also need to add the following directories to the same path:
 
 There is a python file that will create the ig.json and ig.xnl file based on the content in the `resources` and `example` directories.  See the inline comments for how to use.  The bash scripts to run the ig publisher with or without the python script.  
 
-Some screenshots...
+Some screenshots....
 
 1. **index.html (home) page:**
 
