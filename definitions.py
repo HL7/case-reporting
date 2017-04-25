@@ -20,7 +20,19 @@ logging.info('create the ig.json file template as dictionary')
 
 # globals
 
-dir='/Users/ehaas/Documents/FHIR/IG-Template/'  # change to the local path name
+dir='/Users/ehaas/Documents/FHIR/case-reporting/'  # change to the local path name
+logging.info('##############################################################')
+logging.info('##############################################################')
+logging.info('##############################################################')
+logging.info('##############################################################')
+logging.info('##############################################################')
+logging.info('##############################################################')
+logging.info('The working directory is....' + dir)
+logging.info('##############################################################')
+logging.info('##############################################################')
+logging.info('##############################################################')
+logging.info('##############################################################')
+logging.info('##############################################################')
 
 ''' this is the definitions file skeleton you need to modify as needed see ig publisher documenentation at  f http://wiki.hl7.org/index.php?title=IG_Publisher_Documentation or more information. Note it includes the US-Core as a dependencyList'''
 
@@ -52,10 +64,14 @@ codesystems = ['blah-codes']
 
 valuesets = []
 
+#  if logical models in spreadsheet - these need to be manually listed and spreadsheet file must be named 'logical'
+#  ####### TODO ########
+
+
 # ====================== this is all the same for all IGs ===================
 
 # Function definitions here
-def update_sd(i,type):
+def update_sd(i,type,logical):
     namespaces = {'o': 'urn:schemas-microsoft-com:office:office',
                   'x': 'urn:schemas-microsoft-com:office:excel',
                   'ss': 'urn:schemas-microsoft-com:office:spreadsheet', }
@@ -63,10 +79,16 @@ def update_sd(i,type):
     logging.info('adding ' + i + ' to spreadsheets array')
     sd_file = open(dir + 'resources/' + i)  # for each spreadsheet in /resources open value and read  SD id and create and append dict struct to definiions file
     sdxml = etree.parse(sd_file)  # lxml module to parse excel xml
-    sdid = sdxml.xpath('/ss:Workbook/ss:Worksheet[2]/ss:Table/ss:Row[11]/ss:Cell[2]/ss:Data',
+    if logical:  # Get the id from the data element row2 column "element"
+        sdid = sdxml.xpath('/ss:Workbook/ss:Worksheet[3]/ss:Table/ss:Row[2]/ss:Cell[2]/ss:Data',                       namespaces=namespaces)  # use xpath to get the id from the spreadsheet and retain case
+        temp_id = sdid[0].text # retain case
+        update_igxml('StructureDefinition','logical' , temp_id)# add to ig.xml as an SD
+    else:
+        sdid = sdxml.xpath('/ss:Workbook/ss:Worksheet[2]/ss:Table/ss:Row[11]/ss:Cell[2]/ss:Data',
                        namespaces=namespaces)  # use xpath to get the id from the spreadsheet and lower case
-    update_igjson(type, sdid[0].text.lower()) # add base to definitions file
-    update_igjson(type, sdid[0].text.lower(), 'defns') # add base to definitions file
+        temp_id = sdid[0].text.lower()  # use lower case
+    update_igjson(type, temp_id) # add base to definitions file
+    update_igjson(type, temp_id, 'defns') # add base to definitions file
     return
 
 def update_igxml(type, purpose, id):
@@ -76,7 +98,7 @@ def update_igxml(type, purpose, id):
     vsxml = '<resource><example value="' + ev + '"/><sourceReference><reference value="' + type + '/' + id + '"/></sourceReference></resource>'  # concat id into appropriate string
     global igxml
     igxml = igxml.replace('name value="base"/>',
-                            'name value="base"/>' + vsxml)  # add valueset base def to ig resource
+                            'name value="base"/>' + vsxml)  # add valueset(or logical model ) base def to ig resource
     logging.info('adding ' + type + vsxml + ' to resources in ig.xml')
     return
 
@@ -129,8 +151,12 @@ def get_file(e):
 def main():
     resources = os.listdir(dir + 'resources')  # get all the files in the resource directory
     for i in range(len(resources)):  # run through all the files looking for spreadsheets and valuesets
-        if 'spreadsheet' in resources[i]:  # for spreadsheets  append to the igpy[spreadsheet] array.
-            update_sd(resources[i], 'StructureDefinition')
+        if 'spreadsheet' in resources[i]: # for spreadsheets  append to the igpy[spreadsheet] array.
+            if 'logical' in resources[i]:  # check if logical model
+                logical = True #   these need to be handled differently
+            else:
+                logical = False
+            update_sd(resources[i], 'StructureDefinition', logical) # append to the igpy[spreadsheet] array.
         if 'valueset' in resources[
             i]:  # for each vs in /resources open valueset resources and read id and create and append dict struct to definiions file
             update_def(resources[i], 'ValueSet', 'terminology')
