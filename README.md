@@ -7,6 +7,6 @@ This project will determine and document a core, "Initial Public Health Case Rep
 
 http://build.fhir.org/ig/Healthedata1/case-reporting
 
-(GitHub will automatically trigger a new build whenever you commit changes.)
+(A new build is created whenever anything changes.)
 
 Debugging info about the build: http://build.fhir.org/ig/Healthedata1/IG-Template/debug.tgz)
