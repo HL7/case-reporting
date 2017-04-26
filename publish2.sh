@@ -1,5 +1,5 @@
 #!/bin/bash
-name="IG-starter-template"
+name="Case Reporting"
 path1=/Users/ehaas/Documents/FHIR/Case-Reporting/
 path2=/Users/ehaas/Downloads/
 echo "================================================================="
