@@ -70,12 +70,14 @@ def update_sd(i,type,logical):
     sd_file = open(dir + 'resources/' + i)  # for each spreadsheet in /resources open value and read  SD id and create and append dict struct to definiions file
     sdxml = etree.parse(sd_file)  # lxml module to parse excel xml
     if logical:  # Get the id from the data element row2 column "element"
-        sdid = sdxml.xpath('/ss:Workbook/ss:Worksheet[3]/ss:Table/ss:Row[2]/ss:Cell[2]/ss:Data',                       namespaces=namespaces)  # use xpath to get the id from the spreadsheet and retain case
+        sdid = sdxml.xpath('/ss:Workbook/ss:Worksheet[2]/ss:Table/ss:Row[2]/ss:Cell[2]/ss:Data', namespaces=namespaces)  # use xpath to get the id from the spreadsheet and retain case
+        #logging.info('getting logical m name {!r}' .format(sdid[0].text))
+
         temp_id = sdid[0].text # retain case
         update_igxml('StructureDefinition','logical' , temp_id)# add to ig.xml as an SD
     else:
-        sdid = sdxml.xpath('/ss:Workbook/ss:Worksheet[2]/ss:Table/ss:Row[11]/ss:Cell[2]/ss:Data',
-                       namespaces=namespaces)  # use xpath to get the id from the spreadsheet and lower case
+        sdid = sdxml.xpath('/ss:Workbook/ss:Worksheet[2]/ss:Table/ss:Row[11]/ss:Cell[2]/ss:Data', namespaces=namespaces)  # use xpath to get the id from the spreadsheet and lower case
+        #logging.info('getting profile name {!r}' .format(sdid[0]))
         temp_id = sdid[0].text.lower()  # use lower case
     update_igjson(type, temp_id) # add base to definitions file
     update_igjson(type, temp_id, 'defns') # add base to definitions file
