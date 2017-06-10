@@ -9,4 +9,4 @@ http://build.fhir.org/ig/Healthedata1/case-reporting
 
 (A new build is created whenever anything changes.
 
-For a build log see: http://build.fhir.org/ig/Healthedata1/IG-Template/build.log)
+For a build log see: http://build.fhir.org/ig/Healthedata1/case-reporting/build.log)
