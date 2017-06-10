@@ -1,5 +1,5 @@
 # Case Reporting 
-Authors:  Eric Haas
+Author:  Eric Haas
 
 This project will determine and document a core, "Initial Public Health Case Report" standard for use in reporting from Electronic Health Records (EHR) to health departments and a "Reportability Response Report" from health departments to EHRs.
 
