@@ -1,4 +1,4 @@
-eicr-ccda-on-fhir-intro.md file
+eicr-occupationhistory-intro.md file
 
     This is the introduction markdown file that gets inserted into the sd.html template.
 
@@ -16,5 +16,5 @@ eicr-ccda-on-fhir-intro.md file
 
     **Additional Profile specific implementation guidance:**
 
-#### Examples
-[Composition-eicr-ccda-on-fhir-genexample](Composition-eicr-ccda-on-fhir-genexample.html)
+    #### Examples
+    
