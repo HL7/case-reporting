@@ -1,0 +1,168 @@
+"Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"RR","","","",0,null,"","","","","Reportability Response","Information from public health for all of the information they provide to public health.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.id","","","",0,1,"","","","string
+","xml:id (or equivalent in JSON)","unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.extension","","extensions
+user content","",0,*,"","","","Extension
+","Additional Content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","",0,null,"",""
+"RR.patient","","","",0,1,"","","","BackboneElement
+","Patient","","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.patient.iDNumber","","","",0,*,"","","","string
+","Patient ID Number*","The patient ID number received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.patient.name","","","",0,1,"","","","string
+","Patient Name*","The patient name received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.patient.administrativeGender","","","",0,1,"","","","code
+","Patient Administrative Gender","The patient administrative gender received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.patient.birthDate","","","",0,1,"","","","string
+","Patient Birth Date*","If available, the patient birth date received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.patient.streetAddress","","","",0,*,"","","","string
+","Patient Street Address*","The patient address received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.patient.email","","","",0,*,"","","","string
+","Patient Email*","The patient email received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.patient.phone","","","",0,*,"","","","string
+","Patient Phone*","The patient phone number received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.patient.preferredLanguage","","","",0,*,"","","","code
+","Patient Preferred Language","The patient's preferred language received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.patient.race","","","",0,*,"","","","code
+","Patient Race*","The patient race received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.patient.ethnicity","","","",0,*,"","","","code
+","Patient Ethnicity*","The patient ethnicity received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.patient.parentGuardianPhone","","","",0,*,"","","","string
+","Parent/ Guardian Email","The parent or guardian phone number received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.patient.parentGuardianEmail","","","",0,*,"","","","string
+","Parent/ Guardian Name","If available, the parent or guardian email received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.patient.parentGuardianName","","","",0,1,"","","","string
+","Parent/ Guardian Phone","The parent or guardian name received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.provider","","","",0,1,"","","","BackboneElement
+","Provider","PCP.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.provider.address","","","",0,1,"","","","string
+","Provider Address*","The provider address received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.provider.email","","","",0,*,"","","","string
+","Provider Email*","The provider email received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.provider.fax","","","",0,*,"","","","string
+","Provider Fax*","The provider fax received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.provider.iD","","","",0,*,"","","","string
+","Provider ID*","The provider ID received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.provider.name","","","",0,1,"","","","string
+","Provider Name*","The provider name received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.provider.phone","","","",0,*,"","","","string
+","Provider Phone*","The provider phone number received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.provider.facilityOfficeName","","","",0,1,"","","","string
+","Provider Facility/Office Name","The provider facility received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.facility","","","",0,1,"","","","BackboneElement
+","Facility","Sender?","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.facility.address","","","",0,1,"","","","string
+","Facility Address*","The facility address received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.facility.fax","","","",0,*,"","","","string
+","Facility Fax*","The facility fax received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.facility.Identifier","","","",0,*,"","","","string
+","Facility ID Number*","The facility ID number received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.facility.name","","","",0,1,"","","","string
+","Facility Name*","The facility name received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.facility.phone","","","",0,*,"","","","string
+","Facility Phone*","The facility phone received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.facility.type","","","",0,1,"","","","code
+","Facility Type*","The facility type received in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.responsibleAgency","","","",0,1,"","","","BackboneElement
+","","Recipient.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.responsibleAgency.primary","","","",0,1,"","","","boolean
+","Primary Responsible Agency","If reporting is identified for multiple PHAs by the PHA system (or its intermediary) (because the patient's residence and the provider location are in separate jurisdictions), this is an indicator of the PHA that owns follow-up on a patient with a particular reportable condition.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.locationRelevance","","","",0,1,"","","","code
+","Location Relevance","A code indicating whether the responsible PHA is relevant because of the patient's home address, the provider facility address, or both.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.responsibleAgency.addressInformation","","","",0,1,"","","","string
+","Responsible Agency Address Information","The physical address of the PHA to which reporting is legally required.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.responsibleAgency.code","","","",0,1,"","","","code
+","Responsible Agency Code","A code indicating the PHA that is responsible for follow-up on the case investigation.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.responsibleAgency.contactInformation","","","",0,*,"","","","string
+","Responsible Agency Contact Information","Contact information such as telephone, fax, email, URL for the PHA to which reporting is legally required.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.responsibleAgency.description","","","",0,1,"","","","string
+","Responsible Agency Description","The description of the PHA to which reporting is legally required.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.responsibleAgency.name","","","",0,1,"","","","string
+","Responsible Agency Name","The name of the PHA to which reporting is legally required.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.authoringAgency","","","",0,1,"","","","BackboneElement
+","Authoring Agency","","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.authoringAgency.name","","","",0,1,"","","","string
+","Authoring Agency Name","The name of the PHA that authored reporting specifications in the PHA system (or its intermediary).","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.authoringAgency.code","","","",0,1,"","","","code
+","Authoring Agency Code","A code indicating the PHA that authored reporting  specifications in the PHA system (or its intermediary).","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.authoringAgency.description","","","",0,1,"","","","string
+","Authoring Agency Description","The description of the PHA that authored reporting  specifications in the PHA system (or its intermediary).","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.authoringAgency.contactInformation","","","",0,*,"","","","string
+","Authoring Agency Contact Information","Contact information such as telephone, fax, email, URL for the PHA that authored reporting specifications in the PHA system (or its intermediary).","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.authoringAgency.address","","","",0,1,"","","","string
+","Authoring Agency Address Information","The physical address of the PHA that authored reportin specifications in the PHA system (or its intermediary).","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.routingEntity","","","",0,1,"","","","BackboneElement
+","","Via this organization.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.routingEntity.addressInformation","","","",0,1,"","","","string
+","Routing Entity Address Information","The physical address of the public health agency or other identified organization (such as an HIE) to which the eICR (if deemed reportable) and/or the Reportability Response will be routed.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.routingEntity.code","","","",0,1,"","","","code
+","Routing Entity Code","A code indicating the public health agency or other identified organization (such as an HIE) to which the eICR (if deemed reportable) and/or Reportability Response will be routed.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.routingEntity.contactInformation","","","",0,*,"","","","string
+","Routing Entity Contact Information","Contact information such as telephone, fax, email, URL for the public health agency or other identified organization (suchas an HIE) to which the eICR (if deemed reportable)  and/or the Reportability Response will be routed.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.routingEntity.description","","","",0,1,"","","","string
+","Routing Entity Description","The description of the public health agency or other identified organization (such as an HIE) to which the eICR (if deemed reportable)  and/or the Reportability Response will be routed.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.routingEntity.name","","","",0,1,"","","","string
+","Routing Entity Name","The name of the public health agency or other identified organization (such as an HIE) to which the eICR (if deemed reportable)  and/or the Reportability Response will be routed.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.priority","","","",0,1,"","","","code
+","Reportability Response Priority","A value indicating the overall priority of the Reportability Response, derived from the highest priority level of the links contained in the coded section.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.subject","","","",0,1,"","","","string
+","Reportability Response Subject","A succinct, human-readable narrative text that can be used as a subject header in a message queue, much like an email subject.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.summary","","","",0,1,"","","","string
+","Reportability Response Summary","A human-readable narrative summary that contains a reportability determination, the responsible PHA(s), and the PHA(s) that will be sent the eICR (when deemed reportable).","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.uniqueIdentifier","","","",0,*,"","","","string
+","Reportability Response Unique Identifier","Each Reportability Response document should include a unique ID to allow for identification by PHA systems, EHR systems, or other interested parties.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.reportingTimeframe","","","",0,1,"","","","code
+","Reporting Timeframe","For a given condition within a jurisdiction, the mandated timeframe in which the condition should be reported to the PHA.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.reportableCondition","","","",0,1,"","","","code
+","Reportable Condition","A code indicating a condition associated with an RCTC trigger code in the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.locationRelevance","","","",0,1,"","","","code
+","Location Relevance","A code indicating whether the responsible PHA is relevant because of the patient's home address, the provider facility address, or both.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.eICR","","","",0,1,"","","","BackboneElement
+","Initial Public Health Case Report","","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.eICR.receiptDateTime","","","",0,1,"","","","dateTime
+","Date and time of eICR Receipt","The date and time of eICR receipt (to assist with troubleshooting and establish the elapsed time between the EHR sending the eICR and the PHA system (or its intermediary) receiving the eICR).","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.eICR.CDADocumentID","","","",0,1,"","","","string
+","eICR CDA Document ID*","At a minimum, each Reportability Response should contain the unique document ID associated with the eICR that initiated its generation.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.eICR.CDADocumentReference","","","",0,1,"","","","string
+","Reference to eICR CDA Document","At a minimum, each Reportability Response should contain the unique document ID associated with the eICR that initiated its generation.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.eICR.encompassingEncounterID","","","",0,1,"","","","string
+","eICR Encompassing Encounter ID","The encompassing encounter ID from the eICR that generatedthe Reportability Response.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.eICR.filename","","","",0,1,"","","","string
+","Filename of eICR","The filename of the eICR (to assist with troubleshooting in the event that the eICR cannot be parsed).","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.eICR.manuallyInitiated","","","",0,1,"","","","boolean
+","Manually Initiated eICR","If the incoming eICR was manually generated by the provider (as opposed to automatically-generated based on the existence of a trigger code from the RCTC) then this will be present.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.eICR.manuallyInitiatedReason","","","",0,1,"","","","string
+","Initial Case Report Manual Initiation Reason*","Reason for manual initiation of the eICR.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.eICRProcessing","","","",0,1,"","","","BackboneElement
+","","","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.eICRProcessing.status","","","",0,1,"","","","code
+","eICR Processing Status","The status of eICR processing, including an acknowledgemen of successful processing or any known errors encountered during eICR processing.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.eICRProcessing.errorReason","","","",0,1,"","","","code
+","eICR Processing Error Reason","If the incoming eICR was not processed by the PHA system (or its intermediary), will contain the reason it was not processed.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.eICRProcessing.warningReason","","","",0,1,"","","","code
+","eICR Processing Warning Reason","If the PHA system (or its intermediary) identifies an issue with the eICR, but is still able to process the file, this will contain those issues as a warning.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.eICRProcessing.inactiveRCTCCode","","","",0,1,"","","","code
+","Inactive RCTC Code","Code, codeSystem, valueSet, valueSetVersion of a code that exists within the RCTC but has been labeled as inactive.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.eICRProcessing.expectedRCTCVersion","","","",0,1,"","","","string
+","Expected RCTC Version","The version of the RCTC that was expected by RCKMS. If populated, the EHR System Administrator should update to this version of the RCTC immediately.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.eICRProcessing.outdatedRCTCVersion","","","",0,1,"","","","string
+","Outdated RCTC Version","If the version of the RCTC that was used to generate the eICR is outdated, the specific version used.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.determinationofReportability","","","",0,1,"","","","BackboneElement
+","Determination of Reportability","","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.determinationofReportability.code","","","",0,1,"","","","code
+","Determination of Reportability","The determination of reportability generated by the PHA system (or its intermediary). Generally, this is expected to be Yes, No, or Maybe.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.determinationofReportability.reason","","","",0,*,"","","","code
+","Determination of Reportability Reason","A reason code indicating the reason for the reportability status.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.determination of Reportability.rule","","","",0,1,"","","","string
+","Determination of Reportability Rule","A rule that was involved in the determination of the reportability status.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.externalResource","","","",0,*,"","","","BackboneElement
+","External Resource","The description of link which may assist “providers” or “reporters” in understanding or investigating conditions.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.externalResource.description","","","",0,1,"","","","string
+","External Resource Description","The description of link which may assist “providers” or “reporters” in understanding or investigating conditions deemed reportable by the PHA system (or its intermediary).","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.externalResource.category","","","",0,1,"","","","code
+","External Resource Category","Type/category of one or more external resources.","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.externalResource.link","","","",0,1,"","","","string
+","External Resource Link","A link which may assist “providers” or “reporters” in understanding or investigating conditions deemed reportable by the PHA system (or its intermediary).","","","","","","","","","",,,,,"",,,,"",0,null,"",""
+"RR.externalResource.priority","","","",0,1,"","","","code
+","External Resource Priority","Priority given to one or more external resources.","","","","","","","","","",,,,,"",,,,"",0,null,"",""

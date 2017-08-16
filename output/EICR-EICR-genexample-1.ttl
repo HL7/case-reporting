@@ -1,0 +1,113 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.hl7.org/us/case-reporting/EICR/EICR-genexample-1> a fhir:EICR;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:EICR.id [ fhir:value "EICR-genexample-1"];
+  fhir:EICR.reportDate [ fhir:value "2016-11-07"^^xsd:date];
+  fhir:EICR.reportSubmissionDateTime [ fhir:value "2016-11-07T09:14:00-05:00"^^xsd:dateTime];
+  fhir:EICR.sendingApplication [ fhir:value "Acme EHR"];
+  fhir:EICR.provider [
+     fhir:EICR.provider.name [ fhir:value "Michael Coletta, M.D." ];
+     fhir:EICR.provider.phone [
+       fhir:value "1(555)555-1003";
+       fhir:index -1
+     ];
+     fhir:EICR.provider.facilityName [ fhir:value "BMass Doctors" ];
+     fhir:EICR.provider.address [
+       fhir:value "2100 North Ave Burlington, MA 02368, US";
+       fhir:index -1
+     ]
+  ];
+  fhir:EICR.facility [
+     fhir:EICR.facility.name [ fhir:value "Salem Medical Center" ];
+     fhir:EICR.facility.phone [
+       fhir:value "+1(555)555-1212";
+       fhir:index -1
+     ];
+     fhir:EICR.facility.fax [
+       fhir:value "+1(555)555-1212";
+       fhir:index -1
+     ];
+     fhir:EICR.facility.address [
+       fhir:value "4646 Brown Rd Salem, MA 02368, US";
+       fhir:index -1
+     ]
+  ];
+  fhir:EICR.patient [
+     fhir:EICR.patient.id [
+       fhir:value "MPI= 123453, SSN = 11-00-1234";
+       fhir:index -1
+     ];
+     fhir:EICR.patient.name [ fhir:value "Jane Stinn" ];
+     fhir:EICR.patient.phone [
+       fhir:value "1-(404)555-1212";
+       fhir:index -1
+     ];
+     fhir:EICR.patient.address [
+       fhir:value "Home: 5101 Peachtree St NE Atlanta, GA 30302, US";
+       fhir:index -1
+     ];
+     fhir:EICR.patient.birthDate [ fhir:value "1974-11-24"^^xsd:date ];
+     fhir:EICR.patient.sex [ fhir:value "female" ];
+     fhir:EICR.patient.birthSex [ fhir:value "female" ];
+     fhir:EICR.patient.race [ fhir:value "white" ];
+     fhir:EICR.patient.ethnicity [ fhir:value "not hispanic or latino" ]
+  ];
+  fhir:EICR.occupation [
+     fhir:value "Centers for Disease Control 1, Peachtree St South Atlanta, GA, 404-564-7865  Since JAN 1, 1993";
+     fhir:index -1
+  ];
+  fhir:EICR.pregnant [ fhir:value "not pregnant"];
+  fhir:EICR.travelHistory [
+     fhir:index -1;
+     fhir:EICR.travelHistory.locationFreeText [ fhir:value "1999 to 2007 Spent 8 years in the UK during the BSE outbreak,  In the 3 weeks before NOV 9, 2016  Brazil, APR 29, 2016 to OCT 30, 2016  Nadi, FJ ,MAY 6, 2016 to MAY 15, 2016  Montreal, QC, CA, JUL 13, 2016 to JUL 15, 2016  Sydney, NSW, AU ,OCT 22, 2016 to OCT 30, 2016  1170 N Rancho Robles Rd Oracle, AZ8562, US" ]
+  ];
+  fhir:EICR.encounter [
+     fhir:EICR.encounter.visitDateTime [ fhir:value "2016-11-06T00:00:00.000"^^xsd:dateTime ];
+     fhir:EICR.encounter.patientClass [ fhir:value "outpatient" ]
+  ];
+  fhir:EICR.historyofPresentIllness [ fhir:value "Persistent Cough REPORTED starting on 2016/10/05\rWhooping Respiration not reported\rParoxysms Of Coughing REPORTED starting on 2016/11/04\rPost-tussive vomiting not reported"];
+  fhir:EICR.reasonforVisit [
+     fhir:value "Dark stools";
+     fhir:index -1
+  ];
+  fhir:EICR.problem [
+     fhir:index -1;
+     fhir:EICR.problem.dateofOnset [ fhir:value "2016-11-01T00:00:00.000"^^xsd:dateTime ];
+     fhir:EICR.problem.symptoms [
+       fhir:value "Symptom Dark stools (finding)\rComplaint Paroxysmal cough (finding)";
+       fhir:index -1
+     ];
+     fhir:EICR.problem.diagnoses [
+       fhir:value "Pertussis ";
+       fhir:index -1
+     ];
+     fhir:EICR.problem.dateofDiagnosis [
+       fhir:value "2016-11-07T00:00:00.000"^^xsd:dateTime;
+       fhir:index -1
+     ]
+  ];
+  fhir:EICR.laborder [
+     fhir:index -1;
+     fhir:EICR.laborder.laboratoryOrderCode [
+       fhir:value "CBC W Auto Differential panel in Blood\rBordetella pertussis Ab [Units/volume] in Serum\rBordetella pertussis [Presence] in Throat by Organism specific culture";
+       fhir:index -1
+     ]
+  ];
+  fhir:EICR.medicationsAdministered [
+     fhir:value "Azithromycin 500 MG Oral Tablet 1 g NOV 7, 2016 11:60 ORAL";
+     fhir:index -1
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.hl7.org/us/case-reporting/EICR/EICR-genexample-1.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
