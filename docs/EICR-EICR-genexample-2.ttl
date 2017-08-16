@@ -1,0 +1,108 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.hl7.org/us/case-reporting/EICR/EICR-genexample-2> a fhir:EICR;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:EICR.id [ fhir:value "EICR-genexample-2"];
+  fhir:EICR.reportDate [ fhir:value "20151107094421+0000"^^xsd:dateTime];
+  fhir:EICR.provider [
+     fhir:EICR.provider.id [
+       fhir:value "2.16.840.1.113883.4.6:6666666666666";
+       fhir:index -1
+     ];
+     fhir:EICR.provider.name [ fhir:value "Henry Seven M.D." ];
+     fhir:EICR.provider.phone [
+       fhir:value "tel:+1(555)555-1002";
+       fhir:index -1
+     ];
+     fhir:EICR.provider.address [
+       fhir:value "1002 Healthcare Drive Ann Arbor MI 99999 US";
+       fhir:index -1
+     ]
+  ];
+  fhir:EICR.facility [
+     fhir:EICR.facility.id [
+       fhir:value "2.16.840.1.113883.4.6:77777777777";
+       fhir:index -1
+     ];
+     fhir:EICR.facility.name [ fhir:value "Community Health and Hospitals" ];
+     fhir:EICR.facility.type [ fhir:value "OF" ];
+     fhir:EICR.facility.phone [
+       fhir:value "tel: 1+(555)-555-5000";
+       fhir:index -1
+     ]
+  ];
+  fhir:EICR.patient [
+     fhir:EICR.patient.id [
+       fhir:value "2.16.840.1.113883.19.5:123453 2.16.840.1.113883.4.1:444-333-3333";
+       fhir:index -1
+     ];
+     fhir:EICR.patient.name [ fhir:value "Eve E Everyman" ];
+     fhir:EICR.patient.phone [
+       fhir:value "tel:+1-(555)555-2003 tel:+1(555)555-2004";
+       fhir:index -1
+     ];
+     fhir:EICR.patient.address [
+       fhir:value "2222 Home Street Ann Arbor MI 99999 US";
+       fhir:index -1
+     ];
+     fhir:EICR.patient.sex [ fhir:value "F" ];
+     fhir:EICR.patient.race [ fhir:value "2106-3" ];
+     fhir:EICR.patient.preferredLanguage [ fhir:value "eng" ];
+     fhir:EICR.patient.guardian [
+       fhir:EICR.patient.guardian.name [ fhir:value "Adam A Everywoman" ];
+       fhir:EICR.patient.guardian.phone [
+         fhir:value "tel:+1(555)555-2004";
+         fhir:index -1
+       ]
+     ]
+  ];
+  fhir:EICR.occupation [
+     fhir:value "Centers for Disease Control 1 Peachtree St South Atlanta,GA 404-564-7865";
+     fhir:index -1
+  ];
+  fhir:EICR.encounter [
+     fhir:EICR.encounter.visitDateTime [ fhir:value "20151107" ];
+     fhir:EICR.encounter.patientClass [ fhir:value "AMB" ];
+     fhir:EICR.encounter.admissionDateTime [ fhir:value "20151107" ];
+     fhir:EICR.encounter.dischargeDateTime [ fhir:value "20151107" ]
+  ];
+  fhir:EICR.historyofPresentIllness [ fhir:value "Presented with history of  fever, rash annd joint pain for last 4 days.  Travelled to Brazil on vacation  2 weeks prior to onset of symptoms"];
+  fhir:EICR.reasonforVisit [
+     fhir:value "Fever, rash, joint pain for several days for several days";
+     fhir:index -1
+  ];
+  fhir:EICR.problem [
+     fhir:index -1;
+     fhir:EICR.problem.dateofOnset [ fhir:value "20151101,\\n 20151104,\\n 20151104,\\n"^^xsd:dateTime ];
+     fhir:EICR.problem.symptoms [
+       fhir:value "CD,47725002,2.16.840.1.113883.6.96,Maculopapular rash (finding),\\n CD,57676002,2.16.840.1.113883.6.96,Joint pain (finding),\\n CD,271749004,2.16.840.1.113883.6.96,Acute rise of fever (finding),\\n";
+       fhir:index -1
+     ];
+     fhir:EICR.problem.dateofDiagnosis [
+       fhir:value "20151107";
+       fhir:index -1
+     ]
+  ];
+  fhir:EICR.medicationsAdministered [
+     fhir:value "248656,Azithromycin 500 MG Oral Tablet,2.16.840.1.113883.6.88,RxNorm,\\n 248656,Azithromycin 500 MG Oral Tablet,2.16.840.1.113883.6.88,RxNorm,\\n";
+     fhir:index -1
+  ];
+  fhir:EICR.hospitalUnit [ fhir:value "hospital unit"];
+  fhir:EICR.immunizationStatus [
+     fhir:value "VaccineLot NumberDateStatusPneumococcal polysaccharide vaccine112/15/1998Completed";
+     fhir:index -1
+  ];
+  fhir:EICR.triggerCode [ fhir:value "Trigger codes"] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.hl7.org/us/case-reporting/EICR/EICR-genexample-2.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

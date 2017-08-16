@@ -1,0 +1,398 @@
+﻿<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+   <meta charset="UTF-8"/>
+  <title>Case-Reporting</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Case-Reporting Implemenation Guide"/>
+<meta name="author" content="http://argonautwiki.hl7.org"/>
+
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+     <!-- Bootstrap core CSS -->
+
+     <!-- Latest compiled and minified CSS -->
+
+  <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+  <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="assets/css/project.css"/>
+  <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+
+
+<body markdown="1">
+
+
+ <div id="segment-header" class="segment">    <!-- segment-header -->
+  <div class="container">    <!-- container -->
+   <a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="logo fhir"/> </a>
+   <div id="hl7-nav">
+     <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+     <img src="assets/images/hl7-logo.png" alt="visit the hl7 website" width="42" height="50"/>
+    </a>
+   </div>
+
+   <div id="ig-status">
+ <b>Case-Reporting Implementation Guide CI Build</b>
+</div>
+
+  </div>
+  <div class="container">    <!-- container -->
+ </div></div>    <!-- /segment-header -->
+
+ <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+  <div id="stripe"> </div>
+  <div class="container">    <!-- container -->
+     <!-- HEADER CONTENT -->
+
+   <nav class="navbar navbar-inverse">
+    <div class="container">
+     <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+      <span class="icon-bar"> </span>
+      <span class="icon-bar"> </span>
+      <span class="icon-bar"> </span>
+     </button>
+     <a href="http://build.fhir.org/index.html" class="navbar-brand hidden">FHIR</a>
+     <div class="nav-collapse collapse navbar-inverse-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="guidance.html">General Guidance</a></li>
+        <li><a href="profiles.html">Profiles and Logical Models</a></li>
+        <li><a href="structuremaps.html">Mappings</a></li>
+        <li><a href="extensions.html">Extensions</a></li>
+        <li><a href="terminology.html">Terminology</a></li>
+        <li><a href="searchparams.html">Search Parameters</a></li>
+        <li><a href="capstatements.html">Capability Statements</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+            </ul>
+
+     </div>    <!-- /.nav-collapse -->
+    </div>    <!-- /.container -->
+   </nav>    <!-- /.navbar -->
+
+    <!-- /HEADER CONTENT -->
+  </div>    <!-- /container -->
+ </div>    <!-- /segment-navbar -->
+
+
+
+
+ <div id="segment-breadcrumb" class="segmnt">    <!-- segment-breadcrumb -->
+  <div class="container">    <!-- container -->
+   <ul class="breadcrumb">
+       <li title="home"><a href="index.html"><b>Home</b></a></li>
+     <li><b>Case Report Details</b></li>
+   </ul>
+  </div>    <!-- /container -->
+ </div>    <!-- /segment-breadcrumb -->
+
+
+ <div id="segment-content" class="segment">    <!-- segment-content -->
+ <div class="container">    <!-- container -->
+            <div class="row">
+             <div class="inner-wrapper">
+    <!-- CONTENT CONTENT -->
+
+<div class="col-9">
+
+<ul class="nav nav-tabs"><li><a href="StructureDefinition-CaseReport.html">Content</a></li><li class="active"><a href="#">Detailed Descriptions</a></li><li><a href="StructureDefinition-CaseReport-mappings.html">Mappings</a></li><li><a href="StructureDefinition-CaseReport.xml.html">XML</a></li><li><a href="StructureDefinition-CaseReport.json.html">JSON</a></li></ul>
+
+<h4><span class="sectioncount">D.4.1.4<a name="D.4.1.4"> </a></span> StructureDefinition: - Detailed Descriptions <a href="StructureDefinition-CaseReport-definitions.html#D.4.1.4" title="link to here" class="self-link"><img src="target.png"/></a></h4>
+
+<p>Definitions for the StructureDefinition-CaseReport Profile.</p>
+
+<table class="dict">
+  <tr><td colspan="2" class="structure"><a name="CaseReport"> </a><b>CaseReport</b></td></tr>
+  <tr><td>Definition</td><td><p>For use in reporting suspected conditions from provider to public (population) health departments.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..?</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Element.id"> </a><a name="CaseReport.id"> </a><b>CaseReport.id</b></td></tr>
+  <tr><td>Definition</td><td><p>unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Element.extension"> </a><a name="CaseReport.extension"> </a><b>CaseReport.extension</b></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.identifier"> </a><b>CaseReport.identifier</b></td></tr>
+  <tr><td>Definition</td><td><p>Identifiers assigned to this event performer or other systems.</p>
+</td></tr>
+  <tr><td>Note</td><td>This is a business identifer, not a resource identifier (see <a href="http://build.fhir.org/resource.html#identifiers">discussion</a>)</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Identifier">Identifier</a></td></tr>
+  <tr><td>Requirements</td><td><p>Allows identification of the event as it is known by various participating systems and in a way that remains consistent across servers.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.definition"> </a><b>CaseReport.definition</b></td></tr>
+  <tr><td>Definition</td><td><p>A protocol, guideline, orderset or other definition that was adhered to in whole or in part by this event.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/activitydefinition.html" title="http://hl7.org/fhir/StructureDefinition/ActivityDefinition">ActivityDefinition</a>)</td></tr>
+  <tr><td>Comments</td><td><p>[The allowed reference resources may be adjusted as appropriate for the event resource].</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.partOf"> </a><b>CaseReport.partOf</b></td></tr>
+  <tr><td>Definition</td><td><p>A larger event of which this particular event is a component or step.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(http://hl7.org/fhir/StructureDefinition/Any)</td></tr>
+  <tr><td>Requirements</td><td><p>E.g. Drug administration as part of a procedure, procedure as part of observation, etc.</p>
+</td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>container</td></tr>
+  <tr><td>Comments</td><td><p>Not to be used to link an event to an Encounter - use Event.context for that.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.status"> </a><b>CaseReport.status</b></td></tr>
+  <tr><td>Definition</td><td><p>The current state of the event.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td><a name="b7ce0bb1-0efe-4927-bba4-14bb1cfe6f11">​</a>Codes identifying the stage lifecycle stage of a event<br/>The codes SHALL be taken from <a href="ValueSet/event-status.html">EventStatus</a></td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#code">code</a></td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>A nominal state-transition diagram can be found in the [[event.html#statemachine | Event pattern]] documentation</p>
+<p>Unknown does not represent &quot;other&quot; - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.code"> </a><b>CaseReport.code</b></td></tr>
+  <tr><td>Definition</td><td><p>Reportable condition codes that caused this report to be generated.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>Codes indicating what triggered this case report.  Based upon Lab Order Code, Lab Result Code, Lab Results and Diagnosis.<br/>The codes SHOULD be taken from <a href="ValueSet-casereport-code.html">Case Report Codes</a></td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>type</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.subject"> </a><b>CaseReport.subject</b></td></tr>
+  <tr><td>Definition</td><td><p>The individual or set of individuals the case report is about.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>Choice of: <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/patient.html" title="http://hl7.org/fhir/StructureDefinition/Patient">Patient</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/group.html" title="http://hl7.org/fhir/StructureDefinition/Group">Group</a>)</td></tr>
+  <tr><td>Requirements</td><td><p>Links the event to the Patient context.</p>
+</td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>patient</td></tr>
+  <tr><td>Comments</td><td><p>[For resources that aren't patient-specific, the set of allowed resources may be extended to include other things.  Group should generally be retained unless there's certainty this resource won't be used for veterinary, research or public health settings where Group may be necessary (e.g. this cage of rats/crate of chickens, group of people in a 5 mile radious of the incident, etc.)].</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.context"> </a><b>CaseReport.context</b></td></tr>
+  <tr><td>Definition</td><td><p>The encounter or episode of care that establishes the context for this event.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>Choice of: <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/encounter.html" title="http://hl7.org/fhir/StructureDefinition/Encounter">Encounter</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/episodeofcare.html" title="http://hl7.org/fhir/StructureDefinition/EpisodeOfCare">EpisodeOfCare</a>)</td></tr>
+  <tr><td>Requirements</td><td><p>Links the request to the Encounter context.</p>
+</td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>encounter</td></tr>
+  <tr><td>Comments</td><td><p>This will typically be the encounter the event occurred within, but some events may be initiated prior to or after the official completion of an encounter or episode but still be tied to the context of the encounter or episode (e.g. pre-admission lab tests).</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.effective[x]"> </a><a name="CaseReport.effectiveDateTime"> </a><a name="CaseReport.effectivePeriod"> </a><a name="CaseReport.effectiveTiming"> </a><a name="CaseReport.effectiveDateTime"> </a><a name="CaseReport.effectivePeriod"> </a><a name="CaseReport.effectiveTiming"> </a><b>CaseReport.effective[x]</b></td></tr>
+  <tr><td>Definition</td><td><p>Date and time of the provider's most recent encounter with the patient regarding the reportable condition.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>Choice of: <a href="http://build.fhir.org/datatypes.html#dateTime">dateTime</a>, <a href="http://build.fhir.org/datatypes.html#Period">Period</a>, <a href="http://build.fhir.org/datatypes.html#Timing">Timing</a></td></tr>
+  <tr><td>[x] Note</td><td>See <a href="http://build.fhir.org/formats.html#choice">Choice of Data Types</a> for further information about how to use [x]</td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>timing</td></tr>
+  <tr><td>Comments</td><td><p>[The list of types may be constrained as appropriate for the type of event].</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.date"> </a><b>CaseReport.date</b></td></tr>
+  <tr><td>Definition</td><td><p>The date on which the reporting party completed the report.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#dateTime">dateTime</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.performer"> </a><b>CaseReport.performer</b></td></tr>
+  <tr><td>Definition</td><td><p>The Provider responsible for Paitent's care.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td>Comments</td><td><p>[Resources may choose to replace this with just a single performer or repeating where there's no need to distinguish role and/or responsible organization].</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.performer.role"> </a><b>CaseReport.performer.role</b></td></tr>
+  <tr><td>Definition</td><td><p>Describes the type of performance (e.g. primary surgeon, anaesthesiologiest, etc.).</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>Codes describing the types of functional roles performers can take on when performing events<br/>For example codes, see <a href="http://build.fhir.org/valueset-performer-role.html">Procedure Performer Role Codes</a></td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Comments</td><td><p>[Adjust vocabulary to be appropriate to your domain - generally should reflect what the performer does, not who they are].</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.performer.actor"> </a><b>CaseReport.performer.actor</b></td></tr>
+  <tr><td>Definition</td><td><p>The device, practitioner, etc. who performed the action.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>Choice of: <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/practitioner.html" title="http://hl7.org/fhir/StructureDefinition/Practitioner">Practitioner</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/practitionerrole.html" title="http://hl7.org/fhir/StructureDefinition/PractitionerRole">PractitionerRole</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/organization.html" title="http://hl7.org/fhir/StructureDefinition/Organization">Organization</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/patient.html" title="http://hl7.org/fhir/StructureDefinition/Patient">Patient</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/device.html" title="http://hl7.org/fhir/StructureDefinition/Device">Device</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/relatedperson.html" title="http://hl7.org/fhir/StructureDefinition/RelatedPerson">RelatedPerson</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.facility"> </a><b>CaseReport.facility</b></td></tr>
+  <tr><td>Definition</td><td><p>The organization whrer the case originated.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/organization.html" title="http://hl7.org/fhir/StructureDefinition/Organization">Organization</a>)</td></tr>
+  <tr><td>Requirements</td><td><p>Practitioners and Devices can be associated with multiple organizations.  This element indicates which organization they were acting on behalf of when performing the action.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.occupationCode"> </a><b>CaseReport.occupationCode</b></td></tr>
+  <tr><td>Definition</td><td><p>The patient's occupation.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>US Department of Labor Bureau of Labor Statitics Occupational Group Codes</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Requirements</td><td><p>Identification of potential risk,  transmission risk.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.occupationReference"> </a><b>CaseReport.occupationReference</b></td></tr>
+  <tr><td>Definition</td><td><p>The patient's occupation.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/observation.html" title="http://hl7.org/fhir/StructureDefinition/Observation">Observation</a>)</td></tr>
+  <tr><td>Requirements</td><td><p>Identification of potential risk,  transmission risk.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.pregnancyCode"> </a><b>CaseReport.pregnancyCode</b></td></tr>
+  <tr><td>Definition</td><td><p>The patient's coded pregnancy status.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>Yes/No/Don't know<br/>The codes SHALL be taken from <a href="http://build.fhir.org/v2/0136/index.html">v2 Yes/no Indicator</a></td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Requirements</td><td><p>Appropriate treatment, follow-up,  appropriate for scoring/risk  ascertainment.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.pregnancyReference"> </a><b>CaseReport.pregnancyReference</b></td></tr>
+  <tr><td>Definition</td><td><p>The patient's pregnancy status.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>Choice of: <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/condition.html" title="http://hl7.org/fhir/StructureDefinition/Condition">Condition</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/observation.html" title="http://hl7.org/fhir/StructureDefinition/Observation">Observation</a>)</td></tr>
+  <tr><td>Requirements</td><td><p>Appropriate treatment, follow-up,  appropriate for scoring/risk  ascertainment.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.travelHistory"> </a><b>CaseReport.travelHistory</b></td></tr>
+  <tr><td>Definition</td><td><p>The patient's travel history including dates and location.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/observation.html" title="http://hl7.org/fhir/StructureDefinition/Observation">Observation</a>)</td></tr>
+  <tr><td>Requirements</td><td><p>Risk, potential severity of action,  timeliness of action (e.g. is travel  history relevant); Prioritization and triaging.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.immunizationStatus"> </a><b>CaseReport.immunizationStatus</b></td></tr>
+  <tr><td>Definition</td><td><p>The patient's immunization History.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/immunization.html" title="http://hl7.org/fhir/StructureDefinition/Immunization">Immunization</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.orderedDiagnostics"> </a><b>CaseReport.orderedDiagnostics</b></td></tr>
+  <tr><td>Definition</td><td><p>Ordered tests for the patient during the encounter.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#BackboneElement">BackboneElement</a></td></tr>
+  <tr><td>Requirements</td><td><p>Some lab test orders are reportable for  suspected cases .  Potential value to linking electronic  laboratory reports to case reports.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.orderedDiagnostics.reference"> </a><b>CaseReport.orderedDiagnostics.reference</b></td></tr>
+  <tr><td>Definition</td><td><p>Reference to ordered tests for the patient during the encounter.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>Choice of: <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/procedurerequest.html" title="http://hl7.org/fhir/StructureDefinition/ProcedureRequest">ProcedureRequest</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/questionnaire.html" title="http://hl7.org/fhir/StructureDefinition/Questionnaire">Questionnaire</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.orderedDiagnostics.isReason"> </a><b>CaseReport.orderedDiagnostics.isReason</b></td></tr>
+  <tr><td>Definition</td><td><p>This order triggered this case report to be generated.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#boolean">boolean</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.clinicalFindings"> </a><b>CaseReport.clinicalFindings</b></td></tr>
+  <tr><td>Definition</td><td><p>Specific text, code or reference for finding or diagnosis, which may include ruled-out or resolved conditions, history, signs and symptoms, diagnostic information and provider interpretations and diagnoses.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>1..*</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#BackboneElement">BackboneElement</a></td></tr>
+  <tr><td>Requirements</td><td><p>Indicators of reportable condition -Important descriptors of condition/ epidemiologic information that support epidemiologic investigation.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.clinicalFindings.code"> </a><b>CaseReport.clinicalFindings.code</b></td></tr>
+  <tr><td>Definition</td><td><p>Coded diagnosis or symptoms or other findiings relevant to the case.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>Codes identifying the findings for this case<br/>For example codes, see <a href="http://build.fhir.org/valueset-condition-code.html">Condition/Problem/Diagnosis Codes</a></td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.clinicalFindings.reference"> </a><b>CaseReport.clinicalFindings.reference</b></td></tr>
+  <tr><td>Definition</td><td><p>Resource references for patient findings that are relevnat to the case.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>Choice of: <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/diagnosticreport.html" title="http://hl7.org/fhir/StructureDefinition/DiagnosticReport">DiagnosticReport</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/observation.html" title="http://hl7.org/fhir/StructureDefinition/Observation">Observation</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/condition.html" title="http://hl7.org/fhir/StructureDefinition/Condition">Condition</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/questionnaireresponse.html" title="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse">QuestionnaireResponse</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/medicationstatement.html" title="http://hl7.org/fhir/StructureDefinition/MedicationStatement">MedicationStatement</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.clinicalFindings.description"> </a><b>CaseReport.clinicalFindings.description</b></td></tr>
+  <tr><td>Definition</td><td><p>Finding and diagnosis in  free text only format.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#string">string</a></td></tr>
+  <tr><td>Comments</td><td><p>This can be used for provider’s narrative of the history of the reportable event.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.clinicalFindings.isReason"> </a><b>CaseReport.clinicalFindings.isReason</b></td></tr>
+  <tr><td>Definition</td><td><p>This finding triggered thiscase report to be generated.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#boolean">boolean</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.treatments"> </a><b>CaseReport.treatments</b></td></tr>
+  <tr><td>Definition</td><td><p>Treatments for the reportable event.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>Choice of: <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/procedurerequest.html" title="http://hl7.org/fhir/StructureDefinition/ProcedureRequest">ProcedureRequest</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/medicationrequest.html" title="http://hl7.org/fhir/StructureDefinition/MedicationRequest">MedicationRequest</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/medicationstatement.html" title="http://hl7.org/fhir/StructureDefinition/MedicationStatement">MedicationStatement</a>)</td></tr>
+  <tr><td>Requirements</td><td><p>To find treatments that were  prescribed; prophylaxis; knowing if the  patient has already been treated, lower  on the list for PH (priority).</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.note"> </a><b>CaseReport.note</b></td></tr>
+  <tr><td>Definition</td><td><p>Comments made about the event by the performer, subject or other participants.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Annotation">Annotation</a></td></tr>
+</table>
+
+
+</div>
+
+    </div>    <!-- /inner-wrapper -->
+            </div>    <!-- /row -->
+        </div>    <!-- /container -->
+
+    </div>    <!-- /segment-content -->
+
+
+
+        <!-- /inner-wrapper -->
+                <!-- /row -->
+            <!-- /container -->
+
+        <!-- /segment-content -->
+
+
+<div id="segment-footer" class="segment">    <!-- segment-footer -->
+  <div class="container">    <!-- container -->
+   <div class="inner-wrapper">
+    <p>
+            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Aug 16, 2017 12:55-0700. |
+               <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
+                <a rel="license" style="color: #81BEF7" href="http://build.fhir.orglicense.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
+        
+        </p>
+   </div>    <!-- /inner-wrapper -->
+  </div>    <!-- /container -->
+ </div>    <!-- /segment-footer -->
+    <!-- disqus thread -->
+    <!-- disqus -->
+    <!-- end disqus -->
+
+ <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+  <div class="container">    <!-- container -->
+  </div>    <!-- /container -->
+ </div>    <!-- /segment-post-footer -->
+
+   <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./assets/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+
+</body>
+
+
+
+
+</head></html>
