@@ -19,6 +19,8 @@ The following data-elements are defined for this logical model
 |--------------------------------------------------------------------|---------------------------------|
 |[Example-1](assets/EICR-CCDA-Examples/CDAR2_IG_PHCASERPT_R2_STU1.1_SAMPLE_MANUAL.html)||
 |[Example-2](assets/EICR-CCDA-Examples/CDAR2_IG_PHCASERPT_R2_STU1.1_SAMPLE.html)|[Example-2](EICR-EICR-genexample-1.json.html)|
+{: .grid}
+<!--
 |[Example-3](assets/EICR-CCDA-Examples/ChlamydiaTestPositive.html)||
 |[Example-4](assets/EICR-CCDA-Examples/CT-GC-Negative-PatientPregnant.html)||
 |[Example-5](assets/EICR-CCDA-Examples/CT-GC-Test-Gonorrhea-Chlamydia-Negative-PatientPregnant.html)||
@@ -31,3 +33,4 @@ The following data-elements are defined for this logical model
 |[Example-12](assets/EICR-CCDA-Examples/ZIKA1-Negative.html)||
 |[Example-13](assets/EICR-CCDA-Examples/ZIKA1-Positive.html)||
 {: .grid}
+-->
