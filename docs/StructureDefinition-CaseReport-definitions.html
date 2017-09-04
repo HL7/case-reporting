@@ -161,7 +161,7 @@
   <tr><td>Definition</td><td><p>The current state of the event.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
-  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td><a name="ce7c76a1-6fbf-4a7e-ab63-4d5fa03a8a93">​</a>Codes identifying the stage lifecycle stage of a event<br/>The codes SHALL be taken from <a href="ValueSet/event-status.html">EventStatus</a></td></tr>
+  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td><a name="763f7623-8828-4a56-8a72-495527012263">​</a>Codes identifying the stage lifecycle stage of a event<br/>The codes SHALL be taken from <a href="ValueSet/event-status.html">EventStatus</a></td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#code">code</a></td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
   <tr><td>Comments</td><td><p>A nominal state-transition diagram can be found in the [[event.html#statemachine | Event pattern]] documentation</p>
@@ -268,27 +268,26 @@
   <tr><td>Definition</td><td><p>The patient's travel history including dates and location.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
-  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/observation.html" title="http://hl7.org/fhir/StructureDefinition/Observation">Observation</a>)</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#BackboneElement">BackboneElement</a></td></tr>
   <tr><td>Requirements</td><td><p>Risk, potential severity of action,  timeliness of action (e.g. is travel  history relevant); Prioritization and triaging.</p>
 </td></tr>
-  <tr><td colspan="2" class="structure"><a name="CaseReport.immunizationStatus"> </a><b>CaseReport.immunizationStatus</b></td></tr>
-  <tr><td>Definition</td><td><p>The patient's immunization History.</p>
-</td></tr>
-  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
-  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/immunization.html" title="http://hl7.org/fhir/StructureDefinition/Immunization">Immunization</a>)</td></tr>
-  <tr><td colspan="2" class="structure"><a name="CaseReport.orderedDiagnostics"> </a><b>CaseReport.orderedDiagnostics</b></td></tr>
-  <tr><td>Definition</td><td><p>Ordered tests for the patient during the encounter.</p>
-</td></tr>
-  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
-  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#BackboneElement">BackboneElement</a></td></tr>
-  <tr><td>Requirements</td><td><p>Some lab test orders are reportable for  suspected cases .  Potential value to linking electronic  laboratory reports to case reports.</p>
-</td></tr>
-  <tr><td colspan="2" class="structure"><a name="CaseReport.orderedDiagnostics.reference"> </a><b>CaseReport.orderedDiagnostics.reference</b></td></tr>
-  <tr><td>Definition</td><td><p>Reference to ordered tests for the patient during the encounter.</p>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.travelHistory.date"> </a><b>CaseReport.travelHistory.date</b></td></tr>
+  <tr><td>Definition</td><td><p>The period during which the patient's traveled.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
-  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>Choice of: <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/procedurerequest.html" title="http://hl7.org/fhir/StructureDefinition/ProcedureRequest">ProcedureRequest</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/questionnaire.html" title="http://hl7.org/fhir/StructureDefinition/Questionnaire">Questionnaire</a>)</td></tr>
-  <tr><td colspan="2" class="structure"><a name="CaseReport.orderedDiagnostics.isReason"> </a><b>CaseReport.orderedDiagnostics.isReason</b></td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Period">Period</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.travelHistory.locationCode"> </a><b>CaseReport.travelHistory.locationCode</b></td></tr>
+  <tr><td>Definition</td><td><p>Where the patient traveled to as a coded concept or free text.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>Where the patient traveled to as a coded concept. This value set is based upon ISO 3166 (Countries) as well as FIPS 5-2 (States).<br/>For example codes, see <a href="http://build.fhir.org/valueset-jurisdiction.html">Jurisdiction ValueSet</a></td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.travelHistory.locationReference"> </a><b>CaseReport.travelHistory.locationReference</b></td></tr>
+  <tr><td>Definition</td><td><p>Where the patient traveled to as an address.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="StructureDefinition-cr-travel-location.html" title="http://fhir.hl7.org/us/case-reporting/StructureDefinition/cr-travel-location">Case Report Travel Location Profile</a>)</td></tr>
+  <tr><td colspan="2" class="structure"><a name="CaseReport.travelHistory.isReason"> </a><a name="CaseReport.orderedDiagnostics.isReason"> </a><b>CaseReport.orderedDiagnostics.isReason</b></td></tr>
   <tr><td>Definition</td><td><p>This order triggered this case report to be generated.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
@@ -359,7 +358,7 @@
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Aug 16, 2017 13:19-0700. |
+            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Sun, Sep 3, 2017 19:55-0700. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://build.fhir.orglicense.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

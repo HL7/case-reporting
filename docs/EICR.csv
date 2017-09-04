@@ -14,7 +14,7 @@ user content","",0,*,"","","","Extension
 ","Sending Application","The name of the sending application.","CSTE Element Name: Sending Application.","Used to ensure quality and integrity ofeICR data.","","","","","","","",,,,,"",,,,"",0,null,"",""
 "EICR.provider","","","",0,1,"","","","BackboneElement
 ","Provider","The Provider responsible for Paitent's care.","CSTE Element Name: Provider.","","","","","","","","",,,,,"",,,,"",0,null,"","","context : p = /ClinicalDocument/componentOf/encompassingEncounter/responsibleParty/assignedEntity"
-"EICR.provider.id","","","",0,*,"","","Y","string
+"EICR.provider.identifier","","","",0,*,"","","Y","string
 ","Provider ID","Identification code for the care provider(e.g., NPI).","CSTE Element Name: Provider ID.","Need provider's contact information inorder to follow up appropriately forreportable event to ensure appropriatetreatment, identify contact exposures,etc.","","","","","","","",,,,,"",,,,"",0,null,"","","for $i in p:id return string-join(($i/@root, $i/@extension),""."")"
 "EICR.provider.name","","","",0,1,"","","Y","string
 ","Provider Name","The first and last name of thehealthcare provider.","CSTE Element Name: Provider Name.","Need provider's contact information inorder to follow up appropriately forreportable event to ensure appropriatetreatment, identify contact exposures,etc.","","","","","","","",,,,,"",,,,"",0,null,"","","string-join(p:assignedPerson/p:name/*,"" "")"
@@ -30,7 +30,7 @@ user content","",0,*,"","","","Extension
 ","Provider Address","The geographical location or mailingaddress of the provider's office orfacility. Address must include streetaddress, office or suite number (ifapplicable), city or town, state, and zipcode.","CSTE Element Name: Provider Address.","Need provider's contact information inorder to follow up appropriately forreportable event to ensure appropriatetreatment, identify contact exposures,etc.","","","","","","","",,,,,"",,,,"",0,null,"","","for $i in p:addr return string-join( $i/*,' ')"
 "EICR.facility","","","",0,1,"","","","BackboneElement
 ","Facility","The facility sending the EICR.","CSTE Element Name: Facility.","","","","","","","","",,,,,"",,,,"",0,null,"","","context : f = /ClinicalDocument/componentOf/encompassingEncounter/location/healthCareFacility"
-"EICR.facility.id","","","",0,*,"","","","string
+"EICR.facility.identifer","","","",0,*,"","","","string
 ","Facility ID Number","Identification code for the facility (e.g., Facility NPI).","CSTE Element Name: Facility ID Number.","Need provider's contact information in  order to follow up appropriately for  reportable event to ensure appropriate  treatment, identify contact exposures,  etc.","","","","","","","",,,,,"",,,,"",0,null,"","","for $i in f:id return string-join(($i/@root, $i/@extension),""."")"
 "EICR.facility.name","","","",0,1,"","","","string
 ","Facility Name","The facility's name.","CSTE Element Name: Facility Name.","Need provider's contact information in  order to follow up appropriately for  reportable event to ensure appropriate  treatment, identify contact exposures,  etc.","","","","","","","",,,,,"",,,,"",0,null,"","","f:serviceProviderOrganization/f:name"
@@ -44,7 +44,7 @@ user content","",0,*,"","","","Extension
 ","Facility Address","The mailing address for the facility where patient received or is receiving healthcare for the reportable condition. Must include street address, city/town, county, state, and zip code.","CSTE Element Name: Facility Address.","Need provider's contact information in  order to follow up appropriately for  reportable event to ensure appropriate  treatment, identify contact exposures,  etc.","","","","","","","",,,,,"",,,,"",0,null,"","","for $i in f:addr return string-join($i/*,"" "")"
 "EICR.patient","","","",0,1,"","","","BackboneElement
 ","Patient","The subject of the EICR.","CSTE Element Name: Patient.","","","","","","","","",,,,,"",,,,"",0,null,"","","context:  s = /ClinicalDocument/recordTarget/patientRole"
-"EICR.patient.id","","","",0,*,"","","","string
+"EICR.patient.identifer","","","",0,*,"","","","string
 ","Patient ID Number","Patient social security number, medical record number, or other identifying value as required or allowed under jurisdictional laws governing health data exchange.","CSTE Element Name: Patient ID Number.","Identification and contact; jurisdicti  may select which they can receive  based on laws governing public health  data exchange.","","","","","","","",,,,,"",,,,"",0,null,"","","for $i in s:id return string-join(($i/@root, $i/@extension),""."")"
 "EICR.patient.name","","","",0,1,"","","","string
 ","Patient Name","All names for the patient, including legal names and aliases. Must include the name type (i.e., legal or alias), first name, middle name, and last name.","CSTE Element Name: Patient Name.","Identification and contact.","","","","","","","",,,,,"",,,,"",0,null,"","","string-join(s:patient/s:name/*,' ')"

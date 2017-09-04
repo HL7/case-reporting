@@ -1,33 +1,34 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
+
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
    <meta charset="UTF-8"/>
   <title>Case-Reporting</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Case-Reporting Implemenation Guide"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Case-Reporting Implemenation Guide" />
 <meta name="author" content="http://argonautwiki.hl7.org"/>
 
 
-  <link rel="stylesheet" href="fhir.css"/>
+  <link href="fhir.css" rel="stylesheet"/>
 
 
-     <!-- Bootstrap core CSS -->
+   <!-- Bootstrap core CSS -->
 
-     <!-- Latest compiled and minified CSS -->
+   <!-- Latest compiled and minified CSS -->
 
-  <link rel="stylesheet" href="assets/css/bootstrap.css"/>
-  <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+  <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+  <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
 
-    <!-- Project extras -->
-  <link rel="stylesheet" href="assets/css/project.css"/>
-  <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
-	<link rel="stylesheet" href="jquery-ui.css"/>
+  <!-- Project extras -->
+  <link href="assets/css/project.css" rel="stylesheet"/>
+  <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+	<link href="jquery-ui.css" rel="stylesheet"/>
 
-    <!-- Favicons -->
-  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
-  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
-  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
   <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
   <link rel="shortcut icon" href="assets/ico/favicon.png"/>
 
@@ -35,12 +36,12 @@
 <body markdown="1">
 
 
- <div id="segment-header" class="segment">    <!-- segment-header -->
-  <div class="container">    <!-- container -->
-   <a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="logo fhir"/> </a>
+ <div id="segment-header" class="segment">  <!-- segment-header -->
+  <div class="container">  <!-- container -->
+   <a id="logo" no-external="true" href="http://hl7.org/fhir"><img alt="logo fhir" src="assets/images/fhir-logo-www.png"/> </a>
    <div id="hl7-nav">
-     <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
-     <img src="assets/images/hl7-logo.png" alt="visit the hl7 website" width="42" height="50"/>
+     <a id="hl7-logo" no-external="true" href="http://www.hl7.org">
+     <img height="50" alt="visit the hl7 website" width="42" src="assets/images/hl7-logo.png"/>
     </a>
    </div>
 
@@ -49,22 +50,22 @@
 </div>
 
   </div>
-  <div class="container">    <!-- container -->
- </div></div>    <!-- /segment-header -->
+  <div class="container">  <!-- container -->
+ </div></div>  <!-- /segment-header -->
 
- <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+ <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
   <div id="stripe"> </div>
-  <div class="container">    <!-- container -->
-     <!-- HEADER CONTENT -->
+  <div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
 
    <nav class="navbar navbar-inverse">
     <div class="container">
-     <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+     <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
       <span class="icon-bar"> </span>
       <span class="icon-bar"> </span>
       <span class="icon-bar"> </span>
      </button>
-     <a href="http://build.fhir.org/index.html" class="navbar-brand hidden">FHIR</a>
+     <a class="navbar-brand hidden" href="http://build.fhir.org/index.html">FHIR</a>
      <div class="nav-collapse collapse navbar-inverse-collapse">
       <ul class="nav navbar-nav">
         <li><a href="index.html">Home</a></li>
@@ -79,21 +80,21 @@
         <li><a href="downloads.html">Downloads</a></li>
             </ul>
 
-     </div>    <!-- /.nav-collapse -->
-    </div>    <!-- /.container -->
-   </nav>    <!-- /.navbar -->
+     </div>  <!-- /.nav-collapse -->
+    </div>  <!-- /.container -->
+   </nav>  <!-- /.navbar -->
 
-    <!-- /HEADER CONTENT -->
-  </div>    <!-- /container -->
- </div>    <!-- /segment-navbar -->
+  <!-- /HEADER CONTENT -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-navbar -->
 
 
 
-    <!-- /container -->
-    <!-- /segment-breadcrumb -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-breadcrumb -->
 
-<div id="segment-content" class="segment">    <!-- segment-content -->
-<div class="container">    <!-- container -->
+<div id="segment-content" class="segment">  <!-- segment-content -->
+<div class="container">  <!-- container -->
 <div class="row">
 <div class="inner-wrapper">
 
@@ -101,15 +102,15 @@
 <div class="col-12">
 
 
-  <!-- ============BreadCrumb=============== -->
+<!-- ============BreadCrumb=============== -->
 
 <nav class="breadcrumb">
   
     
     
-      <a href="index.html" class="breadcrumb-item">Home</a>
+      <a class="breadcrumb-item" href="index.html">Home</a>
       /
-      <a href="profiles.html" class="breadcrumb-item">Profiles</a>
+      <a class="breadcrumb-item" href="profiles.html">Profiles</a>
       /
       <span class="breadcrumb-item active">EICR-EICR-genexample-1.xml</span>
     
@@ -120,7 +121,7 @@
 </nav>
 
 
-    <!-- ============CONTENT CONTENT=============== -->
+  <!-- ============CONTENT CONTENT=============== -->
 
 <h2>Example: EICR-EICR-genexample-1</h2>
 
@@ -128,10 +129,10 @@
 Formats: <a href="EICR-EICR-genexample-1.html">Narrative</a>, <a href="EICR-EICR-genexample-1.xml.html">XML</a>, <a href="EICR-EICR-genexample-1.json.html">JSON</a>, <a href="EICR-EICR-genexample-1.ttl.html">Turtle</a>
 </p>
 <p>
-Raw <a download="null" href="EICR-EICR-genexample-1.xml">xml</a>
+Raw <a href="EICR-EICR-genexample-1.xml" download>xml</a>
 </p>
 
-<pre class="xml"><a name="061188ea-de27-408f-9854-f1df35858d68">​</a>
+<pre class="xml">
 
 &lt;<a href="StructureDefinition-EICR.html#EICR">EICR</a> xmlns=&quot;http://hl7.org/fhir&quot; <a href="http://build.fhir.org/datatypes.html#string">id</a>=&quot;EICR-genexample-1&quot;&gt;
   &lt;<a href="StructureDefinition-EICR.html#EICR.reportDate">reportDate</a> <a href="http://build.fhir.org/datatypes.html#date">value</a>=&quot;2016-11-07&quot;/&gt;
@@ -150,7 +151,7 @@ Raw <a download="null" href="EICR-EICR-genexample-1.xml">xml</a>
     &lt;<a href="StructureDefinition-EICR.html#EICR.facility.address">address</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;4646 Brown Rd Salem, MA 02368, US&quot;/&gt;
   &lt;/facility&gt;
   &lt;<a href="StructureDefinition-EICR.html#EICR.patient">patient</a>&gt;
-    &lt;<a href="StructureDefinition-EICR.html#EICR.patient.id">id</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;MPI= 123453, SSN = 11-00-1234&quot;/&gt;
+    &lt;<a href="StructureDefinition-EICR.html#EICR.patient.identifer">identifer</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;MPI= 123453, SSN = 11-00-1234&quot;/&gt;
     &lt;<a href="StructureDefinition-EICR.html#EICR.patient.name">name</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Jane Stinn&quot;/&gt;
     &lt;<a href="StructureDefinition-EICR.html#EICR.patient.phone">phone</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;1-(404)555-1212&quot;/&gt;
     &lt;<a href="StructureDefinition-EICR.html#EICR.patient.address">address</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Home: 5101 Peachtree St NE Atlanta, GA 30302, US&quot;/&gt;
@@ -162,7 +163,7 @@ Raw <a download="null" href="EICR-EICR-genexample-1.xml">xml</a>
   &lt;/patient&gt;
   &lt;<a href="StructureDefinition-EICR.html#EICR.occupation">occupation</a>
               <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;Centers for Disease Control 1, Peachtree St South Atlanta, GA, 404-564-7865  Since JAN 1, 1993&quot;/&gt;
-  &lt;<a href="StructureDefinition-EICR.html#EICR.pregnant">pregnant</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;not&nbsp;pregnant&quot;/&gt;
+  &lt;<a href="StructureDefinition-EICR.html#EICR.pregnant">pregnant</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;not pregnant&quot;/&gt;
   &lt;<a href="StructureDefinition-EICR.html#EICR.travelHistory">travelHistory</a>&gt;
     &lt;<a href="StructureDefinition-EICR.html#EICR.travelHistory.locationFreeText">locationFreeText</a>
                       <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;1999 to 2007 Spent 8 years in the UK during the BSE outbreak,  In the 3 weeks before NOV 9, 2016  Brazil, APR 29, 2016 to OCT 30, 2016  Nadi, FJ ,MAY 6, 2016 to MAY 15, 2016  Montreal, QC, CA, JUL 13, 2016 to JUL 15, 2016  Sydney, NSW, AU ,OCT 22, 2016 to OCT 30, 2016  1170 N Rancho Robles Rd Oracle, AZ8562, US&quot;/&gt;
@@ -178,7 +179,7 @@ Raw <a download="null" href="EICR-EICR-genexample-1.xml">xml</a>
     &lt;<a href="StructureDefinition-EICR.html#EICR.problem.dateofOnset">dateofOnset</a> <a href="http://build.fhir.org/datatypes.html#date">value</a>=&quot;2016-11-01T00:00:00.000&quot;/&gt;
     &lt;<a href="StructureDefinition-EICR.html#EICR.problem.symptoms">symptoms</a>
               <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;Symptom Dark stools (finding)Complaint Paroxysmal cough (finding)&quot;/&gt;
-    &lt;<a href="StructureDefinition-EICR.html#EICR.problem.diagnoses">diagnoses</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;Pertussis&nbsp;&quot;/&gt;
+    &lt;<a href="StructureDefinition-EICR.html#EICR.problem.diagnoses">diagnoses</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;Pertussis &quot;/&gt;
     &lt;<a href="StructureDefinition-EICR.html#EICR.problem.dateofDiagnosis">dateofDiagnosis</a> <a href="http://build.fhir.org/datatypes.html#date">value</a>=&quot;2016-11-07T00:00:00.000&quot;/&gt;
   &lt;/problem&gt;
   &lt;<a href="StructureDefinition-EICR.html#EICR.laborder">laborder</a>&gt;
@@ -190,64 +191,63 @@ Raw <a download="null" href="EICR-EICR-genexample-1.xml">xml</a>
 &lt;/EICR&gt;</pre>
 
 
-    <!-- ==============END CONTENT END CONTENT=================== -->
+  <!-- ==============END CONTENT END CONTENT=================== -->
 
 </div>
 
 
-</div>    <!-- /inner-wrapper -->
-</div>    <!-- /row -->
-</div>    <!-- /container -->
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
 
-</div>    <!-- /segment-content -->
-
-
+</div>  <!-- /segment-content -->
 
 
 
-        <!-- /inner-wrapper -->
-                <!-- /row -->
-            <!-- /container -->
+</div>
 
-        <!-- /segment-content -->
+    </div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+
+    </div>  <!-- /segment-content -->
 
 
-<div id="segment-footer" class="segment">    <!-- segment-footer -->
-  <div class="container">    <!-- container -->
+<div id="segment-footer" class="segment">  <!-- segment-footer -->
+  <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Aug 16, 2017 13:19-0700. |
-               <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
-                <a rel="license" style="color: #81BEF7" href="http://build.fhir.orglicense.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
-        
+            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Sun, Sep 3, 2017 19:55-0700. |
+             <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
+                <a style="color: #81BEF7" rel="license" href="http://build.fhir.orglicense.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
+        </span>
         </p>
-   </div>    <!-- /inner-wrapper -->
-  </div>    <!-- /container -->
- </div>    <!-- /segment-footer -->
-    <!-- disqus thread -->
-    <!-- disqus -->
-    <!-- end disqus -->
+   </div>  <!-- /inner-wrapper -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->
 
- <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
-  <div class="container">    <!-- container -->
-  </div>    <!-- /container -->
- </div>    <!-- /segment-post-footer -->
+ <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+  <div class="container">  <!-- container -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-post-footer -->
 
-   <!-- JS and analytics only. -->
-  <!-- Bootstrap core JavaScript
+ <!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
 ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-<script src="./assets/js/jquery.js"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
 <script src="./assets/js/bootstrap.min.js"> </script>
 <script src="./assets/js/respond.min.js"> </script>
 
 <script src="./assets/js/fhir.js"> </script>
 
-  <!-- Analytics Below
+<!-- Analytics Below
 ================================================== -->
 
 
 </body>
+</html>
 
-
-</head></html>

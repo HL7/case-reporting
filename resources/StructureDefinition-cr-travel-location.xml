@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+	<id value="cr-travel-location"/>
+
+	<url value="http://fhir.hl7.org/us/case-reporting/StructureDefinition/cr-travel-location"/>
+	<version value="0.0.0"/>
+	<name value="Case Report Travel Location Profile"/>
+	<status value="draft"/>
+	<date value="2017-09-03T00:00:00-07:00"/>
+	<jurisdiction>
+		<coding>
+			<system value="urn:iso:std:iso:3166"/>
+			<code value="US"/>
+			<display value="United States Minor Outlying Islands (the)"/>
+		</coding>
+	</jurisdiction>
+	<fhirVersion value="3.0.1"/>
+
+	<kind value="resource"/>
+	<abstract value="false"/>
+	<type value="Location"/>
+	<baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-location"/>
+	<derivation value="constraint"/>
+
+	<differential>
+		<element id="Location">
+			<path value="Location"/>
+			<short value="Case Report Travel Location Profile"/>
+			<mustSupport value="false"/>
+			<isModifier value="false"/>
+		</element>
+		<element id="Location.address">
+			<path value="Location.address"/>
+			<min value="0"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+			<isModifier value="false"/>
+		</element>
+		<element id="Location.address.country">
+			<path value="Location.address.country"/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="string"/>
+			</type>
+			<mustSupport value="true"/>
+			<isModifier value="false"/>
+		</element>
+	</differential>
+</StructureDefinition>

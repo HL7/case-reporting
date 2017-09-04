@@ -46,14 +46,14 @@ Reference {http://hl7.org/fhir/StructureDefinition/PractitionerRole}Reference {h
 ","Pregnancy Status Code","The patient's coded pregnancy status.","","Appropriate treatment, follow-up,  appropriate for scoring/risk  ascertainment.","","","","","","","",,"required","Yes/No/Don't know","http://hl7.org/fhir/ValueSet/v2-0136","",,,,"",0,null,"","","pregnant"
 "CaseReport.pregnancyReference","","","",0,1,"","","Y","Reference {http://hl7.org/fhir/StructureDefinition/Condition}
 Reference {http://hl7.org/fhir/StructureDefinition/Observation}","Pregnancy Status Reference","The patient's pregnancy status.","","Appropriate treatment, follow-up,  appropriate for scoring/risk  ascertainment.","","","","","","","",,,,,"",,,,"",0,null,"","","pregnant"
-"CaseReport.travelHistory","","","",0,*,"","","Y","Reference {http://hl7.org/fhir/StructureDefinition/Observation}
+"CaseReport.travelHistory","","","",0,*,"","","Y","BackboneElement
 ","Travel History","The patient's travel history including dates and location.","","Risk, potential severity of action,  timeliness of action (e.g. is travel  history relevant); Prioritization and triaging.","","","","","","","",,,,,"",,,,"",0,null,"","","travelHistory"
-"CaseReport.immunizationStatus","","","",0,*,"","","Y","Reference {http://hl7.org/fhir/StructureDefinition/Immunization}
-","Immunization Status","The patient's immunization History.","","","","","","","","","",,,,,"",,,,"",0,null,"","","immunizationStatus"
-"CaseReport.orderedDiagnostics","","","",0,*,"","","Y","BackboneElement
-","Ordered tests","Ordered tests for the patient during the encounter.","","Some lab test orders are reportable for  suspected cases .  Potential value to linking electronic  laboratory reports to case reports.","","","","","","","",,,,,"",,,,"",0,null,"","","Lab Order"
-"CaseReport.orderedDiagnostics.reference","","","",0,1,"","","Y","Reference {http://hl7.org/fhir/StructureDefinition/ProcedureRequest}
-Reference {http://hl7.org/fhir/StructureDefinition/Questionnaire}","Ordered test details","Reference to ordered tests for the patient during the encounter.","","","","","","","","","",,,,,"",,,,"",0,null,"","","Lab Order"
+"CaseReport.travelHistory.date","","","",0,1,"","","Y","Period
+","Travel History Dates","The period during which the patient's traveled.","","","","","","","","","",,,,,"",,,,"",0,null,"","","travelHistory"
+"CaseReport.travelHistory.locationCode","","","",0,1,"","","Y","CodeableConcept
+","Travel History Location - Coded","Where the patient traveled to as a coded concept or free text.","","","","","","","","","",,"example","Where the patient traveled to as a coded concept. This value set is based upon ISO 3166 (Countries) as well as FIPS 5-2 (States).","http://hl7.org/fhir/ValueSet/jurisdiction","",,,,"",0,null,"","","travelHistory"
+"CaseReport.travelHistory.locationReference","","","",0,1,"","","Y","Reference {http://fhir.hl7.org/us/case-reporting/StructureDefinition/cr-travel-location}
+","Travel History Location - Address","Where the patient traveled to as an address.","","","","","","","","","",,,,,"",,,,"",0,null,"","","travelHistory"
 "CaseReport.orderedDiagnostics.isReason","","","",0,1,"","","Y","boolean
 ","Order trigger flag","This order triggered this case report to be generated.","","","","","","","","","",,,,,"",,,,"",0,null,"","","Lab Order Trigger code"
 "CaseReport.clinicalFindings","","","",1,*,"","","Y","BackboneElement

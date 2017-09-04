@@ -112,7 +112,7 @@
       /
       <a class="breadcrumb-item" href="profiles.html">Profiles</a>
       /
-      <span class="breadcrumb-item active">Observation-eicr-travelhistory-genexample.xml</span>
+      <span class="breadcrumb-item active">Location-cr-travel-location-genexample.ttl</span>
     
     
     
@@ -123,28 +123,48 @@
 
   <!-- ============CONTENT CONTENT=============== -->
 
-<h2>Example: Observation-eicr-travelhistory-genexample</h2>
+<h2>Example: Location-cr-travel-location-genexample</h2>
 
 <p>
-Formats: <a href="Observation-eicr-travelhistory-genexample.html">Narrative</a>, <a href="Observation-eicr-travelhistory-genexample.xml.html">XML</a>, <a href="Observation-eicr-travelhistory-genexample.json.html">JSON</a>, <a href="Observation-eicr-travelhistory-genexample.ttl.html">Turtle</a>
+Formats: <a href="Location-cr-travel-location-genexample.html">Narrative</a>, <a href="Location-cr-travel-location-genexample.xml.html">XML</a>, <a href="Location-cr-travel-location-genexample.json.html">JSON</a>, <a href="Location-cr-travel-location-genexample.ttl.html">Turtle</a>
 </p>
 <p>
-Raw <a href="Observation-eicr-travelhistory-genexample.xml" download>xml</a>
+Raw <a href="Location-cr-travel-location-genexample.ttl" download>ttl</a>
 </p>
 
-<pre class="xml">
+<pre class="rdf">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
-&lt;<a href="StructureDefinition-eicr-travelhistory.html#Observation">Observation</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
-  &lt;<a href="StructureDefinition-eicr-travelhistory.html#Observation.id">id</a> <a href="http://build.fhir.org/datatypes.html#id">value</a>=&quot;eicr-travelhistory-genexample&quot;/&gt;
-  &lt;<a href="StructureDefinition-eicr-travelhistory.html#Observation.code">code</a>&gt;
-    &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-      &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">system</a> <a href="http://build.fhir.org/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
-      &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">code</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;8691-8&quot;/&gt;
-      &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;History of Travel&quot;/&gt;
-    &lt;/coding&gt;
-    &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Travel HIstory&quot;/&gt;
-  &lt;/code&gt;
-&lt;/Observation&gt;</pre>
+# - resource -------------------------------------------------------------------
+
+ a fhir:Location;
+  <a href="http://build.fhir.org/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot;
+  <a href="StructureDefinition-cr-travel-location.html#Location.id">fhir:Resource.id</a> [ <a href="http://build.fhir.org/datatypes.html#id">fhir:value</a> &quot;cr-travel-location-genexample&quot;];
+  <a href="StructureDefinition-cr-travel-location.html#Location.address">fhir:Location.address</a> [
+     <a href="StructureDefinition-cr-travel-location.html#Location.address.use">fhir:Address.use</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> &quot;home&quot; ];
+     <a href="StructureDefinition-cr-travel-location.html#Location.address.type">fhir:Address.type</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> &quot;both&quot; ];
+     <a href="StructureDefinition-cr-travel-location.html#Location.address.text">fhir:Address.text</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;137 Nowhere Street, Erewhon 9132&quot; ];
+     <a href="StructureDefinition-cr-travel-location.html#Location.address.line">fhir:Address.line</a> [
+       <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;137 Nowhere Street&quot;;
+       <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> -1     ];
+     <a href="StructureDefinition-cr-travel-location.html#Location.address.city">fhir:Address.city</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Erewhon&quot; ];
+     <a href="StructureDefinition-cr-travel-location.html#Location.address.district">fhir:Address.district</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Madison&quot; ];
+     <a href="StructureDefinition-cr-travel-location.html#Location.address.postalCode">fhir:Address.postalCode</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;9132&quot; ];
+     <a href="StructureDefinition-cr-travel-location.html#Location.address.period">fhir:Address.period</a> [
+       <a href="http://build.fhir.org/datatypes.html#Period#Period.start">fhir:Period.start</a> [ <a href="http://build.fhir.org/datatypes.html#dateTime">fhir:value</a> &quot;2010-03-23&quot;^^xsd:date ];
+       <a href="http://build.fhir.org/datatypes.html#Period#Period.end">fhir:Period.end</a> [ <a href="http://build.fhir.org/datatypes.html#dateTime">fhir:value</a> &quot;2010-07-01&quot;^^xsd:date ]     ]
+  ].
+
+# - ontology header ------------------------------------------------------------
+
+ a owl:Ontology;
+  owl:imports fhir:fhir.ttl.
+
+</pre>
+
 
 
   <!-- ==============END CONTENT END CONTENT=================== -->
@@ -173,7 +193,7 @@ Raw <a href="Observation-eicr-travelhistory-genexample.xml" download>xml</a>
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Aug 16, 2017 13:19-0700. |
+            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Sun, Sep 3, 2017 19:55-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.orglicense.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>
