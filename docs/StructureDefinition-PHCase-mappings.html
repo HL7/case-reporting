@@ -108,15 +108,15 @@
 
 <div class="col-9">
 
-<ul class="nav nav-tabs"><li><a href="StructureDefinition-CaseReport.html">Content</a></li><li><a href="StructureDefinition-CaseReport-definitions.html">Detailed Descriptions</a></li><li class="active"><a href="#">Mappings</a></li><li><a href="StructureDefinition-CaseReport.xml.html">XML</a></li><li><a href="StructureDefinition-CaseReport.json.html">JSON</a></li></ul>
+<ul class="nav nav-tabs"><li><a href="StructureDefinition-PHCase.html">Content</a></li><li><a href="StructureDefinition-PHCase-definitions.html">Detailed Descriptions</a></li><li class="active"><a href="#">Mappings</a></li><li><a href="StructureDefinition-PHCase.xml.html">XML</a></li><li><a href="StructureDefinition-PHCase.json.html">JSON</a></li></ul>
 
-<h4><span class="sectioncount">D.4.1.4<a name="D.4.1.4"> </a></span> StructureDefinition: Case Report - Mappings <a title="link to here" class="self-link" href="StructureDefinition-CaseReport-definitions.html#D.4.1.4"><img src="target.png"/></a></h4>
+<h4><span class="sectioncount">D.4.1.4<a name="D.4.1.4"> </a></span> StructureDefinition: Case Report - Mappings <a title="link to here" class="self-link" href="StructureDefinition-PHCase-definitions.html#D.4.1.4"><img src="target.png"/></a></h4>
 
-<p>Mappings for the StructureDefinition-CaseReport Profile.</p>
+<p>Mappings for the StructureDefinition-PHCase Profile.</p>
 
 <a name="logical"> </a><h3>Mappings for Logical Mapping (http://hl7.org/fhir/logical)</h3><table class="grid">
  <tr><td colspan="3"><b>Case Report</b></td></tr>
- <tr><td>CaseReport</td><td>EICR Data Elements</td> </tr>
+ <tr><td>PHCase</td><td>EICR Data Elements</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;context</td><td>encounter</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>visitDateTime</td> </tr>
@@ -133,6 +133,8 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date</td><td>travelHistory</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;locationCode</td><td>travelHistory</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;locationReference</td><td>travelHistory</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;orderedDiagnostics</td><td>Lab Order</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference</td><td>Lab Order  details</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isReason</td><td>Lab Order Trigger code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;clinicalFindings</td><td>Lab Result, Symptoms, Diagnosis, HPI, Reason for Visit</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>Lab Result, Symptoms, Diagnosis, HPI, Reason for VisitLab Result, Symptoms, Diagnosis, HPI, Reason for Visit</td> </tr>
@@ -143,7 +145,7 @@
 </table>
 <a name="v2"> </a><h3>Mappings for HL7 v2 Mapping (http://hl7.org/v2)</h3><table class="grid">
  <tr><td colspan="3"><b>Case Report</b></td></tr>
- <tr><td>CaseReport</td><td>EVN (for administrative events)</td> </tr>
+ <tr><td>PHCase</td><td>EVN (for administrative events)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Varies by domain</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;definition</td><td>Varies by domain</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;partOf</td><td>Varies by domain</td> </tr>
@@ -160,7 +162,7 @@
 </table>
 <a name="rim"> </a><h3>Mappings for RIM Mapping (http://hl7.org/v3)</h3><table class="grid">
  <tr><td colspan="3"><b>Case Report</b></td></tr>
- <tr><td>CaseReport</td><td>Act[moodCode=EVN]</td> </tr>
+ <tr><td>PHCase</td><td>Act[moodCode=EVN]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.identifier</td> </tr>
@@ -200,7 +202,7 @@
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Sun, Sep 3, 2017 19:55-0700. |
+            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Tue, Sep 5, 2017 17:03-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.orglicense.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>
