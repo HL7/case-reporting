@@ -1,5 +1,5 @@
 #!/bin/bash
-name="IG-starter-template"
+name="Case-Reporting"
 path1=/Users/ehaas/Documents/FHIR/IG-Template2/
 path2=/Users/ehaas/Downloads/
 path3=/Users/ehaas/Documents/FHIR/IG-tools/
