@@ -1681,9 +1681,9 @@
    <Row ss:AutoFitHeight="0" ss:Height="38.0625">
     <Cell ss:StyleID="s107"><Data ss:Type="String">map all the CSTE provider elements to Provider resource, for t constrain the mas card  to 1</Data></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">provider</Data></Cell>
-    <Cell ss:Index="4" ss:StyleID="s103"><Data ss:Type="String">performer</Data></Cell>
-    <Cell ss:StyleID="s103" ss:Formula="=R2C5&amp;&quot;.&quot;&amp;RC[-1]"><Data
-      ss:Type="String">PHCase.performer</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:Index="4" ss:StyleID="s103"><Data ss:Type="String">reporter</Data></Cell>
+    <Cell ss:StyleID="s103" ss:Formula="=&quot;!&quot;&amp;R2C5&amp;&quot;.&quot;&amp;RC[-1]"><Data
+      ss:Type="String">!PHCase.reporter</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s97"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s97"><Data ss:Type="String">0..1</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -1718,8 +1718,8 @@
     <Cell ss:StyleID="s107"><Data ss:Type="String">provider</Data></Cell>
     <Cell><Data ss:Type="String">review valueset</Data></Cell>
     <Cell ss:StyleID="s103"><Data ss:Type="String">performer.role</Data></Cell>
-    <Cell ss:StyleID="s103" ss:Formula="=R2C5&amp;&quot;.&quot;&amp;RC[-1]"><Data
-      ss:Type="String">PHCase.performer.role</Data><NamedCell
+    <Cell ss:StyleID="s103" ss:Formula="=&quot;!&quot;&amp;R2C5&amp;&quot;.&quot;&amp;RC[-1]"><Data
+      ss:Type="String">!PHCase.performer.role</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s97"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s97"><Data ss:Type="String">0..1</Data><NamedCell
@@ -1756,10 +1756,9 @@
    <Row ss:AutoFitHeight="0" ss:Height="38.0625">
     <Cell><Data ss:Type="String">for s add element</Data></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">provider</Data></Cell>
-    <Cell ss:Index="4" ss:StyleID="s103"><Data ss:Type="String">performer.actor</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="s103"><Data ss:Type="String">reporter</Data></Cell>
     <Cell ss:StyleID="s103" ss:Formula="=R2C5&amp;&quot;.&quot;&amp;RC[-1]"><Data
-      ss:Type="String">PHCase.performer.actor</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+      ss:Type="String">PHCase.reporter</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s97"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s97"><Data ss:Type="String">1..1</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -1830,15 +1829,15 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="38.0625">
     <Cell ss:Index="2" ss:StyleID="s107"><Data ss:Type="String">Facility</Data></Cell>
-    <Cell><Data ss:Type="String">This may be different than the org linked to the provider. Do we need location too?</Data></Cell>
-    <Cell ss:StyleID="s103"><Data ss:Type="String">facility</Data></Cell>
+    <Cell><Data ss:Type="String">This may be different than the org linked to the provider. We need location too!</Data></Cell>
+    <Cell ss:StyleID="s103"><Data ss:Type="String">location</Data></Cell>
     <Cell ss:StyleID="s103" ss:Formula="=R2C5&amp;&quot;.&quot;&amp;RC[-1]"><Data
-      ss:Type="String">PHCase.facility</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
+      ss:Type="String">PHCase.location</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s97"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s97"><Data ss:Type="String">0..1</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s97"><Data ss:Type="String">Reference(Organization)</Data><NamedCell
+    <Cell ss:StyleID="s97"><Data ss:Type="String">Reference(Location)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s97"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s97"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -2021,10 +2020,10 @@
    <Row ss:AutoFitHeight="0" ss:Height="38.0625">
     <Cell ss:StyleID="s75"/>
     <Cell ss:StyleID="s75"><Data ss:Type="String">pregnant</Data></Cell>
-    <Cell><Data ss:Type="String">Use YNU VS</Data></Cell>
+    <Cell><Data ss:Type="String">Use reference to Obs|cond in Clnical Finding instead</Data></Cell>
     <Cell ss:StyleID="s75"><Data ss:Type="String">pregnancyCode</Data></Cell>
-    <Cell ss:StyleID="s103" ss:Formula="=R2C5&amp;&quot;.&quot;&amp;RC[-1]"><Data
-      ss:Type="String">PHCase.pregnancyCode</Data><NamedCell
+    <Cell ss:StyleID="s103" ss:Formula="=&quot;!&quot;&amp;R2C5&amp;&quot;.&quot;&amp;RC[-1]"><Data
+      ss:Type="String">!PHCase.pregnancyCode</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s97"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s97"><Data ss:Type="String">0..1</Data><NamedCell
@@ -2059,10 +2058,10 @@
    <Row ss:AutoFitHeight="0" ss:Height="38.0625">
     <Cell ss:StyleID="s75"/>
     <Cell ss:StyleID="s75"><Data ss:Type="String">pregnant</Data></Cell>
-    <Cell><Data ss:Type="String">possibly as an extensino.  probably use the Pregnancy Observation CCDA template</Data></Cell>
+    <Cell><Data ss:Type="String">Use reference to Obs|cond in Clnical Finding instead</Data></Cell>
     <Cell ss:StyleID="s75"><Data ss:Type="String">pregnancyReference</Data></Cell>
-    <Cell ss:StyleID="s103" ss:Formula="=R2C5&amp;&quot;.&quot;&amp;RC[-1]"><Data
-      ss:Type="String">PHCase.pregnancyReference</Data><NamedCell
+    <Cell ss:StyleID="s103" ss:Formula="=&quot;!&quot;&amp;R2C5&amp;&quot;.&quot;&amp;RC[-1]"><Data
+      ss:Type="String">!PHCase.pregnancyReference</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s97"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s97"><Data ss:Type="String">0..1</Data><NamedCell
@@ -2807,12 +2806,12 @@
     <VerticalResolution>600</VerticalResolution>
    </Print>
    <Selected/>
-   <TopRowVisible>24</TopRowVisible>
+   <TopRowVisible>3</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>31</ActiveRow>
-     <ActiveCol>2</ActiveCol>
+     <ActiveRow>16</ActiveRow>
+     <ActiveCol>4</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -4453,7 +4452,7 @@
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
    <Range>R2C5:R50C5</Range>
    <Condition>
-    <Value1>AND(Operations!R[1048573]C1&lt;&gt;&quot;&quot;,NOT(ISERR(SEARCH(&quot;.&quot;,Operations!R[1048573]C1))),Operations!R[1048573]C2&lt;&gt;&quot;QUERY&quot;, Operations!R[1048573]C2&lt;&gt;&quot;OPERATION&quot;)</Value1>
+    <Value1>AND(Operations!R[1048572]C1&lt;&gt;&quot;&quot;,NOT(ISERR(SEARCH(&quot;.&quot;,Operations!R[1048572]C1))),Operations!R[1048572]C2&lt;&gt;&quot;QUERY&quot;, Operations!R[1048572]C2&lt;&gt;&quot;OPERATION&quot;)</Value1>
    </Condition>
   </ConditionalFormatting>
  </Worksheet>

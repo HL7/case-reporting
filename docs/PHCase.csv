@@ -29,21 +29,14 @@ Reference {http://hl7.org/fhir/StructureDefinition/EpisodeOfCare}","Encounter / 
 PeriodTiming","When event occurred","Date and time of the provider's most recent encounter with the patient regarding the reportable condition.","[The list of types may be constrained as appropriate for the type of event].","","","","","","","","",,,,,"",,,,"",0,null,"","","visitDateTime","Varies by domain",".effectiveTime"
 "PHCase.date","","","",0,1,"","","Y","dateTime
 ","Date of the Report","The date on which the reporting party completed the report.","","","","","","","","","",,,,,"",,,,"",0,null,"","","reportDate"
-"PHCase.performer","","","",0,1,"","","Y","","Responsible Provider","The Provider responsible for Paitent's care.","[Resources may choose to replace this with just a single performer or repeating where there's no need to distinguish role and/or responsible organization].","","","","","","","","",,,,,"",,,,"",0,null,"","","provider","EVN.5 or by domain",".participation[typeCode=PRF].role[scoper.determinerCode=INSTANCE]"
-"PHCase.performer.role","","","",0,1,"","","Y","CodeableConcept
-","What type of performance was done","Describes the type of performance (e.g. primary surgeon, anaesthesiologiest, etc.).","[Adjust vocabulary to be appropriate to your domain - generally should reflect what the performer does, not who they are].","","","","","","","","",,"example","Codes describing the types of functional roles performers can take on when performing events","http://hl7.org/fhir/ValueSet/performer-role","",,,,"",0,null,"","","provider","Varies by domain",".participation.functionCode"
-"PHCase.performer.actor","","","",1,1,"","","Y","Reference {http://hl7.org/fhir/StructureDefinition/Practitioner}
+"PHCase.reporter","","","",1,1,"","","Y","Reference {http://hl7.org/fhir/StructureDefinition/Practitioner}
 Reference {http://hl7.org/fhir/StructureDefinition/PractitionerRole}Reference {http://hl7.org/fhir/StructureDefinition/Organization}Reference {http://hl7.org/fhir/StructureDefinition/Patient}Reference {http://hl7.org/fhir/StructureDefinition/Device}Reference {http://hl7.org/fhir/StructureDefinition/RelatedPerson}","Individual who was performing","The device, practitioner, etc. who performed the action.","","","","","","","","","",,,,,"",,,,"",0,null,"","","provider","EVN.5 or by domain",".player"
-"PHCase.facility","","","",0,1,"","","","Reference {http://hl7.org/fhir/StructureDefinition/Organization}
+"PHCase.location","","","",0,1,"","","","Reference {http://hl7.org/fhir/StructureDefinition/Location}
 ","The facility sending the CR","The organization whrer the case originated.","","Practitioners and Devices can be associated with multiple organizations.  This element indicates which organization they were acting on behalf of when performing the action.","","","","","","","",,,,,"",,,,"",0,null,"","","Facility","N/A",".scoper"
 "PHCase.occupationCode","","","",0,*,"","","Y","CodeableConcept
 ","Occupation","The patient's occupation.","","Identification of potential risk,  transmission risk.","","","","","","","",,"required","US Department of Labor Bureau of Labor Statitics Occupational Group Codes","","",,,,"",0,null,"","","occupation"
 "PHCase.occupationReference","","","",0,*,"","","Y","Reference {http://hl7.org/fhir/StructureDefinition/Observation}
 ","Occupation","The patient's occupation.","","Identification of potential risk,  transmission risk.","","","","","","","",,,,,"",,,,"",0,null,"","","occupation"
-"PHCase.pregnancyCode","","","",0,1,"","","Y","CodeableConcept
-","Pregnancy Status Code","The patient's coded pregnancy status.","","Appropriate treatment, follow-up,  appropriate for scoring/risk  ascertainment.","","","","","","","",,"required","Yes/No/Don't know","http://hl7.org/fhir/ValueSet/v2-0136","",,,,"",0,null,"","","pregnant"
-"PHCase.pregnancyReference","","","",0,1,"","","Y","Reference {http://hl7.org/fhir/StructureDefinition/Condition}
-Reference {http://hl7.org/fhir/StructureDefinition/Observation}","Pregnancy Status Reference","The patient's pregnancy status.","","Appropriate treatment, follow-up,  appropriate for scoring/risk  ascertainment.","","","","","","","",,,,,"",,,,"",0,null,"","","pregnant"
 "PHCase.travelHistory","","","",0,*,"","","Y","BackboneElement
 ","Travel History","The patient's travel history including dates and location.","","Risk, potential severity of action,  timeliness of action (e.g. is travel  history relevant); Prioritization and triaging.","","","","","","","",,,,,"",,,,"",0,null,"","","travelHistory"
 "PHCase.travelHistory.date","","","",0,1,"","","Y","Period
