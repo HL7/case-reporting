@@ -29,8 +29,8 @@ Reference {http://hl7.org/fhir/StructureDefinition/EpisodeOfCare}","Encounter / 
 PeriodTiming","When event occurred","Date and time of the provider's most recent encounter with the patient regarding the reportable condition.","[The list of types may be constrained as appropriate for the type of event].","","","","","","","","",,,,,"",,,,"",0,null,"","","visitDateTime","Varies by domain",".effectiveTime"
 "PHCase.date","","","",0,1,"","","Y","dateTime
 ","Date of the Report","The date on which the reporting party completed the report.","","","","","","","","","",,,,,"",,,,"",0,null,"","","reportDate"
-"PHCase.reporter","","","",1,1,"","","Y","Reference {http://hl7.org/fhir/StructureDefinition/Practitioner}
-Reference {http://hl7.org/fhir/StructureDefinition/PractitionerRole}Reference {http://hl7.org/fhir/StructureDefinition/Organization}Reference {http://hl7.org/fhir/StructureDefinition/Patient}Reference {http://hl7.org/fhir/StructureDefinition/Device}Reference {http://hl7.org/fhir/StructureDefinition/RelatedPerson}","Individual who was performing","The device, practitioner, etc. who performed the action.","","","","","","","","","",,,,,"",,,,"",0,null,"","","provider","EVN.5 or by domain",".player"
+"PHCase.reporter","","","",1,1,"","","Y","Reference {http://hl7.org/fhir/StructureDefinition/PractitionerRole}
+Reference {http://hl7.org/fhir/StructureDefinition/Organization}","Responsible Provider","The Provider responsible for Paitent's care.","","","","","","","","","",,,,,"",,,,"",0,null,"","","provider","EVN.5 or by domain",".player"
 "PHCase.location","","","",0,1,"","","","Reference {http://hl7.org/fhir/StructureDefinition/Location}
 ","The facility sending the CR","The organization whrer the case originated.","","Practitioners and Devices can be associated with multiple organizations.  This element indicates which organization they were acting on behalf of when performing the action.","","","","","","","",,,,,"",,,,"",0,null,"","","Facility","N/A",".scoper"
 "PHCase.occupationCode","","","",0,*,"","","Y","CodeableConcept
