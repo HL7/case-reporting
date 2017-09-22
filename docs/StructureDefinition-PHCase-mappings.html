@@ -120,7 +120,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;context</td><td>encounter</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>visitDateTime</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;date</td><td>reportDate</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>reportDate</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reporter</td><td>provider</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>Facility</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;occupationCode</td><td>occupation</td> </tr>
@@ -135,7 +135,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;clinicalFindings</td><td>Lab Result, Symptoms, Diagnosis, HPI, Reason for Visit</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>Lab Result, Symptoms, Diagnosis, HPI, Reason for VisitLab Result, Symptoms, Diagnosis, HPI, Reason for Visit</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference</td><td>Lab Result, Symptoms, Diagnosis, HPI, Reason for VisitLab Result, Symptoms, Diagnosis, HPI, Reason for Visit</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description</td><td>Lab Result, Symptoms, Diagnosis, HPI, Reason for VisitLab Result, Symptoms, Diagnosis, HPI, Reason for Visit</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isReasonExtension</td><td>Lab Order Trigger code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;treatments</td><td>MedicationAdministered</td> </tr>
 </table>
@@ -146,10 +145,12 @@
  <tr><td>&nbsp;&nbsp;&nbsp;definition</td><td>Varies by domain</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;partOf</td><td>Varies by domain</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Varies by domain</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>Varies by domain</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>Varies by domain</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>PAT in proximity to EVN segment</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;context</td><td>PV1 in proximity to EVN segment</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>Varies by domain</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;jurisdiction</td><td>EVN.5 or by domain</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reporter</td><td>EVN.5 or by domain</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>NTE</td> </tr>
@@ -163,10 +164,12 @@
  <tr><td>&nbsp;&nbsp;&nbsp;definition</td><td>.outboundRelationship[typeCode=DEFN].target</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;partOf</td><td>.inboundRelationship[typeCode=COMP].source[moodCode=EVN]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>.code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>.code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>.participation[typeCode=SBJ].role</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;context</td><td>.inboundRelationship(typeCode=COMP].source[classCode&lt;=PCPR, moodCode=EVN]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;jurisdiction</td><td>.participation[typeCode=PRF].role[scoper.determinerCode=INSTANCE]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reporter</td><td>.player</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>.scoper</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>.inboundRelationship(typeCode=SUBJ].source[classCode=ANNGEN, moodCode=EVN].value[xsi:type=ST]</td> </tr>
@@ -194,7 +197,7 @@
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Sep 20, 2017 10:21-0700. |
+            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Sep 21, 2017 18:02-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.orglicense.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

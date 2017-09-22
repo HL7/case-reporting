@@ -113,7 +113,7 @@
       /
       <a href="terminology.html" class="breadcrumb-item">Terminology</a>
       /
-      <span class="breadcrumb-item active">ValueSet-event-status</span>
+      <span class="breadcrumb-item active">ValueSet-cr-status</span>
     
     
 
@@ -123,22 +123,25 @@
   <!-- ============CONTENT CONTENT=============== -->
 
 <table class="grid">
- <tbody><tr><td>Defining URL:</td><td>http://fhir.hl7.org/us/case-reporting/ValueSet/event-status</td></tr>
- <tr><td>Name:</td><td>EventStatus</td></tr>
- <tr><td>Definition:</td><td><p>Codes identifying the stage lifecycle stage of a event</p>
+ <tbody><tr><td>Defining URL:</td><td>http://fhir.hl7.org/us/case-reporting/ValueSet/cr-status</td></tr>
+ <tr><td>Name:</td><td>PH Case Status Codes</td></tr>
+ <tr><td>Definition:</td><td><p>Codes identifying the stage lifecycle stage of the case.</p>
 </td></tr>
- <tr><td>Source Resource</td><td><a href="ValueSet-event-status.xml.html">XML</a> / <a href="ValueSet-event-status.json.html">JSON</a> / <a href="ValueSet-event-status.ttl.html">Turtle</a></td></tr>
+ <tr><td>Publisher:</td><td>{ site.data.fhir.ig.publisher }</td></tr>
+ <tr><td>Source Resource</td><td><a href="ValueSet-cr-status.xml.html">XML</a> / <a href="ValueSet-cr-status.json.html">JSON</a> / <a href="ValueSet-cr-status.ttl.html">Turtle</a></td></tr>
 </tbody></table>
 
 
-<p>This value set is not used</p>
+<ul>
+ <li><a href="StructureDefinition-PHCase.html">Case Report</a></li>
+</ul>
 
-<div xmlns="http://www.w3.org/1999/xhtml"><h2>EventStatus</h2><div><p>Codes identifying the stage lifecycle stage of a event</p>
-</div><p>This value set includes codes from the following code systems:</p><ul><li><a name="82dd9f87-d574-4c3e-b536-93d8963d7154">​</a>Include all codes defined in <a href="CodeSystem/event-status.html"><code>http://fhir.hl7.org/us/case-reporting/CodeSystem/event-status</code></a></li></ul></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><h2>PH Case Status Codes</h2><div><p>Codes identifying the stage lifecycle stage of the case.</p>
+</div><p>This value set includes codes from the following code systems:</p><ul><li><a name="97ecaf18-4ae3-4ea1-8bf8-7c6a0c040b30">​</a>Include all codes defined in <a href="CodeSystem/cr-status.html"><code>http://fhir.hl7.org/us/case-reporting/CodeSystem/cr-status</code></a></li></ul></div>
 
 <h3>Expansion</h3>
 
-<div xmlns="http://www.w3.org/1999/xhtml"><p>This value set contains 6 concepts</p><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px">Expansion based on http://fhir.hl7.org/us/case-reporting/CodeSystem/event-status version 0.0.0</p><p><a name="39feeb3f-368b-42e8-824d-c4f7fd0fe872">​</a>All codes from system <a href="CodeSystem/event-status.html"><code>http://fhir.hl7.org/us/case-reporting/CodeSystem/event-status</code></a></p><table class="codes"><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a name="56cb1d23-b32a-4b2d-8a3a-18f45af0db66">​</a><a name="http---fhir.hl7.org-us-case-reporting-CodeSystem-event-status-in-progress"> </a><a href="CodeSystem/event-status.html#event-status-in-progress">in-progress</a></td><td>In Progress</td><td>The event is currently occurring</td></tr><tr><td><a name="5cf61aec-059c-4f4c-a362-6e43adaf8787">​</a><a name="http---fhir.hl7.org-us-case-reporting-CodeSystem-event-status-suspended"> </a><a href="CodeSystem/event-status.html#event-status-suspended">suspended</a></td><td>Suspended</td><td>The event has been temporarily stopped but is expected to resume in the future</td></tr><tr><td><a name="23e7e8ec-9e7d-44b5-a27b-ce4818917671">​</a><a name="http---fhir.hl7.org-us-case-reporting-CodeSystem-event-status-aborted"> </a><a href="CodeSystem/event-status.html#event-status-aborted">aborted</a></td><td>Aborted</td><td>The event was  prior to the full completion of the intended actions</td></tr><tr><td><a name="f1a22dd8-0649-449f-8ad0-569c3cb323a6">​</a><a name="http---fhir.hl7.org-us-case-reporting-CodeSystem-event-status-completed"> </a><a href="CodeSystem/event-status.html#event-status-completed">completed</a></td><td>Completed</td><td>The event has now concluded</td></tr><tr><td><a name="b7c51c76-0817-455c-924d-1c15bb856d18">​</a><a name="http---fhir.hl7.org-us-case-reporting-CodeSystem-event-status-entered-in-error"> </a><a href="CodeSystem/event-status.html#event-status-entered-in-error">entered-in-error</a></td><td>Entered in Error</td><td>This electronic record should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be &quot;cancelled&quot; rather than &quot;entered-in-error&quot;.)</td></tr><tr><td><a name="a61fc0a9-7674-4523-825c-a8d7ade7ee1a">​</a><a name="http---fhir.hl7.org-us-case-reporting-CodeSystem-event-status-unknown"> </a><a href="CodeSystem/event-status.html#event-status-unknown">unknown</a></td><td>Unknown</td><td>The authoring system does not know which of the status values currently applies for this request.  Note: This concept is not to be used for &quot;other&quot; - one of the listed statuses is presumed to apply, it's just not known which one.</td></tr></table></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><p>This value set contains 7 concepts</p><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px">Expansion based on http://fhir.hl7.org/us/case-reporting/CodeSystem/cr-status version 0.0.0</p><p><a name="2b3f1397-48a2-4687-92d0-d7d4d8cb49e6">​</a>All codes from system <a href="CodeSystem/cr-status.html"><code>http://fhir.hl7.org/us/case-reporting/CodeSystem/cr-status</code></a></p><table class="codes"><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a name="9264c692-1ca6-4b52-8619-939c991556bb">​</a><a name="http---fhir.hl7.org-us-case-reporting-CodeSystem-cr-status-in-progress"> </a><a href="CodeSystem/cr-status.html#cr-status-in-progress">in-progress</a></td><td>In Progress</td><td>This is a partial (e.g. initial, interim or preliminary) case. Data may be incomplete or unverified.</td></tr><tr><td><a name="3b3d52ed-2304-47ad-b11d-98da83fbbded">​</a><a name="http---fhir.hl7.org-us-case-reporting-CodeSystem-cr-status-suspended"> </a><a href="CodeSystem/cr-status.html#cr-status-suspended">suspended</a></td><td>Suspended</td><td>Incomplete or unavailable because the case has been temporarily halted.</td></tr><tr><td><a name="0567c04e-86dd-477e-86aa-8eb1b882e105">​</a><a name="http---fhir.hl7.org-us-case-reporting-CodeSystem-cr-status-aborted"> </a><a href="CodeSystem/cr-status.html#cr-status-aborted">aborted</a></td><td>Aborted</td><td>Incomplete or unavailable because the case was abandoned prior to completion.</td></tr><tr><td><a name="4e1070cf-bde6-466e-b030-4dde92931555">​</a><a name="http---fhir.hl7.org-us-case-reporting-CodeSystem-cr-status-completed"> </a><a href="CodeSystem/cr-status.html#cr-status-completed">completed</a></td><td>Completed</td><td>The case is complete</td></tr><tr><td><a name="2c355f8c-6033-47f1-8cd9-7721246ff0f4">​</a><a name="http---fhir.hl7.org-us-case-reporting-CodeSystem-cr-status-reopened"> </a><a href="CodeSystem/cr-status.html#cr-status-reopened">reopened</a></td><td>Reopened</td><td>Subsequent to being completed, the case has been reopened. This includes any change in the results, diagnosis, narrative text, or other content that has been issued.</td></tr><tr><td><a name="19d16240-e3af-45f9-932a-3d5f40146e65">​</a><a name="http---fhir.hl7.org-us-case-reporting-CodeSystem-cr-status-entered-in-error"> </a><a href="CodeSystem/cr-status.html#cr-status-entered-in-error">entered-in-error</a></td><td>Entered in Error</td><td>This electronic record of this event should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be &quot;cancelled&quot; rather than &quot;entered-in-error&quot;.)</td></tr><tr><td><a name="8a321398-3644-4483-bc4b-5029f6a1dd52">​</a><a name="http---fhir.hl7.org-us-case-reporting-CodeSystem-cr-status-unknown"> </a><a href="CodeSystem/cr-status.html#cr-status-unknown">unknown</a></td><td>Unknown</td><td>The authoring system does not know which of the status values currently applies.  Note: This concept is not to be used for &quot;other&quot; - one of the listed statuses is presumed to apply, it's just not known which one.</td></tr></table></div>
 
     <!-- ==============END CONTENT END CONTENT=================== -->
 
@@ -166,7 +169,7 @@
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Sep 20, 2017 10:21-0700. |
+            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Sep 21, 2017 18:02-0700. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://build.fhir.orglicense.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

@@ -112,7 +112,7 @@
       /
       <a class="breadcrumb-item" href="profiles.html">Profiles</a>
       /
-      <span class="breadcrumb-item active">CodeSystem-event-status.xml</span>
+      <span class="breadcrumb-item active">CodeSystem-cr-status.xml</span>
     
     
     
@@ -123,30 +123,30 @@
 
   <!-- ============CONTENT CONTENT=============== -->
 
-<h2>Example: CodeSystem-event-status</h2>
+<h2>Example: CodeSystem-cr-status</h2>
 
 <p>
-Formats: <a href="CodeSystem-event-status.html">Narrative</a>, <a href="CodeSystem-event-status.xml.html">XML</a>, <a href="CodeSystem-event-status.json.html">JSON</a>, <a href="CodeSystem-event-status.ttl.html">Turtle</a>
+Formats: <a href="CodeSystem-cr-status.html">Narrative</a>, <a href="CodeSystem-cr-status.xml.html">XML</a>, <a href="CodeSystem-cr-status.json.html">JSON</a>, <a href="CodeSystem-cr-status.ttl.html">Turtle</a>
 </p>
 <p>
-Raw <a href="CodeSystem-event-status.xml" download>xml</a>
+Raw <a href="CodeSystem-cr-status.xml" download>xml</a>
 </p>
 
 <pre class="xml">
 
 &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem">CodeSystem</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
-  &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.id">id</a> <a href="http://build.fhir.org/datatypes.html#id">value</a>=&quot;event-status&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.id">id</a> <a href="http://build.fhir.org/datatypes.html#id">value</a>=&quot;cr-status&quot;/&gt;
   &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.text">text</a>&gt;
     &lt;<a href="http://build.fhir.org/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;generated&quot;/&gt;
-    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;h2&gt;EventStatus&lt;/h2&gt;&lt;div&gt;&lt;p&gt;Codes identifying the stage lifecycle stage of a event&lt;/p&gt;
-&lt;/div&gt;&lt;p&gt;This code system http://fhir.hl7.org/us/case-reporting/CodeSystem/event-status defines the following codes:&lt;/p&gt;&lt;table class=&quot;codes&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;in-progress&lt;a name=&quot;event-status-in-progress&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;In Progress&lt;/td&gt;&lt;td&gt;The event is currently occurring&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;suspended&lt;a name=&quot;event-status-suspended&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Suspended&lt;/td&gt;&lt;td&gt;The event has been temporarily stopped but is expected to resume in the future&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;aborted&lt;a name=&quot;event-status-aborted&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Aborted&lt;/td&gt;&lt;td&gt;The event was  prior to the full completion of the intended actions&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;completed&lt;a name=&quot;event-status-completed&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Completed&lt;/td&gt;&lt;td&gt;The event has now concluded&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;entered-in-error&lt;a name=&quot;event-status-entered-in-error&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Entered in Error&lt;/td&gt;&lt;td&gt;This electronic record should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be &amp;quot;cancelled&amp;quot; rather than &amp;quot;entered-in-error&amp;quot;.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;unknown&lt;a name=&quot;event-status-unknown&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Unknown&lt;/td&gt;&lt;td&gt;The authoring system does not know which of the status values currently applies for this request.  Note: This concept is not to be used for &amp;quot;other&amp;quot; - one of the listed statuses is presumed to apply, it's just not known which one.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;h2&gt;PH Case Status Codes&lt;/h2&gt;&lt;div&gt;&lt;p&gt;Codes identifying the stage lifecycle stage of the case&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;This code system http://fhir.hl7.org/us/case-reporting/CodeSystem/cr-status defines the following codes:&lt;/p&gt;&lt;table class=&quot;codes&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;in-progress&lt;a name=&quot;cr-status-in-progress&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;In Progress&lt;/td&gt;&lt;td&gt;This is a partial (e.g. initial, interim or preliminary) case. Data may be incomplete or unverified.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;suspended&lt;a name=&quot;cr-status-suspended&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Suspended&lt;/td&gt;&lt;td&gt;Incomplete or unavailable because the case has been temporarily halted.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;aborted&lt;a name=&quot;cr-status-aborted&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Aborted&lt;/td&gt;&lt;td&gt;Incomplete or unavailable because the case was abandoned prior to completion.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;completed&lt;a name=&quot;cr-status-completed&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Completed&lt;/td&gt;&lt;td&gt;The case is complete&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;reopened&lt;a name=&quot;cr-status-reopened&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Reopened&lt;/td&gt;&lt;td&gt;Subsequent to being completed, the case has been reopened. This includes any change in the results, diagnosis, narrative text, or other content that has been issued.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;entered-in-error&lt;a name=&quot;cr-status-entered-in-error&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Entered in Error&lt;/td&gt;&lt;td&gt;This electronic record of this event should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be &amp;quot;cancelled&amp;quot; rather than &amp;quot;entered-in-error&amp;quot;.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;unknown&lt;a name=&quot;cr-status-unknown&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Unknown&lt;/td&gt;&lt;td&gt;The authoring system does not know which of the status values currently applies.  Note: This concept is not to be used for &amp;quot;other&amp;quot; - one of the listed statuses is presumed to apply, it's just not known which one.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
   &lt;/text&gt;
-  &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.url">url</a> <a href="http://build.fhir.org/datatypes.html#uri">value</a>=&quot;http://fhir.hl7.org/us/case-reporting/CodeSystem/event-status&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.url">url</a> <a href="http://build.fhir.org/datatypes.html#uri">value</a>=&quot;http://fhir.hl7.org/us/case-reporting/CodeSystem/cr-status&quot;/&gt;
   &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.version">version</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;0.0.0&quot;/&gt;
-  &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.name">name</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;EventStatus&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.name">name</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;PH Case Status Codes&quot;/&gt;
   &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.status">status</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;draft&quot;/&gt;
   &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.experimental">experimental</a> <a href="http://build.fhir.org/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
-  &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.date">date</a> <a href="http://build.fhir.org/datatypes.html#dateTime">value</a>=&quot;2017-09-20T10:21:02-07:00&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.date">date</a> <a href="http://build.fhir.org/datatypes.html#dateTime">value</a>=&quot;2017-09-21T17:17:09-07:00&quot;/&gt;
   &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.contact">contact</a>&gt;
     &lt;<a href="http://build.fhir.org/datatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>&gt;
       &lt;<a href="http://build.fhir.org/datatypes.html#ContactPoint#ContactPoint.system">system</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;url&quot;/&gt;
@@ -155,7 +155,7 @@ Raw <a href="CodeSystem-event-status.xml" download>xml</a>
       &lt;<a href="http://build.fhir.org/datatypes.html#ContactPoint#ContactPoint.system">system</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;email&quot;/&gt;
     &lt;/telecom&gt;
   &lt;/contact&gt;
-  &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.description">description</a> <a href="http://build.fhir.org/datatypes.html#markdown">value</a>=&quot;Codes identifying the stage lifecycle stage of a event&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.description">description</a> <a href="http://build.fhir.org/datatypes.html#markdown">value</a>=&quot;Codes identifying the stage lifecycle stage of the case&quot;/&gt;
   &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.jurisdiction">jurisdiction</a>&gt;
     &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
       &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">system</a> <a href="http://build.fhir.org/datatypes.html#uri">value</a>=&quot;urn:iso:std:iso:3166&quot;/&gt;
@@ -164,41 +164,48 @@ Raw <a href="CodeSystem-event-status.xml" download>xml</a>
     &lt;/coding&gt;
   &lt;/jurisdiction&gt;
   &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.caseSensitive">caseSensitive</a> <a href="http://build.fhir.org/datatypes.html#boolean">value</a>=&quot;true&quot;/&gt;
-  &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.valueSet">valueSet</a> <a href="http://build.fhir.org/datatypes.html#uri">value</a>=&quot;http://fhir.hl7.org/us/case-reporting/ValueSet/event-status&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.valueSet">valueSet</a> <a href="http://build.fhir.org/datatypes.html#uri">value</a>=&quot;http://fhir.hl7.org/us/case-reporting/ValueSet/cr-status&quot;/&gt;
   &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.content">content</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;complete&quot;/&gt;
   &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept">concept</a>&gt;
     &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;in-progress&quot;/&gt;
     &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;In Progress&quot;/&gt;
-    &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;The event is currently occurring&quot;/&gt;
+    &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>
+                <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;This is a partial (e.g. initial, interim or preliminary) case. Data may be incomplete or unverified.&quot;/&gt;
   &lt;/concept&gt;
   &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept">concept</a>&gt;
     &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;suspended&quot;/&gt;
     &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Suspended&quot;/&gt;
     &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>
-                <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;The event has been temporarily stopped but is expected to resume in the future&quot;/&gt;
+                <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Incomplete or unavailable because the case has been temporarily halted.&quot;/&gt;
   &lt;/concept&gt;
   &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept">concept</a>&gt;
     &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;aborted&quot;/&gt;
     &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Aborted&quot;/&gt;
     &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>
-                <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;The event was  prior to the full completion of the intended actions&quot;/&gt;
+                <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Incomplete or unavailable because the case was abandoned prior to completion.&quot;/&gt;
   &lt;/concept&gt;
   &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept">concept</a>&gt;
     &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;completed&quot;/&gt;
     &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Completed&quot;/&gt;
-    &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;The event has now concluded&quot;/&gt;
+    &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;The case is complete&quot;/&gt;
+  &lt;/concept&gt;
+  &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;reopened&quot;/&gt;
+    &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Reopened&quot;/&gt;
+    &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>
+                <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Subsequent to being completed, the case has been reopened. This includes any change in the results, diagnosis, narrative text, or other content that has been issued.&quot;/&gt;
   &lt;/concept&gt;
   &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept">concept</a>&gt;
     &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;entered-in-error&quot;/&gt;
     &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Entered in Error&quot;/&gt;
     &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>
-                <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;This electronic record should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be &amp;quot;cancelled&amp;quot; rather than &amp;quot;entered-in-error&amp;quot;.)&quot;/&gt;
+                <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;This electronic record of this event should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be &amp;quot;cancelled&amp;quot; rather than &amp;quot;entered-in-error&amp;quot;.)&quot;/&gt;
   &lt;/concept&gt;
   &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept">concept</a>&gt;
     &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;unknown&quot;/&gt;
     &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Unknown&quot;/&gt;
     &lt;<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>
-                <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;The authoring system does not know which of the status values currently applies for this request.  Note: This concept is not to be used for &amp;quot;other&amp;quot; - one of the listed statuses is presumed to apply, it&amp;#39;s just not known which one.&quot;/&gt;
+                <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;The authoring system does not know which of the status values currently applies.  Note: This concept is not to be used for &amp;quot;other&amp;quot; - one of the listed statuses is presumed to apply, it&amp;#39;s just not known which one.&quot;/&gt;
   &lt;/concept&gt;
 &lt;/CodeSystem&gt;</pre>
 
@@ -229,7 +236,7 @@ Raw <a href="CodeSystem-event-status.xml" download>xml</a>
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Sep 20, 2017 10:21-0700. |
+            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Sep 21, 2017 18:02-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.orglicense.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

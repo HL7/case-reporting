@@ -102,39 +102,76 @@
 <div class="col-12">
 
 
-
 <!-- ============BreadCrumb=============== -->
 
 <nav class="breadcrumb">
   
     
     
-    
-    
       <a class="breadcrumb-item" href="index.html">Home</a>
       /
-      <a class="breadcrumb-item" href="terminology.html">Terminology</a>
+      <a class="breadcrumb-item" href="profiles.html">Profiles</a>
       /
-      <span class="breadcrumb-item active">CodeSystem-event-status</span>
+      <span class="breadcrumb-item active">ValueSet-cr-status.xml</span>
+    
+    
     
     
 
 </nav>
 
 
-<!-- ============CONTENT CONTENT=============== -->
+  <!-- ============CONTENT CONTENT=============== -->
 
-<h2>CodeSystem: CodeSystem-event-status</h2>
+<h2>Example: ValueSet-cr-status</h2>
 
 <p>
-Formats: <a href="CodeSystem-event-status.xml.html">XML</a>, <a href="CodeSystem-event-status.json.html">JSON</a>, <a href="CodeSystem-event-status.ttl.html">Turtle</a>
+Formats: <a href="ValueSet-cr-status.html">Narrative</a>, <a href="ValueSet-cr-status.xml.html">XML</a>, <a href="ValueSet-cr-status.json.html">JSON</a>, <a href="ValueSet-cr-status.ttl.html">Turtle</a>
+</p>
+<p>
+Raw <a href="ValueSet-cr-status.xml" download>xml</a>
 </p>
 
-<div xmlns="http://www.w3.org/1999/xhtml"><h2>EventStatus</h2><div><p>Codes identifying the stage lifecycle stage of a event</p>
-</div><p>This code system http://fhir.hl7.org/us/case-reporting/CodeSystem/event-status defines the following codes:</p><table class="codes"><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>in-progress<a name="event-status-in-progress"> </a></td><td>In Progress</td><td>The event is currently occurring</td></tr><tr><td>suspended<a name="event-status-suspended"> </a></td><td>Suspended</td><td>The event has been temporarily stopped but is expected to resume in the future</td></tr><tr><td>aborted<a name="event-status-aborted"> </a></td><td>Aborted</td><td>The event was  prior to the full completion of the intended actions</td></tr><tr><td>completed<a name="event-status-completed"> </a></td><td>Completed</td><td>The event has now concluded</td></tr><tr><td>entered-in-error<a name="event-status-entered-in-error"> </a></td><td>Entered in Error</td><td>This electronic record should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be &quot;cancelled&quot; rather than &quot;entered-in-error&quot;.)</td></tr><tr><td>unknown<a name="event-status-unknown"> </a></td><td>Unknown</td><td>The authoring system does not know which of the status values currently applies for this request.  Note: This concept is not to be used for &quot;other&quot; - one of the listed statuses is presumed to apply, it's just not known which one.</td></tr></table></div>
+<pre class="xml">
+
+&lt;<a href="http://build.fhir.org/valueset.html#ValueSet">ValueSet</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.id">id</a> <a href="http://build.fhir.org/datatypes.html#id">value</a>=&quot;cr-status&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.text">text</a>&gt;
+    &lt;<a href="http://build.fhir.org/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;generated&quot;/&gt;
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;h2&gt;PH Case Status Codes&lt;/h2&gt;&lt;div&gt;&lt;p&gt;Codes identifying the stage lifecycle stage of the case.&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;This value set includes codes from the following code systems:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Include all codes defined in &lt;a href=&quot;CodeSystem/cr-status.html&quot;&gt;&lt;code&gt;http://fhir.hl7.org/us/case-reporting/CodeSystem/cr-status&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+  &lt;/text&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.url">url</a> <a href="http://build.fhir.org/datatypes.html#uri">value</a>=&quot;http://fhir.hl7.org/us/case-reporting/ValueSet/cr-status&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.version">version</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;0.0.0&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.name">name</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;PH Case Status Codes&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.status">status</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;draft&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.experimental">experimental</a> <a href="http://build.fhir.org/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.date">date</a> <a href="http://build.fhir.org/datatypes.html#dateTime">value</a>=&quot;2017-09-20T10:45:12-07:00&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.publisher">publisher</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;{ site.data.fhir.ig.publisher }&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.contact">contact</a>&gt;
+    &lt;<a href="http://build.fhir.org/datatypes.html#ContactDetail#ContactDetail.name">name</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;HL7 Public Health and Emergency Response WorkGroup&quot;/&gt;
+    &lt;<a href="http://build.fhir.org/datatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#ContactPoint#ContactPoint.system">system</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;url&quot;/&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#ContactPoint#ContactPoint.value">value</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;http://www.hl7.org/Special/committees/pher/index.cfm&quot;/&gt;
+    &lt;/telecom&gt;
+  &lt;/contact&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.description">description</a> <a href="http://build.fhir.org/datatypes.html#markdown">value</a>=&quot;Codes identifying the stage lifecycle stage of the case.&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.jurisdiction">jurisdiction</a>&gt;
+    &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">system</a> <a href="http://build.fhir.org/datatypes.html#uri">value</a>=&quot;urn:iso:std:iso:3166&quot;/&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">code</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;US&quot;/&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;United States Minor Outlying Islands (the)&quot;/&gt;
+    &lt;/coding&gt;
+  &lt;/jurisdiction&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.compose">compose</a>&gt;
+    &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.compose.include">include</a>&gt;
+      &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.system">system</a> <a href="http://build.fhir.org/datatypes.html#uri">value</a>=&quot;http://fhir.hl7.org/us/case-reporting/CodeSystem/cr-status&quot;/&gt;
+    &lt;/include&gt;
+  &lt;/compose&gt;
+&lt;/ValueSet&gt;</pre>
 
 
-<!-- ==============END CONTENT END CONTENT=================== -->
+  <!-- ==============END CONTENT END CONTENT=================== -->
 
 </div>
 
@@ -144,7 +181,6 @@ Formats: <a href="CodeSystem-event-status.xml.html">XML</a>, <a href="CodeSystem
 </div>  <!-- /container -->
 
 </div>  <!-- /segment-content -->
-
 
 
 
@@ -161,7 +197,7 @@ Formats: <a href="CodeSystem-event-status.xml.html">XML</a>, <a href="CodeSystem
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Sep 20, 2017 10:21-0700. |
+            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Sep 21, 2017 18:02-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.orglicense.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

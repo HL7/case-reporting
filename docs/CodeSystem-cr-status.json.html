@@ -112,7 +112,7 @@
       /
       <a class="breadcrumb-item" href="profiles.html">Profiles</a>
       /
-      <span class="breadcrumb-item active">CodeSystem-event-status.json</span>
+      <span class="breadcrumb-item active">CodeSystem-cr-status.json</span>
     
     
     
@@ -123,30 +123,30 @@
 
   <!-- ============CONTENT CONTENT=============== -->
 
-<h2>Example: CodeSystem-event-status</h2>
+<h2>Example: CodeSystem-cr-status</h2>
 
 <p>
-Formats: <a href="CodeSystem-event-status.html">Narrative</a>, <a href="CodeSystem-event-status.xml.html">XML</a>, <a href="CodeSystem-event-status.json.html">JSON</a>, <a href="CodeSystem-event-status.ttl.html">Turtle</a>
+Formats: <a href="CodeSystem-cr-status.html">Narrative</a>, <a href="CodeSystem-cr-status.xml.html">XML</a>, <a href="CodeSystem-cr-status.json.html">JSON</a>, <a href="CodeSystem-cr-status.ttl.html">Turtle</a>
 </p>
 <p>
-Raw <a href="CodeSystem-event-status.json" download>json</a>
+Raw <a href="CodeSystem-cr-status.json" download>json</a>
 </p>
 
 <pre class="json">
 {
   "<a href="http://build.fhir.org/codesystem.html#CodeSystem">resourceType</a>" : "CodeSystem",
-  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.id">id</a>" : "event-status",
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.id">id</a>" : "cr-status",
   "<a href="http://build.fhir.org/codesystem.html#CodeSystem.text">text</a>" : {
     "<a href="http://build.fhir.org/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
-    "<a href="http://build.fhir.org/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;h2&gt;EventStatus&lt;/h2&gt;&lt;div&gt;&lt;p&gt;Codes identifying the stage lifecycle stage of a event&lt;/p&gt;
-&lt;/div&gt;&lt;p&gt;This code system http://fhir.hl7.org/us/case-reporting/CodeSystem/event-status defines the following codes:&lt;/p&gt;&lt;table class=&quot;codes&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;in-progress&lt;a name=&quot;event-status-in-progress&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;In Progress&lt;/td&gt;&lt;td&gt;The event is currently occurring&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;suspended&lt;a name=&quot;event-status-suspended&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Suspended&lt;/td&gt;&lt;td&gt;The event has been temporarily stopped but is expected to resume in the future&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;aborted&lt;a name=&quot;event-status-aborted&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Aborted&lt;/td&gt;&lt;td&gt;The event was  prior to the full completion of the intended actions&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;completed&lt;a name=&quot;event-status-completed&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Completed&lt;/td&gt;&lt;td&gt;The event has now concluded&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;entered-in-error&lt;a name=&quot;event-status-entered-in-error&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Entered in Error&lt;/td&gt;&lt;td&gt;This electronic record should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be &amp;quot;cancelled&amp;quot; rather than &amp;quot;entered-in-error&amp;quot;.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;unknown&lt;a name=&quot;event-status-unknown&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Unknown&lt;/td&gt;&lt;td&gt;The authoring system does not know which of the status values currently applies for this request.  Note: This concept is not to be used for &amp;quot;other&amp;quot; - one of the listed statuses is presumed to apply, it's just not known which one.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
+    "<a href="http://build.fhir.org/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;h2&gt;PH Case Status Codes&lt;/h2&gt;&lt;div&gt;&lt;p&gt;Codes identifying the stage lifecycle stage of the case&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;This code system http://fhir.hl7.org/us/case-reporting/CodeSystem/cr-status defines the following codes:&lt;/p&gt;&lt;table class=&quot;codes&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;in-progress&lt;a name=&quot;cr-status-in-progress&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;In Progress&lt;/td&gt;&lt;td&gt;This is a partial (e.g. initial, interim or preliminary) case. Data may be incomplete or unverified.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;suspended&lt;a name=&quot;cr-status-suspended&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Suspended&lt;/td&gt;&lt;td&gt;Incomplete or unavailable because the case has been temporarily halted.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;aborted&lt;a name=&quot;cr-status-aborted&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Aborted&lt;/td&gt;&lt;td&gt;Incomplete or unavailable because the case was abandoned prior to completion.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;completed&lt;a name=&quot;cr-status-completed&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Completed&lt;/td&gt;&lt;td&gt;The case is complete&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;reopened&lt;a name=&quot;cr-status-reopened&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Reopened&lt;/td&gt;&lt;td&gt;Subsequent to being completed, the case has been reopened. This includes any change in the results, diagnosis, narrative text, or other content that has been issued.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;entered-in-error&lt;a name=&quot;cr-status-entered-in-error&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Entered in Error&lt;/td&gt;&lt;td&gt;This electronic record of this event should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be &amp;quot;cancelled&amp;quot; rather than &amp;quot;entered-in-error&amp;quot;.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;unknown&lt;a name=&quot;cr-status-unknown&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Unknown&lt;/td&gt;&lt;td&gt;The authoring system does not know which of the status values currently applies.  Note: This concept is not to be used for &amp;quot;other&amp;quot; - one of the listed statuses is presumed to apply, it's just not known which one.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
   },
-  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.url">url</a>" : "http://fhir.hl7.org/us/case-reporting/CodeSystem/event-status",
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.url">url</a>" : "http://fhir.hl7.org/us/case-reporting/CodeSystem/cr-status",
   "<a href="http://build.fhir.org/codesystem.html#CodeSystem.version">version</a>" : "0.0.0",
-  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.name">name</a>" : "EventStatus",
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.name">name</a>" : "PH Case Status Codes",
   "<a href="http://build.fhir.org/codesystem.html#CodeSystem.status">status</a>" : "draft",
   "<a href="http://build.fhir.org/codesystem.html#CodeSystem.experimental">experimental</a>" : false,
-  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.date">date</a>" : "2017-09-20T10:21:02-07:00",
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.date">date</a>" : "2017-09-21T17:17:09-07:00",
   "<a href="http://build.fhir.org/codesystem.html#CodeSystem.contact">contact</a>" : [
     {
       "<a href="http://build.fhir.org/datatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
@@ -159,7 +159,7 @@ Raw <a href="CodeSystem-event-status.json" download>json</a>
       ]
     }
   ],
-  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.description">description</a>" : "Codes identifying the stage lifecycle stage of a event",
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.description">description</a>" : "Codes identifying the stage lifecycle stage of the case",
   "<a href="http://build.fhir.org/codesystem.html#CodeSystem.jurisdiction">jurisdiction</a>" : [
     {
       "<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
@@ -172,38 +172,43 @@ Raw <a href="CodeSystem-event-status.json" download>json</a>
     }
   ],
   "<a href="http://build.fhir.org/codesystem.html#CodeSystem.caseSensitive">caseSensitive</a>" : true,
-  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.valueSet">valueSet</a>" : "http://fhir.hl7.org/us/case-reporting/ValueSet/event-status",
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.valueSet">valueSet</a>" : "http://fhir.hl7.org/us/case-reporting/ValueSet/cr-status",
   "<a href="http://build.fhir.org/codesystem.html#CodeSystem.content">content</a>" : "complete",
   "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept">concept</a>" : [
     {
       "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a>" : "in-progress",
       "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a>" : "In Progress",
-      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>" : "The event is currently occurring"
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>" : "This is a partial (e.g. initial, interim or preliminary) case. Data may be incomplete or unverified."
     },
     {
       "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a>" : "suspended",
       "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a>" : "Suspended",
-      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>" : "The event has been temporarily stopped but is expected to resume in the future"
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>" : "Incomplete or unavailable because the case has been temporarily halted."
     },
     {
       "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a>" : "aborted",
       "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a>" : "Aborted",
-      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>" : "The event was  prior to the full completion of the intended actions"
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>" : "Incomplete or unavailable because the case was abandoned prior to completion."
     },
     {
       "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a>" : "completed",
       "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a>" : "Completed",
-      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>" : "The event has now concluded"
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>" : "The case is complete"
+    },
+    {
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a>" : "reopened",
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a>" : "Reopened",
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>" : "Subsequent to being completed, the case has been reopened. This includes any change in the results, diagnosis, narrative text, or other content that has been issued."
     },
     {
       "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a>" : "entered-in-error",
       "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a>" : "Entered in Error",
-      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>" : "This electronic record should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be &quot;cancelled&quot; rather than &quot;entered-in-error&quot;.)"
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>" : "This electronic record of this event should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be &quot;cancelled&quot; rather than &quot;entered-in-error&quot;.)"
     },
     {
       "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a>" : "unknown",
       "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a>" : "Unknown",
-      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>" : "The authoring system does not know which of the status values currently applies for this request.  Note: This concept is not to be used for &quot;other&quot; - one of the listed statuses is presumed to apply, it's just not known which one."
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>" : "The authoring system does not know which of the status values currently applies.  Note: This concept is not to be used for &quot;other&quot; - one of the listed statuses is presumed to apply, it's just not known which one."
     }
   ]
 }</pre>
@@ -235,7 +240,7 @@ Raw <a href="CodeSystem-event-status.json" download>json</a>
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Sep 20, 2017 10:21-0700. |
+            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Sep 21, 2017 18:02-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.orglicense.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

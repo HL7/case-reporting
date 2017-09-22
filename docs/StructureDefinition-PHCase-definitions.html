@@ -161,19 +161,25 @@
   <tr><td>Definition</td><td><p>The current state of the event.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
-  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td><a name="08108abc-3eda-45f3-8191-c80298dd8189">​</a>Codes identifying the stage lifecycle stage of a event<br/>The codes SHALL be taken from <a href="ValueSet/event-status.html">EventStatus</a></td></tr>
+  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td><a name="90ecdbab-b70e-4fe8-a4a4-53dac526eabc">​</a>Codes identifying the stage lifecycle stage of the case<br/>The codes SHALL be taken from <a href="ValueSet/cr-status.html">PH Case Status Codes</a></td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#code">code</a></td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
   <tr><td>Comments</td><td><p>A nominal state-transition diagram can be found in the [[event.html#statemachine | Event pattern]] documentation</p>
 <p>Unknown does not represent &quot;other&quot; - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.</p>
 </td></tr>
+  <tr><td colspan="2" class="structure"><a name="PHCase.category"> </a><b>PHCase.category</b></td></tr>
+  <tr><td>Definition</td><td><p>A code that classifies the kind of case report this is.clinical discipline, department or diagnostic service that created the report (e.g. infectious disease, poisoning). This is used for searching, sorting and display purposes.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>Codes indicating what triggered this case report.  Based upon Lab Order Code, Lab Result Code, Lab Results and Diagnosis.<br/>The codes SHOULD be taken from <a href="ValueSet-cr-cat.html">PH Case Category Codes</a></td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>kind, type</td></tr>
   <tr><td colspan="2" class="structure"><a name="PHCase.code"> </a><b>PHCase.code</b></td></tr>
   <tr><td>Definition</td><td><p>Reportable condition codes that caused this report to be generated.</p>
 </td></tr>
-  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
   <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>Codes indicating what triggered this case report.  Based upon Lab Order Code, Lab Result Code, Lab Results and Diagnosis.<br/>The codes SHOULD be taken from <a href="ValueSet-casereport-code.html">Case Report Codes</a></td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
-  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>type</td></tr>
   <tr><td colspan="2" class="structure"><a name="PHCase.subject"> </a><b>PHCase.subject</b></td></tr>
   <tr><td>Definition</td><td><p>The individual or set of individuals the case report is about.</p>
 </td></tr>
@@ -195,7 +201,7 @@
   <tr><td>Comments</td><td><p>This will typically be the encounter the event occurred within, but some events may be initiated prior to or after the official completion of an encounter or episode but still be tied to the context of the encounter or episode (e.g. pre-admission lab tests).</p>
 </td></tr>
   <tr><td colspan="2" class="structure"><a name="PHCase.effective[x]"> </a><a name="PHCase.effectiveDateTime"> </a><a name="PHCase.effectivePeriod"> </a><a name="PHCase.effectiveTiming"> </a><a name="PHCase.effectiveDateTime"> </a><a name="PHCase.effectivePeriod"> </a><a name="PHCase.effectiveTiming"> </a><b>PHCase.effective[x]</b></td></tr>
-  <tr><td>Definition</td><td><p>Date and time of the provider's most recent encounter with the patient regarding the reportable condition.</p>
+  <tr><td>Definition</td><td><p>The Period of time over which this case is considered active.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>Choice of: <a href="http://build.fhir.org/datatypes.html#dateTime">dateTime</a>, <a href="http://build.fhir.org/datatypes.html#Period">Period</a>, <a href="http://build.fhir.org/datatypes.html#Timing">Timing</a></td></tr>
@@ -203,28 +209,35 @@
   <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>timing</td></tr>
   <tr><td>Comments</td><td><p>[The list of types may be constrained as appropriate for the type of event].</p>
 </td></tr>
-  <tr><td colspan="2" class="structure"><a name="PHCase.date"> </a><b>PHCase.date</b></td></tr>
-  <tr><td>Definition</td><td><p>The date on which the reporting party completed the report.</p>
+  <tr><td colspan="2" class="structure"><a name="PHCase.issued"> </a><b>PHCase.issued</b></td></tr>
+  <tr><td>Definition</td><td><p>The date and time that this version of the report was made available to providers.  For example the date on which the reporting party completed the report.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
-  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#dateTime">dateTime</a></td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#instant">instant</a></td></tr>
+  <tr><td>Comments</td><td><p>May be different from the update time of the resource itself, because that is the status of the record (potentially a secondary copy), not the actual release time of the report.</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="PHCase.jurisdiction"> </a><b>PHCase.jurisdiction</b></td></tr>
+  <tr><td>Definition</td><td><p>The Provider responsible for the Case Investigation.  E.g., The Napa County Public Health Division.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>Choice of: <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/practitionerrole.html" title="http://hl7.org/fhir/StructureDefinition/PractitionerRole">PractitionerRole</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/organization.html" title="http://hl7.org/fhir/StructureDefinition/Organization">Organization</a>)</td></tr>
+  <tr><td>Comments</td><td><p>[Resources may choose to replace this with just a single performer or repeating where there's no need to distinguish role and/or responsible organization].</p>
+</td></tr>
   <tr><td colspan="2" class="structure"><a name="PHCase.reporter"> </a><b>PHCase.reporter</b></td></tr>
-  <tr><td>Definition</td><td><p>The Provider responsible for Paitent's care.</p>
+  <tr><td>Definition</td><td><p>The Provider or Organization responsible for Patient's care.  This is usually the same as who initiated and sent the report as well.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>Choice of: <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/practitionerrole.html" title="http://hl7.org/fhir/StructureDefinition/PractitionerRole">PractitionerRole</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/organization.html" title="http://hl7.org/fhir/StructureDefinition/Organization">Organization</a>)</td></tr>
   <tr><td colspan="2" class="structure"><a name="PHCase.location"> </a><b>PHCase.location</b></td></tr>
-  <tr><td>Definition</td><td><p>The organization whrer the case originated.</p>
+  <tr><td>Definition</td><td><p>The location where the case originated.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/location.html" title="http://hl7.org/fhir/StructureDefinition/Location">Location</a>)</td></tr>
-  <tr><td>Requirements</td><td><p>Practitioners and Devices can be associated with multiple organizations.  This element indicates which organization they were acting on behalf of when performing the action.</p>
-</td></tr>
   <tr><td colspan="2" class="structure"><a name="PHCase.occupationCode"> </a><b>PHCase.occupationCode</b></td></tr>
   <tr><td>Definition</td><td><p>The patient's occupation.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
-  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>US Department of Labor Bureau of Labor Statitics Occupational Group Codes</td></tr>
+  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>US Department of Labor Bureau of Labor Statitics Occupational Group Codes<br/>The codes SHOULD be taken from <a href="ValueSet-oes.html">US Standard Occupational Classification</a></td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
   <tr><td>Requirements</td><td><p>Identification of potential risk,  transmission risk.</p>
 </td></tr>
@@ -287,17 +300,10 @@
   <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>Codes identifying the findings for this case<br/>For example codes, see <a href="http://build.fhir.org/valueset-condition-code.html">Condition/Problem/Diagnosis Codes</a></td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
   <tr><td colspan="2" class="structure"><a name="PHCase.clinicalFindings.reference"> </a><b>PHCase.clinicalFindings.reference</b></td></tr>
-  <tr><td>Definition</td><td><p>Resource references for patient findings that are relevnat to the case.</p>
+  <tr><td>Definition</td><td><p>Resource references for patient findings that are relevnat to the case. For finding and diagnosis in  free text only format use the <code>.text</code> element.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>Choice of: <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/diagnosticreport.html" title="http://hl7.org/fhir/StructureDefinition/DiagnosticReport">DiagnosticReport</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/observation.html" title="http://hl7.org/fhir/StructureDefinition/Observation">Observation</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/condition.html" title="http://hl7.org/fhir/StructureDefinition/Condition">Condition</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/questionnaireresponse.html" title="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse">QuestionnaireResponse</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/medicationstatement.html" title="http://hl7.org/fhir/StructureDefinition/MedicationStatement">MedicationStatement</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/immunization.html" title="http://hl7.org/fhir/StructureDefinition/Immunization">Immunization</a>)</td></tr>
-  <tr><td colspan="2" class="structure"><a name="PHCase.clinicalFindings.description"> </a><b>PHCase.clinicalFindings.description</b></td></tr>
-  <tr><td>Definition</td><td><p>Finding and diagnosis in  free text only format.</p>
-</td></tr>
-  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
-  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#string">string</a></td></tr>
-  <tr><td>Comments</td><td><p>This can be used for provider’s narrative of the history of the reportable event.</p>
-</td></tr>
   <tr><td colspan="2" class="structure"><a name="PHCase.clinicalFindings.isReasonExtension"> </a><b>PHCase.clinicalFindings.isReasonExtension</b></td></tr>
   <tr><td>Definition</td><td><p>This finding triggered thiscase report to be generated.</p>
 </td></tr>
@@ -339,7 +345,7 @@
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Sep 20, 2017 10:21-0700. |
+            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Sep 21, 2017 18:02-0700. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://build.fhir.orglicense.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         
