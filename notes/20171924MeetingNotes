@@ -1,0 +1,47 @@
+20170924 meeting notes
+
+### Next steps:
+
+- table - complete table for RR
+
+- Extra stuff that don't want - look at this.
+
+- look at the EICR comments
+
+- need a list of resources used.
+  - which transactions
+     - eicr
+     - rr
+     - tc
+
+- constraints
+
+- example
+
+### Make examples using python templates
+
+summary of steps:
+
+1. create python model from SD
+1. create python template from python model
+1. create example using CSV and python template
+
+##### create python model from SD
+
+1. create a bundle file containing the SD
+   - type = 'collection'
+   - id  =  "profiles-mine"
+   - file name  = profiles-mine.json
+1. add to `.../client-py/fhir-parser/downloads`
+1. update `fhirspec.py` line 95  - add `profiles-mine.json` to list
+1. run bash generate_models.sh to create models including custom SD
+
+##### generate python template from SD
+
+1. Update client-py-scripts2.py
+   - move to `.../FHIR/client-py`
+   - change line 8 to  `import fhirclient.models.PHCase as r # import python resource`
+   - change line 72 to `     resource = r.PHCase({'id': '{{id}}', 'status': 'in-progress','effectiveDateTime': '{{effectivedatetime}}','reporter','{{reporter}}','clinicalFindings': '{{clinicalfindings}}','subject': '{{subject}}'})
+` ( need to init with all required values)
+
+1. Create CSV

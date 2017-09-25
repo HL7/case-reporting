@@ -161,7 +161,7 @@
   <tr><td>Definition</td><td><p>The current state of the event.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
-  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td><a name="90ecdbab-b70e-4fe8-a4a4-53dac526eabc">​</a>Codes identifying the stage lifecycle stage of the case<br/>The codes SHALL be taken from <a href="ValueSet/cr-status.html">PH Case Status Codes</a></td></tr>
+  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td><a name="781dcce2-dd34-49f6-a26b-81da11977f22">​</a>Codes identifying the stage lifecycle stage of the case<br/>The codes SHALL be taken from <a href="ValueSet/cr-status.html">PH Case Status Codes</a></td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#code">code</a></td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
   <tr><td>Comments</td><td><p>A nominal state-transition diagram can be found in the [[event.html#statemachine | Event pattern]] documentation</p>
@@ -183,7 +183,7 @@
   <tr><td colspan="2" class="structure"><a name="PHCase.subject"> </a><b>PHCase.subject</b></td></tr>
   <tr><td>Definition</td><td><p>The individual or set of individuals the case report is about.</p>
 </td></tr>
-  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>Choice of: <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/patient.html" title="http://hl7.org/fhir/StructureDefinition/Patient">Patient</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/group.html" title="http://hl7.org/fhir/StructureDefinition/Group">Group</a>)</td></tr>
   <tr><td>Requirements</td><td><p>Links the event to the Patient context.</p>
 </td></tr>
@@ -226,7 +226,7 @@
   <tr><td colspan="2" class="structure"><a name="PHCase.reporter"> </a><b>PHCase.reporter</b></td></tr>
   <tr><td>Definition</td><td><p>The Provider or Organization responsible for Patient's care.  This is usually the same as who initiated and sent the report as well.</p>
 </td></tr>
-  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>Choice of: <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/practitionerrole.html" title="http://hl7.org/fhir/StructureDefinition/PractitionerRole">PractitionerRole</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/organization.html" title="http://hl7.org/fhir/StructureDefinition/Organization">Organization</a>)</td></tr>
   <tr><td colspan="2" class="structure"><a name="PHCase.location"> </a><b>PHCase.location</b></td></tr>
   <tr><td>Definition</td><td><p>The location where the case originated.</p>
@@ -289,7 +289,7 @@
   <tr><td colspan="2" class="structure"><a name="PHCase.clinicalFindings"> </a><b>PHCase.clinicalFindings</b></td></tr>
   <tr><td>Definition</td><td><p>Specific text, code or reference for finding or diagnosis, which may include ruled-out or resolved conditions, history, signs and symptoms, diagnostic information and provider interpretations and diagnoses.</p>
 </td></tr>
-  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>1..*</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#BackboneElement">BackboneElement</a></td></tr>
   <tr><td>Requirements</td><td><p>Indicators of reportable condition -Important descriptors of condition/ epidemiologic information that support epidemiologic investigation.</p>
 </td></tr>
@@ -345,7 +345,7 @@
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Sep 21, 2017 18:02-0700. |
+            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Sep 25, 2017 09:43-0700. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://build.fhir.orglicense.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

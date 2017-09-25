@@ -21,7 +21,7 @@ type","",0,1,"","","Y","CodeableConcept
 "PHCase.code","","","",0,1,"","","Y","CodeableConcept
 ","Case Report Code","Reportable condition codes that caused this report to be generated.","","","","","","","","","",,"preferred","Codes indicating what triggered this case report.  Based upon Lab Order Code, Lab Result Code, Lab Results and Diagnosis.","http://fhir.hl7.org/us/case-reporting/ValueSet/casereport-code","",,,,"",0,null,"","","Varies by domain",".code"
 "PHCase.subject","","patient
-","",1,1,"","","Y","Reference {http://hl7.org/fhir/StructureDefinition/Patient}
+","",0,1,"","","Y","Reference {http://hl7.org/fhir/StructureDefinition/Patient}
 Reference {http://hl7.org/fhir/StructureDefinition/Group}","The Patient","The individual or set of individuals the case report is about.","[For resources that aren't patient-specific, the set of allowed resources may be extended to include other things.  Group should generally be retained unless there's certainty this resource won't be used for veterinary, research or public health settings where Group may be necessary (e.g. this cage of rats/crate of chickens, group of people in a 5 mile radious of the incident, etc.)].","Links the event to the Patient context.","","","","","","","",,,,,"",,,,"",0,null,"","","patient","PAT in proximity to EVN segment",".participation[typeCode=SBJ].role"
 "PHCase.context","","encounter
 ","",0,1,"","","Y","Reference {http://hl7.org/fhir/StructureDefinition/Encounter}
@@ -33,7 +33,7 @@ PeriodTiming","Clinically relevant time/time-period for report","The Period of t
 ","DateTime this version was made","The date and time that this version of the report was made available to providers.  For example the date on which the reporting party completed the report.","May be different from the update time of the resource itself, because that is the status of the record (potentially a secondary copy), not the actual release time of the report.","","","","","","","","",,,,,"",,,,"",0,null,"","","reportDate"
 "PHCase.jurisdiction","","","",0,1,"","","Y","Reference {http://hl7.org/fhir/StructureDefinition/PractitionerRole}
 Reference {http://hl7.org/fhir/StructureDefinition/Organization}","PH Case owner","The Provider responsible for the Case Investigation.  E.g., The Napa County Public Health Division.","[Resources may choose to replace this with just a single performer or repeating where there's no need to distinguish role and/or responsible organization].","","","","","","","","",,,,,"",,,,"",0,null,"","","EVN.5 or by domain",".participation[typeCode=PRF].role[scoper.determinerCode=INSTANCE]"
-"PHCase.reporter","","","",1,1,"","","Y","Reference {http://hl7.org/fhir/StructureDefinition/PractitionerRole}
+"PHCase.reporter","","","",0,1,"","","Y","Reference {http://hl7.org/fhir/StructureDefinition/PractitionerRole}
 Reference {http://hl7.org/fhir/StructureDefinition/Organization}","Responsible Provider or Organization","The Provider or Organization responsible for Patient's care.  This is usually the same as who initiated and sent the report as well.","","","","","","","","","",,,,,"",,,,"",0,null,"","","provider","EVN.5 or by domain",".player"
 "PHCase.location","","","",0,1,"","","","Reference {http://hl7.org/fhir/StructureDefinition/Location}
 ","Where first detected","The location where the case originated.","","","","","","","","","",,,,,"",,,,"",0,null,"","","Facility","N/A",".scoper"
@@ -55,7 +55,7 @@ Reference {http://hl7.org/fhir/StructureDefinition/Organization}","Responsible P
 ","Lab Order","Ordered tests for the patient during the encounter.","","","","","","","","","",,,,,"",,,,"",0,null,"","","Lab Order  details"
 "PHCase.orderedDiagnostics.isReasonExtension","","","",0,1,"","","Y","boolean
 ","Order trigger flag","This order triggered this case report to be generated.","","","","","","","","","",,,,,"",,,,"",0,null,"","","Lab Order Trigger code"
-"PHCase.clinicalFindings","","","",1,*,"","","Y","BackboneElement
+"PHCase.clinicalFindings","","","",0,*,"","","Y","BackboneElement
 ","Clinical findings","Specific text, code or reference for finding or diagnosis, which may include ruled-out or resolved conditions, history, signs and symptoms, diagnostic information and provider interpretations and diagnoses.","","Indicators of reportable condition -Important descriptors of condition/ epidemiologic information that support epidemiologic investigation.","","","","","","","",,,,,"",,,,"",0,null,"","","Lab Result, Symptoms, Diagnosis, HPI, Reason for Visit"
 "PHCase.clinicalFindings.code","","","",0,1,"","","Y","CodeableConcept
 ","Finding codes","Coded diagnosis or symptoms or other findiings relevant to the case.","","","","","","","","","",,"example","Codes identifying the findings for this case","http://hl7.org/fhir/ValueSet/condition-code","",,,,"",0,null,"","","Lab Result, Symptoms, Diagnosis, HPI, Reason for VisitLab Result, Symptoms, Diagnosis, HPI, Reason for Visit"
