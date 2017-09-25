@@ -27,7 +27,7 @@ Reference {http://hl7.org/fhir/StructureDefinition/Group}","The Patient","The in
 ","",0,1,"","","Y","Reference {http://hl7.org/fhir/StructureDefinition/Encounter}
 Reference {http://hl7.org/fhir/StructureDefinition/EpisodeOfCare}","Encounter / Episode associated with event","The encounter or episode of care that establishes the context for this event.","This will typically be the encounter the event occurred within, but some events may be initiated prior to or after the official completion of an encounter or episode but still be tied to the context of the encounter or episode (e.g. pre-admission lab tests).","Links the request to the Encounter context.","","","","","","","",,,,,"",,,,"",0,null,"","","encounter","PV1 in proximity to EVN segment",".inboundRelationship(typeCode=COMP].source[classCode<=PCPR, moodCode=EVN]"
 "PHCase.effective[x]","","timing
-","",1,1,"","","Y","dateTime
+","",0,1,"","","Y","dateTime
 PeriodTiming","Clinically relevant time/time-period for report","The Period of time over which this case is considered active.","[The list of types may be constrained as appropriate for the type of event].","","","","","","","","",,,,,"",,,,"",0,null,"","","visitDateTime","Varies by domain",".effectiveTime"
 "PHCase.issued","","","",0,1,"","","Y","instant
 ","DateTime this version was made","The date and time that this version of the report was made available to providers.  For example the date on which the reporting party completed the report.","May be different from the update time of the resource itself, because that is the status of the record (potentially a secondary copy), not the actual release time of the report.","","","","","","","","",,,,,"",,,,"",0,null,"","","reportDate"
