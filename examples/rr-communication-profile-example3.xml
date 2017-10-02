@@ -2,9 +2,9 @@
 <Communication xmlns="http://hl7.org/fhir">
 	<id value="rr-example-3"/>
 	<meta>
-		<profile value="http://fhir.hl7.org/us/case-reporting/StructureDefinition/rr-communication"/>
+		<profile value="http://fhir.hl7.org/us/case/StructureDefinition/rr-communication"/>
 	</meta>
-	<extension url="http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-warning-reason">
+	<extension url="http://fhir.hl7.org/us/case/StructureDefinition/extension-warning-reason">
 		<valueCode value="invalid id"/>
 	</extension>
 	<identifier>
@@ -31,32 +31,32 @@
 		<reference value="Patient/rr-patient"/>
 	</subject>
 	<recipient>
-		<extension url="http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-primary-agency">
+		<extension url="http://fhir.hl7.org/us/case/StructureDefinition/extension-primary-agency">
 			<valueBoolean value="false"/>
 		</extension>
-		<extension url="http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-loc-relevance">
+		<extension url="http://fhir.hl7.org/us/case/StructureDefinition/extension-loc-relevance">
 			<valueCode value="both"/>
 		</extension>
 		<reference value="Organization/rr-routing-entity"/>
 	</recipient>
 	<recipient>
-		<extension url="http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-primary-agency">
+		<extension url="http://fhir.hl7.org/us/case/StructureDefinition/extension-primary-agency">
 			<valueBoolean value="true"/>
 		</extension>
-		<extension url="http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-loc-relevance">
+		<extension url="http://fhir.hl7.org/us/case/StructureDefinition/extension-loc-relevance">
 			<valueCode value="both"/>
 		</extension>
 		<reference value="Organization/rr-resp-agent"/>
 	</recipient>
 	<topic>
 
-		<extension url="http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-topic-summary">
+		<extension url="http://fhir.hl7.org/us/case/StructureDefinition/extension-topic-summary">
 			<valueString value="An initial case report was submitted electronically by your organization to determine if a patient has a public health reportable condition. The condition of Zika was identified and is a reportable condition in Michigan. The initial case report was forwarded to the Health Authority West."/>
 		</extension>
-		<extension url="http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-topic-dor">
+		<extension url="http://fhir.hl7.org/us/case/StructureDefinition/extension-topic-dor">
 			<valueCode value="Y"/>
 		</extension>
-		<extension url="http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-topic-dor-reason">
+		<extension url="http://fhir.hl7.org/us/case/StructureDefinition/extension-topic-dor-reason">
 			<valueCodeableConcept>
 				<coding>
 					<system value="http://acme.org/cdc-codes"/>
@@ -66,7 +66,7 @@
 				<text value="MISSING REQUIRED DATA"/>
 			</valueCodeableConcept>
 		</extension>
-		<extension url="http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-topic-dor-rule">
+		<extension url="http://fhir.hl7.org/us/case/StructureDefinition/extension-topic-dor-rule">
 			<valueString value="Rule used in reportability determination."/>
 		</extension>
 				<display value="Reportable condition notification: An initial report for Zika has been sent to the Health Authority West."/>
@@ -74,7 +74,7 @@
 	</topic>
 	<received value="2017-07-19T04:09:06Z"/>
 	<sender>
-		<extension url="http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-on-behalf-of">
+		<extension url="http://fhir.hl7.org/us/case/StructureDefinition/extension-on-behalf-of">
 			<valueReference>
 				<reference value="Organization/rr-sender"/>
 			</valueReference>
@@ -90,11 +90,11 @@
 		<text value="Zika virus disease"/>
 	</reasonCode>
 	<payload>
-		<extension url="http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-manual-init">
+		<extension url="http://fhir.hl7.org/us/case/StructureDefinition/extension-manual-init">
 			<valueBoolean value="false"/>
 		</extension>
 		<contentReference>
-			<extension url="http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-manual-init-reason">
+			<extension url="http://fhir.hl7.org/us/case/StructureDefinition/extension-manual-init-reason">
 				<valueString value="Free text containing the reason for the manual initiation"/>
 			</extension>
 			<reference value="DocumentReference/eICR_CDA_document"/>

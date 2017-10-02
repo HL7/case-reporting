@@ -1,5 +1,5 @@
 #!/bin/bash
-name="Case-Reporting"
+name="PHCase"
 path1=/Users/ehaas/Documents/FHIR/IG-Template2/
 path2=/Users/ehaas/Downloads/
 echo "================================================================="

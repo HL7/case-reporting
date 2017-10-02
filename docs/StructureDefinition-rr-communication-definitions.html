@@ -3,10 +3,10 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
    <meta charset="UTF-8"/>
-  <title>Case-Reporting</title>
+  <title>PHCase</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Case-Reporting Implemenation Guide" />
+<meta name="description" content="PHCase Implemenation Guide" />
 <meta name="author" content="http://argonautwiki.hl7.org"/>
 
 
@@ -46,7 +46,7 @@
    </div>
 
    <div id="ig-status">
- <b>Case-Reporting Implementation Guide CI Build</b>
+ <b>PHCase Implementation Guide CI Build</b>
 </div>
 
   </div>
@@ -65,7 +65,7 @@
       <span class="icon-bar"> </span>
       <span class="icon-bar"> </span>
      </button>
-     <a class="navbar-brand hidden" href="http://build.fhir.org/index.html">FHIR</a>
+     <a class="navbar-brand hidden" href="http://build.fhir.org//index.html">FHIR</a>
      <div class="nav-collapse collapse navbar-inverse-collapse">
       <ul class="nav navbar-nav">
         <li><a href="index.html">Home</a></li>
@@ -173,28 +173,28 @@
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Extension">Extension</a></td></tr>
-  <tr><td colspan="2" class="structure"><a name="Communication.extension:warningreason"> </a><b>Communication.extension (<a href="StructureDefinition-extension-warning-reason.html">http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-warning-reason</a>)</b></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Communication.extension:warningreason"> </a><b>Communication.extension (<a href="StructureDefinition-extension-warning-reason.html">http://fhir.hl7.org/us/case/StructureDefinition/extension-warning-reason</a>)</b></td></tr>
   <tr><td>Definition</td><td><p>If the PHA system (or its intermediary) identifies an issue with the eICR, but is still able to process the file, this will contain those issues as a warning.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: ele-1</td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>  (Extension Type: <a href="http://build.fhir.org/datatypes.html#code">code</a>)</td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
 <b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() | (children().count() &gt; id.count()))<br/><b title="Formal Invariant Identifier">ext-1</b>: Must have either extensions or value[x], not both (: extension.exists() != value.exists())</td></tr>
-  <tr><td colspan="2" class="structure"><a name="Communication.extension:inactiverctccode"> </a><b>Communication.extension (<a href="StructureDefinition-extension-inactive-code.html">http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-inactive-code</a>)</b></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Communication.extension:inactiverctccode"> </a><b>Communication.extension (<a href="StructureDefinition-extension-inactive-code.html">http://fhir.hl7.org/us/case/StructureDefinition/extension-inactive-code</a>)</b></td></tr>
   <tr><td>Definition</td><td><p>Code, codeSystem, valueSet, valueSetVersion of a code that exists within the RCTC but has been labeled as inactive.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: ele-1</td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>  (Extension Type: <a href="http://build.fhir.org/datatypes.html#Coding">Coding</a>)</td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
 <b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() | (children().count() &gt; id.count()))<br/><b title="Formal Invariant Identifier">ext-1</b>: Must have either extensions or value[x], not both (: extension.exists() != value.exists())</td></tr>
-  <tr><td colspan="2" class="structure"><a name="Communication.extension:expectedrctccode"> </a><b>Communication.extension (<a href="StructureDefinition-extension-expected-version.html">http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-expected-version</a>)</b></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Communication.extension:expectedrctccode"> </a><b>Communication.extension (<a href="StructureDefinition-extension-expected-version.html">http://fhir.hl7.org/us/case/StructureDefinition/extension-expected-version</a>)</b></td></tr>
   <tr><td>Definition</td><td><p>The version of the RCTC that was expected by RCKMS. If populated, the EHR System Administrator should update to this version of the RCTC immediately.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: ele-1</td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>  (Extension Type: <a href="http://build.fhir.org/datatypes.html#string">string</a>)</td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
 <b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() | (children().count() &gt; id.count()))<br/><b title="Formal Invariant Identifier">ext-1</b>: Must have either extensions or value[x], not both (: extension.exists() != value.exists())</td></tr>
-  <tr><td colspan="2" class="structure"><a name="Communication.extension:outdatedrctccode"> </a><b>Communication.extension (<a href="StructureDefinition-extension-outdated-version.html">http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-outdated-version</a>)</b></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Communication.extension:outdatedrctccode"> </a><b>Communication.extension (<a href="StructureDefinition-extension-outdated-version.html">http://fhir.hl7.org/us/case/StructureDefinition/extension-outdated-version</a>)</b></td></tr>
   <tr><td>Definition</td><td><p>If the version of the RCTC that was used to generate the eICR is outdated, the specific version used.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: ele-1</td></tr>
@@ -221,7 +221,7 @@
   <tr><td>Definition</td><td><p>A protocol, guideline, or other definition that was adhered to in whole or in part by this communication event.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
-  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="StructureDefinition-rr-plandefinition.html" title="http://fhir.hl7.org/us/case-reporting/StructureDefinition/rr-plandefinition">RR PlanDefinition Profile</a>)</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="StructureDefinition-rr-plandefinition.html" title="http://fhir.hl7.org/us/case/StructureDefinition/rr-plandefinition">RR PlanDefinition Profile</a>)</td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
   <tr><td colspan="2" class="structure"><a name="Communication.basedOn"> </a><b>Communication.basedOn</b></td></tr>
   <tr><td>Definition</td><td><p>An order, proposal or plan fulfilled in whole or in part by this Communication.</p>
@@ -318,7 +318,7 @@
   <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content</td></tr>
   <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
 </td></tr>
-  <tr><td colspan="2" class="structure"><a name="Communication.recipient.extension:primaryagency"> </a><b>Communication.recipient.extension (<a href="StructureDefinition-extension-primary-agency.html">http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-primary-agency</a>)</b></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Communication.recipient.extension:primaryagency"> </a><b>Communication.recipient.extension (<a href="StructureDefinition-extension-primary-agency.html">http://fhir.hl7.org/us/case/StructureDefinition/extension-primary-agency</a>)</b></td></tr>
   <tr><td>Definition</td><td><p>If reporting is identified for multiple PHAs by the PHA system (or its intermediary) (because the patient's residence and the provider location are in separate jurisdictions), this is an indicator of the PHA that owns follow-up on a patient with a particular reportable condition.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: ele-1</td></tr>
@@ -345,13 +345,13 @@
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#uri">uri</a></td></tr>
   <tr><td>Comments</td><td><p>The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.</p>
 </td></tr>
-  <tr><td>Fixed Value</td><td>http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-primary-agency</td></tr>
+  <tr><td>Fixed Value</td><td>http://fhir.hl7.org/us/case/StructureDefinition/extension-primary-agency</td></tr>
   <tr><td colspan="2" class="structure"><a name="Communication.recipient.extension:primaryagency.valueBoolean"> </a><a name="Communication.recipient.extension:primaryagency.value[x]"> </a><a name="Communication.recipient.extension:primaryagency.value[x]"> </a><b>Communication.recipient.extension.valueBoolean</b></td></tr>
   <tr><td>Definition</td><td><p>Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#boolean">boolean</a></td></tr>
-  <tr><td colspan="2" class="structure"><a name="Communication.recipient.extension:locationrelevance"> </a><b>Communication.recipient.extension (<a href="StructureDefinition-extension-loc-relevance.html">http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-loc-relevance</a>)</b></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Communication.recipient.extension:locationrelevance"> </a><b>Communication.recipient.extension (<a href="StructureDefinition-extension-loc-relevance.html">http://fhir.hl7.org/us/case/StructureDefinition/extension-loc-relevance</a>)</b></td></tr>
   <tr><td>Definition</td><td><p>A code indicating whether the responsible PHA is relevant because of the patient's home address, the provider facility address, or both.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: ele-1</td></tr>
@@ -378,7 +378,7 @@
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#uri">uri</a></td></tr>
   <tr><td>Comments</td><td><p>The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.</p>
 </td></tr>
-  <tr><td>Fixed Value</td><td>http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-loc-relevance</td></tr>
+  <tr><td>Fixed Value</td><td>http://fhir.hl7.org/us/case/StructureDefinition/extension-loc-relevance</td></tr>
   <tr><td colspan="2" class="structure"><a name="Communication.recipient.extension:locationrelevance.valueCode"> </a><a name="Communication.recipient.extension:locationrelevance.value[x]"> </a><a name="Communication.recipient.extension:locationrelevance.value[x]"> </a><b>Communication.recipient.extension.valueCode</b></td></tr>
   <tr><td>Definition</td><td><p>Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).</p>
 </td></tr>
@@ -430,7 +430,7 @@
   <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content</td></tr>
   <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
 </td></tr>
-  <tr><td colspan="2" class="structure"><a name="Communication.topic.extension:topicsummary"> </a><b>Communication.topic.extension (<a href="StructureDefinition-extension-topic-summary.html">http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-topic-summary</a>)</b></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Communication.topic.extension:topicsummary"> </a><b>Communication.topic.extension (<a href="StructureDefinition-extension-topic-summary.html">http://fhir.hl7.org/us/case/StructureDefinition/extension-topic-summary</a>)</b></td></tr>
   <tr><td>Definition</td><td><p>A human-readable narrative summary that contains a reportability determination, the responsible PHA(s), and the PHA(s) that will be sent the eICR (when deemed reportable).</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: ele-1</td></tr>
@@ -457,13 +457,13 @@
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#uri">uri</a></td></tr>
   <tr><td>Comments</td><td><p>The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.</p>
 </td></tr>
-  <tr><td>Fixed Value</td><td>http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-topic-summary</td></tr>
+  <tr><td>Fixed Value</td><td>http://fhir.hl7.org/us/case/StructureDefinition/extension-topic-summary</td></tr>
   <tr><td colspan="2" class="structure"><a name="Communication.topic.extension:topicsummary.valueString"> </a><a name="Communication.topic.extension:topicsummary.value[x]"> </a><a name="Communication.topic.extension:topicsummary.value[x]"> </a><b>Communication.topic.extension.valueString</b></td></tr>
   <tr><td>Definition</td><td><p>Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#string">string</a></td></tr>
-  <tr><td colspan="2" class="structure"><a name="Communication.topic.extension:topicreportable"> </a><b>Communication.topic.extension (<a href="StructureDefinition-extension-topic-dor.html">http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-topic-dor</a>)</b></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Communication.topic.extension:topicreportable"> </a><b>Communication.topic.extension (<a href="StructureDefinition-extension-topic-dor.html">http://fhir.hl7.org/us/case/StructureDefinition/extension-topic-dor</a>)</b></td></tr>
   <tr><td>Definition</td><td><p>The determination of reportability generated by the PHA system (or its intermediary). Generally, this is expected to be Yes, No, or Maybe.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: ele-1</td></tr>
@@ -490,14 +490,14 @@
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#uri">uri</a></td></tr>
   <tr><td>Comments</td><td><p>The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.</p>
 </td></tr>
-  <tr><td>Fixed Value</td><td>http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-topic-dor</td></tr>
+  <tr><td>Fixed Value</td><td>http://fhir.hl7.org/us/case/StructureDefinition/extension-topic-dor</td></tr>
   <tr><td colspan="2" class="structure"><a name="Communication.topic.extension:topicreportable.valueCode"> </a><a name="Communication.topic.extension:topicreportable.value[x]"> </a><a name="Communication.topic.extension:topicreportable.value[x]"> </a><b>Communication.topic.extension.valueCode</b></td></tr>
   <tr><td>Definition</td><td><p>Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
   <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>The determination of reportability generated by the PHA system (or its intermediary). Generally, this is expected to be Yes, No, or Maybe.<br/>The codes SHALL be taken from <a href="http://build.fhir.org/v2/0532/index.html">v2 Expanded Yes/no Indicator</a></td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#code">code</a></td></tr>
-  <tr><td colspan="2" class="structure"><a name="Communication.topic.extension:topicreportablereason"> </a><b>Communication.topic.extension (<a href="StructureDefinition-extension-topic-dor-reason.html">http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-topic-dor-reason</a>)</b></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Communication.topic.extension:topicreportablereason"> </a><b>Communication.topic.extension (<a href="StructureDefinition-extension-topic-dor-reason.html">http://fhir.hl7.org/us/case/StructureDefinition/extension-topic-dor-reason</a>)</b></td></tr>
   <tr><td>Definition</td><td><p>A reason code indicating the reason for the reportability status.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..* This element is affected by the following invariants: ele-1</td></tr>
@@ -524,14 +524,14 @@
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#uri">uri</a></td></tr>
   <tr><td>Comments</td><td><p>The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.</p>
 </td></tr>
-  <tr><td>Fixed Value</td><td>http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-topic-dor-reason</td></tr>
+  <tr><td>Fixed Value</td><td>http://fhir.hl7.org/us/case/StructureDefinition/extension-topic-dor-reason</td></tr>
   <tr><td colspan="2" class="structure"><a name="Communication.topic.extension:topicreportablereason.valueCodeableConcept"> </a><a name="Communication.topic.extension:topicreportablereason.value[x]"> </a><a name="Communication.topic.extension:topicreportablereason.value[x]"> </a><b>Communication.topic.extension.valueCodeableConcept</b></td></tr>
   <tr><td>Definition</td><td><p>Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
   <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>A reason code indicating the reason for the reportability status<br/>The codes SHALL be taken from <a href="ValueSet-dor-reason.html">Determination of Reportability Reason Codes</a></td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
-  <tr><td colspan="2" class="structure"><a name="Communication.topic.extension:topicreportablerule"> </a><b>Communication.topic.extension (<a href="StructureDefinition-extension-topic-dor-rule.html">http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-topic-dor-rule</a>)</b></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Communication.topic.extension:topicreportablerule"> </a><b>Communication.topic.extension (<a href="StructureDefinition-extension-topic-dor-rule.html">http://fhir.hl7.org/us/case/StructureDefinition/extension-topic-dor-rule</a>)</b></td></tr>
   <tr><td>Definition</td><td><p>A rule that was involved in the determination of the reportability status.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: ele-1</td></tr>
@@ -558,7 +558,7 @@
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#uri">uri</a></td></tr>
   <tr><td>Comments</td><td><p>The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.</p>
 </td></tr>
-  <tr><td>Fixed Value</td><td>http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-topic-dor-rule</td></tr>
+  <tr><td>Fixed Value</td><td>http://fhir.hl7.org/us/case/StructureDefinition/extension-topic-dor-rule</td></tr>
   <tr><td colspan="2" class="structure"><a name="Communication.topic.extension:topicreportablerule.valueString"> </a><a name="Communication.topic.extension:topicreportablerule.value[x]"> </a><a name="Communication.topic.extension:topicreportablerule.value[x]"> </a><b>Communication.topic.extension.valueString</b></td></tr>
   <tr><td>Definition</td><td><p>Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).</p>
 </td></tr>
@@ -627,7 +627,7 @@
   <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content</td></tr>
   <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
 </td></tr>
-  <tr><td colspan="2" class="structure"><a name="Communication.sender.extension:onbehalfof"> </a><b>Communication.sender.extension (<a href="StructureDefinition-extension-on-behalf-of.html">http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-on-behalf-of</a>)</b></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Communication.sender.extension:onbehalfof"> </a><b>Communication.sender.extension (<a href="StructureDefinition-extension-on-behalf-of.html">http://fhir.hl7.org/us/case/StructureDefinition/extension-on-behalf-of</a>)</b></td></tr>
   <tr><td>Definition</td><td><p>The organization the practitioner was acting on behalf of.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: ele-1</td></tr>
@@ -654,7 +654,7 @@
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#uri">uri</a></td></tr>
   <tr><td>Comments</td><td><p>The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.</p>
 </td></tr>
-  <tr><td>Fixed Value</td><td>http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-on-behalf-of</td></tr>
+  <tr><td>Fixed Value</td><td>http://fhir.hl7.org/us/case/StructureDefinition/extension-on-behalf-of</td></tr>
   <tr><td colspan="2" class="structure"><a name="Communication.sender.extension:onbehalfof.valueReference"> </a><a name="Communication.sender.extension:onbehalfof.value[x]"> </a><a name="Communication.sender.extension:onbehalfof.value[x]"> </a><b>Communication.sender.extension.valueReference</b></td></tr>
   <tr><td>Definition</td><td><p>Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).</p>
 </td></tr>
@@ -717,14 +717,14 @@
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Extension">Extension</a></td></tr>
-  <tr><td colspan="2" class="structure"><a name="Communication.payload.extension:manuallyinitiated"> </a><b>Communication.payload.extension (<a href="StructureDefinition-extension-manual-init.html">http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-manual-init</a>)</b></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Communication.payload.extension:manuallyinitiated"> </a><b>Communication.payload.extension (<a href="StructureDefinition-extension-manual-init.html">http://fhir.hl7.org/us/case/StructureDefinition/extension-manual-init</a>)</b></td></tr>
   <tr><td>Definition</td><td><p>If the incoming eICR was manually generated by the provider (as opposed to automatically-generated based on the existence of a trigger code from the RCTC) then this will be present.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: ele-1</td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>  (Extension Type: <a href="http://build.fhir.org/datatypes.html#boolean">boolean</a>)</td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
 <b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() | (children().count() &gt; id.count()))<br/><b title="Formal Invariant Identifier">ext-1</b>: Must have either extensions or value[x], not both (: extension.exists() != value.exists())</td></tr>
-  <tr><td colspan="2" class="structure"><a name="Communication.payload.extension:manuallyinitiatedreason"> </a><b>Communication.payload.extension (<a href="StructureDefinition-extension-manual-init-reason.html">http://fhir.hl7.org/us/case-reporting/StructureDefinition/extension-manual-init-reason</a>)</b></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Communication.payload.extension:manuallyinitiatedreason"> </a><b>Communication.payload.extension (<a href="StructureDefinition-extension-manual-init-reason.html">http://fhir.hl7.org/us/case/StructureDefinition/extension-manual-init-reason</a>)</b></td></tr>
   <tr><td>Definition</td><td><p>Reason for manual initiation of the eICR.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: ele-1</td></tr>
@@ -816,9 +816,9 @@
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Case-Reporting Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Sep 25, 2017 09:48-0700. |
+            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Oct 2, 2017 15:12-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
-                <a style="color: #81BEF7" rel="license" href="http://build.fhir.orglicense.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
+                <a style="color: #81BEF7" rel="license" href="http://build.fhir.org/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>
         </p>
    </div>  <!-- /inner-wrapper -->
