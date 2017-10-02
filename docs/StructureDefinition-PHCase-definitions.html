@@ -162,7 +162,7 @@
   <tr><td>Definition</td><td><p>The current state of the event.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
-  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>Codes identifying the stage lifecycle stage of the case<br/>The codes SHALL be taken from  <a href="http://fhir.hl7.org/us/ph-case/ValueSet/case-status">http://fhir.hl7.org/us/ph-case/ValueSet/case-status</a></td></tr>
+  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>Codes identifying the stage lifecycle stage of the case<br/>The codes SHALL be taken from <a href="ValueSet-case-status.html">Case Status Codes</a></td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#code">code</a></td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true</td></tr>
   <tr><td>Comments</td><td><p>A nominal state-transition diagram can be found in the [[event.html#statemachine | Event pattern]] documentation</p>
@@ -172,14 +172,14 @@
   <tr><td>Definition</td><td><p>A code that classifies the kind of case  this is.clinical discipline, department or diagnostic service that created the  (e.g. infectious disease, poisoning). This is used for searching, sorting and display purposes.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
-  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>Codes indicating what triggered this case.  Based upon Lab Order Code, Lab Result Code, Lab Results and Diagnosis.<br/>The codes SHOULD be taken from  <a href="http://fhir.hl7.org/us/ph-case/ValueSet/case-cat">http://fhir.hl7.org/us/ph-case/ValueSet/case-cat</a></td></tr>
+  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>Codes indicating what triggered this case.  Based upon Lab Order Code, Lab Result Code, Lab Results and Diagnosis.<br/>The codes SHOULD be taken from <a href="ValueSet-case-cat.html">Case Category Codes</a></td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
   <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>kind, type</td></tr>
   <tr><td colspan="2" class="structure"><a name="PHCase.code"> </a><b>PHCase.code</b></td></tr>
   <tr><td>Definition</td><td><p>Reportable condition codes that caused this case to be generated.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
-  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>Codes indicating what triggered this case report.  Based upon Lab Order Code, Lab Result Code, Lab Results and Diagnosis.<br/>The codes SHOULD be taken from  <a href="http://fhir.hl7.org/us/ph-case/ValueSet/case-code">http://fhir.hl7.org/us/ph-case/ValueSet/case-code</a></td></tr>
+  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>Codes indicating what triggered this case report.  Based upon Lab Order Code, Lab Result Code, Lab Results and Diagnosis.<br/>The codes SHOULD be taken from <a href="ValueSet-case-code.html">Reportable Condition Codes</a></td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
   <tr><td colspan="2" class="structure"><a name="PHCase.subject"> </a><b>PHCase.subject</b></td></tr>
   <tr><td>Definition</td><td><p>The individual or set of individuals the case  is about.</p>
@@ -231,7 +231,7 @@
   <tr><td>Definition</td><td><p>The patient's occupation.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
-  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>US Department of Labor Bureau of Labor Statitics Occupational Group Codes<br/>The codes SHOULD be taken from  <a href="http://fhir.hl7.org/us/ph-case/ValueSet/oes">http://fhir.hl7.org/us/ph-case/ValueSet/oes</a></td></tr>
+  <tr><td><a href="http://build.fhir.org/terminologies.html">Binding</a></td><td>US Department of Labor Bureau of Labor Statitics Occupational Group Codes<br/>The codes SHOULD be taken from <a href="ValueSet-oes.html">US Standard Occupational Classification</a></td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
   <tr><td>Requirements</td><td><p>Identification of potential risk,  transmission risk.</p>
 </td></tr>
@@ -339,7 +339,7 @@
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Oct 2, 2017 15:54-0700. |
+            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Oct 2, 2017 16:28-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.org/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>
