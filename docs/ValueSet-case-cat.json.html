@@ -108,39 +108,86 @@
   
     
     
-    
-    
       <a class="breadcrumb-item" href="index.html">Home</a>
       /
-      <a class="breadcrumb-item" href="terminology.html">Terminology</a>
+      <a class="breadcrumb-item" href="profiles.html">Profiles</a>
       /
-      <span class="breadcrumb-item active">ValueSet-cr-status</span>
+      <span class="breadcrumb-item active">ValueSet-case-cat.json</span>
+    
+    
     
     
 
 </nav>
 
 
-<!-- ============CONTENT CONTENT=============== -->
+  <!-- ============CONTENT CONTENT=============== -->
 
-<table class="grid">
- <tbody><tr><td>Defining URL:</td><td>http://fhir.hl7.org/us/case/ValueSet/cr-status</td></tr>
- <tr><td>Name:</td><td>PH Case Status Codes</td></tr>
- <tr><td>Definition:</td><td><p>Codes identifying the stage lifecycle stage of the case.</p>
-</td></tr>
- <tr><td>Publisher:</td><td>{ site.data.fhir.ig.publisher }</td></tr>
- <tr><td>Source Resource</td><td><a href="ValueSet-cr-status.xml.html">XML</a> / <a href="ValueSet-cr-status.json.html">JSON</a> / <a href="ValueSet-cr-status.ttl.html">Turtle</a></td></tr>
-</tbody></table>
+<h2>Example: ValueSet-case-cat</h2>
 
+<p>
+Formats: <a href="ValueSet-case-cat.html">Narrative</a>, <a href="ValueSet-case-cat.xml.html">XML</a>, <a href="ValueSet-case-cat.json.html">JSON</a>, <a href="ValueSet-case-cat.ttl.html">Turtle</a>
+</p>
+<p>
+Raw <a href="ValueSet-case-cat.json" download>json</a>
+</p>
 
-<p>This value set is not used</p>
+<pre class="json">
+{
+  "<a href="http://build.fhir.org/valueset.html#ValueSet">resourceType</a>" : "ValueSet",
+  "<a href="http://build.fhir.org/valueset.html#ValueSet.id">id</a>" : "case-cat",
+  "<a href="http://build.fhir.org/valueset.html#ValueSet.text">text</a>" : {
+    "<a href="http://build.fhir.org/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+    "<a href="http://build.fhir.org/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;h2&gt;Case Category Codes&lt;/h2&gt;&lt;div&gt;&lt;p&gt;Codes indicating what triggered this case report.  Based upon Lab Order Code, Lab Result Code, Lab Results and Diagnosis.&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;This value set includes codes from the following code systems:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Include these codes as defined in &lt;a href=&quot;http://www.snomed.org/&quot;&gt;&lt;code&gt;http://snomed.info/sct&lt;/code&gt;&lt;/a&gt;&lt;table class=&quot;none&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=40733004&quot;&gt;40733004&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Infective disorder&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;http://browser.ihtsdotools.org/?perspective=full&amp;amp;conceptId1=75478009&quot;&gt;75478009&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Poisoning&lt;/td&gt;&lt;td/&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;"
+  },
+  "<a href="http://build.fhir.org/valueset.html#ValueSet.url">url</a>" : "http://fhir.hl7.org/us/case/ValueSet/case-cat",
+  "<a href="http://build.fhir.org/valueset.html#ValueSet.version">version</a>" : "0.0.0",
+  "<a href="http://build.fhir.org/valueset.html#ValueSet.name">name</a>" : "Case Category Codes",
+  "<a href="http://build.fhir.org/valueset.html#ValueSet.status">status</a>" : "draft",
+  "<a href="http://build.fhir.org/valueset.html#ValueSet.experimental">experimental</a>" : false,
+  "<a href="http://build.fhir.org/valueset.html#ValueSet.date">date</a>" : "2017-09-20T10:45:12-07:00",
+  "<a href="http://build.fhir.org/valueset.html#ValueSet.publisher">publisher</a>" : "{ site.data.fhir.ig.publisher }",
+  "<a href="http://build.fhir.org/valueset.html#ValueSet.contact">contact</a>" : [
+    {
+      "<a href="http://build.fhir.org/datatypes.html#ContactDetail#ContactDetail.name">name</a>" : "HL7 Public Health and Emergency Response WorkGroup",
+      "<a href="http://build.fhir.org/datatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
+        {
+          "<a href="http://build.fhir.org/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "url",
+          "<a href="http://build.fhir.org/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "http://www.hl7.org/Special/committees/pher/index.cfm"
+        }
+      ]
+    }
+  ],
+  "<a href="http://build.fhir.org/valueset.html#ValueSet.description">description</a>" : "Codes indicating what triggered this case report.  Based upon Lab Order Code, Lab Result Code, Lab Results and Diagnosis.",
+  "<a href="http://build.fhir.org/valueset.html#ValueSet.jurisdiction">jurisdiction</a>" : [
+    {
+      "<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+        {
+          "<a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">system</a>" : "urn:iso:std:iso:3166",
+          "<a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">code</a>" : "US",
+          "<a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">display</a>" : "United States Minor Outlying Islands (the)"
+        }
+      ]
+    }
+  ],
+  "<a href="http://build.fhir.org/valueset.html#ValueSet.compose">compose</a>" : {
+    "<a href="http://build.fhir.org/valueset.html#ValueSet.compose.include">include</a>" : [
+      {
+        "<a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.system">system</a>" : "http://snomed.info/sct",
+        "<a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept">concept</a>" : [
+          {
+            "<a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "40733004"
+          },
+          {
+            "<a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "75478009"
+          }
+        ]
+      }
+    ]
+  }
+}</pre>
 
-<div xmlns="http://www.w3.org/1999/xhtml"><h2>PH Case Status Codes</h2><div><p>Codes identifying the stage lifecycle stage of the case.</p>
-</div><p>This value set includes codes from the following code systems:</p><ul><li>Include all codes defined in <a href="CodeSystem-cr-status.html"><code>http://fhir.hl7.org/us/case/CodeSystem/cr-status</code></a></li></ul></div>
-
-<h3>Expansion</h3>
-
-<div xmlns="http://www.w3.org/1999/xhtml"><p>This value set contains 7 concepts</p><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px">Expansion based on http://fhir.hl7.org/us/case/CodeSystem/cr-status version 0.0.0</p><p>All codes from system <a href="CodeSystem-cr-status.html"><code>http://fhir.hl7.org/us/case/CodeSystem/cr-status</code></a></p><table class="codes"><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a name="http---fhir.hl7.org-us-case-CodeSystem-cr-status-in-progress"> </a><a href="CodeSystem-cr-status.html#cr-status-in-progress">in-progress</a></td><td>In Progress</td><td>This is a partial (e.g. initial, interim or preliminary) case. Data may be incomplete or unverified.</td></tr><tr><td><a name="http---fhir.hl7.org-us-case-CodeSystem-cr-status-suspended"> </a><a href="CodeSystem-cr-status.html#cr-status-suspended">suspended</a></td><td>Suspended</td><td>Incomplete or unavailable because the case has been temporarily halted.</td></tr><tr><td><a name="http---fhir.hl7.org-us-case-CodeSystem-cr-status-aborted"> </a><a href="CodeSystem-cr-status.html#cr-status-aborted">aborted</a></td><td>Aborted</td><td>Incomplete or unavailable because the case was abandoned prior to completion.</td></tr><tr><td><a name="http---fhir.hl7.org-us-case-CodeSystem-cr-status-completed"> </a><a href="CodeSystem-cr-status.html#cr-status-completed">completed</a></td><td>Completed</td><td>The case is complete</td></tr><tr><td><a name="http---fhir.hl7.org-us-case-CodeSystem-cr-status-reopened"> </a><a href="CodeSystem-cr-status.html#cr-status-reopened">reopened</a></td><td>Reopened</td><td>Subsequent to being completed, the case has been reopened. This includes any change in the results, diagnosis, narrative text, or other content that has been issued.</td></tr><tr><td><a name="http---fhir.hl7.org-us-case-CodeSystem-cr-status-entered-in-error"> </a><a href="CodeSystem-cr-status.html#cr-status-entered-in-error">entered-in-error</a></td><td>Entered in Error</td><td>This electronic record of this event should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be &quot;cancelled&quot; rather than &quot;entered-in-error&quot;.)</td></tr><tr><td><a name="http---fhir.hl7.org-us-case-CodeSystem-cr-status-unknown"> </a><a href="CodeSystem-cr-status.html#cr-status-unknown">unknown</a></td><td>Unknown</td><td>The authoring system does not know which of the status values currently applies.  Note: This concept is not to be used for &quot;other&quot; - one of the listed statuses is presumed to apply, it's just not known which one.</td></tr></table></div>
 
   <!-- ==============END CONTENT END CONTENT=================== -->
 
@@ -168,7 +215,7 @@
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Oct 2, 2017 15:12-0700. |
+            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Oct 2, 2017 15:46-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.org/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

@@ -102,7 +102,6 @@
 <div class="col-12">
 
 
-
 <!-- ============BreadCrumb=============== -->
 
 <nav class="breadcrumb">
@@ -115,7 +114,7 @@
       /
       <a class="breadcrumb-item" href="terminology.html">Terminology</a>
       /
-      <span class="breadcrumb-item active">CodeSystem-cr-status</span>
+      <span class="breadcrumb-item active">ValueSet-case-cat</span>
     
     
 
@@ -124,17 +123,28 @@
 
 <!-- ============CONTENT CONTENT=============== -->
 
-<h2>CodeSystem: CodeSystem-cr-status</h2>
+<table class="grid">
+ <tbody><tr><td>Defining URL:</td><td>http://fhir.hl7.org/us/case/ValueSet/case-cat</td></tr>
+ <tr><td>Name:</td><td>Case Category Codes</td></tr>
+ <tr><td>Definition:</td><td><p>Codes indicating what triggered this case report.  Based upon Lab Order Code, Lab Result Code, Lab Results and Diagnosis.</p>
+</td></tr>
+ <tr><td>Publisher:</td><td>{ site.data.fhir.ig.publisher }</td></tr>
+ <tr><td>Source Resource</td><td><a href="ValueSet-case-cat.xml.html">XML</a> / <a href="ValueSet-case-cat.json.html">JSON</a> / <a href="ValueSet-case-cat.ttl.html">Turtle</a></td></tr>
+</tbody></table>
 
-<p>
-Formats: <a href="CodeSystem-cr-status.xml.html">XML</a>, <a href="CodeSystem-cr-status.json.html">JSON</a>, <a href="CodeSystem-cr-status.ttl.html">Turtle</a>
-</p>
 
-<div xmlns="http://www.w3.org/1999/xhtml"><h2>PH Case Status Codes</h2><div><p>Codes identifying the stage lifecycle stage of the case</p>
-</div><p>This code system http://fhir.hl7.org/us/case/CodeSystem/cr-status defines the following codes:</p><table class="codes"><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>in-progress<a name="cr-status-in-progress"> </a></td><td>In Progress</td><td>This is a partial (e.g. initial, interim or preliminary) case. Data may be incomplete or unverified.</td></tr><tr><td>suspended<a name="cr-status-suspended"> </a></td><td>Suspended</td><td>Incomplete or unavailable because the case has been temporarily halted.</td></tr><tr><td>aborted<a name="cr-status-aborted"> </a></td><td>Aborted</td><td>Incomplete or unavailable because the case was abandoned prior to completion.</td></tr><tr><td>completed<a name="cr-status-completed"> </a></td><td>Completed</td><td>The case is complete</td></tr><tr><td>reopened<a name="cr-status-reopened"> </a></td><td>Reopened</td><td>Subsequent to being completed, the case has been reopened. This includes any change in the results, diagnosis, narrative text, or other content that has been issued.</td></tr><tr><td>entered-in-error<a name="cr-status-entered-in-error"> </a></td><td>Entered in Error</td><td>This electronic record of this event should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be &quot;cancelled&quot; rather than &quot;entered-in-error&quot;.)</td></tr><tr><td>unknown<a name="cr-status-unknown"> </a></td><td>Unknown</td><td>The authoring system does not know which of the status values currently applies.  Note: This concept is not to be used for &quot;other&quot; - one of the listed statuses is presumed to apply, it's just not known which one.</td></tr></table></div>
+<ul>
+ <li><a href="StructureDefinition-PHCase.html">Case</a></li>
+</ul>
 
+<div xmlns="http://www.w3.org/1999/xhtml"><h2>Case Category Codes</h2><div><p>Codes indicating what triggered this case report.  Based upon Lab Order Code, Lab Result Code, Lab Results and Diagnosis.</p>
+</div><p>This value set includes codes from the following code systems:</p><ul><li>Include these codes as defined in <a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a><table class="none"><tr><td><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=40733004">40733004</a></td><td>Infective disorder</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=75478009">75478009</a></td><td>Poisoning</td><td/></tr></table></li></ul></div>
 
-<!-- ==============END CONTENT END CONTENT=================== -->
+<h3>Expansion</h3>
+
+<div xmlns="http://www.w3.org/1999/xhtml"><p>This value set contains 2 concepts</p><p>All codes from system <a href="http://build.fhir.org/codesystem-snomedct.html"><code>http://snomed.info/sct</code></a></p><table class="codes"><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a name="http---snomed.info-sct-40733004"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=40733004">40733004</a></td><td>Infective disorder</td><td/></tr><tr><td><a name="http---snomed.info-sct-75478009"> </a><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=75478009">75478009</a></td><td>Poisoning</td><td/></tr></table></div>
+
+  <!-- ==============END CONTENT END CONTENT=================== -->
 
 </div>
 
@@ -144,7 +154,6 @@ Formats: <a href="CodeSystem-cr-status.xml.html">XML</a>, <a href="CodeSystem-cr
 </div>  <!-- /container -->
 
 </div>  <!-- /segment-content -->
-
 
 
 
@@ -161,7 +170,7 @@ Formats: <a href="CodeSystem-cr-status.xml.html">XML</a>, <a href="CodeSystem-cr
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Oct 2, 2017 15:12-0700. |
+            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Oct 2, 2017 15:46-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.org/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

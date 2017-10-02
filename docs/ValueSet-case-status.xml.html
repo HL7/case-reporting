@@ -112,7 +112,7 @@
       /
       <a class="breadcrumb-item" href="profiles.html">Profiles</a>
       /
-      <span class="breadcrumb-item active">ValueSet-cr-status.json</span>
+      <span class="breadcrumb-item active">ValueSet-case-status.xml</span>
     
     
     
@@ -123,62 +123,52 @@
 
   <!-- ============CONTENT CONTENT=============== -->
 
-<h2>Example: ValueSet-cr-status</h2>
+<h2>Example: ValueSet-case-status</h2>
 
 <p>
-Formats: <a href="ValueSet-cr-status.html">Narrative</a>, <a href="ValueSet-cr-status.xml.html">XML</a>, <a href="ValueSet-cr-status.json.html">JSON</a>, <a href="ValueSet-cr-status.ttl.html">Turtle</a>
+Formats: <a href="ValueSet-case-status.html">Narrative</a>, <a href="ValueSet-case-status.xml.html">XML</a>, <a href="ValueSet-case-status.json.html">JSON</a>, <a href="ValueSet-case-status.ttl.html">Turtle</a>
 </p>
 <p>
-Raw <a href="ValueSet-cr-status.json" download>json</a>
+Raw <a href="ValueSet-case-status.xml" download>xml</a>
 </p>
 
-<pre class="json">
-{
-  "<a href="http://build.fhir.org/valueset.html#ValueSet">resourceType</a>" : "ValueSet",
-  "<a href="http://build.fhir.org/valueset.html#ValueSet.id">id</a>" : "cr-status",
-  "<a href="http://build.fhir.org/valueset.html#ValueSet.text">text</a>" : {
-    "<a href="http://build.fhir.org/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
-    "<a href="http://build.fhir.org/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;h2&gt;PH Case Status Codes&lt;/h2&gt;&lt;div&gt;&lt;p&gt;Codes identifying the stage lifecycle stage of the case.&lt;/p&gt;
-&lt;/div&gt;&lt;p&gt;This value set includes codes from the following code systems:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Include all codes defined in &lt;a href=&quot;CodeSystem-cr-status.html&quot;&gt;&lt;code&gt;http://fhir.hl7.org/us/case/CodeSystem/cr-status&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;"
-  },
-  "<a href="http://build.fhir.org/valueset.html#ValueSet.url">url</a>" : "http://fhir.hl7.org/us/case/ValueSet/cr-status",
-  "<a href="http://build.fhir.org/valueset.html#ValueSet.version">version</a>" : "0.0.0",
-  "<a href="http://build.fhir.org/valueset.html#ValueSet.name">name</a>" : "PH Case Status Codes",
-  "<a href="http://build.fhir.org/valueset.html#ValueSet.status">status</a>" : "draft",
-  "<a href="http://build.fhir.org/valueset.html#ValueSet.experimental">experimental</a>" : false,
-  "<a href="http://build.fhir.org/valueset.html#ValueSet.date">date</a>" : "2017-09-20T10:45:12-07:00",
-  "<a href="http://build.fhir.org/valueset.html#ValueSet.publisher">publisher</a>" : "{ site.data.fhir.ig.publisher }",
-  "<a href="http://build.fhir.org/valueset.html#ValueSet.contact">contact</a>" : [
-    {
-      "<a href="http://build.fhir.org/datatypes.html#ContactDetail#ContactDetail.name">name</a>" : "HL7 Public Health and Emergency Response WorkGroup",
-      "<a href="http://build.fhir.org/datatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
-        {
-          "<a href="http://build.fhir.org/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "url",
-          "<a href="http://build.fhir.org/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "http://www.hl7.org/Special/committees/pher/index.cfm"
-        }
-      ]
-    }
-  ],
-  "<a href="http://build.fhir.org/valueset.html#ValueSet.description">description</a>" : "Codes identifying the stage lifecycle stage of the case.",
-  "<a href="http://build.fhir.org/valueset.html#ValueSet.jurisdiction">jurisdiction</a>" : [
-    {
-      "<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-        {
-          "<a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">system</a>" : "urn:iso:std:iso:3166",
-          "<a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">code</a>" : "US",
-          "<a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">display</a>" : "United States Minor Outlying Islands (the)"
-        }
-      ]
-    }
-  ],
-  "<a href="http://build.fhir.org/valueset.html#ValueSet.compose">compose</a>" : {
-    "<a href="http://build.fhir.org/valueset.html#ValueSet.compose.include">include</a>" : [
-      {
-        "<a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.system">system</a>" : "http://fhir.hl7.org/us/case/CodeSystem/cr-status"
-      }
-    ]
-  }
-}</pre>
+<pre class="xml">
+
+&lt;<a href="http://build.fhir.org/valueset.html#ValueSet">ValueSet</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.id">id</a> <a href="http://build.fhir.org/datatypes.html#id">value</a>=&quot;case-status&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.text">text</a>&gt;
+    &lt;<a href="http://build.fhir.org/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;generated&quot;/&gt;
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;h2&gt;Case Status Codes&lt;/h2&gt;&lt;div&gt;&lt;p&gt;Codes identifying the stage lifecycle stage of the case.&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;This value set includes codes from the following code systems:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Include all codes defined in &lt;a href=&quot;CodeSystem-case-status.html&quot;&gt;&lt;code&gt;http://fhir.hl7.org/us/case/CodeSystem/case-status&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+  &lt;/text&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.url">url</a> <a href="http://build.fhir.org/datatypes.html#uri">value</a>=&quot;http://fhir.hl7.org/us/case/ValueSet/case-status&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.version">version</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;0.0.0&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.name">name</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Case Status Codes&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.status">status</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;draft&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.experimental">experimental</a> <a href="http://build.fhir.org/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.date">date</a> <a href="http://build.fhir.org/datatypes.html#dateTime">value</a>=&quot;2017-09-20T10:45:12-07:00&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.publisher">publisher</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;{ site.data.fhir.ig.publisher }&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.contact">contact</a>&gt;
+    &lt;<a href="http://build.fhir.org/datatypes.html#ContactDetail#ContactDetail.name">name</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;HL7 Public Health and Emergency Response WorkGroup&quot;/&gt;
+    &lt;<a href="http://build.fhir.org/datatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#ContactPoint#ContactPoint.system">system</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;url&quot;/&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#ContactPoint#ContactPoint.value">value</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;http://www.hl7.org/Special/committees/pher/index.cfm&quot;/&gt;
+    &lt;/telecom&gt;
+  &lt;/contact&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.description">description</a> <a href="http://build.fhir.org/datatypes.html#markdown">value</a>=&quot;Codes identifying the stage lifecycle stage of the case.&quot;/&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.jurisdiction">jurisdiction</a>&gt;
+    &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">system</a> <a href="http://build.fhir.org/datatypes.html#uri">value</a>=&quot;urn:iso:std:iso:3166&quot;/&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">code</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;US&quot;/&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;United States Minor Outlying Islands (the)&quot;/&gt;
+    &lt;/coding&gt;
+  &lt;/jurisdiction&gt;
+  &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.compose">compose</a>&gt;
+    &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.compose.include">include</a>&gt;
+      &lt;<a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.system">system</a> <a href="http://build.fhir.org/datatypes.html#uri">value</a>=&quot;http://fhir.hl7.org/us/case/CodeSystem/case-status&quot;/&gt;
+    &lt;/include&gt;
+  &lt;/compose&gt;
+&lt;/ValueSet&gt;</pre>
 
 
   <!-- ==============END CONTENT END CONTENT=================== -->
@@ -207,7 +197,7 @@ Raw <a href="ValueSet-cr-status.json" download>json</a>
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Oct 2, 2017 15:12-0700. |
+            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Oct 2, 2017 15:46-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.org/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>
