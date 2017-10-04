@@ -1,0 +1,266 @@
+﻿<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+   <meta charset="UTF-8"/>
+  <title>PHCase</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="PHCase Implemenation Guide"/>
+<meta name="author" content="http://argonautwiki.hl7.org"/>
+
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+     <!-- Bootstrap core CSS -->
+
+     <!-- Latest compiled and minified CSS -->
+
+  <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+  <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="assets/css/project.css"/>
+  <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+
+
+<body markdown="1">
+
+
+ <div id="segment-header" class="segment">    <!-- segment-header -->
+  <div class="container">    <!-- container -->
+   <a no-external="true" id="logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="logo fhir"/> </a>
+   <div id="hl7-nav">
+     <a no-external="true" id="hl7-logo" href="http://www.hl7.org">
+     <img src="assets/images/hl7-logo.png" alt="visit the hl7 website" width="42" height="50"/>
+    </a>
+   </div>
+
+   <div id="ig-status">
+ <b>PHCase Implementation Guide CI Build</b>
+</div>
+
+  </div>
+  <div class="container">    <!-- container -->
+ </div></div>    <!-- /segment-header -->
+
+ <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+  <div id="stripe"> </div>
+  <div class="container">    <!-- container -->
+     <!-- HEADER CONTENT -->
+
+   <nav class="navbar navbar-inverse">
+    <div class="container">
+     <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+      <span class="icon-bar"> </span>
+      <span class="icon-bar"> </span>
+      <span class="icon-bar"> </span>
+     </button>
+     <a href="http://build.fhir.org//index.html" class="navbar-brand hidden">FHIR</a>
+     <div class="nav-collapse collapse navbar-inverse-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="guidance.html">General Guidance</a></li>
+        <li><a href="profiles.html">Profiles and Logical Models</a></li>
+        <li><a href="structuremaps.html">Mappings</a></li>
+        <li><a href="extensions.html">Extensions</a></li>
+        <li><a href="terminology.html">Terminology</a></li>
+        <li><a href="searchparams.html">Search Parameters</a></li>
+        <li><a href="capstatements.html">Capability Statements</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+            </ul>
+
+     </div>    <!-- /.nav-collapse -->
+    </div>    <!-- /.container -->
+   </nav>    <!-- /.navbar -->
+
+    <!-- /HEADER CONTENT -->
+  </div>    <!-- /container -->
+ </div>    <!-- /segment-navbar -->
+
+
+
+
+    <!-- /container -->
+    <!-- /segment-breadcrumb -->
+
+<div id="segment-content" class="segment">    <!-- segment-content -->
+<div class="container">    <!-- container -->
+<div class="row">
+<div class="inner-wrapper">
+
+
+<div class="col-12">
+
+
+  <!-- ============BreadCrumb=============== -->
+
+<nav class="breadcrumb">
+  
+    
+    
+      <a href="index.html" class="breadcrumb-item">Home</a>
+      /
+      <a href="profiles.html" class="breadcrumb-item">Profiles</a>
+      /
+      <span class="breadcrumb-item active">phcase-example1</span>
+    
+    
+    
+    
+
+</nav>
+
+
+
+    <!-- ============CONTENT CONTENT=============== -->
+
+<p><a name="c9b5ed87-907e-4946-a78f-9854e0a9e864">​</a>
+<a download="null" href="assets/json/phcase_example1.json">download json file</a>
+</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nt">&quot;resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PHCase&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="nt">&quot;clinicalFindings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;not pregnant&quot;</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">&quot;effectivePeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;11/7/16&quot;</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;phcase-1&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">&quot;display&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Salem Medical Center,  4646 Brown Rd, Salem, MA  02368&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Location/phcase-smc&quot;</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">&quot;lastUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2017-10-03T16:51:13.995124&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="nt">&quot;versionID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ver1&quot;</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">&quot;occupationCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Centers for Disease Control 1, Peachtree St South Atlanta, GA, 404-564-7865  Since JAN 1, 1993&quot;</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">&quot;orderedDiagnostics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">&quot;isReasonExtension&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TRUE&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">&quot;display&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zika virus envelope (E) gene [Presence] in Serum by Probe and target amplification method&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ProcedureRequest/phcase-zika&quot;</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">&quot;reporter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">&quot;display&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Micheal Colletta, M.D.&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Practitioner/phcase-mc&quot;</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">&quot;subject&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">&quot;display&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jane Stinn&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Patient/phcase-js&quot;</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">&quot;travelHistory&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">&quot;end&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2007&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1999&quot;</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">&quot;locationCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1999 to 2007 Spent 8 years in the UK during the BSE outbreak,  In the 3 weeks before NOV 9, 2016  Brazil, APR 29, 2016 to OCT 30, 2016  Nadi, FJ ,MAY 6, 2016 to MAY 15, 2016  Montreal, QC, CA, JUL 13, 2016 to JUL 15, 2016  Sydney, NSW, AU ,OCT 22, 2016 to OCT 30, 2016  1170 N Rancho Robles Rd Oracle, AZ8562, US&quot;</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">&quot;treatments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">&quot;display&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Azithromycin 500 MG Oral Tablet&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MedicationStatement/phcase-azithro&quot;</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+</div>
+
+
+
+    <!-- ==============END CONTENT END CONTENT=================== -->
+
+
+
+</div>
+
+
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /row -->
+</div>    <!-- /container -->
+
+</div>    <!-- /segment-content -->
+
+
+
+
+
+
+
+
+
+        <!-- /inner-wrapper -->
+                <!-- /row -->
+            <!-- /container -->
+
+        <!-- /segment-content -->
+
+
+<div id="segment-footer" class="segment">    <!-- segment-footer -->
+  <div class="container">    <!-- container -->
+   <div class="inner-wrapper">
+    <p>
+            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Tue, Oct 3, 2017 17:58-0700. |
+               <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
+                <a rel="license" style="color: #81BEF7" href="http://build.fhir.org/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
+        
+        </p>
+   </div>    <!-- /inner-wrapper -->
+  </div>    <!-- /container -->
+ </div>    <!-- /segment-footer -->
+    <!-- disqus thread -->
+    <!-- disqus -->
+    <!-- end disqus -->
+
+ <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+  <div class="container">    <!-- container -->
+  </div>    <!-- /container -->
+ </div>    <!-- /segment-post-footer -->
+
+   <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./assets/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+
+</body>
+
+
+
+</head></html>

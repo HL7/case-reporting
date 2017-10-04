@@ -16,5 +16,10 @@ PHCase-intro.md file
 
     **Additional Profile specific implementation guidance:**
 
-    #### Examples
-    
+#### Examples
+
+| Examples based on HL7 CDA® R2 eICR | Examples based on PHCase Logical Model |
+|--------------------------------------------------------------------|---------------------------------|
+|[EICR CCDA Example-1](eicr-example1.html)|[PHCase Example 1](phcase-example1.html)|
+|[EICR CCDA Example-2](eicr-example2.html)|[PHCase Example 2](#.html)|
+{: .grid}
