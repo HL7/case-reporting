@@ -1,0 +1,60 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.hl7.org/us/case/Practitioner/phcase-mc> a fhir:Practitioner;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "phcase-mc"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner";
+       fhir:index 0
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: phcase-mc</p><p><b>meta</b>: </p><p><b>identifier</b>: 1521001101</p><p><b>name</b>: Colletta Micheal </p><p><b>address</b>: BMass Doctors</p></div>"
+  ];
+  fhir:Practitioner.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://hl7.org.fhir/sid/us-npi" ];
+     fhir:Identifier.value [ fhir:value "1521001101" ]
+  ];
+  fhir:Practitioner.name [
+     fhir:index 0;
+     fhir:HumanName.family [ fhir:value "Micheal" ];
+     fhir:HumanName.given [
+       fhir:value "Colletta";
+       fhir:index 0
+     ];
+     fhir:HumanName.suffix [
+       fhir:value "M,D,";
+       fhir:index 0
+     ]
+  ];
+  fhir:Practitioner.address [
+     fhir:index 0;
+     fhir:Address.text [ fhir:value "BMass Doctors" ];
+     fhir:Address.line [
+       fhir:value "BMass Doctors";
+       fhir:index 0
+     ], [
+       fhir:value "2100 North Ave";
+       fhir:index 1
+     ];
+     fhir:Address.city [ fhir:value "Burlington" ];
+     fhir:Address.state [ fhir:value "MA" ];
+     fhir:Address.postalCode [ fhir:value "02368" ];
+     fhir:Address.country [ fhir:value "US" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.hl7.org/us/case/Practitioner/phcase-mc.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

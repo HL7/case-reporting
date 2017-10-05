@@ -1,0 +1,68 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.hl7.org/us/case/PractitionerRole/phcase-mc> a fhir:PractitionerRole;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "phcase-mc"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/argonaut-pd/StructureDefinition/argo-practitionerrole";
+       fhir:index 0
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: phcase-mc</p><p><b>meta</b>: </p><p><b>practitioner</b>: <a href=\"Practitioner-phcase-mc.html\">Micheal Colletta, M.D.. Generated Summary: id: phcase-mc; 1521001101; Colletta Micheal </a></p><p><b>organization</b>: <a href=\"Organization/phcase-smc\">Salem Medical Center</a></p><p><b>code</b>: Doctor <span style=\"background: LightGoldenRodYellow\">(Details : {http://hl7.org/fhir/practitioner-role code 'doctor' = 'Doctor', given as 'Doctor'})</span></p><p><b>specialty</b>: General Practice <span style=\"background: LightGoldenRodYellow\">(Details : {http://nucc.org/fhir/codes code '208D00000X' = '208D00000X', given as 'General Practice'})</span></p><p><b>location</b>: <a href=\"Location-phcase-smc.html\">Clinic Bldg A, Salem Medical Center. Generated Summary: id: phcase-smc; status: active; name: Clinic Bldg A, Salem Medical Center; ph: (+1) (555)555-3001, fax: (+1) (555)555-3002, mail@smc.org</a></p><p><b>endpoint</b>: <a href=\"Endpoint/phcase-mcdirect\">Micheal.Coletta.MD@direct.smc.org</a></p></div>"
+  ];
+  fhir:PractitionerRole.practitioner [
+     fhir:link <http://fhir.hl7.org/us/case/Practitioner/phcase-mc>;
+     fhir:Reference.reference [ fhir:value "Practitioner/phcase-mc" ];
+     fhir:Reference.display [ fhir:value "Micheal Colletta, M.D." ]
+  ];
+  fhir:PractitionerRole.organization [
+     fhir:link <http://fhir.hl7.org/us/case/Organization/phcase-smc>;
+     fhir:Reference.reference [ fhir:value "Organization/phcase-smc" ];
+     fhir:Reference.display [ fhir:value "Salem Medical Center" ]
+  ];
+  fhir:PractitionerRole.code [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/practitioner-role" ];
+       fhir:Coding.code [ fhir:value "doctor" ];
+       fhir:Coding.display [ fhir:value "Doctor" ]
+     ]
+  ];
+  fhir:PractitionerRole.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://nucc.org/fhir/codes" ];
+       fhir:Coding.code [ fhir:value "208D00000X" ];
+       fhir:Coding.display [ fhir:value "General Practice" ]
+     ]
+  ];
+  fhir:PractitionerRole.location [
+     fhir:index 0;
+     fhir:link <http://fhir.hl7.org/us/case/Location/phcase-smc>;
+     fhir:Reference.reference [ fhir:value "Location/phcase-smc" ];
+     fhir:Reference.display [ fhir:value "Clinic Bldg A, Salem Medical Center" ]
+  ];
+  fhir:PractitionerRole.endpoint [
+     fhir:index 0;
+     fhir:link <http://fhir.hl7.org/us/case/Endpoint/phcase-mcdirect>;
+     fhir:Reference.reference [ fhir:value "Endpoint/phcase-mcdirect" ];
+     fhir:Reference.display [ fhir:value "Micheal.Coletta.MD@direct.smc.org" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.hl7.org/us/case/PractitionerRole/phcase-mc.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

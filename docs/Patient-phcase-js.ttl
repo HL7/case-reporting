@@ -1,0 +1,129 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.hl7.org/us/case/Patient/phcase-js> a fhir:Patient;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "phcase-js"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient";
+       fhir:index 0
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: phcase-js</p><p><b>meta</b>: </p><p><b>identifier</b>: Medical Record Number = 1032702 (USUAL), SSN = 11-00-1234 (USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: Jane L Stinn </p><p><b>telecom</b>: ph: 1-(404)555-1212(HOME), jane.stinn@example.com</p><p><b>gender</b>: female</p><p><b>birthDate</b>: Nov 24, 1974</p><p><b>address</b>: 5101 Peachtree St NE Atlanta GA 30302 US </p></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race" ];
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "ombCategory" ];
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "urn:oid:2.16.840.1.113883.6.238" ];
+         fhir:Coding.code [ fhir:value "2106-3" ];
+         fhir:Coding.display [ fhir:value "White" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "text" ];
+       fhir:Extension.valueString [ fhir:value "White" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity" ];
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "ombCategory" ];
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "urn:oid:2.16.840.1.113883.6.238" ];
+         fhir:Coding.code [ fhir:value "2186-5" ];
+         fhir:Coding.display [ fhir:value "Not Hispanic or Latino" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "text" ];
+       fhir:Extension.valueString [ fhir:value "Not Hispanic or Latino" ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex" ];
+     fhir:Extension.valueCode [ fhir:value "F" ]
+  ];
+  fhir:Patient.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "usual" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/v2/0203" ];
+         fhir:Coding.code [ fhir:value "MR" ];
+         fhir:Coding.display [ fhir:value "Medical Record Number" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Medical Record Number" ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://hospital.smarthealthit.org" ];
+     fhir:Identifier.value [ fhir:value "1032702" ]
+  ], [
+     fhir:index 1;
+     fhir:Identifier.use [ fhir:value "usual" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/identifier-type" ];
+         fhir:Coding.code [ fhir:value "SB" ];
+         fhir:Coding.display [ fhir:value "Social Beneficiary Identifier" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "SSN" ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://hl7.org/fhir/sid/us-ssn" ];
+     fhir:Identifier.value [ fhir:value "11-00-1234" ]
+  ];
+  fhir:Patient.active [ fhir:value "true"^^xsd:boolean];
+  fhir:Patient.name [
+     fhir:index 0;
+     fhir:HumanName.family [ fhir:value "Stinn" ];
+     fhir:HumanName.given [
+       fhir:value "Jane";
+       fhir:index 0
+     ], [
+       fhir:value "L";
+       fhir:index 1
+     ]
+  ];
+  fhir:Patient.telecom [
+     fhir:index 0;
+     fhir:ContactPoint.system [ fhir:value "phone" ];
+     fhir:ContactPoint.value [ fhir:value "1-(404)555-1212" ];
+     fhir:ContactPoint.use [ fhir:value "home" ]
+  ], [
+     fhir:index 1;
+     fhir:ContactPoint.system [ fhir:value "email" ];
+     fhir:ContactPoint.value [ fhir:value "jane.stinn@example.com" ]
+  ];
+  fhir:Patient.gender [ fhir:value "female"];
+  fhir:Patient.birthDate [ fhir:value "1974-11-24"^^xsd:date];
+  fhir:Patient.address [
+     fhir:index 0;
+     fhir:Address.line [
+       fhir:value "5101 Peachtree St NE";
+       fhir:index 0
+     ];
+     fhir:Address.city [ fhir:value "Atlanta" ];
+     fhir:Address.state [ fhir:value "GA" ];
+     fhir:Address.postalCode [ fhir:value "30302" ];
+     fhir:Address.country [ fhir:value "US" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.hl7.org/us/case/Patient/phcase-js.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

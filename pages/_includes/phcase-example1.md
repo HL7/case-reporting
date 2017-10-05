@@ -1,5 +1,5 @@
 <p>
-<a href="assets/json/phcase_example1.json" download>download json file</a>
+<a href="assets/json/phcase-example1.json" download>download json file</a>
 </p>
 
 ~~~ json
@@ -79,18 +79,18 @@
         "text": "Pertussis"
     },
     "effectivePeriod": {
-        "start": "11/7/2016"
+        "start": "2017-11-07"
     },
     "id": "phcase-1",
     "identifier": [
         {
-            "system": "https://healthauthoritywest.com/case-identifiers",
+            "system": "https://healthauthoritywest.com/case-identifier",
             "type": {
                 "coding": [
                     {
                         "code": "case-identifier",
                         "display": "Case Identifier",
-                        "system": "http://fhir.hl7.org/us/case/CodeSystem/identifier-types"
+                        "system": "http://fhir.hl7.org/us/case/CodeSystem/identifier-type"
                     }
                 ]
             },
@@ -106,13 +106,13 @@
         "reference": "Location/phcase-smc"
     },
     "meta": {
-        "lastUpdated": "2017-10-04T12:20:25.634915",
+        "lastUpdated": "2017-10-04T16:23:29.142584",
         "versionID": "ver2"
     },
     "note": [
         {
             "text": "This is an example using the draft Case Resource",
-            "time": "10/4/2017"
+            "time": "2017-10-4"
         }
     ],
     "occupationCode": [
@@ -131,7 +131,7 @@
     ],
     "reporter": {
         "display": "Micheal Colletta, M.D.",
-        "reference": "Practitioner/phcase-mc"
+        "reference": "PractitionerRole/phcase-mc"
     },
     "resourceType": "PHCase",
     "status": "in-progress",
@@ -151,8 +151,8 @@
         },
         {
             "date": {
-                "end": "10/30/2016",
-                "start": "4/29/2016"
+                "end": "2016-10-30",
+                "start": "2106-04-29"
             },
             "locationCode": {
                 "coding": [
@@ -167,8 +167,8 @@
         },
         {
             "date": {
-                "end": "6/13/2016",
-                "start": "7/15/2016"
+                "end": "2016-06-13",
+                "start": "2016-7-05"
             },
             "locationReference": {
                 "display": "Nadi, FJ",
@@ -179,9 +179,8 @@
     "treatments": [
         {
             "display": "Azithromycin 500 MG Oral Tablet",
-            "reference": "MedicationStatement/phcase-azithroro"
+            "reference": "MedicationStatement/phcase-azithro"
         }
     ]
 }
-
 ~~~
