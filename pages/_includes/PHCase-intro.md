@@ -16,6 +16,10 @@ PHCase-intro.md file
 
     **Additional Profile specific implementation guidance:**
 
+Figure 1 is a graph of a scenario using the PH Case LM resource to show the linkages and relationships to the other FHIR core resources.  ( created using [ClinFHIR](http://clinfhir.com/) Scenario Builder)
+
+{% include img.html img="phcase-lm-graph.png" caption="Figure 1: PH Case LM Graph - Zika testing" %}
+
 #### Examples
 
 | HL7 CDA® R2 eICR | PHCase Logical Model |PHCase Logical Model Bundle

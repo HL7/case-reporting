@@ -1,5 +1,5 @@
 <p>
-<a href="assets/json/phcase-example1.json" download>download json file</a>
+<a href="../assets/json/phcase-example1.json" download>download json file</a>
 </p>
 
 ~~~ json
