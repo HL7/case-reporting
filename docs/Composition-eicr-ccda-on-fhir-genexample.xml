@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Composition xmlns="http://hl7.org/fhir">
+  <id value="eicr-ccda-on-fhir-genexample"/>
+  <extension url="http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Data-Enterer"/>
+  <extension url="http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Informant"/>
+  <extension url="http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Information-Recipient"/>
+  <extension url="http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Participant"/>
+  <extension url="http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Performer"/>
+  <extension url="http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Authorization"/>
+  <extension url="http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-In-Fulfillment-Of-Order"/>
+  <attester>
+    <mode value="legal"/>
+  </attester>
+  <attester>
+    <mode value="professional"/>
+  </attester>
+  <attester>
+    <mode value="personal"/>
+  </attester>
+  <section>
+    <title value="History of Encounter"/>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="46240-8"/>
+        <display value="History of Hospitalizations+&#x200B;Outpatient visits Narrative"/>
+      </coding>
+      <text value="History of Encounters"/>
+    </code>
+    <entry>
+      <reference value="Encounter/eicr"/>
+      <display value="EICR Encounter Profile example"/>
+    </entry>
+  </section>
+  <section>
+    <title value="History of Present Illiness"/>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="10164-2"/>
+        <display value=" History of Present illness Narrative"/>
+      </coding>
+      <text value=" History of Present illness"/>
+    </code>
+  </section>
+  <section>
+    <title value="Reason for Visit"/>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="46240-8"/>
+        <display value="History of Hospitalizations+&#x200B;Outpatient visits Narrative"/>
+      </coding>
+      <text value="History of Encounters"/>
+    </code>
+  </section>
+  <section>
+    <title value="Social History"/>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="29762-2"/>
+        <display value="Social history Narrative"/>
+      </coding>
+      <text value="Social History"/>
+    </code>
+    <entry>
+      <reference value="Observation/eicr-th-obs"/>
+      <display value="EICR Travel History Profile example"/>
+    </entry>
+    <entry>
+      <reference value="Observation/eicr-ph-obs"/>
+      <display value="EICR Social History Pregnancy Observation example"/>
+    </entry>
+    <entry>
+      <reference value="Observation/eicr-oh-obs"/>
+      <display value="EICR Occupational History Profile example"/>
+    </entry>
+  </section>
+  <section>
+    <title value="Problems"/>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="11450-4"/>
+        <display value="Problem list - Reported"/>
+      </coding>
+      <text value="Problem list"/>
+    </code>
+    <entry>
+      <reference value="Condition/us-core-problems-example"/>
+      <display value="US Core Profile problem list example"/>
+    </entry>
+  </section>
+  <section>
+    <title value="Medications Administered"/>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="29549-3"/>
+        <display value="Medication administered Narrative"/>
+      </coding>
+      <text value="Medication administered"/>
+    </code>
+    <entry>
+      <reference value="MedicationStatement/us-core-medstmnt-example"/>
+      <display value="US Core Profile Medication list example"/>
+    </entry>
+  </section>
+  <section>
+    <title value="Results"/>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="30954-2"/>
+        <display value="Relevant diagnostic tests/&#x200B;laboratory data Narrative"/>
+      </coding>
+      <text value="Relevant diagnostic tests/&#x200B;laboratory data"/>
+    </code>
+    <entry>
+      <reference value="DiagnosticReport/us-core-dr-example"/>
+      <display value="US Core Profile DiagnosticReport example"/>
+    </entry>
+  </section>
+  <section>
+    <title value="Immunizations"/>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="11369-6"/>
+        <display value="History of Immunization Narrative"/>
+      </coding>
+      <text value="History of Immunization"/>
+    </code>
+    <entry>
+      <reference value="Immunization/us-core-immunization-example"/>
+      <display value="US Core Profile Immunization example"/>
+    </entry>
+  </section>
+  <section>
+    <title value="Plan of Treatment"/>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="18776-5"/>
+        <display value="Plan of care note"/>
+      </coding>
+      <text value="Plan of care note"/>
+    </code>
+    <entry>
+      <reference value="CarePlan/us-core-careplan-example"/>
+      <display value="US Core Profile CarePlan example"/>
+    </entry>
+  </section>
+</Composition>
