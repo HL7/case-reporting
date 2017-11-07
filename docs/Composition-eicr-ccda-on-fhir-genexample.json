@@ -1,69 +1,11 @@
 {
   "resourceType": "Composition",
   "id": "eicr-ccda-on-fhir-genexample",
-  "extension": {
-    "url": "http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Data-Enterer"
+  "encounter": {
+    "reference": "Encounter/eicr",
+    "display": "EICR Encounter Profile example"
   },
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Data-Enterer"
-    },
-    {
-      "url": "http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Informant"
-    },
-    {
-      "url": "http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Information-Recipient"
-    },
-    {
-      "url": "http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Participant"
-    },
-    {
-      "url": "http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Performer"
-    },
-    {
-      "url": "http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Authorization"
-    },
-    {
-      "url": "http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-In-Fulfillment-Of-Order"
-    }
-  ],
-  "attester": {
-    "mode": "legal"
-  },
-  "attester": [
-    {
-      "mode": "legal"
-    },
-    {
-      "mode": [
-        "professional"
-      ]
-    },
-    {
-      "mode": [
-        "personal"
-      ]
-    }
-  ],
-  "section": {
-    "title": "History of Encounter",
-    "code": {
-      "coding": [
-        {
-          "system": "http://loinc.org",
-          "code": "46240-8",
-          "display": "History of Hospitalizations+​Outpatient visits Narrative"
-        }
-      ],
-      "text": "History of Encounters"
-    },
-    "entry": [
-      {
-        "reference": "Encounter/eicr",
-        "display": "EICR Encounter Profile example"
-      }
-    ]
-  },
+  "date": "2017-11-06T22:13:23Z",
   "section": {
     "title": "History of Present Illiness",
     "code": {
@@ -175,6 +117,29 @@
       {
         "reference": "DiagnosticReport/us-core-dr-example",
         "display": "US Core Profile DiagnosticReport example"
+      },
+      {
+        "reference": "Observation/us-core-obs-example",
+        "display": "US Core Profile Observation example"
+      }
+    ]
+  },
+  "section": {
+    "title": "Lab Orders",
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "30954-2",
+          "display": "Relevant diagnostic tests/​laboratory data Narrative"
+        }
+      ],
+      "text": "Relevant diagnostic tests/​laboratory data"
+    },
+    "entry": [
+      {
+        "reference": "ProcedureRequest/us-core-pr-example",
+        "display": "US Core Profile ProcedureRequest (aka ServiceRequest) example"
       }
     ]
   },
@@ -194,25 +159,6 @@
       {
         "reference": "Immunization/us-core-immunization-example",
         "display": "US Core Profile Immunization example"
-      }
-    ]
-  },
-  "section": {
-    "title": "Plan of Treatment",
-    "code": {
-      "coding": [
-        {
-          "system": "http://loinc.org",
-          "code": "18776-5",
-          "display": "Plan of care note"
-        }
-      ],
-      "text": "Plan of care note"
-    },
-    "entry": [
-      {
-        "reference": "CarePlan/us-core-careplan-example",
-        "display": "US Core Profile CarePlan example"
       }
     ]
   }

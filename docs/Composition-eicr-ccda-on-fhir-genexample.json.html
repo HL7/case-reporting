@@ -67,7 +67,23 @@
      </button>
      <a class="navbar-brand hidden" href="http://build.fhir.org//index.html">FHIR</a>
      <div class="nav-collapse collapse navbar-inverse-collapse">
-      <ul class="nav navbar-nav">
+        <!-- don't remove the line above - to add or remove a menu item commeent in or out -->
+<ul class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="guidance.html">General Guidance</a></li>
+  <li><a href="profiles.html">Profiles and Logical Models</a></li>
+  <li><a href="structuremaps.html">Mappings</a></li>
+  <li><a href="extensions.html">Extensions</a></li>
+  <li><a href="terminology.html">Terminology</a></li>
+  <li><a href="searchparams.html">Search Parameters</a></li>
+  <li><a href="capstatements.html">Capability Statements</a></li>
+  <li><a href="security.html">Security</a></li>
+  <li><a href="examples.html">Examples</a></li>
+  <li><a href="downloads.html">Downloads</a></li>
+</ul>
+
+        <!--
+        <ul class="nav navbar-nav">
         <li><a href="index.html">Home</a></li>
         <li><a href="guidance.html">General Guidance</a></li>
         <li><a href="profiles.html">Profiles and Logical Models</a></li>
@@ -79,7 +95,7 @@
         <li><a href="security.html">Security</a></li>
         <li><a href="examples.html">Examples</a></li>
         <li><a href="downloads.html">Downloads</a></li>
-            </ul>
+      </ul> -->
 
      </div>  <!-- /.nav-collapse -->
     </div>  <!-- /.container -->
@@ -137,69 +153,11 @@ Raw <a href="Composition-eicr-ccda-on-fhir-genexample.json" download>json</a>
 {
   "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition">resourceType</a>" : "Composition",
   "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.id">id</a>" : "eicr-ccda-on-fhir-genexample",
-  "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.extension">extension</a>" : {
-    "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.extension.url">url</a>" : "http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Data-Enterer"
+  "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.encounter">encounter</a>" : {
+    "<a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">reference</a>" : "Encounter/eicr",
+    "<a href="http://build.fhir.org/datatypes.html#Reference#Reference.display">display</a>" : "EICR Encounter Profile example"
   },
-  "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.extension">extension</a>" : [
-    {
-      "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.extension.url">url</a>" : "http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Data-Enterer"
-    },
-    {
-      "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.extension.url">url</a>" : "http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Informant"
-    },
-    {
-      "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.extension.url">url</a>" : "http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Information-Recipient"
-    },
-    {
-      "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.extension.url">url</a>" : "http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Participant"
-    },
-    {
-      "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.extension.url">url</a>" : "http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Performer"
-    },
-    {
-      "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.extension.url">url</a>" : "http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Authorization"
-    },
-    {
-      "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.extension.url">url</a>" : "http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-In-Fulfillment-Of-Order"
-    }
-  ],
-  "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.attester">attester</a>" : {
-    "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.attester.mode">mode</a>" : "legal"
-  },
-  "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.attester">attester</a>" : [
-    {
-      "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.attester.mode">mode</a>" : "legal"
-    },
-    {
-      "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.attester.mode">mode</a>" : [
-        "professional"
-      ]
-    },
-    {
-      "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.attester.mode">mode</a>" : [
-        "personal"
-      ]
-    }
-  ],
-  "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.section">section</a>" : {
-    "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.section.title">title</a>" : "History of Encounter",
-    "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.section.code">code</a>" : {
-      "<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-        {
-          "<a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">system</a>" : "http://loinc.org",
-          "<a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">code</a>" : "46240-8",
-          "<a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">display</a>" : "History of Hospitalizations+​Outpatient visits Narrative"
-        }
-      ],
-      "<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.text">text</a>" : "History of Encounters"
-    },
-    "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.section.entry">entry</a>" : [
-      {
-        "<a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">reference</a>" : "Encounter/eicr",
-        "<a href="http://build.fhir.org/datatypes.html#Reference#Reference.display">display</a>" : "EICR Encounter Profile example"
-      }
-    ]
-  },
+  "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.date">date</a>" : "2017-11-06T22:13:23Z",
   "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.section">section</a>" : {
     "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.section.title">title</a>" : "History of Present Illiness",
     "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.section.code">code</a>" : {
@@ -311,6 +269,29 @@ Raw <a href="Composition-eicr-ccda-on-fhir-genexample.json" download>json</a>
       {
         "<a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">reference</a>" : "DiagnosticReport/us-core-dr-example",
         "<a href="http://build.fhir.org/datatypes.html#Reference#Reference.display">display</a>" : "US Core Profile DiagnosticReport example"
+      },
+      {
+        "<a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">reference</a>" : "Observation/us-core-obs-example",
+        "<a href="http://build.fhir.org/datatypes.html#Reference#Reference.display">display</a>" : "US Core Profile Observation example"
+      }
+    ]
+  },
+  "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.section">section</a>" : {
+    "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.section.title">title</a>" : "Lab Orders",
+    "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.section.code">code</a>" : {
+      "<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+        {
+          "<a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">system</a>" : "http://loinc.org",
+          "<a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">code</a>" : "30954-2",
+          "<a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">display</a>" : "Relevant diagnostic tests/​laboratory data Narrative"
+        }
+      ],
+      "<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.text">text</a>" : "Relevant diagnostic tests/​laboratory data"
+    },
+    "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.section.entry">entry</a>" : [
+      {
+        "<a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">reference</a>" : "ProcedureRequest/us-core-pr-example",
+        "<a href="http://build.fhir.org/datatypes.html#Reference#Reference.display">display</a>" : "US Core Profile ProcedureRequest (aka ServiceRequest) example"
       }
     ]
   },
@@ -330,25 +311,6 @@ Raw <a href="Composition-eicr-ccda-on-fhir-genexample.json" download>json</a>
       {
         "<a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">reference</a>" : "Immunization/us-core-immunization-example",
         "<a href="http://build.fhir.org/datatypes.html#Reference#Reference.display">display</a>" : "US Core Profile Immunization example"
-      }
-    ]
-  },
-  "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.section">section</a>" : {
-    "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.section.title">title</a>" : "Plan of Treatment",
-    "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.section.code">code</a>" : {
-      "<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-        {
-          "<a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">system</a>" : "http://loinc.org",
-          "<a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">code</a>" : "18776-5",
-          "<a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">display</a>" : "Plan of care note"
-        }
-      ],
-      "<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.text">text</a>" : "Plan of care note"
-    },
-    "<a href="StructureDefinition-eicr-ccda-on-fhir.html#Composition.section.entry">entry</a>" : [
-      {
-        "<a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">reference</a>" : "CarePlan/us-core-careplan-example",
-        "<a href="http://build.fhir.org/datatypes.html#Reference#Reference.display">display</a>" : "US Core Profile CarePlan example"
       }
     ]
   }
@@ -381,7 +343,7 @@ Raw <a href="Composition-eicr-ccda-on-fhir-genexample.json" download>json</a>
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Tue, Oct 24, 2017 12:54-0700. |
+            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Nov 6, 2017 16:14-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.org/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

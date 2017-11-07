@@ -2,37 +2,11 @@
 
 <Composition xmlns="http://hl7.org/fhir">
   <id value="eicr-ccda-on-fhir-genexample"/>
-  <extension url="http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Data-Enterer"/>
-  <extension url="http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Informant"/>
-  <extension url="http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Information-Recipient"/>
-  <extension url="http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Participant"/>
-  <extension url="http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Performer"/>
-  <extension url="http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-Authorization"/>
-  <extension url="http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-In-Fulfillment-Of-Order"/>
-  <attester>
-    <mode value="legal"/>
-  </attester>
-  <attester>
-    <mode value="professional"/>
-  </attester>
-  <attester>
-    <mode value="personal"/>
-  </attester>
-  <section>
-    <title value="History of Encounter"/>
-    <code>
-      <coding>
-        <system value="http://loinc.org"/>
-        <code value="46240-8"/>
-        <display value="History of Hospitalizations+&#x200B;Outpatient visits Narrative"/>
-      </coding>
-      <text value="History of Encounters"/>
-    </code>
-    <entry>
-      <reference value="Encounter/eicr"/>
-      <display value="EICR Encounter Profile example"/>
-    </entry>
-  </section>
+  <encounter>
+    <reference value="Encounter/eicr"/>
+    <display value="EICR Encounter Profile example"/>
+  </encounter>
+  <date value="2017-11-06T22:13:23Z"/>
   <section>
     <title value="History of Present Illiness"/>
     <code>
@@ -122,6 +96,25 @@
       <reference value="DiagnosticReport/us-core-dr-example"/>
       <display value="US Core Profile DiagnosticReport example"/>
     </entry>
+    <entry>
+      <reference value="Observation/us-core-obs-example"/>
+      <display value="US Core Profile Observation example"/>
+    </entry>
+  </section>
+  <section>
+    <title value="Lab Orders"/>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="30954-2"/>
+        <display value="Relevant diagnostic tests/&#x200B;laboratory data Narrative"/>
+      </coding>
+      <text value="Relevant diagnostic tests/&#x200B;laboratory data"/>
+    </code>
+    <entry>
+      <reference value="ProcedureRequest/us-core-pr-example"/>
+      <display value="US Core Profile ProcedureRequest (aka ServiceRequest) example"/>
+    </entry>
   </section>
   <section>
     <title value="Immunizations"/>
@@ -136,21 +129,6 @@
     <entry>
       <reference value="Immunization/us-core-immunization-example"/>
       <display value="US Core Profile Immunization example"/>
-    </entry>
-  </section>
-  <section>
-    <title value="Plan of Treatment"/>
-    <code>
-      <coding>
-        <system value="http://loinc.org"/>
-        <code value="18776-5"/>
-        <display value="Plan of care note"/>
-      </coding>
-      <text value="Plan of care note"/>
-    </code>
-    <entry>
-      <reference value="CarePlan/us-core-careplan-example"/>
-      <display value="US Core Profile CarePlan example"/>
     </entry>
   </section>
 </Composition>
