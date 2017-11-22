@@ -1,28 +1,48 @@
-eicr-ccda-on-fhir-intro.md file
+source pages/\_include/{{page.md_filename}}.md  file
 
-    This is the introduction markdown file that gets inserted into the sd.html template.
 
-    This profile sets minimum expectations for blah blah blah
+<!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
 
-    ##### Mandatory Data Elements and Terminology
+* Do not remove this line (it will not be displayed)
+{:toc}
 
-    The following data-elements are mandatory (i.e data MUST be present). blah blah blah
 
-    **must have:**
 
-    1. blah
-    1. blah
-    1. blah
 
-**Additional Profile specific implementation guidance:**
+#### Introduction
+
+##### Mandatory Data Elements and Terminology
+
+
+**must have:**
+
+1. blah
+1. blah
+1. blah
+
+##### Mapping of CSTE EICR Data elements to CCDA and FHIR
+
+Introductory text here.......
+
+--
+
+{% capture my-include %}{% include eicr-ccda-on-fhir-mapping.md %}{% endcapture %}{{ my-include | markdownify }}
+<br />
+
+---
+
+
+##### Additional Profile specific implementation guidance
+
+##### Graph
 
 Figure 1 is a graph of a scenario using the PH Case Composition resource to show the linkages and relationships to the other FHIR core resources.  ( created using [ClinFHIR](http://clinfhir.com/) Scenario Builder)
 
 {% include img.html img="phcase-comp-graph.png" caption="Figure 1: PH Case Composition Graph - Zika testing" %}
 
-#### Examples
+##### Examples
 
-| HL7 CDA® R2 eICR | PHCase Logical Model |PHCase Logical Model Bundle
+| HL7 CDA® R2 eICR | PHCase Composition |PHCase Composition Bundle
 |--------------------------------------------------------------------|---------------------------------|---|
 |[EICR CCDA Example-1](eicr-example1.html)|[CR Composition Example 1](Composition-eicr-ccda-on-fhir-genexample.html)|[PHCase Bundle Example 1](#.html)|
 |[EICR CCDA Example-2](eicr-example2.html)|[PHCase Example 2](#.html)|[PHCase Bundle Example 2](#.html)|
