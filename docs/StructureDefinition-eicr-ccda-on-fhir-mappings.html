@@ -23,7 +23,7 @@
   <!-- Project extras -->
   <link href="assets/css/project.css" rel="stylesheet"/>
   <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
-	<link href="jquery-ui.css" rel="stylesheet"/>
+	<link href="assets/css/jquery-ui.css" rel="stylesheet"/>
 
   <!-- Favicons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
@@ -86,18 +86,26 @@ your logo here
           </span>
         </button>
         <a class="navbar-brand hidden" href="http://build.fhir.org//index.html">FHIR</a>
-        <div class="nav-collapse collapse navbar-inverse-collapse">        <!-- don't remove the line above - to add or remove a menu item commeent in or out -->
+        <div class="nav-collapse collapse navbar-inverse-collapse">        <!-- don't remove the line above - choose what you want  
+- [Home](index.html)
+- [General Guidance](guidance.html)
+- [Profiles and Logical Models](profiles.html)
+- [Mappings](structuremaps.html)
+- [Extensions](extensions.html)
+- [Terminology](terminology.html)
+- [Search Parameters](searchparams.html)
+- [Capability Statements](capstatements.html)
+- [Security](security.html)
+- [Examples](examples.html)
+- [Downloads](downloads.html)
+*****no empty lines****
+-->
 <ul class="nav navbar-nav">
   <li><a href="index.html">Home</a></li>
   <li><a href="guidance.html">General Guidance</a></li>
-  <li><a href="profiles.html">Profiles and Logical Models</a></li>
-  <li><a href="structuremaps.html">Mappings</a></li>
-  <li><a href="extensions.html">Extensions</a></li>
+  <li><a href="profiles.html">Profiles and Extensions</a></li>
   <li><a href="terminology.html">Terminology</a></li>
-  <li><a href="searchparams.html">Search Parameters</a></li>
   <li><a href="capstatements.html">Capability Statements</a></li>
-  <li><a href="security.html">Security</a></li>
-  <li><a href="examples.html">Examples</a></li>
   <li><a href="downloads.html">Downloads</a></li>
 </ul>
         <!--        <ul class="nav navbar-nav">
@@ -169,13 +177,2177 @@ your logo here
 
 <ul class="nav nav-tabs"><li><a href="StructureDefinition-eicr-ccda-on-fhir.html">Content</a></li><li><a href="StructureDefinition-eicr-ccda-on-fhir-definitions.html">Detailed Descriptions</a></li><li class="active"><a href="#">Mappings</a></li><li><a href="StructureDefinition-eicr-ccda-on-fhir.xml.html">XML</a></li><li><a href="StructureDefinition-eicr-ccda-on-fhir.json.html">JSON</a></li></ul>
 
+
 <h4><span class="sectioncount">D.4.1.4<a name="D.4.1.4"> </a></span> StructureDefinition: Case Composition Profile - Mappings <a title="link to here" class="self-link" href="StructureDefinition-eicr-ccda-on-fhir-definitions.html#D.4.1.4"><img src="target.png"/></a></h4>
+
+<!-- insert to allow for custom mappings in markdown listed in the front matter to be inserted into mappings tab -->
+
+
+  
+    <h3>Mappings the EICR Data Elements to the PC Case Composition FHIR Profile.</h3>
+    <p>eicr-ccda-on-fhir-intro.md file</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Data Element Common Name / CSTE eCR Task Force Name</th>
+      <th>Sub-Element Name</th>
+      <th>Published mappings to CDA Conformance ID</th>
+      <th>Mapping to PH Case Composition Profile</th>
+      <th>Mapping to FHIR Profile referenced from PH the Case Composition Profile</th>
+      <th>Mapping to FHIR Profile referenced <em>indirectly</em> from the PH Case Composition Profile</th>
+      <th>Use Core Profile(Y/N)</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Case Report</td>
+      <td> </td>
+      <td>#N/A</td>
+      <td><a href="http://build.fhir.org//composition.html">Composition</a></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Date of the Report</td>
+      <td> </td>
+      <td>1198-5256</td>
+      <td><a href="http://build.fhir.org//composition-definitions.html#Composition.date">Composition.date</a></td>
+      <td> </td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Report Submission Date/Time</td>
+      <td> </td>
+      <td>#N/A</td>
+      <td>None</td>
+      <td>Provenance.occuredDateTime</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sending Application</td>
+      <td> </td>
+      <td>#N/A</td>
+      <td>None</td>
+      <td>Provenance.agent.whoReference</td>
+      <td>Device.url</td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Provider</td>
+      <td> </td>
+      <td>#N/A</td>
+      <td>Composition.author</td>
+      <td>PractitionerRole</td>
+      <td> </td>
+      <td>Planned</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Provider ID</td>
+      <td>namespace</td>
+      <td>3284-8</td>
+      <td> </td>
+      <td>PractitionerRole.identifier</td>
+      <td> </td>
+      <td>Planned</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Provider ID</td>
+      <td>id</td>
+      <td>3284-8</td>
+      <td> </td>
+      <td>PractitionerRole.identifier</td>
+      <td> </td>
+      <td>Planned</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Provider Name</td>
+      <td>given</td>
+      <td>3284-25</td>
+      <td> </td>
+      <td>PractitionerRole.practitioner</td>
+      <td>Practitioner.name</td>
+      <td>PractionerRole - Planned, Practitioner -Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Provider Name</td>
+      <td>family</td>
+      <td>3284-25</td>
+      <td> </td>
+      <td>PractitionerRole.practitioner</td>
+      <td>Practitioner.name</td>
+      <td>PractionerRole - Planned, Practitioner -Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Provider Name</td>
+      <td>suffix</td>
+      <td>3284-25</td>
+      <td> </td>
+      <td>PractitionerRole.practitioner</td>
+      <td>Practitioner.name</td>
+      <td>PractionerRole - Planned, Practitioner -Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Provider Phone</td>
+      <td>use</td>
+      <td>3284-24</td>
+      <td> </td>
+      <td>PractitionerRole.telecom</td>
+      <td> </td>
+      <td>Planned</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Provider Phone</td>
+      <td>value</td>
+      <td>3284-24</td>
+      <td> </td>
+      <td>PractitionerRole.telecom</td>
+      <td> </td>
+      <td>Planned</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Provider Fax</td>
+      <td>use</td>
+      <td>3284-24</td>
+      <td> </td>
+      <td>PractitionerRole.telecom</td>
+      <td> </td>
+      <td>Planned</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Provider Fax</td>
+      <td>value</td>
+      <td>3284-24</td>
+      <td> </td>
+      <td>PractitionerRole.telecom</td>
+      <td> </td>
+      <td>Planned</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Provider Email</td>
+      <td>use</td>
+      <td>3284-24</td>
+      <td> </td>
+      <td>PractitionerRole.telecom</td>
+      <td> </td>
+      <td>Planned</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Provider Email</td>
+      <td>value</td>
+      <td>3284-24</td>
+      <td> </td>
+      <td>PractitionerRole.telecom</td>
+      <td> </td>
+      <td>Planned</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Provider Facility/Office Name</td>
+      <td> </td>
+      <td>3284-26</td>
+      <td> </td>
+      <td>PractitionerRole.organization</td>
+      <td>Organization.name</td>
+      <td>Planned</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Provider Address</td>
+      <td>streetaddress,  office or suite number (ifapplicable),</td>
+      <td>3284-27</td>
+      <td> </td>
+      <td>PractitionerRole.organization</td>
+      <td>Organization.address</td>
+      <td>Planned</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Provider Address</td>
+      <td>city</td>
+      <td>3284-27</td>
+      <td> </td>
+      <td>PractitionerRole.organization</td>
+      <td>Organization.address</td>
+      <td>Planned</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Provider Address</td>
+      <td>state</td>
+      <td>3284-27</td>
+      <td> </td>
+      <td>PractitionerRole.organization</td>
+      <td>Organization.address</td>
+      <td>Planned</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Provider Address</td>
+      <td>zip</td>
+      <td>3284-27</td>
+      <td> </td>
+      <td>PractitionerRole.organization</td>
+      <td>Organization.address</td>
+      <td>Planned</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Provider Address</td>
+      <td>country</td>
+      <td>3284-27</td>
+      <td> </td>
+      <td>PractitionerRole.organization</td>
+      <td>Organization.address</td>
+      <td>Planned</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Facility</td>
+      <td> </td>
+      <td>#N/A</td>
+      <td>Composition.encounter.location</td>
+      <td>Location</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Facility ID Number</td>
+      <td>namespace</td>
+      <td>3284-13</td>
+      <td> </td>
+      <td>Location.identifier</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Facility ID Number</td>
+      <td>id</td>
+      <td>3284-13</td>
+      <td> </td>
+      <td>Location.identifier</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Facility Name</td>
+      <td> </td>
+      <td>3284-33</td>
+      <td> </td>
+      <td>Location.name</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Facility Type</td>
+      <td>system</td>
+      <td>3284-14</td>
+      <td> </td>
+      <td>Location.type</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Facility Type</td>
+      <td>code</td>
+      <td>3284-14</td>
+      <td> </td>
+      <td>Location.type</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Facility Type</td>
+      <td>display</td>
+      <td>3284-14</td>
+      <td> </td>
+      <td>Location.type</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Facility Phone</td>
+      <td> </td>
+      <td>3284-34</td>
+      <td> </td>
+      <td>Location.telecom</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Facility Phone</td>
+      <td> </td>
+      <td>3284-34</td>
+      <td> </td>
+      <td>Location.telecom</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Facility Fax</td>
+      <td> </td>
+      <td>3284-34</td>
+      <td> </td>
+      <td>Location.telecom</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Facility Fax</td>
+      <td> </td>
+      <td>3284-34</td>
+      <td> </td>
+      <td>Location.telecom</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Facility Address</td>
+      <td>streetaddress,  office or suite number (ifapplicable),</td>
+      <td>3284-32</td>
+      <td> </td>
+      <td>Location.address</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Facility Address</td>
+      <td>city</td>
+      <td>3284-32</td>
+      <td> </td>
+      <td>Location.address</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Facility Address</td>
+      <td>county</td>
+      <td>3284-32</td>
+      <td> </td>
+      <td>Location.address</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Facility Address</td>
+      <td>state</td>
+      <td>3284-32</td>
+      <td> </td>
+      <td>Location.address</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Facility Address</td>
+      <td>zip</td>
+      <td>3284-32</td>
+      <td> </td>
+      <td>Location.address</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Facility Address</td>
+      <td>country</td>
+      <td>3284-32</td>
+      <td> </td>
+      <td>Location.address</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Patient</td>
+      <td> </td>
+      <td>#N/A</td>
+      <td>Composition.subject</td>
+      <td>Patient</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Patient ID Number</td>
+      <td>namespace</td>
+      <td>1198-5268</td>
+      <td> </td>
+      <td>Patient.identifier</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Patient ID Number</td>
+      <td>id</td>
+      <td>1198-5268</td>
+      <td> </td>
+      <td>Patient.identifier</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Patient Name</td>
+      <td>type</td>
+      <td>1198-5284</td>
+      <td> </td>
+      <td>Patient.name</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Patient Name</td>
+      <td>given</td>
+      <td>1198-5284</td>
+      <td> </td>
+      <td>Patient.name</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Patient Name</td>
+      <td>family</td>
+      <td>1198-5284</td>
+      <td> </td>
+      <td>Patient.name</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Patient  Phone</td>
+      <td>use</td>
+      <td>1198-5280</td>
+      <td> </td>
+      <td>Patient.telecom</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Patient  Phone</td>
+      <td>value</td>
+      <td>1198-5280</td>
+      <td> </td>
+      <td>Patient.telecom</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Patient  Email</td>
+      <td>use</td>
+      <td>1198-5280</td>
+      <td> </td>
+      <td>Patient.telecom</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Patient  Email</td>
+      <td>value</td>
+      <td>1198-5280</td>
+      <td> </td>
+      <td>Patient.telecom</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Street Address</td>
+      <td>use</td>
+      <td>1198-5271</td>
+      <td> </td>
+      <td>Patient.address</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Street Address</td>
+      <td>streetaddress,  office or suite number (ifapplicable),</td>
+      <td>1198-5271</td>
+      <td> </td>
+      <td>Patient.address</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Street Address</td>
+      <td>city</td>
+      <td>1198-5271</td>
+      <td> </td>
+      <td>Patient.address</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Street Address</td>
+      <td>county</td>
+      <td>1198-5271</td>
+      <td> </td>
+      <td>Patient.address</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Street Address</td>
+      <td>state</td>
+      <td>1198-5271</td>
+      <td> </td>
+      <td>Patient.address</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Street Address</td>
+      <td>zip</td>
+      <td>1198-5271</td>
+      <td> </td>
+      <td>Patient.address</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Street Address</td>
+      <td>country</td>
+      <td>1198-5271</td>
+      <td> </td>
+      <td>Patient.address</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Birth Date</td>
+      <td> </td>
+      <td>1198-5298</td>
+      <td> </td>
+      <td>Patient.birthDate</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Patient Sex (admin gender)</td>
+      <td>system</td>
+      <td>1198-6394</td>
+      <td> </td>
+      <td>Patient.gender</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Patient Sex (admin gender)</td>
+      <td>code</td>
+      <td>1198-6394</td>
+      <td> </td>
+      <td>Patient.gender</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Patient Sex (admin gender)</td>
+      <td>display</td>
+      <td>1198-6394</td>
+      <td> </td>
+      <td>Patient.gender</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Patient Sex (bIrth sex)</td>
+      <td>system</td>
+      <td>3250-32947</td>
+      <td> </td>
+      <td>Patient.extension(url=http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex)</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Patient Sex (bIrth sex)</td>
+      <td>system-name</td>
+      <td>3250-32947</td>
+      <td> </td>
+      <td>Patient.extension(url=http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex)</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Patient Sex (bIrth sex)</td>
+      <td>code</td>
+      <td>3250-32947</td>
+      <td> </td>
+      <td>Patient.extension(url=http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex)</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Patient Sex (bIrth sex)</td>
+      <td>display</td>
+      <td>3250-32947</td>
+      <td> </td>
+      <td>Patient.extension(url=http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex)</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Race</td>
+      <td>system</td>
+      <td>1198-5322, 1198-7263</td>
+      <td> </td>
+      <td>Patient.extension(url=http://hl7.org/fhir/us/core/StructureDefinition/us-core-race)</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Race</td>
+      <td>systemName</td>
+      <td>1198-5322, 1198-7263</td>
+      <td> </td>
+      <td>Patient.extension(url=http://hl7.org/fhir/us/core/StructureDefinition/us-core-race)</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Race</td>
+      <td>code</td>
+      <td>1198-5322, 1198-7263</td>
+      <td> </td>
+      <td>Patient.extension(url=http://hl7.org/fhir/us/core/StructureDefinition/us-core-race)</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Race</td>
+      <td>display</td>
+      <td>1198-5322, 1198-7263</td>
+      <td> </td>
+      <td>Patient.extension(url=http://hl7.org/fhir/us/core/StructureDefinition/us-core-race)</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Ethnicity</td>
+      <td>system</td>
+      <td>1198-5323, 1198-32901</td>
+      <td> </td>
+      <td>Patient.extension(url=http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity)</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Ethnicity</td>
+      <td>systemName</td>
+      <td>1198-5323, 1198-32901</td>
+      <td> </td>
+      <td>Patient.extension(url=http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity)</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Ethnicity</td>
+      <td>code</td>
+      <td>1198-5323, 1198-32901</td>
+      <td> </td>
+      <td>Patient.extension(url=http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity)</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Ethnicity</td>
+      <td>display</td>
+      <td>1198-5323, 1198-32901</td>
+      <td> </td>
+      <td>Patient.extension(url=http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity)</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Preferred Language</td>
+      <td>code</td>
+      <td>1198-5407</td>
+      <td> </td>
+      <td>Patient.communication.language</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Preferred Language</td>
+      <td>proficiency.system</td>
+      <td>1198-5407</td>
+      <td> </td>
+      <td>NA</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Preferred Language</td>
+      <td>proficiency.systemNamw</td>
+      <td>1198-5407</td>
+      <td> </td>
+      <td>NA</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Preferred Language</td>
+      <td>proficiency.code</td>
+      <td>1198-5407</td>
+      <td> </td>
+      <td>NA</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Preferred Language</td>
+      <td>proficiency.display</td>
+      <td>1198-5407</td>
+      <td> </td>
+      <td>NA</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Preferred Language</td>
+      <td>preference</td>
+      <td>1198-5407</td>
+      <td> </td>
+      <td>Patient.communication.preferred</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Death Date</td>
+      <td> </td>
+      <td>3284-106</td>
+      <td> </td>
+      <td>Patient.deceasedDateTime</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Guardian contact information</td>
+      <td> </td>
+      <td>#N/A</td>
+      <td> </td>
+      <td>Patient.contact</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Parent/Guardian Name</td>
+      <td>type</td>
+      <td>1198-5386</td>
+      <td> </td>
+      <td>Patient.contact.name</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Parent/Guardian Name</td>
+      <td>given</td>
+      <td>1198-5386</td>
+      <td> </td>
+      <td>Patient.contact.name</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Parent/Guardian Name</td>
+      <td>family</td>
+      <td>1198-5386</td>
+      <td> </td>
+      <td>Patient.contact.name</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Parent/Guardian Phone</td>
+      <td>use</td>
+      <td>1198-5382</td>
+      <td> </td>
+      <td>Patient.contact.telecom</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Parent/Guardian Phone</td>
+      <td>value</td>
+      <td>1198-5382</td>
+      <td> </td>
+      <td>Patient.contact.telecom</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Parent/Guardian Email</td>
+      <td>use</td>
+      <td>1198-5382</td>
+      <td> </td>
+      <td>Patient.contact.telecom</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Parent/Guardian Email</td>
+      <td>value</td>
+      <td>1198-5382</td>
+      <td> </td>
+      <td>Patient.contact.telecom</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>The patient’s occupation history</td>
+      <td> </td>
+      <td> </td>
+      <td>Composition.section.entry</td>
+      <td>Observation</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Occupation</td>
+      <td>start date</td>
+      <td>1198-8559</td>
+      <td> </td>
+      <td>Observation.effectivePeriod</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Occupation</td>
+      <td>end date</td>
+      <td>1198-8559</td>
+      <td> </td>
+      <td>Observation.effectivePeriod</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Occupation</td>
+      <td>description</td>
+      <td>1198-8559</td>
+      <td> </td>
+      <td>Observation.valueString</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>The patient’s pregnancy status</td>
+      <td> </td>
+      <td> </td>
+      <td>Composition.section.entry</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>The patient’s pregnancy status</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>Observation</td>
+      <td>Condition</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Pregnant</td>
+      <td>start date</td>
+      <td>1198-9058</td>
+      <td> </td>
+      <td>Observation.effectivePeriod or Condition.onset.period</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Pregnant</td>
+      <td>end date</td>
+      <td>1198-9058</td>
+      <td> </td>
+      <td>Observation.effectivePeriod or Condition.onset.period</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Pregnant</td>
+      <td>not pregnancy indicator</td>
+      <td>1198-9058</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Pregnant</td>
+      <td>unknown indicator</td>
+      <td>1198-9058</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Pregnant</td>
+      <td>system</td>
+      <td>#N/A</td>
+      <td> </td>
+      <td>Observation.valueCodeableConcept or Condition.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Pregnant</td>
+      <td>code</td>
+      <td>#N/A</td>
+      <td> </td>
+      <td>Observation.valueCodeableConcept or Condition.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Pregnant</td>
+      <td>display</td>
+      <td>#N/A</td>
+      <td> </td>
+      <td>Observation.valueCodeableConcept or Condition.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Travel History</td>
+      <td> </td>
+      <td>#N/A</td>
+      <td>Composition.section.entry</td>
+      <td> </td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Travel History Dates</td>
+      <td>start</td>
+      <td>3284-295</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Travel History Dates</td>
+      <td>end</td>
+      <td>3284-295</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Travel History Location - Free Text</td>
+      <td> </td>
+      <td>3284-269</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Travel History Location - Coded</td>
+      <td>system</td>
+      <td>3284-263</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Travel History Location - Coded</td>
+      <td>systemName</td>
+      <td>3284-263</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Travel History Location - Coded</td>
+      <td>code</td>
+      <td>3284-263</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Travel History Location - Coded</td>
+      <td>display</td>
+      <td>3284-263</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Travel History Location - Address</td>
+      <td> </td>
+      <td> </td>
+      <td>Composition.section.entry</td>
+      <td>Location</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Travel History Location - Address</td>
+      <td>streetaddress,  office or suite number (ifapplicable),</td>
+      <td>3284-264</td>
+      <td> </td>
+      <td>Location.address</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Travel History Location - Address</td>
+      <td>city</td>
+      <td>3284-264</td>
+      <td> </td>
+      <td>Location.address</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Travel History Location - Address</td>
+      <td>state</td>
+      <td>3284-264</td>
+      <td> </td>
+      <td>Location.address</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Travel History Location - Address</td>
+      <td>zip</td>
+      <td>3284-264</td>
+      <td> </td>
+      <td>Location.address</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Travel History Location - Address</td>
+      <td>country</td>
+      <td>3284-264</td>
+      <td> </td>
+      <td>Location.address</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>History of Present Illness</td>
+      <td> </td>
+      <td> </td>
+      <td>Composition.section.entry</td>
+      <td> </td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>History of Present Illness</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>Observation or Condition</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>History of Present Illness</td>
+      <td>text</td>
+      <td>81-7851</td>
+      <td> </td>
+      <td>Observation.valueString or Condition.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>History of Present Illness</td>
+      <td>system</td>
+      <td>#N/A</td>
+      <td> </td>
+      <td>Condition.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>History of Present Illness</td>
+      <td>code</td>
+      <td>#N/A</td>
+      <td> </td>
+      <td>Condition.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>History of Present Illness</td>
+      <td>display</td>
+      <td>#N/A</td>
+      <td> </td>
+      <td>Condition.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Reason for Visit</td>
+      <td> </td>
+      <td> </td>
+      <td>Composition.section.entry</td>
+      <td> </td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Reason for Visit</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>Observation or Condition</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Reason for Visit</td>
+      <td>0</td>
+      <td>81-7839</td>
+      <td> </td>
+      <td>Observation.valueString or Condition.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Reason for Visit</td>
+      <td>system</td>
+      <td>#N/A</td>
+      <td> </td>
+      <td>Condition.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Reason for Visit</td>
+      <td>code</td>
+      <td>#N/A</td>
+      <td> </td>
+      <td>Condition.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Reason for Visit</td>
+      <td>display</td>
+      <td>#N/A</td>
+      <td> </td>
+      <td>Condition.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Signs and Symptom information</td>
+      <td> </td>
+      <td>#N/A</td>
+      <td>Composition.section.entry</td>
+      <td> </td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Signs and Symptom information</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>Observation or Condition</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Date of Onset</td>
+      <td>start</td>
+      <td>1198-15603</td>
+      <td> </td>
+      <td>Observation.effectivePeriod or Condition.onsetPeriod</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Date of Onset</td>
+      <td>end</td>
+      <td>1198-15603</td>
+      <td> </td>
+      <td>Observation.effectivePeriod or Condition.onsetPeriod</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Symptoms (list)</td>
+      <td>system</td>
+      <td>1198-9058</td>
+      <td> </td>
+      <td>Observation.valueCodeableConcept or Condition.code</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Symptoms (list)</td>
+      <td>code</td>
+      <td>1198-9058</td>
+      <td> </td>
+      <td>Observation.effectivePeriod or Condition.onsetPeriod</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Symptoms (list)</td>
+      <td>display</td>
+      <td>1198-9058</td>
+      <td> </td>
+      <td>Observation.effectivePeriod or Condition.onsetPeriod</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Diagnoses</td>
+      <td> </td>
+      <td> </td>
+      <td>Composition.section.entry</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Diagnoses</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>Condition</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Diagnoses</td>
+      <td>system</td>
+      <td>1198-9058</td>
+      <td> </td>
+      <td>Condition.code</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Diagnoses</td>
+      <td>systemName</td>
+      <td>1198-9058</td>
+      <td> </td>
+      <td>Condition.code</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Diagnoses</td>
+      <td>code</td>
+      <td>1198-9058</td>
+      <td> </td>
+      <td>Condition.code</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Diagnoses</td>
+      <td>display</td>
+      <td>1198-9058</td>
+      <td> </td>
+      <td>Condition.code</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Date of Diagnosis</td>
+      <td>start</td>
+      <td>1198-9050</td>
+      <td> </td>
+      <td>Condition.onsetPeriod</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Date of Diagnosis</td>
+      <td>end</td>
+      <td>1198-9050</td>
+      <td> </td>
+      <td>Condition.onsetPeriod</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order information</td>
+      <td> </td>
+      <td>#N/A</td>
+      <td>Composition.section.entry</td>
+      <td> </td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>ProcedureRequest</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code</td>
+      <td>system</td>
+      <td>1198-30453</td>
+      <td> </td>
+      <td>ProcedureRequest.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code</td>
+      <td>code</td>
+      <td>1198-30453</td>
+      <td> </td>
+      <td>ProcedureRequest.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code</td>
+      <td>display</td>
+      <td>1198-30453</td>
+      <td> </td>
+      <td>ProcedureRequest.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Placer Order Number</td>
+      <td>namespace</td>
+      <td>1098-8584</td>
+      <td> </td>
+      <td>ProcedureRequest.identifier</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Placer Order Number</td>
+      <td>id</td>
+      <td>1098-8584</td>
+      <td> </td>
+      <td>ProcedureRequest.identifier</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Result Information</td>
+      <td> </td>
+      <td>#N/A</td>
+      <td>Composition.section.entry</td>
+      <td> </td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code Results</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>Observation or DiagnosticReport</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code Results</td>
+      <td>system</td>
+      <td>1198-7133</td>
+      <td> </td>
+      <td>Observation.code or DiagnosticReport.code</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code Results</td>
+      <td>code</td>
+      <td>1198-7133</td>
+      <td> </td>
+      <td>Observation.code or DiagnosticReport.code</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code Results</td>
+      <td>display</td>
+      <td>1198-7133</td>
+      <td> </td>
+      <td>Observation.code or DiagnosticReport.code</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Laboratory Results</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>Observation.valueQuantity or DiagnosticReport.result</td>
+      <td>Observation</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Laboratory Results</td>
+      <td>quantity-value</td>
+      <td>1198-7143</td>
+      <td> </td>
+      <td>Observation.valueQuantity or DiagnosticReport.result</td>
+      <td>Observation.valueQuantity</td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Laboratory Results</td>
+      <td>quantity-unit</td>
+      <td>1198-7143</td>
+      <td> </td>
+      <td>Observation.valueQuantity or DiagnosticReport.result</td>
+      <td>Observation.valueQuantity</td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Laboratory Results</td>
+      <td>code-system</td>
+      <td>1198-7143</td>
+      <td> </td>
+      <td>Observation.valueCodeableConcept or DiagnosticReport.result</td>
+      <td>Observation.valueCodeableConcept</td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Laboratory Results</td>
+      <td>code-value</td>
+      <td>1198-7143</td>
+      <td> </td>
+      <td>Observation.valueCodeableConcept or DiagnosticReport.result</td>
+      <td>Observation.valueCodeableConcept</td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Laboratory Results</td>
+      <td>code-display</td>
+      <td>1198-7143</td>
+      <td> </td>
+      <td>Observation.valueCodeableConcept or DiagnosticReport.result</td>
+      <td>Observation.valueCodeableConcept</td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Filler Order Number</td>
+      <td>namespace</td>
+      <td>1198-7127, 1198-7137</td>
+      <td> </td>
+      <td>Observation.identifier or DiagnosticReport.identifier</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Filler Order Number</td>
+      <td>id</td>
+      <td>1198-7127, 1198-7137</td>
+      <td> </td>
+      <td>Observation.identifier or DiagnosticReport.identifier</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Immunization Status</td>
+      <td> </td>
+      <td>3284-149</td>
+      <td>Composition.section.entry</td>
+      <td> </td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Immunization Status</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>Immunization</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Immunization Status</td>
+      <td>vaccine.system</td>
+      <td>3284-149</td>
+      <td> </td>
+      <td>Immunization.vaccineCode</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Immunization Status</td>
+      <td>vaccine.code</td>
+      <td>3284-149</td>
+      <td> </td>
+      <td>Immunization.vaccineCode</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Immunization Status</td>
+      <td>vaccine.display</td>
+      <td>3284-149</td>
+      <td> </td>
+      <td>Immunization.vaccineCode</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Immunization Status</td>
+      <td>manufacturer</td>
+      <td>3284-149</td>
+      <td> </td>
+      <td>Immunization.manufacturer</td>
+      <td>Organization.name</td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Immunization Status</td>
+      <td>lot number</td>
+      <td>3284-149</td>
+      <td> </td>
+      <td>Immunization.lotNumber</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Immunization Status</td>
+      <td>date</td>
+      <td>3284-149</td>
+      <td> </td>
+      <td>Immunization.date</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Immunization Status</td>
+      <td>status</td>
+      <td>3284-149</td>
+      <td> </td>
+      <td>Immunization.status</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Medications Administered (list)</td>
+      <td> </td>
+      <td>1098-7412</td>
+      <td>Composition.section.entry</td>
+      <td> </td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Medications Administered (list)</td>
+      <td> </td>
+      <td>1098-7412</td>
+      <td> </td>
+      <td>MedicationAdministration or MedicationStatement or MedicationDispense</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Medications Administered (list)</td>
+      <td>medication.system</td>
+      <td>1098-7412</td>
+      <td> </td>
+      <td>MedicationAdministration.medicationCodeableConcept or MedicationStatement.medicationCodeableConcept or MedicationDispense.medicationCodeableConcept or MedicationAdministration.medicationReference or MedicationStatement.medicationReference or MedicationDispense.medicationReference</td>
+      <td>Medication.code</td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Medications Administered (list)</td>
+      <td>medication.code</td>
+      <td>1098-7412</td>
+      <td> </td>
+      <td>MedicationAdministration.medicationCodeableConcept or MedicationStatement.medicationCodeableConcept or MedicationDispense.medicationCodeableConcept or MedicationAdministration.medicationReference or MedicationStatement.medicationReference or MedicationDispense.medicationReference</td>
+      <td>Medication.code</td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Medications Administered (list)</td>
+      <td>medication.display</td>
+      <td>1098-7412</td>
+      <td> </td>
+      <td>MedicationAdministration.medicationCodeableConcept or MedicationStatement.medicationCodeableConcept or MedicationDispense.medicationCodeableConcept or MedicationAdministration.medicationReference or MedicationStatement.medicationReference or MedicationDispense.medicationReference</td>
+      <td>Medication.code</td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Medications Administered (list)</td>
+      <td>start</td>
+      <td>1098-7412</td>
+      <td> </td>
+      <td>MedicationAdministration.effectivePeriod</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Medications Administered (list)</td>
+      <td>end</td>
+      <td>1098-7412</td>
+      <td> </td>
+      <td>MedicationAdministration.effectivePeriod or MedicationStatement.effectivePeriod</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Medications Administered (list)</td>
+      <td>timing</td>
+      <td>1098-7412</td>
+      <td> </td>
+      <td>MedicationAdministration.effectiveDateTime or MedicationStatement.effectiveDateTime</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Medications Administered (list)</td>
+      <td>status</td>
+      <td>1098-7412</td>
+      <td> </td>
+      <td>MedicationAdministration.status or MedicationStatement.status or MedicationDispense.status</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Medications Administered (list)</td>
+      <td>dose.quantity</td>
+      <td>1098-7412</td>
+      <td> </td>
+      <td>MedicationAdministration.dosage.dose or MedicationStatement.dosage.doseQuantity  or MedicationDispense.dosage.doseQuantity</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Medications Administered (list)</td>
+      <td>dose.unit</td>
+      <td>1098-7412</td>
+      <td> </td>
+      <td>MedicationAdministration.dosage.dose or MedicationStatement.dosage.doseQuantity  or MedicationDispense.dosage.doseQuantity</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Medications Administered (list)</td>
+      <td>route.system</td>
+      <td>1098-7412</td>
+      <td> </td>
+      <td>MedicationAdministration.dosage.route or MedicationStatement.dosage.route  or MedicationDispense.dosage.route</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Medications Administered (list)</td>
+      <td>route.code</td>
+      <td>1098-7412</td>
+      <td> </td>
+      <td>MedicationAdministration.dosage.route or MedicationStatement.dosage.route  or MedicationDispense.dosage.route</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Medications Administered (list)</td>
+      <td>route.display</td>
+      <td>1098-7412</td>
+      <td> </td>
+      <td>MedicationAdministration.dosage.route or MedicationStatement.dosage.route  or MedicationDispense.dosage.route</td>
+      <td> </td>
+      <td>Yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Trigger Code</td>
+      <td> </td>
+      <td>#N/A</td>
+      <td>Composition.extension</td>
+      <td> </td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code (Trigger Code)</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code (Trigger Code)</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>ProcedureRequest</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code (Trigger Code)</td>
+      <td>system</td>
+      <td>3284-325</td>
+      <td> </td>
+      <td>ProcedureRequest.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code (Trigger Code)</td>
+      <td>code</td>
+      <td>3284-325</td>
+      <td> </td>
+      <td>ProcedureRequest.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code (Trigger Code)</td>
+      <td>display</td>
+      <td>3284-325</td>
+      <td> </td>
+      <td>ProcedureRequest.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code (Trigger Code)</td>
+      <td>valueset</td>
+      <td>3284-325</td>
+      <td> </td>
+      <td>ProcedureRequest.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code (Trigger Code)</td>
+      <td>valueset-version</td>
+      <td>3284-325</td>
+      <td> </td>
+      <td>ProcedureRequest.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code Results (Trigger Code)</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code Results (Trigger Code)</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>Observation or DiagnosticReport</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code Results (Trigger Code)</td>
+      <td>system</td>
+      <td>3284-271</td>
+      <td> </td>
+      <td>Observation.code or DiagnosticReport.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code Results (Trigger Code)</td>
+      <td>code</td>
+      <td>3284-271</td>
+      <td> </td>
+      <td>Observation.code or DiagnosticReport.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code Results (Trigger Code)</td>
+      <td>display</td>
+      <td>3284-271</td>
+      <td> </td>
+      <td>Observation.code or DiagnosticReport.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code Results (Trigger Code)</td>
+      <td>valueset</td>
+      <td>3284-271</td>
+      <td> </td>
+      <td>Observation.code or DiagnosticReport.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lab Order Code Results (Trigger Code)</td>
+      <td>valueset-version</td>
+      <td>3284-271</td>
+      <td> </td>
+      <td>Observation.code or DiagnosticReport.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Laboratory Result (Trigger Code)</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Laboratory Result (Trigger Code)</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>Observation or DiagnosticReport</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Laboratory Result (Trigger Code)</td>
+      <td>system</td>
+      <td>3284-273</td>
+      <td> </td>
+      <td>Observation.valueCodeableConcept or DiagnosticReport.result</td>
+      <td>Observation.valueCodeableConcept</td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Laboratory Result (Trigger Code)</td>
+      <td>code</td>
+      <td>3284-273</td>
+      <td> </td>
+      <td>Observation.valueCodeableConcept or DiagnosticReport.result</td>
+      <td>Observation.valueCodeableConcept</td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Laboratory Result (Trigger Code)</td>
+      <td>display</td>
+      <td>3284-273</td>
+      <td> </td>
+      <td>Observation.valueCodeableConcept or DiagnosticReport.result</td>
+      <td>Observation.valueCodeableConcept</td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Laboratory Result (Trigger Code)</td>
+      <td>valueset</td>
+      <td>3284-273</td>
+      <td> </td>
+      <td>Observation.valueCodeableConcept or DiagnosticReport.result</td>
+      <td>Observation.valueCodeableConcept</td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Laboratory Result (Trigger Code)</td>
+      <td>valueset-version</td>
+      <td>3284-273</td>
+      <td> </td>
+      <td>Observation.valueCodeableConcept or DiagnosticReport.result</td>
+      <td>Observation.valueCodeableConcept</td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Diagnosis (Trigger Code)</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Diagnosis (Trigger Code)</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>Condition</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Diagnosis (Trigger Code)</td>
+      <td>system</td>
+      <td>3284-106</td>
+      <td> </td>
+      <td>Condition.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Diagnosis (Trigger Code)</td>
+      <td>code</td>
+      <td>3284-106</td>
+      <td> </td>
+      <td>Condition.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Diagnosis (Trigger Code)</td>
+      <td>display</td>
+      <td>3284-106</td>
+      <td> </td>
+      <td>Condition.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Diagnosis (Trigger Code)</td>
+      <td>valueset</td>
+      <td>3284-106</td>
+      <td> </td>
+      <td>Condition.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Diagnosis (Trigger Code)</td>
+      <td>valueset-version</td>
+      <td>3284-106</td>
+      <td> </td>
+      <td>Condition.code</td>
+      <td> </td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+    <br />
+  
+
+  
+
+
+
+
 
 <p>Mappings for the StructureDefinition-eicr-ccda-on-fhir Profile.</p>
 
 <a name="eicr-ccda"> </a><h3>Mappings for EICR CCDA (http://unknown.org/EICR CCDA)</h3><table class="grid">
  <tr><td colspan="3"><b>Case Composition Profile</b></td></tr>
- <tr><td>Composition</td><td></td> </tr>
+ <tr><td>Composition</td><td>EICR CCDA</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;section (eicr-section-slices)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;section (eicr-slice2)</td><td>3284-97</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title</td><td>81-7851</td> </tr>
@@ -580,7 +2752,7 @@ your logo here
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Nov 22, 2017 06:01-0800. |
+            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Nov 22, 2017 17:41-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.org/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

@@ -29,6 +29,8 @@ As of a 2007 study, cats are the second most popular pet in the US by number of 
 
 ### Jekyll Site Variables
 
+(remove prior to publication)
+
 dependency url - e.g. "uscore" : Base url of a dependency implementation Guide (defined in ig.json) -  {% raw %} {{ site.data.fhir.uscore }} {% endraw %}= {{site.data.fhir.uscore}}
 
 igName : Title of the implementation Guide (defined in ig.xml) -  {% raw %} {{ site.data.fhir.igName }} {% endraw %}= {{site.data.fhir.igName}}

@@ -1,4 +1,5 @@
-source pages/\_include/{{page.md_filename}}.md  file
+
+/\_include/eicr-ccda-on-fhir-intro.md  file}}
 
 
 <!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
@@ -6,13 +7,9 @@ source pages/\_include/{{page.md_filename}}.md  file
 * Do not remove this line (it will not be displayed)
 {:toc}
 
-
-
-
 #### Introduction
 
 ##### Mandatory Data Elements and Terminology
-
 
 **must have:**
 
@@ -24,9 +21,11 @@ source pages/\_include/{{page.md_filename}}.md  file
 
 Introductory text here.......
 
---
+{% assign id = {{include.id}} %}
 
-{% capture my-include %}{% include eicr-ccda-on-fhir-mapping.md %}{% endcapture %}{{ my-include | markdownify }}
+- {{site.data.structuredefinitions.[id].name}}
+
+{% include eicr-ccda-on-fhir-custom-mapping.md %}
 <br />
 
 ---

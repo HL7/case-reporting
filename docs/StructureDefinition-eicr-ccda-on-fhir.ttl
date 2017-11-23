@@ -119,6 +119,10 @@
          fhir:index 3;
          fhir:ElementDefinition.mapping.identity [ fhir:value "w5" ];
          fhir:ElementDefinition.mapping.map [ fhir:value "infrastructure.documents" ]
+       ], [
+         fhir:index 4;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "eicr-ccda" ];
+         fhir:ElementDefinition.mapping.map [ fhir:value "EICR CCDA" ]
        ]
      ], [
        fhir:index 1;
@@ -7421,7 +7425,12 @@
        fhir:ElementDefinition.path [ fhir:value "Composition" ];
        fhir:ElementDefinition.short [ fhir:value "Case Composition Profile" ];
        fhir:ElementDefinition.mustSupport [ fhir:value "false"^^xsd:boolean ];
-       fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
+       fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "eicr-ccda" ];
+         fhir:ElementDefinition.mapping.map [ fhir:value "EICR CCDA" ]
+       ]
      ], [
        fhir:index 1;
        fhir:Element.id [ fhir:value "Composition.subject" ];
