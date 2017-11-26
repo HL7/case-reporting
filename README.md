@@ -20,8 +20,6 @@ This repository consists of:
   - bash scripts for publication of the IG using the [IG-Publisher tool](http://wiki.hl7.org/index.php?title=IG_Publisher_Documentation)
   - Publication output files (in the `docs` folder)
 
-In order to Run these source files using the IG-Publisher another module is needed which contains the templates and static html files for created this ig.
-
 ### Rendered IG-Template at
 
 https://healthedata1.github.io/IG-Sampler/
@@ -34,13 +32,13 @@ Meeting agenda and notes are archived [here](https://github.com/argonautproject/
 
 See the [FHIR IG publisher documentation](http://wiki.hl7.org/index.php?title=IG_Publisher_Documentation)  for how to set up your local environment.
 
-You will also need to import these modules
+In order to create and publish this implementation guide using the IG-Publisher, other modules are needed which contains the templates and static html files. You will also need to import these modules
 
 - [IG-Template](https://github.com/Healthedata1/IG-Template): a module containing all the static template and pages and build files for FHIR IG Publishing
 
-- If using the bash scripts `publish2.sh` you will also need the file. [IG-FileBuilder](https://github.com/Healthedata1/FHIR-IGPub-filebuilder): A python 3.5 script that will create the ig.json and ig.xnl file based on the content in the `resources` and `example` directories and the `definitions.csv`.  See the inline comments for how to use and note the required python libraries you will need to run.
+- If using the bash scripts `publish2.sh` you will also need the file. [IG-FileBuilder](https://github.com/Healthedata1/FHIR-IGPub-filebuilder): A python 3.5 script that will create the ig.json and ig.xml file based on the content in the `resources` and `example` directories and the `definitions.csv`.  See the inline comments for how to use and note the required python libraries you will need to run the script.
 
-#### To run the igpublisher from directly from the command line:
+#### To run the ig-publisher from directly from the command line:
 
 1. copy the ig.json file to the IG-Template folder
 1. run the command line from this cloned (source) directory:
