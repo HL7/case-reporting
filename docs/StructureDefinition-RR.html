@@ -96,11 +96,16 @@ your logo here
 - [Downloads](downloads.html)
 *****no empty lines**** -->
 <ul class="nav navbar-nav">
-  <li><a href="index.html">Home</a></li>
+  <li><a href="index.html" class="active">Home</a></li>
   <li><a href="guidance.html">General Guidance</a></li>
   <li><a href="profiles.html">Profiles and Extensions</a></li>
   <li><a href="terminology.html">Terminology</a></li>
-  <li><a href="capstatements.html">Capability Statements</a></li>
+  <li><a data-toggle="dropdown" href="#" class="dropdown-toggle">Capability Statements<b style="caret-color:red" class="caret"/></a>
+    <ul class="dropdown-menu">
+      <li><a href="server-capstatement.html">Conformance requirements for Server</a></li>
+      <li><a href="client-capstatement.html">Conformance requirements for Client</a></li>
+    </ul>
+  </li>
   <li><a href="downloads.html">Downloads</a></li>
 </ul>
           <!-- <ul class="nav navbar-nav">
@@ -185,14 +190,51 @@ your logo here
 
   <!-- ============CONTENT CONTENT=============== -->
 
+
+  <!-- - choose what you want  comment out or Change what you don't -->
 <ul class="nav nav-tabs">
+
+	<li class="active"><a href="#">Narrative Content</a></li>
+
+  <!-- { % if StructureDefinition == "StructureDefinition"  % }
+	{ % if content == "definitions"  % }
+		<li class="active"><a href="#">Detailed Descriptions</a></li>
+	{ % else % }
+		<li><a href="StructureDefinition-RR-definitions.html">Detailed Descriptions</a></li>
+	{ % endif % }
+	{ % if content == "mappings" % }
+		<li class="active"><a href="#">Mappings</a></li>
+	{ % else % }
+		<li><a href="StructureDefinition-RR-mappings.html">Mappings</a></li>
+	{ % endif % }
+{ % endif % } -->
+
+<li><a href="StructureDefinition-RR.xml.html">XML</a></li>
+
+
+	<li><a href="StructureDefinition-RR.json.html">JSON</a></li>
+
+  <!-- { % if content == "turtle" % }
+	<li class="active"><a href="#">Turtle</a></li>
+{ % else % }
+	<li><a href="StructureDefinition-RR.ttl.html">Turtle</a></li>
+{ % endif % } -->
+</ul>
+
+
+  <!-- <ul class="nav nav-tabs">
 	<li class="active"><a href="#">Content</a></li>
 	<li><a href="StructureDefinition-RR-definitions.html">Detailed Descriptions</a></li>
 	<li><a href="StructureDefinition-RR-mappings.html">Mappings</a></li>
 	<li><a href="StructureDefinition-RR.xml.html">XML</a></li>
 	<li><a href="StructureDefinition-RR.json.html">JSON</a></li>
 	<li><a href="StructureDefinition-RR.ttl.html">Turtle</a></li>
-</ul>
+</ul> -->
+
+  <!-- simpler links to other pages
+<p>
+Formats: <a href="StructureDefinition-RR.html">Narrative</a>, <a href="StructureDefinition-RR.xml.html">XML</a>, <a href="StructureDefinition-RR.json.html">JSON</a>, <a href="StructureDefinition-RR.ttl.html">Turtle</a>
+</p> -->
 
 <h3><span class="sectioncount">SD.20<a name="SD.20"> </a></span>StructureDefinition-RR<a href="StructureDefinition-RR.html#SD.20" title="link to here" class="self-link"><img src="target.png"/></a></h3>
 
@@ -223,22 +265,22 @@ your logo here
   </thead>
   <tbody>
     <tr>
-      <td><a name="d2de99cc-80b4-4a14-abfb-ca2616a2e213">​</a><a href="#.html">Example-1</a></td>
+      <td><a name="3a1818ab-7aa8-47d3-8748-077c07661d30">​</a><a href="#.html">Example-1</a></td>
       <td><a href="RR-RR-genexample-1.json.html">Example-1</a></td>
       <td><a href="Communication-rr-example-1.html">Example-1</a></td>
     </tr>
     <tr>
-      <td><a name="137b0ef8-35fc-4dbf-8ade-e25dc7f3895d">​</a><a href="#.html">Example-2</a></td>
+      <td><a name="2d099d23-515d-4f52-b46d-10f834f0f08c">​</a><a href="#.html">Example-2</a></td>
       <td><a href="RR-RR-genexample-2.json.html">Example-2</a></td>
       <td><a href="Communication-rr-example-2.html">Example-2</a></td>
     </tr>
     <tr>
-      <td><a name="aed9f37c-2133-4f61-980a-4bfcf12391c9">​</a><a href="#.html">Example-3</a></td>
+      <td><a name="a0004057-3e79-48a6-9dc3-47a483dda932">​</a><a href="#.html">Example-3</a></td>
       <td><a href="RR-RR-genexample-3.json.html">Example-3</a></td>
       <td><a href="Communication-rr-example-3.html">Example-3</a></td>
     </tr>
     <tr>
-      <td><a name="3ef1bb93-7c90-48a0-8189-52ff5e294f31">​</a><a href="#.html">Example-4</a></td>
+      <td><a name="413e5e05-c58b-4949-900e-a53c4ed1b314">​</a><a href="#.html">Example-4</a></td>
       <td><a href="RR-RR-genexample-4.json.html">Example-4</a></td>
       <td><a href="Communication-rr-example-4.html">Example-4</a></td>
     </tr>
@@ -268,7 +310,7 @@ The official URL for this profile is:
 <p>
 </p>
 <p>
-This profile was published on Wed Nov 22 17:27:37 PST 2017 as a draft by null.
+This profile was published on Fri Nov 24 02:03:47 PST 2017 as a draft by null.
 </p>
 
 
@@ -571,7 +613,7 @@ Summary
 
 
 <a name="downloads"> </a>
-<p><a name="b3ffbd7a-2fbb-4f5a-8ee0-6a32d72c6f42">​</a>Downloads: StructureDefinition: (<a download="null" href="StructureDefinition-RR.xml">XML</a>, <a download="null" href="StructureDefinition-RR.json">JSON</a>), Schema:  <a download="null" href="RR.sch">XML Schematron</a></p>
+<p><a name="34dbace8-091c-41d7-85d1-2bd8b3eeca17">​</a>Downloads: StructureDefinition: (<a download="null" href="StructureDefinition-RR.xml">XML</a>, <a download="null" href="StructureDefinition-RR.json">JSON</a>), Schema:  <a download="null" href="RR.sch">XML Schematron</a></p>
 
 <p>&nbsp;</p>
 
@@ -643,7 +685,7 @@ $( '#tabs' ).tabs({
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Nov 22, 2017 17:41-0800. |
+            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Nov 24, 2017 15:40-0800. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://build.fhir.org/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

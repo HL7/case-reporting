@@ -21,9 +21,13 @@
 
 Introductory text here.......
 
+-file name = "{{file.name}}"
+
+-page name = "{{page.name}}"
+
 {% assign id = {{include.id}} %}
 
-- {{site.data.structuredefinitions.[id].name}}
+- sd name = {{site.data.structuredefinitions.[id].name}}
 
 {% include eicr-ccda-on-fhir-custom-mapping.md %}
 <br />

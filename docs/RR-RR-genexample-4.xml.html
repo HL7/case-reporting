@@ -101,11 +101,16 @@ your logo here
 *****no empty lines****
 -->
 <ul class="nav navbar-nav">
-  <li><a href="index.html">Home</a></li>
+  <li><a href="index.html" class="active">Home</a></li>
   <li><a href="guidance.html">General Guidance</a></li>
   <li><a href="profiles.html">Profiles and Extensions</a></li>
   <li><a href="terminology.html">Terminology</a></li>
-  <li><a href="capstatements.html">Capability Statements</a></li>
+  <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Capability Statements<b class="caret" style="caret-color:red"></b></a>
+    <ul class="dropdown-menu">
+      <li><a href="server-capstatement.html">Conformance requirements for Server</a></li>
+      <li><a href="client-capstatement.html">Conformance requirements for Client</a></li>
+    </ul>
+  </li>
   <li><a href="downloads.html">Downloads</a></li>
 </ul>
         <!--        <ul class="nav navbar-nav">
@@ -189,12 +194,48 @@ your logo here
 
 
   <!-- ============CONTENT CONTENT=============== -->
+  
+    <!--  - choose what you want  comment out or Change what you don't-->
+<ul class="nav nav-tabs">
 
-<h2>Example: RR-RR-genexample-4</h2>
+	<li><a href="RR-RR-genexample-4.html">Narrative Content</a></li>
 
+<!--
+{ % if RR == "StructureDefinition"  % }
+	{ % if xml == "definitions"  % }
+		<li class="active"><a href="#">Detailed Descriptions</a></li>
+	{ % else % }
+		<li><a href="RR-RR-genexample-4-definitions.html">Detailed Descriptions</a></li>
+	{ % endif % }
+	{ % if xml == "mappings" % }
+		<li class="active"><a href="#">Mappings</a></li>
+	{ % else % }
+		<li><a href="RR-RR-genexample-4-mappings.html">Mappings</a></li>
+	{ % endif % }
+{ % endif % }
+-->
+
+	<li class="active"><a href="#">XML</a></li>
+
+
+	<li><a href="RR-RR-genexample-4.json.html">JSON</a></li>
+
+<!--
+{ % if xml == "turtle" % }
+	<li class="active"><a href="#">Turtle</a></li>
+{ % else % }
+	<li><a href="RR-RR-genexample-4.ttl.html">Turtle</a></li>
+{ % endif % }
+-->
+</ul>
+
+    <h2>XML Format: RR-RR-genexample-4</h2>
+  
+<!-- simple format links
 <p>
 Formats: <a href="RR-RR-genexample-4.html">Narrative</a>, <a href="RR-RR-genexample-4.xml.html">XML</a>, <a href="RR-RR-genexample-4.json.html">JSON</a>, <a href="RR-RR-genexample-4.ttl.html">Turtle</a>
 </p>
+-->
 <p>
 Raw <a href="RR-RR-genexample-4.xml" download>xml</a>
 </p>
@@ -305,7 +346,7 @@ Raw <a href="RR-RR-genexample-4.xml" download>xml</a>
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Nov 22, 2017 17:41-0800. |
+            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Nov 24, 2017 15:40-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.org/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

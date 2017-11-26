@@ -96,11 +96,16 @@ your logo here
 - [Downloads](downloads.html)
 *****no empty lines**** -->
 <ul class="nav navbar-nav">
-  <li><a href="index.html">Home</a></li>
+  <li><a href="index.html" class="active">Home</a></li>
   <li><a href="guidance.html">General Guidance</a></li>
   <li><a href="profiles.html">Profiles and Extensions</a></li>
   <li><a href="terminology.html">Terminology</a></li>
-  <li><a href="capstatements.html">Capability Statements</a></li>
+  <li><a data-toggle="dropdown" href="#" class="dropdown-toggle">Capability Statements<b style="caret-color:red" class="caret"/></a>
+    <ul class="dropdown-menu">
+      <li><a href="server-capstatement.html">Conformance requirements for Server</a></li>
+      <li><a href="client-capstatement.html">Conformance requirements for Client</a></li>
+    </ul>
+  </li>
   <li><a href="downloads.html">Downloads</a></li>
 </ul>
           <!-- <ul class="nav navbar-nav">
@@ -185,14 +190,51 @@ your logo here
 
   <!-- ============CONTENT CONTENT=============== -->
 
+
+  <!-- - choose what you want  comment out or Change what you don't -->
 <ul class="nav nav-tabs">
+
+	<li class="active"><a href="#">Narrative Content</a></li>
+
+  <!-- { % if StructureDefinition == "StructureDefinition"  % }
+	{ % if content == "definitions"  % }
+		<li class="active"><a href="#">Detailed Descriptions</a></li>
+	{ % else % }
+		<li><a href="StructureDefinition-eicr-ccda-on-fhir-definitions.html">Detailed Descriptions</a></li>
+	{ % endif % }
+	{ % if content == "mappings" % }
+		<li class="active"><a href="#">Mappings</a></li>
+	{ % else % }
+		<li><a href="StructureDefinition-eicr-ccda-on-fhir-mappings.html">Mappings</a></li>
+	{ % endif % }
+{ % endif % } -->
+
+<li><a href="StructureDefinition-eicr-ccda-on-fhir.xml.html">XML</a></li>
+
+
+	<li><a href="StructureDefinition-eicr-ccda-on-fhir.json.html">JSON</a></li>
+
+  <!-- { % if content == "turtle" % }
+	<li class="active"><a href="#">Turtle</a></li>
+{ % else % }
+	<li><a href="StructureDefinition-eicr-ccda-on-fhir.ttl.html">Turtle</a></li>
+{ % endif % } -->
+</ul>
+
+
+  <!-- <ul class="nav nav-tabs">
 	<li class="active"><a href="#">Content</a></li>
 	<li><a href="StructureDefinition-eicr-ccda-on-fhir-definitions.html">Detailed Descriptions</a></li>
 	<li><a href="StructureDefinition-eicr-ccda-on-fhir-mappings.html">Mappings</a></li>
 	<li><a href="StructureDefinition-eicr-ccda-on-fhir.xml.html">XML</a></li>
 	<li><a href="StructureDefinition-eicr-ccda-on-fhir.json.html">JSON</a></li>
 	<li><a href="StructureDefinition-eicr-ccda-on-fhir.ttl.html">Turtle</a></li>
-</ul>
+</ul> -->
+
+  <!-- simpler links to other pages
+<p>
+Formats: <a href="StructureDefinition-eicr-ccda-on-fhir.html">Narrative</a>, <a href="StructureDefinition-eicr-ccda-on-fhir.xml.html">XML</a>, <a href="StructureDefinition-eicr-ccda-on-fhir.json.html">JSON</a>, <a href="StructureDefinition-eicr-ccda-on-fhir.ttl.html">Turtle</a>
+</p> -->
 
 <h3><span class="sectioncount">SD.3<a name="SD.3"> </a></span>StructureDefinition-eicr-ccda-on-fhir<a href="StructureDefinition-eicr-ccda-on-fhir.html#SD.3" title="link to here" class="self-link"><img src="target.png"/></a></h3>
 
@@ -233,11 +275,15 @@ your logo here
 
 <p>Introductory text here…….</p>
 
+<p>-file name = “”</p>
+
+<p>-page name = “StructureDefinition-eicr-ccda-on-fhir.html”</p>
+
 <ul>
-  <li>Case Composition Profile</li>
+  <li>sd name = Case Composition Profile</li>
 </ul>
 
-<p>eicr-ccda-on-fhir-intro.md file</p>
+<p>source: eicr-ccda-on-fhir-mapping.md file</p>
 
 <table class="grid">
   <thead>
@@ -246,8 +292,8 @@ your logo here
       <th>Sub-Element Name</th>
       <th>Published mappings to CDA Conformance ID</th>
       <th>Mapping to PH Case Composition Profile</th>
-      <th>Mapping to FHIR Profile referenced from PH the Case Composition Profile</th>
-      <th>Mapping to FHIR Profile referenced <em>indirectly</em> from the PH Case Composition Profile</th>
+      <th>Mapping to FHIR Profiles referenced from PH the Case Composition Profile</th>
+      <th>Mapping to FHIR Profiles referenced <em>indirectly</em> from the PH Case Composition Profile</th>
       <th>Use Core Profile(Y/N)</th>
       <th>&nbsp;</th>
     </tr>
@@ -2423,12 +2469,12 @@ your logo here
     <tr>
       <td><a href="eicr-example1.html">EICR CCDA Example-1</a></td>
       <td><a href="Composition-eicr-ccda-on-fhir-genexample.html">CR Composition Example 1</a></td>
-      <td><a name="241c24ba-fbac-433a-869d-c95bff63f02c">​</a><a href="#.html">PHCase Bundle Example 1</a></td>
+      <td><a name="07184273-ef3e-40a3-9751-034f65987589">​</a><a href="#.html">PHCase Bundle Example 1</a></td>
     </tr>
     <tr>
       <td><a href="eicr-example2.html">EICR CCDA Example-2</a></td>
-      <td><a name="77af8cda-4cf1-40db-834d-a5e271803069">​</a><a href="#.html">PHCase Example 2</a></td>
-      <td><a name="367ade65-6f4a-4ee5-b6f4-f79a844c85b3">​</a><a href="#.html">PHCase Bundle Example 2</a></td>
+      <td><a name="fedb4abd-ca38-4601-a526-fbfd31d50530">​</a><a href="#.html">PHCase Example 2</a></td>
+      <td><a name="529d9df0-d7b8-4259-8b68-491149e910ba">​</a><a href="#.html">PHCase Bundle Example 2</a></td>
     </tr>
   </tbody>
 </table>
@@ -3060,7 +3106,7 @@ $( '#tabs' ).tabs({
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Nov 22, 2017 17:41-0800. |
+            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Nov 24, 2017 15:40-0800. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://build.fhir.org/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

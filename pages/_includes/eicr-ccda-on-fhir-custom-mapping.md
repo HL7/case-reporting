@@ -1,4 +1,4 @@
-eicr-ccda-on-fhir-intro.md file
+source: eicr-ccda-on-fhir-mapping.md file
 
 |Data Element Common Name / CSTE eCR Task Force Name |Sub-Element Name|Published mappings to CDA Conformance ID|Mapping to PH Case Composition Profile |Mapping to FHIR Profiles referenced from PH the Case Composition Profile|Mapping to FHIR Profiles referenced *indirectly* from the PH Case Composition Profile|Use Core Profile(Y/N)|
 |---|---|---|---|---|---|---|

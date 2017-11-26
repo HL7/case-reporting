@@ -13,9 +13,12 @@
 - [Downloads](downloads.html)
 *****no empty lines****
 -->
-- [Home](index.html)
+- [Home](index.html){: .active}
 - [General Guidance](guidance.html)
 - [Profiles and Extensions](profiles.html)
 - [Terminology](terminology.html)
-- [Capability Statements](capstatements.html)
+- [Capability Statements<b class="caret" style="caret-color:red"></b>](#){: .dropdown-toggle data-toggle="dropdown"}
+    - [Conformance requirements for Server](server-capstatement.html)
+    - [Conformance requirements for Client](client-capstatement.html)
+    {: .dropdown-menu}
 - [Downloads](downloads.html)

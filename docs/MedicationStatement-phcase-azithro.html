@@ -101,11 +101,16 @@ your logo here
 *****no empty lines****
 -->
 <ul class="nav navbar-nav">
-  <li><a href="index.html">Home</a></li>
+  <li><a href="index.html" class="active">Home</a></li>
   <li><a href="guidance.html">General Guidance</a></li>
   <li><a href="profiles.html">Profiles and Extensions</a></li>
   <li><a href="terminology.html">Terminology</a></li>
-  <li><a href="capstatements.html">Capability Statements</a></li>
+  <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Capability Statements<b class="caret" style="caret-color:red"></b></a>
+    <ul class="dropdown-menu">
+      <li><a href="server-capstatement.html">Conformance requirements for Server</a></li>
+      <li><a href="client-capstatement.html">Conformance requirements for Client</a></li>
+    </ul>
+  </li>
   <li><a href="downloads.html">Downloads</a></li>
 </ul>
         <!--        <ul class="nav navbar-nav">
@@ -190,12 +195,45 @@ your logo here
 
 
   <!-- ============CONTENT CONTENT=============== -->
+<!--  - choose what you want  comment out or Change what you don't-->
+<ul class="nav nav-tabs">
 
-<h2>Example: MedicationStatement-phcase-azithro</h2>
+	<li class="active"><a href="#">Narrative Content</a></li>
 
+<!--
+{ % if MedicationStatement == "StructureDefinition"  % }
+	{ % if content == "definitions"  % }
+		<li class="active"><a href="#">Detailed Descriptions</a></li>
+	{ % else % }
+		<li><a href="MedicationStatement-phcase-azithro-definitions.html">Detailed Descriptions</a></li>
+	{ % endif % }
+	{ % if content == "mappings" % }
+		<li class="active"><a href="#">Mappings</a></li>
+	{ % else % }
+		<li><a href="MedicationStatement-phcase-azithro-mappings.html">Mappings</a></li>
+	{ % endif % }
+{ % endif % }
+-->
+
+<li><a href="MedicationStatement-phcase-azithro.xml.html">XML</a></li>
+
+
+	<li><a href="MedicationStatement-phcase-azithro.json.html">JSON</a></li>
+
+<!--
+{ % if content == "turtle" % }
+	<li class="active"><a href="#">Turtle</a></li>
+{ % else % }
+	<li><a href="MedicationStatement-phcase-azithro.ttl.html">Turtle</a></li>
+{ % endif % }
+-->
+</ul>
+
+<!-- simple format links
 <p>
 Formats: <a href="MedicationStatement-phcase-azithro.html">Narrative</a>, <a href="MedicationStatement-phcase-azithro.xml.html">XML</a>, <a href="MedicationStatement-phcase-azithro.json.html">JSON</a>, <a href="MedicationStatement-phcase-azithro.ttl.html">Turtle</a>
 </p>
+-->
 
 <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: phcase-azithro</p><p><b>meta</b>: </p><p><b>status</b>: active</p><p><b>medication</b>: Azithromycin 500 MG Oral Tablet <span style="background: LightGoldenRodYellow">(Details : {RxNorm code '248656' = 'azithromycin 500 MG Oral Tablet', given as 'Azithromycin 500 MG Oral Tablet'})</span></p><p><b>effective</b>: Nov 7, 2016 --&gt; Nov 7, 2016</p><p><b>dateAsserted</b>: Nov 7, 2016 4:13:03 PM</p><p><b>subject</b>: <a href="Patient-phcase-js.html">Jane Stinn. Generated Summary: id: phcase-js; Medical Record Number = 1032702 (USUAL), SSN = 11-00-1234 (USUAL); active; Jane L Stinn ; ph: 1-(404)555-1212(HOME), jane.stinn@example.com; gender: female; birthDate: Nov 24, 1974</a></p><p><b>taken</b>: y</p><p><b>dosage</b>: </p></div>
 
@@ -225,7 +263,7 @@ Formats: <a href="MedicationStatement-phcase-azithro.html">Narrative</a>, <a hre
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Nov 22, 2017 17:41-0800. |
+            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Nov 24, 2017 15:40-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.org/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>
