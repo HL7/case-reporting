@@ -67,4 +67,4 @@ Some screenshots....
 
 ## How to integrate with the [FHIR Implementation Guide Auto-Builder](https://github.com/Healthedata1/auto-ig-builder)
 
-Currently this setup using submodules does not work with the FHIR Implementation Guide Auto-Builder.  It being published as a GitHub pages document.
+Currently this setup using submodules does not work with the FHIR Implementation Guide Auto-Builder.  It is published as a GitHub pages document.
