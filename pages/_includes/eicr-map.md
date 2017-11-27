@@ -1,4 +1,4 @@
-{% include nav-tabs.html type="StructureDefinition" id="eCR" active="mappings" %}
+{% include nav-tabs.html type="StructureDefinition" id="ecr" active="mappings" %}
 
 ## {{ page.title }}
 <!-- { :.no_toc } -->

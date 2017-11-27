@@ -1,5 +1,5 @@
 
-/\_include/eCR-intro.md  file}}
+/\_include/ecr-intro.md  file}}
 
 
 <!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
@@ -47,6 +47,6 @@ Figure 1 is a graph of a scenario using the PH Case Composition resource to show
 
 | HL7 CDA® R2 eICR | PHCase Composition |PHCase Composition Bundle
 |--------------------------------------------------------------------|---------------------------------|---|
-|[EICR CCDA Example-1](eicr-example1.html)|[CR Composition Example 1](Composition-eCR-genexample.html)|[PHCase Bundle Example 1](#.html)|
+|[EICR CCDA Example-1](eicr-example1.html)|[CR Composition Example 1](Composition-ecr-genexample.html)|[PHCase Bundle Example 1](#.html)|
 |[EICR CCDA Example-2](eicr-example2.html)|[PHCase Example 2](#.html)|[PHCase Bundle Example 2](#.html)|
 {: .grid}
