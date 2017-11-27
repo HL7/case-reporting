@@ -22,8 +22,8 @@
     <sch:title>f:PlanDefinition/f:publisher</sch:title>
     <sch:rule context="f:PlanDefinition/f:publisher">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/case/StructureDefinition/extension-publisher-code']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/case/StructureDefinition/extension-publisher-code': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/case/StructureDefinition/extension-organization-description']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/case/StructureDefinition/extension-organization-description': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-publisher-code']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-publisher-code': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-organization-description']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-organization-description': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:value) &lt;= 1">value: maximum cardinality of 'value' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
@@ -40,7 +40,7 @@
     <sch:title>f:PlanDefinition/f:contact</sch:title>
     <sch:rule context="f:PlanDefinition/f:contact">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/case/StructureDefinition/extension-contact-address']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/case/StructureDefinition/extension-contact-address': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-contact-address']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-contact-address': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:name) &lt;= 1">name: maximum cardinality of 'name' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
@@ -57,8 +57,8 @@
     <sch:title>f:PlanDefinition/f:relatedArtifact</sch:title>
     <sch:rule context="f:PlanDefinition/f:relatedArtifact">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/case/StructureDefinition/extension-rel-artifact-category']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/case/StructureDefinition/extension-rel-artifact-category': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/case/StructureDefinition/extension-rel-artifact-priority']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/case/StructureDefinition/extension-rel-artifact-priority': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-rel-artifact-category']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-rel-artifact-category': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-rel-artifact-priority']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-rel-artifact-priority': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:type) &gt;= 1">type: minimum cardinality of 'type' is 1</sch:assert>
       <sch:assert test="count(f:type) &lt;= 1">type: maximum cardinality of 'type' is 1</sch:assert>
       <sch:assert test="count(f:display) &lt;= 1">display: maximum cardinality of 'display' is 1</sch:assert>

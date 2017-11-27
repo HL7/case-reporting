@@ -3,10 +3,10 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
    <meta charset="UTF-8"/>
-  <title>PHCase</title>
+  <title>electronic Case Reporting (eCR)</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="PHCase Implemenation Guide" />
+<meta name="description" content="electronic Case Reporting (eCR) Implemenation Guide" />
 <meta name="author" content="http://argonautwiki.hl7.org"/>
 
 
@@ -34,8 +34,6 @@
 
 
 <body markdown="1">
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 <div id="segment-header" class="segment">
   <!-- segment-header -->
@@ -60,7 +58,7 @@ your logo here
 
       </div>
     <div id="ig-status">
-      <b>PHCase Implementation Guide CI Build</b>
+      <b>electronic Case Reporting (eCR) Implementation Guide CI Build</b>
     </div>
   </div>
   <div class="container">
@@ -68,6 +66,8 @@ your logo here
   </div>
 </div>
 <!-- /segment-header -->
+
+
 <div id="segment-navbar" class="segment">
   <!-- segment-navbar -->
   <div id="stripe">
@@ -86,7 +86,9 @@ your logo here
           </span>
         </button>
         <a class="navbar-brand hidden" href="http://build.fhir.org//index.html">FHIR</a>
-        <div class="nav-collapse collapse navbar-inverse-collapse">        <!-- don't remove the line above - choose what you want  
+        <div class="nav-collapse collapse navbar-inverse-collapse">
+
+       <!-- don't remove the line above - choose what you want  
 - [Home](index.html)
 - [General Guidance](guidance.html)
 - [Profiles and Logical Models](profiles.html)
@@ -105,15 +107,17 @@ your logo here
   <li><a href="guidance.html">General Guidance</a></li>
   <li><a href="profiles.html">Profiles and Extensions</a></li>
   <li><a href="terminology.html">Terminology</a></li>
-  <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Capability Statements<b class="caret" style="caret-color:red"></b></a>
+  <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Capability Statements <span class="caret"></span></a>
     <ul class="dropdown-menu">
-      <li><a href="server-capstatement.html">Conformance requirements for Server</a></li>
-      <li><a href="client-capstatement.html">Conformance requirements for Client</a></li>
+      <li><a href="CapabilityStatement-server.html">Conformance requirements for Server</a></li>
+      <li><a href="CapabilityStatement-client.html">Conformance requirements for Client</a></li>
     </ul>
   </li>
   <li><a href="downloads.html">Downloads</a></li>
 </ul>
-        <!--        <ul class="nav navbar-nav">
+
+
+             <!--        <ul class="nav navbar-nav">
           <li>
             <a href="index.html">Home</a>
           </li>
@@ -161,17 +165,75 @@ your logo here
 <!-- /segment-navbar -->
 
 
-
 </div>  <!-- /container -->
 </div>  <!-- /segment-breadcrumb -->
 
-<div id="segment-content" class="segment">  <!-- segment-content -->
-<div class="container">  <!-- container -->
-<div class="row">
-<div class="inner-wrapper">
+<div id="wrapper">  <!-- wrapper -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- sidebar-wrapper  put your TOC here. like example below...-->
+
+<div id="sidebar-wrapper">
+<a href="StructureDefinition-extension-expected-version.ttl.html" class="btn btn-info" role="button">TOP</a>
+  <ul class="sidebar-nav">
+    <lh class="sidebar-brand">Contents:</lh>
+    <li><a href="index.html">PHCase Implementation Guide</a>    <ul>
+        <li><a href="index.html#cat-facts-to-show-how-the-text-wraps-around-the-contents-block" id="markdown-toc-cat-facts-to-show-how-the-text-wraps-around-the-contents-block">Cat Facts (To Show How the Text Wraps around the Contents Block)</a></li>
+        <li><a href="index.html#jekyll-site-variables" id="markdown-toc-jekyll-site-variables">Jekyll Site Variables</a></li>
+        <li><a href="index.html#introduction" id="markdown-toc-introduction">Introduction</a></li>
+        <li><a href="index.html#more-stuff" id="markdown-toc-more-stuff">More Stuff</a>        <ul>
+            <li><a href="index.html#and-more-stuff" id="markdown-toc-and-more-stuff">And More Stuff</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="guidance.html" id="markdown-toc-general-guidance-and-definitions">General Guidance and Definitions</a>    <ul>
+    <li><a href="guidance.html#introduction" id="markdown-toc-introduction">Introduction</a></li>
+    <li><a href="guidance.html#more-stuff" id="markdown-toc-more-stuff">More Stuff</a>        <ul>
+        <li><a href="guidance.html#and-more-stuff" id="markdown-toc-and-more-stuff">And More Stuff</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+   </ul>
+</div>
+
+<!--
+
+    <div id="sidebar-wrapper">
+<a href="StructureDefinition-extension-expected-version.ttl.html" class="btn btn-info" role="button">TOP</a>
+        <ul class="sidebar-nav">
+            <lh class="sidebar-brand">Contents:</lh>
+            <li><a href="#">Another link</a></li>
+            <li><a href="#">Next link</a></li>
+            <li><a href="#">Last link</a></li>
+        </ul>
+
+    </div>
+-->
 
 
-<div class="col-12">
+<!--
+
+    <div id="sidebar-wrapper">
+
+        <ul class="sidebar-nav">
+            <lh class="sidebar-brand">Contents:</lh>
+            <li><a href="#">Another link</a></li>
+            <li><a href="#">Next link</a></li>
+            <li><a href="#">Last link</a></li>
+        </ul>
+
+    </div>
+-->
+<div id="page-content-wrapper">  <!-- page content wrapper -->
+  <div class="page-content">  <!--page content -->
+    <div class="container">  <!-- container -->
+      <div class="row">  <!-- row -->
+       <div class="inner-wrapper"> <!-- inner-wrapper -->
+         <div class="col-md-12">  <!--col -->
+            <!-- content of page -->
 
 
 <!-- ============BreadCrumb=============== -->
@@ -195,10 +257,12 @@ your logo here
 
   <!-- ============CONTENT CONTENT=============== -->
   
-    <!--  - choose what you want  comment out or Change what you don't-->
+    <!--  choose what you want  comment out or Change what you don't note that markdown is not working here -->
 <ul class="nav nav-tabs">
 
 	<li><a href="StructureDefinition-extension-expected-version.html">Narrative Content</a></li>
+
+
 
 <!--
 { % if StructureDefinition == "StructureDefinition"  % }
@@ -253,9 +317,9 @@ Raw <a href="StructureDefinition-extension-expected-version.ttl" download>ttl</a
   <a href="http://build.fhir.org/structuredefinition.html#StructureDefinition.id">fhir:Resource.id</a> [ <a href="http://build.fhir.org/datatypes.html#id">fhir:value</a> &quot;extension-expected-version&quot;];
   <a href="http://build.fhir.org/structuredefinition.html#StructureDefinition.text">fhir:DomainResource.text</a> [
      <a href="http://build.fhir.org/datatypes.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> &quot;generated&quot; ];
-     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;table border=\&quot;0\&quot; cellpadding=\&quot;0\&quot; cellspacing=\&quot;0\&quot; style=\&quot;border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\&quot;&gt;&lt;tr style=\&quot;border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\&quot;&gt;&lt;th style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;The logical name of the element\&quot;&gt;Name&lt;/a&gt;&lt;/th&gt;&lt;th style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;Information about the use of the element\&quot;&gt;Flags&lt;/a&gt;&lt;/th&gt;&lt;th style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;Minimum and Maximum # of times the the element can appear in the instance\&quot;&gt;Card.&lt;/a&gt;&lt;/th&gt;&lt;th style=\&quot;width: 100px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;Reference to the type of the element\&quot;&gt;Type&lt;/a&gt;&lt;/th&gt;&lt;th style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;Additional information about the element\&quot;&gt;Description &amp;amp; Constraints&lt;/a&gt;&lt;span style=\&quot;float: right\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;Legend for this format\&quot;&gt;&lt;img src=\&quot;http://build.fhir.org/help16.png\&quot; alt=\&quot;doco\&quot; style=\&quot;background-color: inherit\&quot;/&gt;&lt;/a&gt;&lt;/span&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr style=\&quot;border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\&quot;&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;img src=\&quot;tbl_spacer.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;icon_element.gif\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: white; background-color: inherit\&quot; title=\&quot;Element\&quot; class=\&quot;hierarchy\&quot;/&gt; &lt;a href=\&quot;StructureDefinition-extension-expected-version-definitions.html#Extension:expected-version\&quot; title=\&quot;Slice expected-version: The version of the RCTC that was expected by RCKMS. If populated, the EHR System Administrator should update to this version of the RCTC immediately.\&quot;&gt;Extension&lt;/a&gt;&lt;a name=\&quot;Extension\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;span style=\&quot;opacity: 0.4\&quot;&gt;0&lt;/span&gt;..&lt;span style=\&quot;opacity: 0.4\&quot;&gt;1&lt;/span&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;Expected RCTC Version&lt;/td&gt;&lt;/tr&gt;\r\n&lt;tr style=\&quot;border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\&quot;&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;img src=\&quot;tbl_spacer.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;tbl_vjoin.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;icon_element.gif\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: white; background-color: inherit\&quot; title=\&quot;Element\&quot; class=\&quot;hierarchy\&quot;/&gt; &lt;a href=\&quot;StructureDefinition-extension-expected-version-definitions.html#Extension:expected-version.url\&quot; title=\&quot;null\&quot;&gt;url&lt;/a&gt;&lt;a name=\&quot;Extension.url\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;span style=\&quot;opacity: 0.4\&quot;&gt;1&lt;/span&gt;&lt;span style=\&quot;opacity: 0.5\&quot;&gt;..&lt;/span&gt;&lt;span style=\&quot;opacity: 0.4\&quot;&gt;1&lt;/span&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a style=\&quot;opacity: 0.4\&quot; href=\&quot;http://build.fhir.org/datatypes.html#uri\&quot;&gt;uri&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;span style=\&quot;color: darkgreen\&quot;&gt;&amp;quot;http://fhir.hl7.org/us/case/StructureDefinition/extension-expected-version&amp;quot;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&lt;tr style=\&quot;border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\&quot;&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;img src=\&quot;tbl_spacer.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;tbl_vjoin_end.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;icon_primitive.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: white; background-color: inherit\&quot; title=\&quot;Primitive Data Type\&quot; class=\&quot;hierarchy\&quot;/&gt; &lt;a href=\&quot;StructureDefinition-extension-expected-version-definitions.html#Extension:expected-version.valueString\&quot; title=\&quot;null\&quot;&gt;valueString&lt;/a&gt;&lt;a name=\&quot;Extension.valueString\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;span style=\&quot;opacity: 0.4\&quot;&gt;0&lt;/span&gt;&lt;span style=\&quot;opacity: 0.5\&quot;&gt;..&lt;/span&gt;&lt;span style=\&quot;opacity: 0.4\&quot;&gt;1&lt;/span&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;/tr&gt;\r\n&lt;tr&gt;&lt;td colspan=\&quot;5\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;br/&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;Legend for this format\&quot;&gt;&lt;img src=\&quot;http://build.fhir.org/help16.png\&quot; alt=\&quot;doco\&quot; style=\&quot;background-color: inherit\&quot;/&gt; Documentation for this format&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;table border=\&quot;0\&quot; cellpadding=\&quot;0\&quot; cellspacing=\&quot;0\&quot; style=\&quot;border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\&quot;&gt;&lt;tr style=\&quot;border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\&quot;&gt;&lt;th style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;The logical name of the element\&quot;&gt;Name&lt;/a&gt;&lt;/th&gt;&lt;th style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;Information about the use of the element\&quot;&gt;Flags&lt;/a&gt;&lt;/th&gt;&lt;th style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;Minimum and Maximum # of times the the element can appear in the instance\&quot;&gt;Card.&lt;/a&gt;&lt;/th&gt;&lt;th style=\&quot;width: 100px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;Reference to the type of the element\&quot;&gt;Type&lt;/a&gt;&lt;/th&gt;&lt;th style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;Additional information about the element\&quot;&gt;Description &amp;amp; Constraints&lt;/a&gt;&lt;span style=\&quot;float: right\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;Legend for this format\&quot;&gt;&lt;img src=\&quot;http://build.fhir.org/help16.png\&quot; alt=\&quot;doco\&quot; style=\&quot;background-color: inherit\&quot;/&gt;&lt;/a&gt;&lt;/span&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr style=\&quot;border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\&quot;&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;img src=\&quot;tbl_spacer.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;icon_element.gif\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: white; background-color: inherit\&quot; title=\&quot;Element\&quot; class=\&quot;hierarchy\&quot;/&gt; &lt;a href=\&quot;StructureDefinition-extension-expected-version-definitions.html#Extension:expected-version\&quot; title=\&quot;Slice expected-version: The version of the RCTC that was expected by RCKMS. If populated, the EHR System Administrator should update to this version of the RCTC immediately.\&quot;&gt;Extension&lt;/a&gt;&lt;a name=\&quot;Extension\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;span style=\&quot;opacity: 0.4\&quot;&gt;0&lt;/span&gt;..&lt;span style=\&quot;opacity: 0.4\&quot;&gt;1&lt;/span&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;Expected RCTC Version&lt;/td&gt;&lt;/tr&gt;\r\n&lt;tr style=\&quot;border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\&quot;&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;img src=\&quot;tbl_spacer.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;tbl_vjoin.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;icon_element.gif\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: white; background-color: inherit\&quot; title=\&quot;Element\&quot; class=\&quot;hierarchy\&quot;/&gt; &lt;a href=\&quot;StructureDefinition-extension-expected-version-definitions.html#Extension:expected-version.url\&quot; title=\&quot;null\&quot;&gt;url&lt;/a&gt;&lt;a name=\&quot;Extension.url\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;span style=\&quot;opacity: 0.4\&quot;&gt;1&lt;/span&gt;&lt;span style=\&quot;opacity: 0.5\&quot;&gt;..&lt;/span&gt;&lt;span style=\&quot;opacity: 0.4\&quot;&gt;1&lt;/span&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a style=\&quot;opacity: 0.4\&quot; href=\&quot;http://build.fhir.org/datatypes.html#uri\&quot;&gt;uri&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;span style=\&quot;color: darkgreen\&quot;&gt;&amp;quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-expected-version&amp;quot;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&lt;tr style=\&quot;border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\&quot;&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;img src=\&quot;tbl_spacer.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;tbl_vjoin_end.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: inherit\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;img src=\&quot;icon_primitive.png\&quot; alt=\&quot;.\&quot; style=\&quot;background-color: white; background-color: inherit\&quot; title=\&quot;Primitive Data Type\&quot; class=\&quot;hierarchy\&quot;/&gt; &lt;a href=\&quot;StructureDefinition-extension-expected-version-definitions.html#Extension:expected-version.valueString\&quot; title=\&quot;null\&quot;&gt;valueString&lt;/a&gt;&lt;a name=\&quot;Extension.valueString\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;span style=\&quot;opacity: 0.4\&quot;&gt;0&lt;/span&gt;&lt;span style=\&quot;opacity: 0.5\&quot;&gt;..&lt;/span&gt;&lt;span style=\&quot;opacity: 0.4\&quot;&gt;1&lt;/span&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;a href=\&quot;http://build.fhir.org/datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\&quot; class=\&quot;hierarchy\&quot;/&gt;&lt;/tr&gt;\r\n&lt;tr&gt;&lt;td colspan=\&quot;5\&quot; class=\&quot;hierarchy\&quot;&gt;&lt;br/&gt;&lt;a href=\&quot;http://build.fhir.org/formats.html#table\&quot; title=\&quot;Legend for this format\&quot;&gt;&lt;img src=\&quot;http://build.fhir.org/help16.png\&quot; alt=\&quot;doco\&quot; style=\&quot;background-color: inherit\&quot;/&gt; Documentation for this format&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
   ];
-  <a href="http://build.fhir.org/structuredefinition.html#StructureDefinition.url">fhir:StructureDefinition.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/case/StructureDefinition/extension-expected-version&quot;];
+  <a href="http://build.fhir.org/structuredefinition.html#StructureDefinition.url">fhir:StructureDefinition.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-expected-version&quot;];
   <a href="http://build.fhir.org/structuredefinition.html#StructureDefinition.version">fhir:StructureDefinition.version</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;0.0.0&quot;];
   <a href="http://build.fhir.org/structuredefinition.html#StructureDefinition.name">fhir:StructureDefinition.name</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Expected RCTC Version&quot;];
   <a href="http://build.fhir.org/structuredefinition.html#StructureDefinition.title">fhir:StructureDefinition.title</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Expected RCTC Version&quot;];
@@ -390,7 +454,7 @@ Raw <a href="StructureDefinition-extension-expected-version.ttl" download>ttl</a
        <a href="http://build.fhir.org/datatypes.html#ElementDefinition#ElementDefinition.type">fhir:ElementDefinition.type</a> [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
          <a href="http://build.fhir.org/datatypes.html#ElementDefinition#ElementDefinition.type.code">fhir:ElementDefinition.type.code</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;uri&quot; ]       ];
-       <a href="http://build.fhir.org/datatypes.html#ElementDefinition#ElementDefinition.fixed[x]">fhir:ElementDefinition.fixedUri</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/case/StructureDefinition/extension-expected-version&quot; ];
+       <a href="http://build.fhir.org/datatypes.html#ElementDefinition#ElementDefinition.fixed[x]">fhir:ElementDefinition.fixedUri</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-expected-version&quot; ];
        <a href="http://build.fhir.org/datatypes.html#ElementDefinition#ElementDefinition.mapping">fhir:ElementDefinition.mapping</a> [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
          <a href="http://build.fhir.org/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">fhir:ElementDefinition.mapping.identity</a> [ <a href="http://build.fhir.org/datatypes.html#id">fhir:value</a> &quot;rim&quot; ];
@@ -428,7 +492,7 @@ Raw <a href="StructureDefinition-extension-expected-version.ttl" download>ttl</a
        <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 1;
        <a href="http://build.fhir.org/datatypes.html#ElementDefinition#ElementDefinition.id">fhir:Element.id</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Extension:expected-version.url&quot; ];
        <a href="http://build.fhir.org/datatypes.html#ElementDefinition#ElementDefinition.path">fhir:ElementDefinition.path</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Extension.url&quot; ];
-       <a href="http://build.fhir.org/datatypes.html#ElementDefinition#ElementDefinition.fixed[x]">fhir:ElementDefinition.fixedUri</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/case/StructureDefinition/extension-expected-version&quot; ]     ], [
+       <a href="http://build.fhir.org/datatypes.html#ElementDefinition#ElementDefinition.fixed[x]">fhir:ElementDefinition.fixedUri</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-expected-version&quot; ]     ], [
        <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 2;
        <a href="http://build.fhir.org/datatypes.html#ElementDefinition#ElementDefinition.id">fhir:Element.id</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Extension:expected-version.valueString&quot; ];
        <a href="http://build.fhir.org/datatypes.html#ElementDefinition#ElementDefinition.path">fhir:ElementDefinition.path</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Extension.valueString&quot; ];
@@ -448,14 +512,13 @@ Raw <a href="StructureDefinition-extension-expected-version.ttl" download>ttl</a
 
   <!-- ==============END CONTENT END CONTENT=================== -->
 
-</div>
-
-
+</div>  <!-- col -->
 </div>  <!-- /inner-wrapper -->
 </div>  <!-- /row -->
 </div>  <!-- /container -->
-
-</div>  <!-- /segment-content -->
+</div>  <!-- /page content -->
+</div>  <!-- /page content wrapper -->
+</div>  <!-- wrapper -->
 
 
 
@@ -472,7 +535,7 @@ Raw <a href="StructureDefinition-extension-expected-version.ttl" download>ttl</a
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Nov 24, 2017 15:40-0800. |
+            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Nov 27, 2017 00:25-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.org/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

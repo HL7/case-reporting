@@ -3,10 +3,10 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
    <meta charset="UTF-8"/>
-  <title>PHCase</title>
+  <title>electronic Case Reporting (eCR)</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="PHCase Implemenation Guide" />
+<meta name="description" content="electronic Case Reporting (eCR) Implemenation Guide" />
 <meta name="author" content="http://argonautwiki.hl7.org"/>
 
 
@@ -34,8 +34,6 @@
 
 
 <body markdown="1">
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 <div id="segment-header" class="segment">
   <!-- segment-header -->
@@ -60,7 +58,7 @@ your logo here
 
       </div>
     <div id="ig-status">
-      <b>PHCase Implementation Guide CI Build</b>
+      <b>electronic Case Reporting (eCR) Implementation Guide CI Build</b>
     </div>
   </div>
   <div class="container">
@@ -68,6 +66,8 @@ your logo here
   </div>
 </div>
 <!-- /segment-header -->
+
+
 <div id="segment-navbar" class="segment">
   <!-- segment-navbar -->
   <div id="stripe">
@@ -86,7 +86,9 @@ your logo here
           </span>
         </button>
         <a class="navbar-brand hidden" href="http://build.fhir.org//index.html">FHIR</a>
-        <div class="nav-collapse collapse navbar-inverse-collapse">        <!-- don't remove the line above - choose what you want  
+        <div class="nav-collapse collapse navbar-inverse-collapse">
+
+       <!-- don't remove the line above - choose what you want  
 - [Home](index.html)
 - [General Guidance](guidance.html)
 - [Profiles and Logical Models](profiles.html)
@@ -105,15 +107,17 @@ your logo here
   <li><a href="guidance.html">General Guidance</a></li>
   <li><a href="profiles.html">Profiles and Extensions</a></li>
   <li><a href="terminology.html">Terminology</a></li>
-  <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Capability Statements<b class="caret" style="caret-color:red"></b></a>
+  <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Capability Statements <span class="caret"></span></a>
     <ul class="dropdown-menu">
-      <li><a href="server-capstatement.html">Conformance requirements for Server</a></li>
-      <li><a href="client-capstatement.html">Conformance requirements for Client</a></li>
+      <li><a href="CapabilityStatement-server.html">Conformance requirements for Server</a></li>
+      <li><a href="CapabilityStatement-client.html">Conformance requirements for Client</a></li>
     </ul>
   </li>
   <li><a href="downloads.html">Downloads</a></li>
 </ul>
-        <!--        <ul class="nav navbar-nav">
+
+
+             <!--        <ul class="nav navbar-nav">
           <li>
             <a href="index.html">Home</a>
           </li>
@@ -161,17 +165,75 @@ your logo here
 <!-- /segment-navbar -->
 
 
-
 </div>  <!-- /container -->
 </div>  <!-- /segment-breadcrumb -->
 
-<div id="segment-content" class="segment">  <!-- segment-content -->
-<div class="container">  <!-- container -->
-<div class="row">
-<div class="inner-wrapper">
+<div id="wrapper">  <!-- wrapper -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- sidebar-wrapper  put your TOC here. like example below...-->
+
+<div id="sidebar-wrapper">
+<a href="Communication-rr-example-4.ttl.html" class="btn btn-info" role="button">TOP</a>
+  <ul class="sidebar-nav">
+    <lh class="sidebar-brand">Contents:</lh>
+    <li><a href="index.html">PHCase Implementation Guide</a>    <ul>
+        <li><a href="index.html#cat-facts-to-show-how-the-text-wraps-around-the-contents-block" id="markdown-toc-cat-facts-to-show-how-the-text-wraps-around-the-contents-block">Cat Facts (To Show How the Text Wraps around the Contents Block)</a></li>
+        <li><a href="index.html#jekyll-site-variables" id="markdown-toc-jekyll-site-variables">Jekyll Site Variables</a></li>
+        <li><a href="index.html#introduction" id="markdown-toc-introduction">Introduction</a></li>
+        <li><a href="index.html#more-stuff" id="markdown-toc-more-stuff">More Stuff</a>        <ul>
+            <li><a href="index.html#and-more-stuff" id="markdown-toc-and-more-stuff">And More Stuff</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="guidance.html" id="markdown-toc-general-guidance-and-definitions">General Guidance and Definitions</a>    <ul>
+    <li><a href="guidance.html#introduction" id="markdown-toc-introduction">Introduction</a></li>
+    <li><a href="guidance.html#more-stuff" id="markdown-toc-more-stuff">More Stuff</a>        <ul>
+        <li><a href="guidance.html#and-more-stuff" id="markdown-toc-and-more-stuff">And More Stuff</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+   </ul>
+</div>
+
+<!--
+
+    <div id="sidebar-wrapper">
+<a href="Communication-rr-example-4.ttl.html" class="btn btn-info" role="button">TOP</a>
+        <ul class="sidebar-nav">
+            <lh class="sidebar-brand">Contents:</lh>
+            <li><a href="#">Another link</a></li>
+            <li><a href="#">Next link</a></li>
+            <li><a href="#">Last link</a></li>
+        </ul>
+
+    </div>
+-->
 
 
-<div class="col-12">
+<!--
+
+    <div id="sidebar-wrapper">
+
+        <ul class="sidebar-nav">
+            <lh class="sidebar-brand">Contents:</lh>
+            <li><a href="#">Another link</a></li>
+            <li><a href="#">Next link</a></li>
+            <li><a href="#">Last link</a></li>
+        </ul>
+
+    </div>
+-->
+<div id="page-content-wrapper">  <!-- page content wrapper -->
+  <div class="page-content">  <!--page content -->
+    <div class="container">  <!-- container -->
+      <div class="row">  <!-- row -->
+       <div class="inner-wrapper"> <!-- inner-wrapper -->
+         <div class="col-md-12">  <!--col -->
+            <!-- content of page -->
 
 
 <!-- ============BreadCrumb=============== -->
@@ -195,10 +257,12 @@ your logo here
 
   <!-- ============CONTENT CONTENT=============== -->
   
-    <!--  - choose what you want  comment out or Change what you don't-->
+    <!--  choose what you want  comment out or Change what you don't note that markdown is not working here -->
 <ul class="nav nav-tabs">
 
 	<li><a href="Communication-rr-example-4.html">Narrative Content</a></li>
+
+
 
 <!--
 { % if Communication == "StructureDefinition"  % }
@@ -255,7 +319,7 @@ Raw <a href="Communication-rr-example-4.ttl" download>ttl</a>
   <a href="http://build.fhir.org/communication.html#Communication.id">fhir:Resource.id</a> [ <a href="http://build.fhir.org/datatypes.html#id">fhir:value</a> &quot;rr-example-4&quot;];
   <a href="http://build.fhir.org/communication.html#Communication.meta">fhir:Resource.meta</a> [
      <a href="http://build.fhir.org/datatypes.html#Meta#Meta.profile">fhir:Meta.profile</a> [
-       <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/case/StructureDefinition/rr-communication&quot;;
+       <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/ecr/StructureDefinition/rr-communication&quot;;
        <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0     ]
   ];
   <a href="http://build.fhir.org/communication.html#Communication.text">fhir:DomainResource.text</a> [
@@ -264,7 +328,7 @@ Raw <a href="Communication-rr-example-4.ttl" download>ttl</a>
   ];
   <a href="http://build.fhir.org/communication.html#Communication.extension">fhir:DomainResource.extension</a> [
      <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
-     <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/case/StructureDefinition/extension-inactive-code&quot; ];
+     <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-inactive-code&quot; ];
      <a href="http://build.fhir.org/datatypes.html#Extension#Extension.value[x]">fhir:Extension.valueCoding</a> [
        a loinc:13223-3;
        <a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://loinc.org&quot; ];
@@ -272,11 +336,11 @@ Raw <a href="Communication-rr-example-4.ttl" download>ttl</a>
        <a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Deprecated Chlamydia trachomatis B Ab [Units/volume] in Serum&quot; ]     ]
   ], [
      <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 1;
-     <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/case/StructureDefinition/extension-expected-version&quot; ];
+     <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-expected-version&quot; ];
      <a href="http://build.fhir.org/datatypes.html#Extension#Extension.value[x]">fhir:Extension.valueString</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;19/05/2016&quot; ]
   ], [
      <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 2;
-     <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/case/StructureDefinition/extension-outdated-version&quot; ];
+     <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-outdated-version&quot; ];
      <a href="http://build.fhir.org/datatypes.html#Extension#Extension.value[x]">fhir:Extension.valueString</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;19/05/2015&quot; ]
   ];
   <a href="http://build.fhir.org/communication.html#Communication.identifier">fhir:Communication.identifier</a> [
@@ -309,20 +373,20 @@ Raw <a href="Communication-rr-example-4.ttl" download>ttl</a>
      <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
      <a href="http://build.fhir.org/datatypes.html#Reference#Reference.extension">fhir:Element.extension</a> [
        <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
-       <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/case/StructureDefinition/extension-primary-agency&quot; ];
+       <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-primary-agency&quot; ];
        <a href="http://build.fhir.org/datatypes.html#Extension#Extension.value[x]">fhir:Extension.valueBoolean</a> [ <a href="http://build.fhir.org/datatypes.html#boolean">fhir:value</a> &quot;false&quot;^^xsd:boolean ]     ], [
        <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 1;
-       <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/case/StructureDefinition/extension-loc-relevance&quot; ];
+       <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-loc-relevance&quot; ];
        <a href="http://build.fhir.org/datatypes.html#Extension#Extension.value[x]">fhir:Extension.valueCode</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> &quot;both&quot; ]     ];
      <a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Organization/rr-routing-entity&quot; ]
   ], [
      <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 1;
      <a href="http://build.fhir.org/datatypes.html#Reference#Reference.extension">fhir:Element.extension</a> [
        <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
-       <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/case/StructureDefinition/extension-primary-agency&quot; ];
+       <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-primary-agency&quot; ];
        <a href="http://build.fhir.org/datatypes.html#Extension#Extension.value[x]">fhir:Extension.valueBoolean</a> [ <a href="http://build.fhir.org/datatypes.html#boolean">fhir:value</a> &quot;true&quot;^^xsd:boolean ]     ], [
        <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 1;
-       <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/case/StructureDefinition/extension-loc-relevance&quot; ];
+       <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-loc-relevance&quot; ];
        <a href="http://build.fhir.org/datatypes.html#Extension#Extension.value[x]">fhir:Extension.valueCode</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> &quot;both&quot; ]     ];
      <a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Organization/rr-resp-agent&quot; ]
   ];
@@ -330,13 +394,13 @@ Raw <a href="Communication-rr-example-4.ttl" download>ttl</a>
      <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
      <a href="http://build.fhir.org/datatypes.html#Reference#Reference.extension">fhir:Element.extension</a> [
        <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
-       <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/case/StructureDefinition/extension-topic-summary&quot; ];
+       <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-topic-summary&quot; ];
        <a href="http://build.fhir.org/datatypes.html#Extension#Extension.value[x]">fhir:Extension.valueString</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;An initial case report was submitted electronically by your organization to determine if a patient has a public health reportable condition. The condition of Zika was identified and is a reportable condition in Michigan. The initial case report was forwarded to the Health Authority West.&quot; ]     ], [
        <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 1;
-       <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/case/StructureDefinition/extension-topic-dor&quot; ];
+       <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-topic-dor&quot; ];
        <a href="http://build.fhir.org/datatypes.html#Extension#Extension.value[x]">fhir:Extension.valueCode</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> &quot;Y&quot; ]     ], [
        <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 2;
-       <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/case/StructureDefinition/extension-topic-dor-reason&quot; ];
+       <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-topic-dor-reason&quot; ];
        <a href="http://build.fhir.org/datatypes.html#Extension#Extension.value[x]">fhir:Extension.valueCodeableConcept</a> [
          <a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:CodeableConcept.coding</a> [
            <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
@@ -345,7 +409,7 @@ Raw <a href="Communication-rr-example-4.ttl" download>ttl</a>
            <a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;MISSING REQUIRED DATA(TEMPORARY CODE)&quot; ]         ];
          <a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:CodeableConcept.text</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;MISSING REQUIRED DATA&quot; ]       ]     ], [
        <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 3;
-       <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/case/StructureDefinition/extension-topic-dor-rule&quot; ];
+       <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-topic-dor-rule&quot; ];
        <a href="http://build.fhir.org/datatypes.html#Extension#Extension.value[x]">fhir:Extension.valueString</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Rule used in reportability determination.&quot; ]     ];
      <a href="http://build.fhir.org/datatypes.html#Reference#Reference.display">fhir:Reference.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Reportable condition notification: An initial report for Zika has been sent to the Health Authority West.&quot; ]
   ];
@@ -353,7 +417,7 @@ Raw <a href="Communication-rr-example-4.ttl" download>ttl</a>
   <a href="http://build.fhir.org/communication.html#Communication.sender">fhir:Communication.sender</a> [
      <a href="http://build.fhir.org/datatypes.html#Reference#Reference.extension">fhir:Element.extension</a> [
        <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
-       <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/case/StructureDefinition/extension-on-behalf-of&quot; ];
+       <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-on-behalf-of&quot; ];
        <a href="http://build.fhir.org/datatypes.html#Extension#Extension.value[x]">fhir:Extension.valueReference</a> [
          <a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Organization/rr-sender&quot; ]       ]     ];
      <a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Practitioner/rr-sender&quot; ]
@@ -372,12 +436,12 @@ Raw <a href="Communication-rr-example-4.ttl" download>ttl</a>
      <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
      <a href="http://build.fhir.org/communication.html#Communication.payload.extension">fhir:Element.extension</a> [
        <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
-       <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/case/StructureDefinition/extension-manual-init&quot; ];
+       <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-manual-init&quot; ];
        <a href="http://build.fhir.org/datatypes.html#Extension#Extension.value[x]">fhir:Extension.valueBoolean</a> [ <a href="http://build.fhir.org/datatypes.html#boolean">fhir:value</a> &quot;false&quot;^^xsd:boolean ]     ];
      <a href="http://build.fhir.org/communication.html#Communication.payload.content[x]">fhir:Communication.payload.contentReference</a> [
        <a href="http://build.fhir.org/datatypes.html#Reference#Reference.extension">fhir:Element.extension</a> [
          <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
-         <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/case/StructureDefinition/extension-manual-init-reason&quot; ];
+         <a href="http://build.fhir.org/datatypes.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-manual-init-reason&quot; ];
          <a href="http://build.fhir.org/datatypes.html#Extension#Extension.value[x]">fhir:Extension.valueString</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Free text containing the reason for the manual initiation&quot; ]       ];
        <a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;DocumentReference/eICR_CDA_document&quot; ];
        <a href="http://build.fhir.org/datatypes.html#Reference#Reference.identifier">fhir:Reference.identifier</a> [
@@ -397,14 +461,13 @@ Raw <a href="Communication-rr-example-4.ttl" download>ttl</a>
 
   <!-- ==============END CONTENT END CONTENT=================== -->
 
-</div>
-
-
+</div>  <!-- col -->
 </div>  <!-- /inner-wrapper -->
 </div>  <!-- /row -->
 </div>  <!-- /container -->
-
-</div>  <!-- /segment-content -->
+</div>  <!-- /page content -->
+</div>  <!-- /page content wrapper -->
+</div>  <!-- wrapper -->
 
 
 
@@ -421,7 +484,7 @@ Raw <a href="Communication-rr-example-4.ttl" download>ttl</a>
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Nov 24, 2017 15:40-0800. |
+            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Nov 27, 2017 00:25-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.org/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

@@ -17,8 +17,8 @@
 - [General Guidance](guidance.html)
 - [Profiles and Extensions](profiles.html)
 - [Terminology](terminology.html)
-- [Capability Statements<b class="caret" style="caret-color:red"></b>](#){: .dropdown-toggle data-toggle="dropdown"}
-    - [Conformance requirements for Server](server-capstatement.html)
-    - [Conformance requirements for Client](client-capstatement.html)
+- [Capability Statements <span class="caret"></span>](#){: .dropdown-toggle data-toggle="dropdown"}
+    - [Conformance requirements for Server](CapabilityStatement-server.html)
+    - [Conformance requirements for Client](CapabilityStatement-client.html)
     {: .dropdown-menu}
 - [Downloads](downloads.html)

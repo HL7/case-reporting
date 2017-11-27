@@ -1,0 +1,1006 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="eCR"/>
+
+  <url value="http://fhir.hl7.org/us/ecr/StructureDefinition/eCR"/>
+  <version value="0.0.0"/>
+  <name value="Case Composition Profile"/>
+  <status value="draft"/>
+  <date value="2017-06-09T00:00:00-07:00"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States Minor Outlying Islands (the)"/>
+    </coding>
+  </jurisdiction>
+  <fhirVersion value="3.0.1"/>
+  <mapping>
+    <identity value="eicr-ccda"/>
+    <uri value="http://unknown.org/EICR CCDA"/>
+    <name value="EICR CCDA"/>
+  </mapping>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM Mapping"/>
+  </mapping>
+  <mapping>
+    <identity value="cda"/>
+    <uri value="http://hl7.org/v3/cda"/>
+    <name value="CDA (R2)"/>
+  </mapping>
+  <mapping>
+    <identity value="w5"/>
+    <uri value="http://hl7.org/fhir/w5"/>
+    <name value="W5 Mapping"/>
+  </mapping>
+  <kind value="resource"/>
+  <abstract value="false"/>
+  <type value="Composition"/>
+  <baseDefinition value="http://hl7.org/fhir/us/ccda/StructureDefinition/CCDA-on-FHIR-US-Realm-Header"/>
+  <derivation value="constraint"/>
+
+  <differential>
+    <element id="Composition">
+      <path value="Composition"/>
+      <short value="Case Composition Profile"/>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+    </element>
+    <element id="Composition.section:eicr-section-slices">
+      <path value="Composition.section"/>
+      <sliceName value="eicr-section-slices"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="code"/>
+        </discriminator>
+        <rules value="open"/>
+      </slicing>
+      <min value="1"/>
+      <max value="*"/>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+    </element>
+    <element id="Composition.section:eicr-slice1">
+      <path value="Composition.section"/>
+      <sliceName value="eicr-slice1"/>
+      <short value="Encounters Section"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="3284-86"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice1.title">
+      <path value="Composition.section.title"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+      <fixedString value="History of Encounter"/>
+      <example>
+        <label value="General"/>
+        <valueString value="History of Encounter"/>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1198- 8707"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice1.code">
+      <path value="Composition.section.code"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org"/>
+          <code value="46240-8"/>
+          <display value="History of Hospitalizations+&#x200B;Outpatient visits Narrative"/>
+        </coding>
+        <text value="History of Encounters"/>
+      </patternCodeableConcept>
+      <example>
+        <label value="General"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="46240-8"/>
+            <display value="History of Hospitalizations+&#x200B;Outpatient visits Narrative"/>
+          </coding>
+          <text value="History of Encounters"/>
+        </valueCodeableConcept>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1198-15466"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice1.text">
+      <path value="Composition.section.text"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Narrative"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1198- 8708"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice1.entry">
+      <path value="Composition.section.entry"/>
+      <min value="1"/>
+      <max value="*"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
+      </type>
+      <example>
+        <label value="General"/>
+        <valueReference>
+          <reference value="Encounter/eicr"/>
+          <display value="EICR Encounter Profile example"/>
+        </valueReference>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1198-15468"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice2">
+      <path value="Composition.section"/>
+      <sliceName value="eicr-slice2"/>
+      <short value="History of Present Illness Section"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="3284-97"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice2.title">
+      <path value="Composition.section.title"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+      <fixedString value="History of Present Illiness"/>
+      <example>
+        <label value="General"/>
+        <valueString value="History of Present Illiness"/>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="81-7851"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice2.code">
+      <path value="Composition.section.code"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org"/>
+          <code value="10164-2"/>
+          <display value=" History of Present illness Narrative"/>
+        </coding>
+        <text value=" History of Present illness"/>
+      </patternCodeableConcept>
+      <example>
+        <label value="General"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="10164-2"/>
+            <display value=" History of Present illness Narrative"/>
+          </coding>
+          <text value=" History of Present illness"/>
+        </valueCodeableConcept>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="81-15477"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice2.text">
+      <path value="Composition.section.text"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Narrative"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="81-7851"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice3">
+      <path value="Composition.section"/>
+      <sliceName value="eicr-slice3"/>
+      <short value="Reason for Visit Section"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="3284-98"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice3.title">
+      <path value="Composition.section.title"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+      <fixedString value="Reason for Visit"/>
+      <example>
+        <label value="General"/>
+        <valueString value="Reason for Visit"/>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="81-7839"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice3.code">
+      <path value="Composition.section.code"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org"/>
+          <code value="29299-5"/>
+          <display value="Reason for visit Narrative"/>
+        </coding>
+        <text value="History of Encounters"/>
+      </patternCodeableConcept>
+      <example>
+        <label value="General"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="46240-8"/>
+            <display value="History of Hospitalizations+&#x200B;Outpatient visits Narrative"/>
+          </coding>
+          <text value="History of Encounters"/>
+        </valueCodeableConcept>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="81-15429"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice3.text">
+      <path value="Composition.section.text"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Narrative"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="81-7839"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice4">
+      <path value="Composition.section"/>
+      <sliceName value="eicr-slice4"/>
+      <short value="Social History Section"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="3284-87"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice4.title">
+      <path value="Composition.section.title"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+      <fixedString value="Social History"/>
+      <example>
+        <label value="General"/>
+        <valueString value="Social History"/>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1198- 7938"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice4.code">
+      <path value="Composition.section.code"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org"/>
+          <code value="29762-2"/>
+          <display value="Social history Narrative"/>
+        </coding>
+        <text value="Social History"/>
+      </patternCodeableConcept>
+      <example>
+        <label value="General"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="29762-2"/>
+            <display value="Social history Narrative"/>
+          </coding>
+          <text value="Social History"/>
+        </valueCodeableConcept>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1198-14819"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice4.text">
+      <path value="Composition.section.text"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Narrative"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1198- 8708"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice4.entry:eicr-sh-slices">
+      <path value="Composition.section.entry"/>
+      <sliceName value="eicr-sh-slices"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="reference.resolve()"/>
+        </discriminator>
+        <rules value="open"/>
+      </slicing>
+      <min value="1"/>
+      <max value="*"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="todo"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice4.entry:eicr-sh-slice1">
+      <path value="Composition.section.entry"/>
+      <sliceName value="eicr-sh-slice1"/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://fhir.hl7.org/us/ecr/StructureDefinition/eicr-travelhistory"/>
+      </type>
+      <example>
+        <label value="General"/>
+        <valueReference>
+          <reference value="Observation/eicr-th-obs"/>
+          <display value="EICR Travel History Profile example"/>
+        </valueReference>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="todo"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice4.entry:eicr-sh-slice2">
+      <path value="Composition.section.entry"/>
+      <sliceName value="eicr-sh-slice2"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://fhir.hl7.org/us/ecr/StructureDefinition/eicr-pregnancystatus"/>
+      </type>
+      <example>
+        <label value="General"/>
+        <valueReference>
+          <reference value="Observation/eicr-ph-obs"/>
+          <display value="EICR Social History Pregnancy Observation example"/>
+        </valueReference>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="todo"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice4.entry:eicr-sh-slice3">
+      <path value="Composition.section.entry"/>
+      <sliceName value="eicr-sh-slice3"/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://fhir.hl7.org/us/ecr/StructureDefinition/eicr-occupationhistory"/>
+      </type>
+      <example>
+        <label value="General"/>
+        <valueReference>
+          <reference value="Observation/eicr-oh-obs"/>
+          <display value="EICR Occupational History Profile example"/>
+        </valueReference>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="todo"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice5">
+      <path value="Composition.section"/>
+      <sliceName value="eicr-slice5"/>
+      <short value="Problems Section"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="3284-99"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice5.title">
+      <path value="Composition.section.title"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+      <fixedString value="Problems"/>
+      <example>
+        <label value="General"/>
+        <valueString value="Problems"/>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1198- 9181"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice5.code">
+      <path value="Composition.section.code"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org"/>
+          <code value="11450-4"/>
+          <display value="Problem list - Reported"/>
+        </coding>
+        <text value="Problem list"/>
+      </patternCodeableConcept>
+      <example>
+        <label value="General"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="11450-4"/>
+            <display value="Problem list - Reported"/>
+          </coding>
+          <text value="Problem list"/>
+        </valueCodeableConcept>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1198-15409"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice5.text">
+      <path value="Composition.section.text"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Narrative"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1198- 8708"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice5.entry">
+      <path value="Composition.section.entry"/>
+      <min value="1"/>
+      <max value="*"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"/>
+      </type>
+      <example>
+        <label value="General"/>
+        <valueReference>
+          <reference value="Condition/us-core-problems-example"/>
+          <display value="US Core Profile problem list example"/>
+        </valueReference>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1198-15506"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice6">
+      <path value="Composition.section"/>
+      <sliceName value="eicr-slice6"/>
+      <short value="Medications Administered Section"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="3284-88"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice6.title">
+      <path value="Composition.section.title"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+      <fixedString value="Medications Administered"/>
+      <example>
+        <label value="General"/>
+        <valueString value="Medications Administered"/>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1098-8154"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice6.code">
+      <path value="Composition.section.code"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org"/>
+          <code value="29549-3"/>
+          <display value="Medication administered Narrative"/>
+        </coding>
+        <text value="Medication administered"/>
+      </patternCodeableConcept>
+      <example>
+        <label value="General"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="29549-3"/>
+            <display value="Medication administered Narrative"/>
+          </coding>
+          <text value="Medication administered"/>
+        </valueCodeableConcept>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1098-15383"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice6.text">
+      <path value="Composition.section.text"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Narrative"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1098-8155"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice6.entry">
+      <path value="Composition.section.entry"/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationstatement"/>
+      </type>
+      <example>
+        <label value="General"/>
+        <valueReference>
+          <reference value="MedicationStatement/us-core-medstmnt-example"/>
+          <display value="US Core Profile Medication list example"/>
+        </valueReference>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1098-8156"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice7">
+      <path value="Composition.section"/>
+      <sliceName value="eicr-slice7"/>
+      <short value="Results Section"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="3284-89"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice7.title">
+      <path value="Composition.section.title"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+      <fixedString value="Results"/>
+      <example>
+        <label value="General"/>
+        <valueString value="Results"/>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1198-8892"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice7.code">
+      <path value="Composition.section.code"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org"/>
+          <code value="30954-2"/>
+          <display value="Relevant diagnostic tests/&#x200B;laboratory data Narrative"/>
+        </coding>
+        <text value="Relevant diagnostic tests/&#x200B;laboratory data"/>
+      </patternCodeableConcept>
+      <example>
+        <label value="General"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="30954-2"/>
+            <display value="Relevant diagnostic tests/&#x200B;laboratory data Narrative"/>
+          </coding>
+          <text value="Relevant diagnostic tests/&#x200B;laboratory data"/>
+        </valueCodeableConcept>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1198-15433"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice7.text">
+      <path value="Composition.section.text"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Narrative"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1198-7111"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice7.entry">
+      <path value="Composition.section.entry"/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport"/>
+      </type>
+      <example>
+        <label value="General"/>
+        <valueReference>
+          <reference value="DiagnosticReport/us-core-dr-example"/>
+          <display value="US Core Profile DiagnosticReport example"/>
+        </valueReference>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1198-15516"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice8">
+      <path value="Composition.section"/>
+      <sliceName value="eicr-slice8"/>
+      <short value="Immunizations Section"/>
+      <min value="0"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="3284-148"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice8.title">
+      <path value="Composition.section.title"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+      <fixedString value="Immunizations"/>
+      <example>
+        <label value="General"/>
+        <valueString value="Immunizations"/>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1198-9017"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice8.code">
+      <path value="Composition.section.code"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org"/>
+          <code value="11369-6"/>
+          <display value="History of Immunization Narrative"/>
+        </coding>
+        <text value="History of Immunization"/>
+      </patternCodeableConcept>
+      <example>
+        <label value="General"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="11369-6"/>
+            <display value="History of Immunization Narrative"/>
+          </coding>
+          <text value="History of Immunization"/>
+        </valueCodeableConcept>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1198-15369"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice8.text">
+      <path value="Composition.section.text"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Narrative"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1198-9018"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice8.entry">
+      <path value="Composition.section.entry"/>
+      <min value="1"/>
+      <max value="*"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization"/>
+      </type>
+      <example>
+        <label value="General"/>
+        <valueReference>
+          <reference value="Immunization/us-core-immunization-example"/>
+          <display value="US Core Profile Immunization example"/>
+        </valueReference>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1198-9019"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice9">
+      <path value="Composition.section"/>
+      <sliceName value="eicr-slice9"/>
+      <short value="Plan of Treatment Section"/>
+      <min value="0"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="3284-308"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice9.title">
+      <path value="Composition.section.title"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+      <fixedString value="Plan of Treatment"/>
+      <example>
+        <label value="General"/>
+        <valueString value="Plan of Treatment"/>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1098-16986"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice9.code">
+      <path value="Composition.section.code"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org"/>
+          <code value="18776-5"/>
+          <display value="Plan of care note"/>
+        </coding>
+        <text value="Plan of care note"/>
+      </patternCodeableConcept>
+      <example>
+        <label value="General"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="18776-5"/>
+            <display value="Plan of care note"/>
+          </coding>
+          <text value="Plan of care note"/>
+        </valueCodeableConcept>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1098-14750"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice9.text">
+      <path value="Composition.section.text"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Narrative"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1098-7725"/>
+      </mapping>
+    </element>
+    <element id="Composition.section:eicr-slice9.entry">
+      <path value="Composition.section.entry"/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan"/>
+      </type>
+      <example>
+        <label value="General"/>
+        <valueReference>
+          <reference value="CarePlan/us-core-careplan-example"/>
+          <display value="US Core Profile CarePlan example"/>
+        </valueReference>
+      </example>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="eicr-ccda"/>
+        <map value="1098-7726"/>
+      </mapping>
+    </element>
+  </differential>
+</StructureDefinition>

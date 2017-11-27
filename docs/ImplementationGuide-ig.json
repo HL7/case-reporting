@@ -3,10 +3,10 @@
   "id": "ig",
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>PHCase</h2><p>The official URL for this implementation guide is: </p><pre>http://fhir.hl7.org/us/case/ImplementationGuide/ig</pre></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>electronic Case Reporting (eCR)</h2><p>The official URL for this implementation guide is: </p><pre>http://fhir.hl7.org/us/ecr/ImplementationGuide/ig</pre></div>"
   },
-  "url": "http://fhir.hl7.org/us/case/ImplementationGuide/ig",
-  "name": "PHCase",
+  "url": "http://fhir.hl7.org/us/ecr/ImplementationGuide/ig",
+  "name": "electronic Case Reporting (eCR)",
   "status": "draft",
   "experimental": true,
   "publisher": "Health eData Inc",
@@ -234,6 +234,18 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "ValueSet-ostc.html"
+            }
+          ],
+          "example": false,
+          "sourceReference": {
+            "reference": "ValueSet/ostc"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
               "valueUri": "ValueSet-oes.html"
             }
           ],
@@ -246,12 +258,48 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "ValueSet-lrtc.html"
+            }
+          ],
+          "example": false,
+          "sourceReference": {
+            "reference": "ValueSet/lrtc"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "ValueSet-lotc.html"
+            }
+          ],
+          "example": false,
+          "sourceReference": {
+            "reference": "ValueSet/lotc"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
               "valueUri": "ValueSet-inactive-rctc.html"
             }
           ],
           "example": false,
           "sourceReference": {
             "reference": "ValueSet/inactive-rctc"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "ValueSet-dxtc.html"
+            }
+          ],
+          "example": false,
+          "sourceReference": {
+            "reference": "ValueSet/dxtc"
           }
         },
         {
@@ -306,36 +354,12 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-eicr-ccda-on-fhir.html"
-            }
-          ],
-          "example": false,
-          "sourceReference": {
-            "reference": "StructureDefinition/eicr-ccda-on-fhir"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
               "valueUri": "StructureDefinition-cr-travel-location.html"
             }
           ],
           "example": false,
           "sourceReference": {
             "reference": "StructureDefinition/cr-travel-location"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-RR.html"
-            }
-          ],
-          "example": false,
-          "sourceReference": {
-            "reference": "StructureDefinition/RR"
           }
         },
         {
@@ -366,18 +390,6 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-PHCase.html"
-            }
-          ],
-          "example": false,
-          "sourceReference": {
-            "reference": "StructureDefinition/PHCase"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
               "valueUri": "CapabilityStatement-server.html"
             }
           ],
@@ -396,24 +408,6 @@
           "example": false,
           "sourceReference": {
             "reference": "CapabilityStatement/client"
-          }
-        }
-      ]
-    },
-    {
-      "name": "/Users/ehaas/Documents/FHIR/Case-Reporting/resources/case-logical-spreadsheet",
-      "resource": [
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-PHCase.html"
-            }
-          ],
-          "example": false,
-          "name": "Case",
-          "sourceReference": {
-            "reference": "StructureDefinition/PHCase"
           }
         }
       ]
@@ -438,13 +432,13 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-eicr-ccda-on-fhir.html"
+              "valueUri": "StructureDefinition-ecr.html"
             }
           ],
           "example": false,
           "name": "Case Composition Profile",
           "sourceReference": {
-            "reference": "StructureDefinition/eicr-ccda-on-fhir"
+            "reference": "StructureDefinition/ecr"
           }
         }
       ]
@@ -699,24 +693,6 @@
       ]
     },
     {
-      "name": "/Users/ehaas/Documents/FHIR/Case-Reporting/resources/rr-logical-spreadsheet",
-      "resource": [
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-RR.html"
-            }
-          ],
-          "example": false,
-          "name": "Reportability Response",
-          "sourceReference": {
-            "reference": "StructureDefinition/RR"
-          }
-        }
-      ]
-    },
-    {
       "name": "RR PlanDefinition Profile",
       "resource": [
         {
@@ -924,7 +900,7 @@
   ],
   "page": {
     "source": "index.html",
-    "title": "PHCase Homepage",
+    "title": "electronic Case Reporting (eCR) Homepage",
     "kind": "page"
   }
 }

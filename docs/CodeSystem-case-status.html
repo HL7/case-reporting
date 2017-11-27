@@ -3,10 +3,10 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
    <meta charset="UTF-8"/>
-  <title>PHCase</title>
+  <title>electronic Case Reporting (eCR)</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="PHCase Implemenation Guide" />
+<meta name="description" content="electronic Case Reporting (eCR) Implemenation Guide" />
 <meta name="author" content="http://argonautwiki.hl7.org"/>
 
 
@@ -34,8 +34,6 @@
 
 
 <body markdown="1">
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 <div id="segment-header" class="segment">
   <!-- segment-header -->
@@ -60,7 +58,7 @@ your logo here
 
       </div>
     <div id="ig-status">
-      <b>PHCase Implementation Guide CI Build</b>
+      <b>electronic Case Reporting (eCR) Implementation Guide CI Build</b>
     </div>
   </div>
   <div class="container">
@@ -68,6 +66,8 @@ your logo here
   </div>
 </div>
 <!-- /segment-header -->
+
+
 <div id="segment-navbar" class="segment">
   <!-- segment-navbar -->
   <div id="stripe">
@@ -86,7 +86,9 @@ your logo here
           </span>
         </button>
         <a class="navbar-brand hidden" href="http://build.fhir.org//index.html">FHIR</a>
-        <div class="nav-collapse collapse navbar-inverse-collapse">        <!-- don't remove the line above - choose what you want  
+        <div class="nav-collapse collapse navbar-inverse-collapse">
+
+       <!-- don't remove the line above - choose what you want  
 - [Home](index.html)
 - [General Guidance](guidance.html)
 - [Profiles and Logical Models](profiles.html)
@@ -105,15 +107,17 @@ your logo here
   <li><a href="guidance.html">General Guidance</a></li>
   <li><a href="profiles.html">Profiles and Extensions</a></li>
   <li><a href="terminology.html">Terminology</a></li>
-  <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Capability Statements<b class="caret" style="caret-color:red"></b></a>
+  <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Capability Statements <span class="caret"></span></a>
     <ul class="dropdown-menu">
-      <li><a href="server-capstatement.html">Conformance requirements for Server</a></li>
-      <li><a href="client-capstatement.html">Conformance requirements for Client</a></li>
+      <li><a href="CapabilityStatement-server.html">Conformance requirements for Server</a></li>
+      <li><a href="CapabilityStatement-client.html">Conformance requirements for Client</a></li>
     </ul>
   </li>
   <li><a href="downloads.html">Downloads</a></li>
 </ul>
-        <!--        <ul class="nav navbar-nav">
+
+
+             <!--        <ul class="nav navbar-nav">
           <li>
             <a href="index.html">Home</a>
           </li>
@@ -161,17 +165,75 @@ your logo here
 <!-- /segment-navbar -->
 
 
-
 </div>  <!-- /container -->
 </div>  <!-- /segment-breadcrumb -->
 
-<div id="segment-content" class="segment">  <!-- segment-content -->
-<div class="container">  <!-- container -->
-<div class="row">
-<div class="inner-wrapper">
+<div id="wrapper">  <!-- wrapper -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- sidebar-wrapper  put your TOC here. like example below...-->
+
+<div id="sidebar-wrapper">
+<a href="CodeSystem-case-status.html" class="btn btn-info" role="button">TOP</a>
+  <ul class="sidebar-nav">
+    <lh class="sidebar-brand">Contents:</lh>
+    <li><a href="index.html">PHCase Implementation Guide</a>    <ul>
+        <li><a href="index.html#cat-facts-to-show-how-the-text-wraps-around-the-contents-block" id="markdown-toc-cat-facts-to-show-how-the-text-wraps-around-the-contents-block">Cat Facts (To Show How the Text Wraps around the Contents Block)</a></li>
+        <li><a href="index.html#jekyll-site-variables" id="markdown-toc-jekyll-site-variables">Jekyll Site Variables</a></li>
+        <li><a href="index.html#introduction" id="markdown-toc-introduction">Introduction</a></li>
+        <li><a href="index.html#more-stuff" id="markdown-toc-more-stuff">More Stuff</a>        <ul>
+            <li><a href="index.html#and-more-stuff" id="markdown-toc-and-more-stuff">And More Stuff</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="guidance.html" id="markdown-toc-general-guidance-and-definitions">General Guidance and Definitions</a>    <ul>
+    <li><a href="guidance.html#introduction" id="markdown-toc-introduction">Introduction</a></li>
+    <li><a href="guidance.html#more-stuff" id="markdown-toc-more-stuff">More Stuff</a>        <ul>
+        <li><a href="guidance.html#and-more-stuff" id="markdown-toc-and-more-stuff">And More Stuff</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+   </ul>
+</div>
+
+<!--
+
+    <div id="sidebar-wrapper">
+<a href="CodeSystem-case-status.html" class="btn btn-info" role="button">TOP</a>
+        <ul class="sidebar-nav">
+            <lh class="sidebar-brand">Contents:</lh>
+            <li><a href="#">Another link</a></li>
+            <li><a href="#">Next link</a></li>
+            <li><a href="#">Last link</a></li>
+        </ul>
+
+    </div>
+-->
 
 
-<div class="col-12">
+<!--
+
+    <div id="sidebar-wrapper">
+
+        <ul class="sidebar-nav">
+            <lh class="sidebar-brand">Contents:</lh>
+            <li><a href="#">Another link</a></li>
+            <li><a href="#">Next link</a></li>
+            <li><a href="#">Last link</a></li>
+        </ul>
+
+    </div>
+-->
+<div id="page-content-wrapper">  <!-- page content wrapper -->
+  <div class="page-content">  <!--page content -->
+    <div class="container">  <!-- container -->
+      <div class="row">  <!-- row -->
+       <div class="inner-wrapper"> <!-- inner-wrapper -->
+         <div class="col-md-12">  <!--col -->
+            <!-- content of page -->
 
 
 
@@ -195,10 +257,12 @@ your logo here
 
 
 <!-- ============CONTENT CONTENT=============== -->
-<!--  - choose what you want  comment out or Change what you don't-->
+<!--  choose what you want  comment out or Change what you don't note that markdown is not working here -->
 <ul class="nav nav-tabs">
 
 	<li class="active"><a href="#">Narrative Content</a></li>
+
+
 
 <!--
 { % if CodeSystem == "StructureDefinition"  % }
@@ -237,19 +301,18 @@ Formats: <a href="CodeSystem-case-status.xml.html">XML</a>, <a href="CodeSystem-
 </p>
 -->
 <div xmlns="http://www.w3.org/1999/xhtml"><h2>Case Status Codes</h2><div><p>Codes identifying the stage lifecycle stage of the case</p>
-</div><p>This code system http://fhir.hl7.org/us/case/CodeSystem/case-status defines the following codes:</p><table class="codes"><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>in-progress<a name="case-status-in-progress"> </a></td><td>In Progress</td><td>This is a partial (e.g. initial, interim or preliminary) case. Data may be incomplete or unverified.</td></tr><tr><td>suspended<a name="case-status-suspended"> </a></td><td>Suspended</td><td>Incomplete or unavailable because the case has been temporarily halted.</td></tr><tr><td>aborted<a name="case-status-aborted"> </a></td><td>Aborted</td><td>Incomplete or unavailable because the case was abandoned prior to completion.</td></tr><tr><td>completed<a name="case-status-completed"> </a></td><td>Completed</td><td>The case is complete</td></tr><tr><td>reopened<a name="case-status-reopened"> </a></td><td>Reopened</td><td>Subsequent to being completed, the case has been reopened. This includes any change in the results, diagnosis, narrative text, or other content that has been issued.</td></tr><tr><td>entered-in-error<a name="case-status-entered-in-error"> </a></td><td>Entered in Error</td><td>This electronic record of this event should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be &quot;cancelled&quot; rather than &quot;entered-in-error&quot;.)</td></tr><tr><td>unknown<a name="case-status-unknown"> </a></td><td>Unknown</td><td>The authoring system does not know which of the status values currently applies.  Note: This concept is not to be used for &quot;other&quot; - one of the listed statuses is presumed to apply, it's just not known which one.</td></tr></table></div>
+</div><p>This code system http://fhir.hl7.org/us/ecr/CodeSystem/case-status defines the following codes:</p><table class="codes"><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>in-progress<a name="case-status-in-progress"> </a></td><td>In Progress</td><td>This is a partial (e.g. initial, interim or preliminary) case. Data may be incomplete or unverified.</td></tr><tr><td>suspended<a name="case-status-suspended"> </a></td><td>Suspended</td><td>Incomplete or unavailable because the case has been temporarily halted.</td></tr><tr><td>aborted<a name="case-status-aborted"> </a></td><td>Aborted</td><td>Incomplete or unavailable because the case was abandoned prior to completion.</td></tr><tr><td>completed<a name="case-status-completed"> </a></td><td>Completed</td><td>The case is complete</td></tr><tr><td>reopened<a name="case-status-reopened"> </a></td><td>Reopened</td><td>Subsequent to being completed, the case has been reopened. This includes any change in the results, diagnosis, narrative text, or other content that has been issued.</td></tr><tr><td>entered-in-error<a name="case-status-entered-in-error"> </a></td><td>Entered in Error</td><td>This electronic record of this event should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be &quot;cancelled&quot; rather than &quot;entered-in-error&quot;.)</td></tr><tr><td>unknown<a name="case-status-unknown"> </a></td><td>Unknown</td><td>The authoring system does not know which of the status values currently applies.  Note: This concept is not to be used for &quot;other&quot; - one of the listed statuses is presumed to apply, it's just not known which one.</td></tr></table></div>
 
 
 <!-- ==============END CONTENT END CONTENT=================== -->
 
-</div>
-
-
+</div>  <!-- col -->
 </div>  <!-- /inner-wrapper -->
 </div>  <!-- /row -->
 </div>  <!-- /container -->
-
-</div>  <!-- /segment-content -->
+</div>  <!-- /page content -->
+</div>  <!-- /page content wrapper -->
+</div>  <!-- wrapper -->
 
 
 
@@ -267,7 +330,7 @@ Formats: <a href="CodeSystem-case-status.xml.html">XML</a>, <a href="CodeSystem-
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Nov 24, 2017 15:40-0800. |
+            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Nov 27, 2017 00:25-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.org/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

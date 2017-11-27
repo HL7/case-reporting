@@ -22,10 +22,7 @@ This repository consists of:
 
 ### Rendered IG-Template at
 
-https://healthedata1.github.io/IG-Sampler/
-
-(GitHub will automatically trigger a new build whenever you commit changes.)
-Meeting agenda and notes are archived [here](https://github.com/argonautproject/scheduling/tree/master/meeting-notes)
+https://healthedata1.github.io/case-reporting/
 
 
 ## Setup instructions

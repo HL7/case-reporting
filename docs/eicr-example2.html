@@ -3,10 +3,10 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
    <meta charset="UTF-8"/>
-  <title>PHCase</title>
+  <title>electronic Case Reporting (eCR)</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="PHCase Implemenation Guide" />
+<meta name="description" content="electronic Case Reporting (eCR) Implemenation Guide" />
 <meta name="author" content="http://argonautwiki.hl7.org"/>
 
 
@@ -34,8 +34,6 @@
 
 
 <body markdown="1">
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 <div id="segment-header" class="segment">
   <!-- segment-header -->
@@ -60,7 +58,7 @@ your logo here
 
       </div>
     <div id="ig-status">
-      <b>PHCase Implementation Guide CI Build</b>
+      <b>electronic Case Reporting (eCR) Implementation Guide CI Build</b>
     </div>
   </div>
   <div class="container">
@@ -68,6 +66,8 @@ your logo here
   </div>
 </div>
 <!-- /segment-header -->
+
+
 <div id="segment-navbar" class="segment">
   <!-- segment-navbar -->
   <div id="stripe">
@@ -86,7 +86,9 @@ your logo here
           </span>
         </button>
         <a class="navbar-brand hidden" href="http://build.fhir.org//index.html">FHIR</a>
-        <div class="nav-collapse collapse navbar-inverse-collapse">        <!-- don't remove the line above - choose what you want  
+        <div class="nav-collapse collapse navbar-inverse-collapse">
+
+       <!-- don't remove the line above - choose what you want  
 - [Home](index.html)
 - [General Guidance](guidance.html)
 - [Profiles and Logical Models](profiles.html)
@@ -105,15 +107,17 @@ your logo here
   <li><a href="guidance.html">General Guidance</a></li>
   <li><a href="profiles.html">Profiles and Extensions</a></li>
   <li><a href="terminology.html">Terminology</a></li>
-  <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Capability Statements<b class="caret" style="caret-color:red"></b></a>
+  <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Capability Statements <span class="caret"></span></a>
     <ul class="dropdown-menu">
-      <li><a href="server-capstatement.html">Conformance requirements for Server</a></li>
-      <li><a href="client-capstatement.html">Conformance requirements for Client</a></li>
+      <li><a href="CapabilityStatement-server.html">Conformance requirements for Server</a></li>
+      <li><a href="CapabilityStatement-client.html">Conformance requirements for Client</a></li>
     </ul>
   </li>
   <li><a href="downloads.html">Downloads</a></li>
 </ul>
-        <!--        <ul class="nav navbar-nav">
+
+
+             <!--        <ul class="nav navbar-nav">
           <li>
             <a href="index.html">Home</a>
           </li>
@@ -161,18 +165,75 @@ your logo here
 <!-- /segment-navbar -->
 
 
-
-
 </div>  <!-- /container -->
 </div>  <!-- /segment-breadcrumb -->
 
-<div id="segment-content" class="segment">  <!-- segment-content -->
-<div class="container">  <!-- container -->
-<div class="row">
-<div class="inner-wrapper">
+<div id="wrapper">  <!-- wrapper -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- sidebar-wrapper  put your TOC here. like example below...-->
+
+<div id="sidebar-wrapper">
+<a href="eicr-example2.html" class="btn btn-info" role="button">TOP</a>
+  <ul class="sidebar-nav">
+    <lh class="sidebar-brand">Contents:</lh>
+    <li><a href="index.html">PHCase Implementation Guide</a>    <ul>
+        <li><a href="index.html#cat-facts-to-show-how-the-text-wraps-around-the-contents-block" id="markdown-toc-cat-facts-to-show-how-the-text-wraps-around-the-contents-block">Cat Facts (To Show How the Text Wraps around the Contents Block)</a></li>
+        <li><a href="index.html#jekyll-site-variables" id="markdown-toc-jekyll-site-variables">Jekyll Site Variables</a></li>
+        <li><a href="index.html#introduction" id="markdown-toc-introduction">Introduction</a></li>
+        <li><a href="index.html#more-stuff" id="markdown-toc-more-stuff">More Stuff</a>        <ul>
+            <li><a href="index.html#and-more-stuff" id="markdown-toc-and-more-stuff">And More Stuff</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="guidance.html" id="markdown-toc-general-guidance-and-definitions">General Guidance and Definitions</a>    <ul>
+    <li><a href="guidance.html#introduction" id="markdown-toc-introduction">Introduction</a></li>
+    <li><a href="guidance.html#more-stuff" id="markdown-toc-more-stuff">More Stuff</a>        <ul>
+        <li><a href="guidance.html#and-more-stuff" id="markdown-toc-and-more-stuff">And More Stuff</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+   </ul>
+</div>
+
+<!--
+
+    <div id="sidebar-wrapper">
+<a href="eicr-example2.html" class="btn btn-info" role="button">TOP</a>
+        <ul class="sidebar-nav">
+            <lh class="sidebar-brand">Contents:</lh>
+            <li><a href="#">Another link</a></li>
+            <li><a href="#">Next link</a></li>
+            <li><a href="#">Last link</a></li>
+        </ul>
+
+    </div>
+-->
 
 
-<div class="col-12">
+<!--
+
+    <div id="sidebar-wrapper">
+
+        <ul class="sidebar-nav">
+            <lh class="sidebar-brand">Contents:</lh>
+            <li><a href="#">Another link</a></li>
+            <li><a href="#">Next link</a></li>
+            <li><a href="#">Last link</a></li>
+        </ul>
+
+    </div>
+-->
+<div id="page-content-wrapper">  <!-- page content wrapper -->
+  <div class="page-content">  <!--page content -->
+    <div class="container">  <!-- container -->
+      <div class="row">  <!-- row -->
+       <div class="inner-wrapper"> <!-- inner-wrapper -->
+         <div class="col-md-12">  <!--col -->
+            <!-- content of page -->
 
 
 <!-- ============BreadCrumb=============== -->
@@ -192,7 +253,6 @@ your logo here
     
 
 </nav>
-
 
 
   <!-- ============CONTENT CONTENT=============== -->
@@ -1384,18 +1444,13 @@ your logo here
   <!-- ==============END CONTENT END CONTENT=================== -->
 
 
-
-</div>
-
-
+</div>  <!-- col -->
 </div>  <!-- /inner-wrapper -->
 </div>  <!-- /row -->
 </div>  <!-- /container -->
-
-</div>  <!-- /segment-content -->
-
-
-
+</div>  <!-- /page content -->
+</div>  <!-- /page content wrapper -->
+</div>  <!-- wrapper -->
 
 
 
@@ -1413,7 +1468,7 @@ your logo here
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Nov 24, 2017 15:40-0800. |
+            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Nov 27, 2017 00:25-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.org/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

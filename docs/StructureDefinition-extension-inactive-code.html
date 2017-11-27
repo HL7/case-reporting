@@ -1,83 +1,79 @@
-  <!DOCTYPE HTML>
-
+﻿<!DOCTYPE HTML>
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
    <meta charset="UTF-8"/>
-  <title>PHCase</title>
+  <title>electronic Case Reporting (eCR)</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="PHCase Implemenation Guide" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="electronic Case Reporting (eCR) Implemenation Guide"/>
 <meta name="author" content="http://argonautwiki.hl7.org"/>
 
 
-  <link href="fhir.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="fhir.css"/>
 
 
-   <!-- Bootstrap core CSS -->
+     <!-- Bootstrap core CSS -->
 
-   <!-- Latest compiled and minified CSS -->
+     <!-- Latest compiled and minified CSS -->
 
-  <link href="assets/css/bootstrap.css" rel="stylesheet"/>
-  <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+  <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
 
-  <!-- Project extras -->
-  <link href="assets/css/project.css" rel="stylesheet"/>
-  <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
-	<link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+    <!-- Project extras -->
+  <link rel="stylesheet" href="assets/css/project.css"/>
+  <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="assets/css/jquery-ui.css"/>
 
-  <!-- Favicons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
   <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
   <link rel="shortcut icon" href="assets/ico/favicon.png"/>
 
 
 <body markdown="1">
-
-
-<?xml version="1.0" encoding="UTF-8"?>
+  <!-- ?xml version="1.0" encoding="UTF-8"? -->
 <div id="segment-header" class="segment">
-  <!-- segment-header -->
+    <!-- segment-header -->
   <div class="container">
-    <!-- container --> <a id="logo" no-external="true" href="http://hl7.org/fhir">
-      <img alt="logo fhir" src="assets/images/fhir-logo-www.png"/>
+      <!-- container --> <a no-external="true" id="logo" href="http://hl7.org/fhir">
+      <img src="assets/images/fhir-logo-www.png" alt="logo fhir"/>
     </a>
       <div id="project-nav">
-             <!--
-<a id="your-logo" no-external="true" href="http://www.hl7.org">
+               <!-- <a id="your-logo" no-external="true" href="http://www.hl7.org">
 <img height="50" alt="visit the hl7 website" width="42" src="assets/images/hl7-logo.png"/>
 </a>
 
 your logo here
 
 [![visit the our website](your-logo.png)](your web site.html)
-{: .img-responsive #hl7-logo}
+{: .img-responsive #hl7-logo} -->
 
--->
-
-<p class="img-responsive" id="hl7-logo"><a href="http://www.hl7.org"><img src="assets/images/hl7-logo.png" alt="visit the our website" /></a></p>
+<p id="hl7-logo" class="img-responsive"><a href="http://www.hl7.org"><img src="assets/images/hl7-logo.png" alt="visit the our website"/></a></p>
 
       </div>
     <div id="ig-status">
-      <b>PHCase Implementation Guide CI Build</b>
+      <b>electronic Case Reporting (eCR) Implementation Guide CI Build</b>
     </div>
   </div>
   <div class="container">
-    <!-- container -->
+      <!-- container -->
   </div>
 </div>
-<!-- /segment-header -->
+  <!-- /segment-header -->
+
+
 <div id="segment-navbar" class="segment">
-  <!-- segment-navbar -->
+    <!-- segment-navbar -->
   <div id="stripe">
   </div>
   <div class="container">
-    <!-- container -->
-    <!-- HEADER CONTENT -->
+      <!-- container -->
+      <!-- HEADER CONTENT -->
     <nav class="navbar navbar-inverse">
       <div class="container">
-        <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+        <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
           <span class="icon-bar">
           </span>
           <span class="icon-bar">
@@ -85,8 +81,10 @@ your logo here
           <span class="icon-bar">
           </span>
         </button>
-        <a class="navbar-brand hidden" href="http://build.fhir.org//index.html">FHIR</a>
-        <div class="nav-collapse collapse navbar-inverse-collapse">        <!-- don't remove the line above - choose what you want  
+        <a href="http://build.fhir.org//index.html" class="navbar-brand hidden">FHIR</a>
+        <div class="nav-collapse collapse navbar-inverse-collapse">
+
+         <!-- don't remove the line above - choose what you want  
 - [Home](index.html)
 - [General Guidance](guidance.html)
 - [Profiles and Logical Models](profiles.html)
@@ -98,22 +96,23 @@ your logo here
 - [Security](security.html)
 - [Examples](examples.html)
 - [Downloads](downloads.html)
-*****no empty lines****
--->
+*****no empty lines**** -->
 <ul class="nav navbar-nav">
   <li><a href="index.html" class="active">Home</a></li>
   <li><a href="guidance.html">General Guidance</a></li>
   <li><a href="profiles.html">Profiles and Extensions</a></li>
   <li><a href="terminology.html">Terminology</a></li>
-  <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Capability Statements<b class="caret" style="caret-color:red"></b></a>
+  <li><a data-toggle="dropdown" href="#" class="dropdown-toggle">Capability Statements <span class="caret"/></a>
     <ul class="dropdown-menu">
-      <li><a href="server-capstatement.html">Conformance requirements for Server</a></li>
-      <li><a href="client-capstatement.html">Conformance requirements for Client</a></li>
+      <li><a href="CapabilityStatement-server.html">Conformance requirements for Server</a></li>
+      <li><a href="CapabilityStatement-client.html">Conformance requirements for Client</a></li>
     </ul>
   </li>
   <li><a href="downloads.html">Downloads</a></li>
 </ul>
-        <!--        <ul class="nav navbar-nav">
+
+
+               <!-- <ul class="nav navbar-nav">
           <li>
             <a href="index.html">Home</a>
           </li>
@@ -149,60 +148,91 @@ your logo here
           </li>
         </ul> -->
       </div>
-      <!-- /.nav-collapse -->
+        <!-- /.nav-collapse -->
     </div>
-    <!-- /.container -->
+      <!-- /.container -->
   </nav>
-  <!-- /.navbar -->
-  <!-- /HEADER CONTENT -->
+    <!-- /.navbar -->
+    <!-- /HEADER CONTENT -->
 </div>
-<!-- /container -->
+  <!-- /container -->
 </div>
-<!-- /segment-navbar -->
+  <!-- /segment-navbar -->
 
 
+    <!-- /container -->
+    <!-- /segment-breadcrumb -->
 
-</div>  <!-- /container -->
-</div>  <!-- /segment-breadcrumb -->
+<div id="wrapper">    <!-- wrapper -->
 
-<div id="segment-content" class="segment">  <!-- segment-content -->
-<div class="container">  <!-- container -->
-<div class="row">
-<div class="inner-wrapper">
+  <!-- ?xml version="1.0" encoding="UTF-8"? -->
+
+  <!-- sidebar-wrapper  put your TOC here. like example below... -->
+
+<div id="sidebar-wrapper">
+<a role="button" href="StructureDefinition-extension-inactive-code.html" class="btn btn-info">TOP</a>
+  <ul class="sidebar-nav">
+    <lh class="sidebar-brand">Contents:</lh>
+    <li><a href="index.html">PHCase Implementation Guide</a>    <ul>
+        <li><a href="index.html#cat-facts-to-show-how-the-text-wraps-around-the-contents-block" id="markdown-toc-cat-facts-to-show-how-the-text-wraps-around-the-contents-block">Cat Facts (To Show How the Text Wraps around the Contents Block)</a></li>
+        <li><a href="index.html#jekyll-site-variables" id="markdown-toc-jekyll-site-variables">Jekyll Site Variables</a></li>
+        <li><a href="index.html#introduction" id="markdown-toc-introduction">Introduction</a></li>
+        <li><a href="index.html#more-stuff" id="markdown-toc-more-stuff">More Stuff</a>        <ul>
+            <li><a href="index.html#and-more-stuff" id="markdown-toc-and-more-stuff">And More Stuff</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="guidance.html" id="markdown-toc-general-guidance-and-definitions">General Guidance and Definitions</a>    <ul>
+    <li><a href="guidance.html#introduction" id="markdown-toc-introduction">Introduction</a></li>
+    <li><a href="guidance.html#more-stuff" id="markdown-toc-more-stuff">More Stuff</a>        <ul>
+        <li><a href="guidance.html#and-more-stuff" id="markdown-toc-and-more-stuff">And More Stuff</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+   </ul>
+</div>
+
+  <!-- <div id="sidebar-wrapper">
+<a href="StructureDefinition-extension-inactive-code.html" class="btn btn-info" role="button">TOP</a>
+        <ul class="sidebar-nav">
+            <lh class="sidebar-brand">Contents:</lh>
+            <li><a href="#">Another link</a></li>
+            <li><a href="#">Next link</a></li>
+            <li><a href="#">Last link</a></li>
+        </ul>
+
+    </div> -->
 
 
-<div class="col-12">
+  <!-- <div id="sidebar-wrapper">
+
+        <ul class="sidebar-nav">
+            <lh class="sidebar-brand">Contents:</lh>
+            <li><a href="#">Another link</a></li>
+            <li><a href="#">Next link</a></li>
+            <li><a href="#">Last link</a></li>
+        </ul>
+
+    </div> -->
+<div id="page-content-wrapper">    <!-- page content wrapper -->
+  <div class="page-content">    <!-- page content -->
+    <div class="container">    <!-- container -->
+      <div class="row">    <!-- row -->
+       <div class="inner-wrapper">   <!-- inner-wrapper -->
+         <div class="col-md-12">    <!-- col -->
+              <!-- content of page -->
 
 
-<!-- ============BreadCrumb=============== -->
-
-<nav class="breadcrumb">
-  
-    
-    
-      <a class="breadcrumb-item" href="index.html">Home</a>
-      /
-      <a class="breadcrumb-item" href="profiles.html">Profiles</a>
-      /
-      <span class="breadcrumb-item active">StructureDefinition-extension-inactive-code</span>
-    
-    
-    
-    
-
-</nav>
-
-
-<!-- ============CONTENT CONTENT=============== -->
-
-
-<!--  - choose what you want  comment out or Change what you don't-->
+  <!-- choose what you want  comment out or Change what you don't note that markdown is not working here -->
 <ul class="nav nav-tabs">
 
 	<li class="active"><a href="#">Narrative Content</a></li>
 
-<!--
-{ % if StructureDefinition == "StructureDefinition"  % }
+
+
+  <!-- { % if StructureDefinition == "StructureDefinition"  % }
 	{ % if content == "definitions"  % }
 		<li class="active"><a href="#">Detailed Descriptions</a></li>
 	{ % else % }
@@ -213,46 +243,39 @@ your logo here
 	{ % else % }
 		<li><a href="StructureDefinition-extension-inactive-code-mappings.html">Mappings</a></li>
 	{ % endif % }
-{ % endif % }
--->
+{ % endif % } -->
 
 <li><a href="StructureDefinition-extension-inactive-code.xml.html">XML</a></li>
 
 
 	<li><a href="StructureDefinition-extension-inactive-code.json.html">JSON</a></li>
 
-<!--
-{ % if content == "turtle" % }
+  <!-- { % if content == "turtle" % }
 	<li class="active"><a href="#">Turtle</a></li>
 { % else % }
 	<li><a href="StructureDefinition-extension-inactive-code.ttl.html">Turtle</a></li>
-{ % endif % }
--->
+{ % endif % } -->
 </ul>
 
 
-<!--
-<ul class="nav nav-tabs">
+  <!-- <ul class="nav nav-tabs">
 	<li class="active"><a href="#">Content</a></li>
 	<li><a href="StructureDefinition-extension-inactive-code-definitions.html">Detailed Descriptions</a></li>
 	<li><a href="StructureDefinition-extension-inactive-code-mappings.html">Mappings</a></li>
 	<li><a href="StructureDefinition-extension-inactive-code.xml.html">XML</a></li>
 	<li><a href="StructureDefinition-extension-inactive-code.json.html">JSON</a></li>
 	<li><a href="StructureDefinition-extension-inactive-code.ttl.html">Turtle</a></li>
-</ul>
--->
+</ul> -->
 
-<!--simpler links to other pages
+  <!-- simpler links to other pages
 <p>
 Formats: <a href="StructureDefinition-extension-inactive-code.html">Narrative</a>, <a href="StructureDefinition-extension-inactive-code.xml.html">XML</a>, <a href="StructureDefinition-extension-inactive-code.json.html">JSON</a>, <a href="StructureDefinition-extension-inactive-code.ttl.html">Turtle</a>
-</p>
+</p> -->
 
--->
-
-<h3><span class="sectioncount">SD.12<a name="SD.12"> </a></span>StructureDefinition-extension-inactive-code<a title="link to here" class="self-link" href="StructureDefinition-extension-inactive-code.html#SD.12"><img src="target.png"/></a></h3>
+<h3><span class="sectioncount">SD.11<a name="SD.11"> </a></span>StructureDefinition-extension-inactive-code<a href="StructureDefinition-extension-inactive-code.html#SD.11" title="link to here" class="self-link"><img src="target.png"/></a></h3>
 
 
-<!-- introductiontext here-->
+  <!-- introductiontext here -->
 <a name="introduction"> </a>
 
 
@@ -281,26 +304,24 @@ The following data-elements are mandatory (i.e data MUST be present). blah blah 
 
 
 
-<!-- example here -->
+  <!-- example here -->
 
-<!--
-<h5>Example: <a href="daf--.html"> Example: </a></h5>
--->
-<!--  try build generated templates
+  <!-- <h5>Example: <a href="daf--.html"> Example: </a></h5> -->
+  <!-- try build generated templates
 <h5>Example: <a href="Inactive RCTC Code.example.html">Inactive RCTC Code Example</a></h5> -->
 
 
 
 <a name="profile"> </a>
-<h4><span class="sectioncount">SD.12.1</span>
+<h4><span class="sectioncount">SD.11.1</span>
 Formal Views of Profile Content
- <a title="link to here" class="self-link" href="StructureDefinition-extension-inactive-code.html#profile"><img src="target.png"/></a>
+ <a href="StructureDefinition-extension-inactive-code.html#profile" title="link to here" class="self-link"><img src="target.png"/></a>
 </h4>
-<!-- uri -->
+  <!-- uri -->
 <p>
 The official URL for this profile is:
 </p>
-<pre>http://fhir.hl7.org/us/case/StructureDefinition/extension-inactive-code</pre>
+<pre>http://fhir.hl7.org/us/ecr/StructureDefinition/extension-inactive-code</pre>
 <p>
 <p>Code, codeSystem, valueSet, valueSetVersion of a code that exists within the RCTC but has been labeled as inactive.</p>
 </p>
@@ -311,13 +332,13 @@ This profile was published on Sun Jun 11 00:00:00 PDT 2017 as a draft by null.
 </p>
 
 
-<!-- uri -->
+  <!-- uri -->
 <p>
 <a href="http://build.fhir.org/profiling.html#representation">Description of Profiles, Differentials, Snapshots, and how the XML and JSON presentations work</a>.
 </p>
 
 
-<!--  ********remove the tabs for now for editing purposes if status draft ********* -->
+  <!-- ********remove the tabs for now for editing purposes if status draft ********* -->
 
 
 
@@ -326,11 +347,11 @@ This profile was published on Sun Jun 11 00:00:00 PDT 2017 as a draft by null.
   <div id="tbl-summ">
    <div id="tbl-diff-inner">
      <a name="summary"> </a>
-<!--   <a name="summary"> </a>
+  <!-- <a name="summary"> </a>
 <p><b>
 Summary
 </b></p>
-<p>Fixed Value: 1 element</p>  -->
+<p>Fixed Value: 1 element</p> -->
 <p>extension-inactive-code-summary.md
     This is the summary markdown file that gets inserted into the sd.html template. for a more formal narrative summary of constraints.  in future hope to automate this to computer generated code.</p>
 
@@ -349,27 +370,26 @@ Summary
  <div id="all-tbl-diff">
    <p><b>Differential View</b></p>
    <div id="all-tbl-diff-inner">
-   <table border="0" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/formats.html#table" title="The logical name of the element">Name</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/formats.html#table" title="Information about the use of the element">Flags</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/formats.html#table" title="Minimum and Maximum # of times the the element can appear in the instance">Card.</a></th><th style="width: 100px" class="hierarchy"><a href="http://build.fhir.org/formats.html#table" title="Reference to the type of the element">Type</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/formats.html#table" title="Additional information about the element">Description &amp; Constraints</a><span style="float: right"><a href="http://build.fhir.org/formats.html#table" title="Legend for this format"><img src="http://build.fhir.org/help16.png" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a href="StructureDefinition-extension-inactive-code-definitions.html#Extension:inactive-code" title="Slice inactive-code: Code, codeSystem, valueSet, valueSetVersion of a code that exists within the RCTC but has been labeled as inactive.">Extension</a><a name="Extension"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.4">0</span>..<span style="opacity: 0.4">1</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Inactive RCTC Code</td></tr>
-<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a href="StructureDefinition-extension-inactive-code-definitions.html#Extension:inactive-code.url" title="null">url</a><a name="Extension.url"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.4">1</span><span style="opacity: 0.5">..</span><span style="opacity: 0.4">1</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.4" href="http://build.fhir.org/datatypes.html#uri">uri</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="color: darkgreen">&quot;http://fhir.hl7.org/us/case/StructureDefinition/extension-inactive-code&quot;</span></td></tr>
-<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="StructureDefinition-extension-inactive-code-definitions.html#Extension:inactive-code.valueCoding" title="null">valueCoding</a><a name="Extension.valueCoding"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.4">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.4">1</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/datatypes.html#Coding">Coding</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-weight:bold">Binding: </span><a href="ValueSet-inactive-rctc.html">eICR Inactice RCTC Codes</a> (<a href="http://build.fhir.org/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set">required</a>)</td></tr>
+   <table border="0" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/formats.html#table" title="The logical name of the element">Name</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/formats.html#table" title="Information about the use of the element">Flags</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/formats.html#table" title="Minimum and Maximum # of times the the element can appear in the instance">Card.</a></th><th style="width: 100px" class="hierarchy"><a href="http://build.fhir.org/formats.html#table" title="Reference to the type of the element">Type</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/formats.html#table" title="Additional information about the element">Description &amp; Constraints</a><span style="float: right"><a href="http://build.fhir.org/formats.html#table" title="Legend for this format"><img src="http://build.fhir.org/help16.png" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)" class="hierarchy"><a name="0874eb9d-ee14-451d-abc2-b7681f129530">​</a><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a href="StructureDefinition-extension-inactive-code-definitions.html#Extension:inactive-code" title="Slice inactive-code: Code, codeSystem, valueSet, valueSetVersion of a code that exists within the RCTC but has been labeled as inactive.">Extension</a><a name="Extension"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.4">0</span>..<span style="opacity: 0.4">1</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Inactive RCTC Code</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><a name="e14ab732-2594-4c2d-b3cc-361cc93e5c78">​</a><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a href="StructureDefinition-extension-inactive-code-definitions.html#Extension:inactive-code.url" title="null">url</a><a name="Extension.url"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.4">1</span><span style="opacity: 0.5">..</span><span style="opacity: 0.4">1</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.4" href="http://build.fhir.org/datatypes.html#uri">uri</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="color: darkgreen">&quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-inactive-code&quot;</span></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)" class="hierarchy"><a name="693c4368-1312-4554-a376-ebe49ff8cb23">​</a><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="StructureDefinition-extension-inactive-code-definitions.html#Extension:inactive-code.valueCoding" title="null">valueCoding</a><a name="Extension.valueCoding"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.4">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.4">1</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/datatypes.html#Coding">Coding</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-weight:bold">Binding: </span><a href="ValueSet-inactive-rctc.html">eICR Inactice RCTC Codes</a> (<a href="http://build.fhir.org/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set">required</a>)</td></tr>
 <tr><td colspan="5" class="hierarchy"><br/><a href="http://build.fhir.org/formats.html#table" title="Legend for this format"><img src="http://build.fhir.org/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table>
    </div>
   </div>
   <div id="all-tbl-snap">
    <p><b>Snapshot View</b></p>
    <div id="all-tbl-snap-inner">
-<table border="0" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/formats.html#table" title="The logical name of the element">Name</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/formats.html#table" title="Information about the use of the element">Flags</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/formats.html#table" title="Minimum and Maximum # of times the the element can appear in the instance">Card.</a></th><th style="width: 100px" class="hierarchy"><a href="http://build.fhir.org/formats.html#table" title="Reference to the type of the element">Type</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/formats.html#table" title="Additional information about the element">Description &amp; Constraints</a><span style="float: right"><a href="http://build.fhir.org/formats.html#table" title="Legend for this format"><img src="http://build.fhir.org/help16.png" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a href="StructureDefinition-extension-inactive-code-definitions.html#Extension:inactive-code" title="Slice inactive-code: Code, codeSystem, valueSet, valueSetVersion of a code that exists within the RCTC but has been labeled as inactive.">Extension</a><a name="Extension"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding: 3px" title="This element has or is affected by some invariants">I</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Inactive RCTC Code<br/></td></tr>
-<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="StructureDefinition-extension-inactive-code-definitions.html#Extension:inactive-code.id" title="unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.">id</a><a name="Extension.id"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/datatypes.html#string">string</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">xml:id (or equivalent in JSON)</td></tr>
-<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="StructureDefinition-extension-inactive-code-definitions.html#Extension:inactive-code.url" title="Source of the definition for the extension code - a logical name or a URL.">url</a><a name="Extension.url"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/datatypes.html#uri">uri</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="color: darkgreen">&quot;http://fhir.hl7.org/us/case/StructureDefinition/extension-inactive-code&quot;</span></td></tr>
-<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="StructureDefinition-extension-inactive-code-definitions.html#Extension:inactive-code.valueCoding" title="Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).">valueCoding</a><a name="Extension.valueCoding"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/datatypes.html#Coding">Coding</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Value of extension<br/><span style="font-weight:bold">Binding: </span><a href="ValueSet-inactive-rctc.html">eICR Inactice RCTC Codes</a> (<a href="http://build.fhir.org/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set">required</a>)</td></tr>
+<table border="0" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/formats.html#table" title="The logical name of the element">Name</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/formats.html#table" title="Information about the use of the element">Flags</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/formats.html#table" title="Minimum and Maximum # of times the the element can appear in the instance">Card.</a></th><th style="width: 100px" class="hierarchy"><a href="http://build.fhir.org/formats.html#table" title="Reference to the type of the element">Type</a></th><th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/formats.html#table" title="Additional information about the element">Description &amp; Constraints</a><span style="float: right"><a href="http://build.fhir.org/formats.html#table" title="Legend for this format"><img src="http://build.fhir.org/help16.png" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)" class="hierarchy"><a name="a76991d5-1477-4687-bb07-9ab0760e0436">​</a><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a href="StructureDefinition-extension-inactive-code-definitions.html#Extension:inactive-code" title="Slice inactive-code: Code, codeSystem, valueSet, valueSetVersion of a code that exists within the RCTC but has been labeled as inactive.">Extension</a><a name="Extension"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding: 3px" title="This element has or is affected by some invariants">I</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Inactive RCTC Code<br/></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><a name="5253886b-6750-496c-94ff-c2d86a7ffdb3">​</a><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="StructureDefinition-extension-inactive-code-definitions.html#Extension:inactive-code.id" title="unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.">id</a><a name="Extension.id"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/datatypes.html#string">string</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">xml:id (or equivalent in JSON)</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><a name="d10abe1d-0bff-4b3a-bebf-35ccd026eb33">​</a><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="StructureDefinition-extension-inactive-code-definitions.html#Extension:inactive-code.url" title="Source of the definition for the extension code - a logical name or a URL.">url</a><a name="Extension.url"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/datatypes.html#uri">uri</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="color: darkgreen">&quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-inactive-code&quot;</span></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)" class="hierarchy"><a name="e0d727fe-c460-4a45-8ae4-43ea4609d378">​</a><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="StructureDefinition-extension-inactive-code-definitions.html#Extension:inactive-code.valueCoding" title="Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).">valueCoding</a><a name="Extension.valueCoding"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/datatypes.html#Coding">Coding</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Value of extension<br/><span style="font-weight:bold">Binding: </span><a href="ValueSet-inactive-rctc.html">eICR Inactice RCTC Codes</a> (<a href="http://build.fhir.org/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set">required</a>)</td></tr>
 <tr><td colspan="5" class="hierarchy"><br/><a href="http://build.fhir.org/formats.html#table" title="Legend for this format"><img src="http://build.fhir.org/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table>
    </div>
   </div>
 
 
 
-<!--
-  <div id="all-xml">
+  <!-- <div id="all-xml">
    <p><b>XML Template</b></p>
    <div id="all-xml-inner"><p style="color: maroon; font-weight: bold">yet to be done: Xml template</p>
 
@@ -384,19 +404,18 @@ Summary
     "<a href="StructureDefinition-extension-inactive-code.html|Inactive RCTC Code#Extension.id" title="unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces" class="dict"><span style="text-decoration: underline">id</span></a>" : "&lt;<span style="color: darkgreen"><a href="http://build.fhir.org/??.html#string">string</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8">xml:id (or equivalent in JSON)</span>
     "extension": [
     ],
-    "<a href="StructureDefinition-extension-inactive-code.html|Inactive RCTC Code#Extension.url" title="Source of the definition for the extension code - a logical name or a URL" class="dict"><span style="text-decoration: underline">url</span></a>" : "http://fhir.hl7.org/us/case/StructureDefinition/extension-inactive-code", <span style="color: Gray">//</span> <span style="color: brown" title="This element is required"><b>R!</b></span>
-    "<a href="StructureDefinition-extension-inactive-code.html|Inactive RCTC Code#Extension.valueCoding" title="Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list)" class="dict"><span style="text-decoration: underline">valueCoding</span></a>" : {<span style="color: darkgreen"><a href="http://build.fhir.org/??.html#Coding">Coding</a></span>} <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a href="http://fhir.hl7.org/us/case/ValueSet/inactive-rctc.html" style="color: navy">Value of extension</a></span>
+    "<a href="StructureDefinition-extension-inactive-code.html|Inactive RCTC Code#Extension.url" title="Source of the definition for the extension code - a logical name or a URL" class="dict"><span style="text-decoration: underline">url</span></a>" : "http://fhir.hl7.org/us/ecr/StructureDefinition/extension-inactive-code", <span style="color: Gray">//</span> <span style="color: brown" title="This element is required"><b>R!</b></span>
+    "<a href="StructureDefinition-extension-inactive-code.html|Inactive RCTC Code#Extension.valueCoding" title="Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list)" class="dict"><span style="text-decoration: underline">valueCoding</span></a>" : {<span style="color: darkgreen"><a href="http://build.fhir.org/??.html#Coding">Coding</a></span>} <span style="color: Gray">//</span> <span style="color: navy; opacity: 0.8"><a href="http://fhir.hl7.org/us/ecr/ValueSet/inactive-rctc.html" style="color: navy">Value of extension</a></span>
   }
 
    </div>
-  </div>
--->
+  </div> -->
  </div>
 </div>
 
 
 <a name="downloads"> </a>
-<p>Downloads: StructureDefinition: (<a href="StructureDefinition-extension-inactive-code.xml" download>XML</a>, <a href="StructureDefinition-extension-inactive-code.json" download>JSON</a>), Schema:  <a href="extension-inactive-code.sch" download>XML Schematron</a></p>
+<p>Downloads: StructureDefinition: (<a download="null" href="StructureDefinition-extension-inactive-code.xml">XML</a>, <a download="null" href="StructureDefinition-extension-inactive-code.json">JSON</a>), Schema:  <a download="null" href="extension-inactive-code.sch">XML Schematron</a></p>
 
 <p>&nbsp;</p>
 
@@ -405,19 +424,18 @@ Summary
 
 <hr/>
 
- See the <a href="capstatements.html"/>Conformance requirements</a> for a complete list of supported RESTful interactions for this IG.</p>
+ See the <a href="capstatements.html"/>Conformance requirements for a complete list of supported RESTful interactions for this IG.
 
 
-  <!-- ==============END CONTENT END CONTENT=================== -->
+    <!-- ==============END CONTENT END CONTENT=================== -->
 
-</div>
-
-
-</div>  <!-- /inner-wrapper -->
-</div>  <!-- /row -->
-</div>  <!-- /container -->
-
-</div>  <!-- /segment-content -->
+</div>    <!-- col -->
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /row -->
+</div>    <!-- /container -->
+</div>    <!-- /page content -->
+</div>    <!-- /page content wrapper -->
+    <!-- wrapper -->
 
 
 <script src="assets/js/jquery.js"> </script>
@@ -448,52 +466,53 @@ $( '#tabs' ).tabs({
 </script>
 
 
-</div>
-
-    </div>  <!-- /inner-wrapper -->
-            </div>  <!-- /row -->
-        </div>  <!-- /container -->
-
-    </div>  <!-- /segment-content -->
 
 
-<div id="segment-footer" class="segment">  <!-- segment-footer -->
-  <div class="container">  <!-- container -->
+        <!-- /inner-wrapper -->
+                <!-- /row -->
+            <!-- /container -->
+
+        <!-- /segment-content -->
+
+
+<div id="segment-footer" class="segment">    <!-- segment-footer -->
+  <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            PHCase Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Nov 24, 2017 15:40-0800. |
-             <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
-                <a style="color: #81BEF7" rel="license" href="http://build.fhir.org/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
-        </span>
+            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Nov 27, 2017 00:25-0800. |
+               <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
+                <a rel="license" style="color: #81BEF7" href="http://build.fhir.org/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
+        
         </p>
-   </div>  <!-- /inner-wrapper -->
-  </div>  <!-- /container -->
- </div>  <!-- /segment-footer -->
-  <!-- disqus thread -->
-  <!-- disqus -->
-  <!-- end disqus -->
+   </div>    <!-- /inner-wrapper -->
+  </div>    <!-- /container -->
+ </div>    <!-- /segment-footer -->
+    <!-- disqus thread -->
+    <!-- disqus -->
+    <!-- end disqus -->
 
- <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
-  <div class="container">  <!-- container -->
-  </div>  <!-- /container -->
- </div>  <!-- /segment-post-footer -->
+ <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+  <div class="container">    <!-- container -->
+  </div>    <!-- /container -->
+ </div>    <!-- /segment-post-footer -->
 
- <!-- JS and analytics only. -->
-<!-- Bootstrap core JavaScript
+   <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
 ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
 <script src="./assets/js/bootstrap.min.js"> </script>
 <script src="./assets/js/respond.min.js"> </script>
 
 <script src="./assets/js/fhir.js"> </script>
 
-<!-- Analytics Below
+  <!-- Analytics Below
 ================================================== -->
 
 
 </body>
-</html>
 
-</body>
-</html>
+
+
+
+</head></html>
