@@ -22,7 +22,7 @@ This repository consists of:
 
 ### Rendered IG-Template at
 
-https://healthedata1.github.io/case-reporting/
+https://hl7.github.io/case-reporting/
 
 
 ## Setup instructions
