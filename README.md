@@ -22,6 +22,23 @@ This repository consists of:
 
 ### Rendered IG-Template at
 
+using the IG Auto-builder at 
+
+*Note: a build takes 2-3 minutes to complete. You should see a notification at https://chat.fhir.org/#narrow/stream/committers/topic/ig-build.
+
+## After the build is complete, you can...
+
+### Find your rendered IG automatically available at
+
+http://build.fhir.org/ig/hl7/case-reporting
+
+### Find debugging info about the build
+
+For a build log, see:
+http://build.fhir.org/ig/hl7/case-reporting/build.log
+
+Using git pages:
+
 https://hl7.github.io/case-reporting/
 
 
