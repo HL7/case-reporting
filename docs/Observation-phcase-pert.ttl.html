@@ -242,20 +242,28 @@ your logo here
   
     
     
+      
       <a class="breadcrumb-item" href="index.html">Home</a>
       /
       <a class="breadcrumb-item" href="profiles.html">Profiles</a>
       /
       <span class="breadcrumb-item active">Observation-phcase-pert.ttl</span>
+      
+      
+      
+      
+      
+      
+      
     
-    
-    
-    
+
 
 </nav>
 
 
-  <!-- ============CONTENT CONTENT=============== -->
+<!-- ============ CONTENT CONTENT=============== -->
+
+  <!-- ============ default xml or json content for structuredefinition CONTENT CONTENT=============== -->
   
     <!--  choose what you want  comment out or Change what you don't note that markdown is not working here -->
 <ul class="nav nav-tabs">
@@ -294,87 +302,22 @@ your logo here
 </ul>
 
     <h2>Turtle Format: Observation-phcase-pert</h2>
+    <!-- ============ default xml or json content CONTENT CONTENT=============== -->
   
+  <p>
+  Raw <a href="Observation-phcase-pert.ttl" download>ttl</a>
+  </p>
+
+"page.br_{ { [type] } }" = 
+
+<!-- ============CapabilityStatement CONTENT CONTENT=============== -->
+
+
 <!-- simple format links
 <p>
 Formats: <a href="Observation-phcase-pert.html">Narrative</a>, <a href="Observation-phcase-pert.xml.html">XML</a>, <a href="Observation-phcase-pert.json.html">JSON</a>, <a href="Observation-phcase-pert.ttl.html">Turtle</a>
 </p>
 -->
-<p>
-Raw <a href="Observation-phcase-pert.ttl" download>ttl</a>
-</p>
-
-<pre class="rdf">
-@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
-@prefix loinc: &lt;http://loinc.org/rdf#&gt; .
-@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
-@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
-@prefix sct: &lt;http://snomed.info/id/&gt; .
-@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-
-# - resource -------------------------------------------------------------------
-
- a fhir:Observation;
-  <a href="http://build.fhir.org/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot;
-  <a href="http://build.fhir.org/observation.html#Observation.id">fhir:Resource.id</a> [ <a href="http://build.fhir.org/datatypes.html#id">fhir:value</a> &quot;phcase-pert&quot;];
-  <a href="http://build.fhir.org/observation.html#Observation.meta">fhir:Resource.meta</a> [
-     <a href="http://build.fhir.org/datatypes.html#Meta#Meta.profile">fhir:Meta.profile</a> [
-       <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/us/core/StructureDefinition/us-core-observationresults&quot;;
-       <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0     ]
-  ];
-  <a href="http://build.fhir.org/observation.html#Observation.text">fhir:DomainResource.text</a> [
-     <a href="http://build.fhir.org/datatypes.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> &quot;generated&quot; ];
-     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: phcase-pert&lt;/p&gt;&lt;p&gt;&lt;b&gt;meta&lt;/b&gt;: &lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: Filler Identifier = 7d5a02b0-67a4-11db-bd13-0800200c9a66&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Bordetella Throat culture &lt;span style=\&quot;background: LightGoldenRodYellow\&quot;&gt;(Details : {LOINC code '548-8' = 'Bordetella pertussis [Presence] in Throat by Organism specific culture', given as 'Bordetella pertussis [Presence] in Throat by Organism specific culture'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\&quot;Patient-phcase-js.html\&quot;&gt;Stinn. Generated Summary: id: phcase-js; Medical Record Number = 1032702 (USUAL), SSN = 11-00-1234 (USUAL); active; Jane L Stinn ; ph: 1-(404)555-1212(HOME), jane.stinn@example.com; gender: female; birthDate: Nov 24, 1974&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;issued&lt;/b&gt;: Nov 7, 2016 10:28:00 AM&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a href=\&quot;Practitioner-phcase-mc.html\&quot;&gt;Micheal Colletta, M.D.. Generated Summary: id: phcase-mc; 1521001101; Colletta Micheal &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: Bordetella pertussis &lt;span style=\&quot;background: LightGoldenRodYellow\&quot;&gt;(Details : {SNOMED CT code '5247005' = 'Hemophilus pertussis', given as 'Bordetella pertussis (organism)'})&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&quot;
-  ];
-  <a href="http://build.fhir.org/observation.html#Observation.identifier">fhir:Observation.identifier</a> [
-     <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
-     <a href="http://build.fhir.org/datatypes.html#Identifier#Identifier.type">fhir:Identifier.type</a> [
-       <a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:CodeableConcept.coding</a> [
-         <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
-         <a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/identifier-type&quot; ];
-         <a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> &quot;FILL&quot; ];
-         <a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Filler Identifier&quot; ]       ];
-       <a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:CodeableConcept.text</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Filler Identifier&quot; ]     ];
-     <a href="http://build.fhir.org/datatypes.html#Identifier#Identifier.system">fhir:Identifier.system</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;https://acme.labs/identifiers&quot; ];
-     <a href="http://build.fhir.org/datatypes.html#Identifier#Identifier.value">fhir:Identifier.value</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;7d5a02b0-67a4-11db-bd13-0800200c9a66&quot; ]
-  ];
-  <a href="http://build.fhir.org/observation.html#Observation.status">fhir:Observation.status</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> &quot;final&quot;];
-  <a href="http://build.fhir.org/observation.html#Observation.code">fhir:Observation.code</a> [
-     <a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:CodeableConcept.coding</a> [
-       <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
-       a loinc:548-8;
-       <a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://loinc.org&quot; ];
-       <a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> &quot;548-8&quot; ];
-       <a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Bordetella pertussis [Presence] in Throat by Organism specific culture&quot; ]     ];
-     <a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:CodeableConcept.text</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Bordetella Throat culture&quot; ]
-  ];
-  <a href="http://build.fhir.org/observation.html#Observation.subject">fhir:Observation.subject</a> [
-     <a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Patient/phcase-js&quot; ];
-     <a href="http://build.fhir.org/datatypes.html#Reference#Reference.display">fhir:Reference.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Stinn&quot; ]
-  ];
-  <a href="http://build.fhir.org/observation.html#Observation.issued">fhir:Observation.issued</a> [ <a href="http://build.fhir.org/datatypes.html#instant">fhir:value</a> &quot;2016-11-07T10:28:00+01:00&quot;^^xsd:dateTime];
-  <a href="http://build.fhir.org/observation.html#Observation.performer">fhir:Observation.performer</a> [
-     <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
-     <a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Practitioner/phcase-mc&quot; ];
-     <a href="http://build.fhir.org/datatypes.html#Reference#Reference.display">fhir:Reference.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Micheal Colletta, M.D.&quot; ]
-  ];
-  <a href="http://build.fhir.org/observation.html#Observation.value[x]">fhir:Observation.valueCodeableConcept</a> [
-     <a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:CodeableConcept.coding</a> [
-       <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
-       a sct:5247005;
-       <a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ];
-       <a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> &quot;5247005&quot; ];
-       <a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Bordetella pertussis (organism)&quot; ]     ];
-     <a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:CodeableConcept.text</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Bordetella pertussis&quot; ]
-  ].
-
-# - ontology header ------------------------------------------------------------
-
- a owl:Ontology;
-  owl:imports fhir:fhir.ttl.
-
-</pre>
-
 
 
   <!-- ==============END CONTENT END CONTENT=================== -->
@@ -402,7 +345,7 @@ Raw <a href="Observation-phcase-pert.ttl" download>ttl</a>
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Nov 27, 2017 01:15-0800. |
+            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Nov 27, 2017 16:16-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.org/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>
