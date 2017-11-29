@@ -168,65 +168,7 @@ your logo here
 </div>  <!-- /container -->
 </div>  <!-- /segment-breadcrumb -->
 
-<div id="wrapper">  <!-- wrapper -->
 
-<?xml version="1.0" encoding="UTF-8"?>
-
-<!-- sidebar-wrapper  put your TOC here. like example below...-->
-
-<div id="sidebar-wrapper">
-<a href="Composition-ecr-genexample.xml.html" class="btn btn-info" role="button">TOP</a>
-  <ul class="sidebar-nav">
-    <lh class="sidebar-brand">Contents:</lh>
-    <li><a href="index.html">PHCase Implementation Guide</a>    <ul>
-        <li><a href="index.html#cat-facts-to-show-how-the-text-wraps-around-the-contents-block" id="markdown-toc-cat-facts-to-show-how-the-text-wraps-around-the-contents-block">Cat Facts (To Show How the Text Wraps around the Contents Block)</a></li>
-        <li><a href="index.html#jekyll-site-variables" id="markdown-toc-jekyll-site-variables">Jekyll Site Variables</a></li>
-        <li><a href="index.html#introduction" id="markdown-toc-introduction">Introduction</a></li>
-        <li><a href="index.html#more-stuff" id="markdown-toc-more-stuff">More Stuff</a>        <ul>
-            <li><a href="index.html#and-more-stuff" id="markdown-toc-and-more-stuff">And More Stuff</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="guidance.html" id="markdown-toc-general-guidance-and-definitions">General Guidance and Definitions</a>    <ul>
-    <li><a href="guidance.html#introduction" id="markdown-toc-introduction">Introduction</a></li>
-    <li><a href="guidance.html#more-stuff" id="markdown-toc-more-stuff">More Stuff</a>        <ul>
-        <li><a href="guidance.html#and-more-stuff" id="markdown-toc-and-more-stuff">And More Stuff</a></li>
-      </ul>
-    </li>
-  </ul>
-</li>
-   </ul>
-</div>
-
-<!--
-
-    <div id="sidebar-wrapper">
-<a href="Composition-ecr-genexample.xml.html" class="btn btn-info" role="button">TOP</a>
-        <ul class="sidebar-nav">
-            <lh class="sidebar-brand">Contents:</lh>
-            <li><a href="#">Another link</a></li>
-            <li><a href="#">Next link</a></li>
-            <li><a href="#">Last link</a></li>
-        </ul>
-
-    </div>
--->
-
-
-<!--
-
-    <div id="sidebar-wrapper">
-
-        <ul class="sidebar-nav">
-            <lh class="sidebar-brand">Contents:</lh>
-            <li><a href="#">Another link</a></li>
-            <li><a href="#">Next link</a></li>
-            <li><a href="#">Last link</a></li>
-        </ul>
-
-    </div>
--->
 <div id="page-content-wrapper">  <!-- page content wrapper -->
   <div class="page-content">  <!--page content -->
     <div class="container">  <!-- container -->
@@ -242,8 +184,8 @@ your logo here
   
     
     
-      
-      <a class="breadcrumb-item" href="index.html">Home</a>
+      <!-- default -->
+      <a class="breadcrumb-item btn btn-link btn-sm" href="toc.html">TOC</a>/<a class="breadcrumb-item" href="index.html">Home</a>
       /
       <a class="breadcrumb-item" href="profiles.html">Profiles</a>
       /
@@ -307,9 +249,145 @@ your logo here
   Raw <a href="Composition-ecr-genexample.xml" download>xml</a>
   </p>
 
-"page.br_{ { [type] } }" = 
+<pre class="xml">
 
-<!-- ============CapabilityStatement CONTENT CONTENT=============== -->
+&lt;<a href="StructureDefinition-ecr.html#Composition">Composition</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+  &lt;<a href="StructureDefinition-ecr.html#Composition.id">id</a> <a href="http://build.fhir.org/datatypes.html#id">value</a>=&quot;ecr-genexample&quot;/&gt;
+  &lt;<a href="StructureDefinition-ecr.html#Composition.encounter">encounter</a>&gt;
+    &lt;<a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">reference</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Encounter/eicr&quot;/&gt;
+    &lt;<a href="http://build.fhir.org/datatypes.html#Reference#Reference.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;EICR Encounter Profile example&quot;/&gt;
+  &lt;/encounter&gt;
+  &lt;<a href="StructureDefinition-ecr.html#Composition.date">date</a> <a href="http://build.fhir.org/datatypes.html#dateTime">value</a>=&quot;2017-11-06T22:13:23Z&quot;/&gt;
+  &lt;<a href="StructureDefinition-ecr.html#Composition.section">section</a>&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.title">title</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;History of Present Illiness&quot;/&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.code">code</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">system</a> <a href="http://build.fhir.org/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">code</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;10164-2&quot;/&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot; History of Present illness Narrative&quot;/&gt;
+      &lt;/coding&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot; History of Present illness&quot;/&gt;
+    &lt;/code&gt;
+  &lt;/section&gt;
+  &lt;<a href="StructureDefinition-ecr.html#Composition.section">section</a>&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.title">title</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Reason for Visit&quot;/&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.code">code</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">system</a> <a href="http://build.fhir.org/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">code</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;46240-8&quot;/&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">display</a>
+                 <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;History of Hospitalizations+​Outpatient visits Narrative&quot;/&gt;
+      &lt;/coding&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;History of Encounters&quot;/&gt;
+    &lt;/code&gt;
+  &lt;/section&gt;
+  &lt;<a href="StructureDefinition-ecr.html#Composition.section">section</a>&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.title">title</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Social History&quot;/&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.code">code</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">system</a> <a href="http://build.fhir.org/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">code</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;29762-2&quot;/&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Social history Narrative&quot;/&gt;
+      &lt;/coding&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Social History&quot;/&gt;
+    &lt;/code&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.entry">entry</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">reference</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Observation/eicr-th-obs&quot;/&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Reference#Reference.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;EICR Travel History Profile example&quot;/&gt;
+    &lt;/entry&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.entry">entry</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">reference</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Observation/eicr-ph-obs&quot;/&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Reference#Reference.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;EICR Social History Pregnancy Observation example&quot;/&gt;
+    &lt;/entry&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.entry">entry</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">reference</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Observation/eicr-oh-obs&quot;/&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Reference#Reference.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;EICR Occupational History Profile example&quot;/&gt;
+    &lt;/entry&gt;
+  &lt;/section&gt;
+  &lt;<a href="StructureDefinition-ecr.html#Composition.section">section</a>&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.title">title</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Problems&quot;/&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.code">code</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">system</a> <a href="http://build.fhir.org/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">code</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;11450-4&quot;/&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Problem list - Reported&quot;/&gt;
+      &lt;/coding&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Problem list&quot;/&gt;
+    &lt;/code&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.entry">entry</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">reference</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Condition/us-core-problems-example&quot;/&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Reference#Reference.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;US Core Profile problem list example&quot;/&gt;
+    &lt;/entry&gt;
+  &lt;/section&gt;
+  &lt;<a href="StructureDefinition-ecr.html#Composition.section">section</a>&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.title">title</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Medications Administered&quot;/&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.code">code</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">system</a> <a href="http://build.fhir.org/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">code</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;29549-3&quot;/&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Medication administered Narrative&quot;/&gt;
+      &lt;/coding&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Medication administered&quot;/&gt;
+    &lt;/code&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.entry">entry</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">reference</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;MedicationStatement/us-core-medstmnt-example&quot;/&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Reference#Reference.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;US Core Profile Medication list example&quot;/&gt;
+    &lt;/entry&gt;
+  &lt;/section&gt;
+  &lt;<a href="StructureDefinition-ecr.html#Composition.section">section</a>&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.title">title</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Results&quot;/&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.code">code</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">system</a> <a href="http://build.fhir.org/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">code</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;30954-2&quot;/&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Relevant diagnostic tests/​laboratory data Narrative&quot;/&gt;
+      &lt;/coding&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Relevant diagnostic tests/​laboratory data&quot;/&gt;
+    &lt;/code&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.entry">entry</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">reference</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;DiagnosticReport/us-core-dr-example&quot;/&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Reference#Reference.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;US Core Profile DiagnosticReport example&quot;/&gt;
+    &lt;/entry&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.entry">entry</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">reference</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Observation/us-core-obs-example&quot;/&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Reference#Reference.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;US Core Profile Observation example&quot;/&gt;
+    &lt;/entry&gt;
+  &lt;/section&gt;
+  &lt;<a href="StructureDefinition-ecr.html#Composition.section">section</a>&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.title">title</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Lab Orders&quot;/&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.code">code</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">system</a> <a href="http://build.fhir.org/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">code</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;30954-2&quot;/&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Relevant diagnostic tests/​laboratory data Narrative&quot;/&gt;
+      &lt;/coding&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Relevant diagnostic tests/​laboratory data&quot;/&gt;
+    &lt;/code&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.entry">entry</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">reference</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;ProcedureRequest/us-core-pr-example&quot;/&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Reference#Reference.display">display</a>
+               <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;US Core Profile ProcedureRequest (aka ServiceRequest) example&quot;/&gt;
+    &lt;/entry&gt;
+  &lt;/section&gt;
+  &lt;<a href="StructureDefinition-ecr.html#Composition.section">section</a>&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.title">title</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Immunizations&quot;/&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.code">code</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">system</a> <a href="http://build.fhir.org/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">code</a> <a href="http://build.fhir.org/datatypes.html#code">value</a>=&quot;11369-6&quot;/&gt;
+        &lt;<a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;History of Immunization Narrative&quot;/&gt;
+      &lt;/coding&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;History of Immunization&quot;/&gt;
+    &lt;/code&gt;
+    &lt;<a href="StructureDefinition-ecr.html#Composition.section.entry">entry</a>&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Reference#Reference.reference">reference</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;Immunization/us-core-immunization-example&quot;/&gt;
+      &lt;<a href="http://build.fhir.org/datatypes.html#Reference#Reference.display">display</a> <a href="http://build.fhir.org/datatypes.html#string">value</a>=&quot;US Core Profile Immunization example&quot;/&gt;
+    &lt;/entry&gt;
+  &lt;/section&gt;
+&lt;/Composition&gt;</pre>
+
+
+<!-- ============ default xml or json content CONTENT CONTENT=============== -->
 
 
 <!-- simple format links
@@ -327,7 +405,6 @@ Formats: <a href="Composition-ecr-genexample.html">Narrative</a>, <a href="Compo
 </div>  <!-- /container -->
 </div>  <!-- /page content -->
 </div>  <!-- /page content wrapper -->
-</div>  <!-- wrapper -->
 
 
 
@@ -344,7 +421,7 @@ Formats: <a href="Composition-ecr-genexample.html">Narrative</a>, <a href="Compo
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Nov 27, 2017 16:16-0800. |
+            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Tue, Nov 28, 2017 18:13-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.org/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

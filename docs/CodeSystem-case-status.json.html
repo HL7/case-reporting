@@ -168,65 +168,7 @@ your logo here
 </div>  <!-- /container -->
 </div>  <!-- /segment-breadcrumb -->
 
-<div id="wrapper">  <!-- wrapper -->
 
-<?xml version="1.0" encoding="UTF-8"?>
-
-<!-- sidebar-wrapper  put your TOC here. like example below...-->
-
-<div id="sidebar-wrapper">
-<a href="CodeSystem-case-status.json.html" class="btn btn-info" role="button">TOP</a>
-  <ul class="sidebar-nav">
-    <lh class="sidebar-brand">Contents:</lh>
-    <li><a href="index.html">PHCase Implementation Guide</a>    <ul>
-        <li><a href="index.html#cat-facts-to-show-how-the-text-wraps-around-the-contents-block" id="markdown-toc-cat-facts-to-show-how-the-text-wraps-around-the-contents-block">Cat Facts (To Show How the Text Wraps around the Contents Block)</a></li>
-        <li><a href="index.html#jekyll-site-variables" id="markdown-toc-jekyll-site-variables">Jekyll Site Variables</a></li>
-        <li><a href="index.html#introduction" id="markdown-toc-introduction">Introduction</a></li>
-        <li><a href="index.html#more-stuff" id="markdown-toc-more-stuff">More Stuff</a>        <ul>
-            <li><a href="index.html#and-more-stuff" id="markdown-toc-and-more-stuff">And More Stuff</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="guidance.html" id="markdown-toc-general-guidance-and-definitions">General Guidance and Definitions</a>    <ul>
-    <li><a href="guidance.html#introduction" id="markdown-toc-introduction">Introduction</a></li>
-    <li><a href="guidance.html#more-stuff" id="markdown-toc-more-stuff">More Stuff</a>        <ul>
-        <li><a href="guidance.html#and-more-stuff" id="markdown-toc-and-more-stuff">And More Stuff</a></li>
-      </ul>
-    </li>
-  </ul>
-</li>
-   </ul>
-</div>
-
-<!--
-
-    <div id="sidebar-wrapper">
-<a href="CodeSystem-case-status.json.html" class="btn btn-info" role="button">TOP</a>
-        <ul class="sidebar-nav">
-            <lh class="sidebar-brand">Contents:</lh>
-            <li><a href="#">Another link</a></li>
-            <li><a href="#">Next link</a></li>
-            <li><a href="#">Last link</a></li>
-        </ul>
-
-    </div>
--->
-
-
-<!--
-
-    <div id="sidebar-wrapper">
-
-        <ul class="sidebar-nav">
-            <lh class="sidebar-brand">Contents:</lh>
-            <li><a href="#">Another link</a></li>
-            <li><a href="#">Next link</a></li>
-            <li><a href="#">Last link</a></li>
-        </ul>
-
-    </div>
--->
 <div id="page-content-wrapper">  <!-- page content wrapper -->
   <div class="page-content">  <!--page content -->
     <div class="container">  <!-- container -->
@@ -246,7 +188,7 @@ your logo here
       
       
       
-        <a class="breadcrumb-item" href="index.html">Home</a>
+        <a class="breadcrumb-item btn btn-link btn-sm" href="toc.html">TOC</a>/<a class="breadcrumb-item" href="index.html">Home</a>
         /
         <a class="breadcrumb-item" href="terminology.html">Terminology</a>
         /
@@ -307,9 +249,89 @@ your logo here
   Raw <a href="CodeSystem-case-status.json" download>json</a>
   </p>
 
-"page.br_{ { [type] } }" = terminology
+<pre class="json">
+{
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem">resourceType</a>" : "CodeSystem",
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.id">id</a>" : "case-status",
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.text">text</a>" : {
+    "<a href="http://build.fhir.org/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+    "<a href="http://build.fhir.org/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;h2&gt;Case Status Codes&lt;/h2&gt;&lt;div&gt;&lt;p&gt;Codes identifying the stage lifecycle stage of the case&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;This code system http://fhir.hl7.org/us/ecr/CodeSystem/case-status defines the following codes:&lt;/p&gt;&lt;table class=&quot;codes&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;in-progress&lt;a name=&quot;case-status-in-progress&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;In Progress&lt;/td&gt;&lt;td&gt;This is a partial (e.g. initial, interim or preliminary) case. Data may be incomplete or unverified.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;suspended&lt;a name=&quot;case-status-suspended&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Suspended&lt;/td&gt;&lt;td&gt;Incomplete or unavailable because the case has been temporarily halted.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;aborted&lt;a name=&quot;case-status-aborted&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Aborted&lt;/td&gt;&lt;td&gt;Incomplete or unavailable because the case was abandoned prior to completion.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;completed&lt;a name=&quot;case-status-completed&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Completed&lt;/td&gt;&lt;td&gt;The case is complete&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;reopened&lt;a name=&quot;case-status-reopened&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Reopened&lt;/td&gt;&lt;td&gt;Subsequent to being completed, the case has been reopened. This includes any change in the results, diagnosis, narrative text, or other content that has been issued.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;entered-in-error&lt;a name=&quot;case-status-entered-in-error&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Entered in Error&lt;/td&gt;&lt;td&gt;This electronic record of this event should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be &amp;quot;cancelled&amp;quot; rather than &amp;quot;entered-in-error&amp;quot;.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;unknown&lt;a name=&quot;case-status-unknown&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Unknown&lt;/td&gt;&lt;td&gt;The authoring system does not know which of the status values currently applies.  Note: This concept is not to be used for &amp;quot;other&amp;quot; - one of the listed statuses is presumed to apply, it's just not known which one.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
+  },
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.url">url</a>" : "http://fhir.hl7.org/us/ecr/CodeSystem/case-status",
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.version">version</a>" : "0.0.0",
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.name">name</a>" : "Case Status Codes",
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.status">status</a>" : "draft",
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.experimental">experimental</a>" : false,
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.date">date</a>" : "2017-09-21T17:17:09-07:00",
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.contact">contact</a>" : [
+    {
+      "<a href="http://build.fhir.org/datatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
+        {
+          "<a href="http://build.fhir.org/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "url"
+        },
+        {
+          "<a href="http://build.fhir.org/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "email"
+        }
+      ]
+    }
+  ],
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.description">description</a>" : "Codes identifying the stage lifecycle stage of the case",
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.jurisdiction">jurisdiction</a>" : [
+    {
+      "<a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+        {
+          "<a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">system</a>" : "urn:iso:std:iso:3166",
+          "<a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">code</a>" : "US",
+          "<a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">display</a>" : "United States Minor Outlying Islands (the)"
+        }
+      ]
+    }
+  ],
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.caseSensitive">caseSensitive</a>" : true,
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.valueSet">valueSet</a>" : "http://fhir.hl7.org/us/ecr/ValueSet/cr-status",
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.content">content</a>" : "complete",
+  "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept">concept</a>" : [
+    {
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a>" : "in-progress",
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a>" : "In Progress",
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>" : "This is a partial (e.g. initial, interim or preliminary) case. Data may be incomplete or unverified."
+    },
+    {
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a>" : "suspended",
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a>" : "Suspended",
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>" : "Incomplete or unavailable because the case has been temporarily halted."
+    },
+    {
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a>" : "aborted",
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a>" : "Aborted",
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>" : "Incomplete or unavailable because the case was abandoned prior to completion."
+    },
+    {
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a>" : "completed",
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a>" : "Completed",
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>" : "The case is complete"
+    },
+    {
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a>" : "reopened",
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a>" : "Reopened",
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>" : "Subsequent to being completed, the case has been reopened. This includes any change in the results, diagnosis, narrative text, or other content that has been issued."
+    },
+    {
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a>" : "entered-in-error",
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a>" : "Entered in Error",
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>" : "This electronic record of this event should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be &quot;cancelled&quot; rather than &quot;entered-in-error&quot;.)"
+    },
+    {
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.code">code</a>" : "unknown",
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.display">display</a>" : "Unknown",
+      "<a href="http://build.fhir.org/codesystem.html#CodeSystem.concept.definition">definition</a>" : "The authoring system does not know which of the status values currently applies.  Note: This concept is not to be used for &quot;other&quot; - one of the listed statuses is presumed to apply, it's just not known which one."
+    }
+  ]
+}</pre>
 
-<!-- ============CapabilityStatement CONTENT CONTENT=============== -->
+
+<!-- ============ default xml or json content CONTENT CONTENT=============== -->
 
 
 <!-- simple format links
@@ -327,7 +349,6 @@ Formats: <a href="CodeSystem-case-status.html">Narrative</a>, <a href="CodeSyste
 </div>  <!-- /container -->
 </div>  <!-- /page content -->
 </div>  <!-- /page content wrapper -->
-</div>  <!-- wrapper -->
 
 
 
@@ -344,7 +365,7 @@ Formats: <a href="CodeSystem-case-status.html">Narrative</a>, <a href="CodeSyste
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Nov 27, 2017 16:16-0800. |
+            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Tue, Nov 28, 2017 18:13-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.org/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

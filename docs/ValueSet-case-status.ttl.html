@@ -168,65 +168,7 @@ your logo here
 </div>  <!-- /container -->
 </div>  <!-- /segment-breadcrumb -->
 
-<div id="wrapper">  <!-- wrapper -->
 
-<?xml version="1.0" encoding="UTF-8"?>
-
-<!-- sidebar-wrapper  put your TOC here. like example below...-->
-
-<div id="sidebar-wrapper">
-<a href="ValueSet-case-status.ttl.html" class="btn btn-info" role="button">TOP</a>
-  <ul class="sidebar-nav">
-    <lh class="sidebar-brand">Contents:</lh>
-    <li><a href="index.html">PHCase Implementation Guide</a>    <ul>
-        <li><a href="index.html#cat-facts-to-show-how-the-text-wraps-around-the-contents-block" id="markdown-toc-cat-facts-to-show-how-the-text-wraps-around-the-contents-block">Cat Facts (To Show How the Text Wraps around the Contents Block)</a></li>
-        <li><a href="index.html#jekyll-site-variables" id="markdown-toc-jekyll-site-variables">Jekyll Site Variables</a></li>
-        <li><a href="index.html#introduction" id="markdown-toc-introduction">Introduction</a></li>
-        <li><a href="index.html#more-stuff" id="markdown-toc-more-stuff">More Stuff</a>        <ul>
-            <li><a href="index.html#and-more-stuff" id="markdown-toc-and-more-stuff">And More Stuff</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="guidance.html" id="markdown-toc-general-guidance-and-definitions">General Guidance and Definitions</a>    <ul>
-    <li><a href="guidance.html#introduction" id="markdown-toc-introduction">Introduction</a></li>
-    <li><a href="guidance.html#more-stuff" id="markdown-toc-more-stuff">More Stuff</a>        <ul>
-        <li><a href="guidance.html#and-more-stuff" id="markdown-toc-and-more-stuff">And More Stuff</a></li>
-      </ul>
-    </li>
-  </ul>
-</li>
-   </ul>
-</div>
-
-<!--
-
-    <div id="sidebar-wrapper">
-<a href="ValueSet-case-status.ttl.html" class="btn btn-info" role="button">TOP</a>
-        <ul class="sidebar-nav">
-            <lh class="sidebar-brand">Contents:</lh>
-            <li><a href="#">Another link</a></li>
-            <li><a href="#">Next link</a></li>
-            <li><a href="#">Last link</a></li>
-        </ul>
-
-    </div>
--->
-
-
-<!--
-
-    <div id="sidebar-wrapper">
-
-        <ul class="sidebar-nav">
-            <lh class="sidebar-brand">Contents:</lh>
-            <li><a href="#">Another link</a></li>
-            <li><a href="#">Next link</a></li>
-            <li><a href="#">Last link</a></li>
-        </ul>
-
-    </div>
--->
 <div id="page-content-wrapper">  <!-- page content wrapper -->
   <div class="page-content">  <!--page content -->
     <div class="container">  <!-- container -->
@@ -246,7 +188,7 @@ your logo here
       
       
       
-        <a class="breadcrumb-item" href="index.html">Home</a>
+        <a class="breadcrumb-item btn btn-link btn-sm" href="toc.html">TOC</a>/<a class="breadcrumb-item" href="index.html">Home</a>
         /
         <a class="breadcrumb-item" href="terminology.html">Terminology</a>
         /
@@ -302,15 +244,66 @@ your logo here
 </ul>
 
     <h2>Turtle Format: ValueSet-case-status</h2>
-    <!-- ============ default xml or json content CONTENT CONTENT=============== -->
   
   <p>
   Raw <a href="ValueSet-case-status.ttl" download>ttl</a>
   </p>
 
-"page.br_{ { [type] } }" = terminology
+<pre class="rdf">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
-<!-- ============CapabilityStatement CONTENT CONTENT=============== -->
+# - resource -------------------------------------------------------------------
+
+ a fhir:ValueSet;
+  <a href="http://build.fhir.org/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot;
+  <a href="http://build.fhir.org/valueset.html#ValueSet.id">fhir:Resource.id</a> [ <a href="http://build.fhir.org/datatypes.html#id">fhir:value</a> &quot;case-status&quot;];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.text">fhir:DomainResource.text</a> [
+     <a href="http://build.fhir.org/datatypes.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> &quot;generated&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h2&gt;Case Status Codes&lt;/h2&gt;&lt;div&gt;&lt;p&gt;Codes identifying the stage lifecycle stage of the case.&lt;/p&gt;\n&lt;/div&gt;&lt;p&gt;This value set includes codes from the following code systems:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Include all codes defined in &lt;a href=\&quot;CodeSystem-case-status.html\&quot;&gt;&lt;code&gt;http://fhir.hl7.org/us/ecr/CodeSystem/case-status&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&quot;
+  ];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.url">fhir:ValueSet.url</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/ecr/ValueSet/case-status&quot;];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.version">fhir:ValueSet.version</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;0.0.0&quot;];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.name">fhir:ValueSet.name</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;Case Status Codes&quot;];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.status">fhir:ValueSet.status</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> &quot;draft&quot;];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.experimental">fhir:ValueSet.experimental</a> [ <a href="http://build.fhir.org/datatypes.html#boolean">fhir:value</a> &quot;false&quot;^^xsd:boolean];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.date">fhir:ValueSet.date</a> [ <a href="http://build.fhir.org/datatypes.html#dateTime">fhir:value</a> &quot;2017-09-20T10:45:12-07:00&quot;^^xsd:dateTime];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.publisher">fhir:ValueSet.publisher</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;{ site.data.fhir.ig.publisher }&quot;];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.contact">fhir:ValueSet.contact</a> [
+     <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
+     <a href="http://build.fhir.org/datatypes.html#ContactDetail#ContactDetail.name">fhir:ContactDetail.name</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;HL7 Public Health and Emergency Response WorkGroup&quot; ];
+     <a href="http://build.fhir.org/datatypes.html#ContactDetail#ContactDetail.telecom">fhir:ContactDetail.telecom</a> [
+       <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
+       <a href="http://build.fhir.org/datatypes.html#ContactPoint#ContactPoint.system">fhir:ContactPoint.system</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> &quot;url&quot; ];
+       <a href="http://build.fhir.org/datatypes.html#ContactPoint#ContactPoint.value">fhir:ContactPoint.value</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;http://www.hl7.org/Special/committees/pher/index.cfm&quot; ]     ]
+  ];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.description">fhir:ValueSet.description</a> [ <a href="http://build.fhir.org/datatypes.html#markdown">fhir:value</a> &quot;Codes identifying the stage lifecycle stage of the case.&quot;];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.jurisdiction">fhir:ValueSet.jurisdiction</a> [
+     <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
+     <a href="http://build.fhir.org/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:CodeableConcept.coding</a> [
+       <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
+       <a href="http://build.fhir.org/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;urn:iso:std:iso:3166&quot; ];
+       <a href="http://build.fhir.org/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://build.fhir.org/datatypes.html#code">fhir:value</a> &quot;US&quot; ];
+       <a href="http://build.fhir.org/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://build.fhir.org/datatypes.html#string">fhir:value</a> &quot;United States Minor Outlying Islands (the)&quot; ]     ]
+  ];
+  <a href="http://build.fhir.org/valueset.html#ValueSet.compose">fhir:ValueSet.compose</a> [
+     <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include">fhir:ValueSet.compose.include</a> [
+       <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
+       <a href="http://build.fhir.org/valueset.html#ValueSet.compose.include.system">fhir:ValueSet.compose.include.system</a> [ <a href="http://build.fhir.org/datatypes.html#uri">fhir:value</a> &quot;http://fhir.hl7.org/us/ecr/CodeSystem/case-status&quot; ]     ]
+  ].
+
+# - ontology header ------------------------------------------------------------
+
+ a owl:Ontology;
+  owl:imports fhir:fhir.ttl.
+
+</pre>
+
+
+
+<!-- ============ default xml or json content CONTENT CONTENT=============== -->
 
 
 <!-- simple format links
@@ -328,7 +321,6 @@ Formats: <a href="ValueSet-case-status.html">Narrative</a>, <a href="ValueSet-ca
 </div>  <!-- /container -->
 </div>  <!-- /page content -->
 </div>  <!-- /page content wrapper -->
-</div>  <!-- wrapper -->
 
 
 
@@ -345,7 +337,7 @@ Formats: <a href="ValueSet-case-status.html">Narrative</a>, <a href="ValueSet-ca
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Nov 27, 2017 16:16-0800. |
+            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Tue, Nov 28, 2017 18:13-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.org/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>
