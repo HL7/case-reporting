@@ -13,19 +13,35 @@
 <!-- end TOC -->
 
 
-source pages/\_include/{{page.md_filename}}.md  file
+source: pages/\_include/{{page.md_filename}}.md  file
 
-###  Cat Facts (To Show How the Text Wraps around the Contents Block)
+###  Introduction
 
- The domestic cat[1][5] (Latin: Felis catus) is a small, typically furry, carnivorous mammal. They are often called house cats when kept as indoor pets or simply cats when there is no need to distinguish them from other felids and felines.[6] Cats are often valued by humans for companionship and for their ability to hunt vermin. There are more than 70 cat breeds, though different associations proclaim different numbers according to their standards.
+With the advent of Electronic Health Records (EHRs), there are tremendous opportunities to support public health surveillance and the delivery of public health information to clinical care. eCR can support more complete and timely possible case data, support disease and condition monitoring and trending, assist outbreak management and suppression, and improve relevant information delivery to clinicians in the context of jurisdictional disease trends and patient specifics.
 
-Cats are similar in anatomy to the other felids, with a strong flexible body, quick reflexes, sharp retractable claws, and teeth adapted to killing small prey. Cat senses fit a crepuscular and predatory ecological niche. Cats can hear sounds too faint or too high in frequency for human ears, such as those made by mice and other small animals. They can see in near darkness. Like most other mammals, cats have poorer color vision and a better sense of smell than humans. Cats, despite being solitary hunters, are a social species and cat communication includes the use of a variety of vocalizations (mewing, purring, trilling, hissing, growling, and grunting), as well as cat pheromones and types of cat-specific body language.[7]
+eCR has an HL7 CDA STU implementation guide (the Electronic Initial Case Report - eICR) for all-jurisdiction, all-condition initial reporting to public health from EHRs. It also has an in-process HL7 CDA STU implementation guide (the “Reportability Response”).
 
-Cats have a high breeding rate.[8] Under controlled breeding, they can be bred and shown as registered pedigree pets, a hobby known as cat fancy. Failure to control the breeding of pet cats by neutering, as well as the abandonment of former household pets, has resulted in large numbers of feral cats worldwide, requiring population control.[9] In certain areas outside cats' native range, this has contributed, along with habitat destruction and other factors, to the extinction of many bird species. Cats have been known to extirpate a bird species within specific regions and may have contributed to the extinction of isolated island populations.[10] Cats are thought to be primarily responsible for the extinction of 33 species of birds, and the presence of feral and free-ranging cats makes some otherwise suitable locations unsuitable for attempted species reintroduction.[11]
+With the advent of FHIR standards, eCR will also need appropriate FHIR resources, transactions, and implementation guidance to support this process. FHIR also offers opportunities to supplement eICR data and improve the ease of implementation and consistency of the automated triggering of eICRs and the decision logic needed to advance both reporting to public health and provision of public health information to clinical care.
 
-Since cats were venerated in ancient Egypt, they were commonly believed to have been domesticated there,[12] but there may have been instances of domestication as early as the Neolithic from around 9,500 years ago (7,500 BC).[13] A genetic study in 2007 concluded that domestic cats are descended from Near Eastern wildcats, having diverged around 8,000 BC in the Middle East.[12][14] A 2016 study found that leopard cats were undergoing domestication independently in China around 5,500 BC, though this line of partially domesticated cats leaves no trace in the domesticated populations of today.[15][16]
+Public Health electronic case reporting (eCR) is the principally automated, bidirectional exchange of information between clinical care and public health in the context of reportable conditions.
 
-As of a 2007 study, cats are the second most popular pet in the US by number of pets owned, behind freshwater fish.[17] In a 2010 study they were ranked the third most popular pet in the UK, after fish and dogs, with around 8 million being owned.[18]
+This project will build off of the C-CDA STU Public Health Case Report standards to support a number of activities related to electronic case reporting (eCR) through appropriate FHIR representations:
+
+1. Reporting, investigation, and management - electronic transmission of clinical data from Electronic Health Records to Public Health – including; 1) the existing electronic initial case report (eICR) version 1.1, 2) new eICR data from all EHRs, 3) pushed and pulled, non-eICR, condition specific EHR data, and 4) supplemental data not found in EHRs. The management and processing of population cases including potentially a FHIR population case resource.
+
+2. Bi-directional information exchange – the response to the eICR including the delivery of relevant public health information in the context of the patient and their possible relevant conditions – including the Reportability Response transaction
+
+3. Triggering and decision support – the automated initiation of an initial report in Electronic Health Records based on public health specifications and logic as well as clinical care factors. The specification of simple logic “triggers” and a pathway to more complex logic distribution. Including the workflow tie-in opportunity for contextualized public health information.
+
+As with the initial electronic case report, the project will strive to minimize reporting burden and use data that are established to exist in EHRs as a product of care. It will, whenever possible, use existing FHIR resources so as to constitute data that can be readily produced and delivered by EHRs.
+
+The strategy for development undertaken by this project includes the use of a US Realm Standard for Trial Use (STU) for actual development and deployment. Following the STU period, for a period of two years, a Normative standard will be balloted. It will also include the pursuit of a universal FHIR population case resource and the specification of documents, value sets, extensions and other resources as necessary to support these activities.
+
+### Stakeholders:
+- Regulatory Agency
+- Standards Development Organizations (SDOs)
+- Vendors	EHR, PHR; Health Care IT; Clinical Decision Support Systems
+- Providers	Local and State Departments of Health; Healthcare Institutions (hospitals, long term care, home care, mental health)
 
 ### Jekyll Site Variables
 
@@ -52,12 +68,3 @@ totalFiles : total number of files found by the build -  {% raw %} {{ site.data.
 processedFiles : number of files genrated by the build -  {% raw %} {{ site.data.fhir.processedFiles }} {% endraw %} = {{ site.data.fhir.processedFiles }}
 
 genDate : date of generation (so date stamps in the pages can match those in the conformance resources) -  {% raw %} {{ site.data.fhir.genDate }} {% endraw %} = {{ site.data.fhir.genDate }}
-
-
-### Introduction
-
-blah blah blah
-
-### More Stuff
-
-#### And More Stuff

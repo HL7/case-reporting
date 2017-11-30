@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+	<id value="ecr-encounter"/>
+	<url value="http://fhir.hl7.org/us/ecr/StructureDefinition/ecr-encounter"/>
+	<version value="0.0.0"/>
+	<name value="eCR Encounter Profile"/>
+	<status value="draft"/>
+	<date value="2017-11-29T00:00:00-08:00"/>
+	<jurisdiction>
+		<coding>
+			<system value="urn:iso:std:iso:3166"/>
+			<code value="US"/>
+			<display value="United States Minor Outlying Islands (the)"/>
+		</coding>
+	</jurisdiction>
+	<fhirVersion value="3.0.1"/>
+
+	<kind value="resource"/>
+	<abstract value="false"/>
+	<type value="Encounter"/>
+    <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"/>
+	<derivation value="constraint"/>
+
+	<differential>
+		<element id="Encounter">
+			<path value="Encounter"/>
+			<short value="Travel History"/>
+			<mustSupport value="false"/>
+			<isModifier value="false"/>
+		</element>
+		<element id="Encounter.location">
+			<path value="Encounter.location"/>
+			<mustSupport value="true"/>
+			<isModifier value="false"/>
+		</element>
+		<element id="Encounter.location.location">
+			<path value="Encounter.location.location"/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://fhir.hl7.org/us/ecr/StructureDefinition/ecr-location"/>
+			</type>
+			<mustSupport value="false"/>
+			<isModifier value="false"/>
+		</element>
+	</differential>
+</StructureDefinition>

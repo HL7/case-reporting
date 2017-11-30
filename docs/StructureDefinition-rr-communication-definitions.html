@@ -427,14 +427,14 @@ your logo here
   <tr><td>Definition</td><td><p>The patient or group that was the focus of this communication.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
-  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/us/core/stu1//StructureDefinition-us-core-patient.html" title="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient">US Core Patient Profile</a>)</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/ig/HL7/US-Core//StructureDefinition-us-core-patient.html" title="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient">US Core Patient Profile</a>)</td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
   <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>patient</td></tr>
   <tr><td colspan="2" class="structure"><a name="Communication.recipient"> </a><b>Communication.recipient</b></td></tr>
   <tr><td>Definition</td><td><p>The entity (e.g. person, organization, clinical information system, or device) which was the target of the communication. If receipts need to be tracked by individual, a separate resource instance will need to be created for each recipient.  Multiple recipient communications are intended where either a receipt(s) is not tracked (e.g. a mass mail-out) or is captured in aggregate (all emails confirmed received by a particular time).</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
-  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/us/core/stu1//StructureDefinition-us-core-organization.html" title="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization">US Core Organization Core Profile</a>)</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/ig/HL7/US-Core//StructureDefinition-us-core-organization.html" title="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization">US Core Organization Profile</a>)</td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
   <tr><td>Comments</td><td><p>Reporting may beidentified for multiple PHAs by the PHA system (or its intermediary) (because the patient's residence and the provider location are in separate jurisdictions) including other identified organization (such as an HIE) to which the eICR (if deemed reportable) and/or the Reportability Response will be routed.</p>
 </td></tr>
@@ -742,7 +742,7 @@ your logo here
   <tr><td>Definition</td><td><p>The entity (e.g. person, organization, clinical information system, or device) which was the source of the communication.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
-  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>Choice of: <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/device.html" title="http://hl7.org/fhir/StructureDefinition/Device">Device</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/us/core/stu1//StructureDefinition-us-core-organization.html" title="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization">US Core Organization Core Profile</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/us/core/stu1//StructureDefinition-us-core-practitioner.html" title="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner">US  Core Practitioner Profile</a>)</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>Choice of: <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/device.html" title="http://hl7.org/fhir/StructureDefinition/Device">Device</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/ig/HL7/US-Core//StructureDefinition-us-core-organization.html" title="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization">US Core Organization Profile</a>), <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/ig/HL7/US-Core//StructureDefinition-us-core-practitioner.html" title="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner">US  Core Practitioner Profile</a>)</td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
   <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>Provider or Facility</td></tr>
   <tr><td>Comments</td><td><p>If only representing only a Provider or  only a Facility use this element. If representing both a Provider and a Facility use this element to represent the Provider and the <em>onBehalfOf</em> Extension to represent the Facility.</p>
@@ -764,7 +764,7 @@ your logo here
   <tr><td>Definition</td><td><p>The organization the practitioner was acting on behalf of.</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: ele-1</td></tr>
-  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>  (Extension Type: <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/us/core/stu1//StructureDefinition-us-core-organization.html" title="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization">US Core Organization Core Profile</a>))</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>  (Extension Type: <a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/ig/HL7/US-Core//StructureDefinition-us-core-organization.html" title="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization">US Core Organization Profile</a>))</td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
 <b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() | (children().count() &gt; id.count()))<br/><b title="Formal Invariant Identifier">ext-1</b>: Must have either extensions or value[x], not both (: extension.exists() != value.exists())</td></tr>
   <tr><td colspan="2" class="structure"><a name="Communication.sender.extension:onbehalfof.id"> </a><a name="Communication.sender.extension.id"> </a><b>Communication.sender.extension.id</b></td></tr>
@@ -792,7 +792,7 @@ your logo here
   <tr><td>Definition</td><td><p>Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).</p>
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
-  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/us/core/stu1//StructureDefinition-us-core-organization.html" title="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization">US Core Organization Core Profile</a>)</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Reference">Reference</a>(<a href="http://build.fhir.org/ig/HL7/US-Core//StructureDefinition-us-core-organization.html" title="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization">US Core Organization Profile</a>)</td></tr>
   <tr><td colspan="2" class="structure"><a name="Communication.sender.reference"> </a><b>Communication.sender.reference</b></td></tr>
   <tr><td>Definition</td><td><p>A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources.</p>
 </td></tr>
@@ -953,7 +953,7 @@ your logo here
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Tue, Nov 28, 2017 18:13-0800. |
+            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Nov 29, 2017 21:18-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.org/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>
