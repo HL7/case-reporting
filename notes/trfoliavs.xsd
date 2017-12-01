@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="system" xmlns="http://www.lantanagroup.com/voc">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="code" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="value" type="xs:string" use="required"/>
+						<xs:attribute name="displayName" type="xs:string" use="required"/>
+						<xs:attribute name="codeSystemName" type="xs:string" use="required"/>
+						<xs:attribute name="codeSystem" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="valueSetOid" type="xs:string" use="required"/>
+			<xs:attribute name="valueSetName" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

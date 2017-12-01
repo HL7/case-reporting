@@ -306,6 +306,13 @@ your logo here
 </td></tr>
   <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
   <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td><a href="http://build.fhir.org/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Communication.extension:statusreason"> </a><b>Communication.extension (<a href="StructureDefinition-extension-status-reason.html">http://fhir.hl7.org/us/ecr/StructureDefinition/extension-status-reason</a>)</b></td></tr>
+  <tr><td>Definition</td><td><p>If the PHA system (or its intermediary) identifies an issue with the eICR,  this will contain those issues.  Either warnings or not done reasons.</p>
+</td></tr>
+  <tr><td><a href="http://build.fhir.org/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: ele-1</td></tr>
+  <tr><td><a href="http://build.fhir.org/datatypes.html">Type</a></td><td>  (Extension Type: <a href="http://build.fhir.org/datatypes.html#code">code</a>)</td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() | (children().count() &gt; id.count()))<br/><b title="Formal Invariant Identifier">ext-1</b>: Must have either extensions or value[x], not both (: extension.exists() != value.exists())</td></tr>
   <tr><td colspan="2" class="structure"><a name="Communication.extension:warningreason"> </a><b>Communication.extension (<a href="StructureDefinition-extension-warning-reason.html">http://fhir.hl7.org/us/ecr/StructureDefinition/extension-warning-reason</a>)</b></td></tr>
   <tr><td>Definition</td><td><p>If the PHA system (or its intermediary) identifies an issue with the eICR, but is still able to process the file, this will contain those issues as a warning.</p>
 </td></tr>
@@ -953,7 +960,7 @@ your logo here
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Nov 29, 2017 21:18-0800. |
+            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://build.fhir.org/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Nov 30, 2017 20:59-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://build.fhir.org/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

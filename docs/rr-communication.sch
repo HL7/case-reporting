@@ -12,6 +12,7 @@
   <sch:pattern>
     <sch:title>f:Communication</sch:title>
     <sch:rule context="f:Communication">
+      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-status-reason']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-status-reason': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-warning-reason']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-warning-reason': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-inactive-code']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-inactive-code': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-expected-version']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-expected-version': maximum cardinality of 'extension' is 1</sch:assert>
@@ -31,6 +32,8 @@
   <sch:pattern>
     <sch:title>Communication.extension</sch:title>
     <sch:rule context="f:Communication/f:extension">
+      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
+      <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])">Must have either extensions or value[x], not both (inherited)</sch:assert>
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
       <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])">Must have either extensions or value[x], not both (inherited)</sch:assert>
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
