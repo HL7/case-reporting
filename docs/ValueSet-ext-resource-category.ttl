@@ -8,31 +8,20 @@
 <http://fhir.hl7.org/us/ecr/ValueSet/ext-resource-category> a fhir:ValueSet;
   fhir:nodeRole fhir:treeRoot;
   fhir:Resource.id [ fhir:value "ext-resource-category"];
-  fhir:Resource.meta [
-     fhir:Meta.profile [
-       fhir:value "http://hl7.org/fhir/StructureDefinition/shareablevalueset";
-       fhir:index 0
-     ]
-  ];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ExtResourceCategory</h2><div><p>Type/category of one or more external resources</p>\n</div><p>This value set includes codes from the following code systems:</p><ul><li>Include all codes defined in <a href=\"CodeSystem-ext-resource-category.html\"><code>http://fhir.hl7.org/us/ecr/CodeSystem/ext-resource-category</code></a></li></ul></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>External Resource Type</h2><div><p>Type/category of one or more external resources</p>\n</div><p>This value set includes codes from the following code systems:</p><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.114222.4.5.274</code><table class=\"none\"><tr><td><b>Code</b></td><td><b>Display</b></td></tr><tr><td>TEMP_CODE_OUTBREAK</td><td>Outbreak- or Cluster Related</td><td/></tr><tr><td>TEMP_CODE_ADD_REP_NEEDS</td><td>Additional reporting needs</td><td/></tr><tr><td>TEMP_CODE_ADD_LAB_NEEDS</td><td>Additional detection and/or laboratory testing needs</td><td/></tr><tr><td>TEMP_CODE_TREAT_PREVENT</td><td>Treatment and/or prevention</td><td/></tr><tr><td>TEMP_CODE_PHA_CONTACT</td><td>PHA Contact Information</td><td/></tr><tr><td>TEMP_CODE_ADD_RESOURCES</td><td>Additional Resources</td><td/></tr></table></li></ul></div>"
   ];
   fhir:ValueSet.url [ fhir:value "http://fhir.hl7.org/us/ecr/ValueSet/ext-resource-category"];
-  fhir:ValueSet.version [ fhir:value "0.0.0"];
-  fhir:ValueSet.name [ fhir:value "ExtResourceCategory"];
-  fhir:ValueSet.status [ fhir:value "draft"];
-  fhir:ValueSet.date [ fhir:value "2017-11-30T20:59:17-08:00"^^xsd:dateTime];
-  fhir:ValueSet.contact [
+  fhir:ValueSet.identifier [
      fhir:index 0;
-     fhir:ContactDetail.telecom [
-       fhir:index 0;
-       fhir:ContactPoint.system [ fhir:value "url" ]
-     ], [
-       fhir:index 1;
-       fhir:ContactPoint.system [ fhir:value "email" ]
-     ]
+     fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ];
+     fhir:Identifier.value [ fhir:value "2.16.840.1.113883.10.20.15.2.5.4" ]
   ];
+  fhir:ValueSet.version [ fhir:value "0.0.0"];
+  fhir:ValueSet.name [ fhir:value "External Resource Type"];
+  fhir:ValueSet.status [ fhir:value "draft"];
+  fhir:ValueSet.date [ fhir:value "2017-12-11T00:00:00-08:00"^^xsd:dateTime];
   fhir:ValueSet.description [ fhir:value "Type/category of one or more external resources"];
   fhir:ValueSet.jurisdiction [
      fhir:index 0;
@@ -43,11 +32,35 @@
        fhir:Coding.display [ fhir:value "United States Minor Outlying Islands (the)" ]
      ]
   ];
-  fhir:ValueSet.immutable [ fhir:value "true"^^xsd:boolean];
   fhir:ValueSet.compose [
      fhir:ValueSet.compose.include [
        fhir:index 0;
-       fhir:ValueSet.compose.include.system [ fhir:value "http://fhir.hl7.org/us/ecr/CodeSystem/ext-resource-category" ]
+       fhir:ValueSet.compose.include.system [ fhir:value "urn:oid:2.16.840.1.114222.4.5.274" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TEMP_CODE_OUTBREAK" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Outbreak- or Cluster Related" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TEMP_CODE_ADD_REP_NEEDS" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Additional reporting needs" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TEMP_CODE_ADD_LAB_NEEDS" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Additional detection and/or laboratory testing needs" ]
+       ], [
+         fhir:index 3;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TEMP_CODE_TREAT_PREVENT" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Treatment and/or prevention" ]
+       ], [
+         fhir:index 4;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TEMP_CODE_PHA_CONTACT" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "PHA Contact Information" ]
+       ], [
+         fhir:index 5;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "TEMP_CODE_ADD_RESOURCES" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Additional Resources" ]
+       ]
      ]
   ] .
 

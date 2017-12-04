@@ -1,32 +1,21 @@
 {
   "resourceType": "ValueSet",
   "id": "ext-resource-category",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
-    ]
-  },
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ExtResourceCategory</h2><div><p>Type/category of one or more external resources</p>\n</div><p>This value set includes codes from the following code systems:</p><ul><li>Include all codes defined in <a href=\"CodeSystem-ext-resource-category.html\"><code>http://fhir.hl7.org/us/ecr/CodeSystem/ext-resource-category</code></a></li></ul></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>External Resource Type</h2><div><p>Type/category of one or more external resources</p>\n</div><p>This value set includes codes from the following code systems:</p><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.114222.4.5.274</code><table class=\"none\"><tr><td><b>Code</b></td><td><b>Display</b></td></tr><tr><td>TEMP_CODE_OUTBREAK</td><td>Outbreak- or Cluster Related</td><td/></tr><tr><td>TEMP_CODE_ADD_REP_NEEDS</td><td>Additional reporting needs</td><td/></tr><tr><td>TEMP_CODE_ADD_LAB_NEEDS</td><td>Additional detection and/or laboratory testing needs</td><td/></tr><tr><td>TEMP_CODE_TREAT_PREVENT</td><td>Treatment and/or prevention</td><td/></tr><tr><td>TEMP_CODE_PHA_CONTACT</td><td>PHA Contact Information</td><td/></tr><tr><td>TEMP_CODE_ADD_RESOURCES</td><td>Additional Resources</td><td/></tr></table></li></ul></div>"
   },
   "url": "http://fhir.hl7.org/us/ecr/ValueSet/ext-resource-category",
-  "version": "0.0.0",
-  "name": "ExtResourceCategory",
-  "status": "draft",
-  "date": "2017-11-30T20:59:17-08:00",
-  "contact": [
+  "identifier": [
     {
-      "telecom": [
-        {
-          "system": "url"
-        },
-        {
-          "system": "email"
-        }
-      ]
+      "system": "urn:ietf:rfc:3986",
+      "value": "2.16.840.1.113883.10.20.15.2.5.4"
     }
   ],
+  "version": "0.0.0",
+  "name": "External Resource Type",
+  "status": "draft",
+  "date": "2017-12-11T00:00:00-08:00",
   "description": "Type/category of one or more external resources",
   "jurisdiction": [
     {
@@ -39,11 +28,36 @@
       ]
     }
   ],
-  "immutable": true,
   "compose": {
     "include": [
       {
-        "system": "http://fhir.hl7.org/us/ecr/CodeSystem/ext-resource-category"
+        "system": "urn:oid:2.16.840.1.114222.4.5.274",
+        "concept": [
+          {
+            "code": "TEMP_CODE_OUTBREAK",
+            "display": "Outbreak- or Cluster Related"
+          },
+          {
+            "code": "TEMP_CODE_ADD_REP_NEEDS",
+            "display": "Additional reporting needs"
+          },
+          {
+            "code": "TEMP_CODE_ADD_LAB_NEEDS",
+            "display": "Additional detection and/or laboratory testing needs"
+          },
+          {
+            "code": "TEMP_CODE_TREAT_PREVENT",
+            "display": "Treatment and/or prevention"
+          },
+          {
+            "code": "TEMP_CODE_PHA_CONTACT",
+            "display": "PHA Contact Information"
+          },
+          {
+            "code": "TEMP_CODE_ADD_RESOURCES",
+            "display": "Additional Resources"
+          }
+        ]
       }
     ]
   }

@@ -193,10 +193,11 @@ The initial report was manually initiated by a provider. It was sent to: <routin
 A determination of reportability for a triggered condition could not be made for <responsible agency name>.  This may be because it is not on the list of reportable conditions for the relevant Public Health Agency, or the information provided at the time of this report does not meet reporting criteria, or not all data needed to confirm reportability were available.
 
 Note: While the identification of a Responsible Agency is an important part of information that the Reportability Response will provide to clinical care, some decision support systems may not be able to initially identify one.  In that circumstance, sentences that identify ""for"" or ""to"" <responsible agency name> should be ended with a period before that text. (e.g., A determination of reportability for a triggered condition could not be made. for <responsible agency name>.)
+
 "
 1. "This comment addresses the issues raised in comments 78, 110, 221, 339, 355 about the reporting of outdated RCTC versions and inactive RCTC codes and their associated templates.
 
-We will remove the following templates:
+We will remove the following templates:  - eh applied
     • Outdated RCTC Version
     • Expected RCTC Version
     • Inactive RCTC Code
@@ -204,24 +205,24 @@ The reporting of outdated RCTC version and inactive RCTC code will now be contai
 
 The structure of the eICR Processing Status hierarchy will be changed as follows:
     • eICR Processing Status
-            • SHOULD [0..*] eICR Processing Status Reason
-                    • MAY [0..*] eICR Processing Status Details
+            • SHOULD [0..*] eICR Processing Status Reason - eh applied
+                    • MAY [0..*] eICR Processing Status Details  - eh Detected Issue reference extension   ( create an ecr extension for DI)
 
 This structure allows for multiple outdated RCTC versions to be reported as requested in comment 78.
 
 Examples of values to be used in above templates:
-• eICR Processing Status values:
-    PROCESSED
-    PROCESSED_WITH_WARNING
-    NOT_PROCESSED_WITH_ERROR
-    PROCESSED_SEVERE_WARNING etc.
+• eICR Processing Status values:  -->  concept map
+    PROCESSED  --> complete
+    PROCESSED_WITH_WARNING --> completed
+    NOT_PROCESSED_WITH_ERROR --> aborted
+    PROCESSED_SEVERE_WARNING etc. --> aborted
 
-• eICR Processing Status Reason values:
+• eICR Processing Status Reason values:  --> status reason reference to OO
     EICR_FATAL
     EICR_SERVER
     INACTIVE_RCTC_CODE, etc.
 
-• eICR Processing Status Details
+• eICR Processing Status Details  --> status reason reference to OO look at OO from post.   review if this in needed or even possible in Communication maybe part of the POST workflow and not the RR.
       code/value pair with code=type of detail and value=detail
       INACTIVE_RCTC_CODE/99999, SNOMED CT
 

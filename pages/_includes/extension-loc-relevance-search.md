@@ -1,4 +1,3 @@
-extension-loc-relevence-search.md file
+source: extension-loc-relevance.md file
 
     This is the search markdown file that gets inserted into the sd.html Quick Start section for explanation of the search requirements.
-    

@@ -22,8 +22,7 @@
     <sch:title>f:PlanDefinition/f:publisher</sch:title>
     <sch:rule context="f:PlanDefinition/f:publisher">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-publisher-code']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-publisher-code': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-organization-description']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-organization-description': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-publisher-reference']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-publisher-reference': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:value) &lt;= 1">value: maximum cardinality of 'value' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
@@ -32,25 +31,6 @@
     <sch:rule context="f:PlanDefinition/f:publisher/f:extension">
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
       <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])">Must have either extensions or value[x], not both (inherited)</sch:assert>
-      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
-      <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])">Must have either extensions or value[x], not both (inherited)</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:title>f:PlanDefinition/f:contact</sch:title>
-    <sch:rule context="f:PlanDefinition/f:contact">
-      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-contact-address']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-contact-address': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:name) &lt;= 1">name: maximum cardinality of 'name' is 1</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:title>f:PlanDefinition/f:contact/f:extension</sch:title>
-    <sch:rule context="f:PlanDefinition/f:contact/f:extension">
-      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
-      <sch:assert test="count(f:url) &gt;= 1">url: minimum cardinality of 'url' is 1</sch:assert>
-      <sch:assert test="count(f:url) &lt;= 1">url: maximum cardinality of 'url' is 1</sch:assert>
-      <sch:assert test="count(f:valueAddress) &lt;= 1">valueAddress: maximum cardinality of 'valueAddress' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

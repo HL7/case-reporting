@@ -1,22 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ValueSet xmlns="http://hl7.org/fhir">
+<ValueSet xmlns:xhtml="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://hl7.org/fhir file:///C:/Users/Eric/Documents/HL7/FHIR/BUILD_EDIT_FILES/fhir-all-xsd/valueset.xsd" xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<id value="rr-priority"/>
 	<url value="http://fhir.hl7.org/us/ecr/ValueSet/rr-priority"/>
-	<version value="0.0.0"/>
-	<name value="RR Priority Category Code"/>
+	<identifier>
+		<system value="urn:ietf:rfc:3986"/>
+		<value value="2.16.840.1.113883.10.20.15.2.5.5"/>
+	</identifier>
+	<name value="Reportability Priority"/>
 	<status value="draft"/>
-	<date value="2017-07-25T18:19:52-07:00"/>
-	<publisher value="Health eData Inc"/>
+	<date value="2017-12-11"/>
 	<description value="Category codes indicating the relative importance of a communication."/>
 	<compose>
 		<include>
-			<system value="http://acme.org/cdc-codes"/>
+			<system value="urn:oid:2.16.840.1.114222.4.5.274"/>
 			<concept>
-				<!-- ?? 0..* A concept defined in the system -note only one defined here until code system is developed -->
-				<code value="action-required"/>
-				<!-- 1..1 Code or expression from system -->
-				<display value="ACTION REQUIRED (TEMPORARY CODE)"/>
-				<!-- 0..1 Text to display for this code for this value set in this valueset -->
+				<code value="TEMP_CODE_ACTION_REQUIRED"/>
+				<display value="Action required"/>
+			</concept>
+			<concept>
+				<code value="TEMP_CODE_ACTION_REQUESTED"/>
+				<display value="Action requested"/>
+			</concept>
+			<concept>
+				<code value="TEMP_CODE_INFORMATION_ONLY"/>
+				<display value="Information only"/>
+			</concept>
+			<concept>
+				<code value="TEMP_CODE_IMMEDIATE_ACTION_REQUIRED"/>
+				<display value="Immediate action required"/>
+			</concept>
+			<concept>
+				<code value="TEMP_CODE_IMMEDIATE_ACTION_REQUESTED"/>
+				<display value="Immediate action requested"/>
 			</concept>
 		</include>
 	</compose>

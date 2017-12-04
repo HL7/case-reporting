@@ -1,4 +1,4 @@
-extension-topic-dor-reason-intro.md file
+source: extension-topic-dor-reason.md file
 
     This is the introduction markdown file that gets inserted into the sd.html template.
 
@@ -17,4 +17,3 @@ extension-topic-dor-reason-intro.md file
     **Additional Profile specific implementation guidance:**
 
     #### Examples
-    

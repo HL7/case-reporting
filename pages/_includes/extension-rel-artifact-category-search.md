@@ -1,4 +1,3 @@
-extension-rel-artifact-category-search.md file
+source: extension-rel-artifact-category.md file
 
     This is the search markdown file that gets inserted into the sd.html Quick Start section for explanation of the search requirements.
-    

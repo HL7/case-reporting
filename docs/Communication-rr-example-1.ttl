@@ -17,7 +17,7 @@
   ];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: rr-example-1</p><p><b>meta</b>: </p><p><b>identifier</b>: RR12346, 464564</p><p><b>definition</b>: <a href=\"PlanDefinition/authoringagency-1\">PlanDefinition/authoringagency-1</a></p><p><b>status</b>: completed</p><p><b>category</b>: ACTION REQUIRED <span style=\"background: LightGoldenRodYellow\">(Details : {http://acme.org/cdc-codes code 'action-required' = 'action-required', given as 'ACTION REQUIRED'})</span></p><p><b>subject</b>: <a href=\"Patient/rr-patient\">Patient/rr-patient</a></p><p><b>recipient</b>: <a href=\"Organization/rr-routing-entity\">Organization/rr-routing-entity</a>, <a href=\"Organization/rr-resp-agent\">Organization/rr-resp-agent</a></p><p><b>topic</b>: Reportable condition notification: An initial report for Zika has been sent to the Health Authority West.</p><p><b>received</b>: Jul 19, 2017 4:09:06 AM</p><p><b>sender</b>: <a href=\"Practitioner/rr-sender\">Practitioner/rr-sender</a></p><p><b>reasonCode</b>: Zika virus disease <span style=\"background: LightGoldenRodYellow\">(Details : {SNOMED CT code '3928002' = 'Zika virus disease (disorder)', given as 'Zika virus disease (disorder)'})</span></p><h3>Payloads</h3><table class=\"grid\"><tr><td>-</td><td><b>Extension</b></td><td><b>Content[x]</b></td></tr><tr><td>*</td><td/><td><a href=\"DocumentReference/eICR_CDA_document\">eICR_Filename.xml</a></td></tr></table></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: rr-example-1</p><p><b>meta</b>: </p><p><b>identifier</b>: RR12346, 464564</p><p><b>definition</b>: <a href=\"PlanDefinition/authoringagency-1\">PlanDefinition/authoringagency-1</a></p><p><b>status</b>: completed</p><p><b>category</b>: ACTION REQUIRED <span style=\"background: LightGoldenRodYellow\">(Details : {http://acme.org/cdc-codes code 'action-required' = 'action-required', given as 'ACTION REQUIRED'})</span></p><p><b>subject</b>: <a href=\"Patient/rr-patient\">Patient/rr-patient</a></p><p><b>recipient</b>: <a href=\"Organization/rr-routing-entity\">Organization/rr-routing-entity</a>, <a href=\"Organization/rr-resp-agent\">Organization/rr-resp-agent</a></p><p><b>topic</b>: Reportable condition notification: An initial report for Zika has been sent to the Health Authority West.</p><p><b>received</b>: Jul 19, 2017 4:09:06 AM</p><p><b>sender</b>: </p><p><b>reasonCode</b>: Zika virus disease <span style=\"background: LightGoldenRodYellow\">(Details : {SNOMED CT code '3928002' = 'Zika virus disease (disorder)', given as 'Zika virus disease (disorder)'})</span></p><h3>Payloads</h3><table class=\"grid\"><tr><td>-</td><td><b>Extension</b></td><td><b>Content[x]</b></td></tr><tr><td>*</td><td/><td><a href=\"DocumentReference/eICR_CDA_document\">eICR_Filename.xml</a></td></tr></table></div>"
   ];
   fhir:Communication.identifier [
      fhir:index 0;
@@ -53,11 +53,7 @@
      fhir:link <http://fhir.hl7.org/us/ecr/Organization/rr-routing-entity>;
      fhir:Element.extension [
        fhir:index 0;
-       fhir:Extension.url [ fhir:value "http://fhir.hl7.org/us/ecr/StructureDefinition/extension-primary-agency" ];
-       fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
-     ], [
-       fhir:index 1;
-       fhir:Extension.url [ fhir:value "http://fhir.hl7.org/us/ecr/StructureDefinition/extension-loc-relevance" ];
+       fhir:Extension.url [ fhir:value "http://fhir.hl7.org/us/ecr/StructureDefinition/extension-location-relevance" ];
        fhir:Extension.valueCode [ fhir:value "both" ]
      ];
      fhir:Reference.reference [ fhir:value "Organization/rr-routing-entity" ]
@@ -66,11 +62,7 @@
      fhir:link <http://fhir.hl7.org/us/ecr/Organization/rr-resp-agent>;
      fhir:Element.extension [
        fhir:index 0;
-       fhir:Extension.url [ fhir:value "http://fhir.hl7.org/us/ecr/StructureDefinition/extension-primary-agency" ];
-       fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
-     ], [
-       fhir:index 1;
-       fhir:Extension.url [ fhir:value "http://fhir.hl7.org/us/ecr/StructureDefinition/extension-loc-relevance" ];
+       fhir:Extension.url [ fhir:value "http://fhir.hl7.org/us/ecr/StructureDefinition/extension-location-relevance" ];
        fhir:Extension.valueCode [ fhir:value "both" ]
      ];
      fhir:Reference.reference [ fhir:value "Organization/rr-resp-agent" ]
@@ -106,16 +98,14 @@
   ];
   fhir:Communication.received [ fhir:value "2017-07-19T04:09:06Z"^^xsd:dateTime];
   fhir:Communication.sender [
-     fhir:link <http://fhir.hl7.org/us/ecr/Practitioner/rr-sender>;
      fhir:Element.extension [
        fhir:index 0;
-       fhir:Extension.url [ fhir:value "http://fhir.hl7.org/us/ecr/StructureDefinition/extension-on-behalf-of" ];
+       fhir:Extension.url [ fhir:value "http://fhir.hl7.org/us/ecr/StructureDefinition/extension-practitioner-role" ];
        fhir:Extension.valueReference [
-         fhir:link <http://fhir.hl7.org/us/ecr/Organization/rr-sender>;
-         fhir:Reference.reference [ fhir:value "Organization/rr-sender" ]
+         fhir:link <http://fhir.hl7.org/us/ecr/PractionerRole/rr-sender>;
+         fhir:Reference.reference [ fhir:value "PractionerRole/rr-sender" ]
        ]
-     ];
-     fhir:Reference.reference [ fhir:value "Practitioner/rr-sender" ]
+     ]
   ];
   fhir:Communication.reasonCode [
      fhir:index 0;

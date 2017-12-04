@@ -13,10 +13,6 @@
     <sch:title>f:Communication</sch:title>
     <sch:rule context="f:Communication">
       <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-status-reason']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-status-reason': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-warning-reason']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-warning-reason': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-inactive-code']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-inactive-code': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-expected-version']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-expected-version': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-outdated-version']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-outdated-version': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -34,22 +30,13 @@
     <sch:rule context="f:Communication/f:extension">
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
       <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])">Must have either extensions or value[x], not both (inherited)</sch:assert>
-      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
-      <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])">Must have either extensions or value[x], not both (inherited)</sch:assert>
-      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
-      <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])">Must have either extensions or value[x], not both (inherited)</sch:assert>
-      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
-      <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])">Must have either extensions or value[x], not both (inherited)</sch:assert>
-      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
-      <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])">Must have either extensions or value[x], not both (inherited)</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:title>f:Communication/f:recipient</sch:title>
     <sch:rule context="f:Communication/f:recipient">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-primary-agency']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-primary-agency': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-loc-relevance']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-loc-relevance': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-location-relevance']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-location-relevance': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:reference) &lt;= 1">reference: maximum cardinality of 'reference' is 1</sch:assert>
       <sch:assert test="count(f:identifier) &lt;= 1">identifier: maximum cardinality of 'identifier' is 1</sch:assert>
       <sch:assert test="count(f:display) &lt;= 1">display: maximum cardinality of 'display' is 1</sch:assert>
@@ -61,10 +48,6 @@
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
       <sch:assert test="count(f:url) &gt;= 1">url: minimum cardinality of 'url' is 1</sch:assert>
       <sch:assert test="count(f:url) &lt;= 1">url: maximum cardinality of 'url' is 1</sch:assert>
-      <sch:assert test="count(f:valueBoolean) &lt;= 1">valueBoolean: maximum cardinality of 'valueBoolean' is 1</sch:assert>
-      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
-      <sch:assert test="count(f:url) &gt;= 1">url: minimum cardinality of 'url' is 1</sch:assert>
-      <sch:assert test="count(f:url) &lt;= 1">url: maximum cardinality of 'url' is 1</sch:assert>
       <sch:assert test="count(f:valueCode) &lt;= 1">valueCode: maximum cardinality of 'valueCode' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
@@ -72,6 +55,7 @@
     <sch:title>f:Communication/f:topic</sch:title>
     <sch:rule context="f:Communication/f:topic">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-topic-subject']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-topic-subject': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-topic-summary']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-topic-summary': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-topic-dor-reason']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-topic-dor-reason': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-topic-dor-rule']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-topic-dor-rule': maximum cardinality of 'extension' is 1</sch:assert>
@@ -86,7 +70,11 @@
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
       <sch:assert test="count(f:url) &gt;= 1">url: minimum cardinality of 'url' is 1</sch:assert>
       <sch:assert test="count(f:url) &lt;= 1">url: maximum cardinality of 'url' is 1</sch:assert>
-      <sch:assert test="count(f:valueString) &lt;= 1">valueString: maximum cardinality of 'valueString' is 1</sch:assert>
+      <sch:assert test="count(f:valueCodeableConcept) &lt;= 1">valueCodeableConcept: maximum cardinality of 'valueCodeableConcept' is 1</sch:assert>
+      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
+      <sch:assert test="count(f:url) &gt;= 1">url: minimum cardinality of 'url' is 1</sch:assert>
+      <sch:assert test="count(f:url) &lt;= 1">url: maximum cardinality of 'url' is 1</sch:assert>
+      <sch:assert test="count(f:valueMarkdown) &lt;= 1">valueMarkdown: maximum cardinality of 'valueMarkdown' is 1</sch:assert>
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
       <sch:assert test="count(f:url) &gt;= 1">url: minimum cardinality of 'url' is 1</sch:assert>
       <sch:assert test="count(f:url) &lt;= 1">url: maximum cardinality of 'url' is 1</sch:assert>
@@ -105,7 +93,7 @@
     <sch:title>f:Communication/f:sender</sch:title>
     <sch:rule context="f:Communication/f:sender">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-on-behalf-of']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-on-behalf-of': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-practitioner-role']) &lt;= 1">extension with URL = 'http://fhir.hl7.org/us/ecr/StructureDefinition/extension-practitioner-role': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:reference) &lt;= 1">reference: maximum cardinality of 'reference' is 1</sch:assert>
       <sch:assert test="count(f:identifier) &lt;= 1">identifier: maximum cardinality of 'identifier' is 1</sch:assert>
       <sch:assert test="count(f:display) &lt;= 1">display: maximum cardinality of 'display' is 1</sch:assert>

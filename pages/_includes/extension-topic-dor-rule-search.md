@@ -1,4 +1,3 @@
-extension-topic-dor-rule-search.md file
+source: extension-topic-dor-rule.md file
 
     This is the search markdown file that gets inserted into the sd.html Quick Start section for explanation of the search requirements.
-    

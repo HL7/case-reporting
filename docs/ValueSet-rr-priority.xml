@@ -3,15 +3,18 @@
 <ValueSet xmlns="http://hl7.org/fhir">
   <id value="rr-priority"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>RR Priority Category Code</h2><div><p>Category codes indicating the relative importance of a communication.</p>
-</div><p>This value set includes codes from the following code systems:</p><ul><li>Include these codes as defined in <code>http://acme.org/cdc-codes</code><table class="none"><tr><td><b>Code</b></td><td><b>Display</b></td></tr><tr><td>action-required</td><td>ACTION REQUIRED (TEMPORARY CODE)</td><td/></tr></table></li></ul></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>Reportability Priority</h2><div><p>Category codes indicating the relative importance of a communication.</p>
+</div><p>This value set includes codes from the following code systems:</p><ul><li>Include these codes as defined in <code>urn:oid:2.16.840.1.114222.4.5.274</code><table class="none"><tr><td><b>Code</b></td><td><b>Display</b></td></tr><tr><td>TEMP_CODE_ACTION_REQUIRED</td><td>Action required</td><td/></tr><tr><td>TEMP_CODE_ACTION_REQUESTED</td><td>Action requested</td><td/></tr><tr><td>TEMP_CODE_INFORMATION_ONLY</td><td>Information only</td><td/></tr><tr><td>TEMP_CODE_IMMEDIATE_ACTION_REQUIRED</td><td>Immediate action required</td><td/></tr><tr><td>TEMP_CODE_IMMEDIATE_ACTION_REQUESTED</td><td>Immediate action requested</td><td/></tr></table></li></ul></div>
   </text>
   <url value="http://fhir.hl7.org/us/ecr/ValueSet/rr-priority"/>
+  <identifier>
+    <system value="urn:ietf:rfc:3986"/>
+    <value value="2.16.840.1.113883.10.20.15.2.5.5"/>
+  </identifier>
   <version value="0.0.0"/>
-  <name value="RR Priority Category Code"/>
+  <name value="Reportability Priority"/>
   <status value="draft"/>
-  <date value="2017-07-25T18:19:52-07:00"/>
-  <publisher value="Health eData Inc"/>
+  <date value="2017-12-11T00:00:00-08:00"/>
   <description value="Category codes indicating the relative importance of a communication."/>
   <jurisdiction>
     <coding>
@@ -22,10 +25,26 @@
   </jurisdiction>
   <compose>
     <include>
-      <system value="http://acme.org/cdc-codes"/>
+      <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
       <concept>
-        <code value="action-required"/>
-        <display value="ACTION REQUIRED (TEMPORARY CODE)"/>
+        <code value="TEMP_CODE_ACTION_REQUIRED"/>
+        <display value="Action required"/>
+      </concept>
+      <concept>
+        <code value="TEMP_CODE_ACTION_REQUESTED"/>
+        <display value="Action requested"/>
+      </concept>
+      <concept>
+        <code value="TEMP_CODE_INFORMATION_ONLY"/>
+        <display value="Information only"/>
+      </concept>
+      <concept>
+        <code value="TEMP_CODE_IMMEDIATE_ACTION_REQUIRED"/>
+        <display value="Immediate action required"/>
+      </concept>
+      <concept>
+        <code value="TEMP_CODE_IMMEDIATE_ACTION_REQUESTED"/>
+        <display value="Immediate action requested"/>
       </concept>
     </include>
   </compose>

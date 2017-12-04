@@ -186,18 +186,6 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "ValueSet-warning-reason.html"
-            }
-          ],
-          "example": false,
-          "sourceReference": {
-            "reference": "ValueSet/warning-reason"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
               "valueUri": "ValueSet-status-reason.html"
             }
           ],
@@ -222,12 +210,24 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "ValueSet-error-reason.html"
+              "valueUri": "ValueSet-ext-resource-category.html"
             }
           ],
           "example": false,
           "sourceReference": {
-            "reference": "ValueSet/error-reason"
+            "reference": "ValueSet/ext-resource-category"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "ValueSet-dor.html"
+            }
+          ],
+          "example": false,
+          "sourceReference": {
+            "reference": "ValueSet/dor"
           }
         },
         {
@@ -330,42 +330,6 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "ValueSet-case-status.html"
-            }
-          ],
-          "example": false,
-          "sourceReference": {
-            "reference": "ValueSet/case-status"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "ValueSet-case-code.html"
-            }
-          ],
-          "example": false,
-          "sourceReference": {
-            "reference": "ValueSet/case-code"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "ValueSet-case-cat.html"
-            }
-          ],
-          "example": false,
-          "sourceReference": {
-            "reference": "ValueSet/case-cat"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
               "valueUri": "StructureDefinition-ecr-location.html"
             }
           ],
@@ -408,18 +372,6 @@
           "example": false,
           "sourceReference": {
             "reference": "CodeSystem/oes"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "CodeSystem-case-status.html"
-            }
-          ],
-          "example": false,
-          "sourceReference": {
-            "reference": "CodeSystem/case-status"
           }
         },
         {
@@ -493,6 +445,24 @@
           "name": "eCR-OccupationHistory",
           "sourceReference": {
             "reference": "StructureDefinition/ecr-occupationhistory"
+          }
+        }
+      ]
+    },
+    {
+      "name": "eCR Operation Outcome",
+      "resource": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-ecr-operationoutcome.html"
+            }
+          ],
+          "example": false,
+          "name": "eCR Operation Outcome",
+          "sourceReference": {
+            "reference": "StructureDefinition/ecr-operationoutcome"
           }
         }
       ]
@@ -597,39 +567,26 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-on-behalf-of.html"
+              "valueUri": "StructureDefinition-extension-practitioner-role.html"
             }
           ],
           "example": false,
-          "name": "Organization was acting for",
+          "name": "PractitionerRole reference",
           "sourceReference": {
-            "reference": "StructureDefinition/extension-on-behalf-of"
+            "reference": "StructureDefinition/extension-practitioner-role"
           }
         },
         {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-loc-relevance.html"
+              "valueUri": "StructureDefinition-extension-location-relevance.html"
             }
           ],
           "example": false,
           "name": "Location Relevance",
           "sourceReference": {
-            "reference": "StructureDefinition/extension-loc-relevance"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-primary-agency.html"
-            }
-          ],
-          "example": false,
-          "name": "Primary Responsible Agency",
-          "sourceReference": {
-            "reference": "StructureDefinition/extension-primary-agency"
+            "reference": "StructureDefinition/extension-location-relevance"
           }
         },
         {
@@ -666,7 +623,7 @@
             }
           ],
           "example": false,
-          "name": "eICR Processing Status Reason",
+          "name": "eICR processing status reason",
           "sourceReference": {
             "reference": "StructureDefinition/extension-status-reason"
           }
@@ -675,52 +632,13 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-warning-reason.html"
+              "valueUri": "StructureDefinition-extension-topic-subject.html"
             }
           ],
           "example": false,
-          "name": "eICR Processing Warning Reason",
+          "name": "Topic subject Line",
           "sourceReference": {
-            "reference": "StructureDefinition/extension-warning-reason"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-inactive-code.html"
-            }
-          ],
-          "example": false,
-          "name": "Inactive RCTC Code",
-          "sourceReference": {
-            "reference": "StructureDefinition/extension-inactive-code"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-expected-version.html"
-            }
-          ],
-          "example": false,
-          "name": "Expected RCTC Version",
-          "sourceReference": {
-            "reference": "StructureDefinition/extension-expected-version"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-outdated-version.html"
-            }
-          ],
-          "example": false,
-          "name": "Outdated RCTC Version",
-          "sourceReference": {
-            "reference": "StructureDefinition/extension-outdated-version"
+            "reference": "StructureDefinition/extension-topic-subject"
           }
         },
         {
@@ -731,7 +649,7 @@
             }
           ],
           "example": false,
-          "name": "Text Summary",
+          "name": "Topic Summary",
           "sourceReference": {
             "reference": "StructureDefinition/extension-topic-summary"
           }
@@ -797,32 +715,6 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "ValueSet-authoring-agency.html"
-            }
-          ],
-          "example": false,
-          "name": "AuthoringAgency",
-          "sourceReference": {
-            "reference": "ValueSet/authoring-agency"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "CodeSystem-authoring-agency.html"
-            }
-          ],
-          "example": false,
-          "name": "AuthoringAgency",
-          "sourceReference": {
-            "reference": "CodeSystem/authoring-agency"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
               "valueUri": "ValueSet-reporting-timeframe.html"
             }
           ],
@@ -849,91 +741,13 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "ValueSet-ext-resource-category.html"
+              "valueUri": "StructureDefinition-extension-publisher-reference.html"
             }
           ],
           "example": false,
-          "name": "ExtResourceCategory",
+          "name": "Publisher reference",
           "sourceReference": {
-            "reference": "ValueSet/ext-resource-category"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "CodeSystem-ext-resource-category.html"
-            }
-          ],
-          "example": false,
-          "name": "ExtResourceCategory",
-          "sourceReference": {
-            "reference": "CodeSystem/ext-resource-category"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "ValueSet-ext-resource-priority.html"
-            }
-          ],
-          "example": false,
-          "name": "ExtResourcePriority",
-          "sourceReference": {
-            "reference": "ValueSet/ext-resource-priority"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "CodeSystem-ext-resource-priority.html"
-            }
-          ],
-          "example": false,
-          "name": "ExtResourcePriority",
-          "sourceReference": {
-            "reference": "CodeSystem/ext-resource-priority"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-publisher-code.html"
-            }
-          ],
-          "example": false,
-          "name": "Publisher Code",
-          "sourceReference": {
-            "reference": "StructureDefinition/extension-publisher-code"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-contact-address.html"
-            }
-          ],
-          "example": false,
-          "name": "Contact Address",
-          "sourceReference": {
-            "reference": "StructureDefinition/extension-contact-address"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-organization-description.html"
-            }
-          ],
-          "example": false,
-          "name": "Organization Description",
-          "sourceReference": {
-            "reference": "StructureDefinition/extension-organization-description"
+            "reference": "StructureDefinition/extension-publisher-reference"
           }
         },
         {

@@ -1,4 +1,4 @@
-extension-manual-init-intro.md file
+source: extension-manual-init.md file
 
     This is the introduction markdown file that gets inserted into the sd.html template.
 
@@ -17,4 +17,3 @@ extension-manual-init-intro.md file
     **Additional Profile specific implementation guidance:**
 
     #### Examples
-    
