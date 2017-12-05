@@ -520,9 +520,16 @@ your logo here
        <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.id">fhir:Element.id</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;GuidanceResponse.contained:contained-slice1&quot; ];
        <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.path">fhir:ElementDefinition.path</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;GuidanceResponse.contained&quot; ];
        <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.sliceName">fhir:ElementDefinition.sliceName</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;Contained-slice1&quot; ];
-       <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.short">fhir:ElementDefinition.short</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;Operation Request or Response&quot; ];
-       <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.definition">fhir:ElementDefinition.definition</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">fhir:value</a> &quot;This special resource type is used to represent an operation request and response (operations.html). It has no other use, and there is no RESTful endpoint associated with it.&quot; ];
-       <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.comment">fhir:ElementDefinition.comment</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">fhir:value</a> &quot;The parameters that may be used are defined by the OperationDefinition resource.&quot; ];
+       <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.short">fhir:ElementDefinition.short</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;Contained, inline Resources&quot; ];
+       <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.definition">fhir:ElementDefinition.definition</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">fhir:value</a> &quot;These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.&quot; ];
+       <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.comment">fhir:ElementDefinition.comment</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">fhir:value</a> &quot;This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again.&quot; ];
+       <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.alias">fhir:ElementDefinition.alias</a> [
+         <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;inline resources&quot;;
+         <a href="http://hl7.org/fhir/STU3/rdf.html#index">fhir:index</a> 0       ], [
+         <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;anonymous resources&quot;;
+         <a href="http://hl7.org/fhir/STU3/rdf.html#index">fhir:index</a> 1       ], [
+         <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;contained resources&quot;;
+         <a href="http://hl7.org/fhir/STU3/rdf.html#index">fhir:index</a> 2       ];
        <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.min">fhir:ElementDefinition.min</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#unsignedInt">fhir:value</a> &quot;0&quot;^^xsd:nonNegativeInteger ];
        <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.max">fhir:ElementDefinition.max</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;1&quot; ];
        <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.base">fhir:ElementDefinition.base</a> [
@@ -537,16 +544,7 @@ your logo here
        <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping">fhir:ElementDefinition.mapping</a> [
          <a href="http://hl7.org/fhir/STU3/rdf.html#index">fhir:index</a> 0;
          <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">fhir:ElementDefinition.mapping.identity</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#id">fhir:value</a> &quot;rim&quot; ];
-         <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">fhir:ElementDefinition.mapping.map</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;Entity. Role, or Act&quot; ]       ], [
-         <a href="http://hl7.org/fhir/STU3/rdf.html#index">fhir:index</a> 1;
-         <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">fhir:ElementDefinition.mapping.identity</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#id">fhir:value</a> &quot;v2&quot; ];
-         <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">fhir:ElementDefinition.mapping.map</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;n/a&quot; ]       ], [
-         <a href="http://hl7.org/fhir/STU3/rdf.html#index">fhir:index</a> 2;
-         <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">fhir:ElementDefinition.mapping.identity</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#id">fhir:value</a> &quot;rim&quot; ];
-         <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">fhir:ElementDefinition.mapping.map</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;n/a&quot; ]       ], [
-         <a href="http://hl7.org/fhir/STU3/rdf.html#index">fhir:index</a> 3;
-         <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">fhir:ElementDefinition.mapping.identity</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#id">fhir:value</a> &quot;w5&quot; ];
-         <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">fhir:ElementDefinition.mapping.map</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;infrastructure.exchange&quot; ]       ]     ], [
+         <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">fhir:ElementDefinition.mapping.map</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;N/A&quot; ]       ]     ], [
        <a href="http://hl7.org/fhir/STU3/rdf.html#index">fhir:index</a> 9;
        <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.id">fhir:Element.id</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;GuidanceResponse.extension&quot; ];
        <a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.path">fhir:ElementDefinition.path</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;GuidanceResponse.extension&quot; ];
@@ -963,7 +961,7 @@ Formats: <a href="StructureDefinition-rr-guidanceresponse.html">Narrative</a>, <
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Tue, Dec 5, 2017 14:00-0800. |
+            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Tue, Dec 5, 2017 14:12-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

@@ -540,11 +540,14 @@ This element is labelled as a modifier because the implicit rules may provide ad
     &lt;<a href="http://hl7.org/fhir/STU3/structuredefinition.html#StructureDefinition.snapshot.element">element</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">id</a>=&quot;GuidanceResponse.contained:contained-slice1&quot;&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;GuidanceResponse.contained&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.sliceName">sliceName</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;Contained-slice1&quot;/&gt;
-      &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.short">short</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;Operation Request or Response&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.short">short</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;Contained, inline Resources&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.definition">definition</a>
-                  <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>=&quot;This special resource type is used to represent an operation request and response (operations.html). It has no other use, and there is no RESTful endpoint associated with it.&quot;/&gt;
+                  <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>=&quot;These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.comment">comment</a>
-               <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>=&quot;The parameters that may be used are defined by the OperationDefinition resource.&quot;/&gt;
+               <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>=&quot;This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again.&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.alias">alias</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;inline resources&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.alias">alias</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;anonymous resources&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.alias">alias</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;contained resources&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#unsignedInt">value</a>=&quot;0&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;1&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.base">base</a>&gt;
@@ -560,19 +563,7 @@ This element is labelled as a modifier because the implicit rules may provide ad
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mustSupport">mustSupport</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#boolean">value</a>=&quot;true&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#id">value</a>=&quot;rim&quot;/&gt;
-        &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;Entity. Role, or Act&quot;/&gt;
-      &lt;/mapping&gt;
-      &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#id">value</a>=&quot;v2&quot;/&gt;
-        &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;n/a&quot;/&gt;
-      &lt;/mapping&gt;
-      &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#id">value</a>=&quot;rim&quot;/&gt;
-        &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;n/a&quot;/&gt;
-      &lt;/mapping&gt;
-      &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#id">value</a>=&quot;w5&quot;/&gt;
-        &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;infrastructure.exchange&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;N/A&quot;/&gt;
       &lt;/mapping&gt;
     &lt;/element&gt;
     &lt;<a href="http://hl7.org/fhir/STU3/structuredefinition.html#StructureDefinition.snapshot.element">element</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">id</a>=&quot;GuidanceResponse.extension&quot;&gt;
@@ -1018,7 +1009,7 @@ Formats: <a href="StructureDefinition-rr-guidanceresponse.html">Narrative</a>, <
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Tue, Dec 5, 2017 14:00-0800. |
+            electronic Case Reporting (eCR) Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3/">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Tue, Dec 5, 2017 14:12-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

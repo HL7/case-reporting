@@ -320,9 +320,19 @@
        fhir:Element.id [ fhir:value "GuidanceResponse.contained:contained-slice1" ];
        fhir:ElementDefinition.path [ fhir:value "GuidanceResponse.contained" ];
        fhir:ElementDefinition.sliceName [ fhir:value "Contained-slice1" ];
-       fhir:ElementDefinition.short [ fhir:value "Operation Request or Response" ];
-       fhir:ElementDefinition.definition [ fhir:value "This special resource type is used to represent an operation request and response (operations.html). It has no other use, and there is no RESTful endpoint associated with it." ];
-       fhir:ElementDefinition.comment [ fhir:value "The parameters that may be used are defined by the OperationDefinition resource." ];
+       fhir:ElementDefinition.short [ fhir:value "Contained, inline Resources" ];
+       fhir:ElementDefinition.definition [ fhir:value "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope." ];
+       fhir:ElementDefinition.comment [ fhir:value "This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again." ];
+       fhir:ElementDefinition.alias [
+         fhir:value "inline resources";
+         fhir:index 0
+       ], [
+         fhir:value "anonymous resources";
+         fhir:index 1
+       ], [
+         fhir:value "contained resources";
+         fhir:index 2
+       ];
        fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [
@@ -339,19 +349,7 @@
        fhir:ElementDefinition.mapping [
          fhir:index 0;
          fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "Entity. Role, or Act" ]
-       ], [
-         fhir:index 1;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "v2" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
-       ], [
-         fhir:index 2;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
-       ], [
-         fhir:index 3;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "w5" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "infrastructure.exchange" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "N/A" ]
        ]
      ], [
        fhir:index 9;

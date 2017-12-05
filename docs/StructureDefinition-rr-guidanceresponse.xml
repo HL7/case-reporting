@@ -260,9 +260,12 @@
     <element id="GuidanceResponse.contained:contained-slice1">
       <path value="GuidanceResponse.contained"/>
       <sliceName value="Contained-slice1"/>
-      <short value="Operation Request or Response"/>
-      <definition value="This special resource type is used to represent an operation request and response (operations.html). It has no other use, and there is no RESTful endpoint associated with it."/>
-      <comment value="The parameters that may be used are defined by the OperationDefinition resource."/>
+      <short value="Contained, inline Resources"/>
+      <definition value="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."/>
+      <comment value="This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again."/>
+      <alias value="inline resources"/>
+      <alias value="anonymous resources"/>
+      <alias value="contained resources"/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -277,19 +280,7 @@
       <mustSupport value="true"/>
       <mapping>
         <identity value="rim"/>
-        <map value="Entity. Role, or Act"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="w5"/>
-        <map value="infrastructure.exchange"/>
+        <map value="N/A"/>
       </mapping>
     </element>
     <element id="GuidanceResponse.extension">
