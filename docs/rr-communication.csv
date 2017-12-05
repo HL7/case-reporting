@@ -56,7 +56,7 @@ user content","",0,*,"","Y","","Extension
 "Communication.subject","","patient
 ","",0,1,"Y","","Y","Reference {http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient}
 ","Focus of message","The patient or group that was the focus of this communication.","","","","","","","","","",,,,,"",,,,"Communication.subject",0,1,"","","RR.patient","Event.subject","who.focus"
-"Communication.recipient","","","",0,*,"Y","","","Reference {http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization}
+"Communication.recipient","","","",0,*,"Y","","","Reference {http://fhir.hl7.org/us/ecr/StructureDefinition/ecr-organization}
 ","EICR recipients and Intermediaries","The entity (e.g. person, organization, clinical information system, or device) which was the target of the communication. If receipts need to be tracked by individual, a separate resource instance will need to be created for each recipient.  Multiple recipient communications are intended where either a receipt(s) is not tracked (e.g. a mass mail-out) or is captured in aggregate (all emails confirmed received by a particular time).","Reporting may beidentified for multiple PHAs by the PHA system (or its intermediary) (because the patient's residence and the provider location are in separate jurisdictions) including other identified organization (such as an HIE) to which the eICR (if deemed reportable) and/or the Reportability Response will be routed.","","","","","","","","",,,,,"",,,,"Communication.recipient",0,*,"","","RR.Responsible Agent, RR.routingEntity","who.focus"
 "Communication.recipient.id","","","",0,1,"","","","string
 ","xml:id (or equivalent in JSON)","unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
@@ -167,15 +167,15 @@ Applications converting a logical reference to a literal reference may choose to
 "Communication.topic.display","","","",0,1,"","","Y","string
 ","Text alternative for the resource","Plain text narrative that identifies the resource in addition to the resource reference.","This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it.","","","","","","","","",,,,,"",,,,"Reference.display",0,1,"","","N/A"
 "Communication.context","","encounter
-","",0,1,"","","Y","Reference {http://hl7.org/fhir/StructureDefinition/Encounter}
-Reference {http://hl7.org/fhir/StructureDefinition/EpisodeOfCare}","Encounter or episode leading to message","The encounter within which the communication was sent.","","","","","","","","","",,,,,"",,,,"Communication.context",0,1,"","","Event.context","context"
+","",0,1,"Y","","Y","Reference {http://fhir.hl7.org/us/ecr/StructureDefinition/eicr-encounter}
+","eICR encompassing encounter ID","The encompassing encounter ID from the eICR that generatedthe Reportability Response.","","","","","","","","","",,,,,"",,,,"Communication.context",0,1,"","","eICR Encompassing Encounter ID","Event.context","context"
 "Communication.sent","","","",0,1,"","","","dateTime
 ","When sent","The time when this communication was sent.","","","","","","","","","",,,,,"",,,,"Communication.sent",0,1,"","","Event.occurrenceDateTime (Invariant: maps to either sent OR received)","when.init"
 "Communication.received","","","",0,1,"","","","dateTime
 ","When received","The time when this communication arrived at the destination.","","","","","","","","","",,,,,"",,,,"Communication.received",0,1,"","","RR.eICR.receiptDateTime","Event.occurrenceDateTime (Invariant: maps to either sent OR received)","when.done"
 "Communication.sender","","Provider or Facility
 ","",0,1,"Y","","","Reference {http://hl7.org/fhir/StructureDefinition/Device}
-Reference {http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization}Reference {http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner}","Message sender","The entity (e.g. person, organization, clinical information system, or device) which was the source of the communication.","If only representing only a Provider or  only a Facility use this element. If representing both a Provider and a Facility use this element to represent the Provider and the *onBehalfOf* Extension to represent the Facility.","","","","","","","","",,,,,"",,,,"Communication.sender",0,1,"","","RR.provider|RR.facility","Event.performer.actor","who.actor"
+Reference {http://fhir.hl7.org/us/ecr/StructureDefinition/ecr-organization}Reference {http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner}","Message sender","The entity (e.g. person, organization, clinical information system, or device) which was the source of the communication.","If only representing only a Provider or  only a Facility use this element. If representing both a Provider and a Facility use this element to represent the Provider and the *onBehalfOf* Extension to represent the Facility.","","","","","","","","",,,,,"",,,,"Communication.sender",0,1,"","","RR.provider|RR.facility","Event.performer.actor","who.actor"
 "Communication.sender.id","","","",0,1,"","","","string
 ","xml:id (or equivalent in JSON)","unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Communication.sender.extension","","extensions

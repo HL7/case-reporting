@@ -1,3 +1,0 @@
-# Template-basic-summary.md  file
-
-This is the summary markdown of data elements probably as a table...

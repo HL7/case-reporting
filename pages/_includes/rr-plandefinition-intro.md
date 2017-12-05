@@ -1,4 +1,4 @@
-rr-plandefinition-intro.md file
+source: rr-plandefinition.md file
 
     This is the introduction markdown file that gets inserted into the sd.html template.
 
@@ -17,4 +17,3 @@ rr-plandefinition-intro.md file
     **Additional Profile specific implementation guidance:**
 
     #### Examples
-    
