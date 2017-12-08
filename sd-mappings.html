@@ -1,0 +1,25 @@
+---
+# jekyll header
+level: 2
+active: profiles
+---
+{% include navbar.html %}
+
+{% include container-start.html %}
+<!-- ============BreadCrumb=============== -->
+
+{% include breadcrumbs.html %}
+
+<!-- ============CONTENT CONTENT=============== -->
+
+{% include nav-tabs.html type="{{[type]}}" id="{{[id]}}" active="mappings" %}
+
+<h3>Mappings for the {{[type]}}-{{[id]}} Profile.</h3>
+
+{%include {{[type]}}-{{[id]}}-maps.xhtml%}
+
+{% include container-end.html %}
+
+{% include footer.html %}
+</body>
+</html>

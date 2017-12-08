@@ -1,0 +1,30 @@
+---
+# jekyll header
+level: 2
+active: profiles
+---
+
+{% include header.html %}
+
+{% include navbar.html %}
+
+{% include container-start.html %}
+
+<!-- ============BreadCrumb=============== -->
+
+{% include breadcrumbs.html %}
+
+  <!-- ============CONTENT CONTENT=============== -->
+
+{% include nav-tabs.html type="{{[type]}}" id="{{[id]}}" active="content" %}
+
+<h3>Definitions for the {{[type]}}-{{[id]}} Profile.</h3>
+
+{%include {{[type]}}-{{[id]}}-dict.xhtml%}
+
+<!-- ============CONTENT CONTENT=============== -->
+
+
+{% include container-end.html %}
+
+{% include footer.html %}

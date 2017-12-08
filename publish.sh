@@ -1,6 +1,6 @@
 #!/bin/bash
 name="Case Reporting"
-path1=/Users/ehaas/Documents/FHIR/IG-Template/
+path1=$PWD
 path2=/Users/ehaas/Downloads/
 echo "================================================================="
 echo === Publish $name IG!!! $(date -u) ===
@@ -11,10 +11,6 @@ echo "================================================================="
 find . -name '.DS_Store' -type f -delete
 git status
 echo "================================================================="
-echo === copy ig.json from $PWD to ${path1} ===
-echo "================================================================="
-cp ig.json ${path1}
-echo "================================================================="
 echo === run igpublisher ===
 echo "================================================================="
-java -jar ${path2}org.hl7.fhir.igpublisher.jar -ig ${path1}ig.json -watch
+java -jar ${path2}org.hl7.fhir.igpublisher.jar -ig ig.json -watch

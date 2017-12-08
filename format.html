@@ -1,0 +1,57 @@
+---
+# jekyll header
+level: 2
+active: format
+br_StructureDefinition: profiles
+br_ValueSet : terminology
+br_CodeSystem : terminology
+br_ConceptMap : terminology
+br_CapabilityStatement : capstatements
+br_StructureMap : mappings
+br_OperationDefinition : operations
+br_SearchParameter : searchparams
+---
+{% include header.html %}
+
+{% include navbar.html %}
+
+{% include container-start.html %}
+
+<!-- ============BreadCrumb=============== -->
+
+{% include breadcrumbs.html breadcrumb = page.br_{{[type]}} %}
+
+<!-- ============ CONTENT CONTENT=============== -->
+
+  <!-- ============ default xml or json content for structuredefinition CONTENT CONTENT=============== -->
+  {% if '{{[fmt]}}' == 'xml' %}
+    {% include nav-tabs.html type="{{[type]}}" id="{{[id]}}" active="xml" %}
+    <h2>XML Format: {{[type]}}-{{[id]}}</h2>
+  {% elsif '{{[fmt]}}' == 'json' %}
+    {% include nav-tabs.html type="{{[type]}}" id="{{[id]}}" active="json" %}
+    <h2> JSON Format: {{[type]}}-{{[id]}}</h2>
+  {% else %}
+    {% include nav-tabs.html type="{{[type]}}" id="{{[id]}}" active="turtle" %}
+    <h2>Turtle Format: {{[type]}}-{{[id]}}</h2>
+  {% endif %}
+  <p>
+  Raw <a href="{{[type]}}-{{[id]}}.{{[fmt]}}" download>{{[fmt]}}</a>
+  </p>
+
+{% include {{[type]}}-{{[name]}}.xhtml %}
+
+<!-- ============ default xml or json content CONTENT CONTENT=============== -->
+
+
+<!-- simple format links
+<p>
+Formats: <a href="{{[type]}}-{{[id]}}.html">Narrative</a>, <a href="{{[type]}}-{{[id]}}.xml.html">XML</a>, <a href="{{[type]}}-{{[id]}}.json.html">JSON</a>, <a href="{{[type]}}-{{[id]}}.ttl.html">Turtle</a>
+</p>
+-->
+
+
+  <!-- ==============END CONTENT END CONTENT=================== -->
+
+{% include container-end.html %}
+
+{% include footer.html %}
