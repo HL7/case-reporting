@@ -29,6 +29,8 @@ Introductory text here.......
 
 {% assign id = {{include.id}} %}
 
+- id = {{id}}
+
 - sd name = {{site.data.structuredefinitions.[id].name}}
 
 

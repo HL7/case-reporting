@@ -1,19 +1,19 @@
-source: extension-valueAddress.md file
 
-    This is the introduction markdown file that gets inserted into the sd.html template.
 
-    This profile sets minimum expectations for blah blah blah
+{% assign id = {{include.id}} %}
+source file: source/pages/\_includes/{{id}}-intro.md
 
-    ##### Mandatory Data Elements and Terminology
+**ECR Extension: {{site.data.structuredefinitions.[id].name}}**
 
-    The following data-elements are mandatory (i.e data MUST be present). blah blah blah
+The official URL for this profile is: `{{site.data.structuredefinitions.[id].url}}`
 
-    **must have:**
+**Scope and Usage**
 
-    1. blah
-    1. blah
-    1. blah
+{{site.data.structuredefinitions.[id].description}}
 
-    **Additional Profile specific implementation guidance:**
+**Context of Use**
+{% assign context = {{site.data.structuredefinitions.[id].contexts}} %}
+{% assign type = {{site.data.structuredefinitions.[id].contextType}} %}
+{% assign basepath = {{site.data.structuredefinitions.[id].basepath}} %}
+This extension is used on the {{context}} element(s).
 
-    #### Examples

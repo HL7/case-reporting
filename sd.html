@@ -61,7 +61,10 @@ Formal Views of Profile Content
  <a title="link to here" class="self-link" href="{{[type]}}-{{[id]}}.html#profile"><img src="target.png"/></a>
 </h4>
 <!-- uri -->
-{% include {{[type]}}-{{[id]}}-header.xhtml %}
+{% if "{{[id]}}" contains "extension" %}
+<p>Published on {{site.data.structuredefinitions.[id].date}} as a {{site.data.structuredefinitions.[id].status}} by {{site.data.structuredefinitions.[id].publisher}}.</p>
+{% else %}{% include {{[type]}}-{{[id]}}-header.xhtml %}
+{% endif %}
 
 <!-- uri -->
 <p>
@@ -94,10 +97,12 @@ Formal Views of Profile Content
    <div id="tbl-diff-inner">
      <a name="summary"> </a>
 
-<!--{ % include {{[type]}}-{{[id]}}-summary.xhtml %}-->
+{ % include {{[type]}}-{{[id]}}-summary.xhtml %}
 
 
+<!--{% raw %}
 {% capture my-include %}{% include {{[id]}}-summary.md id="{{[id]}}" %}{% endcapture %}{{ my-include | markdownify }}
+{% endraw %}-->
    </div>
   </div>
  </div>
@@ -148,8 +153,9 @@ Formal Views of Profile Content
 
    <div id="all-tbl-summ-inner">
      <a name="summary"> </a>
-<!--   {% include {{[type]}}-{{[id]}}-summary.xhtml %}  -->
-{% capture my-include %}{% include {{[id]}}-summary.md id="{{[id]}}" %}{% endcapture %}{{ my-include | markdownify }}
+{% include {{[type]}}-{{[id]}}-summary.xhtml %}
+<!--{% raw %}{% capture my-include %}{% include {{[id]}}-summary.md id="{{[id]}}" %}{% endcapture %}{{ my-include | markdownify }}
+{% endraw %}-->
    </div>
 
   </div>
