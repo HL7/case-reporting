@@ -8,10 +8,10 @@ source pages/\_include/{{page.md_filename}}.md  file
 * Do not remove this line (it will not be displayed)
 {:toc}
 
-### Introduction
+###  General Sequence of Transactions
 
-blah blah blah
+###  Trigger Code Transaction
 
-### More Stuff
+###  eICR Transaction
 
-#### And More Stuff
+###  Reportability Response Transaction

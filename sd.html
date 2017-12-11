@@ -61,10 +61,12 @@ Formal Views of Profile Content
  <a title="link to here" class="self-link" href="{{[type]}}-{{[id]}}.html#profile"><img src="target.png"/></a>
 </h4>
 <!-- uri -->
-{% if "{{[id]}}" contains "extension" %}
+
 <p>Published on {{site.data.structuredefinitions.[id].date}} as a {{site.data.structuredefinitions.[id].status}} by {{site.data.structuredefinitions.[id].publisher}}.</p>
-{% else %}{% include {{[type]}}-{{[id]}}-header.xhtml %}
-{% endif %}
+
+<!--{% raw %}
+{% include {{[type]}}-{{[id]}}-header.xhtml %}
+{% endraw %}-->
 
 <!-- uri -->
 <p>

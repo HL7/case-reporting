@@ -1,18 +1,14 @@
-rr-communication-intro.md file
+{% assign id = {{include.id}} %}
+source file: source/pages/\_includes/{{id}}-intro.md
 
-    This is the introduction markdown file that gets inserted into the sd.html template.
+**ECR Profile: {{site.data.structuredefinitions.[id].name}}**
 
-    This profile sets minimum expectations for blah blah blah
+The official URL for this profile is: `{{site.data.structuredefinitions.[id].url}}`
 
-    ##### Mandatory Data Elements and Terminology
+**Scope and Usage**
 
-    The following data-elements are mandatory (i.e data MUST be present). blah blah blah
+{{site.data.structuredefinitions.[id].description}}
 
-    **must have:**
-
-    1. blah
-    1. blah
-    1. blah
 
 **Additional Profile specific implementation guidance:**
 

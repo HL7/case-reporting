@@ -17,8 +17,12 @@
 - [General Guidance](guidance.html)
 - [Profiles and Extensions](profiles.html)
 - [Terminology](terminology.html)
+- [Capability Statements](capstatements.html)
+- [Downloads](downloads.html)
+
+<!-- ******* how to create a dropdown menu in md ********
 - [Capability Statements <span class="caret"></span>](#){: .dropdown-toggle data-toggle="dropdown"}
     - [Conformance requirements for Server](CapabilityStatement-server.html)
     - [Conformance requirements for Client](CapabilityStatement-client.html)
     {: .dropdown-menu}
-- [Downloads](downloads.html)
+-->

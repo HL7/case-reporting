@@ -8,7 +8,7 @@
   <Author>Grahame</Author>
   <LastAuthor>Eric Haas</LastAuthor>
   <Created>2012-03-19T11:12:07Z</Created>
-  <LastSaved>2017-12-05T17:00:36Z</LastSaved>
+  <LastSaved>2017-12-10T07:34:45Z</LastSaved>
   <Version>15.0</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
@@ -16,14 +16,14 @@
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
   <SupBook>
-   <Path>C:\work\subversion\fhir\build\source\colorectal\Archive\Invariants</Path>
+   <Path>/Users/ehaas/Documents/FHIR/Case-Reporting/resources/C:\work\subversion\fhir\build\source\colorectal\Archive\Invariants</Path>
    <SheetName>Invariants</SheetName>
   </SupBook>
-  <WindowHeight>15740</WindowHeight>
-  <WindowWidth>27360</WindowWidth>
+  <WindowHeight>18000</WindowHeight>
+  <WindowWidth>28800</WindowWidth>
   <WindowTopX>0</WindowTopX>
-  <WindowTopY>2180</WindowTopY>
-  <ActiveSheet>2</ActiveSheet>
+  <WindowTopY>0</WindowTopY>
+  <ActiveSheet>1</ActiveSheet>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
  </ExcelWorkbook>
@@ -456,19 +456,19 @@
    <Font ss:FontName="Verdana" x:Family="Swiss" ss:Size="8" ss:Color="#333333"/>
   </Style>
   <Style ss:ID="s115">
-   <Font x:Family="Swiss" ss:Size="9" ss:Color="#000000" ss:Bold="1"/>
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
    <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
   </Style>
   <Style ss:ID="s116">
+   <Font x:Family="Swiss" ss:Size="9" ss:Color="#000000" ss:Bold="1"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s117">
    <Alignment ss:Vertical="Bottom" ss:WrapText="1"/>
    <Borders/>
    <Interior ss:Color="#CCFFFF" ss:Pattern="Solid"/>
    <NumberFormat/>
    <Protection/>
-  </Style>
-  <Style ss:ID="s117">
-   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
-   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
   </Style>
   <Style ss:ID="s118">
    <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:ShrinkToFit="1"
@@ -980,6 +980,17 @@
    </Borders>
    <Interior/>
   </Style>
+  <Style ss:ID="s182">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="3"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#C0C0C0"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"
+    ss:Bold="1"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
  </Styles>
  <Worksheet ss:Name="Instructions">
   <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="5" x:FullColumns="1"
@@ -1024,13 +1035,14 @@
    <x:Print>    </x:Print>
    <x:Print>    </x:Print>
    <x:Print>    </x:Print>
+   <x:Print>    </x:Print>
   </WorksheetOptions>
  </Worksheet>
  <Worksheet ss:Name="Metadata">
-  <Table ss:ExpandedColumnCount="2" ss:ExpandedRowCount="16" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultColumnWidth="65" ss:DefaultRowHeight="15">
+  <Table ss:ExpandedColumnCount="2" ss:ExpandedRowCount="17" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="65" ss:DefaultRowHeight="16">
    <Column ss:StyleID="s69" ss:Width="98"/>
-   <Column ss:StyleID="s69" ss:AutoFitWidth="0" ss:Width="363"/>
+   <Column ss:StyleID="s69" ss:AutoFitWidth="0" ss:Width="791"/>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s70"><Data ss:Type="String">Name</Data></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Value</Data></Cell>
@@ -1049,17 +1061,18 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">author.name</Data></Cell>
-    <Cell ss:StyleID="s73"/>
+    <Cell ss:StyleID="s73"><Data ss:Type="String">PHER</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">author.reference</Data></Cell>
     <Cell ss:StyleID="s76"/>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="69">
+   <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">code</Data></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0">
+   <Row ss:AutoFitHeight="0" ss:Height="345">
     <Cell ss:StyleID="s74"><Data ss:Type="String">description</Data></Cell>
+    <Cell ss:StyleID="s96"><Data ss:Type="String">The Reportability Response Communication profile establishes then core elements, extensions, vocabularies and value sets for recording the receipt and processing of an electronic Initial Case Report (eICR) CDA document or FHIR resource.  This information includes information about the reportable condition along with resources and details on where to get more information about the condition, its treatment, and reporting requirements.&#13;&#13;The Reportability Response allows for:&#13;&#13;- Notification, alerting, routing and queueing in work or message management systems for healthcare personnel&#13;- Dynamic and static URIs for supplemental data collection and the provision of information resources&#13;- If the eICR was successfully processed, then there SHOULD be:&#13;&#13;    - A Topic Subject Line&#13;    - A Topic Summary&#13;    - A way to identify the eICR either as a direct reference or through a business identifier&#13;    - References to related artifacts to assist the providers in understanding the investigating conditions.  &#13;&#13;- If the eICR CDA document was not processed and has errors, then there SHOULD be:&#13;&#13;    - A way to identify the eICR either as a direct reference or through a business identifier&#13;    - An eICR processing error reasons&#13;</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">status</Data></Cell>
@@ -1086,6 +1099,10 @@
     <Cell ss:StyleID="s81"/>
    </Row>
    <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s182"><Data ss:Type="String">publication.status</Data></Cell>
+    <Cell ss:StyleID="s81"><Data ss:Type="String">DSTU2</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s82"><Data ss:Type="String">notes</Data></Cell>
     <Cell ss:StyleID="s83"/>
    </Row>
@@ -1104,11 +1121,12 @@
     <VerticalResolution>600</VerticalResolution>
    </Print>
    <PageLayoutZoom>0</PageLayoutZoom>
+   <Selected/>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>24</ActiveRow>
-     <ActiveCol>1</ActiveCol>
+     <ActiveRow>10</ActiveRow>
+     <ActiveCol>4</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -1262,7 +1280,7 @@
     <Cell ss:StyleID="s94"><Data ss:Type="String"></Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s94"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s94"><Data ss:Type="String">DomainResource</Data><NamedCell
+    <Cell ss:StyleID="s94"><Data ss:Type="String">Communication</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s94"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -1270,8 +1288,10 @@
     <Cell ss:StyleID="s94"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s95"><Data ss:Type="String">Reportabllity Response Profile</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s96"><Data ss:Type="String">The Reportability Response Communication profile establishes then core elements, extensions, vocabularies and value sets for recording the receipt and processing of an electronic Initial Case Report (eICR) CDA document or FHIR resource.  This information includes information about the reportable condition along with resources and details on where to get more information about the condition, its treatment, and reporting requirements.&#13;&#13;The Reportability Response allows for:&#13;&#13;- Notification, alerting, routing and queueing in work or message management systems for healthcare personnel&#13;- Dynamic and static URIs for supplemental data collection and the provision of information resources&#13;- If the eICR was successfully processed, then there SHOULD be:&#13;&#13;    - A Topic Subject Line&#13;    - A Topic Summary&#13;    - A way to identify the eICR either as a direct reference or through a business identifier&#13;    - References to related artifacts to assist the providers in understanding the investigating conditions.  &#13;&#13;- If the eICR CDA document was not processed and has errors, then there SHOULD be:&#13;&#13;    - A way to identify the eICR either as a direct reference or through a business identifier&#13;    - An eICR processing error reasons</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s90"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s97"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1858,7 +1878,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s101"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><Data ss:Type="String">Reporting may beidentified for multiple PHAs by the PHA system (or its intermediary) (because the patient's residence and the provider location are in separate jurisdictions) including other identified organization (such as an HIE) to which the eICR (if deemed reportable) and/or the Reportability Response will be routed  </Data><NamedCell
+    <Cell ss:StyleID="s112"><Data ss:Type="String">Reporting may be identified for multiple PHAs by the PHA system (or its intermediary) (because the patient's residence and the provider location are in separate jurisdictions) including other identified organization (such as an HIE) to which the eICR (if deemed reportable) and/or the Reportability Response will be routed  </Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s105"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s105"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -2181,7 +2201,7 @@
     <Cell ss:StyleID="s94"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s117"><Data ss:Type="String">eICR encompassing encounter ID</Data><NamedCell
+    <Cell ss:StyleID="s115"><Data ss:Type="String">eICR encompassing encounter ID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s111"><Data ss:Type="String">The encompassing encounter ID from the eICR that generatedthe Reportability Response </Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -2228,7 +2248,7 @@
     <Cell ss:StyleID="s94"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s111"><Data ss:Type="String">RR.eICR.receiptDateTime</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s115"><Data ss:Type="String">2017-07-19T04:09:06Z</Data><NamedCell
+    <Cell ss:StyleID="s116"><Data ss:Type="String">2017-07-19T04:09:06Z</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><Data ss:Type="String">Communication.received</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -2256,7 +2276,7 @@
     <Cell ss:StyleID="s102"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s94"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s94"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s116"><Data ss:Type="String">RR.provider|RR.facility &#13;</Data><NamedCell
+    <Cell ss:StyleID="s117"><Data ss:Type="String">RR.provider|RR.facility &#13;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s108"><Data ss:Type="String">    &quot;sender&quot;: {&#13;        &quot;reference&quot;: &quot;Practitioner/rr-sender&quot;&#13;    }</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -2293,7 +2313,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s94"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s94"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s116"><Data ss:Type="String">RR.provider|RR.facility &#13;</Data><NamedCell
+    <Cell ss:StyleID="s117"><Data ss:Type="String">RR.provider|RR.facility &#13;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s108"><Data ss:Type="String"> &quot;extention&quot;: {&#13;  &quot;url&quot; : &quot;http://fhir.hl7.org/us/ecr/StructureDefinition/extension-on-behalf-of&quot;, &#13;    &quot;valueReference&quot;: {&#13;          &quot;reference&quot;: &quot;Organization/rr-sender&quot;&#13;    }&#13;}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -2448,7 +2468,7 @@
     <Cell ss:StyleID="s94"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s117"><Data ss:Type="String">Manually Initiated eICR</Data><NamedCell
+    <Cell ss:StyleID="s115"><Data ss:Type="String">Manually Initiated eICR</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s111"><Data ss:Type="String">If the incoming eICR was manually generated by the provider (as opposed to automatically-generated based on the existence of a trigger code from the RCTC) then this will be present. </Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -2485,7 +2505,7 @@
     <Cell ss:StyleID="s94"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s117"><Data ss:Type="String">Initial Case Report Manual Initiation Reason*</Data><NamedCell
+    <Cell ss:StyleID="s115"><Data ss:Type="String">Initial Case Report Manual Initiation Reason*</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s111"><Data ss:Type="String">Reason for manual initiation of the eICR </Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -2517,7 +2537,7 @@
     <Cell ss:StyleID="s94"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s117"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s115"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s111"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s101"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -2551,7 +2571,7 @@
     <Cell ss:StyleID="s94"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s117"><Data ss:Type="String">Reference to eICR CDA Document</Data><NamedCell
+    <Cell ss:StyleID="s115"><Data ss:Type="String">Reference to eICR CDA Document</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s111"><Data ss:Type="String">At a minimum, each Reportability Response should contain the unique document ID associated with the eICR that initiated its generation </Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -2587,7 +2607,7 @@
     <Cell ss:StyleID="s94"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s117"><Data ss:Type="String">eICR CDA Document ID*</Data><NamedCell
+    <Cell ss:StyleID="s115"><Data ss:Type="String">eICR CDA Document ID*</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s119"><Data ss:Type="String">At a minimum, each Reportability Response should contain the unique document ID associated with the eICR that initiated its generation </Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -2623,7 +2643,7 @@
     <Cell ss:StyleID="s94"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s117"><Data ss:Type="String">Filename of eICR</Data><NamedCell
+    <Cell ss:StyleID="s115"><Data ss:Type="String">Filename of eICR</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s111"><Data ss:Type="String">The filename of the eICR (to assist with troubleshooting in the event that the eICR cannot be parsed) </Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -4730,12 +4750,11 @@
     <VerticalResolution>600</VerticalResolution>
    </Print>
    <PageLayoutZoom>0</PageLayoutZoom>
-   <Selected/>
-   <LeftColumnVisible>12</LeftColumnVisible>
+   <LeftColumnVisible>10</LeftColumnVisible>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>18</TopRowBottomPane>
+   <TopRowBottomPane>1</TopRowBottomPane>
    <ActivePane>2</ActivePane>
    <Panes>
     <Pane>
@@ -4743,8 +4762,8 @@
     </Pane>
     <Pane>
      <Number>2</Number>
-     <ActiveRow>30</ActiveRow>
-     <ActiveCol>17</ActiveCol>
+     <ActiveRow>11</ActiveRow>
+     <ActiveCol>14</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -5741,7 +5760,7 @@
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s117"><Data ss:Type="String">Manually Initiated eICR</Data><NamedCell
+    <Cell ss:StyleID="s115"><Data ss:Type="String">Manually Initiated eICR</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s111"><Data ss:Type="String">If the incoming eICR was manually generated by the provider (as opposed to automatically-generated based on the existence of a trigger code from the RCTC) then this will be present. </Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -5774,7 +5793,7 @@
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s95"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s117"><Data ss:Type="String">Initial Case Report Manual Initiation Reason</Data><NamedCell
+    <Cell ss:StyleID="s115"><Data ss:Type="String">Initial Case Report Manual Initiation Reason</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s111"><Data ss:Type="String">Reason for manual initiation of the eICR </Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -6603,7 +6622,7 @@
    <SplitHorizontal>1</SplitHorizontal>
    <TopRowBottomPane>10</TopRowBottomPane>
    <SplitVertical>1</SplitVertical>
-   <LeftColumnRightPane>4</LeftColumnRightPane>
+   <LeftColumnRightPane>1</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
    <Panes>
     <Pane>
@@ -6611,7 +6630,6 @@
     </Pane>
     <Pane>
      <Number>1</Number>
-     <ActiveCol>1</ActiveCol>
     </Pane>
     <Pane>
      <Number>2</Number>
@@ -6619,9 +6637,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>19</ActiveRow>
-     <ActiveCol>9</ActiveCol>
-     <RangeSelection>R20C10:R21C10</RangeSelection>
+     <ActiveCol>0</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -7540,6 +7556,7 @@
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
+   <x:Print>    </x:Print>
    <x:Print>    </x:Print>
    <x:Print>    </x:Print>
    <x:Print>    </x:Print>
@@ -8676,6 +8693,7 @@
    <x:Print>    </x:Print>
    <x:Print>    </x:Print>
    <x:Print>    </x:Print>
+   <x:Print>    </x:Print>
   </WorksheetOptions>
   <AutoFilter x:Range="R1C1:R1C9" xmlns="urn:schemas-microsoft-com:office:excel">
   </AutoFilter>
@@ -9294,6 +9312,7 @@
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
+   <x:Print>    </x:Print>
    <x:Print>    </x:Print>
    <x:Print>    </x:Print>
    <x:Print>    </x:Print>
