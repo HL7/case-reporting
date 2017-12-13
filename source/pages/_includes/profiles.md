@@ -58,7 +58,6 @@ The following profiles and extensions have been defined for the eICR transaction
 <ul>
 <li><a href="StructureDefinition-extension-trigger.html">Trigger Code Flag</a></li>
 <li><a href="StructureDefinition-extension-valueAddress.html">Travel history address</a></li>
-<li><a href="StructureDefinition-extension-practitioner-role.html">PractitionerRole reference</a></li>
 </ul>
 
 <!--
@@ -77,8 +76,8 @@ The following profiles and extensions have been defined for the Reportability Re
 #### Profiles
 
 <ul>
-<li><a href="StructureDefinition-rr-communication.html">RR Communication Profile</a></li>
-<li><a href="StructureDefinition-rr-plandefinition.html">RR PlanDefinition Profile</a></li>
+<li><a href="StructureDefinition-rr-communication.html">Reportability Response Communication Profile</a></li>
+<li><a href="StructureDefinition-rr-plandefinition.html">Reportability Response PlanDefinition Profile</a></li>
 <li><a href="StructureDefinition-ecr-organization.html">eCR Organization Profile</a></li>
 <li><a href="StructureDefinition-eicr-encounter.html">eICR Encounter Profile</a></li>
 <li><a href="StructureDefinition-eicr-operationoutcome.html">eICR Operation Outcome Profile</a></li>

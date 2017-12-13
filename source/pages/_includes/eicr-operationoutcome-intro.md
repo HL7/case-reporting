@@ -10,7 +10,7 @@ source file: source/pages/\_includes/{{id}}-intro.md
 
 **Additional Profile specific implementation guidance:**
 
-- None
+- This profile represents the status of processing the eICR prior to the Determination of Reportability.  The Determination of Reportability outcome is represented in the Commuinication Profile using extensions.
 
 #### Examples
 
