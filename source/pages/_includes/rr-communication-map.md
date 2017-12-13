@@ -1,4 +1,12 @@
-|1. RRData Element Common Name|2. Published mappings to CDA Conformance ID|3. RR Communication Profile elements|4. Target FHIR Profile elements referenced by the element in column 3|5. Target FHIR Profile elements referenced by the element in column 4|6. Target Profile|
+{% include nav-tabs.html type="StructureDefinition" id="rr-communication" active="mappings" %}
+
+# {{ page.title }}
+
+source page: {{page.md_filename}}.md  file
+
+#### Table: Reportability Response Data Elements to Reportability Response Communication Profile
+
+|1. Reportability Response Data Element|2. Published mappings to CDA Conformance ID|3. Reportability Response Communication Profile elements|4. Target FHIR Profile elements referenced by the element in column 3|5. Target FHIR Profile elements referenced by the element in column 4|6. Target Profile|
 |---|---|---|---|---|---|---|
 |Reportability Response||[Communication](StructureDefinition-rr-communication-definitions.html#Communication)|||ECR Profile|
 |Reportability Response Unique Identifier||[Communication.identifier](StructureDefinition-rr-communication-definitions.html#Communication.identifier)|||ECR Profil|

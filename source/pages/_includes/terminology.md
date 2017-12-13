@@ -19,24 +19,26 @@ The following value sets and code systems have been defined for the Trigger Code
 #### Value Sets
 
 These value sets have been defined for this implementation guide.
-{% include list-simple-valuesets.xhtml %}
 
+<ul>
+<li><a href="ValueSet-ostc.html">Organism_Substance Triggers for Public Health Reporting</a></li>
+<li><a href="ValueSet-lrtc.html">Lab Obs Test Name Triggers for Public Health Reporting</a></li>
+<li><a href="ValueSet-lotc.html">Lab Order Test Name Triggers for Public Health Reporting</a></li>
+<li><a href="ValueSet-dxtc.html">Diagnosis_Problem Triggers for Public Health Reporting</a></li>
+</ul>
 
 #### Code Systems
 
-**Code systems published in this IG**
-
 These code systems have been defined for this implementation guide:
 
-{% include list-simple-codesystems.xhtml %}
+Code systems published in this IG: none
 
-<br />
 
-**Externally published code systems used in this guide**
+Externally published code systems used in this guide:
 
 |URI|Source|Comment|
 |---|---|---|
-|`urn:oid:2.16.840.1.114222.4.5.274`|[CDC](todo.html)|todo|
+|`urn:oid:2.16.840.1.114222.4.5.274`|[CDC](todo.html)|...todo...|
 
 ---
 <br/>
@@ -48,23 +50,23 @@ The following value sets and code systems have been defined for the eICR transac
 #### Value Sets
 
 These value sets have been defined for this implementation guide.
-{% include list-simple-valuesets.xhtml %}
+<ul>
+<li><a href="ValueSet-oes.html">US Standard Occupational Classification</a></li>
+</ul>
+
 
 #### Code Systems
 
-**Code systems published in this IG**
-
 These code systems have been defined for this implementation guide:
 
-{% include list-simple-codesystems.xhtml %}
+Code systems published in this IG:
 
-<br />
+<ul>
+<li><a href="CodeSystem-oes.html">US Standard Occupational Classification</a></li>
+</ul>
 
-**Externally published code systems used in this guide**
 
-|URI|Source|Comment|
-|---|---|---|
-|`urn:oid:2.16.840.1.114222.4.5.274`|[CDC](todo.html)|todo|
+Externally published code systems used in this guide: none
 
 ---
 <br/>
@@ -76,20 +78,39 @@ The following value sets and code systems have been defined for the eICR transac
 #### Value Sets
 
 These value sets have been defined for this implementation guide.
-{% include list-simple-valuesets.xhtml %}
+<ul>
+<li><a href="ValueSet-lr-codes.html">LocationRelevance</a></li>
+<li><a href="ValueSet-reporting-timeframe.html">ReportingTimeframe</a></li>
+<li><a href="ValueSet-status-reason.html">eICR Processing Status Reason</a></li>
+<li><a href="ValueSet-rr-priority.html">Reportability Priority</a></li>
+<li><a href="ValueSet-ext-resource-category.html">External Resource Type</a></li>
+<li><a href="ValueSet-dor.html">Determination of Reportability</a></li>
+<li><a href="ValueSet-dor-reason.html">Determination of Reportability Reason Codes</a></li>
+<li><a href="ValueSet-ostc.html">Organism_Substance Triggers for Public Health Reporting</a></li>
+<li><a href="ValueSet-lrtc.html">Lab Obs Test Name Triggers for Public Health Reporting</a></li>
+<li><a href="ValueSet-lotc.html">Lab Order Test Name Triggers for Public Health Reporting</a></li>
+<li><a href="ValueSet-inactive-rctc.html">eICR Inactice RCTC Codes</a></li>
+<li><a href="ValueSet-dxtc.html">Diagnosis_Problem Triggers for Public Health Reporting</a></li>
+<li><a href="ValueSet-rctc.html">Reportable Condition Trigger Codes (RCTC)</a></li>
+</ul>
+
 
 #### Code Systems
 
-**Code systems published in this IG**
+Code systems published in this IG
 
 These code systems have been defined for this implementation guide:
 
-{% include list-simple-codesystems.xhtml %}
+Code systems published in this IG:
 
-<br />
+<ul>
+<li><a href="CodeSystem-lr-codes.html">LocationRelevance</a></li>
+<li><a href="CodeSystem-reporting-timeframe.html">ReportingTimeframe</a></li>
+</ul>
 
-**Externally published code systems used in this guide**
+
+Externally published code systems used in this guide:
 
 |URI|Source|Comment|
 |---|---|---|
-|`urn:oid:2.16.840.1.114222.4.5.274`|[CDC](todo.html)|todo|
+|`urn:oid:2.16.840.1.114222.4.5.274`|[CDC](todo.html)|...todo...|

@@ -27,7 +27,7 @@ These files should be the first choice whenever generating any implementation ar
 #### Schematrons
 Schematrons for the profiles defined in this guide are available and listed below:
 
-- [Schematrons](#)
+- [Schematrons](todo.html)
 
 #### Examples
 All the examples that are used in this Implementation Guide are available for download:

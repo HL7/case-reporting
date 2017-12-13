@@ -1,19 +1,19 @@
-source: rr-plandefinition.md file
+{% assign id = {{include.id}} %}
+source file: source/pages/\_includes/{{id}}-intro.md
 
-    This is the introduction markdown file that gets inserted into the sd.html template.
+**ECR Profile: {{site.data.structuredefinitions.[id].name}}**
 
-    This profile sets minimum expectations for blah blah blah
+**Scope and Usage**
 
-    ##### Mandatory Data Elements and Terminology
+{{site.data.structuredefinitions.[id].description}}
 
-    The following data-elements are mandatory (i.e data MUST be present). blah blah blah
 
-    **must have:**
+**Additional Profile specific implementation guidance:**
 
-    1. blah
-    1. blah
-    1. blah
+- None
 
-    **Additional Profile specific implementation guidance:**
+#### Examples
 
-    #### Examples
+- [Example-1](todo.html)
+
+---

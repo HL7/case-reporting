@@ -35,7 +35,7 @@ Formats: <a href="{{[type]}}-{{[id]}}.html">Narrative</a>, <a href="{{[type]}}-{
 
 -->
 
-<h3><span class="sectioncount">SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}<a name="SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}"> </a></span>{{[type]}}-{{[id]}}<a title="link to here" class="self-link" href="{{[type]}}-{{[id]}}.html#SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}"><img src="target.png"/></a></h3>
+<h2><span class="sectioncount">SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}</span> {{[type]}}-{{[id]}}</h2>
 
 
 <!-- introductiontext here-->
@@ -56,23 +56,33 @@ Formats: <a href="{{[type]}}-{{[id]}}.html">Narrative</a>, <a href="{{[type]}}-{
 
 
 <a name="profile"> </a>
-<h4><span class="sectioncount">SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}.1</span>
-Formal Views of Profile Content
- <a title="link to here" class="self-link" href="{{[type]}}-{{[id]}}.html#profile"><img src="target.png"/></a>
-</h4>
-<!-- uri -->
+<h3><span class="sectioncount">SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}.1 </span>
+Formal Views of Profile Content</h3>
 
-<p>Published on {{site.data.structuredefinitions.[id].date}} as a {{site.data.structuredefinitions.[id].status}} by {{site.data.structuredefinitions.[id].publisher}}.</p>
+<p>
+<a href="{{site.data.fhir.path}}profiling.html#representation">Description of Profiles, Differentials, and Snapshots</a>.
+</p>
+
+<p>
+The official URL for this profile is: <code>{{site.data.structuredefinitions.[id].url}}</code>
+</p>
+
+<p>
+Published on {{site.data.structuredefinitions.[id].date}} as a {{site.data.structuredefinitions.[id].status}} by {{site.data.structuredefinitions.[id].publisher}}.
+</p>
+
+<p><strong>
+This profile builds on <a href= "{{site.data.structuredefinitions.[id].basepath}}">{{site.data.structuredefinitions.[id].basename}}</a>
+</strong></p>
+
+
 
 <!--{% raw %}
 {% include {{[type]}}-{{[id]}}-header.xhtml %}
 {% endraw %}-->
 
-<!-- uri -->
-<p>
-<a href="{{site.data.fhir.path}}profiling.html#representation">Description of Profiles, Differentials, Snapshots, and how the XML and JSON presentations work</a>.
-</p>
 
+<hr>
 
 <!--  ********remove the tabs editing purposes if status draft ********* -->
 
@@ -218,7 +228,7 @@ Formal Views of Profile Content
 
 <!-- search text here-->
 <a name="search"> </a>
-<h4><span class="sectioncount">SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}.2 - </span> Quick Start <a title="link to here" class="self-link" href="{{[type]}}-{{[id]}}.html#search"><img src="target.png"/></a></h4>
+<h3><span class="sectioncount">SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}.2  </span>Quick Start</h3>
 <p>Below is an overview of the required set of RESTful FHIR interactions - for example, search and read operations - for this profile.  See the <a href="capstatements.html"/>Conformance requirements</a> for a complete list of supported RESTful interactions for this IG.</p>
 
 {% capture my-include %}{% include {{[id]}}-search.md  id="{{[id]}}" %}{% endcapture %}{{ my-include | markdownify }}

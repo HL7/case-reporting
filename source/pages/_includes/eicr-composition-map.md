@@ -1,3 +1,5 @@
+{% include nav-tabs.html type="StructureDefinition" id="eicr-composition" active="mappings" %}
+
 # {{ page.title }}
 
 source page: {{page.md_filename}}.md  file

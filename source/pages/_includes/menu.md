@@ -13,6 +13,7 @@
 - [Downloads](downloads.html)
 *****no empty lines****
 -->
+- [Notice to Ballot Commenters](balloters.html)
 - [Home](index.html){: .active}
 - [General Guidance](guidance.html)
 - [Profiles and Extensions](profiles.html)
