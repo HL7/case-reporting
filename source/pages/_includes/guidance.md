@@ -29,7 +29,7 @@ The FHIR ValueSet resources for this implementation guide are on the [Terminolog
 
 ###  Decision Support Options
 
-This specification does not yet formally define a preferred mechanism for decision support. Rather, we wish to gather feedback from balloters one the approaches outlined below. 
+This specification does not yet formally define a preferred mechanism for decision support. Rather, we wish to gather feedback from balloters on the approaches outlined below. 
 
 * CDS Hooks: EHR registers a hook, CDS service executes logic pulling FHIR data from server, a card is returned to the user noting that case reporting has begin (no other user action required), assuming the Decision Report Service is capable of generating and submitting an eICR. Another options would be returning a link card to a SMART on FHIR app that will produce an Electronic Initial Case Report (eICR). 
 * CQL: Distribute CQL logic that implementers can include in their system as they see fit to identify reportable conditions and begin the case reporting process. 
