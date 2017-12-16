@@ -14,7 +14,8 @@ source file: pages/_include/{{page.md_filename}}.md  file
 
 ### Trigger Code Transaction
 
-The following value sets and code systems have been defined for the Trigger Code transactions.
+The following value sets and code systems have been defined for the Trigger Code transactions. 
+General guidance for using these value sets can be found on the [Guidance Page](guidance.html#trigger-code-transaction)
 
 #### Value Sets
 
@@ -25,6 +26,11 @@ These value sets have been defined for this implementation guide.
 <li><a href="ValueSet-lrtc.html">Lab Obs Test Name Triggers for Public Health Reporting</a></li>
 <li><a href="ValueSet-lotc.html">Lab Order Test Name Triggers for Public Health Reporting</a></li>
 <li><a href="ValueSet-dxtc.html">Diagnosis_Problem Triggers for Public Health Reporting</a></li>
+</ul>
+
+A bundle containing all the value sets is also included in this guide.
+<ul>
+<li><a href="Bundle-rctc.html">Reportable Conditions Trigger Codes (RCTC)</a></li>
 </ul>
 
 #### Code Systems

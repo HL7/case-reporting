@@ -72,6 +72,7 @@ where:
 
 - To run the ig publisher
 
+
        bash publish.sh
 
 Some screenshots....
