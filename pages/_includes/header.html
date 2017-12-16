@@ -7,9 +7,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="{{site.data.fhir.igName}} Implemenation Guide" />
-<meta name="author" content="http://argonautwiki.hl7.org"/>
-
-
+<meta name="author" content="{{site.data.fhir.ig.publisher}}"/>
   <link href="fhir.css" rel="stylesheet"/>
 
 
@@ -45,8 +43,14 @@
       <div id="project-nav">
              {% capture my-include %}{% include logo.md %}{% endcapture %}{{ my-include | markdownify }}
       </div>
-    <div id="ig-status">
-      <b>{{site.data.fhir.igName}} Implementation Guide CI Build</b>
+      <div id="ig-status" class="text-center">
+
+      {% if {{site.data.fhir.ig.status}} == 'draft' %}
+      <h3>{{site.data.fhir.igName}} Implementation Guide CI Build</h3>
+      {% else %}
+      <h3>{{site.data.fhir.igName}} Implementation Guide Release {{site.data.fhir.ig.version}}</h3>
+      {% endif %}
+
     </div>
   </div>
   <div class="container">

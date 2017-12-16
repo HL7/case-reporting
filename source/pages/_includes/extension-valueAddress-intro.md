@@ -5,7 +5,7 @@ source file: source/pages/\_includes/{{id}}-intro.md
 
 **ECR Extension: {{site.data.structuredefinitions.[id].name}}**
 
-The official URL for this profile is: `{{site.data.structuredefinitions.[id].url}}`
+
 
 **Scope and Usage**
 
@@ -16,4 +16,3 @@ The official URL for this profile is: `{{site.data.structuredefinitions.[id].url
 {% assign type = {{site.data.structuredefinitions.[id].contextType}} %}
 {% assign basepath = {{site.data.structuredefinitions.[id].basepath}} %}
 This extension is used on the {{context}} element(s).
-
