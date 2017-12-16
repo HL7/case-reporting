@@ -15,7 +15,11 @@
 -->
 - [Notice to Ballot Commenters](balloters.html)
 - [Home](index.html){: .active}
-- [General Guidance](guidance.html)
+- [General Guidance and Questions <span class="caret"></span>](#){: .dropdown-toggle data-toggle="dropdown"}
+    - [eCR Exchange Transactions](ecr-exchange.html)
+    - [Triggering / Decision Support](triggering.html)
+    - [FHIR Timing and Roll-Out](fhir-timing.html)
+    {: .dropdown-menu}
 - [Profiles and Extensions](profiles.html)
 - [Terminology](terminology.html)
 - [Capability Statements](capstatements.html)
