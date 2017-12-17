@@ -16,15 +16,7 @@ source file: pages/_include/{{page.md_filename}}.md  file
 
 ### Trigger Code Transaction
 
-The following profiles and extensions have been defined for the Trigger Code transactions.
-
-#### Profiles
-
-...todo...
-
-#### Extensions
-
-...todo...
+This implementation guide does not provide profiles for the ValueSet resource at this time. Rather, this guide provides instances of ValueSet resources that match the content of the RCTC spreadsheets available from [PHIN VADS](https://phinvads.cdc.gov/vads/SearchVocab.action). Future versions of this specification will provide ValueSet resource profiles so that PHAs may provide their own trigger code sets. 
 
 <!--
 The following Logical Models have been defined for this implementation guide.
