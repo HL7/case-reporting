@@ -45,7 +45,7 @@
 
   <li><a href="fhir-timing.html#fhir-timing-and-roll-out" id="markdown-toc-fhir-timing-and-roll-out">FHIR Timing and Roll-Out</a></li>
   <ul>
-  <li><a href="#fhir-timing-and-roll-out-1" id="markdown-toc-fhir-timing-and-roll-out-1">FHIR Timing and Roll Out</a></li>
+
   <li><a href="fhir-timing.html#requirements" id="markdown-toc-requirements">Requirements</a></li>
   <li><a href="fhir-timing.html#questions" id="markdown-toc-questions">Questions</a></li>
   </ul>
@@ -55,16 +55,16 @@
 <!-- end guidance -->
 
 
-  <li><a href="profile.html#profiles-defined-as-part-of-this-guide" id="markdown-toc-profiles-defined-as-part-of-this-guide">Profiles defined as part of this Guide</a>    <ul>
-      <li><a href="profile.html#trigger-code-transaction" id="markdown-toc-trigger-code-transaction">Trigger Code Transaction</a></li>
-      <li><a href="profile.html#eicr-transaction" id="markdown-toc-eicr-transaction">eICR Transaction</a>        <ul>
-          <li><a href="profile.html#profiles" id="markdown-toc-profiles">Profiles</a></li>
-          <li><a href="profile.html#extensions" id="markdown-toc-extensions">Extensions</a></li>
+  <li><a href="profiles.html#profiles-defined-as-part-of-this-guide" id="markdown-toc-profiles-defined-as-part-of-this-guide">Profiles defined as part of this Guide</a>    <ul>
+      <li><a href="profiles.html#trigger-code-transaction" id="markdown-toc-trigger-code-transaction">Trigger Code Transaction</a></li>
+      <li><a href="profiles.html#eicr-transaction" id="markdown-toc-eicr-transaction">eICR Transaction</a>        <ul>
+          <li><a href="profiles.html#profiles" id="markdown-toc-profiles">Profiles</a></li>
+          <li><a href="profiles.html#extensions" id="markdown-toc-extensions">Extensions</a></li>
         </ul>
       </li>
-      <li><a href="profile.html#reportability-response-transaction" id="markdown-toc-reportability-response-transaction">Reportability Response Transaction</a>        <ul>
-          <li><a href="profile.html#profiles-1" id="markdown-toc-profiles-1">Profiles</a></li>
-          <li><a href="profile.html#extensions-1" id="markdown-toc-extensions-1">Extensions</a></li>
+      <li><a href="profiles.html#reportability-response-transaction" id="markdown-toc-reportability-response-transaction">Reportability Response Transaction</a>        <ul>
+          <li><a href="profiles.html#profiles-1" id="markdown-toc-profiles-1">Profiles</a></li>
+          <li><a href="profiles.html#extensions-1" id="markdown-toc-extensions-1">Extensions</a></li>
         </ul>
       </li>
     </ul>
@@ -100,10 +100,10 @@
     </ul>
   </li>
 
-  <li><a href="donwloads.html#downloads" id="markdown-toc-downloads">Downloads</a>    <ul>
-      <li><a href="donwloads.html#validator-pack-and-definitions" id="markdown-toc-validator-pack-and-definitions">Validator Pack and Definitions</a></li>
-      <li><a href="donwloads.html#schematrons" id="markdown-toc-schematrons">Schematrons</a></li>
-      <li><a href="donwloads.html#examples" id="markdown-toc-examples">Examples</a></li>
+  <li><a href="downloads.html#downloads" id="markdown-toc-downloads">Downloads</a>    <ul>
+      <li><a href="downloads.html#validator-pack-and-definitions" id="markdown-toc-validator-pack-and-definitions">Validator Pack and Definitions</a></li>
+      <li><a href="downloads.html#schematrons" id="markdown-toc-schematrons">Schematrons</a></li>
+      <li><a href="downloads.html#examples" id="markdown-toc-examples">Examples</a></li>
     </ul>
   </li>
 
