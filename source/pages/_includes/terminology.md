@@ -1,4 +1,4 @@
-# {{ page.title }}
+## {{ page.title }}
 
 source file: pages/_include/{{page.md_filename}}.md  file
 
@@ -14,7 +14,7 @@ source file: pages/_include/{{page.md_filename}}.md  file
 
 ### Trigger Code Transaction
 
-The following value sets and code systems have been defined for the Trigger Code transactions. 
+The following value sets and code systems have been defined for the Trigger Code transactions.
 General guidance for using these value sets can be found on the [Guidance Page](guidance.html#trigger-code-transaction)
 
 #### Value Sets

@@ -1,4 +1,4 @@
-## {{ site.data.fhir.igName }} Implementation Guide
+## {{ page.title }}
 
 <!-- { :.no_toc } -->
 
@@ -11,7 +11,7 @@
 <!-- end TOC -->
 
 
-source file: pages/\_include/{{page.md_filename}}.md  file
+source file: source/pages/\_include/{{page.md_filename}}.md  file
 
 
 <!--

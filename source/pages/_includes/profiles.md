@@ -1,4 +1,4 @@
-# {{ page.title }}
+## {{ page.title }}
 
 
 source file: pages/_include/{{page.md_filename}}.md  file
@@ -16,7 +16,7 @@ source file: pages/_include/{{page.md_filename}}.md  file
 
 ### Trigger Code Transaction
 
-This implementation guide does not provide profiles for the ValueSet resource at this time. Rather, this guide provides instances of ValueSet resources that match the content of the RCTC spreadsheets available from [PHIN VADS](https://phinvads.cdc.gov/vads/SearchVocab.action). Future versions of this specification will provide ValueSet resource profiles so that PHAs may provide their own trigger code sets. 
+This implementation guide does not provide profiles for the ValueSet resource at this time. Rather, this guide provides instances of ValueSet resources that match the content of the RCTC spreadsheets available from [PHIN VADS](https://phinvads.cdc.gov/vads/SearchVocab.action). Future versions of this specification will provide ValueSet resource profiles so that PHAs may provide their own trigger code sets.
 
 <!--
 The following Logical Models have been defined for this implementation guide.

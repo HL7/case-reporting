@@ -1,4 +1,4 @@
-# {{ page.title }}
+## {{ page.title }}
 
 source file: pages/_include/{{page.md_filename}}.md  file
 
@@ -14,7 +14,7 @@ source file: pages/_include/{{page.md_filename}}.md  file
 
 The following CapabilityStatements define the conformance requirements for this implementation guide.
 
-#### Trigger Code Transaction
+### Trigger Code Transaction
 
 This section describes the expected capabilities of a server that stores Reportable Conditions Trigger Codes (RCTC).  
 
@@ -36,7 +36,7 @@ The RCTC Server **SHALL**:
 
 The RCTC Server **SHOULD**:
 
-1. Support clients creating and updating Subscription resource for all RCTC ValueSet and Bundle resources. 
+1. Support clients creating and updating Subscription resource for all RCTC ValueSet and Bundle resources.
 1. Implement Subscription services per the FHIR specification.
 
 
@@ -49,10 +49,10 @@ The RCTC Client **SHALL**:
 The RCTC Client **SHOULD**:
 
 - Support creating and updating Subscription resources on the RCTC server.
-- Support receiving updates to subscriptions using one or more of the methods described in the FHIR specification. 
+- Support receiving updates to subscriptions using one or more of the methods described in the FHIR specification.
 
 
-#### eICR Transaction
+### eICR Transaction
 {% include list-simple-capabilitystatements.xhtml %}
-#### Reportability Response Transaction
+### Reportability Response Transaction
 {% include list-simple-capabilitystatements.xhtml %}

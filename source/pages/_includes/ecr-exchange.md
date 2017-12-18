@@ -1,4 +1,4 @@
-## {{ site.data.fhir.igName }} Implementation Guide
+## {{ page.title }}
 
 <!-- { :.no_toc } -->
 
@@ -11,7 +11,7 @@
 <!-- end TOC -->
 
 
-source file: pages/\_include/{{page.md_filename}}.md  file
+source file: source/pages/\_include/{{page.md_filename}}.md  file
 
 
 <!--
@@ -19,3 +19,4 @@ eCR Exchange Transactions - ecr-exchange.md
 Triggering / Decision Support - triggering.md
 FHIR Timing and Roll-Out - fhir-timing.md
 -->
+s
