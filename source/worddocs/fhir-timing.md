@@ -1,18 +1,4 @@
-## {{ page.title }}
-
-<!-- { :.no_toc } -->
-
-<!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
-
-* Do not remove this line (it will not be displayed)
-{:toc}
-
-
-<!-- end TOC -->
-
-
-source file: source/pages/\_include/{{page.md_filename}}.md  file
-
+**FHIR Timing and Roll Out**
 
 The importance of having standards developed for when they are needed
 exists in a tension with both the long time it takes for broad industry
@@ -25,7 +11,7 @@ incentives, business drivers, and policies from outside of standards
 development organizations, your input on some of the related issues can
 help guide the trajectory moving forward.
 
-#### Requirements
+**Requirements**
 
   - In an interorganizational activity like electronic Case Reporting,
     the coordination of the multiple participants can be very
@@ -52,7 +38,7 @@ help guide the trajectory moving forward.
     process for sunsetting old standards and what overlap should exist
     between two approaches.
 
-#### Questions
+**Questions**
 
   - In what timeframe will there be broad enough clinical care adoption
     of FHIR to consider it as a viable option for electronic Case

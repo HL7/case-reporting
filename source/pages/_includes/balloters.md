@@ -62,13 +62,13 @@ get input on:
 #### 5.  The timing and roll-out of board FHIR eCR standards advancement
 
 Material for \#1 and \#3 can be found in the [Profiles and
-Extensions](http://build.fhir.org/ig/HL7/case-reporting/profiles.html),
-[Terminology](http://build.fhir.org/ig/HL7/case-reporting/terminology.html),
+Extensions](profiles.html),
+[Terminology](terminology.html),
 and [Capability
-Statements](http://build.fhir.org/ig/HL7/case-reporting/capstatements.html)
+Statements](capstatements.html)
 tabs of this For Comment Implementation Guide. Specific context and
 questions for \#2, \#4, and \#5 can be found in the [General
-Guidance](http://build.fhir.org/ig/HL7/case-reporting/guidance.html)
+Guidance](guidance.html)
 tab.
 
 #### How to Ballot

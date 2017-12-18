@@ -1,18 +1,4 @@
-## {{ page.title }}
-
-<!-- { :.no_toc } -->
-
-<!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
-
-* Do not remove this line (it will not be displayed)
-{:toc}
-
-
-<!-- end TOC -->
-
-
-source file: source/pages/\_include/{{page.md_filename}}.md  file
-
+**eCR Exchange Transactions**
 
 Electronic Case Reporting (eCR) is the automated generation and
 transmission of case reports from the electronic health record (EHR) to
@@ -46,7 +32,7 @@ Transaction \#4 is the least mature in this guide, but should be
 considered in respect to potential transactions and transaction security
 related issues.
 
-#### Requirements
+**Requirements**
 
   - Transaction \#1 involves the delivery of publicly available,
     non-sensitive information. Whether it is the download of a trigger
@@ -90,7 +76,7 @@ related issues.
     a point-to-point solution. Some PHAs consider the posting of a web
     form not to need extensive transport security.
 
-#### Questions
+**Questions**
 
 1)  We believe that several different interorganizational exchange
     methodologies will be supported with FHIR as well as CDA. As such,

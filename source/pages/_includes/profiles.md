@@ -1,7 +1,7 @@
 ## {{ page.title }}
 
 
-source file: pages/_include/{{page.md_filename}}.md  file
+source file: source/pages/_include/{{page.md_filename}}.md  file
 
 <!-- { :.no_toc } -->
 
