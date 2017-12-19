@@ -98,7 +98,7 @@ source page: {{page.md_filename}}.md  file
 |The patient's occupation history|||[Composition.section.entry](StructureDefinition-eicr-composition-definitions.html#Composition.section.entry)|[Observation](StructureDefinition-eicr-occupationhistory-definitions.html#Observation)||eCR-Profile|
 |Occupation|start date|1198-8559||[Observation.effectivePeriod](StructureDefinition-eicr-occupationhistory-definitions.html#Observation.effectivePeriod)||eCR-Profile|
 |Occupation|end date|1198-8559||[Observation.effectivePeriod](StructureDefinition-eicr-occupationhistory-definitions.html#Observation.effectivePeriod)||eCR-Profile|
-|Occupation|description|1198-8559||[Observation.valueString](StructureDefinition-eicr-occupationhistory-definitions.html#Observation.valueString)||eCR-Profile|
+|Occupation|description|1198-8559||[Observation.valueCodeableConcept](StructureDefinition-eicr-occupationhistory-definitions.html#Observation.valueCodeableConcept)||eCR-Profile|
 |The patient's pregnancy status |||[Composition.section.entry](StructureDefinition-eicr-composition-definitions.html#Composition.section.entry)|[Observation](StructureDefinition-eicr-pregnancystatus-definitions.html#Observation)||eCR-Profile|
 |Pregnant|start date|1198-9058||[Observation.effectivePeriod](StructureDefinition-eicr-pregnancystatus-definitions.html#Observation.effectivePeriod)||eCR-Profile|
 |Pregnant|end date|1198-9058||[Observation.effectivePeriod](StructureDefinition-eicr-pregnancystatus-definitions.html#Observation.effectivePeriod)||eCR-Profile|
@@ -110,7 +110,7 @@ source page: {{page.md_filename}}.md  file
 |Travel History||#N/A|[Composition.section.entry](StructureDefinition-eicr-composition-definitions.html#Composition.section.entry)|[Observation](StructureDefinition-eicr-travelhistory-definitions.html#Observation)||eCR-Profile|
 |Travel History Dates|start|3284-295||[Observation.effectivePeriod](StructureDefinition-eicr-travelhistory-definitions.html#Observation.effectivePeriod)||eCR-Profile|
 |Travel History Dates|end|3284-295||[Observation.effectivePeriod](StructureDefinition-eicr-travelhistory-definitions.html#Observation.effectivePeriod)||eCR-Profile|
-|Travel History Location - Free Text||3284-269||[Observation.valueString](StructureDefinition-eicr-travelhistory-definitions.html#Observation.valueString)||eCR-Profile|
+|Travel History Location - Free Text||3284-269||[Observation.valueCodeableConcept](StructureDefinition-eicr-travelhistory-definitions.html#Observation.valueCodeableConcept)||eCR-Profile|
 |Travel History Location - Coded|system|3284-263||[Observation.valueCodeableConcept](StructureDefinition-eicr-travelhistory-definitions.html#Observation.valueCodeableConcept)||eCR-Profile|
 |Travel History Location - Coded|systemName|3284-263||[Observation.valueCodeableConcept](StructureDefinition-eicr-travelhistory-definitions.html#Observation.valueCodeableConcept)||eCR-Profile|
 |Travel History Location - Coded|code|3284-263||[Observation.valueCodeableConcept](StructureDefinition-eicr-travelhistory-definitions.html#Observation.valueCodeableConcept)||eCR-Profile|

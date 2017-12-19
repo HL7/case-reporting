@@ -4,11 +4,7 @@
 
 
   <li><a href="balloters.html#notice-to-ballot-commenters" id="markdown-toc-notice-to-ballot-commenters">Notice to Ballot Commenters</a>    <ul>
-      <li><a href="balloters.html#fhir-representations-of-two-existing-cda-document-standards" id="markdown-toc-fhir-representations-of-two-existing-cda-document-standards">1.  FHIR representations of two existing CDA document standards:</a></li>
-      <li><a href="balloters.html#the-framing-of-technical-transactions-for-the-exchange-of-the-eicr-the-reportability-response-and-future-supplemental-reporting-information-in-the-milieu-of-supporting-the-following" id="markdown-toc-the-framing-of-technical-transactions-for-the-exchange-of-the-eicr-the-reportability-response-and-future-supplemental-reporting-information-in-the-milieu-of-supporting-the-following">2.  The framing of technical transactions for the exchange of the eICR, the Reportability Response, and future supplemental reporting information in the milieu of supporting the following:</a></li>
-      <li><a href="balloters.html#fhir-representation-of-what-is-currently-a-non-standards-based-excel-spreadsheet-process-for-distributing-trigger-codes" id="markdown-toc-fhir-representation-of-what-is-currently-a-non-standards-based-excel-spreadsheet-process-for-distributing-trigger-codes">3.  FHIR representation of what is currently a non-standards based, Excel spreadsheet process for distributing trigger codes:</a></li>
-      <li><a href="balloters.html#broader-standardization-of-the-triggering--decision-support-process-for-ecr" id="markdown-toc-broader-standardization-of-the-triggering--decision-support-process-for-ecr">4.  Broader standardization of the triggering / decision support process for eCR</a></li>
-      <li><a href="balloters.html#the-timing-and-roll-out-of-board-fhir-ecr-standards-advancement" id="markdown-toc-the-timing-and-roll-out-of-board-fhir-ecr-standards-advancement">5.  The timing and roll-out of board FHIR eCR standards advancement</a></li>
+      
       <li><a href="balloters.html#how-to-ballot" id="markdown-toc-how-to-ballot">How to Ballot</a></li>
     </ul>
   </li>
