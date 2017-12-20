@@ -13,4 +13,4 @@ git status
 echo "================================================================================="
 echo === run igpublisher - to run without a terminology server use the '-tx N/A' option ===
 echo "================================================================================"
-java -jar ${path2}org.hl7.fhir.igpublisher.jar -ig ig.json -watch
+java -jar ${path2}org.hl7.fhir.igpublisher.jar -ig ig.json -watch -tx N/A
