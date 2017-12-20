@@ -2,13 +2,13 @@
 
 <ul id="toc">
 
-
+<!--
   <li><a href="balloters.html#notice-to-ballot-commenters" id="markdown-toc-notice-to-ballot-commenters">Notice to Ballot Commenters</a>    <ul>
-      
+
       <li><a href="balloters.html#how-to-ballot" id="markdown-toc-how-to-ballot">How to Ballot</a></li>
     </ul>
   </li>
-
+-->
   <li><a href="index.html#electronic-case-reporting-ecr-implementation-guide" id="markdown-toc-electronic-case-reporting-ecr-implementation-guide">Home: electronic Case Reporting (eCR) Implementation Guide</a>    <ul>
     <li><a href="index.html#introduction" id="markdown-toc-introduction">Introduction</a></li>
     <li><a href="index.html#stakeholders" id="markdown-toc-stakeholders">Stakeholders</a></li>
