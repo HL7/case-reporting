@@ -18,7 +18,7 @@ This repository consists of:
   - Markdown and HTML files which provide the context and guidance
   - Definitions file for configuring the publication tooling
   - bash scripts for publication of the IG using the [IG-Publisher tool](http://wiki.hl7.org/index.php?title=IG_Publisher_Documentation)
-  - Publication output files (in the `docs` folder)
+
 
 ### Rendered IG-Template at:
 
