@@ -18,19 +18,13 @@ This repository consists of:
   - Markdown and HTML files which provide the context and guidance
   - Definitions file for configuring the publication tooling
   - bash scripts for publication of the IG using the [IG-Publisher tool](http://wiki.hl7.org/index.php?title=IG_Publisher_Documentation)
-  - Publication output files (in the `docs` folder)
 
-### Rendered IG-Template at:
+
+## After a commit the IGis automatically rendered at... 
 
 http://build.fhir.org/ig/HL7/case-reporting/index.html
 
 *Note: a build takes 2-3 minutes to complete. You should see a notification at https://chat.fhir.org/#narrow/stream/committers/topic/ig-build.
-
-## After the build is complete, you can...
-
-### Find your rendered IG automatically available at
-
-http://build.fhir.org/ig/HL7/case-reporting/index.html
 
 ### Find debugging info about the build
 
