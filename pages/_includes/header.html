@@ -45,7 +45,11 @@
       </div>
       <div id="ig-status" class="text-center">
 
-{% capture my-include %}{% include logo.md %}{% endcapture %}{{ my-include | markdownify }}
+        {% if {{site.data.fhir.ig.status}} == 'draft' %}
+        <strong>{{site.data.fhir.igName}} Implementation Guide CI Build</strong>
+        {% else %}
+        <strong>{{site.data.fhir.igName}} Implementation Guide Release {{site.data.fhir.ig.version}}</strong>
+        {% endif %}
 
     </div>
   </div>
