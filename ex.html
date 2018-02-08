@@ -2,6 +2,10 @@
 # jekyll header
 level: 2
 active: format
+layout: fhir-artifact
+type: {{[type]}}
+template: example
+id: {{[id]}}
 br_StructureDefinition: profiles
 br_ValueSet : terminology
 br_CodeSystem : terminology
@@ -12,19 +16,8 @@ br_OperationDefinition : operations
 br_SearchParameter : searchparams
 ---
 
-  <!--  template typically for examples --> 
-{% include header.html %}
-
-{% include navbar.html %}
-
-{% include container-start.html %}
-
-<!-- ============BreadCrumb=============== -->
-
-{% include breadcrumbs.html breadcrumb = page.br_{{[type]}} %}
-
+  <!--  template typically for examples -->
 <!-- ============CONTENT CONTENT=============== -->
-{% include nav-tabs.html type="{{[type]}}" id="{{[id]}}" active="content" %}
 
 <h2>{{[title]}}    {% include {{[type]}}-{{[name]}}.xhtml %}</h2>
 <!--
@@ -35,7 +28,3 @@ Formats: <a href="{{[type]}}-{{[id]}}.xml.html">XML</a>, <a href="{{[type]}}-{{[
 {% include {{[type]}}-{{[name]}}.xhtml %}
 
   <!-- ==============END CONTENT END CONTENT=================== -->
-
-{% include container-end.html %}
-
-{% include footer.html %}

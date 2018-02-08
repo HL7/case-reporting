@@ -5,11 +5,14 @@
 
 your logo here
 
-[![visit the our website](your-logo.png)](your web site.html)
-{: .img-responsive #hl7-logo}
+[![visit our website](assets/images/org_logo.png)](your web site.html)
+{: .img-responsive #org_logo}
+
+can only resize using html  or css ;-(
 
 -->
 
 
-[![visit the our website](assets/images/hl7-logo.png)](http://www.hl7.org)
-{: .img-responsive #hl7-logo}
+<a no-external="true" href="http://www.hl7.org">
+<img alt="visit our website" class="img-responsive project-logo" src="assets/images/hl7-logo.png"/>
+</a>

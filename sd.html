@@ -2,22 +2,15 @@
 # jekyll header
 level: 2
 active: profiles
+template: sd
+layout: fhir-artifact
+type: {{[type]}}
+id: {{[id]}}
 ---
-{% include header.html %}
-
-{% include navbar.html %}
-
-{% include container-start.html %}
-
-<!-- ============BreadCrumb=============== -->
-
-{% include breadcrumbs.html %}
-
 <!-- ============CONTENT CONTENT=============== -->
 
-{% include nav-tabs.html type="{{[type]}}" id="{{[id]}}" active="content" %}
 
-<!--
+<!--{% raw %}
 <ul class="nav nav-tabs">
 	<li class="active"><a href="#">Content</a></li>
 	<li><a href="{{[type]}}-{{[id]}}-definitions.html">Detailed Descriptions</a></li>
@@ -26,14 +19,14 @@ active: profiles
 	<li><a href="{{[type]}}-{{[id]}}.json.html">JSON</a></li>
 	<li><a href="{{[type]}}-{{[id]}}.ttl.html">Turtle</a></li>
 </ul>
--->
+{% endraw %}-->
 
-<!--simpler links to other pages
+<!--{% raw %} simpler links to other pages
 <p>
 Formats: <a href="{{[type]}}-{{[id]}}.html">Narrative</a>, <a href="{{[type]}}-{{[id]}}.xml.html">XML</a>, <a href="{{[type]}}-{{[id]}}.json.html">JSON</a>, <a href="{{[type]}}-{{[id]}}.ttl.html">Turtle</a>
 </p>
 
--->
+{% endraw %}-->
 
 <h2><span class="sectioncount">SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}</span> {{[type]}}-{{[id]}}</h2>
 
@@ -47,12 +40,11 @@ Formats: <a href="{{[type]}}-{{[id]}}.html">Narrative</a>, <a href="{{[type]}}-{
 
 <!-- example here -->
 
-<!--
+<!--{% raw %}
 <h5>Example: <a href="daf-{{page.code}}-{{page.example}}.html">{{page.tcode}} Example: {{page.example}}</a></h5>
--->
-<!--  try build generated templates
-<h5>Example: <a href="{{[title]}}.example.html">{{[title]}} Example</a></h5> -->
 
+<h5>Example: <a href="{{[title]}}.example.html">{{[title]}} Example</a></h5>
+{% endraw %}-->
 
 
 <a name="profile"> </a>
@@ -64,15 +56,15 @@ Formal Views of Profile Content</h3>
 </p>
 
 <p>
-The official URL for this profile is: <code>{{site.data.structuredefinitions.[id].url}}</code>
+The official URL for this profile is: <code>{{site.data.structuredefinitions.{{[id]}}.url}}</code>
 </p>
 
 <p>
-Published on {{site.data.structuredefinitions.[id].date}} as a {{site.data.structuredefinitions.[id].status}} by {{site.data.structuredefinitions.[id].publisher}}.
+Published on {{site.data.structuredefinitions.{{[id]}}.date}} as a {{site.data.structuredefinitions.{{[id]}}.status}} by {{site.data.structuredefinitions.{{[id]}}.publisher}}.
 </p>
 
 <p><strong>
-This profile builds on <a href= "{{site.data.structuredefinitions.[id].basepath}}">{{site.data.structuredefinitions.[id].basename}}</a>
+This profile builds on <a href= "{{site.data.structuredefinitions.{{[id]}}.basepath}}">{{site.data.structuredefinitions.{{[id]}}.basename}}</a>
 </strong></p>
 
 
@@ -109,7 +101,7 @@ This profile builds on <a href= "{{site.data.structuredefinitions.[id].basepath}
    <div id="tbl-diff-inner">
      <a name="summary"> </a>
 
-{ % include {{[type]}}-{{[id]}}-summary.xhtml %}
+{% include {{[type]}}-{{[id]}}-summary.xhtml %}
 
 
 <!--{% raw %}
@@ -137,7 +129,7 @@ This profile builds on <a href= "{{site.data.structuredefinitions.[id].basepath}
  </div>
 
 
-<!--
+ <!--{% raw %}
  <div id="tabs-xml">
   <div id="xml">
    <div id="xml-inner">
@@ -153,7 +145,7 @@ This profile builds on <a href= "{{site.data.structuredefinitions.[id].basepath}
    </div>
   </div>
  </div>
--->
+{% endraw %}-->
 
 {% endif %}
 
@@ -166,7 +158,8 @@ This profile builds on <a href= "{{site.data.structuredefinitions.[id].basepath}
    <div id="all-tbl-summ-inner">
      <a name="summary"> </a>
 {% include {{[type]}}-{{[id]}}-summary.xhtml %}
-<!--{% raw %}{% capture my-include %}{% include {{[id]}}-summary.md id="{{[id]}}" %}{% endcapture %}{{ my-include | markdownify }}
+<!--{% raw %}
+{% capture my-include %}{% include {{[id]}}-summary.md id="{{[id]}}" %}{% endcapture %}{{ my-include | markdownify }}
 {% endraw %}-->
    </div>
 
@@ -193,7 +186,7 @@ This profile builds on <a href= "{{site.data.structuredefinitions.[id].basepath}
 
 
 
-<!--
+  <!--{% raw %}
   <div id="all-xml">
    <p><b>XML Template</b></p>
    <div id="all-xml-inner">
@@ -207,7 +200,7 @@ This profile builds on <a href= "{{site.data.structuredefinitions.[id].basepath}
 {% include {{[type]}}-{{[id]}}-pseudo-json.xhtml %}
    </div>
   </div>
--->
+{% endraw %}-->
  </div>
 </div>
 
@@ -236,36 +229,3 @@ This profile builds on <a href= "{{site.data.structuredefinitions.[id].basepath}
 
 {% endif %}
   <!-- ==============END CONTENT END CONTENT=================== -->
-
-{% include container-end.html %}
-
-<script src="assets/js/jquery.js"> </script>
-<script src="assets/js/jquery-ui.min.js"> </script>
-<script>
-try {
-  var currentTabIndex = sessionStorage.getItem('fhir-resource-tab-index');
-}
-catch(exception){
-}
-
-if (!currentTabIndex)
-  currentTabIndex = '0';
-
-$( '#tabs' ).tabs({
-         active: currentTabIndex,
-         activate: function( event, ui ) {
-             var active = $('.selector').tabs('option', 'active');
-             currentTabIndex = ui.newTab.index();
-             document.activeElement.blur();
-             try {
-               sessionStorage.setItem('fhir-resource-tab-index', currentTabIndex);
-             }
-             catch(exception){
-             }
-         }
-     });
-</script>
-
-{% include footer.html %}
-</body>
-</html>

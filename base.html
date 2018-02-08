@@ -1,32 +1,17 @@
 ---
 # jekyll header
 level: 2
+template: base
 active: format
-br_StructureDefinition: profiles
-br_ValueSet : terminology
-br_CodeSystem : terminology
-br_ConceptMap : terminology
-br_CapabilityStatement : capstatements
-br_StructureMap : mappings
-br_OperationDefinition : operations
-br_SearchParameter : searchparams
+layout: fhir-artifact
+type: {{[type]}}
+id: {{[id]}}
 ---
 
 <!-- ig template for many conformance resource html pages  ('base' in definitions file)  can not be used for conformance resources that have more that a single base template. e.g.,  sd since there are mapping and definitions templates for it as well  they need to be split out into 3 separate templates -->
 
-{% include header.html %}
-
-{% include navbar.html %}
-
-{% include container-start.html %}
-
-<!-- ============BreadCrumb=============== -->
-
-{% include breadcrumbs.html breadcrumb = page.br_{{[type]}} %}
-
-{% include nav-tabs.html type="{{[type]}}" id="{{[id]}}" active="content" %}
-
 <!-- ============ CONTENT CONTENT=============== -->
+
 {% case '{{[type]}}' %} <!-- content depends on type -->
 {% when 'ValueSet' %}
 <!-- ============VAlUESET CONTENT CONTENT=============== -->
@@ -66,7 +51,6 @@ br_SearchParameter : searchparams
 
 {% when 'OperationDefinition' %}
 <!-- ============OperationDefinition CONTENT CONTENT=============== -->
-  {% include nav-tabs.html type="{{[type]}}" id="{{[id]}}" active="content" %}
 
   {% include {{[type]}}-{{[name]}}.xhtml %}
 
@@ -92,7 +76,3 @@ Formats: <a href="{{[type]}}-{{[id]}}.html">Narrative</a>, <a href="{{[type]}}-{
 
 
   <!-- ==============END CONTENT END CONTENT=================== -->
-
-{% include container-end.html %}
-
-{% include footer.html %}
