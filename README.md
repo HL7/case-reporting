@@ -20,7 +20,7 @@ This repository consists of:
   - bash scripts for publication of the IG using the [IG-Publisher tool](http://wiki.hl7.org/index.php?title=IG_Publisher_Documentation)
 
 
-## After a commit the IG is automatically rendered at...
+## After a commit the IG is automatically rendered at:
 
 http://build.fhir.org/ig/HL7/case-reporting/index.html
 
