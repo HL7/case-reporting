@@ -15,3 +15,4 @@ This table provides a list of all the versions of FHIR versions of the {{site.da
 |[current](http://build.fhir.org/ig/HL7/case-reporting/index.html)|(last commit)|Current Development build (may be incoherent and change rapidly)|
 |**STU1 sequence**|
 |[January 2018](http://hl7.org/fhir/uv/ecr/2018Jan/index.html)|0.1.0| Release 0.1.0 (STU1) first ballot (Draft for Comment)|
+|[September 2018](http://hl7.org/fhir/uv/ecr/2018Sep/index.html)|0.1.0| Release 0.1.0 (STU1) second ballot (STU R1)|
