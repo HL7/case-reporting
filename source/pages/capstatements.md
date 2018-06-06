@@ -14,7 +14,7 @@ active: capstatements
 
 <!-- end TOC -->
 
-The following CapabilityStatements define the conformance requirements for this implementation guide.
+TESTING: The following CapabilityStatements define the conformance requirements for this implementation guide.
 
 ### Trigger Code Transaction
 
