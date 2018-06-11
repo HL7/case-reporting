@@ -20,7 +20,7 @@ source: source/pages/\_include/{{page.md_filename}}.md  file
 ###  Introduction
 
 
-TEST: With the advent of Electronic Health Records (EHRs), there are tremendous opportunities to support public health surveillance and the
+TEST CI BUILD: With the advent of Electronic Health Records (EHRs), there are tremendous opportunities to support public health surveillance and the
 delivery of public health information to clinical care. eCR can support
 more complete and timely possible case data, support disease and
 condition monitoring and trending, assist outbreak management and
