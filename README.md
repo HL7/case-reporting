@@ -29,7 +29,7 @@ http://build.fhir.org/ig/HL7/case-reporting/index.html
 ### Find debugging info about the build
 
 For a build log, see:
-http://build.fhir.org/ig/hl7/case-reporting/build.log
+http://build.fhir.org/ig/HL7/case-reporting/build.log
 
 #### Issues logged at
 
