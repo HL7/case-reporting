@@ -2,11 +2,11 @@
 
 Authors:
 
-- Sarah Gaunt
-- Rick Geimer
-- Eric Haas
 - John Loonsk
 - Laura Conn
+- Sarah Gaunt
+- Eric Haas
+- Rick Geimer
 
 This project will determine and document a core, "Population/Public Health Case" based on the FHIR standard for use in reporting from Electronic Health Records (EHR) to health departments and a "Reportability Response Report" from health departments to EHRs.
 
