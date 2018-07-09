@@ -1,5 +1,5 @@
 ---
-title: Note to Balloters
+title: Notice to Ballot Commenters
 layout: default
 active: home
 ---
@@ -8,18 +8,18 @@ active: home
 
 <!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
 
-<!-- * Do not remove this line (it will not be displayed)
-{:toc} -->
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 
 <!-- end TOC -->
 
 
-This *For Comment* ballot continues and expands on work to date on
+This *STU* ballot continues and expands on work to date on
 electronic Case Reporting (eCR) standards. It is intended to preview and
 get input on:
 
-#### 1.  FHIR representations of two existing CDA document standards:
+#### 1.  FHIR representations of two existing CDA document standards
 
   - [The electronic Initial Case Report eICR
     Version 1.1](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=436)
@@ -33,7 +33,9 @@ get input on:
     > (a.k.a. HL7 CDA® R2 Implementation Guide: Reportability Response,
     > Release 1 STU Release 1.0 - US Realm)
 
-#### 2.  The framing of technical transactions for the exchange of the eICR, the Reportability Response, and future supplemental reporting information in the milieu of supporting the following:
+#### 2.  The framing of technical transactions for the exchange of the eICR, the Reportability Response, and future supplemental reporting information
+
+Supporting the following:
 
   - Point-to-point exchange
 
@@ -45,7 +47,7 @@ get input on:
 
   - Many clinical care organizations and Public Health Agencies (PHAs)
 
-#### 3.  FHIR representation of what is currently a non-standards based, Excel spreadsheet process for distributing trigger codes:
+#### 3.  FHIR representation of what is currently a non-standards based, Excel spreadsheet process for distributing trigger codes
 
   - A bundle of constrained FHIR value set resources
 
@@ -62,8 +64,8 @@ get input on:
 
 #### 5.  The timing and roll-out of board FHIR eCR standards advancement
 
-Material for \#1 and \#3 can be found in the [Profiles and
-Extensions](profiles.html),
+Material for \#1 and \#3 can be found in the [Profiles, Extensions, and
+Transactions](profiles.html),
 [Terminology](terminology.html),
 and [Capability
 Statements](capstatements.html)

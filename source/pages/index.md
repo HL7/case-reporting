@@ -10,14 +10,14 @@ active: home
 
 <!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
 
-<!-- * Do not remove this line (it will not be displayed)
-{:toc} -->
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 <!-- end TOC -->
 
 source: source/pages/\_include/{{page.md_filename}}.md  file
 
-###  Introduction
+###  Introduction and Purpose
 
 
 With the advent of Electronic Health Records (EHRs), there are tremendous opportunities to support public health surveillance and the
@@ -92,3 +92,7 @@ activities.
     care, mental health)
 
   - Local and State Public Health Agencies
+
+### Relationships to Other Standards
+
+### Acknowledgements

@@ -3,7 +3,7 @@
 - [Home](index.html)
 - [General Guidance](guidance.html)
 - [Profiles and Logical Models](profiles.html)
-- [Mappings](structuremaps.html)
+
 - [Extensions](extensions.html)
 - [Terminology](terminology.html)
 - [Search Parameters](searchparams.html)
@@ -11,16 +11,21 @@
 - [Security](security.html)
 - [Examples](examples.html)
 - [Downloads](downloads.html)
-*****no empty lines****
-- [Notice to Ballot Commenters](balloters.html)
--->
-- [Home](index.html){: .active}
+
 - [General Guidance and Questions <span class="caret"></span>](#){: .dropdown-toggle data-toggle="dropdown"}
     - [eCR Exchange Transactions](ecr-exchange.html)
     - [Triggering / Decision Support](triggering.html)
     - [FHIR Timing and Roll-Out](fhir-timing.html)
     {: .dropdown-menu}
-- [Profiles and Extensions](profiles.html)
+*****no empty lines****
+
+-->
+- [Notice to Ballot Commenters](balloters.html)
+- [Home](index.html){: .active}
+- [eCR Design Considerations](design-considerations.html)
+
+- [Profiles, Extensions and Transactions](profiles.html)
+- [Mappings](rr-communication-map.html)
 - [Terminology](terminology.html)
 - [Capability Statements](capstatements.html)
 - [Downloads](downloads.html)

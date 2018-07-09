@@ -10,28 +10,28 @@ source file: source/pages/_include/{{page.md_filename}}.md  file
 
 <!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
 
-<!-- * Do not remove this line (it will not be displayed)
-{:toc} -->
-
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 <!-- end TOC -->
 
 
-### Trigger Code Transaction
+### Distribution Profile
+Paragraph Narrative description to include: (JL/LC)
+-	Trigger Codes
+-	Reporting Rules (CQL and others?)
+-	Link(s) to supplemental data request
+-	External resources (references?) from PH 
 
-This implementation guide does not provide profiles for the ValueSet resource at this time. Rather, this guide provides instances of ValueSet resources that match the content of the RCTC spreadsheets available from [PHIN VADS](https://phinvads.cdc.gov/vads/SearchVocab.action). Future versions of this specification will provide ValueSet resource profiles so that PHAs may provide their own trigger code sets.
-
-<!--
-The following Logical Models have been defined for this implementation guide.
-
-{ % include list-simple-logicals.xhtml % }
--->
+<ul>
+<li><a href="StructureDefinition-ecr-distribution.html">eCR Distribution Profile</a></li>
+</ul>
 
 ---
 <br />
 
-### eICR Transaction
-
+### eICR Profiles
+Narrative - to be written (JL/LC)
 The following profiles and extensions have been defined for the eICR transactions
 
 #### Profiles
@@ -55,16 +55,13 @@ The following profiles and extensions have been defined for the eICR transaction
 <li><a href="StructureDefinition-extension-valueAddress.html">Travel history address</a></li>
 </ul>
 
-<!--
-The following Logical Models have been defined for this implementation guide.
 
-{ % include list-simple-logicals.xhtml % }
--->
 
 ---
 <br />
 
-### Reportability Response Transaction
+### Reportability Response Profiles
+Narrative - to be written (JL/LC)
 
 The following profiles and extensions have been defined for the Reportability Response transactions.
 
@@ -96,10 +93,5 @@ The following profiles and extensions have been defined for the Reportability Re
 <li><a href="StructureDefinition-extension-rel-artifact-priority.html">External Resource Priority</a></li>
 </ul>
 
-<!--
-The following Logical Models have been defined for this implementation guide.
-
-{ % include list-simple-logicals.xhtml % }
--->
 
 ---
