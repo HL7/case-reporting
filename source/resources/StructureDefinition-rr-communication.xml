@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="rr-communication"/>
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication"/>
+  <version value="0.0.0"/>
+  <name value="Reportabllity Response Profile"/>
+  <status value="draft"/>
+  <date value="2017-06-11T00:00:00+10:00"/>
+  <publisher value="PHER"/>
+  <description value="The Reportability Response Communication profile establishes then core elements, extensions, vocabularies and value sets for recording the receipt and processing of an electronic Initial Case Report (eICR) CDA document or FHIR resource.  This information includes information about the reportable condition along with resources and details on where to get more information about the condition, its treatment, and reporting requirements.  In the most common scenario, the Reportability Response will communicate, for one or more PHAs, which condition(s) is/are reportable, provide information about what clinical next step activities may need to occur, and other relevant resources.&#xA;&#xA;The Reportability Response allows for:&#xA;&#xA;- Notification, alerting, routing and queueing in work or message management systems for healthcare personnel&#xA;- Dynamic and static URIs for supplemental data collection and the provision of information resources&#xA;- If the eICR was successfully processed, then there SHOULD be:&#xA;&#xA;    - A Topic Subject Line&#xA;    - A Topic Summary&#xA;    - A way to identify the eICR either as a direct reference or through a business identifier&#xA;    - References to related artifacts to assist the providers in understanding the investigating conditions.  &#xA;&#xA;- If the eICR CDA document was not processed and has errors, then there SHOULD be:&#xA;&#xA;    - A way to identify the eICR either as a direct reference or through a business identifier&#xA;    - An eICR processing error reasons"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <fhirVersion value="3.0.1"/>
+  <!--<mapping>
+    <identity value="rr-lm"/>
+    <uri value="http://unknown.org/RR LM"/>
+    <name value="RR LM"/>
+  </mapping>
+  <mapping>
+    <identity value="workflow"/>
+    <uri value="http://hl7.org/fhir/workflow"/>
+    <name value="Workflow Mapping"/>
+  </mapping>
+  <mapping>
+    <identity value="w5"/>
+    <uri value="http://hl7.org/fhir/w5"/>
+    <name value="W5 Mapping"/>
+  </mapping>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM Mapping"/>
+  </mapping>
+  -->
+  <kind value="resource"/>
+  <abstract value="false"/>
+  <type value="Communication"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Communication"/>
+  <derivation value="constraint"/>
+  <differential>
+    <element id="Communication">
+      <path value="Communication"/>
+      <short value="Reportabllity Response Profile"/>
+      <definition value="The Reportability Response Communication profile establishes then core elements, extensions, vocabularies and value sets for recording the receipt and processing of an electronic Initial Case Report (eICR) CDA document or FHIR resource.  This information includes information about the reportable condition along with resources and details on where to get more information about the condition, its treatment, and reporting requirements.&#xD;&#xD;The Reportability Response allows for:&#xD;&#xD;- Notification, alerting, routing and queueing in work or message management systems for healthcare personnel&#xD;- Dynamic and static URIs for supplemental data collection and the provision of information resources&#xD;- If the eICR was successfully processed, then there SHOULD be:&#xD;&#xD;    - A Topic Subject Line&#xD;    - A Topic Summary&#xD;    - A way to identify the eICR either as a direct reference or through a business identifier&#xD;    - References to related artifacts to assist the providers in understanding the investigating conditions.  &#xD;&#xD;- If the eICR CDA document was not processed and has errors, then there SHOULD be:&#xD;&#xD;    - A way to identify the eICR either as a direct reference or through a business identifier&#xD;    - An eICR processing error reasons."/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Communication"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+    </element>
+    <element id="Communication.extension:statusReason">
+      <path value="Communication.extension"/>
+      <sliceName value="statusReason"/>
+      <short value="eICR processing status reason"/>
+      <definition value="Details about eICR processing Warnings or Errors."/>
+      <requirements value="If the PHA system (or its intermediary) identifies an issue with the eICR, this will contain those issues as a warning."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-status-reason"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.eICRProcessing.errorReason, RR.eICRProcessing.warningReason"/>
+      </mapping>
+    </element>
+    <element id="Communication.identifier">
+      <path value="Communication.identifier"/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="Identifier"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.uniqueIdentifier"/>
+      </mapping>
+    </element>
+    <element id="Communication.definition">
+      <path value="Communication.definition"/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-plandefinition"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.authoringAgency"/>
+      </mapping>
+    </element>
+    <element id="Communication.status">
+      <path value="Communication.status"/>
+      <short value="eICR Processing Status"/>
+      <definition value="The status of eICR processing, including an acknowledgemen of successful processing or any known errors encountered during eICR processing."/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="code"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <binding>
+        <strength value="required"/>
+        <description value="The status of the communication."/>
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/ValueSet/event-status"/>
+        </valueSetReference>
+      </binding>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.eICRProcessing.status"/>
+      </mapping>
+    </element>
+    <element id="Communication.category">
+      <path value="Communication.category"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="coding.code"/>
+        </discriminator>
+        <rules value="open"/>
+      </slicing>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+    </element>
+    <element id="Communication.category:priority">
+      <path value="Communication.category"/>
+      <sliceName value="priority"/>
+      <short value="Priority Code"/>
+      <definition value="A value indicating the overall priority of the Reportability Response, derived from the highest priority level of the links contained in the coded section."/>
+      <alias value="Priority Code"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <binding>
+        <strength value="required"/>
+        <description value="Category codes indicating the relative importance of a communication."/>
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/rr-priority"/>
+        </valueSetReference>
+      </binding>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.priority"/>
+      </mapping>
+    </element>
+    <element id="Communication.subject">
+      <path value="Communication.subject"/>
+      <alias value="patient"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.patient"/>
+      </mapping>
+    </element>
+    <element id="Communication.recipient">
+      <path value="Communication.recipient"/>
+      <short value="EICR recipients and Intermediaries"/>
+      <comment value="Reporting may be identified for multiple PHAs by the PHA system (or its intermediary) (because the patient&#39;s residence and the provider location are in separate jurisdictions) including other identified organization (such as an HIE) to which the eICR (if deemed reportable) and/or the Reportability Response will be routed."/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.Responsible Agent, RR.routingEntity"/>
+      </mapping>
+    </element>
+    <element id="Communication.recipient.extension:locationRelevance">
+      <path value="Communication.recipient.extension"/>
+      <sliceName value="locationRelevance"/>
+      <short value="Location Relevance"/>
+      <definition value="A code indicating whether the responsible PHA is relevant because of the patient&#39;s home address, the provider facility address, or both."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-location-relevance"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.locationRelevance"/>
+      </mapping>
+    </element>
+    <element id="Communication.topic">
+      <path value="Communication.topic"/>
+      <short value="Reportability Response summary"/>
+      <definition value="What this RR Communcation is about."/>
+      <comment value="Use the [`.display`] (http://build.fhir.org/references-definitions.html#Reference.display) element to represent the text."/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Any"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.eICR"/>
+      </mapping>
+    </element>
+    <element id="Communication.topic.extension:topicSummary">
+      <path value="Communication.topic.extension"/>
+      <sliceName value="topicSummary"/>
+      <short value="Summary"/>
+      <definition value="A human-readable narrative summary that contains a reportability determination, the responsible PHA(s), and the PHA(s) that will be sent the eICR (when deemed reportable)."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-topic-summary"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.summary"/>
+      </mapping>
+    </element>
+    <element id="Communication.topic.extension:topicReportable">
+      <path value="Communication.topic.extension"/>
+      <sliceName value="topicReportable"/>
+      <short value="Determination of Reportability"/>
+      <definition value="The determination of reportability generated by the PHA system (or its intermediary). Generally, this is expected to be Yes, No, or Maybe."/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-topic-dor"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <binding>
+        <strength value="required"/>
+        <description value="The determination of reportability generated by the PHA system (or its intermediary)."/>
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/dor"/>
+        </valueSetReference>
+      </binding>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.determinationofReportability.code"/>
+      </mapping>
+    </element>
+    <element id="Communication.topic.extension:topicReportableReason">
+      <path value="Communication.topic.extension"/>
+      <sliceName value="topicReportableReason"/>
+      <short value="Determination of Reportability Reason"/>
+      <definition value="A reason code indicating the reason for the reportability status."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-topic-dor-reason"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <binding>
+        <strength value="required"/>
+        <description value="A reason code indicating the reason for the reportability status"/>
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/dor-reason"/>
+        </valueSetReference>
+      </binding>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.determinationofReportability.reason"/>
+      </mapping>
+    </element>
+    <element id="Communication.topic.extension:topicReportableRule">
+      <path value="Communication.topic.extension"/>
+      <sliceName value="topicReportableRule"/>
+      <short value="Determination of Reportability Rule"/>
+      <definition value="A rule that was involved in the determination of the reportability status."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-topic-dor-rule"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.determination of Reportability.rule"/>
+      </mapping>
+    </element>
+    <element id="Communication.context">
+      <path value="Communication.context"/>
+      <short value="eICR encompassing encounter ID"/>
+      <definition value="The encompassing encounter ID from the eICR that generatedthe Reportability Response."/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="eICR Encompassing Encounter ID"/>
+      </mapping>
+    </element>
+    <element id="Communication.received">
+      <path value="Communication.received"/>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.eICR.receiptDateTime"/>
+      </mapping>
+    </element>
+    <element id="Communication.sender">
+      <path value="Communication.sender"/>
+      <comment value="If only representing only a Provider or  only a Facility use this element. If representing both a Provider and a Facility use this element to represent the Provider and the *onBehalfOf* Extension to represent the Facility."/>
+      <alias value="Provider or Facility"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device"/>
+      </type>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization"/>
+      </type>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.provider|RR.facility"/>
+      </mapping>
+    </element>
+    <element id="Communication.sender.extension:SenderRole">
+      <path value="Communication.sender.extension"/>
+      <sliceName value="SenderRole"/>
+      <comment value="If representing both a sending Provider and a  sending Facility use this Extension to reference PractitiionerRole."/>
+      <alias value="PractitionerRole"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-practitioner-role"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.provider|RR.facility"/>
+      </mapping>
+    </element>
+    <element id="Communication.reasonCode">
+      <path value="Communication.reasonCode"/>
+      <short value="Reportable Condition"/>
+      <definition value="A code indicating a condition associated with an RCTC trigger code in the eICR."/>
+      <alias value="RCTC trigger code"/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <binding>
+        <strength value="example"/>
+        <description value="Indicate a condition associated with an RCTC trigger code in the eICR"/>
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/rctc"/>
+        </valueSetReference>
+      </binding>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.ReportableCondition"/>
+      </mapping>
+    </element>
+    <element id="Communication.payload">
+      <path value="Communication.payload"/>
+      <min value="0"/>
+      <max value="*"/>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.eICR"/>
+      </mapping>
+    </element>
+    <element id="Communication.payload.extension:RRSubject">
+      <path value="Communication.payload.extension"/>
+      <sliceName value="RRSubject"/>
+      <short value="RR Subject"/>
+      <definition value="A succinct, human-readable narrative text that can be used as a subject header in a message queue, much like an email subject."/>
+      <comment value="The `text` elelement can be used without any codings."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-subject"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <!--<mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.subject"/>
+      </mapping>-->
+    </element>
+    <element id="Communication.payload.extension:manuallyInitiated">
+      <path value="Communication.payload.extension"/>
+      <sliceName value="manuallyInitiated"/>
+      <short value="Manually Initiated eICR"/>
+      <definition value="If the incoming eICR was manually generated by the provider (as opposed to automatically-generated based on the existence of a trigger code from the RCTC) then this will be present."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-manual-init"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.eICR.manuallyInitiated"/>
+      </mapping>
+    </element>
+    <element id="Communication.payload.extension:manuallyInitiatedReason">
+      <path value="Communication.payload.extension"/>
+      <sliceName value="manuallyInitiatedReason"/>
+      <short value="Initial Case Report Manual Initiation Reason*"/>
+      <definition value="Reason for manual initiation of the eICR."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-manual-init-reason"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.eICR.manuallyInitiatedReason"/>
+      </mapping>
+    </element>
+    <element id="Communication.payload.contentReference">
+      <path value="Communication.payload.contentReference"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/DocumentReference"/>
+      </type>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Binary"/>
+      </type>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+    </element>
+    <element id="Communication.payload.contentReference.reference">
+      <path value="Communication.payload.contentReference.reference"/>
+      <short value="Reference to eICR CDA Document"/>
+      <definition value="At a minimum, each Reportability Response should contain the unique document ID associated with the eICR that initiated its generation."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.eICR.CDADocumentReference"/>
+      </mapping>
+    </element>
+    <element id="Communication.payload.contentReference.identifier">
+      <path value="Communication.payload.contentReference.identifier"/>
+      <short value="eICR CDA Document ID*"/>
+      <definition value="At a minimum, each Reportability Response should contain the unique document ID associated with the eICR that initiated its generation."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Identifier"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.eICR.CDADocumentID"/>
+      </mapping>
+    </element>
+    <element id="Communication.payload.contentReference.display">
+      <path value="Communication.payload.contentReference.display"/>
+      <short value="Filename of eICR"/>
+      <definition value="The filename of the eICR (to assist with troubleshooting in the event that the eICR cannot be parsed)."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <mapping>
+        <identity value="rr-lm"/>
+        <map value="RR.eICR.filename"/>
+      </mapping>
+    </element>
+    <element id="Communication.note">
+      <path value="Communication.note"/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="Annotation"/>
+      </type>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+    </element>
+  </differential>
+</StructureDefinition>

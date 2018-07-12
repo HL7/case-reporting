@@ -87,7 +87,7 @@ The following value sets and code systems have been defined for the eICR transac
 
 These value sets have been defined for this implementation guide.
 <ul>
-<li><a href="ValueSet-lr-codes.html">LocationRelevance</a></li>
+<li><a href="ValueSet-lr.html">LocationRelevance</a></li>
 <li><a href="ValueSet-reporting-timeframe.html">ReportingTimeframe</a></li>
 <li><a href="ValueSet-status-reason.html">eICR Processing Status Reason</a></li>
 <li><a href="ValueSet-rr-priority.html">Reportability Priority</a></li>
