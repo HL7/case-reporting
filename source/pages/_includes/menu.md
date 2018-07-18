@@ -23,7 +23,6 @@
 - [Notice to Ballot Commenters](balloters.html)
 - [Home](index.html){: .active}
 - [eCR Design Considerations](design-considerations.html)
-
 - [Profiles, Extensions and Transactions](profiles.html)
 - [Mappings](rr-communication-map.html)
 - [Terminology](terminology.html)
