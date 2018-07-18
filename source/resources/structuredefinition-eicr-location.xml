@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="eicr-location"/>
-  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-location"/>
-  <version value="0.0.0"/>
-  <name value="eICR Facility"/>
-  <status value="draft"/>
-  <date value="2017-11-29T00:00:00+10:00"/>
-  <description value="The Electronic Case Reporting Location profile is based on the **US Core-Location** profile and establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;- Initial Case Report reportable event location&#xA;&#xA;Note that travel history location is represented using an Observation with coded or string value or an address."/>
+  <id value="eicr-location" />
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-location" />
+  <version value="0.0.0" />
+  <name value="eICR Facility" />
+  <status value="draft" />
+  <date value="2017-11-29T00:00:00+10:00" />
+  <description
+    value="The Electronic Case Reporting Location profile is based on the **US Core-Location** profile and establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;- Initial Case Report reportable event location&#xA;&#xA;Note that travel history location is represented using an Observation with coded or string value or an address." />
   <jurisdiction>
     <coding>
-      <system value="urn:iso:std:iso:3166"/>
-      <code value="US"/>
-      <display value="United States of America"/>
+      <system value="urn:iso:std:iso:3166" />
+      <code value="US" />
+      <display value="United States of America" />
     </coding>
   </jurisdiction>
-  <fhirVersion value="3.0.1"/>
+  <fhirVersion value="3.0.1" />
   <!--<mapping>
     <identity value="eicr-ccda"/>
     <uri value="http://unknown.org/EICR CCDA"/>
@@ -37,11 +38,11 @@
     <name value="W5 Mapping"/>
   </mapping>
   -->
-  <kind value="resource"/>
-  <abstract value="false"/>
-  <type value="Location"/>
-  <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-location"/>
-  <derivation value="constraint"/>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Location" />
+  <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-location" />
+  <derivation value="constraint" />
   <!--<snapshot>
     <element id="Location">
       <path value="Location"/>
@@ -1253,41 +1254,41 @@
   -->
   <differential>
     <element id="Location">
-      <path value="Location"/>
-      <short value="eICR Location"/>
-      <definition value="The facility sending or receiving the eICR."/>
-      <min value="0"/>
-      <max value="*"/>
+      <path value="Location" />
+      <short value="eICR Location" />
+      <definition value="The facility sending or receiving the eICR." />
+      <min value="0" />
+      <max value="*" />
       <base>
-        <path value="us-core-location"/>
-        <min value="0"/>
-        <max value="*"/>
+        <path value="us-core-location" />
+        <min value="0" />
+        <max value="*" />
       </base>
-      <mustSupport value="false"/>
-      <isModifier value="false"/>
+      <mustSupport value="false" />
+      <isModifier value="false" />
     </element>
     <element id="Location.identifier">
-      <path value="Location.identifier"/>
-      <short value="Facility ID Number"/>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <path value="Location.identifier" />
+      <short value="Facility ID Number" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="todo"/>
+        <identity value="eicr-ccda" />
+        <map value="todo" />
       </mapping>
     </element>
     <element id="Location.type">
-      <path value="Location.type"/>
-      <short value="Facility Type"/>
+      <path value="Location.type" />
+      <short value="Facility Type" />
       <type>
-        <code value="CodeableConcept"/>
+        <code value="CodeableConcept" />
       </type>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <binding>
-        <strength value="extensible"/>
+        <strength value="extensible" />
         <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/v3-ServiceDeliveryLocationRoleType"/>
+          <reference value="http://hl7.org/fhir/ValueSet/v3-ServiceDeliveryLocationRoleType" />
         </valueSetReference>
       </binding>
     </element>

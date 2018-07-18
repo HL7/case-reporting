@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="eicr-occupationhistory"/>
-  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-occupationhistory"/>
-  <version value="0.0.0"/>
-  <name value="Occupation History"/>
-  <status value="draft"/>
-  <date value="2017-11-29T00:00:00+10:00"/>
-  <description value="The Electronic Case Reporting Occupational History profile is establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;-  The Initial Case Report subject&#39;s occupational history."/>
+  <id value="eicr-occupationhistory" />
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-occupationhistory" />
+  <version value="0.0.0" />
+  <name value="Occupation History" />
+  <status value="draft" />
+  <date value="2017-11-29T00:00:00+10:00" />
+  <description
+    value="The Electronic Case Reporting Occupational History profile is establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;-  The Initial Case Report subject&#39;s occupational history." />
   <jurisdiction>
     <coding>
-      <system value="urn:iso:std:iso:3166"/>
-      <code value="US"/>
-      <display value="United States of America"/>
+      <system value="urn:iso:std:iso:3166" />
+      <code value="US" />
+      <display value="United States of America" />
     </coding>
   </jurisdiction>
-  <fhirVersion value="3.0.1"/>
+  <fhirVersion value="3.0.1" />
   <!--<mapping>
     <identity value="eicr-ccda"/>
     <uri value="http://unknown.org/EICR CCDA"/>
@@ -51,12 +52,12 @@
     <uri value="http://snomed.info/sct"/>
     <name value="SNOMED CT Attribute Binding"/>
   </mapping>
- --> 
-  <kind value="resource"/>
-  <abstract value="false"/>
-  <type value="Observation"/>
-  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation"/>
-  <derivation value="constraint"/>
+ -->
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Observation" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation" />
+  <derivation value="constraint" />
   <!--<snapshot>
     <element id="Observation">
       <path value="Observation"/>
@@ -1836,69 +1837,69 @@
   -->
   <differential>
     <element id="Observation">
-      <path value="Observation"/>
-      <short value="eICR Occupation History"/>
-      <definition value="TODO"/>
-      <min value="0"/>
-      <max value="*"/>
+      <path value="Observation" />
+      <short value="eICR Occupation History" />
+      <definition value="TODO" />
+      <min value="0" />
+      <max value="*" />
       <base>
-        <path value="Observation"/>
-        <min value="0"/>
-        <max value="*"/>
+        <path value="Observation" />
+        <min value="0" />
+        <max value="*" />
       </base>
-      <mustSupport value="false"/>
-      <isModifier value="false"/>
+      <mustSupport value="false" />
+      <isModifier value="false" />
     </element>
     <element id="Observation.code">
-      <path value="Observation.code"/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="Observation.code" />
+      <min value="1" />
+      <max value="1" />
       <type>
-        <code value="CodeableConcept"/>
+        <code value="CodeableConcept" />
       </type>
       <patternCodeableConcept>
         <coding>
-          <system value="http://loinc.org"/>
-          <code value="74287-4"/>
-          <display value="Occupation [NTDS]"/>
+          <system value="http://loinc.org" />
+          <code value="74287-4" />
+          <display value="Occupation [NTDS]" />
         </coding>
-        <text value="Occupationl HIstory"/>
+        <text value="Occupationl HIstory" />
       </patternCodeableConcept>
       <example>
-        <label value="General"/>
+        <label value="General" />
         <valueCodeableConcept>
           <coding>
-            <system value="http://loinc.org"/>
-            <code value="74287-4"/>
-            <display value="Occupation [NTDS]"/>
+            <system value="http://loinc.org" />
+            <code value="74287-4" />
+            <display value="Occupation [NTDS]" />
           </coding>
-          <text value="Occupationl HIstory"/>
+          <text value="Occupationl HIstory" />
         </valueCodeableConcept>
       </example>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="todo"/>
+        <identity value="eicr-ccda" />
+        <map value="todo" />
       </mapping>
     </element>
     <element id="Observation.effective[x]">
-      <path value="Observation.effective[x]"/>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <path value="Observation.effective[x]" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
     </element>
     <element id="Observation.valueCodeableConcept">
-      <path value="Observation.valueCodeableConcept"/>
+      <path value="Observation.valueCodeableConcept" />
       <type>
-        <code value="CodeableConcept"/>
+        <code value="CodeableConcept" />
       </type>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <binding>
-        <strength value="extensible"/>
-        <description value="Occupation codes"/>
+        <strength value="extensible" />
+        <description value="Occupation codes" />
         <valueSetReference>
-          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/oes"/>
+          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/oes" />
         </valueSetReference>
       </binding>
     </element>

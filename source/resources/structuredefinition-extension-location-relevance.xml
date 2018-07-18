@@ -1,35 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="extension-location-relevance"/>
-  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-location-relevance"/>
-  <version value="0.0.0"/>
-  <name value="Location Relevance"/>
-  <title value="Location Relevance"/>
-  <status value="draft"/>
-  <date value="2017-06-11T00:00:00+10:00"/>
-  <publisher value="PHER"/>
-  <description value="A code indicating whether the responsible PHA is relevant because of the patient&#39;s home address, the provider facility address, or both."/>
+  <id value="extension-location-relevance" />
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-location-relevance" />
+  <version value="0.0.0" />
+  <name value="Location Relevance" />
+  <title value="Location Relevance" />
+  <status value="draft" />
+  <date value="2017-06-11T00:00:00+10:00" />
+  <publisher value="PHER" />
+  <description
+    value="A code indicating whether the responsible PHA is relevant because of the patient&#39;s home address, the provider facility address, or both." />
   <jurisdiction>
     <coding>
-      <system value="urn:iso:std:iso:3166"/>
-      <code value="US"/>
-      <display value="United States of America"/>
+      <system value="urn:iso:std:iso:3166" />
+      <code value="US" />
+      <display value="United States of America" />
     </coding>
   </jurisdiction>
-  <fhirVersion value="3.0.1"/>
+  <fhirVersion value="3.0.1" />
   <!--<mapping>
     <identity value="rim"/>
     <uri value="http://hl7.org/v3"/>
     <name value="RIM Mapping"/>
   </mapping>-->
-  <kind value="complex-type"/>
-  <abstract value="false"/>
-  <contextType value="datatype"/>
-  <context value="Communication.recipient"/>
-  <type value="Extension"/>
-  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-  <derivation value="constraint"/>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <contextType value="datatype" />
+  <context value="Communication.recipient" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
   <!--<snapshot>
     <element id="Extension">
       <path value="Extension"/>
@@ -164,33 +165,35 @@
   -->
   <differential>
     <element id="Extension">
-      <path value="Extension"/>
-      <sliceName value="location-relevance"/>
-      <short value="home|provider|both"/>
-      <definition value="A code indicating whether the responsible PHA is relevant because of the patient&#39;s home address, the provider facility address, or both."/>
-      <min value="0"/>
-      <max value="1"/>
+      <path value="Extension" />
+      <sliceName value="location-relevance" />
+      <short value="home|provider|both" />
+      <definition
+        value="A code indicating whether the responsible PHA is relevant because of the patient&#39;s home address, the provider facility address, or both." />
+      <min value="0" />
+      <max value="1" />
       <base>
-        <path value="Extension"/>
-        <min value="0"/>
-        <max value="*"/>
+        <path value="Extension" />
+        <min value="0" />
+        <max value="*" />
       </base>
-      <isModifier value="false"/>
+      <isModifier value="false" />
     </element>
     <element id="Extension.url">
-      <path value="Extension.url"/>
-      <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-location-relevance"/>
+      <path value="Extension.url" />
+      <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-location-relevance" />
     </element>
     <element id="Extension.valueCode">
-      <path value="Extension.valueCode"/>
+      <path value="Extension.valueCode" />
       <type>
-        <code value="code"/>
+        <code value="code" />
       </type>
       <binding>
-        <strength value="required"/>
-        <description value="Indicates whether the responsible PHA is relevant because of the patient&#39;s home address, the provider facility address, or both"/>
+        <strength value="required" />
+        <description
+          value="Indicates whether the responsible PHA is relevant because of the patient&#39;s home address, the provider facility address, or both" />
         <valueSetReference>
-          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/lr"/>
+          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/lr" />
         </valueSetReference>
       </binding>
     </element>

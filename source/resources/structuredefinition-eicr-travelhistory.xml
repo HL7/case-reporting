@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="eicr-travelhistory"/>
-  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-travelhistory"/>
-  <version value="0.0.0"/>
-  <name value="Travel History"/>
-  <status value="draft"/>
-  <date value="2017-06-11T00:00:00+10:00"/>
-  <description value="The Electronic Case Reporting Travel History profile establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;-  The Initial Case Report subject&#39;s travel history as a string, an address or a coded location."/>
+  <id value="eicr-travelhistory" />
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-travelhistory" />
+  <version value="0.0.0" />
+  <name value="Travel History" />
+  <status value="draft" />
+  <date value="2017-06-11T00:00:00+10:00" />
+  <description
+    value="The Electronic Case Reporting Travel History profile establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;-  The Initial Case Report subject&#39;s travel history as a string, an address or a coded location." />
   <jurisdiction>
     <coding>
-      <system value="urn:iso:std:iso:3166"/>
-      <code value="US"/>
-      <display value="United States of America"/>
+      <system value="urn:iso:std:iso:3166" />
+      <code value="US" />
+      <display value="United States of America" />
     </coding>
   </jurisdiction>
-  <fhirVersion value="3.0.1"/>
+  <fhirVersion value="3.0.1" />
   <!--<mapping>
     <identity value="eicr-ccda"/>
     <uri value="http://unknown.org/EICR CCDA"/>
@@ -52,11 +53,11 @@
     <name value="SNOMED CT Attribute Binding"/>
   </mapping>
   -->
-  <kind value="resource"/>
-  <abstract value="false"/>
-  <type value="Observation"/>
-  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation"/>
-  <derivation value="constraint"/>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Observation" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation" />
+  <derivation value="constraint" />
   <!--<snapshot>
     <element id="Observation">
       <path value="Observation"/>
@@ -1876,81 +1877,81 @@
   -->
   <differential>
     <element id="Observation">
-      <path value="Observation"/>
-      <short value="eICR Travel History"/>
-      <definition value="TODO"></definition>
+      <path value="Observation" />
+      <short value="eICR Travel History" />
+      <definition value="TODO" />
       <base>
-        <path value="Observation"/>
-        <min value="0"/>
-        <max value="*"/>
+        <path value="Observation" />
+        <min value="0" />
+        <max value="*" />
       </base>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
     </element>
     <element id="Observation.extension:address">
-      <path value="Observation.extension"/>
-      <sliceName value="address"/>
-      <short value="Travel history address"/>
-      <min value="0"/>
-      <max value="1"/>
+      <path value="Observation.extension" />
+      <sliceName value="address" />
+      <short value="Travel history address" />
+      <min value="0" />
+      <max value="1" />
       <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-valueAddress"/>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-valueAddress" />
       </type>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
     </element>
     <element id="Observation.code">
-      <path value="Observation.code"/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="Observation.code" />
+      <min value="1" />
+      <max value="1" />
       <type>
-        <code value="CodeableConcept"/>
+        <code value="CodeableConcept" />
       </type>
       <patternCodeableConcept>
         <coding>
-          <system value="http://loinc.org"/>
-          <code value="8691-8"/>
-          <display value="History of Travel"/>
+          <system value="http://loinc.org" />
+          <code value="8691-8" />
+          <display value="History of Travel" />
         </coding>
-        <text value="Travel HIstory"/>
+        <text value="Travel HIstory" />
       </patternCodeableConcept>
       <example>
-        <label value="General"/>
+        <label value="General" />
         <valueCodeableConcept>
           <coding>
-            <system value="http://loinc.org"/>
-            <code value="8691-8"/>
-            <display value="History of Travel"/>
+            <system value="http://loinc.org" />
+            <code value="8691-8" />
+            <display value="History of Travel" />
           </coding>
-          <text value="Travel HIstory"/>
+          <text value="Travel HIstory" />
         </valueCodeableConcept>
       </example>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="todo"/>
+        <identity value="eicr-ccda" />
+        <map value="todo" />
       </mapping>
     </element>
     <element id="Observation.effective[x]">
-      <path value="Observation.effective[x]"/>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <path value="Observation.effective[x]" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
     </element>
     <element id="Observation.valueCodeableConcept">
-      <path value="Observation.valueCodeableConcept"/>
-      <short value="Travel Location"/>
+      <path value="Observation.valueCodeableConcept" />
+      <short value="Travel Location" />
       <type>
-        <code value="CodeableConcept"/>
+        <code value="CodeableConcept" />
       </type>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <binding>
-        <strength value="extensible"/>
-        <description value="Geographical location codes"/>
+        <strength value="extensible" />
+        <description value="Geographical location codes" />
         <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/jurisdiction"/>
+          <reference value="http://hl7.org/fhir/ValueSet/jurisdiction" />
         </valueSetReference>
       </binding>
     </element>

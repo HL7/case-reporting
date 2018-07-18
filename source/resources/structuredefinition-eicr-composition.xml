@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="eicr-composition"/>
-  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
-  <version value="0.0.0"/>
-  <name value="Case Composition Profile"/>
-  <status value="draft"/>
-  <date value="2017-12-04T00:00:00+10:00"/>
-  <description value="The Electronic Case Reporting Composition profile establishes the core elements, extensions, vocabularies and value sets for representing an electronic initial case report (eICR).  It describes the content requirements for the initial Case Report including:&#xA;&#xA;- Patient demographics&#xA;- Patient pregnancy status&#xA;- Patient occupation and travel history&#xA;- Provider and Facility information&#xA;- Laboratory orders tests and results&#xA;- Signs and Symptoms and Diagnosis&#xA;- Medication and Immunization History&#xA;- Flags for the existence of reportable condition trigger codes in diagnoses and ordered/resulted laboratory tests."/>
+  <id value="eicr-composition" />
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition" />
+  <version value="0.0.0" />
+  <name value="Case Composition Profile" />
+  <status value="draft" />
+  <date value="2017-12-04T00:00:00+10:00" />
+  <description
+    value="The Electronic Case Reporting Composition profile establishes the core elements, extensions, vocabularies and value sets for representing an electronic initial case report (eICR).  It describes the content requirements for the initial Case Report including:&#xA;&#xA;- Patient demographics&#xA;- Patient pregnancy status&#xA;- Patient occupation and travel history&#xA;- Provider and Facility information&#xA;- Laboratory orders tests and results&#xA;- Signs and Symptoms and Diagnosis&#xA;- Medication and Immunization History&#xA;- Flags for the existence of reportable condition trigger codes in diagnoses and ordered/resulted laboratory tests." />
   <jurisdiction>
     <coding>
-      <system value="urn:iso:std:iso:3166"/>
-      <code value="US"/>
-      <display value="United States of America"/>
+      <system value="urn:iso:std:iso:3166" />
+      <code value="US" />
+      <display value="United States of America" />
     </coding>
   </jurisdiction>
-  <fhirVersion value="3.0.1"/>
+  <fhirVersion value="3.0.1" />
   <!--<mapping>
     <identity value="eicr-ccda"/>
     <uri value="http://unknown.org/EICR CCDA"/>
@@ -35,11 +36,11 @@
     <uri value="http://hl7.org/fhir/w5"/>
     <name value="W5 Mapping"/>
   </mapping>-->
-  <kind value="resource"/>
-  <abstract value="false"/>
-  <type value="Composition"/>
-  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Composition"/>
-  <derivation value="constraint"/>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Composition" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Composition" />
+  <derivation value="constraint" />
   <!--<snapshot>
     <element id="Composition">
       <path value="Composition"/>
@@ -6000,46 +6001,46 @@
   -->
   <differential>
     <element id="Composition">
-      <path value="Composition"/>
-      <short value="eICR Composition Profile"/>
-      <definition value="TODO"/>
-      <min value="0"/>
-      <max value="*"/>
+      <path value="Composition" />
+      <short value="eICR Composition Profile" />
+      <definition value="TODO" />
+      <min value="0" />
+      <max value="*" />
       <base>
-        <path value="Composition"/>
-        <min value="0"/>
-        <max value="*"/>
+        <path value="Composition" />
+        <min value="0" />
+        <max value="*" />
       </base>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="EICR CCDA"/>
+        <identity value="eicr-ccda" />
+        <map value="EICR CCDA" />
       </mapping>
     </element>
     <element id="Composition.subject">
-      <path value="Composition.subject"/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="Composition.subject" />
+      <min value="1" />
+      <max value="1" />
       <type>
-        <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient" />
       </type>
       <type>
-        <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Group"/>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Group" />
       </type>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
     </element>
     <element id="Composition.encounter">
-      <path value="Composition.encounter"/>
-      <comment value="(US Core Encounter profile pending)."/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="Composition.encounter" />
+      <comment value="(US Core Encounter profile pending)." />
+      <min value="1" />
+      <max value="1" />
       <type>
-        <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter" />
       </type>
       <!--<example>
         <label value="General"/>
@@ -6048,255 +6049,255 @@
           <display value="EICR Encounter Profile example"/>
         </valueReference>
       </example>-->
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
     </element>
     <element id="Composition.date">
-      <path value="Composition.date"/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="Composition.date" />
+      <min value="1" />
+      <max value="1" />
       <type>
-        <code value="dateTime"/>
+        <code value="dateTime" />
       </type>
       <example>
-        <label value="General"/>
-        <valueDateTime value="2017-11-06T22:13:23Z"/>
+        <label value="General" />
+        <valueDateTime value="2017-11-06T22:13:23Z" />
       </example>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
     </element>
     <element id="Composition.author">
-      <path value="Composition.author"/>
-      <comment value="(US Core PractitionerRole profile pending)."/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="Composition.author" />
+      <comment value="(US Core PractitionerRole profile pending)." />
+      <min value="1" />
+      <max value="1" />
       <type>
-        <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole"/>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole" />
       </type>
       <type>
-        <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
       </type>
       <type>
-        <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization"/>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization" />
       </type>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
     </element>
     <element id="Composition.section:eicr-section-slices">
-      <path value="Composition.section"/>
-      <sliceName value="eicr-section-slices"/>
+      <path value="Composition.section" />
+      <sliceName value="eicr-section-slices" />
       <slicing>
         <discriminator>
-          <type value="value"/>
-          <path value="code"/>
+          <type value="value" />
+          <path value="code" />
         </discriminator>
-        <rules value="open"/>
+        <rules value="open" />
       </slicing>
-      <min value="1"/>
-      <max value="*"/>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <min value="1" />
+      <max value="*" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
     </element>
     <element id="Composition.section:eicr-slice2">
-      <path value="Composition.section"/>
-      <sliceName value="eicr-slice2"/>
-      <short value="History of Present Illness Section"/>
-      <min value="1"/>
-      <max value="1"/>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <path value="Composition.section" />
+      <sliceName value="eicr-slice2" />
+      <short value="History of Present Illness Section" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="3284-97"/>
+        <identity value="eicr-ccda" />
+        <map value="3284-97" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice2.code">
-      <path value="Composition.section.code"/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="Composition.section.code" />
+      <min value="1" />
+      <max value="1" />
       <type>
-        <code value="CodeableConcept"/>
+        <code value="CodeableConcept" />
       </type>
       <patternCodeableConcept>
         <coding>
-          <system value="http://loinc.org"/>
-          <code value="10164-2"/>
-          <display value="History of Present illness Narrative"/>
+          <system value="http://loinc.org" />
+          <code value="10164-2" />
+          <display value="History of Present illness Narrative" />
         </coding>
-        <text value="History of Present illness"/>
+        <text value="History of Present illness" />
       </patternCodeableConcept>
       <example>
-        <label value="General"/>
+        <label value="General" />
         <valueCodeableConcept>
           <coding>
-            <system value="http://loinc.org"/>
-            <code value="10164-2"/>
-            <display value="History of Present illness Narrative"/>
+            <system value="http://loinc.org" />
+            <code value="10164-2" />
+            <display value="History of Present illness Narrative" />
           </coding>
-          <text value="History of Present illness"/>
+          <text value="History of Present illness" />
         </valueCodeableConcept>
       </example>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="81-15477"/>
+        <identity value="eicr-ccda" />
+        <map value="81-15477" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice2.text">
-      <path value="Composition.section.text"/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="Composition.section.text" />
+      <min value="1" />
+      <max value="1" />
       <type>
-        <code value="Narrative"/>
+        <code value="Narrative" />
       </type>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="81-7851"/>
+        <identity value="eicr-ccda" />
+        <map value="81-7851" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice3">
-      <path value="Composition.section"/>
-      <sliceName value="eicr-slice3"/>
-      <short value="Reason for Visit Section"/>
-      <min value="1"/>
-      <max value="1"/>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <path value="Composition.section" />
+      <sliceName value="eicr-slice3" />
+      <short value="Reason for Visit Section" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="3284-98"/>
+        <identity value="eicr-ccda" />
+        <map value="3284-98" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice3.code">
-      <path value="Composition.section.code"/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="Composition.section.code" />
+      <min value="1" />
+      <max value="1" />
       <type>
-        <code value="CodeableConcept"/>
+        <code value="CodeableConcept" />
       </type>
       <patternCodeableConcept>
         <coding>
-          <system value="http://loinc.org"/>
-          <code value="29299-5"/>
-          <display value="Reason for visit Narrative"/>
+          <system value="http://loinc.org" />
+          <code value="29299-5" />
+          <display value="Reason for visit Narrative" />
         </coding>
-        <text value="History of Encounters"/>
+        <text value="History of Encounters" />
       </patternCodeableConcept>
       <example>
-        <label value="General"/>
+        <label value="General" />
         <valueCodeableConcept>
           <coding>
-            <system value="http://loinc.org"/>
-            <code value="46240-8"/>
-            <display value="History of Hospitalizations+&#x200B;Outpatient visits Narrative"/>
+            <system value="http://loinc.org" />
+            <code value="46240-8" />
+            <display value="History of Hospitalizations+&#x200B;Outpatient visits Narrative" />
           </coding>
-          <text value="History of Encounters"/>
+          <text value="History of Encounters" />
         </valueCodeableConcept>
       </example>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="81-15429"/>
+        <identity value="eicr-ccda" />
+        <map value="81-15429" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice3.text">
-      <path value="Composition.section.text"/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="Composition.section.text" />
+      <min value="1" />
+      <max value="1" />
       <type>
-        <code value="Narrative"/>
+        <code value="Narrative" />
       </type>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="81-7839"/>
+        <identity value="eicr-ccda" />
+        <map value="81-7839" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice4">
-      <path value="Composition.section"/>
-      <sliceName value="eicr-slice4"/>
-      <short value="Social History Section"/>
-      <min value="1"/>
-      <max value="1"/>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <path value="Composition.section" />
+      <sliceName value="eicr-slice4" />
+      <short value="Social History Section" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="3284-87"/>
+        <identity value="eicr-ccda" />
+        <map value="3284-87" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice4.code">
-      <path value="Composition.section.code"/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="Composition.section.code" />
+      <min value="1" />
+      <max value="1" />
       <type>
-        <code value="CodeableConcept"/>
+        <code value="CodeableConcept" />
       </type>
       <patternCodeableConcept>
         <coding>
-          <system value="http://loinc.org"/>
-          <code value="29762-2"/>
-          <display value="Social history Narrative"/>
+          <system value="http://loinc.org" />
+          <code value="29762-2" />
+          <display value="Social history Narrative" />
         </coding>
-        <text value="Social History"/>
+        <text value="Social History" />
       </patternCodeableConcept>
       <example>
-        <label value="General"/>
+        <label value="General" />
         <valueCodeableConcept>
           <coding>
-            <system value="http://loinc.org"/>
-            <code value="29762-2"/>
-            <display value="Social history Narrative"/>
+            <system value="http://loinc.org" />
+            <code value="29762-2" />
+            <display value="Social history Narrative" />
           </coding>
-          <text value="Social History"/>
+          <text value="Social History" />
         </valueCodeableConcept>
       </example>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="1198-14819"/>
+        <identity value="eicr-ccda" />
+        <map value="1198-14819" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice4.entry:eicr-sh-slices">
-      <path value="Composition.section.entry"/>
-      <sliceName value="eicr-sh-slices"/>
+      <path value="Composition.section.entry" />
+      <sliceName value="eicr-sh-slices" />
       <slicing>
         <discriminator>
-          <type value="value"/>
-          <path value="profile"/>
+          <type value="value" />
+          <path value="profile" />
         </discriminator>
-        <rules value="open"/>
+        <rules value="open" />
       </slicing>
-      <min value="1"/>
-      <max value="*"/>
+      <min value="1" />
+      <max value="*" />
       <type>
-        <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
       </type>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="todo"/>
+        <identity value="eicr-ccda" />
+        <map value="todo" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice4.entry:eicr-sh-slice1">
-      <path value="Composition.section.entry"/>
-      <sliceName value="eicr-sh-slice1"/>
-      <min value="0"/>
-      <max value="*"/>
+      <path value="Composition.section.entry" />
+      <sliceName value="eicr-sh-slice1" />
+      <min value="0" />
+      <max value="*" />
       <type>
-        <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-travelhistory"/>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-travelhistory" />
       </type>
       <!--<example>
         <label value="General"/>
@@ -6305,21 +6306,21 @@
           <display value="EICR Travel History Profile example"/>
         </valueReference>
       </example>-->
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="todo"/>
+        <identity value="eicr-ccda" />
+        <map value="todo" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice4.entry:eicr-sh-slice2">
-      <path value="Composition.section.entry"/>
-      <sliceName value="eicr-sh-slice2"/>
-      <min value="0"/>
-      <max value="1"/>
+      <path value="Composition.section.entry" />
+      <sliceName value="eicr-sh-slice2" />
+      <min value="0" />
+      <max value="1" />
       <type>
-        <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-pregnancystatus"/>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-pregnancystatus" />
       </type>
       <!--<example>
         <label value="General"/>
@@ -6328,21 +6329,21 @@
           <display value="EICR Social History Pregnancy Observation example"/>
         </valueReference>
       </example>-->
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="todo"/>
+        <identity value="eicr-ccda" />
+        <map value="todo" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice4.entry:eicr-sh-slice3">
-      <path value="Composition.section.entry"/>
-      <sliceName value="eicr-sh-slice3"/>
-      <min value="0"/>
-      <max value="*"/>
+      <path value="Composition.section.entry" />
+      <sliceName value="eicr-sh-slice3" />
+      <min value="0" />
+      <max value="*" />
       <type>
-        <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-occupationhistory"/>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-occupationhistory" />
       </type>
       <!--<example>
         <label value="General"/>
@@ -6351,66 +6352,66 @@
           <display value="EICR Occupational History Profile example"/>
         </valueReference>
       </example>-->
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="todo"/>
+        <identity value="eicr-ccda" />
+        <map value="todo" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice5">
-      <path value="Composition.section"/>
-      <sliceName value="eicr-slice5"/>
-      <short value="Problems Section"/>
-      <min value="1"/>
-      <max value="1"/>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <path value="Composition.section" />
+      <sliceName value="eicr-slice5" />
+      <short value="Problems Section" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="3284-99"/>
+        <identity value="eicr-ccda" />
+        <map value="3284-99" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice5.code">
-      <path value="Composition.section.code"/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="Composition.section.code" />
+      <min value="1" />
+      <max value="1" />
       <type>
-        <code value="CodeableConcept"/>
+        <code value="CodeableConcept" />
       </type>
       <patternCodeableConcept>
         <coding>
-          <system value="http://loinc.org"/>
-          <code value="11450-4"/>
-          <display value="Problem list - Reported"/>
+          <system value="http://loinc.org" />
+          <code value="11450-4" />
+          <display value="Problem list - Reported" />
         </coding>
-        <text value="Problem list"/>
+        <text value="Problem list" />
       </patternCodeableConcept>
       <example>
-        <label value="General"/>
+        <label value="General" />
         <valueCodeableConcept>
           <coding>
-            <system value="http://loinc.org"/>
-            <code value="11450-4"/>
-            <display value="Problem list - Reported"/>
+            <system value="http://loinc.org" />
+            <code value="11450-4" />
+            <display value="Problem list - Reported" />
           </coding>
-          <text value="Problem list"/>
+          <text value="Problem list" />
         </valueCodeableConcept>
       </example>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="1198-15409"/>
+        <identity value="eicr-ccda" />
+        <map value="1198-15409" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice5.entry">
-      <path value="Composition.section.entry"/>
-      <min value="1"/>
-      <max value="*"/>
+      <path value="Composition.section.entry" />
+      <min value="1" />
+      <max value="*" />
       <type>
-        <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition" />
       </type>
       <!--<example>
         <label value="General"/>
@@ -6419,93 +6420,93 @@
           <display value="US Core Profile problem list example"/>
         </valueReference>
       </example>-->
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="1198-15506"/>
+        <identity value="eicr-ccda" />
+        <map value="1198-15506" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice5.entry.extension:trigger1">
-      <path value="Composition.section.entry.extension"/>
-      <sliceName value="trigger1"/>
-      <short value="Trigger Code Indicator"/>
-      <min value="0"/>
-      <max value="1"/>
+      <path value="Composition.section.entry.extension" />
+      <sliceName value="trigger1" />
+      <short value="Trigger Code Indicator" />
+      <min value="0" />
+      <max value="1" />
       <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger"/>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger" />
       </type>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
     </element>
     <element id="Composition.section:eicr-slice6">
-      <path value="Composition.section"/>
-      <sliceName value="eicr-slice6"/>
-      <short value="Medications Administered Section"/>
-      <min value="1"/>
-      <max value="1"/>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <path value="Composition.section" />
+      <sliceName value="eicr-slice6" />
+      <short value="Medications Administered Section" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="3284-88"/>
+        <identity value="eicr-ccda" />
+        <map value="3284-88" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice6.code">
-      <path value="Composition.section.code"/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="Composition.section.code" />
+      <min value="1" />
+      <max value="1" />
       <type>
-        <code value="CodeableConcept"/>
+        <code value="CodeableConcept" />
       </type>
       <patternCodeableConcept>
         <coding>
-          <system value="http://loinc.org"/>
-          <code value="29549-3"/>
-          <display value="Medication administered Narrative"/>
+          <system value="http://loinc.org" />
+          <code value="29549-3" />
+          <display value="Medication administered Narrative" />
         </coding>
-        <text value="Medication administered"/>
+        <text value="Medication administered" />
       </patternCodeableConcept>
       <example>
-        <label value="General"/>
+        <label value="General" />
         <valueCodeableConcept>
           <coding>
-            <system value="http://loinc.org"/>
-            <code value="29549-3"/>
-            <display value="Medication administered Narrative"/>
+            <system value="http://loinc.org" />
+            <code value="29549-3" />
+            <display value="Medication administered Narrative" />
           </coding>
-          <text value="Medication administered"/>
+          <text value="Medication administered" />
         </valueCodeableConcept>
       </example>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="1098-15383"/>
+        <identity value="eicr-ccda" />
+        <map value="1098-15383" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice6.text">
-      <path value="Composition.section.text"/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="Composition.section.text" />
+      <min value="1" />
+      <max value="1" />
       <type>
-        <code value="Narrative"/>
+        <code value="Narrative" />
       </type>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="1098-8155"/>
+        <identity value="eicr-ccda" />
+        <map value="1098-8155" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice6.entry">
-      <path value="Composition.section.entry"/>
-      <min value="0"/>
-      <max value="*"/>
+      <path value="Composition.section.entry" />
+      <min value="0" />
+      <max value="*" />
       <type>
-        <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationstatement"/>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationstatement" />
       </type>
       <!--<example>
         <label value="General"/>
@@ -6514,86 +6515,86 @@
           <display value="US Core Profile Medication list example"/>
         </valueReference>
       </example>-->
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="1098-8156"/>
+        <identity value="eicr-ccda" />
+        <map value="1098-8156" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice7">
-      <path value="Composition.section"/>
-      <sliceName value="eicr-slice7"/>
-      <short value="Results Section"/>
-      <min value="1"/>
-      <max value="1"/>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <path value="Composition.section" />
+      <sliceName value="eicr-slice7" />
+      <short value="Results Section" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="3284-89"/>
+        <identity value="eicr-ccda" />
+        <map value="3284-89" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice7.code">
-      <path value="Composition.section.code"/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="Composition.section.code" />
+      <min value="1" />
+      <max value="1" />
       <type>
-        <code value="CodeableConcept"/>
+        <code value="CodeableConcept" />
       </type>
       <patternCodeableConcept>
         <coding>
-          <system value="http://loinc.org"/>
-          <code value="30954-2"/>
-          <display value="Relevant diagnostic tests/&#x200B;laboratory data Narrative"/>
+          <system value="http://loinc.org" />
+          <code value="30954-2" />
+          <display value="Relevant diagnostic tests/&#x200B;laboratory data Narrative" />
         </coding>
-        <text value="Relevant diagnostic tests/&#x200B;laboratory data"/>
+        <text value="Relevant diagnostic tests/&#x200B;laboratory data" />
       </patternCodeableConcept>
       <example>
-        <label value="General"/>
+        <label value="General" />
         <valueCodeableConcept>
           <coding>
-            <system value="http://loinc.org"/>
-            <code value="30954-2"/>
-            <display value="Relevant diagnostic tests/&#x200B;laboratory data Narrative"/>
+            <system value="http://loinc.org" />
+            <code value="30954-2" />
+            <display value="Relevant diagnostic tests/&#x200B;laboratory data Narrative" />
           </coding>
-          <text value="Relevant diagnostic tests/&#x200B;laboratory data"/>
+          <text value="Relevant diagnostic tests/&#x200B;laboratory data" />
         </valueCodeableConcept>
       </example>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="1198-15433"/>
+        <identity value="eicr-ccda" />
+        <map value="1198-15433" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice7.entry:eicr-res-slices">
-      <path value="Composition.section.entry"/>
-      <sliceName value="eicr-res-slices"/>
+      <path value="Composition.section.entry" />
+      <sliceName value="eicr-res-slices" />
       <slicing>
         <discriminator>
-          <type value="value"/>
-          <path value="type"/>
+          <type value="value" />
+          <path value="type" />
         </discriminator>
-        <rules value="open"/>
+        <rules value="open" />
       </slicing>
-      <min value="1"/>
-      <max value="*"/>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <min value="1" />
+      <max value="*" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="todo"/>
+        <identity value="eicr-ccda" />
+        <map value="todo" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice7.entry:eicr-res-slice1">
-      <path value="Composition.section.entry"/>
-      <sliceName value="eicr-res-slice1"/>
-      <min value="0"/>
-      <max value="*"/>
+      <path value="Composition.section.entry" />
+      <sliceName value="eicr-res-slice1" />
+      <min value="0" />
+      <max value="*" />
       <type>
-        <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport"/>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport" />
       </type>
       <!--<example>
         <label value="General"/>
@@ -6602,34 +6603,34 @@
           <display value="US Core Profile DiagnosticReport example"/>
         </valueReference>
       </example>-->
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="1198-15516"/>
+        <identity value="eicr-ccda" />
+        <map value="1198-15516" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice7.entry:eicr-res-slice1.extension:trigger2">
-      <path value="Composition.section.entry.extension"/>
-      <sliceName value="trigger2"/>
-      <short value="Trigger Code Indicator"/>
-      <min value="0"/>
-      <max value="1"/>
+      <path value="Composition.section.entry.extension" />
+      <sliceName value="trigger2" />
+      <short value="Trigger Code Indicator" />
+      <min value="0" />
+      <max value="1" />
       <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger"/>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger" />
       </type>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
     </element>
     <element id="Composition.section:eicr-slice7.entry:eicr-res-slice2">
-      <path value="Composition.section.entry"/>
-      <sliceName value="eicr-res-slice2"/>
-      <min value="0"/>
-      <max value="*"/>
+      <path value="Composition.section.entry" />
+      <sliceName value="eicr-res-slice2" />
+      <min value="0" />
+      <max value="*" />
       <type>
-        <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-observationresults"/>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-observationresults" />
       </type>
       <!--<example>
         <label value="General"/>
@@ -6638,71 +6639,71 @@
           <display value="US Core Profile Observation example"/>
         </valueReference>
       </example>-->
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="1198-15516"/>
+        <identity value="eicr-ccda" />
+        <map value="1198-15516" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice7.entry:eicr-res-slice2.extension:trigger3">
-      <path value="Composition.section.entry.extension"/>
-      <sliceName value="trigger3"/>
-      <short value="Trigger Code Indicator"/>
-      <min value="0"/>
-      <max value="1"/>
+      <path value="Composition.section.entry.extension" />
+      <sliceName value="trigger3" />
+      <short value="Trigger Code Indicator" />
+      <min value="0" />
+      <max value="1" />
       <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger"/>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger" />
       </type>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
     </element>
     <element id="Composition.section:eicr-slice8">
-      <path value="Composition.section"/>
-      <sliceName value="eicr-slice8"/>
-      <short value="Lab Order Section"/>
-      <min value="1"/>
-      <max value="1"/>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <path value="Composition.section" />
+      <sliceName value="eicr-slice8" />
+      <short value="Lab Order Section" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
     </element>
     <element id="Composition.section:eicr-slice8.code">
-      <path value="Composition.section.code"/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="Composition.section.code" />
+      <min value="1" />
+      <max value="1" />
       <type>
-        <code value="CodeableConcept"/>
+        <code value="CodeableConcept" />
       </type>
       <patternCodeableConcept>
         <coding>
-          <system value="http://example.org"/>
-          <code value="NNNNN-N"/>
-          <display value="Lab Order Narrative"/>
+          <system value="http://example.org" />
+          <code value="NNNNN-N" />
+          <display value="Lab Order Narrative" />
         </coding>
-        <text value="Relevant &#x200B;laboratory order data"/>
+        <text value="Relevant &#x200B;laboratory order data" />
       </patternCodeableConcept>
       <example>
-        <label value="General"/>
+        <label value="General" />
         <valueCodeableConcept>
           <coding>
-            <system value="http://loinc.org"/>
-            <code value="30954-2"/>
-            <display value="Relevant diagnostic tests/&#x200B;laboratory data Narrative"/>
+            <system value="http://loinc.org" />
+            <code value="30954-2" />
+            <display value="Relevant diagnostic tests/&#x200B;laboratory data Narrative" />
           </coding>
-          <text value="Relevant diagnostic tests/&#x200B;laboratory data"/>
+          <text value="Relevant diagnostic tests/&#x200B;laboratory data" />
         </valueCodeableConcept>
       </example>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
     </element>
     <element id="Composition.section:eicr-slice8.entry">
-      <path value="Composition.section.entry"/>
-      <min value="0"/>
-      <max value="*"/>
+      <path value="Composition.section.entry" />
+      <min value="0" />
+      <max value="*" />
       <type>
-        <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-procedurerequest"/>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-procedurerequest" />
       </type>
       <!--<example>
         <label value="General"/>
@@ -6711,75 +6712,75 @@
           <display value="US Core Profile ProcedureRequest (aka ServiceRequest) example"/>
         </valueReference>
       </example>-->
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
     </element>
     <element id="Composition.section:eicr-slice8.entry.extension:trigger4">
-      <path value="Composition.section.entry.extension"/>
-      <sliceName value="trigger4"/>
-      <short value="Trigger Code Indicator"/>
-      <min value="0"/>
-      <max value="1"/>
+      <path value="Composition.section.entry.extension" />
+      <sliceName value="trigger4" />
+      <short value="Trigger Code Indicator" />
+      <min value="0" />
+      <max value="1" />
       <type>
-        <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger"/>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger" />
       </type>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
     </element>
     <element id="Composition.section:eicr-slice9">
-      <path value="Composition.section"/>
-      <sliceName value="eicr-slice9"/>
-      <short value="Immunizations Section"/>
-      <min value="0"/>
-      <max value="1"/>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <path value="Composition.section" />
+      <sliceName value="eicr-slice9" />
+      <short value="Immunizations Section" />
+      <min value="0" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="3284-148"/>
+        <identity value="eicr-ccda" />
+        <map value="3284-148" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice9.code">
-      <path value="Composition.section.code"/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="Composition.section.code" />
+      <min value="1" />
+      <max value="1" />
       <type>
-        <code value="CodeableConcept"/>
+        <code value="CodeableConcept" />
       </type>
       <patternCodeableConcept>
         <coding>
-          <system value="http://loinc.org"/>
-          <code value="11369-6"/>
-          <display value="History of Immunization Narrative"/>
+          <system value="http://loinc.org" />
+          <code value="11369-6" />
+          <display value="History of Immunization Narrative" />
         </coding>
-        <text value="History of Immunization"/>
+        <text value="History of Immunization" />
       </patternCodeableConcept>
       <example>
-        <label value="General"/>
+        <label value="General" />
         <valueCodeableConcept>
           <coding>
-            <system value="http://loinc.org"/>
-            <code value="11369-6"/>
-            <display value="History of Immunization Narrative"/>
+            <system value="http://loinc.org" />
+            <code value="11369-6" />
+            <display value="History of Immunization Narrative" />
           </coding>
-          <text value="History of Immunization"/>
+          <text value="History of Immunization" />
         </valueCodeableConcept>
       </example>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="1198-15369"/>
+        <identity value="eicr-ccda" />
+        <map value="1198-15369" />
       </mapping>
     </element>
     <element id="Composition.section:eicr-slice9.entry">
-      <path value="Composition.section.entry"/>
-      <min value="1"/>
-      <max value="*"/>
+      <path value="Composition.section.entry" />
+      <min value="1" />
+      <max value="*" />
       <type>
-        <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization"/>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization" />
       </type>
       <!--<example>
         <label value="General"/>
@@ -6788,11 +6789,11 @@
           <display value="US Core Profile Immunization example"/>
         </valueReference>
       </example>-->
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <mapping>
-        <identity value="eicr-ccda"/>
-        <map value="1198-9019"/>
+        <identity value="eicr-ccda" />
+        <map value="1198-9019" />
       </mapping>
     </element>
   </differential>

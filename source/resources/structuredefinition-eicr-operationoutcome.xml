@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="eicr-operationoutcome"/>
-  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-operationoutcome"/>
-  <version value="0.0.0"/>
-  <name value="Travel History"/>
-  <status value="draft"/>
-  <date value="2017-06-11T00:00:00+10:00"/>
-  <description value="The Electronic Case Reporting Operation Outcome profile establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;-  Details about the eICR processing warnings or errors encountered during eICR processing"/>
+  <id value="eicr-operationoutcome" />
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-operationoutcome" />
+  <version value="0.0.0" />
+  <name value="Travel History" />
+  <status value="draft" />
+  <date value="2017-06-11T00:00:00+10:00" />
+  <description
+    value="The Electronic Case Reporting Operation Outcome profile establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;-  Details about the eICR processing warnings or errors encountered during eICR processing" />
   <jurisdiction>
     <coding>
-      <system value="urn:iso:std:iso:3166"/>
-      <code value="US"/>
-      <display value="United States of America"/>
+      <system value="urn:iso:std:iso:3166" />
+      <code value="US" />
+      <display value="United States of America" />
     </coding>
   </jurisdiction>
-  <fhirVersion value="3.0.1"/>
+  <fhirVersion value="3.0.1" />
   <!--<mapping>
     <identity value="rim"/>
     <uri value="http://hl7.org/v3"/>
@@ -32,11 +33,11 @@
     <name value="HL7 v2 Mapping"/>
   </mapping>
   -->
-  <kind value="resource"/>
-  <abstract value="false"/>
-  <type value="OperationOutcome"/>
-  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/OperationOutcome"/>
-  <derivation value="constraint"/>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="OperationOutcome" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/OperationOutcome" />
+  <derivation value="constraint" />
   <!--<snapshot>
     <element id="OperationOutcome">
       <path value="OperationOutcome"/>
@@ -560,40 +561,41 @@
   -->
   <differential>
     <element id="OperationOutcome">
-      <path value="OperationOutcome"/>
-      <short value="eICR Operation Outcome"/>
-      <definition value="TODO"/>
-      <min value="0"/>
-      <max value="*"/>
+      <path value="OperationOutcome" />
+      <short value="eICR Operation Outcome" />
+      <definition value="TODO" />
+      <min value="0" />
+      <max value="*" />
       <base>
-        <path value="OperationOutcome"/>
-        <min value="0"/>
-        <max value="*"/>
+        <path value="OperationOutcome" />
+        <min value="0" />
+        <max value="*" />
       </base>
-      <mustSupport value="false"/>
-      <isModifier value="false"/>
+      <mustSupport value="false" />
+      <isModifier value="false" />
     </element>
     <element id="OperationOutcome.issue">
-      <path value="OperationOutcome.issue"/>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <path value="OperationOutcome.issue" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
     </element>
     <element id="OperationOutcome.issue.details">
-      <path value="OperationOutcome.issue.details"/>
-      <short value="eICR Processing Status Reasons"/>
-      <definition value="If the PHA system (or its intermediary) identifies an issue with the eICR, but is still able to process the file, or  If the incoming eICR was not processed by the PHA system (or its intermediary), the code will identify  the warning or error reason."/>
-      <min value="1"/>
-      <max value="1"/>
+      <path value="OperationOutcome.issue.details" />
+      <short value="eICR Processing Status Reasons" />
+      <definition
+        value="If the PHA system (or its intermediary) identifies an issue with the eICR, but is still able to process the file, or  If the incoming eICR was not processed by the PHA system (or its intermediary), the code will identify  the warning or error reason." />
+      <min value="1" />
+      <max value="1" />
       <type>
-        <code value="CodeableConcept"/>
+        <code value="CodeableConcept" />
       </type>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
+      <mustSupport value="true" />
+      <isModifier value="false" />
       <binding>
-        <strength value="extensible"/>
-        <description value="Code identifying  the warning or error for eICR Processing."/>
+        <strength value="extensible" />
+        <description value="Code identifying  the warning or error for eICR Processing." />
         <valueSetReference>
-          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/status-reason"/>
+          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/status-reason" />
         </valueSetReference>
       </binding>
     </element>

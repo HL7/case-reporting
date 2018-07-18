@@ -24,7 +24,7 @@
 - [Home](index.html){: .active}
 - [eCR Design Considerations](design-considerations.html)
 - [Profiles, Extensions and Transactions](profiles.html)
-- [Mappings](rr-communication-map.html)
+- [Mappings](mappings.html)
 - [Terminology](terminology.html)
 - [Capability Statements](capstatements.html)
 - [Downloads](downloads.html)
