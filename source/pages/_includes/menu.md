@@ -22,8 +22,8 @@
 -->
 - [Notice to Ballot Commenters](balloters.html)
 - [Home](index.html){: .active}
-- [eCR Design Considerations](design-considerations.html)
-- [Profiles, Extensions and Transactions](profiles.html)
+- [Design Considerations](design-considerations.html)
+- [Profiles, Extensions & Transactions](profiles.html)
 - [Mappings](mappings.html)
 - [Terminology](terminology.html)
 - [Capability Statements](capstatements.html)
