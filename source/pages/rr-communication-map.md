@@ -10,7 +10,7 @@ id: rr-communication
 ---
 
 #### Table: Reportability Response Data Elements to Reportability Response Communication Profile
-
+<!--
 |1. Reportability Response Data Element|2. Published mappings to CDA Conformance ID|3. Reportability Response Communication Profile elements|4. Target FHIR Profile elements referenced by the element in column 3|5. Target FHIR Profile elements referenced by the element in column 4|6. Target Profile|
 |---|---|---|---|---|---|---|
 |Reportability Response||[Communication](StructureDefinition-rr-communication-definitions.html#Communication)|||ECR Profile|
@@ -33,7 +33,7 @@ id: rr-communication
 |Parent/ Guardian Name|||[Patient.contact.name]({{site.data.fhir.uscore}}StructureDefinition-us-core-patient-definitions.html#Patient.contact.name)||US-Core Profile|
 |Parent/ Guardian Phone|||[Patient.contact.telecom]({{site.data.fhir.uscore}}StructureDefinition-us-core-patient-definitions.html#Patient.contact.telecom)||US-Core Profile|
 |Provider (Source)||[Communication.sender](StructureDefinition-rr-communication-definitions.html#Communication.sender)|[PractitionerRole]({{site.data.fhir.uscore}}StructureDefinition-us-core-practitionerrole-definitions.html#PractitionerRole)||US-Core Profile|
-|Provider Address|||[PractitionerRole.organization]({{site.data.fhir.uscore}}StructureDefinition-us-core-practitionerrole-definitions.html#PractitionerRole.organization)|[Organization.address](StructureDefinition-ecr-organization-definitions.html#Organization.address)|ECR Profile|
+|Provider Address|||[PractitionerRole.organization]({{site.data.fhir}}StructureDefinition-practitionerrole-definitions.html#PractitionerRole.organization)|[Organization.address](StructureDefinition-ecr-organization-definitions.html#Organization.address)|ECR Profile|
 |Provider Email|||[PractitionerRole.telecom]({{site.data.fhir.uscore}}StructureDefinition-us-core-practitionerrole-definitions.html#PractitionerRole.telecom)||US-Core Profile|
 |Provider Fax|||[PractitionerRole.telecom]({{site.data.fhir.uscore}}StructureDefinition-us-core-practitionerrole-definitions.html#PractitionerRole.telecom)||US-Core Profile|
 |Provider ID|||[PractitionerRole.identifier]({{site.data.fhir.uscore}}StructureDefinition-us-core-practitionerrole-definitions.html#PractitionerRole.identifier)||US-Core Profile|
@@ -86,3 +86,4 @@ id: rr-communication
 |Authoring Agency Contact Information||||[Organization.contact]StructureDefinition-ecr-organization)|ECR Profile|
 |Authoring Agency Address Information||||[Organization.address]StructureDefinition-ecr-organization)|ECR Profile|
 {:.grid}
+!-->

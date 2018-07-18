@@ -10,7 +10,7 @@ id: eicr-composition
 ---
 
 #### Table: EICR Data Elements to eICR Composition Profile
-
+<!--
 |1. Data Element Common Name / CSTE eICR Task Force Name |2. Sub-Element Name|3. Published mappings to CDA Conformance ID|4. Target eICR Composition profile elements|5. Target FHIR Profile elements referenced by the element in column 4|6. Target FHIR Profile elements referenced by the element in column 5|7. Target Profile|
 |---|---|---|---|---|---|---|
 |Case Report||#N/A|[Composition](StructureDefinition-eicr-composition-definitions.html#Composition)||||
@@ -220,3 +220,4 @@ id: eicr-composition
 |Diagnosis (Trigger Code)|valueset|3284-106|||||
 |Diagnosis (Trigger Code)|valueset-version|3284-106|||||
 {:.grid}
+-->

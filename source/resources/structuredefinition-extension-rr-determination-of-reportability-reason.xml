@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="extension-rr-determination-of-reportability-reason" />
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-determination-of-reportability-reason" />
+  <version value="0.0.0" />
+  <name value="Determination of Reportability Reason" />
+  <title value="Determination of Reportability Reason" />
+  <status value="draft" />
+  <date value="2017-06-11T00:00:00+10:00" />
+  <publisher value="PHER" />
+  <description value="A reason code indicating the reason for the reportability status." />
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166" />
+      <code value="US" />
+      <display value="United States of America" />
+    </coding>
+  </jurisdiction>
+  <fhirVersion value="3.0.1" />
+  <!--<mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM Mapping"/>
+  </mapping>
+  -->
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <contextType value="datatype" />
+  <context value="Communication.payload" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <sliceName value="rr-determination-of-reportability-reason" />
+      <short value="Determination of Reportability Reason" />
+      <definition value="A reason code indicating the reason for the reportability status." />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="Extension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <isModifier value="false" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-determination-of-reportability-reason" />
+    </element>
+    <element id="Extension.valueCodeableConcept">
+      <path value="Extension.valueCodeableConcept" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <description value="A reason code indicating the reason for the reportability status" />
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/dor-reason" />
+        </valueSetReference>
+      </binding>
+    </element>
+  </differential>
+</StructureDefinition>

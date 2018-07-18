@@ -78,17 +78,16 @@ The following profiles and extensions have been defined for the Reportability Re
 #### Extensions
 
 <ul>
+<li><a href="StructureDefinition-extension-rr-subject.html">Reportability Response Subject</a></li>
+<li><a href="StructureDefinition-extension-rr-summary.html">Reportability Response Summary</a></li>
 <li><a href="StructureDefinition-extension-practitioner-role.html">PractitionerRole reference</a></li>
 <li><a href="StructureDefinition-extension-location-relevance.html">Location Relevance</a></li>
 <li><a href="StructureDefinition-extension-manual-init.html">Initial Case Report Manual Initiation Flag</a></li>
-<li><a href="StructureDefinition-extension-manual-init-reason.html">Initial Case Report Manual Initiation Reason</a></li>
-<li><a href="StructureDefinition-extension-status-reason.html">eICR processing status reason</a></li>
-<li><a href="StructureDefinition-extension-topic-subject.html">Topic subject Line</a></li>
-<li><a href="StructureDefinition-extension-topic-summary.html">Topic Summary</a></li>
-<li><a href="StructureDefinition-extension-topic-dor.html">Determination of Reportability</a></li>
-<li><a href="StructureDefinition-extension-topic-dor-reason.html">Determination of Reportability Reason</a></li>
-<li><a href="StructureDefinition-extension-topic-dor-rule.html">Determination of Reportability Rule</a></li>
-<li><a href="StructureDefinition-extension-publisher-reference.html">Publisher reference</a></li>
+<li><a href="StructureDefinition-extension-status-reason.html">eICR Processing Status Reason</a></li>
+<li><a href="StructureDefinition-extension-rr-determination-of-reportability.html">Determination of Reportability</a></li>
+<li><a href="StructureDefinition-extension-rr-determination-of-reportability-reason.html">Determination of Reportability Reason</a></li>
+<li><a href="StructureDefinition-extension-rr-determination-of-reportability-rule.html">Determination of Reportability Rule</a></li>
+<li><a href="StructureDefinition-extension-publisher-reference.html">Publisher Reference</a></li>
 <li><a href="StructureDefinition-extension-rel-artifact-category.html">External Resource Category</a></li>
 <li><a href="StructureDefinition-extension-rel-artifact-priority.html">External Resource Priority</a></li>
 </ul>

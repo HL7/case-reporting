@@ -5,5 +5,3 @@ source: extension-topic-dor-reason.md file
     #### Complete Summary of the Mandatory Requirements
 
     1.
-    1.
-    1.
