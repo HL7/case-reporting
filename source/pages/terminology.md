@@ -87,8 +87,7 @@ The following value sets and code systems have been defined for the eICR transac
 
 These value sets have been defined for this implementation guide.
 <ul>
-<li><a href="ValueSet-lr.html">LocationRelevance</a></li>
-<li><a href="ValueSet-reporting-timeframe.html">ReportingTimeframe</a></li>
+<li><a href="ValueSet-location-relevance.html">Location Relevance (eCR)</a></li>
 <li><a href="ValueSet-status-reason.html">eICR Processing Status Reason</a></li>
 <li><a href="ValueSet-rr-priority.html">Reportability Priority</a></li>
 <li><a href="ValueSet-ext-resource-category.html">External Resource Type</a></li>
@@ -105,20 +104,8 @@ These value sets have been defined for this implementation guide.
 
 #### Code Systems
 
-Code systems published in this IG
-
-These code systems have been defined for this implementation guide:
-
-Code systems published in this IG:
-
-<ul>
-<li><a href="CodeSystem-lr-codes.html">LocationRelevance</a></li>
-<li><a href="CodeSystem-reporting-timeframe.html">ReportingTimeframe</a></li>
-</ul>
-
-
 Externally published code systems used in this guide:
 
-|URI|Source|Comment|
-|---|---|---|
-|`urn:oid:2.16.840.1.114222.4.5.274`|[CDC](todo.html)|...todo...|
+<ul>
+<li><a href="https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.114222.4.5.274#">PHIN VS (CDC Local Coding System)</a></li>
+</ul>
