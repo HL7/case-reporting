@@ -12,5 +12,5 @@ source file: source/pages/\_includes/{{id}}-intro.md
 
 #### Instances
 
-- [Example-1](PlanDefinition-knowledge-distribution-instance.html)
+- [Knowledge Distribution Instance](PlanDefinition-knowledge-distribution-instance.html)
 ---
