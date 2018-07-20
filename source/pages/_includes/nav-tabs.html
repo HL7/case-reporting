@@ -9,15 +9,17 @@
   	<li><a href="{{include.type}}-{{include.id}}.html">Content</a></li>
   {% endif %}
   
-  <!-- Definitions -->
-  {% if {{include.active}} == "definitions" %}
-    <li class="active"><a href="#">definitions</a></li>
-  {% else %}
-    <li><a href="{{include.type}}-{{include.id}}-definitions.html">Detailed Definitions</a></li>
-  {% endif %}
+  
     
     <!-- Mappings -->
   {% if {{include.id}} == "eicr-composition" or  {{include.id}} == "rr-communication" %}
+    <!-- Definitions -->
+    {% if {{include.active}} == "definitions" %}
+      <li class="active"><a href="#">definitions</a></li>
+    {% else %}
+      <li><a href="{{include.type}}-{{include.id}}-definitions.html">Detailed Definitions</a></li>
+    {% endif %}
+  
     {% if {{include.active}} == "mappings" %}
       <li class="active"><a href="#">Mappings</a></li>
     {% else %}

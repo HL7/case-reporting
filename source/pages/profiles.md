@@ -24,7 +24,7 @@ Paragraph Narrative description to include: (JL/LC)
 -	External resources (references?) from PH 
 
 <ul>
-<li><a href="StructureDefinition-ecr-distribution.html">eCR Distribution Profile</a></li>
+<li><a href="StructureDefinition-knowledge-distribution-plandefinition.html">Knowledge Distribution Profile</a></li>
 </ul>
 
 ---

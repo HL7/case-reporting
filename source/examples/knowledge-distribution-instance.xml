@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PlanDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../validation/plandefinition.xsd"
+  xmlns="http://hl7.org/fhir">
+  <id value="knowledge-distribution-instance" />
+  <meta>
+    <profile value="http://fhir.hl7.org/us/ecr/StructureDefinition/knowledge-distribution-plandefinition" />
+  </meta>
+  <!-- SG: Commented out both of these contained because they need to be referrred to from elsewhere in the resource before they will pass validation, plus
+           the value set needs some members, I think (maybe)... -->
+  <!--<contained>
+    <ActivityDefinition>
+      <id value="activitydefinition-diagnosisproblem" />
+      <status value="draft" />
+      <description value="Diagnosis Problem trigger" />
+      <!-\- SG: commented out to pass validation (needs a value if present) -\->
+<!-\-      <jurisdiction> </jurisdiction>-\->
+      <library id="cql-for-diagnosis-problem-action.cql" />
+
+    </ActivityDefinition>
+  </contained>
+  <contained>
+    <ValueSet>
+      <id value="value-set-diagnosis-problem" />
+      <status value="active" />
+    </ValueSet>
+  </contained>-->
+  <!-- SG: Updated to get this to validate - not sure if this is correct ro not -->
+  <!--  <identifier id="2.16.840.1.114222.4.11.7508" />-->
+  <identifier>
+    <value value="2.16.840.1.114222.4.11.7508" />
+  </identifier>
+  <version value="0.1" />
+  <title value="Knowledge Definition Sample Instance" />
+  <!-- SG: Updated to get this to validate - not sure if this is correct ro not -->
+  <!--  <type id="eca-rule" />-->
+  <type>
+    <coding>
+      <code value="eca-rule" />
+    </coding>
+  </type>
+  <status value="draft" />
+  <!-- SG: Commented out to get this to valudate - this is supposed to be a reference to a resource I think? -->
+<!--  <library id="cql_logic.cql" />-->
+  <action>
+    <description value="Reportable Condition Trigger Codes (RCTC)" />
+    <textEquivalent value="Do this action at so and so time and send the results to this organization" />
+    <groupingBehavior value="logical-group" />
+    <action>
+      <description value="Diagnosis Problem Triggers for Public Health Reporting" />
+      <triggerDefinition>
+        <type value="named-event" />
+        <eventName value="Diagnoses or problems documented in a clinical record" />
+        <eventData>
+          <!-- SG: I think this type is required to be from this value set: http://hl7.org/fhir/STU3/valueset-trigger-type.html - it doesn't validate if it's not -->
+<!--          <type value="Diagnosis" />-->
+          <type value="named-event" />
+          <codeFilter>
+            <path value="code" />
+            <!-- SG: Commented out because I've commented out the contained value set 
+              (plus, this isn't the right format - can't have id there - has to either be "value" or a child element) -->
+<!--            <valueSetReference id="#value-set-diagnosis-problem" />-->
+          </codeFilter>
+        </eventData>
+      </triggerDefinition>
+      <condition id="diagnosis-condition">
+        <kind value="applicability" />
+      </condition>
+      <definition>
+        <reference value="#activitydefinition-diagnosisproblem" />
+      </definition>
+      <action>
+        <description value="Specific codes within Diagnosis Triggers" />
+        <triggerDefinition>
+          <type value="named-event" />
+        </triggerDefinition>
+      </action>
+    </action>
+    <action>
+      <description value="Organism Substance Triggers for Public Health Reporting" />
+      <!-- More stuff to come... -->
+    </action>
+  </action>
+</PlanDefinition>
