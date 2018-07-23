@@ -24,10 +24,8 @@
     {% include nav-tabs.html type=page.type id=page.id active="turtle" %}
     <h2>Turtle Format: {{page.type}}-{{page.id}}</h2>
   {% endif %}
-<!--
-   { % elsif page.template == 'definitions'% }
-    { % include nav-tabs.html type=page.type id=page.id active="definitions" % }
--->
+  {% elsif page.template == 'definitions' %}
+    {% include nav-tabs.html type=page.type id=page.id active="definitions" %}
   {% elsif page.template == 'mappings' %}
     {% include nav-tabs.html type=page.type id=page.id active="mappings" %}
  {% else %}
