@@ -1,46 +1,49 @@
 <!--  choose what you want  comment out or Change what you don't note that markdown is not working here -->
 
 <ul class="nav nav-tabs">
-  
   <!-- Content -->
   {% if {{include.active}} == "content" %}
   	<li class="active"><a href="#">Content</a></li>
   {% else %}
-  	<li><a href="{{include.type}}-{{include.id}}.html">Content</a></li>
+  	<li><a
+      href="{{include.type}}-{{include.id}}.html">Content</a></li>
   {% endif %}
-  
-  
     
     <!-- Mappings -->
-  {% if {{include.id}} == "eicr-composition" or  {{include.id}} == "rr-communication" %}
-    <!-- Definitions -->
+  <!--  {% if {{include.id}} == "eicr-composition" or  {{include.id}} == "rr-communication" %}-->
+  <!-- Definitions -->
     {% if {{include.active}} == "definitions" %}
-      <li class="active"><a href="#">definitions</a></li>
+      <li class="active"><a href="#"
+      >Detailed Definitions</a></li>
     {% else %}
-      <li><a href="{{include.type}}-{{include.id}}-definitions.html">Detailed Definitions</a></li>
+      <li><a href="{{include.type}}-{{include.id}}-definitions.html"
+    >Detailed Definitions</a></li>
     {% endif %}
   
     {% if {{include.active}} == "mappings" %}
-      <li class="active"><a href="#">Mappings</a></li>
+      <li class="active"><a href="#"
+    >Mappings</a></li>
     {% else %}
     	<li><a href="{{include.id}}-map.html">Mappings</a></li>
     {% endif %}
-  {% endif %}
-  
-    <!-- XML -->
+<!--  {% endif %}-->
+  <!-- XML -->
   {% if {{include.active}} == "xml" %}
     <li class="active"><a href="#">XML</a></li>
   {% else %}
-    <li><a href="{{include.type}}-{{include.id}}.xml.html">XML</a></li>
+    <li><a
+      href="{{include.type}}-{{include.id}}.xml.html"
+    >XML</a></li>
   {% endif %}
     
     <!-- JSON -->
   {% if {{include.active}} == "json" %}
-    <li class="active"><a href="#">JSON</a></li>
+    <li class="active"><a href="#"
+      >JSON</a></li>
   {% else %}
     <li><a href="{{include.type}}-{{include.id}}.json.html">JSON</a></li>
   {% endif %}
-  
+  <li>{{include.type}}, {{include.id}}, {{include.active}}</li>
   
   <!-- Detailed Descriptions -->
   <!--{ % if {{include.type}} == "StructureDefinition"  % }-->

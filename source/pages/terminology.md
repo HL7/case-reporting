@@ -65,16 +65,11 @@ These value sets have been defined for this implementation guide.
 
 #### Code Systems
 
-These code systems have been defined for this implementation guide:
-
-Code systems published in this IG:
+Externally published code systems used in this guide:
 
 <ul>
-<li><a href="CodeSystem-oes.html">US Standard Occupational Classification</a></li>
+<li><a href="https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.114222.4.5.274#">PHIN VS (CDC Local Coding System)</a></li>
 </ul>
-
-
-Externally published code systems used in this guide: none
 
 ---
 <br/>
@@ -91,8 +86,7 @@ These value sets have been defined for this implementation guide.
 <li><a href="ValueSet-status-reason.html">eICR Processing Status Reason</a></li>
 <li><a href="ValueSet-rr-priority.html">Reportability Priority</a></li>
 <li><a href="ValueSet-ext-resource-category.html">External Resource Type</a></li>
-<li><a href="ValueSet-dor.html">Determination of Reportability</a></li>
-<li><a href="ValueSet-dor-reason.html">Determination of Reportability Reason Codes</a></li>
+<li><a href="ValueSet-determination-of-reportability.html">Determination of Reportability</a></li>
 <li><a href="ValueSet-ostc.html">Organism_Substance Triggers for Public Health Reporting</a></li>
 <li><a href="ValueSet-lrtc.html">Lab Obs Test Name Triggers for Public Health Reporting</a></li>
 <li><a href="ValueSet-lotc.html">Lab Order Test Name Triggers for Public Health Reporting</a></li>

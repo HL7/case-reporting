@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<StructureDefinition xmlns="http://hl7.org/fhir">
+<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://hl7.org/fhir ../../validation/fhir-all.xsd" xmlns="http://hl7.org/fhir">
   <id value="extension-rr-subject" />
   <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-subject" />
   <version value="0.0.0" />
@@ -10,20 +10,7 @@
   <date value="2017-06-11T00:00:00+10:00" />
   <publisher value="PHER" />
   <description value="A succinct, human-readable narrative text that can be used as a subject header in a message queue, much like an email subject." />
-  <jurisdiction>
-    <coding>
-      <system value="urn:iso:std:iso:3166" />
-      <code value="US" />
-      <display value="United States of America" />
-    </coding>
-  </jurisdiction>
   <fhirVersion value="3.0.1" />
-  <!--<mapping>
-    <identity value="rim"/>
-    <uri value="http://hl7.org/v3"/>
-    <name value="RIM Mapping"/>
-  </mapping>
-  -->
   <kind value="complex-type" />
   <abstract value="false" />
   <contextType value="datatype" />
@@ -53,11 +40,11 @@
     </element>
     <element id="Extension.valueCodeableConcept">
       <path value="Extension.valueCodeableConcept" />
+      <min value="1" />
+      <max value="1" />
       <type>
         <code value="CodeableConcept" />
       </type>
-      <min value="1" />
-      <max value="1" />
     </element>
     <element id="Extension.valueCodeableConcept.coding">
       <path value="Extension.valueCodeableConcept.coding" />
