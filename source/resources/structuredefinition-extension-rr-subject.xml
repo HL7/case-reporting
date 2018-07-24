@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://hl7.org/fhir ../../validation/fhir-all.xsd" xmlns="http://hl7.org/fhir">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="extension-rr-subject" />
   <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-subject" />
   <version value="0.0.0" />
@@ -21,62 +20,55 @@
   <differential>
     <element id="Extension">
       <path value="Extension" />
-      <sliceName value="rr-subject" />
       <short value="RR Subject" />
-      <definition
-        value="A short high-level description of the determination of reportability. This information can be used to route and prioritize Reportability Responses in a work queue or an email subject." />
-      <min value="0" />
+      <definition value="A short high-level description of the determination of reportability. This information can be used to route and prioritize Reportability Responses in a work queue or an email subject." />
       <max value="1" />
-      <base>
-        <path value="Extension" />
-        <min value="0" />
-        <max value="*" />
-      </base>
       <isModifier value="false" />
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
       <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-subject" />
     </element>
-    <element id="Extension.valueCodeableConcept">
+    <element id="Extension.value[x]:valueCodeableConcept">
       <path value="Extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
       <min value="1" />
-      <max value="1" />
       <type>
         <code value="CodeableConcept" />
       </type>
     </element>
-    <element id="Extension.valueCodeableConcept.coding">
+    <element id="Extension.value[x]:valueCodeableConcept.coding">
       <path value="Extension.valueCodeableConcept.coding" />
       <short value="Code identifying that this is a Reportability Response" />
       <min value="1" />
       <max value="1" />
     </element>
-    <element id="Extension.valueCodeableConcept.coding.system">
+    <element id="Extension.value[x]:valueCodeableConcept.coding.system">
       <path value="Extension.valueCodeableConcept.coding.system" />
       <min value="1" />
-      <max value="1" />
-      <patternCode value="http://loinc.org" />
     </element>
-    <element id="Extension.valueCodeableConcept.coding.code">
+    <element id="Extension.value[x]:valueCodeableConcept.coding.code">
       <path value="Extension.valueCodeableConcept.coding.code" />
       <min value="1" />
-      <max value="1" />
       <patternCode value="88085-6" />
     </element>
-    <element id="Extension.valueCodeableConcept.coding.display">
+    <element id="Extension.value[x]:valueCodeableConcept.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
       <path value="Extension.valueCodeableConcept.coding.display" />
       <min value="1" />
-      <max value="1" />
-      <patternCode value="Reportability response report Document Public health" />
+      <fixedString value="Reportability response report Document Public health" />
     </element>
-    <element id="Extension.valueCodeableConcept.text">
+    <element id="Extension.value[x]:valueCodeableConcept.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
       <path value="Extension.valueCodeableConcept.text" />
       <short value="Reportability Response subject text" />
       <definition value="Text description of the determination of reportability." />
       <comment value="comment" />
       <min value="1" />
-      <max value="1" />
     </element>
   </differential>
 </StructureDefinition>
