@@ -3,10 +3,10 @@
   <id value="rr-plandefinition" />
   <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-plandefinition" />
   <version value="0.0.0" />
-  <name value="Reportability Response PlanDefinition Profile" />
+  <name value="Reportability Response Plan Definition" />
   <status value="draft" />
   <date value="2018-08-01" />
-  <description value="The Reportability Response Plan Definition profile establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;-  The Reportability Response case definitions and reporting requirements which include:&#xA;&#xA;   -  The data that are needed to determine reportability&#xA;   -  For a given condition , the mandated timeframe in which the condition should be reported to the PHA.&#xA;   &#xA;-  The name of the Responsible Agency(ies) in which the condition was determined to be or not be reportable&#xA;-  The External Resources (text and links)in association with specific conditions" />
+  <description value="The Reportability Response Plan Definition establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;-  The Reportability Response case definitions and reporting requirements which include:&#xA;&#xA;   -  The data that are needed to determine reportability&#xA;   -  For a given condition , the mandated timeframe in which the condition should be reported to the PHA.&#xA;   &#xA;-  The name of the Responsible Agency(ies) in which the condition was determined to be or not be reportable&#xA;-  The External Resources (text and links)in association with specific conditions" />
   <fhirVersion value="3.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -17,14 +17,66 @@
     <element id="PlanDefinition">
       <path value="PlanDefinition" />
       <short value="RR Plan Definition" />
-      <definition value="This profile defines the case report definitions for reportable conditions." />
-      <mustSupport value="false" />
+      <definition value="This profile defines the represents reportability information for a condition-jurisdiction pair, based on the PHA in which is located the patient's home, the provider facility, or both locations. The Determination of Reportability, Determination of Reportability Reason, and Determination of Reportability Rule are contained in extensions. This profile also contains extensions for the Responsible Agency, the Rules Authoring Agency, and the Routing Entity.  The Relevant Reportable Condition is contained in goal.addresses and any External Resources are contained in action (one action contains the information for one External Resource)." />
+      <mustSupport value="true" />
       <isModifier value="false" />
+    </element>
+    <element id="PlanDefinition.extension">
+      <path value="PlanDefinition.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="PlanDefinition.extension:determinationOfReportability">
+      <path value="PlanDefinition.extension" />
+      <sliceName value="determinationOfReportability" />
+      <short value="Determination of Reportability" />
+      <definition value="This extension represents the determination of reportability. Reportability is &quot;the quality or state of being reportable or not&quot;. Reportability does not equate to the patient having a condition or meeting a case definition (definitively being “a case”).&#xD;&#xA;For each condition included in the eICR and the relevant public health agency(s), this element indicates the determination of whether the condition is reportable to public health.  &#xD;&#xA;The values that can be used for the Determination of Reportability are described below.&#xD;&#xA;A possible condition is:&#xD;&#xA;•  Reportable - The information provided meets reporting criteria for an associated PHA.&#xD;&#xA;A possible condition:&#xD;&#xA;•  May be Reportable - The information provided may meet reporting criteria if additional information is provided. The Reportability Response will also be able to share the information needed to definitively determine reportability.&#xD;&#xA;A possible condition is:&#xD;&#xA;•  Not Reportable - The information provided conclusively does not meet reporting criteria.&#xD;&#xA;Some decision support systems may not be able to fully differentiate between possible conditions that are Not Reportable and those that May be Reportable if additional information is provided. In these circumstances there may only be a reportability determination of:&#xD;&#xA;•  No Reporting Rule Met - The information provided does not meet reporting criteria or may meet reporting criteria if additional information is provided.&#xD;&#xA;The determination of No Reporting Rule Met may be provided for a possible condition or for all conditions in the  eICR." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-determination-of-reportability" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.extension:determinationOfReportabilityReason">
+      <path value="PlanDefinition.extension" />
+      <sliceName value="determinationOfReportabilityReason" />
+      <short value="Determination of Reportability Reason" />
+      <definition value="The reason for the determination of reportability." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-determination-of-reportability-reason" />
+      </type>
+    </element>
+    <element id="PlanDefinition.extension:determinationOfReportabilityRule">
+      <path value="PlanDefinition.extension" />
+      <sliceName value="determinationOfReportabilityRule" />
+      <short value="Determination of Reportability Rule" />
+      <definition value="A rule that was involved in the determination of the reportability status." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-determination-of-reportability-rule" />
+      </type>
+    </element>
+    <element id="PlanDefinition.status">
+      <path value="PlanDefinition.status" />
+      <fixedCode value="active" />
     </element>
     <element id="PlanDefinition.publisher">
       <path value="PlanDefinition.publisher" />
       <short value="Rules Authoring Agency" />
       <definition value="The name of the PHA that authored reporting specifications in the PHA system (or its intermediary)." />
+      <min value="1" />
       <mustSupport value="true" />
       <isModifier value="false" />
       <mapping>
@@ -42,11 +94,10 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="PlanDefinition.publisher.extension:sliceRRRulesAuthoringAgency">
+    <element id="PlanDefinition.publisher.extension:rulesAuthoringAgency">
       <path value="PlanDefinition.publisher.extension" />
-      <sliceName value="sliceRRRulesAuthoringAgency" />
-      <short value="Rules Authoring Agency" />
-      <max value="1" />
+      <sliceName value="rulesAuthoringAgency" />
+      <min value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-rules-authoring-agency" />
@@ -57,23 +108,12 @@
         <map value="Rules Authoring Agency" />
       </mapping>
     </element>
-    <element id="PlanDefinition.publisher.extension:sliceRRRulesAuthoringAgency.url">
-      <path value="PlanDefinition.publisher.extension.url" />
-      <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-rules-authoring-agency" />
-    </element>
-    <element id="PlanDefinition.relatedArtifact">
-      <path value="PlanDefinition.relatedArtifact" />
-      <short value="External Resource" />
-      <definition value="The description of link which may assist “providers” or “reporters” in understanding or investigating conditions." />
+    <element id="PlanDefinition.jurisdiction">
+      <path value="PlanDefinition.jurisdiction" />
       <mustSupport value="true" />
-      <isModifier value="false" />
-      <mapping>
-        <identity value="rr-lm" />
-        <map value="RR.externalResource" />
-      </mapping>
     </element>
-    <element id="PlanDefinition.relatedArtifact.extension">
-      <path value="PlanDefinition.relatedArtifact.extension" />
+    <element id="PlanDefinition.jurisdiction.extension">
+      <path value="PlanDefinition.jurisdiction.extension" />
       <slicing>
         <discriminator>
           <type value="value" />
@@ -82,72 +122,43 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="PlanDefinition.relatedArtifact.extension:resourceCategory">
-      <path value="PlanDefinition.relatedArtifact.extension" />
-      <sliceName value="resourceCategory" />
+    <element id="PlanDefinition.jurisdiction.extension:locationRelevance">
+      <path value="PlanDefinition.jurisdiction.extension" />
+      <sliceName value="locationRelevance" />
+      <min value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rel-artifact-category" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-location-relevance" />
       </type>
       <mustSupport value="true" />
-      <mapping>
-        <identity value="rr-lm" />
-        <map value="RR.externalResource.category" />
-      </mapping>
     </element>
-    <element id="PlanDefinition.relatedArtifact.extension:resourceCategory.valueCode:valueCode">
-      <path value="PlanDefinition.relatedArtifact.extension.valueCode" />
-      <sliceName value="valueCode" />
-    </element>
-    <element id="PlanDefinition.relatedArtifact.extension:priority">
-      <path value="PlanDefinition.relatedArtifact.extension" />
-      <sliceName value="priority" />
+    <element id="PlanDefinition.jurisdiction.extension:routingEntity">
+      <path value="PlanDefinition.jurisdiction.extension" />
+      <sliceName value="routingEntity" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rel-artifact-priority" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-routing-entity" />
       </type>
       <mustSupport value="true" />
-      <mapping>
-        <identity value="rr-lm" />
-        <map value="RR.externalResource.priority" />
-      </mapping>
     </element>
-    <element id="PlanDefinition.relatedArtifact.extension:priority.valueCode:valueCode">
-      <path value="PlanDefinition.relatedArtifact.extension.valueCode" />
-      <sliceName value="valueCode" />
-    </element>
-    <element id="PlanDefinition.relatedArtifact.type">
-      <path value="PlanDefinition.relatedArtifact.type" />
-      <fixedCode value="documentation" />
+    <element id="PlanDefinition.jurisdiction.extension:responsibleAgency">
+      <path value="PlanDefinition.jurisdiction.extension" />
+      <sliceName value="responsibleAgency" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-responsible-agency" />
+      </type>
       <mustSupport value="true" />
-      <isModifier value="false" />
-    </element>
-    <element id="PlanDefinition.relatedArtifact.display">
-      <path value="PlanDefinition.relatedArtifact.display" />
-      <short value="External Resource Description" />
-      <definition value="The description of link which may assist “providers” or “reporters” in understanding or investigating conditions deemed reportable by the PHA system (or its intermediary)." />
-      <mustSupport value="true" />
-      <isModifier value="false" />
-      <mapping>
-        <identity value="rr-lm" />
-        <map value="RR.externalResource.description" />
-      </mapping>
-    </element>
-    <element id="PlanDefinition.relatedArtifact.url">
-      <path value="PlanDefinition.relatedArtifact.url" />
-      <short value="External Resource Link" />
-      <definition value="A link which may assist “providers” or “reporters” in understanding or investigating conditions deemed reportable by the PHA system (or its intermediary)." />
-      <mustSupport value="true" />
-      <isModifier value="false" />
-      <mapping>
-        <identity value="rr-lm" />
-        <map value="RR.externalResource.link" />
-      </mapping>
     </element>
     <element id="PlanDefinition.goal">
       <path value="PlanDefinition.goal" />
       <min value="1" />
       <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.goal.description">
+      <path value="PlanDefinition.goal.description" />
+      <mustSupport value="true" />
     </element>
     <element id="PlanDefinition.goal.description.coding">
       <path value="PlanDefinition.goal.description.coding" />
@@ -164,25 +175,148 @@
     <element id="PlanDefinition.goal.addresses">
       <path value="PlanDefinition.goal.addresses" />
       <short value="Relevant Reportable Condition" />
-      <definition value="The relevant reportable condition addressed by this plan." />
+      <definition value="The relevant reportable condition addressed by this plan. When the eICR is manually initiated or no reportable condition has been identified (e.g. when there is no rule met) neither coding nor text will be used. If there is no available condition code use text to specify the condition." />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
       <mapping>
         <identity value="cda-rr" />
         <map value="Relevant Reportable Condition" />
       </mapping>
     </element>
+    <element id="PlanDefinition.goal.addresses.coding">
+      <path value="PlanDefinition.goal.addresses.coding" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
     <element id="PlanDefinition.goal.addresses.coding.system">
       <path value="PlanDefinition.goal.addresses.coding.system" />
       <fixedUri value="http://snomed.info/sct" />
     </element>
+    <element id="PlanDefinition.goal.addresses.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="PlanDefinition.goal.addresses.text" />
+      <definition value="Set nullFlavor='NA&quot; when the eICR is manually initiated or no reportable condition has been identified (e.g. when there is no rule met).&#xD;&#xA;Set nullFlavor=&quot;OTH&quot; and use originalText if there is no available condition code." />
+      <mustSupport value="true" />
+    </element>
     <element id="PlanDefinition.action">
       <path value="PlanDefinition.action" />
+      <short value="External Resource" />
+      <definition value="An external resource such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources. The type/category of the external resource is contained in the External Resource Type extension located in action.documentation, and the priority placed on the external resource is represented the External Resource Priority located in action.documentation. " />
+      <comment value="Test comment" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="cda-rr" />
+        <map value="External Resources" />
+        <comment value="Mapping wil allow only one External Reference in one External Resources (External Resources allows multiple but this will never happen in FHIR)" />
+      </mapping>
+    </element>
+    <element id="PlanDefinition.action.documentation">
+      <path value="PlanDefinition.action.documentation" />
+      <short value="External Resource" />
+      <definition value="The description of link which may assist “providers” or “reporters” in understanding or investigating conditions." />
+      <min value="1" />
       <mustSupport value="true" />
       <isModifier value="false" />
     </element>
-    <element id="PlanDefinition.action.timing[x]">
-      <path value="PlanDefinition.action.timing[x]" />
+    <element id="PlanDefinition.action.documentation.extension">
+      <path value="PlanDefinition.action.documentation.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="PlanDefinition.action.documentation.extension:externalResourceType">
+      <path value="PlanDefinition.action.documentation.extension" />
+      <sliceName value="externalResourceType" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-external-resource-type" />
+      </type>
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="cda-rr" />
+        <map value="External Resources/category" />
+      </mapping>
+    </element>
+    <element id="PlanDefinition.action.documentation.extension:externalResourcePriority">
+      <path value="PlanDefinition.action.documentation.extension" />
+      <sliceName value="externalResourcePriority" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-external-resource-priority" />
+      </type>
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="cda-rr" />
+        <map value="RR.externalResource.priority" />
+      </mapping>
+    </element>
+    <element id="PlanDefinition.action.documentation.type">
+      <path value="PlanDefinition.action.documentation.type" />
+      <fixedCode value="documentation" />
       <mustSupport value="true" />
       <isModifier value="false" />
+      <mapping>
+        <identity value="cda-rr" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element id="PlanDefinition.action.documentation.display">
+      <path value="PlanDefinition.action.documentation.display" />
+      <short value="External Resource Description" />
+      <definition value="Text description for supplemental information requests, public health contact information for the responsible agency(ies), and additional information of relevance to the relevant reportable condition." />
+      <min value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="cda-rr" />
+        <map value="External Reference/code/originalText" />
+      </mapping>
+    </element>
+    <element id="PlanDefinition.action.documentation.url">
+      <path value="PlanDefinition.action.documentation.url" />
+      <short value="External Resource Link" />
+      <definition value="Link to an external reference for supplemental information requests, public health contact information for the responsible agency(ies), and additional information of relevance to the relevant reportable condition." />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="cda-rr" />
+        <map value="External Reference/text/reference" />
+      </mapping>
+    </element>
+    <element id="PlanDefinition.action.timing[x]:timingDuration">
+      <path value="PlanDefinition.action.timingDuration" />
+      <sliceName value="timingDuration" />
+      <definition value="The timeframe in which the receiver should take the actions specified." />
+      <type>
+        <code value="Duration" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="cda-rr" />
+        <map value="Reporting Timeframe" />
+      </mapping>
+    </element>
+    <element id="PlanDefinition.action.timing[x]:timingDuration.value">
+      <path value="PlanDefinition.action.timingDuration.value" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action.timing[x]:timingDuration.unit">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="PlanDefinition.action.timingDuration.unit" />
+      <min value="1" />
+      <mustSupport value="true" />
     </element>
   </differential>
 </StructureDefinition>

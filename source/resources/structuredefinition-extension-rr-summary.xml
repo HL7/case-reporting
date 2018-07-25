@@ -1,23 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="extension-rr-summary" />
   <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-summary" />
   <version value="0.0.0" />
-  <name value="RR Summary" />
-  <title value="RR Summary" />
+  <name value="Reportability Response Summary" />
+  <title value="Reportability Response Summary" />
   <status value="draft" />
   <date value="2018-08-01" />
-  <publisher value="PHER" />
-  <description
-    value="A human-readable narrative summary that contains a reportability determination, the responsible PHA(s), and the PHA(s) that will be sent the eICR (when deemed reportable)." />
+  <description value="Contains a detailed text description of the reportable condition(s) including actions the provider needs to take, any supplemental information that may be required, and where the initial case report was sent." />
   <fhirVersion value="3.0.1" />
-  <!--<mapping>
-    <identity value="rim"/>
-    <uri value="http://hl7.org/v3"/>
-    <name value="RIM Mapping"/>
-  </mapping>
-  -->
   <kind value="complex-type" />
   <abstract value="false" />
   <contextType value="datatype" />
@@ -28,25 +19,18 @@
   <differential>
     <element id="Extension">
       <path value="Extension" />
-      <sliceName value="rr-summary" />
-      <short value="RR Summary" />
-      <definition
-        value="A human-readable narrative summary that contains a reportability determination, the responsible PHA(s), and the PHA(s) that will be sent the eICR (when deemed reportable)." />
-      <min value="0" />
+      <short value="Reportability Response Summary" />
+      <definition value="Contains a detailed text description of the reportable condition(s) including actions the provider needs to take, any supplemental information that may be required, and where the initial case report was sent." />
       <max value="1" />
-      <base>
-        <path value="Extension" />
-        <min value="0" />
-        <max value="*" />
-      </base>
       <isModifier value="false" />
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
       <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-summary" />
     </element>
-    <element id="Extension.valueMarkdown">
+    <element id="Extension.value[x]:valueMarkdown">
       <path value="Extension.valueMarkdown" />
+      <sliceName value="valueMarkdown" />
       <type>
         <code value="markdown" />
       </type>

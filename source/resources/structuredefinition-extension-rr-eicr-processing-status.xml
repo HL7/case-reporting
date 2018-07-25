@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://hl7.org/fhir ../../validation/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
+  <id value="extension-rr-eicr-processing-status" />
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-eicr-processing-status" />
+  <name value="eICR Processing Status" />
+  <status value="draft" />
+  <description
+    value="This template indicates the eICR processing status. If the eICR was not processed or was processed with a warning, the reason will be contained in the eICR Processing Status Reason. If there is any output from a validator, that output will be contained in the eICR Validation Output.&#xD;&#xA;If any of the trigger codes used to generate the eICR are from an outdated version of the RCTC or the codes are marked as inactive in the latest version of the RCTC, these are flagged and and the eICR Processing Status Reason Detail will hold the details of the outdated and expected versions of the RCTC.&#xD;&#xA;" />
+  <fhirVersion value="3.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <contextType value="resource" />
+  <context value="Communication.payload" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="eICR Processing Status" />
+      <min value="0" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:eICRProcessingStatus">
+      <path value="Extension.extension" />
+      <sliceName value="eICRProcessingStatus" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:eICRProcessingStatus.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="eICRProcessingStatus" />
+    </element>
+    <element id="Extension.extension:eICRProcessingStatus.value[x]:valueCodeableConcept">
+      <path value="Extension.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="extensible" />
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/eicr-processing-status" />
+        </valueSetReference>
+      </binding>
+    </element>
+    <element id="Extension.extension:eICRProcessingStatusReason">
+      <path value="Extension.extension" />
+      <sliceName value="eICRProcessingStatusReason" />
+      <definition
+        value="If the incoming eICR was not successfully processed for a determination of reportability, this template contains the reason it was not processed. If any issues with the eICR are identified, but it is still able to be processed, this will contain the issues as warnings. If there are further details about the error or warning, these details will be recorded in the eICR Processing Status Reason Details." />
+      <binding>
+        <strength value="extensible" />
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/eicr-processing-status-reason" />
+        </valueSetReference>
+      </binding>
+    </element>
+    <element id="Extension.extension:eICRProcessingStatusReason.extension">
+      <path value="Extension.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:eICRProcessingStatusReason.extension:eICRProcessingStatusReasonCode">
+      <path value="Extension.extension.extension" />
+      <sliceName value="eICRProcessingStatusReasonCode" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:eICRProcessingStatusReason.extension:eICRProcessingStatusReasonCode.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="eICRProcessingStatusReasonCode" />
+    </element>
+    <element id="Extension.extension:eICRProcessingStatusReason.extension:eICRProcessingStatusReasonCode.value[x]:valueCodeableConcept">
+      <path value="Extension.extension.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="extensible" />
+        <valueSetUri value="http://hl7.org/fhir/us/ecr/ValueSet/eicr-processing-status-reason" />
+      </binding>
+    </element>
+    <element id="Extension.extension:eICRProcessingStatusReason.extension:eICRProcessingStatusReasonDetailType">
+      <path value="Extension.extension.extension" />
+      <sliceName value="eICRProcessingStatusReasonDetailType" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:eICRProcessingStatusReason.extension:eICRProcessingStatusReasonDetailType.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="eICRProcessingStatusReasonDetailType" />
+    </element>
+    <element id="Extension.extension:eICRProcessingStatusReason.extension:eICRProcessingStatusReasonDetailType.value[x]:valueCodeableConcept">
+      <path value="Extension.extension.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="extensible" />
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/eicr-processing-status-reason-detail-type" />
+        </valueSetReference>
+      </binding>
+    </element>
+    <element id="Extension.extension:eICRProcessingStatusReason.extension:eICRProcessingStatusReasonDetail">
+      <path value="Extension.extension.extension" />
+      <sliceName value="eICRProcessingStatusReasonDetail" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:eICRProcessingStatusReason.extension:eICRProcessingStatusReasonDetail.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="eICRProcessingStatusReasonDetail" />
+    </element>
+    <element id="Extension.extension:eICRProcessingStatusReason.extension:eICRProcessingStatusReasonDetail.value[x]">
+      <path value="Extension.extension.extension.value[x]" />
+      <type>
+        <code value="string" />
+      </type>
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+    <element id="Extension.extension:eICRProcessingStatusReason.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="eICRProcessingStatusReason" />
+    </element>
+    <element id="Extension.extension:eICRProcessingStatusReason.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <max value="0" />
+      <type>
+        <code value="base64Binary" />
+      </type>
+      <type>
+        <code value="boolean" />
+      </type>
+      <type>
+        <code value="code" />
+      </type>
+      <type>
+        <code value="date" />
+      </type>
+      <type>
+        <code value="dateTime" />
+      </type>
+      <type>
+        <code value="decimal" />
+      </type>
+      <type>
+        <code value="id" />
+      </type>
+      <type>
+        <code value="instant" />
+      </type>
+      <type>
+        <code value="integer" />
+      </type>
+      <type>
+        <code value="markdown" />
+      </type>
+      <type>
+        <code value="oid" />
+      </type>
+      <type>
+        <code value="positiveInt" />
+      </type>
+      <type>
+        <code value="string" />
+      </type>
+      <type>
+        <code value="time" />
+      </type>
+      <type>
+        <code value="unsignedInt" />
+      </type>
+      <type>
+        <code value="uri" />
+      </type>
+      <type>
+        <code value="Address" />
+      </type>
+      <type>
+        <code value="Age" />
+      </type>
+      <type>
+        <code value="Annotation" />
+      </type>
+      <type>
+        <code value="Attachment" />
+      </type>
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <type>
+        <code value="Coding" />
+      </type>
+      <type>
+        <code value="ContactPoint" />
+      </type>
+      <type>
+        <code value="Count" />
+      </type>
+      <type>
+        <code value="Distance" />
+      </type>
+      <type>
+        <code value="Duration" />
+      </type>
+      <type>
+        <code value="HumanName" />
+      </type>
+      <type>
+        <code value="Identifier" />
+      </type>
+      <type>
+        <code value="Money" />
+      </type>
+      <type>
+        <code value="Period" />
+      </type>
+      <type>
+        <code value="Quantity" />
+      </type>
+      <type>
+        <code value="Range" />
+      </type>
+      <type>
+        <code value="Ratio" />
+      </type>
+      <type>
+        <code value="Reference" />
+      </type>
+      <type>
+        <code value="SampledData" />
+      </type>
+      <type>
+        <code value="Signature" />
+      </type>
+      <type>
+        <code value="Timing" />
+      </type>
+    </element>
+    <element id="Extension.extension:eICRValidationOutput">
+      <path value="Extension.extension" />
+      <sliceName value="eICRValidationOutput" />
+    </element>
+    <element id="Extension.extension:eICRValidationOutput.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="eICRValidationOutput" />
+    </element>
+    <element id="Extension.extension:eICRValidationOutput.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="markdown" />
+      </type>
+      <type>
+        <code value="string" />
+      </type>
+      <type>
+        <code value="Attachment" />
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-eicr-processing-status" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

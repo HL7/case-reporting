@@ -3,12 +3,11 @@
   <id value="extension-rr-subject" />
   <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-subject" />
   <version value="0.0.0" />
-  <name value="RR Subject" />
-  <title value="RR Subject" />
+  <name value="Reportability Response Subject" />
+  <title value="Reportability Response Subject" />
   <status value="draft" />
   <date value="2018-08-01" />
-  <publisher value="PHER" />
-  <description value="A succinct, human-readable narrative text that can be used as a subject header in a message queue, much like an email subject." />
+  <description value="Contains a short high-level description of the determination of reportability. This information can be used to route and prioritize Reportability Responses in a work queue or an email subject." />
   <fhirVersion value="3.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
@@ -20,7 +19,7 @@
   <differential>
     <element id="Extension">
       <path value="Extension" />
-      <short value="RR Subject" />
+      <short value="Reportability Response Subject" />
       <definition value="A short high-level description of the determination of reportability. This information can be used to route and prioritize Reportability Responses in a work queue or an email subject." />
       <max value="1" />
       <isModifier value="false" />
@@ -29,46 +28,13 @@
       <path value="Extension.url" />
       <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-subject" />
     </element>
-    <element id="Extension.value[x]:valueCodeableConcept">
-      <path value="Extension.valueCodeableConcept" />
-      <sliceName value="valueCodeableConcept" />
+    <element id="Extension.value[x]:valueMarkdown">
+      <path value="Extension.valueMarkdown" />
+      <sliceName value="valueMarkdown" />
       <min value="1" />
       <type>
-        <code value="CodeableConcept" />
+        <code value="markdown" />
       </type>
-    </element>
-    <element id="Extension.value[x]:valueCodeableConcept.coding">
-      <path value="Extension.valueCodeableConcept.coding" />
-      <short value="Code identifying that this is a Reportability Response" />
-      <min value="1" />
-      <max value="1" />
-    </element>
-    <element id="Extension.value[x]:valueCodeableConcept.coding.system">
-      <path value="Extension.valueCodeableConcept.coding.system" />
-      <min value="1" />
-    </element>
-    <element id="Extension.value[x]:valueCodeableConcept.coding.code">
-      <path value="Extension.valueCodeableConcept.coding.code" />
-      <min value="1" />
-      <patternCode value="88085-6" />
-    </element>
-    <element id="Extension.value[x]:valueCodeableConcept.coding.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
-      <path value="Extension.valueCodeableConcept.coding.display" />
-      <min value="1" />
-      <fixedString value="Reportability response report Document Public health" />
-    </element>
-    <element id="Extension.value[x]:valueCodeableConcept.text">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
-      <path value="Extension.valueCodeableConcept.text" />
-      <short value="Reportability Response subject text" />
-      <definition value="Text description of the determination of reportability." />
-      <comment value="comment" />
-      <min value="1" />
     </element>
   </differential>
 </StructureDefinition>

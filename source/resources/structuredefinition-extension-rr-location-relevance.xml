@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="extension-rr-location-relevance" />
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-location-relevance" />
+  <version value="0.0.0" />
+  <name value="Location Relevance" />
+  <title value="Location Relevance" />
+  <status value="draft" />
+  <date value="2018-08-01" />
+  <publisher value="PHER" />
+  <description value="A code indicating whether the responsible PHA is relevant because of the patient's home address, the provider facility address, or both." />
+  <fhirVersion value="3.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <contextType value="resource" />
+  <context value="PlanDefinition.jurisdiction" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="home|provider|both" />
+      <definition value="A code indicating whether the responsible PHA is relevant because of the patient's home address, the provider facility address, or both." />
+      <max value="1" />
+      <isModifier value="false" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-location-relevance" />
+    </element>
+    <element id="Extension.value[x]:valueCode">
+      <path value="Extension.valueCode" />
+      <sliceName value="valueCode" />
+      <type>
+        <code value="code" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <description value="Indicates whether the responsible PHA is relevant because of the patient's home address, the provider facility address, or both" />
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/location-relevance" />
+        </valueSetReference>
+      </binding>
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ImplementationGuide xmlns="http://hl7.org/fhir">
+<ImplementationGuide xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://hl7.org/fhir ../../validation/implementationguide.xsd" xmlns="http://hl7.org/fhir">
   <id value="ig" />
   <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/ig" />
   <name value="electronic Case Reporting (eCR)" />
@@ -8,7 +9,6 @@
   <publisher value="HL7 Public Health Work Group (http://www.hl7.org/Special/committees/pher/index.cfm)" />
   <package>
     <name value="base" />
-    
         
     <!-- ******************************************************** -->
     <!-- Begin StructureDefinitions                               -->
@@ -16,7 +16,7 @@
     <resource>
       <example value="false" />
       <sourceReference>
-        <reference value="StructureDefinition/extension-status-reason" />
+        <reference value="StructureDefinition/extension-rr-eicr-processing-status" />
       </sourceReference>
     </resource>
     <resource>
@@ -34,13 +34,13 @@
     <resource>
       <example value="false" />
       <sourceReference>
-        <reference value="StructureDefinition/extension-rel-artifact-priority" />
+        <reference value="StructureDefinition/extension-rr-external-resource-priority" />
       </sourceReference>
     </resource>
     <resource>
       <example value="false" />
       <sourceReference>
-        <reference value="StructureDefinition/extension-rel-artifact-category" />
+        <reference value="StructureDefinition/extension-rr-external-resource-type" />
       </sourceReference>
     </resource>
     <resource>
@@ -73,22 +73,16 @@
         <reference value="StructureDefinition/extension-rr-subject" />
       </sourceReference>
     </resource>
-    <!--<resource>
-      <example value="false" />
-      <sourceReference>
-        <reference value="StructureDefinition/extension-manual-init-reason" />
-      </sourceReference>
-    </resource>-->
     <resource>
       <example value="false" />
       <sourceReference>
-        <reference value="StructureDefinition/extension-manual-init" />
+        <reference value="StructureDefinition/extension-rr-manually-initiated-eicr" />
       </sourceReference>
     </resource>
     <resource>
       <example value="false" />
       <sourceReference>
-        <reference value="StructureDefinition/extension-location-relevance" />
+        <reference value="StructureDefinition/extension-rr-location-relevance" />
       </sourceReference>
     </resource>
     <resource>
@@ -143,12 +137,6 @@
       <example value="false" />
       <sourceReference>
         <reference value="StructureDefinition/eicr-pregnancystatus" />
-      </sourceReference>
-    </resource>
-    <resource>
-      <example value="false" />
-      <sourceReference>
-        <reference value="StructureDefinition/eicr-operationoutcome" />
       </sourceReference>
     </resource>
     <resource>

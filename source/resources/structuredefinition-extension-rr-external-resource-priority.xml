@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="extension-rel-artifact-priority" />
-  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rel-artifact-priority" />
+  <id value="extension-rr-external-resource-priority" />
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-external-resource-priority" />
   <version value="0.0.0" />
   <name value="External Resource Priority" />
   <title value="External Resource Priority" />
@@ -10,40 +9,29 @@
   <date value="2018-08-01" />
   <description value="Priority given to one or more external resources." />
   <fhirVersion value="3.0.1" />
-  <!--<mapping>
-    <identity value="rim"/>
-    <uri value="http://hl7.org/v3"/>
-    <name value="RIM Mapping"/>
-  </mapping>
-  -->
   <kind value="complex-type" />
   <abstract value="false" />
   <contextType value="datatype" />
-  <context value="PlanDefinition.relatedArtifact" />
+  <context value="PlanDefinition.action.documentation" />
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
   <differential>
     <element id="Extension">
       <path value="Extension" />
-      <sliceName value="rel-artifact-priority" />
       <short value="External Resource Priority" />
       <definition value="Priority given to one or more external resources." />
-      <min value="0" />
       <max value="1" />
-      <base>
-        <path value="Extension" />
-        <min value="0" />
-        <max value="*" />
-      </base>
       <isModifier value="false" />
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rel-artifact-priority" />
+      <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-external-resource-priority" />
     </element>
-    <element id="Extension.valueCode">
+    <element id="Extension.value[x]:valueCode">
       <path value="Extension.valueCode" />
+      <sliceName value="valueCode" />
+      <min value="1" />
       <type>
         <code value="code" />
       </type>

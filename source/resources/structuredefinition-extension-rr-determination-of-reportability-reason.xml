@@ -12,33 +12,31 @@
   <fhirVersion value="3.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
-  <contextType value="datatype" />
-  <context value="Communication.payload" />
+  <contextType value="resource" />
+  <context value="PlanDefinition" />
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
   <differential>
     <element id="Extension">
       <path value="Extension" />
-      <sliceName value="rr-determination-of-reportability-reason" />
       <short value="Determination of Reportability Reason" />
-      <definition value="A reason code indicating the reason for the reportability status." />
+      <definition value="The reason for the determination of reportability." />
       <isModifier value="false" />
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
       <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-determination-of-reportability-reason" />
     </element>
-    <element id="Extension.value[x]:valueCodeableConcept">
-      <path value="Extension.valueCodeableConcept" />
-      <sliceName value="valueCodeableConcept" />
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
       <type>
         <code value="CodeableConcept" />
       </type>
-    </element>
-    <element id="Extension.value[x]:valueCodeableConcept.coding">
-      <path value="Extension.valueCodeableConcept.coding" />
-      <max value="1" />
     </element>
   </differential>
 </StructureDefinition>

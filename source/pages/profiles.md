@@ -83,13 +83,15 @@ The following profiles and extensions have been defined for the Reportability Re
 <li><a href="StructureDefinition-extension-practitioner-role.html">PractitionerRole reference</a></li>
 <li><a href="StructureDefinition-extension-location-relevance.html">Location Relevance</a></li>
 <li><a href="StructureDefinition-extension-manual-init.html">Initial Case Report Manual Initiation Flag</a></li>
-<li><a href="StructureDefinition-extension-status-reason.html">eICR Processing Status Reason</a></li>
+<li><a href="StructureDefinition-extension-rr-eicr-processing-status.html">eICR Processing Status</a></li>
 <li><a href="StructureDefinition-extension-rr-determination-of-reportability.html">Determination of Reportability</a></li>
 <li><a href="StructureDefinition-extension-rr-determination-of-reportability-reason.html">Determination of Reportability Reason</a></li>
 <li><a href="StructureDefinition-extension-rr-determination-of-reportability-rule.html">Determination of Reportability Rule</a></li>
-<li><a href="StructureDefinition-extension-publisher-reference.html">Publisher Reference</a></li>
-<li><a href="StructureDefinition-extension-rel-artifact-category.html">External Resource Category</a></li>
-<li><a href="StructureDefinition-extension-rel-artifact-priority.html">External Resource Priority</a></li>
+<li><a href="StructureDefinition-extension-rr-responsible-agency.html">Responsible Agency</a></li>
+<li><a href="StructureDefinition-extension-rr-rules-authoring-agency.html">Rules Authoring Agency</a></li>
+<li><a href="StructureDefinition-extension-rr-routing-entity.html">Routing Entity</a></li>
+<li><a href="StructureDefinition-extension-rr-external-resource-type.html">External Resource Type</a></li>
+<li><a href="StructureDefinition-extension-rr-external-resource-priority.html">External Resource Priority</a></li>
 </ul>
 
 
