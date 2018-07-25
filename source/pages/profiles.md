@@ -24,7 +24,7 @@ Paragraph Narrative description to include: (JL/LC)
 -	External resources (references?) from PH 
 
 <ul>
-<li><a href="StructureDefinition-knowledge-distribution-plandefinition.html">Knowledge Distribution Profile</a></li>
+  <li><a href="StructureDefinition-ecr-knowledge-distribution.html">eCR Knowledge Distribution Profile</a></li>
 </ul>
 
 ---
@@ -37,25 +37,23 @@ The following profiles and extensions have been defined for the eICR transaction
 #### Profiles
 
 <ul>
-<li><a href="StructureDefinition-eicr-composition.html">eICR Composition Profile</a></li>
-<li><a href="StructureDefinition-ecr-organization.html">eCR Organization Profile</a></li>
-<li><a href="StructureDefinition-eicr-condition.html">eICR Condition Profile</a></li>
-<li><a href="StructureDefinition-eicr-encounter.html">eICR Encounter Profile</a></li>
-<li><a href="StructureDefinition-eicr-procedurerequest.html">eICR Lab Orders Profile</a></li>
-<li><a href="StructureDefinition-eicr-location.html">eICR Location Profile</a></li>
-<li><a href="StructureDefinition-eicr-pregnancystatus.html">eICR PregnancyStatus Profile</a></li>
-<li><a href="StructureDefinition-eicr-travelhistory.html">eICR TravelHistory Profile</a></li>
-<li><a href="StructureDefinition-eicr-occupationhistory.html">eICR-OccupationHistory Profile</a></li>
+  <li><a href="StructureDefinition-eicr-composition.html">eICR Composition Profile</a></li>
+  <li><a href="StructureDefinition-ecr-organization.html">eCR Organization Profile</a></li>
+  <li><a href="StructureDefinition-eicr-condition.html">eICR Condition Profile</a></li>
+  <li><a href="StructureDefinition-eicr-encounter.html">eICR Encounter Profile</a></li>
+  <li><a href="StructureDefinition-eicr-procedurerequest.html">eICR Lab Orders Profile</a></li>
+  <li><a href="StructureDefinition-eicr-location.html">eICR Location Profile</a></li>
+  <li><a href="StructureDefinition-eicr-pregnancystatus.html">eICR PregnancyStatus Profile</a></li>
+  <li><a href="StructureDefinition-eicr-travelhistory.html">eICR TravelHistory Profile</a></li>
+  <li><a href="StructureDefinition-eicr-occupationhistory.html">eICR-OccupationHistory Profile</a></li>
 </ul>
 
 #### Extensions
 
 <ul>
-<li><a href="StructureDefinition-extension-trigger.html">Trigger Code Flag</a></li>
-<li><a href="StructureDefinition-extension-valueAddress.html">Travel history address</a></li>
+  <li><a href="StructureDefinition-extension-trigger.html">Trigger Code Flag</a></li>
+  <li><a href="StructureDefinition-extension-valueAddress.html">Travel History Address</a></li>
 </ul>
-
-
 
 ---
 <br />
@@ -68,31 +66,28 @@ The following profiles and extensions have been defined for the Reportability Re
 #### Profiles
 
 <ul>
-<li><a href="StructureDefinition-rr-communication.html">Reportability Response Communication Profile</a></li>
-<li><a href="StructureDefinition-rr-plandefinition.html">Reportability Response PlanDefinition Profile</a></li>
-<li><a href="StructureDefinition-ecr-organization.html">eCR Organization Profile</a></li>
-<li><a href="StructureDefinition-eicr-encounter.html">eICR Encounter Profile</a></li>
-<li><a href="StructureDefinition-eicr-operationoutcome.html">eICR Operation Outcome Profile</a></li>
+  <li><a href="StructureDefinition-rr-communication.html">Reportability Response Communication Profile</a></li>
+  <li><a href="StructureDefinition-rr-plandefinition.html">Reportability Response PlanDefinition Profile</a></li>
+  <li><a href="StructureDefinition-ecr-organization.html">eCR Organization Profile</a></li>
+  <li><a href="StructureDefinition-eicr-encounter.html">eICR Encounter Profile</a></li>
 </ul>
 
 #### Extensions
 
 <ul>
-<li><a href="StructureDefinition-extension-rr-subject.html">Reportability Response Subject</a></li>
-<li><a href="StructureDefinition-extension-rr-summary.html">Reportability Response Summary</a></li>
-<li><a href="StructureDefinition-extension-practitioner-role.html">PractitionerRole reference</a></li>
-<li><a href="StructureDefinition-extension-location-relevance.html">Location Relevance</a></li>
-<li><a href="StructureDefinition-extension-manual-init.html">Initial Case Report Manual Initiation Flag</a></li>
-<li><a href="StructureDefinition-extension-rr-eicr-processing-status.html">eICR Processing Status</a></li>
-<li><a href="StructureDefinition-extension-rr-determination-of-reportability.html">Determination of Reportability</a></li>
-<li><a href="StructureDefinition-extension-rr-determination-of-reportability-reason.html">Determination of Reportability Reason</a></li>
-<li><a href="StructureDefinition-extension-rr-determination-of-reportability-rule.html">Determination of Reportability Rule</a></li>
-<li><a href="StructureDefinition-extension-rr-responsible-agency.html">Responsible Agency</a></li>
-<li><a href="StructureDefinition-extension-rr-rules-authoring-agency.html">Rules Authoring Agency</a></li>
-<li><a href="StructureDefinition-extension-rr-routing-entity.html">Routing Entity</a></li>
-<li><a href="StructureDefinition-extension-rr-external-resource-type.html">External Resource Type</a></li>
-<li><a href="StructureDefinition-extension-rr-external-resource-priority.html">External Resource Priority</a></li>
+  <li><a href="StructureDefinition-extension-rr-subject.html">Reportability Response Subject</a></li>
+  <li><a href="StructureDefinition-extension-rr-summary.html">Reportability Response Summary</a></li>
+  <li><a href="StructureDefinition-extension-practitioner-role.html">PractitionerRole reference</a></li>
+  <li><a href="StructureDefinition-extension-location-relevance.html">Location Relevance</a></li>
+  <li><a href="StructureDefinition-extension-manual-init.html">Initial Case Report Manual Initiation Flag</a></li>
+  <li><a href="StructureDefinition-extension-rr-eicr-processing-status.html">eICR Processing Status</a></li>
+  <li><a href="StructureDefinition-extension-rr-determination-of-reportability.html">Determination of Reportability</a></li>
+  <li><a href="StructureDefinition-extension-rr-determination-of-reportability-reason.html">Determination of Reportability Reason</a></li>
+  <li><a href="StructureDefinition-extension-rr-determination-of-reportability-rule.html">Determination of Reportability Rule</a></li>
+  <li><a href="StructureDefinition-extension-rr-responsible-agency.html">Responsible Agency</a></li>
+  <li><a href="StructureDefinition-extension-rr-rules-authoring-agency.html">Rules Authoring Agency</a></li>
+  <li><a href="StructureDefinition-extension-rr-routing-entity.html">Routing Entity</a></li>
+  <li><a href="StructureDefinition-extension-rr-external-resource-type.html">External Resource Type</a></li>
+  <li><a href="StructureDefinition-extension-rr-external-resource-priority.html">External Resource Priority</a></li>
 </ul>
-
-
 ---

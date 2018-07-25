@@ -12,5 +12,6 @@ source file: source/pages/\_includes/{{id}}-intro.md
 
 #### Instances
 
-- [Knowledge Distribution Instance](PlanDefinition-knowledge-distribution-instance.html)
+ - [eCR Knowledge Distribution Instance](PlanDefinition-ecr-knowledge-distribution-instance.html)
+
 ---
