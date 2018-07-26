@@ -99,7 +99,7 @@
     ],
     "jurisdiction": {
         "display": "Health Authority West",
-        "reference": "Organization/phcase-healthwest"
+        "reference": "Organization/ecr-organization-health-authority-west"
     },
     "location": {
         "display": "Salem Medical Center,  4646 Brown Rd, Salem, MA  02368",

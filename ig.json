@@ -7,6 +7,10 @@
   "tool": "jekyll",
   "broken-links": "warning",
   "canonicalBase": "http://hl7.org/fhir/us/ecr", 
+  "logging": [],
+  "extraTemplates": ["mappings"],
+  "gen-examples": "true",
+  "sct-edition": "http://snomed.info/sct/731000124108",
   "codesystems": [
     "reporting-timeframe",
     "lr-codes"
@@ -69,6 +73,39 @@
   "working-dir": null,
   "no-inactive-codes": "false",
   "status": "draft",
+  "defaults": {
+    "Location": {"template-base": "ex.html"},
+    "ProcedureRequest": {"template-base": "ex.html"},
+    "Organization": {"template-base": "ex.html"},
+    "MedicationStatement": {"template-base": "ex.html"},
+    "SearchParameter": {"template-base": "base.html"},
+    "StructureDefinition": {
+      "template-mappings": "sd-mappings.html",
+      "template-base": "sd.html",
+      "template-defns": "sd-definitions.html"
+    },
+    "Immunization": {"template-base": "ex.html"},
+    "Patient": {"template-base": "ex.html"},
+    "StructureMap": {
+      "content": false,
+      "script": false,
+      "template-base": "ex.html",
+      "profiles": false
+    },
+    "ConceptMap": {"template-base": "base.html"},
+    "Practitioner": {"template-base": "ex.html"},
+    "OperationDefinition": {"template-base": "base.html"},
+    "CodeSystem": {"template-base": "base.html"},
+    "Communication": {"template-base": "ex.html"},
+    "Any": {
+      "template-format": "format.html",
+      "template-base": "base.html"
+    },
+    "PractitionerRole": {"template-base": "ex.html"},
+    "ValueSet": {"template-base": "base.html"},
+    "CapabilityStatement": {"template-base": "base.html"},
+    "Observation": {"template-base": "ex.html"}
+  },
   "resources": {
     "StructureDefinition/extension-practitioner-role": {
       "base": "StructureDefinition-extension-practitioner-role.html",
@@ -171,8 +208,8 @@
       "defns": "StructureDefinition-eicr-condition-definitions.html"
     },
     "StructureDefinition/extension-rr-determination-of-reportability-rule": {
-      "base": "StructureDefinition-extension-topic-determination-of-reportability-rule.html",
-      "defns": "StructureDefinition-extension-topic-determination-of-reportability-rule-definitions.html"
+      "base": "StructureDefinition-extension-rr-determination-of-reportability-rule.html",
+      "defns": "StructureDefinition-extension-rr-determination-of-reportability-rule-definitions.html"
     },
     "StructureDefinition/extension-rr-location-relevance": {
       "base": "StructureDefinition-extension-rr-location-relevance.html",
@@ -181,6 +218,18 @@
     "StructureDefinition/ecr-organization": {
       "base": "StructureDefinition-ecr-organization.html",
       "defns": "StructureDefinition-ecr-organization-definitions.html"
+    },
+    "StructureDefinition/rr-routing-entity": {
+      "base": "StructureDefinition-rr-routing-entity.html",
+      "defns": "StructureDefinition-rr-routing-entity-definitions.html"
+    },
+    "StructureDefinition/rr-responsible-agency": {
+      "base": "StructureDefinition-rr-responsible-agency.html",
+      "defns": "StructureDefinition-rr-responsible-agency-definitions.html"
+    },
+    "StructureDefinition/rr-rules-authoring-agency": {
+      "base": "StructureDefinition-rr-rules-authoring-agency.html",
+      "defns": "StructureDefinition-rr-rules-authoring-agency-definitions.html"
     },
     "CodeSystem/oes": {
       "base": "CodeSystem-oes.html",
@@ -242,17 +291,21 @@
       "base": "Communication-rr-example-3.html",
       "source": "rr-communication-profile-example3.xml"
     },
-    "Organization/phcase-healthwest": {
-      "base": "Organization-phcase-healthwest.html",
-      "source": "organization-example-phcase-healthwest.xml"
+    "Organization/ecr-organization-health-authority-west": {
+      "base": "Organization-ecr-organization-health-authority-west.html",
+      "source": "ecr-organization-health-authority-west.xml"
+    },
+    "Organization/ecr-organization-acme-labs": {
+      "base": "Organization-ecr-organization-acme-labs.html",
+      "source": "ecr-organization-acme-labs.xml"
     },
     "Location/phcase-fj": {
       "base": "Location-phcase-fj.html",
       "source": "location-example-phcase-fj.xml"
     },
-    "Patient/phcase-js": {
-      "base": "Patient-phcase-js.html",
-      "source": "patient-example-phcase-js.xml"
+    "Patient/ecr-patient-jane-stinn": {
+      "base": "Patient-ecr-patient-jane-stinn.html",
+      "source": "ecr-patient-jane-stinn.xml"
     },
     "Practitioner/phcase-mc": {
       "base": "Practitioner-phcase-mc.html",
@@ -270,9 +323,9 @@
       "base": "MedicationStatement-phcase-azithro.html",
       "source": "medicationstatement-example-phcase-azithro.xml"
     },
-    "Location/phcase-smc": {
-      "base": "Location-phcase-smc.html",
-      "source": "location-example-phcase-smc.xml"
+    "Location/ecr-location-salem-medical-center": {
+      "base": "Location-ecr-location-salem-medical-center.html",
+      "source": "ecr-location-salem-medical-center.xml"
     },
     "Observation/phcase-pert": {
       "base": "Observation-phcase-pert.html",
@@ -306,43 +359,5 @@
       "base": "CapabilityStatement-client.html",
       "source": "capabilitystatement-client.xml"
     }
-  },
-   
-  "defaults": {
-    "Location": {"template-base": "ex.html"},
-    "ProcedureRequest": {"template-base": "ex.html"},
-    "Organization": {"template-base": "ex.html"},
-    "MedicationStatement": {"template-base": "ex.html"},
-    "SearchParameter": {"template-base": "base.html"},
-    "StructureDefinition": {
-      "template-mappings": "sd-mappings.html",
-      "template-base": "sd.html",
-      "template-defns": "sd-definitions.html"
-    },
-    "Immunization": {"template-base": "ex.html"},
-    "Patient": {"template-base": "ex.html"},
-    "StructureMap": {
-      "content": false,
-      "script": false,
-      "template-base": "ex.html",
-      "profiles": false
-    },
-    "ConceptMap": {"template-base": "base.html"},
-    "Practitioner": {"template-base": "ex.html"},
-    "OperationDefinition": {"template-base": "base.html"},
-    "CodeSystem": {"template-base": "base.html"},
-    "Communication": {"template-base": "ex.html"},
-    "Any": {
-      "template-format": "format.html",
-      "template-base": "base.html"
-    },
-    "PractitionerRole": {"template-base": "ex.html"},
-    "ValueSet": {"template-base": "base.html"},
-    "CapabilityStatement": {"template-base": "base.html"},
-    "Observation": {"template-base": "ex.html"}
-  },
-  "logging": [],
-  "extraTemplates": ["mappings"],
-  "gen-examples": "false",
-  "sct-edition": "http://snomed.info/sct/731000124108"
+  }
 }

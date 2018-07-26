@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="rr-responsible-agency" />
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency" />
+  <name value="Responsible Agency" />
+  <status value="draft" />
+  <date value="2018-08-01" />
+  <description value="The Responsible Agency profile is based on the US Core Organization and sets the type to 'Responsible Agency'. A Responsible Agency is a PHA to which reporting is legally required. This represents the PHA for the location in which care was provided and/or where the patient lives." />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Organization" />
+  <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Organization">
+      <path value="Organization" />
+      <short value="Responsible Agency" />
+      <definition value="A Responsible Agency is a PHA to which reporting is legally required. This represents the PHA for the location in which care was provided and/or where the patient lives." />
+      <min value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Organization.type">
+      <path value="Organization.type" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCodeableConcept>
+        <coding>
+          <system value="urn:oid:2.16.840.1.114222.4.5.232" />
+          <code value="RR8" />
+          <display value="Responsible Agency" />
+        </coding>
+      </fixedCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Organization.name">
+      <path value="Organization.name" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.telecom">
+      <path value="Organization.telecom" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address">
+      <path value="Organization.address" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.contact">
+      <path value="Organization.contact" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+  </differential>
+</StructureDefinition>
