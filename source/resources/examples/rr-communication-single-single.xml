@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Communication xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../../validation/fhir-all.xsd"
+  xmlns="http://hl7.org/fhir">
+  <id value="rr-communication-single-single" />
+  <meta>
+    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication" />
+  </meta>
+  <identifier>
+    <system value="http://acme.org/identifiers" />
+    <value value="RR12346" />
+  </identifier>
+  <status value="completed" />
+  <category>
+    <coding>
+      <system value="http://loinc.org" />
+      <code value="88085-6" />
+      <display value="Reportability Response Report Public Health" />
+    </coding>
+  </category>
+  <subject>
+    <reference value="Patient/ecr-patient-jane-stinn" />
+  </subject>
+  <!-- TODO - add recipients -->
+  <!-- Reportability Response Subject -->
+  <topic>
+    <display value="Public Health Reporting Communication: one or more conditions are reportable, or may be reportable, to public health." />
+  </topic>
+  <sent value="2018-07-19T04:09:06Z" />
+  <!-- Author -->
+  <sender>
+    <extension url="http://fhir.hl7.org/us/ecr/StructureDefinition/extension-practitioner-role">
+      <valueReference>
+        <reference value="PractitionerRole/rr-sender" />
+      </valueReference>
+    </extension>
+  </sender>
+
+  <!-- Electronic Initial Case Report Information payload slice -->
+  <payload>
+    <!-- eICR Processing Status -->
+    <extension url="http://fhir.hl7.org/us/ecr/StructureDefinition/extension-rr-eicr-processing-status">
+      <valueCodeableConcept>
+        <coding>
+          <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+          <code value="RRV220" />
+          <display value="eICR was processed - with a warning" />
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="http://fhir.hl7.org/us/ecr/StructureDefinition/extension-manual-init">
+      <valueBoolean value="false" />
+    </extension>
+    <contentReference>
+      <extension url="http://fhir.hl7.org/us/ecr/StructureDefinition/extension-manual-init-reason">
+        <valueString value="Free text containing the reason for the manual initiation" />
+      </extension>
+      <reference value="DocumentReference/eICR_CDA_document" />
+      <identifier>
+        <system value="http://acme.org/EICR-identifier" />
+        <value value="EICR123456" />
+      </identifier>
+      <display value="eICR_Filename.xml" />
+    </contentReference>
+  </payload>
+  <!-- Reportability Response Summary payload slice -->
+  <payload>
+    <contentString
+      value="Your organization electronically submitted an initial case report to        determine if reporting to public health is needed for a patient. 'Zika virus disease (disorder)' is        reportable to 'State Department of Health'. An initial case report was sent to       'State Department of Health'. Additional information may be required for this report."
+     />
+  </payload>
+  <!-- Relevant Reportable Condition Information payload slice -->
+  <payload>
+    <contentReference>
+      <!-- Reportability Response Plan Definition -->
+      <reference value="PlanDefinition/rr-plan-zika-state-department-of-health" />
+    </contentReference>
+  </payload>
+</Communication>

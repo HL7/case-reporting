@@ -73,28 +73,25 @@
     </element>
     <element id="Communication.topic">
       <path value="Communication.topic" />
+      <short value="Reportability Response Subject" />
+      <definition value="Contains a short high-level description of the determination of reportability. This information can be used to route and prioritize Reportability Responses in a work queue or an email subject." />
       <min value="1" />
       <max value="1" />
     </element>
-    <element id="Communication.topic.extension">
-      <path value="Communication.topic.extension" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="url" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
+    <element id="Communication.topic.reference">
+      <path value="Communication.topic.reference" />
+      <max value="0" />
     </element>
-    <element id="Communication.topic.extension:reportabilityResponseSubject">
-      <path value="Communication.topic.extension" />
-      <sliceName value="reportabilityResponseSubject" />
+    <element id="Communication.topic.identifier">
+      <path value="Communication.topic.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Communication.topic.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Communication.topic.display" />
       <min value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-subject" />
-      </type>
-      <mustSupport value="true" />
     </element>
     <element id="Communication.context">
       <path value="Communication.context" />
@@ -130,6 +127,10 @@
           <type value="profile" />
           <path value="contentReference" />
         </discriminator>
+        <discriminator>
+          <type value="value" />
+          <path value="extension.url" />
+        </discriminator>
         <rules value="open" />
       </slicing>
     </element>
@@ -139,7 +140,6 @@
       <short value="Electronic Initial Case Report Information" />
       <definition value="This payload contains information about the eICR Composition to which this Communication is a response. The date/time of receipt and a document reference are represented in the TODO profile and the processing status of the eICR Composition is contained in the TODO eICR Processing Status profile. If the eICR Composition was manually initiated by a healthcare provider, this is indicated by the presence of the TODO Manually Initiated eICR extension.&#xD;&#xA;&#xD;&#xA;This payload is always present in the Reportability Response Communication.&#xD;&#xA;&#xD;&#xA;TODO: The text element (narrative block) in this section is only populated and displayed when the eICR CDA document was not processed (eICR Processing Status/code=&quot;RRVS22&quot;, &quot;eICR was not processed – error&quot;) and that text element contains the eICR processing status reason(s).&#xD;&#xA;" />
       <min value="1" />
-      <max value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Communication.payload:sliceEICRInformation.extension">
@@ -155,12 +155,15 @@
     <element id="Communication.payload:sliceEICRInformation.extension:eICRProcessingStatus">
       <path value="Communication.payload.extension" />
       <sliceName value="eICRProcessingStatus" />
+      <short value="eICR Processing Status" />
+      <definition value="Optional Extension Element - found in all resources." />
       <min value="1" />
       <max value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-eicr-processing-status" />
       </type>
+      <mustSupport value="true" />
     </element>
     <element id="Communication.payload:sliceEICRInformation.extension:manuallyInitiatedEICR">
       <path value="Communication.payload.extension" />
@@ -178,6 +181,7 @@
     <element id="Communication.payload:sliceEICRInformation.content[x]:contentReference">
       <path value="Communication.payload.contentReference" />
       <sliceName value="contentReference" />
+      <short value="Reference to eICR Composition" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition" />
@@ -189,22 +193,22 @@
     </element>
     <element id="Communication.payload:sliceEICRInformation.content[x]:contentReference.identifier">
       <path value="Communication.payload.contentReference.identifier" />
+      <short value="eICR Composition identifier" />
       <mustSupport value="true" />
     </element>
     <element id="Communication.payload:sliceReportabilityResponseSummary">
       <path value="Communication.payload" />
       <sliceName value="sliceReportabilityResponseSummary" />
-      <short value="Reportable Response Summary" />
-      <definition value="This extension is present in the Reportabilty Response if the eICR was processed and is not present if the eICR was not processed. Contains a detailed text description of the reportable condition(s) including actions the provider needs to take, any supplemental information that may be required, and where the initial case report was sent." />
+      <short value="Reportability Response Summary" />
+      <definition value="This payload slice is present in the Reportabilty Response if the eICR was processed and is not present if the eICR was not processed. Contains a detailed text description of the reportable condition(s) including actions the provider needs to take, any supplemental information that may be required, and where the initial case report was sent." />
       <max value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Communication.payload:sliceReportabilityResponseSummary.content[x]:contentReference">
-      <path value="Communication.payload.contentReference" />
-      <sliceName value="contentReference" />
+    <element id="Communication.payload:sliceReportabilityResponseSummary.content[x]:contentString">
+      <path value="Communication.payload.contentString" />
+      <sliceName value="contentString" />
       <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-summary" />
+        <code value="string" />
       </type>
     </element>
     <element id="Communication.payload:sliceRelevantReportableConditionInformation">

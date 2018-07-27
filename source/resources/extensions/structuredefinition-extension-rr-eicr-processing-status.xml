@@ -1,12 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://hl7.org/fhir ../../validation/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
+<StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="extension-rr-eicr-processing-status" />
   <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-eicr-processing-status" />
   <name value="eICR Processing Status" />
   <status value="draft" />
-  <description
-    value="This template indicates the eICR processing status. If the eICR was not processed or was processed with a warning, the reason will be contained in the eICR Processing Status Reason. If there is any output from a validator, that output will be contained in the eICR Validation Output.&#xD;&#xA;If any of the trigger codes used to generate the eICR are from an outdated version of the RCTC or the codes are marked as inactive in the latest version of the RCTC, these are flagged and and the eICR Processing Status Reason Detail will hold the details of the outdated and expected versions of the RCTC.&#xD;&#xA;" />
+  <description value="This template indicates the eICR processing status. If the eICR was not processed or was processed with a warning, the reason will be contained in the eICR Processing Status Reason. If there is any output from a validator, that output will be contained in the eICR Validation Output.&#xD;&#xA;If any of the trigger codes used to generate the eICR are from an outdated version of the RCTC or the codes are marked as inactive in the latest version of the RCTC, these are flagged and and the eICR Processing Status Reason Detail will hold the details of the outdated and expected versions of the RCTC.&#xD;&#xA;" />
   <fhirVersion value="3.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
@@ -19,8 +17,17 @@
     <element id="Extension">
       <path value="Extension" />
       <short value="eICR Processing Status" />
-      <min value="0" />
       <max value="1" />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
     </element>
     <element id="Extension.extension:eICRProcessingStatus">
       <path value="Extension.extension" />
@@ -48,8 +55,7 @@
     <element id="Extension.extension:eICRProcessingStatusReason">
       <path value="Extension.extension" />
       <sliceName value="eICRProcessingStatusReason" />
-      <definition
-        value="If the incoming eICR was not successfully processed for a determination of reportability, this template contains the reason it was not processed. If any issues with the eICR are identified, but it is still able to be processed, this will contain the issues as warnings. If there are further details about the error or warning, these details will be recorded in the eICR Processing Status Reason Details." />
+      <definition value="If the incoming eICR was not successfully processed for a determination of reportability, this template contains the reason it was not processed. If any issues with the eICR are identified, but it is still able to be processed, this will contain the issues as warnings. If there are further details about the error or warning, these details will be recorded in the eICR Processing Status Reason Details." />
       <binding>
         <strength value="extensible" />
         <valueSetReference>

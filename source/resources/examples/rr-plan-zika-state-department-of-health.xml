@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="1" />
+  <meta>
+    <profile value="http://fhir.hl7.org/us/ecr/StructureDefinition/rr-plandefinition" />
+  </meta>
+  <text>
+    <status value="generated" />
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <ul>
+        <li>
+          <p>Local mosquito-borne Zika virus transmission was reported in your area. Increased watchfulness for symptoms of Zika virus in your patients is warranted. (Immediate action requested)</p>
+        </li>
+        <li>
+          <p>Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here. (
+            <a
+              href="http://statedepartmentofhealth.gov/epi/disease/zika/Supplemental_data_form.pdf">Link</a>- Immediate action required)</p>
+        </li>
+        <li>
+          <p>Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy. (
+            <a
+              href="http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf">Link</a>- Immediate action requested)</p>
+        </li>
+      </ul>
+    </div>
+  </text>
+  <status value="draft" />
+  <date value="2016-11-22" />
+  <publisher>
+    <!--Authoring Agency Reference (ecr-organization)-->
+    <extension url="http://fhir.hl7.org/us/ecr/StructureDefinition/extension-publisher-reference">
+      <valueReference>
+        <reference value="Organization/426169" />
+      </valueReference>
+    </extension>
+  </publisher>
+  <description value="State Department of Health Zika-related definitions and reporting requirements" />
+  <!--External Resource: Outbreak- or Cluster Related-->
+  <relatedArtifact>
+    <!--External Resource Category-->
+    <extension url="http://fhir.hl7.org/us/ecr/StructureDefinition/extension-rel-artifact-category">
+      <valueCode value="TEMP_CODE_OUTBREAK" />
+    </extension>
+    <!--External Reportability Priority-->
+    <extension url="http://fhir.hl7.org/us/ecr/StructureDefinition/extension-rel-artifact-priority">
+      <valueCode value="TEMP_CODE_IMMEDIATE_ACTION_REQUESTED" />
+    </extension>
+    <type value="documentation" />
+    <!--External Resource Description-->
+    <display
+      value="Local mosquito-borne Zika virus transmission was reported in your area. Increased watchfulness for symptoms of Zika virus in your patients is warranted."
+     />
+  </relatedArtifact>
+  <!--External Resource: Additional Reporting Needs-->
+  <relatedArtifact>
+    <!--External Resource Category-->
+    <extension url="http://fhir.hl7.org/us/ecr/StructureDefinition/extension-rel-artifact-category">
+      <valueCode value="TEMP_CODE_ADD_REP_NEEDS" />
+    </extension>
+    <!--External Reportability Priority-->
+    <extension url="http://fhir.hl7.org/us/ecr/StructureDefinition/extension-rel-artifact-priority">
+      <valueCode value="TEMP_CODE_ACTION_REQUESTED" />
+    </extension>
+    <type value="documentation" />
+    <!--External Resource Description-->
+    <display
+      value="Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here." />
+    <!--External Resource Link-->
+    <url value="http://statedepartmentofhealth.gov/epi/disease/zika/Supplemental_data_form.pdf" />
+  </relatedArtifact>
+  <!--External Resource: Treatment and/or prevention-->
+  <relatedArtifact>
+    <!--External Resource Category-->
+    <extension url="http://fhir.hl7.org/us/ecr/StructureDefinition/extension-rel-artifact-category">
+      <valueCode value="TEMP_CODE_TREAT_PREVENT" />
+    </extension>
+    <!--External Reportability Priority-->
+    <extension url="http://fhir.hl7.org/us/ecr/StructureDefinition/extension-rel-artifact-priority">
+      <valueCode value="TEMP_CODE_IMMEDIATE_ACTION_REQUESTED" />
+    </extension>
+    <type value="documentation" />
+    <!--External Resource Description-->
+    <display value="Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy." />
+    <!--External Resource Link-->
+    <url value="http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf" />
+  </relatedArtifact>
+  <!--Reporting Timeframe-->
+  <action>
+    <title value="Reporting Timeframe" />
+    <timingTiming>
+      <code>
+        <coding>
+          <system value="http://fhir.hl7.org/us/ecr/CodeSystem/reporting-timeframe" />
+          <code value="24-hrs" />
+          <display value="Report within 24 hours by phone or electronic report." />
+        </coding>
+      </code>
+    </timingTiming>
+  </action>
+  <!-- Taken out of communication -->
+  <extension url="http://fhir.hl7.org/us/ecr/StructureDefinition/extension-rr-determination-of-reportability">
+    <valueCode value="Y" />
+  </extension>
+  <extension url="http://fhir.hl7.org/us/ecr/StructureDefinition/extension-rr-determination-of-reportability-reason">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://acme.org/cdc-codes" />
+        <code value="missing" />
+        <display value="MISSING REQUIRED DATA(TEMPORARY CODE)" />
+      </coding>
+      <text value="MISSING REQUIRED DATA" />
+    </valueCodeableConcept>
+  </extension>
+  <extension url="http://fhir.hl7.org/us/ecr/StructureDefinition/extension-rr-determination-of-reportability-rule">
+    <valueString value="Rule used in reportability determination." />
+  </extension>
+</PlanDefinition>
