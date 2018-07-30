@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="extension-eicr-trigger-code-flag" />
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag" />
+  <version value="0.0.0" />
+  <name value="eICR Trigger Code Flag" />
+  <title value="eICR Trigger Code Flag" />
+  <status value="draft" />
+  <date value="2018-08-01" />
+  <description value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
+  <fhirVersion value="3.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <contextType value="datatype" />
+  <context value="Reference" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="eICR Trigger Code Flag" />
+      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
+      <max value="1" />
+      <isModifier value="false" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag" />
+    </element>
+    <element id="Extension.value[x]:valueBoolean">
+      <path value="Extension.valueBoolean" />
+      <sliceName value="valueBoolean" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

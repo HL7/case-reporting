@@ -22,7 +22,7 @@ Figure 1 is a graph of a scenario using the PH Case Composition resource to show
 
 | HL7 CDA® R2 eICR | PHCase Composition |PHCase Composition Bundle
 |--------------------------------------------------------------------|---------------------------------|---|
-|[EICR CCDA Example-1](eicr-example1.html)|[CR Composition Example 1](Composition-eicr-composition-genexample.html)|[PHCase Bundle Example 1](todo.html)|
+|[EICR CCDA Example-1](eicr-example1.html)|[CR Composition Example 1](Composition-eicr-composition-zika.html)|[PHCase Bundle Example 1](todo.html)|
 |[EICR CCDA Example-2](eicr-example2.html)|[PHCase Example 2](todo.html)|[PHCase Bundle Example 2](todo.html)|
 {: .grid}
 
