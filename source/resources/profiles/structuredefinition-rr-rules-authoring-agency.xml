@@ -10,16 +10,26 @@
   <kind value="resource" />
   <abstract value="false" />
   <type value="Organization" />
-  <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Organization" />
   <derivation value="constraint" />
   <differential>
     <element id="Organization">
       <path value="Organization" />
       <short value="Rules Authoring Agency" />
-      <definition value="The Rules Authoring Agency is whose rules are being executed in decision support to determine reportability. This may be a State or Local PHA. In the majority of cases the Rules Authoring Agency will be the same as the Responsible Agency. Usually, a Local Public Health Agency will inherit rules from its relevant State agency, but a Local agency can adopt, replace or supplement relevant state rules." />
+      <definition value="The Rules Authoring Agency profile is based on the US Core Organization and sets the type to 'Rules Authoring Agency'. The Rules Authoring Agency is whose rules are being executed in decision support to determine reportability. This may be a State or Local PHA. In the majority of cases the Rules Authoring Agency will be the same as the Responsible Agency. Usually, a Local Public Health Agency will inherit rules from its relevant State agency, but a Local agency can adopt, replace or supplement relevant state rules." />
       <min value="1" />
       <mustSupport value="true" />
       <isModifier value="false" />
+    </element>
+    <element id="Organization.text">
+      <path value="Organization.text" />
+      <short value="Rules Authoring Agency Description" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier">
+      <path value="Organization.identifier" />
+      <short value="Rules Authoring Agency Id" />
+      <mustSupport value="true" />
     </element>
     <element id="Organization.type">
       <path value="Organization.type" />
@@ -37,15 +47,18 @@
     </element>
     <element id="Organization.name">
       <path value="Organization.name" />
+      <short value="Rules Authoring Agency Name" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.telecom">
       <path value="Organization.telecom" />
+      <short value="Rules Authoring Agency Contact Information" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.address">
       <path value="Organization.address" />
+      <short value="Rules Authoring Agency Address" />
       <mustSupport value="true" />
     </element>
   </differential>

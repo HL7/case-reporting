@@ -10,16 +10,26 @@
   <kind value="resource" />
   <abstract value="false" />
   <type value="Organization" />
-  <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Organization" />
   <derivation value="constraint" />
   <differential>
     <element id="Organization">
       <path value="Organization" />
       <short value="Routing Entity" />
-      <definition value="A Routing Entity is a PHA or other organization identified by the PHA (such as an HIE) to which the eICR and/or the Reportability Response will be provided immediately following the creation of the Reportability Response. This entity may just be acting to route the eICR and Reportability Response on their way to a Responsible Agency." />
+      <definition value="The Routing Entity profile is based on the US Core Organization and sets the type to 'Routing Entity'. A Routing Entity is a PHA or other organization identified by the PHA (such as an HIE) to which the eICR and/or the Reportability Response will be provided immediately following the creation of the Reportability Response. This entity may just be acting to route the eICR and Reportability Response on their way to a Responsible Agency." />
       <min value="1" />
       <mustSupport value="true" />
       <isModifier value="false" />
+    </element>
+    <element id="Organization.text">
+      <path value="Organization.text" />
+      <short value="Routing Entity Description" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier">
+      <path value="Organization.identifier" />
+      <short value="Routing Entity Id" />
+      <mustSupport value="true" />
     </element>
     <element id="Organization.type">
       <path value="Organization.type" />
@@ -37,15 +47,18 @@
     </element>
     <element id="Organization.name">
       <path value="Organization.name" />
+      <short value="Routing Entity Name" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.telecom">
       <path value="Organization.telecom" />
+      <short value="Routing Entity Contact Information" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.address">
       <path value="Organization.address" />
+      <short value="Routing Entity Address" />
       <mustSupport value="true" />
     </element>
   </differential>
