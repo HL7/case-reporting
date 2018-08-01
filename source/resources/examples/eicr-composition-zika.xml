@@ -2,7 +2,7 @@
 <Composition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://hl7.org/fhir">
   <id value="eicr-composition-zika"/>
   <meta>
-    <profile value="http://fhir.hl7.org/us/ecr/StructureDefinition/eicr-composition" />
+    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition" />
   </meta>
   <language value="en-US" />
   <text>
@@ -80,7 +80,6 @@
     </div>
   </text>
 
-
   <status value="final" />
   <type>
     <coding>
@@ -90,23 +89,23 @@
     </coding>
   </type>
 
-  <!--  Subject (us-core-patient reference)  -->
+  <!--  Subject -->
   <subject>
-    <reference value="Patient/Patient-US-Core-Patient-eICRExample1" />
+    <reference value="Patient/ecr-patient-jane-stinn" />
     <display value="Jane Stinn" />
   </subject>
 
   <!--Encounter (eicr-encounter reference)-->
   <encounter>
-    <reference value="Encounter/Patient-US-Core-Patient-eICRExample1"/>
-    <display value="Ambulatory Office Visit, Nov 7, 2016, 10:00am"/>
+    <reference value="Encounter/eicr-encounter-jane-stinn-20180401"/>
+    <display value="Ambulatory Office Visit, Apr 1, 2018, 10:00am"/>
   </encounter>
 
-  <date value="2017-11-06T22:13:23Z" />
+  <date value="2018-01-02T22:13:23Z" />
 
   <!--  Author (us-core-practictioner reference)  -->
   <author>
-    <reference value="Practitioner/Practitioner-US-Core-Practitioner-eICRExample1" />
+    <reference value="Practitioner/ecr-practitioner-micheal-colletta" />
     <display value="Michael Colletta, MD" />
   </author>
 
@@ -207,18 +206,18 @@
     </text>
     <!-- eICR Travel History -->
     <entry>
-      <reference value="Observation/425400" />
-      <display value="eICR Travel History Example 1" />
+      <reference value="Observation/eicr-travel-history-jane-stinn-201801" />
+      <display value="eICR Travel History: Jane Stinn 2018-01" />
     </entry>
     <!-- eICR Pregnancy Status -->
     <entry>
-      <reference value="Observation/Observation-eICR-PregnancyStatus-eICRExample1" />
+      <reference value="Observation/eicr-pregnancy-status-jane-stinn" />
       <display value="eICR Pregnancy Status Example 1" />
     </entry>
     <!-- eICR Occupation History -->
     <entry>
-      <reference value="Observation/Observation-eICR-OccupationHistory-eICRExample1" />
-      <display value="eICR Occupation History Example 1" />
+      <reference value="Observation/eicr-occupation-history-jane-stinn" />
+      <display value="eICR Occupation History: Jane Stinn" />
     </entry>
   </section>
 
@@ -267,7 +266,7 @@
     
     <!-- US Core Condition without a Trigger Code Indicator (extension-trigger) - not sure if this should really be "false", but it's not required so... -->
     <entry>
-      <reference value="Condition/Condition-eICR-Condition-eICRExample2" />
+      <reference value="Condition/eicr-condition-jane-stinn-common-cold" />
       <display value="Common cold (disorder)" />
     </entry>
   </section>
@@ -369,7 +368,7 @@
     
     <entry>
       <!-- extension-trigger - "false" - this is not a trigger code result -->
-      <extension url="http://fhir.hl7.org/us/ecr/StructureDefinition/extension-trigger">
+      <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger">
         <valueBoolean value="false" />
       </extension>
       <reference value="Observation/Observation-US-Core-ObservationResults-eICRExample2" />
@@ -405,10 +404,10 @@
     </text>
     <entry>
       <!-- extension-trigger - "true" - this is a trigger code lab order -->
-      <extension url="http://fhir.hl7.org/us/ecr/StructureDefinition/extension-trigger">
+      <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger">
         <valueBoolean value="true" />
       </extension>
-      <reference value="ProcedureRequest/ProcedureRequest-eICR-ProcedureRequest-eICRExample1" />
+      <reference value="ProcedureRequest/ProcedureRequest-eicr-procedurerequest-zika" />
       <display value="Request for Zika virus envelope (E) gene [Presence] in Serum by Probe and target amplification method" />
     </entry>
   </section>

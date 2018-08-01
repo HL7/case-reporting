@@ -29,21 +29,22 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="Extension.extension:eICRProcessingStatusReason">
+    <element id="Extension.extension:eICRProcessingStatus">
       <path value="Extension.extension" />
-      <sliceName value="eICRProcessingStatusReason" />
+      <sliceName value="eICRProcessingStatus" />
+      <min value="1" />
+      <max value="1" />
     </element>
-    <element id="Extension.extension:eICRProcessingStatusReason.url">
+    <element id="Extension.extension:eICRProcessingStatus.url">
       <path value="Extension.extension.url" />
-      <fixedUri value="eICRProcessingStatusReason" />
+      <fixedUri value="eICRProcessingStatus" />
     </element>
-    <element id="Extension.extension:eICRProcessingStatusReason.value[x]:valueReference">
+    <element id="Extension.extension:eICRProcessingStatus.value[x]:valueReference">
       <path value="Extension.extension.valueReference" />
       <sliceName value="valueReference" />
-      <min value="1" />
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status" />
       </type>
     </element>
     <element id="Extension.extension:eICRValidationOutput">

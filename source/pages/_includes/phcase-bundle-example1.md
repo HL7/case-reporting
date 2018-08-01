@@ -298,7 +298,7 @@
                }
             ],
             "text":{
-               "div":"<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: phcase-healthwest</p><p><b>meta</b>: </p><p><b>identifier</b>: 1144221847</p><p><b>active</b>: true</p><p><b>type</b>: Public Health Agency <span style=\"background: LightGoldenRodYellow\">(Details : {http://fhir.hl7.org/us/ecr/CodeSystem/organization-type code 'pha' = 'pha', given as 'Public Health Agency'})</span></p><p><b>name</b>: Health Authority West</p><p><b>telecom</b>: ph: +1-555-555-3555, mail@healthauthoritywest.gov</p><p><b>address</b>: 7777 Health Authority Drive, Ann Arbor MI, 99999</p></div>",
+               "div":"<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: phcase-healthwest</p><p><b>meta</b>: </p><p><b>identifier</b>: 1144221847</p><p><b>active</b>: true</p><p><b>type</b>: Public Health Agency <span style=\"background: LightGoldenRodYellow\">(Details : {http://hl7.org/fhir/us/ecr/CodeSystem/organization-type code 'pha' = 'pha', given as 'Public Health Agency'})</span></p><p><b>name</b>: Health Authority West</p><p><b>telecom</b>: ph: +1-555-555-3555, mail@healthauthoritywest.gov</p><p><b>address</b>: 7777 Health Authority Drive, Ann Arbor MI, 99999</p></div>",
                "status":"generated"
             },
             "type":[
@@ -307,7 +307,7 @@
                      {
                         "code":"pha",
                         "display":"Public Health Agency",
-                        "system":"http://fhir.hl7.org/us/ecr/CodeSystem/organization-type"
+                        "system":"http://hl7.org/fhir/us/ecr/CodeSystem/organization-type"
                      }
                   ]
                }
@@ -532,7 +532,7 @@
                         {
                            "code":"case-identifier",
                            "display":"Case Identifier",
-                           "system":"http://fhir.hl7.org/us/ecr/CodeSystem/identifier-type"
+                           "system":"http://hl7.org/fhir/us/ecr/CodeSystem/identifier-type"
                         }
                      ]
                   },

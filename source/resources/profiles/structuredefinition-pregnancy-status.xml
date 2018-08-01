@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="pregnancy-status" />
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status" />
+  <version value="0.0.0" />
+  <name value="Pregnancy Status" />
+  <status value="draft" />
+  <date value="2018-08-01" />
+  <description value="The Electronic Case Reporting Pregnancy profile establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;- Current or prior pregnancy status enabling investigators to determine if the subject of the case report was pregnant during the course of a condition." />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Observation" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Observation">
+      <path value="Observation" />
+      <short value="Pregnancy Status" />
+      <definition value="Current or prior pregnancy status enabling investigators to determine if the subject of the case report was pregnant during the course of a condition." />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Observation.code">
+      <path value="Observation.code" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="82810-3" />
+        </coding>
+        <text value="Pregnancy status" />
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eicr-ccda" />
+        <map value="todo" />
+      </mapping>
+    </element>
+    <element id="Observation.effective[x]">
+      <path value="Observation.effective[x]" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Observation.value[x]:valueCodeableConcept">
+      <path value="Observation.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <binding>
+        <strength value="extensible" />
+        <description value="Pregnancy Status" />
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/pregnancy-status" />
+        </valueSetReference>
+      </binding>
+    </element>
+  </differential>
+</StructureDefinition>

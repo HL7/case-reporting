@@ -43,7 +43,7 @@ The following profiles and extensions have been defined for the eICR transaction
   <li><a href="StructureDefinition-eicr-encounter.html">eICR Encounter Profile</a></li>
   <li><a href="StructureDefinition-eicr-procedurerequest.html">eICR Lab Orders Profile</a></li>
   <li><a href="StructureDefinition-eicr-location.html">eICR Location Profile</a></li>
-  <li><a href="StructureDefinition-eicr-pregnancystatus.html">eICR PregnancyStatus Profile</a></li>
+  <li><a href="StructureDefinition-pregnancy-status.html">Pregnancy Status Profile</a></li>
   <li><a href="StructureDefinition-eicr-travelhistory.html">eICR TravelHistory Profile</a></li>
   <li><a href="StructureDefinition-eicr-occupationhistory.html">eICR-OccupationHistory Profile</a></li>
 </ul>
@@ -71,6 +71,8 @@ The following profiles and extensions have been defined for the Reportability Re
   <li><a href="StructureDefinition-rr-rules-authoring-agency.html">Rules Authoring Agency</a></li>
   <li><a href="StructureDefinition-rr-responsible-agency.html">Responsible Agency</a></li>
   <li><a href="StructureDefinition-rr-routing-entity.html">Routing Entity</a></li>
+  <li><a href="StructureDefinition-rr-eicr-processing-status.html">eICR Processing Status Profile</a></li>
+  <li><a href="StructureDefinition-rr-eicr-processing-status-reason.html">eICR Processing Status Reason Profile</a></li>
   <li><a href="StructureDefinition-ecr-organization.html">eCR Organization Profile</a></li>
   <li><a href="StructureDefinition-eicr-encounter.html">eICR Encounter Profile</a></li>
 </ul>
