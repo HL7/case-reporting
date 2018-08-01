@@ -27,7 +27,9 @@ A bundle containing all the trigger code value sets is also included in this gui
 <br/>
 ### Value Sets: eICR Transaction
 <ul>
-  <li>TODO<a href="ValueSet-oes.html">US Standard Occupational Classification</a></li>
+  <li>TODO</li>
+  <li><a href="ValueSet-oes.html">US Standard Occupational Classification</a></li>
+  
 </ul>
 ---
 <br/>
@@ -50,6 +52,7 @@ The following value sets have been defined for the Reportability Response transa
 <br/>
 ## Code Systems
 <ul>
+  <li><a href="CodeSystem-ph-phinvs-cdc.html">PHIN VS (CDC Local Coding System)</a></li>
   <li><a href="https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.114222.4.5.274#">PHIN VS (CDC Local Coding System)</a></li>
   <li><a href="http://snomed.info/sct">SNOMED CT</a></li>
   <li><a href="http://loinc.org">LOINC</a></li>
