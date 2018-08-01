@@ -29,78 +29,75 @@
                     <reference value="cql_logic.cql"/>
                 </library>
                 <action>
-                    <description value="Triggering"/>
-                    <textEquivalent value="Blah blah"/>
-                    <groupingBehavior value="logical-group"/>
+                    <description value="Orchestration"/>
+                    <textEquivalent value="reporting conditions (delay from start of encounter (but not clinical feedback), more triggers, 
+                        periodic, close of encounter or a few hours later) (should this be in the &quot;Sending the eICR&quot; PD?)"/>
                     <action>
-                        <description value="Diagnosis Problem Triggers for Public Health Reporting"/>
-                        <triggerDefinition>
-                            <type value="named-event"/>
-                            <eventName value="Diagnoses or problems documented in a clinical record"/>
-                            <eventData>
-                                <type value="Diagnosis"/>
-                                <codeFilter>
-                                    <path value="code"/>
-                                    <valueSetReference>
-                                        <reference value="value-set-diagnosis-problem"/>
-                                    </valueSetReference>                
-                                </codeFilter>
-                            </eventData>
-                        </triggerDefinition>
-                        <condition id="diagnosis-condition">
-                            <kind value="applicability"/>
-                            <description value="If this condition is satisfied...then..."/>
-                        </condition>
-                        <definition>
-                            <reference value="activitydefinition-diagnosisproblem"/>
-                        </definition>
-                        <action>
-                            <description value="Specific codes within Diagnosis Triggers"/>
-                            <textEquivalent value="sub-groups of codes"/>
-                            <triggerDefinition>
-                                <type value="named-event"/>
-                                <eventData>
-                                    <type value="Diagnosis"/>
-                                    <codeFilter>
-                                        <path value="code"/>
-                                        <valueCode value="12345"/>            
-                                    </codeFilter>
-                                </eventData>
-                            </triggerDefinition>
-                        </action>
+                        <description value="Triggering"/>
+                        <textEquivalent value="Points to the Triggering PlanDefinition"/>
                     </action>
                     <action>
-                        <description value="Organism Substance Triggers for Public Health Reporting"/>
-                        <!-- More stuff to come... -->
-                    </action>
-                </action>
-                <action>
-                    <description value="Rules Processing"/>
-                    <textEquivalent value="Defines rules for Each Jurisdiction or Organization"/>
-                    <action>
-                        <textEquivalent value="Rules for Jusrisdiction 1"/>
+                        <description value="Rules Processing"/>
+                        <textEquivalent value="Defines rules for Each Jurisdiction or Organization"/>
                     </action>
                     <action>
-                        <textEquivalent value="Rules for Jusrisdiction 2"/>
-                    </action>
-                </action>
-                <action>
-                    <description value="Creation of Clinical Feedback"/>
-                    <action>
-                        <textEquivalent value="If so and so disease, then this"/>
+                        <description value="Creation of Clinical Feedback"/>
                     </action>
                     <action>
-                        <textEquivalent value="more rules"/>
+                        <description value="Creation of eICR"/>
                     </action>
-                </action>
-                <action>
-                    <description value="Creation of eICR"/>
-                </action>
-                <action>
-                    <description value="Routing and Sending"/>
+                    <action>
+                        <description value="Routing and Sending"/>
+                    </action>
                 </action>
             </PlanDefinition>
         </resource>
         
+    </entry>
+    <entry>
+        <fullUrl value="null"/>
+        <resource>
+            <PlanDefinition> <!--Triggering-->
+                <status></status>
+                <action>
+                    <action>
+                        
+                    </action>
+                </action>
+            </PlanDefinition>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="null"/>
+        <resource>
+            <PlanDefinition> 
+                <status></status>
+            </PlanDefinition>
+            
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="null"/>
+        <resource>
+            <PlanDefinition>
+                <status></status>
+            </PlanDefinition>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="null"/>
+        <resource>
+            <PlanDefinition>
+                <status></status>
+            </PlanDefinition>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="null"/>
+        <resource>
+            <PlanDefinition>
+                <status></status>
+            </PlanDefinition>
+        </resource>
     </entry>
 </Bundle>

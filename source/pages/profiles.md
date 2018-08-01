@@ -26,6 +26,9 @@ Paragraph Narrative description to include: (JL/LC)
 <ul>
   <li><a href="StructureDefinition-ecr-knowledge-distribution.html">eCR Knowledge Distribution Profile</a></li>
 </ul>
+<ul>
+  <li><a href="StructureDefinition-ecr-knowledge-distribution-triggering.html">eCR Knowledge Distribution Profile</a></li>
+</ul>
 
 ---
 <br />
