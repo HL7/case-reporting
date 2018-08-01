@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Composition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://hl7.org/fhir">
+<Composition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://hl7.org/fhir ../../../validation/fhir-all.xsd" xmlns="http://hl7.org/fhir">
   <id value="eicr-composition-zika"/>
   <meta>
     <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition" />
@@ -368,7 +369,7 @@
     
     <entry>
       <!-- extension-trigger - "false" - this is not a trigger code result -->
-      <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger">
+      <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag">
         <valueBoolean value="false" />
       </extension>
       <reference value="Observation/Observation-US-Core-ObservationResults-eICRExample2" />
@@ -376,14 +377,14 @@
     </entry>
   </section>
 
-  <!-- Lab Order Section (required) -->
+  <!-- Plan of Treatment Section (required) -->
   <section>
-    <title value="Lab Order Section" />
+    <title value="Plan of Treatment Section" />
     <code>
       <coding>
         <system value="http://loinc.org" />
-        <code value="30954-2" />
-        <display value="Relevant diagnostic tests/​laboratory data Narrative" />
+        <code value="18776-5" />
+        <display value="Plan of Treatment" />
       </coding>
 <!--      <text value="Relevant diagnostic tests/​laboratory data" />-->
     </code>
@@ -404,7 +405,7 @@
     </text>
     <entry>
       <!-- extension-trigger - "true" - this is a trigger code lab order -->
-      <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger">
+      <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag">
         <valueBoolean value="true" />
       </extension>
       <reference value="ProcedureRequest/ProcedureRequest-eicr-procedurerequest-zika" />
