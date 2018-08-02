@@ -29,17 +29,19 @@
       <path value="Extension.url" />
       <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-location-relevance" />
     </element>
-    <element id="Extension.value[x]:valueCode">
-      <path value="Extension.valueCode" />
-      <sliceName value="valueCode" />
+    <element id="Extension.value[x]:valueCodeableConcept">
+      <path value="Extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
       <type>
-        <code value="code" />
+        <code value="CodeableConcept" />
       </type>
+    </element>
+    <element id="Extension.value[x]:valueCodeableConcept.coding">
+      <path value="Extension.valueCodeableConcept.coding" />
       <binding>
-        <strength value="required" />
-        <description value="Indicates whether the responsible PHA is relevant because of the patient's home address, the provider facility address, or both" />
+        <strength value="extensible" />
         <valueSetReference>
-          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/location-relevance" />
+          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/determination-of-reportability" />
         </valueSetReference>
       </binding>
     </element>

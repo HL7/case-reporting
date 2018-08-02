@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="eicr-encounter" />
   <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter" />
@@ -9,13 +9,10 @@
   <contact>
     <telecom>
       <system value="url" />
-      <value
-        value="The Electronic Case Reporting Encounter profile is based on the **US Core-Encounter** profile and establishes the core elements, extensions, vocabularies and value sets for representing the following encounters for electronic case reporting:&#xA;&#xA;- Initial Case Report context&#xA;- Reportability Response context"
-       />
+      <value value="The Electronic Case Reporting Encounter profile is based on the **US Core-Encounter** profile and establishes the core elements, extensions, vocabularies and value sets for representing the following encounters for electronic case reporting:&#xA;&#xA;- Initial Case Report context&#xA;- Reportability Response context" />
     </telecom>
   </contact>
-  <description
-    value="The Electronic Case Reporting Encounter profile is based on the **US Core-Encounter** profile and establishes the core elements, extensions, vocabularies and value sets for representing the following encounters for electronic case reporting:&#xA;&#xA;- Initial Case Report encounter related to the reported event." />
+  <description value="The Electronic Case Reporting Encounter profile is based on the **US Core-Encounter** profile and establishes the core elements, extensions, vocabularies and value sets for representing the following encounters for electronic case reporting:&#xA;&#xA;- Initial Case Report encounter related to the reported event." />
   <fhirVersion value="3.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -27,18 +24,26 @@
       <path value="Encounter" />
       <short value="eICR Encounter" />
       <definition value="TODO" />
-      <min value="0" />
-      <max value="*" />
-      <base>
-        <path value="Encounter" />
-        <min value="0" />
-        <max value="*" />
-      </base>
       <mustSupport value="false" />
       <isModifier value="false" />
     </element>
+    <element id="Encounter.identifier">
+      <path value="Encounter.identifier" />
+      <definition value="Visit or encounter id." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.type">
+      <path value="Encounter.type" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.period">
+      <path value="Encounter.period" />
+      <mustSupport value="true" />
+    </element>
     <element id="Encounter.location">
       <path value="Encounter.location" />
+      <max value="1" />
       <mustSupport value="true" />
       <isModifier value="false" />
     </element>

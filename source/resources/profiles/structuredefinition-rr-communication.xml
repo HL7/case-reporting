@@ -26,6 +26,13 @@
       <path value="Communication.identifier" />
       <min value="1" />
       <max value="1" />
+      <example>
+        <label value="General" />
+        <valueIdentifier>
+          <system value="http://acme.org/identifiers" />
+          <value value="RR12346" />
+        </valueIdentifier>
+      </example>
       <mustSupport value="true" />
       <mapping>
         <identity value="cda-rr" />
@@ -58,11 +65,19 @@
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient" />
       </type>
+      <example>
+        <label value="General" />
+        <valueReference>
+          <reference value="Patient/ecr-patient-jane-stinn" />
+          <display value="Jane Stinn" />
+        </valueReference>
+      </example>
       <mustSupport value="true" />
     </element>
     <element id="Communication.recipient">
       <path value="Communication.recipient" />
       <comment value="Reporting may be identified for multiple PHAs by the PHA system (or its intermediary) (because the patient&amp;#39;s residence and the provider location are in separate jurisdictions) including other identified organization (such as an HIE) to which the eICR (if deemed reportable) and/or the Reportability Response will be routed." />
+      <min value="1" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
@@ -71,6 +86,18 @@
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
       </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
+      </type>
+      <example>
+        <label value="General" />
+        <valueReference>
+          <reference value="PractitionerRole/ecr-practitionerrole-micheal-colletta" />
+          <display value="Micheal Colletta, MD" />
+        </valueReference>
+      </example>
+      <mustSupport value="true" />
     </element>
     <element id="Communication.topic">
       <path value="Communication.topic" />
@@ -78,6 +105,12 @@
       <definition value="Contains a short high-level description of the determination of reportability. This information can be used to route and prioritize Reportability Responses in a work queue or an email subject." />
       <min value="1" />
       <max value="1" />
+      <example>
+        <label value="General" />
+        <valueReference>
+          <display value="Public Health Reporting Communication: one or more conditions are reportable, or may be reportable to public health." />
+        </valueReference>
+      </example>
     </element>
     <element id="Communication.topic.reference">
       <path value="Communication.topic.reference" />
@@ -112,10 +145,6 @@
       <short value="Author" />
       <definition value="For the Reportability Response communication, this will most likely be the software that is generating the response, though this will not always the be case." />
       <min value="1" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
-      </type>
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
@@ -194,7 +223,7 @@
     </element>
     <element id="Communication.payload:sliceEICRInformation.content[x]:contentReference.reference">
       <path value="Communication.payload.contentReference.reference" />
-      <mustSupport value="true" />
+      <mustSupport value="false" />
     </element>
     <element id="Communication.payload:sliceEICRInformation.content[x]:contentReference.identifier">
       <path value="Communication.payload.contentReference.identifier" />
@@ -215,6 +244,10 @@
       <type>
         <code value="string" />
       </type>
+      <example>
+        <label value="General" />
+        <valueString value="Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient. &quot;Zika virus disease (disorder)&quot; is reportable to &quot;State Department of Health&quot;. An initial case report was sent to &quot;State Department of Health&quot;. Additional information may be required for this report." />
+      </example>
     </element>
     <element id="Communication.payload:sliceRelevantReportableConditionInformation">
       <path value="Communication.payload" />

@@ -10,8 +10,5 @@ source file: source/pages/\_includes/{{id}}-intro.md
 
 **Additional Profile specific implementation guidance:**
 
-#### Instances
-
- - [eCR Bundle Knowledge Distribution Instance](Bundle-ecr-bundle-knowledge-distribution.html)
 
 ---
