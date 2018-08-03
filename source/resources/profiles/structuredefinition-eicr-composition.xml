@@ -1,14 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../../validation/fhir-all.xsd"
-  xmlns="http://hl7.org/fhir">
+<StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="eicr-composition" />
   <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition" />
   <version value="0.0.0" />
   <name value="Electronic Initial Case Report Composition Profile" />
   <status value="draft" />
   <date value="2018-08-01" />
-  <description
-    value="The Electronic Case Reporting Composition profile establishes the core elements, extensions, vocabularies and value sets for representing an electronic initial case report (eICR).  It describes the content requirements for the initial Case Report including:&#xA;&#xA;- Patient demographics&#xA;- Patient pregnancy status&#xA;- Patient occupation and travel history&#xA;- Provider and Facility information&#xA;- Laboratory orders tests and results&#xA;- Signs and Symptoms and Diagnosis&#xA;- Medication and Immunization History&#xA;- Flags for the existence of reportable condition trigger codes in diagnoses and ordered/resulted laboratory tests." />
+  <description value="The Electronic Case Reporting Composition profile establishes the core elements, extensions, vocabularies and value sets for representing an electronic initial case report (eICR).  It describes the content requirements for the initial Case Report including:&#xA;&#xA;- Patient demographics&#xA;- Patient pregnancy status&#xA;- Patient occupation and travel history&#xA;- Provider and Facility information&#xA;- Laboratory orders tests and results&#xA;- Signs and Symptoms and Diagnosis&#xA;- Medication and Immunization History&#xA;- Flags for the existence of reportable condition trigger codes in diagnoses and ordered/resulted laboratory tests." />
   <fhirVersion value="3.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -37,7 +35,6 @@
       </patternCodeableConcept>
       <mustSupport value="true" />
     </element>
-
     <element id="Composition.subject">
       <path value="Composition.subject" />
       <type>
@@ -122,11 +119,21 @@
       </patternCodeableConcept>
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:sliceEncountersSection.code.text">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
-      <path value="Composition.section.code.text" />
+    <element id="Composition.section:sliceEncountersSection.text">
+      <path value="Composition.section.text" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceEncountersSection.entry">
+      <path value="Composition.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter" />
+      </type>
       <mustSupport value="true" />
     </element>
     <element id="Composition.section:sliceHistoryOfPresentIllnessSection">
@@ -162,6 +169,11 @@
         <map value="81-15477" />
       </mapping>
     </element>
+    <element id="Composition.section:sliceHistoryOfPresentIllnessSection.text">
+      <path value="Composition.section.text" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
     <element id="Composition.section:sliceReasonForVisitSection">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
         <valueString value="Section" />
@@ -195,7 +207,11 @@
         <map value="81-15429" />
       </mapping>
     </element>
-
+    <element id="Composition.section:sliceReasonForVisitSection.text">
+      <path value="Composition.section.text" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
     <element id="Composition.section:sliceSocialHistorySection">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
         <valueString value="Section" />
@@ -229,7 +245,11 @@
         <map value="1198-14819" />
       </mapping>
     </element>
-
+    <element id="Composition.section:sliceSocialHistorySection.text">
+      <path value="Composition.section.text" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
     <element id="Composition.section:sliceSocialHistorySection.entry">
       <path value="Composition.section.entry" />
       <slicing>
@@ -325,7 +345,11 @@
         <map value="1198-15409" />
       </mapping>
     </element>
-
+    <element id="Composition.section:sliceProblemSection.text">
+      <path value="Composition.section.text" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
     <element id="Composition.section:sliceProblemSection.entry">
       <path value="Composition.section.entry" />
       <min value="1" />
@@ -354,8 +378,7 @@
       <path value="Composition.section.entry.extension" />
       <sliceName value="sliceTriggerCondition" />
       <short value="eICR Trigger Code Flag" />
-      <definition
-        value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
+      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -400,7 +423,11 @@
         <map value="1098-15383" />
       </mapping>
     </element>
-
+    <element id="Composition.section:sliceMedicationsAdministeredSection.text">
+      <path value="Composition.section.text" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
     <element id="Composition.section:sliceMedicationsAdministeredSection.entry">
       <path value="Composition.section.entry" />
       <type>
@@ -447,7 +474,11 @@
         <map value="1198-15433" />
       </mapping>
     </element>
-
+    <element id="Composition.section:sliceResultsSection.text">
+      <path value="Composition.section.text" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
     <element id="Composition.section:sliceResultsSection.entry">
       <path value="Composition.section.entry" />
       <slicing>
@@ -486,8 +517,7 @@
       <path value="Composition.section.entry.extension" />
       <sliceName value="sliceTriggerUSCoreDiagnosticReport" />
       <short value="eICR Trigger Code Flag" />
-      <definition
-        value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
+      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -527,8 +557,7 @@
       <path value="Composition.section.entry.extension" />
       <sliceName value="sliceTriggerUSCoreObservationResults" />
       <short value="eICR Trigger Code Flag" />
-      <definition
-        value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
+      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -565,7 +594,11 @@
       <mustSupport value="true" />
       <isModifier value="false" />
     </element>
-
+    <element id="Composition.section:slicePlanOfTreatmentSection.text">
+      <path value="Composition.section.text" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
     <element id="Composition.section:slicePlanOfTreatmentSection.entry">
       <path value="Composition.section.entry" />
       <short value="eICR Procedure Request" />
@@ -590,8 +623,7 @@
       <path value="Composition.section.entry.extension" />
       <sliceName value="sliceTriggerEICRProcedureRequest" />
       <short value="eICR Trigger Code Flag" />
-      <definition
-        value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
+      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
       <min value="1" />
       <max value="1" />
       <type>
@@ -636,7 +668,11 @@
         <map value="1198-15369" />
       </mapping>
     </element>
-
+    <element id="Composition.section:sliceImmunizationsSection.text">
+      <path value="Composition.section.text" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
     <element id="Composition.section:sliceImmunizationsSection.entry">
       <path value="Composition.section.entry" />
       <min value="1" />
