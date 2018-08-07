@@ -17,9 +17,13 @@ active: design-considerations
 The CDA Electronic Case Reporting (eCR) standards, the electronic Initial Case Report (eICR) and the Reportability Response (RR), support two broad information flow.
 In some jurisdictions Health Information Exchanges (HIEs) and/or Health Data Networks may also be employed to securely move data.
 One of the two flows also uses the Reportable Condition Knowledge Management System (RCKMS) on the Association of Public Health Laboratories AIMS platform to report to Public Health Agencies (PHAs) and one does not.
+
 The two information flows are:
+
 1) from healthcare to PHAs (via the eICR) and back (via the RR)
+
 2) from healthcare to AIMS/RCKMS (via the eICR) and then to PHAs (via the eICR and sometimes the RR) and with a response to healthcare from the AIMS/RCKMS (via the RR)
+
 RCKMS and the AIMS platform serve several purposes in flow #2.
 Prominent among them is to implement public health reporting rules that cannot currently be readily distributed to healthcare.
 Another important role is ensuring that public health agencies only get the data they are authorized to receive by state laws.
