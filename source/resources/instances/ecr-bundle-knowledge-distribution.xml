@@ -95,10 +95,10 @@
         <effectivePeriod>
           <start value="2017-01-13" />
         </effectivePeriod>
-        <!-- All value sets action??? what is the action here?-->
+        <!-- All value sets action -->
         <action>
           <description value="This action applies to all value sets in the RCTC bundle" />
-          <textEquivalent value="Match codes in each value set and then process the Rules Processing Plan Definition" />
+          <textEquivalent value="Match codes in each value set and if rules processing capability, then process the Rules Processing Plan Definition, otherwise create eICR" />
           <triggerDefinition>
             <type value="data-added" />
             <eventData>
@@ -114,7 +114,7 @@
           <!-- Diagnosis value set code matching action -->
           <action>
             <description
-              value="This action applies to Diagnosis Value Set, OID: 2.16.840.1.113762.1.4.1146.627 All codes in this value set aree ICD 10 or SNOMED" />
+              value="This action applies to Diagnosis Value Set, OID: 2.16.840.1.113762.1.4.1146.627 All codes in this value set are ICD 10 or SNOMED" />
             <textEquivalent value="Any Condition.code match with codes in the Diagnosis Value Set." />
             <triggerDefinition>
               <type value="data-added" />
