@@ -17,84 +17,24 @@ active: home
 
 source: source/pages/\_include/{{page.md_filename}}.md  file
 
-###  Introduction and Purpose
+###Introduction and Purpose
 
-FHIR offers several opportunities to advance electronic Case Reporting (eCR).
+With the adoption and maturing of Electronic Health Records (EHRs) there are opportunities to better support public health surveillance as well as the delivery of relevant public health information to clinical care.
+Electronic Case Reporting (eCR) can provide more complete and timely case data, support disease / condition monitoring, and assist in outbreak management and control.
+It can also improve bidirectional communications through the delivery of public health information in the context of a patient’s condition and local disease trends and by facilitating ad hoc communications.
+eCR will also reduce healthcare provider burden by automating the completion of legal reporting requirements.
 
+With the advent of FHIR standards, there is a need for FHIR implementation guidance to specify appropriate resources and transactions needed for the eCR process. FHIR offers opportunities to further enable automated triggering and reporting of cases from EHRs, to ease implementation and integration, to support the acquisition of investigation and supplemental data, and to connect public health information (e.g., guidelines) and clinical workflow. Over time, FHIR may also support the distribution of reporting rules to clinical care to better align data authorities and make broader clinical data available to public health decision support services inside the clinical care environment.
+ 
+###Relationship to Other Standards
 
-With the advent of Electronic Health Records (EHRs), there are tremendous opportunities to support public health surveillance and the
-delivery of public health information to clinical care. eCR can support
-more complete and timely possible case data, support disease and
-condition monitoring and trending, assist outbreak management and
-control, and improve relevant information delivery to clinicians in the
-context of jurisdictional disease trends and patient specifics.
+There is an existing Electronic Initial Case Report (eICR) HL7 CDA STU implementation guide (http://www.hl7.org/implement/standards/product_brief.cfm?product_id=436.) to be used for all-jurisdiction, all-condition reporting to public health agencies from EHRs. The eICR was created from a Council of State and Territorial Epidemiologists (CSTE) Task Force recommendation that identified necessary data to support case reporting. There also is an existing Reportability Response (RR) HL7 CDA STU implementation guide (http://www.hl7.org/implement/standards/product_brief.cfm?product_id=470) that supports several functions for providing information back to clinical care in response to received eICRs. 
+In a January 2018 there was an HL7 FHIR eCR "for comment" ballot with FHIR versions of the following transactions: eICR, the RR, and a specification / subscription service for knowledge distribution (trigger codes). These specifications were tested at the January, 2018 HL7 Connectathon.  A fourth transaction for web form-based acquisition of public health case investigation supplemental data has been demonstrated and piloted.
+This current FHIR electronic case reporting STU implementation guide (hereby known as "FHIR eCR") includes all of the eICR, RR, and the knowledge distribution / trigger codes transactions in FHIR form. Web form - based requests case investigation and supplemental data are enabled by, but not specified in, this implementation guide. Transforms will be made available to facilitate the conversion of CDA and FHIR eICR and RR transactions.
 
-eCR has an HL7 CDA STU implementation guide (the Electronic Initial Case
-Report - eICR) for all-jurisdiction, all-condition initial reporting to
-public health from EHRs. It also has an in-process HL7 CDA STU
-implementation guide (the “Reportability Response”).
-
-With the advent of FHIR standards, eCR will also need appropriate FHIR
-resources, transactions, and implementation guidance to support this
-process. FHIR also offers opportunities to supplement eICR data and
-improve the ease of implementation and consistency of the automated
-triggering of eICRs and the decision logic needed to advance both
-reporting to public health and provision of public health information to
-clinical care.
-
-Public Health electronic case reporting (eCR) is the principally
-automated, bidirectional exchange of information between clinical care
-and public health in the context of reportable conditions.
-
-This project will build off of the C-CDA STU Public Health Case Report
-standards to support a number of activities related to electronic case
-reporting (eCR) through appropriate FHIR representations:
-
-1.  > Reporting, investigation, and management - electronic transmission
-    > of clinical data from Electronic Health Records to Public Health -
-    > including; 1) the existing electronic initial case report (eICR)
-    > version 1.1, 2) new eICR data from all EHRs, 3) pushed and pulled,
-    > non-eICR, condition specific EHR data, and 4) supplemental data
-    > not found in EHRs. The management and processing of population
-    > cases including potentially a FHIR population case resource.
-
-2.  > Bi-directional information exchange – the response to the eICR
-    > including the delivery of relevant public health information in
-    > the context of the patient and their possible relevant conditions
-    > – included in the Reportability Response transaction
-
-3.  > Triggering and decision support – the automated initiation of an
-    > initial report in Electronic Health Records based on simple logic
-    > “triggers” from public health. A pathway to more complex logic
-    > distribution will be explored, as well as the opportunities in
-    > workflow to tie in contextualized public health information.
-
-As with the initial electronic case report, the project will strive to
-minimize reporting burden and use data that are in EHRs because of the
-provision of care. It will, whenever possible, use existing FHIR
-resources so the data can be readily produced and delivered by EHRs.
-
-The strategy undertaken by this project includes the use of a US Realm
-Standard for Trial Use (STU) for development and deployment. Following
-the STU period, for a period of two years, the standard will be
-published as Normative. It will also include the pursuit of a universal
-FHIR population case resource and the specification of documents, value
-sets, extensions and other resources as necessary to support these
-activities.
-
-### Stakeholders
-
-  - Regulatory Agencies
-
-  - Standards Development Organizations (SDOs)
-
-  - Vendors: EHR, PHR; Health Care IT; Clinical Decision Support Systems
-
-  - Providers: Healthcare Institutions (hospitals, long term care, home
-    care, mental health)
-
-  - Local and State Public Health Agencies
-
-### Relationships to Other Standards
-
-### Acknowledgements
+###Stakeholders
+•	Regulatory Agencies
+•	Standards Development Organizations
+•	Vendors: EHR, PHR; Health Care IT; Clinical Decision Support Systems, Public Health Surveillance Systems
+•	Providers: Ambulatory and Healthcare Institutions (hospitals, long term care,  mental health)
+•	Local, State, Tribal and Federal Public Health Agencies
