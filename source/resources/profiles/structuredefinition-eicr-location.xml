@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="eicr-location" />
   <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-location" />
@@ -7,8 +6,7 @@
   <name value="eICR Facility" />
   <status value="draft" />
   <date value="2018-08-01" />
-  <description
-    value="The Electronic Case Reporting Location profile is based on the **US Core-Location** profile and establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;- Initial Case Report reportable event location&#xA;&#xA;Note that travel history location is represented using an Observation with coded or string value or an address." />
+  <description value="The Electronic Case Reporting Location profile is based on the **US Core-Location** profile and establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;- Initial Case Report reportable event location&#xA;&#xA;Note that travel history location is represented using an Observation with coded or string value or an address." />
   <fhirVersion value="3.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -20,13 +18,6 @@
       <path value="Location" />
       <short value="eICR Location" />
       <definition value="The facility sending or receiving the eICR." />
-      <min value="0" />
-      <max value="*" />
-      <base>
-        <path value="us-core-location" />
-        <min value="0" />
-        <max value="*" />
-      </base>
       <mustSupport value="false" />
       <isModifier value="false" />
     </element>
@@ -43,17 +34,20 @@
     <element id="Location.type">
       <path value="Location.type" />
       <short value="Facility Type" />
-      <type>
-        <code value="CodeableConcept" />
-      </type>
       <mustSupport value="true" />
       <isModifier value="false" />
-      <binding>
-        <strength value="extensible" />
-        <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/v3-ServiceDeliveryLocationRoleType" />
-        </valueSetReference>
-      </binding>
+    </element>
+    <element id="Location.managingOrganization">
+      <path value="Location.managingOrganization" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization" />
+      </type>
+      <mustSupport value="true" />
     </element>
   </differential>
 </StructureDefinition>

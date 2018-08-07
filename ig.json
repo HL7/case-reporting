@@ -29,7 +29,6 @@
   "fixed-business-version": "0.0.0",
   "structuremaps": [],
   "version": "3.0.1",
-  "pub_url": "ehaas@healthedatainc.com",
   "html-template": "html-template.html",
   "source": "ig.xml",
   "paths": {
@@ -53,7 +52,7 @@
     ]
   },
   "extensions": [
-    "extension-practitioner-role",
+    "extension-ecr-practitionerrole",
     "extension-eicr-trigger-code-flag",
     "extension-rr-rules-authoring-agency",
     "extension-rr-responsible-agency",
@@ -108,9 +107,9 @@
     "Observation": {"template-base": "ex.html"}
   },
   "resources": {
-    "StructureDefinition/extension-practitioner-role": {
-      "base": "StructureDefinition-extension-practitioner-role.html",
-      "defns": "StructureDefinition-extension-practitioner-role-definitions.html"
+    "StructureDefinition/extension-ecr-practitionerrole": {
+      "base": "StructureDefinition-extension-ecr-practitionerrole.html",
+      "defns": "StructureDefinition-extension-ecr-practitionerrole-definitions.html"
     },
     "StructureDefinition/extension-rr-eicr-processing-status": {
       "base": "StructureDefinition-extension-rr-eicr-processing-status.html",
@@ -195,6 +194,10 @@
     "StructureDefinition/extension-eicr-trigger-code-flag": {
       "base": "StructureDefinition-extension-eicr-trigger-code-flag.html",
       "defns": "StructureDefinition-extension-eicr-trigger--code-flag-definitions.html"
+    },
+    "StructureDefinition/ecr-practitionerrole": {
+      "base": "StructureDefinition-ecr-practitionerrole.html",
+      "defns": "StructureDefinition-ecr-practitionerrole-definitions.html"
     },
     "StructureDefinition/eicr-procedurerequest": {
       "base": "StructureDefinition-eicr-procedurerequest.html",
@@ -308,6 +311,10 @@
     },
     
     
+    "Condition/eicr-condition-jane-stinn-common-cold": {
+      "base": "Condition-eicr-condition-jane-stinn-common-cold.html",
+      "source": "eicr-condition-jane-stinn-common-cold.xml"
+    },
     "Communication/rr-communication-single-single": {
       "base": "Communication-rr-communication-single-single.html",
       "source": "rr-communication-single-single.xml"
@@ -361,9 +368,13 @@
       "base": "ProcedureRequest-eicr-procedurerequest-zika.html",
       "source": "eicr-procedurerequest-zika.xml"
     },
+    "ProcedureRequest/eicr-procedurerequest-jane-stinn-zika": {
+      "base": "ProcedureRequest-eicr-procedurerequest-jane-stinn-zika.html",
+      "source": "eicr-procedurerequest-jane-stinn-zika.xml"
+    },
     "MedicationStatement/phcase-azithro": {
-      "base": "MedicationStatement-phcase-azithro.html",
-      "source": "medicationstatement-example-phcase-azithro.xml"
+      "base": "MedicationStatement-us-core-medicationstatement-jane-stinn-azithromycin.html",
+      "source": "us-core-medicationstatement-jane-stinn-azithromycin.xml"
     },
     "Location/ecr-location-salem-medical-center": {
       "base": "Location-ecr-location-salem-medical-center.html",
@@ -377,7 +388,10 @@
       "base": "Observation-phcase-pert.html",
       "source": "observation-example-phcase-pert.xml"
     },
-    
+    "Observation/us-core-observation-results-jane-stinn-lymphocytes": {
+      "base": "Observation-us-core-observation-results-jane-stinn-lymphocytes.html",
+      "source": "us-core-observation-results-jane-stinn-lymphocytes.xml"
+    },
     "Immunization/phcase-pneumo": {
       "base": "Immunization-phcase-pneumo.html",
       "source": "immunization-example-phcase-pnuemo.xml"

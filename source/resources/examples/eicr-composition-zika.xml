@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Composition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://hl7.org/fhir">
+<Composition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://hl7.org/fhir ../../../validation/fhir-all.xsd" xmlns="http://hl7.org/fhir">
   <id value="eicr-composition-zika"/>
   <meta>
     <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition" />
@@ -111,6 +112,134 @@
 
   <title value="Initial Public Health Case Report" />
 
+  <!-- Encounter Section -->
+  <section>
+    <code>
+      <coding>
+        <system value="http://loinc.org" />
+        <code value="46240-8" />
+        <display value="Encounters" />
+      </coding>
+      <!--      <text value="Encounters" />-->
+    </code>
+    <text>
+      <status value="generated"/>
+      
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <table>
+        <thead>
+          <tr>
+            <th>Encounter</th>
+            <th>Date(s)</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Office outpatient visit 15 minutes</td>
+            <td>NOV 7, 2016</td>
+            <td>
+              <ul>
+                
+                <li>Urgent Care Center</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="20">
+              <ul>
+                <li>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Encounter Diagnosis Type</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Diagnosis</td>
+                      </tr>
+                      <tr>
+                        <td colspan="20">
+                          <ul>
+                            <li>
+                              <table>
+                                <thead>
+                                  <tr>
+                                    <th>Initial Case Report Trigger Code Problem Observation </th>
+                                    <th>Problem</th>
+                                    <th>Trigger Code</th>
+                                    <th>Trigger Code codeSystem</th>
+                                    <th>RCTC OID</th>
+                                    <th>RCTC Version</th>
+                                    <th>Date(s)</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Diagnosis</td>
+                                    <td>Pertussis (disorder)</td>
+                                    <td>27836007</td>
+                                    <td>SNOMED CT</td>
+                                    <td>2.16.840.1.114222.4.11.7508</td>
+                                    <td>19/05/2016</td>
+                                    <td>NOV 7, 2016</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <table>
+                                <thead>
+                                  <tr>
+                                    <th>Encounter Diagnosis Type</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Diagnosis</td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="20">
+                                      <ul>
+                                        <li>
+                                          <table>
+                                            <thead>
+                                              <tr>
+                                                <th>Problem Type</th>
+                                                <th>Problem</th>
+                                                <th>Date(s)</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <td>Diagnosis</td>
+                                                <td>A non-trigger code diagnosis (disorder)</td>
+                                                <td>NOV 7, 2016</td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </li>
+                                      </ul>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </text>
+    
+  </section>
+  
   <!-- History of Present Illness Section -->
   <section>
     <code>
@@ -368,7 +497,7 @@
     
     <entry>
       <!-- extension-trigger - "false" - this is not a trigger code result -->
-      <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger">
+      <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag">
         <valueBoolean value="false" />
       </extension>
       <reference value="Observation/Observation-US-Core-ObservationResults-eICRExample2" />
@@ -376,14 +505,14 @@
     </entry>
   </section>
 
-  <!-- Lab Order Section (required) -->
+  <!-- Plan of Treatment Section (required) -->
   <section>
-    <title value="Lab Order Section" />
+    <title value="Plan of Treatment Section" />
     <code>
       <coding>
         <system value="http://loinc.org" />
-        <code value="30954-2" />
-        <display value="Relevant diagnostic tests/​laboratory data Narrative" />
+        <code value="18776-5" />
+        <display value="Plan of Treatment" />
       </coding>
 <!--      <text value="Relevant diagnostic tests/​laboratory data" />-->
     </code>
@@ -404,7 +533,7 @@
     </text>
     <entry>
       <!-- extension-trigger - "true" - this is a trigger code lab order -->
-      <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger">
+      <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag">
         <valueBoolean value="true" />
       </extension>
       <reference value="ProcedureRequest/ProcedureRequest-eicr-procedurerequest-zika" />

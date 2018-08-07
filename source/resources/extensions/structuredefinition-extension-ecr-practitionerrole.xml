@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="extension-ecr-practitionerrole" />
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-ecr-practitionerrole" />
+  <version value="0.0.0" />
+  <name value="Extension PractitionerRole" />
+  <title value="PractitionerRole Reference" />
+  <status value="draft" />
+  <date value="2018-08-01" />
+  <publisher value="PHER" />
+  <description value="A reference to the PractitionerRole resource." />
+  <purpose value="If representing both a receiving Provider and a receiving Facility." />
+  <fhirVersion value="3.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <contextType value="resource" />
+  <context value="Communication.recipient" />
+  <context value="Communication.recipient.reference" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="PractitionerRole" />
+      <definition value="A reference to the PractitionerRole resource." />
+      <comment value="In many elements  that reference Practitioner, PractitionerRole is often a valid alternative. It enables the representation of  both the practitioner, his role, and the organization on behalf of which the practitioner is performing that role." />
+      <max value="1" />
+      <isModifier value="false" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-ecr-practitionerrole" />
+    </element>
+    <element id="Extension.value[x]:valueReference">
+      <path value="Extension.valueReference" />
+      <sliceName value="valueReference" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-practitionerrole" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

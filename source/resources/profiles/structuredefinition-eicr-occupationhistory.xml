@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="eicr-occupationhistory" />
   <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-occupationhistory" />
@@ -7,8 +6,7 @@
   <name value="Occupation History" />
   <status value="draft" />
   <date value="2018-08-01" />
-  <description
-    value="The Electronic Case Reporting Occupational History profile is establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;-  The Initial Case Report subject&#39;s occupational history." />
+  <description value="The Electronic Case Reporting Occupational History profile is establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;-  The Initial Case Report subject's occupational history." />
   <fhirVersion value="3.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -19,31 +17,18 @@
     <element id="Observation">
       <path value="Observation" />
       <short value="eICR Occupation History" />
-      <definition value="TODO" />
-      <min value="0" />
-      <max value="*" />
-      <base>
-        <path value="Observation" />
-        <min value="0" />
-        <max value="*" />
-      </base>
+      <definition value="Can include either current or past occupation information." />
       <mustSupport value="false" />
       <isModifier value="false" />
     </element>
     <element id="Observation.code">
       <path value="Observation.code" />
-      <min value="1" />
-      <max value="1" />
-      <type>
-        <code value="CodeableConcept" />
-      </type>
+      <short value="Occupation History" />
       <patternCodeableConcept>
         <coding>
           <system value="http://loinc.org" />
           <code value="74287-4" />
-          <display value="Occupation [NTDS]" />
         </coding>
-        <text value="Occupationl HIstory" />
       </patternCodeableConcept>
       <example>
         <label value="General" />
@@ -53,7 +38,7 @@
             <code value="74287-4" />
             <display value="Occupation [NTDS]" />
           </coding>
-          <text value="Occupationl HIstory" />
+          <text value="Occupation HIstory" />
         </valueCodeableConcept>
       </example>
       <mustSupport value="true" />
@@ -68,8 +53,9 @@
       <mustSupport value="true" />
       <isModifier value="false" />
     </element>
-    <element id="Observation.valueCodeableConcept">
+    <element id="Observation.value[x]:valueCodeableConcept">
       <path value="Observation.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
       <type>
         <code value="CodeableConcept" />
       </type>

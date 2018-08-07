@@ -28,13 +28,13 @@
     </element>
     <element id="Observation.code">
       <path value="Observation.code" />
-      <fixedCodeableConcept>
+      <patternCodeableConcept>
         <coding>
           <system value="urn:oid:2.16.840.1.114222.4.5.274" />
           <code value="RR6" />
           <display value="eICR Processing Status Reason" />
         </coding>
-      </fixedCodeableConcept>
+      </patternCodeableConcept>
     </element>
     <element id="Observation.value[x]:valueCodeableConcept">
       <path value="Observation.valueCodeableConcept" />
@@ -60,7 +60,17 @@
     </element>
     <element id="Observation.component.code">
       <path value="Observation.component.code" />
-      <short value="eICR Processing Status Reason Detail Type" />
+      <short value="Type of processing status reason detail" />
+      <example>
+        <label value="General" />
+        <valueCodeableConcept>
+          <coding>
+            <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+            <code value="RRVS31" />
+            <display value="Outdated RCTC Version Detail" />
+          </coding>
+        </valueCodeableConcept>
+      </example>
       <mustSupport value="true" />
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
@@ -75,6 +85,7 @@
     </element>
     <element id="Observation.component.value[x]">
       <path value="Observation.component.value[x]" />
+      <short value="Processing status reason detail" />
       <min value="1" />
       <type>
         <code value="CodeableConcept" />
@@ -82,6 +93,10 @@
       <type>
         <code value="string" />
       </type>
+      <example>
+        <label value="General" />
+        <valueString value="19/05/2016"/>
+      </example>
       <mustSupport value="true" />
     </element>
   </differential>
