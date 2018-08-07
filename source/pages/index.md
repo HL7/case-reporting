@@ -30,7 +30,7 @@ Over time, FHIR may also support the distribution of reporting rules to clinical
  
 #### Relationship to Other Standards
 
-There is an existing Electronic Initial Case Report (eICR) HL7 CDA STU implementation guide (http://www.hl7.org/implement/standards/product_brief.cfm?product_id=436.) to be used for all-jurisdiction, all-condition reporting to public health agencies from EHRs.
+There is an existing <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=436">Electronic Initial Case Report (eICR) HL7 CDA STU implementation guide</a> to be used for all-jurisdiction, all-condition reporting to public health agencies from EHRs.
 The eICR was created from a Council of State and Territorial Epidemiologists (CSTE) Task Force recommendation that identified necessary data to support case reporting.
 There also is an existing Reportability Response (RR) HL7 CDA STU implementation guide (http://www.hl7.org/implement/standards/product_brief.cfm?product_id=470) that supports several functions for providing information back to clinical care in response to received eICRs.
 
