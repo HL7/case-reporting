@@ -34,12 +34,12 @@ There is an existing <a href="http://www.hl7.org/implement/standards/product_bri
 The eICR was created from a Council of State and Territorial Epidemiologists (CSTE) Task Force recommendation that identified necessary data to support case reporting.
 There also is an existing <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=470">HL7 CDA® R2 Reportability Response (RR) STU</a> implementation guide that supports several functions for providing information back to clinical care in response to received eICRs.
 
-In a January 2018 there was an HL7 FHIR eCR "for comment" ballot with FHIR versions of the following transactions: eICR, the RR, and a specification / subscription service for knowledge distribution (trigger codes).
-These specifications were tested at the January, 2018 HL7 Connectathon.  A fourth transaction for web form-based acquisition of public health case investigation supplemental data has been demonstrated and piloted.
+In a January 2018 there was an HL7 FHIR eCR "for comment" ballot consisting of FHIR versions of the following transactions: eICR, the RR, and a specification / subscription service for knowledge distribution (trigger code value set bundle).
+These specifications were tested at the January, 2018 HL7 FHIR Connectathon.  A fourth transaction for web form-based acquisition of public health case investigation supplemental data has been demonstrated and piloted.
 
 This current FHIR electronic case reporting STU implementation guide (hereby known as "FHIR eCR") includes all of the eICR, RR, and the knowledge distribution / trigger codes transactions in FHIR form.
-Web form - based requests case investigation and supplemental data are enabled by, but not specified in, this implementation guide.
-Transforms will be made available to facilitate the conversion of CDA and FHIR eICR and RR transactions.
+Web form-based requests for case investigation and supplemental data are enabled by, but not specified in, this implementation guide.
+Transforms will be made available to facilitate the conversion of eICR and RR transactions between CDA and FHIR formats.
 
 #### Stakeholders
 - Regulatory Agencies
