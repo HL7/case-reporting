@@ -11,10 +11,6 @@
                 <meta>
                     <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-knowledge-distribution-plandefinition" />
                 </meta>
-                <identifier >
-                    <system value="urn:ietf:rfc:3986"/>
-                    <value value="urn:oid:"/>
-                </identifier>
                 <version value="0.1"/>
                 <title value="Knowledge Definition Sample Instance"/>
                 <type>
@@ -26,7 +22,7 @@
                 </type>
                 <status value="draft"/>
                 <library>
-                    <reference value="cql_logic.cql"/>
+                    <reference value="Knowledge_Distribution_Logic.cql"/>
                 </library>
                 <action>
                     <description value="Orchestration"/>
@@ -34,20 +30,36 @@
                         periodic, close of encounter or a few hours later) (should this be in the &quot;Sending the eICR&quot; PD?)"/>
                     <action>
                         <description value="Triggering"/>
-                        <textEquivalent value="Points to the Triggering PlanDefinition"/>
+                        <definition>
+                            <reference value="http://hl7.org/fhir/us/ecr/PlanDefinition/ecr-knowledge-distribution-triggering"/>
+                        </definition>
                     </action>
                     <action>
                         <description value="Rules Processing"/>
-                        <textEquivalent value="Defines rules for Each Jurisdiction or Organization"/>
+                        <definition>
+                            <reference value="http://hl7.org/fhir/us/ecr/PlanDefinition/ecr-knowledge-distribution-rules-processing"/>
+                        </definition>
                     </action>
                     <action>
-                        <description value="Creation of Clinical Feedback"/>
+                        <description value="Creation of Clinical Feedback Plan Definition"/>
+                        <textEquivalent value="Produce the Clinical Feedback Plan Definition by following these steps: 
+                            1. ...
+                            2. ...
+                            3. ...
+                            "></textEquivalent>
                     </action>
                     <action>
                         <description value="Creation of eICR"/>
+                        <textEquivalent value="resources are assembled
+                            document is created
+                            eventually supplemental data added to eICR
+                            "/>
                     </action>
                     <action>
                         <description value="Routing and Sending"/>
+                        <textEquivalent value="to what jurisdiction
+                            Responsible Agency, Routing Entity
+                            "/>
                     </action>
                 </action>
             </PlanDefinition>
@@ -55,49 +67,129 @@
         
     </entry>
     <entry>
-        <fullUrl value="null"/>
+        <fullUrl value="http://hl7.org/fhir/us/ecr/PlanDefinition/ecr-knowledge-distribution-triggering"/>
         <resource>
             <PlanDefinition> <!--Triggering-->
-                <status></status>
+                <name value="Reportable Condition Trigger Codes (RCTC)"/>
+                <text>
+                    <status value="additional"/>
+                    <div xmlns="http://www.w3.org/1999/xhtml">Triggers for initiating decision support for electronic case reports</div>
+                </text>
+                <version value="2017-10-13"/>
+                <status value="draft"/>
+                <effectivePeriod>
+                    <start value="2017-01-13"/>
+                </effectivePeriod>
                 <action>
+                    <description value="This action applies to all value sets in the RCTC bundle"/>
+                    <textEquivalent value="Match codes in each value set and then process the Rules Processing Plan Definition"/>
+                    <triggerDefinition>
+                        <type value="data-added"/>
+                        <eventData>
+                            <type value="Codes"/>            
+                            <codeFilter>
+                                <path value="code"/>
+                                <valueSetReference>
+                                    <reference value="#value-set-bundle"/>
+                                </valueSetReference>
+                            </codeFilter>
+                        </eventData>
+                    </triggerDefinition>
                     <action>
-                        
+                        <description value="This action applies to Diagnosis Value Set, OID: 2.16.840.1.113762.1.4.1146.627
+                            All codes in this value set aree ICD 10 or SNOMED"/>
+                        <textEquivalent value="Any Condition.code match with codes in the Diagnosis Value Set."/>
+                        <triggerDefinition>
+                            <type value="data-added"/>
+                            <eventName value="Diagnoses or problems documented in a clinical record."/>
+                            <eventData>
+                                <type value="Diagnosis Codes"/>    
+                                <codeFilter>
+                                    <path value="code"/>
+                                    <valueSetReference>
+                                        <reference value="#diagnosis-value-set"/>
+                                    </valueSetReference>
+                                </codeFilter>
+                            </eventData>
+                        </triggerDefinition>     
+                    </action>
+                    <action>
+                        <description value="This action applies to Organism Substance Value Set, OID: 2.16.840.1.113762.1.4.1146.628
+                            All codes in this value set are SNOMED-CT"/>
+                        <textEquivalent value="Any Observation.valueCodeableConcept match with codes in the Organism Substance Value Sets"/>
+                        <triggerDefinition>
+                            <type value="data-added"/>
+                            <eventName value="Nominal laboratory result values documented in a clinical record."/>
+                            <eventData>
+                                <type value="Organism Substance Codes"/>    
+                                <codeFilter>
+                                    <path value="code"/>
+                                    <valueSetReference>
+                                        <reference value="#organism-substance-value-set"/>
+                                    </valueSetReference>
+                                </codeFilter>
+                            </eventData>
+                        </triggerDefinition>                
+                    </action>
+                    <action>
+                        <description value="This action applies to Lab Orders Test Name Value Set, OID:  2.16.840.1.113762.1.4.1146.629
+                            All codes in this value set are LOINC"/>
+                        <textEquivalent value="Any ProcedureRequest.code match with codes in the Lab Order Test Value Set."/>
+                        <triggerDefinition>
+                            <type value="data-added"/>
+                            <eventName value="Laboratory test names used in orders documented in a clinical record."/>
+                            <eventData>
+                                <type value="Lab Test Order Codes"/>    
+                                <codeFilter>
+                                    <path value="code"/>
+                                    <valueSetReference>
+                                        <reference value="#lab-order-test-name-value-set"/>
+                                    </valueSetReference>
+                                </codeFilter>
+                            </eventData>
+                        </triggerDefinition>   
+                    </action>
+                    <action>
+                        <description value="This action applies to Lab Observations Test Name Value Set, OID:  2.16.840.1.113762.1.4.1146.630
+                            All codes in this value set are LOINC"/>
+                        <textEquivalent value="Any Observation.code match with codes in the Lab Observation Test Value Set."/>
+                        <triggerDefinition>
+                            <type value="data-added"/>
+                            <eventName value="Laboratory test names used in observations documented in a clinical record."/>
+                            <eventData>
+                                <type value="Lab Test Order Codes"/>    
+                                <codeFilter>
+                                    <path value="code"/>
+                                    <valueSetReference>
+                                        <reference value="#lab-observation-test-name-value-set"/>
+                                    </valueSetReference>
+                                </codeFilter>
+                            </eventData>
+                        </triggerDefinition>   
                     </action>
                 </action>
             </PlanDefinition>
         </resource>
     </entry>
     <entry>
-        <fullUrl value="null"/>
+        <fullUrl value="http://hl7.org/fhir/us/ecr/PlanDefinition/ecr-knowledge-distribution-rules-processing"/> <!--Rules Processing-->
         <resource>
             <PlanDefinition> 
                 <status></status>
-            </PlanDefinition>
-            
-        </resource>
-    </entry>
-    <entry>
-        <fullUrl value="null"/>
-        <resource>
-            <PlanDefinition>
-                <status></status>
+                
+                <action>
+                    
+                </action>
             </PlanDefinition>
         </resource>
     </entry>
+   
     <entry>
-        <fullUrl value="null"/>
+        
         <resource>
-            <PlanDefinition>
+            <ValueSet>
                 <status></status>
-            </PlanDefinition>
-        </resource>
-    </entry>
-    <entry>
-        <fullUrl value="null"/>
-        <resource>
-            <PlanDefinition>
-                <status></status>
-            </PlanDefinition>
+            </ValueSet>
         </resource>
     </entry>
 </Bundle>
