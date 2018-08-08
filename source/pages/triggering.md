@@ -202,8 +202,7 @@ Standards and technologies and EHR workflow implementation.
 
       - Should one or both approaches be advanced?
 
-      - How would this be done if the value sets represented a union of
-        different inputs for each one?
+      - How would this be done if the value sets represent a union of different inputs for each one?
 
 5.  EHR vendors have indicated that they would like a common set of
     trigger codes. Are there specific needs that State and Local PHAs
