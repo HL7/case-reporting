@@ -128,13 +128,13 @@ Standards and technologies and EHR workflow implementation.
         app)
 
     3.  Public health could develop and support one or more centralized
-        decision support services that would be called by EHRs to
+        decision support service that would be called by EHRs to
         determine reportability (e.g. using a standard API for decision
         support)
 
 #### Questions
 
-1.  Regarding model “a” above: In time, will the standardization of APIs
+1.  Regarding model “1” above: In time, will the standardization of APIs
     and data in FHIR resources offer practical opportunities to
     distribute decision logic to EHRs?
 
@@ -160,7 +160,7 @@ Standards and technologies and EHR workflow implementation.
 
       - Are there other issues for this approach?
 
-2.  Regarding model “b” above: Will APIs offer practical opportunities
+2.  Regarding model “2” above: Will APIs offer practical opportunities
     to distribute decision support apps to all EHRs?
 
       - In this model, for eCR, should more than the APIs be
@@ -181,7 +181,7 @@ Standards and technologies and EHR workflow implementation.
 
       - Are there other issues for this approach?
 
-3.  Regarding model “c” above: Will APIs offer increased opportunities
+3.  Regarding model “3” above: Will APIs offer increased opportunities
     for central services that can be called from distributed and
     cloud-based EHRs?
 
@@ -200,10 +200,9 @@ Standards and technologies and EHR workflow implementation.
     simultaneously and are versioned as such. The specification also
     describes how to retrieve them as individual ValueSet resources.
 
-      - Should one or both approaches should be advanced?
+      - Should one or both approaches be advanced?
 
-      - How would this be done if the value sets represented a union of
-        different inputs for each one?
+      - How would this be done if the value sets represent a union of different inputs for each one?
 
 5.  EHR vendors have indicated that they would like a common set of
     trigger codes. Are there specific needs that State and Local PHAs
@@ -214,7 +213,7 @@ Standards and technologies and EHR workflow implementation.
         to the PHAs of the patient’s residence wherever that may be
         nationally (vs. the location that care was provided) be enabled?
 
-      - There is currently a single set of Trigger codes that is
+      - There is currently a single set of trigger codes that is
         produced from PHA rules input into the shared public health
         decision support system (Reportable Condition Knowledge
         Management System) on the shared services platform. These

@@ -2,6 +2,9 @@
 <Communication xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../../validation/fhir-all.xsd"
   xmlns="http://hl7.org/fhir">
   <id value="rr-communication-single-single" />
+  <meta>
+    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication" />
+  </meta>
   <text>
     <status value="additional"></status>
     <div xmlns="http://www.w3.org/1999/xhtml"><br /><br /><p><span class="Bold">Subject:</span></p><p>Public Health Reporting Communication: one or more conditions are reportable, or may
@@ -11,9 +14,7 @@
       is reportable to "State Department of Health". An initial case report was sent to
       "State Department of Health". Additional information may be required for this report.<br /><br /></p></div>
   </text>
-  <meta>
-    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication" />
-  </meta>
+  
   <identifier>
     <system value="http://acme.org/identifiers" />
     <value value="RR12346" />
@@ -56,14 +57,11 @@
         </coding>
       </valueCodeableConcept>
     </extension>
-    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-manual-init">
+    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-manually-initiated-eicr">
       <valueBoolean value="false" />
     </extension>
     <contentReference>
-      <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-manual-init-reason">
-        <valueString value="Free text containing the reason for the manual initiation" />
-      </extension>
-      <reference value="http://hl7.org/fhir/us/ecr/Composition/eicr-composition-zika" />
+      <reference value="Composition/eicr-composition-zika" />
       <identifier>
         <system value="http://acme.org/EICR-identifier" />
         <value value="EICR123456" />
@@ -81,7 +79,7 @@
   <payload>
     <contentReference>
       <!-- Reportability Response Plan Definition -->
-      <reference value="http://hl7.org/fhir/us/ecr/PlanDefinition/rr-plan-zika-state-department-of-health" />
+      <reference value="PlanDefinition/rr-plan-zika-state-department-of-health" />
     </contentReference>
   </payload>
 </Communication>

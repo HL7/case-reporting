@@ -20,7 +20,7 @@ and DirectTrust also may play important roles.
 eCR conceptually includes at least four interorganizational
 transactions:
 
-1)  The distribution of trigger codes / decision logic to guiding
+1)  The distribution of trigger codes / decision logic to guide
     reporting
 
 2)  The reporting of electronic Initial Case Report (eICR) data from
@@ -72,7 +72,7 @@ related issues.
     Personally Identifiable Information (PII) and need to be exchanged
     with very robust security considerations.
 
-  - The supplemental data in transaction \#4 are typically are not found
+  - The supplemental data in transaction \#4 are typically not found
     in EHRs as part of care. As such they may be supplemental data
     manually entered into web forms though standards like IHE RFD / HL7
     SDC. While the eICR and the Reportability Response may pass through

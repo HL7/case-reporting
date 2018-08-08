@@ -63,7 +63,7 @@ help guide the trajectory moving forward.
     Reporting data from EHRs?
 
   - In what timeframe will some Public Health Agencies begin to use FHIR
-    standards. How long will it be until all Public Health Agencies can
+    standards? How long will it be until all Public Health Agencies can
     use FHIR?
 
   - How would you sequence the different parts of the FHIR electronic
