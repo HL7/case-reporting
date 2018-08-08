@@ -115,11 +115,10 @@ The following profiles and extensions have been defined for the Reportability Re
 </ul>
 
 #### Extensions
-+
 <ul>
   <li><a href="StructureDefinition-extension-rr-subject.html">Extension Reportability Response Subject</a></li>
   <li><a href="StructureDefinition-extension-rr-summary.html">Extension Reportability Response Summary</a></li>
-  <li><a href="StructureDefinition-extension-practitioner-role.html">Extension PractitionerRole reference</a></li>
+  <li><a href="StructureDefinition-extension-ecr-practitionerrole.html">Extension PractitionerRole reference</a></li>
   <li><a href="StructureDefinition-extension-rr-location-relevance.html">Extension Location Relevance</a></li>
   <li><a href="StructureDefinition-extension-rr-manually-initiated-eicr.html">Extension Manually Initiated eICR</a></li>
   <li><a href="StructureDefinition-extension-rr-eicr-processing-status.html">Extension eICR Processing Status</a></li>
