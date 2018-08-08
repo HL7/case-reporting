@@ -200,7 +200,7 @@ Standards and technologies and EHR workflow implementation.
     simultaneously and are versioned as such. The specification also
     describes how to retrieve them as individual ValueSet resources.
 
-      - Should one or both approaches should be advanced?
+      - Should one or both approaches be advanced?
 
       - How would this be done if the value sets represented a union of
         different inputs for each one?
