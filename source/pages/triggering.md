@@ -128,7 +128,7 @@ Standards and technologies and EHR workflow implementation.
         app)
 
     3.  Public health could develop and support one or more centralized
-        decision support services that would be called by EHRs to
+        decision support service that would be called by EHRs to
         determine reportability (e.g. using a standard API for decision
         support)
 
