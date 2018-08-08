@@ -213,7 +213,7 @@ Standards and technologies and EHR workflow implementation.
         to the PHAs of the patient’s residence wherever that may be
         nationally (vs. the location that care was provided) be enabled?
 
-      - There is currently a single set of Trigger codes that is
+      - There is currently a single set of trigger codes that is
         produced from PHA rules input into the shared public health
         decision support system (Reportable Condition Knowledge
         Management System) on the shared services platform. These
