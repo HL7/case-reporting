@@ -134,7 +134,7 @@ Standards and technologies and EHR workflow implementation.
 
 #### Questions
 
-1.  Regarding model “a” above: In time, will the standardization of APIs
+1.  Regarding model “1” above: In time, will the standardization of APIs
     and data in FHIR resources offer practical opportunities to
     distribute decision logic to EHRs?
 
@@ -160,7 +160,7 @@ Standards and technologies and EHR workflow implementation.
 
       - Are there other issues for this approach?
 
-2.  Regarding model “b” above: Will APIs offer practical opportunities
+2.  Regarding model “2” above: Will APIs offer practical opportunities
     to distribute decision support apps to all EHRs?
 
       - In this model, for eCR, should more than the APIs be
@@ -181,7 +181,7 @@ Standards and technologies and EHR workflow implementation.
 
       - Are there other issues for this approach?
 
-3.  Regarding model “c” above: Will APIs offer increased opportunities
+3.  Regarding model “3” above: Will APIs offer increased opportunities
     for central services that can be called from distributed and
     cloud-based EHRs?
 
