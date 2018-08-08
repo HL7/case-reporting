@@ -20,7 +20,7 @@ and DirectTrust also may play important roles.
 eCR conceptually includes at least four interorganizational
 transactions:
 
-1)  The distribution of trigger codes / decision logic to guiding
+1)  The distribution of trigger codes / decision logic to guide
     reporting
 
 2)  The reporting of electronic Initial Case Report (eICR) data from
