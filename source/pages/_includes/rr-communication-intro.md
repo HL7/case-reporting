@@ -13,6 +13,6 @@ The [Mappings tab](eicr-composition-map.html) above provides the mappings from t
 
 #### Examples
 
-- [Example-1](Communication-rr-communication-single-single.html)
+- [Reportability Response Communication Example](Communication-rr-communication-single-single.html)
 
 ---

@@ -20,8 +20,8 @@ General guidance for using these value sets can be found on the [Guidance Page](
 <br/>
 A bundle containing all the trigger code value sets is also included in this guide.
 <ul>
-  <!-- <li><a href="Bundle-rctc.html">TODO: Reportable Conditions Trigger Codes (RCTC)</a></li> -->
-  <li>TODO: Reportable Conditions Trigger Codes (RCTC)</li>
+  <!-- <li><a href="Bundle-rctc.html">Reportable Conditions Trigger Codes (RCTC)</a></li> -->
+  <li>Reportable Conditions Trigger Codes (RCTC)</li>
 </ul>
 ---
 <br/>

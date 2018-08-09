@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Encounter xmlns="http://hl7.org/fhir">
+<Encounter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://hl7.org/fhir ../../../validation/fhir-all.xsd" xmlns="http://hl7.org/fhir">
   <id value="eicr-encounter-eve-everywoman-20180401"/>
   <meta>
     <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
@@ -50,6 +51,13 @@
     <display value="Eve Everywoman"/>
   </subject>
   <participant>
+    <type>
+      <coding>
+        <system value="http://hl7.org/fhir/v3/ParticipationType" />
+        <code value="ATND"/>
+        <display value="attender"/>
+      </coding>
+    </type>
     <individual>
       <reference value="Practitioner/ecr-practitioner-henry-seven"/>
       <display value="Henry Seven, MD"/>
@@ -62,7 +70,11 @@
   <location>
     <location>
       <reference value="Location/ecr-location-salem-medical-center"/>
-      <display value="Salem Medical Center, 4646 Brown Rd, Salem, MA 02368"/>
+      <display value="Clinic Bldg A, Salem Medical Center, 4646 Brown Rd, Salem, MA 02368"/>
     </location>
   </location>
+  <serviceProvider>
+    <reference value="Organization/ecr-organization-salem-medical-center"></reference>
+    <display value="Salem Medical Center, 22222 Health Authority Drive, Ann Arbor MI, 99999"></display>
+  </serviceProvider>
 </Encounter>

@@ -3,7 +3,7 @@
 - [Home](index.html)
 - [General Guidance](guidance.html)
 - [Profiles and Logical Models](profiles.html)
-
+- [Notice to Balloters](balloters.html)
 - [Extensions](extensions.html)
 - [Terminology](terminology.html)
 - [Search Parameters](searchparams.html)
@@ -20,7 +20,6 @@
 *****no empty lines****
 
 -->
-- [Notice to Balloters](balloters.html)
 - [Home](index.html){: .active}
 - [Design Considerations](design-considerations.html)
 - [Profiles, Extensions & Transactions](profiles.html)
