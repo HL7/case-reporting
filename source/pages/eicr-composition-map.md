@@ -112,14 +112,14 @@ id: eicr-composition
 |Pregnant|system|#N/A||[Observation.valueCodeableConcept](StructureDefinition-eicr-pregnancystatus-definitions.html#Observation.valueCodeableConcept)||eCR-Profile|
 |Pregnant|code|#N/A||[Observation.valueCodeableConcept](StructureDefinition-eicr-pregnancystatus-definitions.html#Observation.valueCodeableConcept)||eCR-Profile|
 |Pregnant|display|#N/A||[Observation.valueCodeableConcept](StructureDefinition-eicr-pregnancystatus-definitions.html#Observation.valueCodeableConcept)||eCR-Profile|
-|Travel History||#N/A|[Composition.section.entry](StructureDefinition-eicr-composition-definitions.html#Composition.section.entry)|[Observation](StructureDefinition-eicr-travelhistory-definitions.html#Observation)||eCR-Profile|
-|Travel History Dates|start|3284-295||[Observation.effectivePeriod](StructureDefinition-eicr-travelhistory-definitions.html#Observation.effectivePeriod)||eCR-Profile|
-|Travel History Dates|end|3284-295||[Observation.effectivePeriod](StructureDefinition-eicr-travelhistory-definitions.html#Observation.effectivePeriod)||eCR-Profile|
-|Travel History Location - Free Text||3284-269||[Observation.valueCodeableConcept](StructureDefinition-eicr-travelhistory-definitions.html#Observation.valueCodeableConcept)||eCR-Profile|
-|Travel History Location - Coded|system|3284-263||[Observation.valueCodeableConcept](StructureDefinition-eicr-travelhistory-definitions.html#Observation.valueCodeableConcept)||eCR-Profile|
-|Travel History Location - Coded|systemName|3284-263||[Observation.valueCodeableConcept](StructureDefinition-eicr-travelhistory-definitions.html#Observation.valueCodeableConcept)||eCR-Profile|
-|Travel History Location - Coded|code|3284-263||[Observation.valueCodeableConcept](StructureDefinition-eicr-travelhistory-definitions.html#Observation.valueCodeableConcept)||eCR-Profile|
-|Travel History Location - Coded|display|3284-263||[Observation.valueCodeableConcept](StructureDefinition-eicr-travelhistory-definitions.html#Observation.valueCodeableConcept)||eCR-Profile|
+|Travel History||#N/A|[Composition.section.entry](StructureDefinition-eicr-composition-definitions.html#Composition.section.entry)|[Observation](StructureDefinition-eicr-travel-history-definitions.html#Observation)||eCR-Profile|
+|Travel History Dates|start|3284-295||[Observation.effectivePeriod](StructureDefinition-eicr-travel-history-definitions.html#Observation.effectivePeriod)||eCR-Profile|
+|Travel History Dates|end|3284-295||[Observation.effectivePeriod](StructureDefinition-eicr-travel-history-definitions.html#Observation.effectivePeriod)||eCR-Profile|
+|Travel History Location - Free Text||3284-269||[Observation.valueCodeableConcept](StructureDefinition-eicr-travel-history-definitions.html#Observation.valueCodeableConcept)||eCR-Profile|
+|Travel History Location - Coded|system|3284-263||[Observation.valueCodeableConcept](StructureDefinition-eicr-travel-history-definitions.html#Observation.valueCodeableConcept)||eCR-Profile|
+|Travel History Location - Coded|systemName|3284-263||[Observation.valueCodeableConcept](StructureDefinition-eicr-travel-history-definitions.html#Observation.valueCodeableConcept)||eCR-Profile|
+|Travel History Location - Coded|code|3284-263||[Observation.valueCodeableConcept](StructureDefinition-eicr-travel-history-definitions.html#Observation.valueCodeableConcept)||eCR-Profile|
+|Travel History Location - Coded|display|3284-263||[Observation.valueCodeableConcept](StructureDefinition-eicr-travel-history-definitions.html#Observation.valueCodeableConcept)||eCR-Profile|
 |Travel History Location - Address|||[Composition.section.entry](StructureDefinition-eicr-composition-definitions.html#Composition.section.entry)|[Observation.extension(valueAddress)](StructureDefinition-extension-valueAddress.html)||eCR-Profile|
 |Travel History Location - Address|streetaddress,  office or suite number (ifapplicable),|3284-264||[Observation.extension(valueAddress)](StructureDefinition-extension-valueAddress.html)||eCR-Profile|
 |Travel History Location - Address|city|3284-264||[Observation.extension(valueAddress)](StructureDefinition-extension-valueAddress.html)||eCR-Profile|

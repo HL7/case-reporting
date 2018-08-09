@@ -581,7 +581,7 @@
                "display":"Eve Everywoman",
                "reference":"Patient/phcase-js"
             },
-            "travelHistory":[
+            "travel-history":[
                {
                   "date":{
                      "end":"2007",

@@ -255,7 +255,7 @@
       <slicing>
         <discriminator>
           <type value="profile" />
-          <path value="reference" />
+          <path value="resolve()" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -269,19 +269,15 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
       </type>
     </element>
-    <element id="Composition.section:sliceSocialHistorySection.entry:sliceTravelHistory">
+    <element id="Composition.section:sliceSocialHistorySection.entry:slicetravel-history">
       <path value="Composition.section.entry" />
-      <sliceName value="sliceTravelHistory" />
+      <sliceName value="slicetravel-history" />
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-travelhistory" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-travel-history" />
       </type>
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="todo" />
-      </mapping>
     </element>
     <element id="Composition.section:sliceSocialHistorySection.entry:slicePregnancyStatus">
       <path value="Composition.section.entry" />
@@ -484,7 +480,7 @@
       <slicing>
         <discriminator>
           <type value="profile" />
-          <path value="reference" />
+          <path value="resolve()" />
         </discriminator>
         <rules value="open" />
       </slicing>

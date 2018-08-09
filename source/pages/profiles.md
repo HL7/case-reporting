@@ -69,7 +69,7 @@ The following profiles and extensions have been defined for the eICR transaction
   <li><a href="StructureDefinition-eicr-procedurerequest.html">eICR Lab Orders Profile</a></li>
   <li><a href="StructureDefinition-eicr-location.html">eICR Location Profile</a></li>
   <li><a href="StructureDefinition-pregnancy-status.html">Pregnancy Status Profile</a></li>
-  <li><a href="StructureDefinition-eicr-travelhistory.html">eICR TravelHistory Profile</a></li>
+  <li><a href="StructureDefinition-eicr-travel-history.html">eICR travel-history Profile</a></li>
   <li><a href="StructureDefinition-eicr-occupationhistory.html">eICR-OccupationHistory Profile</a></li>
 </ul>
 
