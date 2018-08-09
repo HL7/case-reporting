@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../../validation/fhir-all.xsd"
+  xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <id value="eicr-processing-status-ecr" />
+  <text>
+    <status value="generated" />
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>eICR Processing Status (eCR)</h2>
+      <div>
+        <p>This value set contains codes that describe the status of the eICR in terms of processing by the public health decision support system.</p>
+        <p><a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=C166B4A8-0DF0-469B-B678-CDAB6985AA4D">eICR Processing Status (eCR) PHIN VADS link</a></p>
+      </div>
+    </div>
+  </text>
+  <url value="http://hl7.org/fhir/us/ecr/ValueSet/eicr-processing-status-ecr" />
+
+  <version value="1" />
+  <name value="eICR Processing Status (eCR)" />
+  <status value="active" />
+  <date value="2017-12-27" />
+  <publisher value="Public Health Information Network Vocabulary Access and Distribution System (PHIN VADS)" />
+  <description
+    value="This value set contains codes that describe the status of the eICR in terms of processing by the public health decision support system." />
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ph-phinvs-cdc" />
+      <concept>
+        <code value="RRVS20" />
+        <display value="eICR was processed - with a warning" />
+      </concept>
+      <concept>
+        <code value="RRVS19" />
+        <display value="eICR processed" />
+      </concept>
+      <concept>
+        <code value="RRVS22" />
+        <display value="eICR was not processed - error" />
+      </concept>
+      <concept>
+        <code value="RRVS21" />
+        <display value="eICR was processed - with a severe warning" />
+      </concept>
+    </include>
+  </compose>
+  <expansion>
+    <identifier value="http://hl7.org/fhir/us/ecr/ValueSet/eicr-processing-status-ecr">
+    </identifier>
+    <timestamp value="2017-12-27" />
+    <contains>
+      <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ph-phinvs-cdc" />
+      <code value="RRVS20" />
+      <display value="eICR was processed - with a warning" />
+    </contains>
+    <contains>
+      <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ph-phinvs-cdc" />
+      <code value="RRVS19" />
+      <display value="eICR processed" />
+    </contains>
+    <contains>
+      <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ph-phinvs-cdc" />
+      <code value="RRVS22" />
+      <display value="eICR was not processed - error" />
+    </contains>
+    <contains>
+      <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ph-phinvs-cdc" />
+      <code value="RRVS21" />
+      <display value="eICR was processed - with a severe warning" />
+    </contains>
+  </expansion>
+</ValueSet>

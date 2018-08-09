@@ -36,13 +36,13 @@ A bundle containing all the trigger code value sets is also included in this gui
 ### Value Sets: Reportability Response Transaction
 The following value sets have been defined for the Reportability Response transactions.
 <ul>
-  <li><a href="ValueSet-location-relevance.html">Location Relevance (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=C81BF4A8-F68F-4E45-90CB-4795BF361A68">PHIN VADS link</a>)</li>
-  <li><a href="ValueSet-eicr-processing-status.html">eICR Processing Status (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=C166B4A8-0DF0-469B-B678-CDAB6985AA4D">PHIN VADS link</a>)</li>
-  <li><a href="ValueSet-eicr-processing-status-reason.html">eICR Processing Status Reason (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=7A5BB424-3B98-4A13-9D08-57538F3E630E">PHIN VADS link</a>)</li>
-  <li><a href="ValueSet-eicr-processing-status-reason-detail-type.html">eICR Processing Status Reason Detail Type (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=3C9F1654-1CEB-E711-ACD6-0017A477041A">PHIN VADS link</a>)</li>
+  <li><a href="ValueSet-location-relevance-ecr.html">Location Relevance (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=C81BF4A8-F68F-4E45-90CB-4795BF361A68">PHIN VADS link</a>)</li>
+  <li><a href="ValueSet-eicr-processing-status-ecr.html">eICR Processing Status (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=C166B4A8-0DF0-469B-B678-CDAB6985AA4D">PHIN VADS link</a>)</li>
+  <li><a href="ValueSet-eicr-processing-status-reason-ecr.html">eICR Processing Status Reason (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=7A5BB424-3B98-4A13-9D08-57538F3E630E">PHIN VADS link</a>)</li>
+  <li><a href="ValueSet-eicr-processing-status-reason-detail-type-ecr.html">eICR Processing Status Reason Detail Type (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=3C9F1654-1CEB-E711-ACD6-0017A477041A">PHIN VADS link</a>)</li>
   <li><a href="ValueSet-reportability-priority.html">Reportability Priority (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=6B65D531-C888-486B-9EC2-4571FE9037B5">PHIN VADS link</a>)</li>
-  <li><a href="ValueSet-external-resource-type.html">External Resource Type (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=D8101379-01B5-4784-A3BF-58A6B3DFD195">PHIN VADS link</a>)</li>
-  <li><a href="ValueSet-determination-of-reportability.html">Determination of Reportability (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=FEBE81D7-97B4-4D2E-A326-19D9BBF3DE9D">PHIN VADS link</a>)</li>
+  <li><a href="ValueSet-external-resource-type-ecr.html">External Resource Type (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=D8101379-01B5-4784-A3BF-58A6B3DFD195">PHIN VADS link</a>)</li>
+  <li><a href="ValueSet-determination-of-reportability-ecr.html">Determination of Reportability (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=FEBE81D7-97B4-4D2E-A326-19D9BBF3DE9D">PHIN VADS link</a>)</li>
   <li><a href="ValueSet-ostc.html">Organism_Substance Triggers for Public Health Reporting</a></li>
   <li><a href="ValueSet-lrtc.html">Lab Obs Test Name Triggers for Public Health Reporting</a></li>
   <li><a href="ValueSet-lotc.html">Lab Order Test Name Triggers for Public Health Reporting</a></li>

@@ -30,7 +30,7 @@
       <path value="Observation.code" />
       <patternCodeableConcept>
         <coding>
-          <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+          <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ph-phinquestions-cdc" />
           <code value="RR6" />
           <display value="eICR Processing Status Reason" />
         </coding>
@@ -43,12 +43,22 @@
       <type>
         <code value="CodeableConcept" />
       </type>
+      <example>
+        <label value="General" />
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ph-phinvs-cdc" />
+            <code value="RRVS30" />
+            <display value="eICR was processed with the warning of: inactive RCTC code" />
+          </coding>
+        </valueCodeableConcept>
+      </example>
       <mustSupport value="true" />
       <binding>
         <strength value="extensible" />
         <description value="This value set contains codes that describe the reason for the processing status (warning or error)." />
         <valueSetReference>
-          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/eicr-processing-status-reason" />
+          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/eicr-processing-status-reason-ecr" />
         </valueSetReference>
       </binding>
     </element>
@@ -66,8 +76,8 @@
         <valueCodeableConcept>
           <coding>
             <system value="urn:oid:2.16.840.1.114222.4.5.274" />
-            <code value="RRVS31" />
-            <display value="Outdated RCTC Version Detail" />
+            <code value="RRVS32" />
+            <display value="Inactive RCTC code detail" />
           </coding>
         </valueCodeableConcept>
       </example>
@@ -79,7 +89,7 @@
         <strength value="extensible" />
         <description value="This value set contains codes that describe the type of eICR processing status detail." />
         <valueSetReference>
-          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/eicr-processing-status-reason-detail-type" />
+          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/eicr-processing-status-reason-detail-type-ecr" />
         </valueSetReference>
       </binding>
     </element>
@@ -95,7 +105,13 @@
       </type>
       <example>
         <label value="General" />
-        <valueString value="19/05/2016"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://snomed.info/sct" />
+            <code value="69092001" />
+            <display value="Leptospirosis icterohemorrhagica (disorder)" />
+          </coding>
+        </valueCodeableConcept>
       </example>
       <mustSupport value="true" />
     </element>

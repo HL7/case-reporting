@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ValueSet xmlns="http://hl7.org/fhir">
-  <id value="location-relevance" />
+<ValueSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://hl7.org/fhir ../../../validation/fhir-all.xsd" xmlns="http://hl7.org/fhir">
+  <id value="location-relevance-ecr" />
   <text>
     <status value="generated" />
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>Location Relevance (eCR)</h2>
       <div>
         <p>This value set contains codes to indicate the location because of which the responsible agency is relevant.</p>
-        <p><a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=C81BF4A8-F68F-4E45-90CB-4795BF361A68">PHIN VADS link</a></p>
+        <p><a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=C81BF4A8-F68F-4E45-90CB-4795BF361A68">Location Relevance (eCR) PHIN VADS link</a></p>
       </div>
     </div>
   </text>
-  <url value="http://hl7.org/fhir/us/ecr/ValueSet/location-relevance" />
+  <url value="http://hl7.org/fhir/us/ecr/ValueSet/location-relevance-ecr" />
   <identifier>
     <system value="urn:ietf:rfc:3986" />
     <value value="2.16.840.1.113883.10.20.15.2.5.6" />
@@ -25,7 +26,7 @@
     value="This value set contains codes to indicate the location because of which the responsible agency is relevant." />
   <compose>
     <include>
-      <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+      <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ph-phinvs-cdc" />
       <concept>
         <code value="RRVS5" />
         <display value="Patient home address" />
@@ -40,4 +41,23 @@
       </concept>
     </include>
   </compose>
+  <expansion>
+    <identifier value="http://hl7.org/fhir/us/ecr/ValueSet/location-relevance-ecr" />
+    <timestamp value="2017-12-27"></timestamp>
+    <contains>
+      <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ph-phinvs-cdc" />
+      <code value="RRVS5" />
+      <display value="Patient home address" />
+    </contains>
+    <contains>
+      <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ph-phinvs-cdc" />
+      <code value="RRVS6" />
+      <display value="Provider facility address" />
+    </contains>
+    <contains>
+      <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ph-phinvs-cdc" />
+      <code value="RRVS7" />
+      <display value="Both patient home address and prvider facility address" />
+    </contains>
+  </expansion>
 </ValueSet>
