@@ -27,7 +27,7 @@
         </library>
         <!-- Knowledge Distribution Orchestration action -->
         <action>
-          <description value="Orchestration" />
+          <title value="Orchestration" />
           <textEquivalent
             value="reporting conditions (delay from start of encounter (but not clinical feedback), more triggers, periodic, close of encounter or a few hours later) (should this be in the &quot;Sending the eICR&quot; PD?)" />
           <!-- Start process after encounter condition -->
@@ -46,17 +46,139 @@
           </condition>
           <!-- Triggering action -->
           <action>
-            <description value="Triggering" />
-            <definition>
-              <reference value="http://hl7.org/fhir/us/ecr/PlanDefinition/ecr-knowledge-distribution-triggering" />
-            </definition>
+            <title value="Triggering"/>
+            <description value="Triggers for initiating decision support for electronic case reports" />
+            <textEquivalent value="Match codes in each value set and if rules processing capability, then process the Rules Processing Plan Definition, otherwise create eICR" />
+            <triggerDefinition>
+              <type value="data-added" />
+              <eventData>
+                <type value="Codes" />
+                <codeFilter>
+                  <path value="code" />
+                  <!--<valueSetReference>
+                  <reference value="#value-set-bundle" />
+                </valueSetReference>-->
+                </codeFilter>
+              </eventData>
+            </triggerDefinition>
+            <condition>
+              <kind></kind>
+            </condition>
+            <!-- Diagnosis value set code matching action -->
+            <action>
+              <description
+                value="This action applies to Diagnosis Value Set, OID: 2.16.840.1.113762.1.4.1146.627 All codes in this value set are ICD 10 or SNOMED" />
+              <textEquivalent value="Any Condition.code match with codes in the Diagnosis Value Set." />
+              <triggerDefinition>
+                <type value="data-added" />
+                <eventName value="Diagnoses or problems documented in a clinical record." />
+                <eventData>
+                  <type value="Diagnosis Codes" />
+                  <codeFilter>
+                    <path value="code" />
+                    <valueSetReference>
+                      <reference value="#diagnosis-value-set" />
+                    </valueSetReference>
+                  </codeFilter>
+                </eventData>
+              </triggerDefinition>
+            </action>
+            <!-- Organism Substance value set code matching action -->
+            <action>
+              <description
+                value="This action applies to Organism Substance Value Set, OID: 2.16.840.1.113762.1.4.1146.628 All codes in this value set are SNOMED-CT" />
+              <textEquivalent value="Any Observation.valueCodeableConcept match with codes in the Organism Substance Value Sets" />
+              <triggerDefinition>
+                <type value="data-added" />
+                <eventName value="Nominal laboratory result values documented in a clinical record." />
+                <eventData>
+                  <type value="Organism Substance Codes" />
+                  <codeFilter>
+                    <path value="code" />
+                    <valueSetReference>
+                      <reference value="#organism-substance-value-set" />
+                    </valueSetReference>
+                  </codeFilter>
+                </eventData>
+              </triggerDefinition>
+            </action>
+            <!-- Lab orders value set code matching action -->
+            <action>
+              <description
+                value="This action applies to Lab Orders Test Name Value Set, OID: 2.16.840.1.113762.1.4.1146.629 All codes in this value set are LOINC" />
+              <textEquivalent value="Any ProcedureRequest.code match with codes in the Lab Order Test Value Set." />
+              <triggerDefinition>
+                <type value="data-added" />
+                <eventName value="Laboratory test names used in orders documented in a clinical record." />
+                <eventData>
+                  <type value="Lab Test Order Codes" />
+                  <codeFilter>
+                    <path value="code" />
+                    <valueSetReference>
+                      <reference value="#lab-order-test-name-value-set" />
+                    </valueSetReference>
+                  </codeFilter>
+                </eventData>
+              </triggerDefinition>
+            </action>
+            <!-- Lab observation value set code matching action -->
+            <action>
+              <description
+                value="This action applies to Lab Observations Test Name Value Set, OID: 2.16.840.1.113762.1.4.1146.630 All codes in this value set are LOINC" />
+              <textEquivalent value="Any Observation.code match with codes in the Lab Observation Test Value Set." />
+              <triggerDefinition>
+                <type value="data-added" />
+                <eventName value="Laboratory test names used in observations documented in a clinical record." />
+                <eventData>
+                  <type value="Lab Test Order Codes" />
+                  <codeFilter>
+                    <path value="code" />
+                    <valueSetReference>
+                      <reference value="#lab-observation-test-name-value-set" />
+                    </valueSetReference>
+                  </codeFilter>
+                </eventData>
+              </triggerDefinition>
+            </action>
           </action>
           <!-- Rules processing action -->
           <action>
-            <description value="Rules Processing" />
-            <definition>
-              <reference value="http://hl7.org/fhir/us/ecr/PlanDefinition/ecr-knowledge-distribution-rules-processing" />
-            </definition>
+            <title value="Rules Processing"/>
+            <description value="Rules for processing electronic case reports to determine PHA, reportable condition(s), and creating clincal feedback" />
+            <!-- Determine PHA based on patient address -->
+            <action>
+              <title value="Determine PHA(s)" />
+              <description
+                value="This action determins the PHA based on patient address" />
+              <textEquivalent value="Match patient address to PHA jurisdiction" />
+              <triggerDefinition>
+                <type value="named-event" />
+              </triggerDefinition>
+              <!-- Trigger code match found condition -->
+              <condition>
+                <kind value="applicability" />
+                <description value="When trigger code match was found" />
+                <language value="CQL???" />
+                <expression value="notNull(triggerCode)" />
+              </condition>
+            </action>
+            <!-- Determine PHA based on facility address -->
+            <action>
+              <title value="Determine PHA(s)" />
+              <description
+                value="This action determins the PHA based on facilty address" />
+              <textEquivalent value="Match facility address to PHA jurisdiction" />
+              <triggerDefinition>
+                <type value="named-event" />
+              </triggerDefinition>
+              <!-- Trigger code match found condition -->
+              <condition>
+                <kind value="applicability" />
+                <description value="When trigger code match was found" />
+                <language value="CQL???" />
+                <expression value="notNull(triggerCode)" />
+              </condition>
+            </action>
           </action>
           <!-- Creation of clinical feedback plan definition action -->
           <action>
@@ -77,180 +199,4 @@
       </PlanDefinition>
     </resource>
   </entry>
-  <entry>
-    <fullUrl value="http://hl7.org/fhir/us/ecr/PlanDefinition/ecr-knowledge-distribution-triggering" />
-    <resource>
-      <!-- Triggering plan definition -->
-      <PlanDefinition>
-        <!--Triggering-->
-        <text>
-          <status value="additional" />
-          <div xmlns="http://www.w3.org/1999/xhtml">Triggers for initiating decision support for electronic case reports</div>
-        </text>
-        <version value="2017-10-13" />
-        <name value="Reportable Condition Trigger Codes (RCTC)" />
-
-        <status value="draft" />
-
-        <effectivePeriod>
-          <start value="2017-01-13" />
-        </effectivePeriod>
-        <!-- All value sets action -->
-        <action>
-          <description value="This action applies to all value sets in the RCTC bundle" />
-          <textEquivalent value="Match codes in each value set and if rules processing capability, then process the Rules Processing Plan Definition, otherwise create eICR" />
-          <triggerDefinition>
-            <type value="data-added" />
-            <eventData>
-              <type value="Codes" />
-              <codeFilter>
-                <path value="code" />
-                <!--<valueSetReference>
-                  <reference value="#value-set-bundle" />
-                </valueSetReference>-->
-              </codeFilter>
-            </eventData>
-          </triggerDefinition>
-          <!-- Diagnosis value set code matching action -->
-          <action>
-            <description
-              value="This action applies to Diagnosis Value Set, OID: 2.16.840.1.113762.1.4.1146.627 All codes in this value set are ICD 10 or SNOMED" />
-            <textEquivalent value="Any Condition.code match with codes in the Diagnosis Value Set." />
-            <triggerDefinition>
-              <type value="data-added" />
-              <eventName value="Diagnoses or problems documented in a clinical record." />
-              <eventData>
-                <type value="Diagnosis Codes" />
-                <codeFilter>
-                  <path value="code" />
-                  <valueSetReference>
-                    <reference value="#diagnosis-value-set" />
-                  </valueSetReference>
-                </codeFilter>
-              </eventData>
-            </triggerDefinition>
-          </action>
-          <!-- Organism Substance value set code matching action -->
-          <action>
-            <description
-              value="This action applies to Organism Substance Value Set, OID: 2.16.840.1.113762.1.4.1146.628 All codes in this value set are SNOMED-CT" />
-            <textEquivalent value="Any Observation.valueCodeableConcept match with codes in the Organism Substance Value Sets" />
-            <triggerDefinition>
-              <type value="data-added" />
-              <eventName value="Nominal laboratory result values documented in a clinical record." />
-              <eventData>
-                <type value="Organism Substance Codes" />
-                <codeFilter>
-                  <path value="code" />
-                  <valueSetReference>
-                    <reference value="#organism-substance-value-set" />
-                  </valueSetReference>
-                </codeFilter>
-              </eventData>
-            </triggerDefinition>
-          </action>
-          <!-- Lab orders value set code matching action -->
-          <action>
-            <description
-              value="This action applies to Lab Orders Test Name Value Set, OID: 2.16.840.1.113762.1.4.1146.629 All codes in this value set are LOINC" />
-            <textEquivalent value="Any ProcedureRequest.code match with codes in the Lab Order Test Value Set." />
-            <triggerDefinition>
-              <type value="data-added" />
-              <eventName value="Laboratory test names used in orders documented in a clinical record." />
-              <eventData>
-                <type value="Lab Test Order Codes" />
-                <codeFilter>
-                  <path value="code" />
-                  <valueSetReference>
-                    <reference value="#lab-order-test-name-value-set" />
-                  </valueSetReference>
-                </codeFilter>
-              </eventData>
-            </triggerDefinition>
-          </action>
-          <!-- Lab observation value set code matching action -->
-          <action>
-            <description
-              value="This action applies to Lab Observations Test Name Value Set, OID: 2.16.840.1.113762.1.4.1146.630 All codes in this value set are LOINC" />
-            <textEquivalent value="Any Observation.code match with codes in the Lab Observation Test Value Set." />
-            <triggerDefinition>
-              <type value="data-added" />
-              <eventName value="Laboratory test names used in observations documented in a clinical record." />
-              <eventData>
-                <type value="Lab Test Order Codes" />
-                <codeFilter>
-                  <path value="code" />
-                  <valueSetReference>
-                    <reference value="#lab-observation-test-name-value-set" />
-                  </valueSetReference>
-                </codeFilter>
-              </eventData>
-            </triggerDefinition>
-          </action>
-        </action>
-      </PlanDefinition>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://hl7.org/fhir/us/ecr/PlanDefinition/ecr-knowledge-distribution-rules-processing" />
-    <!--Rules Processing-->
-    <resource>
-      <PlanDefinition>
-        <text>
-          <status value="additional" />
-          <div xmlns="http://www.w3.org/1999/xhtml"
-            >Rules for processing electronic case reports to determine PHA, reportable condition(s), and creating clincal feedback</div>
-        </text>
-        <name value="Knowledge Distribution Rules Processing" />
-
-        <status value="draft" />
-        <effectivePeriod>
-          <start value="2017-01-13" />
-        </effectivePeriod>
-        <!-- Determine PHA based on patient address -->
-        <action>
-          <title value="Determine PHA(s)" />
-          <description
-            value="This action determins the PHA based on patient address" />
-          <textEquivalent value="Match patient address to PHA jurisdiction" />
-          <triggerDefinition>
-            <type value="named-event" />
-          </triggerDefinition>
-          <!-- Trigger code match found condition -->
-          <condition>
-            <kind value="applicability" />
-            <description value="When trigger code match was found" />
-            <language value="CQL???" />
-            <expression value="notNull(triggerCode)" />
-          </condition>
-        </action>
-        <!-- Determine PHA based on facility address -->
-        <action>
-          <title value="Determine PHA(s)" />
-          <description
-            value="This action determins the PHA based on facilty address" />
-          <textEquivalent value="Match facility address to PHA jurisdiction" />
-          <triggerDefinition>
-            <type value="named-event" />
-          </triggerDefinition>
-          <!-- Trigger code match found condition -->
-          <condition>
-            <kind value="applicability" />
-            <description value="When trigger code match was found" />
-            <language value="CQL???" />
-            <expression value="notNull(triggerCode)" />
-          </condition>
-        </action>
-
-      </PlanDefinition>
-    </resource>
-  </entry>
-  <!--<entry>
-
-    <resource>
-      <ValueSet>
-        <status value="draft"/>
-      </ValueSet>
-    </resource>
-  </entry>-->
 </Bundle>
