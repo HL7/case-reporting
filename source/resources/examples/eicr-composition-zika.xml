@@ -41,7 +41,7 @@
               style="width: 20%; background-color: #3399ff; padding: 0.1cm 0.2cm; vertical-align: top; background-color: #ffffcc;">
               <span class="td_label">Author</span>
             </td>
-            <td class="td_header_role_value">Michael Colletta, MD</td>
+            <td class="td_header_role_value">Henry Seven, MD</td>
           </tr>
 
         </tbody>
@@ -92,13 +92,13 @@
 
   <!--  Subject -->
   <subject>
-    <reference value="Patient/ecr-patient-jane-stinn" />
-    <display value="Jane Stinn" />
+    <reference value="Patient/ecr-patient-eve-everywoman" />
+    <display value="Eve Everywoman" />
   </subject>
 
   <!--Encounter (eicr-encounter reference)-->
   <encounter>
-    <reference value="Encounter/eicr-encounter-jane-stinn-20180401" />
+    <reference value="Encounter/eicr-encounter-eve-everywoman-20180401" />
     <display value="Ambulatory Office Visit, Apr 1, 2018, 10:00am" />
   </encounter>
 
@@ -106,8 +106,8 @@
 
   <!--  Author (us-core-practictioner reference)  -->
   <author>
-    <reference value="Practitioner/ecr-practitioner-micheal-colletta" />
-    <display value="Michael Colletta, MD" />
+    <reference value="Practitioner/ecr-practitioner-henry-seven" />
+    <display value="Henry Seven, MD" />
   </author>
 
   <title value="Initial Public Health Case Report" />
@@ -334,18 +334,18 @@
     </text>
     <!-- eICR Travel History -->
     <entry>
-      <reference value="Observation/eicr-travel-history-jane-stinn-201801" />
-      <display value="eICR Travel History: Jane Stinn 2018-01" />
+      <reference value="Observation/eicr-travel-history-eve-everywoman-201801" />
+      <display value="eICR Travel History: Eve Everywoman 2018-01" />
     </entry>
     <!-- eICR Pregnancy Status -->
     <entry>
-      <reference value="Observation/eicr-pregnancy-status-jane-stinn" />
+      <reference value="Observation/eicr-pregnancy-status-eve-everywoman" />
       <display value="eICR Pregnancy Status Example 1" />
     </entry>
     <!-- eICR Occupation History -->
     <entry>
-      <reference value="Observation/eicr-occupation-history-jane-stinn" />
-      <display value="eICR Occupation History: Jane Stinn" />
+      <reference value="Observation/eicr-occupation-history-eve-everywoman" />
+      <display value="eICR Occupation History: Eve Everywoman" />
     </entry>
   </section>
 
@@ -384,7 +384,7 @@
               <td>Encounter Diagnosis</td>
               <td>82272006 / SNOMED CT</td>
               <td>NOV 6, 2016</td>
-              <td>Micheal Colletta, MD</td>
+              <td>Henry Seven, MD</td>
             </tr>
           </tbody>
         </table>
@@ -394,7 +394,7 @@
 
     <!-- US Core Condition without a Trigger Code Indicator (extension-trigger) - not sure if this should really be "false", but it's not required so... -->
     <entry>
-      <reference value="Condition/eicr-condition-jane-stinn-common-cold" />
+      <reference value="Condition/eicr-condition-eve-everywoman-common-cold" />
       <display value="Common cold (disorder)" />
     </entry>
   </section>
@@ -426,7 +426,7 @@
           </thead>
           <tbody>
             <tr>
-              <td>MedicationStatement-us-core-medicationstatement-jane-stinn-azithromycin</td>
+              <td>MedicationStatement-us-core-medicationstatement-eve-everywoman-azithromycin</td>
               <td>Azithromycin 500 MG Oral Tablet</td>
               <td>1 TAB</td>
               <td>NOV 7, 2016 11:25</td>
@@ -438,7 +438,7 @@
     </text>
     <!-- us-core-medicationstatement reference -->
     <entry>
-      <reference value="MedicationStatement/us-core-medicationstatement-jane-stinn-azithromycin" />
+      <reference value="MedicationStatement/us-core-medicationstatement-eve-everywoman-azithromycin" />
       <display value="Azithromycin 500 MG Oral Tablet" />
     </entry>
   </section>
@@ -461,7 +461,7 @@
           <b>Generated Narrative with Details</b>
         </p>
 
-        <p><b>id</b>: Observation-US-Core-ObservationResults-eICRExample2</p>
+        <p><b>id</b>: us-core-observation-results-eve-everywoman-lymphocytes</p>
         <p><b>meta</b>: </p>
         <p><b>status</b>: final</p>
         <p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow"
@@ -495,11 +495,8 @@
     <!-- US Core ObservationResults with an extension-trigger of "true" -->
 
     <entry>
-      <!-- extension-trigger - "false" - this is not a trigger code result -->
-      <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag">
-        <valueBoolean value="false" />
-      </extension>
-      <reference value="Observation/Observation-US-Core-ObservationResults-eICRExample2" />
+      <!-- No extension-trigger  this is not a trigger code result -->
+      <reference value="Observation/us-core-observation-results-eve-everywoman-lymphocytes" />
       <display value="Lymphocytes [#/​volume] in Blood by Automated count - Interpretation: High" />
     </entry>
   </section>
@@ -527,13 +524,20 @@
         <p><b>code</b>: Zika RT-PCR <span style="background: LightGoldenRodYellow"
             >(Details : {LOINC code '80825-3' = 'Zika virus envelope (E) gene [Presence] in Serum by Probe and target amplification method', given as 'Zika virus envelope (E) gene [Presence] in Serum by Probe and target amplification method'})</span></p>
         <p><b>trigger lab order</b>: TRUE</p>
+        <p><b>trigger value set/version</b>: urn:oid:2.16.840.1.114222.4.11.7508 / 19/05/2018</p>
+        
         <p><b>performer</b>: <a href="Organization/acme-labs">Acme Labs</a></p>
       </div>
     </text>
     <entry>
       <!-- extension-trigger - "true" - this is a trigger code lab order -->
       <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag">
-        <valueBoolean value="true" />
+        <extension url="triggerCodeValueSet">
+          <valueOid value="urn:oid:2.16.840.1.114222.4.11.7508"/>
+        </extension>
+        <extension url="triggerCodeValueSetVersion">
+          <valueString value="19/05/2018"/>
+        </extension>
       </extension>
       <reference value="ProcedureRequest/eicr-procedurerequest-zika" />
       <display value="Request for Zika virus envelope (E) gene [Presence] in Serum by Probe and target amplification method" />

@@ -130,13 +130,13 @@
         }
     ],
     "reporter": {
-        "display": "Micheal Colletta, M.D.",
+        "display": "Henry Seven, M.D.",
         "reference": "PractitionerRole/phcase-mc"
     },
     "resourceType": "PHCase",
     "status": "in-progress",
     "subject": {
-        "display": "Jane Stinn",
+        "display": "Eve Everywoman",
         "reference": "Patient/phcase-js"
     },
     "travelHistory": [
