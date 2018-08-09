@@ -107,20 +107,19 @@ The following profiles and extensions have been defined for the Reportability Re
 <br/>
 ### Knowledge Distribution Transaction and Profiles
 
-The Knowledge Distribution transaction includes a family of actions and constrained FHIR PlanDefinition resource profiles and a FHIR Subscription service. 
-It supports the distribution of reporting guidance and parameters, trigger code value sets, and presents the structure for the distribution of more complex reporting rules and clinician / reporter support resources.
+The Knowledge Distribution transaction includes a constrained FHIR PlanDefinition resource profile, a family of actions, and a FHIR Subscription service. 
+It supports the distribution of reporting guidance and parameters, trigger code value sets, and presents a structure for the distribution of more complex reporting rules and clinician / reporter support resources.
 This standard seeks to align with developing public health guideline work that covers the same conditions.
 
-Each member of the family of actions and FHIR PlanDefinition resources (eCR, Triggering, Rule Processing, Clinical Feedback, Creation of eICR, Routing and Sending) aligns with what are often different healthcare information systems or modules involved in reporting.
+Each member of the family of actions (eCR, Triggering, Rule Processing, Clinical Feedback, Creation of eICR, Routing and Sending) aligns with what are often different healthcare information systems or modules involved in reporting.
 The top-level PlanDefinition includes guidance for the overall orchestration of electronic case reporting.
-It also points to modularized component actions and PlanDefinitions for Triggering, Rules Processing, Clinical Feedback, Creation of the eICR, and Routing and Sending of the eICR.
-The elements of this profile will be used to help structure and guide implementation until EHRs have the ability to automatically consume them. 
+The narrative elements of this profile will be used to help structure and guide implementation until EHRs have the ability to automatically consume them. 
 
 “Triggering” value sets and metadata can be used for EHR implementations whether they are FHIR-based or not.
-Through the “Rules Processing” component, this implementation guide seeks to help advance EHR-based, or EHR API-connected, rules engine capabilities that can run under clinical data authorities as the industry can support them.
-While there may be circumstances, in conjunction with appropriate guidelines, where clinical personal are "alerted" to a particular reportable condition, for the most part the “Clinical Feedback” component involves attaching information to a patient's chart or queuing information for providers and reporters.
-The “Creation of the eICR” guides the marshaling of FHIR resources needed to create the eICR profile included in this standard.
-And the “Sending of the eICR” involves the transmission of the eICR to either the APHL AIMS Platform, a Public Health Agency (PHA), or a Health information Exchange or Health Data Network on their way to PHAs.
+Through the “Rules Processing” action, this implementation guide seeks to help advance EHR-based, or EHR API-connected, rules engine capabilities that can run under clinical data authorities as the industry can support them.
+While there may be circumstances, in conjunction with appropriate guidelines, where clinical personal are "alerted" to a particular reportable condition, for the most part the “Clinical Feedback” action involves attaching information to a patient's chart or queuing information for providers and reporters.
+The “Creation of the eICR” action involves the marshaling of FHIR resources needed to create the eICR profile included in this standard.
+And the “Sending of the eICR” action involves the transmission of the eICR to either the APHL AIMS Platform, a Public Health Agency (PHA), or a Health information Exchange or Health Data Network on their way to PHAs.
 
 The FHIR subscription service supports public health needs for the routine and emergent distribution of the Knowledge Distribution Profile.
 The Subscription does not require FHIR implementation on the receiving (EHR) end of the transaction, but can provide XML or JSON formats via RESTful query or proactive notification channels. 
