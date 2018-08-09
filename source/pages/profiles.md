@@ -110,9 +110,8 @@ The following profiles and extensions have been defined for the Reportability Re
 The Knowledge Distribution transaction includes a constrained FHIR PlanDefinition resource profile, a family of actions, and a FHIR Subscription service. 
 It supports the distribution of reporting guidance and parameters, trigger code value sets, and presents a structure for the distribution of more complex reporting rules and clinician / reporter support resources.
 This standard seeks to align with developing public health guideline work that covers the same conditions.
-
-Each member of the family of actions (eCR, Triggering, Rule Processing, Clinical Feedback, Creation of eICR, Routing and Sending) aligns with what are often different healthcare information systems or modules involved in reporting.
-The top-level PlanDefinition includes guidance for the overall orchestration of electronic case reporting.
+The PlanDefinition includes guidance for the overall orchestration of electronic case reporting.
+Each member of the family of actions (Triggering, Rule Processing, Clinical Feedback, Creation of eICR, Routing and Sending) aligns with what are often different healthcare information systems or modules involved in reporting.
 The narrative elements of this profile will be used to help structure and guide implementation until EHRs have the ability to automatically consume them. 
 
 “Triggering” value sets and metadata can be used for EHR implementations whether they are FHIR-based or not.
