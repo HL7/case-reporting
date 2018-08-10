@@ -6,7 +6,15 @@
   <name value="Electronic Initial Case Report Composition Profile" />
   <status value="draft" />
   <date value="2018-08-01" />
-  <description value="The Electronic Case Reporting Composition profile establishes the core elements, extensions, vocabularies and value sets for representing an electronic initial case report (eICR).  It describes the content requirements for the initial Case Report including:&#xA;&#xA;- Patient demographics&#xA;- Patient pregnancy status&#xA;- Patient occupation and travel history&#xA;- Provider and Facility information&#xA;- Laboratory orders tests and results&#xA;- Signs and Symptoms and Diagnosis&#xA;- Medication and Immunization History&#xA;- Flags for the existence of reportable condition trigger codes in diagnoses and ordered/resulted laboratory tests." />
+  <description value="The Electronic Case Reporting Composition profile establishes the core elements, extensions, vocabularies and value sets for representing an electronic initial case report (eICR). It describes the content requirements for the initial Case Report including:
+        &#xA;&#xA;- Patient demographics
+        &#xA;- Patient pregnancy status
+        &#xA;- Patient occupation and travel history
+        &#xA;- Provider and Facility information
+        &#xA;- Laboratory orders tests and results
+        &#xA;- Signs and Symptoms and Diagnosis
+        &#xA;- Medication and Immunization History
+        &#xA;- Flags for the existence of reportable condition trigger codes in diagnoses and ordered/resulted laboratory tests." />
   <fhirVersion value="3.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -17,7 +25,7 @@
     <element id="Composition">
       <path value="Composition" />
       <short value="eICR Composition Profile" />
-      <definition value="TODO" />
+      
       <mustSupport value="true" />
       <isModifier value="false" />
       <mapping>
@@ -255,7 +263,7 @@
       <slicing>
         <discriminator>
           <type value="profile" />
-          <path value="reference" />
+          <path value="resolve()" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -269,19 +277,15 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
       </type>
     </element>
-    <element id="Composition.section:sliceSocialHistorySection.entry:sliceTravelHistory">
+    <element id="Composition.section:sliceSocialHistorySection.entry:slicetravel-history">
       <path value="Composition.section.entry" />
-      <sliceName value="sliceTravelHistory" />
+      <sliceName value="slicetravel-history" />
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-travelhistory" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-travel-history" />
       </type>
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="todo" />
-      </mapping>
     </element>
     <element id="Composition.section:sliceSocialHistorySection.entry:slicePregnancyStatus">
       <path value="Composition.section.entry" />
@@ -289,7 +293,7 @@
       <max value="1" />
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-pregnancy-status" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status" />
       </type>
       <mustSupport value="true" />
       <isModifier value="false" />
@@ -484,7 +488,7 @@
       <slicing>
         <discriminator>
           <type value="profile" />
-          <path value="reference" />
+          <path value="resolve()" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -624,7 +628,6 @@
       <sliceName value="sliceTriggerEICRProcedureRequest" />
       <short value="eICR Trigger Code Flag" />
       <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
-      <min value="1" />
       <max value="1" />
       <type>
         <code value="Extension" />

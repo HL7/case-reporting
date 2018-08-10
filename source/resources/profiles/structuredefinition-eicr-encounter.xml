@@ -23,7 +23,6 @@
     <element id="Encounter">
       <path value="Encounter" />
       <short value="eICR Encounter" />
-      <definition value="TODO" />
       <mustSupport value="false" />
       <isModifier value="false" />
     </element>
@@ -73,7 +72,7 @@
       <path value="Encounter.participant.individual" />
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-ecr-practitionerrole" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
       </type>
     </element>
     <element id="Encounter.period">
@@ -129,6 +128,14 @@
       </type>
       <mustSupport value="false" />
       <isModifier value="false" />
+    </element>
+    <element id="Encounter.serviceProvider">
+      <path value="Encounter.serviceProvider" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization" />
+      </type>
+      <mustSupport value="true" />
     </element>
   </differential>
 </StructureDefinition>

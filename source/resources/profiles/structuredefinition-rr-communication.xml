@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<StructureDefinition xmlns="http://hl7.org/fhir">
+<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../../validation/fhir-all.xsd"
+  xmlns="http://hl7.org/fhir">
   <id value="rr-communication" />
   <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication" />
   <name value="Reportability Response Communication" />
   <status value="draft" />
-  <description value="This Reportability Response Communication will be created in response to an electronic Initial Case Report Composition and the sharing of the Reportability Response with clinical care will serve several functions, including to:&#xD;&#xA;• Communicate the reportability status, for the responsible PHA(s)of each condition included in the electronic Initial Case Report (eICR)&#xD;&#xA;• Identify who (a PHA or an intermediary) prepared the Reportability Response&#xD;&#xA;• Indicate whether the eICR has been sent to one or more PHA(s)&#xD;&#xA;• Identify which PHA(s) has/have been sent the eICR&#xD;&#xA;• Provide contact information for the responsible PHA(s)&#xD;&#xA;• Provide suggested or required clinical follow-up activities from the responsible PHA(s), including any additional reporting needs or infection control activities&#xD;&#xA;• Provide access to clinical support resources suggested by the responsible PHA(s) for identified reportable conditions&#xD;&#xA;• Confirm eICR receipt and processing&#xD;&#xA;A Reportability Response will also, when requested, be shared with the responsible PHAs (when they have not constructed it) for their internal use, so they understand what has been shared with clinical care and, and to monitor/audit decision support algorithm effectivesness and implementation. When a condition is considered reportable to more than one PHA, the Reportability Response can be helpful in communicating reporting that has been done to other PHAs.&#xD;&#xA;The Reportability Response Communication is also structured to allow:&#xD;&#xA;• Notification, alerting, routing and queueing in work or message management systems for healthcare personnel&#xD;&#xA;• Dynamic and static URIs for supplemental data collection and the provision of information resources" />
+  <description
+    value="This Reportability Response Communication will be created in response to an electronic Initial Case Report Composition and the sharing of the Reportability Response with clinical care will serve several functions, including to: &#xA;&#xA;- Communicate the reportability status, for the responsible PHA(s)of each condition included in the electronic Initial Case Report (eICR)     &#xA;- Identify who (a PHA or an intermediary) prepared the Reportability Response     &#xA;- Indicate whether the eICR has been sent to one or more PHA(s)     &#xA;- Identify which PHA(s) has/have been sent the eICR     &#xA;- Provide contact information for the responsible PHA(s)     &#xA;- Provide suggested or required clinical follow-up activities from the responsible PHA(s), including any additional reporting needs or infection control activities     &#xA;- Provide access to clinical support resources suggested by the responsible PHA(s) for identified reportable conditions     &#xA;- Confirm eICR receipt and processing     &#xA;&#xA;A Reportability Response will also, when requested, be shared with the responsible PHAs (when they have not constructed it) for their internal use, so they understand what has been shared with clinical care and, and to monitor/audit decision support algorithm effectivesness and implementation. When a condition is considered reportable to more than one PHA, the Reportability Response can be helpful in communicating reporting that has been done to other PHAs.     &#xA;&#xA;The Reportability Response Communication is also structured to allow:     &#xA;&#xA;- Notification, alerting, routing and queueing in work or message management systems for healthcare personnel     &#xA;- Dynamic and static URIs for supplemental data collection and the provision of information resources" />
   <fhirVersion value="3.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -15,7 +17,8 @@
     <element id="Communication">
       <path value="Communication" />
       <short value="Reportability Response Communication" />
-      <definition value="The Reportability Response Communication profile establishes then core elements, extensions, vocabularies and value sets for recording the receipt and processing of an electronic Initial Case Report FHIR resource. This information includes information about the reportable condition along with resources and details on where to get more information about the condition, its treatment, and reporting requirements.&amp;#xD;&amp;#xD;The Reportability Response allows for:&amp;#xD;&amp;#xD;- Notification, alerting, routing and queueing in work or message management systems for healthcare personnel&amp;#xD;- Dynamic and static URIs for supplemental data collection and the provision of information resources&amp;#xD;- If the eICR was successfully processed, then there SHOULD be:&amp;#xD;&amp;#xD;    - A Topic Subject Line&amp;#xD;    - A Topic Summary&amp;#xD;    - A way to identify the eICR either as a direct reference or through a business identifier&amp;#xD;    - References to related artifacts to assist the providers in understanding the investigating conditions.  &amp;#xD;&amp;#xD;- If the eICR CDA document was not processed and has errors, then there SHOULD be:&amp;#xD;&amp;#xD;    - A way to identify the eICR either as a direct reference or through a business identifier&amp;#xD;    - An eICR processing error reasons." />
+      <definition
+        value="The Reportability Response Communication profile establishes then core elements, extensions, vocabularies and value sets for recording the receipt and processing of an electronic Initial Case Report FHIR resource. This information includes information about the reportable condition along with resources and details on where to get more information about the condition, its treatment, and reporting requirements.&amp;#xD;&amp;#xD;The Reportability Response allows for:&amp;#xD;&amp;#xD;- Notification, alerting, routing and queueing in work or message management systems for healthcare personnel&amp;#xD;- Dynamic and static URIs for supplemental data collection and the provision of information resources&amp;#xD;- If the eICR was successfully processed, then there SHOULD be:&amp;#xD;&amp;#xD;    - A Topic Subject Line&amp;#xD;    - A Topic Summary&amp;#xD;    - A way to identify the eICR either as a direct reference or through a business identifier&amp;#xD;    - References to related artifacts to assist the providers in understanding the investigating conditions.  &amp;#xD;&amp;#xD;- If the eICR CDA document was not processed and has errors, then there SHOULD be:&amp;#xD;&amp;#xD;    - A way to identify the eICR either as a direct reference or through a business identifier&amp;#xD;    - An eICR processing error reasons." />
       <mustSupport value="true" />
       <mapping>
         <identity value="cda-rr" />
@@ -73,15 +76,16 @@
       <example>
         <label value="General" />
         <valueReference>
-          <reference value="Patient/ecr-patient-jane-stinn" />
-          <display value="Jane Stinn" />
+          <reference value="Patient/ecr-patient-eve-everywoman" />
+          <display value="Eve Everywoman" />
         </valueReference>
       </example>
       <mustSupport value="true" />
     </element>
     <element id="Communication.recipient">
       <path value="Communication.recipient" />
-      <comment value="Reporting may be identified for multiple PHAs by the PHA system (or its intermediary) (because the patient&amp;#39;s residence and the provider location are in separate jurisdictions) including other identified organization (such as an HIE) to which the eICR (if deemed reportable) and/or the Reportability Response will be routed." />
+      <comment
+        value="Reporting may be identified for multiple PHAs by the PHA system (or its intermediary) (because the patient&amp;#39;s residence and the provider location are in separate jurisdictions) including other identified organization (such as an HIE) to which the eICR (if deemed reportable) and/or the Reportability Response will be routed." />
       <min value="1" />
       <type>
         <code value="Reference" />
@@ -98,8 +102,8 @@
       <example>
         <label value="General" />
         <valueReference>
-          <reference value="PractitionerRole/ecr-practitionerrole-micheal-colletta" />
-          <display value="Micheal Colletta, MD" />
+          <reference value="PractitionerRole/ecr-practitionerrole-henry-seven" />
+          <display value="Henry Seven, MD" />
         </valueReference>
       </example>
       <mustSupport value="true" />
@@ -107,7 +111,8 @@
     <element id="Communication.topic">
       <path value="Communication.topic" />
       <short value="Reportability Response Subject" />
-      <definition value="Contains a short high-level description of the determination of reportability. This information can be used to route and prioritize Reportability Responses in a work queue or an email subject." />
+      <definition
+        value="Contains a short high-level description of the determination of reportability. This information can be used to route and prioritize Reportability Responses in a work queue or an email subject." />
       <min value="1" />
       <max value="1" />
       <example>
@@ -148,7 +153,8 @@
     <element id="Communication.sender">
       <path value="Communication.sender" />
       <short value="Author" />
-      <definition value="For the Reportability Response communication, this will most likely be the software that is generating the response, though this will not always the be case." />
+      <definition
+        value="For the Reportability Response communication, this will most likely be the software that is generating the response, though this will not always the be case." />
       <min value="1" />
       <type>
         <code value="Reference" />
@@ -158,17 +164,14 @@
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
       </type>
+      <mustSupport value="true" />
     </element>
     <element id="Communication.payload">
       <path value="Communication.payload" />
       <slicing>
         <discriminator>
-          <type value="profile" />
-          <path value="contentReference" />
-        </discriminator>
-        <discriminator>
           <type value="value" />
-          <path value="extension.url" />
+          <path value="id" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -177,8 +180,15 @@
       <path value="Communication.payload" />
       <sliceName value="sliceEICRInformation" />
       <short value="Electronic Initial Case Report Information" />
-      <definition value="This payload contains information about the eICR Composition to which this Communication is a response. The date/time of receipt and a document reference are represented in the TODO profile and the processing status of the eICR Composition is contained in the TODO eICR Processing Status profile. If the eICR Composition was manually initiated by a healthcare provider, this is indicated by the presence of the TODO Manually Initiated eICR extension.&#xD;&#xA;&#xD;&#xA;This payload is always present in the Reportability Response Communication.&#xD;&#xA;&#xD;&#xA;TODO: The text element (narrative block) in this section is only populated and displayed when the eICR CDA document was not processed (eICR Processing Status/code=&quot;RRVS22&quot;, &quot;eICR was not processed – error&quot;) and that text element contains the eICR processing status reason(s).&#xD;&#xA;" />
+      <definition
+        value="This payload contains information about the eICR Composition to which this Communication is a response. The date/time of receipt and a document reference are represented in the referenced Electronic Initial Case Report Composition Profile and the processing status of the eICR Composition is contained in the eICR Processing Status profile. If the eICR Composition was manually initiated by a healthcare provider, this is indicated by the presence of the Manually Initiated eICR extension.&#xD;&#xA;&#xD;&#xA;This payload is always present in the Reportability Response Communication.&#xD;&#xA;&#xD;&#xA;The text element (narrative block) in this section is only populated and displayed when the eICR CDA document was not processed (eICR Processing Status/code=&quot;RRVS22&quot;, &quot;eICR was not processed – error&quot;) and that text element contains the eICR processing status reason(s).&#xD;&#xA;" />
       <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Communication.payload:sliceEICRInformation.id">
+      <path value="Communication.payload.id" />
+      <min value="1" />
+      <fixedString value="eicr-information" />
       <mustSupport value="true" />
     </element>
     <element id="Communication.payload:sliceEICRInformation.extension">
@@ -186,7 +196,7 @@
       <slicing>
         <discriminator>
           <type value="value" />
-          <path value="url" />
+          <path value="id" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -204,17 +214,30 @@
       </type>
       <mustSupport value="true" />
     </element>
+    <element id="Communication.payload:sliceEICRInformation.extension:eICRProcessingStatus.id">
+      <path value="Communication.payload.extension.id" />
+      <min value="1" />
+      <fixedString value="eicr-processing-status" />
+      <mustSupport value="true" />
+    </element>
     <element id="Communication.payload:sliceEICRInformation.extension:manuallyInitiatedEICR">
       <path value="Communication.payload.extension" />
       <sliceName value="manuallyInitiatedEICR" />
       <short value="Manually Initiated eICR" />
-      <definition value="This extension indicates whether or not the eICR CDA document for which this Reportability Response is a response, was manually initiated by the provider. The eICR could also contain RCTC trigger codes." />
+      <definition
+        value="This extension indicates whether or not the eICR CDA document for which this Reportability Response is a response, was manually initiated by the provider. The eICR could also contain RCTC trigger codes." />
       <min value="1" />
       <max value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-manually-initiated-eicr" />
       </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Communication.payload:sliceEICRInformation.extension:manuallyInitiatedEICR.id">
+      <path value="Communication.payload.extension.id" />
+      <min value="1" />
+      <fixedString value="manually-initiated-eicr" />
       <mustSupport value="true" />
     </element>
     <element id="Communication.payload:sliceEICRInformation.content[x]:contentReference">
@@ -239,8 +262,15 @@
       <path value="Communication.payload" />
       <sliceName value="sliceReportabilityResponseSummary" />
       <short value="Reportability Response Summary" />
-      <definition value="This payload slice is present in the Reportabilty Response if the eICR was processed and is not present if the eICR was not processed. Contains a detailed text description of the reportable condition(s) including actions the provider needs to take, any supplemental information that may be required, and where the initial case report was sent." />
+      <definition
+        value="This payload slice is present in the Reportabilty Response if the eICR was processed and is not present if the eICR was not processed. Contains a detailed text description of the reportable condition(s) including actions the provider needs to take, any supplemental information that may be required, and where the initial case report was sent." />
       <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Communication.payload:sliceReportabilityResponseSummary.id">
+      <path value="Communication.payload.id" />
+      <min value="1" />
+      <fixedString value="reportability-response-summary" />
       <mustSupport value="true" />
     </element>
     <element id="Communication.payload:sliceReportabilityResponseSummary.content[x]:contentString">
@@ -251,14 +281,23 @@
       </type>
       <example>
         <label value="General" />
-        <valueString value="Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient. &quot;Zika virus disease (disorder)&quot; is reportable to &quot;State Department of Health&quot;. An initial case report was sent to &quot;State Department of Health&quot;. Additional information may be required for this report." />
+        <valueString
+          value="Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient. &quot;Zika virus disease (disorder)&quot; is reportable to &quot;State Department of Health&quot;. An initial case report was sent to &quot;State Department of Health&quot;. Additional information may be required for this report."
+         />
       </example>
     </element>
     <element id="Communication.payload:sliceRelevantReportableConditionInformation">
       <path value="Communication.payload" />
       <sliceName value="sliceRelevantReportableConditionInformation" />
       <short value="Relevant Reportable Condition Information" />
-      <definition value="This payload slice is present in the Reportabilty Response if the eICR was processed and is not present if the eICR was not processed. It contains a Reportability Response PlanDefinition and repeats for each uniqe condition-PHA pair." />
+      <definition
+        value="This payload slice is present in the Reportabilty Response if the eICR was processed and is not present if the eICR was not processed. It contains a Reportability Response PlanDefinition and repeats for each uniqe condition-PHA pair." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Communication.payload:sliceRelevantReportableConditionInformation.id">
+      <path value="Communication.payload.id" />
+      <min value="1" />
+      <fixedString value="relevant-reportable-condition-information" />
       <mustSupport value="true" />
     </element>
     <element id="Communication.payload:sliceRelevantReportableConditionInformation.content[x]:contentReference">

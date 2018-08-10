@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Observation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://hl7.org/fhir ../../../validation/fhir-all.xsd" xmlns="http://hl7.org/fhir">
+  <id value="rr-eicr-processing-status-reason" />
+  <meta>
+    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason" />
+  </meta>
+  <status value="final"/>
+  <code>
+    <coding>
+      <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ph-phinquestions-cdc" />
+      <code value="RR6" />
+      <display value="eICR Processing Status Reason" />
+    </coding>
+  </code>
+  <valueCodeableConcept>
+    <coding>
+      <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ph-phinvs-cdc"/>
+      <code value="RRVS30" />
+      <display value="eICR was processed with the warning of: inactive RCTC code"/>
+    </coding>
+  </valueCodeableConcept>
+  <component>
+    <code>
+      <coding>
+        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ph-phinvs-cdc"/>
+        <code value="RRVS32"/>
+        <display value="Inactive RCTC code detail"></display>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://snomed.info/sct" />
+        <code value="69092001" />
+        <display value="Leptospirosis icterohemorrhagica (disorder)" />
+      </coding>
+    </valueCodeableConcept>
+  </component>
+</Observation>

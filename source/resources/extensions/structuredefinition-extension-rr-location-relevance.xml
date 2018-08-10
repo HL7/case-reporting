@@ -35,13 +35,29 @@
       <type>
         <code value="CodeableConcept" />
       </type>
+      <example>
+        <label value="General" />
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ph-phinvs-cdc" />
+            <code value="RRVS5" />
+            <display value="Patient home address" />
+          </coding>
+        </valueCodeableConcept>
+      </example>
+      <binding>
+        <strength value="extensible" />
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/location-relevance-ecr" />
+        </valueSetReference>
+      </binding>
     </element>
     <element id="Extension.value[x]:valueCodeableConcept.coding">
       <path value="Extension.valueCodeableConcept.coding" />
       <binding>
         <strength value="extensible" />
         <valueSetReference>
-          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/determination-of-reportability" />
+          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/determination-of-reportability-ecr" />
         </valueSetReference>
       </binding>
     </element>

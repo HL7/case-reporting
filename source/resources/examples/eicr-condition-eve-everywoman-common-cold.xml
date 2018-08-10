@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Condition xmlns="http://hl7.org/fhir">
+  <id value="eicr-condition-eve-everywoman-common-cold" />
+  <meta>
+    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition" />
+  </meta>
+  <text>
+    <status value="generated" />
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Condition</th>
+            <th>Condition Category</th>
+            <th>Condition Code/Code System</th>
+            <th>Date(s)</th>
+            <th>Asserter</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>eicr-condition-eve-everywoman-common-cold</td>
+            <td>Common cold (disorder)</td>
+            <td>Encounter Diagnosis</td>
+            <td>82272006 / SNOMED CT</td>
+            <td>APR 6, 2018</td>
+            <td>Henry Seven, MD</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </text>
+  <identifier>
+    <type>
+      <coding>
+        <system value="http://hl7.org/fhir/identifier-type" />
+        <code value="FILL" />
+        <display value="Filler Identifier" />
+      </coding>
+      <text value="Filler Identifier" />
+    </type>
+    <system value="https://acme.labs/identifiers" />
+    <value value="7d5a02b0-67a4-11db-bd13-0800200c9a66" />
+  </identifier>
+  <clinicalStatus value="active" />
+  <verificationStatus value="confirmed" />
+  <category>
+    <coding>
+      <system value="http://hl7.org/fhir/condition-category" />
+      <code value="encounter-diagnosis" />
+      <display value="Encounter Diagnosis" />
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct" />
+      <code value="82272006" />
+      <display value="Common cold (disorder)" />
+    </coding>
+    <text value="Common cold (disorder)" />
+  </code>
+  <!--Subject (us-core-patient reference)-->
+  <subject>
+    <reference value="Patient/ecr-patient-eve-everywoman" />
+    <display value="Eve Everywoman" />
+  </subject>
+  <!--Encounter (eicr-encounter reference)-->
+  <context>
+    <reference value="Encounter/eicr-encounter-eve-everywoman-20180401" />
+    <display value="eICR Encounter: Eve Everywoman" />
+  </context>
+  <assertedDate value="2017-11-06T10:25:23Z" />
+  <!--Asserter (us-core-practictioner reference)-->
+  <asserter>
+    <reference value="Practitioner/ecr-practitioner-henry-seven" />
+    <display value="Henry Seven, MD" />
+  </asserter>
+</Condition>

@@ -14,6 +14,6 @@ source file: source/pages/\_includes/{{id}}-intro.md
 
 #### Examples
 
-- [Example-1](todo.html)
+- [eICR Location Example](Location-ecr-location-salem-medical-center.html)
 
 ---
