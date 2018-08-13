@@ -100,7 +100,7 @@ The following profiles and extensions have been defined for the Reportability Re
   <li><a href="StructureDefinition-extension-rr-rules-authoring-agency.html">Extension Rules Authoring Agency</a></li>
   <li><a href="StructureDefinition-extension-rr-routing-entity.html">Extension Routing Entity</a></li>
   <li><a href="StructureDefinition-extension-rr-external-resource-type.html">Extension External Resource Type</a></li>
-  <li><a href="StructureDefinition-extension-rr-external-resource-priority.html">Extension External Resource Priority</a></li>
+  <li><a href="StructureDefinition-extension-rr-priority.html">Extension External Resource Priority</a></li>
 </ul>
 ---
 <br/>
