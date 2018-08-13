@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://hl7.org/fhir ../../../validation/fhir-all.xsd" xmlns="http://hl7.org/fhir">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="eicr-travel-history" />
   <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-travel-history" />
   <version value="0.0.0" />
   <name value="Travel History" />
   <status value="draft" />
   <date value="2018-08-01" />
-  <description
-    value="The Electronic Case Reporting Travel History profile establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;-  The Initial Case Report subject&#39;s travel history as a string, an address or a coded location." />
+  <description value="The Electronic Case Reporting Travel History profile establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;-  The Initial Case Report subject's travel history as a string, an address or a coded location.&#xD;&#xA;-  Observation.effectiveTime contains the date or period of time spent in the location.&#xD;&#xA;-  It is possible to have multiple Observation.components, each containing a different location, but there is only a single effectiveTime. This allows for cases where a patient cannot remember exact dates of travel (e.g. I treveled to London, Paris, and Berlin in July and August 2016). However, most uses will involve a single component (location).&#xD;&#xA;-  Free text describing the travel history details and location can be entered using the Observation.component.valueCodeableConcept.text element&#xD;&#xA;-  Use component.codeableConcept to record a coded location&#xD;&#xA;-  Use component.extension to record a specific address" />
   <fhirVersion value="3.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -20,77 +18,109 @@
       <path value="Observation" />
       <short value="eICR Travel History" />
       <definition value="TODO" />
-      <base>
-        <path value="Observation" />
-        <min value="0" />
-        <max value="*" />
-      </base>
-      <mustSupport value="true" />
-      <isModifier value="false" />
-    </element>
-    <element id="Observation.extension:address">
-      <path value="Observation.extension" />
-      <sliceName value="address" />
-      <short value="Travel history address" />
-      <min value="0" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-valueAddress" />
-      </type>
       <mustSupport value="true" />
       <isModifier value="false" />
     </element>
     <element id="Observation.code">
       <path value="Observation.code" />
-      <min value="1" />
-      <max value="1" />
-      <type>
-        <code value="CodeableConcept" />
-      </type>
       <patternCodeableConcept>
         <coding>
-          <system value="http://loinc.org" />
-          <code value="8691-8" />
-          <display value="History of Travel" />
+          <system value="http://snomed.info/sct" />
+          <code value="420008001" />
         </coding>
-        <text value="Travel HIstory" />
       </patternCodeableConcept>
       <example>
         <label value="General" />
         <valueCodeableConcept>
           <coding>
-            <system value="http://loinc.org" />
-            <code value="8691-8" />
-            <display value="History of Travel" />
+            <system value="http://snomed.info/sct" />
+            <code value="420008001" />
+            <display value="Travel" />
           </coding>
-          <text value="Travel HIstory" />
+          <text value="Travel History" />
         </valueCodeableConcept>
       </example>
       <mustSupport value="true" />
       <isModifier value="false" />
-      
     </element>
     <element id="Observation.effective[x]">
       <path value="Observation.effective[x]" />
+      <short value="Date or period of time spent in the location" />
       <mustSupport value="true" />
       <isModifier value="false" />
     </element>
-    <element id="Observation.valueCodeableConcept">
-      <path value="Observation.valueCodeableConcept" />
-      <short value="Travel Location" />
+    <element id="Observation.component">
+      <path value="Observation.component" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.component.code">
+      <path value="Observation.component.code" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/v3/ParticipationType" />
+          <code value="LOC" />
+          <display value="Location" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.component.value[x]:valueCodeableConcept">
+      <path value="Observation.component.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
       <type>
         <code value="CodeableConcept" />
       </type>
+      <example>
+        <label value="General" />
+        <valueCodeableConcept>
+          <coding>
+            <system value="urn:oid:1.0.3166.1" />
+            <code value="FJI" />
+            <display value="Fiji" />
+          </coding>
+        </valueCodeableConcept>
+      </example>
       <mustSupport value="true" />
-      <isModifier value="false" />
       <binding>
         <strength value="extensible" />
-        <description value="Geographical location codes" />
         <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/jurisdiction" />
+          <reference value="http://hl7.org/fhir/us/ecr/ValueSet/geographical-location-history" />
         </valueSetReference>
       </binding>
+    </element>
+    <element id="Observation.component.value[x]:valueCodeableConcept.extension">
+      <path value="Observation.component.valueCodeableConcept.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Observation.component.value[x]:valueCodeableConcept.extension:travelHistoryAddress">
+      <path value="Observation.component.valueCodeableConcept.extension" />
+      <sliceName value="travelHistoryAddress" />
+      <short value="Travel history address" />
+      <definition value="Where the patient traveled to as an address e.g.country, city, street address if applicable. At the least, address must contain the country." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-travel-history-address" />
+      </type>
+    </element>
+    <element id="Observation.component.value[x]:valueCodeableConcept.coding">
+      <path value="Observation.component.valueCodeableConcept.coding" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.component.value[x]:valueCodeableConcept.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Observation.component.valueCodeableConcept.text" />
+      <mustSupport value="true" />
     </element>
   </differential>
 </StructureDefinition>

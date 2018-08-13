@@ -41,7 +41,7 @@ The following profiles and extensions have been defined for the eICR transaction
   <li><a href="StructureDefinition-eicr-procedurerequest.html">eICR Lab Orders Profile</a></li>
   <li><a href="StructureDefinition-eicr-location.html">eICR Location Profile</a></li>
   <li><a href="StructureDefinition-pregnancy-status.html">Pregnancy Status Profile</a></li>
-  <li><a href="StructureDefinition-eicr-travel-history.html">eICR travel-history Profile</a></li>
+  <li><a href="StructureDefinition-eicr-travel-history.html">eICR Travel History Profile</a></li>
   <li><a href="StructureDefinition-eicr-occupationhistory.html">eICR-OccupationHistory Profile</a></li>
 </ul>
 
@@ -49,7 +49,7 @@ The following profiles and extensions have been defined for the eICR transaction
 
 <ul>
   <li><a href="StructureDefinition-extension-eicr-trigger-code-flag.html">eICR Trigger Code Flag</a></li>
-  <li><a href="StructureDefinition-extension-valueAddress.html">Travel History Address</a></li>
+  <li><a href="StructureDefinition-extension-eicr-travel-history-address.html">Travel History Address</a></li>
 </ul>
 
 ---

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Observation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../../validation/fhir-all.xsd"
   xmlns="http://hl7.org/fhir">
-  <id value="eicr-travel-history-eve-everywoman-201801" />
+  <id value="eicr-travel-history-eve-everywoman-201610" />
   <meta>
     <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-travel-history" />
   </meta>
@@ -19,9 +19,9 @@
         </thead>
         <tbody>
           <tr>
-            <td>eicr-travel-history-eve-everywoman-201801</td>
-            <td>JAN 15, 2018 to JAN 30, 2018</td>
-            <td>Fiji and Vanuatu</td>
+            <td>eicr-travel-history-eve-everywoman-201610</td>
+            <td>OCT 22, 2016 to OCT 30, 2016</td>
+            <td>1170 N Rancho Robles Rd, Oracle, AZ, 8562, USA</td>
           </tr>
         </tbody>
       </table>
@@ -41,11 +41,9 @@
     <display value="Eve Everywoman" />
   </subject>
   <effectivePeriod>
-    <start value="2018-01-15" />
-    <end value="2018-01-30" />
+    <start value="2016-10-22" />
+    <end value="2016-10-30" />
   </effectivePeriod>
-  <!-- Both Fiji and Vanuatu were visited in the above time period -->
-  <!-- Fiji -->
   <component>
     <code>
       <coding>
@@ -55,29 +53,14 @@
       </coding>
     </code>
     <valueCodeableConcept>
-      <coding>
-        <system value="urn:oid:1.0.3166.1" />
-        <code value="FJI" />
-        <display value="Fiji" />
-      </coding>
+      <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-travel-history-address">
+        <valueAddress>
+          <line value="1170 N Rancho Robles Rd"/>
+          <city value="Oracle"/>
+          <postalCode value="8562"/>
+          <country value="US"></country>
+        </valueAddress>
+      </extension>
     </valueCodeableConcept>
   </component>
-  <!-- Vanuatu -->
-  <component>
-    <code>
-      <coding>
-        <system value="http://hl7.org/fhir/v3/ParticipationType" />
-        <code value="LOC" />
-        <display value="Location" />
-      </coding>
-    </code>
-    <valueCodeableConcept>
-      <coding>
-        <system value="urn:oid:1.0.3166.1" />
-        <code value="VUT" />
-        <display value="Vanuatu" />
-      </coding>
-    </valueCodeableConcept>
-  </component>
-
 </Observation>

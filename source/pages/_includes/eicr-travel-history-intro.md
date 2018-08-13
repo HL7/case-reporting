@@ -14,6 +14,8 @@ source file: source/pages/\_includes/{{id}}-intro.md
 
 #### Examples
 
-- [Travel History Example](Observation-eicr-travel-history-eve-everywoman-201801.html)
+- [Travel History Example - multiple locations (when exact date(s) of each location unknown)](Observation-eicr-travel-history-eve-everywoman-201801.html)
+- [Travel History Example - address location (when exact date(s) of travel known)](Observation-eicr-travel-history-eve-everywoman-201610.html)
+- [Travel History Example - text location description](Observation-eicr-travel-history-eve-everywoman-1999.html)
 
 ---
