@@ -15,5 +15,6 @@ source file: source/pages/\_includes/{{id}}-intro.md
 #### Examples
 
 - [eICR Encounter Example](Encounter-eicr-encounter-eve-everywoman-20180401.html)
+- [eICR Encounter Example](Encounter-eicr-encounter-diagnosis-eve-everywoman-20180401.html)
 
 ---

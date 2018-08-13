@@ -6,15 +6,7 @@
   <name value="Electronic Initial Case Report Composition Profile" />
   <status value="draft" />
   <date value="2018-08-01" />
-  <description value="The Electronic Case Reporting Composition profile establishes the core elements, extensions, vocabularies and value sets for representing an electronic initial case report (eICR). It describes the content requirements for the initial Case Report including:
-        &#xA;&#xA;- Patient demographics
-        &#xA;- Patient pregnancy status
-        &#xA;- Patient occupation and travel history
-        &#xA;- Provider and Facility information
-        &#xA;- Laboratory orders tests and results
-        &#xA;- Signs and Symptoms and Diagnosis
-        &#xA;- Medication and Immunization History
-        &#xA;- Flags for the existence of reportable condition trigger codes in diagnoses and ordered/resulted laboratory tests." />
+  <description value="The Electronic Case Reporting Composition profile establishes the core elements, extensions, vocabularies and value sets for representing an electronic initial case report (eICR). It describes the content requirements for the initial Case Report including:         &#xA;&#xA;- Patient demographics         &#xA;- Patient pregnancy status         &#xA;- Patient occupation and travel history         &#xA;- Provider and Facility information         &#xA;- Laboratory orders tests and results         &#xA;- Signs and Symptoms and Diagnosis         &#xA;- Medication and Immunization History         &#xA;- Flags for the existence of reportable condition trigger codes in diagnoses and ordered/resulted laboratory tests." />
   <fhirVersion value="3.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -25,7 +17,6 @@
     <element id="Composition">
       <path value="Composition" />
       <short value="eICR Composition Profile" />
-      
       <mustSupport value="true" />
       <isModifier value="false" />
       <mapping>
@@ -269,17 +260,9 @@
       </slicing>
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:sliceSocialHistorySection.entry:sliceObservation">
+    <element id="Composition.section:sliceSocialHistorySection.entry:sliceTravelHistory">
       <path value="Composition.section.entry" />
-      <sliceName value="sliceObservation" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
-      </type>
-    </element>
-    <element id="Composition.section:sliceSocialHistorySection.entry:slicetravel-history">
-      <path value="Composition.section.entry" />
-      <sliceName value="slicetravel-history" />
+      <sliceName value="sliceTravelHistory" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-travel-history" />
@@ -359,14 +342,10 @@
       <min value="1" />
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition" />
       </type>
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="1198-15506" />
-      </mapping>
     </element>
     <element id="Composition.section:sliceProblemSection.entry.extension">
       <path value="Composition.section.entry.extension" />
@@ -492,46 +471,6 @@
         </discriminator>
         <rules value="open" />
       </slicing>
-    </element>
-    <element id="Composition.section:sliceResultsSection.entry:sliceUSCoreDiagnosticReport">
-      <path value="Composition.section.entry" />
-      <sliceName value="sliceUSCoreDiagnosticReport" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport" />
-      </type>
-      <mustSupport value="true" />
-      <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="1198-15516" />
-      </mapping>
-    </element>
-    <element id="Composition.section:sliceResultsSection.entry:sliceUSCoreDiagnosticReport.extension">
-      <path value="Composition.section.entry.extension" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="url" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-    </element>
-    <element id="Composition.section:sliceResultsSection.entry:sliceUSCoreDiagnosticReport.extension:sliceTriggerUSCoreDiagnosticReport">
-      <path value="Composition.section.entry.extension" />
-      <sliceName value="sliceTriggerUSCoreDiagnosticReport" />
-      <short value="eICR Trigger Code Flag" />
-      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag" />
-      </type>
-      <mustSupport value="true" />
-    </element>
-    <element id="Composition.section:sliceResultsSection.entry:sliceUSCoreDiagnosticReport.extension:sliceTriggerUSCoreDiagnosticReport.url">
-      <path value="Composition.section.entry.extension.url" />
-      <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger" />
     </element>
     <element id="Composition.section:sliceResultsSection.entry:sliceUSCoreObservationResults">
       <path value="Composition.section.entry" />

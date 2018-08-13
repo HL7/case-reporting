@@ -16,6 +16,7 @@ General guidance for using these value sets can be found on the [Guidance Page](
   <li><a href="ValueSet-lrtc.html">Lab Obs Test Name Triggers for Public Health Reporting</a></li>
   <li><a href="ValueSet-lotc.html">Lab Order Test Name Triggers for Public Health Reporting</a></li>
   <li><a href="ValueSet-dxtc.html">Diagnosis_Problem Triggers for Public Health Reporting</a></li>
+  <li><a href="ValueSet-pregnancy-status.html">Pregnancy Status</a></li>
 </ul>
 <br/>
 A bundle containing all the trigger code value sets is also included in this guide.
@@ -52,8 +53,8 @@ The following value sets have been defined for the Reportability Response transa
 <br/>
 ## Code Systems
 <ul>
-  <li><a href="CodeSystem-ph-phinvs-cdc.html">PHIN VS (CDC Local Coding System)</a></li>
   <li><a href="https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.114222.4.5.274#">PHIN VS (CDC Local Coding System)</a></li>
+  <li><a href="https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.114222.4.5.232#">PHIN Questions (CDC Local Coding System)</a></li>
   <li><a href="http://snomed.info/sct">SNOMED CT</a></li>
   <li><a href="http://loinc.org">LOINC</a></li>
   <li><a href="http://hl7.org/fhir/sid/cvx">CDC Vaccine Code (CVX)</a></li>

@@ -36,7 +36,6 @@ The following profiles and extensions have been defined for the eICR transaction
 <ul>
   <li><a href="StructureDefinition-eicr-composition.html">eICR Composition Profile</a></li>
   <li><a href="StructureDefinition-ecr-organization.html">eCR Organization Profile</a></li>
-  <li><a href="StructureDefinition-eicr-condition.html">eICR Condition Profile</a></li>
   <li><a href="StructureDefinition-eicr-encounter.html">eICR Encounter Profile</a></li>
   <li><a href="StructureDefinition-eicr-procedurerequest.html">eICR Lab Orders Profile</a></li>
   <li><a href="StructureDefinition-eicr-location.html">eICR Location Profile</a></li>

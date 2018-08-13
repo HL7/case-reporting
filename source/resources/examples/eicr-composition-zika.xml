@@ -358,7 +358,6 @@
         <code value="11450-4" />
         <display value="Problem list - Reported" />
       </coding>
-      <!--      <text value="Problem list" />-->
     </code>
     <text>
       <status value="generated" />
@@ -392,7 +391,7 @@
     </text>
 
 
-    <!-- US Core Condition without a Trigger Code Indicator (extension-trigger) - not sure if this should really be "false", but it's not required so... -->
+    <!-- US Core Condition without a Trigger Code Indicator - i.e. not a trigger code -->
     <entry>
       <reference value="Condition/eicr-condition-eve-everywoman-common-cold" />
       <display value="Common cold (disorder)" />
@@ -408,7 +407,6 @@
         <code value="29549-3" />
         <display value="Medication administered Narrative" />
       </coding>
-      <!--      <text value="Medication administered" />-->
     </code>
     <text>
       <status value="generated" />
@@ -452,7 +450,6 @@
         <code value="30954-2" />
         <display value="Relevant diagnostic tests/​laboratory data Narrative" />
       </coding>
-      <!--      <text value="Relevant diagnostic tests/​laboratory data" />-->
     </code>
     <text>
       <status value="generated" />
@@ -492,8 +489,6 @@
 
     </text>
 
-    <!-- US Core ObservationResults with an extension-trigger of "true" -->
-
     <entry>
       <!-- No extension-trigger  this is not a trigger code result -->
       <reference value="Observation/us-core-observation-results-eve-everywoman-lymphocytes" />
@@ -510,7 +505,6 @@
         <code value="18776-5" />
         <display value="Plan of Treatment" />
       </coding>
-      <!--      <text value="Relevant diagnostic tests/​laboratory data" />-->
     </code>
     <text>
       <status value="generated" />
@@ -530,7 +524,7 @@
       </div>
     </text>
     <entry>
-      <!-- extension-trigger - "true" - this is a trigger code lab order -->
+      <!-- This is a trigger code as extension-eicr-trigger-code-flag is present  -->
       <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag">
         <extension url="triggerCodeValueSet">
           <valueOid value="urn:oid:2.16.840.1.114222.4.11.7508"/>
