@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="extension-rr-agency-entity" />
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-agency-entity" />
+  <version value="0.0.0" />
+  <name value="Extension Agency-Entity" />
+  <title value="Agency-Entity" />
+  <status value="draft" />
+  <date value="2018-08-01" />
+  <description value="TODO" />
+  <fhirVersion value="3.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <contextType value="resource" />
+  <context value="PlanDefinition.jurisdiction" />
+  <context value="PlanDefinition.publisher" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Agency-Entity" />
+      <isModifier value="false" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-responsible-agency" />
+    </element>
+    <element id="Extension.value[x]:valueReference">
+      <path value="Extension.valueReference" />
+      <sliceName value="valueReference" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

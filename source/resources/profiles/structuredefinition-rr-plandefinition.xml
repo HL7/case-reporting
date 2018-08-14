@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://hl7.org/fhir ../../../validation/fhir-all.xsd" xmlns="http://hl7.org/fhir">
+<StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="rr-plandefinition" />
   <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-plandefinition" />
   <version value="0.0.0" />
@@ -104,6 +103,26 @@
         <identity value="cda-rr" />
         <map value="Rules Authoring Agency" />
       </mapping>
+    </element>
+    <element id="PlanDefinition.publisher.extension:rulesAuthoringAgencyTest">
+      <path value="PlanDefinition.publisher.extension" />
+      <sliceName value="rulesAuthoringAgencyTest" />
+      <short value="Rules Authoring Agency Test" />
+      <definition value="Optional Extension Element - found in all resources." />
+      <min value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-agency-entity" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.publisher.extension:rulesAuthoringAgencyTest.value[x]:valueReference">
+      <path value="PlanDefinition.publisher.extension.valueReference" />
+      <sliceName value="valueReference" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency" />
+      </type>
     </element>
     <element id="PlanDefinition.jurisdiction">
       <path value="PlanDefinition.jurisdiction" />
