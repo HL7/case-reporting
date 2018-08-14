@@ -1,0 +1,30 @@
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://hl7.org/fhir/v3/ActCode",
+  "code" : "AMB",
+  "display" : "ambulatory"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://hl7.org/fhir/v3/ActCode",
+      "filter" : [{
+        "property" : "concept",
+        "op" : "is-a",
+        "value" : "_ActEncounterCode"
+      }]
+    }],
+    "exclude" : [{
+      "system" : "http://hl7.org/fhir/v3/ActCode",
+      "concept" : [{
+        "code" : "_ActEncounterCode"
+      }]
+    }]
+  }
+}}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "Unable to provide support for code system http://hl7.org/fhir/v3/ActCode"
+}
+-------------------------------------------------------------------------------------
