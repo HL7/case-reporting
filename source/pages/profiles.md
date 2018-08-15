@@ -4,8 +4,6 @@ layout: default
 active: profiles
 ---
 
-source file: source/pages/_include/{{page.md_filename}}.md  file
-
 <!-- { :.no_toc } -->
 
 <!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->

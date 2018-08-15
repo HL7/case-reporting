@@ -1,7 +1,7 @@
 {% assign id = {{include.id}} %}
-source file: source/pages/\_includes/{{id}}-intro.md
 
-**ECR Profile: {{site.data.structuredefinitions.[id].name}}**
+
+**eCR Profile: {{site.data.structuredefinitions.[id].name}}**
 
 **Scope and Usage**
 

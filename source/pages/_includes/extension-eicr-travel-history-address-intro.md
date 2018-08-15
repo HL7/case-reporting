@@ -1,9 +1,9 @@
 
 
 {% assign id = {{include.id}} %}
-source file: source/pages/\_includes/{{id}}-intro.md
 
-**ECR Extension: {{site.data.structuredefinitions.[id].name}}**
+
+**eCR Extension: {{site.data.structuredefinitions.[id].name}}**
 
 
 

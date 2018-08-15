@@ -15,9 +15,6 @@ layout: default
 <!-- end TOC -->
 
 
-source file: source/pages/\_include/{{page.md_filename}}.md  file
-
-
 The importance of having standards developed for when they are needed
 exists in a tension with both the long time it takes for broad industry
 adoption and the inflated expectations for new technologies. This
