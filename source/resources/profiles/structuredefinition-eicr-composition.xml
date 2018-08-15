@@ -6,7 +6,8 @@
   <name value="Electronic Initial Case Report Composition" />
   <status value="draft" />
   <date value="2018-08-01" />
-  <description value="The Electronic Case Reporting Composition profile establishes the core elements, extensions, vocabularies and value sets for representing an electronic initial case report (eICR). It describes the content requirements for the initial Case Report including:         &#xA;&#xA;- Patient demographics         &#xA;- Patient pregnancy status         &#xA;- Patient occupation and travel history         &#xA;- Provider and Facility information         &#xA;- Laboratory orders tests and results         &#xA;- Signs and Symptoms and Diagnosis         &#xA;- Medication and Immunization History         &#xA;- Flags for the existence of reportable condition trigger codes in diagnoses and ordered/resulted laboratory tests." />
+  <description
+    value="The Electronic Case Reporting Composition profile establishes the core elements, extensions, vocabularies and value sets for representing an electronic initial case report (eICR). It describes the content requirements for the initial Case Report including:         &#xA;&#xA;- Patient demographics         &#xA;- Patient pregnancy status         &#xA;- Patient occupation and travel history         &#xA;- Provider and Facility information         &#xA;- Laboratory orders tests and results         &#xA;- Signs and Symptoms and Diagnosis         &#xA;- Medication and Immunization History         &#xA;- Flags for the existence of reportable condition trigger codes in diagnoses and ordered/resulted laboratory tests." />
   <fhirVersion value="3.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -19,10 +20,6 @@
       <short value="eICR Composition Profile" />
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="EICR CCDA" />
-      </mapping>
     </element>
     <element id="Composition.type">
       <path value="Composition.type" />
@@ -125,10 +122,18 @@
     </element>
     <element id="Composition.section:sliceEncountersSection.entry">
       <path value="Composition.section.entry" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource" />
-      </type>
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceEncountersSection.entry:sliceTravelHistory">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceEICREncounter" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter" />
@@ -146,10 +151,6 @@
       <max value="1" />
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="3284-97" />
-      </mapping>
     </element>
     <element id="Composition.section:sliceHistoryOfPresentIllnessSection.code">
       <path value="Composition.section.code" />
@@ -163,10 +164,6 @@
       </patternCodeableConcept>
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="81-15477" />
-      </mapping>
     </element>
     <element id="Composition.section:sliceHistoryOfPresentIllnessSection.text">
       <path value="Composition.section.text" />
@@ -184,10 +181,7 @@
       <max value="1" />
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="3284-98" />
-      </mapping>
+      
     </element>
     <element id="Composition.section:sliceReasonForVisitSection.code">
       <path value="Composition.section.code" />
@@ -201,10 +195,7 @@
       </patternCodeableConcept>
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="81-15429" />
-      </mapping>
+      
     </element>
     <element id="Composition.section:sliceReasonForVisitSection.text">
       <path value="Composition.section.text" />
@@ -222,10 +213,7 @@
       <max value="1" />
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="3284-87" />
-      </mapping>
+      
     </element>
     <element id="Composition.section:sliceSocialHistorySection.code">
       <path value="Composition.section.code" />
@@ -239,10 +227,7 @@
       </patternCodeableConcept>
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="1198-14819" />
-      </mapping>
+      
     </element>
     <element id="Composition.section:sliceSocialHistorySection.text">
       <path value="Composition.section.text" />
@@ -280,10 +265,7 @@
       </type>
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="todo" />
-      </mapping>
+      
     </element>
     <element id="Composition.section:sliceSocialHistorySection.entry:sliceOccupationHistory">
       <path value="Composition.section.entry" />
@@ -294,10 +276,7 @@
       </type>
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="todo" />
-      </mapping>
+      
     </element>
     <element id="Composition.section:sliceProblemSection">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
@@ -310,10 +289,7 @@
       <max value="1" />
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="3284-99" />
-      </mapping>
+      
     </element>
     <element id="Composition.section:sliceProblemSection.code">
       <path value="Composition.section.code" />
@@ -327,10 +303,7 @@
       </patternCodeableConcept>
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="1198-15409" />
-      </mapping>
+      
     </element>
     <element id="Composition.section:sliceProblemSection.text">
       <path value="Composition.section.text" />
@@ -339,7 +312,18 @@
     </element>
     <element id="Composition.section:sliceProblemSection.entry">
       <path value="Composition.section.entry" />
-      <min value="1" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceProblemSection.entry:sliceEICRCondition">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceEICRCondition" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition" />
@@ -361,7 +345,8 @@
       <path value="Composition.section.entry.extension" />
       <sliceName value="sliceTriggerCondition" />
       <short value="eICR Trigger Code Flag" />
-      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
+      <definition
+        value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -384,10 +369,7 @@
       <max value="1" />
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="3284-88" />
-      </mapping>
+      
     </element>
     <element id="Composition.section:sliceMedicationsAdministeredSection.code">
       <path value="Composition.section.code" />
@@ -401,10 +383,7 @@
       </patternCodeableConcept>
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="1098-15383" />
-      </mapping>
+      
     </element>
     <element id="Composition.section:sliceMedicationsAdministeredSection.text">
       <path value="Composition.section.text" />
@@ -413,16 +392,25 @@
     </element>
     <element id="Composition.section:sliceMedicationsAdministeredSection.entry">
       <path value="Composition.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceMedicationsAdministeredSection.entry:USCoreMedicationStatement">
+      <path value="Composition.section.entry" />
+      <sliceName value="USCoreMedicationStatement"></sliceName>
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationstatement" />
       </type>
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="1098-8156" />
-      </mapping>
+      
     </element>
     <element id="Composition.section:sliceResultsSection">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
@@ -435,10 +423,7 @@
       <max value="1" />
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="3284-89" />
-      </mapping>
+      
     </element>
     <element id="Composition.section:sliceResultsSection.code">
       <path value="Composition.section.code" />
@@ -452,10 +437,7 @@
       </patternCodeableConcept>
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="1198-15433" />
-      </mapping>
+      
     </element>
     <element id="Composition.section:sliceResultsSection.text">
       <path value="Composition.section.text" />
@@ -481,10 +463,7 @@
       </type>
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="1198-15516" />
-      </mapping>
+      
     </element>
     <element id="Composition.section:sliceResultsSection.entry:sliceUSCoreObservationResults.extension">
       <path value="Composition.section.entry.extension" />
@@ -500,7 +479,8 @@
       <path value="Composition.section.entry.extension" />
       <sliceName value="sliceTriggerUSCoreObservationResults" />
       <short value="eICR Trigger Code Flag" />
-      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
+      <definition
+        value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -542,8 +522,20 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:slicePlanOfTreatmentSection.entry">
+    <element id="Composition.section:slicePlanOfTreatment.entry">
       <path value="Composition.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceEICRProcedureRequest">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceEICRProcedureRequest" />
       <short value="eICR Procedure Request" />
       <type>
         <code value="Reference" />
@@ -566,7 +558,8 @@
       <path value="Composition.section.entry.extension" />
       <sliceName value="sliceTriggerEICRProcedureRequest" />
       <short value="eICR Trigger Code Flag" />
-      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
+      <definition
+        value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -588,10 +581,7 @@
       <max value="1" />
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="3284-148" />
-      </mapping>
+      
     </element>
     <element id="Composition.section:sliceImmunizationsSection.code">
       <path value="Composition.section.code" />
@@ -605,10 +595,7 @@
       </patternCodeableConcept>
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="1198-15369" />
-      </mapping>
+      
     </element>
     <element id="Composition.section:sliceImmunizationsSection.text">
       <path value="Composition.section.text" />
@@ -617,6 +604,18 @@
     </element>
     <element id="Composition.section:sliceImmunizationsSection.entry">
       <path value="Composition.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceImmunizationsSection.entry:sliceUSCoreImmunization">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceUSCoreImmunization" />
       <min value="1" />
       <type>
         <code value="Reference" />
@@ -624,10 +623,6 @@
       </type>
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-eicr" />
-        <map value="1198-9019" />
-      </mapping>
     </element>
   </differential>
 </StructureDefinition>
