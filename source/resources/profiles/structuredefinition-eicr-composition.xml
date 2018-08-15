@@ -3,11 +3,11 @@
   <id value="eicr-composition" />
   <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition" />
   <version value="0.0.0" />
-  <name value="Electronic Initial Case Report Composition" />
+  <name value="eicr-composition" />
+  <title value="Electronic Initial Case Report Composition" />
   <status value="draft" />
   <date value="2018-08-01" />
-  <description
-    value="The Electronic Case Reporting Composition profile establishes the core elements, extensions, vocabularies and value sets for representing an electronic initial case report (eICR). It describes the content requirements for the initial Case Report including:         &#xA;&#xA;- Patient demographics         &#xA;- Patient pregnancy status         &#xA;- Patient occupation and travel history         &#xA;- Provider and Facility information         &#xA;- Laboratory orders tests and results         &#xA;- Signs and Symptoms and Diagnosis         &#xA;- Medication and Immunization History         &#xA;- Flags for the existence of reportable condition trigger codes in diagnoses and ordered/resulted laboratory tests." />
+  <description value="The Electronic Case Reporting Composition profile establishes the core elements, extensions, vocabularies and value sets for representing an electronic initial case report (eICR). It describes the content requirements for the initial Case Report including:         &#xA;&#xA;- Patient demographics         &#xA;- Patient pregnancy status         &#xA;- Patient occupation and travel history         &#xA;- Provider and Facility information         &#xA;- Laboratory orders tests and results         &#xA;- Signs and Symptoms and Diagnosis         &#xA;- Medication and Immunization History         &#xA;- Flags for the existence of reportable condition trigger codes in diagnoses and ordered/resulted laboratory tests." />
   <fhirVersion value="3.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -18,8 +18,35 @@
     <element id="Composition">
       <path value="Composition" />
       <short value="eICR Composition Profile" />
+      <definition value="The Electronic Case Reporting Composition profile establishes the core elements, extensions, vocabularies and value sets for representing an electronic initial case report (eICR). It describes the content requirements for the initial Case Report including:         &#xA;&#xA;- Patient demographics         &#xA;- Patient pregnancy status         &#xA;- Patient occupation and travel history         &#xA;- Provider and Facility information         &#xA;- Laboratory orders tests and results         &#xA;- Signs and Symptoms and Diagnosis         &#xA;- Medication and Immunization History         &#xA;- Flags for the existence of reportable condition trigger codes in diagnoses and ordered/resulted laboratory tests." />
       <mustSupport value="true" />
       <isModifier value="false" />
+    </element>
+    <element id="Composition.extension">
+      <path value="Composition.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.extension:extensionEICRManuallyInitiatedReason">
+      <path value="Composition.extension" />
+      <sliceName value="extensionEICRManuallyInitiatedReason" />
+      <short value="Initial Case Report Manual Initiation Reason" />
+      <definition value="The presence of this extension indicates this eICR was manually initiated and contains the reason for manual initiation of the eICR." />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-manually-initiated-reason" />
+      </type>
+    </element>
+    <element id="Composition.identifier">
+      <path value="Composition.identifier" />
+      <short value="eICR Document Id" />
+      <definition value="ID of the eICR Document" />
     </element>
     <element id="Composition.type">
       <path value="Composition.type" />
@@ -131,7 +158,7 @@
       </slicing>
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:sliceEncountersSection.entry:sliceTravelHistory">
+    <element id="Composition.section:sliceEncountersSection.entry:sliceEICREncounter">
       <path value="Composition.section.entry" />
       <sliceName value="sliceEICREncounter" />
       <type>
@@ -167,6 +194,8 @@
     </element>
     <element id="Composition.section:sliceHistoryOfPresentIllnessSection.text">
       <path value="Composition.section.text" />
+      <short value="History of present illness" />
+      <definition value="History of present illness" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
@@ -181,7 +210,6 @@
       <max value="1" />
       <mustSupport value="true" />
       <isModifier value="false" />
-      
     </element>
     <element id="Composition.section:sliceReasonForVisitSection.code">
       <path value="Composition.section.code" />
@@ -195,10 +223,11 @@
       </patternCodeableConcept>
       <mustSupport value="true" />
       <isModifier value="false" />
-      
     </element>
     <element id="Composition.section:sliceReasonForVisitSection.text">
       <path value="Composition.section.text" />
+      <short value="Reason for visit" />
+      <definition value="Reason for visit" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
@@ -213,7 +242,6 @@
       <max value="1" />
       <mustSupport value="true" />
       <isModifier value="false" />
-      
     </element>
     <element id="Composition.section:sliceSocialHistorySection.code">
       <path value="Composition.section.code" />
@@ -227,7 +255,6 @@
       </patternCodeableConcept>
       <mustSupport value="true" />
       <isModifier value="false" />
-      
     </element>
     <element id="Composition.section:sliceSocialHistorySection.text">
       <path value="Composition.section.text" />
@@ -265,7 +292,6 @@
       </type>
       <mustSupport value="true" />
       <isModifier value="false" />
-      
     </element>
     <element id="Composition.section:sliceSocialHistorySection.entry:sliceOccupationHistory">
       <path value="Composition.section.entry" />
@@ -276,7 +302,6 @@
       </type>
       <mustSupport value="true" />
       <isModifier value="false" />
-      
     </element>
     <element id="Composition.section:sliceProblemSection">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
@@ -289,7 +314,6 @@
       <max value="1" />
       <mustSupport value="true" />
       <isModifier value="false" />
-      
     </element>
     <element id="Composition.section:sliceProblemSection.code">
       <path value="Composition.section.code" />
@@ -303,7 +327,6 @@
       </patternCodeableConcept>
       <mustSupport value="true" />
       <isModifier value="false" />
-      
     </element>
     <element id="Composition.section:sliceProblemSection.text">
       <path value="Composition.section.text" />
@@ -331,7 +354,7 @@
       <mustSupport value="true" />
       <isModifier value="false" />
     </element>
-    <element id="Composition.section:sliceProblemSection.entry.extension">
+    <element id="Composition.section:sliceProblemSection.entry:sliceEICRCondition.extension">
       <path value="Composition.section.entry.extension" />
       <slicing>
         <discriminator>
@@ -341,12 +364,11 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="Composition.section:sliceProblemSection.entry.extension:sliceTriggerCondition">
+    <element id="Composition.section:sliceProblemSection.entry:sliceEICRCondition.extension:sliceTriggerCondition">
       <path value="Composition.section.entry.extension" />
       <sliceName value="sliceTriggerCondition" />
       <short value="eICR Trigger Code Flag" />
-      <definition
-        value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
+      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -354,7 +376,7 @@
       </type>
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:sliceProblemSection.entry.extension:sliceTriggerCondition.url">
+    <element id="Composition.section:sliceProblemSection.entry:sliceEICRCondition.extension:sliceTriggerCondition.url">
       <path value="Composition.section.entry.extension.url" />
       <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger" />
     </element>
@@ -369,7 +391,6 @@
       <max value="1" />
       <mustSupport value="true" />
       <isModifier value="false" />
-      
     </element>
     <element id="Composition.section:sliceMedicationsAdministeredSection.code">
       <path value="Composition.section.code" />
@@ -383,7 +404,6 @@
       </patternCodeableConcept>
       <mustSupport value="true" />
       <isModifier value="false" />
-      
     </element>
     <element id="Composition.section:sliceMedicationsAdministeredSection.text">
       <path value="Composition.section.text" />
@@ -403,14 +423,13 @@
     </element>
     <element id="Composition.section:sliceMedicationsAdministeredSection.entry:USCoreMedicationStatement">
       <path value="Composition.section.entry" />
-      <sliceName value="USCoreMedicationStatement"></sliceName>
+      <sliceName value="USCoreMedicationStatement" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationstatement" />
       </type>
       <mustSupport value="true" />
       <isModifier value="false" />
-      
     </element>
     <element id="Composition.section:sliceResultsSection">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
@@ -423,7 +442,6 @@
       <max value="1" />
       <mustSupport value="true" />
       <isModifier value="false" />
-      
     </element>
     <element id="Composition.section:sliceResultsSection.code">
       <path value="Composition.section.code" />
@@ -437,7 +455,6 @@
       </patternCodeableConcept>
       <mustSupport value="true" />
       <isModifier value="false" />
-      
     </element>
     <element id="Composition.section:sliceResultsSection.text">
       <path value="Composition.section.text" />
@@ -463,7 +480,6 @@
       </type>
       <mustSupport value="true" />
       <isModifier value="false" />
-      
     </element>
     <element id="Composition.section:sliceResultsSection.entry:sliceUSCoreObservationResults.extension">
       <path value="Composition.section.entry.extension" />
@@ -479,8 +495,7 @@
       <path value="Composition.section.entry.extension" />
       <sliceName value="sliceTriggerUSCoreObservationResults" />
       <short value="eICR Trigger Code Flag" />
-      <definition
-        value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
+      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -522,7 +537,7 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:slicePlanOfTreatment.entry">
+    <element id="Composition.section:slicePlanOfTreatmentSection.entry">
       <path value="Composition.section.entry" />
       <slicing>
         <discriminator>
@@ -544,7 +559,7 @@
       <mustSupport value="true" />
       <isModifier value="false" />
     </element>
-    <element id="Composition.section:slicePlanOfTreatmentSection.entry.extension">
+    <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceEICRProcedureRequest.extension">
       <path value="Composition.section.entry.extension" />
       <slicing>
         <discriminator>
@@ -554,12 +569,11 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="Composition.section:slicePlanOfTreatmentSection.entry.extension:sliceTriggerEICRProcedureRequest">
+    <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceEICRProcedureRequest.extension:sliceTriggerEICRProcedureRequest">
       <path value="Composition.section.entry.extension" />
       <sliceName value="sliceTriggerEICRProcedureRequest" />
       <short value="eICR Trigger Code Flag" />
-      <definition
-        value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
+      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -567,7 +581,7 @@
       </type>
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:slicePlanOfTreatmentSection.entry.extension:sliceTriggerEICRProcedureRequest.url">
+    <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceEICRProcedureRequest.extension:sliceTriggerEICRProcedureRequest.url">
       <path value="Composition.section.entry.extension.url" />
       <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger" />
     </element>
@@ -581,7 +595,6 @@
       <max value="1" />
       <mustSupport value="true" />
       <isModifier value="false" />
-      
     </element>
     <element id="Composition.section:sliceImmunizationsSection.code">
       <path value="Composition.section.code" />
@@ -595,7 +608,6 @@
       </patternCodeableConcept>
       <mustSupport value="true" />
       <isModifier value="false" />
-      
     </element>
     <element id="Composition.section:sliceImmunizationsSection.text">
       <path value="Composition.section.text" />

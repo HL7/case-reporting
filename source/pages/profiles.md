@@ -15,7 +15,6 @@ active: profiles
 
 ---
 <br />
-
 ### Electronic Initial Case Report (eICR) Transaction and Profiles
 
 The eICR transaction involves the transmission of data identified by a Council of State and Territorial Epidemiologists Task Force as being important to a case report.
@@ -26,11 +25,9 @@ There may be several different intermediaries involved in the transmission inclu
 In this implementation guide the reference transport transaction is a FHIR POST, but other transport mechanism may be added or substituted as the data travel to the appropriate public health agencies.
 In the FHIR eICR transaction to PHAs the RR payload may be added to provide the PHAs with information about what has been determined to be reportable, what PHAs have been sent eICR information, and what else has been communicated to healthcare.
 
-
 The following profiles and extensions have been defined for the eICR transactions
 
 #### Profiles
-
 <ul>
   <li><a href="StructureDefinition-eicr-composition.html">eICR Composition Profile</a></li>
   <li><a href="StructureDefinition-ecr-organization.html">eCR Organization Profile</a></li>
@@ -43,9 +40,9 @@ The following profiles and extensions have been defined for the eICR transaction
 </ul>
 
 #### Extensions
-
 <ul>
   <li><a href="StructureDefinition-extension-eicr-trigger-code-flag.html">eICR Trigger Code Flag</a></li>
+  <li><a href="StructureDefinition-extension-eicr-manually-initiated-reason.html">eICR Manually Initiated Reason</a></li>
   <li><a href="StructureDefinition-extension-eicr-travel-history-address.html">Travel History Address</a></li>
 </ul>
 
@@ -66,11 +63,9 @@ In this implementation guide the reference transport transaction is a FHIR POST,
 Once received by healthcare, the RR information is intended to support Providers and Reporters and be attached to patient charts or placed in work queues so as to notify personnel of reportable and possibly reportable conditions.
 It also should be provided to EHR System Administrators to confirm reporting and convey error and warning messages.
 
-
 The following profiles and extensions have been defined for the Reportability Response transactions.
 
 #### Profiles
-
 <ul>
   <li><a href="StructureDefinition-rr-communication.html">Reportability Response Communication Profile</a></li>
   <li><a href="StructureDefinition-rr-relevant-reportable-condition-plandefinition.html">Reportability Response PlanDefinition Profile</a></li>
@@ -123,4 +118,3 @@ The Subscription does not require FHIR implementation on the receiving (EHR) end
 <ul>
   <li><a href="StructureDefinition-ecr-knowledge-distribution.html">eCR Knowledge Distribution Profile</a></li>
 </ul>
-
