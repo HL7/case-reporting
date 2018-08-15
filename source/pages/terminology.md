@@ -28,7 +28,7 @@ A bundle containing all the trigger code value sets is also included in this gui
 <br/>
 ### Value Sets: eICR Transaction
 <ul>
-  <li>TODO</li>
+  <li><a href="ValueSet-geographical-location-history.html">Geographical Location History</a></li>(<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.3201">PHIN VADS link</a>)
   <li><a href="ValueSet-oes.html">US Standard Occupational Classification</a></li>
   
 </ul>

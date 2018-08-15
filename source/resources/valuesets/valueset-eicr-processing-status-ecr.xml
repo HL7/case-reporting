@@ -8,7 +8,8 @@
       <h2>eICR Processing Status (eCR)</h2>
       <div>
         <p>This value set contains codes that describe the status of the eICR in terms of processing by the public health decision support system.</p>
-        <p><a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=C166B4A8-0DF0-469B-B678-CDAB6985AA4D">eICR Processing Status (eCR) PHIN VADS link</a></p>
+        <p><a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=C166B4A8-0DF0-469B-B678-CDAB6985AA4D"
+            >eICR Processing Status (eCR) PHIN VADS link</a></p>
       </div>
     </div>
   </text>
@@ -51,5 +52,37 @@
       </concept>
     </include>
   </compose>
-  
+  <expansion>
+    <identifier value="http://hl7.org/fhir/us/ecr/ValueSet/eicr-processing-status-ecr" />
+    <timestamp value="2017-12-27" />
+    <contains>
+      <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+
+      <code value="RRVS20" />
+      <display value="eICR was processed - with a warning" />
+
+    </contains>
+    <contains>
+      <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+
+      <code value="RRVS19" />
+      <display value="eICR processed" />
+
+    </contains>
+    <contains>
+      <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+
+      <code value="RRVS22" />
+      <display value="eICR was not processed - error" />
+
+    </contains>
+    <contains>
+      <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+
+      <code value="RRVS21" />
+      <display value="eICR was processed - with a severe warning" />
+
+    </contains>
+  </expansion>
+
 </ValueSet>

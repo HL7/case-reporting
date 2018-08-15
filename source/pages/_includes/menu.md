@@ -25,6 +25,7 @@
 - [Profiles, Extensions & Transactions](profiles.html)
 - [Mappings](mappings.html)
 - [Terminology](terminology.html)
+- [Narrative Guidance](narrative-guidance.html)
 - [Capability Statements](capstatements.html)
 - [Downloads](downloads.html)
 

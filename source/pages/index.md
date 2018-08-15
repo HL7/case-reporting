@@ -15,7 +15,6 @@ active: home
 
 <!-- end TOC -->
 
-source: source/pages/\_include/{{page.md_filename}}.md  file
 
 #### Introduction and Purpose
 
