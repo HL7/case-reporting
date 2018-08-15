@@ -318,17 +318,17 @@
         <valueString value="Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient. &quot;Zika virus disease (disorder)&quot; is reportable to &quot;State Department of Health&quot;. An initial case report was sent to &quot;State Department of Health&quot;. Additional information may be required for this report." />
       </example>
     </element>
-    <element id="Communication.payload:sliceRelevantReportableConditionInformation">
+    <element id="Communication.payload:sliceRelevantReportableCondition">
       <path value="Communication.payload" />
-      <sliceName value="sliceRelevantReportableConditionInformation" />
-      <short value="Relevant Reportable Condition Information" />
+      <sliceName value="sliceRelevantReportableCondition" />
+      <short value="Relevant Reportable Condition" />
       <definition value="This payload slice is present in the Reportabilty Response if the eICR was processed and is not present if the eICR was not processed. It contains a Reportability Response PlanDefinition and repeats for each uniqe condition-PHA pair." />
       <mustSupport value="true" />
     </element>
-    <element id="Communication.payload:sliceRelevantReportableConditionInformation.id">
+    <element id="Communication.payload:sliceRelevantReportableCondition.id">
       <path value="Communication.payload.id" />
       <min value="1" />
-      <fixedString value="relevant-reportable-condition-information" />
+      <fixedString value="relevant-reportable-condition" />
       <mustSupport value="true" />
     </element>
     <element id="Communication.payload:sliceRelevantReportableConditionInformation.content[x]:contentReference">
@@ -336,7 +336,7 @@
       <sliceName value="contentReference" />
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-feedback-plandefinition" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition" />
       </type>
     </element>
   </differential>

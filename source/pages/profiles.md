@@ -73,7 +73,7 @@ The following profiles and extensions have been defined for the Reportability Re
 
 <ul>
   <li><a href="StructureDefinition-rr-communication.html">Reportability Response Communication Profile</a></li>
-  <li><a href="StructureDefinition-rr-reportability-feedback-plandefinition.html">Reportability Response PlanDefinition Profile</a></li>
+  <li><a href="StructureDefinition-rr-relevant-reportable-condition-plandefinition.html">Reportability Response PlanDefinition Profile</a></li>
   <li><a href="StructureDefinition-rr-rules-authoring-agency.html">Rules Authoring Agency</a></li>
   <li><a href="StructureDefinition-rr-responsible-agency.html">Responsible Agency</a></li>
   <li><a href="StructureDefinition-rr-routing-entity.html">Routing Entity</a></li>
