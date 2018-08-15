@@ -73,12 +73,12 @@ id: rr-communication
 |Filename of eICR||[Communication.payload.contentString](StructureDefinition-rr-communication-definitions.html#Communication.payload.contentReference.display)|||eCR Profile|
 |Manually Initiated eICR||[Communication.payload.extension](StructureDefinition-extension-manual-init.html)|||eCR Profile|
 |Initial Case Report Manual Initiation Reason||[Communication.payload.extension](StructureDefinition-extension-manual-init-reason.html)|||eCR Profile|
-|Definition||[Communication.definition](StructureDefinition-rr-communication-definitions.html#Communication.definition)|[PlanDefinition](StructureDefinition-rr-plandefinition-definitions.html#PlanDefinition)||eCR Profile|
+|Definition||[Communication.definition](StructureDefinition-rr-communication-definitions.html#Communication.definition)|[PlanDefinition](StructureDefinition-rr-reportability-feedback-plandefinition-definitions.html#PlanDefinition)||eCR Profile|
 |External Resource Category|||[PlanDefinition.relatedArtifact.extension](StructureDefinition-extension-rel-artifact-category.html)||eCR Profile|
 |External Resource Priority|||[PlanDefinition.relatedArtifact.extension](StructureDefinition-extension-rel-artifact-priority.html)||eCR Profile|
-|External Resource Description|||[PlanDefinition.relatedArtifact](StructureDefinition-rr-plandefinition-definitions.html#PlanDefinition.relatedArtifact)|[RelatedArtifact.display]({{site.data.fhir.path}}metadatatypes-definitions.html#RelatedArtifact.type)|eCR Profile|
+|External Resource Description|||[PlanDefinition.relatedArtifact](StructureDefinition-rr-reportability-feedback-plandefinition-definitions.html#PlanDefinition.relatedArtifact)|[RelatedArtifact.display]({{site.data.fhir.path}}metadatatypes-definitions.html#RelatedArtifact.type)|eCR Profile|
 |External Resource Link||||[RelatedArtifact.url]({{site.data.fhir.path}}metadatatypes-definitions.html#RelatedArtifact.url)|US-Core Profile|
-|Reporting Timeframe|||[PlanDefinition.action.timing](StructureDefinition-rr-plandefinition-definitions.html#PlanDefinition.action.timingTiming)||US-Core Profile|
+|Reporting Timeframe|||[PlanDefinition.action.timing](StructureDefinition-rr-reportability-feedback-plandefinition-definitions.html#PlanDefinition.action.timingTiming)||US-Core Profile|
 |Authoring Agency|||[PlanDefinition.publisher.extension](StructureDefinition-extension-publisher-reference.html)|[Organization]StructureDefinition-ecr-organization)|eCR Profile|
 |Authoring Agency Name||||[Organization.name]StructureDefinition-ecr-organization)|eCR Profile|
 |Authoring Agency Identifier||||[Organization.identifier]StructureDefinition-ecr-organization)|eCR Profile|
