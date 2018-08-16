@@ -30,6 +30,7 @@ The following profiles and extensions have been defined for the eICR transaction
 #### Profiles
 <ul>
   <li><a href="StructureDefinition-eicr-composition.html">eICR Composition Profile</a></li>
+  <li><a href="StructureDefinition-ecr-patient.html">eICR Composition Profile</a></li>
   <li><a href="StructureDefinition-ecr-organization.html">eCR Organization Profile</a></li>
   <li><a href="StructureDefinition-eicr-encounter.html">eICR Encounter Profile</a></li>
   <li><a href="StructureDefinition-eicr-procedurerequest.html">eICR Lab Orders Profile</a></li>
@@ -89,9 +90,6 @@ The following profiles and extensions have been defined for the Reportability Re
   <li><a href="StructureDefinition-extension-rr-determination-of-reportability.html">Extension Determination of Reportability</a></li>
   <li><a href="StructureDefinition-extension-rr-determination-of-reportability-reason.html">Extension Determination of Reportability Reason</a></li>
   <li><a href="StructureDefinition-extension-rr-determination-of-reportability-rule.html">Extension Determination of Reportability Rule</a></li>
-  <li><a href="StructureDefinition-extension-rr-responsible-agency.html">Extension Responsible Agency</a></li>
-  <li><a href="StructureDefinition-extension-rr-rules-authoring-agency.html">Extension Rules Authoring Agency</a></li>
-  <li><a href="StructureDefinition-extension-rr-routing-entity.html">Extension Routing Entity</a></li>
   <li><a href="StructureDefinition-extension-rr-external-resource-type.html">Extension External Resource Type</a></li>
   <li><a href="StructureDefinition-extension-rr-priority.html">Extension External Resource Priority</a></li>
 </ul>

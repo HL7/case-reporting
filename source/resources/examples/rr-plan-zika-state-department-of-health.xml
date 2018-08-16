@@ -7,24 +7,15 @@
   </meta>
   <text>
     <status value="generated" />
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <ul>
-        <li>
-          <p>Local mosquito-borne Zika virus transmission was reported in your area. Increased watchfulness for symptoms of Zika virus in your patients is warranted. (Immediate action requested)</p>
-        </li>
-        <li>
-          <p>Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here. (
-            <a
-              href="http://statedepartmentofhealth.gov/epi/disease/zika/Supplemental_data_form.pdf">Link</a>- Immediate action required)</p>
-        </li>
-        <li>
-          <p>Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy. (
-            <a
-              href="http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf">Link</a>- Immediate action requested)</p>
-        </li>
-      </ul>
+    <div xmlns="http://www.w3.org/1999/xhtml"
+        >
+      The Reportability Response Plan Definition does not contain narrative text. The information from this resource is parsed and contained in <a
+        href="StructureDefinition-rr-communication-definitions.html#Communication.text"
+        >Communication[rr-communication].text</a> according to the guidlines set out here: <a href="narrative-guidance.html"
+      >Narrative Guidance</a>.
     </div>
   </text>
+
   <!-- Extension: Determination of Reportability -->
   <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-determination-of-reportability">
     <valueCodeableConcept>
@@ -38,31 +29,30 @@
 
   <!-- Extension: Determination of Reportability Reason -->
   <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-determination-of-reportability-reason">
-    <valueCodeableConcept>
-      <coding>
-        <system value="http://acme.org/cdc-codes" />
-        <code value="missing" />
-        <display value="MISSING REQUIRED DATA(TEMPORARY CODE)" />
-      </coding>
-      <text value="MISSING REQUIRED DATA" />
-    </valueCodeableConcept>
+    <valueString value="Condition is reportable" />
   </extension>
 
   <!-- Extension: Determination of Reportability Rule -->
   <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-determination-of-reportability-rule">
-    <valueString value="Rule used in reportability determination." />
+    <valueString value="Description of rule used in reportability determination" />
   </extension>
+
   <status value="active" />
-  <date value="2016-11-22" />
+  <date value="2017-11-22" />
+
   <publisher>
-    <!-- Extension: Rules Authoring Agency -->
-    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-rules-authoring-agency">
+    <!-- Extension: eCR Organization - contains Rules Authoring Agency organization -->
+    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-ecr-organization">
       <valueReference>
         <reference value="Organization/rr-organization-rules-authoring-agency-haw" />
       </valueReference>
     </extension>
   </publisher>
+
+  
   <jurisdiction>
+    
+    <!-- Extension: Location relevance -->
     <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-location-relevance">
       <valueCodeableConcept>
         <coding>
@@ -72,32 +62,37 @@
         </coding>
       </valueCodeableConcept>
     </extension>
-    <!-- Extension: Routing Entity -->
-    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-routing-entity">
+
+    <!-- Extension: eCR Organization - contains Routing Entity organization -->
+    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-ecr-organization">
       <valueReference>
         <reference value="Organization/rr-organization-routing-entity-haw" />
       </valueReference>
     </extension>
-    <!-- Extension: Responsible Agency -->
-    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-responsible-agency">
+
+    <!-- Extension: eCR Organization - contains Responsible Agency organization -->
+    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-ecr-organization">
       <valueReference>
         <reference value="Organization/rr-organization-responsible-agency-haw" />
       </valueReference>
     </extension>
   </jurisdiction>
+
+  <!-- Goal that address a particular condition - in this case Zika -->
   <goal>
     <description>
-      <text value="Provide information on the status of a reportable condition and next steps to be taken relative to this condition."></text>
+      <text value="Clinical feedback" />
     </description>
+    <!-- The Relevant Reportable Condition -->
     <addresses>
       <coding>
-        <system value="http://snomed.info/sct"/>
-        <code value="3928002"></code>
-        <display value="Zika virus disease (disorder)"></display>
+        <system value="http://snomed.info/sct" />
+        <code value="3928002" />
+        <display value="Zika virus disease (disorder)" />
       </coding>
     </addresses>
   </goal>
-  
+
   <!-- Action: External Resource: Outbreak- or Cluster Related (no link)-->
   <action>
     <documentation>
@@ -121,10 +116,10 @@
           </coding>
         </valueCodeableConcept>
       </extension>
-      <type value="documentation"></type>
+      <type value="documentation" />
       <display
         value="Local mosquito-borne Zika virus transmission was reported in your area. Increased watchfulness for symptoms of Zika virus in your patients is warranted."
-      />
+       />
     </documentation>
     <timingDuration>
       <value value="24" />
@@ -133,7 +128,7 @@
       <code value="H" />
     </timingDuration>
   </action>
-  
+
   <!-- Action: External Resource: Additional Reporting Needs-->
   <action>
     <documentation>
@@ -171,37 +166,39 @@
       <code value="H" />
     </timingDuration>
   </action>
-  
+
   <!-- Action: External Resource: Treatment and/or prevention-->
   <action>
     <documentation>
-      
-    <!--External Resource Category-->
-    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-external-resource-type">
-      <valueCodeableConcept>
-        <coding>
-          <system value="urn:oid:2.16.840.1.114222.4.5.274" />
-          <code value="RRVS10" />
-          <display value="Treatment and/or prevention" />
-        </coding>
-      </valueCodeableConcept>
-    </extension>
-    <!--External Reportability Priority-->
-    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-priority">
-      <valueCodeableConcept>
-        <coding>
-          <system value="urn:oid:2.16.840.1.114222.4.5.274" />
-          <code value="RRVS18" />
-          <display value="Immediate action requested" />
-        </coding>
-      </valueCodeableConcept>
-    </extension>
-    <type value="documentation" />
-    <!--External Resource Description-->
-    <display value="Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy." />
-    <!--External Resource Link-->
-    <url value="http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf" />
+
+      <!--External Resource Category-->
+      <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-external-resource-type">
+        <valueCodeableConcept>
+          <coding>
+            <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+            <code value="RRVS10" />
+            <display value="Treatment and/or prevention" />
+          </coding>
+        </valueCodeableConcept>
+      </extension>
+      <!--External Reportability Priority-->
+      <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-priority">
+        <valueCodeableConcept>
+          <coding>
+            <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+            <code value="RRVS18" />
+            <display value="Immediate action requested" />
+          </coding>
+        </valueCodeableConcept>
+      </extension>
+      <type value="documentation" />
+      <!--External Resource Description-->
+      <display value="Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy." />
+      <!--External Resource Link-->
+      <url value="http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf" />
     </documentation>
+    
+    <!-- Reporting Timeframe -->
     <timingDuration>
       <value value="24" />
       <unit value="H" />
