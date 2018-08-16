@@ -1,292 +1,362 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CapabilityStatement xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
-  <id value="server" />
-  <text>
-    <status value="generated" />
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <ul>
-        <li>FHIR Version: 3.0.1</li>
-        <li>Supported formats: xml, json</li>
-        <li>Published: 2017-12-17</li>
-        <li>Published by: HL7 PHER Workgroup</li>
-      </ul>
-<!--      <p>...TODO... This Section will describes the expected capabilities etc....</p>-->
-    </div>
-  </text>
-  <url value="http://hl7.org/fhir/us/ecr/CapabilityStatement/server" />
-  <name value="Server" />
-  <status value="draft" />
-  <date value="2018-08-01" />
-  <description value="This resource defines the expected capabilities " />
-  <kind value="requirements" />
-  <fhirVersion value="3.0.1" />
-  <acceptUnknown value="extensions" />
-  
-  <format value="xml" />
-  <format value="json" />
-
-  <profile>
-    <reference value="http://hl7.org/fhir/us/ecr/StructureDefinition/template-basic" />
-    <display value="StructureDefinition-template-basic" />
-  </profile>
-  
-  <implementationGuide value="http://hl7.org/fhir/us/ecr/ImplementationGuide/ig"/>
-  
-  <rest>
-    <mode value="server" />
-
-  <resource>
-    <type value="Composition"/>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="read"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="update"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="delete"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="create"/>
-    </interaction>
-  </resource>
-  <resource>
-    <type value="Communication"/>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="read"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="update"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="delete"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="create"/>
-    </interaction>
-  </resource>
-  <resource>
-    <type value="Organization"/>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="read"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="update"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="create"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="delete"/>
-    </interaction>
-  </resource>
-  <resource>
-    <type value="Encounter"/>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="read"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="update"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="delete"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="create"/>
-    </interaction>
-  </resource>
-  <resource>
-    <type value="ProcedureRequest"/>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="read"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="update"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="delete"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="create"/>
-    </interaction>
-  </resource>
-  <resource>
-    <type value="Location"/>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="read"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="update"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="delete"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="create"/>
-    </interaction>
-  </resource>
-  <resource>
-    <type value="Observation"/>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="read"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="update"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="delete"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="create"/>
-    </interaction>
-  </resource>
-  <resource>
-    <type value="StructureDefinition"/>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="read"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="update"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="delete"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="create"/>
-    </interaction>
-  </resource>
-  <resource>
-    <type value="PlanDefinition"/>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="read"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="update"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="delete"/>
-    </interaction>
-    <interaction>
-      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-        <valueCode value="SHOULD" />
-      </extension>
-      <code value="create"/>
-    </interaction>
-	</resource>
-
-  </rest>
-  
-  <document>
-    <mode value="consumer"/>
+<CapabilityStatement
+    xmlns="http://hl7.org/fhir">
+    <id value="server"/>
+    <text>
+        <status value="generated"/>
+        <div
+            xmlns="http://www.w3.org/1999/xhtml">
+            <ul>
+                <li>FHIR Version: 3.0.1</li>
+                <li>Supported formats: xml, json</li>
+                <li>Published: 2017-12-17</li>
+                <li>Published by: HL7 PHER Workgroup</li>
+            </ul>
+            <!--      <p>...TODO... This Section will describes the expected capabilities etc....</p>-->
+        </div>
+    </text>
+    <url value="http://hl7.org/fhir/us/ecr/CapabilityStatement/server"/>
+    <name value="Server"/>
+    <status value="draft"/>
+    <date value="2018-08-01"/>
+    <description value="This resource defines the expected capabilities "/>
+    <kind value="requirements"/>
+    <fhirVersion value="3.0.1"/>
+    <acceptUnknown value="extensions"/>
+    <format value="xml"/>
+    <format value="json"/>
+    <implementationGuide value="http://hl7.org/fhir/us/ecr/ImplementationGuide/ig"/>
     <profile>
-      <reference value="StructureDefinition/eicr-composition"/>
-      <display value="eicr-composition"/>
+        <reference value="StructureDefinition/ecr-organization"/>
+        <display value="eCR Organization Profile"/>
     </profile>
-  </document>
+    <profile>
+        <reference value="StructureDefinition/ecr-knowledge-distribution-triggering"/>
+        <display value="eCR Knowledge Distribution Triggering"/>
+    </profile>
+    <profile>
+        <reference value="StructureDefinition/ecr-knowledge-distribution"/>
+        <display value="eCR Knowledge Distribution"/>
+    </profile>
+    <profile>
+        <reference value="StructureDefinition/rr-rules-authoring-agency"/>
+        <display value="Rules Authoring Agency"/>
+    </profile>
+    <profile>
+        <reference value="StructureDefinition/rr-routing-entity"/>
+        <display value="Routing Entity"/>
+    </profile>
+    <profile>
+        <reference value="StructureDefinition/rr-responsible-agency"/>
+        <display value="Responsible Agency"/>
+    </profile>
+    <profile>
+        <reference value="StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
+        <display value="Relevant Reportable Condition PlanDefinition"/>
+    </profile>
+    <profile>
+        <reference value="StructureDefinition/rr-eicr-processing-status-reason"/>
+        <display value="eICR Processing Status Reason"/>
+    </profile>
+    <profile>
+        <reference value="StructureDefinition/rr-eicr-processing-status"/>
+        <display value="eICR Processing Status"/>
+    </profile>
+    <profile>
+        <reference value="StructureDefinition/rr-communication"/>
+        <display value="Reportability Response Communication"/>
+    </profile>
+    <profile>
+        <reference value="StructureDefinition/pregnancy-status"/>
+        <display value="Pregnancy Status"/>
+    </profile>
+    <profile>
+        <reference value="StructureDefinition/eicr-travel-history"/>
+        <display value="eICR Travel History"/>
+    </profile>
+    <profile>
+        <reference value="StructureDefinition/eicr-procedurerequest"/>
+        <display value="eICR ProcedureRequest"/>
+    </profile>
+    <profile>
+        <reference value="StructureDefinition/eicr-occupationhistory"/>
+        <display value="eICR Occupation History"/>
+    </profile>
+    <profile>
+        <reference value="StructureDefinition/eicr-location"/>
+        <display value="eICR Facility"/>
+    </profile>
+    <profile>
+        <reference value="StructureDefinition/eicr-encounter"/>
+        <display value="eICR Encounter"/>
+    </profile>
+    <profile>
+        <reference value="StructureDefinition/eicr-condition"/>
+        <display value="eICR Condition"/>
+    </profile>
+    <profile>
+        <reference value="StructureDefinition/eicr-composition"/>
+        <display value="Electronic Initial Case Report Composition"/>
+    </profile>
+    <profile>
+        <reference value="StructureDefinition/ecr-practitionerrole"/>
+        <display value="eCR PractitionerRole"/>
+    </profile>
+    <profile>
+        <reference value="StructureDefinition/ecr-patient"/>
+        <display value="eCR Patient"/>
+    </profile>
+    <rest>
+        <mode value="server"/>
+        <resource>
+            <type value="Composition"/>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="delete"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="create"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="Communication"/>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="delete"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="create"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="Organization"/>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="create"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="delete"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="Encounter"/>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="delete"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="create"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="ProcedureRequest"/>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="delete"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="create"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="Location"/>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="delete"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="create"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="Observation"/>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="delete"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="create"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="StructureDefinition"/>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="delete"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="create"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="PlanDefinition"/>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="delete"/>
+            </interaction>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHOULD"/>
+                </extension>
+                <code value="create"/>
+            </interaction>
+        </resource>
+    </rest>
+    <document>
+        <mode value="consumer"/>
+        <profile>
+            <reference value="StructureDefinition/eicr-composition"/>
+            <display value="eicr-composition"/>
+        </profile>
+    </document>
 </CapabilityStatement>
