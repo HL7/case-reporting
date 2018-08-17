@@ -1,8 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <url value="http://example.org/fhir/StructureDefinition/rctc-valueset-library" />
+  <id value="rctc-valueset-library" />
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rctc-valueset-library" />
   <name value="rctc-valueset-library" />
+  <title value="RCTC Valueset Library" />
   <status value="draft" />
+  <date value="2018-08-19" />
+  <description value="Defines the library containing the Reportable Condition Trigger Code value sets. These are used in Public Health as trigger codes to kick off creation of electronic initial case reports and reportability responses. " />
   <fhirVersion value="3.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -10,6 +14,10 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Library" />
   <derivation value="constraint" />
   <differential>
+    <element id="Library">
+      <path value="Library" />
+      <mustSupport value="true" />
+    </element>
     <element id="Library.identifier">
       <path value="Library.identifier" />
       <min value="1" />
@@ -33,7 +41,7 @@
     <element id="Library.version">
       <path value="Library.version" />
       <short value="The version of the RCTC ValueSet Library. " />
-      <definition value="The RCTC Definition Version. Usualy a date. " />
+      <definition value="The RCTC Definition Version. Usually a date. " />
       <min value="1" />
     </element>
     <element id="Library.name">
