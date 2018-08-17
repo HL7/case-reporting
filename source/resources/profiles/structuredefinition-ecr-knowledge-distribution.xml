@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://hl7.org/fhir ../../../validation/fhir-all.xsd" xmlns="http://hl7.org/fhir">
+<StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="ecr-knowledge-distribution" />
   <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-knowledge-distribution" />
   <name value="ecr-knowledge-distribution" />
@@ -14,7 +13,6 @@
   <type value="PlanDefinition" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/PlanDefinition" />
   <derivation value="constraint" />
-  
   <differential>
     <element id="PlanDefinition">
       <path value="PlanDefinition" />
@@ -35,7 +33,7 @@
           <type value="value" />
           <path value="id" />
         </discriminator>
-        <!--<ordered value="true" />-->
+        <ordered value="true" />
         <rules value="open" />
       </slicing>
       <min value="1" />
@@ -44,9 +42,10 @@
     <element id="PlanDefinition.action.triggerDefinition:sliceDiagnosisProblemTriggerDefinition">
       <path value="PlanDefinition.action.triggerDefinition" />
       <sliceName value="sliceDiagnosisProblemTriggerDefinition" />
+      <short value="Diagnosis Problem Trigger Definition" />
       <min value="1" />
       <max value="1" />
-      <mustSupport value="false" />
+      <mustSupport value="true" />
     </element>
     <element id="PlanDefinition.action.triggerDefinition:sliceDiagnosisProblemTriggerDefinition.id">
       <path value="PlanDefinition.action.triggerDefinition.id" />
@@ -56,6 +55,7 @@
     <element id="PlanDefinition.action.triggerDefinition:sliceLabObsTestNameTriggerDefinition">
       <path value="PlanDefinition.action.triggerDefinition" />
       <sliceName value="sliceLabObsTestNameTriggerDefinition" />
+      <short value="Lab Obs Test Name Trigger Definition" />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
@@ -68,6 +68,7 @@
     <element id="PlanDefinition.action.triggerDefinition:sliceOrganismSubstanceTriggerDefinition">
       <path value="PlanDefinition.action.triggerDefinition" />
       <sliceName value="sliceOrganismSubstanceTriggerDefinition" />
+      <short value="Organism Substance Trigger Definition" />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
@@ -80,6 +81,7 @@
     <element id="PlanDefinition.action.triggerDefinition:sliceLabOrderTestNameTriggerDefinition">
       <path value="PlanDefinition.action.triggerDefinition" />
       <sliceName value="sliceLabOrderTestNameTriggerDefinition" />
+      <short value="Organism Substance Trigger Definition" />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
@@ -102,7 +104,7 @@
           <type value="value" />
           <path value="id" />
         </discriminator>
-        <!--<ordered value="true" />-->
+        <ordered value="true" />
         <rules value="open" />
       </slicing>
       <min value="1" />
@@ -111,7 +113,7 @@
     <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing">
       <path value="PlanDefinition.action.action" />
       <sliceName value="sliceHealthcareBasedRulesProcessing" />
-      <short value="Healthcare Rules Processing" />
+      <short value="Healthcare Base Rules Processing" />
       <definition value="Healthcare Based Rules Processing definition TODO" />
       <min value="1" />
       <max value="1" />
@@ -129,44 +131,47 @@
           <type value="value" />
           <path value="id" />
         </discriminator>
-        <!--<ordered value="true" />-->
+        <ordered value="true" />
         <rules value="open" />
       </slicing>
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceRulesProcessingHP">
+    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceRulesProcessing">
       <path value="PlanDefinition.action.action.action" />
-      <sliceName value="sliceRulesProcessingHP" />
+      <sliceName value="sliceRulesProcessing" />
+      <short value="Rules Processing" />
       <min value="1" />
       <max value="1" />
     </element>
-    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceRulesProcessingHP.id">
+    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceRulesProcessing.id">
       <path value="PlanDefinition.action.action.action.id" />
       <min value="1" />
     </element>
-    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceCreateClinicalFeedbackHP">
+    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceCreateClinicalFeedback">
       <path value="PlanDefinition.action.action.action" />
-      <sliceName value="sliceCreateClinicalFeedbackHP" />
+      <sliceName value="sliceCreateClinicalFeedback" />
+      <short value="Create Clinical Feedback" />
       <min value="1" />
       <max value="1" />
       <mustSupport value="false" />
     </element>
-    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceCreateClinicalFeedbackHP.id">
+    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceCreateClinicalFeedback.id">
       <path value="PlanDefinition.action.action.action.id" />
       <min value="1" />
-    </element> 
-    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceEICRHP">
+    </element>
+    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceEICR">
       <path value="PlanDefinition.action.action.action" />
-      <sliceName value="sliceEICRHP" />
+      <sliceName value="sliceEICR" />
+      <short value="eICR" />
       <min value="1" />
       <max value="1" />
     </element>
-    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceEICRHP.id">
+    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceEICR.id">
       <path value="PlanDefinition.action.action.action.id" />
       <min value="1" />
     </element>
-    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceEICRHP.action">
+    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceEICR.action">
       <path value="PlanDefinition.action.action.action.action" />
       <slicing>
         <discriminator>
@@ -176,47 +181,51 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceEICRHP.action:sliceCreateEICRHP">
+    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceEICR.action:sliceCreateEICR">
       <path value="PlanDefinition.action.action.action.action" />
-      <sliceName value="sliceCreateEICRHP" />
+      <sliceName value="sliceCreateEICR" />
+      <short value="Create eICR" />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceEICRHP.action:sliceCreateEICRHP.id">
+    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceEICR.action:sliceCreateEICR.id">
       <path value="PlanDefinition.action.action.action.action.id" />
       <min value="1" />
     </element>
-    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceEICRHP.action:slicePeriodicUpdateofEICRHP">
+    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceEICR.action:slicePeriodicUpdateofEICR">
       <path value="PlanDefinition.action.action.action.action" />
-      <sliceName value="slicePeriodicUpdateofEICRHP" />
+      <sliceName value="slicePeriodicUpdateofEICR" />
+      <short value="Periodic Update of eICR" />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceEICRHP.action:slicePeriodicUpdateofEICRHP.id">
+    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceEICR.action:slicePeriodicUpdateofEICR.id">
       <path value="PlanDefinition.action.action.action.action.id" />
       <min value="1" />
     </element>
-    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceEICRHP.action:sliceCloseOutEICRHP">
+    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceEICR.action:sliceCloseOutEICR">
       <path value="PlanDefinition.action.action.action.action" />
-      <sliceName value="sliceCloseOutEICRHP" />
+      <sliceName value="sliceCloseOutEICR" />
+      <short value="Close Out eICR" />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceEICRHP.action:sliceCloseOutEICRHP.id">
+    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceEICR.action:sliceCloseOutEICR.id">
       <path value="PlanDefinition.action.action.action.action.id" />
       <min value="1" />
     </element>
-    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceRouteAndSendHP">
+    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceRouteAndSend">
       <path value="PlanDefinition.action.action.action" />
-      <sliceName value="sliceRouteAndSendHP" />
+      <sliceName value="sliceRouteAndSend" />
+      <short value="Route and Send" />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceRouteAndSendHP.id">
+    <element id="PlanDefinition.action.action:sliceHealthcareBasedRulesProcessing.action:sliceRouteAndSend.id">
       <path value="PlanDefinition.action.action.action.id" />
       <min value="1" />
     </element>
@@ -240,72 +249,75 @@
           <type value="value" />
           <path value="id" />
         </discriminator>
-        <!--<ordered value="true" />-->
+        <ordered value="true" />
         <rules value="open" />
       </slicing>
       <min value="1" />
     </element>
-    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:sliceCreateEICRAP">
+    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:sliceCreateEICR">
       <path value="PlanDefinition.action.action.action" />
-      <sliceName value="sliceCreateEICRAP" />
+      <sliceName value="sliceCreateEICR" />
+      <short value="Create eICR" />
       <min value="1" />
       <max value="1" />
     </element>
-    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:sliceCreateEICRAP.id">
+    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:sliceCreateEICR.id">
       <path value="PlanDefinition.action.action.action.id" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:sliceCreateEICRAP.textEquivalent">
+    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:sliceCreateEICR.textEquivalent">
       <path value="PlanDefinition.action.action.action.textEquivalent" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:sliceSendFromClinicalCareToPlatformAP">
+    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:sliceSendFromClinicalCareToPlatform">
       <path value="PlanDefinition.action.action.action" />
-      <sliceName value="sliceSendFromClinicalCareToPlatformAP" />
+      <sliceName value="sliceSendFromClinicalCareToPlatform" />
+      <short value="Send From Clinical Care to Platform" />
       <min value="1" />
       <max value="1" />
     </element>
-    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:sliceSendFromClinicalCareToPlatformAP.id">
+    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:sliceSendFromClinicalCareToPlatform.id">
       <path value="PlanDefinition.action.action.action.id" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:sliceSendFromClinicalCareToPlatformAP.textEquivalent">
+    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:sliceSendFromClinicalCareToPlatform.textEquivalent">
       <path value="PlanDefinition.action.action.action.textEquivalent" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    
-    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:slicePlatformRulesProcessingAP">
+    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:slicePlatformRulesProcessing">
       <path value="PlanDefinition.action.action.action" />
-      <sliceName value="slicePlatformRulesProcessingAP" />
+      <sliceName value="slicePlatformRulesProcessing" />
+      <short value="Platform Rules Processing" />
       <min value="1" />
       <max value="1" />
     </element>
-    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:slicePlatformRulesProcessingAP.id">
+    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:slicePlatformRulesProcessing.id">
       <path value="PlanDefinition.action.action.action.id" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:slicePlatformRulesProcessingAP.textEquivalent">
+    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:slicePlatformRulesProcessing.textEquivalent">
       <path value="PlanDefinition.action.action.action.textEquivalent" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:sliceCreateClincalFeedbackAP">
+    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:sliceCreateClincalFeedback">
       <path value="PlanDefinition.action.action.action" />
-      <sliceName value="sliceCreateClincalFeedbackAP" />
+      <sliceName value="sliceCreateClincalFeedback" />
+      <short value="Create Clinical Feedback" />
       <min value="1" />
       <max value="1" />
     </element>
-    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:sliceCreateClincalFeedbackAP.id">
+    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:sliceCreateClincalFeedback.id">
       <path value="PlanDefinition.action.action.action.id" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:sliceCreateClincalFeedbackAP.textEquivalent">
+    <element id="PlanDefinition.action.action:sliceRCKMSRulesProcessingOnAIMSPlatform.action:sliceCreateClincalFeedback.textEquivalent">
       <path value="PlanDefinition.action.action.action.textEquivalent" />
       <min value="1" />
       <mustSupport value="true" />
