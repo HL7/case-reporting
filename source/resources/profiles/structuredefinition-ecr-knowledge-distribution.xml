@@ -20,12 +20,85 @@
       <definition value="Defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician." />
       <mustSupport value="true" />
     </element>
+    <element id="PlanDefinition.version">
+      <path value="PlanDefinition.version" />
+      <min value="1" />
+    </element>
+    <element id="PlanDefinition.name">
+      <path value="PlanDefinition.name" />
+      <min value="1" />
+    </element>
+    <element id="PlanDefinition.title">
+      <path value="PlanDefinition.title" />
+      <min value="1" />
+    </element>
+    <element id="PlanDefinition.date">
+      <path value="PlanDefinition.date" />
+      <min value="1" />
+    </element>
+    <element id="PlanDefinition.effectivePeriod">
+      <path value="PlanDefinition.effectivePeriod" />
+      <min value="1" />
+    </element>
+    <element id="PlanDefinition.effectivePeriod.start">
+      <path value="PlanDefinition.effectivePeriod.start" />
+      <min value="1" />
+    </element>
+    <element id="PlanDefinition.relatedArtifact">
+      <path value="PlanDefinition.relatedArtifact" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="display" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="PlanDefinition.relatedArtifact:sliceRCTCLibraryRelatedArtifact">
+      <path value="PlanDefinition.relatedArtifact" />
+      <sliceName value="sliceRCTCLibraryRelatedArtifact" />
+      <short value="The RCTC Value Set Library" />
+      <definition value="Reference to the RCTC Value Set library of trigger codes that this Knowledge Distribution depends on" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="PlanDefinition.relatedArtifact:sliceRCTCLibraryRelatedArtifact.type">
+      <path value="PlanDefinition.relatedArtifact.type" />
+      <patternCode value="depends-on" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.relatedArtifact:sliceRCTCLibraryRelatedArtifact.display">
+      <path value="PlanDefinition.relatedArtifact.display" />
+      <min value="1" />
+      <patternString value="RCTC Value Set Bundle of Trigger Codes" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.relatedArtifact:sliceRCTCLibraryRelatedArtifact.url">
+      <path value="PlanDefinition.relatedArtifact.url" />
+      <min value="1" />
+    </element>
+    <element id="PlanDefinition.relatedArtifact:sliceRCTCLibraryRelatedArtifact.resource">
+      <path value="PlanDefinition.relatedArtifact.resource" />
+      <min value="1" />
+    </element>
+    <element id="PlanDefinition.relatedArtifact:sliceRCTCLibraryRelatedArtifact.resource.reference">
+      <path value="PlanDefinition.relatedArtifact.resource.reference" />
+      <min value="1" />
+    </element>
+    <element id="PlanDefinition.library">
+      <path value="PlanDefinition.library" />
+      <mustSupport value="true" />
+    </element>
     <element id="PlanDefinition.action">
       <path value="PlanDefinition.action" />
       <short value="Orchestration" />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action.textEquivalent">
+      <path value="PlanDefinition.action.textEquivalent" />
+      <min value="1" />
     </element>
     <element id="PlanDefinition.action.triggerDefinition">
       <path value="PlanDefinition.action.triggerDefinition" />
@@ -53,6 +126,25 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
+    <element id="PlanDefinition.action.triggerDefinition:sliceDiagnosisProblemTriggerDefinition.eventData">
+      <path value="PlanDefinition.action.triggerDefinition.eventData" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action.triggerDefinition:sliceDiagnosisProblemTriggerDefinition.eventData.codeFilter">
+      <path value="PlanDefinition.action.triggerDefinition.eventData.codeFilter" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="PlanDefinition.action.triggerDefinition:sliceDiagnosisProblemTriggerDefinition.eventData.codeFilter.valueSet[x]:valueSetReference">
+      <path value="PlanDefinition.action.triggerDefinition.eventData.codeFilter.valueSetReference" />
+      <sliceName value="valueSetReference" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ValueSet" />
+      </type>
+    </element>
     <element id="PlanDefinition.action.triggerDefinition:sliceLabObsTestNameTriggerDefinition">
       <path value="PlanDefinition.action.triggerDefinition" />
       <sliceName value="sliceLabObsTestNameTriggerDefinition" />
@@ -65,6 +157,24 @@
       <path value="PlanDefinition.action.triggerDefinition.id" />
       <min value="1" />
       <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action.triggerDefinition:sliceLabObsTestNameTriggerDefinition.eventData">
+      <path value="PlanDefinition.action.triggerDefinition.eventData" />
+      <min value="1" />
+    </element>
+    <element id="PlanDefinition.action.triggerDefinition:sliceLabObsTestNameTriggerDefinition.eventData.codeFilter">
+      <path value="PlanDefinition.action.triggerDefinition.eventData.codeFilter" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="PlanDefinition.action.triggerDefinition:sliceLabObsTestNameTriggerDefinition.eventData.codeFilter.valueSet[x]:valueSetReference">
+      <path value="PlanDefinition.action.triggerDefinition.eventData.codeFilter.valueSetReference" />
+      <sliceName value="valueSetReference" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ValueSet" />
+      </type>
     </element>
     <element id="PlanDefinition.action.triggerDefinition:sliceOrganismSubstanceTriggerDefinition">
       <path value="PlanDefinition.action.triggerDefinition" />
@@ -79,6 +189,24 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
+    <element id="PlanDefinition.action.triggerDefinition:sliceOrganismSubstanceTriggerDefinition.eventData">
+      <path value="PlanDefinition.action.triggerDefinition.eventData" />
+      <min value="1" />
+    </element>
+    <element id="PlanDefinition.action.triggerDefinition:sliceOrganismSubstanceTriggerDefinition.eventData.codeFilter">
+      <path value="PlanDefinition.action.triggerDefinition.eventData.codeFilter" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="PlanDefinition.action.triggerDefinition:sliceOrganismSubstanceTriggerDefinition.eventData.codeFilter.valueSet[x]:valueSetReference">
+      <path value="PlanDefinition.action.triggerDefinition.eventData.codeFilter.valueSetReference" />
+      <sliceName value="valueSetReference" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ValueSet" />
+      </type>
+    </element>
     <element id="PlanDefinition.action.triggerDefinition:sliceLabOrderTestNameTriggerDefinition">
       <path value="PlanDefinition.action.triggerDefinition" />
       <sliceName value="sliceLabOrderTestNameTriggerDefinition" />
@@ -91,6 +219,49 @@
       <path value="PlanDefinition.action.triggerDefinition.id" />
       <min value="1" />
       <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action.triggerDefinition:sliceLabOrderTestNameTriggerDefinition.eventData">
+      <path value="PlanDefinition.action.triggerDefinition.eventData" />
+      <min value="1" />
+    </element>
+    <element id="PlanDefinition.action.triggerDefinition:sliceLabOrderTestNameTriggerDefinition.eventData.codeFilter">
+      <path value="PlanDefinition.action.triggerDefinition.eventData.codeFilter" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="PlanDefinition.action.triggerDefinition:sliceLabOrderTestNameTriggerDefinition.eventData.codeFilter.valueSet[x]:valueSetReference">
+      <path value="PlanDefinition.action.triggerDefinition.eventData.codeFilter.valueSetReference" />
+      <sliceName value="valueSetReference" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ValueSet" />
+      </type>
+    </element>
+    <element id="PlanDefinition.action.triggerDefinition:sliceDrugsPrescribedTriggerDefinition">
+      <path value="PlanDefinition.action.triggerDefinition" />
+      <sliceName value="sliceDrugsPrescribedTriggerDefinition" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action.triggerDefinition:sliceDrugsPrescribedTriggerDefinition.eventData">
+      <path value="PlanDefinition.action.triggerDefinition.eventData" />
+      <min value="1" />
+    </element>
+    <element id="PlanDefinition.action.triggerDefinition:sliceDrugsPrescribedTriggerDefinition.eventData.codeFilter">
+      <path value="PlanDefinition.action.triggerDefinition.eventData.codeFilter" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="PlanDefinition.action.triggerDefinition:sliceDrugsPrescribedTriggerDefinition.eventData.codeFilter.valueSet[x]:valueSetReference">
+      <path value="PlanDefinition.action.triggerDefinition.eventData.codeFilter.valueSetReference" />
+      <sliceName value="valueSetReference" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ValueSet" />
+      </type>
     </element>
     <element id="PlanDefinition.action.selectionBehavior">
       <path value="PlanDefinition.action.selectionBehavior" />
