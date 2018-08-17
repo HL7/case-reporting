@@ -29,15 +29,15 @@ The following profiles and extensions have been defined for the eICR transaction
 
 #### Profiles
 <ul>
-  <li><a href="StructureDefinition-eicr-composition.html">eICR Composition Profile</a></li>
-  <li><a href="StructureDefinition-ecr-patient.html">eICR Composition Profile</a></li>
-  <li><a href="StructureDefinition-ecr-organization.html">eCR Organization Profile</a></li>
-  <li><a href="StructureDefinition-eicr-encounter.html">eICR Encounter Profile</a></li>
-  <li><a href="StructureDefinition-eicr-procedurerequest.html">eICR Lab Orders Profile</a></li>
-  <li><a href="StructureDefinition-eicr-location.html">eICR Location Profile</a></li>
-  <li><a href="StructureDefinition-pregnancy-status.html">Pregnancy Status Profile</a></li>
-  <li><a href="StructureDefinition-eicr-travel-history.html">eICR Travel History Profile</a></li>
-  <li><a href="StructureDefinition-eicr-occupationhistory.html">eICR-OccupationHistory Profile</a></li>
+  <li><a href="StructureDefinition-eicr-composition.html">eICR Composition</a></li>
+  <li><a href="StructureDefinition-ecr-patient.html">eICR Patient</a></li>
+  <li><a href="StructureDefinition-ecr-organization.html">eCR Organization</a></li>
+  <li><a href="StructureDefinition-eicr-encounter.html">eICR Encounter</a></li>
+  <li><a href="StructureDefinition-eicr-procedurerequest.html">eICR Lab Orders</a></li>
+  <li><a href="StructureDefinition-eicr-location.html">eICR Location</a></li>
+  <li><a href="StructureDefinition-pregnancy-status.html">Pregnancy Status</a></li>
+  <li><a href="StructureDefinition-eicr-travel-history.html">eICR Travel History</a></li>
+  <li><a href="StructureDefinition-eicr-occupationhistory.html">eICR-OccupationHistory</a></li>
 </ul>
 
 #### Extensions
@@ -68,15 +68,15 @@ The following profiles and extensions have been defined for the Reportability Re
 
 #### Profiles
 <ul>
-  <li><a href="StructureDefinition-rr-communication.html">Reportability Response Communication Profile</a></li>
-  <li><a href="StructureDefinition-rr-relevant-reportable-condition-plandefinition.html">Reportability Response PlanDefinition Profile</a></li>
+  <li><a href="StructureDefinition-rr-communication.html">Reportability Response Communication</a></li>
+  <li><a href="StructureDefinition-rr-relevant-reportable-condition-plandefinition.html">Relevant Reportable Condition PlanDefinition</a></li>
   <li><a href="StructureDefinition-rr-rules-authoring-agency.html">Rules Authoring Agency</a></li>
   <li><a href="StructureDefinition-rr-responsible-agency.html">Responsible Agency</a></li>
   <li><a href="StructureDefinition-rr-routing-entity.html">Routing Entity</a></li>
-  <li><a href="StructureDefinition-rr-eicr-processing-status.html">eICR Processing Status Profile</a></li>
-  <li><a href="StructureDefinition-rr-eicr-processing-status-reason.html">eICR Processing Status Reason Profile</a></li>
-  <li><a href="StructureDefinition-ecr-organization.html">eCR Organization Profile</a></li>
-  <li><a href="StructureDefinition-eicr-encounter.html">eICR Encounter Profile</a></li>
+  <li><a href="StructureDefinition-rr-eicr-processing-status.html">eICR Processing Status</a></li>
+  <li><a href="StructureDefinition-rr-eicr-processing-status-reason.html">eICR Processing Status Reason</a></li>
+  <li><a href="StructureDefinition-ecr-organization.html">eCR Organization</a></li>
+  <li><a href="StructureDefinition-eicr-encounter.html">eICR Encounter</a></li>
 </ul>
 
 #### Extensions
@@ -114,5 +114,5 @@ The FHIR subscription service supports public health needs for the routine and e
 The Subscription does not require FHIR implementation on the receiving (EHR) end of the transaction, but can provide XML or JSON formats via RESTful query or proactive notification channels. 
 
 <ul>
-  <li><a href="StructureDefinition-ecr-knowledge-distribution.html">eCR Knowledge Distribution Profile</a></li>
+  <li><a href="StructureDefinition-ecr-knowledge-distribution.html">eCR Knowledge Distribution PlanDefinition</a></li>
 </ul>

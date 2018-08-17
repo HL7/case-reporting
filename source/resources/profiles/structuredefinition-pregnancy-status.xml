@@ -55,5 +55,32 @@
         </valueSetReference>
       </binding>
     </element>
+    <element id="Observation.component">
+      <path value="Observation.component" />
+      <short value="Estimated date of delivery" />
+      <definition value="Represents the anticipated date when a woman will give birth." />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.component.code">
+      <path value="Observation.component.code" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="11778-8" />
+        </coding>
+        <text value="Estimated date of delivery" />
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.component.value[x]:valueDateTime">
+      <path value="Observation.component.valueDateTime" />
+      <sliceName value="valueDateTime" />
+      <min value="1" />
+      <type>
+        <code value="dateTime" />
+      </type>
+      <mustSupport value="true" />
+    </element>
   </differential>
 </StructureDefinition>

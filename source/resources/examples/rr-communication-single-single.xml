@@ -61,7 +61,22 @@
     <reference value="Organization/ecr-organization-health-authority-west"/>
     <display value="Health Authority West, 7777 Health Authority Drive, Ann Arbor MI, 99999"></display>
   </sender>
-
+  
+  <!-- Reportability Response Summary payload slice -->
+  <payload id="reportability-response-summary">
+    <contentString
+      value="Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient. 'Zika virus disease (disorder)' is reportable to 'State Department of Health'. An initial case report was sent to 'State Department of Health'. Additional information may be required for this report."
+    />
+  </payload>
+  
+  <!-- Relevant Reportable Condition Information payload slice -->
+  <payload id="relevant-reportable-condition">
+    <contentReference>
+      <!-- Reportability Response Plan Definition -->
+      <reference value="PlanDefinition/rr-plan-zika-state-department-of-health" />
+    </contentReference>
+  </payload>
+  
   <!-- Electronic Initial Case Report Information payload slice -->
   <payload id="eicr-information">
     <!-- eICR Processing Status -->
@@ -91,17 +106,6 @@
       <display value="eICR_Filename.xml" />
     </contentReference>
   </payload>
-  <!-- Reportability Response Summary payload slice -->
-  <payload id="reportability-response-summary">
-    <contentString
-      value="Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient. 'Zika virus disease (disorder)' is reportable to 'State Department of Health'. An initial case report was sent to 'State Department of Health'. Additional information may be required for this report."
-     />
-  </payload>
-  <!-- Relevant Reportable Condition Information payload slice -->
-  <payload id="relevant-reportable-condition">
-    <contentReference>
-      <!-- Reportability Response Plan Definition -->
-      <reference value="PlanDefinition/rr-plan-zika-state-department-of-health" />
-    </contentReference>
-  </payload>
+  
+  
 </Communication>
