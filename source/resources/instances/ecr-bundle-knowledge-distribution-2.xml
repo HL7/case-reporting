@@ -4,6 +4,26 @@
     <id value="ecr-bundle-knowledge-distribution" />
     <type value="collection" />
     <!-- Knowledge Distribution Plan Definition instance -->
+    
+    <!--
+                    Knowledge Distribution Hierarchy:
+                    top level Action that contains:
+                    Triggering in the triggerDefinition elements
+                    Orchestration that decides between healthcare-based rules and AIMS platform rules
+                    Sub Actions:
+                        Healthcare-based Rules Processing
+                        Sub-actions:
+                            Rules Processing
+                            Prepare Clinical Feedback
+                            Creation of eICR
+                            Routing and Sending
+                        RCKMS Rules Processing on AIMS Platform:
+                        Sub Actions:
+                            Creation of eICR
+                            Sending from Clinical Care to Platform
+                            Platform rules processing
+                            Prepare Clinical Feedback (Creation of RR) 
+     -->
     <entry>
         <fullUrl value="http://hl7.org/fhir/us/ecr/PlanDefinition/ecr-knowledge-distribution" />
         <resource>
@@ -32,26 +52,8 @@
                 <library>
                     <reference value="Knowledge_Distribution_Logic.cql" />
                 </library>
-                <action id="Orchestration">
-                    <!--
-                    New Hierarchy:
-                    top level Action that contains:
-                    Triggering in the triggerDefinition elements
-                    Orchestration that decides between healthcare-based rules and AIMS platform rules
-                    Sub Actions:
-                        Healthcare-based Rules Processing
-                        Sub-actions:
-                            Rules Processing
-                            Prepare Clinical Feedback
-                            Creation of eICR
-                            Routing and Sending
-                        RCKMS Rules Processing on AIMS Platform:
-                        Sub Actions:
-                            Creation of eICR
-                            Sending from Clinical Care to Platform
-                            Platform rules processing
-                            Prepare Clinical Feedback (Creation of RR) 
-                    -->
+                <!-- Orchestration Action: Decides between Healthcare-based Rules Processing or RCKMS Rules Processing on AIMS Platform -->
+                <action id="Orchestration"> 
                     <textEquivalent value="Pick between the two sequence options based on rules processing: Healthcare-based processing, or RCKMS Rules Processing on AIMS Platform"/>
                     <triggerDefinition>
                         <type value="data-added" />
@@ -105,6 +107,21 @@
                             </codeFilter>
                         </eventData>
                     </triggerDefinition>
+                    <triggerDefinition>
+                        <type value="data-added" />
+                        <eventName value="Prescription drugs names used in observations documented in a clinical record." />
+                        <eventData>
+                            <type value="Medication" />
+                            <codeFilter>
+                                <path value="code" />
+                                <valueSetReference>
+                                    <reference value="prescription-drug-names-value-set" />
+                                </valueSetReference>
+                            </codeFilter>
+                        </eventData>
+                    </triggerDefinition>
+                    
+                    <!-- Select b/w the two types of Rules Processing.  -->
                     
                     <selectionBehavior value="exactly-one"/>
                     <!-- Healthcare-based Rules Processing -->
@@ -211,7 +228,7 @@
                             </condition>
                         </action>
                     </action>
-                    <!-- Platform-based Rules Processing -->
+                    <!-- RCKMS Rules Processing on AIMS Platform -->
                     <action>
                         <description value="Platform-based Rules processing workflow"/>
                         <action>
@@ -301,8 +318,7 @@
                                 <type value="named-event"/>
                                 <eventName value="rules processing complete"/>
                             </triggerDefinition>
-                        </action>
-                        
+                        </action>    
                     </action>
                 </action>
             </PlanDefinition>
