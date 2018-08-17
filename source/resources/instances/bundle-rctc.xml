@@ -1,11 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Bundle xmlns="http://hl7.org/fhir">
-  <id value="rctc" />
-  <identifier>
-    <system value="urn:ietf:rfc:3986" />
-    <value value="http://hl7.org/fhir/us/ecr/Bundle/rctc" />
-  </identifier>
+<Bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://hl7.org/fhir ../../../validation/fhir-all.xsd"
+ xmlns="http://hl7.org/fhir">
+  <id value="ecr-bundle-rctc-valuesets" />  
   <type value="collection" />
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/us/ecr/Library/rctc" />
+    <resource>
+      <Library>
+        <identifier>
+          <system value="urn:ietf:rfc:3986" />
+          <value value="urn:oid:2.16.840.1.114222.4.11.7508" />
+        </identifier>
+        <name value="rctc-valueset-library"/>
+        <title value="Reportable Condition Trigger Codes (RCTC)"/>
+        <status value="active"/>
+        <type>
+          <coding>
+            <system value="http://hl7.org/fhir/ValueSet/library-type"/>
+            <code value="asset-collection"/>
+          </coding>
+        </type>
+        <date value="2018-07-30"/>
+        <description value="Triggers for initiating decision support for electronic case reports"/>
+        <effectivePeriod>
+          <start value="2018-10-30"/>
+        </effectivePeriod>
+        <relatedArtifact>
+          <type value="composed-of"/>
+          <resource>
+            <reference value="http://hl7.org/fhir/us/ecr/ValueSet/dxtc"/>
+          </resource>
+        </relatedArtifact>
+        <relatedArtifact>
+          <type value="composed-of"/>
+          <resource>
+            <reference value="http://hl7.org/fhir/us/ecr/ValueSet/lotc"/>
+          </resource>
+        </relatedArtifact>
+        <relatedArtifact>
+          <type value="composed-of"/>
+          <resource>
+            <reference value="http://hl7.org/fhir/us/ecr/ValueSet/lrtc"/>
+          </resource>
+        </relatedArtifact>
+        <relatedArtifact>
+          <type value="composed-of"/>
+          <resource>
+            <reference value="http://hl7.org/fhir/us/ecr/ValueSet/ostc"/>
+          </resource>
+        </relatedArtifact>
+      </Library>
+    </resource>
+  </entry>
   <entry>
     <fullUrl value="http://hl7.org/fhir/us/ecr/ValueSet/dxtc" />
     <resource>
