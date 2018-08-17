@@ -116,3 +116,7 @@ The Subscription does not require FHIR implementation on the receiving (EHR) end
 <ul>
   <li><a href="StructureDefinition-ecr-knowledge-distribution.html">eCR Knowledge Distribution PlanDefinition</a></li>
 </ul>
+
+<ul>
+  <li><a href="StructureDefinition-rctc-valueset-library.html">RCTC Valueset Library</a></li>
+</ul>
