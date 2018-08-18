@@ -29,13 +29,16 @@ URL. Look for this icon <span class="glyphicon glyphicon-link"></span> to appea
 
 We would especially appreciate comments on the following items.
 
-#### 1. Suggested values for reporting parameters or addtional parameter inclusion
+#### 1. Additional timing-related reporting parameters and suggested values
 
-The included Knowledge Distribution profile defines three parameters for initating case reports from Electronic Health Records:
+The included Knowledge Distribution profile defines three timing-related parameters for initating case reports from Electronic Health Records:
+<ol>
+  <li>
+  <li>
+  Li>
+</ol>
 
-
-
-
+This standard defines these parameters but does not make normative the specific hour values for them. We would appreciate your comments on the possible hour values (in parentheses above) for use in guiding implmentations. We would also appreciate  
 
 #### 2. Difficulties from CDA using nullFlavors while FHIR does not
 
