@@ -38,7 +38,7 @@ The included Knowledge Distribution profile defines three timing-related paramet
   Li>
 </ol>
 
-This standard defines these parameters but does not make normative the specific hour values for them. We would appreciate your comments on the possible hour values (in parentheses above) for use in guiding implmentations. We would also appreciate  
+This standard defines these parameters but does not make normative the specific hour values for them. We would appreciate your comments on the possible hour values (in parentheses above) for use in guiding implmentations. We would also appreciate comments on the utility of these three parameters or of the needs for others.  
 
 #### 2. Difficulties from CDA using nullFlavors while FHIR does not
 
