@@ -33,9 +33,9 @@ We would especially appreciate comments on the following items.
 
 The included Knowledge Distribution profile defines three timing-related parameters for initating case reports from Electronic Health Records:
 <ol>
+  <li> 
   <li>
   <li>
-  Li>
 </ol>
 
 This standard defines these parameters but does not make normative the specific hour values for them. We would appreciate your comments on the possible hour values (in parentheses above) for use in guiding implmentations. We would also appreciate comments on the utility of these three parameters or of the needs for others.  
