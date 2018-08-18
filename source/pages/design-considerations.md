@@ -30,7 +30,6 @@ Without more complex reporting rules that are distributable to, and executable i
 <br>
 <img src="ReportingDesignPatternV17.JPG" alt="Reporting Design Pattern" class="figure-img-portrait img-responsive img-rounded center-block">
 <br>
-<br>
 #### FHIR Design Considerations
 
 FHIR enables several helpful capabilities for eCR.
