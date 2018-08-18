@@ -40,7 +40,7 @@ The included Knowledge Distribution profile defines three timing-related paramet
 
 This standard defines these parameters but does not make normative the specific hour values for them. We would appreciate your comments on the possible hour values (in parentheses above) for use in guiding implmentations. We would also appreciate comments on the utility of these three parameters or of the needs for others.  
 
-#### 2. Difficulties from CDA using nullFlavors while FHIR does not
+#### 2. Difficulties related to CDA using nullFlavors while FHIR does not
 
 The base datatype used by CDA has the properly nullFlavor. This means that it is possible to add a nullFlavor to any element in CDA. FHIR on the other hand, does not have this option. To express a nullFlavor concept in FHIR, one would either need to have a value set containing those values or add an extension to express the nullFlavor.
 This means that if an element is required and has not explicitly precluded a nullFlavor in a CDA IG, it is possible, when the data isn’t available to send a nullFlavor instead of a proper value.
