@@ -23,8 +23,8 @@ One of the two information flows also uses the Reportable Condition Knowledge Ma
 </ol>
 
 RCKMS and the AIMS platform serve several purposes in flow #2.
-Prominent among them is to implement public health reporting rules that cannot currently be readily distributed to healthcare.
-Another important role is ensuring that public health agencies only get the data they are authorized to receive by state laws.
+Prominent among these purposes is to implement public health reporting rules that cannot currently be readily distributed to healthcare.
+The rules ensure that public health agencies only get the data they are authorized to receive by state laws.
 Without more complex reporting rules that are distributable to, and executable in healthcare, most PHAs will not implement flow #1.
 <br>
 <img src="case-reporting/source/pages/ReportingDesignPatternV17.jpg" alt="Reporting Design Pattern" class="figure-img-portrait img-responsive img-rounded center-block">
