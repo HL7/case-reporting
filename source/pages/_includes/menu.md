@@ -20,6 +20,7 @@
 *****no empty lines****
 
 -->
+- [Notice to Balloters](balloters.html)
 - [Home](index.html){: .active}
 - [Design Considerations](design-considerations.html)
 - [Profiles, Extensions & Transactions](profiles.html)
