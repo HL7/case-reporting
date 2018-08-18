@@ -21,22 +21,11 @@ This *STU* ballot continues and expands on work-to-date on CDA electronic Case R
 #### How to Ballot
 
 To sign up for the ballot and provide input on this specification follow the
-same process as for any other HL7 artifacts using ballot
-spreadsheets as described on the [HL7 Balloting
+same process as for other HL7 artifacts using ballot spreadsheets as described on the [HL7 Balloting
 website](http://www.hl7.org/participate/onlineballoting.cfm?ref=nav) or the FHIR GForge Tracker.
 
 If using the spreadsheet, please be sure to include a comment summary that can be used to populate the FHIR GForge Tracker when your comments are moved there. To reference an item in the ballot, Provide the HTML Page Name and/or
-URL. Look for this icon <span class="glyphicon glyphicon-link"></span> to appear when you hover over a section. to copy and paste the link address into the ballot spreadsheet “URL” Column (see figure).
-
-  - Mac: right click or control + click
-
-  - Windows: right click and select “copy link” from the drop-down menu
-    (actual menu text may vary by browser)
-
-
-{% include img.html img="ballot.png" caption="URL column in HL7 ballotting spreadsheet" %}
-
-
+URL. Look for this icon <span class="glyphicon glyphicon-link"></span> to appear when you hover over a section.
 
 
 
