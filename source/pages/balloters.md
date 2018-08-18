@@ -50,5 +50,5 @@ To get around this, we make elements “must support” but allow them to be opt
 
 #### 3. How to best implement patient vital signs for public health reporting
 
-We would propose using either the FHIR Vital Signs profiles (http://hl7.org/fhir/observation-profiles.html) or also using the US Core Vital Signs - which is "additional guidance which sets the minimum expectations for recording, searching and retreiving vital signs associated with a patient. Together they identify which elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile." 
+We would propose using either the <a href="http://hl7.org/fhir/observation-profiles.html" rel="nofollow">FHIR Vital Signs profiles(STU)</a> or using the US Core Vital Signs - which is "additional guidance which sets the minimum expectations for recording, searching and retreiving vital signs associated with a patient. Together they identify which elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile." 
 
