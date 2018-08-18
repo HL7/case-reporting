@@ -10,8 +10,6 @@
 
 **Additional Profile specific implementation guidance:**
 
-#### Instances
-
- - [eCR Bundle Knowledge Distribution Instance](Bundle-ecr-bundle-knowledge-distribution.html)
+ 
 
 ---
