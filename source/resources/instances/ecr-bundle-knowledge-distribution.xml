@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://hl7.org/fhir ../../../validation/fhir-all.xsd"
-    xmlns="http://hl7.org/fhir">
-    <id value="ecr-bundle-knowledge-distribution"/>
-    <type value="collection"/>
-    <!-- Knowledge Distribution Plan Definition instance -->
+<Bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../../validation/fhir-all.xsd"
+  xmlns="http://hl7.org/fhir">
+  <id value="ecr-bundle-knowledge-distribution" />
+  <type value="collection" />
+  <!-- Knowledge Distribution Plan Definition instance -->
 
-    <!--
+  <!--
                     Knowledge Distribution Hierarchy:
                     top level Action that contains:
                     Triggering in the triggerDefinition elements
@@ -25,54 +24,53 @@
                             Platform rules processing
                             Prepare Clinical Feedback (Creation of RR) 
      -->
-    <entry>
-        <fullUrl value="http://hl7.org/fhir/us/ecr/PlanDefinition/ecr-knowledge-distribution"/>
-        <resource>
-            <PlanDefinition>
-                <id value="ecr-knowledge-distribution-instance"/>
-                <meta>
-                    <profile
-                        value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-knowledge-distribution-plandefinition"
-                    />
-                </meta>
-                <version value="0.1"/>
-                <title value="Knowledge Definition Sample Instance"/>
-                <type>
-                    <coding>
-                        <system value="http://hl7.org/fhir/plan-definition-type"/>
-                        <code value="eca-rule"/>
-                        <display value="ECA Rule"/>
-                    </coding>
-                </type>
-                <status value="draft"/>
-                <relatedArtifact>
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/us/ecr/PlanDefinition/ecr-knowledge-distribution" />
+    <resource>
+      <PlanDefinition>
+        <id value="ecr-knowledge-distribution-instance" />
+        <meta>
+          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-knowledge-distribution" />
+        </meta>
+        <version value="0.1" />
+        <title value="Knowledge Definition Sample Instance" />
+        <type>
+          <coding>
+            <system value="http://hl7.org/fhir/plan-definition-type" />
+            <code value="eca-rule" />
+            <display value="ECA Rule" />
+          </coding>
+        </type>
+        <status value="draft" />
+        <!-- SG: Commented out -->
+        <!--<relatedArtifact>
                     <type value="depends-on"/>
                     <display value="RCTC Value Set Bundle of Trigger Codes"/>
                     <resource>
                         <reference value="http://hl7.org/fhir/us/ecr/Library/rctc"/>
                     </resource>
-                </relatedArtifact>
-                <library>
-                    <reference value="Knowledge_Distribution_Logic.cql"/>
-                </library>
-                <!-- Orchestration Action: Decides between Healthcare-based Rules Processing or RCKMS Rules Processing on AIMS Platform -->
-                <action id="Orchestration">
-                    <textEquivalent
-                        value="Pick between the two sequence options based on rules processing: Healthcare-based processing, or RCKMS Rules Processing on AIMS Platform"/>
-                    <triggerDefinition>
-                        <type value="data-added"/>
-                        <eventName value="Diagnoses or problems documented in a clinical record."/>
-                        <eventData>
-                            <type value="Condition"/>
-                            <codeFilter>
-                                <path value="code"/>
-                                <valueSetReference>
-                                    <reference value="diagnosis-value-set"/>
-                                </valueSetReference>
-                            </codeFilter>
-                        </eventData>
-                    </triggerDefinition>
-                    <triggerDefinition>
+                </relatedArtifact>-->
+        <library>
+          <reference value="Knowledge_Distribution_Logic.cql" />
+        </library>
+        <!-- Orchestration Action: Decides between Healthcare-based Rules Processing or RCKMS Rules Processing on AIMS Platform -->
+        <action id="Orchestration">
+          <textEquivalent
+            value="Pick between the two sequence options based on rules processing: Healthcare-based processing, or RCKMS Rules Processing on AIMS Platform" />
+          <triggerDefinition>
+            <type value="data-added" />
+            <eventName value="Diagnoses or problems documented in a clinical record." />
+            <!--<eventData>
+              <type value="Condition" />
+              <codeFilter>
+                <path value="code" />
+                <valueSetReference>
+                  <reference value="diagnosis-value-set" />
+                </valueSetReference>
+              </codeFilter>
+            </eventData>-->
+          </triggerDefinition>
+          <!--<triggerDefinition>
                         <type value="data-added"/>
                         <eventName
                             value="Nominal laboratory result values documented in a clinical record."/>
@@ -128,12 +126,12 @@
                             </codeFilter>
                         </eventData>
                     </triggerDefinition>
+-->
+          <!-- Select b/w the two types of Rules Processing.  -->
 
-                    <!-- Select b/w the two types of Rules Processing.  -->
-
-                    <selectionBehavior value="exactly-one"/>
-                    <!-- Healthcare-based Rules Processing -->
-                    <action>
+          <selectionBehavior value="exactly-one" />
+          <!-- Healthcare-based Rules Processing -->
+          <!--<action>
                         <description value="Healthcare-based Rules processing workflow"/>
                         <condition>
                             <kind value="applicability"/>
@@ -149,7 +147,7 @@
                             </triggerDefinition>
                         </action>
                         <action>
-                            <!--Creation of Clinical Feedback-->
+                            <!-\-Creation of Clinical Feedback-\->
                             <textEquivalent value="create clinical feedback per rules"/>
                             <triggerDefinition>
                                 <type value="named-event"/>
@@ -163,10 +161,10 @@
                             </condition>
                         </action>
                         <action>
-                            <!-- Creation of EICR -->
+                            <!-\- Creation of EICR -\->
                             <selectionBehavior value="at-most-one"/>
                             <action>
-                                <!--Initial Creation of eICR-->
+                                <!-\-Initial Creation of eICR-\->
                                 <textEquivalent
                                     value="delay eICR construction (x hours) -  time after the start of the encounter before a triggered eICR should be composed and sent"/>
                                 <triggerDefinition>
@@ -178,12 +176,12 @@
                                         </repeat>
                                     </eventTimingTiming>
                                 </triggerDefinition>
-                                <definition>
-                                    <!-- this will point to the same activity definition: create eicr. -->
-                                </definition>
+                                <!-\-<definition>
+                                    <!-\\- this will point to the same activity definition: create eicr. -\\->
+                                </definition>-\->
                             </action>
                             <action>
-                                <!-- eicr periodic update -->
+                                <!-\- eicr periodic update -\->
                                 <textEquivalent
                                     value="eICR periodic update (y hours) – the time after an initial eICR transmission to send new eICRs as updates for long episodes of care"/>
                                 <triggerDefinition>
@@ -206,12 +204,12 @@
                                     <kind value="stop"/>
                                     <description value="episode of care is closed out"/>
                                 </condition>
-                                <definition>
-                                    <!-- this will point to the same activity definition: create eicr. -->
-                                </definition>
+                                <!-\-<definition>
+                                    <!-\\- this will point to the same activity definition: create eicr. -\\->
+                                </definition>-\->
                             </action>
                             <action>
-                                <!-- eicr episode of care close out -->
+                                <!-\- eicr episode of care close out -\->
                                 <textEquivalent
                                     value="eICR episode of care close out (z hours) – the time after the end of an episode of care for a final eICR will be sent when there has been one or more trigger events"/>
                                 <triggerDefinition>
@@ -227,13 +225,13 @@
                                     <kind value="applicability"/>
                                     <description value="there has been one or more trigger events"/>
                                 </condition>
-                                <definition>
-                                    <!-- this will point to the same activity definition: create eicr. -->
-                                </definition>
+                                <!-\-<definition>
+                                    <!-\\- this will point to the same activity definition: create eicr. -\\->
+                                </definition>-\->
                             </action>
                         </action>
                         <action>
-                            <!--Routing and Sending-->
+                            <!-\-Routing and Sending-\->
                             <textEquivalent value="Route and send eicr per rules processing"/>
                             <triggerDefinition>
                                 <type value="named-event"/>
@@ -245,13 +243,13 @@
                             </condition>
                         </action>
                     </action>
-                    <!-- RCKMS Rules Processing on AIMS Platform -->
+                    <!-\- RCKMS Rules Processing on AIMS Platform -\->
                     <action>
                         <description value="Platform-based Rules processing workflow"/>
                         <action>
                             <selectionBehavior value="at-most-one"/>
                             <action>
-                                <!--Creation of eICR-->
+                                <!-\-Creation of eICR-\->
                                 <textEquivalent
                                     value="eICR construction and send delay (x hours) -  time after the start of the encounter before a triggered eICR should be composed and sent"/>
                                 <triggerDefinition>
@@ -263,12 +261,12 @@
                                         </repeat>
                                     </eventTimingTiming>
                                 </triggerDefinition>
-                                <definition>
-                                    <!-- this will point to the same activity definition: create eicr. -->
-                                </definition>
+                                <!-\-<definition>
+                                    <!-\\- this will point to the same activity definition: create eicr. -\\->
+                                </definition>-\->
                             </action>
                             <action>
-                                <!-- eicr periodic update -->
+                                <!-\- eicr periodic update -\->
                                 <textEquivalent
                                     value="eICR periodic update (y hours) – the time after an initial eICR transmission to send new eICRs as updates for long episodes of care"/>
                                 <triggerDefinition>
@@ -291,12 +289,12 @@
                                     <kind value="stop"/>
                                     <description value="episode of care is closed out"/>
                                 </condition>
-                                <definition>
-                                    <!-- this will point to the same activity definition: create eicr. -->
-                                </definition>
+                                <!-\-<definition>
+                                    <!-\\- this will point to the same activity definition: create eicr. -\\->
+                                </definition>-\->
                             </action>
                             <action>
-                                <!-- eicr episode of care close out -->
+                                <!-\- eicr episode of care close out -\->
                                 <textEquivalent
                                     value="eICR episode of care close out (z hours) – the time after the end of an episode of care for a final eICR will be sent when there has been one or more trigger events"/>
                                 <triggerDefinition>
@@ -312,13 +310,13 @@
                                     <kind value="applicability"/>
                                     <description value="there has been one or more trigger events"/>
                                 </condition>
-                                <definition>
-                                    <!-- this will point to the same activity definition: create eicr. -->
-                                </definition>
+                                <!-\-<definition>
+                                    <!-\\- this will point to the same activity definition: create eicr. -\\->
+                                </definition>-\->
                             </action>
                         </action>
                         <action>
-                            <!--Sending from Clinical Care to Platform-->
+                            <!-\-Sending from Clinical Care to Platform-\->
                             <textEquivalent value="Send from clinical care to platform"/>
                             <triggerDefinition>
                                 <type value="named-event"/>
@@ -326,7 +324,7 @@
                             </triggerDefinition>
                         </action>
                         <action>
-                            <!--Platform Rules Processing-->
+                            <!-\-Platform Rules Processing-\->
                             <textEquivalent value="Platform rules processing"/>
                             <triggerDefinition>
                                 <type value="named-event"/>
@@ -334,7 +332,7 @@
                             </triggerDefinition>
                         </action>
                         <action>
-                            <!--Creation of Clinical Feedback-->
+                            <!-\-Creation of Clinical Feedback-\->
                             <textEquivalent value="create clinical feedback per rules"/>
                             <triggerDefinition>
                                 <type value="named-event"/>
@@ -342,8 +340,9 @@
                             </triggerDefinition>
                         </action>
                     </action>
-                </action>
-            </PlanDefinition>
-        </resource>
-    </entry>
+                -->
+        </action>
+      </PlanDefinition>
+    </resource>
+  </entry>
 </Bundle>
