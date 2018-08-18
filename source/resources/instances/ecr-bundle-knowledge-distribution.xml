@@ -120,9 +120,10 @@
               <type value="Medication" />
               <codeFilter>
                 <path value="code" />
-                <!--<valueSetReference>
-                                    <reference value="prescription-drug-names-value-set"/>
-                                </valueSetReference>-->
+                <valueSetReference>
+                  <!-- NOTE: This is the wrong value set - the value doesn't exist yet -->
+                  <reference value="http://hl7.org/fhir/us/ecr/ValueSet/lrtc" />
+                </valueSetReference>
               </codeFilter>
             </eventData>
           </triggerDefinition>
@@ -234,7 +235,7 @@
             </action>
             <action id="route-and-send">
               <!--Routing and Sending-->
-              <description value="route and sent eicr"></description>
+              <description value="route and sent eicr" />
               <textEquivalent value="Route and send eicr per rules processing" />
               <triggerDefinition>
                 <type value="named-event" />
