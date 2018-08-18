@@ -22,7 +22,7 @@ This *STU* ballot continues and expands on work-to-date on CDA electronic Case R
 
 To sign up for the ballot and provide input on this specification follow the
 same process as for other HL7 artifacts using ballot spreadsheets as described on the [HL7 Balloting
-website](http://www.hl7.org/participate/onlineballoting.cfm?ref=nav) or the FHIR GForge Tracker.
+website](http://www.hl7.org/participate/onlineballoting.cfm?ref=nav) or the [FHIR GForge Tracker](https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677).
 
 If using the spreadsheet, please be sure to include a comment summary that can be used to populate the FHIR GForge Tracker when your comments are moved there. To reference an item in the ballot, Provide the HTML Page Name and/or
 URL. Look for this icon <span class="glyphicon glyphicon-link"></span> to appear when you hover over a section.
@@ -50,5 +50,5 @@ To get around this, we make elements “must support” but allow them to be opt
 
 #### 3. How to best implement patient vital signs for public health reporting
 
-We would propose using either the <a href="http://hl7.org/fhir/observation-profiles.html" rel="nofollow">FHIR Vital Signs profiles (STU)</a> or using the US Core Vital Signs - which is "additional guidance which sets the minimum expectations for recording, searching and retreiving vital signs associated with a patient. Together they identify which elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile." 
+We would propose using either the <a href="http://hl7.org/fhir/observation-profiles.html" rel="nofollow">FHIR Vital Signs profiles (STU)</a> or using the <a href="https://www.hl7.org/fhir/us/core/us-core-vitalsigns.html" rel="nofollow">US Core Vital Signs Profile</a> - which outlines "additional guidance which sets the minimum expectations for recording, searching and retreiving vital signs associated with a patient. Together they identify which elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile." 
 
