@@ -113,11 +113,11 @@ Note: While the identification of a Responsible Agency is an important part of i
 (Above each list of external resources, include and repeat for each eICR &lt;[determination of reportability code](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.extension:determinationOfReportability)&gt;)
 
 > "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" for "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency.html#Organization.name)&gt;"
-> Reporting is required within "&lt;reporting timeframe&gt;". Reporting to this Public Health Agency is based on "&lt;location relevance&gt;". 
+> Reporting is required within "&lt;[reporting timeframe](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.action.timingDuration:timingDuration)&gt;". Reporting to this Public Health Agency is based on "&lt;[location relevance](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.jurisdiction.extension:locationRelevance)&gt;". 
 
 (repeat for each external resource template, based on External Resource Category order)
 
-> &lt;External resource description&gt; (&lt;External resource link&gt; - &lt;External resource priority&gt;)
+> &lt;[External resource description](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.action.documentation.display)&gt; (&lt;[External resource link](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.action.documentation.url)&gt; - &lt;[External resource priority](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.action.documentation.extension:externalResourcePriority)&gt;)
 
 ## A Single Condition is Reportable to a Single PHA
 ### Subject:
@@ -133,7 +133,7 @@ Your organization electronically submitted an initial case report to determine i
 
 **"&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" for "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency.html#Organization.name)&gt;"**.
 
-Reporting is required within "&lt;reporting timeframe&gt;". Reporting to this Public Health Agency is based on "&lt;location relevance&gt;". 
+Reporting is required within "&lt;[reporting timeframe](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.action.timingDuration:timingDuration)&gt;". Reporting to this Public Health Agency is based on "&lt;[location relevance](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.jurisdiction.extension:locationRelevance)&gt;". 
 
 *Example text:*
 > Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient. 
@@ -203,7 +203,7 @@ Similar to these examples, some additional responses may include:
 
 In the case where an eICR Composition was not processed (**eICR Processing Status**=eICR was not processed – error), the normative constraints in the Reportability Response Communication profile state that there must be narrative text populated from [Communication\[rr-communication\].payload\[sliceEICRInformation\]](StructureDefinition-rr-communication-definitions.html#Communication.payload:sliceEICRInformation)  that contains the reason the file was not processed. Given the potential reasons (see codes from the [eICR Processing Status (eCR)](ValueSet-eicr-processing-status-ecr.html) value set) for an eICR Composition not to be processed, the following example may be used in the the corresponding Reportability Response Communication.text: 
 
-> An initial report for a possible reportable condition was received on "&lt;date and time of eICR receipt&gt;" with the file name "&lt;[filename of eICR](StructureDefinition-rr-communication-definitions.html#Communication.payload:sliceEICRInformation.contentReference:contentReference.display)&gt;" but it was not processed. "&lt;eICR Processing Status Reason&gt;"
+> An initial report for a possible reportable condition was received on "&lt;date and time of eICR receipt&gt;" with the file name "&lt;[filename of eICR](StructureDefinition-rr-communication-definitions.html#Communication.payload:sliceEICRInformation.contentReference:contentReference.display)&gt;" but it was not processed. "&lt;[eICR Processing Status Reason](StructureDefinition-rr-eicr-processing-status-reason-definitions.html#Observation)&gt;"
 
 If additional information about the specific error is available (e.g., file validator output, server logs), it can also be found in eICR Validation output. 
 
