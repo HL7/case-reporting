@@ -5,7 +5,7 @@
   <name value="rr-communication" />
   <title value="Reportability Response Communication" />
   <status value="draft" />
-  <description value="This Reportability Response Communication will be created in response to an electronic Initial Case Report Composition and the sharing of the Reportability Response with clinical care will serve several functions, including to: &#xA;&#xA;- Communicate the reportability status, for the responsible PHA(s)of each condition included in the electronic Initial Case Report (eICR)     &#xA;- Identify who (a PHA or an intermediary) prepared the Reportability Response     &#xA;- Indicate whether the eICR has been sent to one or more PHA(s)     &#xA;- Identify which PHA(s) has/have been sent the eICR     &#xA;- Provide contact information for the responsible PHA(s)     &#xA;- Provide suggested or required clinical follow-up activities from the responsible PHA(s), including any additional reporting needs or infection control activities     &#xA;- Provide access to clinical support resources suggested by the responsible PHA(s) for identified reportable conditions     &#xA;- Confirm eICR receipt and processing     &#xA;&#xA;A Reportability Response will also, when requested, be shared with the responsible PHAs (when they have not constructed it) for their internal use, so they understand what has been shared with clinical care and, and to monitor/audit decision support algorithm effectivesness and implementation. When a condition is considered reportable to more than one PHA, the Reportability Response can be helpful in communicating reporting that has been done to other PHAs.     &#xA;&#xA;The Reportability Response Communication is also structured to allow:     &#xA;&#xA;- Notification, alerting, routing and queueing in work or message management systems for healthcare personnel     &#xA;- Dynamic and static URIs for supplemental data collection and the provision of information resources" />
+  <description value="This Reportability Response Communication will be created in response to an electronic Initial Case Report Composition and the sharing of the Reportability Response with clinical care will serve several functions, including to: &#xA;&#xA;- Communicate the reportability status, for the responsible PHA(s)of each condition included in the electronic Initial Case Report (eICR)  &#xA;- Identify who (a PHA or an intermediary) prepared the Reportability Response  &#xA;- Indicate whether the eICR has been sent to one or more PHA(s)  &#xA;- Identify which PHA(s) has/have been sent the eICR  &#xA;- Provide contact information for the responsible PHA(s)  &#xA;- Provide suggested or required clinical follow-up activities from the responsible PHA(s), including any additional reporting needs or infection control activities &#xA;- Provide access to clinical support resources suggested by the responsible PHA(s) for identified reportable conditions  &#xA;- Confirm eICR receipt and processing &#xA;&#xA;A Reportability Response will also, when requested, be shared with the responsible PHAs (when they have not constructed it) for their internal use, so they understand what has been shared with clinical care and, and to monitor/audit decision support algorithm effectivesness and implementation. When a condition is considered reportable to more than one PHA, the Reportability Response can be helpful in communicating reporting that has been done to other PHAs. &#xA;&#xA;The Reportability Response Communication is also structured to allow: &#xA;&#xA;- Notification, alerting, routing and queueing in work or message management systems for healthcare personnel &#xA;- Dynamic and static URIs for supplemental data collection and the provision of information resources" />
   <fhirVersion value="3.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -16,21 +16,17 @@
     <element id="Communication">
       <path value="Communication" />
       <short value="Reportability Response Communication" />
-      <definition value="This Reportability Response Communication will be created in response to an electronic Initial Case Report Composition and the sharing of the Reportability Response with clinical care will serve several functions, including to: &#xA;&#xA;- Communicate the reportability status, for the responsible PHA(s)of each condition included in the electronic Initial Case Report (eICR)     &#xA;- Identify who (a PHA or an intermediary) prepared the Reportability Response     &#xA;- Indicate whether the eICR has been sent to one or more PHA(s)     &#xA;- Identify which PHA(s) has/have been sent the eICR     &#xA;- Provide contact information for the responsible PHA(s)     &#xA;- Provide suggested or required clinical follow-up activities from the responsible PHA(s), including any additional reporting needs or infection control activities     &#xA;- Provide access to clinical support resources suggested by the responsible PHA(s) for identified reportable conditions     &#xA;- Confirm eICR receipt and processing     &#xA;&#xA;A Reportability Response will also, when requested, be shared with the responsible PHAs (when they have not constructed it) for their internal use, so they understand what has been shared with clinical care and, and to monitor/audit decision support algorithm effectivesness and implementation. When a condition is considered reportable to more than one PHA, the Reportability Response can be helpful in communicating reporting that has been done to other PHAs.     &#xA;&#xA;The Reportability Response Communication is also structured to allow:     &#xA;&#xA;- Notification, alerting, routing and queueing in work or message management systems for healthcare personnel     &#xA;- Dynamic and static URIs for supplemental data collection and the provision of information resources" />
+   <definition value="This Reportability Response Communication will be created in response to an electronic Initial Case Report Composition and the sharing of the Reportability Response with clinical care will serve several functions, including to: &#xA;&#xA;- Communicate the reportability status, for the responsible PHA(s)of each condition included in the electronic Initial Case Report (eICR)  &#xA;- Identify who (a PHA or an intermediary) prepared the Reportability Response  &#xA;- Indicate whether the eICR has been sent to one or more PHA(s)  &#xA;- Identify which PHA(s) has/have been sent the eICR  &#xA;- Provide contact information for the responsible PHA(s)  &#xA;- Provide suggested or required clinical follow-up activities from the responsible PHA(s), including any additional reporting needs or infection control activities  &#xA;- Provide access to clinical support resources suggested by the responsible PHA(s) for identified reportable conditions  &#xA;- Confirm eICR receipt and processing  &#xA;&#xA;A Reportability Response will also, when requested, be shared with the responsible PHAs (when they have not constructed it) for their internal use, so they understand what has been shared with clinical care and, and to monitor/audit decision support algorithm effectivesness and implementation. When a condition is considered reportable to more than one PHA, the Reportability Response can be helpful in communicating reporting that has been done to other PHAs.  &#xA;&#xA;The Reportability Response Communication is also structured to allow:  &#xA;&#xA;- Notification, alerting, routing and queueing in work or message management systems for healthcare personnel  &#xA;- Dynamic and static URIs for supplemental data collection and the provision of information resources" />
       <mustSupport value="true" />
-      <mapping>
-        <identity value="cda-rr" />
-        <map value="Reportability Response Document (RR)" />
-      </mapping>
     </element>
     <element id="Communication.text">
       <path value="Communication.text" />
-      <definition value="The narrative structure of a Reportability Response Comminication can take two different forms, depending on the processing status of the eICR Composition document to which it is a response. These forms are as follows: &#xA;&#xA;- If the eICR was processed, then the narrative text will be populated with data from Communication.topic, Communication.payload[Reportability Response Summary], Communication.payload[Relevant Reportable Condition], and Communication.payload[Electronic Initial Case Report Information] &#xA;&#xA;- If the eICR was not processed and has errors, then the narrative text will only be populated with data from Communication.payload[Electronic Initial Case Report Information]" />
+      <definition value="The narrative structure of a Reportability Response Comminication can take two different forms, depending on the processing status of the eICR Composition document to which it is a response. These forms are as follows: &#xA;&#xA;- If the eICR was processed, then the narrative text will be populated with data from Communication.topic, Communication.payload[Reportability Response Summary], Communication.payload[Relevant Reportable Condition], and Communication.payload[Electronic Initial Case Report Information] &#xA;&#xA;- If the eICR was not processed and has errors, then the narrative text will only be populated with data from Communication.payload[Electronic Initial Case Report Information]&#xA;&#xA; Text narrative SHOULD conform to requirements laid out in the 'Narrative Guidance' tab of this IG." />
       <min value="1" />
       <constraint>
         <key value="nar-1" />
         <severity value="error" />
-        <human value="Text narrative SHOULD conform to requirements laid out in the Creator and Receiver Guidance" />
+        <human value="Text narrative SHOULD conform to requirements laid out in  the 'Narrative Guidance' tab of this IG. /> 
         <expression value="not(tested)" />
       </constraint>
       <mustSupport value="true" />
@@ -49,7 +45,7 @@
       <path value="Communication.extension" />
       <sliceName value="reportabilityResponsePriority" />
       <short value="Reportability Response Priority" />
-      <definition value="Rrepresents a priority for the reportability response communication overall. It has been calculated from the highest priority of any included External Resources or the highest priority of included conditions based on a separate, jurisdictionally developed priority list.&#xD;&#xA;This “communication”-level priority should be used for EHR workflow including notification, alerting, routing and queueing." />
+      <definition value="Represents a priority for the reportability response communication overall. It has been calculated from the highest priority of any included External Resources or the highest priority of included conditions based on a separate, jurisdictionally developed priority list.&#xD;&#xA;This “communication”-level priority should be used for EHR workflow including notification, alerting, routing and queueing." />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -69,10 +65,6 @@
         </valueIdentifier>
       </example>
       <mustSupport value="true" />
-      <mapping>
-        <identity value="cda-rr" />
-        <map value="Reportability Response Document (RR)/id" />
-      </mapping>
     </element>
     <element id="Communication.category">
       <path value="Communication.category" />
@@ -87,10 +79,6 @@
       </patternCodeableConcept>
       <mustSupport value="true" />
       <isModifier value="false" />
-      <mapping>
-        <identity value="cda-rr" />
-        <map value="Reportability Response/code" />
-      </mapping>
     </element>
     <element id="Communication.subject">
       <path value="Communication.subject" />
@@ -254,7 +242,7 @@
       <path value="Communication.payload" />
       <sliceName value="sliceEICRInformation" />
       <short value="Electronic Initial Case Report Information" />
-      <definition value="This payload contains information about the eICR Composition to which this Communication is a response. The date/time of receipt and a document reference are represented in the referenced Electronic Initial Case Report Composition Profile and the processing status of the eICR Composition is contained in the eICR Processing Status profile. If the eICR Composition was manually initiated by a healthcare provider, this is indicated by the presence of the Manually Initiated eICR extension.&#xD;&#xA;&#xD;&#xA;This payload is always present in the Reportability Response Communication.&#xD;&#xA;&#xD;&#xA;The text element (narrative block) in this section is only populated and displayed when the eICR CDA document was not processed (eICR Processing Status/code=&quot;RRVS22&quot;, &quot;eICR was not processed – error&quot;) and that text element contains the eICR processing status reason(s).&#xD;&#xA;" />
+   <definition value="This payload contains information about the eICR Composition to which this Communication is a response. The date/time of receipt and a document reference are represented in the referenced Electronic Initial Case Report Composition Profile and the processing status of the eICR Composition is contained in the eICR Processing Status profile. If the eICR Composition was manually initiated by a healthcare provider, this is indicated by the presence of the Manually Initiated eICR extension.&#xD;&#xA;&#xD;&#xA;This payload is always present in the Reportability Response Communication.&#xD;&#xA;&#xD;&#xA;The text element (narrative block) in this section is only populated and displayed when the eICR CDA document was not processed (eICR Processing Status/code=&quot;RRVS22&quot;, &quot;eICR was not processed – error&quot;) and that text element contains the eICR processing status reason(s).&#xD;&#xA;" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
