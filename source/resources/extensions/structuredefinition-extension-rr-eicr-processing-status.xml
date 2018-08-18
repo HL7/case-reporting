@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<StructureDefinition xmlns="http://hl7.org/fhir">
+<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://hl7.org/fhir ../../../validation/fhir-all.xsd" xmlns="http://hl7.org/fhir">
   <id value="extension-rr-eicr-processing-status" />
   <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-eicr-processing-status" />
   <name value="extension-rr-eicr-processing-status" />
   <title value="Extension eICR Processing Status" />
   <status value="draft" />
-  <description value="This template indicates the eICR processing status. If the eICR was not processed or was processed with a warning, the reason will be contained in the eICR Processing Status Reason. If there is any output from a validator, that output will be contained in the eICR Validation Output.&#xD;&#xA;If any of the trigger codes used to generate the eICR are from an outdated version of the RCTC or the codes are marked as inactive in the latest version of the RCTC, these are flagged and and the eICR Processing Status Reason Detail will hold the details of the outdated and expected versions of the RCTC.&#xD;&#xA;" />
+  <description value="This extension indicates the eICR processing status. If the eICR was not processed or was processed with a warning, the reason will be contained in the eICR Processing Status Reason. If there is any output from a validator, that output will be contained in the eICR Validation Output.&#xA;&#xA;If any of the trigger codes used to generate the eICR are from an outdated version of the RCTC or the codes are marked as inactive in the latest version of the RCTC, these are flagged and and the eICR Processing Status Reason Detail will hold the details of the outdated and expected versions of the RCTC." />
   <fhirVersion value="3.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
@@ -18,6 +19,7 @@
     <element id="Extension">
       <path value="Extension" />
       <short value="eICR Processing Status" />
+      <definition value="This extension indicates the eICR processing status. If the eICR was not processed or was processed with a warning, the reason will be contained in the eICR Processing Status Reason. If there is any output from a validator, that output will be contained in the eICR Validation Output.&#xA;&#xA;If any of the trigger codes used to generate the eICR are from an outdated version of the RCTC or the codes are marked as inactive in the latest version of the RCTC, these are flagged and and the eICR Processing Status Reason Detail will hold the details of the outdated and expected versions of the RCTC." />
       <max value="1" />
     </element>
     <element id="Extension.extension">
@@ -51,6 +53,7 @@
     <element id="Extension.extension:eICRValidationOutput">
       <path value="Extension.extension" />
       <sliceName value="eICRValidationOutput" />
+      <definition value="Contains eICR validation output - this could be the actual output from a validator, or a link to a validation output file" />
     </element>
     <element id="Extension.extension:eICRValidationOutput.url">
       <path value="Extension.extension.url" />
@@ -75,6 +78,7 @@
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
+      <definition value="Contains eICR validation output - this could be the actual output from a validator, or a link to a validation output file" />
       <max value="0" />
     </element>
   </differential>

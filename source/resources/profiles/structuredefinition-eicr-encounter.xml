@@ -10,10 +10,13 @@
   <contact>
     <telecom>
       <system value="url" />
-      <value value="The Electronic Case Reporting Encounter profile is based on the Encounter resource and establishes the core elements, extensions, vocabularies and value sets for representing the following encounters for electronic case reporting:&#xA;&#xA;- Initial Case Report context&#xA;- Reportability Response context" />
+      <value
+        value="The Electronic Case Reporting Encounter profile is based on the Encounter resource and establishes the core elements, extensions, vocabularies and value sets for representing the following encounters for electronic case reporting:&#xA;&#xA;- Initial Case Report context&#xA;- Reportability Response context"
+       />
     </telecom>
   </contact>
-  <description value="The Electronic Case Reporting Encounter profile is based on the Encounter resource and establishes the core elements, extensions, vocabularies and value sets for representing the following encounters for electronic case reporting:&#xA;&#xA;- Initial Case Report encounter related to the reported event." />
+  <description
+    value="The Electronic Case Reporting Encounter profile is based on the Encounter resource and establishes the core elements, extensions, vocabularies and value sets for representing the following encounters for electronic case reporting:&#xA;&#xA;- Initial Case Report encounter related to the reported event." />
   <fhirVersion value="3.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -24,7 +27,8 @@
     <element id="Encounter">
       <path value="Encounter" />
       <short value="eICR Encounter" />
-      <definition value="The Electronic Case Reporting Encounter profile is based on the Encounter resource and establishes the core elements, extensions, vocabularies and value sets for representing the following encounters for electronic case reporting:&#xA;&#xA;- Initial Case Report encounter related to the reported event."></definition>
+      <definition
+        value="The Electronic Case Reporting Encounter profile is based on the Encounter resource and establishes the core elements, extensions, vocabularies and value sets for representing the following encounters for electronic case reporting:&#xA;&#xA;- Initial Case Report encounter related to the reported event." />
       <mustSupport value="false" />
       <isModifier value="false" />
     </element>
@@ -42,6 +46,8 @@
     </element>
     <element id="Encounter.participant">
       <path value="Encounter.participant" />
+      <definition
+        value="The provider in charge of care and the facility in which care was provided during the encounter in which the eICR was triggered" />
       <slicing>
         <discriminator>
           <type value="type" />
@@ -56,6 +62,8 @@
       <path value="Encounter.participant" />
       <sliceName value="sliceResponsibleProvider" />
       <short value="Responsible provider" />
+      <definition
+        value="The provider in charge of care and the facility in which care was provided during the encounter in which the eICR was triggered" />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
@@ -72,6 +80,8 @@
     </element>
     <element id="Encounter.participant:sliceResponsibleProvider.individual">
       <path value="Encounter.participant.individual" />
+      <definition
+        value="The provider in charge of care and the facility in which care was provided during the encounter in which the eICR was triggered" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
@@ -79,6 +89,8 @@
     </element>
     <element id="Encounter.period">
       <path value="Encounter.period" />
+      <short value="Patient encounter start and end times" />
+      <definition value="Start and end times of the patient encounter in which the eICR was triggered" />
       <mustSupport value="true" />
     </element>
     <element id="Encounter.diagnosis">
@@ -102,7 +114,8 @@
       <path value="Encounter.diagnosis.extension" />
       <sliceName value="eICRTriggerCodeFlag" />
       <short value="eICR Trigger Code Flag" />
-      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;&#xA;- Encounters Section&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
+      <definition
+        value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:;&#xA;&#xA;- Encounters Section;&#xA;- Problem Section;&#xA;&#xA;- Plan of Treatment Section;&#xA;- Results Section" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -118,6 +131,8 @@
     </element>
     <element id="Encounter.location">
       <path value="Encounter.location" />
+      <short value="eICR encounter location" />
+      <definition value="Location of the facility in which the eICR encounter took place" />
       <max value="1" />
       <mustSupport value="true" />
       <isModifier value="false" />
