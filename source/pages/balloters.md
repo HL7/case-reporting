@@ -15,8 +15,10 @@ active: home
 <!-- end TOC -->
 
 
-This *STU* ballot continues and expands on work to date on
-electronic Case Reporting (eCR) standards. It is intended to preview and
+This *STU* ballot continues and expands on work to date on CDA electronic Case Reporting (eCR) standards (<a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=436" rel="nofollow">HL7 CDA® R2 Electronic Initial Case Report (eICR) Standard for Trial Use (STU)</a> and <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=470" rel="nofollow">HL7 CDA® R2 Reportability Response (RR) STU</a>) as well as a previous <a href="http://hl7.org/fhir/uv/ecr/2018Jan/index.html" rel="follow">"For Comment" HL7 FHIR® ballot</a>.
+
+
+It is intended to preview and
 get input on:
 
 #### 1.  FHIR representations of two existing CDA document standards
