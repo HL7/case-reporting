@@ -11,7 +11,7 @@ active: design-considerations
 
 <!-- end TOC -->
 
-
+<br>
 #### Existing CDA Design
 
 The CDA Electronic Case Reporting (eCR) standards; the electronic Initial Case Report (eICR) and the Reportability Response (RR), support two broad information flows.
@@ -28,7 +28,7 @@ RCKMS and the AIMS platform serve several purposes in flow #2.
 Prominent among them is to implement public health reporting rules that cannot currently be readily distributed to healthcare.
 Another important role is ensuring that public health agencies only get the data they are authorized to receive by state laws.
 Without more complex reporting rules that are distributable to, and executable in healthcare, most PHAs will not implement flow #1.
-
+<br>
 <img src="case-reporting/source/pages/ReportingDesignPatternV17.jpg" alt="Reporting Design Pattern" class="figure-img-portrait img-responsive img-rounded center-block">
 
 #### FHIR Design Considerations
