@@ -27,7 +27,6 @@ Prominent among these purposes is to implement public health reporting rules tha
 The rules ensure that public health agencies only get the data they are authorized to receive by state laws.
 Without more complex reporting rules that are distributable to, and executable in, healthcare most PHAs will not implement flow #1.
 <br>
-<br>
 <img src="ReportingDesignPatternV17.JPG" alt="Reporting Design Pattern" class="figure-img-portrait img-responsive img-rounded center-block">
 <br>
 #### FHIR Design Considerations
