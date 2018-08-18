@@ -29,6 +29,8 @@ Prominent among them is to implement public health reporting rules that cannot c
 Another important role is ensuring that public health agencies only get the data they are authorized to receive by state laws.
 Without more complex reporting rules that are distributable to, and executable in healthcare, most PHAs will not implement flow #1.
 
+<img src="source/pages/ReportingDesignPatternV17.jpg" alt="Reporting Design Pattern" class="figure-img-portrait img-responsive img-rounded center-block">
+
 #### FHIR Design Considerations
 
 FHIR enables several helpful capabilities for eCR.
