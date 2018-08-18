@@ -14,7 +14,7 @@ active: home
 
 <!-- end TOC -->
 
-### Notice to Ballot Commenters Context
+### Notice to Ballot Commenters
 
 This *STU* ballot continues and expands on work-to-date on CDA electronic Case Reporting (eCR) standards (<a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=436" rel="nofollow">HL7 CDA® R2 Electronic Initial Case Report (eICR) Standard for Trial Use (STU)</a> and <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=470" rel="nofollow">HL7 CDA® R2 Reportability Response (RR) STU</a>) as well as a previous <a href="http://hl7.org/fhir/uv/ecr/2018Jan/index.html" rel="follow">"For Comment" HL7 FHIR® eCR ballot</a>.
 
@@ -27,63 +27,25 @@ website](http://www.hl7.org/participate/onlineballoting.cfm?ref=nav) or the FHIR
 If using the spreadsheet, please be sure to include a comment summary that can be used to populate the FHIR GForge Tracker when your comments are moved there. To reference an item in the ballot, Provide the HTML Page Name and/or
 URL. Look for this icon <span class="glyphicon glyphicon-link"></span> to appear when you hover over a section.
 
-
-
-
 We would especially appreciate comments on the following items.
 
-#### 1.  FHIR representations of two existing CDA document standards
+#### 1. Suggested values for reporting parameters or addtional parameter inclusion
 
-  - [The electronic Initial Case Report eICR
-    Version 1.1](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=436)
+The included Knowledge Distribution profile defines three parameters for initating case reports from Electronic Health Records:
 
-    > (a.k.a. HL7 CDA® R2 Implementation Guide: Public Health Case Report,
-    > Release 2: The Electronic Initial Case Report (eICR), Release 1, STU
-    > Release 1.1 - US Realm)
 
-  - The Reportability Response (RR) Version 1.0
 
-    > (a.k.a. HL7 CDA® R2 Implementation Guide: Reportability Response,
-    > Release 1 STU Release 1.0 - US Realm)
 
-#### 2.  The framing of technical transactions for the exchange of the eICR, the Reportability Response, and future supplemental reporting information
 
-Supporting the following:
+#### 2. Difficulties from CDA using nullFlavors while FHIR does not
 
-  - Point-to-point exchange
+The base datatype used by CDA has the properly nullFlavor. This means that it is possible to add a nullFlavor to any element in CDA. FHIR on the other hand, does not have this option. To express a nullFlavor concept in FHIR, one would either need to have a value set containing those values or add an extension to express the nullFlavor.
+This means that if an element is required and has not explicitly precluded a nullFlavor in a CDA IG, it is possible, when the data isn’t available to send a nullFlavor instead of a proper value.
+If the equivalent element is required in a FHIR IG, it isn’t possible to send a nullFlavor unless that nullFlavor value has been added to a value set or an extension has been added to the element.
+To get around this, we make elements “must support” but allow them to be optional. Then in the case of missing data, the instance still validates.
 
-  - A multi-jurisdictional services platform
 
-  - Health Information Exchanges
+#### 3. How to best implement patient vital signs for public health reporting
 
-  - Health Data Networks
-
-  - Many clinical care organizations and Public Health Agencies (PHAs)
-
-#### 3.  FHIR representation of what is currently a non-standards based, Excel spreadsheet process for distributing trigger codes
-
-  - A bundle of constrained FHIR value set resources
-
-  - FHIR publish/subscribe services for offering-up the bundle
-
-#### 4.  Broader standardization of the triggering / decision support process for eCR
-
-  - The accomplishment of public health objectives in a way that is
-    sensitive to clinical care and EHR vendor needs
-
-  - A pathway for FHIR standards in this area
-
-  - Input that can be applied to existing CDA-based activities
-
-#### 5.  The timing and roll-out of board FHIR eCR standards advancement
-
-Material for \#1 and \#3 can be found in the [Profiles, Extensions, and
-Transactions](profiles.html),
-[Terminology](terminology.html),
-and [Capability
-Statements](capstatements.html)
-tabs of this For Comment Implementation Guide. Specific context and
-questions for \#2, \#4, and \#5 can be found in the [General
-Guidance](guidance.html)
-tab.
+We would propose using either the FHIR Vital Signs profiles (http://hl7.org/fhir/observation-profiles.html) or also using the US Core Vital Signs - which is "additional guidance which sets the minimum expectations for recording, searching and retreiving vital signs associated with a patient. Together they identify which elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile." 
 
