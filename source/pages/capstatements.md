@@ -42,7 +42,7 @@ The Knowledge Management Server **SHOULD**:
 1. Implement Subscription services per the FHIR specification.
 
 
-#### Conformance requirements for an RCTC Client
+#### Conformance requirements for an Knowledge Management Client
 
 The Knowledge Management Client **SHALL**:
 
