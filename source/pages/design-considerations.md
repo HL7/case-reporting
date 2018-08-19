@@ -14,17 +14,17 @@ active: design-considerations
 
 #### Existing CDA Design
 
-The CDA Electronic Case Reporting (eCR) standards; the electronic Initial Case Report (eICR) and the Reportability Response (RR), support two broad information flows.
-One of the two information flows also uses the Reportable Condition Knowledge Management System (RCKMS) on the Association of Public Health Laboratories (APHL) AIMS platform to report to Public Health Agencies (PHAs) and one does not. The two information flows are:
+The CDA Electronic Case Reporting (eCR) standards; the electronic Initial Case Report (eICR) and the Reportability Response (RR), support two broad approaches.
+One of the approaches also uses the Reportable Condition Knowledge Management System (RCKMS) on the Association of Public Health Laboratories (APHL) AIMS platform to report to Public Health Agencies (PHAs) and one does not. The two approaches are:
 
 1. from healthcare to PHAs (via the eICR) and back (via the RR)
 2. from healthcare to AIMS/RCKMS (via the eICR) and then to PHAs (via the eICR and sometimes the RR) and with a response to healthcare from the AIMS/RCKMS (via the RR)
 
 In some jurisdictions Health Information Exchanges (HIEs) and/or Health Data Networks may also be employed to securely move data between organizations.
-RCKMS and the AIMS platform serve several purposes in flow #2.
+RCKMS and the AIMS platform serve several purposes in approach #2.
 Prominent among these purposes is to implement public health reporting rules that cannot currently be readily distributed to healthcare.
 The rules ensure that public health agencies only get the data they are authorized to receive by state laws.
-Without more complex reporting rules that are distributable to, and executable in, healthcare most PHAs will not implement flow #1.
+Without more complex reporting rules that are distributable to, and executable in, healthcare most PHAs will not approach #1. Hence, these flows are represented by either "Remote Rules" or "Local Rules" in the following diagram. 
 
 <img src="ReportingDesignPatternV17.JPG" alt="Reporting Design Pattern" class="figure-img-portrait img-responsive img-rounded center-block">
 
