@@ -22,7 +22,7 @@ It also includes the trigger codes that matched to initiate the report, a step t
 The eICR is conveyed as an unsolicited push transaction from healthcare to public health.
 There may be several different intermediaries involved in the transmission including Health Information Exchanges, Health Data Networks, and the Association of Public Health Laboratories (APHL) AIMS platform. 
 
-In this implementation guide the reference transport transaction is a FHIR POST, but other transport mechanism may be added or substituted as the data travel to the appropriate public health agencies.
+In this implementation guide the reference transport transaction is a FHIR POST, but other transport mechanisms may be added or substituted as the data travel to the appropriate public health agencies.
 In the FHIR eICR transaction to PHAs the RR payload may be added to provide the PHAs with information about what has been determined to be reportable, what PHAs have been sent eICR information, and what else has been communicated to healthcare.
 
 The following profiles and extensions have been defined for the eICR transactions
