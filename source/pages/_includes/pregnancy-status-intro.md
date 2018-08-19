@@ -14,6 +14,6 @@
 
 #### Examples
 
-- [Pregnancy Status Example](eicr-pregnancy-status-eve-everywoman.html)
+- [Pregnancy Status Example](Observation-eicr-pregnancy-status-eve-everywoman.html)
 
 ---

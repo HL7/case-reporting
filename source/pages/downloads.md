@@ -30,7 +30,7 @@ These files should be the first choice whenever generating any implementation ar
 - [eicr-occupationhistory.sch](eicr-occupationhistory.sch)
 - [eicr-procedurerequest.sch](eicr-procedurerequest.sch)
 - [eicr-travel-history.sch](eicr-travel-history.sch)
-- [extension-ecr-organization](extension-ecr-organization)
+- [extension-ecr-organization.sch](extension-ecr-organization.sch)
 - [extension-ecr-practitionerrole.sch](extension-ecr-practitionerrole.sch)
 - [extension-eicr-manually-initiated-reason.sch](extension-eicr-manually-initiated-reason.sch)
 - [extension-eicr-travel-history-address.sch](extension-eicr-travel-history-address.sch)
