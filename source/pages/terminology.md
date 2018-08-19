@@ -9,14 +9,13 @@ active: terminology
 {:toc} -->
 <!-- end TOC -->
 <br/>
-### Value Sets: Trigger Code Transaction
+### Value Sets: Knowledge Distribution Transaction
 General guidance for using these value sets can be found on the [Guidance Page](triggering.html)
 <ul>
   <li><a href="ValueSet-ostc.html">Organism_Substance Triggers for Public Health Reporting</a></li>
   <li><a href="ValueSet-lrtc.html">Lab Obs Test Name Triggers for Public Health Reporting</a></li>
   <li><a href="ValueSet-lotc.html">Lab Order Test Name Triggers for Public Health Reporting</a></li>
   <li><a href="ValueSet-dxtc.html">Diagnosis_Problem Triggers for Public Health Reporting</a></li>
-  <li><a href="ValueSet-pregnancy-status.html">Pregnancy Status</a></li>
 </ul>
 <br/>
 A bundle containing all the trigger code value sets is also included in this guide.
@@ -30,6 +29,7 @@ A bundle containing all the trigger code value sets is also included in this gui
 <ul>
   <li><a href="ValueSet-geographical-location-history.html">Geographical Location History</a></li>(<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.3201">PHIN VADS link</a>)
   <li><a href="ValueSet-oes.html">US Standard Occupational Classification</a></li>
+  <li><a href="ValueSet-pregnancy-status.html">Pregnancy Status</a></li>
   
 </ul>
 ---
