@@ -53,7 +53,7 @@ The following profiles and extensions have been defined for the eICR transaction
 ### Reportability Response (RR) Transaction and Profiles
 
 The RR transaction represents a response from public health to healthcare associated with a received eICR.
-It can include determination of reportability information, contact information for the involved public health agencies, and requests for case investigation / supplemental data that may not have been recorded in the process of care, condition-specific information from public health, and an acknowledgment that report has been successfully conveyed. 
+It can include determination of reportability information, contact information for the involved public health agencies, and requests for case investigation supplemental data that may not have been recorded in the process of care, condition-specific information from public health, and an acknowledgment that report has been successfully conveyed. 
 
 When public health reporting rules are distributable to healthcare some of this information will be conveyed in the Knowledge Distribution transaction so that it can be accessed by the healthcare rules engine.
 The RR is conveyed as a push transaction from public health to healthcare.
