@@ -24,7 +24,7 @@ It can also improve bidirectional communications through the delivery of public 
 eCR will also reduce healthcare provider burden by automating the completion of legal reporting requirements.
 
 With the advent of FHIR standards, there is a need for FHIR implementation guidance to specify appropriate resources and transactions needed for the eCR process.
-FHIR offers opportunities to further enable automated triggering and reporting of cases from EHRs, to ease implementation and integration, to support the acquisition of investigation and supplemental data, and to connect public health information (e.g., guidelines) and clinical workflow.
+FHIR offers opportunities to further enable automated triggering and reporting of cases from EHRs, to ease implementation and integration, to support the acquisition of investigation supplemental data, and to connect public health information (e.g., guidelines) and clinical workflow.
 Over time, FHIR may also support the distribution of reporting rules to clinical care to better align data authorities and make broader clinical data available to public health decision support services inside the clinical care environment.
  
 #### Relationship to Other Standards
