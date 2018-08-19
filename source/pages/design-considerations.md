@@ -14,17 +14,17 @@ active: design-considerations
 
 #### Existing CDA Design
 
-The CDA Electronic Case Reporting (eCR) standards; the electronic Initial Case Report (eICR) and the Reportability Response (RR), support two broad information flows.
-One of the two information flows also uses the Reportable Condition Knowledge Management System (RCKMS) on the Association of Public Health Laboratories (APHL) AIMS platform to report to Public Health Agencies (PHAs) and one does not. The two information flows are:
+The CDA Electronic Case Reporting (eCR) standards; the electronic Initial Case Report (eICR) and the Reportability Response (RR), support two broad approaches to eCR.
+One of the approaches also uses the Reportable Condition Knowledge Management System (RCKMS) on the Association of Public Health Laboratories (APHL) AIMS platform to report to Public Health Agencies (PHAs) and one does not. The two approaches are:
 
-1. from healthcare to PHAs (via the eICR) and back (via the RR)
-2. from healthcare to AIMS/RCKMS (via the eICR) and then to PHAs (via the eICR and sometimes the RR) and with a response to healthcare from the AIMS/RCKMS (via the RR)
+1. informaton flowing from healthcare to PHAs (via the eICR) and back (via the RR)
+2. information flowing from healthcare to AIMS/RCKMS (via the eICR) and then to PHAs (via the eICR and sometimes the RR) and with a response to healthcare from the AIMS/RCKMS (via the RR)
 
 In some jurisdictions Health Information Exchanges (HIEs) and/or Health Data Networks may also be employed to securely move data between organizations.
-RCKMS and the AIMS platform serve several purposes in flow #2.
+RCKMS and the AIMS platform serve several purposes in approach #2.
 Prominent among these purposes is to implement public health reporting rules that cannot currently be readily distributed to healthcare.
 The rules ensure that public health agencies only get the data they are authorized to receive by state laws.
-Without more complex reporting rules that are distributable to, and executable in, healthcare most PHAs will not implement flow #1.
+Without more complex reporting rules that are distributable to, and executable in, healthcare most PHAs will not use approach #1. Hence, these flows are principally represented by either "Remote Rules" or "Local Rules" in the following diagram. 
 
 <img src="ReportingDesignPatternV17.JPG" alt="Reporting Design Pattern" class="figure-img-portrait img-responsive img-rounded center-block">
 
@@ -50,11 +50,10 @@ To achieve this orchestration the Knowledge Distribution resource needs to guide
 For some time much of the Knowledge Distribution transaction will provide structure to eCR as human consumable guidance.
 The most immediately machine processable components are the included trigger code value sets.
 
-When distributable rules can be processed in most healthcare settings, there will be needs to distribute the rules, the trigger codes, and links to relevant on-line support information.
+When distributable rules can be processed in most healthcare settings, there will be needs to distribute the rules, the trigger codes, and links to relevant on-line condition-specific information.
 The Knowledge Distribution transaction can enable these distributions going forward as well as provide details for how critical elements, like report timing, of the reporting process should be implemented.
-It will also allow for a connection to separate efforts to develop clinical guidelines for public health conditions.
-Eventually, healthcare should be able to implement both reporting and guidelines together seamlessly.
+It will also allow for a connection to separate efforts to develop clinical guidelines for public health conditions. Reporting and guidelines should utilize the same infrastructure and approaches where possible to minimize demands on EHRs.
 
-As with the CDA Reportability Response, the FHIR version needs to be queueable in healthcare reporter workflows and be attachable to a patient chart when there is a “reportable” or “maybe reportable” condition identified.
+As with the CDA Reportability Response, the FHIR version needs to be queueable in healthcare provider/reporter workflows and be attachable to a patient chart when there is a “reportable” or “maybe reportable” condition identified.
 Also, like the CDA Reportability Response, the FHIR version needs to be able to convey trusted Public Health Agency web-links for management and treatment guidance information as well as links for web forms that enable PHA acquisition of case investigation supplemental data that may not be recorded in the typical process of care.
-HIE Retreive Form for Data Capture (RFD) web forms have been demonstrated to support this investigation supplemental data need. As reporting rules become distributable to rules engines running in healthcare, the possibility for FHIR RESTful queries from the rules engine to the EHR to provide additional condition and/or jurisdiction specific data that are found there could be implemented.
+HIE Retreive Form for Data Capture (RFD) web forms have been demonstrated to support this investigation supplemental data need. As reporting rules become distributable to rules engines running in healthcare, it may be possible for FHIR RESTful queries from the rules engine to the EHR in order to provide additional condition and/or jurisdiction specific data.

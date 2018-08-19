@@ -22,7 +22,7 @@ It also includes the trigger codes that matched to initiate the report, a step t
 The eICR is conveyed as an unsolicited push transaction from healthcare to public health.
 There may be several different intermediaries involved in the transmission including Health Information Exchanges, Health Data Networks, and the Association of Public Health Laboratories (APHL) AIMS platform. 
 
-In this implementation guide the reference transport transaction is a FHIR POST, but other transport mechanism may be added or substituted as the data travel to the appropriate public health agencies.
+In this implementation guide the reference transport transaction is a FHIR POST, but other transport mechanisms may be added or substituted as the data travel to the appropriate public health agencies.
 In the FHIR eICR transaction to PHAs the RR payload may be added to provide the PHAs with information about what has been determined to be reportable, what PHAs have been sent eICR information, and what else has been communicated to healthcare.
 
 The following profiles and extensions have been defined for the eICR transactions
@@ -53,7 +53,7 @@ The following profiles and extensions have been defined for the eICR transaction
 ### Reportability Response (RR) Transaction and Profiles
 
 The RR transaction represents a response from public health to healthcare associated with a received eICR.
-It can include determination of reportability information, contact information for the involved public health agencies, and requests for case investigation / supplemental data that may not have been recorded in the process of care, condition-specific information from public health, and an acknowledgment that report has been successfully conveyed. 
+It can include determination of reportability information, contact information for the involved public health agencies, and requests for case investigation supplemental data that may not have been recorded in the process of care, condition-specific information from public health, and an acknowledgment that report has been successfully conveyed. 
 
 When public health reporting rules are distributable to healthcare some of this information will be conveyed in the Knowledge Distribution transaction so that it can be accessed by the healthcare rules engine.
 The RR is conveyed as a push transaction from public health to healthcare.
@@ -100,7 +100,7 @@ The following profiles and extensions have been defined for the Reportability Re
 
 The Knowledge Distribution transaction includes a constrained FHIR PlanDefinition resource profile, a family of actions, and a FHIR Subscription service. 
 It supports the distribution of reporting guidance and parameters, trigger code value sets, and more complex reporting rules and clinician / reporter support resources.
-This work seeks to align with developing public health guideline that cover the same conditions.
+This work seeks to align with developing public health guidelines that cover the same conditions.
 The PlanDefinition includes guidance for the overall orchestration of electronic case reporting.
 Each member of the family of actions (Triggering, Rule Processing, Clinical Feedback, Creation of eICR, Routing and Sending) aligns with what may be different healthcare information systems or modules involved in reporting.
 The narrative elements of this profile will be used to help structure and guide implementation until EHRs have the ability to automatically consume them. 
