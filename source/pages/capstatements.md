@@ -18,13 +18,13 @@ The following CapabilityStatements define the conformance requirements for this 
 
 ### Trigger Code Transaction
 
-This section describes the expected capabilities of a server that stores Reportable Conditions Trigger Codes (RCTC).  
+This section describes the expected capabilities of a server that stores the Knowledge Management resources including the Reportable Conditions Trigger Codes (RCTC).  
 
-#### Conformance requirements for the RCTC Server
+#### Conformance requirements for the Knowledge Management Server
 
-The RCTC Server **SHALL**:
+The Knowledge Management Server **SHALL**:
 
-1. Store all RCTC value sets as individual ValueSet resources, and as a single Bundle resource containing all RCTC ValueSet resources.
+1. Store all of the Knowledge Managment resources and RCTC value sets as a PlanDefiniton bundle and an included RCTC ValueSet bundle.
 1. Implement the RESTful behavior according to the FHIR specification.
 1. Return the following response classes:
    - (Status 200): successful operation
@@ -36,21 +36,21 @@ The RCTC Server **SHALL**:
 1. Support *json* and *xml* resource formats for all RCTC interactions.
 1. Declare a CapabilityStatement identifying the list of profiles, operations, search parameter supported.
 
-The RCTC Server **SHOULD**:
+The Knowledge Management Server **SHOULD**:
 
-1. Support clients creating and updating Subscription resource for all RCTC ValueSet and Bundle resources.
+1. Support clients creating and updating Subscription resource for the Knowledge Management PlanDefinition and all RCTC ValueSet and Bundle resources.
 1. Implement Subscription services per the FHIR specification.
 
 
 #### Conformance requirements for an RCTC Client
 
-The RCTC Client **SHALL**:
+The Knowledge Management Client **SHALL**:
 
-- Support fetching RCTC ValueSet and Bundle resources using the supported RESTful interactions and search parameters declared in the RCTC Server CapabilityStatement.
+- Support fetching the Knowledge Management PlanDefinition Bundle and RCTC ValueSet and Bundle resources using the supported RESTful interactions and search parameters declared in the Knowledge Management Server CapabilityStatement.
 
-The RCTC Client **SHOULD**:
+The Knowledge Management Client **SHOULD**:
 
-- Support creating and updating Subscription resources on the RCTC server.
+- Support creating and updating Subscription resources on the Knowledge Management server.
 - Support receiving updates to subscriptions using one or more of the methods described in the FHIR specification.
 
 
