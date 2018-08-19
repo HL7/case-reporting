@@ -33,7 +33,7 @@ Without more complex reporting rules that are distributable to, and executable i
 #### FHIR Design Considerations
 
 FHIR enables several helpful capabilities for eCR.
-Because reportable events occur in healthcare without PHA knowledge and because PHAs do not have the authority to receive these data until they are deemed reportable, eCR is a natural “unsolicited push” transaction.
+Because reportable events occur in healthcare without PHA knowledge and because PHAs do not have the authority to receive these data until they are deemed reportable, eCR requires an “unsolicited push” transaction.
 FHIR or other messaging and flexibility in multi-network transport will be needed to get data to state-level agencies.
 To the transactions associated with the information flows listed above, we have added a transaction for "Knowledge Distribution" of Reportable Condition Trigger Code (RCTC) trigger code value sets and other reporting guidance from public health to healthcare to support reporting from EHRs.
 This Knowledge Distribution transaction is supported by FHIR services, but EHR users do not need to be using FHIR to access it.
