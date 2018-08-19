@@ -42,7 +42,7 @@ This standard defines these parameters but does not make normative the specific 
 
 #### 2. Difficulties related to CDA using nullFlavors while FHIR does not
 
-The base datatype used by CDA has the properly nullFlavor. This means that it is possible to add a nullFlavor to any element in CDA. FHIR on the other hand, does not have this option. To express a nullFlavor concept in FHIR, one would either need to have a value set containing those values or add an extension to express the nullFlavor.
+The base datatype used by CDA has the property nullFlavor. This means that it is possible to use a nullFlavor for any element in CDA. FHIR on the other hand, does not have this option. To express a nullFlavor concept in FHIR, one would either need to have a value set containing those values or add an extension to express the nullFlavor.
 This means that if an element is required and has not explicitly precluded a nullFlavor in a CDA IG, it is possible, when the data isn’t available to send a nullFlavor instead of a proper value.
 If the equivalent element is required in a FHIR IG, it isn’t possible to send a nullFlavor unless that nullFlavor value has been added to a value set or an extension has been added to the element.
 To get around this, we make elements “must support” but allow them to be optional. Then in the case of missing data, the instance still validates.
