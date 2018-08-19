@@ -24,7 +24,7 @@ In some jurisdictions Health Information Exchanges (HIEs) and/or Health Data Net
 RCKMS and the AIMS platform serve several purposes in approach #2.
 Prominent among these purposes is to implement public health reporting rules that cannot currently be readily distributed to healthcare.
 The rules ensure that public health agencies only get the data they are authorized to receive by state laws.
-Without more complex reporting rules that are distributable to, and executable in, healthcare most PHAs will not use approach #1. Hence, these flows are principally represented by either "Remote Rules" or "Local Rules" in the following diagram. 
+Without more complex reporting rules that are distributable to, and executable in, healthcare most PHAs will not use approach #1. Hence, these approaches are principally represented by either "Remote Rules" or "Local Rules" in the following diagram. 
 
 <img src="ReportingDesignPatternV17.JPG" alt="Reporting Design Pattern" class="figure-img-portrait img-responsive img-rounded center-block">
 
@@ -35,12 +35,12 @@ Without more complex reporting rules that are distributable to, and executable i
 FHIR enables several helpful capabilities for eCR.
 Because reportable events occur in healthcare without PHA knowledge and because PHAs do not have the authority to receive these data until they are deemed reportable, eCR requires an “unsolicited push” transaction.
 FHIR or other messaging and flexibility in multi-network transport will be needed to get data to state-level agencies.
-To the transactions associated with the information flows listed above, we have added a transaction for "Knowledge Distribution" of Reportable Condition Trigger Code (RCTC) trigger code value sets and other reporting guidance from public health to healthcare to support reporting from EHRs.
+To the transactions associated with the approaches listed above, we have added a transaction for "Knowledge Distribution" of Reportable Condition Trigger Code (RCTC) trigger code value sets and other reporting guidance from public health to healthcare to support reporting from EHRs.
 This Knowledge Distribution transaction is supported by FHIR services, but EHR users do not need to be using FHIR to access it.
 
 FHIR also offers several possibilities for eventually distributing more complex reporting rules to healthcare. Widely implementable distributable rules would alieviate the need for rules processing on an intermediate platform and provide flexibility in information flows.
 The local rules would operate under healthcare authorities and only disclose data to public health agencies that are specified by state laws.
-This would facilitate information flow #1 above. Local rules might be implemented through FHIR Clinical Decision Support and/or API – based rules engines that can process CQL or other standards-based rules. 
+This would facilitate approach #1 above. Local rules might be implemented through FHIR Clinical Decision Support and/or API – based rules engines that can process CQL or other standards-based rules. 
 There are still several possibilities for how the various elements of eCR may be implemented with distributable rules.
 Triggering based on data, workflow, or timed events may be supported though FHIR Subscription in the EHR, though CDS Hooks, and/or through SMART connected rules engines.
 Some of these approaches will use trigger codes for triggering and others may not.
