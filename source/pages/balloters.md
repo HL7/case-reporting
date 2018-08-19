@@ -38,7 +38,7 @@ The included Knowledge Distribution profile defines three timing-related paramet
 - eICR episode of care close-out (for example "24" hours or "0" hours for no delay) – the time after the end of an episode of care for a final eICR to be sent when there has been one or more trigger events. (The close-out eICR is intended to provide the full data available at the end of an episode of care.)
 
 
-This standard defines these parameters but does not make normative the specific hour values for them. We would appreciate your comments on the possible hour values (in parentheses above) for use in guiding implmentations. We would also appreciate comments on the utility of these three parameters or of the needs for others.  
+This standard defines these parameters but does not make normative the specific hour values for them. We would appreciate your comments on the possible hour values (in parentheses above) for use in guiding implementations. We would also appreciate comments on the utility of these three parameters or of the needs for others.  
 
 #### 2. Difficulties related to CDA using nullFlavors while FHIR does not
 
