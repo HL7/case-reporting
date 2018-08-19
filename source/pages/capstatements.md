@@ -16,7 +16,7 @@ active: capstatements
 
 The following CapabilityStatements define the conformance requirements for this implementation guide.
 
-### Trigger Code Transaction
+### Knowledge Management Transaction
 
 This section describes the expected capabilities of a server that stores the Knowledge Management resources including the Reportable Conditions Trigger Codes (RCTC).  
 
