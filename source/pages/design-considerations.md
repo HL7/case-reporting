@@ -50,10 +50,9 @@ To achieve this orchestration the Knowledge Distribution resource needs to guide
 For some time much of the Knowledge Distribution transaction will provide structure to eCR as human consumable guidance.
 The most immediately machine processable components are the included trigger code value sets.
 
-When distributable rules can be processed in most healthcare settings, there will be needs to distribute the rules, the trigger codes, and links to relevant on-line support information.
+When distributable rules can be processed in most healthcare settings, there will be needs to distribute the rules, the trigger codes, and links to relevant on-line condition-specific information.
 The Knowledge Distribution transaction can enable these distributions going forward as well as provide details for how critical elements, like report timing, of the reporting process should be implemented.
-It will also allow for a connection to separate efforts to develop clinical guidelines for public health conditions.
-Eventually, healthcare should be able to implement both reporting and guidelines together seamlessly.
+It will also allow for a connection to separate efforts to develop clinical guidelines for public health conditions. Reporting and guidelines should utilize the same infrastructure and approaches where possible.
 
 As with the CDA Reportability Response, the FHIR version needs to be queueable in healthcare reporter workflows and be attachable to a patient chart when there is a “reportable” or “maybe reportable” condition identified.
 Also, like the CDA Reportability Response, the FHIR version needs to be able to convey trusted Public Health Agency web-links for management and treatment guidance information as well as links for web forms that enable PHA acquisition of case investigation supplemental data that may not be recorded in the typical process of care.
