@@ -18,10 +18,9 @@ active: terminology
   <li><a href="ValueSet-dxtc.html">Diagnosis_Problem Triggers for Public Health Reporting</a></li>
 </ul>
 <br/>
-A bundle containing all the trigger code value sets is also included in this guide.
+A bundle containing all the trigger code value sets (and the PlanDefinition) is also included in this guide.
 <ul>
-  <!-- <li><a href="Bundle-rctc.html">Reportable Conditions Trigger Codes (RCTC)</a></li> -->
-  <li>Reportable Conditions Trigger Codes (RCTC)</li>
+  <li><a href="Bundle-ecr-bundle-knowledge-distribution.html">Knowlege Distribution Bundle</li>
 </ul>
 ---
 <br/>
@@ -44,11 +43,6 @@ The following value sets have been defined for the Reportability Response transa
   <li><a href="ValueSet-reportability-priority-ecr.html">Reportability Priority (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=6B65D531-C888-486B-9EC2-4571FE9037B5">PHIN VADS link</a>)</li>
   <li><a href="ValueSet-external-resource-type-ecr.html">External Resource Type (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=D8101379-01B5-4784-A3BF-58A6B3DFD195">PHIN VADS link</a>)</li>
   <li><a href="ValueSet-determination-of-reportability-ecr.html">Determination of Reportability (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=FEBE81D7-97B4-4D2E-A326-19D9BBF3DE9D">PHIN VADS link</a>)</li>
-  <li><a href="ValueSet-ostc.html">Organism_Substance Triggers for Public Health Reporting</a></li>
-  <li><a href="ValueSet-lrtc.html">Lab Obs Test Name Triggers for Public Health Reporting</a></li>
-  <li><a href="ValueSet-lotc.html">Lab Order Test Name Triggers for Public Health Reporting</a></li>
-  <li><a href="ValueSet-dxtc.html">Diagnosis_Problem Triggers for Public Health Reporting</a></li>
-  <li><a href="ValueSet-rctc.html">Reportable Condition Trigger Codes (RCTC)</a></li>
 </ul>
 <br/>
 ## Code Systems
