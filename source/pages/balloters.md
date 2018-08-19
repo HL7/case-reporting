@@ -18,13 +18,13 @@ active: home
 
 This *STU* ballot continues and expands on work-to-date on CDA electronic Case Reporting (eCR) standards (<a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=436" rel="nofollow">HL7 CDA® R2 Electronic Initial Case Report (eICR) Standard for Trial Use (STU)</a> and <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=470" rel="nofollow">HL7 CDA® R2 Reportability Response (RR) STU</a>) as well as a previous <a href="http://hl7.org/fhir/uv/ecr/2018Jan/index.html" rel="follow">"For Comment" HL7 FHIR® eCR ballot</a>.
 
-#### How to Ballot
+#### How to provide comments on Ballot
 
 To sign up for the ballot and provide input on this specification follow the
 same process as for other HL7 artifacts using ballot spreadsheets as described on the [HL7 Balloting
 website](http://www.hl7.org/participate/onlineballoting.cfm?ref=nav) or the [FHIR GForge Tracker](https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677).
 
-If using the spreadsheet, please be sure to include a comment summary that can be used to populate the FHIR GForge Tracker when your comments are moved there. To reference an item in the ballot, Provide the HTML Page Name and/or
+If using the spreadsheet, please be sure to include a comment summary for each comment.  It is required to be populated in the FHIR GForge Tracker when your comments are moved there. To reference an item in the ballot, Provide the HTML Page Name and/or
 URL. Look for this icon <span class="glyphicon glyphicon-link"></span> to appear when you hover over a section.
 
 We would especially appreciate comments on the following items.
