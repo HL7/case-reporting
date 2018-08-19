@@ -10,7 +10,7 @@ active: terminology
 <!-- end TOC -->
 <br/>
 ### Value Sets: Knowledge Distribution Transaction
-General guidance for using these value sets can be found on the [Guidance Page](triggering.html)
+
 <ul>
   <li><a href="ValueSet-ostc.html">Organism_Substance Triggers for Public Health Reporting</a></li>
   <li><a href="ValueSet-lrtc.html">Lab Obs Test Name Triggers for Public Health Reporting</a></li>

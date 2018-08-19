@@ -11,7 +11,7 @@ id: eicr-composition
 
 #### Table: EICR Data Elements to eICR Composition Profile
 
-<table class="grid">
+<table class="grid" width="80%">
   <thead>
     <tr>
       <th style="text-align: left">Data Element</th>
