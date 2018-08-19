@@ -37,7 +37,7 @@ The following profiles and extensions have been defined for the eICR transaction
   <li><a href="StructureDefinition-eicr-location.html">eICR Location</a></li>
   <li><a href="StructureDefinition-pregnancy-status.html">Pregnancy Status</a></li>
   <li><a href="StructureDefinition-eicr-travel-history.html">eICR Travel History</a></li>
-  <li><a href="StructureDefinition-eicr-occupationhistory.html">eICR-OccupationHistory</a></li>
+  <li><a href="StructureDefinition-eicr-occupationhistory.html">eICR Occupation History</a></li>
 </ul>
 
 #### Extensions
