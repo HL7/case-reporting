@@ -33,9 +33,9 @@ We would especially appreciate comments on the following items.
 
 The included Knowledge Distribution profile defines three timing-related parameters for initating case reports from Electronic Health Records:
 
-1. Delay eICR construction (for example "6" hours) - time after the start of the encounter before a triggered eICR should be composed and sent.(This delay is intended to allow adequate data to be recorded in the EHR, but is not so long as to delay reporting in critical circumstances.) 
-2. eICR periodic update (for example "48" hours) – the time after an initial eICR transmission to send new eICRs as an update for long episodes of care.
-3. eICR episode of care close-out (for example "24" hours) – the time after the end of an episode of care for a final eICR to be sent when there has been one or more trigger events. (The close-out eICR is intened to provide the full data available at the end of an episode of care.)
+- Delay eICR construction (for example "6" hours) - time after the start of the encounter before a triggered eICR should be composed and sent.(This delay is intended to allow adequate data to be recorded in the EHR, but is not so long as to delay reporting in critical circumstances.) 
+- eICR periodic update (for example "48" hours) – the time after an initial eICR transmission to send new eICRs as an update for long episodes of care.
+- eICR episode of care close-out (for example "24" hours or "0" hours for no delay) – the time after the end of an episode of care for a final eICR to be sent when there has been one or more trigger events. (The close-out eICR is intended to provide the full data available at the end of an episode of care.)
 
 
 This standard defines these parameters but does not make normative the specific hour values for them. We would appreciate your comments on the possible hour values (in parentheses above) for use in guiding implmentations. We would also appreciate comments on the utility of these three parameters or of the needs for others.  
