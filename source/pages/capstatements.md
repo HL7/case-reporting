@@ -33,7 +33,7 @@ The Knowledge Management Server **SHALL**:
    - (Status 403): insufficient scope
    - (Status 404): unknown resource
    - (Status 410): deleted resource.
-1. Support *json* and *xml* resource formats for all RCTC interactions.
+1. Support *json* and *xml* resource formats for all Knowledge Management interactions.
 1. Declare a CapabilityStatement identifying the list of profiles, operations, search parameter supported.
 
 The Knowledge Management Server **SHOULD**:
