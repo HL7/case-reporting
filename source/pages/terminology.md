@@ -11,88 +11,85 @@ active: terminology
 <br/>
 ### Value Sets: Knowledge Distribution Transaction
 
-<ul>
-  <li><a href="ValueSet-ostc.html">Organism_Substance Triggers for Public Health Reporting</a></li>
-  <li><a href="ValueSet-lrtc.html">Lab Obs Test Name Triggers for Public Health Reporting</a></li>
-  <li><a href="ValueSet-lotc.html">Lab Order Test Name Triggers for Public Health Reporting</a></li>
-  <li><a href="ValueSet-dxtc.html">Diagnosis_Problem Triggers for Public Health Reporting</a></li>
-</ul>
-<br/>
-A bundle containing all the trigger code value sets (and the PlanDefinition) is also included in this guide.
-<ul>
-  <li><a href="Bundle-ecr-bundle-knowledge-distribution.html">Knowlege Distribution Bundle</li>
-</ul>
----
-<br/>
-### Value Sets: eICR Transaction
-<ul>
-  <li><a href="ValueSet-geographical-location-history.html">Geographical Location History</a></li>(<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.3201">PHIN VADS link</a>)
-  <li><a href="ValueSet-oes.html">US Standard Occupational Classification</a></li>
-  <li><a href="ValueSet-pregnancy-status.html">Pregnancy Status</a></li>
+- [Organism_Substance Triggers for Public Health Reporting](ValueSet-ostc.html)
+- [Lab Obs Test Name Triggers for Public Health Reporting](ValueSet-lrtc.html)
+- [Lab Order Test Name Triggers for Public Health Reporting](ValueSet-lotc.html)
+- [Diagnosis_Problem Triggers for Public Health Reporting](ValueSet-dxtc.html)
   
-</ul>
+
+A bundle containing all the trigger code value sets (and the PlanDefinition) is also included in this guide.
+- [Knowlege Distribution Bundle](Bundle-ecr-bundle-knowledge-distribution.html)
+
 ---
-<br/>
+
+
+### Value Sets: eICR Transaction
+
+- [Geographical Location History](ValueSet-geographical-location-history.html) ([PHIN VADS Link](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.3201))
+- [US Standard Occupational Classification](ValueSet-oes.html)
+- [Pregnancy Status](ValueSet-pregnancy-status.html)
+  
+---
+
+
 ### Value Sets: Reportability Response Transaction
+
 The following value sets have been defined for the Reportability Response transactions.
-<ul>
-  <li><a href="ValueSet-location-relevance-ecr.html">Location Relevance (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=C81BF4A8-F68F-4E45-90CB-4795BF361A68">PHIN VADS link</a>)</li>
-  <li><a href="ValueSet-eicr-processing-status-ecr.html">eICR Processing Status (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=C166B4A8-0DF0-469B-B678-CDAB6985AA4D">PHIN VADS link</a>)</li>
-  <li><a href="ValueSet-eicr-processing-status-reason-ecr.html">eICR Processing Status Reason (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=7A5BB424-3B98-4A13-9D08-57538F3E630E">PHIN VADS link</a>)</li>
-  <li><a href="ValueSet-eicr-processing-status-reason-detail-type-ecr.html">eICR Processing Status Reason Detail Type (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=3C9F1654-1CEB-E711-ACD6-0017A477041A">PHIN VADS link</a>)</li>
-  <li><a href="ValueSet-reportability-priority-ecr.html">Reportability Priority (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=6B65D531-C888-486B-9EC2-4571FE9037B5">PHIN VADS link</a>)</li>
-  <li><a href="ValueSet-external-resource-type-ecr.html">External Resource Type (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=D8101379-01B5-4784-A3BF-58A6B3DFD195">PHIN VADS link</a>)</li>
-  <li><a href="ValueSet-determination-of-reportability-ecr.html">Determination of Reportability (eCR)</a> (<a href="https://phinvads.cdc.gov/vads/ViewValueSet.action?id=FEBE81D7-97B4-4D2E-A326-19D9BBF3DE9D">PHIN VADS link</a>)</li>
-</ul>
-<br/>
+- [Location Relevance (eCR)](ValueSet-location-relevance-ecr.html) ([PHIN VADS link](https://phinvads.cdc.gov/vads/ViewValueSet.action?id=C81BF4A8-F68F-4E45-90CB-4795BF361A68))
+- [eICR Processing Status (eCR)](ValueSet-eicr-processing-status-ecr.html) ([PHIN VADS link](https://phinvads.cdc.gov/vads/ViewValueSet.action?id=C166B4A8-0DF0-469B-B678-CDAB6985AA4D))
+- [eICR Processing Status Reason (eCR)](ValueSet-eicr-processing-status-reason-ecr.html) ([PHIN VADS link](https://phinvads.cdc.gov/vads/ViewValueSet.action?id=7A5BB424-3B98-4A13-9D08-57538F3E630E))
+- [eICR Processing Status Reason Detail Type (eCR)](ValueSet-eicr-processing-status-reason-detail-type-ecr.html) ([PHIN VADS link](https://phinvads.cdc.gov/vads/ViewValueSet.action?id=3C9F1654-1CEB-E711-ACD6-0017A477041A))
+- [Reportability Priority (eCR)](ValueSet-reportability-priority-ecr.html) ([PHIN VADS link](https://phinvads.cdc.gov/vads/ViewValueSet.action?id=6B65D531-C888-486B-9EC2-4571FE9037B5))
+- [External Resource Type (eCR)](ValueSet-external-resource-type-ecr.html) ([PHIN VADS link](https://phinvads.cdc.gov/vads/ViewValueSet.action?id=D8101379-01B5-4784-A3BF-58A6B3DFD195))
+- [Determination of Reportability (eCR)](ValueSet-determination-of-reportability-ecr.html) ([PHIN VADS link](https://phinvads.cdc.gov/vads/ViewValueSet.action?id=FEBE81D7-97B4-4D2E-A326-19D9BBF3DE9D))
+
+
 ## Code Systems
-<ul>
-  <li><a href="https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.114222.4.5.274#">PHIN VS (CDC Local Coding System)</a></li>
-  <li><a href="https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.114222.4.5.232#">PHIN Questions (CDC Local Coding System)</a></li>
-  <li><a href="http://snomed.info/sct">SNOMED CT</a></li>
-  <li><a href="http://loinc.org">LOINC</a></li>
-  <li><a href="http://hl7.org/fhir/sid/cvx">CDC Vaccine Code (CVX)</a></li>
-  <li><a href="http://www.ama-assn.org/go/cpt">CPT4</a></li>
-  <li><a href="http://dicom.nema.org/resources/ontology/DCM">DCM</a></li>
-  <li><a href="https://www.census.gov/geo/reference/ansi_statetables.html">FIPS 5-2 (State)</a></li>
-  <li><a href="http://nucc.org/provider-taxonomy">Healthcare Provider Taxonomy (HIPAA)</a></li>
-  <li><a href="http://hitsp.org/ConstructSet_Details.aspx?&PrefixAlpha=4&PrefixNumeric=83">HITSP-CS-83</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/HealthcareServiceLocation">HL7 HealthcareServiceLocation</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/ActClass">HL7ActClass</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/ActCode">HL7ActCode</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/ActMood">HL7ActMood</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/ActPriority">HL7ActPriority</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/ActReason">HL7ActReason</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/ActRelationshipType">HL7ActRelationshipType</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/ActStatus">HL7ActStatus</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/AddressUse">HL7AddressUse</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/AdministrativeGender">HL7AdministrativeGender</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/Confidentiality">HL7Confidentiality</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/EntityClass">HL7EntityClass</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/EntityNamePartQualifier">HL7EntityNamePartQualifier</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/EntityNameUse">HL7EntityNameUse</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/LanguageAbilityMode">HL7LanguageAbilityMode</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/LanguageAbilityProficiency">HL7LanguageAbilityProficiency</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/MaritalStatus">HL7MaritalStatus</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/ObservationValue">HL7ObservationValue</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/ParticipationFunction">HL7ParticipationFunction</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/ParticipationSignature">HL7ParticipationSignature</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/ParticipationType">HL7ParticipationType</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/Race">HL7Race</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/ReligiousAffiliation">HL7ReligiousAffiliation</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/RoleClass">HL7RoleClass</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/RoleCode">HL7RoleCode</a></li>
-  <li><a href="http://www.who.int/classifications/icd/en/">ICD-10-CM</a></li>
-  <li><a href="http://www.iso.org/iso/country_codes.htm">ISO 3166 Part 1 Country Codes, 2nd Edition, Alpha-2</a></li>
-  <li><a href="http://tools.ietf.org/html/bcp47">Language</a></li>
-  <li><a href="http://ncimeta.nci.nih.gov">NCI Thesaurus (NCIt)</a></li>
-  <li><a href="http://hl7.org/fhir/ndfrt">NDFRT</a></li>
-  <li><a href="http://www.nubc.org/patient-discharge">NUBC UB-04 Patient Discharge Status</a></li>
-  <li><a href="https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.114222.4.5.232">PHIN Questions</a></li>
-  <li><a href="https://www.hl7.org/fhir/v3/ProviderRole">Provider Role (HL7)</a></li>
-  <li><a href="https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.113883.6.238">Race & Ethnicity - CDC</a></li>
-  <li><a href="http://www.nlm.nih.gov/research/umls/rxnorm">RxNorm</a></li>
-  <li><a href="http://www.phdsc.org/standards/payer-typology.asp">Source of Payment Typology (PHDSC)</a></li>
-  <li><a href="http://unitsofmeasure.org">UCUM</a></li>
-  <li><a href="http://fdasis.nlm.nih.gov">Unique Ingredient Identifier (UNII)</a></li>
-</ul>
+- [PHIN VS (CDC Local Coding System)](https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.114222.4.5.274#)
+- [PHIN Questions (CDC Local Coding System)](https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.114222.4.5.232#)
+- [SNOMED CT](http://snomed.info/sct)
+- [LOINC](http://loinc.org)
+- [CDC Vaccine Code (CVX)](http://hl7.org/fhir/sid/cvx)
+- [CPT4](http://www.ama-assn.org/go/cpt)
+- [DCM](http://dicom.nema.org/resources/ontology/DCM)
+- [FIPS 5-2 (State)](https://www.census.gov/geo/reference/ansi_statetables.html)
+- [Healthcare Provider Taxonomy (HIPAA)](http://nucc.org/provider-taxonomy)
+- [HITSP-CS-83](http://hitsp.org/ConstructSet_Details.aspx?&PrefixAlpha=4&PrefixNumeric=83)
+- [HL7 HealthcareServiceLocation](https://www.hl7.org/fhir/v3/HealthcareServiceLocation)
+- [HL7ActClass](https://www.hl7.org/fhir/v3/ActClass)
+- [HL7ActCode](https://www.hl7.org/fhir/v3/ActCode)
+- [HL7ActMood](https://www.hl7.org/fhir/v3/ActMood)
+- [HL7ActPriority](https://www.hl7.org/fhir/v3/ActPriority)
+- [HL7ActReason](https://www.hl7.org/fhir/v3/ActReason)
+- [HL7ActRelationshipType](https://www.hl7.org/fhir/v3/ActRelationshipType)
+- [HL7ActStatus](https://www.hl7.org/fhir/v3/ActStatus)
+- [HL7AddressUse](https://www.hl7.org/fhir/v3/AddressUse)
+- [HL7AdministrativeGender](https://www.hl7.org/fhir/v3/AdministrativeGender)
+- [HL7Confidentiality](https://www.hl7.org/fhir/v3/Confidentiality)
+- [HL7EntityClass](https://www.hl7.org/fhir/v3/EntityClass)
+- [HL7EntityNamePartQualifier](https://www.hl7.org/fhir/v3/EntityNamePartQualifier)
+- [HL7EntityNameUse](https://www.hl7.org/fhir/v3/EntityNameUse)
+- [HL7LanguageAbilityMode](https://www.hl7.org/fhir/v3/LanguageAbilityMode)
+- [HL7LanguageAbilityProficiency](https://www.hl7.org/fhir/v3/LanguageAbilityProficiency)
+- [HL7MaritalStatus](https://www.hl7.org/fhir/v3/MaritalStatus)
+- [HL7ObservationValue](https://www.hl7.org/fhir/v3/ObservationValue)
+- [HL7ParticipationFunction](https://www.hl7.org/fhir/v3/ParticipationFunction)
+- [HL7ParticipationSignature](https://www.hl7.org/fhir/v3/ParticipationSignature)
+- [HL7ParticipationType](https://www.hl7.org/fhir/v3/ParticipationType)
+- [HL7Race](https://www.hl7.org/fhir/v3/Race)
+- [HL7ReligiousAffiliation](https://www.hl7.org/fhir/v3/ReligiousAffiliation)
+- [HL7RoleClass](https://www.hl7.org/fhir/v3/RoleClass)
+- [HL7RoleCode](https://www.hl7.org/fhir/v3/RoleCode)
+- [ICD-10-CM](http://www.who.int/classifications/icd/en/)
+- [ISO 3166 Part 1 Country Codes, 2nd Edition, Alpha-2](http://www.iso.org/iso/country_codes.htm)
+- [Language](http://tools.ietf.org/html/bcp47)
+- [NCI Thesaurus (NCIt)](http://ncimeta.nci.nih.gov)
+- [NDFRT](http://hl7.org/fhir/ndfrt)
+- [NUBC UB-04 Patient Discharge Status](http://www.nubc.org/patient-discharge)
+- [PHIN Questions](https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.114222.4.5.232)
+- [Provider Role (HL7)](https://www.hl7.org/fhir/v3/ProviderRole)
+- [Race & Ethnicity - CDC](https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.113883.6.238)
+- [RxNorm](http://www.nlm.nih.gov/research/umls/rxnorm)
+- [Source of Payment Typology (PHDSC)](http://www.phdsc.org/standards/payer-typology.asp)
+- [UCUM](http://unitsofmeasure.org)
+- [Unique Ingredient Identifier (UNII)](http://fdasis.nlm.nih.gov)

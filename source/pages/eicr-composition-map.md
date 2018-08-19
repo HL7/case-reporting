@@ -41,7 +41,7 @@ id: eicr-composition
     </tr>
     <tr>
       <td style="text-align: left">Provider ID</td>
-      <td style="text-align: left">“Encounter[eicr-encounter].participant[type=”ATND”]</td>
+      <td style="text-align: left">“Encounter[eicr-encounter].participant[type="ATND"]</td>
       <td style="text-align: left">Practitioner[us-core-practitioner]</td>
       <td style="text-align: left"><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner-definitions.html#Practitioner.identifier">identifier</a></td>
       <td style="text-align: left">eICR Initial Public Health Case Report Document (V2)</td>
@@ -49,7 +49,7 @@ id: eicr-composition
     </tr>
     <tr>
       <td style="text-align: left">Provider Name</td>
-      <td style="text-align: left">“Encounter[eicr-encounter].participant[type=”ATND”]</td>
+      <td style="text-align: left">“Encounter[eicr-encounter].participant[type="ATND"]</td>
       <td style="text-align: left">Practitioner[us-core-practitioner]</td>
       <td style="text-align: left"><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner-definitions.html#Practitioner.name">name</a></td>
       <td style="text-align: left">eICR Initial Public Health Case Report Document (V2)</td>
@@ -57,25 +57,25 @@ id: eicr-composition
     </tr>
     <tr>
       <td style="text-align: left">Provider Phone</td>
-      <td style="text-align: left">“Encounter[eicr-encounter].participant[type=”ATND”]</td>
+      <td style="text-align: left">“Encounter[eicr-encounter].participant[type="ATND"]</td>
       <td style="text-align: left">Practitioner[us-core-practitioner]</td>
-      <td style="text-align: left"><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner-definitions.html#Practitioner.telecom">telecom[system=”phone”]</a>”</td>
+      <td style="text-align: left"><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner-definitions.html#Practitioner.telecom">telecom[system="phone"]</a></td>
       <td style="text-align: left">eICR Initial Public Health Case Report Document (V2)</td>
       <td style="text-align: left">ClincalDocument/componentOf/encompassingEncounter/responsibleParty/assignedEntity/telecom[telecom:]</td>
     </tr>
     <tr>
       <td style="text-align: left">Provider Fax</td>
-      <td style="text-align: left">“Encounter[eicr-encounter].participant[type=”ATND”]</td>
+      <td style="text-align: left">“Encounter[eicr-encounter].participant[type="ATND"]</td>
       <td style="text-align: left">Practitioner[us-core-practitioner]</td>
-      <td style="text-align: left"><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner-definitions.html#Practitioner.telecom">telecom[system=”fax”]</a>”</td>
+      <td style="text-align: left"><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner-definitions.html#Practitioner.telecom">telecom[system="fax"]</a></td>
       <td style="text-align: left">eICR Initial Public Health Case Report Document (V2)</td>
       <td style="text-align: left">ClincalDocument/componentOf/encompassingEncounter/responsibleParty/assignedEntity/telecom[fax:]</td>
     </tr>
     <tr>
       <td style="text-align: left">Provider Email</td>
-      <td style="text-align: left">“Encounter[eicr-encounter].participant[type=”ATND”]</td>
+      <td style="text-align: left">“Encounter[eicr-encounter].participant[type="ATND"]</td>
       <td style="text-align: left">Practitioner[us-core-practitioner]</td>
-      <td style="text-align: left"><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner-definitions.html#Practitioner.telecom">telecom[system=”email”]</a>”</td>
+      <td style="text-align: left"><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner-definitions.html#Practitioner.telecom">telecom[system="email"]</a></td>
       <td style="text-align: left">eICR Initial Public Health Case Report Document (V2)</td>
       <td style="text-align: left">ClincalDocument/componentOf/encompassingEncounter/responsibleParty/assignedEntity/telecom[email:]</td>
     </tr>
@@ -89,7 +89,7 @@ id: eicr-composition
     </tr>
     <tr>
       <td style="text-align: left">Provider Address</td>
-      <td style="text-align: left">“Encounter[eicr-encounter].participant[type=”ATND”].PractitionerRole[ecr-practitionerrole].practitioner”</td>
+      <td style="text-align: left">“Encounter[eicr-encounter].participant[type="ATND"].PractitionerRole[ecr-practitionerrole].practitioner"</td>
       <td style="text-align: left">Practitioner[us-core-practitioner]</td>
       <td style="text-align: left"><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner-definitions.html#Practitioner.address">address</a></td>
       <td style="text-align: left">eICR Initial Public Health Case Report Document (V2)</td>
@@ -123,7 +123,7 @@ id: eicr-composition
       <td style="text-align: left">Facility Phone</td>
       <td style="text-align: left">Encounter[eicr-encounter].location</td>
       <td style="text-align: left">Location(eicr-location)</td>
-      <td style="text-align: left"><a href="StructureDefinition-eicr-location-definitions.html#Location.telecom">telecom[system=”phone”]</a>”</td>
+      <td style="text-align: left"><a href="StructureDefinition-eicr-location-definitions.html#Location.telecom">telecom[system="phone"]</a></td>
       <td style="text-align: left">eICR Initial Public Health Case Report Document (V2)</td>
       <td style="text-align: left">ClincalDocument/componentOf/encompassingEncounter/location/healthCareFacility/serviceProviderOrganization/telecom[tel:]</td>
     </tr>
@@ -131,7 +131,7 @@ id: eicr-composition
       <td style="text-align: left">Facility FAX</td>
       <td style="text-align: left">Encounter[eicr-encounter].location</td>
       <td style="text-align: left">Location(eicr-location)</td>
-      <td style="text-align: left"><a href="StructureDefinition-eicr-location-definitions.html#Location.telecom">telecom[system=”fax”]</a>”</td>
+      <td style="text-align: left"><a href="StructureDefinition-eicr-location-definitions.html#Location.telecom">telecom[system="fax"]</a></td>
       <td style="text-align: left">eICR Initial Public Health Case Report Document (V2)</td>
       <td style="text-align: left">ClincalDocument/componentOf/encompassingEncounter/location/healthCareFacility/serviceProviderOrganization/telecom[fax:]</td>
     </tr>
@@ -163,7 +163,7 @@ id: eicr-composition
       <td style="text-align: left">Patient Phone</td>
       <td style="text-align: left">Composition[eicr-composition].subject</td>
       <td style="text-align: left">Patient[ecr-patient]</td>
-      <td style="text-align: left"><a href="StructureDefinition-ecr-patient-definitions.html#Patient.telecom">telecom[system=”phone”]</a>”</td>
+      <td style="text-align: left"><a href="StructureDefinition-ecr-patient-definitions.html#Patient.telecom">telecom[system="phone"]</a></td>
       <td style="text-align: left">US Realm Header (V3)</td>
       <td style="text-align: left">ClinicalDocument/recordTarget/patientRole/telecom[tel:]</td>
     </tr>
@@ -171,7 +171,7 @@ id: eicr-composition
       <td style="text-align: left">Patient Email</td>
       <td style="text-align: left">Composition[eicr-composition].subject</td>
       <td style="text-align: left">Patient[ecr-patient]</td>
-      <td style="text-align: left"><a href="StructureDefinition-ecr-patient-definitions.html#Patient.telecom">telecom[system=”email”]</a>”</td>
+      <td style="text-align: left"><a href="StructureDefinition-ecr-patient-definitions.html#Patient.telecom">telecom[system="email"]</a></td>
       <td style="text-align: left">US Realm Header (V3)</td>
       <td style="text-align: left">ClinicalDocument/recordTarget/patientRole/telecom[mailto:]</td>
     </tr>
@@ -187,7 +187,7 @@ id: eicr-composition
       <td style="text-align: left">Parent/ Guardian Phone</td>
       <td style="text-align: left">Composition[eicr-composition].subject</td>
       <td style="text-align: left">Patient[ecr-patient]</td>
-      <td style="text-align: left"><a href="StructureDefinition-ecr-patient-definitions.html#Patient.contact.telecom">contact.telecom[system=”phone”]</a>”</td>
+      <td style="text-align: left"><a href="StructureDefinition-ecr-patient-definitions.html#Patient.contact.telecom">contact.telecom[system="phone"]</a></td>
       <td style="text-align: left">US Realm Header (V3)</td>
       <td style="text-align: left">Clinical Document/record target/patientRole/patient/guardian/telecom[tel:]</td>
     </tr>
@@ -195,7 +195,7 @@ id: eicr-composition
       <td style="text-align: left">Parent/ Guardian Email</td>
       <td style="text-align: left">Composition[eicr-composition].subject</td>
       <td style="text-align: left">Patient[ecr-patient]</td>
-      <td style="text-align: left"><a href="StructureDefinition-ecr-patient-definitions.html#Patient.contact.telecom">contact.telecom[system=”email”]</a>”</td>
+      <td style="text-align: left"><a href="StructureDefinition-ecr-patient-definitions.html#Patient.contact.telecom">contact.telecom[system="email"]</a></td>
       <td style="text-align: left">US Realm Header (V3)</td>
       <td style="text-align: left">Clinical Document/record target/patientRole/patient/guardian/telecom[mailto:]</td>
     </tr>
@@ -352,7 +352,7 @@ id: eicr-composition
       <td style="text-align: left">“Result Observation (V3).code and/or</td>
     </tr>
     <tr>
-      <td style="text-align: left">Result Observation (V3).value[xsi:type=”CD”]</td>
+      <td style="text-align: left">Result Observation (V3).value[xsi:type="CD"]</td>
       <td style="text-align: left">&nbsp;</td>
       <td style="text-align: left">&nbsp;</td>
       <td style="text-align: left">&nbsp;</td>
@@ -368,7 +368,7 @@ id: eicr-composition
       <td style="text-align: left">“Result Organizer (V3)/Intitial Case Report Trigger Code Result Observation.code and/or</td>
     </tr>
     <tr>
-      <td style="text-align: left">Result Organizer (V3)/Intitial Case Report Trigger Code Result Observation.value[xsi:type=”CD”]</td>
+      <td style="text-align: left">Result Organizer (V3)/Intitial Case Report Trigger Code Result Observation.value[xsi:type="CD"]</td>
       <td style="text-align: left">&nbsp;</td>
       <td style="text-align: left">&nbsp;</td>
       <td style="text-align: left">&nbsp;</td>
@@ -469,7 +469,7 @@ id: eicr-composition
       <td style="text-align: left">Composition[eicr-composition].extension</td>
       <td style="text-align: left"><a href="StructureDefinition-eicr-composition-definitions.html#Composition.extension:extensionEICRManuallyInitiatedReason">extension-eicr-manually-initiated-reason</a></td>
       <td style="text-align: left">eICR Initial Public Health Case Report Document (V2)</td>
-      <td style="text-align: left">“ClinicalDocument/documentationOf/serviceEvent/code[@code=”PHC1464”]</td>
+      <td style="text-align: left">“ClinicalDocument/documentationOf/serviceEvent/code[@code="PHC1464"]</td>
     </tr>
     <tr>
       <td style="text-align: left">Manually Initiated eICR Reason</td>
