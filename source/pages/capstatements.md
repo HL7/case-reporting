@@ -24,7 +24,7 @@ This section describes the expected capabilities of a server that stores the Kno
 
 The Knowledge Management Server **SHALL**:
 
-1. Store all of the Knowledge Managment resources and RCTC value sets as a PlanDefiniton bundle and included RCTC ValueSets.
+1. Store all of the Knowledge Managment resources and value sets as a PlanDefiniton bundle and included RCTC ValueSets.
 1. Implement the RESTful behavior according to the FHIR specification.
 1. Return the following response classes:
    - (Status 200): successful operation
@@ -38,7 +38,7 @@ The Knowledge Management Server **SHALL**:
 
 The Knowledge Management Server **SHOULD**:
 
-1. Support clients creating and updating Subscription resource for the Knowledge Management PlanDefinition and all RCTC ValueSet and Bundle resources.
+1. Support clients creating and updating Subscription resource for the Knowledge Management PlanDefinition bundle, resources, and RCTC ValueSets.
 1. Implement Subscription services per the FHIR specification.
 
 
@@ -46,7 +46,7 @@ The Knowledge Management Server **SHOULD**:
 
 The Knowledge Management Client **SHALL**:
 
-- Support fetching the Knowledge Management PlanDefinition Bundle and RCTC ValueSet and Bundle resources using the supported RESTful interactions and search parameters declared in the Knowledge Management Server CapabilityStatement.
+- Support fetching the Knowledge Management PlanDefinition Bundle and RCTC ValueSet resources using the supported RESTful interactions and search parameters declared in the Knowledge Management Server CapabilityStatement.
 
 The Knowledge Management Client **SHOULD**:
 
