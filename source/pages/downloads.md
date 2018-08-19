@@ -23,7 +23,7 @@ These files should be the first choice whenever generating any implementation ar
 - [ecr-organization.sch](ecr-organization.sch)
 - [ecr-patient.sch](ecr-patient.sch)
 - [ecr-practitionerrole.sch](ecr-practitionerrole.sch)
-- [eicr-composition.sch]{eicr-composition.sch}
+- [eicr-composition.sch](eicr-composition.sch)
 - [eicr-condition.sch](eicr-condition.sch)
 - [eicr-encounter.sch](eicr-encounter.sch)
 - [eicr-location.sch](eicr-location.sch)
