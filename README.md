@@ -1,6 +1,6 @@
 # case-reporting
 
-Authors:
+Authors: 
 
 - John Loonsk
 - Laura Conn
