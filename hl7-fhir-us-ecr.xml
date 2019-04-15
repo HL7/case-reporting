@@ -1,0 +1,614 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ImplementationGuide
+    xmlns="http://hl7.org/fhir">
+    <id value="hl7-fhir-us-ecr"/>
+    <meta>
+        <versionId value="11"/>
+        <lastUpdated value="2019-04-12T19:33:04.000-04:00"/>
+    </meta>
+    <extension url="https://trifolia-on-fhir.lantanagroup.com/StructureDefinition/extension-ig-dependency">
+        <extension url="https://trifolia-on-fhir.lantanagroup.com/StructureDefinition/extension-ig-dependency-version">
+            <valueString value="2.0.0"/>
+        </extension>
+        <extension url="https://trifolia-on-fhir.lantanagroup.com/StructureDefinition/extension-ig-dependency-name">
+            <valueString value="uscore"/>
+        </extension>
+        <extension url="https://trifolia-on-fhir.lantanagroup.com/StructureDefinition/extension-ig-dependency-location">
+            <valueUri value="http://hl7.org/fhir/us/core"/>
+        </extension>
+    </extension>
+    <extension url="https://trifolia-fhir.lantanagroup.com/stu3/StructureDefinition/extension-ig-package-id">
+        <valueString value="hl7.fhir.us.ecr"/>
+    </extension>
+    <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
+    <version value="1.0.0"/>
+    <name value="ElectronicCaseReporting"/>
+    <status value="draft"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group (http://www.hl7.org/Special/committees/pher/index.cfm)"/>
+    <fhirVersion value="3.0.1"/>
+    <package>
+        <name value="base"/>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/eicr-condition"/>
+                <display value="eicr-condition"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/ecr-patient"/>
+                <display value="ecr-patient"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/extension-rr-eicr-processing-status"/>
+                <display value="extension-rr-eicr-processing-status"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/extension-eicr-travel-history-address"/>
+                <display value="extension-eicr-travel-history-address"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/extension-eicr-trigger-code-flag"/>
+                <display value="extension-eicr-trigger-code-flag"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/extension-rr-priority"/>
+                <display value="extension-rr-priority"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/extension-rr-external-resource-type"/>
+                <display value="extension-rr-external-resource-type"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/extension-rr-determination-of-reportability-rule"/>
+                <display value="extension-rr-determination-of-reportability-rule"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/extension-rr-determination-of-reportability-reason"/>
+                <display value="extension-rr-determination-of-reportability-reason"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/extension-rr-determination-of-reportability"/>
+                <display value="extension-rr-determination-of-reportability"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/extension-rr-summary"/>
+                <display value="extension-rr-summary"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/extension-rr-subject"/>
+                <display value="extension-rr-subject"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/extension-rr-manually-initiated-eicr"/>
+                <display value="extension-rr-manually-initiated-eicr"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/extension-eicr-manually-initiated-reason"/>
+                <display value="extension-eicr-manually-initiated-reason"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/extension-rr-location-relevance"/>
+                <display value="extension-rr-location-relevance"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/extension-rr-eicr-receipt-time"/>
+                <display value="extension-rr-eicr-receipt-time"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/extension-rr-rules-authoring-agency"/>
+                <display value="extension-rr-rules-authoring-agency"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/extension-rr-responsible-agency"/>
+                <display value="extension-rr-responsible-agency"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/extension-rr-routing-entity"/>
+                <display value="extension-rr-routing-entity"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/extension-ecr-organization"/>
+                <display value="extension-ecr-organization"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/ecr-practitionerrole"/>
+                <display value="ecr-practitionerrole"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/extension-ecr-practitionerrole"/>
+                <display value="extension-ecr-practitionerrole"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
+                <display value="rr-relevant-reportable-condition-plandefinition"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/rr-communication"/>
+                <display value="rr-communication"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/eicr-travel-history"/>
+                <display value="eicr-travel-history"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/eicr-procedurerequest"/>
+                <display value="eicr-procedurerequest"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/eicr-occupationhistory"/>
+                <display value="eicr-occupationhistory"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/eicr-location"/>
+                <display value="eicr-location"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/eicr-encounter"/>
+                <display value="eicr-encounter"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/eicr-composition"/>
+                <display value="eicr-composition"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/ecr-organization"/>
+                <display value="ecr-organization"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/rr-eicr-processing-status"/>
+                <display value="rr-eicr-processing-status"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/rr-eicr-processing-status-reason"/>
+                <display value="rr-eicr-processing-status-reason"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/rr-responsible-agency"/>
+                <display value="rr-responsible-agency"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/rr-rules-authoring-agency"/>
+                <display value="rr-rules-authoring-agency"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/rr-routing-entity"/>
+                <display value="rr-routing-entity"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/ecr-knowledge-distribution"/>
+                <display value="ecr-knowledge-distribution"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/knowledge-distribution-valueset-library"/>
+                <display value="knowledge-distribution-valueset-library"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="ValueSet/location-relevance-ecr"/>
+                <display value="location-relevance-ecr"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="ValueSet/eicr-processing-status-ecr"/>
+                <display value="eicr-processing-status-ecr"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="ValueSet/eicr-processing-status-reason-ecr"/>
+                <display value="eicr-processing-status-reason-ecr"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="ValueSet/eicr-processing-status-reason-detail-type-ecr"/>
+                <display value="eicr-processing-status-reason-detail-type-ecr"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="ValueSet/reportability-priority-ecr"/>
+                <display value="reportability-priority-ecr"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="ValueSet/external-resource-type-ecr"/>
+                <display value="external-resource-type-ecr"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="ValueSet/determination-of-reportability-ecr"/>
+                <display value="determination-of-reportability-ecr"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="ValueSet/geographical-location-history"/>
+                <display value="geographical-location-history"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="ValueSet/ostc"/>
+                <display value="ostc"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="ValueSet/oes"/>
+                <display value="oes"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="ValueSet/lrtc"/>
+                <display value="lrtc"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="ValueSet/lotc"/>
+                <display value="lotc"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="ValueSet/dxtc"/>
+                <display value="dxtc"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="CodeSystem/oes"/>
+                <display value="oes"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="CapabilityStatement/server"/>
+                <display value="server"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="CapabilityStatement/client"/>
+                <display value="client"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/ecr-bundle-knowledge-distribution"/>
+                <display value="ecr-bundle-knowledge-distribution"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Composition/eicr-composition-zika"/>
+                <display value="eicr-composition-zika"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Communication/rr-communication-single-single"/>
+                <display value="rr-communication-single-single"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Condition/eicr-condition-eve-everywoman-common-cold"/>
+                <display value="eicr-condition-eve-everywoman-common-cold"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Condition/eicr-condition-eve-everywoman-pertussis"/>
+                <display value="eicr-condition-eve-everywoman-pertussis"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/eicr-encounter-eve-everywoman-20180401"/>
+                <display value="eicr-encounter-eve-everywoman-20180401"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/eicr-encounter-diagnosis-eve-everywoman-20180401"/>
+                <display value="eicr-encounter-diagnosis-eve-everywoman-20180401"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Immunization/phcase-pneumo"/>
+                <display value="phcase-pneumo"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Location/ecr-location-salem-medical-center"/>
+                <display value="ecr-location-salem-medical-center"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationStatement/us-core-medicationstatement-eve-everywoman-azithromycin"/>
+                <display value="us-core-medicationstatement-eve-everywoman-azithromycin"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Observation/us-core-observation-results-eve-everywoman-lymphocytes"/>
+                <display value="us-core-observation-results-eve-everywoman-lymphocytes"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Observation/rr-eicr-processing-status"/>
+                <display value="rr-eicr-processing-status"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Observation/rr-eicr-processing-status-reason"/>
+                <display value="rr-eicr-processing-status-reason"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Observation/eicr-travel-history-eve-everywoman-201801"/>
+                <display value="eicr-travel-history-eve-everywoman-201801"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Observation/eicr-travel-history-eve-everywoman-201610"/>
+                <display value="eicr-travel-history-eve-everywoman-201610"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Observation/eicr-travel-history-eve-everywoman-1999"/>
+                <display value="eicr-travel-history-eve-everywoman-1999"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Observation/eicr-occupation-history-eve-everywoman"/>
+                <display value="eicr-occupation-history-eve-everywoman"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Organization/ecr-organization-health-authority-west"/>
+                <display value="ecr-organization-health-authority-west"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Organization/rr-organization-routing-entity-haw"/>
+                <display value="rr-organization-routing-entity-haw"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Organization/rr-organization-rules-authoring-agency-haw"/>
+                <display value="rr-organization-rules-authoring-agency-haw"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Organization/rr-organization-responsible-agency-haw"/>
+                <display value="rr-organization-responsible-agency-haw"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Organization/ecr-organization-acme-labs"/>
+                <display value="ecr-organization-acme-labs"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Organization/ecr-organization-salem-medical-center"/>
+                <display value="ecr-organization-salem-medical-center"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/ecr-patient-eve-everywoman"/>
+                <display value="ecr-patient-eve-everywoman"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="PlanDefinition/rr-plan-zika-state-department-of-health"/>
+                <display value="rr-plan-zika-state-department-of-health"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="ProcedureRequest/eicr-procedurerequest-zika"/>
+                <display value="eicr-procedurerequest-zika"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="ProcedureRequest/eicr-procedurerequest-eve-everywoman-zika"/>
+                <display value="eicr-procedurerequest-eve-everywoman-zika"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="PractitionerRole/ecr-practitionerrole-henry-seven"/>
+                <display value="ecr-practitionerrole-henry-seven"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Practitioner/ecr-practitioner-henry-seven"/>
+                <display value="ecr-practitioner-henry-seven"/>
+            </sourceReference>
+        </resource>
+    </package>
+</ImplementationGuide>

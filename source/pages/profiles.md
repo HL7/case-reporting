@@ -92,7 +92,7 @@ The following profiles and extensions have been defined for the Reportability Re
   <li><a href="StructureDefinition-extension-rr-determination-of-reportability-rule.html">Extension Determination of Reportability Rule</a></li>
   <li><a href="StructureDefinition-extension-rr-external-resource-type.html">Extension External Resource Type</a></li>
   <li><a href="StructureDefinition-extension-rr-priority.html">Extension External Resource Priority</a></li>
-<!--  <li><a href="StructureDefinition-extension-rr-eicr-receipt-time.html">Extension eICR Receipt Time</a></li> -->
+
 </ul>
 ---
 <br/>
