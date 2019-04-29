@@ -48,6 +48,9 @@
       <path value="Composition.identifier" />
       <short value="eICR Document Id" />
       <definition value="ID of the eICR Document" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="Composition.type">
       <path value="Composition.type" />
@@ -365,7 +368,7 @@
       <path value="Composition.section.entry.extension" />
       <sliceName value="sliceTriggerCondition" />
       <short value="eICR Trigger Code Flag" />
-      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
+      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated." />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -418,16 +421,44 @@
       </slicing>
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:sliceMedicationsAdministeredSection.entry:USCoreMedicationStatement">
+    <element id="Composition.section:sliceMedicationsAdministeredSection.entry:MedicationAdministration">
       <path value="Composition.section.entry" />
-      <sliceName value="USCoreMedicationStatement" />
+      <sliceName value="MedicationAdministration" />
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationstatement" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/MedicationAdministration" />
       </type>
       <mustSupport value="true" />
       <isModifier value="false" />
     </element>
+    
+    <element id="Composition.section:sliceMedicationsAdministeredSection.entry:sliceUSCoreMedicationStatement.extension">
+      <path value="Composition.section.entry.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:sliceMedicationsAdministeredSection.entry:sliceUSCoreMedicationStatement.extension:sliceTriggerMedication">
+      <path value="Composition.section.entry.extension" />
+      <sliceName value="sliceTriggerMedication" />
+      <short value="eICR Trigger Code Flag" />
+      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated." />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceProblemSection.entry:sliceEICRCondition.extension:sliceTriggerCondition.url">
+      <path value="Composition.section.entry.extension.url" />
+      <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger" />
+    </element>
+    
     <element id="Composition.section:sliceResultsSection">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
         <valueString value="Section" />
@@ -492,7 +523,7 @@
       <path value="Composition.section.entry.extension" />
       <sliceName value="sliceTriggerUSCoreObservationResults" />
       <short value="eICR Trigger Code Flag" />
-      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
+      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated." />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -570,7 +601,7 @@
       <path value="Composition.section.entry.extension" />
       <sliceName value="sliceTriggerEICRProcedureRequest" />
       <short value="eICR Trigger Code Flag" />
-      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:&#xD;&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section" />
+      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated." />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -582,6 +613,45 @@
       <path value="Composition.section.entry.extension.url" />
       <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger" />
     </element>
+    
+    <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceUSCoreMedicationRequest">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceUSCoreMedicationRequest" />
+      <short value="US Core Medication Request" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceUSCoreMedicationRequest.extension">
+      <path value="Composition.section.entry.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceUSCoreMedicationRequest.extension:sliceTriggerUSCoreMedicationRequest">
+      <path value="Composition.section.entry.extension" />
+      <sliceName value="sliceTriggerUSCoreMedicationRequest" />
+      <short value="eICR Trigger Code Flag" />
+      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated." />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceUSCoreMedicationRequest.extension:sliceTriggerUSCoreMedicationRequest.url">
+      <path value="Composition.section.entry.extension.url" />
+      <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger" />
+    </element>
+    
     <element id="Composition.section:sliceImmunizationsSection">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
         <valueString value="Section" />
@@ -629,6 +699,57 @@
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceVitalSignsSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceVitalSignsSection" />
+      <short value="Vital Signs Section" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceVitalSignsSection.code">
+      <path value="Composition.section.code" />
+      <short value="Vital Signs" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="8716-3" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.section:sliceVitalSignsSection.text">
+      <path value="Composition.section.text" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceVitalSignsSection.entry">
+      <path value="Composition.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceVitalSignsSection.entry:sliceUSCoreVitalSigns">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceUSCoreVitalSigns" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-vitalsigns" />
       </type>
       <mustSupport value="true" />
       <isModifier value="false" />

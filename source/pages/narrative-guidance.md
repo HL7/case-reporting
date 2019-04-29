@@ -25,7 +25,7 @@ The following is informative guidance on generating the narrative text of a Repo
 A Reportability Response will also, when requested, be shared with the responsible PHAs (when they have not constructed it) for their internal use, so they understand what has been shared with clinical care, and to monitor/audit decision support algorithm effectiveness and implementation. When a condition is considered reportable to more than one PHA, the Reportability Response can be helpful in communicating reporting that has been done to other PHAs as well.
 
 ### Determination of Reportability
-Reportability indicates the quality or state of a possible case/event being reportable to one or more PHA. It does not, in itself, represent the clincial diagnosis of a possible condition nor the conclusion that a possible case/event fully meets a public health case defintion. Reportability is based on information at a given point of time and, resultantly, reportability status can change when additional or different information becomes available. Decision support systems that provide a determination of reportability of a possible condition produce results that may fall into a number of types. One or more of these reportability determinations may be present in the Reportability Response based on the possible condition(s) in the eICR being assessed.
+Reportability indicates the quality or state of a possible case/event being reportable to one or more PHA. It does not, in itself, represent the clinical diagnosis of a possible condition nor the conclusion that a possible case/event fully meets a public health case definition. Reportability is based on information at a given point of time and, resultantly, reportability status can change when additional or different information becomes available. Decision support systems that provide a determination of reportability of a possible condition produce results that may fall into a number of types. One or more of these reportability determinations may be present in the Reportability Response based on the possible condition(s) in the eICR being assessed.
 
 The values that can currently be used for the **Determination of Reportability** are described below.
 
@@ -41,7 +41,7 @@ A possible condition is:
 
 -	**Not Reportable** - The information provided conclusively does not meet reporting criteria.
 
-Some decision support systems may not be able to fully differentiate between possible conditions that are **Not Reportable** and those that **May be Reportable** if additonal information is provided. In these circumstaces there may only be a reportabilty determination of:
+Some decision support systems may not be able to fully differentiate between possible conditions that are **Not Reportable** and those that **May be Reportable** if additional information is provided. In these circumstances there may only be a reportabilty determination of:
 
 -	**No Reporting Rule Met** - The information provided does not meet reporting criteria or may meet reporting criteria if additional information is provided.
 
@@ -89,7 +89,7 @@ Variables that represent coded data found elsewhere in the Reportabilty Response
 > The initial report was manually initiated by a provider. It was sent to: "&lt;[routing entity name](StructureDefinition-rr-routing-entity.html#Organization.name)&gt;","&lt;[routing entity name](StructureDefinition-rr-routing-entity.html#Organization.name)&gt;".
 
 
-**(include and repeat for each Relevent [Reportable Condition PlanDefinition](StructureDefinition-rr-relevant-reportable-condition-plandefinition.html) contained in the RR Communication)**
+**(include and repeat for each Relevant [Reportable Condition PlanDefinition](StructureDefinition-rr-relevant-reportable-condition-plandefinition.html) contained in the RR Communication)**
 
 **(Reportable)**
 
@@ -227,8 +227,8 @@ The examples below provide example text for *Providers / Reporters* for these ty
 6. One No reporting rule met for One PHA
 7. Two Reportable Conditions for Two PHAs
 8. One Reportable and One Not reportable for Two PHAs
-9. Manually initiatied eICR with no reporting criteria matched for One PHA
-10. Manually initiatied eICR with One Reportable Condition for One PHA
+9. Manually initiated eICR with no reporting criteria matched for One PHA
+10. Manually initiated eICR with One Reportable Condition for One PHA
 
 
 ----------
@@ -373,7 +373,7 @@ The examples below provide example text for *Providers / Reporters* for these ty
 > **Summary:**
 >
 > Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient.
-> A determination of reporatbility for a triggered condition could not be made for "State Department of Health". This may be because it is not on the list of reportable conditions for the relevant Public Health Agency, or the information provided at the time of this report does not meet reporting criteria, or not all data needed to confirm reportability were available.
+> A determination of reportability for a triggered condition could not be made for "State Department of Health". This may be because it is not on the list of reportable conditions for the relevant Public Health Agency, or the information provided at the time of this report does not meet reporting criteria, or not all data needed to confirm reportability were available.
 
 
 ----------
@@ -578,7 +578,7 @@ The examples below provide example text for *Providers / Reporters* for these ty
 
 ----------
  
-*Example 9* – Example Reportability Response text for a Manually initiatied eICR with no reporting criteria matched for One PHA
+*Example 9* – Example Reportability Response text for a Manually initiated eICR with no reporting criteria matched for One PHA
 
 > **Subject:**
 >
@@ -592,7 +592,7 @@ The examples below provide example text for *Providers / Reporters* for these ty
 
 ----------
  
-*Example 10* – Example Reportability Response text for a Manually initiatied eICR with One Reportable Condition for One PHA
+*Example 10* – Example Reportability Response text for a Manually initiated eICR with One Reportable Condition for One PHA
 
 > **Subject:**
 >

@@ -24,7 +24,7 @@ This section describes the expected capabilities of a server that stores the Kno
 
 The Knowledge Management Server **SHALL**:
 
-1. Store all of the Knowledge Managment resources and value sets as a PlanDefiniton bundle and included RCTC ValueSets.
+1. Store all of the Knowledge Management resources and value sets as a PlanDefiniton bundle and included RCTC ValueSets.
 1. Implement the RESTful behavior according to the FHIR specification.
 1. Return the following response classes:
    - (Status 200): successful operation

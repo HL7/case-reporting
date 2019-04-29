@@ -17,7 +17,7 @@ active: design-considerations
 The CDA Electronic Case Reporting (eCR) standards; the electronic Initial Case Report (eICR) and the Reportability Response (RR), support two broad approaches to eCR.
 One of the approaches also uses the Reportable Condition Knowledge Management System (RCKMS) on the Association of Public Health Laboratories (APHL) AIMS platform to report to Public Health Agencies (PHAs) and one does not. The two approaches are:
 
-1. informaton flowing from healthcare to PHAs (via the eICR) and back (via the RR)
+1. information flowing from healthcare to PHAs (via the eICR) and back (via the RR)
 2. information flowing from healthcare to AIMS/RCKMS (via the eICR) and then to PHAs (via the eICR and sometimes the RR) and with a response to healthcare from the AIMS/RCKMS (via the RR)
 
 In some jurisdictions Health Information Exchanges (HIEs) and/or Health Data Networks may also be employed to securely move data between organizations.
@@ -38,7 +38,7 @@ FHIR or other messaging and flexibility in multi-network transport will be neede
 To the transactions associated with the approaches listed above, we have added a transaction for "Knowledge Distribution" of Reportable Condition Trigger Code (RCTC) trigger code value sets and other reporting guidance from public health to healthcare to support reporting from EHRs.
 This Knowledge Distribution transaction is supported by FHIR services, but EHR users do not need to be using FHIR to access it.
 
-FHIR also offers several possibilities for eventually distributing more complex reporting rules to healthcare. Widely implementable distributable rules would alieviate the need for rules processing on an intermediate platform and provide flexibility in information flows.
+FHIR also offers several possibilities for eventually distributing more complex reporting rules to healthcare. Widely implementable distributable rules would alleviate the need for rules processing on an intermediate platform and provide flexibility in information flows.
 The local rules would operate under healthcare authorities and only disclose data to public health agencies that are specified by state laws.
 This would facilitate approach #1 above. Local rules might be implemented through FHIR Clinical Decision Support and/or API – based rules engines that can process CQL or other standards-based rules. 
 There are still several possibilities for how the various elements of eCR may be implemented with distributable rules.
@@ -56,4 +56,4 @@ It will also allow for a connection to separate efforts to develop clinical guid
 
 As with the CDA Reportability Response, the FHIR version needs to be queueable in healthcare provider/reporter workflows and be attachable to a patient chart when there is a “reportable” or “maybe reportable” condition identified.
 Also, like the CDA Reportability Response, the FHIR version needs to be able to convey trusted Public Health Agency web-links for management and treatment guidance information as well as links for web forms that enable PHA acquisition of case investigation supplemental data that may not be recorded in the typical process of care.
-HIE Retreive Form for Data Capture (RFD) web forms have been demonstrated to support this investigation supplemental data need. As reporting rules become distributable to rules engines running in healthcare, it may be possible for FHIR RESTful queries from the rules engine to the EHR in order to provide additional condition and/or jurisdiction specific data.
+HIE Retrieve Form for Data Capture (RFD) web forms have been demonstrated to support this investigation supplemental data need. As reporting rules become distributable to rules engines running in healthcare, it may be possible for FHIR RESTful queries from the rules engine to the EHR in order to provide additional condition and/or jurisdiction specific data.

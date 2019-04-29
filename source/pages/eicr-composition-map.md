@@ -35,7 +35,7 @@ id: eicr-composition
       <td style="text-align: left">ID of the eICR Document</td>
       <td style="text-align: left">&nbsp;</td>
       <td style="text-align: left">Composition[eicr-composition]</td>
-      <td style="text-align: left"><a href="StructureDefinition-eicr-composition-definitions.html#Composition.id">id</a></td>
+      <td style="text-align: left"><a href="StructureDefinition-eicr-composition-definitions.html#Composition.identifier">identifier</a></td>
       <td style="text-align: left">US Realm Header (V3)</td>
       <td style="text-align: left">ClinicalDocument/identifier</td>
     </tr>
