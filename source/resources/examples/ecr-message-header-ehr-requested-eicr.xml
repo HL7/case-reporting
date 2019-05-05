@@ -7,9 +7,10 @@
     </div>
   </text>
   <!-- Required -->
+  <!-- Need value set process-ecr, process-referral -->
   <event>
     <system value="http://hl7.org/fhir/message-events" />
-    <code value="communication-request" />
+    <code value="process-ecr" />
   </event>
   <destination>
     <name value="YMCA Acme Message Gateway" />
@@ -18,12 +19,12 @@
     <target>
       <reference value="Device/ecr-device-software-ymca" />
     </target>
-    <endpoint value="llp:10.11.12.14:5432" />
+    <endpoint value="http://example.org/ymca/fhir" />
   </destination>
   <sender>
     <reference value="Organization/ecr-organization-salem-medical-center" />
   </sender>
-  <timestamp value="2018-05-04T15:10:14Z" />
+  <timestamp value="2019-05-04T15:10:14Z" />
   <!--<author>
     <reference value="Practitioner/ecr-practitionerrole-henry-seven" />
   </author>-->
@@ -35,7 +36,7 @@
       <system value="phone" />
       <value value="+1 (555) 123 4567" />
     </contact>
-    <endpoint value="llp:10.11.12.13:5432" />
+    <endpoint value="http://example.org/salem-medical-center/fhir" />
   </source>
   <!--<reason>
     <coding>
@@ -44,10 +45,10 @@
     </coding>
   </reason>-->
   <!-- If this is a a response to a prior message - will need this for RR? -->
-  <response>
+  <!--<response>
     <identifier value="5015fe84-8e76-4526-89d8-44b322e8d4fb" />
     <code value="ok" />
-  </response>
+  </response>-->
   <!-- Actual content of the message -->
   <focus>
     <reference value="Task/ecr-task-ehr-requested-eicr" />
