@@ -9,7 +9,7 @@
   <!-- Required -->
   <!-- Need value set process-ecr, process-referral -->
   <event>
-    <system value="http://hl7.org/fhir/message-events" />
+    <system value="http://example.org/fhir/message-events" />
     <code value="process-ecr" />
   </event>
   <destination>
@@ -20,6 +20,12 @@
       <reference value="Device/ecr-device-software-ymca" />
     </target>
     <endpoint value="http://example.org/ymca/fhir" />
+	<!-- Uncomment receiver for R4 -->
+	<!--
+	<receiver>
+		<reference value="Organziation/ecr-organization-ymca" />
+	</receiver>
+	-->
   </destination>
   <sender>
     <reference value="Organization/ecr-organization-salem-medical-center" />
