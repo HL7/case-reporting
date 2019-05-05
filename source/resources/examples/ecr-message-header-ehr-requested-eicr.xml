@@ -24,12 +24,9 @@
     <reference value="Organization/ecr-organization-salem-medical-center" />
   </sender>
   <timestamp value="2018-05-04T15:10:14Z" />
-  <enterer>
+  <!--<author>
     <reference value="Practitioner/ecr-practitionerrole-henry-seven" />
-  </enterer>
-  <author>
-    <reference value="Practitioner/ecr-practitionerrole-henry-seven" />
-  </author>
+  </author>-->
   <source>
     <name value="Acme Central Patient Registry" />
     <software value="FooBar Patient Manager" />
@@ -40,17 +37,18 @@
     </contact>
     <endpoint value="llp:10.11.12.13:5432" />
   </source>
-  <reason>
+  <!--<reason>
     <coding>
       <system value="http://hl7.org/fhir/message-reasons-encounter" />
       <code value="admit" />
     </coding>
-  </reason>
+  </reason>-->
+  <!-- If this is a a response to a prior message - will need this for RR? -->
   <response>
     <identifier value="5015fe84-8e76-4526-89d8-44b322e8d4fb" />
     <code value="ok" />
   </response>
-  <!--   Here's the payload, the resource that this admin-update concerns   -->
+  <!-- Actual content of the message -->
   <focus>
     <reference value="Task/ecr-task-ehr-requested-eicr" />
   </focus>
