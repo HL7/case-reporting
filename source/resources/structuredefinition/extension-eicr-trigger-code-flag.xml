@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="extension-eicr-trigger-code-flag"/>
+    <meta>
+        <versionId value="5"/>
+        <lastUpdated value="2019-04-16T22:48:25.000-04:00"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag"/>
+    <version value="1.0.0"/>
+    <name value="extension-eicr-trigger-code-flag"/>
+    <title value="eICR Trigger Code Flag"/>
+    <status value="draft"/>
+    <date value="2018-08-01"/>
+    <description value="A flag which, if it is present, indicates that the **target** reference represents a triggering event and caused the eCR to be generated. It also contains the identifier and version of the RCTC value from which the code was matched. It is used in the eICR profile in the following sections:&#xD;&#xD;&#xA;- Encounters Section&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section"/>
+    <fhirVersion value="3.0.1"/>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <contextType value="resource"/>
+    <context value="Reference"/>
+    <context value="Encounter.diagnosis"/>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Extension">
+            <path value="Extension"/>
+            <short value="eICR Trigger Code Flag"/>
+            <definition value="Definition: A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following places:&#xD;&#xD;&#xA;- Composition[eICR Composition].section[Problem Section].entry&#xD;- Composition[eICR Composition].section[Results Section].entry&#xD;&#xA;- Composition[eICR Composition].section[Plan of Treatment Section].entry&#xD;- Encounter[eICR Encounter].diagnosis"/>
+            <max value="1"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Extension.extension">
+            <path value="Extension.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+        </element>
+        <element id="Extension.extension:triggerCodeValueSet">
+            <path value="Extension.extension"/>
+            <sliceName value="triggerCodeValueSet"/>
+            <short value="RCTC value set OID"/>
+            <min value="1"/>
+            <max value="1"/>
+        </element>
+        <element id="Extension.extension:triggerCodeValueSet.url">
+            <path value="Extension.extension.url"/>
+            <fixedUri value="triggerCodeValueSet"/>
+        </element>
+        <element id="Extension.extension:triggerCodeValueSet.value[x]:valueOid">
+            <path value="Extension.extension.valueOid"/>
+            <sliceName value="valueOid"/>
+            <min value="1"/>
+            <type>
+                <code value="oid"/>
+            </type>
+            <example>
+                <label value="General"/>
+                <valueOid value="urn:oid:2.16.840.1.114222.4.11.7508"/>
+            </example>
+        </element>
+        <element id="Extension.extension:triggerCodeValueSetVersion">
+            <path value="Extension.extension"/>
+            <sliceName value="triggerCodeValueSetVersion"/>
+            <short value="RCTC value set version"/>
+            <min value="1"/>
+            <max value="1"/>
+        </element>
+        <element id="Extension.extension:triggerCodeValueSetVersion.url">
+            <path value="Extension.extension.url"/>
+            <fixedUri value="triggerCodeValueSetVersion"/>
+        </element>
+        <element id="Extension.extension:triggerCodeValueSetVersion.value[x]:valueString">
+            <path value="Extension.extension.valueString"/>
+            <sliceName value="valueString"/>
+            <type>
+                <code value="string"/>
+            </type>
+            <example>
+                <label value="General"/>
+                <valueString value="19/05/2018"/>
+            </example>
+        </element>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag"/>
+        </element>
+        <element id="Extension.value[x]">
+            <path value="Extension.value[x]"/>
+            <max value="0"/>
+            <type>
+                <code value="base64Binary"/>
+            </type>
+            <type>
+                <code value="boolean"/>
+            </type>
+            <type>
+                <code value="code"/>
+            </type>
+            <type>
+                <code value="date"/>
+            </type>
+            <type>
+                <code value="dateTime"/>
+            </type>
+            <type>
+                <code value="decimal"/>
+            </type>
+            <type>
+                <code value="id"/>
+            </type>
+            <type>
+                <code value="instant"/>
+            </type>
+            <type>
+                <code value="integer"/>
+            </type>
+            <type>
+                <code value="markdown"/>
+            </type>
+            <type>
+                <code value="oid"/>
+            </type>
+            <type>
+                <code value="positiveInt"/>
+            </type>
+            <type>
+                <code value="string"/>
+            </type>
+            <type>
+                <code value="time"/>
+            </type>
+            <type>
+                <code value="unsignedInt"/>
+            </type>
+            <type>
+                <code value="uri"/>
+            </type>
+            <type>
+                <code value="Address"/>
+            </type>
+            <type>
+                <code value="Age"/>
+            </type>
+            <type>
+                <code value="Annotation"/>
+            </type>
+            <type>
+                <code value="Attachment"/>
+            </type>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <type>
+                <code value="Coding"/>
+            </type>
+            <type>
+                <code value="ContactPoint"/>
+            </type>
+            <type>
+                <code value="Count"/>
+            </type>
+            <type>
+                <code value="Distance"/>
+            </type>
+            <type>
+                <code value="Duration"/>
+            </type>
+            <type>
+                <code value="HumanName"/>
+            </type>
+            <type>
+                <code value="Identifier"/>
+            </type>
+            <type>
+                <code value="Money"/>
+            </type>
+            <type>
+                <code value="Period"/>
+            </type>
+            <type>
+                <code value="Quantity"/>
+            </type>
+            <type>
+                <code value="Range"/>
+            </type>
+            <type>
+                <code value="Ratio"/>
+            </type>
+            <type>
+                <code value="Reference"/>
+            </type>
+            <type>
+                <code value="SampledData"/>
+            </type>
+            <type>
+                <code value="Signature"/>
+            </type>
+            <type>
+                <code value="Timing"/>
+            </type>
+        </element>
+    </differential>
+</StructureDefinition>

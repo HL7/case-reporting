@@ -1,19 +1,7 @@
+---
+title: StructureDefinition-extension-rr-routing-entity-intro
+layout: default
+active: StructureDefinition-extension-rr-routing-entity-intro
+---
 
-
-{% assign id = {{include.id}} %}
-
-
-**eCR Extension: {{site.data.structuredefinitions.[id].name}}**
-
-
-
-**Scope and Usage**
-
-{{site.data.structuredefinitions.[id].description}}
-
-**Context of Use**
-{% assign context = {{site.data.structuredefinitions.[id].contexts}} %}
-{% assign type = {{site.data.structuredefinitions.[id].contextType}} %}
-{% assign basepath = {{site.data.structuredefinitions.[id].basepath}} %}
-This extension is used on the {{context}} element(s).
-
+A Routing Entity is a PHA or other organization identified by the PHA (such as an HIE) to which the eICR and/or the Reportability Response will be provided immediately following the creation of the Reportability Response. This entity may just be acting to route the eICR and Reportability Response on their way to a Responsible Agency.

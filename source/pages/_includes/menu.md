@@ -20,14 +20,12 @@
 *****no empty lines****
 
 -->
-- [Notice to Balloters](balloters.html)
 - [Home](index.html){: .active}
-- [Design Considerations](design-considerations.html)
+- [Table of Contents](toc.html)
 - [Profiles, Extensions & Transactions](profiles.html)
-- [Mappings](mappings.html)
 - [Terminology](terminology.html)
-- [Narrative Guidance](narrative-guidance.html)
 - [Capability Statements](capstatements.html)
+- [Other](other.html)
 - [Downloads](downloads.html)
 
 <!-- ******* how to create a dropdown menu in md ********

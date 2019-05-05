@@ -1,19 +1,9 @@
-{% assign id = {{include.id}} %}
-
-
-**eCR Profile: {{site.data.structuredefinitions.[id].name}}**
-
-**Scope and Usage**
-
-{{site.data.structuredefinitions.[id].description}}
-
-
-**Additional Profile specific implementation guidance:**
-
-- None
-
-#### Examples
-
-- [eICR ProcedureRequest Example](ProcedureRequest-eicr-procedurerequest-eve-everywoman-zika.html)
-
 ---
+title: StructureDefinition-eicr-procedurerequest-intro
+layout: default
+active: StructureDefinition-eicr-procedurerequest-intro
+---
+
+The Electronic Case Reporting Lab Orders profile establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:
+
+- Initial Case Report laboratory orders and other diagnostics for the reported event.

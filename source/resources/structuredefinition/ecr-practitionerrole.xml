@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="ecr-practitionerrole"/>
+    <meta>
+        <versionId value="4"/>
+        <lastUpdated value="2019-04-11T21:44:33.000-04:00"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-practitionerrole"/>
+    <version value="1.0.0"/>
+    <name value="ecr-practitionerrole"/>
+    <title value="eCR PractitionerRole"/>
+    <status value="draft"/>
+    <fhirVersion value="3.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="PractitionerRole"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/PractitionerRole"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="PractitionerRole.identifier">
+            <path value="PractitionerRole.identifier"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PractitionerRole.practitioner">
+            <path value="PractitionerRole.practitioner"/>
+            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PractitionerRole.organization">
+            <path value="PractitionerRole.organization"/>
+            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PractitionerRole.location">
+            <path value="PractitionerRole.location"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-location"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+    </differential>
+</StructureDefinition>

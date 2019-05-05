@@ -1,14 +1,8 @@
 ---
 title: Narrative Guidance
 layout: default
+active: Narrative Guidance
 ---
-
-<!-- TOC the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
-
-* Do not remove this line (it will not be displayed)
-{:toc}
-
-<!-- end TOC -->
 
 # Introduction
 ## Purpose
@@ -61,13 +55,13 @@ The following sections include further details on how narrative text can be cons
 Variables that represent coded data found elsewhere in the Reportabilty Response will be enclosed with angle brackets with a link to the relevant element, like this: &lt;[variable](narrative-guidance.html#narrative-construction-guidance)&gt;
 
 ## [Reportability Response Subject](StructureDefinition-rr-communication-definitions.html#Communication.topic)
-(for circumstances where **any** determination of reportability code is **reportable or maybe reportable** – it is recommended to communicate the Reportability Response to Provider/Reporter)
+(for circumstances where **any** determination of reportability code is **reportable or maybe reportable** - it is recommended to communicate the Reportability Response to Provider/Reporter)
 
 
 > Public Health Reporting Communication: one or more conditions are reportable, or may be reportable, to public health.
 
 
-(for circumstances where **all** determination of reportability codes **are not reportable and/or no rule met** – it is recommended to not communicate the Reportability Response to Provider / Reporter, but to store to document completion)
+(for circumstances where **all** determination of reportability codes **are not reportable and/or no rule met** - it is recommended to not communicate the Reportability Response to Provider / Reporter, but to store to document completion)
 
 
 > Public Health Reporting Communication: Submitted report had no identifiable reporting needs.
@@ -208,7 +202,7 @@ Similar to these examples, some additional responses may include:
 
 ### eICR Not Processed
 
-In the case where an eICR Composition was not processed (**eICR Processing Status**=eICR was not processed – error), the normative constraints in the Reportability Response Communication profile state that there must be narrative text populated from [Communication\[rr-communication\].payload\[sliceEICRInformation\]](StructureDefinition-rr-communication-definitions.html#Communication.payload:sliceEICRInformation) that contains the reason the file was not processed. Given the potential reasons (see codes from the [eICR Processing Status (eCR)](ValueSet-eicr-processing-status-ecr.html) value set) for an eICR Composition not to be processed, the following example may be used in the the corresponding Reportability Response [Communication.text](StructureDefinition-rr-communication-definitions.html#Communication.text):
+In the case where an eICR Composition was not processed (**eICR Processing Status**=eICR was not processed - error), the normative constraints in the Reportability Response Communication profile state that there must be narrative text populated from [Communication\[rr-communication\].payload\[sliceEICRInformation\]](StructureDefinition-rr-communication-definitions.html#Communication.payload:sliceEICRInformation) that contains the reason the file was not processed. Given the potential reasons (see codes from the [eICR Processing Status (eCR)](ValueSet-eicr-processing-status-ecr.html) value set) for an eICR Composition not to be processed, the following example may be used in the the corresponding Reportability Response [Communication.text](StructureDefinition-rr-communication-definitions.html#Communication.text):
 
 > An initial report for a possible reportable condition was received on "&lt;[date and time of eICR receipt](StructureDefinition-rr-communication-definitions.html#Communication.payload:sliceEICRInformation.extension:extensionEICRReceiptTime)&gt;" with the file name "&lt;[filename of eICR](StructureDefinition-rr-communication-definitions.html#Communication.payload:sliceEICRInformation.contentReference:contentReference.display)&gt;" but it was not processed. "&lt;[eICR Processing Status Reason](StructureDefinition-rr-eicr-processing-status-reason-definitions.html#Observation)&gt;"
 
@@ -233,7 +227,7 @@ The examples below provide example text for *Providers / Reporters* for these ty
 
 ----------
 
-*Example 1* – Example Reportability Response text for One Reportable Condition to One PHA (with minimum external resources by PHA)
+*Example 1* - Example Reportability Response text for One Reportable Condition to One PHA (with minimum external resources by PHA)
 
 > **Subject:**
 >
@@ -252,8 +246,8 @@ The examples below provide example text for *Providers / Reporters* for these ty
 
 
 ----------
- 
-*Example 2* – Example Reportability Response text for One Reportable Condition to One PHA (fully populated with external resources by PHA)
+
+*Example 2* - Example Reportability Response text for One Reportable Condition to One PHA (fully populated with external resources by PHA)
 
 > **Subject:**
 >
@@ -292,7 +286,7 @@ The examples below provide example text for *Providers / Reporters* for these ty
 >
 > CDC webpage ([Link](http://statedepartmentofhealth.gov/link) - Information only)
 >
-> Patient information factsheet ([Link](http://statedepartmentofhealth.gov/link) - Information only) 
+> Patient information factsheet ([Link](http://statedepartmentofhealth.gov/link) - Information only)
 
 
 ----------
@@ -310,8 +304,8 @@ The examples below provide example text for *Providers / Reporters* for these ty
 
 
 ----------
- 
-*Example 4* – Example Reportability Response text for One Not Reportable Condition to One PHA
+
+*Example 4* - Example Reportability Response text for One Not Reportable Condition to One PHA
 
 > **Subject:**
 >
@@ -327,7 +321,7 @@ The examples below provide example text for *Providers / Reporters* for these ty
 
 ----------
 
-*Example 5* – Example Reportability Response text for One May be Reportable Condition to One PHA
+*Example 5* - Example Reportability Response text for One May be Reportable Condition to One PHA
 
 > **Subject:**
 >
@@ -363,8 +357,8 @@ The examples below provide example text for *Providers / Reporters* for these ty
 
 
 ----------
- 
-*Example 6* – Example Reportability Response text with No Reporting Rule Met for One PHA
+
+*Example 6* - Example Reportability Response text with No Reporting Rule Met for One PHA
 
 > **Subject:**
 >
@@ -377,8 +371,8 @@ The examples below provide example text for *Providers / Reporters* for these ty
 
 
 ----------
- 
-*Example 7* – Example Reportability Response text for Two Reportable Condition to Two PHAs
+
+*Example 7* - Example Reportability Response text for Two Reportable Condition to Two PHAs
 
 > **Subject:**
 >
@@ -489,7 +483,7 @@ The examples below provide example text for *Providers / Reporters* for these ty
 
 ----------
 
-*Example 8* – Example Reportability Response text for One Reportable and One Not reportable for Two PHAs
+*Example 8* - Example Reportability Response text for One Reportable and One Not reportable for Two PHAs
 
 > **Subject:**
 >
@@ -577,8 +571,8 @@ The examples below provide example text for *Providers / Reporters* for these ty
 
 
 ----------
- 
-*Example 9* – Example Reportability Response text for a Manually initiated eICR with no reporting criteria matched for One PHA
+
+*Example 9* - Example Reportability Response text for a Manually initiated eICR with no reporting criteria matched for One PHA
 
 > **Subject:**
 >
@@ -591,8 +585,8 @@ The examples below provide example text for *Providers / Reporters* for these ty
 
 
 ----------
- 
-*Example 10* – Example Reportability Response text for a Manually initiated eICR with One Reportable Condition for One PHA
+
+*Example 10* - Example Reportability Response text for a Manually initiated eICR with One Reportable Condition for One PHA
 
 > **Subject:**
 >
@@ -613,7 +607,7 @@ The examples below provide example text for *Providers / Reporters* for these ty
 
 ----------
 
-*Example 11* – Example Reportability Response text with Error for "EHR System Administrators"
+*Example 11* - Example Reportability Response text with Error for "EHR System Administrators"
 
 > **eICR Information:**
 >

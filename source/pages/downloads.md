@@ -1,7 +1,7 @@
 ---
 title: Downloads
 layout: default
-active: downloads
+active: Downloads
 ---
 
 **Validator Pack and Definitions:**

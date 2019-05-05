@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PlanDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="rr-plan-zika-state-department-of-health"/>
+    <meta>
+        <versionId value="4"/>
+        <lastUpdated value="2019-04-16T22:48:08.000-04:00"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
+    </meta>
+    <text>
+        <status value="generated"/>
+        <div
+            xmlns="http://www.w3.org/1999/xhtml">
+      The Reportability Response Plan Definition does not contain narrative text. The information from this resource is parsed and contained in 
+            <a href="StructureDefinition-rr-communication-definitions.html#Communication.text">Communication[rr-communication].text</a> according to the guidlines set out here: 
+            <a href="narrative-guidance.html">Narrative Guidance</a>.
+    
+        </div>
+    </text>
+    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-determination-of-reportability">
+        <valueCodeableConcept>
+            <coding>
+                <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
+                <code value="RRVS1"/>
+                <display value="Reportable"/>
+            </coding>
+        </valueCodeableConcept>
+    </extension>
+    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-determination-of-reportability-reason">
+        <valueString value="Condition is reportable"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-determination-of-reportability-rule">
+        <valueString value="Description of rule used in reportability determination"/>
+    </extension>
+    <url value="http://hl7.org/fhir/us/ecr/PlanDefinition/rr-plan-zika-state-department-of-health"/>
+    <name value="ReportableConditionDetermination"/>
+    <title value="Determination of Reportable Condition"/>
+    <status value="active"/>
+    <date value="2017-11-22"/>
+    <jurisdiction>
+        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-location-relevance">
+            <valueCodeableConcept>
+                <coding>
+                    <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
+                    <code value="RRVS5"/>
+                    <display value="Patient home address"/>
+                </coding>
+            </valueCodeableConcept>
+        </extension>
+        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-ecr-organization">
+            <valueReference>
+                <reference value="Organization/rr-organization-routing-entity-haw"/>
+            </valueReference>
+        </extension>
+        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-ecr-organization">
+            <valueReference>
+                <reference value="Organization/rr-organization-responsible-agency-haw"/>
+            </valueReference>
+        </extension>
+    </jurisdiction>
+    <goal>
+        <description>
+            <text value="Clinical feedback"/>
+        </description>
+        <addresses>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="3928002"/>
+                <display value="Zika virus disease (disorder)"/>
+            </coding>
+        </addresses>
+    </goal>
+    <action>
+        <documentation>
+            <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-external-resource-type">
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
+                        <code value="RRVS13"/>
+                        <display value="Outbreak- or Cluster Related"/>
+                    </coding>
+                </valueCodeableConcept>
+            </extension>
+            <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-priority">
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
+                        <code value="RRVS17"/>
+                        <display value="Immediate action required"/>
+                    </coding>
+                </valueCodeableConcept>
+            </extension>
+            <type value="documentation"/>
+            <display value="Local mosquito-borne Zika virus transmission was reported in your area. Increased watchfulness for symptoms of Zika virus in your patients is warranted."/>
+        </documentation>
+        <timingDuration>
+            <value value="24"/>
+            <unit value="H"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="H"/>
+        </timingDuration>
+    </action>
+    <action>
+        <documentation>
+            <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-external-resource-type">
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
+                        <code value="RRVS8"/>
+                        <display value="Additional reporting needs"/>
+                    </coding>
+                </valueCodeableConcept>
+            </extension>
+            <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-priority">
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
+                        <code value="RRVS16"/>
+                        <display value="Action requested"/>
+                    </coding>
+                </valueCodeableConcept>
+            </extension>
+            <type value="documentation"/>
+            <display value="Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here."/>
+            <url value="http://statedepartmentofhealth.gov/epi/disease/zika/Supplemental_data_form.pdf"/>
+        </documentation>
+        <timingDuration>
+            <value value="24"/>
+            <unit value="H"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="H"/>
+        </timingDuration>
+    </action>
+    <action>
+        <documentation>
+            <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-external-resource-type">
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
+                        <code value="RRVS10"/>
+                        <display value="Treatment and/or prevention"/>
+                    </coding>
+                </valueCodeableConcept>
+            </extension>
+            <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-priority">
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
+                        <code value="RRVS18"/>
+                        <display value="Immediate action requested"/>
+                    </coding>
+                </valueCodeableConcept>
+            </extension>
+            <type value="documentation"/>
+            <display value="Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy."/>
+            <url value="http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf"/>
+        </documentation>
+        <timingDuration>
+            <value value="24"/>
+            <unit value="H"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="H"/>
+        </timingDuration>
+    </action>
+</PlanDefinition>

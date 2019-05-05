@@ -1,19 +1,9 @@
+---
+title: StructureDefinition-extension-eicr-trigger-code-flag-intro
+layout: default
+active: StructureDefinition-extension-eicr-trigger-code-flag-intro
+---
 
-
-{% assign id = {{include.id}} %}
-
-
-**eCR Extension: {{site.data.structuredefinitions.[id].name}}**
-
-
-
-**Scope and Usage**
-
-{{site.data.structuredefinitions.[id].description}}
-
-**Context of Use**
-{% assign context = {{site.data.structuredefinitions.[id].contexts}} %}
-{% assign type = {{site.data.structuredefinitions.[id].contextType}} %}
-{% assign basepath = {{site.data.structuredefinitions.[id].basepath}} %}
-This extension is used on the {{context}} element(s).
-
+A flag which, if it is present, indicates that the **target** reference represents a triggering event and caused the eCR to be generated. It also contains the identifier and version of the RCTC value from which the code was matched. It is used in the eICR profile in the following sections:
+- Encounters Section- Problem Section
+- Plan of Treatment Section- Results Section

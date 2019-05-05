@@ -1,19 +1,7 @@
+---
+title: StructureDefinition-extension-rr-responsible-agency-intro
+layout: default
+active: StructureDefinition-extension-rr-responsible-agency-intro
+---
 
-
-{% assign id = {{include.id}} %}
-
-
-**eCR Extension: {{site.data.structuredefinitions.[id].name}}**
-
-
-
-**Scope and Usage**
-
-{{site.data.structuredefinitions.[id].description}}
-
-**Context of Use**
-{% assign context = {{site.data.structuredefinitions.[id].contexts}} %}
-{% assign type = {{site.data.structuredefinitions.[id].contextType}} %}
-{% assign basepath = {{site.data.structuredefinitions.[id].basepath}} %}
-This extension is used on the {{context}} element(s).
-
+A Responsible Agency is a PHA to which reporting is legally required. This represents the PHA for the location in which care was provided and/or where the patient lives.

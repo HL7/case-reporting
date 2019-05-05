@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Encounter
+    xmlns="http://hl7.org/fhir">
+    <id value="eicr-encounter-eve-everywoman-20180401"/>
+    <meta>
+        <versionId value="3"/>
+        <lastUpdated value="2019-04-10T19:02:31.000-04:00"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
+    </meta>
+    <text>
+        <status value="generated"/>
+        <div
+            xmlns="http://www.w3.org/1999/xhtml">
+            <p>
+                <b>Generated Narrative with Details</b>
+            </p>
+            <p>
+                <b>id</b>: eicr-encounter-eve-everywoman-20180401
+            </p>
+            <p>
+                <b>meta</b>: 
+            </p>
+            <p>
+                <b>status</b>: generated
+            </p>
+            <p>
+                <b>class</b>: ambulatory (Details: http://hl7.org/fhir/v3/ActCode code AMB = 'ambulatory', stated as 'ambulatory')
+            </p>
+            <p>
+                <b>type</b>: Office Visit 
+        
+                <span style="background: LightGoldenRodYellow">(Details : {http://www.ama-assn.org/go/cpt code '99201' = '99201)</span>
+            </p>
+            <p>
+                <b>subject</b>: 
+        
+                <b>name</b>: Eve Everywoman 
+        
+                <b>identifier</b>: Medical Record Number = 1032702 (http://hospital.smarthealthit.org), SSN = 11-00-1234 (USUAL)
+            </p>
+            <p>
+                <b>period</b>: Apr 1, 2018 10:00:00 AM --&gt; Apr 2, 2018 10:15:00 AM
+            </p>
+        </div>
+    </text>
+    <identifier>
+        <system value="http://hospital.smarthealthit.org"/>
+        <value value="9937012"/>
+    </identifier>
+    <status value="finished"/>
+    <class>
+        <system value="http://hl7.org/fhir/v3/ActCode"/>
+        <code value="AMB"/>
+        <display value="ambulatory"/>
+    </class>
+    <type>
+        <coding>
+            <system value="http://www.ama-assn.org/go/cpt"/>
+            <code value="99201"/>
+        </coding>
+        <text value="Office Visit"/>
+    </type>
+    <subject>
+        <reference value="Patient/ecr-patient-eve-everywoman"/>
+        <display value="Eve Everywoman"/>
+    </subject>
+    <participant>
+        <type>
+            <coding>
+                <system value="http://hl7.org/fhir/v3/ParticipationType"/>
+                <code value="ATND"/>
+                <display value="attender"/>
+            </coding>
+        </type>
+        <individual>
+            <reference value="Practitioner/ecr-practitioner-henry-seven"/>
+            <display value="Henry Seven, MD"/>
+        </individual>
+    </participant>
+    <period>
+        <start value="2018-04-01T10:00:00-05:00"/>
+        <end value="2018-04-02T10:15:00-05:00"/>
+    </period>
+    <location>
+        <location>
+            <reference value="Location/ecr-location-salem-medical-center"/>
+            <display value="Clinic Bldg A, Salem Medical Center, 4646 Brown Rd, Salem, MA 02368"/>
+        </location>
+    </location>
+    <serviceProvider>
+        <reference value="Organization/ecr-organization-salem-medical-center"/>
+        <display value="Salem Medical Center, 22222 Health Authority Drive, Ann Arbor MI, 99999"/>
+    </serviceProvider>
+</Encounter>

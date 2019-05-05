@@ -1,19 +1,6 @@
-{% assign id = {{include.id}} %}
-
-
-**eCR Profile: {{site.data.structuredefinitions.[id].name}}**
-
-**Scope and Usage**
-
-{{site.data.structuredefinitions.[id].description}}
-
-
-**Additional Profile specific implementation guidance:**
-
-- None
-
-#### Examples
-
-- [eICR PractitionerRole example](PractitionerRole-ecr-practitionerrole-henry-seven.html)
-
 ---
+title: StructureDefinition-ecr-practitionerrole-intro
+layout: default
+active: StructureDefinition-ecr-practitionerrole-intro
+---
+

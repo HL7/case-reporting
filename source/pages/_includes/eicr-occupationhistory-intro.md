@@ -1,19 +1,9 @@
-{% assign id = {{include.id}} %}
-
-
-**eCR Profile: {{site.data.structuredefinitions.[id].name}}**
-
-**Scope and Usage**
-
-{{site.data.structuredefinitions.[id].description}}
-
-
-**Additional Profile specific implementation guidance:**
-
-- Both current and past occupation information should be sent if available.
-
-#### Examples
-
-- [eICR Occupation History Example](Observation-eicr-occupation-history-eve-everywoman.html)
-
 ---
+title: StructureDefinition-eicr-occupationhistory-intro
+layout: default
+active: StructureDefinition-eicr-occupationhistory-intro
+---
+
+The Electronic Case Reporting Occupational History profile establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:
+
+-  The Initial Case Report subject's occupational history.

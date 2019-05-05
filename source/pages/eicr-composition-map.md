@@ -1,12 +1,7 @@
 ---
-# jekyll header
-title: Mappings from the EICR Data Elements to the eCR Composition Profile
-layout: fhir-artifact
-level: 2
-active: profiles
-template: mappings
-type: StructureDefinition
-id: eicr-composition
+title: eICR Mappings
+layout: default
+active: eICR Mappings
 ---
 
 #### Table: EICR Data Elements to eICR Composition Profile
@@ -41,7 +36,7 @@ id: eicr-composition
     </tr>
     <tr>
       <td style="text-align: left">Provider ID</td>
-      <td style="text-align: left">“Encounter[eicr-encounter].participant[type="ATND"]</td>
+      <td style="text-align: left">Encounter[eicr-encounter].participant[type="ATND"]</td>
       <td style="text-align: left">Practitioner[us-core-practitioner]</td>
       <td style="text-align: left"><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner-definitions.html#Practitioner.identifier">identifier</a></td>
       <td style="text-align: left">eICR Initial Public Health Case Report Document (V2)</td>
@@ -49,7 +44,7 @@ id: eicr-composition
     </tr>
     <tr>
       <td style="text-align: left">Provider Name</td>
-      <td style="text-align: left">“Encounter[eicr-encounter].participant[type="ATND"]</td>
+      <td style="text-align: left">Encounter[eicr-encounter].participant[type="ATND"]</td>
       <td style="text-align: left">Practitioner[us-core-practitioner]</td>
       <td style="text-align: left"><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner-definitions.html#Practitioner.name">name</a></td>
       <td style="text-align: left">eICR Initial Public Health Case Report Document (V2)</td>
@@ -57,7 +52,7 @@ id: eicr-composition
     </tr>
     <tr>
       <td style="text-align: left">Provider Phone</td>
-      <td style="text-align: left">“Encounter[eicr-encounter].participant[type="ATND"]</td>
+      <td style="text-align: left">Encounter[eicr-encounter].participant[type="ATND"]</td>
       <td style="text-align: left">Practitioner[us-core-practitioner]</td>
       <td style="text-align: left"><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner-definitions.html#Practitioner.telecom">telecom[system="phone"]</a></td>
       <td style="text-align: left">eICR Initial Public Health Case Report Document (V2)</td>
@@ -65,7 +60,7 @@ id: eicr-composition
     </tr>
     <tr>
       <td style="text-align: left">Provider Fax</td>
-      <td style="text-align: left">“Encounter[eicr-encounter].participant[type="ATND"]</td>
+      <td style="text-align: left">Encounter[eicr-encounter].participant[type="ATND"]</td>
       <td style="text-align: left">Practitioner[us-core-practitioner]</td>
       <td style="text-align: left"><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner-definitions.html#Practitioner.telecom">telecom[system="fax"]</a></td>
       <td style="text-align: left">eICR Initial Public Health Case Report Document (V2)</td>
@@ -73,7 +68,7 @@ id: eicr-composition
     </tr>
     <tr>
       <td style="text-align: left">Provider Email</td>
-      <td style="text-align: left">“Encounter[eicr-encounter].participant[type="ATND"]</td>
+      <td style="text-align: left">Encounter[eicr-encounter].participant[type="ATND"]</td>
       <td style="text-align: left">Practitioner[us-core-practitioner]</td>
       <td style="text-align: left"><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner-definitions.html#Practitioner.telecom">telecom[system="email"]</a></td>
       <td style="text-align: left">eICR Initial Public Health Case Report Document (V2)</td>
@@ -89,7 +84,7 @@ id: eicr-composition
     </tr>
     <tr>
       <td style="text-align: left">Provider Address</td>
-      <td style="text-align: left">“Encounter[eicr-encounter].participant[type="ATND"].PractitionerRole[ecr-practitionerrole].practitioner"</td>
+      <td style="text-align: left">Encounter[eicr-encounter].participant[type="ATND"].PractitionerRole[ecr-practitionerrole].practitioner"</td>
       <td style="text-align: left">Practitioner[us-core-practitioner]</td>
       <td style="text-align: left"><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner-definitions.html#Practitioner.address">address</a></td>
       <td style="text-align: left">eICR Initial Public Health Case Report Document (V2)</td>
@@ -211,7 +206,7 @@ id: eicr-composition
       <td style="text-align: left">Patient Birth Date</td>
       <td style="text-align: left">Composition[eicr-composition].subject</td>
       <td style="text-align: left">Patient[ecr-patient]</td>
-      <td style="text-align: left"><a name="96cea1bd-4932-4330-a19b-0ee426599307">​</a><a href="StructureDefinition-ecr-patient-definitions.html#Patient.birthDate">birthDate</a></td>
+      <td style="text-align: left"><a name="96cea1bd-4932-4330-a19b-0ee426599307"></a><a href="StructureDefinition-ecr-patient-definitions.html#Patient.birthDate">birthDate</a></td>
       <td style="text-align: left">US Realm Header (V3)</td>
       <td style="text-align: left">ClinicalDocument/recordTarget/patientRole/patient/birthTime</td>
     </tr>
@@ -349,7 +344,7 @@ id: eicr-composition
       <td style="text-align: left">Observation[us-core-observationresults]</td>
       <td style="text-align: left"><a href="https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-observationresults-definitions.html#Observation.code">code and/or valueCodeableConcept</a></td>
       <td style="text-align: left">Results Section (V3)</td>
-      <td style="text-align: left">“Result Observation (V3).code and/or</td>
+      <td style="text-align: left">Result Observation (V3).code and/or</td>
     </tr>
     <tr>
       <td style="text-align: left">Result Observation (V3).value[xsi:type="CD"]</td>
@@ -365,7 +360,7 @@ id: eicr-composition
       <td style="text-align: left">Composition[eicr-composition].section[Results Section].entry[us-core-observationresults]</td>
       <td style="text-align: left"><a href="StructureDefinition-eicr-composition-definitions.html#Composition.section:sliceResultsSection.entry:sliceUSCoreObservationResults.extension:sliceTriggerUSCoreObservationResults">extension-eicr-trigger-code-flag</a></td>
       <td style="text-align: left">Results Section (V3)</td>
-      <td style="text-align: left">“Result Organizer (V3)/Intitial Case Report Trigger Code Result Observation.code and/or</td>
+      <td style="text-align: left">Result Organizer (V3)/Intitial Case Report Trigger Code Result Observation.code and/or</td>
     </tr>
     <tr>
       <td style="text-align: left">Result Organizer (V3)/Intitial Case Report Trigger Code Result Observation.value[xsi:type="CD"]</td>
@@ -379,7 +374,7 @@ id: eicr-composition
       <td style="text-align: left">Filler Order Number</td>
       <td style="text-align: left">Composition[eicr-composition].section[Results Section].entry[us-core-observationresults]</td>
       <td style="text-align: left">Observation[us-core-observationresults]</td>
-      <td style="text-align: left"><a name="3b3898c2-c05a-453c-b486-374104f110ae">​</a><a href="https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-observationresults-definitions.html#Observation.identifier">identifier</a></td>
+      <td style="text-align: left"><a name="3b3898c2-c05a-453c-b486-374104f110ae"></a><a href="https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-observationresults-definitions.html#Observation.identifier">identifier</a></td>
       <td style="text-align: left">Results Section (V3)</td>
       <td style="text-align: left">Result Organizer (V3)/id</td>
     </tr>
@@ -469,7 +464,7 @@ id: eicr-composition
       <td style="text-align: left">Composition[eicr-composition].extension</td>
       <td style="text-align: left"><a href="StructureDefinition-eicr-composition-definitions.html#Composition.extension:extensionEICRManuallyInitiatedReason">extension-eicr-manually-initiated-reason</a></td>
       <td style="text-align: left">eICR Initial Public Health Case Report Document (V2)</td>
-      <td style="text-align: left">“ClinicalDocument/documentationOf/serviceEvent/code[@code="PHC1464"]</td>
+      <td style="text-align: left">ClinicalDocument/documentationOf/serviceEvent/code[@code="PHC1464"]</td>
     </tr>
     <tr>
       <td style="text-align: left">Manually Initiated eICR Reason</td>
@@ -481,5 +476,3 @@ id: eicr-composition
     </tr>
   </tbody>
 </table>
-
-{:.grid}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MessageHeader
+    xmlns="http://hl7.org/fhir">
+    <id value="ecr-message-header-ehr-requested-eicr"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2019-05-05T12:16:01.000-04:00"/>
+    </meta>
+    <text>
+        <status value="generated"/>
+        <div
+            xmlns="http://www.w3.org/1999/xhtml">
+            <p>Generated info</p>
+        </div>
+    </text>
+    <event>
+        <system value="http://example.org/fhir/message-events"/>
+        <code value="process-ecr"/>
+    </event>
+    <destination>
+        <name value="YMCA Acme Message Gateway"/>
+        <target>
+            <reference value="Device/ecr-device-software-ymca"/>
+        </target>
+        <endpoint value="http://example.org/ymca/fhir"/>
+    </destination>
+    <sender>
+        <reference value="Organization/ecr-organization-salem-medical-center"/>
+    </sender>
+    <timestamp value="2019-05-04T15:10:14Z"/>
+    <source>
+        <name value="Acme Central Patient Registry"/>
+        <software value="FooBar Patient Manager"/>
+        <version value="3.1.45.AABB"/>
+        <contact>
+            <system value="phone"/>
+            <value value="+1 (555) 123 4567"/>
+        </contact>
+        <endpoint value="http://example.org/salem-medical-center/fhir"/>
+    </source>
+    <focus>
+        <reference value="Task/ecr-task-ehr-requested-eicr"/>
+    </focus>
+</MessageHeader>

@@ -1,18 +1,7 @@
+---
+title: StructureDefinition-extension-eicr-manually-initiated-reason-intro
+layout: default
+active: StructureDefinition-extension-eicr-manually-initiated-reason-intro
+---
 
-
-{% assign id = {{include.id}} %}
-
-**ECR Extension: {{site.data.structuredefinitions.[id].name}}**
-
-
-
-**Scope and Usage**
-
-{{site.data.structuredefinitions.[id].description}}
-
-**Context of Use**
-{% assign context = {{site.data.structuredefinitions.[id].contexts}} %}
-{% assign type = {{site.data.structuredefinitions.[id].contextType}} %}
-{% assign basepath = {{site.data.structuredefinitions.[id].basepath}} %}
-This extension is used on the {{context}} element(s).
-
+The presence of this extension indicates this eICR was manually initiated and contains the reason for manual initiation of the eICR.

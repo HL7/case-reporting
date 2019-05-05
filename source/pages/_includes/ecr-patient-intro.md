@@ -1,19 +1,7 @@
-{% assign id = {{include.id}} %}
-
-
-**eCR Profile: {{site.data.structuredefinitions.[id].name}}**
-
-**Scope and Usage**
-
-{{site.data.structuredefinitions.[id].description}}
-
-
-**Additional Profile specific implementation guidance:**
-
-- None
-
-#### Examples
-
-- [eCR Patient Example](Patient-ecr-patient-eve-everywoman.html)
-
 ---
+title: StructureDefinition-ecr-patient-intro
+layout: default
+active: StructureDefinition-ecr-patient-intro
+---
+
+This profile represents an eCR Patient. It is based on the US Core Patient and further restricts that profile to allow masking of some elements.

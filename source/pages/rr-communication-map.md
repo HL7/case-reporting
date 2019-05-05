@@ -1,12 +1,7 @@
 ---
-# jekyll header
-title: Mappings the Reportability Response Data Elements to the FHIR Reportability Response Communication Profile
-layout: fhir-artifact
-template: mappings
-level: 2
-active: profiles
-type: StructureDefinition
-id: rr-communication
+title: Reportability Response Mappings
+layout: default
+active: Reportability Response Mappings
 ---
 
 #### Table: Reportability Response Data Elements to Reportability Response Communication Profile
@@ -25,7 +20,7 @@ id: rr-communication
 |eICR Processing Status Reason|Observation[eicr-processing-status].related|Observation[eicr-processing-status-reason]|[valueCodeableConcept](StructureDefinition-rr-eicr-processing-status-reason-definitions.html#Observation.valueCodeableConcept:valueCodeableConcept)|Electronic Initial Case Report Section|eICR Processing Status/eICR Processing StatusReason/value|
 |eICR Validation Output (text output)|PlanDefinition[rr-plandefinition].extension|Observation[eicr-processing-status]|[extension.valueString and extension.valueMarkdown](StructureDefinition-extension-rr-eicr-processing-status-definitions.html#Extension.extension:eICRValidationOutput.value[x])|Electronic Initial Case Report Section|eICR Processing Status/eICR Validation Output/value|
 |eICR Validation Output (link to output file)|PlanDefinition[rr-plandefinition].extension|Observation[eicr-processing-status]|[extension.valueAttachment](StructureDefinition-extension-rr-eicr-processing-status-definitions.html#Extension.extension:eICRValidationOutput.value[x])|Electronic Initial Case Report Section|eICR Processing Status/eICR Validation Output/value/reference[http:][https:]|
-|Expected RCTC Version|Observation[eicr-processing-status].related|Observation[eicr-processing-status-reason]|[component[code="RRVS33"].valueString](StructureDefinition-rr-eicr-processing-status-reason-definitions.html#Observation.valueCodeableConcept:valueCodeableConcept)|Electronic Initial Case Report Section|eICR Processing Status/eICR Processing Status Reason/eICR Processing Status Reason Detail[code=”RRVS33”]/value|
+|Expected RCTC Version|Observation[eicr-processing-status].related|Observation[eicr-processing-status-reason]|[component[code="RRVS33"].valueString](StructureDefinition-rr-eicr-processing-status-reason-definitions.html#Observation.valueCodeableConcept:valueCodeableConcept)|Electronic Initial Case Report Section|eICR Processing Status/eICR Processing Status Reason/eICR Processing Status Reason Detail[code=RRVS33]/value|
 |External Resource Category|Communication[rr-communication].payload|PlanDefinition[rr-plandefinition]|[action.documentation.extension-rr-external-resource-type](StructureDefinition-extension-rr-external-resource-type.html)|Reportability Response Summary Section|../External Resources/code|
 |External Resource Description|Communication[rr-communication].payload|PlanDefinition[rr-plandefinition]|[action.documentation.display](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.action.documentation.display)|Reportability Response Summary Section|../External Resources/External Reference/code/originalText|
 |External Resource Link|Communication[rr-communication].payload|PlanDefinition[rr-plandefinition]|[action.documentation.url](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.action.documentation.url)|Reportability Response Summary Section|../External Resources/External Reference/code/text/reference[http:][https:]|

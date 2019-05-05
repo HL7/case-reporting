@@ -1,15 +1,7 @@
-{% assign id = {{include.id}} %}
-
-
-**eCR Profile: {{site.data.structuredefinitions.[id].name}}**
-
-**Scope and Usage**
-
-{{site.data.structuredefinitions.[id].description}}
-
-
-**Additional Profile specific implementation guidance:**
-
- 
-
 ---
+title: StructureDefinition-knowledge-distribution-valueset-library-intro
+layout: default
+active: StructureDefinition-knowledge-distribution-valueset-library-intro
+---
+
+Defines the library containing the Reportable Condition Trigger Code value sets. These are used in Public Health as trigger codes to kick off creation of electronic initial case reports and reportability responses. 

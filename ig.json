@@ -1,271 +1,471 @@
 {
-  "title": "electronic Case Reporting (eCR)",
-  "npm-name": "hl7.fhir.us.ecr",
-  "license": "CC0-1.0",
-  "igtemplate-dir": null,
-  "valuesets": [],
-  "tool": "jekyll",
-  "broken-links": "warning",
-  "canonicalBase": "http://hl7.org/fhir/us/ecr", 
-  "logging": [],
-  "extraTemplates": ["mappings"],
-  "gen-examples": "false",
-  "sct-edition": "http://snomed.info/sct/731000124108",
-  "codesystems": [
-    "reporting-timeframe",
-    "lr-codes"
-  ],
-  "dependencyList": [{
-    "name": "uscore",
-    "location": "http://hl7.org/fhir/us/core",
-    "version": "2.0.0"
-  }],
-  "special-urls": ["urn:oid:2.16.840.1.114222.4.5.274"],
-  "jurisdiction": "US",
-  "do-transforms": "false",
-  "publisher": "HL7 Public Health Work Group (http://www.hl7.org/Special/committees/pher/index.cfm)",
-  "fixed-business-version": "1.0.0",
-  "structuremaps": [],
-  "version": "3.0.1",
-  "html-template": "html-template.html",
-  "source": "ig.xml",
-  "paths": {
-    "qa": "generated_output/qa",
-    "temp": "generated_output/temp",
-    "output": "output",
-    "txCache": "generated_output/txCache",
-    "specification": "http://hl7.org/fhir/STU3",
-    "pages": [
-      "framework",
-      "source/pages"
-    ],
-    "resources": [
-      "source/resources",
-      "source/resources/profiles",
-      "source/resources/extensions",
-      "source/resources/instances",
-      "source/resources/examples",
-      "source/resources/valuesets",
-      "source/resources/codesystems"
-    ]
-  },
-  "extensions": [
-    "extension-ecr-practitionerrole",
-    "extension-eicr-trigger-code-flag",
-    "extension-ecr-organization",
-    "extension-rr-location-relevance",
-    "extension-rr-manually-initiated-eicr",
-    "extension-eicr-manually-initiated-reason",
-    "extension-rr-subject",
-    "extension-rr-summary",
-    "extension-rr-determination-of-reportability",
-    "extension-rr-determination-of-reportability-reason",
-    "extension-rr-determination-of-reportability-rule",
-    "extension-rr-external-resource-type",
-    "extension-rr-priority",
-    "extension-rr-eicr-processing-status",
-    "extension-eicr-travel-history-address",
-    "extension-rr-eicr-receipt-time"
-  ],
-  "searches": [],
-  "working-dir": null,
-  "no-inactive-codes": "false",
-  "status": "draft",
-  "defaults": {
-    "Location": {"template-base": "ex.html"},
-    "ProcedureRequest": {"template-base": "ex.html"},
-    "Organization": {"template-base": "ex.html"},
-    "MedicationStatement": {"template-base": "ex.html"},
-    "SearchParameter": {"template-base": "base.html"},
-    "StructureDefinition": {
-      "template-mappings": "sd-mappings.html",
-      "template-base": "sd.html",
-      "template-defns": "sd-definitions.html"
-    },
-    "Immunization": {"template-base": "ex.html"},
-    "Patient": {"template-base": "ex.html"},
-    "StructureMap": {
-      "content": false,
-      "script": false,
-      "template-base": "ex.html",
-      "profiles": false
-    },
-    "ConceptMap": {"template-base": "base.html"},
-    "Practitioner": {"template-base": "ex.html"},
-    "OperationDefinition": {"template-base": "base.html"},
-    "CodeSystem": {"template-base": "base.html"},
-    "Communication": {"template-base": "ex.html"},
-    "Any": {
-      "template-format": "format.html",
-      "template-base": "base.html"
-    },
-    "PractitionerRole": {"template-base": "ex.html"},
-    "ValueSet": {"template-base": "base.html"},
-    "CapabilityStatement": {"template-base": "base.html"},
-    "Observation": {"template-base": "ex.html"}
-  },
-  "resources": {
-    "StructureDefinition/extension-ecr-practitionerrole": {},
-    "StructureDefinition/extension-rr-eicr-processing-status":{},
-    "StructureDefinition/eicr-condition": {},
-    "StructureDefinition/ecr-patient": {},
-    "StructureDefinition/extension-rr-manually-initiated-eicr": {},
-    "StructureDefinition/extension-eicr-manually-initiated-reason": {
-    },
-    "StructureDefinition/eicr-location": {
-    },
-    "StructureDefinition/extension-rr-determination-of-reportability-reason": {
-    }, 
-    "StructureDefinition/extension-rr-determination-of-reportability": {
-    },
-    "StructureDefinition/eicr-travel-history": {},
-    "StructureDefinition/extension-rr-subject": {
-    },
-    "StructureDefinition/extension-rr-rules-authoring-agency": {
-    },
-    "StructureDefinition/extension-rr-routing-entity": {
-    },
-    "StructureDefinition/extension-rr-responsible-agency": {
-    },
-    "StructureDefinition/extension-ecr-organization": {
-    },
-    "StructureDefinition/extension-rr-summary": {
-    },
-    "StructureDefinition/extension-rr-eicr-receipt-time": {
-    },
-    "StructureDefinition/rr-relevant-reportable-condition-plandefinition": {
-    },
-    "StructureDefinition/ecr-knowledge-distribution": {
-    },
-    "StructureDefinition/knowledge-distribution-valueset-library": {
-    },
-    "StructureDefinition/extension-eicr-travel-history-address": {
-    },
-    "StructureDefinition/eicr-encounter": {
-    },
-    "StructureDefinition/eicr-occupationhistory": {
-    },
-    "StructureDefinition/rr-communication": {
-    },
-    "StructureDefinition/eicr-composition": {
-    },
-    "StructureDefinition/extension-eicr-trigger-code-flag": {
-    },
-    "StructureDefinition/ecr-practitionerrole": {
-    },
-    "StructureDefinition/eicr-procedurerequest": {
-    },
-    "StructureDefinition/extension-rr-external-resource-type": {
-    },
-    "StructureDefinition/extension-rr-priority": {
-    },
-    "StructureDefinition/extension-rr-determination-of-reportability-rule": {
-    },
-    "StructureDefinition/extension-rr-location-relevance": {
-    },
-    "StructureDefinition/ecr-organization": {
-    },
-    "StructureDefinition/rr-eicr-processing-status": {
-    },
-    "StructureDefinition/rr-eicr-processing-status-reason": {
-    },
-    "StructureDefinition/rr-routing-entity": {
-    },
-    "StructureDefinition/rr-responsible-agency": {
-    },
-    "StructureDefinition/rr-rules-authoring-agency": {
-    },
-    "CodeSystem/oes": {
-    },
-    "ValueSet/eicr-processing-status-ecr": {
-    },
-    "ValueSet/eicr-processing-status-reason-ecr": {
-    },
-    "ValueSet/eicr-processing-status-reason-detail-type-ecr": {
-    },
-    "ValueSet/determination-of-reportability-ecr": {
-    },
-    "ValueSet/location-relevance-ecr": {
-    },
-   "ValueSet/external-resource-type-ecr": {
-    },
-   "ValueSet/reportability-priority-ecr": {
-    },
-    "ValueSet/geographical-location-history": {
-    },
-    "ValueSet/pregnancy-status-codes": {
-    },
-   "ValueSet/dxtc": {
-    },
-    "ValueSet/lotc": {
-    },
-    "ValueSet/oes": {
-    },
-    "ValueSet/ostc": {
-    },
-    "ValueSet/lrtc": {
-    },
-    "Condition/eicr-condition-eve-everywoman-common-cold": {
-    },
-    "Condition/eicr-condition-eve-everywoman-pertussis": {
-    },
-    "Encounter/eicr-encounter-diagnosis-eve-everywoman-20180401": {
-    },
-    "Communication/rr-communication-single-single": {
-    },
-    "Composition/eicr-composition-zika": {
-    },
-    "Encounter/eicr-enounter-eve-everywoman-20180401": {
-    },
-    "Observation/eicr-travel-history-eve-everywoman-201801": {
-    },
-    "Observation/eicr-travel-history-eve-everywoman-201610": {
-    },
-    "Observation/eicr-travel-history-eve-everywoman-1999": {
-    },
-    "Observation/eicr-pregnancy-status-eve-everywoman": {
-    },
-    "Observation/eicr-occupation-history-eve-everywoman": {
-    },
-    "Organization/ecr-organization-health-authority-west": {
-    },
-    "Organization/ecr-organization-acme-labs": {
-    },
-    "Patient/ecr-patient-eve-everywoman": {
-    },
-    "PractitionerRole/ecr-practitionerrole-henry-seven": {
-    },
-    "Practitioner/ecr-practitioner-henry-seven": {
-    },
-    "ProcedureRequest/eicr-procedurerequest-zika": {
-    },
-    "ProcedureRequest/eicr-procedurerequest-eve-everywoman-zika": {
-    },
-    "MedicationStatement/phcase-azithro": {
-    },
-    "Location/ecr-location-salem-medical-center": {
-    },
-    "Organization/ecr-organization-salem-medical-center": {
-    },
-    "Organization/rr-organization-routing-entity-haw": {
-    },
-    "Organization/rr-organization-rules-authoring-agency-haw": {
-    },
-    "Organization/rr-organization-responsible-agency-haw": {
-    },
-    "Observation/rr-eicr-processing-status": {
-    },
-    "Observation/rr-eicr-processing-status-reason": {
-    },
-    "Observation/us-core-observation-results-eve-everywoman-lymphocytes": {
-    },
-    "Immunization/phcase-pneumo": {
-    },
-    "Bundle/ecr-bundle-knowledge-distribution": {
-    },
-    "CapabilityStatement/server": {
-    },
-    "CapabilityStatement/client": {
-    }
-  }
+	"tool": "jekyll",
+	"source": "implementationguide/hl7-fhir-us-ecr.xml",
+	"npm-name": "hl7.fhir.us.ecr",
+	"license": "CC0-1.0",
+	"paths": {
+		"qa": "generated_output/qa",
+		"temp": "generated_output/temp",
+		"output": "output",
+		"txCache": "generated_output/txCache",
+		"specification": "http://hl7.org/fhir/STU3",
+		"pages": [
+			"framework",
+			"source/pages"
+		],
+		"resources": [
+			"source/resources"
+		]
+	},
+	"pages": [
+		"pages"
+	],
+	"extension-domains": [
+		"https://trifolia-on-fhir.lantanagroup.com"
+	],
+	"allowed-domains": [
+		"https://trifolia-on-fhir.lantanagroup.com"
+	],
+	"sct-edition": "http://snomed.info/sct/731000124108",
+	"canonicalBase": "http://hl7.org/fhir/us/ecr",
+	"defaults": {
+		"Location": {
+			"template-base": "ex.html"
+		},
+		"ProcedureRequest": {
+			"template-base": "ex.html"
+		},
+		"Organization": {
+			"template-base": "ex.html"
+		},
+		"MedicationStatement": {
+			"template-base": "ex.html"
+		},
+		"SearchParameter": {
+			"template-base": "base.html"
+		},
+		"StructureDefinition": {
+			"template-mappings": "sd-mappings.html",
+			"template-base": "sd.html",
+			"template-defns": "sd-definitions.html"
+		},
+		"Immunization": {
+			"template-base": "ex.html"
+		},
+		"Patient": {
+			"template-base": "ex.html"
+		},
+		"StructureMap": {
+			"content": false,
+			"script": false,
+			"template-base": "ex.html",
+			"profiles": false
+		},
+		"ConceptMap": {
+			"template-base": "base.html"
+		},
+		"Practitioner": {
+			"template-base": "ex.html"
+		},
+		"OperationDefinition": {
+			"template-base": "base.html"
+		},
+		"CodeSystem": {
+			"template-base": "base.html"
+		},
+		"Communication": {
+			"template-base": "ex.html"
+		},
+		"Any": {
+			"template-format": "format.html",
+			"template-base": "base.html"
+		},
+		"PractitionerRole": {
+			"template-base": "ex.html"
+		},
+		"ValueSet": {
+			"template-base": "base.html"
+		},
+		"CapabilityStatement": {
+			"template-base": "base.html"
+		},
+		"Observation": {
+			"template-base": "ex.html"
+		}
+	},
+	"resources": {
+		"Communication/rr-communication-single-single": {
+			"base": "Communication-rr-communication-single-single.html",
+			"defns": "Communication-rr-communication-single-single-definitions.html"
+		},
+		"CodeSystem/oes": {
+			"base": "CodeSystem-oes.html",
+			"defns": "CodeSystem-oes-definitions.html"
+		},
+		"CapabilityStatement/client": {
+			"base": "CapabilityStatement-client.html",
+			"defns": "CapabilityStatement-client-definitions.html"
+		},
+		"CapabilityStatement/server": {
+			"base": "CapabilityStatement-server.html",
+			"defns": "CapabilityStatement-server-definitions.html"
+		},
+		"Bundle/eicr-bundle-zika": {
+			"base": "Bundle-eicr-bundle-zika.html",
+			"defns": "Bundle-eicr-bundle-zika-definitions.html"
+		},
+		"Bundle/ecr-bundle-knowledge-distribution": {
+			"base": "Bundle-ecr-bundle-knowledge-distribution.html",
+			"defns": "Bundle-ecr-bundle-knowledge-distribution-definitions.html"
+		},
+		"ValueSet/determination-of-reportability-ecr": {
+			"base": "ValueSet-determination-of-reportability-ecr.html",
+			"defns": "ValueSet-determination-of-reportability-ecr-definitions.html"
+		},
+		"ValueSet/dxtc": {
+			"base": "ValueSet-dxtc.html",
+			"defns": "ValueSet-dxtc-definitions.html"
+		},
+		"ValueSet/eicr-processing-status-ecr": {
+			"base": "ValueSet-eicr-processing-status-ecr.html",
+			"defns": "ValueSet-eicr-processing-status-ecr-definitions.html"
+		},
+		"ValueSet/eicr-processing-status-reason-detail-type-ecr": {
+			"base": "ValueSet-eicr-processing-status-reason-detail-type-ecr.html",
+			"defns": "ValueSet-eicr-processing-status-reason-detail-type-ecr-definitions.html"
+		},
+		"ValueSet/eicr-processing-status-reason-ecr": {
+			"base": "ValueSet-eicr-processing-status-reason-ecr.html",
+			"defns": "ValueSet-eicr-processing-status-reason-ecr-definitions.html"
+		},
+		"ValueSet/external-resource-type-ecr": {
+			"base": "ValueSet-external-resource-type-ecr.html",
+			"defns": "ValueSet-external-resource-type-ecr-definitions.html"
+		},
+		"ValueSet/location-relevance-ecr": {
+			"base": "ValueSet-location-relevance-ecr.html",
+			"defns": "ValueSet-location-relevance-ecr-definitions.html"
+		},
+		"ValueSet/lotc": {
+			"base": "ValueSet-lotc.html",
+			"defns": "ValueSet-lotc-definitions.html"
+		},
+		"ProcedureRequest/eicr-procedurerequest-eve-everywoman-zika": {
+			"base": "ProcedureRequest-eicr-procedurerequest-eve-everywoman-zika.html",
+			"defns": "ProcedureRequest-eicr-procedurerequest-eve-everywoman-zika-definitions.html"
+		},
+		"ValueSet/lrtc": {
+			"base": "ValueSet-lrtc.html",
+			"defns": "ValueSet-lrtc-definitions.html"
+		},
+		"ProcedureRequest/eicr-procedurerequest-zika": {
+			"base": "ProcedureRequest-eicr-procedurerequest-zika.html",
+			"defns": "ProcedureRequest-eicr-procedurerequest-zika-definitions.html"
+		},
+		"ValueSet/oes": {
+			"base": "ValueSet-oes.html",
+			"defns": "ValueSet-oes-definitions.html"
+		},
+		"PractitionerRole/ecr-practitionerrole-henry-seven": {
+			"base": "PractitionerRole-ecr-practitionerrole-henry-seven.html",
+			"defns": "PractitionerRole-ecr-practitionerrole-henry-seven-definitions.html"
+		},
+		"ValueSet/reportability-priority-ecr": {
+			"base": "ValueSet-reportability-priority-ecr.html",
+			"defns": "ValueSet-reportability-priority-ecr-definitions.html"
+		},
+		"ValueSet/geographical-location-history": {
+			"base": "ValueSet-geographical-location-history.html",
+			"defns": "ValueSet-geographical-location-history-definitions.html"
+		},
+		"ValueSet/ostc": {
+			"base": "ValueSet-ostc.html",
+			"defns": "ValueSet-ostc-definitions.html"
+		},
+		"Practitioner/ecr-practitioner-henry-seven": {
+			"base": "Practitioner-ecr-practitioner-henry-seven.html",
+			"defns": "Practitioner-ecr-practitioner-henry-seven-definitions.html"
+		},
+		"Endpoint/ecr-endpoint-salem-medical-center": {
+			"base": "Endpoint-ecr-endpoint-salem-medical-center.html",
+			"defns": "Endpoint-ecr-endpoint-salem-medical-center-definitions.html"
+		},
+		"Endpoint/ecr-endpoint-ymca": {
+			"base": "Endpoint-ecr-endpoint-ymca.html",
+			"defns": "Endpoint-ecr-endpoint-ymca-definitions.html"
+		},
+		"Task/ecr-task-ehr-requested-eicr": {
+			"base": "Task-ecr-task-ehr-requested-eicr.html",
+			"defns": "Task-ecr-task-ehr-requested-eicr-definitions.html"
+		},
+		"Device/ecr-device-software-ymca": {
+			"base": "Device-ecr-device-software-ymca.html",
+			"defns": "Device-ecr-device-software-ymca-definitions.html"
+		},
+		"MessageHeader/ecr-message-header-ehr-requested-eicr": {
+			"base": "MessageHeader-ecr-message-header-ehr-requested-eicr.html",
+			"defns": "MessageHeader-ecr-message-header-ehr-requested-eicr-definitions.html"
+		},
+		"Organization/ecr-organization-ymca": {
+			"base": "Organization-ecr-organization-ymca.html",
+			"defns": "Organization-ecr-organization-ymca-definitions.html"
+		},
+		"Bundle/ecr-bundle-message-zika": {
+			"base": "Bundle-ecr-bundle-message-zika.html",
+			"defns": "Bundle-ecr-bundle-message-zika-definitions.html"
+		},
+		"StructureDefinition/extension-ecr-practitionerrole": {
+			"base": "StructureDefinition-extension-ecr-practitionerrole.html",
+			"defns": "StructureDefinition-extension-ecr-practitionerrole-definitions.html"
+		},
+		"PlanDefinition/rr-plan-zika-state-department-of-health": {
+			"base": "PlanDefinition-rr-plan-zika-state-department-of-health.html",
+			"defns": "PlanDefinition-rr-plan-zika-state-department-of-health-definitions.html"
+		},
+		"Patient/ecr-patient-eve-everywoman": {
+			"base": "Patient-ecr-patient-eve-everywoman.html",
+			"defns": "Patient-ecr-patient-eve-everywoman-definitions.html"
+		},
+		"Organization/rr-organization-responsible-agency-haw": {
+			"base": "Organization-rr-organization-responsible-agency-haw.html",
+			"defns": "Organization-rr-organization-responsible-agency-haw-definitions.html"
+		},
+		"Organization/rr-organization-routing-entity-haw": {
+			"base": "Organization-rr-organization-routing-entity-haw.html",
+			"defns": "Organization-rr-organization-routing-entity-haw-definitions.html"
+		},
+		"Organization/rr-organization-rules-authoring-agency-haw": {
+			"base": "Organization-rr-organization-rules-authoring-agency-haw.html",
+			"defns": "Organization-rr-organization-rules-authoring-agency-haw-definitions.html"
+		},
+		"Organization/ecr-organization-acme-labs": {
+			"base": "Organization-ecr-organization-acme-labs.html",
+			"defns": "Organization-ecr-organization-acme-labs-definitions.html"
+		},
+		"Organization/ecr-organization-health-authority-west": {
+			"base": "Organization-ecr-organization-health-authority-west.html",
+			"defns": "Organization-ecr-organization-health-authority-west-definitions.html"
+		},
+		"StructureDefinition/ecr-organization": {
+			"base": "StructureDefinition-ecr-organization.html",
+			"defns": "StructureDefinition-ecr-organization-definitions.html"
+		},
+		"Organization/ecr-organization-salem-medical-center": {
+			"base": "Organization-ecr-organization-salem-medical-center.html",
+			"defns": "Organization-ecr-organization-salem-medical-center-definitions.html"
+		},
+		"StructureDefinition/ecr-patient": {
+			"base": "StructureDefinition-ecr-patient.html",
+			"defns": "StructureDefinition-ecr-patient-definitions.html"
+		},
+		"StructureDefinition/ecr-practitionerrole": {
+			"base": "StructureDefinition-ecr-practitionerrole.html",
+			"defns": "StructureDefinition-ecr-practitionerrole-definitions.html"
+		},
+		"StructureDefinition/eicr-composition": {
+			"base": "StructureDefinition-eicr-composition.html",
+			"defns": "StructureDefinition-eicr-composition-definitions.html"
+		},
+		"StructureDefinition/eicr-condition": {
+			"base": "StructureDefinition-eicr-condition.html",
+			"defns": "StructureDefinition-eicr-condition-definitions.html"
+		},
+		"StructureDefinition/eicr-encounter": {
+			"base": "StructureDefinition-eicr-encounter.html",
+			"defns": "StructureDefinition-eicr-encounter-definitions.html"
+		},
+		"Observation/rr-eicr-processing-status": {
+			"base": "Observation-rr-eicr-processing-status.html",
+			"defns": "Observation-rr-eicr-processing-status-definitions.html"
+		},
+		"StructureDefinition/eicr-location": {
+			"base": "StructureDefinition-eicr-location.html",
+			"defns": "StructureDefinition-eicr-location-definitions.html"
+		},
+		"Observation/rr-eicr-processing-status-reason": {
+			"base": "Observation-rr-eicr-processing-status-reason.html",
+			"defns": "Observation-rr-eicr-processing-status-reason-definitions.html"
+		},
+		"StructureDefinition/eicr-occupationhistory": {
+			"base": "StructureDefinition-eicr-occupationhistory.html",
+			"defns": "StructureDefinition-eicr-occupationhistory-definitions.html"
+		},
+		"Observation/us-core-observation-results-eve-everywoman-lymphocytes": {
+			"base": "Observation-us-core-observation-results-eve-everywoman-lymphocytes.html",
+			"defns": "Observation-us-core-observation-results-eve-everywoman-lymphocytes-definitions.html"
+		},
+		"StructureDefinition/eicr-procedurerequest": {
+			"base": "StructureDefinition-eicr-procedurerequest.html",
+			"defns": "StructureDefinition-eicr-procedurerequest-definitions.html"
+		},
+		"Observation/eicr-occupation-history-eve-everywoman": {
+			"base": "Observation-eicr-occupation-history-eve-everywoman.html",
+			"defns": "Observation-eicr-occupation-history-eve-everywoman-definitions.html"
+		},
+		"StructureDefinition/eicr-travel-history": {
+			"base": "StructureDefinition-eicr-travel-history.html",
+			"defns": "StructureDefinition-eicr-travel-history-definitions.html"
+		},
+		"StructureDefinition/knowledge-distribution-valueset-library": {
+			"base": "StructureDefinition-knowledge-distribution-valueset-library.html",
+			"defns": "StructureDefinition-knowledge-distribution-valueset-library-definitions.html"
+		},
+		"StructureDefinition/rr-communication": {
+			"base": "StructureDefinition-rr-communication.html",
+			"defns": "StructureDefinition-rr-communication-definitions.html"
+		},
+		"StructureDefinition/rr-eicr-processing-status": {
+			"base": "StructureDefinition-rr-eicr-processing-status.html",
+			"defns": "StructureDefinition-rr-eicr-processing-status-definitions.html"
+		},
+		"Observation/eicr-travel-history-eve-everywoman-1999": {
+			"base": "Observation-eicr-travel-history-eve-everywoman-1999.html",
+			"defns": "Observation-eicr-travel-history-eve-everywoman-1999-definitions.html"
+		},
+		"StructureDefinition/rr-eicr-processing-status-reason": {
+			"base": "StructureDefinition-rr-eicr-processing-status-reason.html",
+			"defns": "StructureDefinition-rr-eicr-processing-status-reason-definitions.html"
+		},
+		"Observation/eicr-travel-history-eve-everywoman-201610": {
+			"base": "Observation-eicr-travel-history-eve-everywoman-201610.html",
+			"defns": "Observation-eicr-travel-history-eve-everywoman-201610-definitions.html"
+		},
+		"StructureDefinition/rr-relevant-reportable-condition-plandefinition": {
+			"base": "StructureDefinition-rr-relevant-reportable-condition-plandefinition.html",
+			"defns": "StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html"
+		},
+		"Observation/eicr-travel-history-eve-everywoman-201801": {
+			"base": "Observation-eicr-travel-history-eve-everywoman-201801.html",
+			"defns": "Observation-eicr-travel-history-eve-everywoman-201801-definitions.html"
+		},
+		"StructureDefinition/rr-responsible-agency": {
+			"base": "StructureDefinition-rr-responsible-agency.html",
+			"defns": "StructureDefinition-rr-responsible-agency-definitions.html"
+		},
+		"StructureDefinition/rr-routing-entity": {
+			"base": "StructureDefinition-rr-routing-entity.html",
+			"defns": "StructureDefinition-rr-routing-entity-definitions.html"
+		},
+		"MedicationStatement/us-core-medicationstatement-eve-everywoman-azithromycin": {
+			"base": "MedicationStatement-us-core-medicationstatement-eve-everywoman-azithromycin.html",
+			"defns": "MedicationStatement-us-core-medicationstatement-eve-everywoman-azithromycin-definitions.html"
+		},
+		"StructureDefinition/rr-rules-authoring-agency": {
+			"base": "StructureDefinition-rr-rules-authoring-agency.html",
+			"defns": "StructureDefinition-rr-rules-authoring-agency-definitions.html"
+		},
+		"StructureDefinition/ecr-knowledge-distribution": {
+			"base": "StructureDefinition-ecr-knowledge-distribution.html",
+			"defns": "StructureDefinition-ecr-knowledge-distribution-definitions.html"
+		},
+		"StructureDefinition/extension-eicr-manually-initiated-reason": {
+			"base": "StructureDefinition-extension-eicr-manually-initiated-reason.html",
+			"defns": "StructureDefinition-extension-eicr-manually-initiated-reason-definitions.html"
+		},
+		"Location/ecr-location-salem-medical-center": {
+			"base": "Location-ecr-location-salem-medical-center.html",
+			"defns": "Location-ecr-location-salem-medical-center-definitions.html"
+		},
+		"StructureDefinition/extension-eicr-travel-history-address": {
+			"base": "StructureDefinition-extension-eicr-travel-history-address.html",
+			"defns": "StructureDefinition-extension-eicr-travel-history-address-definitions.html"
+		},
+		"StructureDefinition/extension-eicr-trigger-code-flag": {
+			"base": "StructureDefinition-extension-eicr-trigger-code-flag.html",
+			"defns": "StructureDefinition-extension-eicr-trigger-code-flag-definitions.html"
+		},
+		"StructureDefinition/extension-rr-determination-of-reportability": {
+			"base": "StructureDefinition-extension-rr-determination-of-reportability.html",
+			"defns": "StructureDefinition-extension-rr-determination-of-reportability-definitions.html"
+		},
+		"StructureDefinition/extension-rr-determination-of-reportability-reason": {
+			"base": "StructureDefinition-extension-rr-determination-of-reportability-reason.html",
+			"defns": "StructureDefinition-extension-rr-determination-of-reportability-reason-definitions.html"
+		},
+		"StructureDefinition/extension-rr-determination-of-reportability-rule": {
+			"base": "StructureDefinition-extension-rr-determination-of-reportability-rule.html",
+			"defns": "StructureDefinition-extension-rr-determination-of-reportability-rule-definitions.html"
+		},
+		"StructureDefinition/extension-rr-eicr-processing-status": {
+			"base": "StructureDefinition-extension-rr-eicr-processing-status.html",
+			"defns": "StructureDefinition-extension-rr-eicr-processing-status-definitions.html"
+		},
+		"StructureDefinition/extension-rr-eicr-receipt-time": {
+			"base": "StructureDefinition-extension-rr-eicr-receipt-time.html",
+			"defns": "StructureDefinition-extension-rr-eicr-receipt-time-definitions.html"
+		},
+		"StructureDefinition/extension-rr-external-resource-type": {
+			"base": "StructureDefinition-extension-rr-external-resource-type.html",
+			"defns": "StructureDefinition-extension-rr-external-resource-type-definitions.html"
+		},
+		"StructureDefinition/extension-rr-location-relevance": {
+			"base": "StructureDefinition-extension-rr-location-relevance.html",
+			"defns": "StructureDefinition-extension-rr-location-relevance-definitions.html"
+		},
+		"Immunization/phcase-pneumo": {
+			"base": "Immunization-phcase-pneumo.html",
+			"defns": "Immunization-phcase-pneumo-definitions.html"
+		},
+		"StructureDefinition/extension-rr-manually-initiated-eicr": {
+			"base": "StructureDefinition-extension-rr-manually-initiated-eicr.html",
+			"defns": "StructureDefinition-extension-rr-manually-initiated-eicr-definitions.html"
+		},
+		"StructureDefinition/extension-rr-priority": {
+			"base": "StructureDefinition-extension-rr-priority.html",
+			"defns": "StructureDefinition-extension-rr-priority-definitions.html"
+		},
+		"Encounter/eicr-encounter-diagnosis-eve-everywoman-20180401": {
+			"base": "Encounter-eicr-encounter-diagnosis-eve-everywoman-20180401.html",
+			"defns": "Encounter-eicr-encounter-diagnosis-eve-everywoman-20180401-definitions.html"
+		},
+		"StructureDefinition/extension-rr-responsible-agency": {
+			"base": "StructureDefinition-extension-rr-responsible-agency.html",
+			"defns": "StructureDefinition-extension-rr-responsible-agency-definitions.html"
+		},
+		"StructureDefinition/extension-rr-routing-entity": {
+			"base": "StructureDefinition-extension-rr-routing-entity.html",
+			"defns": "StructureDefinition-extension-rr-routing-entity-definitions.html"
+		},
+		"Encounter/eicr-encounter-eve-everywoman-20180401": {
+			"base": "Encounter-eicr-encounter-eve-everywoman-20180401.html",
+			"defns": "Encounter-eicr-encounter-eve-everywoman-20180401-definitions.html"
+		},
+		"StructureDefinition/extension-rr-rules-authoring-agency": {
+			"base": "StructureDefinition-extension-rr-rules-authoring-agency.html",
+			"defns": "StructureDefinition-extension-rr-rules-authoring-agency-definitions.html"
+		},
+		"Condition/eicr-condition-eve-everywoman-common-cold": {
+			"base": "Condition-eicr-condition-eve-everywoman-common-cold.html",
+			"defns": "Condition-eicr-condition-eve-everywoman-common-cold-definitions.html"
+		},
+		"StructureDefinition/extension-rr-subject": {
+			"base": "StructureDefinition-extension-rr-subject.html",
+			"defns": "StructureDefinition-extension-rr-subject-definitions.html"
+		},
+		"Condition/eicr-condition-eve-everywoman-pertussis": {
+			"base": "Condition-eicr-condition-eve-everywoman-pertussis.html",
+			"defns": "Condition-eicr-condition-eve-everywoman-pertussis-definitions.html"
+		},
+		"StructureDefinition/extension-rr-summary": {
+			"base": "StructureDefinition-extension-rr-summary.html",
+			"defns": "StructureDefinition-extension-rr-summary-definitions.html"
+		},
+		"StructureDefinition/extension-ecr-organization": {
+			"base": "StructureDefinition-extension-ecr-organization.html",
+			"defns": "StructureDefinition-extension-ecr-organization-definitions.html"
+		},
+		"Composition/eicr-composition-zika": {
+			"base": "Composition-eicr-composition-zika.html",
+			"defns": "Composition-eicr-composition-zika-definitions.html"
+		}
+	},
+	"version": "3.0.1",
+	"fixed-business-version": "1.0.0",
+	"dependencyList": [
+		{
+			"location": "http://hl7.org/fhir/us/core",
+			"name": "uscore",
+			"version": "2.0.0"
+		}
+	]
 }

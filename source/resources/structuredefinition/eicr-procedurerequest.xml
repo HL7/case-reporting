@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="eicr-procedurerequest"/>
+    <meta>
+        <versionId value="4"/>
+        <lastUpdated value="2019-04-11T21:22:00.000-04:00"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-procedurerequest"/>
+    <version value="1.0.0"/>
+    <name value="eicr-procedurerequest"/>
+    <title value="eICR ProcedureRequest"/>
+    <status value="draft"/>
+    <date value="2018-08-01"/>
+    <description value="The Electronic Case Reporting Lab Orders profile establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;- Initial Case Report laboratory orders and other diagnostics for the reported event."/>
+    <fhirVersion value="3.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="ProcedureRequest"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/ProcedureRequest"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="ProcedureRequest">
+            <path value="ProcedureRequest"/>
+            <short value="eICR ProcedureRequest"/>
+            <definition value="Ordered tests for the patient during the encounter."/>
+            <base>
+                <path value="ProcedureRequest"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="ProcedureRequest.identifier">
+            <path value="ProcedureRequest.identifier"/>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="ProcedureRequest.code">
+            <path value="ProcedureRequest.code"/>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <binding>
+                <strength value="extensible"/>
+                <description value="This value set includes all the LOINC codes which relate to Diagnostic Orders."/>
+                <valueSetReference>
+                    <reference value="http://hl7.org/fhir/ValueSet/report-codes"/>
+                </valueSetReference>
+            </binding>
+        </element>
+        <element id="ProcedureRequest.authoredOn">
+            <path value="ProcedureRequest.authoredOn"/>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="ProcedureRequest.requester">
+            <path value="ProcedureRequest.requester"/>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+        </element>
+    </differential>
+</StructureDefinition>

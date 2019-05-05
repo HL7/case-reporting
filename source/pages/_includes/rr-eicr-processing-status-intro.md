@@ -1,14 +1,7 @@
-{% assign id = {{include.id}} %}
-
-
-**eCR Profile: {{site.data.structuredefinitions.[id].name}}**
-
-**Scope and Usage**
-
-{{site.data.structuredefinitions.[id].description}}
-
-
-**Additional Profile specific implementation guidance:**
-
-
 ---
+title: StructureDefinition-rr-eicr-processing-status-intro
+layout: default
+active: StructureDefinition-rr-eicr-processing-status-intro
+---
+
+Indicates the eICR processing status. If it was not processed or was processed with a warning, the reason and details will be contained in the related eICR Processing Status Reason resource.

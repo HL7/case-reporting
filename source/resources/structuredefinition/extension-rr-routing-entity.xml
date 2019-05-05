@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="extension-rr-routing-entity"/>
+    <meta>
+        <versionId value="4"/>
+        <lastUpdated value="2019-04-11T21:25:46.000-04:00"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-routing-entity"/>
+    <version value="1.0.0"/>
+    <name value="extension-rr-routing-entity"/>
+    <title value="Extension Routing Entity"/>
+    <status value="draft"/>
+    <date value="2018-08-01"/>
+    <description value="A Routing Entity is a PHA or other organization identified by the PHA (such as an HIE) to which the eICR and/or the Reportability Response will be provided immediately following the creation of the Reportability Response. This entity may just be acting to route the eICR and Reportability Response on their way to a Responsible Agency."/>
+    <fhirVersion value="3.0.1"/>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <contextType value="resource"/>
+    <context value="PlanDefinition.jurisdiction"/>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Extension">
+            <path value="Extension"/>
+            <short value="Routing Entity"/>
+            <definition value="A Routing Entity is a PHA or other organization identified by the PHA (such as an HIE) to which the eICR and/or the Reportability Response will be provided immediately following the creation of the Reportability Response. This entity may just be acting to route the eICR and Reportability Response on their way to a Responsible Agency."/>
+            <min value="1"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-routing-entity"/>
+        </element>
+        <element id="Extension.value[x]:valueReference">
+            <path value="Extension.valueReference"/>
+            <sliceName value="valueReference"/>
+            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity"/>
+            </type>
+        </element>
+    </differential>
+</StructureDefinition>

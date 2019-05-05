@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="extension-rr-subject"/>
+    <meta>
+        <versionId value="4"/>
+        <lastUpdated value="2019-04-11T21:25:56.000-04:00"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-subject"/>
+    <version value="1.0.0"/>
+    <name value="extension-rr-subject"/>
+    <title value="Extension Reportability Response Subject"/>
+    <status value="draft"/>
+    <date value="2018-08-01"/>
+    <description value="A short high-level description of the determination of reportability. This information can be used to route and prioritize Reportability Responses in a work queue or an email subject."/>
+    <fhirVersion value="3.0.1"/>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <contextType value="datatype"/>
+    <context value="Communication.topic"/>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Extension">
+            <path value="Extension"/>
+            <short value="Reportability Response Subject"/>
+            <definition value="A short high-level description of the determination of reportability. This information can be used to route and prioritize Reportability Responses in a work queue or an email subject."/>
+            <max value="1"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-subject"/>
+        </element>
+        <element id="Extension.value[x]:valueMarkdown">
+            <path value="Extension.valueMarkdown"/>
+            <sliceName value="valueMarkdown"/>
+            <min value="1"/>
+            <type>
+                <code value="markdown"/>
+            </type>
+        </element>
+    </differential>
+</StructureDefinition>
