@@ -3,22 +3,32 @@
     xmlns="http://hl7.org/fhir">
     <id value="extension-rr-determination-of-reportability-rule"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2019-04-11T22:16:41.000-04:00"/>
+        <versionId value="5"/>
+        <lastUpdated value="2019-05-29T19:59:08.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-determination-of-reportability-rule"/>
     <version value="1.0.0"/>
-    <name value="Extension Determination of Reportability Rule"/>
+    <name value="ExtensionRRDeterminationofReportabilityRule"/>
     <title value="Determination of Reportability Rule"/>
     <status value="draft"/>
     <date value="2018-08-01"/>
     <publisher value="PHER"/>
     <description value="A rule that led to the determination of reportability."/>
-    <fhirVersion value="3.0.1"/>
+    <fhirVersion value="4.0.0"/>
     <kind value="complex-type"/>
     <abstract value="false"/>
-    <contextType value="resource"/>
-    <context value="PlanDefinition"/>
+    <context>
+        <type value="element"/>
+        <expression value="PlanDefinition"/>
+    </context>
     <type value="Extension"/>
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
     <derivation value="constraint"/>

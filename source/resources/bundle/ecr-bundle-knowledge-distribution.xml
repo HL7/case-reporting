@@ -3,8 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="ecr-bundle-knowledge-distribution"/>
     <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2019-04-10T19:02:04.000-04:00"/>
+        <versionId value="2"/>
+        <lastUpdated value="2019-05-20T20:07:35.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
     </meta>
     <type value="collection"/>
     <entry>
@@ -31,104 +39,26 @@
                 <relatedArtifact>
                     <type value="depends-on"/>
                     <display value="RCTC Value Set Bundle of Trigger Codes"/>
-                    <resource>
-                        <reference value="http://hl7.org/fhir/us/ecr/Library/rctc"/>
-                    </resource>
                 </relatedArtifact>
                 <action id="orchestration">
                     <description value="orchestration"/>
                     <textEquivalent value="Pick between the two sequence options based on rules processing: Healthcare-based processing, or RCKMS Rules Processing on AIMS Platform"/>
-                    <triggerDefinition id="diagnosis">
-                        <type value="data-added"/>
-                        <eventName value="Diagnoses or problems documented in a clinical record."/>
-                        <eventData>
-                            <type value="Condition"/>
-                            <codeFilter>
-                                <path value="code"/>
-                                <valueSetReference>
-                                    <reference value="http://hl7.org/fhir/us/ecr/ValueSet/dxtc"/>
-                                </valueSetReference>
-                            </codeFilter>
-                        </eventData>
-                    </triggerDefinition>
-                    <triggerDefinition id="organism-substance">
-                        <type value="data-added"/>
-                        <eventName value="Nominal laboratory result values documented in a clinical record."/>
-                        <eventData>
-                            <type value="Observation"/>
-                            <codeFilter>
-                                <path value="valueCodeableConcept"/>
-                                <valueSetReference>
-                                    <reference value="http://hl7.org/fhir/us/ecr/ValueSet/ostc"/>
-                                </valueSetReference>
-                            </codeFilter>
-                        </eventData>
-                    </triggerDefinition>
-                    <triggerDefinition id="lab-order-test">
-                        <type value="data-added"/>
-                        <eventName value="Laboratory test names used in orders documented in a clinical record."/>
-                        <eventData>
-                            <type value="Condition"/>
-                            <codeFilter>
-                                <path value="code"/>
-                                <valueSetReference>
-                                    <reference value="http://hl7.org/fhir/us/ecr/ValueSet/lotc"/>
-                                </valueSetReference>
-                            </codeFilter>
-                        </eventData>
-                    </triggerDefinition>
-                    <triggerDefinition id="lab-obs-test">
-                        <type value="data-added"/>
-                        <eventName value="Laboratory test names used in observations documented in a clinical record."/>
-                        <eventData>
-                            <type value="Observation"/>
-                            <codeFilter>
-                                <path value="code"/>
-                                <valueSetReference>
-                                    <reference value="http://hl7.org/fhir/us/ecr/ValueSet/lrtc"/>
-                                </valueSetReference>
-                            </codeFilter>
-                        </eventData>
-                    </triggerDefinition>
-                    <triggerDefinition id="prescription-drugs">
-                        <type value="data-added"/>
-                        <eventName value="Prescription drugs names used in observations documented in a clinical record."/>
-                        <eventData>
-                            <type value="Medication"/>
-                            <codeFilter>
-                                <path value="code"/>
-                                <valueSetReference>
-                                    <reference value="http://hl7.org/fhir/us/ecr/ValueSet/lrtc"/>
-                                </valueSetReference>
-                            </codeFilter>
-                        </eventData>
-                    </triggerDefinition>
                     <selectionBehavior value="exactly-one"/>
                     <action id="healthcare-based">
                         <description value="Healthcare-based Rules processing workflow"/>
                         <textEquivalent value="Rules processing, clinical feedback, eicr, route and send"/>
                         <condition>
                             <kind value="applicability"/>
-                            <description value="healthcare facility has rules processing capability"/>
                         </condition>
                         <action id="rules-processing">
                             <description value="Rules processing"/>
                             <textEquivalent value="Rules Processing is executed on Healthcare platform"/>
-                            <triggerDefinition>
-                                <type value="named-event"/>
-                                <eventName value="orchestration is completed"/>
-                            </triggerDefinition>
                         </action>
                         <action id="clinical-feedback">
                             <description value="clinical feedback"/>
                             <textEquivalent value="create clinical feedback per rules"/>
-                            <triggerDefinition>
-                                <type value="named-event"/>
-                                <eventName value="rules processing is completed"/>
-                            </triggerDefinition>
                             <condition>
                                 <kind value="applicability"/>
-                                <description value="If rules processing determines reportable or may be reportable, then create clinical feedback"/>
                             </condition>
                         </action>
                         <action id="eicr">
@@ -150,23 +80,11 @@
                             <action id="periodic-eicr">
                                 <description value="eICR periodic update"/>
                                 <textEquivalent value="eICR periodic update (y hours) – the time after an initial eICR transmission to send new eICRs as updates for long episodes of care"/>
-                                <triggerDefinition>
-                                    <type value="periodic"/>
-                                    <eventTimingTiming>
-                                        <repeat>
-                                            <frequency value="1"/>
-                                            <period value="48"/>
-                                            <periodUnit value="h"/>
-                                        </repeat>
-                                    </eventTimingTiming>
-                                </triggerDefinition>
                                 <condition>
                                     <kind value="applicability"/>
-                                    <description value="A trigger code was matched, episode of care is still active, and 48 hours have passed after the last eicr was sent"/>
                                 </condition>
                                 <condition>
                                     <kind value="stop"/>
-                                    <description value="episode of care is closed out"/>
                                 </condition>
                                 <relatedAction>
                                     <actionId value="create-eicr"/>
@@ -180,36 +98,16 @@
                             <action id="close-out-eicr">
                                 <description value="eICR episode of care close out"/>
                                 <textEquivalent value="eICR episode of care close out (z hours) – the time after the end of an episode of care for a final eICR will be sent when there has been one or more trigger events"/>
-                                <triggerDefinition>
-                                    <type value="named-event"/>
-                                    <eventName value="Episode of Care close out"/>
-                                    <eventTimingTiming>
-                                        <repeat>
-                                            <boundsDuration>
-                                                <value value="6"/>
-                                                <unit value="h"/>
-                                                <system value="http://unitsofmeasure.org"/>
-                                                <code value="h"/>
-                                            </boundsDuration>
-                                        </repeat>
-                                    </eventTimingTiming>
-                                </triggerDefinition>
                                 <condition>
                                     <kind value="applicability"/>
-                                    <description value="there has been one or more trigger events"/>
                                 </condition>
                             </action>
                         </action>
                         <action id="route-and-send">
                             <description value="route and sent eicr"/>
                             <textEquivalent value="Route and send eicr per rules processing"/>
-                            <triggerDefinition>
-                                <type value="named-event"/>
-                                <eventName value="creation of eicr complete"/>
-                            </triggerDefinition>
                             <condition>
                                 <kind value="applicability"/>
-                                <expression value="RoutingSending() == true"/>
                             </condition>
                         </action>
                     </action>
@@ -235,23 +133,11 @@
                             <action id="periodic-eicr">
                                 <description value="eICR periodic update"/>
                                 <textEquivalent value="eICR periodic update (y hours) – the time after an initial eICR transmission to send new eICRs as updates for long episodes of care"/>
-                                <triggerDefinition>
-                                    <type value="periodic"/>
-                                    <eventTimingTiming>
-                                        <repeat>
-                                            <frequency value="1"/>
-                                            <period value="48"/>
-                                            <periodUnit value="h"/>
-                                        </repeat>
-                                    </eventTimingTiming>
-                                </triggerDefinition>
                                 <condition>
                                     <kind value="applicability"/>
-                                    <description value="A trigger code was matched, episode of care is still active, and 48 hours have passed after the last eicr was sent"/>
                                 </condition>
                                 <condition>
                                     <kind value="stop"/>
-                                    <description value="episode of care is closed out"/>
                                 </condition>
                                 <relatedAction>
                                     <actionId value="create-eicr"/>
@@ -265,49 +151,22 @@
                             <action id="close-out-eicr">
                                 <description value="eICR episode of care close out"/>
                                 <textEquivalent value="eICR episode of care close out (z hours) – the time after the end of an episode of care for a final eICR will be sent when there has been one or more trigger events"/>
-                                <triggerDefinition>
-                                    <type value="named-event"/>
-                                    <eventName value="Episode of Care close out"/>
-                                    <eventTimingTiming>
-                                        <repeat>
-                                            <boundsDuration>
-                                                <value value="6"/>
-                                                <unit value="h"/>
-                                                <system value="http://unitsofmeasure.org"/>
-                                                <code value="h"/>
-                                            </boundsDuration>
-                                        </repeat>
-                                    </eventTimingTiming>
-                                </triggerDefinition>
                                 <condition>
                                     <kind value="applicability"/>
-                                    <description value="there has been one or more trigger events"/>
                                 </condition>
                             </action>
                         </action>
                         <action id="send-clinical-care-platform">
                             <description value="send eicr from clinical care to platform"/>
                             <textEquivalent value="Send from clinical care to platform"/>
-                            <triggerDefinition>
-                                <type value="named-event"/>
-                                <eventName value="Creation of eICR complete"/>
-                            </triggerDefinition>
                         </action>
                         <action id="platform-rules-processing">
                             <description value="platform rules processing"/>
                             <textEquivalent value="Platform rules processing"/>
-                            <triggerDefinition>
-                                <type value="named-event"/>
-                                <eventName value="eICR Received"/>
-                            </triggerDefinition>
                         </action>
                         <action id="create-clinical-feedback">
                             <description value="create clinical feedback per results of rules processing"/>
                             <textEquivalent value="create clinical feedback per rules"/>
-                            <triggerDefinition>
-                                <type value="named-event"/>
-                                <eventName value="rules processing complete"/>
-                            </triggerDefinition>
                         </action>
                     </action>
                 </action>
@@ -339,27 +198,15 @@
                 </effectivePeriod>
                 <relatedArtifact>
                     <type value="composed-of"/>
-                    <resource>
-                        <reference value="http://hl7.org/fhir/us/ecr/ValueSet/dxtc"/>
-                    </resource>
                 </relatedArtifact>
                 <relatedArtifact>
                     <type value="composed-of"/>
-                    <resource>
-                        <reference value="http://hl7.org/fhir/us/ecr/ValueSet/lotc"/>
-                    </resource>
                 </relatedArtifact>
                 <relatedArtifact>
                     <type value="composed-of"/>
-                    <resource>
-                        <reference value="http://hl7.org/fhir/us/ecr/ValueSet/lrtc"/>
-                    </resource>
                 </relatedArtifact>
                 <relatedArtifact>
                     <type value="composed-of"/>
-                    <resource>
-                        <reference value="http://hl7.org/fhir/us/ecr/ValueSet/ostc"/>
-                    </resource>
                 </relatedArtifact>
             </Library>
         </resource>

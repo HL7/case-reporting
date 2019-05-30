@@ -3,8 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="ecr-device-software-ymca"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2019-05-05T12:09:46.000-04:00"/>
+        <versionId value="1"/>
+        <lastUpdated value="2019-05-20T20:11:17.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
     </meta>
     <text>
         <status value="generated"/>
@@ -15,25 +23,32 @@
             </p>
             <p>
                 <b> id</b> : software
+            
             </p>
             <p>
                 <b> identifier</b> : YMCA
+            
             </p>
             <p>
                 <b> type</b> : YMCA Software 
+                
                 <span> (Details )</span>
             </p>
             <p>
                 <b> manufacturer</b> : Acme Devices, Inc
+            
             </p>
             <p>
                 <b> version</b> : 10.23-23423
+            
             </p>
             <p>
                 <b> contact</b> : http://acme.com
+            
             </p>
             <p>
                 <b> url</b> : 
+                
                 <a> http://acme.com/ymca/software/</a>
             </p>
         </div>
@@ -42,11 +57,13 @@
         <system value="http://acme.com/software/client-ids"/>
         <value value="goodhealth"/>
     </identifier>
+    <manufacturer value="Acme Devices, Inc"/>
     <type>
         <text value="EHR"/>
     </type>
-    <manufacturer value="Acme Devices, Inc"/>
-    <version value="10.23-23423"/>
+    <version>
+        <value value="10.23-23423"/>
+    </version>
     <contact>
         <system value="url"/>
         <value value="http://acme.com"/>

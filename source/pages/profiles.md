@@ -1,114 +1,253 @@
 ---
-title: Profiles, Extensions & Transactions
+title: Profiles defined as part of this Guide
 layout: default
-active: Profiles, Extensions & Transactions
+active: profiles
 ---
 
-### Electronic Initial Case Report (eICR) Transaction and Profiles
+<!-- { :.no_toc } -->
 
-The eICR transaction involves the transmission of data identified by a Council of State and Territorial Epidemiologists Task Force as being important to a case report.
-It also includes the trigger codes that matched to initiate the report, a step toward a structured travel history, and a vital sign snapshot.
-The eICR is conveyed as an unsolicited push transaction from healthcare to public health.
-There may be several different intermediaries involved in the transmission including Health Information Exchanges, Health Data Networks, and the Association of Public Health Laboratories (APHL) AIMS platform. 
+<!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
 
-In this implementation guide the reference transport transaction is a FHIR POST, but other transport mechanisms may be added or substituted as the data travel to the appropriate public health agencies.
-In the FHIR eICR transaction to PHAs the RR payload may be added to provide the PHAs with information about what has been determined to be reportable, what PHAs have been sent eICR information, and what else has been communicated to healthcare.
+* Do not remove this line (it will not be displayed)
+{:toc}
 
-The following profiles and extensions have been defined for the eICR transactions
-
-#### Profiles
-<ul>
-  <li><a href="StructureDefinition-eicr-composition.html">eICR Composition</a></li>
-  <li><a href="StructureDefinition-ecr-patient.html">eICR Patient</a></li>
-  <li><a href="StructureDefinition-ecr-organization.html">eCR Organization</a></li>
-  <li><a href="StructureDefinition-eicr-encounter.html">eICR Encounter</a></li>
-  <li><a href="StructureDefinition-eicr-procedurerequest.html">eICR Lab Orders</a></li>
-  <li><a href="StructureDefinition-eicr-location.html">eICR Location</a></li>
-  <li><a href="StructureDefinition-pregnancy-status.html">Pregnancy Status</a></li>
-  <li><a href="StructureDefinition-eicr-travel-history.html">eICR Travel History</a></li>
-  <li><a href="StructureDefinition-eicr-occupationhistory.html">eICR Occupation History</a></li>
-</ul>
-
-#### Extensions
-<ul>
-  <li><a href="StructureDefinition-extension-eicr-trigger-code-flag.html">eICR Trigger Code Flag</a></li>
-  <li><a href="StructureDefinition-extension-eicr-manually-initiated-reason.html">eICR Manually Initiated Reason</a></li>
-  <li><a href="StructureDefinition-extension-eicr-travel-history-address.html">Travel History Address</a></li>
-</ul>
+<!-- end TOC -->
 
 ---
 <br />
 
-### Reportability Response (RR) Transaction and Profiles
+### Profiles
 
-The RR transaction represents a response from public health to healthcare associated with a received eICR.
-It can include determination of reportability information, contact information for the involved public health agencies, and requests for case investigation supplemental data that may not have been recorded in the process of care, condition-specific information from public health, and an acknowledgment that report has been successfully conveyed. 
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="StructureDefinition-eicr-condition.html">EcrCondition</a></td>
+<td>The Electronic Case Reporting Condition profile is based on the **US Core-Condition** profile and establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:
 
-When public health reporting rules are distributable to healthcare some of this information will be conveyed in the Knowledge Distribution transaction so that it can be accessed by the healthcare rules engine.
-The RR is conveyed as a push transaction from public health to healthcare.
-There may be several different intermediaries involved in its transmission including Health Information Exchanges and Health Data Networks.
-The RR may originate from the Association of Public Health Laboratories (APHL) AIMS platform when public health decision support (the Reportable Condition Knowledge Management System - RCKMS) is used there or directly from a Public Health Agency if they received the eICR directly from healthcare. 
+   -  Initial Case Report signs, symptoms and diagnoses related to an event.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-ecr-knowledge-distribution.html">EcrKnowledgeDistribution</a></td>
+<td>Defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-ecr-organization.html">EcrOrganization</a></td>
+<td>The Electronic Case Reporting Organization profile is based on the **US Core-Organization** profile and establishes the core elements, extensions, vocabularies and value sets for representing the following organizations for electronic case reporting:
 
-In this implementation guide the reference transport transaction is a FHIR POST, but other transport mechanisms may be added or substituted as the data wend their way back to the source of the related eICR.
-Once received by healthcare, the RR information is intended to support Providers and Reporters and be attached to patient charts or placed in work queues so as to notify personnel of reportable and possibly reportable conditions.
-It also should be provided to EHR System Administrators to confirm reporting and convey error and warning messages.
+- Initial Case Report source provider facility/office name
+- Initial Case Report source facility
+- Reportability Response recipients
+- Reportability Response responsible agency  
+- Reportability Response routing entity
+- Reportability Response rules authoring agency</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-ecr-patient.html">EcrPatient</a></td>
+<td>This profile represents an eCR Patient. It is based on the US Core Patient and further restricts that profile to allow masking of some elements.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-ecr-practitionerrole.html">EcrPractitionerRole</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-eicr-composition.html">EicrComposition</a></td>
+<td>The Electronic Case Reporting Composition profile establishes the core elements, extensions, vocabularies and value sets for representing an electronic initial case report (eICR). It describes the content requirements for the initial Case Report including:         
 
-The following profiles and extensions have been defined for the Reportability Response transactions.
+- Patient demographics         
+- Patient pregnancy status         
+- Patient occupation and travel history         
+- Provider and Facility information         
+- Laboratory orders tests and results         
+- Signs and Symptoms and Diagnosis         
+- Medication and Immunization History         
+- Flags for the existence of reportable condition trigger codes in diagnoses and ordered/resulted laboratory tests.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-eicr-encounter.html">EicrEncounter</a></td>
+<td>The Electronic Case Reporting Encounter profile is based on the Encounter resource and establishes the core elements, extensions, vocabularies and value sets for representing the following encounters for electronic case reporting:
 
-#### Profiles
-<ul>
-  <li><a href="StructureDefinition-rr-communication.html">Reportability Response Communication</a></li>
-  <li><a href="StructureDefinition-rr-relevant-reportable-condition-plandefinition.html">Relevant Reportable Condition PlanDefinition</a></li>
-  <li><a href="StructureDefinition-rr-rules-authoring-agency.html">Rules Authoring Agency</a></li>
-  <li><a href="StructureDefinition-rr-responsible-agency.html">Responsible Agency</a></li>
-  <li><a href="StructureDefinition-rr-routing-entity.html">Routing Entity</a></li>
-  <li><a href="StructureDefinition-rr-eicr-processing-status.html">eICR Processing Status</a></li>
-  <li><a href="StructureDefinition-rr-eicr-processing-status-reason.html">eICR Processing Status Reason</a></li>
-  <li><a href="StructureDefinition-ecr-organization.html">eCR Organization</a></li>
-  <li><a href="StructureDefinition-eicr-encounter.html">eICR Encounter</a></li>
-</ul>
+- Initial Case Report encounter related to the reported event.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-eicr-location.html">EicrLocation</a></td>
+<td>The location/facility in which care was provided when the case was triggered.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-eicr-occupationhistory.html">EicrOccupationHistory</a></td>
+<td>The Electronic Case Reporting Occupational History profile establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:
 
-#### Extensions
-<ul>
-  <li><a href="StructureDefinition-extension-rr-subject.html">Extension Reportability Response Subject</a></li>
-  <li><a href="StructureDefinition-extension-rr-summary.html">Extension Reportability Response Summary</a></li>
-  <li><a href="StructureDefinition-extension-ecr-practitionerrole.html">Extension PractitionerRole reference</a></li>
-  <li><a href="StructureDefinition-extension-rr-location-relevance.html">Extension Location Relevance</a></li>
-  <li><a href="StructureDefinition-extension-rr-manually-initiated-eicr.html">Extension Manually Initiated eICR</a></li>
-  <li><a href="StructureDefinition-extension-rr-eicr-processing-status.html">Extension eICR Processing Status</a></li>
-  <li><a href="StructureDefinition-extension-rr-determination-of-reportability.html">Extension Determination of Reportability</a></li>
-  <li><a href="StructureDefinition-extension-rr-determination-of-reportability-reason.html">Extension Determination of Reportability Reason</a></li>
-  <li><a href="StructureDefinition-extension-rr-determination-of-reportability-rule.html">Extension Determination of Reportability Rule</a></li>
-  <li><a href="StructureDefinition-extension-rr-external-resource-type.html">Extension External Resource Type</a></li>
-  <li><a href="StructureDefinition-extension-rr-priority.html">Extension External Resource Priority</a></li>
+-  The Initial Case Report subject's occupational history.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-eicr-servicerequest.html">EicrServiceRequest</a></td>
+<td>The Electronic Case Reporting ServiceRequest profile establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:
 
-</ul>
+- Initial Case Report laboratory orders and other diagnostics for the reported event.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-eicr-travel-history.html">EicrTravelHistory</a></td>
+<td>The Electronic Case Reporting Travel History profile establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:
 
----
-<br/>
+-  The Initial Case Report subject's travel history as a string, an address or a coded location.
+-  Observation.effectiveTime contains the date or period of time spent in the location.
+-  It is possible to have multiple Observation.components, each containing a different location, but there is only a single effectiveTime. This allows for cases where a patient cannot remember exact dates of travel (e.g. I traveled to London, Paris, and Berlin in July and August 2016). However, most uses will involve a single component (location).
+-  Free text describing the travel history details and location can be entered using the Observation.component.valueCodeableConcept.text element
+-  Use component.codeableConcept to record a coded location
+-  Use component.extension to record a specific address</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-knowledge-distribution-valueset-library.html">KnowledgeDistributionValuesetLibrary</a></td>
+<td>Defines the library containing the Reportable Condition Trigger Code value sets. These are used in Public Health as trigger codes to kick off creation of electronic initial case reports and reportability responses. </td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-pregnancy-status.html">PregnancyStatus</a></td>
+<td>The Electronic Case Reporting Pregnancy profile establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:
 
-### Knowledge Distribution Transaction and Profiles
+- Current or prior pregnancy status enabling investigators to determine if the subject of the case report was pregnant during the course of a condition.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-rr-communication.html">RRCommunication</a></td>
+<td>This Reportability Response Communication will be created in response to an electronic Initial Case Report Composition and the sharing of the Reportability Response with clinical care will serve several functions, including to: 
 
-The Knowledge Distribution transaction includes a constrained FHIR PlanDefinition resource profile and bundle, a family of actions, and a FHIR Subscription service. 
-It supports the distribution of reporting guidance and parameters, trigger code value sets, and more complex reporting rules and clinician / reporter support resources.
-This work seeks to align with developing public health guidelines that cover the same conditions.
-The PlanDefinition includes guidance for the overall orchestration of electronic case reporting.
-Each member of the family of actions (Triggering, Rule Processing, Clinical Feedback, Creation of eICR, Routing and Sending) aligns with what may be different healthcare information systems or modules involved in reporting.
-The narrative elements of this profile will be used to help structure and guide implementation until EHRs have the ability to automatically consume them. 
+- Communicate the reportability status, for the responsible PHA(s)of each condition included in the electronic Initial Case Report (eICR)     
+- Identify who (a PHA or an intermediary) prepared the Reportability Response     
+- Indicate whether the eICR has been sent to one or more PHA(s)     
+- Identify which PHA(s) has/have been sent the eICR     
+- Provide contact information for the responsible PHA(s)     
+- Provide suggested or required clinical follow-up activities from the responsible PHA(s), including any additional reporting needs or infection control activities     
+- Provide access to clinical support resources suggested by the responsible PHA(s) for identified reportable conditions     
+- Confirm eICR receipt and processing     
 
-Triggering value sets and metadata can be used for EHR implementations whether they are FHIR-based or not.
-Through the Rules Processing action, this implementation guide seeks to help advance EHR-based, or EHR API-connected rules engine capabilities that can run under clinical data authorities as the industry can support them.
-While there may be circumstances, in conjunction with appropriate guidelines, where clinical personal are "alerted" to a particular reportable condition, for the most part the Clinical Feedback action involves attaching information to a patient's chart or queuing information for providers and reporters.
-The Creation of the eICR action involves the marshaling of FHIR resources needed to create the eICR profile included in this standard.
-And the Sending of the eICR action involves the transmission of the eICR to either the APHL AIMS Platform, a Public Health Agency (PHA), or a Health information Exchange or Health Data Network on the way to a PHA.
+A Reportability Response will also, when requested, be shared with the responsible PHAs (when they have not constructed it) for their internal use, so they understand what has been shared with clinical care and, and to monitor/audit decision support algorithm effectivesness and implementation. When a condition is considered reportable to more than one PHA, the Reportability Response can be helpful in communicating reporting that has been done to other PHAs.     
 
-The FHIR subscription service supports public health needs for the routine and emergent distribution of the Knowledge Distribution.
-The Subscription does not require FHIR implementation on the receiving (EHR) end of the transaction, but can provide XML or JSON formats via RESTful query or proactive notification channels. 
+The Reportability Response Communication is also structured to allow:     
 
-<ul>
-  <li><a href="StructureDefinition-ecr-knowledge-distribution.html">eCR Knowledge Distribution PlanDefinition</a></li>
-</ul>
+- Notification, alerting, routing and queueing in work or message management systems for healthcare personnel     
+- Dynamic and static URIs for supplemental data collection and the provision of information resources</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-rr-relevant-reportable-condition-plandefinition.html">RRRelevantReportableConditionPlandefinition</a></td>
+<td>The Relevant Reportable Condition Information PlanDefinition establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:
 
-<ul>
-  <li><a href="StructureDefinition-knowledge-distribution-valueset-library.html">Knowledge Distribution Valueset Library</a></li>
-</ul>
+-  The Reportability Response case definitions and reporting requirements which include:
+
+   -  The data that are needed to determine reportability
+   -  For a given condition , the mandated timeframe in which the condition should be reported to the PHA.
+   
+-  The name of the Responsible Agency(ies) in which the condition was determined to be or not be reportable
+-  The External Resources (text and links)in association with specific conditions</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-rr-responsible-agency.html">RRResponsibleAgency</a></td>
+<td>The Responsible Agency profile is based on the US Core Organization and sets the type to 'Responsible Agency'. A Responsible Agency is a PHA to which reporting is legally required. This represents the PHA for the location in which care was provided and/or where the patient lives.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-rr-routing-entity.html">RRRoutingEntity</a></td>
+<td>The Routing Entity profile is based on the US Core Organization and sets the type to 'Routing Entity'.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-rr-rules-authoring-agency.html">RRRulesAuthoringAgency</a></td>
+<td>The Rules Authoring Agency profile is based on the US Core Organization and sets the type to 'Rules Authoring Agency'. The Rules Authoring Agency is whose rules are being executed in decision support to determine reportability. This may be a State or Local PHA. In the majority of cases the Rules Authoring Agency will be the same as the Responsible Agency. Usually, a Local Public Health Agency will inherit rules from its relevant State agency, but a Local agency can adopt, replace or supplement relevant state rules.</td>
+</tr>
+</tbody>
+</table>
+
+
+### Extensions
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="StructureDefinition-extension-ecr-organization.html">ExtensionEcrOrganization</a></td>
+<td>This extension represents an eCR Organization</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-extension-eicr-manually-initiated-reason.html">ExtensionEicrManuallyInitiatedReason</a></td>
+<td>The presence of this extension indicates this eICR was manually initiated and contains the reason for manual initiation of the eICR.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-extension-eicr-travel-history-address.html">ExtensionEicrTravelHistoryAddress</a></td>
+<td>Where the patient traveled to as an address e.g.country, state, city, street address if applicable. At the least, address must contain the country.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-extension-eicr-trigger-code-flag.html">ExtensionEicrTriggerCodeFlag</a></td>
+<td>A flag which, if it is present, indicates that the **target** reference represents a triggering event and caused the eCR to be generated. It also contains the identifier and version of the RCTC value from which the code was matched. It is used in the eICR profile in the following sections:
+- Encounters Section- Problem Section
+- Plan of Treatment Section- Results Section</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-extension-rr-determination-of-reportability.html">ExtensionRRDeterminationOfReportability</a></td>
+<td>This extension represents the determination of reportability. Reportability is "the quality or state of being reportable or not". Reportability does not equate to the patient having a condition or meeting a case definition (definitively being “a case”).
+
+For each condition included in the eICR and the relevant public health agency(s), this element indicates the determination of whether the condition is reportable to public health. 
+
+The values that can be used for the Determination of Reportability are described below.
+
+A possible condition is:
+
+- Reportable - The information provided meets reporting criteria for an associated PHA.
+
+A possible condition:
+
+- May be Reportable - The information provided may meet reporting criteria if additional information is provided. The Reportability Response will also be able to share the information needed to definitively determine reportability.
+
+A possible condition is:
+
+- Not Reportable - The information provided conclusively does not meet reporting criteria.
+
+Some decision support systems may not be able to fully differentiate between possible conditions that are Not Reportable and those that May be Reportable if additional information is provided. In these circumstances there may only be a reportability determination of:
+
+- No Reporting Rule Met - The information provided does not meet reporting criteria or may meet reporting criteria if additional information is provided.
+
+The determination of No Reporting Rule Met may be provided for a possible condition or for all conditions in the  eICR.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-extension-rr-determination-of-reportability-reason.html">ExtensionRRDeterminationOfReportabilityReason</a></td>
+<td>The reason for the determination of reportability.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-extension-rr-determination-of-reportability-rule.html">ExtensionRRDeterminationofReportabilityRule</a></td>
+<td>A rule that led to the determination of reportability.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-extension-rr-eicr-processing-status.html">ExtensionRREicrProcessingStatus</a></td>
+<td>This extension indicates the eICR processing status. If the eICR was not processed or was processed with a warning, the reason will be contained in the eICR Processing Status Reason. If there is any output from a validator, that output will be contained in the eICR Validation Output.
+
+If any of the trigger codes used to generate the eICR are from an outdated version of the RCTC or the codes are marked as inactive in the latest version of the RCTC, these are flagged and and the eICR Processing Status Reason Detail will hold the details of the outdated and expected versions of the RCTC.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-extension-rr-eicr-receipt-time.html">ExtensionRREicrReceiptTime</a></td>
+<td>Date and time of eICR receipt</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-extension-rr-external-resource-type.html">ExtensionRRExternalResourceType</a></td>
+<td>Type/category of one or more external resources.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-extension-rr-location-relevance.html">ExtensionRRLocationRelevance</a></td>
+<td>A code indicating whether the responsible PHA is relevant because of the patient's home address, the provider facility address, or both.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-extension-rr-manually-initiated-eicr.html">ExtensionRRManuallyInitiatedEicr</a></td>
+<td>This extension indicates whether or not the eICR CDA document for which this Reportability Response is a response, was manually initiated by the provider. The eICR could also contain RCTC trigger codes.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-extension-rr-priority.html">ExtensionRRPriority</a></td>
+<td>Priority given to the whole communication or one or more external resources.</td>
+</tr>
+</tbody>
+</table>
+
+

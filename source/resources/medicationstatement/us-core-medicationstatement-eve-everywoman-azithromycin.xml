@@ -3,9 +3,17 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-core-medicationstatement-eve-everywoman-azithromycin"/>
     <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2019-04-10T19:02:31.000-04:00"/>
+        <versionId value="2"/>
+        <lastUpdated value="2019-05-20T20:12:36.000-04:00"/>
         <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationstatement"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
     </meta>
     <text>
         <status value="generated"/>
@@ -16,33 +24,43 @@
             </p>
             <p>
                 <b>id</b>: us-core-medicationstatement-eve-everywoman-azithromycin
+            
             </p>
             <p>
                 <b>meta</b>: 
+            
             </p>
             <p>
                 <b>status</b>: active
+            
             </p>
             <p>
                 <b>medication</b>: Azithromycin 500 MG Oral Tablet 
         
+                
                 <span style="background: LightGoldenRodYellow">(Details : {RxNorm code '248656' = 'azithromycin 500 MG Oral Tablet', given as 'Azithromycin 500 MG Oral Tablet'})</span>
             </p>
             <p>
                 <b>effective</b>: 07/03/2018 --&gt; 07/03/2018
+            
             </p>
             <p>
                 <b>dateAsserted</b>: 07/03/2018 10:27:03 PM
+            
             </p>
             <p>
                 <b>subject</b>: 
         
+                
                 <b>name</b>: Eve Everywoman 
         
+                
                 <b>identifier</b>: Medical Record Number = 1032702 (http://hospital.smarthealthit.org), SSN = 11-00-1234 (USUAL)
+            
             </p>
             <p>
                 <b>dosage</b>: 1 TAB
+            
             </p>
         </div>
     </text>
@@ -55,16 +73,15 @@
         </coding>
         <text value="Azithromycin 500 MG Oral Tablet"/>
     </medicationCodeableConcept>
+    <subject>
+        <reference value="Patient/ecr-patient-eve-everywoman"/>
+        <display value="Eve Everywoman"/>
+    </subject>
     <effectivePeriod>
         <start value="2018-03-07"/>
         <end value="2018-03-07"/>
     </effectivePeriod>
     <dateAsserted value="2018-03-07T10:27:03Z"/>
-    <subject>
-        <reference value="Patient/ecr-patient-eve-everywoman"/>
-        <display value="Eve Everywoman"/>
-    </subject>
-    <taken value="y"/>
     <dosage>
         <timing>
             <repeat>
@@ -79,11 +96,5 @@
                 <userSelected value="false"/>
             </coding>
         </route>
-        <doseQuantity>
-            <value value="1"/>
-            <unit value="TAB"/>
-            <system value="http://hl7.org/fhir/v3/orderableDrugForm"/>
-            <code value="TAB"/>
-        </doseQuantity>
     </dosage>
 </MedicationStatement>

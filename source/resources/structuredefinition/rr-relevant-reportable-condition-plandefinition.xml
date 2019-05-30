@@ -3,17 +3,25 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-relevant-reportable-condition-plandefinition"/>
     <meta>
-        <versionId value="6"/>
-        <lastUpdated value="2019-05-05T14:15:05.000-04:00"/>
+        <versionId value="4"/>
+        <lastUpdated value="2019-05-30T01:54:21.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
     <version value="1.0.0"/>
-    <name value="rr-relevant-reportable-condition-plandefinition"/>
+    <name value="RRRelevantReportableConditionPlandefinition"/>
     <title value="Relevant Reportable Condition PlanDefinition"/>
     <status value="draft"/>
     <date value="2018-08-01"/>
     <description value="The Relevant Reportable Condition Information PlanDefinition establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;-  The Reportability Response case definitions and reporting requirements which include:&#xA;&#xA;   -  The data that are needed to determine reportability&#xA;   -  For a given condition , the mandated timeframe in which the condition should be reported to the PHA.&#xA;   &#xA;-  The name of the Responsible Agency(ies) in which the condition was determined to be or not be reportable&#xA;-  The External Resources (text and links)in association with specific conditions"/>
-    <fhirVersion value="3.0.1"/>
+    <fhirVersion value="4.0.0"/>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="PlanDefinition"/>
@@ -235,6 +243,8 @@
             <path value="PlanDefinition.action"/>
             <short value="External resources and related information"/>
             <definition value="Contains one or more external resources and information related to that resource."/>
+            <min value="1"/>
+            <max value="1"/>
             <mustSupport value="true"/>
             <isModifier value="false"/>
         </element>
@@ -259,6 +269,8 @@
         <element id="PlanDefinition.action.documentation.extension:externalResourceType">
             <path value="PlanDefinition.action.documentation.extension"/>
             <sliceName value="externalResourceType"/>
+            <min value="1"/>
+            <max value="1"/>
             <type>
                 <code value="Extension"/>
                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-external-resource-type"/>
@@ -268,6 +280,8 @@
         <element id="PlanDefinition.action.documentation.extension:externalResourcePriority">
             <path value="PlanDefinition.action.documentation.extension"/>
             <sliceName value="externalResourcePriority"/>
+            <min value="1"/>
+            <max value="1"/>
             <type>
                 <code value="Extension"/>
                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-priority"/>

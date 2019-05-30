@@ -3,9 +3,17 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-communication-single-single"/>
     <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2019-04-10T19:02:31.000-04:00"/>
+        <versionId value="1"/>
+        <lastUpdated value="2019-05-20T20:08:58.000-04:00"/>
         <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
     </meta>
     <text>
         <status value="additional"/>
@@ -26,6 +34,7 @@
       reporting to public health is needed for a patient. "Zika virus disease (disorder)"
       is reportable to "State Department of Health". An initial case report was sent to
       "State Department of Health". Additional information may be required for this report.
+                
                 <br/>
             </p>
             <ul>
@@ -35,13 +44,17 @@
                 <li>
                     <p>Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here. (
             
+                        
                         <a href="http://statedepartmentofhealth.gov/epi/disease/zika/Supplemental_data_form.pdf">Link</a>- Immediate action required)
+                    
                     </p>
                 </li>
                 <li>
                     <p>Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy. (
             
+                        
                         <a href="http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf">Link</a>- Immediate action requested)
+                    
                     </p>
                 </li>
             </ul>
@@ -63,14 +76,11 @@
         <reference value="Patient/ecr-patient-eve-everywoman"/>
         <display value="Eve Everywoman"/>
     </subject>
+    <sent value="2018-07-19T04:09:06Z"/>
     <recipient>
         <reference value="Practitioner/ecr-practitioner-henry-seven"/>
         <display value="Henry Seven, MD"/>
     </recipient>
-    <topic>
-        <display value="Public Health Reporting Communication: one or more conditions are reportable, or may be reportable, to public health."/>
-    </topic>
-    <sent value="2018-07-19T04:09:06Z"/>
     <sender>
         <reference value="Organization/ecr-organization-health-authority-west"/>
         <display value="Health Authority West, 7777 Health Authority Drive, Ann Arbor MI, 99999"/>

@@ -3,22 +3,35 @@
     xmlns="http://hl7.org/fhir">
     <id value="extension-eicr-trigger-code-flag"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2019-04-16T22:48:25.000-04:00"/>
+        <versionId value="4"/>
+        <lastUpdated value="2019-05-29T20:40:16.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag"/>
     <version value="1.0.0"/>
-    <name value="extension-eicr-trigger-code-flag"/>
+    <name value="ExtensionEicrTriggerCodeFlag"/>
     <title value="eICR Trigger Code Flag"/>
     <status value="draft"/>
     <date value="2018-08-01"/>
     <description value="A flag which, if it is present, indicates that the **target** reference represents a triggering event and caused the eCR to be generated. It also contains the identifier and version of the RCTC value from which the code was matched. It is used in the eICR profile in the following sections:&#xD;&#xD;&#xA;- Encounters Section&#xD;- Problem Section&#xD;&#xA;- Plan of Treatment Section&#xD;- Results Section"/>
-    <fhirVersion value="3.0.1"/>
+    <fhirVersion value="4.0.0"/>
     <kind value="complex-type"/>
     <abstract value="false"/>
-    <contextType value="resource"/>
-    <context value="Reference"/>
-    <context value="Encounter.diagnosis"/>
+    <context>
+        <type value="element"/>
+        <expression value="Composition.section.entry"/>
+    </context>
+    <context>
+        <type value="element"/>
+        <expression value="Encounter.diagnosis"/>
+    </context>
     <type value="Extension"/>
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
     <derivation value="constraint"/>

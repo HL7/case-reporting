@@ -3,8 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="ecr-message-header-ehr-requested-eicr"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2019-05-05T12:16:01.000-04:00"/>
+        <versionId value="1"/>
+        <lastUpdated value="2019-05-20T20:12:50.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
     </meta>
     <text>
         <status value="generated"/>
@@ -13,10 +21,6 @@
             <p>Generated info</p>
         </div>
     </text>
-    <event>
-        <system value="http://example.org/fhir/message-events"/>
-        <code value="process-ecr"/>
-    </event>
     <destination>
         <name value="YMCA Acme Message Gateway"/>
         <target>
@@ -27,7 +31,6 @@
     <sender>
         <reference value="Organization/ecr-organization-salem-medical-center"/>
     </sender>
-    <timestamp value="2019-05-04T15:10:14Z"/>
     <source>
         <name value="Acme Central Patient Registry"/>
         <software value="FooBar Patient Manager"/>

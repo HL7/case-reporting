@@ -3,8 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="server"/>
     <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2019-04-10T19:02:04.000-04:00"/>
+        <versionId value="2"/>
+        <lastUpdated value="2019-05-20T22:18:02.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
     </meta>
     <text>
         <status value="generated"/>
@@ -25,87 +33,10 @@
     <date value="2018-08-01"/>
     <description value="This resource defines the expected capabilities "/>
     <kind value="requirements"/>
-    <fhirVersion value="3.0.1"/>
-    <acceptUnknown value="extensions"/>
+    <fhirVersion value="4.0.0"/>
     <format value="xml"/>
     <format value="json"/>
     <implementationGuide value="http://hl7.org/fhir/us/ecr/ImplementationGuide/ig"/>
-    <profile>
-        <reference value="StructureDefinition/ecr-organization"/>
-        <display value="eCR Organization Profile"/>
-    </profile>
-    <profile>
-        <reference value="StructureDefinition/ecr-knowledge-distribution"/>
-        <display value="eCR Knowledge Distribution"/>
-    </profile>
-    <profile>
-        <reference value="StructureDefinition/rr-rules-authoring-agency"/>
-        <display value="Rules Authoring Agency"/>
-    </profile>
-    <profile>
-        <reference value="StructureDefinition/rr-routing-entity"/>
-        <display value="Routing Entity"/>
-    </profile>
-    <profile>
-        <reference value="StructureDefinition/rr-responsible-agency"/>
-        <display value="Responsible Agency"/>
-    </profile>
-    <profile>
-        <reference value="StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
-        <display value="Relevant Reportable Condition PlanDefinition"/>
-    </profile>
-    <profile>
-        <reference value="StructureDefinition/rr-eicr-processing-status-reason"/>
-        <display value="eICR Processing Status Reason"/>
-    </profile>
-    <profile>
-        <reference value="StructureDefinition/rr-eicr-processing-status"/>
-        <display value="eICR Processing Status"/>
-    </profile>
-    <profile>
-        <reference value="StructureDefinition/rr-communication"/>
-        <display value="Reportability Response Communication"/>
-    </profile>
-    <profile>
-        <reference value="StructureDefinition/pregnancy-status"/>
-        <display value="Pregnancy Status"/>
-    </profile>
-    <profile>
-        <reference value="StructureDefinition/eicr-travel-history"/>
-        <display value="eICR Travel History"/>
-    </profile>
-    <profile>
-        <reference value="StructureDefinition/eicr-procedurerequest"/>
-        <display value="eICR ProcedureRequest"/>
-    </profile>
-    <profile>
-        <reference value="StructureDefinition/eicr-occupationhistory"/>
-        <display value="eICR Occupation History"/>
-    </profile>
-    <profile>
-        <reference value="StructureDefinition/eicr-location"/>
-        <display value="eICR Facility"/>
-    </profile>
-    <profile>
-        <reference value="StructureDefinition/eicr-encounter"/>
-        <display value="eICR Encounter"/>
-    </profile>
-    <profile>
-        <reference value="StructureDefinition/eicr-condition"/>
-        <display value="eICR Condition"/>
-    </profile>
-    <profile>
-        <reference value="StructureDefinition/eicr-composition"/>
-        <display value="Electronic Initial Case Report Composition"/>
-    </profile>
-    <profile>
-        <reference value="StructureDefinition/ecr-practitionerrole"/>
-        <display value="eCR PractitionerRole"/>
-    </profile>
-    <profile>
-        <reference value="StructureDefinition/ecr-patient"/>
-        <display value="eCR Patient"/>
-    </profile>
     <rest>
         <mode value="server"/>
         <resource>
@@ -217,7 +148,7 @@
             </interaction>
         </resource>
         <resource>
-            <type value="ProcedureRequest"/>
+            <type value="ServiceRequest"/>
             <interaction>
                 <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
                     <valueCode value="SHOULD"/>
@@ -354,9 +285,5 @@
     </rest>
     <document>
         <mode value="consumer"/>
-        <profile>
-            <reference value="StructureDefinition/eicr-composition"/>
-            <display value="eicr-composition"/>
-        </profile>
     </document>
 </CapabilityStatement>

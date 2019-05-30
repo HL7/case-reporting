@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="eicr-servicerequest"/>
+    <meta>
+        <versionId value="6"/>
+        <lastUpdated value="2019-05-20T22:22:56.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-servicerequest"/>
+    <version value="1.0.0"/>
+    <name value="EicrServiceRequest"/>
+    <title value="eICR ServiceRequest"/>
+    <status value="draft"/>
+    <date value="2018-08-01"/>
+    <description value="The Electronic Case Reporting ServiceRequest profile establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;- Initial Case Report laboratory orders and other diagnostics for the reported event."/>
+    <fhirVersion value="4.0.0"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="ServiceRequest"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/ServiceRequest"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="ServiceRequest">
+            <path value="ServiceRequest"/>
+            <short value="eICR ServiceRequest"/>
+            <definition value="Ordered tests for the patient during the encounter."/>
+            <base>
+                <path value="ServiceRequest"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="ServiceRequest.identifier">
+            <path value="ServiceRequest.identifier"/>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="ServiceRequest.code">
+            <path value="ServiceRequest.code"/>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <binding>
+                <strength value="extensible"/>
+                <description value="This value set includes all the LOINC codes which relate to Diagnostic Orders."/>
+            </binding>
+        </element>
+        <element id="ServiceRequest.authoredOn">
+            <path value="ServiceRequest.authoredOn"/>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="ServiceRequest.requester">
+            <path value="ServiceRequest.requester"/>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+        </element>
+    </differential>
+</StructureDefinition>

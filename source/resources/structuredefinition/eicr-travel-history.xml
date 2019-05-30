@@ -3,17 +3,25 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-travel-history"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2019-04-16T22:47:02.000-04:00"/>
+        <versionId value="3"/>
+        <lastUpdated value="2019-05-29T19:26:50.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-travel-history"/>
     <version value="1.0.0"/>
-    <name value="eicr-travel-history"/>
+    <name value="EicrTravelHistory"/>
     <title value="eICR Travel History"/>
     <status value="draft"/>
     <date value="2018-08-01"/>
     <description value="The Electronic Case Reporting Travel History profile establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:&#xA;&#xA;-  The Initial Case Report subject's travel history as a string, an address or a coded location.&#xD;&#xA;-  Observation.effectiveTime contains the date or period of time spent in the location.&#xD;&#xA;-  It is possible to have multiple Observation.components, each containing a different location, but there is only a single effectiveTime. This allows for cases where a patient cannot remember exact dates of travel (e.g. I traveled to London, Paris, and Berlin in July and August 2016). However, most uses will involve a single component (location).&#xD;&#xA;-  Free text describing the travel history details and location can be entered using the Observation.component.valueCodeableConcept.text element&#xD;&#xA;-  Use component.codeableConcept to record a coded location&#xD;&#xA;-  Use component.extension to record a specific address"/>
-    <fhirVersion value="3.0.1"/>
+    <fhirVersion value="4.0.0"/>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Observation"/>
@@ -90,9 +98,6 @@
             <mustSupport value="true"/>
             <binding>
                 <strength value="extensible"/>
-                <valueSetReference>
-                    <reference value="http://hl7.org/fhir/us/ecr/ValueSet/geographical-location-history"/>
-                </valueSetReference>
             </binding>
         </element>
         <element id="Observation.component.value[x]:valueCodeableConcept.extension">

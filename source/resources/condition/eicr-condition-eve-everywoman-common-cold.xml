@@ -3,9 +3,17 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-condition-eve-everywoman-common-cold"/>
     <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2019-04-10T19:02:30.000-04:00"/>
+        <versionId value="2"/>
+        <lastUpdated value="2019-05-20T20:11:06.000-04:00"/>
         <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
     </meta>
     <text>
         <status value="generated"/>
@@ -47,8 +55,6 @@
         <system value="https://acme.labs/identifiers"/>
         <value value="7d5a02b0-67a4-11db-bd13-0800200c9a66"/>
     </identifier>
-    <clinicalStatus value="active"/>
-    <verificationStatus value="confirmed"/>
     <category>
         <coding>
             <system value="http://hl7.org/fhir/condition-category"/>
@@ -68,11 +74,6 @@
         <reference value="Patient/ecr-patient-eve-everywoman"/>
         <display value="Eve Everywoman"/>
     </subject>
-    <context>
-        <reference value="Encounter/eicr-encounter-eve-everywoman-20180401"/>
-        <display value="eICR Encounter: Eve Everywoman"/>
-    </context>
-    <assertedDate value="2017-11-06T10:25:23Z"/>
     <asserter>
         <reference value="Practitioner/ecr-practitioner-henry-seven"/>
         <display value="Henry Seven, MD"/>

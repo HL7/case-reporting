@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcedureRequest
+<ServiceRequest
     xmlns="http://hl7.org/fhir">
-    <id value="eicr-procedurerequest-zika"/>
+    <id value="eicr-servicerequest-zika"/>
     <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2019-04-10T19:02:31.000-04:00"/>
+        <versionId value="1"/>
+        <lastUpdated value="2019-05-20T22:06:25.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
     </meta>
     <status value="completed"/>
     <intent value="order"/>
-    <priority value="asap"/>
     <category>
         <coding>
             <system value="http://snomed.info/sct"/>
@@ -17,6 +24,7 @@
         </coding>
         <text value="Diagnostics Procedure"/>
     </category>
+    <priority value="asap"/>
     <code>
         <coding>
             <system value="http://loinc.org"/>
@@ -32,4 +40,4 @@
         <reference value="Organization/ecr-organization-acme-labs"/>
         <display value="Acme Labs"/>
     </performer>
-</ProcedureRequest>
+</ServiceRequest>

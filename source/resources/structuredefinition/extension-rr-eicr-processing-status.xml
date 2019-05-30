@@ -4,19 +4,29 @@
     <id value="extension-rr-eicr-processing-status"/>
     <meta>
         <versionId value="4"/>
-        <lastUpdated value="2019-04-11T21:23:06.000-04:00"/>
+        <lastUpdated value="2019-05-29T20:13:01.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-eicr-processing-status"/>
     <version value="1.0.0"/>
-    <name value="extension-rr-eicr-processing-status"/>
+    <name value="ExtensionRREicrProcessingStatus"/>
     <title value="Extension eICR Processing Status"/>
     <status value="draft"/>
     <description value="This extension indicates the eICR processing status. If the eICR was not processed or was processed with a warning, the reason will be contained in the eICR Processing Status Reason. If there is any output from a validator, that output will be contained in the eICR Validation Output.&#xA;&#xA;If any of the trigger codes used to generate the eICR are from an outdated version of the RCTC or the codes are marked as inactive in the latest version of the RCTC, these are flagged and and the eICR Processing Status Reason Detail will hold the details of the outdated and expected versions of the RCTC."/>
-    <fhirVersion value="3.0.1"/>
+    <fhirVersion value="4.0.0"/>
     <kind value="complex-type"/>
     <abstract value="false"/>
-    <contextType value="resource"/>
-    <context value="Communication.payload"/>
+    <context>
+        <type value="element"/>
+        <expression value="Communication.payload"/>
+    </context>
     <type value="Extension"/>
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
     <derivation value="constraint"/>

@@ -41,7 +41,7 @@ active: other
 </tr>
 <tr>
 <td>Composition</td>
-<td><a href="Composition-eicr-composition-zika.html">Initial Public Health Case Report</a></td>
+<td><a href="Composition-eicr-composition-zika.html">eicr-composition-zika</a></td>
 </tr>
 <tr>
 <td>Condition</td>
@@ -121,7 +121,11 @@ active: other
 </tr>
 <tr>
 <td>Organization</td>
-<td><a href="Organization-ecr-organization-health-authority-west.html">Health Authority West</a></td>
+<td><a href="Organization-ecr-organization-health-authority-west.html">ecr-organization-health-authority-west</a></td>
+</tr>
+<tr>
+<td>Organization</td>
+<td><a href="Organization-ecr-organization-salem-medical-center.html">ecr-organization-salem-medical-center</a></td>
 </tr>
 <tr>
 <td>Organization</td>
@@ -134,10 +138,6 @@ active: other
 <tr>
 <td>Organization</td>
 <td><a href="Organization-rr-organization-rules-authoring-agency-haw.html">Health Authority West Rules Authoring Agency</a></td>
-</tr>
-<tr>
-<td>Organization</td>
-<td><a href="Organization-ecr-organization-salem-medical-center.html">Salem Medical Center</a></td>
 </tr>
 <tr>
 <td>Organization</td>
@@ -160,12 +160,12 @@ active: other
 <td><a href="PractitionerRole-ecr-practitionerrole-henry-seven.html">ecr-practitionerrole-henry-seven</a></td>
 </tr>
 <tr>
-<td>ProcedureRequest</td>
-<td><a href="ProcedureRequest-eicr-procedurerequest-eve-everywoman-zika.html">eicr-procedurerequest-eve-everywoman-zika</a></td>
+<td>ServiceRequest</td>
+<td><a href="ServiceRequest-eicr-servicerequest-eve-everywoman-zika.html">eicr-servicerequest-eve-everywoman-zika</a></td>
 </tr>
 <tr>
-<td>ProcedureRequest</td>
-<td><a href="ProcedureRequest-eicr-procedurerequest-zika.html">eicr-procedurerequest-zika</a></td>
+<td>ServiceRequest</td>
+<td><a href="ServiceRequest-eicr-servicerequest-zika.html">eicr-servicerequest-zika</a></td>
 </tr>
 <tr>
 <td>Task</td>
