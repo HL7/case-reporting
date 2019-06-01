@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-plan-zika-state-department-of-health"/>
     <meta>
-        <versionId value="1"/>
-        <lastUpdated value="2019-05-20T20:15:23.000-04:00"/>
+        <versionId value="2"/>
+        <lastUpdated value="2019-05-31T22:42:39.000-04:00"/>
         <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
@@ -21,10 +21,13 @@
             xmlns="http://www.w3.org/1999/xhtml">
       The Reportability Response Plan Definition does not contain narrative text. The information from this resource is parsed and contained in 
             
+            
             <a href="StructureDefinition-rr-communication-definitions.html#Communication.text">Communication[rr-communication].text</a> according to the guidlines set out here: 
+            
             
             <a href="narrative-guidance.html">Narrative Guidance</a>.
     
+        
         
         </div>
     </text>
@@ -48,6 +51,13 @@
     <title value="Determination of Reportable Condition"/>
     <status value="active"/>
     <date value="2017-11-22"/>
+    <publisher value="Health Authority West Rules Authoring Agency">
+        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-ecr-organization">
+            <valueReference>
+                <reference value="Organization/rr-organization-rules-authoring-agency-haw"/>
+            </valueReference>
+        </extension>
+    </publisher>
     <jurisdiction>
         <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-location-relevance">
             <valueCodeableConcept>
@@ -71,7 +81,7 @@
     </jurisdiction>
     <goal>
         <description>
-            <text value="Clinical feedback"/>
+            <text value="Reportability feedback"/>
         </description>
         <addresses>
             <coding>
@@ -104,14 +114,6 @@
             <type value="documentation"/>
             <display value="Local mosquito-borne Zika virus transmission was reported in your area. Increased watchfulness for symptoms of Zika virus in your patients is warranted."/>
         </documentation>
-        <timingDuration>
-            <value value="24"/>
-            <unit value="H"/>
-            <system value="http://unitsofmeasure.org"/>
-            <code value="H"/>
-        </timingDuration>
-    </action>
-    <action>
         <documentation>
             <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-external-resource-type">
                 <valueCodeableConcept>
@@ -135,14 +137,6 @@
             <display value="Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here."/>
             <url value="http://statedepartmentofhealth.gov/epi/disease/zika/Supplemental_data_form.pdf"/>
         </documentation>
-        <timingDuration>
-            <value value="24"/>
-            <unit value="H"/>
-            <system value="http://unitsofmeasure.org"/>
-            <code value="H"/>
-        </timingDuration>
-    </action>
-    <action>
         <documentation>
             <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-external-resource-type">
                 <valueCodeableConcept>

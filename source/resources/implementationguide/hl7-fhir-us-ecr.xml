@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="42"/>
-        <lastUpdated value="2019-05-30T01:58:34.000-04:00"/>
+        <versionId value="73"/>
+        <lastUpdated value="2019-06-01T00:03:16.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^read"/>
@@ -40,29 +40,8 @@
     <definition>
         <resource>
             <reference>
-                <reference value="StructureDefinition/eicr-condition"/>
-                <display value="eicr-condition"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/ecr-patient"/>
-                <display value="ecr-patient"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="StructureDefinition/extension-rr-eicr-processing-status"/>
                 <display value="extension-rr-eicr-processing-status"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/extension-eicr-travel-history-address"/>
-                <display value="extension-eicr-travel-history-address"/>
             </reference>
             <exampleBoolean value="false"/>
         </resource>
@@ -166,22 +145,8 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/eicr-travel-history"/>
-                <display value="eicr-travel-history"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="StructureDefinition/eicr-servicerequest"/>
                 <display value="eicr-servicerequest"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/eicr-occupationhistory"/>
-                <display value="eicr-occupationhistory"/>
             </reference>
             <exampleBoolean value="false"/>
         </resource>
@@ -203,55 +168,6 @@
             <reference>
                 <reference value="StructureDefinition/eicr-composition"/>
                 <display value="eicr-composition"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/ecr-organization"/>
-                <display value="ecr-organization"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-eicr-processing-status"/>
-                <display value="rr-eicr-processing-status"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-eicr-processing-status-reason"/>
-                <display value="rr-eicr-processing-status-reason"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-responsible-agency"/>
-                <display value="rr-responsible-agency"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-rules-authoring-agency"/>
-                <display value="rr-rules-authoring-agency"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-routing-entity"/>
-                <display value="rr-routing-entity"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/ecr-knowledge-distribution"/>
-                <display value="ecr-knowledge-distribution"/>
             </reference>
             <exampleBoolean value="false"/>
         </resource>
@@ -451,11 +367,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="Observation/eicr-travel-history-eve-everywoman-1999"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="Observation/eicr-occupation-history-eve-everywoman"/></reference>
             <exampleBoolean value="true"/>
         </resource>
@@ -577,19 +488,173 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/pregnancy-status"/>
-                <display value="PregnancyStatus"/>
+                <reference value="StructureDefinition/extension-travel-history-address"/>
+                <display value="Extension_Travel_History_Address"/>
             </reference>
-            <name value="PregnancyStatus"/>
+            <name value="Extension_Travel_History_Address"/>
             <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/travel-history-observation"/>
+                <display value="Travel_History_Observation"/>
+            </reference>
+            <name value="Travel_History_Observation"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-condition"/>
+                <display value="Eicr_Condition"/>
+            </reference>
+            <name value="Eicr_Condition"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-occupation-history-observation"/>
+                <display value="Eicr_Occupation_History_Observation"/>
+            </reference>
+            <name value="Eicr_Occupation_History_Observation"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/pregnancy-status-observation"/>
+                <display value="Pregnancy_Status_Observation"/>
+            </reference>
+            <name value="Pregnancy_Status_Observation"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-eicr-processing-status-reason-observation"/>
+                <display value="RR_Eicr_Processing_Status_Reason_Observation"/>
+            </reference>
+            <name value="RR_Eicr_Processing_Status_Reason_Observation"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-rules-authoring-agency-organization"/>
+                <display value="RR_Rules_Authoring_Agency_Organization"/>
+            </reference>
+            <name value="RR_Rules_Authoring_Agency_Organization"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-routing-entity-organization"/>
+                <display value="RR_Routing_Entity_Organization"/>
+            </reference>
+            <name value="RR_Routing_Entity_Organization"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-responsible-agency-organization"/>
+                <display value="RR_Responsible_Agency_Organization"/>
+            </reference>
+            <name value="RR_Responsible_Agency_Organization"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-eicr-processing-status-observation"/>
+                <display value="RR_Eicr_Processing_Status_Observation"/>
+            </reference>
+            <name value="RR_Eicr_Processing_Status_Observation"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ecr-organization"/>
+                <display value="Ecr_Organization"/>
+            </reference>
+            <name value="Ecr_Organization"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ecr-patient"/>
+                <display value="Ecr_Patient"/>
+            </reference>
+            <name value="Ecr_Patient"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ecr-knowledge-distribution-plandefinition"/>
+                <display value="Ecr_Knowledge_Distribution_PlanDefinition"/>
+            </reference>
+            <name value="Ecr_Knowledge_Distribution_PlanDefinition"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/eicr-travel-history-eve-everywoman-1999"/>
+                <display value="eicr-travel-history-eve-everywoman-1999"/>
+            </reference>
+            <name value="eicr-travel-history-eve-everywoman-1999"/>
+            <exampleBoolean value="true"/>
         </resource>
         <page>
             <nameUrl value="toc.md"/>
             <title value="Table of Contents"/>
             <generation value="generated"/>
             <page>
-                <nameUrl value="Extensions,_Profiles_&amp;_Transaction.html"/>
-                <title value="Extensions, Profiles &amp; Transaction"/>
+                <nameUrl value="Profiles,_Extensions_&amp;_Transactions.html"/>
+                <title value="Profiles, Extensions &amp; Transactions"/>
+                <generation value="markdown"/>
+            </page>
+            <page>
+                <nameUrl value="Terminology.html"/>
+                <title value="Terminology"/>
+                <generation value="markdown"/>
+            </page>
+            <page>
+                <nameUrl value="Capability_Statements.html"/>
+                <title value="Capability Statements"/>
+                <generation value="markdown"/>
+            </page>
+            <page>
+                <nameUrl value="Downloads.html"/>
+                <title value="Downloads"/>
+                <generation value="markdown"/>
+            </page>
+            <page>
+                <nameUrl value="Implementation_Guidance.html"/>
+                <title value="Implementation Guidance"/>
+                <generation value="markdown"/>
+                <page>
+                    <nameUrl value="Design_Considerations.html"/>
+                    <title value="Design Considerations"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="Narrative_Guidance.html"/>
+                    <title value="Narrative Guidance"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="Mappings.html"/>
+                    <title value="Mappings"/>
+                    <generation value="markdown"/>
+                    <page>
+                        <nameUrl value="eICR_Mappings.html"/>
+                        <title value="eICR Mappings"/>
+                        <generation value="markdown"/>
+                    </page>
+                    <page>
+                        <nameUrl value="Reportability_Response_Mappings.html"/>
+                        <title value="Reportability Response Mappings"/>
+                        <generation value="markdown"/>
+                    </page>
+                </page>
+            </page>
+            <page>
+                <nameUrl value="History.html"/>
+                <title value="History"/>
                 <generation value="markdown"/>
             </page>
         </page>

@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="extension-rr-eicr-processing-status"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2019-05-29T20:13:01.000-04:00"/>
+        <versionId value="6"/>
+        <lastUpdated value="2019-05-31T21:53:00.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^read"/>
@@ -16,7 +16,7 @@
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-eicr-processing-status"/>
     <version value="1.0.0"/>
-    <name value="ExtensionRREicrProcessingStatus"/>
+    <name value="Extension_RR_Eicr_Processing_Status"/>
     <title value="Extension eICR Processing Status"/>
     <status value="draft"/>
     <description value="This extension indicates the eICR processing status. If the eICR was not processed or was processed with a warning, the reason will be contained in the eICR Processing Status Reason. If there is any output from a validator, that output will be contained in the eICR Validation Output.&#xA;&#xA;If any of the trigger codes used to generate the eICR are from an outdated version of the RCTC or the codes are marked as inactive in the latest version of the RCTC, these are flagged and and the eICR Processing Status Reason Detail will hold the details of the outdated and expected versions of the RCTC."/>
@@ -62,7 +62,7 @@
             <sliceName value="valueReference"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation"/>
             </type>
         </element>
         <element id="Extension.extension:eICRValidationOutput">
