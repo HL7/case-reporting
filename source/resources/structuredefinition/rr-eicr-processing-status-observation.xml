@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-eicr-processing-status-observation"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2019-05-31T20:50:39.000-04:00"/>
+        <versionId value="4"/>
+        <lastUpdated value="2019-06-01T01:14:10.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^read"/>
@@ -62,17 +62,11 @@
                 <description value="This value set contains codes that describe the status of the eICR in terms of processing by the public health decision support system."/>
             </binding>
         </element>
-        <element id="Observation.related">
-            <path value="Observation.related"/>
-            <short value="eICR Processing Status Reason"/>
-            <definition value="Indicates the eICR processing status. If it was not processed or was processed with a warning, the reason and details will be contained in the related eICR Processing Status Reason resource."/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Observation.related.target">
-            <path value="Observation.related.target"/>
+        <element id="Observation.hasMember">
+            <path value="Observation.hasMember"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation"/>
             </type>
         </element>
     </differential>
