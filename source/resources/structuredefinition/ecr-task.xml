@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="ecr-task"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2019-06-04T18:49:51.000-04:00"/>
+        <versionId value="5"/>
+        <lastUpdated value="2019-06-05T06:19:34.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="user^s7DIn2HM^write"/>
@@ -40,12 +40,17 @@
         <element id="Task">
             <path value="Task"/>
         </element>
+        <element id="Task.status">
+            <path value="Task.status"/>
+            <mustSupport value="true"/>
+        </element>
         <element id="Task.focus">
             <path value="Task.focus"/>
             <min value="1"/>
             <max value="1"/>
             <type>
                 <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication"/>
             </type>
             <mustSupport value="true"/>

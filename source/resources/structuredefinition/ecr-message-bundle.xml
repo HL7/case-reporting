@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="ecr-message-bundle"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2019-06-04T20:00:33.000-04:00"/>
+        <versionId value="5"/>
+        <lastUpdated value="2019-06-05T06:23:08.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="user^s7DIn2HM^write"/>
@@ -43,6 +43,34 @@
         <element id="Bundle.type">
             <path value="Bundle.type"/>
             <fixedCode value="message"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Bundle.entry">
+            <path value="Bundle.entry"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="resource"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Bundle.entry:sliceMessageHeader">
+            <path value="Bundle.entry"/>
+            <sliceName value="sliceMessageHeader"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Bundle.entry:sliceMessageHeader.resource">
+            <path value="Bundle.entry.resource"/>
+            <sliceName value="sliceMessageHeader"/>
+            <min value="1"/>
+            <type>
+                <code value="Resource"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader"/>
+            </type>
             <mustSupport value="true"/>
         </element>
     </differential>
