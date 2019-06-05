@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-relevant-reportable-condition-plandefinition"/>
     <meta>
-        <versionId value="11"/>
-        <lastUpdated value="2019-06-01T00:51:56.000-04:00"/>
+        <versionId value="14"/>
+        <lastUpdated value="2019-06-04T22:17:49.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^read"/>
@@ -52,7 +52,7 @@
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-determination-of-reportability"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-determination-of-reportability-extension"/>
             </type>
             <mustSupport value="true"/>
         </element>
@@ -61,7 +61,7 @@
             <sliceName value="determinationOfReportabilityReason"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-determination-of-reportability-reason"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-determination-of-reportability-reason-extension"/>
             </type>
         </element>
         <element id="PlanDefinition.extension:determinationOfReportabilityRule">
@@ -69,7 +69,7 @@
             <sliceName value="determinationOfReportabilityRule"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-determination-of-reportability-rule"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-determination-of-reportability-rule-extension"/>
             </type>
         </element>
         <element id="PlanDefinition.status">
@@ -100,13 +100,13 @@
             <min value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-ecr-organization"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization-extension"/>
             </type>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.publisher.extension:rulesAuthoringAgency.url">
             <path value="PlanDefinition.publisher.extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-ecr-organization"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization-extension"/>
         </element>
         <element id="PlanDefinition.publisher.extension:rulesAuthoringAgency.value[x]:valueReference">
             <path value="PlanDefinition.publisher.extension.valueReference"/>
@@ -139,7 +139,7 @@
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-location-relevance"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-location-relevance-extension"/>
             </type>
             <mustSupport value="true"/>
         </element>
@@ -155,7 +155,7 @@
         </element>
         <element id="PlanDefinition.jurisdiction.extension:routingEntity.url">
             <path value="PlanDefinition.jurisdiction.extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-ecr-organization"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization-extension"/>
         </element>
         <element id="PlanDefinition.jurisdiction.extension:routingEntity.value[x]:valueReference">
             <path value="PlanDefinition.jurisdiction.extension.valueReference"/>
@@ -176,7 +176,7 @@
         </element>
         <element id="PlanDefinition.jurisdiction.extension:responsibleAgency.url">
             <path value="PlanDefinition.jurisdiction.extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-ecr-organization"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization-extension"/>
         </element>
         <element id="PlanDefinition.jurisdiction.extension:responsibleAgency.value[x]:valueReference">
             <path value="PlanDefinition.jurisdiction.extension.valueReference"/>
@@ -254,7 +254,7 @@
         <element id="PlanDefinition.action.documentation">
             <path value="PlanDefinition.action.documentation"/>
             <short value="External Resource"/>
-            <definition value="An external resources such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources. The type/category of the external resource is contained in the External Resource Type extension located in extension-rr-external-resource-type, and the priority placed on the external resource is represented in the extension-rr-priority. "/>
+            <definition value="An external resources such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources. The type/category of the external resource is contained in the External Resource Type extension located in rr-external-resource-type-extension, and the priority placed on the external resource is represented in the rr-priority-extension. "/>
             <min value="1"/>
             <mustSupport value="true"/>
             <isModifier value="false"/>
@@ -276,7 +276,7 @@
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-external-resource-type"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-type-extension"/>
             </type>
             <mustSupport value="true"/>
         </element>
@@ -287,7 +287,7 @@
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-rr-priority"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-priority-extension"/>
             </type>
             <mustSupport value="true"/>
         </element>

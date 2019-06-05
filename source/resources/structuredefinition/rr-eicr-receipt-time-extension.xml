@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="rr-eicr-receipt-time-extension"/>
+    <meta>
+        <versionId value="5"/>
+        <lastUpdated value="2019-06-04T22:41:31.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-receipt-time-extension"/>
+    <version value="1.0.0"/>
+    <name value="RR_Eicr_Receipt_Time_Extension"/>
+    <title value="eICR Receipt Time Extension "/>
+    <status value="draft"/>
+    <date value="2018-08-01"/>
+    <publisher value="PHER"/>
+    <description value="Date and time of eICR receipt"/>
+    <fhirVersion value="4.0.0"/>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <context>
+        <type value="element"/>
+        <expression value="Communication.payload"/>
+    </context>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Extension">
+            <path value="Extension"/>
+            <short value="Date and time of eICR receipt"/>
+            <definition value="Date and time of eICR receipt"/>
+            <max value="1"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-receipt-time-extension"/>
+        </element>
+        <element id="Extension.value[x]:valueDateTime">
+            <path value="Extension.valueDateTime"/>
+            <sliceName value="valueDateTime"/>
+            <min value="1"/>
+            <type>
+                <code value="dateTime"/>
+            </type>
+            <example>
+                <label value="General"/>
+                <valueDateTime value="2018-03-07"/>
+            </example>
+        </element>
+    </differential>
+</StructureDefinition>

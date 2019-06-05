@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="rr-eicr-processing-status-extension"/>
+    <meta>
+        <versionId value="3"/>
+        <lastUpdated value="2019-06-04T22:41:11.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-extension"/>
+    <version value="1.0.0"/>
+    <name value="RR_Eicr_Processing_Status_Extension"/>
+    <title value="eICR Processing Status Extension"/>
+    <status value="draft"/>
+    <description value="This extension indicates the eICR processing status. If the eICR was not processed or was processed with a warning, the reason will be contained in the eICR Processing Status Reason. If there is any output from a validator, that output will be contained in the eICR Validation Output.&#xA;&#xA;If any of the trigger codes used to generate the eICR are from an outdated version of the RCTC or the codes are marked as inactive in the latest version of the RCTC, these are flagged and and the eICR Processing Status Reason Detail will hold the details of the outdated and expected versions of the RCTC."/>
+    <fhirVersion value="4.0.0"/>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <context>
+        <type value="element"/>
+        <expression value="Communication.payload"/>
+    </context>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Extension">
+            <path value="Extension"/>
+            <short value="eICR Processing Status"/>
+            <definition value="This extension indicates the eICR processing status. If the eICR was not processed or was processed with a warning, the reason will be contained in the eICR Processing Status Reason. If there is any output from a validator, that output will be contained in the eICR Validation Output.&#xA;&#xA;If any of the trigger codes used to generate the eICR are from an outdated version of the RCTC or the codes are marked as inactive in the latest version of the RCTC, these are flagged and and the eICR Processing Status Reason Detail will hold the details of the outdated and expected versions of the RCTC."/>
+            <max value="1"/>
+        </element>
+        <element id="Extension.extension">
+            <path value="Extension.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+        </element>
+        <element id="Extension.extension:eICRProcessingStatus">
+            <path value="Extension.extension"/>
+            <sliceName value="eICRProcessingStatus"/>
+            <min value="1"/>
+            <max value="1"/>
+        </element>
+        <element id="Extension.extension:eICRProcessingStatus.url">
+            <path value="Extension.extension.url"/>
+            <fixedUri value="eICRProcessingStatus"/>
+        </element>
+        <element id="Extension.extension:eICRProcessingStatus.value[x]:valueReference">
+            <path value="Extension.extension.valueReference"/>
+            <sliceName value="valueReference"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation"/>
+            </type>
+        </element>
+        <element id="Extension.extension:eICRValidationOutput">
+            <path value="Extension.extension"/>
+            <sliceName value="eICRValidationOutput"/>
+            <definition value="Contains eICR validation output - this could be the actual output from a validator, or a link to a validation output file"/>
+        </element>
+        <element id="Extension.extension:eICRValidationOutput.url">
+            <path value="Extension.extension.url"/>
+            <fixedUri value="eICRValidationOutput"/>
+        </element>
+        <element id="Extension.extension:eICRValidationOutput.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <min value="1"/>
+            <type>
+                <code value="markdown"/>
+            </type>
+            <type>
+                <code value="string"/>
+            </type>
+            <type>
+                <code value="Attachment"/>
+            </type>
+        </element>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-extension"/>
+        </element>
+        <element id="Extension.value[x]">
+            <path value="Extension.value[x]"/>
+            <definition value="Contains eICR validation output - this could be the actual output from a validator, or a link to a validation output file"/>
+            <max value="0"/>
+        </element>
+    </differential>
+</StructureDefinition>

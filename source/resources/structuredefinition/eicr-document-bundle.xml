@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="eicr-document-bundle"/>
+    <meta>
+        <versionId value="14"/>
+        <lastUpdated value="2019-06-05T04:57:15.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^write"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^read"/>
+        </security>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+    <version value="1.0.0"/>
+    <name value="Eicr_Document_Bundle"/>
+    <title value="eICR Document Bundle"/>
+    <status value="draft"/>
+    <experimental value="false"/>
+    <date value="2019-06-05"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <fhirVersion value="4.0.0"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Bundle"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Bundle">
+            <path value="Bundle"/>
+        </element>
+        <element id="Bundle.type">
+            <path value="Bundle.type"/>
+            <fixedCode value="document"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Bundle.entry">
+            <path value="Bundle.entry"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="resource"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Bundle.entry:sliceEICRComposition">
+            <path value="Bundle.entry"/>
+            <sliceName value="sliceEICRComposition"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Bundle.entry:sliceEICRComposition.resource">
+            <path value="Bundle.entry.resource"/>
+            <sliceName value="sliceECRComposition"/>
+            <min value="1"/>
+            <type>
+                <code value="Resource"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+    </differential>
+</StructureDefinition>

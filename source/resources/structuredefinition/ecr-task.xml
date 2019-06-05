@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="ecr-task"/>
+    <meta>
+        <versionId value="4"/>
+        <lastUpdated value="2019-06-04T18:49:51.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^write"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^read"/>
+        </security>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-task"/>
+    <version value="1.0.0"/>
+    <name value="Ecr_Task"/>
+    <title value="eCR Task"/>
+    <status value="draft"/>
+    <experimental value="false"/>
+    <date value="2019-06-05"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <fhirVersion value="4.0.0"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Task"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Task"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Task">
+            <path value="Task"/>
+        </element>
+        <element id="Task.focus">
+            <path value="Task.focus"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Task.authoredOn">
+            <path value="Task.authoredOn"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Task.owner">
+            <path value="Task.owner"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+    </differential>
+</StructureDefinition>

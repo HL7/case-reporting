@@ -5,7 +5,8 @@ active: toc
 ---
 
 * Table of Contents
-    * <a href="Profiles,_Extensions_&_Transactions.html">Profiles, Extensions & Transactions</a>
+    * <a href="Profiles_&_Extensions.html">Profiles & Extensions</a>
+    * <a href="Messaging_&_RESTful_Transactions.html">Messaging & RESTful Transactions</a>
     * <a href="Terminology.html">Terminology</a>
     * <a href="Capability_Statements.html">Capability Statements</a>
     * <a href="Downloads.html">Downloads</a>

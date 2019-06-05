@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="rr-manually-initiated-eicr-extension"/>
+    <meta>
+        <versionId value="4"/>
+        <lastUpdated value="2019-06-04T22:42:15.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-manually-initiated-eicr-extension"/>
+    <version value="1.0.0"/>
+    <name value="RR_Manually_Initiated_Eicr_Extension"/>
+    <title value="Manually Initiated eICR Extension "/>
+    <status value="draft"/>
+    <date value="2018-08-01"/>
+    <description value="This extension indicates whether or not the eICR CDA document for which this Reportability Response is a response, was manually initiated by the provider. The eICR could also contain RCTC trigger codes."/>
+    <fhirVersion value="4.0.0"/>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <context>
+        <type value="element"/>
+        <expression value="Communication.payload"/>
+    </context>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Extension">
+            <path value="Extension"/>
+            <short value="Manually Initiated eICR"/>
+            <definition value="This extension indicates whether or not the eICR CDA document for which this Reportability Response is a response, was manually initiated by the provider. The eICR could also contain RCTC trigger codes."/>
+            <min value="1"/>
+            <max value="1"/>
+            <isModifier value="false"/>
+            <mapping>
+                <identity value="cda-rr"/>
+                <map value="Manually Initiated eICR"/>
+            </mapping>
+        </element>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-manually-initiated-eicr-extension"/>
+        </element>
+        <element id="Extension.value[x]:valueBoolean">
+            <path value="Extension.valueBoolean"/>
+            <sliceName value="valueBoolean"/>
+            <min value="1"/>
+            <type>
+                <code value="boolean"/>
+            </type>
+        </element>
+    </differential>
+</StructureDefinition>

@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-composition"/>
     <meta>
-        <versionId value="15"/>
-        <lastUpdated value="2019-05-31T21:40:31.000-04:00"/>
+        <versionId value="20"/>
+        <lastUpdated value="2019-06-04T22:37:25.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^read"/>
@@ -53,7 +53,7 @@
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-manually-initiated-reason"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-manually-initiated-reason-extension"/>
             </type>
             <mustSupport value="true"/>
         </element>
@@ -382,13 +382,13 @@
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
             </type>
             <mustSupport value="true"/>
         </element>
         <element id="Composition.section:sliceProblemSection.entry:sliceEICRCondition.extension:sliceTriggerCondition.url">
             <path value="Composition.section.entry.extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
         </element>
         <element id="Composition.section:sliceMedicationsAdministeredSection">
             <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
@@ -441,6 +441,25 @@
             <mustSupport value="true"/>
             <isModifier value="false"/>
         </element>
+        <element id="Composition.section:sliceMedicationsAdministeredSection.entry:MedicationAdministration.extension">
+            <path value="Composition.section.entry.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+        </element>
+        <element id="Composition.section:sliceMedicationsAdministeredSection.entry:MedicationAdministration.extension:sliceTriggerMedicationAdministered">
+            <path value="Composition.section.entry.extension"/>
+            <sliceName value="sliceTriggerMedicationAdministered"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
+            </type>
+        </element>
         <element id="Composition.section:sliceMedicationsAdministeredSection.entry:sliceUSCoreMedicationStatement.extension">
             <path value="Composition.section.entry.extension"/>
             <slicing>
@@ -459,7 +478,7 @@
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
             </type>
             <mustSupport value="true"/>
         </element>
@@ -531,13 +550,13 @@
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
             </type>
             <mustSupport value="true"/>
         </element>
         <element id="Composition.section:sliceResultsSection.entry:sliceUSCoreObservationResults.extension:sliceTriggerUSCoreObservationResults.url">
             <path value="Composition.section.entry.extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
         </element>
         <element id="Composition.section:slicePlanOfTreatmentSection">
             <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
@@ -609,13 +628,13 @@
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
             </type>
             <mustSupport value="true"/>
         </element>
         <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceEICRServiceRequest.extension:sliceEICRServiceRequest.url">
             <path value="Composition.section.entry.extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
         </element>
         <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceUSCoreMedicationRequest">
             <path value="Composition.section.entry"/>
@@ -646,13 +665,13 @@
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
             </type>
             <mustSupport value="true"/>
         </element>
         <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceUSCoreMedicationRequest.extension:sliceTriggerUSCoreMedicationRequest.url">
             <path value="Composition.section.entry.extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
         </element>
         <element id="Composition.section:sliceImmunizationsSection">
             <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">

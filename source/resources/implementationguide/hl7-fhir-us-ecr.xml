@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="73"/>
-        <lastUpdated value="2019-06-01T00:03:16.000-04:00"/>
+        <versionId value="94"/>
+        <lastUpdated value="2019-06-05T03:55:27.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^read"/>
@@ -40,466 +40,58 @@
     <definition>
         <resource>
             <reference>
-                <reference value="StructureDefinition/extension-rr-eicr-processing-status"/>
-                <display value="extension-rr-eicr-processing-status"/>
+                <reference value="StructureDefinition/ecr-organization"/>
+                <display value="Ecr_Organization"/>
             </reference>
+            <name value="Ecr_Organization"/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/extension-eicr-trigger-code-flag"/>
-                <display value="extension-eicr-trigger-code-flag"/>
+                <reference value="StructureDefinition/ecr-patient"/>
+                <display value="Ecr_Patient"/>
             </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/extension-rr-priority"/>
-                <display value="extension-rr-priority"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/extension-rr-external-resource-type"/>
-                <display value="extension-rr-external-resource-type"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/extension-rr-determination-of-reportability-rule"/>
-                <display value="extension-rr-determination-of-reportability-rule"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/extension-rr-determination-of-reportability-reason"/>
-                <display value="extension-rr-determination-of-reportability-reason"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/extension-rr-determination-of-reportability"/>
-                <display value="extension-rr-determination-of-reportability"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/extension-rr-manually-initiated-eicr"/>
-                <display value="extension-rr-manually-initiated-eicr"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/extension-eicr-manually-initiated-reason"/>
-                <display value="extension-eicr-manually-initiated-reason"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/extension-rr-location-relevance"/>
-                <display value="extension-rr-location-relevance"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/extension-rr-eicr-receipt-time"/>
-                <display value="extension-rr-eicr-receipt-time"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/extension-ecr-organization"/>
-                <display value="extension-ecr-organization"/>
-            </reference>
+            <name value="Ecr_Patient"/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
             <reference>
                 <reference value="StructureDefinition/ecr-practitionerrole"/>
-                <display value="ecr-practitionerrole"/>
+                <display value="Ecr_PractitionerRole"/>
             </reference>
+            <name value="Ecr_PractitionerRole"/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
-                <display value="rr-relevant-reportable-condition-plandefinition"/>
+                <reference value="StructureDefinition/ecr-knowledge-distribution-plandefinition"/>
+                <display value="Ecr_Knowledge_Distribution_PlanDefinition"/>
             </reference>
+            <name value="Ecr_Knowledge_Distribution_PlanDefinition"/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/rr-communication"/>
-                <display value="rr-communication"/>
+                <reference value="StructureDefinition/ecr-messageheader"/>
+                <display value="Ecr_MessageHeader"/>
             </reference>
+            <name value="Ecr_MessageHeader"/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/eicr-servicerequest"/>
-                <display value="eicr-servicerequest"/>
+                <reference value="StructureDefinition/ecr-task"/>
+                <display value="Ecr_Task"/>
             </reference>
+            <name value="Ecr_Task"/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/eicr-location"/>
-                <display value="eicr-location"/>
+                <reference value="StructureDefinition/ecr-message-bundle"/>
+                <display value="Ecr_Message_Bundle"/>
             </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/eicr-encounter"/>
-                <display value="eicr-encounter"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/eicr-composition"/>
-                <display value="eicr-composition"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/knowledge-distribution-valueset-library"/>
-                <display value="knowledge-distribution-valueset-library"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/location-relevance-ecr"/>
-                <display value="location-relevance-ecr"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/eicr-processing-status-ecr"/>
-                <display value="eicr-processing-status-ecr"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/eicr-processing-status-reason-ecr"/>
-                <display value="eicr-processing-status-reason-ecr"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/eicr-processing-status-reason-detail-type-ecr"/>
-                <display value="eicr-processing-status-reason-detail-type-ecr"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/reportability-priority-ecr"/>
-                <display value="reportability-priority-ecr"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/external-resource-type-ecr"/>
-                <display value="external-resource-type-ecr"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/determination-of-reportability-ecr"/>
-                <display value="determination-of-reportability-ecr"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/geographical-location-history"/>
-                <display value="geographical-location-history"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/ostc"/>
-                <display value="ostc"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/oes"/>
-                <display value="oes"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/lrtc"/>
-                <display value="lrtc"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/lotc"/>
-                <display value="lotc"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/dxtc"/>
-                <display value="dxtc"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="CodeSystem/oes"/>
-                <display value="oes"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="CapabilityStatement/server"/>
-                <display value="server"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="CapabilityStatement/client"/>
-                <display value="client"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Bundle/ecr-bundle-knowledge-distribution"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Composition/eicr-composition-zika"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Communication/rr-communication-single-single"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Condition/eicr-condition-eve-everywoman-common-cold"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Condition/eicr-condition-eve-everywoman-pertussis"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Encounter/eicr-encounter-eve-everywoman-20180401"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Encounter/eicr-encounter-diagnosis-eve-everywoman-20180401"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Immunization/phcase-pneumo"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Location/ecr-location-salem-medical-center"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="MedicationStatement/us-core-medicationstatement-eve-everywoman-azithromycin"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/us-core-observation-results-eve-everywoman-lymphocytes"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/rr-eicr-processing-status"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/rr-eicr-processing-status-reason"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/eicr-travel-history-eve-everywoman-201801"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/eicr-travel-history-eve-everywoman-201610"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/eicr-occupation-history-eve-everywoman"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Organization/ecr-organization-health-authority-west"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Organization/rr-organization-routing-entity-haw"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Organization/rr-organization-rules-authoring-agency-haw"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Organization/rr-organization-responsible-agency-haw"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Organization/ecr-organization-acme-labs"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Organization/ecr-organization-salem-medical-center"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Patient/ecr-patient-eve-everywoman"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="PlanDefinition/rr-plan-zika-state-department-of-health"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ServiceRequest/eicr-servicerequest-zika"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ServiceRequest/eicr-servicerequest-eve-everywoman-zika"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="PractitionerRole/ecr-practitionerrole-henry-seven"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Practitioner/ecr-practitioner-henry-seven"/></reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Bundle/eicr-bundle-zika"/>
-                <display value="eicr-bundle-zika"/>
-            </reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Bundle/ecr-bundle-message-zika"/>
-                <display value="ecr-bundle-message-zika"/>
-            </reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Task/ecr-task-ehr-requested-eicr"/>
-                <display value="ecr-task-ehr-requested-eicr"/>
-            </reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="MessageHeader/ecr-message-header-ehr-requested-eicr"/>
-                <display value="ecr-message-header-ehr-requested-eicr"/>
-            </reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Organization/ecr-organization-ymca"/>
-                <display value="YMCA"/>
-            </reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Endpoint/ecr-endpoint-salem-medical-center"/>
-                <display value="ecr-endpoint-salem-medical-center"/>
-            </reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Endpoint/ecr-endpoint-ymca"/>
-                <display value="ecr-endpoint-ymca"/>
-            </reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Device/ecr-device-software-ymca"/>
-                <display value="ecr-device-software-ymca"/>
-            </reference>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/extension-travel-history-address"/>
-                <display value="Extension_Travel_History_Address"/>
-            </reference>
-            <name value="Extension_Travel_History_Address"/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/travel-history-observation"/>
-                <display value="Travel_History_Observation"/>
-            </reference>
-            <name value="Travel_History_Observation"/>
+            <name value="Ecr_Message_Bundle"/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
@@ -512,6 +104,38 @@
         </resource>
         <resource>
             <reference>
+                <reference value="StructureDefinition/eicr-servicerequest"/>
+                <display value="Eicr_ServiceRequest"/>
+            </reference>
+            <name value="Eicr_ServiceRequest"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-encounter"/>
+                <display value="Eicr_Encounter"/>
+            </reference>
+            <name value="Eicr_Encounter"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-location"/>
+                <display value="Eicr_Location"/>
+            </reference>
+            <name value="Eicr_Location"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-composition"/>
+                <display value="Eicr_Composition"/>
+            </reference>
+            <name value="Eicr_Composition"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
                 <reference value="StructureDefinition/eicr-occupation-history-observation"/>
                 <display value="Eicr_Occupation_History_Observation"/>
             </reference>
@@ -520,10 +144,42 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/pregnancy-status-observation"/>
-                <display value="Pregnancy_Status_Observation"/>
+                <reference value="StructureDefinition/eicr-document-bundle"/>
+                <display value="Eicr_Document_Bundle"/>
             </reference>
-            <name value="Pregnancy_Status_Observation"/>
+            <name value="Eicr_Document_Bundle"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-manually-initiated-reason-extension"/>
+                <display value="Eicr_Manually_Initiated_Reason_Extension"/>
+            </reference>
+            <name value="Eicr_Manually_Initiated_Reason_Extension"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-trigger-code-flag-extension"/>
+                <display value="Eicr_Trigger_Code_Flag_Extension"/>
+            </reference>
+            <name value="Eicr_Trigger_Code_Flag_Extension"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
+                <display value="RR_Relevant_Reportable_Condition_Plandefinition"/>
+            </reference>
+            <name value="RR_Relevant_Reportable_Condition_Plandefinition"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-communication"/>
+                <display value="RR_Communication"/>
+            </reference>
+            <name value="RR_Communication"/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
@@ -532,6 +188,14 @@
                 <display value="RR_Eicr_Processing_Status_Reason_Observation"/>
             </reference>
             <name value="RR_Eicr_Processing_Status_Reason_Observation"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-responsible-agency-organization"/>
+                <display value="RR_Responsible_Agency_Organization"/>
+            </reference>
+            <name value="RR_Responsible_Agency_Organization"/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
@@ -552,14 +216,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/rr-responsible-agency-organization"/>
-                <display value="RR_Responsible_Agency_Organization"/>
-            </reference>
-            <name value="RR_Responsible_Agency_Organization"/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="StructureDefinition/rr-eicr-processing-status-observation"/>
                 <display value="RR_Eicr_Processing_Status_Observation"/>
             </reference>
@@ -568,43 +224,528 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ecr-organization"/>
-                <display value="Ecr_Organization"/>
+                <reference value="StructureDefinition/rr-determination-of-reportability-rule-extension"/>
+                <display value="RR_Determination_of_Reportability_Rule_Extension"/>
             </reference>
-            <name value="Ecr_Organization"/>
+            <name value="RR_Determination_of_Reportability_Rule_Extension"/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ecr-patient"/>
-                <display value="Ecr_Patient"/>
+                <reference value="StructureDefinition/rr-determination-of-reportability-reason-extension"/>
+                <display value="RR_Determination_of_Reportability_Reason_Extension"/>
             </reference>
-            <name value="Ecr_Patient"/>
+            <name value="RR_Determination_of_Reportability_Reason_Extension"/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ecr-knowledge-distribution-plandefinition"/>
-                <display value="Ecr_Knowledge_Distribution_PlanDefinition"/>
+                <reference value="StructureDefinition/rr-location-relevance-extension"/>
+                <display value="RR_Location_Relevance_Extension"/>
             </reference>
-            <name value="Ecr_Knowledge_Distribution_PlanDefinition"/>
+            <name value="RR_Location_Relevance_Extension"/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
             <reference>
-                <reference value="Observation/eicr-travel-history-eve-everywoman-1999"/>
-                <display value="eicr-travel-history-eve-everywoman-1999"/>
+                <reference value="StructureDefinition/rr-manually-initiated-eicr-extension"/>
+                <display value="RR_Manually_Initiated_Eicr_Extension"/>
             </reference>
-            <name value="eicr-travel-history-eve-everywoman-1999"/>
+            <name value="RR_Manually_Initiated_Eicr_Extension"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-eicr-receipt-time-extension"/>
+                <display value="RR_Eicr_Receipt_Time_Extension"/>
+            </reference>
+            <name value="RR_Eicr_Receipt_Time_Extension"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-eicr-processing-status-extension"/>
+                <display value="RR_Eicr_Processing_Status_Extension"/>
+            </reference>
+            <name value="RR_Eicr_Processing_Status_Extension"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-external-resource-type-extension"/>
+                <display value="RR_External_Resource_Type_Extension"/>
+            </reference>
+            <name value="RR_External_Resource_Type_Extension"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-priority-extension"/>
+                <display value="RR_Priority_Extension"/>
+            </reference>
+            <name value="RR_Priority_Extension"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-determination-of-reportability-extension"/>
+                <display value="RR_Determination_of_Reportability_Extension"/>
+            </reference>
+            <name value="RR_Determination_of_Reportability_Extension"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/pregnancy-status-observation"/>
+                <display value="Pregnancy_Status_Observation"/>
+            </reference>
+            <name value="Pregnancy_Status_Observation"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/travel-history-observation"/>
+                <display value="Travel_History_Observation"/>
+            </reference>
+            <name value="Travel_History_Observation"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/travel-history-address-extension"/>
+                <display value="Travel_History_Address_Extension"/>
+            </reference>
+            <name value="Travel_History_Address_Extension"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-location-relevance-ecr"/>
+                <display value="ValueSet_Location_Relevance_eCR"/>
+            </reference>
+            <name value="ValueSet_Location_Relevance_eCR"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-oes"/>
+                <display value="ValueSet_US_Standard_Occupational_Classification"/>
+            </reference>
+            <name value="ValueSet_US_Standard_Occupational_Classification"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-determination-of-reportability-ecr"/>
+                <display value="ValueSet_Determination_of_Reportability_eCR"/>
+            </reference>
+            <name value="ValueSet_Determination_of_Reportability_eCR"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-eicr-processing-status-reason-detail-type-ecr"/>
+                <display value="ValueSet_eICR_Processing_Status_Reason_Detail_Type_eCR"/>
+            </reference>
+            <name value="ValueSet_eICR_Processing_Status_Reason_Detail_Type_eCR"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-eicr-processing-status-ecr"/>
+                <display value="ValueSet_eICR_Processing_Status_eCR"/>
+            </reference>
+            <name value="ValueSet_eICR_Processing_Status_eCR"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-reportability-priority-ecr"/>
+                <display value="ValueSet_Reportability_Priority_eCR"/>
+            </reference>
+            <name value="ValueSet_Reportability_Priority_eCR"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-eicr-processing-status-reason-ecr"/>
+                <display value="ValueSet_eICR_Processing_Status_Reason_eCR"/>
+            </reference>
+            <name value="ValueSet_eICR_Processing_Status_Reason_eCR"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-lotc"/>
+                <display value="ValueSet_Lab_Order_Test_Name_Triggers_for_Public_Health_Reporting"/>
+            </reference>
+            <name value="ValueSet_Lab_Order_Test_Name_Triggers_for_Public_Health_Reporting"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-external-resource-type-ecr"/>
+                <display value="ValueSet_External_Resource_Type_eCR"/>
+            </reference>
+            <name value="ValueSet_External_Resource_Type_eCR"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-lrtc"/>
+                <display value="ValueSet_Lab_Obs_Test_Name_Triggers_for_Public_Health_Reporting"/>
+            </reference>
+            <name value="ValueSet_Lab_Obs_Test_Name_Triggers_for_Public_Health_Reporting"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-dxtc"/>
+                <display value="ValueSet_Diagnosis_Problem_Triggers_for_Public_Health_Reporting"/>
+            </reference>
+            <name value="ValueSet_Diagnosis_Problem_Triggers_for_Public_Health_Reporting"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-geographical-location-history"/>
+                <display value="ValueSet_Geographical_Location_History"/>
+            </reference>
+            <name value="ValueSet_Geographical_Location_History"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-ostc"/>
+                <display value="ValueSet_Organism_Substance_Triggers_for_Public_Health_Reporting"/>
+            </reference>
+            <name value="ValueSet_Organism_Substance_Triggers_for_Public_Health_Reporting"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/codesystem-oes"/>
+                <display value="CodeSystem_US_Standard_Occupational_Classification"/>
+            </reference>
+            <name value="CodeSystem_US_Standard_Occupational_Classification"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/bundle-ecr-knowledge-distribution"/>
+                <display value="bundle-ecr-knowledge-distribution"/>
+            </reference>
+            <name value="bundle-ecr-knowledge-distribution"/>
             <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/bundle-eicr-document-zika"/>
+                <display value="bundle-eicr-document-zika"/>
+            </reference>
+            <name value="bundle-eicr-document-zika"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/bundle-ecr-message-zika"/>
+                <display value="bundle-ecr-message-zika"/>
+            </reference>
+            <name value="bundle-ecr-message-zika"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/capabilitystatement-ecr-server"/>
+                <display value="CapabilityStatement_eCR_Server"/>
+            </reference>
+            <name value="CapabilityStatement_eCR_Server"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/capabilitystatement-ecr-client"/>
+                <display value="CapabilityStatement_eCR_Client"/>
+            </reference>
+            <name value="CapabilityStatement_eCR_Client"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Communication/communication-rr-single-single"/>
+                <display value="communication-rr-single-single"/>
+            </reference>
+            <name value="communication-rr-single-single"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Composition/composition-eicr-zika"/>
+                <display value="Initial Public Health Case Report"/>
+            </reference>
+            <name value="Initial Public Health Case Report"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Composition/composition-eicr-pertussis-zika"/>
+                <display value="Initial Public Health Case Report"/>
+            </reference>
+            <name value="Initial Public Health Case Report"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Condition/condition-eicr-eve-everywoman-pertussis"/>
+                <display value="condition-eicr-eve-everywoman-pertussis"/>
+            </reference>
+            <name value="condition-eicr-eve-everywoman-pertussis"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Condition/condition-eicr-eve-everywoman-common-cold"/>
+                <display value="condition-eicr-eve-everywoman-common-cold"/>
+            </reference>
+            <name value="condition-eicr-eve-everywoman-common-cold"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Device/device-ecr-software-ymca"/>
+                <display value="device-ecr-software-ymca"/>
+            </reference>
+            <name value="device-ecr-software-ymca"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Encounter/encounter-eicr-diagnosis-eve-everywoman-20180401"/>
+                <display value="encounter-eicr-diagnosis-eve-everywoman-20180401"/>
+            </reference>
+            <name value="encounter-eicr-diagnosis-eve-everywoman-20180401"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Endpoint/endpoint-ecr-ymca"/>
+                <display value="endpoint-ecr-ymca"/>
+            </reference>
+            <name value="endpoint-ecr-ymca"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Endpoint/endpoint-ecr-salem-medical-center"/>
+                <display value="endpoint-ecr-salem-medical-center"/>
+            </reference>
+            <name value="endpoint-ecr-salem-medical-center"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Immunization/immunization-ecr-pneumo"/>
+                <display value="immunization-ecr-pneumo"/>
+            </reference>
+            <name value="immunization-ecr-pneumo"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Location/location-ecr-salem-medical-center"/>
+                <display value="Clinic Bldg A, Salem Medical Center"/>
+            </reference>
+            <name value="Clinic Bldg A, Salem Medical Center"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="MedicationStatement/medicationstatement-us-core-eve-everywoman-azithromycin"/>
+                <display value="medicationstatement-us-core-eve-everywoman-azithromycin"/>
+            </reference>
+            <name value="medicationstatement-us-core-eve-everywoman-azithromycin"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-rr-eicr-processing-status"/>
+                <display value="observation-rr-eicr-processing-status"/>
+            </reference>
+            <name value="observation-rr-eicr-processing-status"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-rr-eicr-processing-status-reason"/>
+                <display value="observation-rr-eicr-processing-status-reason"/>
+            </reference>
+            <name value="observation-rr-eicr-processing-status-reason"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-pregnancy-status-eve-everywoman"/>
+                <display value="observation-pregnancy-status-eve-everywoman"/>
+            </reference>
+            <name value="observation-pregnancy-status-eve-everywoman"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-eicr-occupation-history-eve-everywoman"/>
+                <display value="observation-eicr-occupation-history-eve-everywoman"/>
+            </reference>
+            <name value="observation-eicr-occupation-history-eve-everywoman"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-travel-history-eve-everywoman-201801"/>
+                <display value="observation-travel-history-eve-everywoman-201801"/>
+            </reference>
+            <name value="observation-travel-history-eve-everywoman-201801"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-travel-history-eve-everywoman-1999"/>
+                <display value="observation-travel-history-eve-everywoman-1999"/>
+            </reference>
+            <name value="observation-travel-history-eve-everywoman-1999"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-travel-history-eve-everywoman-201610"/>
+                <display value="observation-travel-history-eve-everywoman-201610"/>
+            </reference>
+            <name value="observation-travel-history-eve-everywoman-201610"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-us-core-results-eve-everywoman-lymphocytes"/>
+                <display value="observation-us-core-results-eve-everywoman-lymphocytes"/>
+            </reference>
+            <name value="observation-us-core-results-eve-everywoman-lymphocytes"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/ecr-organization-acme-labs"/>
+                <display value="Acme Labs"/>
+            </reference>
+            <name value="Acme Labs"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/organization-ecr-health-authority-west"/>
+                <display value="Health Authority West"/>
+            </reference>
+            <name value="Health Authority West"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/organization-rr-responsible-agency-haw"/>
+                <display value="Health Authority West Responsible Agency"/>
+            </reference>
+            <name value="Health Authority West Responsible Agency"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/organization-rr-routing-entity-haw"/>
+                <display value="Health Authority West Routing Entity"/>
+            </reference>
+            <name value="Health Authority West Routing Entity"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/organization-rr-rules-authoring-agency-haw"/>
+                <display value="Health Authority West Rules Authoring Agency"/>
+            </reference>
+            <name value="Health Authority West Rules Authoring Agency"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/organization-ecr-salem-medical-center"/>
+                <display value="organization-ecr-salem-medical-center"/>
+            </reference>
+            <name value="organization-ecr-salem-medical-center"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Patient/patient-ecr-eve-everywoman"/>
+                <display value="Patient Eve L Everywoman"/>
+            </reference>
+            <name value="Patient Eve L Everywoman"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="PlanDefinition/plandefinition-rr-relevant-reportable-condition"/>
+                <display value="ReportableConditionDetermination"/>
+            </reference>
+            <name value="ReportableConditionDetermination"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Practitioner/practitioner-us-core-henry-seven"/>
+                <display value="Practitioner Seven Henry"/>
+            </reference>
+            <name value="Practitioner Seven Henry"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ServiceRequest/servicerequest-eicr-zika"/>
+                <display value="servicerequest-eicr-zika"/>
+            </reference>
+            <name value="servicerequest-eicr-zika"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ServiceRequest/servicerequest-eicr-eve-everywoman-zika"/>
+                <display value="servicerequest-eicr-eve-everywoman-zika"/>
+            </reference>
+            <name value="servicerequest-eicr-eve-everywoman-zika"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Task/task-ecr-ehr-requested-eicr"/>
+                <display value="task-ecr-ehr-requested-eicr"/>
+            </reference>
+            <name value="task-ecr-ehr-requested-eicr"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-document-bundle"/>
+                <display value="Eicr_Document_Bundle"/>
+            </reference>
+            <name value="Eicr_Document_Bundle"/>
+            <exampleBoolean value="false"/>
         </resource>
         <page>
             <nameUrl value="toc.md"/>
             <title value="Table of Contents"/>
             <generation value="generated"/>
             <page>
-                <nameUrl value="Profiles,_Extensions_&amp;_Transactions.html"/>
-                <title value="Profiles, Extensions &amp; Transactions"/>
+                <nameUrl value="Profiles_&amp;_Extensions.html"/>
+                <title value="Profiles &amp; Extensions"/>
+                <generation value="markdown"/>
+            </page>
+            <page>
+                <nameUrl value="Messaging_&amp;_RESTful_Transactions.html"/>
+                <title value="Messaging &amp; RESTful Transactions"/>
                 <generation value="markdown"/>
             </page>
             <page>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Encounter
+    xmlns="http://hl7.org/fhir">
+    <id value="encounter-eicr-diagnosis-eve-everywoman-20180401"/>
+    <meta>
+        <versionId value="5"/>
+        <lastUpdated value="2019-06-05T01:20:48.000-04:00"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
+    </meta>
+    <text>
+        <status value="generated"/>
+        <div
+            xmlns="http://www.w3.org/1999/xhtml">
+            <p>
+                <b>Generated Narrative with Details</b>
+            </p>
+            <p>
+                <b>id</b>: eicr-encounter-eve-everywoman-20180401
+            
+            
+            </p>
+            <p>
+                <b>meta</b>: 
+            
+            
+            </p>
+            <p>
+                <b>status</b>: generated
+            
+            
+            </p>
+            <p>
+                <b>class</b>: ambulatory (Details: http://hl7.org/fhir/v3/ActCode code AMB = 'ambulatory', stated as 'ambulatory')
+            
+            
+            </p>
+            <p>
+                <b>type</b>: Office Visit 
+        
+                
+                
+                <span style="background: LightGoldenRodYellow">(Details : {http://www.ama-assn.org/go/cpt code '99201' = '99201)</span>
+            </p>
+            <p>
+                <b>subject</b>: 
+        
+                
+                
+                <b>name</b>: Eve Everywoman 
+        
+                
+                
+                <b>identifier</b>: Medical Record Number = 1032702 (http://hospital.smarthealthit.org), SSN = 11-00-1234 (USUAL)
+            
+            
+            </p>
+            <p>
+                <b>period</b>: Apr 1, 2018 10:00:00 AM --&gt; Apr 2, 2018 10:15:00 AM
+            
+            
+            </p>
+        </div>
+    </text>
+    <identifier>
+        <system value="http://hospital.smarthealthit.org"/>
+        <value value="9937012"/>
+    </identifier>
+    <status value="finished"/>
+    <class>
+        <system value="http://hl7.org/fhir/v3/ActCode"/>
+        <code value="AMB"/>
+        <display value="ambulatory"/>
+    </class>
+    <type>
+        <coding>
+            <system value="http://www.ama-assn.org/go/cpt"/>
+            <code value="99201"/>
+        </coding>
+        <text value="Office Visit"/>
+    </type>
+    <subject>
+        <reference value="Patient/patient-ecr-eve-everywoman"/>
+        <display value="Eve Everywoman"/>
+    </subject>
+    <participant>
+        <type>
+            <coding>
+                <system value="http://hl7.org/fhir/v3/ParticipationType"/>
+                <code value="ATND"/>
+                <display value="attender"/>
+            </coding>
+        </type>
+        <individual>
+            <reference value="Practitioner/practitioner-us-core-henry-seven"/>
+            <display value="Henry Seven, MD"/>
+        </individual>
+    </participant>
+    <period>
+        <start value="2018-04-01T10:00:00-05:00"/>
+        <end value="2018-04-02T10:15:00-05:00"/>
+    </period>
+    <diagnosis>
+        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension">
+            <extension url="triggerCodeValueSet">
+                <valueOid value="urn:oid:2.16.840.1.114222.4.11.7508"/>
+            </extension>
+            <extension url="triggerCodeValueSetVersion">
+                <valueString value="19/05/2018"/>
+            </extension>
+        </extension>
+        <condition>
+            <reference value="Condition/condition-eicr-eve-everywoman-pertussis"/>
+        </condition>
+    </diagnosis>
+    <diagnosis>
+        <condition>
+            <reference value="Condition/condition-eicr-eve-everywoman-common-cold"/>
+        </condition>
+    </diagnosis>
+    <location>
+        <location>
+            <reference value="Location/location-ecr-salem-medical-center"/>
+            <display value="Clinic Bldg A, Salem Medical Center, 4646 Brown Rd, Salem, MA 02368"/>
+        </location>
+    </location>
+    <serviceProvider>
+        <reference value="Organization/organization-ecr-salem-medical-center"/>
+        <display value="Salem Medical Center, 22222 Health Authority Drive, Ann Arbor MI, 99999"/>
+    </serviceProvider>
+</Encounter>

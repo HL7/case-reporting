@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Observation
+    xmlns="http://hl7.org/fhir">
+    <id value="observation-rr-eicr-processing-status-reason"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2019-06-05T00:18:36.000-04:00"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
+    </meta>
+    <status value="final"/>
+    <code>
+        <coding>
+            <system value="urn:oid:2.16.840.1.114222.4.5.232"/>
+            <code value="RR6"/>
+            <display value="eICR Processing Status Reason"/>
+        </coding>
+    </code>
+    <valueCodeableConcept>
+        <coding>
+            <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
+            <code value="RRVS30"/>
+            <display value="eICR was processed with the warning of: inactive RCTC code"/>
+        </coding>
+    </valueCodeableConcept>
+    <component>
+        <code>
+            <coding>
+                <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
+                <code value="RRVS32"/>
+                <display value="Inactive RCTC code detail"/>
+            </coding>
+        </code>
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="69092001"/>
+                <display value="Leptospirosis icterohemorrhagica (disorder)"/>
+            </coding>
+        </valueCodeableConcept>
+    </component>
+</Observation>
