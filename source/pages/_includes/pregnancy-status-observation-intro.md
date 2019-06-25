@@ -4,6 +4,4 @@ layout: default
 active: StructureDefinition-pregnancy-status-observation-intro
 ---
 
-The Electronic Case Reporting Pregnancy profile establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:
-
-- Current or prior pregnancy status enabling investigators to determine if the subject of the case report was pregnant during the course of a condition.
+This Observation profile represents the eICR patient's current or prior pregnancy status.

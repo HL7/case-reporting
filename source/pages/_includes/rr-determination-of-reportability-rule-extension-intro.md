@@ -4,4 +4,4 @@ layout: default
 active: StructureDefinition-rr-determination-of-reportability-rule-extension-intro
 ---
 
-A rule that led to the determination of reportability.
+This Extension profile represents a rule that led to the determination of reportability.

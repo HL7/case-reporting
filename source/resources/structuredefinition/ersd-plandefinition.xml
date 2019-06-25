@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="ecr-knowledge-distribution-plandefinition"/>
+    <id value="ersd-plandefinition"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2019-05-31T20:54:43.000-04:00"/>
-        <security>
-            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
-            <code value="everyone^read"/>
-        </security>
-        <security>
-            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
-            <code value="everyone^write"/>
-        </security>
+        <versionId value="5"/>
+        <lastUpdated value="2019-06-24T21:42:05.000-04:00"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-knowledge-distribution-plandefinition"/>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
     <version value="1.0.0"/>
-    <name value="Ecr_Knowledge_Distribution_PlanDefinition"/>
-    <title value="eCR Knowledge Distribution PlanDefinition"/>
-    <status value="draft"/>
-    <date value="2018-08-19"/>
-    <description value="Defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician."/>
+    <name value="Ersd_PlanDefinition"/>
+    <title value="eRSD PlanDefinition"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This PlanDefinition profile defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician."/>
     <fhirVersion value="4.0.0"/>
     <kind value="resource"/>
     <abstract value="false"/>
@@ -30,19 +23,19 @@
     <differential>
         <element id="PlanDefinition">
             <path value="PlanDefinition"/>
-            <short value="eCR Knowledge Distribution"/>
+            <short value="eRSD - electronic Reporting and Surveillance Distribution"/>
             <definition value="Defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician."/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.version">
             <path value="PlanDefinition.version"/>
-            <short value="Business version of the Knowledge Distribution"/>
+            <short value="Business version of the eRSD"/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.name">
             <path value="PlanDefinition.name"/>
-            <short value="Name for this Knowledge Distribution (computer friendly)"/>
+            <short value="Name for this eRSD (computer friendly)"/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
@@ -53,23 +46,23 @@
         </element>
         <element id="PlanDefinition.date">
             <path value="PlanDefinition.date"/>
-            <short value="Date the Knowledge Distribution was published"/>
+            <short value="Date the eRSD was published"/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.publisher">
             <path value="PlanDefinition.publisher"/>
-            <short value="Name of the agency that published this Knowledge Distribution"/>
+            <short value="Name of the agency that published this eRSD"/>
         </element>
         <element id="PlanDefinition.effectivePeriod">
             <path value="PlanDefinition.effectivePeriod"/>
-            <short value="When the Knowledge Distribution is expected to be used"/>
+            <short value="When the eRSD is expected to be used"/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.effectivePeriod.start">
             <path value="PlanDefinition.effectivePeriod.start"/>
-            <short value="The start of the time period when this Knowledge Distribution goes in effect"/>
+            <short value="The start of the time period when this eRSD goes in effect"/>
             <min value="1"/>
         </element>
         <element id="PlanDefinition.relatedArtifact">
@@ -87,7 +80,7 @@
             <path value="PlanDefinition.relatedArtifact"/>
             <sliceName value="sliceRCTCLibraryRelatedArtifact"/>
             <short value="The RCTC Value Set Library"/>
-            <definition value="Reference to the RCTC Value Set library of trigger codes that this Knowledge Distribution depends on"/>
+            <definition value="Reference to the RCTC Value Set library of trigger codes that this eRSD depends on"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>

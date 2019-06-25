@@ -4,6 +4,8 @@ layout: default
 active: Messaging & RESTful Transactions
 ---
 
+[Previous Page](Profiles_&_Extensions.html)
+
 ### Electronic Case Report Messaging Profiles
 
 The following profiles have been defined for the Electronic Case Report Messaging paradigm:
@@ -28,3 +30,6 @@ The following profiles have been defined for the Electronic Case Report RESTful 
 </ul>
 
 The focus of the <a href="StructureDefinition-ecr-Task.html">eCR Task</a> is either the <a href="StructureDefinition-eicr-document-bundle.html">eICR Document Bundle</a> or the <a href="StructureDefinition-rr-Communication.html">RR Communication</a>.
+
+
+[Next Page](Terminology.html)

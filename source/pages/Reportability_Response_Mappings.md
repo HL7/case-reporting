@@ -4,6 +4,8 @@ layout: default
 active: Reportability Response Mappings
 ---
 
+[Previous Page](eICR_Mappings.html)
+
 #### Table: Reportability Response Data Elements to Reportability Response Communication Profile
 
 |Data Element|FHIR Contained by|FHIR Resource|FHIR Element Path|CDA Section|CDA Mapping|
@@ -79,3 +81,6 @@ active: Reportability Response Mappings
 |Rules Authoring Agency Identifier|PlanDefinition[rr-plandefinition].publisher|Organization[rr-rules-authoring-agency]|[identifier](StructureDefinition-rr-rules-authoring-agency-definitions.html#Organization.identifier)|Reportability Response Summary Section|Reportability Response Coded Information Organizer/Relevant Reportable Condition Observation/Reportability Information Organizer/Rules Authoring Agency/participantRole/id|
 |Rules Authoring Agency Name|PlanDefinition[rr-plandefinition].publisher|Organization[rr-rules-authoring-agency]|[name](StructureDefinition-rr-rules-authoring-agency-definitions.html#Organization.name)|Reportability Response Summary Section|Reportability Response Coded Information Organizer/Relevant Reportable Condition Observation/Reportability Information Organizer/Rules Authoring Agency/participantRole/playingEntity/name|
 {:.grid}
+
+
+[Next Page](History.html)

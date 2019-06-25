@@ -4,6 +4,8 @@ layout: default
 active: Downloads
 ---
 
+[Previous Page](Capability_Statements.html)
+
 **Validator Pack and Definitions:**
 
 The following file contains all the value sets, profiles, extensions, list of pages and urls in the IG, etc defined as part of the this Implementation Guides.:
@@ -19,7 +21,7 @@ These files should be the first choice whenever generating any implementation ar
 
 **Schematrons** are also available and listed below:
 
-- [ecr-knowledge-distribution.sch](ecr-knowledge-distribution.sch)
+- [ersd-plandefinition.sch](ersd-plandefinition.sch)
 - [ecr-organization.sch](ecr-organization.sch)
 - [ecr-patient.sch](ecr-patient.sch)
 - [ecr-practitionerrole.sch](ecr-practitionerrole.sch)
@@ -49,7 +51,7 @@ These files should be the first choice whenever generating any implementation ar
 - [extension-rr-rules-authoring-agency.sch](extension-rr-rules-authoring-agency.sch)
 - [extension-rr-subject.sch](extension-rr-subject.sch)
 - [extension-rr-summary.sch](extension-rr-summary.sch)
-- [knowledge-distribution-valueset-library.sch](knowledge-distribution-valueset-library.sch)
+- [ersd-valueset-library.sch](ersd-valueset-library.sch)
 - [pregnancy-status.sch](pregnancy-status.sch)
 - [rr-communication.sch](rr-communication.sch)
 - [rr-eicr-processing-status.sch](rr-eicr-processing-status.sch)
@@ -64,3 +66,6 @@ These files should be the first choice whenever generating any implementation ar
 - [XML](examples.xml.zip)
 - [JSON](examples.json.zip)
 - [TTl](examples.ttl.zip)
+
+
+[Next Page](Implementation_Guidance.html)

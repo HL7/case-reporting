@@ -4,6 +4,8 @@ layout: default
 active: eICR Mappings
 ---
 
+[Previous Page](Mappings.html)
+
 #### Table: EICR Data Elements to eICR Composition Profile
 
 <table class="grid" width="80%">
@@ -476,3 +478,5 @@ active: eICR Mappings
     </tr>
   </tbody>
 </table>
+
+[Next Page](Reportability_Response_Mappings.html)

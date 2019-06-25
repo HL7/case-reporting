@@ -40,6 +40,10 @@ active: other
 <td><a href="Communication-communication-rr-single-single.html">communication-rr-single-single</a></td>
 </tr>
 <tr>
+<td>Communication</td>
+<td><a href="Communication-communication-rr-single-single-html-validation-output.html">communication-rr-single-single-html-validation-output</a></td>
+</tr>
+<tr>
 <td>Composition</td>
 <td><a href="Composition-composition-eicr-zika.html">Initial Public Health Case Report</a></td>
 </tr>

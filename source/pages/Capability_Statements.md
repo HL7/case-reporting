@@ -4,6 +4,8 @@ layout: default
 active: Capability Statements
 ---
 
+[Previous Page](Terminology.html)
+
 The following CapabilityStatements define the conformance requirements for this implementation guide.
 
 ### Knowledge Management Transaction
@@ -48,3 +50,5 @@ The Knowledge Management Client **SHOULD**:
 {% include list-simple-capabilitystatements.xhtml %}
 ### Reportability Response Transaction
 {% include list-simple-capabilitystatements.xhtml %}
+
+[Next Page](Downloads.html)

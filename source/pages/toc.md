@@ -4,7 +4,7 @@ layout: default
 active: toc
 ---
 
-* Table of Contents
+* <a href="toc.html">Table of Contents</a>
     * <a href="Profiles_&_Extensions.html">Profiles & Extensions</a>
     * <a href="Messaging_&_RESTful_Transactions.html">Messaging & RESTful Transactions</a>
     * <a href="Terminology.html">Terminology</a>

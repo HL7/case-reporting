@@ -4,6 +4,8 @@ layout: default
 active: Profiles & Extensions
 ---
 
+[Previous Page](toc.html)
+
 ### Electronic Initial Case Report (eICR) Transaction and Profiles
 
 The eICR transaction involves the transmission of data identified by a Council of State and Territorial Epidemiologists Task Force as being important to a case report.
@@ -44,7 +46,7 @@ The following profiles and extensions have been defined for the eICR transaction
 The RR transaction represents a response from public health to healthcare associated with a received eICR.
 It can include determination of reportability information, contact information for the involved public health agencies, and requests for case investigation supplemental data that may not have been recorded in the process of care, condition-specific information from public health, and an acknowledgment that report has been successfully conveyed. 
 
-When public health reporting rules are distributable to healthcare some of this information will be conveyed in the Knowledge Distribution transaction so that it can be accessed by the healthcare rules engine.
+When public health reporting rules are distributable to healthcare some of this information will be conveyed in the electronic Reporting & Surveillance Distribution (eRSD) transaction so that it can be accessed by the healthcare rules engine.
 The RR is conveyed as a push transaction from public health to healthcare.
 There may be several different intermediaries involved in its transmission including Health Information Exchanges and Health Data Networks.
 The RR may originate from the Association of Public Health Laboratories (APHL) AIMS platform when public health decision support (the Reportable Condition Knowledge Management System - RCKMS) is used there or directly from a Public Health Agency if they received the eICR directly from healthcare. 
@@ -87,9 +89,9 @@ The following profiles and extensions have been defined for the Reportability Re
 ---
 <br/>
 
-### Knowledge Distribution Transaction and Profiles
+### electronic Reporting & Surveillance Distribution (eRSD) Transaction and Profiles
 
-The Knowledge Distribution transaction includes a constrained FHIR PlanDefinition resource profile and bundle, a family of actions, and a FHIR Subscription service. 
+The eRSD transaction includes a constrained FHIR PlanDefinition resource profile and bundle, a family of actions, and a FHIR Subscription service. 
 It supports the distribution of reporting guidance and parameters, trigger code value sets, and more complex reporting rules and clinician / reporter support resources.
 This work seeks to align with developing public health guidelines that cover the same conditions.
 The PlanDefinition includes guidance for the overall orchestration of electronic case reporting.
@@ -102,15 +104,18 @@ While there may be circumstances, in conjunction with appropriate guidelines, wh
 The Creation of the eICR action involves the marshaling of FHIR resources needed to create the eICR profile included in this standard.
 And the Sending of the eICR action involves the transmission of the eICR to either the APHL AIMS Platform, a Public Health Agency (PHA), or a Health information Exchange or Health Data Network on the way to a PHA.
 
-The FHIR subscription service supports public health needs for the routine and emergent distribution of the Knowledge Distribution.
+The FHIR subscription service supports public health needs for the routine and emergent distribution of the eRSD.
 The Subscription does not require FHIR implementation on the receiving (EHR) end of the transaction, but can provide XML or JSON formats via RESTful query or proactive notification channels. 
 
 <ul>
-  <li><a href="StructureDefinition-ecr-knowledge-distribution.html">eCR Knowledge Distribution PlanDefinition</a></li>
+  <li><a href="StructureDefinition-ersd-plandefinition.html">eRSD PlanDefinition</a></li>
 </ul>
 
 <ul>
-  <li><a href="StructureDefinition-knowledge-distribution-valueset-library.html">Knowledge Distribution Valueset Library</a></li>
+  <li><a href="StructureDefinition-ersd-valueset-library.html">eRSD Valueset Library</a></li>
 </ul>
 
 
+
+
+[Next Page](Messaging_&_RESTful_Transactions.html)

@@ -4,7 +4,9 @@ layout: default
 active: Terminology
 ---
 
-### Value Sets: Knowledge Distribution Transaction
+[Previous Page](Messaging_&_RESTful_Transactions.html)
+
+### Value Sets: eRSD Transaction
 
 - [Organism_Substance Triggers for Public Health Reporting](ValueSet-ostc.html)
 - [Lab Obs Test Name Triggers for Public Health Reporting](ValueSet-lrtc.html)
@@ -13,7 +15,7 @@ active: Terminology
   
 
 A bundle containing all the trigger code value sets (and the PlanDefinition) is also included in this guide.
-- [Knowlege Distribution Bundle](Bundle-ecr-bundle-knowledge-distribution.html)
+- [eRSD Bundle](Bundle-ersd-bundle-ersd.html)
 
 ---
 
@@ -87,3 +89,5 @@ The following value sets have been defined for the Reportability Response transa
 - [Source of Payment Typology (PHDSC)](http://www.phdsc.org/standards/payer-typology.asp)
 - [UCUM](http://unitsofmeasure.org)
 - [Unique Ingredient Identifier (UNII)](http://fdasis.nlm.nih.gov)
+
+[Next Page](Capability_Statements.html)

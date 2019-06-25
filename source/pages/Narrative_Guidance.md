@@ -4,6 +4,8 @@ layout: default
 active: Narrative Guidance
 ---
 
+[Previous Page](Design_Considerations.html)
+
 # Introduction
 ## Purpose
 The following is informative guidance on generating the narrative text of a Reportability Response Communication (Reportability Response). Through the Reportability Response, public health seeks to support bidirectional communication with clinical care for reportable conditions. The Reportability Response is designed to have one Reportability Response created for each electronic Initial Case Report (eICR) and to be shared with the clinical care organization that created that eICR. The Reportability Response can also be shared with a Public Health Agency(ies) [PHA(s)] that has relevant reporting requirements (a Responsible Pubic Health Agency) that wants to use it to monitor the reporting process and know what has been conveyed to clinical care organizations and other Public Health Agencies. Sharing the Reportability Response with clinical care will serve several functions, including to:
@@ -614,3 +616,5 @@ The examples below provide example text for *Providers / Reporters* for these ty
 > An initial report for a possible reportable condition was received on December 12, 2017 at 8:00pm with a file name "Eicr_Filename.xml" but it was not able to be processed.
 >
 > eICR was not processed due to an error of: fatal problem with the eICR that was received.
+
+[Next Page](Mappings.html)

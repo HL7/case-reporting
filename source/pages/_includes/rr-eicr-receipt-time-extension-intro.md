@@ -4,4 +4,4 @@ layout: default
 active: StructureDefinition-rr-eicr-receipt-time-extension-intro
 ---
 
-Date and time of eICR receipt
+This Extension profile represents the date and time of eICR receipt

@@ -4,6 +4,4 @@ layout: default
 active: StructureDefinition-eicr-occupation-history-observation-intro
 ---
 
-The Electronic Case Reporting Occupational History profile establishes the core elements, extensions, vocabularies and value sets for representing the following for electronic case reporting:
-
--  The Initial Case Report subject's occupational history.
+This Observation profile represents the eICR subject's occupational history.
