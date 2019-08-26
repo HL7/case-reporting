@@ -4,7 +4,7 @@ layout: default
 active: Implementation Guidance
 ---
 
-[Previous Page](Downloads.html)
+[Previous Page](FHIR_Messaging_and_RESTful_Submit.html)
 
 <ul>
 	<li><a href="design-considerations.html">Design Considerations</a></li>

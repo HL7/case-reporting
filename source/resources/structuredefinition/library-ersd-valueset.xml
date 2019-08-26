@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="library-ersd-valueset"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2019-08-25T01:45:34.000-04:00"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-valueset-library"/>
+    <version value="1.0.0"/>
+    <name value="ERSD_Valueset_Library"/>
+    <title value="eRSD Valueset Library"/>
+    <status value="draft"/>
+    <date value="2018-08-19"/>
+    <description value="Defines the library containing the Reportable Condition Trigger Code value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses. "/>
+    <fhirVersion value="4.0.0"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Library"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Library"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Library">
+            <path value="Library"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.identifier">
+            <path value="Library.identifier"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.identifier.system">
+            <path value="Library.identifier.system"/>
+            <short value="The namespace for Object Identifiers"/>
+            <definition value="Fixed to the namespace: urn:ietf:rfc:3986 for OIDs"/>
+            <min value="1"/>
+            <patternUri value="urn:ietf:rfc:3986"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.identifier.value">
+            <path value="Library.identifier.value"/>
+            <short value="The OID for the RCTC ValueSet Library"/>
+            <definition value="The Object Identifier of the Reportable Condition Trigger Code library"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.version">
+            <path value="Library.version"/>
+            <short value="The version of the RCTC ValueSet Library."/>
+            <definition value="The RCTC Definition Version. Usually a date. "/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.name">
+            <path value="Library.name"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.title">
+            <path value="Library.title"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.status">
+            <path value="Library.status"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.type">
+            <path value="Library.type"/>
+            <short value="asset-collection"/>
+            <definition value="Identifies the type of library. Fixed to Asset-Collection. "/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.type.coding">
+            <path value="Library.type.coding"/>
+            <min value="1"/>
+            <max value="1"/>
+        </element>
+        <element id="Library.type.coding.system">
+            <path value="Library.type.coding.system"/>
+            <min value="1"/>
+            <fixedUri value="http://hl7.org/fhir/ValueSet/library-type"/>
+        </element>
+        <element id="Library.type.coding.code">
+            <path value="Library.type.coding.code"/>
+            <min value="1"/>
+            <fixedCode value="asset-collection"/>
+        </element>
+        <element id="Library.description">
+            <path value="Library.description"/>
+            <min value="1"/>
+            <patternMarkdown value="Triggers for initiating decision support for electronic case reports"/>
+        </element>
+        <element id="Library.effectivePeriod">
+            <path value="Library.effectivePeriod"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.effectivePeriod.start">
+            <path value="Library.effectivePeriod.start"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact">
+            <path value="Library.relatedArtifact"/>
+            <slicing>
+                <discriminator>
+                    <type value="profile"/>
+                    <path value="resource"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <min value="1"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceDiagnosisProblemValueSet">
+            <path value="Library.relatedArtifact"/>
+            <sliceName value="sliceDiagnosisProblemValueSet"/>
+            <short value="Diagnosis Problem Value Set"/>
+            <definition value="References to the Diagnosis Problem Value Set resource"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceDiagnosisProblemValueSet.type">
+            <path value="Library.relatedArtifact.type"/>
+            <short value="composed-of"/>
+            <definition value="The type of relationship to the related artifact. Fixed to composed-of."/>
+            <patternCode value="composed-of"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceDiagnosisProblemValueSet.display">
+            <path value="Library.relatedArtifact.display"/>
+            <min value="1"/>
+            <patternString value="Diagnosis Problem Triggers for Public Health Reporting"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceDiagnosisProblemValueSet.resource">
+            <path value="Library.relatedArtifact.resource"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceDiagnosisProblemValueSet.resource.reference">
+            <path value="Library.relatedArtifact.resource.reference"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceOrganismSubstanceValueSet">
+            <path value="Library.relatedArtifact"/>
+            <sliceName value="sliceOrganismSubstanceValueSet"/>
+            <short value="Organism Substance Value Set"/>
+            <definition value="References to the Organism Substance Value Set resource"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceOrganismSubstanceValueSet.type">
+            <path value="Library.relatedArtifact.type"/>
+            <short value="composed-of"/>
+            <definition value="The type of relationship to the related artifact. Fixed to composed-of."/>
+            <patternCode value="composed-of"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceOrganismSubstanceValueSet.display">
+            <path value="Library.relatedArtifact.display"/>
+            <min value="1"/>
+            <patternString value="Organism Substance Triggers for Public Health Reporting"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceOrganismSubstanceValueSet.resource">
+            <path value="Library.relatedArtifact.resource"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceOrganismSubstanceValueSet.resource.reference">
+            <path value="Library.relatedArtifact.resource.reference"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceLabOrderTestNameValueSet">
+            <path value="Library.relatedArtifact"/>
+            <sliceName value="sliceLabOrderTestNameValueSet"/>
+            <short value="Lab Order Test Value Set"/>
+            <definition value="References to the Lab Order Test Value Set resource"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceLabOrderTestNameValueSet.type">
+            <path value="Library.relatedArtifact.type"/>
+            <short value="composed-of"/>
+            <definition value="The type of relationship to the related artifact. Fixed to composed-of."/>
+            <patternCode value="composed-of"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceLabOrderTestNameValueSet.display">
+            <path value="Library.relatedArtifact.display"/>
+            <min value="1"/>
+            <patternString value="Lab Order Test Name Triggers for Public Health Reporting"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceLabOrderTestNameValueSet.resource">
+            <path value="Library.relatedArtifact.resource"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceLabOrderTestNameValueSet.resource.reference">
+            <path value="Library.relatedArtifact.resource.reference"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceLabObsTestNameValueSet">
+            <path value="Library.relatedArtifact"/>
+            <sliceName value="sliceLabObsTestNameValueSet"/>
+            <short value="Lab Observation Test Value Set"/>
+            <definition value="References to the Lab Observation Test Value Set resource"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceLabObsTestNameValueSet.type">
+            <path value="Library.relatedArtifact.type"/>
+            <short value="composed-of"/>
+            <definition value="The type of relationship to the related artifact. Fixed to composed-of."/>
+            <patternCode value="composed-of"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceLabObsTestNameValueSet.display">
+            <path value="Library.relatedArtifact.display"/>
+            <min value="1"/>
+            <patternString value="Lab Obs Test Name Triggers for Public Health Reporting"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceLabObsTestNameValueSet.resource">
+            <path value="Library.relatedArtifact.resource"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceLabObsTestNameValueSet.resource.reference">
+            <path value="Library.relatedArtifact.resource.reference"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceDrugsPrescribedValueSet">
+            <path value="Library.relatedArtifact"/>
+            <sliceName value="sliceDrugsPrescribedValueSet"/>
+            <short value="Drugs Prescribed Value Set"/>
+            <definition value="References to the Drugs Prescribed Value Set resource"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceDrugsPrescribedValueSet.type">
+            <path value="Library.relatedArtifact.type"/>
+            <short value="composed-of"/>
+            <definition value="The type of relationship to the related artifact. Fixed to composed-of."/>
+            <patternCode value="composed-of"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceDrugsPrescribedValueSet.display">
+            <path value="Library.relatedArtifact.display"/>
+            <min value="1"/>
+            <patternString value="Drugs Prescribed Triggers for Public Health Reporting"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceDrugsPrescribedValueSet.resource">
+            <path value="Library.relatedArtifact.resource"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceDrugsPrescribedValueSet.resource.reference">
+            <path value="Library.relatedArtifact.resource.reference"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+    </differential>
+</StructureDefinition>

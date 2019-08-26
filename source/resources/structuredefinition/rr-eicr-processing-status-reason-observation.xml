@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-eicr-processing-status-reason-observation"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2019-06-24T21:07:52.000-04:00"/>
+        <versionId value="8"/>
+        <lastUpdated value="2019-08-12T13:14:57.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation"/>
     <version value="1.0.0"/>
@@ -15,6 +15,11 @@
     <publisher value="HL7 Public Health Work Group"/>
     <description value="This Observation profile represents, if the incoming eICR was not successfully processed for a determination of reportability, the reason it was not processed.  If any of the trigger codes used to generate the eICR are from an outdated version of the RCTC or the codes are marked as inactive in the latest version of the RCTC, these are flagged and component observations will hold the details of the outdated and expected versions of the RCTC."/>
     <fhirVersion value="4.0.0"/>
+    <mapping>
+        <identity value="CDA"/>
+        <name value="eICR Processing Status Reason observation mapping to CDA"/>
+        <comment value="This table maps eICR Processing status reason observation profile to CDA"/>
+    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Observation"/>
@@ -118,6 +123,21 @@
                 </valueCodeableConcept>
             </example>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="eICR Processing Status/eICR Processing Status Reason/eICR Processing Status Reason Detail[code=RRVS33]/value"/>
+                <comment value="Expected RCTC Version"/>
+            </mapping>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="eICR Processing Status Detail[code=”RRVS32”]/value"/>
+                <comment value="Inactive RCTC Code"/>
+            </mapping>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="eICR Processing Status Reason Detail[code=”RRVS31”]/value"/>
+                <comment value="Outdated RCTC Version"/>
+            </mapping>
         </element>
     </differential>
 </StructureDefinition>

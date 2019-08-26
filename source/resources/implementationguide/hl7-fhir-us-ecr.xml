@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="101"/>
-        <lastUpdated value="2019-07-03T00:31:53.000-04:00"/>
+        <versionId value="129"/>
+        <lastUpdated value="2019-08-25T22:00:33.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.0.0"/>
@@ -272,14 +272,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/pregnancy-status-observation"/>
-                <display value="Pregnancy_Status_Observation"/>
-            </reference>
-            <name value="Pregnancy_Status_Observation"/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="StructureDefinition/travel-history-observation"/>
                 <display value="Travel_History_Observation"/>
             </reference>
@@ -405,14 +397,6 @@
             </reference>
             <name value="CodeSystem_US_Standard_Occupational_Classification"/>
             <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Bundle/bundle-ecr-knowledge-distribution"/>
-                <display value="bundle-ecr-knowledge-distribution"/>
-            </reference>
-            <name value="bundle-ecr-knowledge-distribution"/>
-            <exampleBoolean value="true"/>
         </resource>
         <resource>
             <reference>
@@ -718,33 +702,156 @@
             <name value="ERSD_PlanDefinition"/>
             <exampleBoolean value="false"/>
         </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ecr-organization-extension"/>
+                <display value="Ecr_Organization_Extension"/>
+            </reference>
+            <name value="Ecr_Organization_Extension"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/bundle-eRSD"/>
+                <display value="bundle-eRSD"/>
+            </reference>
+            <name value="bundle-eRSD"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-eicr-initiation-ecr"/>
+                <display value="EICR_Initiation"/>
+            </reference>
+            <name value="EICR_Initiation"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/capabilitystatement-ersd-server"/>
+                <display value="CapabilityStatement_eRSD_Server"/>
+            </reference>
+            <name value="CapabilityStatement_eRSD_Server"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/capabilitystatement-ersd-client"/>
+                <display value="CapabilityStatement_eRSD_Client"/>
+            </reference>
+            <name value="CapabilityStatement_eRSD_Client"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/library-ersd-valueset"/>
+                <display value="ERSD_Valueset_Library"/>
+            </reference>
+            <name value="ERSD_Valueset_Library"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/2.16.840.1.113883.10.20.15.2.5.12"/>
+                <display value="Therapeutic Response to Medication"/>
+            </reference>
+            <name value="Therapeutic Response to Medication"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/therapeutic-medication-response-extension"/>
+                <display value="Therapeutic_Medication_Response_Extension"/>
+            </reference>
+            <name value="Therapeutic_Medication_Response_Extension"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/pregnancy-status"/>
+                <display value="Pregnancy Status"/>
+            </reference>
+            <name value="Pregnancy Status"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/2.16.840.1.113883.11.20.9.80"/>
+                <display value="Pregnancy Status Determination Method"/>
+            </reference>
+            <name value="Pregnancy Status Determination Method"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/pregnancy-status-observation"/>
+                <display value="Pregnancy_Status_Observation"/>
+            </reference>
+            <name value="Pregnancy_Status_Observation"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/2.16.840.1.113883.11.20.9.81"/>
+                <display value="Estimated Date of Delivery Including Method"/>
+            </reference>
+            <name value="Estimated Date of Delivery Including Method"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/determination-date-extension"/>
+                <display value="Determination_Date_Extension"/>
+            </reference>
+            <name value="Determination_Date_Extension"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/2.16.840.1.113883.11.20.9.82"/>
+                <display value="Estimated Gestational Age Code Including Method"/>
+            </reference>
+            <name value="Estimated Gestational Age Code Including Method"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/2.16.840.1.113883.11.20.9.86"/>
+                <display value="Pregnancy Outcome"/>
+            </reference>
+            <name value="Pregnancy Outcome"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/pregnancy-outcome-observation"/>
+                <display value="Pregnancy_Outcome_Observation"/>
+            </reference>
+            <name value="Pregnancy_Outcome_Observation"/>
+            <exampleBoolean value="false"/>
+        </resource>
         <page>
             <nameUrl value="toc.md"/>
             <title value="Table of Contents"/>
             <generation value="generated"/>
             <page>
-                <nameUrl value="Profiles_&amp;_Extensions.html"/>
-                <title value="Profiles &amp; Extensions"/>
+                <nameUrl value="Electronic_Initial_Case_Report_(eICR)_Transaction_and_Profiles.html"/>
+                <title value="Electronic Initial Case Report (eICR) Transaction and Profiles"/>
                 <generation value="markdown"/>
             </page>
             <page>
-                <nameUrl value="Messaging_&amp;_RESTful_Transactions.html"/>
-                <title value="Messaging &amp; RESTful Transactions"/>
+                <nameUrl value="Reportability_Response_(RR)_Transaction_and_Profiles.html"/>
+                <title value="Reportability Response (RR) Transaction and Profiles"/>
                 <generation value="markdown"/>
             </page>
             <page>
-                <nameUrl value="Terminology.html"/>
-                <title value="Terminology"/>
+                <nameUrl value="Electronic_Reporting_and_Surveillance_Distribution_(eRSD)_Transaction_and_Profiles.html"/>
+                <title value="Electronic Reporting and Surveillance Distribution (eRSD) Transaction and Profiles"/>
                 <generation value="markdown"/>
             </page>
             <page>
-                <nameUrl value="Capability_Statements.html"/>
-                <title value="Capability Statements"/>
-                <generation value="markdown"/>
-            </page>
-            <page>
-                <nameUrl value="Downloads.html"/>
-                <title value="Downloads"/>
+                <nameUrl value="FHIR_Messaging_and_RESTful_Submit.html"/>
+                <title value="FHIR Messaging and RESTful Submit"/>
                 <generation value="markdown"/>
             </page>
             <page>

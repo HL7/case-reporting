@@ -20,6 +20,7 @@
 	"pages": [
 		"pages"
 	],
+	"version": "4.0.0",
 	"extension-domains": [
 		"https://trifolia-on-fhir.lantanagroup.com"
 	],
@@ -27,6 +28,9 @@
 		"https://trifolia-on-fhir.lantanagroup.com"
 	],
 	"sct-edition": "http://snomed.info/sct/731000124108",
+	"extraTemplates": [
+		"mappings"
+	],
 	"canonicalBase": "http://hl7.org/fhir/us/ecr",
 	"defaults": {
 		"Location": {
@@ -47,7 +51,8 @@
 		"StructureDefinition": {
 			"template-mappings": "sd-mappings.html",
 			"template-base": "sd.html",
-			"template-defns": "sd-definitions.html"
+			"template-defns": "sd-definitions.html",
+			"mappings": "StructureDefinition-{{[id]}}-mappings.html"
 		},
 		"Immunization": {
 			"template-base": "ex.html"
@@ -94,6 +99,226 @@
 		}
 	},
 	"resources": {
+		"StructureDefinition/ecr-organization-extension": {
+			"base": "StructureDefinition-ecr-organization-extension.html",
+			"defns": "StructureDefinition-ecr-organization-extension-definitions.html"
+		},
+		"Bundle/bundle-eRSD": {
+			"base": "Bundle-bundle-eRSD.html",
+			"defns": "Bundle-bundle-eRSD-definitions.html"
+		},
+		"ValueSet/valueset-eicr-initiation-ecr": {
+			"base": "ValueSet-valueset-eicr-initiation-ecr.html",
+			"defns": "ValueSet-valueset-eicr-initiation-ecr-definitions.html"
+		},
+		"CapabilityStatement/capabilitystatement-ersd-server": {
+			"base": "CapabilityStatement-capabilitystatement-ersd-server.html",
+			"defns": "CapabilityStatement-capabilitystatement-ersd-server-definitions.html"
+		},
+		"CapabilityStatement/capabilitystatement-ersd-client": {
+			"base": "CapabilityStatement-capabilitystatement-ersd-client.html",
+			"defns": "CapabilityStatement-capabilitystatement-ersd-client-definitions.html"
+		},
+		"StructureDefinition/library-ersd-valueset": {
+			"base": "StructureDefinition-library-ersd-valueset.html",
+			"defns": "StructureDefinition-library-ersd-valueset-definitions.html"
+		},
+		"StructureDefinition/therapeutic-medication-response-extension": {
+			"base": "StructureDefinition-therapeutic-medication-response-extension.html",
+			"defns": "StructureDefinition-therapeutic-medication-response-extension-definitions.html"
+		},
+		"ValueSet/2.16.840.1.113883.10.20.15.2.5.12": {
+			"base": "ValueSet-2.16.840.1.113883.10.20.15.2.5.12.html",
+			"defns": "ValueSet-2.16.840.1.113883.10.20.15.2.5.12-definitions.html"
+		},
+		"ValueSet/2.16.840.1.113883.11.20.9.80": {
+			"base": "ValueSet-2.16.840.1.113883.11.20.9.80.html",
+			"defns": "ValueSet-2.16.840.1.113883.11.20.9.80-definitions.html"
+		},
+		"StructureDefinition/travel-history-observation": {
+			"base": "StructureDefinition-travel-history-observation.html",
+			"defns": "StructureDefinition-travel-history-observation-definitions.html"
+		},
+		"ValueSet/2.16.840.1.113883.11.20.9.81": {
+			"base": "ValueSet-2.16.840.1.113883.11.20.9.81.html",
+			"defns": "ValueSet-2.16.840.1.113883.11.20.9.81-definitions.html"
+		},
+		"StructureDefinition/determination-date-extension": {
+			"base": "StructureDefinition-determination-date-extension.html",
+			"defns": "StructureDefinition-determination-date-extension-definitions.html"
+		},
+		"StructureDefinition/eicr-occupation-history-observation": {
+			"base": "StructureDefinition-eicr-occupation-history-observation.html",
+			"defns": "StructureDefinition-eicr-occupation-history-observation-definitions.html"
+		},
+		"ValueSet/2.16.840.1.113883.11.20.9.82": {
+			"base": "ValueSet-2.16.840.1.113883.11.20.9.82.html",
+			"defns": "ValueSet-2.16.840.1.113883.11.20.9.82-definitions.html"
+		},
+		"StructureDefinition/pregnancy-status-observation": {
+			"base": "StructureDefinition-pregnancy-status-observation.html",
+			"defns": "StructureDefinition-pregnancy-status-observation-definitions.html"
+		},
+		"StructureDefinition/pregnancy-outcome-observation": {
+			"base": "StructureDefinition-pregnancy-outcome-observation.html",
+			"defns": "StructureDefinition-pregnancy-outcome-observation-definitions.html"
+		},
+		"StructureDefinition/rr-eicr-processing-status-reason-observation": {
+			"base": "StructureDefinition-rr-eicr-processing-status-reason-observation.html",
+			"defns": "StructureDefinition-rr-eicr-processing-status-reason-observation-definitions.html"
+		},
+		"ValueSet/2.16.840.1.113883.11.20.9.86": {
+			"base": "ValueSet-2.16.840.1.113883.11.20.9.86.html",
+			"defns": "ValueSet-2.16.840.1.113883.11.20.9.86-definitions.html"
+		},
+		"StructureDefinition/rr-responsible-agency-organization": {
+			"base": "StructureDefinition-rr-responsible-agency-organization.html",
+			"defns": "StructureDefinition-rr-responsible-agency-organization-definitions.html"
+		},
+		"StructureDefinition/rr-rules-authoring-agency-organization": {
+			"base": "StructureDefinition-rr-rules-authoring-agency-organization.html",
+			"defns": "StructureDefinition-rr-rules-authoring-agency-organization-definitions.html"
+		},
+		"StructureDefinition/rr-routing-entity-organization": {
+			"base": "StructureDefinition-rr-routing-entity-organization.html",
+			"defns": "StructureDefinition-rr-routing-entity-organization-definitions.html"
+		},
+		"StructureDefinition/rr-eicr-processing-status-observation": {
+			"base": "StructureDefinition-rr-eicr-processing-status-observation.html",
+			"defns": "StructureDefinition-rr-eicr-processing-status-observation-definitions.html"
+		},
+		"StructureDefinition/ecr-messageheader": {
+			"base": "StructureDefinition-ecr-messageheader.html",
+			"defns": "StructureDefinition-ecr-messageheader-definitions.html"
+		},
+		"StructureDefinition/ecr-task": {
+			"base": "StructureDefinition-ecr-task.html",
+			"defns": "StructureDefinition-ecr-task-definitions.html"
+		},
+		"StructureDefinition/eicr-document-bundle": {
+			"base": "StructureDefinition-eicr-document-bundle.html",
+			"defns": "StructureDefinition-eicr-document-bundle-definitions.html"
+		},
+		"StructureDefinition/ecr-message-bundle": {
+			"base": "StructureDefinition-ecr-message-bundle.html",
+			"defns": "StructureDefinition-ecr-message-bundle-definitions.html"
+		},
+		"StructureDefinition/rr-determination-of-reportability-rule-extension": {
+			"base": "StructureDefinition-rr-determination-of-reportability-rule-extension.html",
+			"defns": "StructureDefinition-rr-determination-of-reportability-rule-extension-definitions.html"
+		},
+		"StructureDefinition/rr-determination-of-reportability-reason-extension": {
+			"base": "StructureDefinition-rr-determination-of-reportability-reason-extension.html",
+			"defns": "StructureDefinition-rr-determination-of-reportability-reason-extension-definitions.html"
+		},
+		"StructureDefinition/rr-location-relevance-extension": {
+			"base": "StructureDefinition-rr-location-relevance-extension.html",
+			"defns": "StructureDefinition-rr-location-relevance-extension-definitions.html"
+		},
+		"StructureDefinition/rr-manually-initiated-eicr-extension": {
+			"base": "StructureDefinition-rr-manually-initiated-eicr-extension.html",
+			"defns": "StructureDefinition-rr-manually-initiated-eicr-extension-definitions.html"
+		},
+		"StructureDefinition/rr-eicr-receipt-time-extension": {
+			"base": "StructureDefinition-rr-eicr-receipt-time-extension.html",
+			"defns": "StructureDefinition-rr-eicr-receipt-time-extension-definitions.html"
+		},
+		"StructureDefinition/rr-eicr-processing-status-extension": {
+			"base": "StructureDefinition-rr-eicr-processing-status-extension.html",
+			"defns": "StructureDefinition-rr-eicr-processing-status-extension-definitions.html"
+		},
+		"StructureDefinition/rr-external-resource-type-extension": {
+			"base": "StructureDefinition-rr-external-resource-type-extension.html",
+			"defns": "StructureDefinition-rr-external-resource-type-extension-definitions.html"
+		},
+		"StructureDefinition/rr-priority-extension": {
+			"base": "StructureDefinition-rr-priority-extension.html",
+			"defns": "StructureDefinition-rr-priority-extension-definitions.html"
+		},
+		"StructureDefinition/rr-determination-of-reportability-extension": {
+			"base": "StructureDefinition-rr-determination-of-reportability-extension.html",
+			"defns": "StructureDefinition-rr-determination-of-reportability-extension-definitions.html"
+		},
+		"StructureDefinition/travel-history-address-extension": {
+			"base": "StructureDefinition-travel-history-address-extension.html",
+			"defns": "StructureDefinition-travel-history-address-extension-definitions.html"
+		},
+		"StructureDefinition/eicr-manually-initiated-reason-extension": {
+			"base": "StructureDefinition-eicr-manually-initiated-reason-extension.html",
+			"defns": "StructureDefinition-eicr-manually-initiated-reason-extension-definitions.html"
+		},
+		"StructureDefinition/eicr-trigger-code-flag-extension": {
+			"base": "StructureDefinition-eicr-trigger-code-flag-extension.html",
+			"defns": "StructureDefinition-eicr-trigger-code-flag-extension-definitions.html"
+		},
+		"ValueSet/valueset-location-relevance-ecr": {
+			"base": "ValueSet-valueset-location-relevance-ecr.html",
+			"defns": "ValueSet-valueset-location-relevance-ecr-definitions.html"
+		},
+		"ValueSet/valueset-oes": {
+			"base": "ValueSet-valueset-oes.html",
+			"defns": "ValueSet-valueset-oes-definitions.html"
+		},
+		"ValueSet/valueset-determination-of-reportability-ecr": {
+			"base": "ValueSet-valueset-determination-of-reportability-ecr.html",
+			"defns": "ValueSet-valueset-determination-of-reportability-ecr-definitions.html"
+		},
+		"ValueSet/valueset-eicr-processing-status-reason-detail-type-ecr": {
+			"base": "ValueSet-valueset-eicr-processing-status-reason-detail-type-ecr.html",
+			"defns": "ValueSet-valueset-eicr-processing-status-reason-detail-type-ecr-definitions.html"
+		},
+		"ValueSet/valueset-eicr-processing-status-ecr": {
+			"base": "ValueSet-valueset-eicr-processing-status-ecr.html",
+			"defns": "ValueSet-valueset-eicr-processing-status-ecr-definitions.html"
+		},
+		"ValueSet/valueset-lotc": {
+			"base": "ValueSet-valueset-lotc.html",
+			"defns": "ValueSet-valueset-lotc-definitions.html"
+		},
+		"ValueSet/valueset-eicr-processing-status-reason-ecr": {
+			"base": "ValueSet-valueset-eicr-processing-status-reason-ecr.html",
+			"defns": "ValueSet-valueset-eicr-processing-status-reason-ecr-definitions.html"
+		},
+		"ValueSet/valueset-dxtc": {
+			"base": "ValueSet-valueset-dxtc.html",
+			"defns": "ValueSet-valueset-dxtc-definitions.html"
+		},
+		"ValueSet/valueset-lrtc": {
+			"base": "ValueSet-valueset-lrtc.html",
+			"defns": "ValueSet-valueset-lrtc-definitions.html"
+		},
+		"ValueSet/valueset-geographical-location-history": {
+			"base": "ValueSet-valueset-geographical-location-history.html",
+			"defns": "ValueSet-valueset-geographical-location-history-definitions.html"
+		},
+		"ValueSet/valueset-reportability-priority-ecr": {
+			"base": "ValueSet-valueset-reportability-priority-ecr.html",
+			"defns": "ValueSet-valueset-reportability-priority-ecr-definitions.html"
+		},
+		"ValueSet/valueset-external-resource-type-ecr": {
+			"base": "ValueSet-valueset-external-resource-type-ecr.html",
+			"defns": "ValueSet-valueset-external-resource-type-ecr-definitions.html"
+		},
+		"ValueSet/valueset-ostc": {
+			"base": "ValueSet-valueset-ostc.html",
+			"defns": "ValueSet-valueset-ostc-definitions.html"
+		},
+		"CodeSystem/codesystem-oes": {
+			"base": "CodeSystem-codesystem-oes.html",
+			"defns": "CodeSystem-codesystem-oes-definitions.html"
+		},
+		"Bundle/bundle-eicr-document-zika": {
+			"base": "Bundle-bundle-eicr-document-zika.html",
+			"defns": "Bundle-bundle-eicr-document-zika-definitions.html"
+		},
+		"Bundle/bundle-ecr-message-zika": {
+			"base": "Bundle-bundle-ecr-message-zika.html",
+			"defns": "Bundle-bundle-ecr-message-zika-definitions.html"
+		},
+		"CapabilityStatement/capabilitystatement-ecr-server": {
+			"base": "CapabilityStatement-capabilitystatement-ecr-server.html",
+			"defns": "CapabilityStatement-capabilitystatement-ecr-server-definitions.html"
+		},
 		"CapabilityStatement/capabilitystatement-ecr-client": {
 			"base": "CapabilityStatement-capabilitystatement-ecr-client.html",
 			"defns": "CapabilityStatement-capabilitystatement-ecr-client-definitions.html"
@@ -210,45 +435,13 @@
 			"base": "Composition-composition-eicr-zika.html",
 			"defns": "Composition-composition-eicr-zika-definitions.html"
 		},
-		"StructureDefinition/travel-history-observation": {
-			"base": "StructureDefinition-travel-history-observation.html",
-			"defns": "StructureDefinition-travel-history-observation-definitions.html"
-		},
 		"Observation/observation-pregnancy-status-eve-everywoman": {
 			"base": "Observation-observation-pregnancy-status-eve-everywoman.html",
 			"defns": "Observation-observation-pregnancy-status-eve-everywoman-definitions.html"
 		},
-		"StructureDefinition/eicr-occupation-history-observation": {
-			"base": "StructureDefinition-eicr-occupation-history-observation.html",
-			"defns": "StructureDefinition-eicr-occupation-history-observation-definitions.html"
-		},
-		"StructureDefinition/pregnancy-status-observation": {
-			"base": "StructureDefinition-pregnancy-status-observation.html",
-			"defns": "StructureDefinition-pregnancy-status-observation-definitions.html"
-		},
-		"StructureDefinition/rr-eicr-processing-status-reason-observation": {
-			"base": "StructureDefinition-rr-eicr-processing-status-reason-observation.html",
-			"defns": "StructureDefinition-rr-eicr-processing-status-reason-observation-definitions.html"
-		},
-		"StructureDefinition/rr-responsible-agency-organization": {
-			"base": "StructureDefinition-rr-responsible-agency-organization.html",
-			"defns": "StructureDefinition-rr-responsible-agency-organization-definitions.html"
-		},
-		"StructureDefinition/rr-rules-authoring-agency-organization": {
-			"base": "StructureDefinition-rr-rules-authoring-agency-organization.html",
-			"defns": "StructureDefinition-rr-rules-authoring-agency-organization-definitions.html"
-		},
-		"StructureDefinition/rr-routing-entity-organization": {
-			"base": "StructureDefinition-rr-routing-entity-organization.html",
-			"defns": "StructureDefinition-rr-routing-entity-organization-definitions.html"
-		},
 		"Composition/composition-eicr-pertussis-zika": {
 			"base": "Composition-composition-eicr-pertussis-zika.html",
 			"defns": "Composition-composition-eicr-pertussis-zika-definitions.html"
-		},
-		"StructureDefinition/rr-eicr-processing-status-observation": {
-			"base": "StructureDefinition-rr-eicr-processing-status-observation.html",
-			"defns": "StructureDefinition-rr-eicr-processing-status-observation-definitions.html"
 		},
 		"Communication/communication-rr-single-single": {
 			"base": "Communication-communication-rr-single-single.html",
@@ -266,57 +459,17 @@
 			"base": "StructureDefinition-eicr-servicerequest.html",
 			"defns": "StructureDefinition-eicr-servicerequest-definitions.html"
 		},
-		"StructureDefinition/ecr-messageheader": {
-			"base": "StructureDefinition-ecr-messageheader.html",
-			"defns": "StructureDefinition-ecr-messageheader-definitions.html"
-		},
-		"StructureDefinition/ecr-task": {
-			"base": "StructureDefinition-ecr-task.html",
-			"defns": "StructureDefinition-ecr-task-definitions.html"
-		},
-		"StructureDefinition/eicr-document-bundle": {
-			"base": "StructureDefinition-eicr-document-bundle.html",
-			"defns": "StructureDefinition-eicr-document-bundle-definitions.html"
-		},
-		"StructureDefinition/ecr-message-bundle": {
-			"base": "StructureDefinition-ecr-message-bundle.html",
-			"defns": "StructureDefinition-ecr-message-bundle-definitions.html"
-		},
-		"StructureDefinition/rr-determination-of-reportability-rule-extension": {
-			"base": "StructureDefinition-rr-determination-of-reportability-rule-extension.html",
-			"defns": "StructureDefinition-rr-determination-of-reportability-rule-extension-definitions.html"
-		},
-		"StructureDefinition/rr-determination-of-reportability-reason-extension": {
-			"base": "StructureDefinition-rr-determination-of-reportability-reason-extension.html",
-			"defns": "StructureDefinition-rr-determination-of-reportability-reason-extension-definitions.html"
-		},
-		"StructureDefinition/rr-location-relevance-extension": {
-			"base": "StructureDefinition-rr-location-relevance-extension.html",
-			"defns": "StructureDefinition-rr-location-relevance-extension-definitions.html"
+		"ValueSet/pregnancy-status": {
+			"base": "ValueSet-pregnancy-status.html",
+			"defns": "ValueSet-pregnancy-status-definitions.html"
 		},
 		"StructureDefinition/ersd-plandefinition": {
 			"base": "StructureDefinition-ersd-plandefinition.html",
 			"defns": "StructureDefinition-ersd-plandefinition-definitions.html"
 		},
-		"StructureDefinition/rr-manually-initiated-eicr-extension": {
-			"base": "StructureDefinition-rr-manually-initiated-eicr-extension.html",
-			"defns": "StructureDefinition-rr-manually-initiated-eicr-extension-definitions.html"
-		},
-		"StructureDefinition/rr-eicr-receipt-time-extension": {
-			"base": "StructureDefinition-rr-eicr-receipt-time-extension.html",
-			"defns": "StructureDefinition-rr-eicr-receipt-time-extension-definitions.html"
-		},
 		"StructureDefinition/eicr-condition": {
 			"base": "StructureDefinition-eicr-condition.html",
 			"defns": "StructureDefinition-eicr-condition-definitions.html"
-		},
-		"StructureDefinition/rr-eicr-processing-status-extension": {
-			"base": "StructureDefinition-rr-eicr-processing-status-extension.html",
-			"defns": "StructureDefinition-rr-eicr-processing-status-extension-definitions.html"
-		},
-		"StructureDefinition/rr-external-resource-type-extension": {
-			"base": "StructureDefinition-rr-external-resource-type-extension.html",
-			"defns": "StructureDefinition-rr-external-resource-type-extension-definitions.html"
 		},
 		"StructureDefinition/eicr-encounter": {
 			"base": "StructureDefinition-eicr-encounter.html",
@@ -326,124 +479,31 @@
 			"base": "StructureDefinition-eicr-location.html",
 			"defns": "StructureDefinition-eicr-location-definitions.html"
 		},
-		"StructureDefinition/rr-priority-extension": {
-			"base": "StructureDefinition-rr-priority-extension.html",
-			"defns": "StructureDefinition-rr-priority-extension-definitions.html"
-		},
-		"StructureDefinition/rr-determination-of-reportability-extension": {
-			"base": "StructureDefinition-rr-determination-of-reportability-extension.html",
-			"defns": "StructureDefinition-rr-determination-of-reportability-extension-definitions.html"
-		},
-		"StructureDefinition/travel-history-address-extension": {
-			"base": "StructureDefinition-travel-history-address-extension.html",
-			"defns": "StructureDefinition-travel-history-address-extension-definitions.html"
-		},
-		"StructureDefinition/eicr-manually-initiated-reason-extension": {
-			"base": "StructureDefinition-eicr-manually-initiated-reason-extension.html",
-			"defns": "StructureDefinition-eicr-manually-initiated-reason-extension-definitions.html"
-		},
-		"StructureDefinition/eicr-trigger-code-flag-extension": {
-			"base": "StructureDefinition-eicr-trigger-code-flag-extension.html",
-			"defns": "StructureDefinition-eicr-trigger-code-flag-extension-definitions.html"
-		},
-		"ValueSet/valueset-location-relevance-ecr": {
-			"base": "ValueSet-valueset-location-relevance-ecr.html",
-			"defns": "ValueSet-valueset-location-relevance-ecr-definitions.html"
-		},
 		"StructureDefinition/rr-communication": {
 			"base": "StructureDefinition-rr-communication.html",
 			"defns": "StructureDefinition-rr-communication-definitions.html"
-		},
-		"ValueSet/valueset-oes": {
-			"base": "ValueSet-valueset-oes.html",
-			"defns": "ValueSet-valueset-oes-definitions.html"
-		},
-		"ValueSet/valueset-determination-of-reportability-ecr": {
-			"base": "ValueSet-valueset-determination-of-reportability-ecr.html",
-			"defns": "ValueSet-valueset-determination-of-reportability-ecr-definitions.html"
-		},
-		"ValueSet/valueset-eicr-processing-status-reason-detail-type-ecr": {
-			"base": "ValueSet-valueset-eicr-processing-status-reason-detail-type-ecr.html",
-			"defns": "ValueSet-valueset-eicr-processing-status-reason-detail-type-ecr-definitions.html"
 		},
 		"StructureDefinition/rr-relevant-reportable-condition-plandefinition": {
 			"base": "StructureDefinition-rr-relevant-reportable-condition-plandefinition.html",
 			"defns": "StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html"
 		},
-		"ValueSet/valueset-eicr-processing-status-ecr": {
-			"base": "ValueSet-valueset-eicr-processing-status-ecr.html",
-			"defns": "ValueSet-valueset-eicr-processing-status-ecr-definitions.html"
-		},
-		"ValueSet/valueset-lotc": {
-			"base": "ValueSet-valueset-lotc.html",
-			"defns": "ValueSet-valueset-lotc-definitions.html"
-		},
-		"ValueSet/valueset-eicr-processing-status-reason-ecr": {
-			"base": "ValueSet-valueset-eicr-processing-status-reason-ecr.html",
-			"defns": "ValueSet-valueset-eicr-processing-status-reason-ecr-definitions.html"
-		},
-		"ValueSet/valueset-dxtc": {
-			"base": "ValueSet-valueset-dxtc.html",
-			"defns": "ValueSet-valueset-dxtc-definitions.html"
-		},
-		"ValueSet/valueset-lrtc": {
-			"base": "ValueSet-valueset-lrtc.html",
-			"defns": "ValueSet-valueset-lrtc-definitions.html"
-		},
 		"StructureDefinition/ecr-organization": {
 			"base": "StructureDefinition-ecr-organization.html",
 			"defns": "StructureDefinition-ecr-organization-definitions.html"
-		},
-		"ValueSet/valueset-geographical-location-history": {
-			"base": "ValueSet-valueset-geographical-location-history.html",
-			"defns": "ValueSet-valueset-geographical-location-history-definitions.html"
 		},
 		"StructureDefinition/ecr-practitionerrole": {
 			"base": "StructureDefinition-ecr-practitionerrole.html",
 			"defns": "StructureDefinition-ecr-practitionerrole-definitions.html"
 		},
-		"ValueSet/valueset-reportability-priority-ecr": {
-			"base": "ValueSet-valueset-reportability-priority-ecr.html",
-			"defns": "ValueSet-valueset-reportability-priority-ecr-definitions.html"
-		},
 		"StructureDefinition/ecr-patient": {
 			"base": "StructureDefinition-ecr-patient.html",
 			"defns": "StructureDefinition-ecr-patient-definitions.html"
 		},
-		"ValueSet/valueset-external-resource-type-ecr": {
-			"base": "ValueSet-valueset-external-resource-type-ecr.html",
-			"defns": "ValueSet-valueset-external-resource-type-ecr-definitions.html"
-		},
 		"StructureDefinition/eicr-composition": {
 			"base": "StructureDefinition-eicr-composition.html",
 			"defns": "StructureDefinition-eicr-composition-definitions.html"
-		},
-		"ValueSet/valueset-ostc": {
-			"base": "ValueSet-valueset-ostc.html",
-			"defns": "ValueSet-valueset-ostc-definitions.html"
-		},
-		"CodeSystem/codesystem-oes": {
-			"base": "CodeSystem-codesystem-oes.html",
-			"defns": "CodeSystem-codesystem-oes-definitions.html"
-		},
-		"Bundle/bundle-ecr-knowledge-distribution": {
-			"base": "Bundle-bundle-ecr-knowledge-distribution.html",
-			"defns": "Bundle-bundle-ecr-knowledge-distribution-definitions.html"
-		},
-		"Bundle/bundle-eicr-document-zika": {
-			"base": "Bundle-bundle-eicr-document-zika.html",
-			"defns": "Bundle-bundle-eicr-document-zika-definitions.html"
-		},
-		"Bundle/bundle-ecr-message-zika": {
-			"base": "Bundle-bundle-ecr-message-zika.html",
-			"defns": "Bundle-bundle-ecr-message-zika-definitions.html"
-		},
-		"CapabilityStatement/capabilitystatement-ecr-server": {
-			"base": "CapabilityStatement-capabilitystatement-ecr-server.html",
-			"defns": "CapabilityStatement-capabilitystatement-ecr-server-definitions.html"
 		}
 	},
-	"version": "4.0.0",
 	"fixed-business-version": "1.0.0",
 	"dependencyList": [
 		{

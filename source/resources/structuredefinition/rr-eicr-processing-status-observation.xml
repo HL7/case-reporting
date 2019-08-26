@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-eicr-processing-status-observation"/>
     <meta>
-        <versionId value="6"/>
-        <lastUpdated value="2019-06-24T21:20:32.000-04:00"/>
+        <versionId value="8"/>
+        <lastUpdated value="2019-08-12T12:01:11.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation"/>
     <version value="1.0.0"/>
@@ -15,6 +15,11 @@
     <publisher value="HL7 Public Health Work Group"/>
     <description value="This Observation profile represents the  eICR processing status. If it was not processed or was processed with a warning, the reason and details will be contained in the related eICR Processing Status Reason profile."/>
     <fhirVersion value="4.0.0"/>
+    <mapping>
+        <identity value="CDA"/>
+        <name value="ECR Processing status profile mapping to CDA"/>
+        <comment value="This table maps eICR Processing Status observation code to CDA"/>
+    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Observation"/>
@@ -54,6 +59,11 @@
                 <strength value="extensible"/>
                 <description value="This value set contains codes that describe the status of the eICR in terms of processing by the public health decision support system."/>
             </binding>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="eICR Processing Status/code"/>
+                <comment value="eICR Processing Status"/>
+            </mapping>
         </element>
         <element id="Observation.hasMember">
             <path value="Observation.hasMember"/>

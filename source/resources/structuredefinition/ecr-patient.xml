@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="ecr-patient"/>
     <meta>
-        <versionId value="10"/>
-        <lastUpdated value="2019-06-24T20:54:40.000-04:00"/>
+        <versionId value="16"/>
+        <lastUpdated value="2019-08-15T19:28:01.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-patient"/>
     <version value="1.0.0"/>
@@ -15,6 +15,11 @@
     <publisher value="HL7 Public Health Work Group"/>
     <description value="This Patient profile represents an eCR Patient. It is based on the **US Core Patient** profile with further restrictions to allow masking of some data elements."/>
     <fhirVersion value="4.0.0"/>
+    <mapping>
+        <identity value="CDA"/>
+        <name value="eCR Patient profile CDA mappings"/>
+        <comment value="This table is for mapping eCR Patient Profile to CDA"/>
+    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Patient"/>
@@ -38,6 +43,11 @@
             </type>
             <mustSupport value="true"/>
             <isModifier value="false"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClinicalDocument/recordTarget/patientRole/patient/raceCode + ClinicalDocument/recordTarget/patientRole/patient/sdtc:raceCode"/>
+                <comment value="Patient Race"/>
+            </mapping>
         </element>
         <element id="Patient.extension:ethnicity">
             <path value="Patient.extension"/>
@@ -50,6 +60,11 @@
             </type>
             <mustSupport value="true"/>
             <isModifier value="false"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClinicalDocument/recordTarget/patientRole/patient/ethnicGroupCode + ClinicalDocument/recordTarget/patientRole/patient/sdtc:ethnicGroupCode"/>
+                <comment value="Patient Ethnicity"/>
+            </mapping>
         </element>
         <element id="Patient.extension:birthsex">
             <path value="Patient.extension"/>
@@ -71,6 +86,11 @@
             <path value="Patient.identifier"/>
             <min value="1"/>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClinicalDocument/recordTarget/patientRole/id"/>
+                <comment value="Patient ID Number"/>
+            </mapping>
         </element>
         <element id="Patient.identifier.extension">
             <path value="Patient.identifier.extension"/>
@@ -109,6 +129,11 @@
         <element id="Patient.name">
             <path value="Patient.name"/>
             <min value="1"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClinicalDocument/recordTarget/patientRole/patient/name"/>
+                <comment value="Patient Name"/>
+            </mapping>
         </element>
         <element id="Patient.name.extension">
             <path value="Patient.name.extension"/>
@@ -147,6 +172,16 @@
         <element id="Patient.telecom">
             <path value="Patient.telecom"/>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClinicalDocument/recordTarget/patientRole/telecom[tel:]"/>
+                <comment value="Patient Phone"/>
+            </mapping>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClinicalDocument/recordTarget/patientRole/telecom[mailto:]"/>
+                <comment value="Patient Email"/>
+            </mapping>
         </element>
         <element id="Patient.telecom.extension">
             <path value="Patient.telecom.extension"/>
@@ -185,6 +220,16 @@
         <element id="Patient.gender">
             <path value="Patient.gender"/>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Birth Sex Observation/code"/>
+                <comment value="Patient Sex"/>
+            </mapping>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClinicalDocument/recordTarget/patientRole/patient/administrativeGenderCode"/>
+                <comment value="Patient Administrative Gender"/>
+            </mapping>
         </element>
         <element id="Patient.gender.extension">
             <path value="Patient.gender.extension"/>
@@ -223,6 +268,19 @@
         <element id="Patient.birthDate">
             <path value="Patient.birthDate"/>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClinicalDocument/recordTarget/patientRole/patient/birthTime"/>
+                <comment value="Patient Birth Date"/>
+            </mapping>
+        </element>
+        <element id="Patient.deceased[x]">
+            <path value="Patient.deceased[x]"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClinicalDocument/recordTarget/patientRole/patient/sdtc:deceasedInd"/>
+                <comment value="Death Date"/>
+            </mapping>
         </element>
         <element id="Patient.birthDate.extension">
             <path value="Patient.birthDate.extension"/>
@@ -261,6 +319,11 @@
         <element id="Patient.address">
             <path value="Patient.address"/>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClinicalDocument/recordTarget/patientRole/addr"/>
+                <comment value="Patient Street Address"/>
+            </mapping>
         </element>
         <element id="Patient.address.extension">
             <path value="Patient.address.extension"/>
@@ -312,6 +375,11 @@
         <element id="Patient.contact.name">
             <path value="Patient.contact.name"/>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Clinical Document/record target/patientRole/patient/guardian/guardianPerson/name"/>
+                <comment value="Parent/ Guardian Name"/>
+            </mapping>
         </element>
         <element id="Patient.contact.name.extension">
             <path value="Patient.contact.name.extension"/>
@@ -346,6 +414,16 @@
         <element id="Patient.contact.telecom">
             <path value="Patient.contact.telecom"/>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Clinical Document/record target/patientRole/patient/guardian/telecom[tel:]"/>
+                <comment value="Parent/ Guardian Phone"/>
+            </mapping>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Clinical Document/record target/patientRole/patient/guardian/telecom[mailto:]"/>
+                <comment value="Parent/ Guardian Email"/>
+            </mapping>
         </element>
         <element id="Patient.contact.telecom.extension">
             <path value="Patient.contact.telecom.extension"/>
@@ -418,6 +496,11 @@
         <element id="Patient.communication.language">
             <path value="Patient.communication.language"/>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClinicalDocument/recordTarget/patientRole/patient/languageCommunication/languageCode"/>
+                <comment value="Preferred Language"/>
+            </mapping>
         </element>
         <element id="Patient.communication.language.extension">
             <path value="Patient.communication.language.extension"/>

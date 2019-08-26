@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-communication"/>
     <meta>
-        <versionId value="13"/>
-        <lastUpdated value="2019-06-24T20:46:26.000-04:00"/>
+        <versionId value="26"/>
+        <lastUpdated value="2019-08-25T02:30:52.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication"/>
     <version value="1.0.0"/>
@@ -15,6 +15,11 @@
     <publisher value="HL7 Public Health Work Group"/>
     <description value="This Communication profile represents the Reportability Response that will be created in response to an electronic Initial Case Report Composition. The sharing of the Reportability Response with clinical care will serve several functions, including to: &#xA;&#xA;* Communicate the reportability status, for the responsible PHA(s)of each condition included in the electronic Initial Case Report (eICR)     &#xA;* Identify who (a PHA or an intermediary) prepared the Reportability Response     &#xA;* Indicate whether the eICR has been sent to one or more PHA(s)     &#xA;* Identify which PHA(s) has/have been sent the eICR     &#xA;* Provide contact information for the responsible PHA(s)     &#xA;* Provide suggested or required clinical follow-up activities from the responsible PHA(s), including any additional reporting needs or infection control activities     &#xA;* Provide access to clinical support resources suggested by the responsible PHA(s) for identified reportable conditions     &#xA;* Confirm eICR receipt and processing     &#xA;&#xA;A Reportability Response will also, when requested, be shared with the responsible PHAs (when they have not constructed it) for their internal use, so they understand what has been shared with clinical care and, and to monitor/audit decision support algorithm effectivesness and implementation. When a condition is considered reportable to more than one PHA, the Reportability Response can be helpful in communicating reporting that has been done to other PHAs.     &#xA;&#xA;The Reportability Response Communication is also structured to allow:     &#xA;&#xA;* Notification, alerting, routing and queueing in work or message management systems for healthcare personnel     &#xA;* Dynamic and static URIs for supplemental data collection and the provision of information resources"/>
     <fhirVersion value="4.0.0"/>
+    <mapping>
+        <identity value="CDA"/>
+        <name value="RR-Communication map to CDA"/>
+        <comment value="The table maps RR-Communication profile elements to CDA"/>
+    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Communication"/>
@@ -64,6 +69,10 @@
                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-priority-extension"/>
             </type>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Reportability Response Priority/value"/>
+            </mapping>
         </element>
         <element id="Communication.identifier">
             <path value="Communication.identifier"/>
@@ -78,8 +87,13 @@
             </example>
             <mustSupport value="true"/>
             <mapping>
-                <identity value="cda-rr"/>
+                <identity value="CDA"/>
                 <map value="Reportability Response Document (RR)/id"/>
+            </mapping>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClinicalDocument/id"/>
+                <comment value="Reportability Response Unique Identifier"/>
             </mapping>
         </element>
         <element id="Communication.category">
@@ -123,9 +137,9 @@
             <min value="1"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-practitionerrole"/>
             </type>
             <example>
                 <label value="General"/>
@@ -143,6 +157,10 @@
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Reportability Response Subject/text"/>
+            </mapping>
         </element>
         <element id="Communication.topic.reference">
             <path value="Communication.topic.reference"/>
@@ -187,8 +205,8 @@
             <min value="1"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
             </type>
             <mustSupport value="true"/>
         </element>
@@ -201,6 +219,13 @@
                 </discriminator>
                 <rules value="open"/>
             </slicing>
+        </element>
+        <element id="Communication.payload.content[x]">
+            <path value="Communication.payload.content[x]"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClinicalDocument/componentOf/encompassingEncounter/id"/>
+            </mapping>
         </element>
         <element id="Communication.payload:sliceReportabilityResponseSummary">
             <path value="Communication.payload"/>
@@ -228,6 +253,10 @@
                 <label value="General"/>
                 <valueString value="Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient. &quot;Zika virus disease (disorder)&quot; is reportable to &quot;State Department of Health&quot;. An initial case report was sent to &quot;State Department of Health&quot;. Additional information may be required for this report."/>
             </example>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Reportability Response Summary/text"/>
+            </mapping>
         </element>
         <element id="Communication.payload:sliceRelevantReportableCondition">
             <path value="Communication.payload"/>
@@ -315,10 +344,18 @@
             <min value="1"/>
             <fixedString value="manually-initiated-eicr"/>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Manually Initiated eICR/code=PHC1464]"/>
+            </mapping>
         </element>
         <element id="Communication.payload:sliceEICRInformation.extension:manuallyInitiatedEICR.url">
             <path value="Communication.payload.extension.url"/>
             <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-manually-initiated-eicr-extension"/>
+            <mapping>
+                <identity value="identity"/>
+                <map value="map"/>
+            </mapping>
         </element>
         <element id="Communication.payload:sliceEICRInformation.extension:extensionEICRReceiptTime">
             <path value="Communication.payload.extension"/>
@@ -330,6 +367,10 @@
                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-receipt-time-extension"/>
             </type>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Received eICR Information/eICR External Document Reference/effectiveTime"/>
+            </mapping>
         </element>
         <element id="Communication.payload:sliceEICRInformation.content[x]:contentReference">
             <path value="Communication.payload.contentReference"/>
@@ -339,6 +380,14 @@
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
             </type>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Received eICR Information/eICR External Document Reference/id"/>
+            </mapping>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Received eICR Information/text"/>
+            </mapping>
         </element>
         <element id="Communication.payload:sliceEICRInformation.content[x]:contentReference.reference">
             <path value="Communication.payload.contentReference.reference"/>

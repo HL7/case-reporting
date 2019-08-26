@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="ecr-organization"/>
     <meta>
-        <versionId value="12"/>
-        <lastUpdated value="2019-06-24T21:48:41.000-04:00"/>
+        <versionId value="14"/>
+        <lastUpdated value="2019-08-12T13:25:35.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization"/>
     <version value="1.0.0"/>
@@ -15,6 +15,11 @@
     <publisher value="HL7 Public Health Work Group"/>
     <description value="This Organization profile represents the following organizations for electronic case reporting:&#xA;&#xA;* Initial Case Report source provider facility/office name&#xA;* Initial Case Report source facility&#xA;* Reportability Response recipients&#xA;* Reportability Response responsible agency  &#xA;* Reportability Response routing entity&#xA;* Reportability Response rules authoring agency&#xA;&#xA;It is based on the **US Core Organization** profile with a further restriction of *Must Support* on the **type** and **contact** data elements."/>
     <fhirVersion value="4.0.0"/>
+    <mapping>
+        <identity value="CDA"/>
+        <name value="eICR Organization name mapping to CDA"/>
+        <comment value="This table maps eICR and RR Organization profile to CDA"/>
+    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Organization"/>
@@ -43,6 +48,14 @@
                 <strength value="extensible"/>
                 <description value="The type of Organization"/>
             </binding>
+        </element>
+        <element id="Organization.name">
+            <path value="Organization.name"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClinicalDocument/componentOf/encompassingEncounter/responsibleParty/assignedEntity/representedOrganization/name"/>
+                <comment value="Provider Facility/Office Name"/>
+            </mapping>
         </element>
         <element id="Organization.contact">
             <path value="Organization.contact"/>

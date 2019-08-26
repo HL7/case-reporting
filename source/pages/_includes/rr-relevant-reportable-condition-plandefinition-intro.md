@@ -4,9 +4,5 @@ layout: default
 active: StructureDefinition-rr-relevant-reportable-condition-plandefinition-intro
 ---
 
-This PlanDefinition profile represents the Reportability Response case definitions and reporting requirements which include:
+This PlanDefinition in the Reportability Response transaction represents reportability information for a condition-jurisdiction pair, based on the PHA in which is located the patient's home, the provider facility or both locations. The Determination of Reportability, Determination of Reportability Reason, and Determination of Reportability Rule are contained in extensions. This profile also contains extensions for the Responsible Agency, the Rules Authoring Agency, and the Routing Entity. The Relevant Reportable Condition is contained in goal.addresses and any External Resources are contained in action (one action contains the information for one External Resource). 
 
-* The data that are needed to determine reportability
-* For a given condition , the mandated timeframe in which the condition should be reported to the PHA
-* The name of the Responsible Agency(ies) in which the condition was determined to be or not be reportable
-* The External Resources (text and links)in association with specific conditions

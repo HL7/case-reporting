@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-determination-of-reportability-rule-extension"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2019-06-24T21:35:41.000-04:00"/>
+        <versionId value="6"/>
+        <lastUpdated value="2019-08-12T11:25:53.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-determination-of-reportability-rule-extension"/>
     <version value="1.0.0"/>
@@ -15,6 +15,11 @@
     <publisher value="HL7 Public Health Work Group"/>
     <description value="This Extension profile represents a rule that led to the determination of reportability."/>
     <fhirVersion value="4.0.0"/>
+    <mapping>
+        <identity value="CDA"/>
+        <name value="RR Determination of Reportability Rule Extension mapping to CDA"/>
+        <comment value="This table maps RR's Determination of Reportability Rule profile extension to CDA"/>
+    </mapping>
     <kind value="complex-type"/>
     <abstract value="false"/>
     <context>
@@ -30,6 +35,11 @@
             <short value="Determination of Reportability Rule"/>
             <definition value="A rule that was involved in the determination of the reportability status."/>
             <isModifier value="false"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Reportability Response Coded Information Organizer/Relevant Reportable Condition Observation/Reportability Information Organizer/Determination of Reportability/Determination of Reportability Rule/value"/>
+                <comment value="Determination of Reportability Rule"/>
+            </mapping>
         </element>
         <element id="Extension.url">
             <path value="Extension.url"/>

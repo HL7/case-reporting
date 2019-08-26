@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet
+    xmlns="http://hl7.org/fhir">
+    <id value="pregnancy-status"/>
+    <meta>
+        <versionId value="6"/>
+        <lastUpdated value="2019-08-25T18:08:28.000-04:00"/>
+    </meta>
+    <text>
+        <status value="generated"/>
+        <div
+            xmlns="http://www.w3.org/1999/xhtml">
+            <h2>Pregnancy Status</h2>
+            <div>
+                <p>This value set contains codes representing pregnancy statuses.</p>
+            </div>
+        </div>
+    </text>
+    <url value="http://hl7.org/fhir/us/ecr/ValueSet/pregnancy-status"/>
+    <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="2.16.840.1.113883.11.20.9.85"/>
+    </identifier>
+    <version value="0.2.0"/>
+    <name value="Pregnancy-Status"/>
+    <title value="Pregnancy Status"/>
+    <status value="active"/>
+    <date value="2018-08-01T00:00:00+10:00"/>
+    <description value="This value set contains codes representing pregnancy statuses."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+    </jurisdiction>
+    <compose>
+        <include>
+            <system value="http://snomed.info/sct"/>
+            <concept>
+                <code value="77386006"/>
+                <display value="Pregnant (finding)"/>
+            </concept>
+            <concept>
+                <code value="60001007"/>
+                <display value="Not pregnant (finding)"/>
+            </concept>
+            <concept>
+                <code value="102874004"/>
+                <display value="Possibly pregnant (finding)"/>
+            </concept>
+        </include>
+        <include>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor"/>
+            <concept>
+                <code value="UNK"/>
+                <display value="Unknown"/>
+            </concept>
+        </include>
+    </compose>
+</ValueSet>

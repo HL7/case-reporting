@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-occupation-history-observation"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2019-06-24T21:06:23.000-04:00"/>
+        <versionId value="5"/>
+        <lastUpdated value="2019-08-07T15:52:02.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-occupation-history-observation"/>
     <version value="1.0.0"/>
@@ -15,6 +15,11 @@
     <publisher value="HL7 Public Health Work Group"/>
     <description value="This Observation profile represents the eICR subject's occupational history."/>
     <fhirVersion value="4.0.0"/>
+    <mapping>
+        <identity value="CDA"/>
+        <name value="eICR Occupation History to CDA mapping"/>
+        <comment value="This table maps eICR Occupation History observation to CDA"/>
+    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Observation"/>
@@ -68,6 +73,11 @@
                 <strength value="extensible"/>
                 <description value="Occupation codes"/>
             </binding>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Social History Observation (V3)/code"/>
+                <comment value="Occupation"/>
+            </mapping>
         </element>
     </differential>
 </StructureDefinition>

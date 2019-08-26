@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-encounter"/>
     <meta>
-        <versionId value="11"/>
-        <lastUpdated value="2019-06-24T20:47:09.000-04:00"/>
+        <versionId value="20"/>
+        <lastUpdated value="2019-08-07T15:37:41.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
     <version value="1.0.0"/>
@@ -15,6 +15,11 @@
     <publisher value="HL7 Public Health Work Group"/>
     <description value="This Encounter profile represents the encounter related to the eICR event."/>
     <fhirVersion value="4.0.0"/>
+    <mapping>
+        <identity value="CDA"/>
+        <name value="eICR Encounter CDA mapping"/>
+        <comment value="This page provides eICR Encounter profile mappings to CDA XPath"/>
+    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Encounter"/>
@@ -39,6 +44,11 @@
             <path value="Encounter.type"/>
             <max value="1"/>
             <mustSupport value="true"/>
+            <binding>
+                <strength value="preferred"/>
+                <description value="EncounterTypeCode"/>
+                <valueSet value="https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.88.12.80.32"/>
+            </binding>
         </element>
         <element id="Encounter.participant">
             <path value="Encounter.participant"/>
@@ -88,6 +98,27 @@
             <max value="1"/>
             <mustSupport value="true"/>
         </element>
+        <element id="Encounter.period.start">
+            <path value="Encounter.period.start"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClinicalDocument/componentOf/encompassingEncounter/effectiveTime/low"/>
+                <comment value="Admission Date/Time"/>
+            </mapping>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClinicalDocument/componentOf/encompassingEncounter/effectiveTime/low"/>
+                <comment value="Visit Date/Time"/>
+            </mapping>
+        </element>
+        <element id="Encounter.period.end">
+            <path value="Encounter.period.end"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClinicalDocument/componentOf/encompassingEncounter/effectiveTime/high"/>
+                <comment value="Discharge Date/Time"/>
+            </mapping>
+        </element>
         <element id="Encounter.diagnosis">
             <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
                 <valueString value="Diagnosis"/>
@@ -130,6 +161,10 @@
             <max value="1"/>
             <mustSupport value="true"/>
             <isModifier value="false"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClinicalDocument/componentOf/encompassingEncounter/location/healthCareFacility/code"/>
+            </mapping>
         </element>
         <element id="Encounter.location.location">
             <path value="Encounter.location.location"/>
@@ -139,6 +174,14 @@
             </type>
             <mustSupport value="false"/>
             <isModifier value="false"/>
+        </element>
+        <element id="Encounter.location.location.type">
+            <path value="Encounter.location.location.type"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClinicalDocument/componentOf/encompassingEncounter/location/healthCareFacility/code"/>
+                <comment value="Hospital Unit"/>
+            </mapping>
         </element>
         <element id="Encounter.serviceProvider">
             <path value="Encounter.serviceProvider"/>

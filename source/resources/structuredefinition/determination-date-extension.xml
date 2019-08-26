@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="determination-date-extension"/>
+    <meta>
+        <versionId value="4"/>
+        <lastUpdated value="2019-08-26T19:37:56.000-04:00"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/determination-date-extension"/>
+    <name value="Determination_Date_Extension"/>
+    <title value="Determination Date Extension"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <date value="2019-08-01"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="The date of determination of a status or observation."/>
+    <fhirVersion value="4.0.0"/>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <context>
+        <type value="element"/>
+        <expression value="Observation"/>
+    </context>
+    <type value="dateTime"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/dateTime"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="dateTime">
+            <path value="dateTime"/>
+        </element>
+        <element id="dateTime.value">
+            <path value="dateTime.value"/>
+            <short value="Determination date."/>
+            <definition value="Represents the determination date of a status or observation."/>
+            <min value="1"/>
+            <max value="1"/>
+        </element>
+    </differential>
+</StructureDefinition>

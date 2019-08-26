@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-condition"/>
     <meta>
-        <versionId value="19"/>
-        <lastUpdated value="2019-06-24T20:54:12.000-04:00"/>
+        <versionId value="21"/>
+        <lastUpdated value="2019-08-09T15:55:43.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
     <version value="1.0.0"/>
@@ -15,6 +15,10 @@
     <publisher value="HL7 Public Health Work Group"/>
     <description value="This Condition profile represents the signs, symptoms, and diagnoses related to an eICR event. It is based on the **US Core Condition** profile with a further restriction of a *Must Support* constraint on the **onset\[x]** data element."/>
     <fhirVersion value="4.0.0"/>
+    <mapping>
+        <identity value="CDA"/>
+        <name value="eICR Condition profile mapping to CDA"/>
+    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Condition"/>
@@ -34,10 +38,28 @@
             <mustSupport value="false"/>
             <isModifier value="false"/>
         </element>
+        <element id="Condition.code">
+            <path value="Condition.code"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Problem Observation (V3)"/>
+                <comment value="Dianoses"/>
+            </mapping>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Problem Concern Act (V3)/Problem Observation (V3)/value"/>
+                <comment value="Symptoms (list)"/>
+            </mapping>
+        </element>
         <element id="Condition.onset[x]">
             <path value="Condition.onset[x]"/>
             <mustSupport value="true"/>
             <isModifier value="false"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Problem Concern Act (V3)/Problem Observation (V3)/effectiveTime + Problem Concern Act (V3)/Initial Case Report Trigger Code Problem Observation/effectiveTime"/>
+                <comment value="Date of Onset"/>
+            </mapping>
         </element>
     </differential>
 </StructureDefinition>

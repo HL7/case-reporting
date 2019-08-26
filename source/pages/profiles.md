@@ -27,6 +27,10 @@ active: profiles
 </thead>
 <tbody>
 <tr>
+<td><a href="StructureDefinition-determination-date-extension.html">Determination_Date_Extension</a></td>
+<td>The date of determination of a status or observation.</td>
+</tr>
+<tr>
 <td><a href="StructureDefinition-ecr-message-bundle.html">Ecr_Message_Bundle</a></td>
 <td>This Bundle profile represents an eICR Message Bundle. It contains the eCR MessageHeader and is for use in the eCR messaging paradigm.</td>
 </tr>
@@ -98,11 +102,33 @@ It is based on the **US Core Organization** profile with a further restriction o
 </tr>
 <tr>
 <td><a href="StructureDefinition-ersd-plandefinition.html">Ersd_PlanDefinition</a></td>
-<td>This PlanDefinition profile defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician.</td>
+<td>This PlanDefinition profile defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician.
+
+The profile defines three timing-related parameters for initiating case reports from Electronic Health Records (the standard does not specify the hour value for the delay of the send - public health can determine the specific value appropriate for implementation and may adjust based on review of the data available at different times) the standard conveys the parameters to clinical care but it does not require their implementation.  Any requirement for timing in implementation would require regulation. TODO:
+
+* Delay eICR construction (for example 3 hours) - the time after the start of the encounter before a triggered eICR should be composed and sent. (This delay is intended to allow adequate data to be recorded in the EHR, but is not so long as to delay reporting in critical circumstances.)  If there is a trigger and the encounter is closed before the specified delay value (for example the encounter is closed in 2 hours when the specified delay value is 3 hours) the eICR should be created and sent.
+* eICR periodic update (for example 24 hours) - the time after an initial eICR transmission to send new eICRs as updates during long encounters. (These updates should only be applied until the end of the encounter).
+* eICR encounter close-out (for example 24 hours or 0 hours for no delay) - the time after the end of an encounter for a final eICR to be sent when there has been one or more trigger events. (The close-out eICR is intended to provide the full data available at the end of an encounter.)</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-library-ersd-valueset.html">ERSD_Valueset_Library</a></td>
+<td>Defines the library containing the Reportable Condition Trigger Code value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses. </td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-pregnancy-outcome-observation.html">Pregnancy_Outcome_Observation</a></td>
+<td>This profile represents a result of the pregnancy such as live birth, still birth, miscarriage, etc.</td>
 </tr>
 <tr>
 <td><a href="StructureDefinition-pregnancy-status-observation.html">Pregnancy_Status_Observation</a></td>
-<td>This Observation profile represents the eICR patient's current or prior pregnancy status.</td>
+<td>This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range.
+
+This profile is includes the determination method, determination date, and recorded date of the pregnancy status. It also contains profiles to represent various aspects of the pregnancy.
+
+Use the effectiveTime to indicate the date range over which the patient was pregnant/possibly pregnant/not pregnant/unknown. To record the date that the pregnancy status was recorded, use author/time and to record the date on which the pregnancy status determination was made, use performer/time.
+
+To record the plurality of the pregnancy, use the contained profile Pregnancy Plurality. To record the outcome(s) of the pregnancy, use the contained template Pregnancy Outcome (birth order is specified in the required entryRelationship/sequence element). To record the date of the first prenatal visit for this pregnancy, use the contained template First Prenatal Visit for this Pregnancy and to record the total number of prenatal care visits for this pregnancy use the contained template Total Number of Prenatal Care Visits for this Pregnancy.
+
+**TODO - update this to suit use case for just eCR**</td>
 </tr>
 <tr>
 <td><a href="StructureDefinition-rr-communication.html">RR_Communication</a></td>
@@ -134,12 +160,9 @@ The Reportability Response Communication is also structured to allow:
 </tr>
 <tr>
 <td><a href="StructureDefinition-rr-relevant-reportable-condition-plandefinition.html">RR_Relevant_Reportable_Condition_Plandefinition</a></td>
-<td>This PlanDefinition profile represents the Reportability Response case definitions and reporting requirements which include:
+<td>This PlanDefinition in the Reportability Response transaction represents reportability information for a condition-jurisdiction pair, based on the PHA in which is located the patient's home, the provider facility or both locations. The Determination of Reportability, Determination of Reportability Reason, and Determination of Reportability Rule are contained in extensions. This profile also contains extensions for the Responsible Agency, the Rules Authoring Agency, and the Routing Entity. The Relevant Reportable Condition is contained in goal.addresses and any External Resources are contained in action (one action contains the information for one External Resource). 
 
-* The data that are needed to determine reportability
-* For a given condition , the mandated timeframe in which the condition should be reported to the PHA
-* The name of the Responsible Agency(ies) in which the condition was determined to be or not be reportable
-* The External Resources (text and links)in association with specific conditions</td>
+</td>
 </tr>
 <tr>
 <td><a href="StructureDefinition-rr-responsible-agency-organization.html">RR_Responsible_Agency_Organization</a></td>
@@ -179,8 +202,12 @@ The Reportability Response Communication is also structured to allow:
 </thead>
 <tbody>
 <tr>
-<td><a href="StructureDefinition-eicr-manually-initiated-reason-extension.html">Eicr_Manually_Initiated_Reason_Extension</a></td>
-<td>This Extension profile represents that this eICR was manually initiated and contains the reason for manual initiation of the eICR.</td>
+<td><a href="StructureDefinition-ecr-organization-extension.html">Ecr_Organization_Extension</a></td>
+<td>This extension represents an eCR Organization</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-eicr-manually-initiated-reason-extension.html">Eicr_Initiation_Reason_Extension</a></td>
+<td>This Extension profile represents that this eICR was either manually or alternately initiated and contains the reason for manual initiation of the eICR.</td>
 </tr>
 <tr>
 <td><a href="StructureDefinition-eicr-trigger-code-flag-extension.html">Eicr_Trigger_Code_Flag_Extension</a></td>
@@ -250,6 +277,10 @@ If any of the trigger codes used to generate the eICR are from an outdated versi
 <tr>
 <td><a href="StructureDefinition-rr-priority-extension.html">RR_Priority_Extension</a></td>
 <td>This Extension profile represents the priority given to the whole communication or one or more external resources.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-therapeutic-medication-response-extension.html">Therapeutic_Medication_Response_Extension</a></td>
+<td>This Extension profile represents represents a therapeutic response (as opposed to an undesired reaction) to the administration of a medication.</td>
 </tr>
 <tr>
 <td><a href="StructureDefinition-travel-history-address-extension.html">Travel_History_Address_Extension</a></td>

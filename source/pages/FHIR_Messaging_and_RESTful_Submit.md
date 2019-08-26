@@ -1,14 +1,16 @@
 ---
-title: Messaging & RESTful Transactions
+title: FHIR Messaging and RESTful Submit
 layout: default
-active: Messaging & RESTful Transactions
+active: FHIR Messaging and RESTful Submit
 ---
 
-[Previous Page](Profiles_&_Extensions.html)
+[Previous Page](Electronic_Reporting_and_Surveillance_Distribution_(eRSD)_Transaction_and_Profiles.html)
 
-### Electronic Case Report Messaging Profiles
+### FHIR Messaging Option
 
-The following profiles have been defined for the Electronic Case Report Messaging paradigm:
+Describe that this is an alternative to the other and vice versa
+
+The following profiles have been defined for the FHIR Messaging Option:
 
 #### Profiles
 <ul>
@@ -20,9 +22,11 @@ The following profiles have been defined for the Electronic Case Report Messagin
 The first resource in the <a href="StructureDefinition-ecr-message-bundle.html">eCR Message Bundle</a> is the <a href="StructureDefinition-ecr-messagheader.html">eCR MessageHeader</a> and the focus of the <a href="StructureDefinition-ecr-messageheader.html">eCR MessageHeader</a> is the <a href="StructureDefinition-ecr-Task.html">eCR Task</a>. The focus of the <a href="StructureDefinition-ecr-Task.html">eCR Task</a> is either the <a href="StructureDefinition-eicr-document-bundle.html">eICR Document Bundle</a> or the <a href="StructureDefinition-rr-Communication.html">RR Communication</a>.
 
 
-### Electronic Case Report RESTful Transaction Profiles
+### RESTful Submit Option
 
-The following profiles have been defined for the Electronic Case Report RESTful Transaction paradigm:
+Describe that this is an alternative to the other and vice versa.
+
+The following profiles have been defined for the RESTful Submit Option: 
 
 #### Profiles
 <ul>
@@ -32,4 +36,4 @@ The following profiles have been defined for the Electronic Case Report RESTful 
 The focus of the <a href="StructureDefinition-ecr-Task.html">eCR Task</a> is either the <a href="StructureDefinition-eicr-document-bundle.html">eICR Document Bundle</a> or the <a href="StructureDefinition-rr-Communication.html">RR Communication</a>.
 
 
-[Next Page](Terminology.html)
+[Next Page](Implementation_Guidance.html)

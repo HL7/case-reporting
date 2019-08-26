@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-location"/>
     <meta>
-        <versionId value="9"/>
-        <lastUpdated value="2019-06-24T20:47:06.000-04:00"/>
+        <versionId value="11"/>
+        <lastUpdated value="2019-08-07T15:48:36.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-location"/>
     <version value="1.0.0"/>
@@ -15,6 +15,11 @@
     <publisher value="HL7 Public Health Work Group"/>
     <description value="This Location profile represents the location/facility in which care was provided when the eICR was triggered."/>
     <fhirVersion value="4.0.0"/>
+    <mapping>
+        <identity value="CDA"/>
+        <name value="eICR Location profile CDA mapping"/>
+        <comment value="This table maps eICR Location profile to CDA"/>
+    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Location"/>
@@ -33,12 +38,61 @@
             <short value="Facility ID Number"/>
             <mustSupport value="true"/>
             <isModifier value="false"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClincalDocument/componentOf/encompassingEncounter/location/healthCareFacility/id"/>
+                <comment value="Facility ID Number"/>
+            </mapping>
+        </element>
+        <element id="Location.name">
+            <path value="Location.name"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClincalDocument/componentOf/encompassingEncounter/responsibleParty/representedOrganization/name"/>
+                <comment value="Provider Facility/Office Name"/>
+            </mapping>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClincalDocument/componentOf/encompassingEncounter/location/healthCareFacility/serviceProviderOrganization/name"/>
+                <comment value="Facility Name"/>
+            </mapping>
         </element>
         <element id="Location.type">
             <path value="Location.type"/>
             <short value="Facility Type"/>
             <mustSupport value="true"/>
             <isModifier value="false"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClincalDocument/componentOf/encompassingEncounter/location/healthCareFacility/code"/>
+                <comment value="Facility Type"/>
+            </mapping>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClinicalDocument/componentOf/encompassingEncounter/location/healthCareFacility/code"/>
+                <comment value="Hospital Unit"/>
+            </mapping>
+        </element>
+        <element id="Location.telecom">
+            <path value="Location.telecom"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClincalDocument/componentOf/encompassingEncounter/location/healthCareFacility/serviceProviderOrganization/telecom[tel:]"/>
+                <comment value="Facility Phone"/>
+            </mapping>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClincalDocument/componentOf/encompassingEncounter/location/healthCareFacility/serviceProviderOrganization/telecom[fax:]"/>
+                <comment value="Facility FAX"/>
+            </mapping>
+        </element>
+        <element id="Location.address">
+            <path value="Location.address"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="ClincalDocument/componentOf/encompassingEncounter/location/healthCareFacility/location/addr"/>
+                <comment value="Facility Address"/>
+            </mapping>
         </element>
         <element id="Location.address.city">
             <path value="Location.address.city"/>
