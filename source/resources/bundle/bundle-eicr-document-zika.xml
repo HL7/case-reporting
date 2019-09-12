@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="bundle-eicr-document-zika"/>
     <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2019-07-17T18:25:47.000-04:00"/>
+        <versionId value="7"/>
+        <lastUpdated value="2019-08-29T00:38:15.000-04:00"/>
     </meta>
     <identifier>
         <system value="urn:ietf:rfc:3986"/>
@@ -12,10 +12,10 @@
     </identifier>
     <type value="document"/>
     <entry>
-        <fullUrl value="http://hl7.org/fhir/us/ecr/Composition/eicr-composition-zika"/>
+        <fullUrl value="http://hl7.org/fhir/us/ecr/Composition/composition-eicr-zika"/>
         <resource>
             <Composition>
-                <id value="eicr-composition-zika"/>
+                <id value="composition-eicr-zika"/>
                 <language value="en-US"/>
                 <text>
                     <status value="generated"/>
@@ -92,7 +92,7 @@
                     </coding>
                 </type>
                 <subject>
-                    <reference value="http://hl7.org/fhir/us/ecr/Patient/ecr-patient-eve-everywoman"/>
+                    <reference value="http://hl7.org/fhir/us/ecr/Patient/patient-ecr-eve-everywoman"/>
                     <display value="Eve Everywoman"/>
                 </subject>
                 <encounter>
@@ -101,7 +101,7 @@
                 </encounter>
                 <date value="2018-01-02T22:13:23Z"/>
                 <author>
-                    <reference value="Practitioner/ecr-practitioner-henry-seven"/>
+                    <reference value="Practitioner/practitioner-us-core-henry-seven"/>
                     <display value="Henry Seven, MD"/>
                 </author>
                 <title value="Initial Public Health Case Report"/>
@@ -128,7 +128,7 @@
                                 <tbody>
                                     <tr>
                                         <td>Office outpatient visit 15 minutes</td>
-                                        <td>March 7, 2018</td>
+                                        <td>MAR 7, 2018</td>
                                         <td>
                                             <ul>
                                                 <li>Urgent Care Center</li>
@@ -240,10 +240,14 @@
                         <status value="generated"/>
                         <div
                             xmlns="http://www.w3.org/1999/xhtml">Persistent Cough REPORTED starting on 2018/03/05
+                            
                             <br/> Whooping Respiration not reported
+                            
                             <br/> Paroxysms Of
       Coughing REPORTED starting on 2018/03/06
+                            
                             <br/> Post-tussive vomiting not reported
+                            
                             <br/>
                         </div>
                     </text>
@@ -260,6 +264,7 @@
                         <status value="generated"/>
                         <div
                             xmlns="http://www.w3.org/1999/xhtml">Bad cough
+                            
                             <br/>
                         </div>
                     </text>
@@ -322,15 +327,15 @@
                         </div>
                     </text>
                     <entry>
-                        <reference value="Observation/eicr-travel-history-eve-everywoman-201801"/>
+                        <reference value="Observation/observation-travel-history-eve-everywoman-201801"/>
                         <display value="eICR Travel History: Eve Everywoman 2018-01"/>
                     </entry>
                     <entry>
-                        <reference value="Observation/eicr-pregnancy-status-eve-everywoman"/>
+                        <reference value="Observation/observation-pregnancy-status-eve-everywoman"/>
                         <display value="eICR Pregnancy Status Example 1"/>
                     </entry>
                     <entry>
-                        <reference value="Observation/eicr-occupation-history-eve-everywoman"/>
+                        <reference value="Observation/observation-eicr-occupation-history-eve-everywoman"/>
                         <display value="eICR Occupation History: Eve Everywoman"/>
                     </entry>
                 </section>
@@ -374,7 +379,7 @@
                         </div>
                     </text>
                     <entry>
-                        <reference value="Condition/eicr-condition-eve-everywoman-common-cold"/>
+                        <reference value="Condition/condition-eicr-eve-everywoman-common-cold"/>
                         <display value="Common cold (disorder)"/>
                     </entry>
                 </section>
@@ -414,7 +419,7 @@
                         </div>
                     </text>
                     <entry>
-                        <reference value="MedicationStatement/us-core-medicationstatement-eve-everywoman-azithromycin"/>
+                        <reference value="MedicationStatement/medicationstatement-us-core-eve-everywoman-azithromycin"/>
                         <display value="Azithromycin 500 MG Oral Tablet"/>
                     </entry>
                 </section>
@@ -436,33 +441,42 @@
                             </p>
                             <p>
                                 <b>id</b>: us-core-observation-results-eve-everywoman-lymphocytes
+                            
                             </p>
                             <p>
                                 <b>meta</b>: 
+                            
                             </p>
                             <p>
                                 <b>status</b>: final
+                            
                             </p>
                             <p>
                                 <b>category</b>: Laboratory 
+                                
                                 <span style="background: LightGoldenRodYellow">(Details : {http://hl7.org/fhir/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'})</span>
                             </p>
                             <p>
                                 <b>code</b>: Lymphocytes [#/​volume] in Blood by Automated count 
+                                
                                 <span style="background: LightGoldenRodYellow">(Details : {LOINC code '731-0' = 'Lymphocytes [#/​volume] in Blood by Automated count'})</span>
                             </p>
                             <p>
                                 <b>trigger result</b>: FALSE
+                            
                             </p>
                             <p>
                                 <b>effective</b>: Mar 6, 2018
+                            
                             </p>
                             <p>
                                 <b>value</b>: 5.2 10*3/uL
+                                
                                 <span style="background: LightGoldenRodYellow"> (Details: UCUM code 10*3/uL')</span>
                             </p>
                             <p>
                                 <b>interpretation</b>: High
+                                
                                 <span style="background: LightGoldenRodYellow"> (Details: http://hl7.org/fhir/v2/0078 code 'H' = 'High')</span>
                             </p>
                             <h3>ReferenceRanges</h3>
@@ -477,9 +491,11 @@
                                 <tr>
                                     <td>*</td>
                                     <td>1.0 10*3/uL
+                                        
                                         <span style="background: LightGoldenRodYellow"> (Details: UCUM code 10*3/uL')</span>
                                     </td>
                                     <td>4.8 10*3/uL
+                                        
                                         <span style="background: LightGoldenRodYellow"> (Details: UCUM code 10*3/uL')</span>
                                     </td>
                                 </tr>
@@ -487,7 +503,7 @@
                         </div>
                     </text>
                     <entry>
-                        <reference value="Observation/us-core-observation-results-eve-everywoman-lymphocytes"/>
+                        <reference value="Observation/observation-us-core-results-eve-everywoman-lymphocytes"/>
                         <display value="Lymphocytes [#/​volume] in Blood by Automated count - Interpretation: High"/>
                     </entry>
                 </section>
@@ -506,38 +522,47 @@
                             xmlns="http://www.w3.org/1999/xhtml">
                             <p>
                                 <b>id</b>: 5
+                            
                             </p>
                             <p>
                                 <b>status</b>: completed
+                            
                             </p>
                             <p>
                                 <b>intent</b>: order
+                            
                             </p>
                             <p>
                                 <b>priority</b>: asap
+                            
                             </p>
                             <p>
                                 <b>category</b>: Diagnostics Procedure 
+                                
                                 <span style="background: LightGoldenRodYellow">(Details : {SNOMED CT code '103693007' = 'Diagnostic procedure', given as 'Diagnostic procedure (procedure)'})</span>
                             </p>
                             <p>
                                 <b>code</b>: Zika RT-PCR 
+                                
                                 <span style="background: LightGoldenRodYellow">(Details : {LOINC code '80825-3' = 'Zika virus envelope (E) gene [Presence] in Serum by Probe and target amplification method', given as 'Zika virus envelope (E) gene [Presence] in Serum by Probe and target amplification method'})</span>
                             </p>
                             <p>
                                 <b>trigger lab order</b>: TRUE
+                            
                             </p>
                             <p>
                                 <b>trigger value set/version</b>: urn:oid:2.16.840.1.114222.4.11.7508 / 19/05/2018
+                            
                             </p>
                             <p>
                                 <b>performer</b>: 
+                                
                                 <a href="Organization/acme-labs">Acme Labs</a>
                             </p>
                         </div>
                     </text>
                     <entry>
-                        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-eicr-trigger-code-flag">
+                        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension">
                             <extension url="triggerCodeValueSet">
                                 <valueOid value="urn:oid:2.16.840.1.114222.4.11.7508"/>
                             </extension>
@@ -545,7 +570,7 @@
                                 <valueString value="19/05/2018"/>
                             </extension>
                         </extension>
-                        <reference value="ProcedureRequest/eicr-procedurerequest-zika"/>
+                        <reference value="ServiceRequest/servicerequest-eicr-zika"/>
                         <display value="Request for Zika virus envelope (E) gene [Presence] in Serum by Probe and target amplification method"/>
                     </entry>
                 </section>
@@ -553,15 +578,16 @@
         </resource>
     </entry>
     <entry>
-        <fullUrl value="http://hl7.org/fhir/us/ecr/Patient/ecr-patient-eve-everywoman"/>
+        <fullUrl value="http://hl7.org/fhir/us/ecr/Patient/patient-ecr-eve-everywoman"/>
         <resource>
             <Patient>
-                <id value="ecr-patient-eve-everywoman"/>
+                <id value="patient-ecr-eve-everywoman"/>
                 <text>
                     <status value="generated"/>
                     <div
                         xmlns="http://www.w3.org/1999/xhtml">
                         <div class="hapiHeaderText">Eve L 
+                            
                             <b>EVERYWOMAN </b>
                         </div>
                         <table class="hapiPropertyTable">
@@ -621,7 +647,7 @@
                     <use value="usual"/>
                     <type>
                         <coding>
-                            <system value="http://hl7.org/fhir/v2/0203"/>
+                            <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
                             <code value="MR"/>
                             <display value="Medical Record Number"/>
                         </coding>
@@ -634,7 +660,7 @@
                     <use value="usual"/>
                     <type>
                         <coding>
-                            <system value="http://hl7.org/fhir/identifier-type"/>
+                            <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
                             <code value="SB"/>
                             <display value="Social Beneficiary Identifier"/>
                         </coding>
@@ -671,10 +697,10 @@
         </resource>
     </entry>
     <entry>
-        <fullUrl value="http://hl7.org/fhir/us/ecr/Encounter/eicr-encounter-eve-everywoman-20180401"/>
+        <fullUrl value="http://hl7.org/fhir/us/ecr/Encounter/encounter-eicr-diagnosis-eve-everywoman-20180401"/>
         <resource>
             <Encounter>
-                <id value="eicr-encounter-eve-everywoman-20180401"/>
+                <id value="encounter-eicr-diagnosis-eve-everywoman-20180401"/>
                 <text>
                     <status value="generated"/>
                     <div
@@ -683,31 +709,40 @@
                             <b>Generated Narrative with Details</b>
                         </p>
                         <p>
-                            <b>id</b>: eicr-encounter-eve-everywoman-20180401
+                            <b>id</b>: encounter-eicr-diagnosis-eve-everywoman-20180401
+                        
                         </p>
                         <p>
                             <b>meta</b>: 
+                        
                         </p>
                         <p>
                             <b>status</b>: generated
+                        
                         </p>
                         <p>
-                            <b>class</b>: ambulatory (Details: http://hl7.org/fhir/v3/ActCode code AMB = 'ambulatory', stated as 'ambulatory')
+                            <b>class</b>: ambulatory (Details: http://terminology.hl7.org/CodeSystem/v3-ActCode code AMB = 'ambulatory', stated as 'ambulatory')
+                        
                         </p>
                         <p>
                             <b>type</b>: Office Visit 
               
+                            
                             <span style="background: LightGoldenRodYellow">(Details : {http://www.ama-assn.org/go/cpt code '99201' = '99201)</span>
                         </p>
                         <p>
                             <b>subject</b>: 
               
+                            
                             <b>name</b>: Eve Everywoman 
               
+                            
                             <b>identifier</b>: Medical Record Number = 1032702 (http://hospital.smarthealthit.org), SSN = 11-00-1234 (USUAL)
+                        
                         </p>
                         <p>
                             <b>period</b>: Apr 1, 2018 10:00:00 AM --&gt; Apr 2, 2018 10:15:00 AM
+                        
                         </p>
                     </div>
                 </text>
@@ -717,7 +752,7 @@
                 </identifier>
                 <status value="finished"/>
                 <class>
-                    <system value="http://hl7.org/fhir/v3/ActCode"/>
+                    <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
                     <code value="AMB"/>
                     <display value="ambulatory"/>
                 </class>
@@ -729,13 +764,13 @@
                     <text value="Office Visit"/>
                 </type>
                 <subject>
-                    <reference value="Patient/ecr-patient-eve-everywoman"/>
+                    <reference value="Patient/patient-ecr-eve-everywoman"/>
                     <display value="Eve Everywoman"/>
                 </subject>
                 <participant>
                     <type>
                         <coding>
-                            <system value="http://hl7.org/fhir/v3/ParticipationType"/>
+                            <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
                             <code value="ATND"/>
                             <display value="attender"/>
                         </coding>
@@ -751,7 +786,7 @@
                 </period>
                 <location>
                     <location>
-                        <reference value="Location/ecr-location-salem-medical-center"/>
+                        <reference value="Location/location-ecr-salem-medical-center"/>
                         <display value="Clinic Bldg A, Salem Medical Center, 4646 Brown Rd, Salem, MA 02368"/>
                     </location>
                 </location>

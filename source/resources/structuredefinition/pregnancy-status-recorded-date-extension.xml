@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="pregnancy-status-recorded-date-extension"/>
+    <meta>
+        <versionId value="4"/>
+        <lastUpdated value="2019-08-27T03:25:11.000-04:00"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-recorded-date-extension"/>
+    <name value="Pregnancy_Status_Recorded_Date_Extension"/>
+    <title value="Pregnancy Status Recorded Date Extension"/>
+    <status value="active"/>
+    <description value="The date the pregnancy status was recorded."/>
+    <mapping>
+        <identity value="CDA"/>
+    </mapping>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <context>
+        <type value="element"/>
+        <expression value="Observation"/>
+    </context>
+    <type value="dateTime"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/dateTime"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="dateTime">
+            <path value="dateTime"/>
+        </element>
+        <element id="dateTime.value">
+            <path value="dateTime.value"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Pregnancy Status (SUPPLEMENTAL PREGNANCY)/author/time/@value"/>
+            </mapping>
+        </element>
+    </differential>
+</StructureDefinition>

@@ -26,29 +26,25 @@ The following profiles and extensions have been defined for the Reportability Re
 <ul>
   <li><a href="StructureDefinition-rr-communication.html">Reportability Response Communication</a></li>
   <li><a href="StructureDefinition-rr-relevant-reportable-condition-plandefinition.html">Relevant Reportable Condition PlanDefinition</a></li>
-  <li><a href="StructureDefinition-rr-rules-authoring-agency.html">Rules Authoring Agency</a></li>
-  <li><a href="StructureDefinition-rr-responsible-agency.html">Responsible Agency</a></li>
-  <li><a href="StructureDefinition-rr-routing-entity.html">Routing Entity</a></li>
-  <li><a href="StructureDefinition-rr-eicr-processing-status.html">eICR Processing Status</a></li>
-  <li><a href="StructureDefinition-rr-eicr-processing-status-reason.html">eICR Processing Status Reason</a></li>
+  <li><a href="StructureDefinition-rr-rules-authoring-agency-organization.html">Rules Authoring Agency Organization</a></li>
+  <li><a href="StructureDefinition-rr-responsible-agency-organization.html">Responsible Agency Organization</a></li>
+  <li><a href="StructureDefinition-rr-routing-entity-organization.html">Routing Entity Organization</a></li>
+  <li><a href="StructureDefinition-rr-eicr-processing-status-observation.html">eICR Processing Status Observation</a></li>
+  <li><a href="StructureDefinition-rr-eicr-processing-status-reason-observation.html">eICR Processing Status Reason Observation</a></li>
   <li><a href="StructureDefinition-ecr-organization.html">eCR Organization</a></li>
   <li><a href="StructureDefinition-eicr-encounter.html">eICR Encounter</a></li>
 </ul>
 
 #### Extensions
 <ul>
-  <li><a href="StructureDefinition-extension-rr-subject.html">Extension Reportability Response Subject</a></li>
-  <li><a href="StructureDefinition-extension-rr-summary.html">Extension Reportability Response Summary</a></li>
-  <li><a href="StructureDefinition-extension-ecr-practitionerrole.html">Extension PractitionerRole reference</a></li>
-  <li><a href="StructureDefinition-extension-rr-location-relevance.html">Extension Location Relevance</a></li>
-  <li><a href="StructureDefinition-extension-rr-manually-initiated-eicr.html">Extension Manually Initiated eICR</a></li>
-  <li><a href="StructureDefinition-extension-rr-eicr-processing-status.html">Extension eICR Processing Status</a></li>
-  <li><a href="StructureDefinition-extension-rr-determination-of-reportability.html">Extension Determination of Reportability</a></li>
-  <li><a href="StructureDefinition-extension-rr-determination-of-reportability-reason.html">Extension Determination of Reportability Reason</a></li>
-  <li><a href="StructureDefinition-extension-rr-determination-of-reportability-rule.html">Extension Determination of Reportability Rule</a></li>
-  <li><a href="StructureDefinition-extension-rr-external-resource-type.html">Extension External Resource Type</a></li>
-  <li><a href="StructureDefinition-extension-rr-priority.html">Extension External Resource Priority</a></li>
-
+  <li><a href="StructureDefinition-rr-location-relevance-extension.html">Location Relevance Extension</a></li>
+  <li><a href="StructureDefinition-eicr-initiation-reason-extension.html">eICR Initiation Reason Extension</a></li>
+  <li><a href="StructureDefinition-rr-eicr-processing-status-extension.html">eICR Processing Status Extension</a></li>
+  <li><a href="StructureDefinition-rr-determination-of-reportability-extension.html">Extension Determination of Reportability</a></li>
+  <li><a href="StructureDefinition-rr-determination-of-reportability-reason-extension.html">Extension Determination of Reportability Reason</a></li>
+  <li><a href="StructureDefinition-rr-determination-of-reportability-rule-extension.html">Determination of Reportability Rule Extension</a></li>
+  <li><a href="StructureDefinition-rr-external-resource-type-extension.html">External Resource Type Extension</a></li>
+  <li><a href="StructureDefinition-rr-priority-extension.html">External Resource Priority Extension</a></li>
 </ul>
 
 [Next Page](Electronic_Reporting_and_Surveillance_Distribution_(eRSD)_Transaction_and_Profiles.html)

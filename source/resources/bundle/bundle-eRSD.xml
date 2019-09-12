@@ -3,19 +3,19 @@
     xmlns="http://hl7.org/fhir">
     <id value="bundle-eRSD"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2019-08-26T19:34:44.000-04:00"/>
+        <versionId value="14"/>
+        <lastUpdated value="2019-08-28T19:11:28.000-04:00"/>
     </meta>
     <type value="collection"/>
     <entry>
-        <fullUrl value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-eRSD"/>
+        <fullUrl value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-example"/>
         <resource>
             <PlanDefinition>
-                <id value="plandefinition-eRSD"/>
-                <url value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-eRSD"/>
+                <id value="plandefinition-ersd-example"/>
+                <url value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-example"/>
                 <version value="0.1"/>
-                <name value="ERSD-PlanDefinition-Sample-Instance-1"/>
-                <title value="eRSD PlanDefinition Sample Instance"/>
+                <name value="PlanDefinition_eRSD_Example"/>
+                <title value="eRSD PlanDefinition Example"/>
                 <type>
                     <coding>
                         <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
@@ -24,80 +24,29 @@
                     </coding>
                 </type>
                 <status value="active"/>
-                <date value="2019-07-26T12:01:51-04:00"/>
+                <date value="2019-07-26T12:49:11-04:00"/>
                 <relatedArtifact>
                     <type value="depends-on"/>
                     <display value="Reportable Condition Trigger Codes (RCTC)"/>
-                    <resource value="http://hl7.org/fhir/us/ecr/Library/rctc"/>
+                    <resource value="http://hl7.org/fhir/us/ecr/Library/library-rctc"/>
                 </relatedArtifact>
                 <action id="orchestration">
-                    <description value="orchestration"/>
+                    <description value="This action contains rules processing orchestration actions and information."/>
                     <textEquivalent value="Pick between the two sequence options based on rules processing: Healthcare-based processing, or RCKMS Rules Processing on AIMS Platform"/>
-                    <trigger id="dxtc-trigger">
-                        <type value="data-added"/>
-                        <name value="Diagnoses or problems documented in a clinical record."/>
-                        <data>
-                            <type value="Condition"/>
-                            <codeFilter>
-                                <path value="code"/>
-                                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/dxtc"/>
-                            </codeFilter>
-                        </data>
-                    </trigger>
-                    <trigger id="ostc-trigger">
-                        <type value="data-added"/>
-                        <name value="Nominal laboratory result values documented in a clinical record."/>
-                        <data>
-                            <type value="Observation"/>
-                            <codeFilter>
-                                <path value="valueCodeableConcept"/>
-                                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/ostc"/>
-                            </codeFilter>
-                        </data>
-                    </trigger>
-                    <trigger id="lotc-trigger">
-                        <type value="data-added"/>
-                        <name value="Laboratory test names used in orders documented in a clinical record."/>
-                        <data>
-                            <type value="ServiceRequest"/>
-                            <codeFilter>
-                                <path value="code"/>
-                                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/lotc"/>
-                            </codeFilter>
-                        </data>
-                    </trigger>
-                    <trigger id="lrtc-trigger">
-                        <type value="data-added"/>
-                        <name value="Laboratory test names used in observations documented in a clinical record."/>
-                        <data>
-                            <type value="Observation"/>
-                            <codeFilter>
-                                <path value="valueCodeableConcept"/>
-                                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/lrtc"/>
-                            </codeFilter>
-                        </data>
-                    </trigger>
-                    <trigger id="mrtc-trigger">
-                        <type value="data-added"/>
-                        <name value="Prescription drugs names used in observations documented in a clinical record."/>
-                        <data>
-                            <type value="Medication"/>
-                            <codeFilter>
-                                <path value="code"/>
-                                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/mrtc"/>
-                            </codeFilter>
-                        </data>
-                    </trigger>
                     <selectionBehavior value="exactly-one"/>
                     <action id="healthcare-based">
-                        <description value="Healthcare-based Rules processing workflow"/>
-                        <textEquivalent value="Rules processing, clinical feedback, eicr, route and send"/>
+                        <description value="Healthcare-based rules processing workflow"/>
+                        <textEquivalent value="Rules processing, clinical feedback, eicr, route and send."/>
                         <condition>
                             <kind value="applicability"/>
+                            <expression>
+                                <description value="Healthcare facility has rules processing capability"/>
+                                <language value="text/cql"/>
+                                <expression value="RulesProcessing() = true"/></expression>
                         </condition>
                         <action id="rules-processing">
-                            <description value="Rules processing"/>
-                            <textEquivalent value="Rules Processing is executed on Healthcare platform"/>
+                            <description value="This action contains rules processing that is executed in a healthcare organization or business associate."/>
+                            <textEquivalent value="Rules Processing is executed in Healthcare organization or business associate."/>
                             <trigger>
                                 <type value="named-event"/>
                                 <name value="orchestration is completed"/>
@@ -105,66 +54,99 @@
                         </action>
                         <action id="clinical-feedback">
                             <description value="clinical feedback"/>
-                            <textEquivalent value="create clinical feedback per rules"/>
+                            <textEquivalent value="Create clinical feedback for reportable and may be reportable conditons."/>
                             <trigger>
                                 <type value="named-event"/>
                                 <name value="rules processing is completed"/>
                             </trigger>
                             <condition>
                                 <kind value="applicability"/>
+                                <expression>
+                                    <description value="If rules processing determines reportable or may be reportable, then create clinical feedback"/>
+                                    <language value="text/cql"/>
+                                    <expression value="Reportable() = true or MayBeReportable() = true"/></expression>
                             </condition>
                         </action>
                         <action id="eicr">
-                            <description value="eicr"/>
-                            <textEquivalent value="create: initial eicr, periodic update eicr, close out eicr"/>
+                            <description value="This action contains eICR creation, update, and close out actions and information."/>
+                            <textEquivalent value="Create: initial eicr, periodic update eicr, close out eicr."/>
                             <selectionBehavior value="at-most-one"/>
                             <action id="create-eicr">
-                                <description value="Initial creation of eICR"/>
-                                <textEquivalent value="delay eICR construction (x hours) -  time after the start of the encounter before a triggered eICR should be composed and sent"/>
+                                <description value="This action represents the initial creation of the eICR."/>
+                                <textEquivalent value="Delay eICR construction (x hours) - time after the start of the encounter before a triggered eICR should be composed and sent."/>
                                 <relatedAction>
                                     <actionId value="orchestration"/>
                                     <relationship value="after-end"/>
                                     <offsetDuration>
-                                        <value value="6"/>
+                                        <value value="3"/>
                                         <unit value="h"/>
                                     </offsetDuration>
                                 </relatedAction>
                             </action>
                             <action id="periodic-eicr">
-                                <description value="eICR periodic update"/>
-                                <textEquivalent value="eICR periodic update (y hours) � the time after an initial eICR transmission to send new eICRs as updates for long episodes of care"/>
+                                <description value="This action represents the periodic update of the eICR."/>
+                                <textEquivalent value="eICR periodic update (y hours) – the time after a previous eICR transmission to send a new eICR as an update during long encounters."/>
                                 <trigger>
                                     <type value="periodic"/>
+                                    <timingTiming>
+                                        <repeat>
+                                            <frequency value="1"/>
+                                            <period value="24"/>
+                                            <periodUnit value="h"/>
+                                        </repeat>
+                                    </timingTiming>
                                 </trigger>
                                 <condition>
                                     <kind value="applicability"/>
+                                    <expression>
+                                        <description value="A trigger code was matched, encounter is still active, and 24 hours have passed after the last eicr was sent."/>
+                                        <language value="text/cql"/>
+                                        <expression value="TriggerCode() = true and EncounterActive() = true and (LastEncounterSentTime() - CurrentTime() &gt; 24)"/></expression>
                                 </condition>
                                 <condition>
                                     <kind value="stop"/>
+                                    <expression>
+                                        <description value="encounter is closed out"/>
+                                        <language value="text/cql"/>
+                                        <expression value="EncounterClosed() = true"/></expression>
                                 </condition>
                                 <relatedAction>
                                     <actionId value="create-eicr"/>
                                     <relationship value="after-end"/>
                                     <offsetDuration>
-                                        <value value="48"/>
+                                        <value value="24"/>
                                         <unit value="h"/>
                                     </offsetDuration>
                                 </relatedAction>
                             </action>
                             <action id="close-out-eicr">
-                                <description value="eICR episode of care close out"/>
-                                <textEquivalent value="eICR episode of care close out (z hours) � the time after the end of an episode of care for a final eICR will be sent when there has been one or more trigger events"/>
+                                <description value="This action represents an eICR encounter close out."/>
+                                <textEquivalent value="eICR encounter close out (z hours) - the time after the end of an encounter for a final eICR will be sent when there has been one or more trigger events"/>
                                 <trigger>
                                     <type value="named-event"/>
-                                    <name value="Episode of Care close out"/>
+                                    <name value="encounter close out"/>
+                                    <timingTiming>
+                                        <repeat>
+                                            <boundsDuration>
+                                                <value value="3"/>
+                                                <unit value="h"/>
+                                                <system value="http://unitsofmeasure.org"/>
+                                                <code value="h"/>
+                                            </boundsDuration>
+                                        </repeat>
+                                    </timingTiming>
                                 </trigger>
                                 <condition>
                                     <kind value="applicability"/>
+                                    <expression>
+                                        <description value="There has been one or more trigger event."/>
+                                        <language value="text/cql"/>
+                                        <expression value="TriggerEventCount() &gt;= 1"/></expression>
                                 </condition>
                             </action>
                         </action>
                         <action id="route-and-send">
-                            <description value="route and sent eicr"/>
+                            <description value="This action represents the routing and sending of an eICR as per rules processing."/>
                             <textEquivalent value="Route and send eicr per rules processing"/>
                             <trigger>
                                 <type value="named-event"/>
@@ -172,63 +154,96 @@
                             </trigger>
                             <condition>
                                 <kind value="applicability"/>
+                                <expression>
+                                    <description value="There has been one or more trigger event."/>
+                                    <language value="text/cql"/>
+                                    <expression value="TriggerEventCount() &gt;= 1"/></expression>
                             </condition>
                         </action>
                     </action>
                     <action id="aims-platform-rules-processing">
-                        <description value="Platform-based Rules processing workflow"/>
-                        <textEquivalent value="eicr, send from clinical care to platform, platform rules-processing, creation of clinical feedback"/>
-                        <action id="eicr">
-                            <description value="eicr"/>
-                            <textEquivalent value="create: initial eicr, periodic update eicr, close out eicr"/>
+                        <description value="This action defines the platform-based rules processing workflow including the steps/actions to be taken when Rules Processing is performed by the RCKMS System on the AIMS Platform."/>
+                        <textEquivalent value="eICR, send from clinical care to platform, platform rules-processing, creation of clinical feedback"/>
+                        <action id="eicr-platform">
+                            <description value="This action contains eICR creation, update, and close out actions and information."/>
+                            <textEquivalent value="Create: initial eicr, periodic update eicr, close out eicr."/>
                             <selectionBehavior value="at-most-one"/>
-                            <action id="create-eicr">
-                                <description value="Initial creation of eICR"/>
-                                <textEquivalent value="delay eICR construction (x hours) -  time after the start of the encounter before a triggered eICR should be composed and sent"/>
+                            <action id="create-eicr-platform">
+                                <description value="This action represents the initial creation of the eICR."/>
+                                <textEquivalent value="delay eICR construction (x hours) - time after the start of the encounter before a triggered eICR should be composed and sent"/>
                                 <relatedAction>
                                     <actionId value="orchestration"/>
                                     <relationship value="after-end"/>
                                     <offsetDuration>
-                                        <value value="6"/>
+                                        <value value="3"/>
                                         <unit value="h"/>
                                     </offsetDuration>
                                 </relatedAction>
                             </action>
-                            <action id="periodic-eicr">
-                                <description value="eICR periodic update"/>
-                                <textEquivalent value="eICR periodic update (y hours) � the time after an initial eICR transmission to send new eICRs as updates for long episodes of care"/>
+                            <action id="periodic-eicr-platform">
+                                <description value="This action represents the periodic update of the eICR."/>
+                                <textEquivalent value="eICR periodic update (y hours) - the time after an initial eICR transmission to send new eICRs as updates for long encounters"/>
                                 <trigger>
                                     <type value="periodic"/>
+                                    <timingTiming>
+                                        <repeat>
+                                            <frequency value="1"/>
+                                            <period value="24"/>
+                                            <periodUnit value="h"/>
+                                        </repeat>
+                                    </timingTiming>
                                 </trigger>
                                 <condition>
                                     <kind value="applicability"/>
+                                    <expression>
+                                        <description value="A trigger code was matched, encounter is still active, and 24 hours have passed after the last eicr was sent"/>
+                                        <language value="text/cql"/>
+                                        <expression value="TriggerCode() = true and EncounterActive() = true and (LastEncounterSentTime() - CurrentTime() &gt; 24)"/></expression>
                                 </condition>
                                 <condition>
                                     <kind value="stop"/>
+                                    <expression>
+                                        <description value="encounter is closed out"/>
+                                        <language value="text/cql"/>
+                                        <expression value="EncounterClosed() = true"/></expression>
                                 </condition>
                                 <relatedAction>
-                                    <actionId value="create-eicr"/>
+                                    <actionId value="create-eicr-platform"/>
                                     <relationship value="after-end"/>
                                     <offsetDuration>
-                                        <value value="48"/>
+                                        <value value="24"/>
                                         <unit value="h"/>
                                     </offsetDuration>
                                 </relatedAction>
                             </action>
                             <action id="close-out-eicr">
-                                <description value="eICR episode of care close out"/>
-                                <textEquivalent value="eICR episode of care close out (z hours) � the time after the end of an episode of care for a final eICR will be sent when there has been one or more trigger events"/>
+                                <description value="This action represents an eICR encounter close out."/>
+                                <textEquivalent value="eICR encounter close out (z hours) – the time after the end of an encounter for a final eICR will be sent when there has been one or more trigger events"/>
                                 <trigger>
                                     <type value="named-event"/>
-                                    <name value="Episode of Care close out"/>
+                                    <name value="encounter close out"/>
+                                    <timingTiming>
+                                        <repeat>
+                                            <boundsDuration>
+                                                <value value="3"/>
+                                                <unit value="h"/>
+                                                <system value="http://unitsofmeasure.org"/>
+                                                <code value="h"/>
+                                            </boundsDuration>
+                                        </repeat>
+                                    </timingTiming>
                                 </trigger>
                                 <condition>
                                     <kind value="applicability"/>
+                                    <expression>
+                                        <description value="There has been one or more trigger event."/>
+                                        <language value="text/cql"/>
+                                        <expression value="TriggerEventCount() = true"/></expression>
                                 </condition>
                             </action>
                         </action>
                         <action id="send-clinical-care-platform">
-                            <description value="send eicr from clinical care to platform"/>
+                            <description value="This action represents the sending of an eICR from clinical care to the platform."/>
                             <textEquivalent value="Send from clinical care to platform"/>
                             <trigger>
                                 <type value="named-event"/>
@@ -236,7 +251,7 @@
                             </trigger>
                         </action>
                         <action id="platform-rules-processing">
-                            <description value="platform rules processing"/>
+                            <description value="This action represents the platform rules processing on receipt of an eICR."/>
                             <textEquivalent value="Platform rules processing"/>
                             <trigger>
                                 <type value="named-event"/>
@@ -244,11 +259,11 @@
                             </trigger>
                         </action>
                         <action id="create-clinical-feedback">
-                            <description value="create clinical feedback per results of rules processing"/>
-                            <textEquivalent value="create clinical feedback per rules"/>
+                            <description value="This action represens the creation of clinical feedback per results of rules processing."/>
+                            <textEquivalent value="Create clinical feedback per rules results."/>
                             <trigger>
                                 <type value="named-event"/>
-                                <name value="rules processing complete"/>
+                                <name value="Rules processing complete."/>
                             </trigger>
                         </action>
                     </action>
@@ -257,14 +272,49 @@
         </resource>
     </entry>
     <entry>
-        <fullUrl value="http://hl7.org/fhir/us/ecr/Library/rctc"/>
+        <fullUrl value="http://hl7.org/fhir/us/ecr/Library/library-rctc"/>
+        <resource>
+            <Library>
+                <id value="library-rctc"/>
+                <url value="http://hl7.org/fhir/us/ecr/Library/library-rctc"/>
+                <name value="Library_RCTC"/>
+                <title value="Example library of RCTC value sets"/>
+                <status value="active"/>
+                <type>
+                    <coding>
+                        <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+                        <code value="asset-collection"/>
+                    </coding>
+                </type>
+                <relatedArtifact>
+                    <type value="composed-of"/>
+                    <resource value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"/>
+                </relatedArtifact>
+                <relatedArtifact>
+                    <type value="composed-of"/>
+                    <resource value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"/>
+                </relatedArtifact>
+                <relatedArtifact>
+                    <type value="composed-of"/>
+                    <resource value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"/>
+                </relatedArtifact>
+                <relatedArtifact>
+                    <type value="composed-of"/>
+                    <resource value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example"/>
+                </relatedArtifact>
+                <relatedArtifact>
+                    <type value="composed-of"/>
+                    <resource value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
+                </relatedArtifact>
+            </Library>
+        </resource>
     </entry>
     <entry>
-        <fullUrl value="http://hl7.org/fhir/us/ecr/ValueSet/dxtc"/>
+        <fullUrl value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"/>
         <resource>
             <ValueSet>
-                <id value="dxtc"/>
-                <url value="http://hl7.org/fhir/us/ecr/ValueSet/dxtc"/>
+                <id value="valueset-dxtc-example"/>
+                <url value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"/>
                 <identifier>
                     <system value="urn:ietf:rfc:3986"/>
                     <value value="urn:oid:2.16.840.1.113762.1.4.1146.627"/>
@@ -2338,11 +2388,11 @@
         </resource>
     </entry>
     <entry>
-        <fullUrl value="http://hl7.org/fhir/us/ecr/ValueSet/ostc"/>
+        <fullUrl value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"/>
         <resource>
             <ValueSet>
-                <id value="ostc"/>
-                <url value="http://hl7.org/fhir/us/ecr/ValueSet/ostc"/>
+                <id value="valueset-ostc-example"/>
+                <url value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"/>
                 <identifier>
                     <system value="urn:ietf:rfc:3986"/>
                     <value value="urn:oid:2.16.840.1.113762.1.4.1146.1059"/>
@@ -15725,11 +15775,11 @@
         </resource>
     </entry>
     <entry>
-        <fullUrl value="http://hl7.org/fhir/us/ecr/ValueSet/lotc"/>
+        <fullUrl value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"/>
         <resource>
             <ValueSet>
-                <id value="lotc"/>
-                <url value="http://hl7.org/fhir/us/ecr/ValueSet/lotc"/>
+                <id value="valueset-lotc-example"/>
+                <url value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"/>
                 <identifier>
                     <system value="urn:ietf:rfc:3986"/>
                     <value value="urn:oid:2.16.840.1.113762.1.4.1146.1056"/>
@@ -16152,11 +16202,11 @@
         </resource>
     </entry>
     <entry>
-        <fullUrl value="http://hl7.org/fhir/us/ecr/ValueSet/lrtc"/>
+        <fullUrl value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example"/>
         <resource>
             <ValueSet>
-                <id value="lrtc"/>
-                <url value="http://hl7.org/fhir/us/ecr/ValueSet/lrtc"/>
+                <id value="valueset-lrtc-example"/>
+                <url value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example"/>
                 <identifier>
                     <system value="urn:ietf:rfc:3986"/>
                     <value value="urn:oid:2.16.840.1.113762.1.4.1146.1057"/>
@@ -18827,17 +18877,17 @@
         </resource>
     </entry>
     <entry>
-        <fullUrl value="http://hl7.org/fhir/us/ecr/ValueSet/mrtc"/>
+        <fullUrl value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
         <resource>
             <ValueSet>
-                <id value="mrtc"/>
-                <url value="http://hl7.org/fhir/us/ecr/ValueSet/mrtc"/>
+                <id value="valueset-mrtc-example"/>
+                <url value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
                 <identifier>
                     <system value="urn:ietf:rfc:3986"/>
                     <value value="urn:oid:2.16.840.1.113762.1.4.1146.1060"/>
                 </identifier>
                 <name value="MedicationsRelease062019TriggersforPublicHealthReporting"/>
-                <title value="Medications         Release 062019 Triggers for Public Health Reporting"/>
+                <title value="Medications Release 062019 Triggers for Public Health Reporting"/>
                 <status value="active"/>
                 <description value="This set of values contains CVX,RXNORM,SNOMED medication codes that may represent that the patient may have a potentially reportable condition.  These pertain to medications administered and medications prescribed, where the medication, coded in CVX,RXNORM,SNOMED, may be indicative of a reportable condition."/>
                 <purpose value="Prescription drugs names used in observations documented in a clinical record."/>

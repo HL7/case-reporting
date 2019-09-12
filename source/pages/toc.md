@@ -12,7 +12,4 @@ active: toc
     * <a href="Implementation_Guidance.html">Implementation Guidance</a>
         * <a href="Design_Considerations.html">Design Considerations</a>
         * <a href="Narrative_Guidance.html">Narrative Guidance</a>
-        * <a href="Mappings.html">Mappings</a>
-            * <a href="eICR_Mappings.html">eICR Mappings</a>
-            * <a href="Reportability_Response_Mappings.html">Reportability Response Mappings</a>
     * <a href="History.html">History</a>

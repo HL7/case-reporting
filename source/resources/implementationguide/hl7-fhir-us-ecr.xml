@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="129"/>
-        <lastUpdated value="2019-08-25T22:00:33.000-04:00"/>
+        <versionId value="163"/>
+        <lastUpdated value="2019-09-12T19:35:33.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.0.0"/>
@@ -124,14 +124,6 @@
                 <display value="Eicr_Document_Bundle"/>
             </reference>
             <name value="Eicr_Document_Bundle"/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/eicr-manually-initiated-reason-extension"/>
-                <display value="Eicr_Manually_Initiated_Reason_Extension"/>
-            </reference>
-            <name value="Eicr_Manually_Initiated_Reason_Extension"/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
@@ -344,14 +336,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="ValueSet/valueset-lotc"/>
-                <display value="ValueSet_Lab_Order_Test_Name_Triggers_for_Public_Health_Reporting"/>
-            </reference>
-            <name value="ValueSet_Lab_Order_Test_Name_Triggers_for_Public_Health_Reporting"/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="ValueSet/valueset-external-resource-type-ecr"/>
                 <display value="ValueSet_External_Resource_Type_eCR"/>
             </reference>
@@ -360,34 +344,10 @@
         </resource>
         <resource>
             <reference>
-                <reference value="ValueSet/valueset-lrtc"/>
-                <display value="ValueSet_Lab_Obs_Test_Name_Triggers_for_Public_Health_Reporting"/>
-            </reference>
-            <name value="ValueSet_Lab_Obs_Test_Name_Triggers_for_Public_Health_Reporting"/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/valueset-dxtc"/>
-                <display value="ValueSet_Diagnosis_Problem_Triggers_for_Public_Health_Reporting"/>
-            </reference>
-            <name value="ValueSet_Diagnosis_Problem_Triggers_for_Public_Health_Reporting"/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="ValueSet/valueset-geographical-location-history"/>
                 <display value="ValueSet_Geographical_Location_History"/>
             </reference>
             <name value="ValueSet_Geographical_Location_History"/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/valueset-ostc"/>
-                <display value="ValueSet_Organism_Substance_Triggers_for_Public_Health_Reporting"/>
-            </reference>
-            <name value="ValueSet_Organism_Substance_Triggers_for_Public_Health_Reporting"/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
@@ -429,14 +389,6 @@
             </reference>
             <name value="CapabilityStatement_eCR_Client"/>
             <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Communication/communication-rr-single-single"/>
-                <display value="communication-rr-single-single"/>
-            </reference>
-            <name value="communication-rr-single-single"/>
-            <exampleBoolean value="true"/>
         </resource>
         <resource>
             <reference>
@@ -592,14 +544,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="Organization/ecr-organization-acme-labs"/>
-                <display value="Acme Labs"/>
-            </reference>
-            <name value="Acme Labs"/>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="Organization/organization-ecr-health-authority-west"/>
                 <display value="Health Authority West"/>
             </reference>
@@ -680,14 +624,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="Task/task-ecr-ehr-requested-eicr"/>
-                <display value="task-ecr-ehr-requested-eicr"/>
-            </reference>
-            <name value="task-ecr-ehr-requested-eicr"/>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="Communication/communication-rr-single-single-html-validation-output"/>
                 <display value="communication-rr-single-single-html-validation-output"/>
             </reference>
@@ -740,14 +676,6 @@
                 <display value="CapabilityStatement_eRSD_Client"/>
             </reference>
             <name value="CapabilityStatement_eRSD_Client"/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/library-ersd-valueset"/>
-                <display value="ERSD_Valueset_Library"/>
-            </reference>
-            <name value="ERSD_Valueset_Library"/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
@@ -830,6 +758,166 @@
             <name value="Pregnancy_Outcome_Observation"/>
             <exampleBoolean value="false"/>
         </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-initiation-reason-extension"/>
+                <display value="Eicr_Initiation_Reason_Extension"/>
+            </reference>
+            <name value="Eicr_Initiation_Reason_Extension"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ersd-valueset-library"/>
+                <display value="ERSD_Valueset_Library"/>
+            </reference>
+            <name value="ERSD_Valueset_Library"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/last-menstrual-period"/>
+                <display value="Last_Menstrual_Period"/>
+            </reference>
+            <name value="Last_Menstrual_Period"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/2.16.840.1.113883.11.20.9.87"/>
+                <display value="Postpartum Status"/>
+            </reference>
+            <name value="Postpartum Status"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/postpartum-status"/>
+                <display value="Postpartum_Status"/>
+            </reference>
+            <name value="Postpartum_Status"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/pregnancy-status-recorded-date-extension"/>
+                <display value="Pregnancy_Status_Recorded_Date_Extension"/>
+            </reference>
+            <name value="Pregnancy_Status_Recorded_Date_Extension"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="PlanDefinition/plandefinition-ersd-example"/>
+                <display value="PlanDefinition_eRSD_Example"/>
+            </reference>
+            <name value="PlanDefinition_eRSD_Example"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-us-core-results-eve-everywoman-pertussis"/>
+                <display value="observation-us-core-results-eve-everywoman-pertussis"/>
+            </reference>
+            <name value="observation-us-core-results-eve-everywoman-pertussis"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Communication/communication-rr-one-cond-one-pha"/>
+                <display value="communication-rr-one-cond-one-pha"/>
+            </reference>
+            <name value="communication-rr-one-cond-one-pha"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-lotc"/>
+                <display value="Example_Lab_Order_Test_Triggers_for_Public_Health_Reporting"/>
+            </reference>
+            <name value="Example_Lab_Order_Test_Triggers_for_Public_Health_Reporting"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-lrtc"/>
+                <display value="Example_Lab_Obs_Test_Name_Triggers_for_Public_Health_Reporting"/>
+            </reference>
+            <name value="Example_Lab_Obs_Test_Name_Triggers_for_Public_Health_Reporting"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-dxtc"/>
+                <display value="Example_Diagnosis_Problem_Triggers_for_Public_Health_Reporting"/>
+            </reference>
+            <name value="Example_Diagnosis_Problem_Triggers_for_Public_Health_Reporting"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-ostc"/>
+                <display value="Example_Organism_Substance_Triggers_for_Public_Health_Reporting"/>
+            </reference>
+            <name value="Example_Organism_Substance_Triggers_for_Public_Health_Reporting"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-mrtc"/>
+                <display value="Example_Medications_Triggers_for_Public_Health_Reporting"/>
+            </reference>
+            <name value="Example_Medications_Triggers_for_Public_Health_Reporting"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-iztc"/>
+                <display value="Example_Immunizations_Triggers_for_Public_Health_Reporting"/>
+            </reference>
+            <name value="Example_Immunizations_Triggers_for_Public_Health_Reporting"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Library/library-rctc"/>
+                <display value="library-rctc"/>
+            </reference>
+            <name value="library-rctc"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="MedicationAdministration/medicationadministration-eve-everywoman-azithromycin"/>
+                <display value="medicationadministration-eve-everywoman-azithromycin"/>
+            </reference>
+            <name value="medicationadministration-eve-everywoman-azithromycin"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Task/task-ecr-ehr-requested-eicr"/>
+                <display value="task-ecr-ehr-requested-eicr"/>
+            </reference>
+            <name value="task-ecr-ehr-requested-eicr"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="MessageHeader/messageheader-ecr-ehr-requested-eicr"/>
+                <display value="messageheader-ecr-ehr-requested-eicr"/>
+            </reference>
+            <name value="messageheader-ecr-ehr-requested-eicr"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rctc-valueset"/>
+                <display value="RCTC_ValueSet"/>
+            </reference>
+            <name value="RCTC_ValueSet"/>
+            <exampleBoolean value="false"/>
+        </resource>
         <page>
             <nameUrl value="toc.md"/>
             <title value="Table of Contents"/>
@@ -867,21 +955,6 @@
                     <nameUrl value="Narrative_Guidance.html"/>
                     <title value="Narrative Guidance"/>
                     <generation value="markdown"/>
-                </page>
-                <page>
-                    <nameUrl value="Mappings.html"/>
-                    <title value="Mappings"/>
-                    <generation value="markdown"/>
-                    <page>
-                        <nameUrl value="eICR_Mappings.html"/>
-                        <title value="eICR Mappings"/>
-                        <generation value="markdown"/>
-                    </page>
-                    <page>
-                        <nameUrl value="Reportability_Response_Mappings.html"/>
-                        <title value="Reportability Response Mappings"/>
-                        <generation value="markdown"/>
-                    </page>
                 </page>
             </page>
             <page>

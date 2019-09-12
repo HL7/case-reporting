@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-condition"/>
     <meta>
-        <versionId value="21"/>
-        <lastUpdated value="2019-08-09T15:55:43.000-04:00"/>
+        <versionId value="22"/>
+        <lastUpdated value="2019-08-27T16:34:55.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
     <version value="1.0.0"/>
@@ -16,8 +16,9 @@
     <description value="This Condition profile represents the signs, symptoms, and diagnoses related to an eICR event. It is based on the **US Core Condition** profile with a further restriction of a *Must Support* constraint on the **onset\[x]** data element."/>
     <fhirVersion value="4.0.0"/>
     <mapping>
-        <identity value="CDA"/>
-        <name value="eICR Condition profile mapping to CDA"/>
+        <identity value="eCR-CDA"/>
+        <name value="eCR FHIR to CDA Mapping"/>
+        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR"/>
     </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
@@ -37,18 +38,16 @@
             </base>
             <mustSupport value="false"/>
             <isModifier value="false"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Problem Observation (V3) + Initial Case Report Trigger Code Problem Observation (V2)"/>
+            </mapping>
         </element>
         <element id="Condition.code">
             <path value="Condition.code"/>
             <mapping>
                 <identity value="CDA"/>
-                <map value="Problem Observation (V3)"/>
-                <comment value="Dianoses"/>
-            </mapping>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="Problem Concern Act (V3)/Problem Observation (V3)/value"/>
-                <comment value="Symptoms (list)"/>
+                <map value="Problem Observation (V3)/value + Initial Case Report Trigger Code Problem Observation (V2)/value"/>
             </mapping>
         </element>
         <element id="Condition.onset[x]">
@@ -56,8 +55,8 @@
             <mustSupport value="true"/>
             <isModifier value="false"/>
             <mapping>
-                <identity value="CDA"/>
-                <map value="Problem Concern Act (V3)/Problem Observation (V3)/effectiveTime + Problem Concern Act (V3)/Initial Case Report Trigger Code Problem Observation/effectiveTime"/>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Problem Observation (V3)/effectiveTime + Initial Case Report Trigger Code Problem Observation/effectiveTime"/>
                 <comment value="Date of Onset"/>
             </mapping>
         </element>

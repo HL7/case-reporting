@@ -74,7 +74,9 @@ It is based on the **US Core Organization** profile with a further restriction o
 * laboratory orders, tests, and results         
 * signs, symptoms, and diagnoses
 * medication and immunization information
-* flags for the existence of reportable condition trigger codes in diagnoses, ordered/resulted laboratory tests, medications, and immunizations</td>
+* flags for the existence of reportable condition trigger codes in diagnoses, ordered/resulted laboratory tests, medications, and immunizations
+
+TODO - update</td>
 </tr>
 <tr>
 <td><a href="StructureDefinition-eicr-condition.html">Eicr_Condition</a></td>
@@ -111,8 +113,18 @@ The profile defines three timing-related parameters for initiating case reports 
 * eICR encounter close-out (for example 24 hours or 0 hours for no delay) - the time after the end of an encounter for a final eICR to be sent when there has been one or more trigger events. (The close-out eICR is intended to provide the full data available at the end of an encounter.)</td>
 </tr>
 <tr>
-<td><a href="StructureDefinition-library-ersd-valueset.html">ERSD_Valueset_Library</a></td>
+<td><a href="StructureDefinition-ersd-valueset-library.html">ERSD_Valueset_Library</a></td>
 <td>Defines the library containing the Reportable Condition Trigger Code value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses. </td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-last-menstrual-period.html">Last_Menstrual_Period</a></td>
+<td>This profile represents the date of the last menstrual period of the patient. If known, the first day of last menstrual period should be captured. The effectiveTime captures the observation date.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-postpartum-status.html">Postpartum_Status</a></td>
+<td>This profile represents the postpartum status of a patient. If the profile is present, the patient is in the postpartum period and further information about the postpartum status is communicated by the code chosen.
+The postpartum period, also known as the puerperium, refers to the time after delivery when maternal physiological changes related to pregnancy return to the nonpregnant state. There is consensus that the postpartum period begins upon delivery of the infant. The end is less well defined but is often considered the six to eight weeks after delivery because the effects of pregnancy on many systems have largely returned to the pre-pregnancy state.
+</td>
 </tr>
 <tr>
 <td><a href="StructureDefinition-pregnancy-outcome-observation.html">Pregnancy_Outcome_Observation</a></td>
@@ -129,6 +141,14 @@ Use the effectiveTime to indicate the date range over which the patient was preg
 To record the plurality of the pregnancy, use the contained profile Pregnancy Plurality. To record the outcome(s) of the pregnancy, use the contained template Pregnancy Outcome (birth order is specified in the required entryRelationship/sequence element). To record the date of the first prenatal visit for this pregnancy, use the contained template First Prenatal Visit for this Pregnancy and to record the total number of prenatal care visits for this pregnancy use the contained template Total Number of Prenatal Care Visits for this Pregnancy.
 
 **TODO - update this to suit use case for just eCR**</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-pregnancy-status-recorded-date-extension.html">Pregnancy_Status_Recorded_Date_Extension</a></td>
+<td>The date the pregnancy status was recorded.</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-rctc-valueset.html">RCTC_ValueSet</a></td>
+<td>This profile describes the RCTC value sets.</td>
 </tr>
 <tr>
 <td><a href="StructureDefinition-rr-communication.html">RR_Communication</a></td>
@@ -206,17 +226,19 @@ The Reportability Response Communication is also structured to allow:
 <td>This extension represents an eCR Organization</td>
 </tr>
 <tr>
-<td><a href="StructureDefinition-eicr-manually-initiated-reason-extension.html">Eicr_Initiation_Reason_Extension</a></td>
-<td>This Extension profile represents that this eICR was either manually or alternately initiated and contains the reason for manual initiation of the eICR.</td>
+<td><a href="StructureDefinition-eicr-initiation-reason-extension.html">Eicr_Initiation_Reason_Extension</a></td>
+<td>This Extension profile represents that this eICR was either manually or alternately initiated and contains the reason for initiation of the eICR.</td>
 </tr>
 <tr>
 <td><a href="StructureDefinition-eicr-trigger-code-flag-extension.html">Eicr_Trigger_Code_Flag_Extension</a></td>
-<td>This Extension profile represents a flag which, if it is present, indicates that the **target** reference represents a triggering event and caused the eCR to be generated. It also contains the identifier and version of the RCTC value from which the code was matched. It is used in the eICR profile in the following sections:
+<td>This Extension profile represents a flag which, if it is present, indicates that the **target** reference represents a triggering event and caused the eCR to be generated. It also contains the identifier and version of the RCTC value from which the code was matched. It is used in the eICR Composition profile in the following sections:
 
 * Encounters Section
 * Problem Section
 * Plan of Treatment Section
-* Results Section</td>
+* Results Section
+* Medications Section
+* Immunization Section</td>
 </tr>
 <tr>
 <td><a href="StructureDefinition-rr-determination-of-reportability-extension.html">RR_Determination_of_Reportability_Extension</a></td>

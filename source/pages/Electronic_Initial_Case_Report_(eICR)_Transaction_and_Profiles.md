@@ -24,18 +24,18 @@ The following profiles and extensions have been defined for the eICR transaction
   <li><a href="StructureDefinition-ecr-patient.html">eICR Patient</a></li>
   <li><a href="StructureDefinition-ecr-organization.html">eCR Organization</a></li>
   <li><a href="StructureDefinition-eicr-encounter.html">eICR Encounter</a></li>
-  <li><a href="StructureDefinition-eicr-procedurerequest.html">eICR Lab Orders</a></li>
+  <li><a href="StructureDefinition-eicr-servicerequest.html">eICR Lab Order</a></li>
   <li><a href="StructureDefinition-eicr-location.html">eICR Location</a></li>
-  <li><a href="StructureDefinition-pregnancy-status.html">Pregnancy Status</a></li>
-  <li><a href="StructureDefinition-eicr-travel-history.html">eICR Travel History</a></li>
-  <li><a href="StructureDefinition-eicr-occupationhistory.html">eICR Occupation History</a></li>
+  <li><a href="StructureDefinition-pregnancy-status-observation.html">Pregnancy Status Observation</a></li>
+  <li><a href="StructureDefinition-travel-history-observation.html">Travel History Observation</a></li>
+  <li><a href="StructureDefinition-eicr-occupation-history-observation.html">eICR Occupation History Observation</a></li>
 </ul>
 
 #### Extensions
 <ul>
-  <li><a href="StructureDefinition-extension-eicr-trigger-code-flag.html">eICR Trigger Code Flag</a></li>
-  <li><a href="StructureDefinition-extension-eicr-manually-initiated-reason.html">eICR Manually Initiated Reason</a></li>
-  <li><a href="StructureDefinition-extension-eicr-travel-history-address.html">Travel History Address</a></li>
+  <li><a href="StructureDefinition-eicr-trigger-code-flag-extension.html">eICR Trigger Code Flag</a></li>
+  <li><a href="StructureDefinition-eicr-initiation-reason-extension.html">eICR Manually Initiated Reason</a></li>
+  <li><a href="StructureDefinition-eicr-travel-history-address-extension.html">Travel History Address</a></li>
 </ul>
 
 

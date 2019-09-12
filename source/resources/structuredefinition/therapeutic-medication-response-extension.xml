@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="therapeutic-medication-response-extension"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2019-08-25T03:31:38.000-04:00"/>
+        <versionId value="6"/>
+        <lastUpdated value="2019-08-27T02:28:46.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/therapeutic-medication-response-extension"/>
     <name value="Therapeutic_Medication_Response_Extension"/>
@@ -16,7 +16,9 @@
     <description value="This Extension profile represents represents a therapeutic response (as opposed to an undesired reaction) to the administration of a medication."/>
     <fhirVersion value="4.0.0"/>
     <mapping>
-        <identity value="CDA"/>
+        <identity value="eCR-CDA"/>
+        <name value="eCR FHIR to CDA Mapping"/>
+        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
     </mapping>
     <kind value="complex-type"/>
     <abstract value="false"/>
@@ -41,6 +43,10 @@
                 <description value="Therapeutic response to medication"/>
                 <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.10.20.15.2.5.12"/>
             </binding>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Therapeutic Medication Response Observation/value"/>
+            </mapping>
         </element>
     </differential>
 </StructureDefinition>

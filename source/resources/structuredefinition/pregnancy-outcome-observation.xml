@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="pregnancy-outcome-observation"/>
     <meta>
-        <versionId value="6"/>
-        <lastUpdated value="2019-08-25T22:13:49.000-04:00"/>
+        <versionId value="7"/>
+        <lastUpdated value="2019-08-27T01:49:52.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-outcome-observation"/>
     <name value="Pregnancy_Outcome_Observation"/>
@@ -15,7 +15,9 @@
     <description value="This profile represents a result of the pregnancy such as live birth, still birth, miscarriage, etc."/>
     <fhirVersion value="4.0.0"/>
     <mapping>
-        <identity value="CDA"/>
+        <identity value="eCR-CDA"/>
+        <name value="eCR FHIR to CDA Mapping"/>
+        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
     </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
@@ -37,8 +39,8 @@
             </patternCodeableConcept>
             <mustSupport value="true"/>
             <mapping>
-                <identity value="CDA"/>
-                <map value="Pregnancy Outcome/code"/>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Pregnancy Outcome/code"/>
             </mapping>
         </element>
         <element id="Observation.focus">
@@ -59,8 +61,8 @@
             <definition value="Date on which the pregnancy outcome occurred."/>
             <mustSupport value="true"/>
             <mapping>
-                <identity value="CDA"/>
-                <map value="Pregnancy Outcome/effectiveTime"/>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Pregnancy Outcome/effectiveTime"/>
             </mapping>
         </element>
         <element id="Observation.value[x]">
@@ -78,8 +80,8 @@
                 <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.9.86"/>
             </binding>
             <mapping>
-                <identity value="CDA"/>
-                <map value="Pregnancy Outcome/value"/>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Pregnancy Outcome/value"/>
             </mapping>
         </element>
     </differential>

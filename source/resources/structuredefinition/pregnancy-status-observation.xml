@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="pregnancy-status-observation"/>
     <meta>
-        <versionId value="37"/>
-        <lastUpdated value="2019-08-25T22:14:37.000-04:00"/>
+        <versionId value="43"/>
+        <lastUpdated value="2019-08-29T03:03:57.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation"/>
     <version value="1.0.0"/>
@@ -16,9 +16,9 @@
     <description value="This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range.&#xA;&#xA;This profile is includes the determination method, determination date, and recorded date of the pregnancy status. It also contains profiles to represent various aspects of the pregnancy.&#xA;&#xA;Use the effectiveTime to indicate the date range over which the patient was pregnant/possibly pregnant/not pregnant/unknown. To record the date that the pregnancy status was recorded, use author/time and to record the date on which the pregnancy status determination was made, use performer/time.&#xA;&#xA;To record the plurality of the pregnancy, use the contained profile Pregnancy Plurality. To record the outcome(s) of the pregnancy, use the contained template Pregnancy Outcome (birth order is specified in the required entryRelationship/sequence element). To record the date of the first prenatal visit for this pregnancy, use the contained template First Prenatal Visit for this Pregnancy and to record the total number of prenatal care visits for this pregnancy use the contained template Total Number of Prenatal Care Visits for this Pregnancy.&#xA;&#xA;**TODO - update this to suit use case for just eCR**"/>
     <fhirVersion value="4.0.0"/>
     <mapping>
-        <identity value="CDA"/>
-        <name value="eICR Pregnancy Status mapping to CDA"/>
-        <comment value="This table maps eICR Pregnancy Status observation to CDA"/>
+        <identity value="eCR-CDA"/>
+        <name value="eCR FHIR to CDA Mapping"/>
+        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
     </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
@@ -35,35 +35,39 @@
         <element id="Observation.extension">
             <path value="Observation.extension"/>
             <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
                 <rules value="open"/>
             </slicing>
         </element>
-        <element id="Observation.extension:slicePregnancyStatusRecordedDate">
+        <element id="Observation.extension:extensionPregnancyStatusRecordedDate">
             <path value="Observation.extension"/>
-            <sliceName value="slicePregnancyStatusRecordedDate"/>
+            <sliceName value="extensionPregnancyStatusRecordedDate"/>
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-recorded-date-extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-recorded-date-extension"/>
             </type>
             <mustSupport value="true"/>
             <mapping>
-                <identity value="CDA"/>
-                <map value="Pregnancy Status (SUPPLEMENTAL PREGNANCY)/author/date/@value"/>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Pregnancy Status (SUPPLEMENTAL PREGNANCY)/author/date/@value"/>
             </mapping>
         </element>
-        <element id="Observation.extension:slicePregnancyStatusDeterminationDate">
+        <element id="Observation.extension:extensionPregnancyStatusDeterminationDate">
             <path value="Observation.extension"/>
-            <sliceName value="slicePregnancyStatusDeterminationDate"/>
+            <sliceName value="extensionPregnancyStatusDeterminationDate"/>
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <targetProfile value="de"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/determination-date-extension"/>
             </type>
             <mustSupport value="true"/>
             <mapping>
-                <identity value="CDA"/>
-                <map value="Pregnancy Status (SUPPLEMENTAL PREGNANCY)/performer/date/@value"/>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Pregnancy Status (SUPPLEMENTAL PREGNANCY)/performer/date/@value"/>
             </mapping>
         </element>
         <element id="Observation.code">
@@ -72,13 +76,12 @@
                 <coding>
                     <system value="http://loinc.org"/>
                     <code value="82810-3"/>
-                    <display value="Pregnancy Status"/>
                 </coding>
             </patternCodeableConcept>
             <mustSupport value="true"/>
             <mapping>
-                <identity value="CDA"/>
-                <map value="Pregnancy Observation (SUPPLEMENTAL PREGNANCY)/code"/>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Pregnancy Observation (SUPPLEMENTAL PREGNANCY)/code"/>
             </mapping>
         </element>
         <element id="Observation.subject">
@@ -99,8 +102,8 @@
             </type>
             <mustSupport value="true"/>
             <mapping>
-                <identity value="CDA"/>
-                <map value="Pregnancy Observation (SUPPLEMENTAL PREGNANCY)/effectiveTime"/>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Pregnancy Observation (SUPPLEMENTAL PREGNANCY)/effectiveTime"/>
             </mapping>
         </element>
         <element id="Observation.value[x]">
@@ -117,8 +120,8 @@
                 <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/pregnancy-status"/>
             </binding>
             <mapping>
-                <identity value="CDA"/>
-                <map value="Pregnancy Observation (SUPPLEMENTAL PREGNANCY)/value"/>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Pregnancy Observation (SUPPLEMENTAL PREGNANCY)/value"/>
             </mapping>
         </element>
         <element id="Observation.method">
@@ -131,10 +134,19 @@
                 <description value="The method of determination of the pregnancy status."/>
                 <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.9.80"/>
             </binding>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Pregnancy Observation (SUPPLEMENTAL PREGNANCY)/methodCode"/>
+                <comment value="Pregnancy status determination method aka Certainty of status (i.e., ultrasound, lab test evidence)"/>
+            </mapping>
         </element>
         <element id="Observation.component">
             <path value="Observation.component"/>
             <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="code"/>
+                </discriminator>
                 <rules value="open"/>
             </slicing>
         </element>
@@ -144,6 +156,10 @@
             <short value="Estimated Gestational Age of Pregnancy"/>
             <definition value="Represents the estimated gestational age of the pregnancy (in contrast to the gestational age at birth), beginning from the time of fertilization. The gestational age determination method is contained in code and the gestational age determination date is contained in the Determination Date Extension. Although gestational age is typically recorded in weeks plus days (e.g., 10 weeks and 3 days), the data type does not allow for mixed units. The gestational age must be represented in days. For example, 10 weeks and 3 days would be represented with 73 days."/>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Estimated Gestational Age of Pregnancy"/>
+            </mapping>
         </element>
         <element id="Observation.component:sliceEstimatedGestationalAgeOfPregnancy.extension">
             <path value="Observation.component.extension"/>
@@ -152,7 +168,7 @@
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/determination-date-extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/determination-date-extension"/>
             </type>
             <mustSupport value="true"/>
             <mapping>
@@ -200,6 +216,10 @@
             <short value="Estimated Date of Delivery (EDD)"/>
             <definition value="Represents the anticipated date when a woman will give birth. Set the code element to the appropriate value to allow recording of the estimated delivery date (EDD) determination method. The EDD determination date is contained in the Determination Date Extension.&#xA;If method of determination is known, it is included in the code chosen, if the method of determination is not known, use code 11778-8 - Delivery Date estimated (no method specified).&#xA;"/>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Estimated Date of Delivery (SUPPLEMENTAL PREGNANCY)"/>
+            </mapping>
         </element>
         <element id="Observation.component:sliceEstimatedDateOfDelivery.extension">
             <path value="Observation.component.extension"/>
@@ -208,7 +228,7 @@
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/determination-date-extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/determination-date-extension"/>
             </type>
             <mustSupport value="true"/>
             <mapping>

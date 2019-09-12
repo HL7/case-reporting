@@ -3,18 +3,22 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-trigger-code-flag-extension"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2019-06-24T21:41:38.000-04:00"/>
+        <versionId value="17"/>
+        <lastUpdated value="2019-08-27T22:52:55.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
-    <version value="1.0.0"/>
     <name value="Eicr_Trigger_Code_Flag_Extension"/>
     <title value="eICR Trigger Code Flag Extension"/>
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Extension profile represents a flag which, if it is present, indicates that the **target** reference represents a triggering event and caused the eCR to be generated. It also contains the identifier and version of the RCTC value from which the code was matched. It is used in the eICR profile in the following sections:&#xA;&#xA;* Encounters Section&#xA;* Problem Section&#xA;* Plan of Treatment Section&#xA;* Results Section"/>
+    <description value="This Extension profile represents a flag which, if it is present, indicates that the **target** reference represents a triggering event and caused the eCR to be generated. It also contains the identifier and version of the RCTC value from which the code was matched. It is used in the eICR Composition profile in the following sections:&#xA;&#xA;* Encounters Section&#xA;* Problem Section&#xA;* Plan of Treatment Section&#xA;* Results Section&#xA;* Medications Section&#xA;* Immunization Section"/>
     <fhirVersion value="4.0.0"/>
+    <mapping>
+        <identity value="eCR-CDA"/>
+        <name value="eCR FHIR to CDA Mapping"/>
+        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
+    </mapping>
     <kind value="complex-type"/>
     <abstract value="false"/>
     <context>
@@ -46,21 +50,19 @@
                 <rules value="open"/>
             </slicing>
         </element>
-        <element id="Extension.extension:triggerCodeValueSet">
+        <element id="Extension.extension:extensionTriggerCodeValueSet">
             <path value="Extension.extension"/>
-            <sliceName value="triggerCodeValueSet"/>
+            <sliceName value="extensionTriggerCodeValueSet"/>
             <short value="RCTC value set OID"/>
             <min value="1"/>
             <max value="1"/>
         </element>
-        <element id="Extension.extension:triggerCodeValueSet.url">
+        <element id="Extension.extension:extensionTriggerCodeValueSet.url">
             <path value="Extension.extension.url"/>
             <fixedUri value="triggerCodeValueSet"/>
         </element>
-        <element id="Extension.extension:triggerCodeValueSet.value[x]:valueOid">
-            <path value="Extension.extension.valueOid"/>
-            <sliceName value="valueOid"/>
-            <min value="1"/>
+        <element id="Extension.extension:extensionTriggerCodeValueSet.value[x]">
+            <path value="Extension.extension.value[x]"/>
             <type>
                 <code value="oid"/>
             </type>
@@ -69,26 +71,26 @@
                 <valueOid value="urn:oid:2.16.840.1.114222.4.11.7508"/>
             </example>
         </element>
-        <element id="Extension.extension:triggerCodeValueSetVersion">
+        <element id="Extension.extension:extensionTriggerCodeValueSetVersion">
             <path value="Extension.extension"/>
-            <sliceName value="triggerCodeValueSetVersion"/>
+            <sliceName value="extensionTriggerCodeValueSetVersion"/>
             <short value="RCTC value set version"/>
             <min value="1"/>
             <max value="1"/>
         </element>
-        <element id="Extension.extension:triggerCodeValueSetVersion.url">
+        <element id="Extension.extension:extensionTriggerCodeValueSetVersion.url">
             <path value="Extension.extension.url"/>
             <fixedUri value="triggerCodeValueSetVersion"/>
         </element>
-        <element id="Extension.extension:triggerCodeValueSetVersion.value[x]:valueString">
-            <path value="Extension.extension.valueString"/>
-            <sliceName value="valueString"/>
+        <element id="Extension.extension:extensionTriggerCodeValueSetVersion.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <min value="1"/>
             <type>
                 <code value="string"/>
             </type>
             <example>
                 <label value="General"/>
-                <valueString value="19/05/2018"/>
+                <valueString value="19/05/2019"/>
             </example>
         </element>
         <element id="Extension.url">
@@ -97,118 +99,8 @@
         </element>
         <element id="Extension.value[x]">
             <path value="Extension.value[x]"/>
+            <min value="0"/>
             <max value="0"/>
-            <type>
-                <code value="base64Binary"/>
-            </type>
-            <type>
-                <code value="boolean"/>
-            </type>
-            <type>
-                <code value="code"/>
-            </type>
-            <type>
-                <code value="date"/>
-            </type>
-            <type>
-                <code value="dateTime"/>
-            </type>
-            <type>
-                <code value="decimal"/>
-            </type>
-            <type>
-                <code value="id"/>
-            </type>
-            <type>
-                <code value="instant"/>
-            </type>
-            <type>
-                <code value="integer"/>
-            </type>
-            <type>
-                <code value="markdown"/>
-            </type>
-            <type>
-                <code value="oid"/>
-            </type>
-            <type>
-                <code value="positiveInt"/>
-            </type>
-            <type>
-                <code value="string"/>
-            </type>
-            <type>
-                <code value="time"/>
-            </type>
-            <type>
-                <code value="unsignedInt"/>
-            </type>
-            <type>
-                <code value="uri"/>
-            </type>
-            <type>
-                <code value="Address"/>
-            </type>
-            <type>
-                <code value="Age"/>
-            </type>
-            <type>
-                <code value="Annotation"/>
-            </type>
-            <type>
-                <code value="Attachment"/>
-            </type>
-            <type>
-                <code value="CodeableConcept"/>
-            </type>
-            <type>
-                <code value="Coding"/>
-            </type>
-            <type>
-                <code value="ContactPoint"/>
-            </type>
-            <type>
-                <code value="Count"/>
-            </type>
-            <type>
-                <code value="Distance"/>
-            </type>
-            <type>
-                <code value="Duration"/>
-            </type>
-            <type>
-                <code value="HumanName"/>
-            </type>
-            <type>
-                <code value="Identifier"/>
-            </type>
-            <type>
-                <code value="Money"/>
-            </type>
-            <type>
-                <code value="Period"/>
-            </type>
-            <type>
-                <code value="Quantity"/>
-            </type>
-            <type>
-                <code value="Range"/>
-            </type>
-            <type>
-                <code value="Ratio"/>
-            </type>
-            <type>
-                <code value="Reference"/>
-            </type>
-            <type>
-                <code value="SampledData"/>
-            </type>
-            <type>
-                <code value="Signature"/>
-            </type>
-            <type>
-                <code value="Timing"/>
-            </type>
         </element>
     </differential>
 </StructureDefinition>

@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="composition-eicr-pertussis-zika"/>
     <meta>
-        <versionId value="1"/>
-        <lastUpdated value="2019-06-05T01:34:54.000-04:00"/>
+        <versionId value="7"/>
+        <lastUpdated value="2019-08-29T02:34:19.000-04:00"/>
         <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
     </meta>
     <language value="en-US"/>
@@ -74,6 +74,7 @@
             </table>
         </div>
     </text>
+    <identifier id="2eec4326-bf29-4428-8d02-a334a19cfc18"/>
     <status value="final"/>
     <type>
         <coding>
@@ -83,11 +84,11 @@
         </coding>
     </type>
     <subject>
-        <reference value="Patient/patient-ecr-everywoman"/>
+        <reference value="Patient/patient-ecr-eve-everywoman"/>
         <display value="Eve Everywoman"/>
     </subject>
     <encounter>
-        <reference value="Encounter/encounter-eicr-eve-everywoman-20180401"/>
+        <reference value="Encounter/encounter-eicr-diagnosis-eve-everywoman-20180401"/>
         <display value="Ambulatory Office Visit, Nov 7, 2016, 10:00am"/>
     </encounter>
     <date value="2017-11-06T22:13:23Z"/>
@@ -100,6 +101,134 @@
         <code>
             <coding>
                 <system value="http://loinc.org"/>
+                <code value="46240-8"/>
+                <display value="Encounters"/>
+            </coding>
+        </code>
+        <text>
+            <status value="generated"/>
+            <div
+                xmlns="http://www.w3.org/1999/xhtml">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Encounter</th>
+                            <th>Date(s)</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Office outpatient visit 15 minutes</td>
+                            <td>MAR 7, 2018</td>
+                            <td>
+                                <ul>
+                                    <li>Urgent Care Center</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="20">
+                                <ul>
+                                    <li>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Encounter Diagnosis Type</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Diagnosis</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="20">
+                                                        <ul>
+                                                            <li>
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Initial Case Report Trigger Code Problem Observation </th>
+                                                                            <th>Problem</th>
+                                                                            <th>Trigger Code</th>
+                                                                            <th>Trigger Code codeSystem</th>
+                                                                            <th>RCTC OID</th>
+                                                                            <th>RCTC Version</th>
+                                                                            <th>Date(s)</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>Diagnosis</td>
+                                                                            <td>Pertussis (disorder)</td>
+                                                                            <td>27836007</td>
+                                                                            <td>SNOMED CT</td>
+                                                                            <td>2.16.840.1.114222.4.11.7508</td>
+                                                                            <td>19/03/2018</td>
+                                                                            <td>MAR 7, 2018</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Encounter Diagnosis Type</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>Diagnosis</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td colspan="20">
+                                                                                <ul>
+                                                                                    <li>
+                                                                                        <table>
+                                                                                            <thead>
+                                                                                                <tr>
+                                                                                                    <th>Problem Type</th>
+                                                                                                    <th>Problem</th>
+                                                                                                    <th>Date(s)</th>
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td>Diagnosis</td>
+                                                                                                    <td>A non-trigger code diagnosis (disorder)</td>
+                                                                                                    <td>MAR 7, 2018</td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+        <entry>
+            <reference value="Encounter/encounter-eicr-diagnosis-eve-everywoman-20180401"/>
+            <display value="eICR Encounter Diagnosis: Eve Everywoman 20180401"/>
+        </entry>
+    </section>
+    <section>
+        <title value="History of Present Illness Section"/>
+        <code>
+            <coding>
+                <system value="http://loinc.org"/>
                 <code value="10164-2"/>
                 <display value="History of Present illness Narrative"/>
             </coding>
@@ -108,15 +237,20 @@
             <status value="generated"/>
             <div
                 xmlns="http://www.w3.org/1999/xhtml">Persistent Cough REPORTED starting on 2016/10/05
+                
                 <br/> Whooping Respiration not reported
+                
                 <br/> Paroxysms Of
       Coughing REPORTED starting on 2016/11/04
+                
                 <br/> Post-tussive vomiting not reported
+                
                 <br/>
             </div>
         </text>
     </section>
     <section>
+        <title value="Reason for Visit Section Section"/>
         <code>
             <coding>
                 <system value="http://loinc.org"/>
@@ -128,6 +262,7 @@
             <status value="generated"/>
             <div
                 xmlns="http://www.w3.org/1999/xhtml">Bad cough
+                
                 <br/>
             </div>
         </text>
@@ -203,6 +338,40 @@
         </entry>
     </section>
     <section>
+        <title value="Pregnancy Section"/>
+        <code>
+            <coding>
+                <system value="http://loinc.org"/>
+                <code value="90767-5"/>
+                <display value="Pregnancy summary Document"/>
+            </coding>
+        </code>
+        <text>
+            <status value="generated"/>
+            <div
+                xmlns="http://www.w3.org/1999/xhtml">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pregnancy Status</th>
+                            <th>Date(s)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Not Pregnant</td>
+                            <td>JAN 1, 2016 to NOV 7, 2016</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </text>
+        <entry>
+            <reference value="Observation/observation-pregnancy-status-eve-everywoman"/>
+            <display value="eICR Pregnancy Status Example 1"/>
+        </entry>
+    </section>
+    <section>
         <title value="Problems Section"/>
         <code>
             <coding>
@@ -230,7 +399,7 @@
                     <tbody>
                         <tr>
                             <td>Pertussis (disorder)</td>
-                            <td>Condition-eICR-Condition-eICRExample1</td>
+                            <td>condition-eicr-eve-everywoman-pertussis</td>
                             <td>TRUE</td>
                             <td>Encounter Diagnosis</td>
                             <td>27836007 / SNOMED CT</td>
@@ -267,9 +436,14 @@
         </text>
         <entry>
             <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension">
-                <valueBoolean value="true"/>
+                <extension url="triggerCodeValueSet">
+                    <valueOid value="urn:oid:2.16.840.1.114222.4.11.7508"/>
+                </extension>
+                <extension url="triggerCodeValueSetVersion">
+                    <valueString value="19/05/2018"/>
+                </extension>
             </extension>
-            <reference value="Condition/Condition-eICR-Condition-eICRExample1"/>
+            <reference value="Condition/condition-eicr-eve-everywoman-pertussis"/>
             <display value="Pertussis (disorder)"/>
         </entry>
         <entry>
@@ -335,33 +509,42 @@
                 </p>
                 <p>
                     <b>id</b>: Observation-US-Core-ObservationResults-eICRExample1
+                
                 </p>
                 <p>
                     <b>meta</b>: 
+                
                 </p>
                 <p>
                     <b>status</b>: final
+                
                 </p>
                 <p>
                     <b>category</b>: Laboratory 
+                    
                     <span style="background: LightGoldenRodYellow">(Details : {http://hl7.org/fhir/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'})</span>
                 </p>
                 <p>
                     <b>code</b>: Bordetella pertussis Ab [Units/volume] in Serum 
+                    
                     <span style="background: LightGoldenRodYellow">(Details : {LOINC code '11585-7' = 'Bordetella pertussis Ab [Units/volume] in Serum'})</span>
                 </p>
                 <p>
                     <b>trigger result</b>: TRUE
+                
                 </p>
                 <p>
                     <b>effective</b>: Nov 11, 2016
+                
                 </p>
                 <p>
                     <b>value</b>: 100 [iU]/mL
+                    
                     <span style="background: LightGoldenRodYellow"> (Details: UCUM code [iU]/mL')</span>
                 </p>
                 <p>
                     <b>interpretation</b>: High
+                    
                     <span style="background: LightGoldenRodYellow"> (Details: http://hl7.org/fhir/v2/0078 code 'H' = 'High')</span>
                 </p>
                 <h3>ReferenceRanges</h3>
@@ -375,39 +558,49 @@
                     <tr>
                         <td>*</td>
                         <td>45 [iU]/mL
+                            
                             <span style="background: LightGoldenRodYellow"> (Details: UCUM code [iU]/mL')</span>
                         </td>
                     </tr>
                 </table>
                 <p>
                     <b>id</b>: Observation-US-Core-ObservationResults-eICRExample2
+                
                 </p>
                 <p>
                     <b>meta</b>: 
+                
                 </p>
                 <p>
                     <b>status</b>: final
+                
                 </p>
                 <p>
                     <b>category</b>: Laboratory 
+                    
                     <span style="background: LightGoldenRodYellow">(Details : {http://hl7.org/fhir/observation-category code 'laboratory' = 'Laboratory', given as 'Laboratory'})</span>
                 </p>
                 <p>
                     <b>code</b>: Lymphocytes [#/​volume] in Blood by Automated count 
+                    
                     <span style="background: LightGoldenRodYellow">(Details : {LOINC code '731-0' = 'Lymphocytes [#/​volume] in Blood by Automated count'})</span>
                 </p>
                 <p>
                     <b>trigger result</b>: FALSE
+                
                 </p>
                 <p>
                     <b>effective</b>: Nov 11, 2016
+                
                 </p>
                 <p>
                     <b>value</b>: 5.2 10*3/uL
+                    
                     <span style="background: LightGoldenRodYellow"> (Details: UCUM code 10*3/uL')</span>
                 </p>
                 <p>
                     <b>interpretation</b>: High
+                    
                     <span style="background: LightGoldenRodYellow"> (Details: http://hl7.org/fhir/v2/0078 code 'H' = 'High')</span>
                 </p>
                 <h3>ReferenceRanges</h3>
@@ -422,9 +615,11 @@
                     <tr>
                         <td>*</td>
                         <td>1.0 10*3/uL
+                            
                             <span style="background: LightGoldenRodYellow"> (Details: UCUM code 10*3/uL')</span>
                         </td>
                         <td>4.8 10*3/uL
+                            
                             <span style="background: LightGoldenRodYellow"> (Details: UCUM code 10*3/uL')</span>
                         </td>
                     </tr>
@@ -433,26 +628,28 @@
         </text>
         <entry>
             <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension">
-                <valueBoolean value="true"/>
+                <extension url="triggerCodeValueSet">
+                    <valueOid value="urn:oid:2.16.840.1.114222.4.11.7508"/>
+                </extension>
+                <extension url="triggerCodeValueSetVersion">
+                    <valueString value="19/05/2018"/>
+                </extension>
             </extension>
-            <reference value="Observation/Observation-US-Core-ObservationResults-eICRExample1"/>
+            <reference value="Observation/observation-us-core-results-eve-everywoman-pertussis"/>
             <display value="Bordetella pertussis Ab [Units/volume] in Serum - Interpretation: High"/>
         </entry>
         <entry>
-            <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-trigger">
-                <valueBoolean value="false"/>
-            </extension>
             <reference value="Observation/observation-us-core-results-eve-everywoman-lymphocytes"/>
             <display value="Lymphocytes [#/​volume] in Blood by Automated count - Interpretation: High"/>
         </entry>
     </section>
     <section>
-        <title value="Lab Order Section"/>
+        <title value="Plan of Treatment Section"/>
         <code>
             <coding>
                 <system value="http://loinc.org"/>
-                <code value="30954-2"/>
-                <display value="Relevant diagnostic tests/​laboratory data Narrative"/>
+                <code value="18776-5"/>
+                <display value="Plan of Treatment Section"/>
             </coding>
         </code>
         <text>
@@ -461,36 +658,49 @@
                 xmlns="http://www.w3.org/1999/xhtml">
                 <p>
                     <b>id</b>: 5
+                
                 </p>
                 <p>
                     <b>status</b>: completed
+                
                 </p>
                 <p>
                     <b>intent</b>: order
+                
                 </p>
                 <p>
                     <b>priority</b>: asap
+                
                 </p>
                 <p>
                     <b>category</b>: Diagnostics Procedure 
+                    
                     <span style="background: LightGoldenRodYellow">(Details : {SNOMED CT code '103693007' = 'Diagnostic procedure', given as 'Diagnostic procedure (procedure)'})</span>
                 </p>
                 <p>
                     <b>code</b>: Zika RT-PCR 
+                    
                     <span style="background: LightGoldenRodYellow">(Details : {LOINC code '80825-3' = 'Zika virus envelope (E) gene [Presence] in Serum by Probe and target amplification method', given as 'Zika virus envelope (E) gene [Presence] in Serum by Probe and target amplification method'})</span>
                 </p>
                 <p>
                     <b>trigger lab order</b>: TRUE
+                
                 </p>
                 <p>
                     <b>performer</b>: 
+                    
                     <a href="Organization/acme-labs">Acme Labs</a>
                 </p>
             </div>
         </text>
         <entry>
             <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension">
-                <valueBoolean value="true"/>
+                <extension url="triggerCodeValueSet">
+                    <valueOid value="urn:oid:2.16.840.1.114222.4.11.7508"/>
+                </extension>
+                <extension url="triggerCodeValueSetVersion">
+                    <valueString value="19/05/2018"/>
+                </extension>
             </extension>
             <reference value="ServiceRequest/servicerequest-eicr-zika"/>
             <display value="Request for Zika virus envelope (E) gene [Presence] in Serum by Probe and target amplification method"/>

@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-communication"/>
     <meta>
-        <versionId value="26"/>
-        <lastUpdated value="2019-08-25T02:30:52.000-04:00"/>
+        <versionId value="44"/>
+        <lastUpdated value="2019-08-29T00:02:18.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication"/>
     <version value="1.0.0"/>
@@ -16,9 +16,9 @@
     <description value="This Communication profile represents the Reportability Response that will be created in response to an electronic Initial Case Report Composition. The sharing of the Reportability Response with clinical care will serve several functions, including to: &#xA;&#xA;* Communicate the reportability status, for the responsible PHA(s)of each condition included in the electronic Initial Case Report (eICR)     &#xA;* Identify who (a PHA or an intermediary) prepared the Reportability Response     &#xA;* Indicate whether the eICR has been sent to one or more PHA(s)     &#xA;* Identify which PHA(s) has/have been sent the eICR     &#xA;* Provide contact information for the responsible PHA(s)     &#xA;* Provide suggested or required clinical follow-up activities from the responsible PHA(s), including any additional reporting needs or infection control activities     &#xA;* Provide access to clinical support resources suggested by the responsible PHA(s) for identified reportable conditions     &#xA;* Confirm eICR receipt and processing     &#xA;&#xA;A Reportability Response will also, when requested, be shared with the responsible PHAs (when they have not constructed it) for their internal use, so they understand what has been shared with clinical care and, and to monitor/audit decision support algorithm effectivesness and implementation. When a condition is considered reportable to more than one PHA, the Reportability Response can be helpful in communicating reporting that has been done to other PHAs.     &#xA;&#xA;The Reportability Response Communication is also structured to allow:     &#xA;&#xA;* Notification, alerting, routing and queueing in work or message management systems for healthcare personnel     &#xA;* Dynamic and static URIs for supplemental data collection and the provision of information resources"/>
     <fhirVersion value="4.0.0"/>
     <mapping>
-        <identity value="CDA"/>
-        <name value="RR-Communication map to CDA"/>
-        <comment value="The table maps RR-Communication profile elements to CDA"/>
+        <identity value="eCR-CDA"/>
+        <name value="eCR FHIR to CDA Mapping"/>
+        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
     </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
@@ -104,7 +104,6 @@
                 <coding>
                     <system value="http://loinc.org"/>
                     <code value="88085-6"/>
-                    <display value="Reportability response report Document Public health"/>
                 </coding>
             </patternCodeableConcept>
             <mustSupport value="true"/>
@@ -122,18 +121,12 @@
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-patient"/>
             </type>
-            <example>
-                <label value="General"/>
-                <valueReference>
-                    <reference value="Patient/ecr-patient-eve-everywoman"/>
-                    <display value="Eve Everywoman"/>
-                </valueReference>
-            </example>
             <mustSupport value="true"/>
         </element>
         <element id="Communication.recipient">
             <path value="Communication.recipient"/>
-            <comment value="Reporting may be identified for multiple PHAs by the PHA system (or its intermediary) (because the patient&amp;#39;s residence and the provider location are in separate jurisdictions) including other identified organization (such as an HIE) to which the eICR (if deemed reportable) and/or the Reportability Response will be routed."/>
+            <short value="Reportability Response recipients"/>
+            <definition value="Reporting may be identified for multiple PHAs by the PHA system (or its intermediary) (because the patient's residence and the provider location are in separate jurisdictions) including other identified organization (such as an HIE) to which the eICR (if deemed reportable) and/or the Reportability Response will be routed."/>
             <min value="1"/>
             <type>
                 <code value="Reference"/>
@@ -141,13 +134,6 @@
                 <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-practitionerrole"/>
             </type>
-            <example>
-                <label value="General"/>
-                <valueReference>
-                    <reference value="PractitionerRole/ecr-practitionerrole-henry-seven"/>
-                    <display value="Henry Seven, MD"/>
-                </valueReference>
-            </example>
             <mustSupport value="true"/>
         </element>
         <element id="Communication.topic">
@@ -162,19 +148,8 @@
                 <map value="Reportability Response Subject/text"/>
             </mapping>
         </element>
-        <element id="Communication.topic.reference">
-            <path value="Communication.topic.reference"/>
-            <max value="0"/>
-        </element>
-        <element id="Communication.topic.identifier">
-            <path value="Communication.topic.identifier"/>
-            <max value="0"/>
-        </element>
-        <element id="Communication.topic.display">
-            <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-                <valueBoolean value="true"/>
-            </extension>
-            <path value="Communication.topic.display"/>
+        <element id="Communication.topic.text">
+            <path value="Communication.topic.text"/>
             <short value="Reportability Response Subject text"/>
             <definition value="Contains a short high-level description of the determination of reportability."/>
             <min value="1"/>
@@ -241,11 +216,9 @@
             <fixedString value="reportability-response-summary"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Communication.payload:sliceReportabilityResponseSummary.content[x]:contentString">
-            <path value="Communication.payload.contentString"/>
-            <sliceName value="contentString"/>
+        <element id="Communication.payload:sliceReportabilityResponseSummary.content[x]">
+            <path value="Communication.payload.content[x]"/>
             <short value="Reportability Response Summary text"/>
-            <definition value="Contains a detailed text description of the reportable condition(s) including actions the provider needs to take, any supplemental information that may be required, and where the initial case report was sent."/>
             <type>
                 <code value="string"/>
             </type>
@@ -253,9 +226,10 @@
                 <label value="General"/>
                 <valueString value="Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient. &quot;Zika virus disease (disorder)&quot; is reportable to &quot;State Department of Health&quot;. An initial case report was sent to &quot;State Department of Health&quot;. Additional information may be required for this report."/>
             </example>
+            <mustSupport value="true"/>
             <mapping>
-                <identity value="CDA"/>
-                <map value="Reportability Response Summary/text"/>
+                <identity value="eCR-CDA"/>
+                <map value="[RR R1 STU1] Reportability Response Summary/text"/>
             </mapping>
         </element>
         <element id="Communication.payload:sliceRelevantReportableCondition">
@@ -271,19 +245,20 @@
             <fixedString value="relevant-reportable-condition"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Communication.payload:sliceRelevantReportableCondition.content[x]:contentReference">
-            <path value="Communication.payload.contentReference"/>
-            <sliceName value="contentReference"/>
+        <element id="Communication.payload:sliceRelevantReportableCondition.content[x]">
+            <path value="Communication.payload.content[x]"/>
+            <short value="Reference to Relevant Reportable Condition PlanDefinition"/>
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
             </type>
+            <mustSupport value="true"/>
         </element>
         <element id="Communication.payload:sliceEICRInformation">
             <path value="Communication.payload"/>
             <sliceName value="sliceEICRInformation"/>
             <short value="Electronic Initial Case Report Information"/>
-            <definition value="This payload contains information about the eICR Composition to which this Communication is a response. The date/time of receipt and a document reference are represented in the referenced Electronic Initial Case Report Composition Profile and the processing status of the eICR Composition is contained in the eICR Processing Status profile. If the eICR Composition was manually initiated by a healthcare provider, this is indicated by the presence of the Manually Initiated eICR extension.&#xD;&#xA;&#xD;&#xA;This payload is always present in the Reportability Response Communication.&#xD;&#xA;&#xD;&#xA;The text element (narrative block) in this section is only populated and displayed when the eICR CDA document was not processed (eICR Processing Status/code=&quot;RRVS22&quot;, &quot;eICR was not processed – error&quot;) and that text element contains the eICR processing status reason(s).&#xD;&#xA;"/>
+            <definition value="This payload slice contains information about the eICR Composition to which this Communication is a response. The date/time of receipt and a document reference are represented in the referenced Electronic Initial Case Report Composition Profile and the processing status of the eICR Composition is contained in the eICR Processing Status profile. If the eICR Composition was manually initiated by a healthcare provider, this is indicated by the presence of the Manually Initiated eICR extension.&#xA;&#xA;This payload slice is always present in the Reportability Response Communication.&#xA;&#xA;The text element (narrative block) in this section is only populated and displayed when the eICR CDA document was not processed (eICR Processing Status/code=&quot;RRVS22&quot;, &quot;eICR was not processed - error&quot;) and that text element contains the eICR processing status reason(s).&#xA;"/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
@@ -303,11 +278,11 @@
                 <rules value="open"/>
             </slicing>
         </element>
-        <element id="Communication.payload:sliceEICRInformation.extension:eICRProcessingStatus">
+        <element id="Communication.payload:sliceEICRInformation.extension:extensionEICRProcessingStatus">
             <path value="Communication.payload.extension"/>
-            <sliceName value="eICRProcessingStatus"/>
+            <sliceName value="extensionEICRProcessingStatus"/>
             <short value="eICR Processing Status"/>
-            <definition value="Optional Extension Element - found in all resources."/>
+            <definition value="This extension constains processing status information about the eICR."/>
             <min value="1"/>
             <max value="1"/>
             <type>
@@ -316,21 +291,21 @@
             </type>
             <mustSupport value="true"/>
         </element>
-        <element id="Communication.payload:sliceEICRInformation.extension:eICRProcessingStatus.id">
+        <element id="Communication.payload:sliceEICRInformation.extension:extensionEICRProcessingStatus.id">
             <path value="Communication.payload.extension.id"/>
             <min value="1"/>
             <fixedString value="eicr-processing-status"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Communication.payload:sliceEICRInformation.extension:eICRProcessingStatus.url">
+        <element id="Communication.payload:sliceEICRInformation.extension:extensionEICRProcessingStatus.url">
             <path value="Communication.payload.extension.url"/>
             <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-extension"/>
         </element>
-        <element id="Communication.payload:sliceEICRInformation.extension:manuallyInitiatedEICR">
+        <element id="Communication.payload:sliceEICRInformation.extension:extensionAlternatelyManuallyInitiatedEICR">
             <path value="Communication.payload.extension"/>
-            <sliceName value="manuallyInitiatedEICR"/>
-            <short value="Manually Initiated eICR"/>
-            <definition value="This extension indicates whether or not the eICR CDA document for which this Reportability Response is a response, was manually initiated by the provider. The eICR could also contain RCTC trigger codes."/>
+            <sliceName value="extensionAlternatelyManuallyInitiatedEICR"/>
+            <short value="Alternately or Manually Initiated eICR"/>
+            <definition value="This extension indicates whether or not the eICR CDA document for which this Reportability Response is a response, was either alternately or manually initiated. The eICR could also contain RCTC trigger codes (automatic trigger code initiation)."/>
             <min value="1"/>
             <max value="1"/>
             <type>
@@ -339,7 +314,7 @@
             </type>
             <mustSupport value="true"/>
         </element>
-        <element id="Communication.payload:sliceEICRInformation.extension:manuallyInitiatedEICR.id">
+        <element id="Communication.payload:sliceEICRInformation.extension:extensionAlternatelyManuallyInitiatedEICR.id">
             <path value="Communication.payload.extension.id"/>
             <min value="1"/>
             <fixedString value="manually-initiated-eicr"/>
@@ -349,7 +324,7 @@
                 <map value="Manually Initiated eICR/code=PHC1464]"/>
             </mapping>
         </element>
-        <element id="Communication.payload:sliceEICRInformation.extension:manuallyInitiatedEICR.url">
+        <element id="Communication.payload:sliceEICRInformation.extension:extensionAlternatelyManuallyInitiatedEICR.url">
             <path value="Communication.payload.extension.url"/>
             <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-manually-initiated-eicr-extension"/>
             <mapping>
@@ -360,6 +335,8 @@
         <element id="Communication.payload:sliceEICRInformation.extension:extensionEICRReceiptTime">
             <path value="Communication.payload.extension"/>
             <sliceName value="extensionEICRReceiptTime"/>
+            <short value="Date and time of eICR receipt"/>
+            <definition value="This extension contains the date and time of eICR receipt."/>
             <min value="0"/>
             <max value="1"/>
             <type>
@@ -372,43 +349,31 @@
                 <map value="Received eICR Information/eICR External Document Reference/effectiveTime"/>
             </mapping>
         </element>
-        <element id="Communication.payload:sliceEICRInformation.content[x]:contentReference">
-            <path value="Communication.payload.contentReference"/>
-            <sliceName value="contentReference"/>
+        <element id="Communication.payload:sliceEICRInformation.content[x]">
+            <path value="Communication.payload.content[x]"/>
             <short value="Reference to eICR Composition"/>
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
             </type>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="Received eICR Information/eICR External Document Reference/id"/>
-            </mapping>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="Received eICR Information/text"/>
-            </mapping>
+            <mustSupport value="true"/>
         </element>
-        <element id="Communication.payload:sliceEICRInformation.content[x]:contentReference.reference">
-            <path value="Communication.payload.contentReference.reference"/>
+        <element id="Communication.payload:sliceEICRInformation.content[x].reference">
+            <path value="Communication.payload.content[x].reference"/>
             <mustSupport value="false"/>
         </element>
-        <element id="Communication.payload:sliceEICRInformation.content[x]:contentReference.identifier">
-            <path value="Communication.payload.contentReference.identifier"/>
+        <element id="Communication.payload:sliceEICRInformation.content[x].identifier">
+            <path value="Communication.payload.content[x].identifier"/>
             <short value="eICR Composition id"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Communication.payload:sliceEICRInformation.content[x]:contentReference.display">
+        <element id="Communication.payload:sliceEICRInformation.content[x].display">
             <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
                 <valueBoolean value="true"/>
             </extension>
-            <path value="Communication.payload.contentReference.display"/>
+            <path value="Communication.payload.content[x].display"/>
             <short value="eICR filename (or other identifying string)"/>
             <definition value="The filename (or other identifying string) is recommended primarily for dealing with eICR error cases. In the case where an eICR document is unreadable for some reason, it is possible that the only identifying information is the eICR filename (or other identifying string)."/>
-            <example>
-                <label value="General"/>
-                <valueString value="eicr-composition-zika.xml"/>
-            </example>
             <mustSupport value="true"/>
         </element>
     </differential>

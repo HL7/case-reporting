@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-relevant-reportable-condition-plandefinition"/>
     <meta>
-        <versionId value="22"/>
-        <lastUpdated value="2019-08-22T21:06:22.000-04:00"/>
+        <versionId value="27"/>
+        <lastUpdated value="2019-08-30T18:25:58.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
     <version value="1.0.0"/>
@@ -286,6 +286,15 @@
             <mustSupport value="true"/>
             <isModifier value="false"/>
         </element>
+        <element id="PlanDefinition.action.timing[x]">
+            <path value="PlanDefinition.action.timing[x]"/>
+            <short value="Reporting timeframe"/>
+            <definition value="The timeframe in which the receiver should take the actions specified."/>
+            <type>
+                <code value="Duration"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
         <element id="PlanDefinition.action.documentation.extension">
             <path value="PlanDefinition.action.documentation.extension"/>
             <slicing>
@@ -353,42 +362,6 @@
                 <map value="../External Resources/External Reference/code/text/reference[http:][https:]"/>
                 <comment value="External Resource Link"/>
             </mapping>
-        </element>
-        <element id="PlanDefinition.action.timing[x]:timingDuration">
-            <path value="PlanDefinition.action.timingDuration"/>
-            <sliceName value="timingDuration"/>
-            <short value="Reporting Timeframe"/>
-            <definition value="The timeframe in which the receiver should take the actions specified."/>
-            <type>
-                <code value="Duration"/>
-            </type>
-            <patternDuration>
-                <system value="http://unitsofmeasure.org"/>
-            </patternDuration>
-            <example>
-                <label value="General"/>
-                <valueDuration>
-                    <value value="24"/>
-                    <unit value="h"/>
-                    <system value="http://unitsofmeasure.org"/>
-                    <code value="h"/>
-                </valueDuration>
-            </example>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-        </element>
-        <element id="PlanDefinition.action.timing[x]:timingDuration.value">
-            <path value="PlanDefinition.action.timingDuration.value"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action.timing[x]:timingDuration.unit">
-            <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-                <valueBoolean value="true"/>
-            </extension>
-            <path value="PlanDefinition.action.timingDuration.unit"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
         </element>
     </differential>
 </StructureDefinition>

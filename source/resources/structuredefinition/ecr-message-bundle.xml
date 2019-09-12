@@ -3,11 +3,10 @@
     xmlns="http://hl7.org/fhir">
     <id value="ecr-message-bundle"/>
     <meta>
-        <versionId value="7"/>
-        <lastUpdated value="2019-06-24T21:34:53.000-04:00"/>
+        <versionId value="10"/>
+        <lastUpdated value="2019-08-27T03:14:27.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-message-bundle"/>
-    <version value="1.0.0"/>
     <name value="Ecr_Message_Bundle"/>
     <title value="eCR Message Bundle"/>
     <status value="active"/>
@@ -33,7 +32,7 @@
             <path value="Bundle.entry"/>
             <slicing>
                 <discriminator>
-                    <type value="value"/>
+                    <type value="profile"/>
                     <path value="resource"/>
                 </discriminator>
                 <rules value="open"/>
@@ -45,6 +44,10 @@
             <sliceName value="sliceMessageHeader"/>
             <min value="1"/>
             <max value="1"/>
+            <type>
+                <code value="BackboneElement"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader"/>
+            </type>
             <mustSupport value="true"/>
         </element>
         <element id="Bundle.entry:sliceMessageHeader.resource">

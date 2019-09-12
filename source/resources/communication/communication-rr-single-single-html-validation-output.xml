@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="communication-rr-single-single-html-validation-output"/>
     <meta>
-        <versionId value="1"/>
-        <lastUpdated value="2019-06-06T20:17:36.000-04:00"/>
+        <versionId value="7"/>
+        <lastUpdated value="2019-08-30T19:05:42.000-04:00"/>
         <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication"/>
     </meta>
     <text>
@@ -29,6 +29,7 @@
                 
                 
                 
+                
                 <br/>
             </p>
             <ul>
@@ -41,7 +42,9 @@
                         
                         
                         
+                        
                         <a href="http://statedepartmentofhealth.gov/epi/disease/zika/Supplemental_data_form.pdf">Link</a>- Immediate action required)
+                    
                     
                     
                     
@@ -53,7 +56,9 @@
                         
                         
                         
+                        
                         <a href="http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf">Link</a>- Immediate action requested)
+                    
                     
                     
                     
@@ -75,16 +80,19 @@
         </coding>
     </category>
     <subject>
-        <reference value="Patient/patient-ecr-patient-eve-everywoman"/>
+        <reference value="Patient/patient-ecr-eve-everywoman"/>
         <display value="Eve Everywoman"/>
     </subject>
+    <topic>
+        <text value="Public Health Reporting Communication: one or more conditions are reportable, or may be reportable to public health."/>
+    </topic>
     <sent value="2018-07-19T04:09:06Z"/>
     <recipient>
         <reference value="Practitioner/practitioner-us-core-henry-seven"/>
         <display value="Henry Seven, MD"/>
     </recipient>
     <sender>
-        <reference value="Organization/organization-ecr-organization-health-authority-west"/>
+        <reference value="Organization/organization-ecr-health-authority-west"/>
         <display value="Health Authority West, 7777 Health Authority Drive, Ann Arbor MI, 99999"/>
     </sender>
     <payload id="reportability-response-summary">
@@ -99,13 +107,13 @@
         <extension id="eicr-processing-status" url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-extension">
             <extension url="eICRProcessingStatus">
                 <valueReference>
-                    <reference value="Observation/rr-eicr-processing-status"/>
+                    <reference value="Observation/observation-rr-eicr-processing-status"/>
                     <display value="eICR was processed - with a warning"/>
                 </valueReference>
             </extension>
             <extension url="eicrValidationOutput">
-                <valueMarkdown value="&lt;html
-                    xmlns='http://www.w3.org/1999/xhtml'
+                <valueMarkdown value="&lt;html&#xA;
+                    xmlns='http://www.w3.org/1999/xhtml'&#xA;
                     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'&gt;&#xA;                &lt;head&gt;&#xA;                  &lt;title&gt; Results &lt;/title&gt;&lt;style type='text/css'&gt; &lt;/style&gt;&lt;/head&gt;&#xA;                &lt;body&gt;&#xA;                  &lt;table&gt;&#xA;                    &lt;thead&gt;&#xA;                      &lt;tr&gt;&#xA;                        &lt;th&gt;Severity&lt;/th&gt;&#xA;                        &lt;th&gt;Description&lt;/th&gt;&#xA;                        &lt;th&gt;File&lt;/th&gt;&#xA;                        &lt;th&gt;Location&lt;/th&gt;&#xA;                      &lt;/tr&gt;&#xA;                    &lt;/thead&gt;&#xA;                    &lt;tbody&gt;&#xA;                      &lt;tr&gt;&#xA;                        &lt;td&gt;error&lt;/td&gt;&#xA;                        &lt;td&gt;SHOULD contain zero or one [0..1] setId (CONF:1098-32752).&lt;/td&gt;&#xA;                        &lt;td&gt;C:\Users\user1\Documents\Work\Lantana\SVN\ClientProjects\ReportabilityResponse\xml\samples\CDAR2_IG_PHCR_R2_RR_D1_2017AUG_SAMPLE.xml&lt;/td&gt;&#xA;                        &lt;td&gt;&#xA;                          &lt;p&gt;Start line 415:70&lt;/p&gt;&#xA;                        &lt;/td&gt;&#xA;                      &lt;/tr&gt;&#xA;                      &lt;tr&gt;&#xA;                        &lt;td&gt;error&lt;/td&gt;&#xA;                        &lt;td&gt;SHOULD contain zero or one [0..1] versionNumber (CONF:1098-32753).&lt;/td&gt;&#xA;                        &lt;td&gt;C:\Users\user1\Documents\Work\Lantana\SVN\ClientProjects\ReportabilityResponse\xml\samples\CDAR2_IG_PHCR_R2_RR_D1_2017AUG_SAMPLE.xml&lt;/td&gt;&#xA;                        &lt;td&gt;&#xA;                          &lt;p&gt;Start line 415:70&lt;/p&gt;&#xA;                        &lt;/td&gt;&#xA;                      &lt;/tr&gt;&#xA;                    &lt;/tbody&gt;&#xA;                  &lt;/table&gt;&#xA;                &lt;/body&gt;&#xA;              &lt;/html&gt;"/>
                 </extension>
             </extension>
@@ -113,7 +121,7 @@
                 <valueBoolean value="false"/>
             </extension>
             <contentReference>
-                <reference value="Composition/eicr-composition-zika"/>
+                <reference value="Composition/composition-eicr-zika"/>
                 <identifier>
                     <system value="http://acme.org/EICR-identifier"/>
                     <value value="EICR123456"/>

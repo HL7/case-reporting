@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="eicr-initiation-reason-extension"/>
+    <meta>
+        <versionId value="10"/>
+        <lastUpdated value="2019-08-27T01:47:31.000-04:00"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-initiation-reason-extension"/>
+    <version value="1.0.0"/>
+    <name value="Eicr_Initiation_Reason_Extension"/>
+    <title value="eICR Initiation Reason Extension"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This Extension profile represents that this eICR was either manually or alternately initiated and contains the reason for initiation of the eICR."/>
+    <fhirVersion value="4.0.0"/>
+    <mapping>
+        <identity value="eCR-CDA"/>
+        <name value="eCR FHIR to CDA Mapping"/>
+        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
+    </mapping>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <context>
+        <type value="element"/>
+        <expression value="Composition"/>
+    </context>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Extension">
+            <path value="Extension"/>
+            <short value="Initial Case Report Initiation Reason"/>
+            <definition value="Reason for manual or alternate initiation of the eICR."/>
+            <max value="1"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-initiation-reason-extension"/>
+        </element>
+        <element id="Extension.value[x]">
+            <path value="Extension.value[x]"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="string"/>
+            </type>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Initial Case Report Initiation Reason Observation/value"/>
+            </mapping>
+        </element>
+    </differential>
+</StructureDefinition>

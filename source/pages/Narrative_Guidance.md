@@ -8,7 +8,7 @@ active: Narrative Guidance
 
 # Introduction
 ## Purpose
-The following is informative guidance on generating the narrative text of a Reportability Response Communication (Reportability Response). Through the Reportability Response, public health seeks to support bidirectional communication with clinical care for reportable conditions. The Reportability Response is designed to have one Reportability Response created for each electronic Initial Case Report (eICR) and to be shared with the clinical care organization that created that eICR. The Reportability Response can also be shared with a Public Health Agency(ies) [PHA(s)] that has relevant reporting requirements (a Responsible Pubic Health Agency) that wants to use it to monitor the reporting process and know what has been conveyed to clinical care organizations and other Public Health Agencies. Sharing the Reportability Response with clinical care will serve several functions, including to:
+The following is infprocormative guidance on generating the narrative text of a Reportability Response Communication (Reportability Response). Through the Reportability Response, public health seeks to support bidirectional communication with clinical care for reportable conditions. The Reportability Response is designed to have one Reportability Response created for each electronic Initial Case Report (eICR) and to be shared with the clinical care organization that created that eICR. The Reportability Response can also be shared with a Public Health Agency(ies) [PHA(s)] that has relevant reporting requirements (a Responsible Pubic Health Agency) that wants to use it to monitor the reporting process and know what has been conveyed to clinical care organizations and other Public Health Agencies. Sharing the Reportability Response with clinical care will serve several functions, including to:
 
 - Communicate the reportability status, for the responsible PHA(s), of each condition included in the eICR
 -	Identify who (a PHA or an intermediary) prepared the Reportability Response
@@ -54,7 +54,7 @@ Normative guidance in the profiles includes data specification, order, and some 
 
 The following sections include further details on how narrative text can be constructed to meet the goals of communicating with largely clinical audiences. There are example templates for the possible combinations of reportability determinations that need to be accommodated in the Reportablity Response and example visualizations.
 
-Variables that represent coded data found elsewhere in the Reportabilty Response will be enclosed with angle brackets with a link to the relevant element, like this: &lt;[variable](narrative-guidance.html#narrative-construction-guidance)&gt;
+Variables that represent coded data found elsewhere in the Reportabilty Response will be enclosed with angle brackets with a link to the relevant element, like this: &lt;[variable](Narrative_Guidance.html#narrative-construction-guidance)&gt;
 
 ## [Reportability Response Subject](StructureDefinition-rr-communication-definitions.html#Communication.topic)
 (for circumstances where **any** determination of reportability code is **reportable or maybe reportable** - it is recommended to communicate the Reportability Response to Provider/Reporter)
@@ -82,35 +82,35 @@ Variables that represent coded data found elsewhere in the Reportabilty Response
 
 **(if eICR was manually initiated)**
 
-> The initial report was manually initiated by a provider. It was sent to: "&lt;[routing entity name](StructureDefinition-rr-routing-entity.html#Organization.name)&gt;","&lt;[routing entity name](StructureDefinition-rr-routing-entity.html#Organization.name)&gt;".
+> The initial report was manually initiated by a provider. It was sent to: "&lt;[routing entity name](StructureDefinition-rr-routing-entity-organization.html#Organization.name)&gt;","&lt;[routing entity name](StructureDefinition-rr-routing-entity-organization.html#Organization.name)&gt;".
 
 
 **(include and repeat for each Relevant [Reportable Condition PlanDefinition](StructureDefinition-rr-relevant-reportable-condition-plandefinition.html) contained in the RR Communication)**
 
 **(Reportable)**
 
-> "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" is reportable to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-definitions.html#Organization.name)&gt;". The initial case report was sent to "&lt;[routing entity name](StructureDefinition-rr-routing-entity.html#Organization.name)&gt;". Additional information may be required for this report.
+> "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" is reportable to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization-definitions.html#Organization.name)&gt;". The initial case report was sent to "&lt;[routing entity name](StructureDefinition-rr-routing-entity-organization.html#Organization.name)&gt;". Additional information may be required for this report.
 
 **(May be reportable)**
 
-> "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" may be reportable to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency.html#Organization.name)&gt;". The reportability status could not be completely determined because: "&lt;[determination of reportability reason](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.extension:determinationOfReportabilityReason)&gt;".
+> "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" may be reportable to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization.html#Organization.name)&gt;". The reportability status could not be completely determined because: "&lt;[determination of reportability reason](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.extension:determinationOfReportabilityReason)&gt;".
 
 
 **(Not reportable)**
 
-> "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" was determined not to be reportable to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency.html#Organization.name)&gt;". This may be because it is not on the list of reportable conditions for the relevant Public
+> "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" was determined not to be reportable to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization.html#Organization.name)&gt;". This may be because it is not on the list of reportable conditions for the relevant Public
 > Health Agency or the information provided at the time of this report does not meet reporting criteria.
 
 **(No rule met)**
 
-> A determination of reportability for a triggered condition could not be made for "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency.html#Organization.name)&gt;". This may be because it is not on the list of reportable conditions for the relevant Public Health Agency, or the information provided at the time of this report does not meet reporting criteria, or not all data needed to confirm reportabilty were available.
+> A determination of reportability for a triggered condition could not be made for "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization.html#Organization.name)&gt;". This may be because it is not on the list of reportable conditions for the relevant Public Health Agency, or the information provided at the time of this report does not meet reporting criteria, or not all data needed to confirm reportabilty were available.
 
-Note: While the identification of a Responsible Agency is an important part of information that the Reportability Response will provide to clinical care, some decision support systems may not be able to initially identify one. In that circumstance, sentences that identify "for" or "to" &lt;[responsible agency name](StructureDefinition-rr-responsible-agency.html#Organization.name)&gt; should be ended with a period before that text. (e.g., A determination of reportability for a triggered condition could not be made.)
+Note: While the identification of a Responsible Agency is an important part of information that the Reportability Response will provide to clinical care, some decision support systems may not be able to initially identify one. In that circumstance, sentences that identify "for" or "to" &lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization.html#Organization.name)&gt; should be ended with a period before that text. (e.g., A determination of reportability for a triggered condition could not be made.)
 
 (Above each list of external resources, include and repeat for each eICR &lt;[determination of reportability code](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.extension:determinationOfReportability)&gt;)
 
-> "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" for "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency.html#Organization.name)&gt;"
-> Reporting is required within "&lt;[reporting timeframe](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.action.timingDuration:timingDuration)&gt;". Reporting to this Public Health Agency is based on "&lt;[location relevance](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.jurisdiction.extension:locationRelevance)&gt;".
+> "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" for "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization.html#Organization.name)&gt;"
+> Reporting is required within "&lt;[reporting timeframe](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.action.timing[x])&gt;". Reporting to this Public Health Agency is based on "&lt;[location relevance](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.jurisdiction.extension:locationRelevance)&gt;".
 
 (repeat for each external resource template, based on External Resource Category order)
 
@@ -129,11 +129,11 @@ Public Health Reporting Communication: one or more conditions are reportable, or
 
 Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient.
 
-"&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" is reportable to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency.html#Organization.name)&gt;". The initial case report was sent to "&lt;[routing entity name](StructureDefinition-rr-routing-entity.html#Organization.name)&gt;". Additional information may be required for this report.
+"&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" is reportable to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization.html#Organization.name)&gt;". The initial case report was sent to "&lt;[routing entity name](StructureDefinition-rr-routing-entity-organization.html#Organization.name)&gt;". Additional information may be required for this report.
 
-**"&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" for "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency.html#Organization.name)&gt;"**.
+**"&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" for "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization.html#Organization.name)&gt;"**.
 
-Reporting is required within "&lt;[reporting timeframe](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.action.timingDuration:timingDuration)&gt;". Reporting to this Public Health Agency is based on "&lt;[location relevance](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.jurisdiction.extension:locationRelevance)&gt;".
+Reporting is required within "&lt;[reporting timeframe](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.action.timing[x])&gt;". Reporting to this Public Health Agency is based on "&lt;[location relevance](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.jurisdiction.extension:locationRelevance)&gt;".
 
 *Example text:*
 
@@ -181,7 +181,7 @@ Public Health Reporting Communication: Submitted report had no identifiable repo
 
 Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient.
 
-"&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" was determined not to be reportable to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency.html#Organization.name)&gt;". This may be because it is not on the list of reportable conditions for the relevant Public Health Agency or the information provided at the time of this report does not meet reporting criteria.
+"&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" was determined not to be reportable to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization.html#Organization.name)&gt;". This may be because it is not on the list of reportable conditions for the relevant Public Health Agency or the information provided at the time of this report does not meet reporting criteria.
 
 *Example text:*
 
@@ -204,9 +204,9 @@ Similar to these examples, some additional responses may include:
 
 ### eICR Not Processed
 
-In the case where an eICR Composition was not processed (**eICR Processing Status**=eICR was not processed - error), the normative constraints in the Reportability Response Communication profile state that there must be narrative text populated from [Communication\[rr-communication\].payload\[sliceEICRInformation\]](StructureDefinition-rr-communication-definitions.html#Communication.payload:sliceEICRInformation) that contains the reason the file was not processed. Given the potential reasons (see codes from the [eICR Processing Status (eCR)](ValueSet-eicr-processing-status-ecr.html) value set) for an eICR Composition not to be processed, the following example may be used in the the corresponding Reportability Response [Communication.text](StructureDefinition-rr-communication-definitions.html#Communication.text):
+In the case where an eICR Composition was not processed (**eICR Processing Status**=eICR was not processed - error), the normative constraints in the Reportability Response Communication profile state that there must be narrative text populated from [Communication\[rr-communication\].payload\[sliceEICRInformation\]](StructureDefinition-rr-communication-definitions.html#Communication.payload:sliceEICRInformation) that contains the reason the file was not processed. Given the potential reasons (see codes from the [eICR Processing Status (eCR)](ValueSet-valueset-eicr-processing-status-ecr.html) value set) for an eICR Composition not to be processed, the following example may be used in the the corresponding Reportability Response [Communication.text](StructureDefinition-rr-communication-definitions.html#Communication.text):
 
-> An initial report for a possible reportable condition was received on "&lt;[date and time of eICR receipt](StructureDefinition-rr-communication-definitions.html#Communication.payload:sliceEICRInformation.extension:extensionEICRReceiptTime)&gt;" with the file name "&lt;[filename of eICR](StructureDefinition-rr-communication-definitions.html#Communication.payload:sliceEICRInformation.contentReference:contentReference.display)&gt;" but it was not processed. "&lt;[eICR Processing Status Reason](StructureDefinition-rr-eicr-processing-status-reason-definitions.html#Observation)&gt;"
+> An initial report for a possible reportable condition was received on "&lt;[date and time of eICR receipt](StructureDefinition-rr-communication-definitions.html#Communication.payload:sliceEICRInformation.extension:extensionEICRReceiptTime)&gt;" with the file name "&lt;[filename of eICR](StructureDefinition-rr-communication-definitions.html#Communication.payload:sliceEICRInformation.contentReference:contentReference.display)&gt;" but it was not processed. "&lt;[eICR Processing Status Reason](StructureDefinition-rr-eicr-processing-status-reason-observation-definitions.html#Observation)&gt;"
 
 If additional information about the specific error is available (e.g., file validator output, server logs), it can be found in [eICR Validation output](StructureDefinition-extension-rr-eicr-processing-status-definitions.html#Extension.extension:eICRValidationOutput.value[x]
 ).
@@ -617,4 +617,4 @@ The examples below provide example text for *Providers / Reporters* for these ty
 >
 > eICR was not processed due to an error of: fatal problem with the eICR that was received.
 
-[Next Page](Mappings.html)
+[Next Page](History.html)
