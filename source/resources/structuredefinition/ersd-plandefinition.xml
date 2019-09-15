@@ -332,30 +332,93 @@
 
     <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition">
       <path value="PlanDefinition.action.condition" />
-      <short value="Open encounter condition." />
-      <definition value="Open encounter condition." />
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="kind"/>
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <max value="*" />
+      <mustSupport value="true" />
+    </element>
+    
+    <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition:sliceStartCondition">
+      <path value="PlanDefinition.action.condition" />
+      <sliceName value="sliceStartCondition"/>
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition.expression">
+    <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition:sliceStartCondition.kind">
+      <path value="PlanDefinition.action.condition.kind" />
+      <fixedCode value="start" />
+    </element>
+    <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition:sliceStartCondition.expression">
       <path value="PlanDefinition.action.condition.expression" />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition.expression.language">
+    <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition:sliceStartCondition.expression.language">
       <path value="PlanDefinition.action.condition.expression.language" />
+      <example>
+        <label value="CQL"/>
+        <valueCode value="text/cql"/>
+      </example>
     </element>
-    <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition.expression.expression">
+    <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition:sliceStartCondition.expression.expression">
       <path value="PlanDefinition.action.condition.expression.expression" />
-      <short value="Encounter has started but not ended." />
-      <definition value="Encounter has started but not ended." />
+      <short value="Encounter started." />
+      <definition value="Encounter has started but not ended. (encounter.period.start != null and encounter.period.end = null)" />
+      <min value="1" />
+      <max value="1" />
+      <example>
+        <label value="CQL"/>
+        <valueString value="encounter.period.start != null and encounter.period.end = null"/>
+      </example>
+      <mustSupport value="true" />
+    </element>
+
+
+    <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition:sliceStopCondition">
+      <path value="PlanDefinition.action.condition" />
+      <sliceName value="sliceStopCondition"/>
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
     </element>
-
+    <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition:sliceStopCondition.kind">
+      <path value="PlanDefinition.action.condition.kind" />
+      <fixedCode value="stop" />
+    </element>
+    <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition:sliceStopCondition.expression">
+      <path value="PlanDefinition.action.condition.expression" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition:sliceStopCondition.expression.language">
+      <path value="PlanDefinition.action.condition.expression.language" />
+      <example>
+        <label value="CQL"/>
+        <valueCode value="text/cql"/>
+      </example>
+    </element>
+    <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition:sliceStopCondition.expression.expression">
+      <path value="PlanDefinition.action.condition.expression.expression" />
+      <short value="Encounter ended." />
+      <definition value="Encounter has ended." />
+      <min value="1" />
+      <max value="1" />
+      <example>
+        <label value="CQL"/>
+        <valueString value="encounter.period.end != null"/>
+      </example>
+      <mustSupport value="true" />
+    </element>
+    
     <element id="PlanDefinition.action:slicePeriodicUpdateEICR.relatedAction">
       <path value="PlanDefinition.action.relatedAction" />
       <min value="1" />
