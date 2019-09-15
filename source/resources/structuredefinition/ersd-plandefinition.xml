@@ -78,55 +78,6 @@
       <short value="The start of the time period when this eRSD goes in effect" />
       <min value="1" />
     </element>
-    <element id="PlanDefinition.relatedArtifact">
-      <path value="PlanDefinition.relatedArtifact" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="resource.id" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-      <min value="1" />
-    </element>
-    <element id="PlanDefinition.relatedArtifact:sliceRCTCLibrary">
-      <path value="PlanDefinition.relatedArtifact" />
-      <sliceName value="sliceRCTCLibrary" />
-      <short value="The RCTC Value Set Library" />
-      <definition value="Reference to the RCTC Value Set library of trigger codes that this eRSD depends on" />
-      <min value="1" />
-      <max value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="PlanDefinition.relatedArtifact:sliceRCTCLibrary.type">
-      <path value="PlanDefinition.relatedArtifact.type" />
-      <short value="depends-on" />
-      <definition value="The relationship to the RCTC ValueSet Library. Fixed to 'depends-on'." />
-      <fixedCode value="depends-on" />
-      <mustSupport value="true" />
-    </element>
-    <element id="PlanDefinition.relatedArtifact:sliceRCTCLibrary.display">
-      <path value="PlanDefinition.relatedArtifact.display" />
-      <short value="Brief description of the RCTC Valueset Library" />
-      <definition value="Name from the Reportable Condition Trigger Code (RCTC) file." />
-      <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="PlanDefinition.relatedArtifact:sliceRCTCLibrary.resource">
-      <path value="PlanDefinition.relatedArtifact.resource" />
-      <short value="The RCTC ValueSet Library being referenced" />
-      <min value="1" />
-      <type>
-        <code value="canonical" />
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-valueset-library" />
-      </type>
-    </element>
-    <element id="PlanDefinition.relatedArtifact:sliceRCTCLibrary.resource.reference">
-      <path value="PlanDefinition.relatedArtifact.resource.reference" />
-      <short value="A reference to the RCTC ValueSet Library location" />
-      <definition value="A reference to a location at which the RCTC ValueSet Library is found." />
-      <min value="1" />
-    </element>
     <element id="PlanDefinition.library">
       <path value="PlanDefinition.library" />
       <mustSupport value="true" />
@@ -287,7 +238,7 @@
       <path value="PlanDefinition.action.relatedAction.offset[x].unit" />
       <min value="1" />
       <max value="1" />
-      <fixedCode value="h"/>
+      <fixedCode value="h" />
       <mustSupport value="true" />
     </element>
     <element id="PlanDefinition.action:slicePeriodicUpdateEICR">
@@ -338,7 +289,7 @@
       </type>
       <mustSupport value="true" />
     </element>
-    
+
     <element id="PlanDefinition.action:slicePeriodicUpdateEICR.trigger.timing[x].repeat">
       <path value="PlanDefinition.action.trigger.timing[x].repeat" />
       <short value="Repeat update of eICR every [y] hours." />
@@ -357,17 +308,17 @@
       <path value="PlanDefinition.action.trigger.timing[x].repeat.frequency" />
       <min value="1" />
       <max value="1" />
-      <fixedPositiveInt value="1"/>
+      <fixedPositiveInt value="1" />
       <mustSupport value="true" />
     </element>
     <element id="PlanDefinition.action:slicePeriodicUpdateEICR.trigger.timing[x].repeat.periodUnit">
       <path value="PlanDefinition.action.trigger.timing[x].repeat.periodUnit" />
       <min value="1" />
       <max value="1" />
-      <fixedCode value="h"/>
+      <fixedCode value="h" />
       <mustSupport value="true" />
     </element>
-    
+
     <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition">
       <path value="PlanDefinition.action.condition" />
       <short value="Open encounter condition." />
@@ -468,7 +419,7 @@
       <path value="PlanDefinition.action.trigger.timing[x].repeat.count" />
       <min value="1" />
       <max value="1" />
-      <fixedPositiveInt value="1"/>
+      <fixedPositiveInt value="1" />
       <mustSupport value="true" />
     </element>
     <element id="PlanDefinition.action:sliceCloseOutEICR.trigger.timing[x].repeat.duration">
@@ -481,14 +432,14 @@
       <path value="PlanDefinition.action.trigger.timing[x].repeat.frequency" />
       <min value="1" />
       <max value="1" />
-      <fixedPositiveInt value="1"/>
+      <fixedPositiveInt value="1" />
       <mustSupport value="true" />
     </element>
     <element id="PlanDefinition.action:sliceCloseOutEICR.trigger.timing[x].repeat.periodUnit">
       <path value="PlanDefinition.action.trigger.timing[x].repeat.periodUnit" />
       <min value="1" />
       <max value="1" />
-      <fixedCode value="h"/>
+      <fixedCode value="h" />
       <mustSupport value="true" />
     </element>
     <element id="PlanDefinition.action:sliceCloseOutEICR.trigger.data">
@@ -549,10 +500,98 @@
       <path value="PlanDefinition.action.relatedAction.relationship" />
       <fixedCode value="after" />
     </element>
+
+    <element id="PlanDefinition.action:sliceValidateEICR">
+      <path value="PlanDefinition.action" />
+      <sliceName value="sliceValidateEICR" />
+      <short value="Validate eICR" />
+      <definition value="Defines the validation of the eICR." />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:sliceValidateEICR.id">
+      <path value="PlanDefinition.action.id" />
+      <min value="1" />
+      <fixedString value="validate-eicr" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:sliceValidateEICR.description">
+      <path value="PlanDefinition.action.description" />
+      <short value="Description of the &quot;validate-eicr&quot; action." />
+      <definition value="Description of the &quot;validate-eicr&quot; action." />
+      <min value="1" />
+      <fixedString value="This action represents the validation of an eICR." />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:sliceValidateEICR.textEquivalent">
+      <path value="PlanDefinition.action.textEquivalent" />
+      <min value="1" />
+      <fixedString value="Validate eICR." />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:sliceValidateEICR.trigger">
+      <path value="PlanDefinition.action.trigger" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:sliceValidateEICR.relatedAction">
+      <path value="PlanDefinition.action.relatedAction" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:sliceValidateEICR.relatedAction:sliceAfterCreateEICR">
+      <path value="PlanDefinition.action.relatedAction" />
+      <sliceName value="sliceAfterCreateEICR" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:sliceValidateEICR.relatedAction:sliceAfterCreateEICR.actionId">
+      <path value="PlanDefinition.action.relatedAction.actionId" />
+      <fixedId value="create-eicr" />
+    </element>
+    <element id="PlanDefinition.action:sliceValidateEICR.relatedAction:sliceAfterCreateEICR.relationship">
+      <path value="PlanDefinition.action.relatedAction.relationship" />
+      <fixedCode value="after" />
+    </element>
+    <element id="PlanDefinition.action:sliceValidateEICR.relatedAction:sliceAfterPeriodicUpdateEICR">
+      <path value="PlanDefinition.action.relatedAction" />
+      <sliceName value="sliceAfterPeriodicUpdateEICR" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:sliceValidateEICR.relatedAction:sliceAfterPeriodicUpdateEICR.actionId">
+      <path value="PlanDefinition.action.relatedAction.actionId" />
+      <fixedId value="periodic-update-eicr" />
+    </element>
+    <element id="PlanDefinition.action:sliceValidateEICR.relatedAction:sliceAfterPeriodicUpdateEICR.relationship">
+      <path value="PlanDefinition.action.relatedAction.relationship" />
+      <fixedCode value="after" />
+    </element>
+    <element id="PlanDefinition.action:sliceValidateEICR.relatedAction:sliceAfterCloseOutEICR">
+      <path value="PlanDefinition.action.relatedAction" />
+      <sliceName value="sliceAfterCloseOutEICR" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:sliceValidateEICR.relatedAction:sliceAfterCloseOutEICR.actionId">
+      <path value="PlanDefinition.action.relatedAction.actionId" />
+      <fixedId value="close-out-eicr" />
+    </element>
+    <element id="PlanDefinition.action:sliceValidateEICR.relatedAction:sliceAfterCloseOutEICR.relationship">
+      <path value="PlanDefinition.action.relatedAction.relationship" />
+      <fixedCode value="after" />
+    </element>
+
     <element id="PlanDefinition.action:sliceRouteAndSendEICR">
       <path value="PlanDefinition.action" />
-      <sliceName value="sliceRouteAndSendEICR" />
-      <short value="Send From Clinical Care to Platform" />
+      <sliceName value="sliceValidateEICR" />
+      <short value="Route and send eICR" />
       <definition value="Defines the routing and sending of the eICR." />
       <min value="1" />
       <max value="1" />
@@ -566,24 +605,20 @@
     </element>
     <element id="PlanDefinition.action:sliceRouteAndSendEICR.description">
       <path value="PlanDefinition.action.description" />
-      <short value="Description of the Send From Clinical Care to Platform action." />
-      <definition value="Description of the Send From Clinical Care to Platform action within the RCKMS Rules Processing on AIMS action." />
+      <short value="Description of the route and send action." />
+      <definition value="Description of the route and send action." />
       <min value="1" />
-      <fixedString value="This action represents the sending of an eICR from clinical care to the platform." />
+      <fixedString value="This action represents the routing and sending of an eICR." />
       <mustSupport value="true" />
     </element>
     <element id="PlanDefinition.action:sliceRouteAndSendEICR.textEquivalent">
       <path value="PlanDefinition.action.textEquivalent" />
       <min value="1" />
-      <fixedString value="Send from clinical care to platform." />
+      <fixedString value="Route and send eICR" />
       <mustSupport value="true" />
     </element>
     <element id="PlanDefinition.action:sliceRouteAndSendEICR.trigger">
       <path value="PlanDefinition.action.trigger" />
-      <mustSupport value="true" />
-    </element>
-    <element id="PlanDefinition.action:sliceRouteAndSendEICR.condition">
-      <path value="PlanDefinition.action.condition" />
       <mustSupport value="true" />
     </element>
     <element id="PlanDefinition.action:sliceRouteAndSendEICR.relatedAction">
@@ -594,87 +629,20 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="PlanDefinition.action:sliceRouteAndSendEICR.relatedAction:sliceAfterCreateEICR">
+    <element id="PlanDefinition.action:sliceRouteAndSendEICR.relatedAction:sliceAfterValidateEICR">
       <path value="PlanDefinition.action.relatedAction" />
-      <sliceName value="sliceAfterCreateEICR" />
+      <sliceName value="sliceAfterValidateEICR" />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="PlanDefinition.action:sliceRouteAndSendEICR.relatedAction:sliceAfterCreateEICR.actionId">
+    <element id="PlanDefinition.action:sliceRouteAndSendEICR.relatedAction:sliceAfterValidateEICR.actionId">
       <path value="PlanDefinition.action.relatedAction.actionId" />
-      <fixedId value="create-eicr" />
+      <fixedId value="validate-eicr" />
     </element>
-    <element id="PlanDefinition.action:sliceRouteAndSendEICR.relatedAction:sliceAfterCreateEICR.relationship">
+    <element id="PlanDefinition.action:sliceRouteAndSendEICR.relatedAction:sliceAfterValidateEICR.relationship">
       <path value="PlanDefinition.action.relatedAction.relationship" />
       <fixedCode value="after" />
-    </element>
-    <element id="PlanDefinition.action:sliceRouteAndSendEICR.relatedAction:sliceAfterPeriodicUpdateEICR">
-      <path value="PlanDefinition.action.relatedAction" />
-      <sliceName value="sliceAfterPeriodicUpdateEICR" />
-      <min value="1" />
-      <max value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="PlanDefinition.action:sliceRouteAndSendEICR.relatedAction:sliceAfterPeriodicUpdateEICR.actionId">
-      <path value="PlanDefinition.action.relatedAction.actionId" />
-      <fixedId value="periodic-update-eicr" />
-    </element>
-    <element id="PlanDefinition.action:sliceRouteAndSendEICR.relatedAction:sliceAfterPeriodicUpdateEICR.relationship">
-      <path value="PlanDefinition.action.relatedAction.relationship" />
-      <fixedCode value="after" />
-    </element>
-    <element id="PlanDefinition.action:sliceRouteAndSendEICR.relatedAction:sliceAfterCloseOutEICR">
-      <path value="PlanDefinition.action.relatedAction" />
-      <sliceName value="sliceAfterCloseOutEICR" />
-      <min value="1" />
-      <max value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="PlanDefinition.action:sliceRouteAndSendEICR.relatedAction:sliceAfterCloseOutEICR.actionId">
-      <path value="PlanDefinition.action.relatedAction.actionId" />
-      <fixedId value="close-out-eicr" />
-    </element>
-    <element id="PlanDefinition.action:sliceRouteAndSendEICR.relatedAction:sliceAfterCloseOutEICR.relationship">
-      <path value="PlanDefinition.action.relatedAction.relationship" />
-      <fixedCode value="after" />
-    </element>
-    <element id="PlanDefinition.action:sliceRulesProcessing">
-      <path value="PlanDefinition.action" />
-      <sliceName value="sliceRulesProcessing" />
-      <short value="Rules Processing" />
-      <definition value="Defines the Rules Processing action within the RCKMS Rules Processing on AIMS Platform action" />
-      <min value="1" />
-      <max value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="PlanDefinition.action:sliceRulesProcessing.id">
-      <path value="PlanDefinition.action.id" />
-      <min value="1" />
-      <fixedString value="rules-processing" />
-      <mustSupport value="true" />
-    </element>
-    <element id="PlanDefinition.action:sliceRulesProcessing.description">
-      <path value="PlanDefinition.action.description" />
-      <short value="Description of the Rules Processing action." />
-      <definition value="Description of the Rules Processing action within the RCKMS Rules Processing on AIMS action." />
-      <min value="1" />
-      <fixedString value="This action represents the rules processing on receipt of an eICR." />
-      <mustSupport value="true" />
-    </element>
-    <element id="PlanDefinition.action:sliceRulesProcessing.textEquivalent">
-      <path value="PlanDefinition.action.textEquivalent" />
-      <min value="1" />
-      <fixedString value="rules processing" />
-      <mustSupport value="true" />
-    </element>
-    <element id="PlanDefinition.action:sliceRulesProcessing.trigger">
-      <path value="PlanDefinition.action.trigger" />
-      <mustSupport value="true" />
-    </element>
-    <element id="PlanDefinition.action:sliceRulesProcessing.condition">
-      <path value="PlanDefinition.action.condition" />
-      <mustSupport value="true" />
     </element>
   </differential>
 </StructureDefinition>
