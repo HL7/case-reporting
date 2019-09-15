@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://hl7.org/fhir ../../../../../../../../../../Dropbox/03%20Work/Lantana/Temp_Files/fhir-all-xsd/fhir-all.xsd" xmlns="http://hl7.org/fhir">
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
     <id value="ersd-plandefinition"/>
     <meta>
-        <versionId value="53"/>
-        <lastUpdated value="2019-09-14T16:44:07.000-04:00"/>
+        <versionId value="68"/>
+        <lastUpdated value="2019-09-14T20:30:12.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="user^s7DIn2HM^read"/>
@@ -69,7 +69,6 @@
         <element id="PlanDefinition.effectivePeriod">
             <path value="PlanDefinition.effectivePeriod"/>
             <short value="When the eRSD is expected to be used"/>
-            <min value="1"/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.effectivePeriod.start">
@@ -82,44 +81,48 @@
             <slicing>
                 <discriminator>
                     <type value="value"/>
-                    <path value="display"/>
+                    <path value="resource.id"/>
                 </discriminator>
                 <rules value="open"/>
             </slicing>
             <min value="1"/>
         </element>
-        <element id="PlanDefinition.relatedArtifact:sliceRCTCLibraryRelatedArtifact">
+        <element id="PlanDefinition.relatedArtifact:sliceRCTCLibrary">
             <path value="PlanDefinition.relatedArtifact"/>
-            <sliceName value="sliceRCTCLibraryRelatedArtifact"/>
+            <sliceName value="sliceRCTCLibrary"/>
             <short value="The RCTC Value Set Library"/>
             <definition value="Reference to the RCTC Value Set library of trigger codes that this eRSD depends on"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.relatedArtifact:sliceRCTCLibraryRelatedArtifact.type">
+        <element id="PlanDefinition.relatedArtifact:sliceRCTCLibrary.type">
             <path value="PlanDefinition.relatedArtifact.type"/>
             <short value="depends-on"/>
             <definition value="The relationship to the RCTC ValueSet Library. Fixed to 'depends-on'."/>
             <patternCode value="depends-on"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.relatedArtifact:sliceRCTCLibraryRelatedArtifact.display">
+        <element id="PlanDefinition.relatedArtifact:sliceRCTCLibrary.display">
             <path value="PlanDefinition.relatedArtifact.display"/>
             <short value="Brief description of the RCTC Valueset Library"/>
             <definition value="Name from the Reportable Condition Trigger Code (RCTC) file."/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.relatedArtifact:sliceRCTCLibraryRelatedArtifact.resource">
+        <element id="PlanDefinition.relatedArtifact:sliceRCTCLibrary.resource">
             <path value="PlanDefinition.relatedArtifact.resource"/>
             <short value="The RCTC ValueSet Library being referenced"/>
             <min value="1"/>
+            <type>
+                <code value="canonical"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-valueset-library"/>
+            </type>
         </element>
-        <element id="PlanDefinition.relatedArtifact:sliceRCTCLibraryRelatedArtifact.resource.reference">
+        <element id="PlanDefinition.relatedArtifact:sliceRCTCLibrary.resource.reference">
             <path value="PlanDefinition.relatedArtifact.resource.reference"/>
             <short value="A reference to the RCTC ValueSet Library location"/>
-            <definition value="A reference to a location at which the RCTC ValueSet Library is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources."/>
+            <definition value="A reference to a location at which the RCTC ValueSet Library is found."/>
             <min value="1"/>
         </element>
         <element id="PlanDefinition.library">
@@ -128,7 +131,8 @@
         </element>
         <element id="PlanDefinition.action">
             <path value="PlanDefinition.action"/>
-            <short value="The rules processing orchestration actions to be taken as part of the eRSD PlanDefinition."/>
+            <short value="Defines the &quot;orchestration&quot; action."/>
+            <definition value="The top-level &quot;orchestration&quot; action contains value set triggers, that, when matched, start the process (in the contained actions) of the creation and associated processing of an eICR."/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -141,231 +145,69 @@
         </element>
         <element id="PlanDefinition.action.description">
             <path value="PlanDefinition.action.description"/>
-            <definition value="Description of the action containing eICR rules processing orchestration."/>
+            <definition value="Description of the &quot;orchestration&quot; action."/>
             <min value="1"/>
-            <patternString value="This action contains rules processing orchestration actions and information."/>
+            <patternString value="This action contains rules processing orchestration actions and information that are triggered when a code is matched to one of the codes in the RCTC value sets."/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action.textEquivalent">
             <path value="PlanDefinition.action.textEquivalent"/>
-            <definition value="Text equivalent of the orchestration action. The orchestration action helps pick between alternative paths of Rules Processing which are mutually exclusive."/>
+            <definition value="Text equivalent of the &quot;orchestration&quot; action."/>
             <min value="1"/>
-            <patternString value="Pick between the two sequence options based on rules processing: Healthcare-based processing, or RCKMS Rules Processing on AIMS Platform."/>
+            <patternString value="When a code is matched to one of the RCTC value set codes in the triggers perform the contained actions."/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action.trigger">
             <path value="PlanDefinition.action.trigger"/>
             <slicing>
                 <discriminator>
-                    <type value="value"/>
-                    <path value="id"/>
+                    <type value="profile"/>
+                    <path value="data.codeFilter.valueSet.resolve()"/>
                 </discriminator>
-                <ordered value="false"/>
                 <rules value="open"/>
             </slicing>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.trigger:sliceDiagnosisProblemTrigger">
+        <element id="PlanDefinition.action.trigger:sliceRCTCValueSet">
             <path value="PlanDefinition.action.trigger"/>
-            <sliceName value="sliceDiagnosisProblemTrigger"/>
-            <short value="Diagnosis_Problem Trigger Definition"/>
-            <definition value="This trigger is defined as a code match between a code in the RCTC Diagnosis_Problem value set and the diagnosis code (observation.value) in a US Core Condition contained in the eICR Composition."/>
+            <sliceName value="sliceRCTCValueSet"/>
+            <short value="When the orchestration action should be triggered."/>
+            <definition value="Contains details about when the orchestration action should be triggered based on an RCTC value set."/>
             <min value="1"/>
-            <max value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.trigger:sliceDiagnosisProblemTrigger.id">
-            <path value="PlanDefinition.action.trigger.id"/>
-            <min value="1"/>
-            <fixedString value="Diagnosis_Problem"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceDiagnosisProblemTrigger.data">
+        <element id="PlanDefinition.action.trigger:sliceRCTCValueSet.data">
             <path value="PlanDefinition.action.trigger.data"/>
-            <short value="Diagnosis_Problem Trigger data"/>
+            <short value="A triggering value set."/>
+            <definition value="A triggering value set for the action."/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.trigger:sliceDiagnosisProblemTrigger.data.type">
+        <element id="PlanDefinition.action.trigger:sliceRCTCValueSet.data.type">
             <path value="PlanDefinition.action.trigger.data.type"/>
-            <fixedCode value="Condition"/>
+            <short value="The type of trigger data."/>
+            <definition value="The trigger codes that match to the codes in the RCTC value sets are of CodeableConcept data type."/>
+            <fixedCode value="CodeableConcept"/>
         </element>
-        <element id="PlanDefinition.action.trigger:sliceDiagnosisProblemTrigger.data.codeFilter">
+        <element id="PlanDefinition.action.trigger:sliceRCTCValueSet.data.codeFilter">
             <path value="PlanDefinition.action.trigger.data.codeFilter"/>
+            <short value="Match based on code."/>
+            <definition value="Make a match (trigger) based on code."/>
             <min value="1"/>
             <max value="1"/>
+            <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.trigger:sliceDiagnosisProblemTrigger.data.codeFilter.valueSet">
+        <element id="PlanDefinition.action.trigger:sliceRCTCValueSet.data.codeFilter.valueSet">
             <path value="PlanDefinition.action.trigger.data.codeFilter.valueSet"/>
-            <definition value="RCTC Diagnosis_Problem value set"/>
-            <min value="1"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceLabObsTestTrigger">
-            <path value="PlanDefinition.action.trigger"/>
-            <sliceName value="sliceLabObsTestTrigger"/>
-            <short value="Lab Obs Test Name Trigger Definition"/>
-            <definition value="This trigger is defined as a code match between a code in the RCTC Lab Obs Test Name value set and the lab test name code (observation.code) in a US Core Laboratory Observation contained in the eICR Composition."/>
+            <short value="RCTC value set containing trigger codes."/>
+            <definition value="One of the RCTC value set containing trigger codes for use in matching to the data."/>
             <min value="1"/>
             <max value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceLabObsTestTrigger.id">
-            <path value="PlanDefinition.action.trigger.id"/>
-            <min value="1"/>
-            <fixedString value="Lab Obs Test"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceLabObsTestTrigger.data">
-            <path value="PlanDefinition.action.trigger.data"/>
-            <short value="Lab Obs Test Trigger data"/>
-            <min value="1"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceLabObsTestTrigger.data.type">
-            <path value="PlanDefinition.action.trigger.data.type"/>
-            <fixedCode value="Observation"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceLabObsTestTrigger.data.codeFilter">
-            <path value="PlanDefinition.action.trigger.data.codeFilter"/>
-            <min value="1"/>
-            <max value="1"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceLabObsTestTrigger.data.codeFilter.valueSet">
-            <path value="PlanDefinition.action.trigger.data.codeFilter.valueSet"/>
-            <definition value="RCTC Lab Obs Test Name value set"/>
-            <min value="1"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceOrganismSubstanceTrigger">
-            <path value="PlanDefinition.action.trigger"/>
-            <sliceName value="sliceOrganismSubstanceTrigger"/>
-            <short value="Organism Substance Trigger Definition"/>
-            <definition value="This trigger is defined as a code match between a code in the RCTC Organism_Substance value set and the lab test result code (observation.value) in a US Core Observation Lab contained in the eICR Composition."/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceOrganismSubstanceTrigger.id">
-            <path value="PlanDefinition.action.trigger.id"/>
-            <min value="1"/>
-            <fixedString value="Organism_Substance"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceOrganismSubstanceTrigger.data">
-            <path value="PlanDefinition.action.trigger.data"/>
-            <short value="Organism_Substance Trigger data"/>
-            <min value="1"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceOrganismSubstanceTrigger.data.codeFilter">
-            <path value="PlanDefinition.action.trigger.data.codeFilter"/>
-            <min value="1"/>
-            <max value="1"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceOrganismSubstanceTrigger.data.codeFilter.valueSet">
-            <path value="PlanDefinition.action.trigger.data.codeFilter.valueSet"/>
-            <definition value="RCTC Organism_Substance value set"/>
-            <min value="1"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceLabOrderTestTrigger">
-            <path value="PlanDefinition.action.trigger"/>
-            <sliceName value="sliceLabOrderTestTrigger"/>
-            <short value="Lab Order Test Trigger Definition"/>
-            <definition value="This trigger is defined as a code match between a code in the RCTC Lab Order Test Name value set and the ordered lab test name code (observation.code) in an eICR Service Request contained in the eICR Composition."/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceLabOrderTestTrigger.id">
-            <path value="PlanDefinition.action.trigger.id"/>
-            <min value="1"/>
-            <fixedString value="Lab Order Test"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceLabOrderTestTrigger.data">
-            <path value="PlanDefinition.action.trigger.data"/>
-            <short value="Lab Order Test Trigger Data"/>
-            <min value="1"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceLabOrderTestTrigger.data.codeFilter">
-            <path value="PlanDefinition.action.trigger.data.codeFilter"/>
-            <min value="1"/>
-            <max value="1"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceLabOrderTestTrigger.data.codeFilter.valueSet">
-            <path value="PlanDefinition.action.trigger.data.codeFilter.valueSet"/>
-            <definition value="RCTC Lab Order Test value set"/>
-            <min value="1"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceMedicationsTrigger">
-            <path value="PlanDefinition.action.trigger"/>
-            <sliceName value="sliceMedicationsTrigger"/>
-            <short value="Medications Trigger Definition"/>
-            <definition value="This trigger is defined as a code match between a code in the RCTC Medications value set and either the medication code (MedicationAdministration.medication) in a MedicationAdministration contained in the eICR Composition or the medication code in a US Core Medication Request (MedicationRequest.medication)."/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceMedicationsTrigger.id">
-            <path value="PlanDefinition.action.trigger.id"/>
-            <min value="1"/>
-            <fixedString value="Medications"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceMedicationsTrigger.data">
-            <path value="PlanDefinition.action.trigger.data"/>
-            <short value="Medications Trigger Data"/>
-            <min value="1"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceMedicationsTrigger.data.codeFilter">
-            <path value="PlanDefinition.action.trigger.data.codeFilter"/>
-            <min value="1"/>
-            <max value="1"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceMedicationsTrigger.data.codeFilter.valueSet">
-            <path value="PlanDefinition.action.trigger.data.codeFilter.valueSet"/>
-            <definition value="RCTC Medications value set"/>
-            <min value="1"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceImmunizationsTrigger">
-            <path value="PlanDefinition.action.trigger"/>
-            <sliceName value="sliceImmunizationTrigger"/>
-            <short value="Immunizations Trigger Definition"/>
-            <definition value="This trigger is defined as a code match between a code in the RCTC Immunizations value set and the vaccine code (Immunization.vaccineCode) in a US Core Immunization contained in the eICR Composition."/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceImmunizationsTrigger.id">
-            <path value="PlanDefinition.action.trigger.id"/>
-            <min value="1"/>
-            <fixedString value="Immunizations"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceImmunizationsTrigger.data">
-            <path value="PlanDefinition.action.trigger.data"/>
-            <short value="Immunizations Trigger Data"/>
-            <min value="1"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceImmunizationsTrigger.data.codeFilter">
-            <path value="PlanDefinition.action.trigger.data.codeFilter"/>
-            <min value="1"/>
-            <max value="1"/>
-        </element>
-        <element id="PlanDefinition.action.trigger:sliceImmunizationsTrigger.data.codeFilter.valueSet">
-            <path value="PlanDefinition.action.trigger.data.codeFilter.valueSet"/>
-            <definition value="RCTC Immunizations value set"/>
-            <min value="1"/>
-        </element>
-        <element id="PlanDefinition.action.condition">
-            <path value="PlanDefinition.action.condition"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action.selectionBehavior">
-            <path value="PlanDefinition.action.selectionBehavior"/>
-            <short value="exactly-one"/>
-            <definition value="Exactly one of the two Rules Processing pathways can be picked."/>
-            <min value="1"/>
-            <patternCode value="exactly-one"/>
-            <mustSupport value="true"/>
+            <type>
+                <code value="canonical"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rctc-valueset"/>
+            </type>
         </element>
         <element id="PlanDefinition.action.action">
             <path value="PlanDefinition.action.action"/>
@@ -384,7 +226,7 @@
             <path value="PlanDefinition.action.action"/>
             <sliceName value="sliceEICR"/>
             <short value="Defines the eICR action."/>
-            <definition value="Defines the eICR sliceCloseOutEICRaction within the RCKMS Rules Processing on AIMS Platform action."/>
+            <definition value="Defines the &quot;eicr&quot; action within the main &quot;orchestration&quot; action."/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -397,8 +239,8 @@
         </element>
         <element id="PlanDefinition.action.action:sliceEICR.description">
             <path value="PlanDefinition.action.action.description"/>
-            <short value="Description of the eICR sliceCloseOutEICRaction."/>
-            <definition value="Description of the eICR sliceCloseOutEICRaction within the RCKMS Rules Processing on AIMS Platform."/>
+            <short value="Description of the &quot;eicr&quot; action."/>
+            <definition value="Description of the &quot;eicr&quot; action within the &quot;orchestration&quot; action."/>
             <min value="1"/>
             <patternString value="This action contains eICR creation, update, and close out actions and information."/>
             <mustSupport value="true"/>
@@ -432,8 +274,8 @@
         <element id="PlanDefinition.action.action:sliceEICR.action:sliceCreateEICR">
             <path value="PlanDefinition.action.action.action"/>
             <sliceName value="sliceCreateEICR"/>
-            <short value="Create eICR On Platform"/>
-            <definition value="Defines the Create eICR sliceCloseOutEICRaction within the eICR sliceCloseOutEICRaction"/>
+            <short value="Create eICR"/>
+          <definition value="Defines the &quot;create-eicr&quot; action within the &quot;eicr&quot; action"/>
             <min value="1"/>
             <max value="1"/>
         </element>
@@ -451,33 +293,33 @@
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action.action:sliceEICR.action:sliceCreateEICR.textEquivalent">
-          <path value="PlanDefinition.action.action.action.textEquivalent"/>
+            <path value="PlanDefinition.action.action.action.textEquivalent"/>
             <min value="1"/>
             <patternString value="eICR construction and send delay (x hours) - time after trigger even before an eICR should be composed and sent."/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action.action:sliceEICR.action:sliceCreateEICR.trigger">
-          <path value="PlanDefinition.action.action.action.trigger"/>
+            <path value="PlanDefinition.action.action.action.trigger"/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action.action:sliceEICR.action:sliceCreateEICR.condition">
-          <path value="PlanDefinition.action.action.action.condition"/>
+            <path value="PlanDefinition.action.action.action.condition"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceEICR.action:slicePeriodicUpdateofEICR">
+        <element id="PlanDefinition.action.action:sliceEICR.action:slicePeriodicUpdateEICR">
             <path value="PlanDefinition.action.action.action"/>
-            <sliceName value="slicePeriodicUpdateofEICR"/>
+            <sliceName value="slicePeriodicUpdateEICR"/>
             <short value="Periodic Update of eICR On Platform"/>
             <definition value="Defines the creation of periodic updates to eICR action within the eICR sliceCloseOutEICRaction"/>
             <min value="1"/>
             <max value="1"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceEICR.action:slicePeriodicUpdateofEICR.id">
+        <element id="PlanDefinition.action.action:sliceEICR.action:slicePeriodicUpdateEICR.id">
             <path value="PlanDefinition.action.action.action.id"/>
             <min value="1"/>
             <fixedString value="periodic-eicr"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceEICR.action:slicePeriodicUpdateofEICR.description">
+        <element id="PlanDefinition.action.action:sliceEICR.action:slicePeriodicUpdateEICR.description">
             <path value="PlanDefinition.action.action.action.description"/>
             <short value="Description of the Periodic Update of eICR sliceCloseOutEICRaction."/>
             <definition value="Description of the Periodic Update of eICR sliceCloseOutEICRaction within the eICR sliceCloseOutEICRaction."/>
@@ -485,17 +327,17 @@
             <patternString value="This action represents the periodic update of the eICR."/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceEICR.action:slicePeriodicUpdateofEICR.textEquivalent">
+        <element id="PlanDefinition.action.action:sliceEICR.action:slicePeriodicUpdateEICR.textEquivalent">
             <path value="PlanDefinition.action.action.action.textEquivalent"/>
             <min value="1"/>
             <patternString value="eICR periodic update (y hours) – the time after an initial eICR transmission to send a new eICR as an update during long encounters."/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceEICR.action:slicePeriodicUpdateofEICR.trigger">
+        <element id="PlanDefinition.action.action:sliceEICR.action:slicePeriodicUpdateEICR.trigger">
             <path value="PlanDefinition.action.action.action.trigger"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceEICR.action:slicePeriodicUpdateofEICR.condition">
+        <element id="PlanDefinition.action.action:sliceEICR.action:slicePeriodicUpdateEICR.condition">
             <path value="PlanDefinition.action.action.action.condition"/>
             <mustSupport value="true"/>
         </element>
@@ -534,22 +376,22 @@
             <path value="PlanDefinition.action.action.action.condition"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceSendFromClinicalCareToPlatform">
+        <element id="PlanDefinition.action.action:sliceRouteAndSendEICR">
             <path value="PlanDefinition.action.action.action"/>
-            <sliceName value="sliceSendFromClinicalCareToPlatform"/>
+            <sliceName value="sliceRouteAndSendEICR"/>
             <short value="Send From Clinical Care to Platform"/>
             <definition value="Defines the sending of eICR from Clinical Care to AIMS Platform action within the RCKMS Rules Processing on AIMS Platform action"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceSendFromClinicalCareToPlatform.id">
+        <element id="PlanDefinition.action.action:sliceRouteAndSendEICR.id">
             <path value="PlanDefinition.action.action.action.id"/>
             <min value="1"/>
-            <fixedString value="send-from-clinical-care-to-platform"/>
+            <fixedString value="route-and-send-eicr"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceSendFromClinicalCareToPlatform.description">
+        <element id="PlanDefinition.action.action:sliceRouteAndSendEICR.description">
             <path value="PlanDefinition.action.action.action.description"/>
             <short value="Description of the Send From Clinical Care to Platform action."/>
             <definition value="Description of the Send From Clinical Care to Platform action within the RCKMS Rules Processing on AIMS action."/>
@@ -557,36 +399,36 @@
             <patternString value="This action represents the sending of an eICR from clinical care to the platform."/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceSendFromClinicalCareToPlatform.textEquivalent">
+        <element id="PlanDefinition.action.action:sliceRouteAndSendEICR.textEquivalent">
             <path value="PlanDefinition.action.action.action.textEquivalent"/>
             <min value="1"/>
             <patternString value="Send from clinical care to platform."/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceSendFromClinicalCareToPlatform.trigger">
+        <element id="PlanDefinition.action.action:sliceRouteAndSendEICR.trigger">
             <path value="PlanDefinition.action.action.action.trigger"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceSendFromClinicalCareToPlatform.condition">
+        <element id="PlanDefinition.action.action:sliceRouteAndSendEICR.condition">
             <path value="PlanDefinition.action.action.action.condition"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceOnPlatformRulesProcessing">
+        <element id="PlanDefinition.action.action:sliceRulesProcessing">
             <path value="PlanDefinition.action.action.action"/>
-            <sliceName value="sliceOnPlatformRulesProcessing"/>
+            <sliceName value="sliceRulesProcessing"/>
             <short value="sliceCloseOutEICRRules Processing"/>
             <definition value="Defines the sliceCloseOutEICRRules Processing action within the RCKMS Rules Processing on AIMS Platform action"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceOnPlatformRulesProcessing.id">
+        <element id="PlanDefinition.action.action:sliceRulesProcessing.id">
             <path value="PlanDefinition.action.action.action.id"/>
             <min value="1"/>
             <fixedString value="rules-processing"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceOnPlatformRulesProcessing.description">
+        <element id="PlanDefinition.action.action:sliceRulesProcessing.description">
             <path value="PlanDefinition.action.action.action.description"/>
             <short value="Description of the sliceCloseOutEICRRules Processing action."/>
             <definition value="Description of the sliceCloseOutEICRRules Processing action within the RCKMS Rules Processing on AIMS action."/>
@@ -594,36 +436,36 @@
             <patternString value="This action represents the sliceCloseOutEICRrules processing on receipt of an eICR."/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceOnPlatformRulesProcessing.textEquivalent">
+        <element id="PlanDefinition.action.action:sliceRulesProcessing.textEquivalent">
             <path value="PlanDefinition.action.action.action.textEquivalent"/>
             <min value="1"/>
             <patternString value="sliceCloseOutEICRrules processing"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceOnPlatformRulesProcessing.trigger">
+        <element id="PlanDefinition.action.action:sliceRulesProcessing.trigger">
             <path value="PlanDefinition.action.action.action.trigger"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceOnPlatformRulesProcessing.condition">
+        <element id="PlanDefinition.action.action:sliceRulesProcessing.condition">
             <path value="PlanDefinition.action.action.action.condition"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceCreateClinicalFeedbackOnPlatform">
+        <element id="PlanDefinition.action.action:sliceCreateClinicalFeedback">
             <path value="PlanDefinition.action.action.action"/>
-            <sliceName value="sliceCreateClinicalFeedbackOnPlatform"/>
+            <sliceName value="sliceCreateClinicalFeedback"/>
             <short value="Create Clinical Feedback"/>
             <definition value="Defines the Creation of Clinical Feedback action within the AIMS-based Rules Processing"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceCreateClinicalFeedbackOnPlatform.id">
+        <element id="PlanDefinition.action.action:sliceCreateClinicalFeedback.id">
             <path value="PlanDefinition.action.action.action.id"/>
             <min value="1"/>
             <fixedString value="create-clinical-feedback"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceCreateClinicalFeedbackOnPlatform.description">
+        <element id="PlanDefinition.action.action:sliceCreateClinicalFeedback.description">
             <path value="PlanDefinition.action.action.action.description"/>
             <short value="Description of the Create Clinical Feedback sliceCloseOutEICRProcessing action."/>
             <definition value="Description of the Create Clinical Feedback sliceCloseOutEICRProcessing action within the RCKMS Rules Processing on AIMS."/>
@@ -631,17 +473,17 @@
             <patternString value="This action represens the creation of clinical feedback per results of rules processing."/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceCreateClinicalFeedbackOnPlatform.textEquivalent">
+        <element id="PlanDefinition.action.action:sliceCreateClinicalFeedback.textEquivalent">
             <path value="PlanDefinition.action.action.action.textEquivalent"/>
             <min value="1"/>
             <patternString value="Create clinical feedback per rules results."/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceCreateClinicalFeedbackOnPlatform.trigger">
+        <element id="PlanDefinition.action.action:sliceCreateClinicalFeedback.trigger">
             <path value="PlanDefinition.action.action.action.trigger"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action.action:sliceCreateClinicalFeedbackOnPlatform.condition">
+        <element id="PlanDefinition.action.action:sliceCreateClinicalFeedback.condition">
             <path value="PlanDefinition.action.action.action.condition"/>
             <mustSupport value="true"/>
         </element>
