@@ -326,14 +326,30 @@
       <type>
         <code value="Timing" />
       </type>
-      <patternTiming>
-        <repeat>
-          <frequency value="1" />
-          <periodUnit value="h" />
-        </repeat>
-      </patternTiming>
       <mustSupport value="true" />
     </element>
+    
+    <element id="PlanDefinition.action:slicePeriodicUpdateEICR.trigger.timing[x].repeat">
+      <path value="PlanDefinition.action.trigger.timing[x].repeat" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:slicePeriodicUpdateEICR.trigger.timing[x].repeat.frequency">
+      <path value="PlanDefinition.action.trigger.timing[x].repeat.frequency" />
+      <min value="1" />
+      <max value="1" />
+      <fixedPositiveInt value="1"/>
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:slicePeriodicUpdateEICR.trigger.timing[x].repeat.periodUnit">
+      <path value="PlanDefinition.action.trigger.timing[x].repeat.periodUnit" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCode value="h"/>
+      <mustSupport value="true" />
+    </element>
+    
     <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition">
       <path value="PlanDefinition.action.condition" />
       <short value="Open encounter condition." />
@@ -420,13 +436,33 @@
       <type>
         <code value="Timing" />
       </type>
-      <patternTiming>
-        <repeat>
-          <count value="1" />
-          <frequency value="1" />
-          <periodUnit value="h" />
-        </repeat>
-      </patternTiming>
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:sliceCloseOutEICR.trigger.timing[x].repeat">
+      <path value="PlanDefinition.action.trigger.timing[x].repeat" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:sliceCloseOutEICR.trigger.timing[x].repeat.count">
+      <path value="PlanDefinition.action.trigger.timing[x].repeat.count" />
+      <min value="1" />
+      <max value="1" />
+      <fixedPositiveInt value="1"/>
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:sliceCloseOutEICR.trigger.timing[x].repeat.frequency">
+      <path value="PlanDefinition.action.trigger.timing[x].repeat.frequency" />
+      <min value="1" />
+      <max value="1" />
+      <fixedPositiveInt value="1"/>
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:sliceCloseOutEICR.trigger.timing[x].repeat.periodUnit">
+      <path value="PlanDefinition.action.trigger.timing[x].repeat.periodUnit" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCode value="h"/>
       <mustSupport value="true" />
     </element>
     <element id="PlanDefinition.action:sliceCloseOutEICR.trigger.data">
