@@ -95,7 +95,7 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    
+
     <element id="PlanDefinition.action:sliceMatchTrigger">
       <path value="PlanDefinition.action" />
       <sliceName value="sliceMatchTrigger" />
@@ -138,17 +138,17 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    
+
     <element id="PlanDefinition.action:sliceMatchTrigger.trigger.type">
       <path value="PlanDefinition.action.trigger.type" />
-      <fixedCode value="named-event"/>
+      <fixedCode value="named-event" />
     </element>
     <element id="PlanDefinition.action:sliceMatchTrigger.trigger.name">
       <path value="PlanDefinition.action.trigger.name" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    
+
     <element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceRCTCValueSet">
       <path value="PlanDefinition.action.trigger" />
       <sliceName value="sliceRCTCValueSet" />
@@ -189,8 +189,8 @@
         <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rctc-valueset" />
       </type>
     </element>
-    
-    
+
+
     <element id="PlanDefinition.action:sliceCreateEICR">
       <path value="PlanDefinition.action" />
       <sliceName value="sliceCreateEICR" />
@@ -337,8 +337,8 @@
       <path value="PlanDefinition.action.condition" />
       <slicing>
         <discriminator>
-          <type value="value"/>
-          <path value="kind"/>
+          <type value="value" />
+          <path value="kind" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -346,10 +346,10 @@
       <max value="*" />
       <mustSupport value="true" />
     </element>
-    
+
     <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition:sliceStartCondition">
       <path value="PlanDefinition.action.condition" />
-      <sliceName value="sliceStartCondition"/>
+      <sliceName value="sliceStartCondition" />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
@@ -364,22 +364,26 @@
       <max value="1" />
       <mustSupport value="true" />
     </element>
+    <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition:sliceStartCondition.expression.description">
+      <path value="PlanDefinition.action.condition.expression.description" />
+      <fixedString value="Encounter is active." />
+    </element>
     <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition:sliceStartCondition.expression.language">
       <path value="PlanDefinition.action.condition.expression.language" />
       <example>
-        <label value="CQL"/>
-        <valueCode value="text/cql"/>
+        <label value="CQL" />
+        <valueCode value="text/cql" />
       </example>
     </element>
     <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition:sliceStartCondition.expression.expression">
       <path value="PlanDefinition.action.condition.expression.expression" />
       <short value="Encounter started." />
-      <definition value="Encounter has started but not ended. (encounter.period.start != null and encounter.period.end = null)" />
+      <definition value="Encounter has started but not ended." />
       <min value="1" />
       <max value="1" />
       <example>
-        <label value="CQL"/>
-        <valueString value="encounter.period.start != null and encounter.period.end = null"/>
+        <label value="CQL" />
+        <valueString value="encounter.period.start != null and encounter.period.end = null" />
       </example>
       <mustSupport value="true" />
     </element>
@@ -387,7 +391,7 @@
 
     <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition:sliceStopCondition">
       <path value="PlanDefinition.action.condition" />
-      <sliceName value="sliceStopCondition"/>
+      <sliceName value="sliceStopCondition" />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
@@ -402,11 +406,15 @@
       <max value="1" />
       <mustSupport value="true" />
     </element>
+    <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition:sliceStartCondition.expression.description">
+      <path value="PlanDefinition.action.condition.expression.description" />
+      <fixedString value="Encounter is closed." />
+    </element>
     <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition:sliceStopCondition.expression.language">
       <path value="PlanDefinition.action.condition.expression.language" />
       <example>
-        <label value="CQL"/>
-        <valueCode value="text/cql"/>
+        <label value="CQL" />
+        <valueCode value="text/cql" />
       </example>
     </element>
     <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition:sliceStopCondition.expression.expression">
@@ -416,12 +424,12 @@
       <min value="1" />
       <max value="1" />
       <example>
-        <label value="CQL"/>
-        <valueString value="encounter.period.end != null"/>
+        <label value="CQL" />
+        <valueString value="encounter.period.end != null" />
       </example>
       <mustSupport value="true" />
     </element>
-    
+
     <element id="PlanDefinition.action:slicePeriodicUpdateEICR.relatedAction">
       <path value="PlanDefinition.action.relatedAction" />
       <min value="1" />
@@ -538,28 +546,6 @@
       <type>
         <code value="canonical" />
         <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter" />
-      </type>
-      <mustSupport value="true" />
-    </element>
-    <element id="PlanDefinition.action:sliceCloseOutEICR.trigger.data.dateFilter">
-      <path value="PlanDefinition.action.trigger.data.dateFilter" />
-      <min value="1" />
-      <max value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="PlanDefinition.action:sliceCloseOutEICR.trigger.data.dateFilter.path">
-      <path value="PlanDefinition.action.trigger.data.dateFilter.path" />
-      <min value="1" />
-      <max value="1" />
-      <fixedString value="encounter.period.end" />
-      <mustSupport value="true" />
-    </element>
-    <element id="PlanDefinition.action:sliceCloseOutEICR.trigger.data.dateFilter.value[x]">
-      <path value="PlanDefinition.action.trigger.data.dateFilter.value[x]" />
-      <short value="encounter.period.end != null" />
-      <min value="1" />
-      <type>
-        <code value="dateTime" />
       </type>
       <mustSupport value="true" />
     </element>
