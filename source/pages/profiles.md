@@ -103,10 +103,6 @@ TODO - update</td>
 <td>This ServiceRequest profile represents eICR laboratory orders and other diagnostics for the eICR event.</td>
 </tr>
 <tr>
-<td><a href="StructureDefinition-ersd-eicr-validate-activitydefinition.html">Ersd_Eicr_Validate_ActivityDefinition</a></td>
-<td>This ActivityDefinition describes the activity of validating an eICR report (eICR Composition)</td>
-</tr>
-<tr>
 <td><a href="StructureDefinition-ersd-plandefinition.html">Ersd_PlanDefinition</a></td>
 <td>This PlanDefinition profile defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician.
 
