@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="ersd-plandefinition"/>
     <meta>
-        <versionId value="108"/>
-        <lastUpdated value="2019-09-18T21:01:49.000-04:00"/>
+        <versionId value="110"/>
+        <lastUpdated value="2019-09-18T21:12:03.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="user^s7DIn2HM^read"/>
@@ -593,13 +593,21 @@
         </element>
         <element id="PlanDefinition.action:sliceValidateEICR.trigger">
             <path value="PlanDefinition.action.trigger"/>
+            <definition value="Trigger when the eICR has been created."/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action:sliceValidateEICR.trigger.type">
             <path value="PlanDefinition.action.trigger.type"/>
-            <fixedCode value="named-event"/>
+            <fixedCode value="data-changed"/>
+        </element>
+        <element id="PlanDefinition.action:sliceValidateEICR.trigger.name">
+            <path value="PlanDefinition.action.trigger.name"/>
+            <min value="1"/>
+            <max value="1"/>
+            <fixedString value="eicr-created"/>
+            <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action:sliceValidateEICR.trigger.data">
             <path value="PlanDefinition.action.trigger.data"/>
