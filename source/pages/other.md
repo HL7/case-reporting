@@ -161,7 +161,7 @@ active: other
 </tr>
 <tr>
 <td>PlanDefinition</td>
-<td><a href="PlanDefinition-plandefinition-ersd-example.html">eRSD PlanDefinition Example</a></td>
+<td><a href="PlanDefinition-plandefinition-ersd-instance.html">eRSD PlanDefinition Instance</a></td>
 </tr>
 <tr>
 <td>PlanDefinition</td>

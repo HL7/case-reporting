@@ -32,4 +32,4 @@ The Subscription does not require FHIR implementation on the receiving (EHR) end
   <li><a href="StructureDefinition-ersd-valueset-library.html">eRSD Valueset Library</a></li>
 </ul>
 
-[Next Page](FHIR_Messaging_and_RESTful_Submit.html)
+[Next Page](FHIR_Messaging_and_Basic_REST_Options.html)
