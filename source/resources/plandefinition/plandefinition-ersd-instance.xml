@@ -157,4 +157,24 @@
             <relationship value="after"/>
         </relatedAction>
     </action>
+  <action id="validate-eicr">
+    <description value="This action represents the validation of an eICR."/>
+    <textEquivalent value="Validate eICR."/>
+    <trigger>
+      <type value="data-changed"/>
+      <name value="eicr-created"/>
+      <data>
+        <type value="Composition"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
+      </data>
+    </trigger>
+  </action>
+  <action id="route-and-send-eicr">
+    <description value="This action represents the routing and sending of an eICR."/>
+    <textEquivalent value="Route and send eICR"/>
+    <relatedAction>
+      <actionId value="validate-eicr"/>
+      <relationship value="after"/>
+    </relatedAction>
+  </action>
 </PlanDefinition>

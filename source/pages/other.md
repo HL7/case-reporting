@@ -161,10 +161,6 @@ active: other
 </tr>
 <tr>
 <td>PlanDefinition</td>
-<td><a href="PlanDefinition-plandefinition-ersd-instance.html">eRSD PlanDefinition Instance</a></td>
-</tr>
-<tr>
-<td>PlanDefinition</td>
 <td><a href="PlanDefinition-plandefinition-rr-relevant-reportable-condition.html">Relevant Reportable Condition</a></td>
 </tr>
 <tr>
