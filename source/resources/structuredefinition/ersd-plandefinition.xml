@@ -3,8 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="ersd-plandefinition"/>
     <meta>
-        <versionId value="112"/>
-        <lastUpdated value="2019-09-18T22:46:13.000-04:00"/>
+        <versionId value="114"/>
+        <lastUpdated value="2019-09-19T14:06:33.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^write"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
     <version value="1.0.0"/>
@@ -459,7 +467,7 @@
         </element>
         <element id="PlanDefinition.action:sliceCloseOutEICR.trigger.type">
             <path value="PlanDefinition.action.trigger.type"/>
-            <fixedCode value="data-changed"/>
+            <fixedCode value="data-added"/>
         </element>
         <element id="PlanDefinition.action:sliceCloseOutEICR.trigger.timing[x]">
             <path value="PlanDefinition.action.trigger.timing[x]"/>
@@ -507,15 +515,15 @@
         </element>
         <element id="PlanDefinition.action:sliceCloseOutEICR.trigger.data">
             <path value="PlanDefinition.action.trigger.data"/>
-            <short value="Trigger when encounter.period.end is changed."/>
-            <definition value="Trigger when encounter.period.end is changed."/>
+            <short value="Trigger when Encounter.period.end is added."/>
+            <definition value="Trigger when encounter.period.end is added."/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action:sliceCloseOutEICR.trigger.data.type">
             <path value="PlanDefinition.action.trigger.data.type"/>
-            <fixedCode value="DateTime"/>
+            <fixedCode value="Encounter"/>
         </element>
         <element id="PlanDefinition.action:sliceCloseOutEICR.trigger.data.profile">
             <path value="PlanDefinition.action.trigger.data.profile"/>
@@ -537,7 +545,7 @@
             <path value="PlanDefinition.action.trigger.data.dateFilter.path"/>
             <min value="1"/>
             <max value="1"/>
-            <fixedString value="encounter.period.end"/>
+            <fixedString value="period.end"/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action:sliceCloseOutEICR.relatedAction">
