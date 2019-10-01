@@ -35,7 +35,7 @@ The following profiles and extensions have been defined for the eICR transaction
 <ul>
   <li><a href="StructureDefinition-eicr-trigger-code-flag-extension.html">eICR Trigger Code Flag</a></li>
   <li><a href="StructureDefinition-eicr-initiation-reason-extension.html">eICR Manually Initiated Reason</a></li>
-  <li><a href="StructureDefinition-eicr-travel-history-address-extension.html">Travel History Address</a></li>
+  <li><a href="StructureDefinition-travel-history-address-extension.html">Travel History Address</a></li>
 </ul>
 
 

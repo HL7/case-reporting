@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-communication"/>
     <meta>
-        <versionId value="44"/>
-        <lastUpdated value="2019-08-29T00:02:18.000-04:00"/>
+        <versionId value="48"/>
+        <lastUpdated value="2019-10-01T05:31:59.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication"/>
     <version value="1.0.0"/>
@@ -148,6 +148,16 @@
                 <map value="Reportability Response Subject/text"/>
             </mapping>
         </element>
+        <element id="Communication.encounter">
+            <path value="Communication.encounter"/>
+            <short value="eICR Encounter"/>
+            <definition value="The encounter in which the eICR was triggered."/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
         <element id="Communication.topic.text">
             <path value="Communication.topic.text"/>
             <short value="Reportability Response Subject text"/>
@@ -157,16 +167,6 @@
                 <label value="General"/>
                 <valueString value="Public Health Reporting Communication: one or more conditions are reportable, or may be reportable to public health."/>
             </example>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Communication.context">
-            <path value="Communication.context"/>
-            <short value="eICR Encounter"/>
-            <definition value="The encounter in which the eICR was triggered."/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
-            </type>
             <mustSupport value="true"/>
         </element>
         <element id="Communication.sent">
