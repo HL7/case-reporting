@@ -137,6 +137,10 @@ active: other
 </tr>
 <tr>
 <td>Organization</td>
+<td><a href="Organization-organization-ecr-acme-laboratory.html">Acme_Labs</a></td>
+</tr>
+<tr>
+<td>Organization</td>
 <td><a href="Organization-organization-ecr-health-authority-west.html">Health Authority West</a></td>
 </tr>
 <tr>
