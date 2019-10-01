@@ -81,7 +81,7 @@ active: other
 </tr>
 <tr>
 <td>Library</td>
-<td><a href="Library-library-rctc.html">library-rctc</a></td>
+<td><a href="Library-library-rctc.html">Library_RCTC</a></td>
 </tr>
 <tr>
 <td>Location</td>
@@ -157,7 +157,7 @@ active: other
 </tr>
 <tr>
 <td>Organization</td>
-<td><a href="Organization-organization-ecr-salem-medical-center.html">organization-ecr-salem-medical-center</a></td>
+<td><a href="Organization-organization-ecr-salem-medical-center.html">Salem Medical Center</a></td>
 </tr>
 <tr>
 <td>Organization</td>
