@@ -5,6 +5,14 @@
     <meta>
         <versionId value="85"/>
         <lastUpdated value="2019-08-29T02:08:02.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
     <version value="1.0.0"/>
@@ -972,6 +980,10 @@
         <element id="Composition.section:sliceImmunizationsSection.entry:sliceUSCoreImmunization.extension">
             <path value="Composition.section.entry.extension"/>
             <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
                 <rules value="open"/>
             </slicing>
         </element>
@@ -982,7 +994,8 @@
             <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated."/>
             <type>
                 <code value="Extension"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
+                <targetProfile value=""/>
             </type>
         </element>
         <element id="Composition.section:sliceVitalSignsSection">
