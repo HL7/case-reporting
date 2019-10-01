@@ -10,9 +10,10 @@ This section describes the expected capabilities of a client consuming eRSD reso
 
 The eRSD Client **SHALL**:
 
-- Support fetching the eRSD PlanDefinition Bundle and RCTC ValueSet resources using the supported RESTful interactions and search parameters declared in the eRSD Server CapabilityStatement.
+- Support fetching the eRSD Bundle using the supported RESTful interactions.
+- Support processing PlanDefinition and ValueSet resources that are included in the Bundle.
 
-The eRSD Client **SHOULD**:
+The eRSD Client **MAY**:
 
-- Support creating and updating Subscription resources on the eRSD server.
-- Support receiving updates to subscriptions using one or more of the methods described in the FHIR specification.
+- Support fetching and reading a Person resource.
+- Support fetching and reading Subscription resources associated with a Person.

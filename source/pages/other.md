@@ -156,6 +156,10 @@ active: other
 <td><a href="Organization-organization-ecr-salem-medical-center.html">organization-ecr-salem-medical-center</a></td>
 </tr>
 <tr>
+<td>Organization</td>
+<td><a href="Organization-organization-ecr-ymca-center.html">YMCA</a></td>
+</tr>
+<tr>
 <td>Patient</td>
 <td><a href="Patient-patient-ecr-eve-everywoman.html">patient-ecr-eve-everywoman</a></td>
 </tr>

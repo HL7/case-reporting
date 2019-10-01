@@ -3,18 +3,70 @@
     xmlns="http://hl7.org/fhir">
     <id value="capabilitystatement-ersd-client"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2019-08-26T20:55:00.000-04:00"/>
+        <versionId value="7"/>
+        <lastUpdated value="2019-09-30T17:48:33.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/CapabilityStatement/capabilitystatement-ersd-client"/>
+    <version value="1.0"/>
     <name value="CapabilityStatement_eRSD_Client"/>
     <title value="eRSD Capability Statement Client"/>
     <status value="draft"/>
     <experimental value="false"/>
     <date value="2019-08-23"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This section describes the expected capabilities of a client consuming eRSD resources including the Reportable Conditions Trigger Codes (RCTC).&#xA;&#xA;#### Conformance requirements for an eRSD Client&#xA;&#xA;The eRSD Client **SHALL**:&#xA;&#xA;- Support fetching the eRSD PlanDefinition Bundle and RCTC ValueSet resources using the supported RESTful interactions and search parameters declared in the eRSD Server CapabilityStatement.&#xA;&#xA;The eRSD Client **SHOULD**:&#xA;&#xA;- Support creating and updating Subscription resources on the eRSD server.&#xA;- Support receiving updates to subscriptions using one or more of the methods described in the FHIR specification."/>
+    <description value="This section describes the expected capabilities of a client consuming eRSD resources including the Reportable Conditions Trigger Codes (RCTC).&#xA;&#xA;#### Conformance requirements for an eRSD Client&#xA;&#xA;The eRSD Client **SHALL**:&#xA;&#xA;- Support fetching the eRSD Bundle using the supported RESTful interactions.&#xA;- Support processing PlanDefinition and ValueSet resources that are included in the Bundle.&#xA;&#xA;The eRSD Client **MAY**:&#xA;&#xA;- Support fetching and reading a Person resource.&#xA;- Support fetching and reading Subscription resources associated with a Person."/>
     <kind value="instance"/>
     <fhirVersion value="4.0.0"/>
     <format value="application/json"/>
+    <rest>
+        <mode value="client"/>
+        <resource>
+            <type value="Bundle"/>
+            <documentation value="The Bundle represents the artifacts that are to be distributed to subscribers. The Bundle contains the information necessary for implementers to update their systems. The Bundle typically includes PlanDefinition and ValueSet resources. The Bundle may also contain a message from the administrator that indicates the severity of the update."/>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHALL"/>
+                </extension>
+                <code value="read"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="ValueSet"/>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHALL"/>
+                </extension>
+                <code value="read"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="PlanDefinition"/>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="SHALL"/>
+                </extension>
+                <code value="read"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="Person"/>
+            <documentation value="The Person resource is used by the eRSD server to associate one or more Subscription s to an individual. The Person contains references to the Subscriptions associated with the Person."/>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="MAY"/>
+                </extension>
+                <code value="read"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="Subscription"/>
+            <documentation value="A Subscriuption is used to notify a Person using the specified channel (email, rest-hook or email-based SMS) that a Bundle has been updated on the FHIR Server."/>
+            <interaction>
+                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+                    <valueCode value="MAY"/>
+                </extension>
+                <code value="read"/>
+            </interaction>
+        </resource>
+    </rest>
 </CapabilityStatement>

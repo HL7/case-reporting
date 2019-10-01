@@ -227,7 +227,11 @@ The Reportability Response Communication is also structured to allow:
 </tr>
 <tr>
 <td><a href="StructureDefinition-eicr-initiation-reason-extension.html">Eicr_Initiation_Reason_Extension</a></td>
-<td>This Extension profile represents that this eICR was either manually or alternately initiated and contains the reason for initiation of the eICR.</td>
+<td>This Extension profile represents that this eICR was either manually or alternately initiated and contains the explanation for the initiation of the eICR. 
+
+The reason may be entered either as:
+* free text (string) 
+* coded value (valueCodeableConcept) (not ncesssarily initiated by a provider of care bul might be "programmed-in" by the EHR implementer for some purpose)</td>
 </tr>
 <tr>
 <td><a href="StructureDefinition-eicr-trigger-code-flag-extension.html">Eicr_Trigger_Code_Flag_Extension</a></td>
