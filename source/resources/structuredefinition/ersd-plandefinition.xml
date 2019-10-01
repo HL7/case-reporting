@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition
-    xmlns="http://hl7.org/fhir">
+<StructureDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://hl7.org/fhir ../../../../../../../../../../Dropbox/03%20Work/Lantana/Temp_Files/fhir-all-xsd/fhir-all.xsd" xmlns="http://hl7.org/fhir">
     <id value="ersd-plandefinition"/>
     <meta>
         <versionId value="122"/>
@@ -136,28 +136,28 @@
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceRCTCValueSet">
+        <element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceERSDValueSet">
             <path value="PlanDefinition.action.trigger"/>
-            <sliceName value="sliceRCTCValueSet"/>
+            <sliceName value="sliceERSDValueSet"/>
             <short value="When the &quot;match-trigger&quot; action should be triggered."/>
             <definition value="."/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceRCTCValueSet.data">
+        <element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceERSDValueSet.data">
             <path value="PlanDefinition.action.trigger.data"/>
             <short value="A triggering value set."/>
             <definition value="A triggering value set for the action."/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceRCTCValueSet.data.type">
+        <element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceERSDValueSet.data.type">
             <path value="PlanDefinition.action.trigger.data.type"/>
             <short value="The type of trigger data."/>
             <definition value="The trigger codes that match to the codes in the RCTC value sets are of CodeableConcept data type."/>
             <fixedCode value="CodeableConcept"/>
         </element>
-        <element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceRCTCValueSet.data.codeFilter">
+        <element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceERSDValueSet.data.codeFilter">
             <path value="PlanDefinition.action.trigger.data.codeFilter"/>
             <short value="Match based on code."/>
             <definition value="Make a match (trigger) based on code."/>
@@ -165,14 +165,14 @@
             <max value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceRCTCValueSet.data.codeFilter.path">
+        <element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceERSDValueSet.data.codeFilter.path">
             <path value="PlanDefinition.action.trigger.data.codeFilter.path"/>
             <short value="Path to the code to match"/>
             <definition value="Path to the code to match:&#xA;&#xA;* Diagnosis: Condition.code&#xA;* Immunization: Immunization.vaccineCode&#xA;* Lab Order: ServiceRequest.code&#xA;* Lab Observation: Observation.code&#xA;* Medication: MedicationAdministration.medicationCodeableConcept&#xA;* Organism/Substance: Observation.value"/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceRCTCValueSet.data.codeFilter.valueSet">
+        <element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceERSDValueSet.data.codeFilter.valueSet">
             <path value="PlanDefinition.action.trigger.data.codeFilter.valueSet"/>
             <short value="RCTC value set containing trigger codes."/>
             <definition value="One of the RCTC value set containing trigger codes for use in matching to the data."/>
@@ -180,7 +180,7 @@
             <max value="1"/>
             <type>
                 <code value="canonical"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rctc-valueset"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-valueset"/>
             </type>
         </element>
         <element id="PlanDefinition.action:sliceCreateEICR">
@@ -393,7 +393,7 @@
             <max value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition:sliceStartCondition.expression.description">
+        <element id="PlanDefinition.action:slicePeriodicUpdateEICR.condition:sliceStopCondition.expression.description">
             <path value="PlanDefinition.action.condition.expression.description"/>
             <fixedString value="Encounter is closed."/>
         </element>
