@@ -3,8 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="ersd-plandefinition"/>
     <meta>
-        <versionId value="124"/>
-        <lastUpdated value="2019-10-01T02:14:13.000-04:00"/>
+        <versionId value="125"/>
+        <lastUpdated value="2019-10-01T02:56:19.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^write"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
     <version value="1.0.0"/>
@@ -105,22 +113,22 @@
             <short value="Description of the &quot;match-trigger&quot; action."/>
             <definition value="Description of the &quot;create-eicr&quot; action."/>
             <min value="1"/>
-            <fixedString value="This action represents the matching of a trigger code to one of the values in the RCTC value sets."/>
+            <fixedString value="This action represents the matching of a trigger code to one of the values in the eRSD value sets."/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action:sliceMatchTrigger.textEquivalent">
             <path value="PlanDefinition.action.textEquivalent"/>
             <definition value="Text equivalent of the &quot;match-trigger&quot; action."/>
             <min value="1"/>
-            <fixedString value="Match of a code to one of the values in the RCTC value sets."/>
+            <fixedString value="Match of a code to one of the values in the eRSD value sets."/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action:sliceMatchTrigger.trigger">
             <path value="PlanDefinition.action.trigger"/>
             <slicing>
                 <discriminator>
-                    <type value="profile"/>
-                    <path value="data.codeFilter.valueSet.resolve()"/>
+                    <type value="value"/>
+                    <path value="data.codeFilter.valueSet.identifier.value"/>
                 </discriminator>
                 <rules value="open"/>
             </slicing>
@@ -154,7 +162,7 @@
         <element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceERSDValueSet.data.type">
             <path value="PlanDefinition.action.trigger.data.type"/>
             <short value="The type of trigger data."/>
-            <definition value="The trigger codes that match to the codes in the RCTC value sets are of CodeableConcept data type."/>
+            <definition value="The trigger codes that match to the codes in the eRSD value sets are of CodeableConcept data type."/>
             <fixedCode value="CodeableConcept"/>
         </element>
         <element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceERSDValueSet.data.codeFilter">
@@ -174,8 +182,8 @@
         </element>
         <element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceERSDValueSet.data.codeFilter.valueSet">
             <path value="PlanDefinition.action.trigger.data.codeFilter.valueSet"/>
-            <short value="RCTC value set containing trigger codes."/>
-            <definition value="One of the RCTC value set containing trigger codes for use in matching to the data."/>
+            <short value="eRSD value set containing trigger codes."/>
+            <definition value="One of the eRSD value sets containing trigger codes for use in matching to the data."/>
             <min value="1"/>
             <max value="1"/>
             <type>
