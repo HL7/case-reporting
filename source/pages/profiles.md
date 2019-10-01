@@ -113,6 +113,10 @@ The profile defines three timing-related parameters for initiating case reports 
 * eICR encounter close-out (for example 24 hours or 0 hours for no delay) - the time after the end of an encounter for a final eICR to be sent when there has been one or more trigger events. (The close-out eICR is intended to provide the full data available at the end of an encounter.)</td>
 </tr>
 <tr>
+<td><a href="StructureDefinition-ersd-valueset.html">Ersd_ValueSet</a></td>
+<td>This profile describes the eRSD value sets.</td>
+</tr>
+<tr>
 <td><a href="StructureDefinition-ersd-valueset-library.html">Ersd_Valueset_Library</a></td>
 <td>Defines the library containing the Reportable Condition Trigger Code value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses. </td>
 </tr>
@@ -145,10 +149,6 @@ To record the plurality of the pregnancy, use the contained profile Pregnancy Pl
 <tr>
 <td><a href="StructureDefinition-pregnancy-status-recorded-date-extension.html">Pregnancy_Status_Recorded_Date_Extension</a></td>
 <td>The date the pregnancy status was recorded.</td>
-</tr>
-<tr>
-<td><a href="StructureDefinition-rctc-valueset.html">RCTC_ValueSet</a></td>
-<td>This profile describes the RCTC value sets.</td>
 </tr>
 <tr>
 <td><a href="StructureDefinition-rr-communication.html">RR_Communication</a></td>
