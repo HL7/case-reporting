@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="ecr-patient"/>
     <meta>
-        <versionId value="33"/>
-        <lastUpdated value="2019-10-01T01:24:16.000-04:00"/>
+        <versionId value="36"/>
+        <lastUpdated value="2019-10-01T01:50:26.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="user^s7DIn2HM^write"/>
@@ -218,24 +218,31 @@
             <slicing>
                 <discriminator>
                     <type value="value"/>
-                    <path value="code"/>
+                    <path value="system"/>
                 </discriminator>
                 <rules value="open"/>
             </slicing>
+            <min value="1"/>
             <mustSupport value="true"/>
         </element>
         <element id="Patient.telecom:slicePhone">
             <path value="Patient.telecom"/>
             <sliceName value="slicePhone"/>
+            <mustSupport value="true"/>
             <mapping>
                 <identity value="eCR-CDA"/>
                 <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/telecom[tel:]"/>
                 <comment value="Patient Phone"/>
             </mapping>
         </element>
+        <element id="Patient.telecom:slicePhone.system">
+            <path value="Patient.telecom.system"/>
+            <fixedCode value="phone"/>
+        </element>
         <element id="Patient.telecom:sliceEmail">
             <path value="Patient.telecom"/>
             <sliceName value="sliceEmail"/>
+            <mustSupport value="true"/>
             <mapping>
                 <identity value="eCR-CDA"/>
                 <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/telecom[mailto:]"/>
@@ -245,10 +252,6 @@
         <element id="Patient.telecom:sliceEmail.system">
             <path value="Patient.telecom.system"/>
             <fixedCode value="email"/>
-        </element>
-        <element id="Patient.telecom:slicePhone.system">
-            <path value="Patient.telecom.system"/>
-            <fixedCode value="phone"/>
         </element>
         <element id="Patient.telecom.extension">
             <path value="Patient.telecom.extension"/>
