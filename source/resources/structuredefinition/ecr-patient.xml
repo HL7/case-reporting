@@ -215,43 +215,13 @@
         </element>
         <element id="Patient.telecom">
             <path value="Patient.telecom"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="system"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
             <min value="1"/>
             <mustSupport value="true"/>
-        </element>
-        <element id="Patient.telecom:slicePhone">
-            <path value="Patient.telecom"/>
-            <sliceName value="slicePhone"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/telecom[tel:]"/>
-                <comment value="Patient Phone"/>
-            </mapping>
-        </element>
-        <element id="Patient.telecom:slicePhone.system">
-            <path value="Patient.telecom.system"/>
-            <fixedCode value="phone"/>
-        </element>
-        <element id="Patient.telecom:sliceEmail">
-            <path value="Patient.telecom"/>
-            <sliceName value="sliceEmail"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/telecom[mailto:]"/>
-                <comment value="Patient Email"/>
-            </mapping>
-        </element>
-        <element id="Patient.telecom:sliceEmail.system">
-            <path value="Patient.telecom.system"/>
-            <fixedCode value="email"/>
+          <mapping>
+            <identity value="eCR-CDA"/>
+            <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/telecom"/>
+            <comment value="Patient Telecom"/>
+          </mapping>
         </element>
         <element id="Patient.telecom.extension">
             <path value="Patient.telecom.extension"/>
