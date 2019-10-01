@@ -1,186 +1,200 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<PlanDefinition xmlns="http://hl7.org/fhir">
-  <id value="plandefinition-ersd-instance"/>
+<PlanDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://hl7.org/fhir ../../../../../../../../../../Dropbox/03%20Work/Lantana/Temp_Files/fhir-all-xsd/fhir-all.xsd" xmlns="http://hl7.org/fhir">
+  <id value="plandefinition-ersd-instance" />
   <meta>
-    <versionId value="21"/>
-    <lastUpdated value="2019-09-19T14:07:07.000-04:00"/>
-    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
+    <versionId value="25" />
+    <lastUpdated value="2019-09-30T20:13:27.650-04:00" />
+    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition" />
+    <security>
+      <system value="https://trifolia-fhir.lantanagroup.com/security" />
+      <code value="everyone^read" />
+    </security>
+    <security>
+      <system value="https://trifolia-fhir.lantanagroup.com/security" />
+      <code value="everyone^write" />
+    </security>
   </meta>
-  <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: plandefinition-ersd-instance</p><p><b>meta</b>: </p><p><b>url</b>: <a href="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance">http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance</a></p><p><b>version</b>: 0.1</p><p><b>name</b>: PlanDefinition_eRSD_Instance</p><p><b>title</b>: eRSD PlanDefinition Instance</p><p><b>type</b>: ECA Rule <span style="background: LightGoldenRodYellow">(Details : {http://terminology.hl7.org/CodeSystem/plan-definition-type code 'eca-rule' = 'ECA Rule', given as 'ECA Rule'})</span></p><p><b>status</b>: active</p><p><b>date</b>: Sep 15, 2019, 4:49:11 PM</p><blockquote><p><b>action</b></p><p><b>id</b>: match-trigger</p><p><b>description</b>: This action represents the matching of a trigger code to one of the values in the RCTC value sets.</p><p><b>textEquivalent</b>: Match of a code to one of the values in the RCTC value sets.</p><p><b>trigger</b>: , , , , , </p></blockquote><blockquote><p><b>action</b></p><p><b>id</b>: create-eicr</p><p><b>description</b>: This action represents the initial creation of the eICR.</p><p><b>textEquivalent</b>: eICR construction delay (x hours) - time after trigger event before an eICR should be created.</p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td><td><b>Offset[x]</b></td></tr><tr><td>*</td><td>match-trigger</td><td>after</td><td>3 h</td></tr></table></blockquote><blockquote><p><b>action</b></p><p><b>id</b>: periodic-update-eicr</p><p><b>description</b>: This action represents the periodic update of the eICR.</p><p><b>textEquivalent</b>: eICR periodic update (y hours) – the time after an initial eICR transmission to send a new eICR as an update during long encounters.</p><p><b>trigger</b>: </p><blockquote><p><b>condition</b></p><p><b>kind</b>: start</p><p><b>expression</b>: </p></blockquote><blockquote><p><b>condition</b></p><p><b>kind</b>: stop</p><p><b>expression</b>: </p></blockquote><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td><td><b>Offset[x]</b></td></tr><tr><td>*</td><td>create-eicr</td><td>after</td><td>24 h</td></tr></table></blockquote><blockquote><p><b>action</b></p><p><b>id</b>: close-out-eicr</p><p><b>description</b>: This action represents the close out of an eICR encounter.</p><p><b>textEquivalent</b>: eICR encounter close out (z hours) – the time after the end of the encounter to create the final eICR when there have been one or more trigger events.</p><p><b>trigger</b>: </p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>create-eicr</td><td>after</td></tr></table></blockquote><blockquote><p><b>action</b></p><p><b>id</b>: validate-eicr</p><p><b>description</b>: This action represents the validation of an eICR.</p><p><b>textEquivalent</b>: Validate eICR.</p><p><b>trigger</b>: </p></blockquote><blockquote><p><b>action</b></p><p><b>id</b>: route-and-send-eicr</p><p><b>description</b>: This action represents the routing and sending of an eICR.</p><p><b>textEquivalent</b>: Route and send eICR</p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>validate-eicr</td><td>after</td></tr></table></blockquote></div>
-  </text>
-  <url value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance"/>
-  <version value="0.1"/>
-  <name value="PlanDefinition_eRSD_Instance"/>
-  <title value="eRSD PlanDefinition Instance"/>
+  <url value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance" />
+  <version value="0.1" />
+  <name value="PlanDefinition_eRSD_Instance" />
+  <title value="eRSD PlanDefinition Instance" />
   <type>
     <coding>
-      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
-      <code value="eca-rule"/>
-      <display value="ECA Rule"/>
+      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type" />
+      <code value="eca-rule" />
+      <display value="ECA Rule" />
     </coding>
   </type>
-  <status value="active"/>
-  <date value="2019-09-15T12:49:11-04:00"/>
+  <status value="active" />
+  <date value="2019-09-15T12:49:11-04:00" />
   <action id="match-trigger">
-    <description value="This action represents the matching of a trigger code to one of the values in the RCTC value sets."/>
-    <textEquivalent value="Match of a code to one of the values in the RCTC value sets."/>
+    <description value="This action represents the matching of a trigger code to one of the values in the RCTC value sets." />
+    <textEquivalent value="Match of a code to one of the values in the RCTC value sets." />
     <trigger>
-      <type value="named-event"/>
-      <name value="match-trigger-diagnosis"/>
+      <type value="named-event" />
+      <name value="match-trigger-diagnosis" />
       <data>
-        <type value="CodeableConcept"/>
+        <type value="CodeableConcept" />
         <codeFilter>
-          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc"/>
+          <path value="Condition.code" />
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc" />
         </codeFilter>
       </data>
     </trigger>
     <trigger>
-      <type value="named-event"/>
-      <name value="match-trigger-immunization"/>
+      <type value="named-event" />
+      <name value="match-trigger-immunization" />
       <data>
-        <type value="CodeableConcept"/>
+        <type value="CodeableConcept" />
         <codeFilter>
-          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-iztc"/>
+          <path value="Immunization.vaccineCode" />
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-iztc" />
         </codeFilter>
       </data>
     </trigger>
     <trigger>
-      <type value="named-event"/>
-      <name value="match-trigger-lab-order"/>
+      <type value="named-event" />
+      <name value="match-trigger-lab-order" />
       <data>
-        <type value="CodeableConcept"/>
+        <type value="CodeableConcept" />
         <codeFilter>
-          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc"/>
+          <path value="ServiceReqeust.code"/>
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc" />
         </codeFilter>
       </data>
     </trigger>
     <trigger>
-      <type value="named-event"/>
-      <name value="match-trigger-lab-observation"/>
+      <type value="named-event" />
+      <name value="match-trigger-lab-observation" />
       <data>
-        <type value="CodeableConcept"/>
+        <type value="CodeableConcept" />
         <codeFilter>
-          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc"/>
+          <path value="Observation.code" />
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc" />
         </codeFilter>
       </data>
     </trigger>
     <trigger>
-      <type value="named-event"/>
-      <name value="match-trigger-medication"/>
+      <type value="named-event" />
+      <name value="match-trigger-medication" />
       <data>
-        <type value="CodeableConcept"/>
+        <type value="CodeableConcept" />
         <codeFilter>
-          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc"/>
+          <path value="MedicationAdministration.medicationCodeableConcept" />
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc" />
         </codeFilter>
       </data>
     </trigger>
     <trigger>
-      <type value="named-event"/>
-      <name value="match-trigger-organism-substance"/>
+      <type value="named-event" />
+      <name value="match-trigger-organism-substance" />
       <data>
-        <type value="CodeableConcept"/>
+        <type value="CodeableConcept" />
         <codeFilter>
-          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc"/>
+          <path value="Observation.code"/>
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc" />
         </codeFilter>
       </data>
     </trigger>
   </action>
   <action id="create-eicr">
-    <description value="This action represents the initial creation of the eICR."/>
-    <textEquivalent value="eICR construction delay (x hours) - time after trigger event before an eICR should be created."/>
+    <description value="This action represents the initial creation of the eICR." />
+    <textEquivalent value="eICR construction delay (x hours) - time after trigger event before an eICR should be created." />
     <relatedAction>
-      <actionId value="match-trigger"/>
-      <relationship value="after"/>
+      <actionId value="match-trigger" />
+      <relationship value="after" />
       <offsetDuration>
-        <value value="3"/>
-        <unit value="h"/>
+        <value value="3" />
+        <unit value="h" />
       </offsetDuration>
     </relatedAction>
   </action>
   <action id="periodic-update-eicr">
-    <description value="This action represents the periodic update of the eICR."/>
-    <textEquivalent value="eICR periodic update (y hours) &#x2013; the time after an initial eICR transmission to send a new eICR as an update during long encounters."/>
+    <description value="This action represents the periodic update of the eICR." />
+    <textEquivalent value="eICR periodic update (y hours) – the time after an initial eICR transmission to send a new eICR as an update during long encounters." />
     <trigger>
-      <type value="periodic"/>
+      <type value="periodic" />
       <timingTiming>
         <repeat>
-          <frequency value="1"/>
-          <period value="24"/>
-          <periodUnit value="h"/>
+          <frequency value="1" />
+          <period value="24" />
+          <periodUnit value="h" />
         </repeat>
       </timingTiming>
     </trigger>
     <condition>
-      <kind value="start"/>
+      <kind value="start" />
       <expression>
-        <description value="Encounter is active."/>
-        <language value="text/cql"/>
-        <expression value="encounter.period.start != null and encounter.period.end = null"/>
+        <description value="Encounter is active." />
+        <language value="text/cql" />
+        <expression value="encounter.period.start != null and encounter.period.end = null" />
       </expression>
     </condition>
     <condition>
-      <kind value="stop"/>
+      <kind value="stop" />
       <expression>
-        <description value="encounter is closed out"/>
-        <language value="text/cql"/>
-        <expression value="encounter.period.end != null"/>
+        <description value="encounter is closed out" />
+        <language value="text/cql" />
+        <expression value="encounter.period.end != null" />
       </expression>
     </condition>
     <relatedAction>
-      <actionId value="create-eicr"/>
-      <relationship value="after"/>
+      <actionId value="create-eicr" />
+      <relationship value="after" />
       <offsetDuration>
-        <value value="24"/>
-        <unit value="h"/>
+        <value value="24" />
+        <unit value="h" />
       </offsetDuration>
     </relatedAction>
   </action>
   <action id="close-out-eicr">
-    <description value="This action represents the close out of an eICR encounter."/>
-    <textEquivalent value="eICR encounter close out (z hours) &#x2013; the time after the end of the encounter to create the final eICR when there have been one or more trigger events."/>
+    <description value="This action represents the close out of an eICR encounter." />
+    <textEquivalent
+      value="eICR encounter close out (z hours) – the time after the end of the encounter to create the final eICR when there have been one or more trigger events." />
     <trigger>
-      <type value="data-added"/>
-      <timingTiming>
-        <repeat>
-          <count value="1"/>
-          <duration value="24"/>
-          <frequency value="1"/>
-          <periodUnit value="h"/>
-        </repeat>
-      </timingTiming>
+      <type value="data-added" />
+      
       <data>
-        <type value="Encounter"/>
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
+        <type value="Encounter" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter" />
         <dateFilter>
-          <path value="period.end"/>
+          <path value="period.end" />
         </dateFilter>
       </data>
     </trigger>
     <relatedAction>
-      <actionId value="create-eicr"/>
-      <relationship value="after"/>
+      <actionId value="create-eicr" />
+      <relationship value="after" />
     </relatedAction>
+    <timingTiming>
+      <repeat>
+        <count value="1" />
+        <duration value="24" />
+        <durationUnit value="h"/>
+        <frequency value="1" />
+        <periodUnit value="h" />
+      </repeat>
+    </timingTiming>
   </action>
   <action id="validate-eicr">
-    <description value="This action represents the validation of an eICR."/>
-    <textEquivalent value="Validate eICR."/>
+    <description value="This action represents the validation of an eICR." />
+    <textEquivalent value="Validate eICR." />
     <trigger>
-      <type value="data-changed"/>
-      <name value="eicr-created"/>
+      <type value="data-changed" />
+      <name value="eicr-created" />
       <data>
-        <type value="Composition"/>
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
+        <type value="Composition" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition" />
       </data>
     </trigger>
   </action>
   <action id="route-and-send-eicr">
-    <description value="This action represents the routing and sending of an eICR."/>
-    <textEquivalent value="Route and send eICR"/>
+    <description value="This action represents the routing and sending of an eICR." />
+    <textEquivalent value="Route and send eICR" />
     <relatedAction>
-      <actionId value="validate-eicr"/>
-      <relationship value="after"/>
+      <actionId value="validate-eicr" />
+      <relationship value="after" />
     </relatedAction>
   </action>
 </PlanDefinition>
