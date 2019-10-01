@@ -3,19 +3,17 @@
     xmlns="http://hl7.org/fhir">
     <id value="pregnancy-status"/>
     <meta>
-        <versionId value="8"/>
-        <lastUpdated value="2019-09-30T23:40:44.000-04:00"/>
+        <versionId value="9"/>
+        <lastUpdated value="2019-10-01T00:16:09.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^write"/>
+        </security>
     </meta>
-    <text>
-        <status value="generated"/>
-        <div
-            xmlns="http://www.w3.org/1999/xhtml">
-            <h2>Pregnancy Status</h2>
-            <div>
-                <p>This value set contains codes representing pregnancy statuses.</p>
-            </div>
-        </div>
-    </text>
     <url value="http://hl7.org/fhir/us/ecr/ValueSet/pregnancy-status"/>
     <identifier>
         <system value="urn:ietf:rfc:3986"/>
@@ -36,19 +34,7 @@
     </jurisdiction>
     <compose>
         <include>
-            <system value="http://snomed.info/sct"/>
-            <concept>
-                <code value="77386006"/>
-                <display value="Pregnant (finding)"/>
-            </concept>
-            <concept>
-                <code value="60001007"/>
-                <display value="Not pregnant (finding)"/>
-            </concept>
-            <concept>
-                <code value="102874004"/>
-                <display value="Possibly pregnant (finding)"/>
-            </concept>
+            <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1099.24"/>
         </include>
         <include>
             <system value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor"/>
