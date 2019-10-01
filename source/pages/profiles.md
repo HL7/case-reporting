@@ -36,7 +36,7 @@ active: profiles
 </tr>
 <tr>
 <td><a href="StructureDefinition-ecr-messageheader.html">Ecr_MessageHeader</a></td>
-<td>This MessageHeader profile represents metadata to support the eCR messaging paradigm.  It requires data elements destination, sender, source, and focus. The focus of an eCR MessageHeader profile is the eCR Task profile.</td>
+<td>This MessageHeader profile represents metadata to support the eCR messaging paradigm. It requires data elements destination, sender, source, and focus. The focus of an eCR MessageHeader profile is the eCR Task profile.</td>
 </tr>
 <tr>
 <td><a href="StructureDefinition-ecr-organization.html">Ecr_Organization</a></td>
