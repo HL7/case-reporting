@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="ersd-plandefinition"/>
     <meta>
-        <versionId value="125"/>
-        <lastUpdated value="2019-10-01T02:56:19.000-04:00"/>
+        <versionId value="127"/>
+        <lastUpdated value="2019-10-01T03:11:24.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="user^s7DIn2HM^read"/>
@@ -127,8 +127,8 @@
             <path value="PlanDefinition.action.trigger"/>
             <slicing>
                 <discriminator>
-                    <type value="value"/>
-                    <path value="data.codeFilter.valueSet.identifier"/>
+                    <type value="profile"/>
+                    <path value="data.codeFilter.valueSet.resolve()"/>
                 </discriminator>
                 <rules value="open"/>
             </slicing>
