@@ -26,6 +26,7 @@ active: terminology
 - [Example Lab Order Test Triggers for Public Health Reporting](ValueSet-valueset-lotc-example.html)
 - [Example Medications Triggers for Public Health Reporting](ValueSet-valueset-mrtc-example.html)
 - [Example Organism Substance Triggers for Public Health Reporting](ValueSet-valueset-ostc-example.html)
+- [Extended Pregnancy Status](ValueSet-2.16.840.1.113762.1.4.1099.24.html)
 - [External Resource Type (eCR) Value Set](ValueSet-valueset-external-resource-type-ecr.html)
 - [Geographical Location History Value Set](ValueSet-valueset-geographical-location-history.html)
 - [Location Relevance (eCR) Value Set](ValueSet-valueset-location-relevance-ecr.html)
