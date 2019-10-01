@@ -3,8 +3,24 @@
     xmlns="http://hl7.org/fhir">
     <id value="ecr-patient"/>
     <meta>
-        <versionId value="31"/>
-        <lastUpdated value="2019-08-27T16:04:40.000-04:00"/>
+        <versionId value="33"/>
+        <lastUpdated value="2019-10-01T01:24:16.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^write"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-patient"/>
     <version value="1.0.0"/>
@@ -200,14 +216,26 @@
         <element id="Patient.telecom">
             <path value="Patient.telecom"/>
             <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="code"/>
+                </discriminator>
                 <rules value="open"/>
             </slicing>
             <mustSupport value="true"/>
+        </element>
+        <element id="Patient.telecom:slicePhone">
+            <path value="Patient.telecom"/>
+            <sliceName value="slicePhone"/>
             <mapping>
                 <identity value="eCR-CDA"/>
                 <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/telecom[tel:]"/>
                 <comment value="Patient Phone"/>
             </mapping>
+        </element>
+        <element id="Patient.telecom:sliceEmail">
+            <path value="Patient.telecom"/>
+            <sliceName value="sliceEmail"/>
             <mapping>
                 <identity value="eCR-CDA"/>
                 <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/telecom[mailto:]"/>
