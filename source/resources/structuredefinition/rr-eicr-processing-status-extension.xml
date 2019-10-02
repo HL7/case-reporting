@@ -3,8 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-eicr-processing-status-extension"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2019-06-24T21:36:57.000-04:00"/>
+        <versionId value="6"/>
+        <lastUpdated value="2019-10-01T23:07:56.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-extension"/>
     <version value="1.0.0"/>
@@ -51,9 +59,9 @@
             <path value="Extension.extension.url"/>
             <fixedUri value="eICRProcessingStatus"/>
         </element>
-        <element id="Extension.extension:eICRProcessingStatus.value[x]:valueReference">
-            <path value="Extension.extension.valueReference"/>
-            <sliceName value="valueReference"/>
+        <element id="Extension.extension:eICRProcessingStatus.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <min value="1"/>
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation"/>
@@ -87,7 +95,7 @@
         </element>
         <element id="Extension.value[x]">
             <path value="Extension.value[x]"/>
-            <definition value="Contains eICR validation output - this could be the actual output from a validator, or a link to a validation output file"/>
+            <definition value=""/>
             <max value="0"/>
         </element>
     </differential>
