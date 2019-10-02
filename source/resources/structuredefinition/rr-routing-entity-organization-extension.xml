@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="rr-routing-entity-organization-extension"/>
+    <meta>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization-extension"/>
+    <version value="1.0.0"/>
+    <name value="RR_Routing_Entity_Organization_Extension"/>
+    <title value="RR Routing Entity Organization Extension"/>
+    <status value="draft"/>
+    <date value="2019-08-01"/>
+    <description value="This extension represents an RR Routing Entity Organization"/>
+    <fhirVersion value="4.0.0"/>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <context>
+        <type value="element"/>
+        <expression value="PlanDefinition"/>
+    </context>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Extension">
+            <path value="Extension"/>
+            <short value="eCR Organization"/>
+          <definition value="This extension represents an RR Routing Entity Organization"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization"/>
+        </element>
+        <element id="Extension.value[x]">
+            <path value="Extension.value[x]"/>
+            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+              <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization"/>
+            </type>
+        </element>
+    </differential>
+</StructureDefinition>

@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-relevant-reportable-condition-plandefinition"/>
     <meta>
-        <versionId value="36"/>
-        <lastUpdated value="2019-10-02T06:50:03.000-04:00"/>
+        <versionId value="38"/>
+        <lastUpdated value="2019-10-02T07:53:42.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^read"/>
@@ -137,10 +137,6 @@
                     <type value="value"/>
                     <path value="url"/>
                 </discriminator>
-                <!--<discriminator>
-                    <type value="value"/>
-                    <path value="reference.type"/>
-                </discriminator>-->
                 <rules value="open"/>
             </slicing>
             <min value="1"/>
@@ -172,32 +168,18 @@
             <min value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization-extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization-extension"/>
             </type>
             <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.jurisdiction.extension:routingEntity.value[x]">
-            <path value="PlanDefinition.jurisdiction.extension.value[x]"/>
-            <type>
-                <code value="Reference"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization"/>
-            </type>
         </element>
         <element id="PlanDefinition.jurisdiction.extension:responsibleAgency">
             <path value="PlanDefinition.jurisdiction.extension"/>
             <sliceName value="responsibleAgency"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization-extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization-extension"/>
             </type>
             <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.jurisdiction.extension:responsibleAgency.value[x]">
-            <path value="PlanDefinition.jurisdiction.extension.value[x]"/>
-            <type>
-                <code value="Reference"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization"/>
-            </type>
         </element>
         <element id="PlanDefinition.goal">
             <path value="PlanDefinition.goal"/>
