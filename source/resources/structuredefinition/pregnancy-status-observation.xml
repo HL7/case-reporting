@@ -4,7 +4,23 @@
     <id value="pregnancy-status-observation"/>
     <meta>
         <versionId value="46"/>
-        <lastUpdated value="2019-10-02T01:01:26.000-04:00"/>
+        <lastUpdated value="2019-10-02T01:01:53.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^write"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation"/>
     <version value="1.0.0"/>
@@ -144,8 +160,8 @@
             <path value="Observation.component"/>
             <slicing>
                 <discriminator>
-                    <type value="value"/>
-                    <path value="code"/>
+                    <type value="type"/>
+                    <path value="value"/>
                 </discriminator>
                 <rules value="open"/>
             </slicing>
@@ -183,7 +199,7 @@
             <comment value="If method of determination is known, it is included in the code chosen, if the method of determination is not known, use code 11884-4 - Gestational age Estimated."/>
             <mustSupport value="true"/>
             <binding>
-                <strength value="required"/>
+                <strength value="extensible"/>
                 <description value="This value set contains codes to describe that the component in which they are used represents the estimated gestational age. If the method of determination by which the gestational age was estimated is known it is included in the code."/>
                 <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.9.82"/>
             </binding>
@@ -243,7 +259,7 @@
             <comment value="If method of determination is known, it is included in the code chosen, if the method of determination is not known, use code 11778-8 - Delivery Date estimated (no method specified)."/>
             <mustSupport value="true"/>
             <binding>
-                <strength value="required"/>
+                <strength value="extensible"/>
                 <description value="This value set contains codes to describe that the component in which they are used represents the estimated date of delivery. If the method of determination by which the date was estimated is known it is included in the code."/>
                 <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.9.81"/>
             </binding>
