@@ -3,8 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-relevant-reportable-condition-plandefinition"/>
     <meta>
-        <versionId value="27"/>
-        <lastUpdated value="2019-08-30T18:25:58.000-04:00"/>
+        <versionId value="28"/>
+        <lastUpdated value="2019-10-01T19:56:56.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
     <version value="1.0.0"/>
@@ -16,9 +24,9 @@
     <description value="This PlanDefinition in the Reportability Response transaction represents reportability information for a condition-jurisdiction pair, based on the PHA in which is located the patient's home, the provider facility or both locations. The Determination of Reportability, Determination of Reportability Reason, and Determination of Reportability Rule are contained in extensions. This profile also contains extensions for the Responsible Agency, the Rules Authoring Agency, and the Routing Entity. The Relevant Reportable Condition is contained in goal.addresses and any External Resources are contained in action (one action contains the information for one External Resource). &#xA;&#xA;"/>
     <fhirVersion value="4.0.0"/>
     <mapping>
-        <identity value="CDA"/>
-        <name value="RR Relevant Reportable Condition PlanDefinition to CDA mapping"/>
-        <comment value="This table maps RR Relevant Reportable Conditition PlanDefinition to CDA"/>
+        <identity value="eCR-CDA"/>
+        <name value="Mappings for eCR FHIR to CDA"/>
+        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
     </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
@@ -123,10 +131,6 @@
         <element id="PlanDefinition.jurisdiction.extension">
             <path value="PlanDefinition.jurisdiction.extension"/>
             <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
                 <rules value="open"/>
             </slicing>
             <mapping>
@@ -134,6 +138,10 @@
                 <map value="Reportability Response Coded Information Organizer/Relevant Reportable Condition Observation/Reportability Information Organizer/code"/>
                 <comment value="Location Relevance"/>
             </mapping>
+        </element>
+        <element id="PlanDefinition.jurisdiction.extension:slice6569">
+            <path value="PlanDefinition.jurisdiction.extension"/>
+            <sliceName value="slice6569"/>
         </element>
         <element id="PlanDefinition.jurisdiction.extension:locationRelevance">
             <path value="PlanDefinition.jurisdiction.extension"/>
@@ -145,6 +153,11 @@
                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-location-relevance-extension"/>
             </type>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="Reportability Response Coded Information Organizer/Relevant Reportable Condition Observation/Reportability Information Organizer/code"/>
+                <comment value="Location Relevance"/>
+            </mapping>
         </element>
         <element id="PlanDefinition.jurisdiction.extension:routingEntity">
             <path value="PlanDefinition.jurisdiction.extension"/>
@@ -152,13 +165,9 @@
             <min value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization-extension"/>
             </type>
             <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.jurisdiction.extension:routingEntity.url">
-            <path value="PlanDefinition.jurisdiction.extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization-extension"/>
         </element>
         <element id="PlanDefinition.jurisdiction.extension:routingEntity.value[x]:valueReference">
             <path value="PlanDefinition.jurisdiction.extension.valueReference"/>
@@ -173,13 +182,9 @@
             <sliceName value="responsibleAgency"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization-extension"/>
             </type>
             <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.jurisdiction.extension:responsibleAgency.url">
-            <path value="PlanDefinition.jurisdiction.extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization-extension"/>
         </element>
         <element id="PlanDefinition.jurisdiction.extension:responsibleAgency.value[x]:valueReference">
             <path value="PlanDefinition.jurisdiction.extension.valueReference"/>
@@ -231,26 +236,18 @@
             <path value="PlanDefinition.goal.addresses.coding"/>
             <max value="1"/>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="Relevant Reportable Condition Observation/value"/>
+            </mapping>
         </element>
         <element id="PlanDefinition.goal.addresses.coding.system">
             <path value="PlanDefinition.goal.addresses.coding.system"/>
             <fixedUri value="http://snomed.info/sct"/>
-        </element>
-        <element id="PlanDefinition.goal.addresses.coding.code">
-            <path value="PlanDefinition.goal.addresses.coding.code"/>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="Relevant Reportable Condition Observation/value/@code"/>
-                <comment value="Relevant Reportable Condition Value"/>
-            </mapping>
-        </element>
-        <element id="PlanDefinition.goal.addresses.coding.display">
-            <path value="PlanDefinition.goal.addresses.coding.display"/>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="Relevant Reportable Condition Observation/value/@displayName"/>
-                <comment value="Relevant Reportable Condition Name"/>
-            </mapping>
+            <mustSupport value="true"/>
+            <binding>
+                <strength value="required"/>
+            </binding>
         </element>
         <element id="PlanDefinition.goal.addresses.text">
             <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
