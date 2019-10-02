@@ -3,8 +3,24 @@
     xmlns="http://hl7.org/fhir">
     <id value="pregnancy-status-observation"/>
     <meta>
-        <versionId value="44"/>
-        <lastUpdated value="2019-09-30T14:46:46.000-04:00"/>
+        <versionId value="46"/>
+        <lastUpdated value="2019-10-02T01:01:53.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^write"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation"/>
     <version value="1.0.0"/>
@@ -13,7 +29,7 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range.&#xA;&#xA;This profile is includes the determination method, determination date, and recorded date of the pregnancy status. It also contains profiles to represent various aspects of the pregnancy.&#xA;&#xA;Use the effectiveTime to indicate the date range over which the patient was pregnant/possibly pregnant/not pregnant/unknown. To record the date that the pregnancy status was recorded, use author/time and to record the date on which the pregnancy status determination was made, use performer/time.&#xA;&#xA;To record the plurality of the pregnancy, use the contained profile Pregnancy Plurality. To record the outcome(s) of the pregnancy, use the contained template Pregnancy Outcome (birth order is specified in the required entryRelationship/sequence element). To record the date of the first prenatal visit for this pregnancy, use the contained template First Prenatal Visit for this Pregnancy and to record the total number of prenatal care visits for this pregnancy use the contained template Total Number of Prenatal Care Visits for this Pregnancy.&#xA;&#xA;**TODO - update this to suit use case for just eCR**"/>
+    <description value="This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range.&#xA;&#xA;This profile includes the determination method, determination date, and recorded date of the pregnancy status.&#xA;&#xA;Use the effectiveTime to indicate the date range over which the patient was pregnant/possibly pregnant/not pregnant/unknown. To record the date that the pregnancy status was recorded, use the pregnancy-status-recorded-date-extension and to record the date on which the pregnancy status determination was made, use the determination-date-extension."/>
     <fhirVersion value="4.0.0"/>
     <mapping>
         <identity value="eCR-CDA"/>
@@ -183,7 +199,7 @@
             <comment value="If method of determination is known, it is included in the code chosen, if the method of determination is not known, use code 11884-4 - Gestational age Estimated."/>
             <mustSupport value="true"/>
             <binding>
-                <strength value="extensible"/>
+                <strength value="required"/>
                 <description value="This value set contains codes to describe that the component in which they are used represents the estimated gestational age. If the method of determination by which the gestational age was estimated is known it is included in the code."/>
                 <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.9.82"/>
             </binding>
@@ -243,7 +259,7 @@
             <comment value="If method of determination is known, it is included in the code chosen, if the method of determination is not known, use code 11778-8 - Delivery Date estimated (no method specified)."/>
             <mustSupport value="true"/>
             <binding>
-                <strength value="extensible"/>
+                <strength value="required"/>
                 <description value="This value set contains codes to describe that the component in which they are used represents the estimated date of delivery. If the method of determination by which the date was estimated is known it is included in the code."/>
                 <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.9.81"/>
             </binding>
