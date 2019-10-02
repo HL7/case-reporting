@@ -3,8 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="pregnancy-status-recorded-date-extension"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2019-09-30T22:15:17.000-04:00"/>
+        <versionId value="11"/>
+        <lastUpdated value="2019-10-02T00:33:46.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-recorded-date-extension"/>
     <name value="Pregnancy_Status_Recorded_Date_Extension"/>
@@ -22,17 +30,23 @@
         <type value="element"/>
         <expression value="Observation"/>
     </context>
-    <type value="dateTime"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/dateTime"/>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
     <derivation value="constraint"/>
     <differential>
-        <element id="dateTime">
-            <path value="dateTime"/>
+        <element id="Extension">
+            <path value="Extension"/>
         </element>
-        <element id="dateTime.value">
-            <path value="dateTime.value"/>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-recorded-date-extension"/>
+        </element>
+        <element id="Extension.value[x]">
+            <path value="Extension.value[x]"/>
             <min value="1"/>
-            <max value="1"/>
+            <type>
+                <code value="dateTime"/>
+            </type>
             <mapping>
                 <identity value="CDA"/>
                 <map value="Pregnancy Status (SUPPLEMENTAL PREGNANCY)/author/time/@value"/>
