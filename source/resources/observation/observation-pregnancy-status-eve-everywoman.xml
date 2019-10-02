@@ -1,54 +1,175 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Observation
-    xmlns="http://hl7.org/fhir">
-    <id value="observation-pregnancy-status-eve-everywoman"/>
-    <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2019-08-29T03:04:12.000-04:00"/>
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation"/>
-    </meta>
-    <text>
-        <status value="generated"/>
-        <div
-            xmlns="http://www.w3.org/1999/xhtml">
-            <table>
-                <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>Pregnancy Status</th>
-                        <th>Date(s)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>eicr-pregnancy-status-eve-everywoman</td>
-                        <td>Not Pregnant</td>
-                        <td>JAN 1, 2016 to present</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </text>
-    <status value="final"/>
+<Observation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://hl7.org/fhir ../../../../../../../../../../Dropbox/03%20Work/Lantana/Temp_Files/fhir-all-xsd/fhir-all.xsd" xmlns="http://hl7.org/fhir">
+  <id value="observation-pregnancy-status-eve-everywoman" />
+  <meta>
+    <versionId value="2" />
+    <lastUpdated value="2019-08-29T03:04:12.000-04:00" />
+    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation" />
+  </meta>
+  <!--<text>
+    <status value="generated" />
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Pregnancy Status</th>
+            <th>Date(s)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>eicr-pregnancy-status-eve-everywoman</td>
+            <td>Pregnant</td>
+            <td>August 8, 2017 to recorded date</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Pregnancy Status</th>
+            <th>Date(s)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>eicr-pregnancy-status-eve-everywoman</td>
+            <td>Pregnant</td>
+            <td>August 8, 2017 to recorded date</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Pregnancy Status</th>
+            <th>Date(s)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>eicr-pregnancy-status-eve-everywoman</td>
+            <td>Pregnant</td>
+            <td>August 8, 2017 to recorded date</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Pregnancy Status</th>
+            <th>Date(s)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>eicr-pregnancy-status-eve-everywoman</td>
+            <td>Pregnant</td>
+            <td>August 8, 2017 to recorded date</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Pregnancy Status</th>
+            <th>Date(s)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>eicr-pregnancy-status-eve-everywoman</td>
+            <td>Pregnant</td>
+            <td>August 8, 2017 to recorded date</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Pregnancy Status</th>
+            <th>Date(s)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>eicr-pregnancy-status-eve-everywoman</td>
+            <td>Pregnant</td>
+            <td>August 8, 2017 to recorded date</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </text>-->
+  <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-recorded-date-extension">
+    <valueDateTime value="2017-10-01" />
+  </extension>
+  <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/determination-date-extension">
+    <valueDateTime value="2017-10-01" />
+  </extension>
+  <status value="final" />
+  <code>
+    <coding>
+      <system value="http://loinc.org" />
+      <code value="82810-3" />
+      <display value="Pregnancy Status" />
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/patient-ecr-eve-everywoman" />
+    <display value="Eve Everywoman" />
+  </subject>
+  <effectivePeriod>
+    <start value="2017-08-26" />
+  </effectivePeriod>
+  <valueCodeableConcept>
+    <coding>
+      <system value="http://snomed.info/sct" />
+      <code value="77386006" />
+      <display value="Pregnant (finding)" />
+    </coding>
+  </valueCodeableConcept>
+  <method>
+    <coding>
+      <system value="http://snomed.info/sct" />
+      <code value="16310003" />
+      <display value="Diagnostic ultrasonography (procedure)" />
+    </coding>
+  </method>
+  <component>
+    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/determination-date-extension">
+      <valueDateTime value="2017-10-01" />
+    </extension>
     <code>
-        <coding>
-            <system value="http://loinc.org"/>
-            <code value="82810-3"/>
-            <display value="Pregnancy Status"/>
-        </coding>
+      <coding>
+        <system value="http://loinc.org" />
+        <code value="53691-2" />
+        <display value="Gestational age Estimated from patient reported estimated date of conception" />
+      </coding>
     </code>
-    <subject>
-        <reference value="Patient/patient-ecr-eve-everywoman"/>
-        <display value="Eve Everywoman"/>
-    </subject>
-    <effectivePeriod>
-        <start value="2016-01-01"/>
-    </effectivePeriod>
-    <valueCodeableConcept>
-        <coding>
-            <system value="http://snomed.info/sct"/>
-            <code value="60001007"/>
-            <display value="Not pregnant (finding)"/>
-        </coding>
-    </valueCodeableConcept>
+    <valueQuantity>
+      <value value="143"/>
+      <unit value="d"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/determination-date-extension">
+      <valueDateTime value="2017-10-01" />
+    </extension>
+    <code>
+      <coding>
+        <system value="http://loinc.org" />
+        <code value="57064-8" />
+        <display value="Delivery date Estimated from date fundal height reaches umb	" />
+      </coding>
+    </code>
+    <valueDateTime value="2018-05-01"/>
+  </component>
 </Observation>
