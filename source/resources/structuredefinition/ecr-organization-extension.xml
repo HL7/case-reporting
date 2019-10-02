@@ -3,8 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="ecr-organization-extension"/>
     <meta>
-        <versionId value="1"/>
-        <lastUpdated value="2019-08-15T20:18:35.000-04:00"/>
+        <versionId value="2"/>
+        <lastUpdated value="2019-10-02T07:56:57.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization-extension"/>
     <version value="1.0.0"/>
@@ -34,9 +42,8 @@
             <path value="Extension.url"/>
             <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization-extension"/>
         </element>
-        <element id="Extension.value[x]:valueReference">
-            <path value="Extension.valueReference"/>
-            <sliceName value="valueReference"/>
+        <element id="Extension.value[x]">
+            <path value="Extension.value[x]"/>
             <min value="1"/>
             <type>
                 <code value="Reference"/>
