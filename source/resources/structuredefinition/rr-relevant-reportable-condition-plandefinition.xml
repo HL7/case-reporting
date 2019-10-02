@@ -4,7 +4,15 @@
     <id value="rr-relevant-reportable-condition-plandefinition"/>
     <meta>
         <versionId value="34"/>
-        <lastUpdated value="2019-10-01T23:20:16.000-04:00"/>
+        <lastUpdated value="2019-10-02T01:21:33.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
     <version value="1.0.0"/>
@@ -125,6 +133,14 @@
         <element id="PlanDefinition.jurisdiction.extension">
             <path value="PlanDefinition.jurisdiction.extension"/>
             <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <discriminator>
+                    <type value="profile"/>
+                    <path value="value.resolve()"/>
+                </discriminator>
                 <rules value="open"/>
             </slicing>
             <mapping>
