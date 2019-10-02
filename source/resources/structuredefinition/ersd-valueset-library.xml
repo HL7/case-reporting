@@ -5,6 +5,14 @@
     <meta>
         <versionId value="12"/>
         <lastUpdated value="2019-10-01T06:29:54.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^write"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-valueset-library"/>
     <version value="1.0.0"/>
@@ -13,7 +21,7 @@
     <status value="draft"/>
     <date value="2018-08-19"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="Defines the library containing the Reportable Condition Trigger Code value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses. "/>
+    <description value="Defines the library containing the eRSD value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses. "/>
     <fhirVersion value="4.0.0"/>
     <kind value="resource"/>
     <abstract value="false"/>
@@ -44,25 +52,22 @@
         </element>
         <element id="Library.identifier.value">
             <path value="Library.identifier.value"/>
-            <short value="The OID for the RCTC ValueSet Library"/>
+            <short value="The OID for the ValueSet Library"/>
             <definition value="The Object Identifier of the Reportable Condition Trigger Code library"/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
         <element id="Library.version">
             <path value="Library.version"/>
-            <short value="The version of the RCTC ValueSet Library."/>
-            <definition value="The RCTC Definition Version. Usually a date. "/>
+            <short value="Value Sets Definition Version"/>
+            <definition value="Value Sets Definition Version. Usually a date. "/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
         <element id="Library.name">
             <path value="Library.name"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Library.title">
-            <path value="Library.title"/>
+            <short value="Value Sets Name"/>
+            <definition value="Value Sets Name"/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
@@ -93,8 +98,10 @@
         </element>
         <element id="Library.description">
             <path value="Library.description"/>
+            <short value="Value Sets Release Description"/>
+            <definition value="Value Sets Release Description"/>
             <min value="1"/>
-            <patternMarkdown value="Triggers for initiating decision support for electronic case reports"/>
+            <mustSupport value="true"/>
         </element>
         <element id="Library.effectivePeriod">
             <path value="Library.effectivePeriod"/>
@@ -103,6 +110,8 @@
         </element>
         <element id="Library.effectivePeriod.start">
             <path value="Library.effectivePeriod.start"/>
+            <short value="Value Sets Effective Start Date"/>
+            <definition value="Value Sets Effective Start Date"/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
@@ -117,25 +126,21 @@
             </slicing>
             <min value="1"/>
         </element>
-        <element id="Library.relatedArtifact:sliceRCTCValueSet">
+        <element id="Library.relatedArtifact:sliceERSDValueSet">
             <path value="Library.relatedArtifact"/>
-            <sliceName value="sliceRCTCValueSet"/>
-            <short value="RCTC Value Set"/>
-            <definition value="Reference to one of the RCTC value sets"/>
+            <sliceName value="sliceERSDValueSet"/>
+            <short value="eRSD Value Set"/>
+            <definition value="Reference to one of the eRSD value sets"/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Library.relatedArtifact:sliceRCTCValueSet.type">
+        <element id="Library.relatedArtifact:sliceERSDValueSet.type">
             <path value="Library.relatedArtifact.type"/>
             <short value="composed-of"/>
             <definition value="The type of relationship to the related artifact. Fixed to composed-of."/>
             <patternCode value="composed-of"/>
         </element>
-        <element id="Library.relatedArtifact:sliceRCTCValueSet.display">
-            <path value="Library.relatedArtifact.display"/>
-            <min value="1"/>
-        </element>
-        <element id="Library.relatedArtifact:sliceRCTCValueSet.resource">
+        <element id="Library.relatedArtifact:sliceERSDValueSet.resource">
             <path value="Library.relatedArtifact.resource"/>
             <min value="1"/>
             <type>
