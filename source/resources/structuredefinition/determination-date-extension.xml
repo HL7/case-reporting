@@ -3,37 +3,53 @@
     xmlns="http://hl7.org/fhir">
     <id value="determination-date-extension"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2019-09-30T14:40:47.000-04:00"/>
+        <versionId value="9"/>
+        <lastUpdated value="2019-10-02T00:44:59.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^write"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^read"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/determination-date-extension"/>
     <name value="Determination_Date_Extension"/>
     <title value="Determination Date Extension"/>
     <status value="active"/>
-    <experimental value="false"/>
-    <date value="2019-08-01"/>
     <publisher value="HL7 Public Health Work Group"/>
     <description value="The date of determination of a status or observation."/>
     <fhirVersion value="4.0.0"/>
     <kind value="complex-type"/>
     <abstract value="false"/>
-    <context>
-        <type value="element"/>
-        <expression value="Observation"/>
-    </context>
-    <type value="dateTime"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/dateTime"/>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
     <derivation value="constraint"/>
     <differential>
-        <element id="dateTime">
-            <path value="dateTime"/>
+        <element id="Extension">
+            <path value="Extension"/>
         </element>
-        <element id="dateTime.value">
-            <path value="dateTime.value"/>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/determination-date-extension"/>
+        </element>
+        <element id="Extension.value[x]">
+            <path value="Extension.value[x]"/>
             <short value="Determination date."/>
             <definition value="Represents the determination date of a status or observation."/>
             <min value="1"/>
-            <max value="1"/>
+            <type>
+                <code value="dateTime"/>
+            </type>
         </element>
     </differential>
 </StructureDefinition>
