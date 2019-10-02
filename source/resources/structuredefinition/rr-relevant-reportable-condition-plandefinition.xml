@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-relevant-reportable-condition-plandefinition"/>
     <meta>
-        <versionId value="34"/>
-        <lastUpdated value="2019-10-02T01:21:33.000-04:00"/>
+        <versionId value="36"/>
+        <lastUpdated value="2019-10-02T06:50:03.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^read"/>
@@ -137,8 +137,13 @@
                     <type value="value"/>
                     <path value="url"/>
                 </discriminator>
+                <discriminator>
+                    <type value="profile"/>
+                    <path value="valueReference.reference.resolve()"/>
+                </discriminator>
                 <rules value="open"/>
             </slicing>
+            <min value="1"/>
             <mapping>
                 <identity value="CDA"/>
                 <map value="Reportability Response Coded Information Organizer/Relevant Reportable Condition Observation/Reportability Information Organizer/code"/>
