@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Observation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://hl7.org/fhir ../../../../../../../../../../Dropbox/03%20Work/Lantana/Temp_Files/fhir-all-xsd/fhir-all.xsd" xmlns="http://hl7.org/fhir">
-  <id value="observation-pregnancy-status-eve-everywoman" />
-  <meta>
-    <versionId value="2" />
-    <lastUpdated value="2019-08-29T03:04:12.000-04:00" />
-    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation" />
-  </meta>
-  <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-recorded-date-extension">
-    <valueDateTime value="2017-10-01" />
-  </extension>
-  <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/determination-date-extension">
-    <valueDateTime value="2017-10-01" />
-  </extension>
-  <status value="final" />
-  <code>
-    <coding>
-      <system value="http://loinc.org" />
-      <code value="82810-3" />
-      <display value="Pregnancy Status" />
-    </coding>
-  </code>
-  <subject>
-    <reference value="Patient/patient-ecr-eve-everywoman" />
-    <display value="Eve Everywoman" />
-  </subject>
-  <effectivePeriod>
-    <start value="2017-08-26" />
-  </effectivePeriod>
-  <valueCodeableConcept>
-    <coding>
-      <system value="http://snomed.info/sct" />
-      <code value="77386006" />
-      <display value="Pregnant (finding)" />
-    </coding>
-  </valueCodeableConcept>
-  <method>
-    <coding>
-      <system value="http://snomed.info/sct" />
-      <code value="16310003" />
-      <display value="Diagnostic ultrasonography (procedure)" />
-    </coding>
-  </method>
-  <component>
-    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/determination-date-extension">
-      <valueDateTime value="2017-10-01" />
+<Observation
+    xmlns="http://hl7.org/fhir">
+    <id value="observation-pregnancy-status-eve-everywoman"/>
+    <meta>
+        <versionId value="3"/>
+        <lastUpdated value="2019-10-02T01:20:03.000-04:00"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation"/>
+    </meta>
+    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-recorded-date-extension">
+        <valueDateTime value="2017-10-01"/>
     </extension>
-    <code>
-      <coding>
-        <system value="http://loinc.org" />
-        <code value="53691-2" />
-        <display value="Gestational age Estimated from patient reported estimated date of conception" />
-      </coding>
-    </code>
-    <valueQuantity>
-      <value value="143"/>
-      <unit value="d"/>
-    </valueQuantity>
-  </component>
-  <component>
     <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/determination-date-extension">
-      <valueDateTime value="2017-10-01" />
+        <valueDateTime value="2017-10-01"/>
     </extension>
+    <status value="final"/>
     <code>
-      <coding>
-        <system value="http://loinc.org" />
-        <code value="57064-8" />
-        <display value="Delivery date Estimated from date fundal height reaches umb" />
-      </coding>
+        <coding>
+            <system value="http://loinc.org"/>
+            <code value="82810-3"/>
+            <display value="Pregnancy Status"/>
+        </coding>
     </code>
-    <valueDateTime value="2018-05-01"/>
-  </component>
+    <subject>
+        <reference value="Patient/patient-ecr-eve-everywoman"/>
+        <display value="Eve Everywoman"/>
+    </subject>
+    <effectivePeriod>
+        <start value="2017-08-26"/>
+    </effectivePeriod>
+    <valueCodeableConcept>
+        <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="77386006"/>
+            <display value="Pregnant (finding)"/>
+        </coding>
+    </valueCodeableConcept>
+    <method>
+        <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="16310003"/>
+            <display value="Diagnostic ultrasonography (procedure)"/>
+        </coding>
+    </method>
+    <component>
+        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/determination-date-extension">
+            <valueDateTime value="2017-10-01"/>
+        </extension>
+        <code>
+            <coding>
+                <system value="http://loinc.org"/>
+                <code value="53691-2"/>
+                <display value="Gestational age Estimated from patient reported estimated date of conception"/>
+            </coding>
+        </code>
+        <valueQuantity>
+            <value value="143"/>
+            <unit value="d"/>
+        </valueQuantity>
+    </component>
+    <component>
+        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/determination-date-extension">
+            <valueDateTime value="2017-10-01"/>
+        </extension>
+        <code>
+            <coding>
+                <system value="http://loinc.org"/>
+                <code value="57064-8"/>
+                <display value="Delivery date Estimated from date fundal height reaches umb"/>
+            </coding>
+        </code>
+        <valueDateTime value="2018-05-01"/>
+    </component>
 </Observation>

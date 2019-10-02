@@ -27,10 +27,6 @@ active: profiles
 </thead>
 <tbody>
 <tr>
-<td><a href="StructureDefinition-determination-date-extension.html">Determination_Date_Extension</a></td>
-<td>The date of determination of a status or observation.</td>
-</tr>
-<tr>
 <td><a href="StructureDefinition-ecr-message-bundle.html">Ecr_Message_Bundle</a></td>
 <td>This Bundle profile represents an eICR Message Bundle. It contains the eCR MessageHeader and is for use in the eCR messaging paradigm.</td>
 </tr>
@@ -118,7 +114,7 @@ The profile defines three timing-related parameters for initiating case reports 
 </tr>
 <tr>
 <td><a href="StructureDefinition-ersd-valueset-library.html">Ersd_Valueset_Library</a></td>
-<td>Defines the library containing the Reportable Condition Trigger Code value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses. </td>
+<td>Defines the library containing the eRSD value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses. </td>
 </tr>
 <tr>
 <td><a href="StructureDefinition-last-menstrual-period.html">Last_Menstrual_Period</a></td>
@@ -138,17 +134,9 @@ The postpartum period, also known as the puerperium, refers to the time after de
 <td><a href="StructureDefinition-pregnancy-status-observation.html">Pregnancy_Status_Observation</a></td>
 <td>This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range.
 
-This profile is includes the determination method, determination date, and recorded date of the pregnancy status. It also contains profiles to represent various aspects of the pregnancy.
+This profile includes the determination method, determination date, and recorded date of the pregnancy status.
 
-Use the effectiveTime to indicate the date range over which the patient was pregnant/possibly pregnant/not pregnant/unknown. To record the date that the pregnancy status was recorded, use author/time and to record the date on which the pregnancy status determination was made, use performer/time.
-
-To record the plurality of the pregnancy, use the contained profile Pregnancy Plurality. To record the outcome(s) of the pregnancy, use the contained template Pregnancy Outcome (birth order is specified in the required entryRelationship/sequence element). To record the date of the first prenatal visit for this pregnancy, use the contained template First Prenatal Visit for this Pregnancy and to record the total number of prenatal care visits for this pregnancy use the contained template Total Number of Prenatal Care Visits for this Pregnancy.
-
-**TODO - update this to suit use case for just eCR**</td>
-</tr>
-<tr>
-<td><a href="StructureDefinition-pregnancy-status-recorded-date-extension.html">Pregnancy_Status_Recorded_Date_Extension</a></td>
-<td>The date the pregnancy status was recorded.</td>
+Use the effectiveTime to indicate the date range over which the patient was pregnant/possibly pregnant/not pregnant/unknown. To record the date that the pregnancy status was recorded, use the pregnancy-status-recorded-date-extension and to record the date on which the pregnancy status determination was made, use the determination-date-extension.</td>
 </tr>
 <tr>
 <td><a href="StructureDefinition-rr-communication.html">RR_Communication</a></td>
@@ -222,6 +210,10 @@ The Reportability Response Communication is also structured to allow:
 </thead>
 <tbody>
 <tr>
+<td><a href="StructureDefinition-determination-date-extension.html">Determination_Date_Extension</a></td>
+<td>The date of determination of a status or observation.</td>
+</tr>
+<tr>
 <td><a href="StructureDefinition-ecr-organization-extension.html">Ecr_Organization_Extension</a></td>
 <td>This extension represents an eCR Organization</td>
 </tr>
@@ -243,6 +235,10 @@ The reason may be entered either as:
 * Results Section
 * Medications Section
 * Immunization Section</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-pregnancy-status-recorded-date-extension.html">Pregnancy_Status_Recorded_Date_Extension</a></td>
+<td>The date the pregnancy status was recorded.</td>
 </tr>
 <tr>
 <td><a href="StructureDefinition-rr-determination-of-reportability-extension.html">RR_Determination_of_Reportability_Extension</a></td>

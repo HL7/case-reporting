@@ -1,41 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MessageHeader xmlns="http://hl7.org/fhir">
-  <id value="messageheader-ecr-ehr-requested-eicr" />
-  <meta>
-    <versionId value="9" />
-    <lastUpdated value="2019-10-01T12:46:40.000-04:00" />
-    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader" />
-    <tag>
-      <system value="http://terminology.hl7.org/CodeSystem/v3-ObservationValue" />
-      <code value="SUBSETTED" />
-      <display value="Resource encoded in summary mode" />
-    </tag>
-  </meta>
-  <eventCoding>
-    <system value="http://example.org/fhir/message-events" />
-    <code value="requested-eicr" />
-  </eventCoding>
-  <destination>
-    <name value="YMCA Acme Message Gateway" />
-    <target>
-      <reference value="Device/device-ecr-software-ymca" />
-    </target>
-    <endpoint value="http://example.org/ymca/fhir" />
-  </destination>
-  <sender>
-    <reference value="Organization/organization-ecr-salem-medical-center" />
-  </sender>
-  <source>
-    <name value="Acme Central Patient Registry" />
-    <software value="FooBar Patient Manager" />
-    <version value="3.1.45.AABB" />
-    <contact>
-      <system value="phone" />
-      <value value="+1 (555) 123 4567" />
-    </contact>
-    <endpoint value="http://example.org/salem-medical-center/fhir" />
-  </source>
-  <focus>
-    <reference value="Task/task-ecr-ehr-requested-eicr" />
-  </focus>
+<MessageHeader
+    xmlns="http://hl7.org/fhir">
+    <id value="messageheader-ecr-ehr-requested-eicr"/>
+    <meta>
+        <versionId value="10"/>
+        <lastUpdated value="2019-10-02T01:21:22.000-04:00"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader"/>
+        <tag>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ObservationValue"/>
+            <code value="SUBSETTED"/>
+            <display value="Resource encoded in summary mode"/>
+        </tag>
+    </meta>
+    <eventCoding>
+        <system value="http://example.org/fhir/message-events"/>
+        <code value="requested-eicr"/>
+    </eventCoding>
+    <destination>
+        <name value="YMCA Acme Message Gateway"/>
+        <target>
+            <reference value="Device/device-ecr-software-ymca"/>
+        </target>
+        <endpoint value="http://example.org/ymca/fhir"/>
+    </destination>
+    <sender>
+        <reference value="Organization/organization-ecr-salem-medical-center"/>
+    </sender>
+    <source>
+        <name value="Acme Central Patient Registry"/>
+        <software value="FooBar Patient Manager"/>
+        <version value="3.1.45.AABB"/>
+        <contact>
+            <system value="phone"/>
+            <value value="+1 (555) 123 4567"/>
+        </contact>
+        <endpoint value="http://example.org/salem-medical-center/fhir"/>
+    </source>
+    <focus>
+        <reference value="Task/task-ecr-ehr-requested-eicr"/>
+    </focus>
 </MessageHeader>

@@ -49,7 +49,7 @@ active: other
 </tr>
 <tr>
 <td>Composition</td>
-<td><a href="Composition-composition-eicr-pertussis-zika.html">Initial Public Health Case Report</a></td>
+<td><a href="Composition-composition-eicr-pertussis-zika.html">Initial Public Health Case Report - Pertussis/Zika example</a></td>
 </tr>
 <tr>
 <td>Condition</td>
@@ -81,7 +81,7 @@ active: other
 </tr>
 <tr>
 <td>Library</td>
-<td><a href="Library-library-rctc.html">Library_RCTC</a></td>
+<td><a href="Library-library-rctc.html">Reportable Condition Trigger Codes (RCTC)</a></td>
 </tr>
 <tr>
 <td>Location</td>
