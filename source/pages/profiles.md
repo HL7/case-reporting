@@ -301,6 +301,18 @@ If any of the trigger codes used to generate the eICR are from an outdated versi
 <td>This Extension profile represents the priority given to the whole communication or one or more external resources.</td>
 </tr>
 <tr>
+<td><a href="StructureDefinition-rr-responsible-agency-organization-extension.html">RR_Responsible_Agency_Organization_Extension</a></td>
+<td>This extension represents an RR Responsible Agency Organization</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-rr-routing-entity-organization-extension.html">RR_Routing_Entity_Organization_Extension</a></td>
+<td>This extension represents an RR Routing Entity Organization</td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-rr-rules-authoring-agency-organization-extension.html">RR_Rules_Authoring_Agency_Organization_Extension</a></td>
+<td>This extension represents an RR Rules Authoring Agency Organization</td>
+</tr>
+<tr>
 <td><a href="StructureDefinition-therapeutic-medication-response-extension.html">Therapeutic_Medication_Response_Extension</a></td>
 <td>This Extension profile represents represents a therapeutic response (as opposed to an undesired reaction) to the administration of a medication.</td>
 </tr>

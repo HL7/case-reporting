@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MessageHeader
+    xmlns="http://hl7.org/fhir">
+    <id value="messageheader-ecr-requested-eicr"/>
+    <meta>
+        <versionId value="5"/>
+        <lastUpdated value="2019-10-03T06:41:00.000-04:00"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader"/>
+        <tag>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ObservationValue"/>
+            <code value="SUBSETTED"/>
+            <display value="Resource encoded in summary mode"/>
+        </tag>
+    </meta>
+    <text>
+        <status value="generated"/>
+        <div
+            xmlns="http://www.w3.org/1999/xhtml">
+            <table
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform" class="bare">
+                <tr>
+                    <td>
+                        <b>Id:</b>
+                    </td>
+                    <td>messageheader-ecr-requested-eicr</td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Meta:</b>
+                    </td>
+                    <td>
+                        <ul style="list-style:none; padding-left:0; margin:0 0;">
+                            <li>http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader</li>
+                            <li>subsetted</li>
+                            <li>Code system: 
+                                <a href="http://terminology.hl7.org/CodeSystem/v3-ObservationValue">http://terminology.hl7.org/CodeSystem/v3-ObservationValue</a>
+                            </li>
+                            <li>Code: SUBSETTED</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>EventCoding:</b>
+                    </td>
+                    <td>
+                        <ul style="list-style:none; padding-left:0; margin:0 0;">
+                            <li>Code system: 
+                                <a href="http://example.org/fhir/message-events">http://example.org/fhir/message-events</a>
+                            </li>
+                            <li>Code: requested-eicr</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Destination:</b>
+                    </td>
+                    <td>
+                        <table class="bare">
+                            <tr>
+                                <td>
+                                    <b>Name:</b>
+                                </td>
+                                <td>YMCA Acme Message Gateway</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Target:</b>
+                                </td>
+                                <td>
+                                    <a href="Device-device-ecr-software-ymca.html">Device/device-ecr-software-ymca</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Endpoint:</b>
+                                </td>
+                                <td>http://example.org/ymca/fhir</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Sender:</b>
+                    </td>
+                    <td>
+                        <a href="Organization-organization-ecr-salem-medical-center.html">Organization/organization-ecr-salem-medical-center</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Source:</b>
+                    </td>
+                    <td>
+                        <table class="bare">
+                            <tr>
+                                <td>
+                                    <b>Name:</b>
+                                </td>
+                                <td>Acme Central Patient Registry</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Software:</b>
+                                </td>
+                                <td>FooBar Patient Manager</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Version:</b>
+                                </td>
+                                <td>Version: 3.1.45.AABB</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Contact:</b>
+                                </td>
+                                <td>
+                                    <ul style="list-style:none; padding-left:0; margin:0 0;">
+                                        <li>System: phone</li>
+                                        <li>+1 (555) 123 4567</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Endpoint:</b>
+                                </td>
+                                <td>http://example.org/salem-medical-center/fhir</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Focus:</b>
+                    </td>
+                    <td>
+                        <a href="Task-task-ecr-ehr-requested-eicr.html">Task/task-ecr-ehr-requested-eicr</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </text>
+    <eventCoding>
+        <system value="http://example.org/fhir/message-events"/>
+        <code value="requested-eicr"/>
+    </eventCoding>
+    <destination>
+        <name value="YMCA Acme Message Gateway"/>
+        <target>
+            <reference value="Device/device-ecr-software-ymca"/>
+        </target>
+        <endpoint value="http://example.org/ymca/fhir"/>
+    </destination>
+    <sender>
+        <reference value="Organization/organization-ecr-salem-medical-center"/>
+    </sender>
+    <source>
+        <name value="Acme Central Patient Registry"/>
+        <software value="FooBar Patient Manager"/>
+        <version value="3.1.45.AABB"/>
+        <contact>
+            <system value="phone"/>
+            <value value="+1 (555) 123 4567"/>
+        </contact>
+        <endpoint value="http://example.org/salem-medical-center/fhir"/>
+    </source>
+    <focus>
+        <reference value="Task/task-ecr-ehr-requested-eicr"/>
+    </focus>
+</MessageHeader>

@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="ecr-task"/>
     <meta>
-        <versionId value="8"/>
-        <lastUpdated value="2019-08-30T19:34:28.000-04:00"/>
+        <versionId value="9"/>
+        <lastUpdated value="2019-10-03T06:20:53.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-task"/>
     <version value="1.0.0"/>
@@ -31,6 +31,11 @@
         <element id="Task.businessStatus">
             <path value="Task.businessStatus"/>
             <mustSupport value="true"/>
+            <binding>
+                <strength value="extensible"/>
+                <description value="This value set contains codes that describe the eCR task businessStatus."/>
+                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-ecr-task-businessstatus"/>
+            </binding>
         </element>
         <element id="Task.focus">
             <path value="Task.focus"/>

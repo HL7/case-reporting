@@ -92,12 +92,8 @@ active: other
 <td><a href="MedicationAdministration-medicationadministration-eve-everywoman-azithromycin.html">medicationadministration-eve-everywoman-azithromycin</a></td>
 </tr>
 <tr>
-<td>MedicationStatement</td>
-<td><a href="MedicationStatement-medicationstatement-us-core-eve-everywoman-azithromycin.html">medicationstatement-us-core-eve-everywoman-azithromycin</a></td>
-</tr>
-<tr>
 <td>MessageHeader</td>
-<td><a href="MessageHeader-messageheader-ecr-ehr-requested-eicr.html">messageheader-ecr-ehr-requested-eicr</a></td>
+<td><a href="MessageHeader-messageheader-ecr-requested-eicr.html">messageheader-ecr-requested-eicr</a></td>
 </tr>
 <tr>
 <td>Observation</td>

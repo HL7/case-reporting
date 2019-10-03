@@ -1,41 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Observation
-    xmlns="http://hl7.org/fhir">
-    <id value="observation-rr-eicr-processing-status-reason"/>
-    <meta>
-        <versionId value="1"/>
-        <lastUpdated value="2019-06-05T00:18:36.000-04:00"/>
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation"/>
-    </meta>
-    <status value="final"/>
-    <code>
-        <coding>
-            <system value="urn:oid:2.16.840.1.114222.4.5.232"/>
-            <code value="RR6"/>
-            <display value="eICR Processing Status Reason"/>
-        </coding>
-    </code>
-    <valueCodeableConcept>
-        <coding>
+<Observation xmlns="http://hl7.org/fhir">
+   <id value="observation-rr-eicr-processing-status-reason"/>
+   <meta>
+      <versionId value="3"/>
+      <lastUpdated value="2019-10-03T05:15:38.000-04:00"/>
+      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation"/>
+   </meta>
+   <text>
+      <status value="generated"/>
+      <div xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+         <table xmlns:xsl="http://www.w3.org/1999/XSL/Transform" class="bare">
+            <tr>
+               <td>
+                  <b>Id:</b>
+               </td>
+               <td>observation-rr-eicr-processing-status-reason</td>
+            </tr>
+            <tr>
+               <td>
+                  <b>Meta:</b>
+               </td>
+               <td>
+                  <ul style="list-style:none; padding-left:0; margin:0 0;">
+                     <li>3</li>
+                     <li>2019-10-03T05:15:38.000-04:00</li>
+                     <li>http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation</li>
+                  </ul>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <b>Status:</b>
+               </td>
+               <td>final</td>
+            </tr>
+            <tr>
+               <td>
+                  <b>Code:</b>
+               </td>
+               <td>
+                  <ul style="list-style:none; padding-left:0; margin:0 0;">
+                     <li>Code: RR6</li>
+                     <li>System: urn:oid:2.16.840.1.114222.4.5.232</li>
+                     <li>
+                Display: eICR Processing Status Reason</li>
+                  </ul>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <b>Effective:</b>
+               </td>
+               <td/>
+            </tr>
+            <tr>
+               <td>
+                  <b>Value Codeable Concept:</b>
+               </td>
+               <td>
+                  <ul style="list-style:none; padding-left:0; margin:0 0;">
+                     <li>Code: RRVS30</li>
+                     <li>System: urn:oid:2.16.840.1.114222.4.5.274</li>
+                     <li>
+                Display: eICR was processed with the warning of: inactive RCTC code</li>
+                  </ul>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <b>Component:</b>
+               </td>
+               <td>
+                  <table class="bare">
+                     <tr>
+                        <td>
+                           <b>Code:</b>
+                        </td>
+                        <td>
+                           <ul style="list-style:none; padding-left:0; margin:0 0;">
+                              <li>Code: RRVS32</li>
+                              <li>System: urn:oid:2.16.840.1.114222.4.5.274</li>
+                              <li>
+                Display: Inactive RCTC code detail</li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <b>Value Codeable Concept:</b>
+                        </td>
+                        <td>
+                           <ul style="list-style:none; padding-left:0; margin:0 0;">
+                              <li>Code: 69092001</li>
+                              <li>System: <a href="http://snomed.info/sct">http://snomed.info/sct</a>
+                              </li>
+                              <li>
+                Display: Leptospirosis icterohemorrhagica (disorder)</li>
+                           </ul>
+                        </td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </table>
+      </div>
+   </text>
+   <status value="final"/>
+   <code>
+      <coding>
+         <system value="urn:oid:2.16.840.1.114222.4.5.232"/>
+         <code value="RR6"/>
+         <display value="eICR Processing Status Reason"/>
+      </coding>
+   </code>
+   <valueCodeableConcept>
+      <coding>
+         <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
+         <code value="RRVS30"/>
+         <display value="eICR was processed with the warning of: inactive RCTC code"/>
+      </coding>
+   </valueCodeableConcept>
+   <component>
+      <code>
+         <coding>
             <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
-            <code value="RRVS30"/>
-            <display value="eICR was processed with the warning of: inactive RCTC code"/>
-        </coding>
-    </valueCodeableConcept>
-    <component>
-        <code>
-            <coding>
-                <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
-                <code value="RRVS32"/>
-                <display value="Inactive RCTC code detail"/>
-            </coding>
-        </code>
-        <valueCodeableConcept>
-            <coding>
-                <system value="http://snomed.info/sct"/>
-                <code value="69092001"/>
-                <display value="Leptospirosis icterohemorrhagica (disorder)"/>
-            </coding>
-        </valueCodeableConcept>
-    </component>
+            <code value="RRVS32"/>
+            <display value="Inactive RCTC code detail"/>
+         </coding>
+      </code>
+      <valueCodeableConcept>
+         <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="69092001"/>
+            <display value="Leptospirosis icterohemorrhagica (disorder)"/>
+         </coding>
+      </valueCodeableConcept>
+   </component>
 </Observation>

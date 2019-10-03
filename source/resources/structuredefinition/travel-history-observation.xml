@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="travel-history-observation"/>
     <meta>
-        <versionId value="10"/>
-        <lastUpdated value="2019-10-01T20:58:44.000-04:00"/>
+        <versionId value="12"/>
+        <lastUpdated value="2019-10-02T20:15:10.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-observation"/>
     <version value="1.0.0"/>
@@ -77,22 +77,6 @@
             <type>
                 <code value="CodeableConcept"/>
             </type>
-            <example>
-                <label value="Example for CodeableConcept"/>
-                <valueCodeableConcept>
-                    <coding>
-                        <system value="urn:oid:1.0.3166.1"/>
-                        <code value="FJI"/>
-                        <display value="Fiji"/>
-                    </coding>
-                </valueCodeableConcept>
-            </example>
-            <mustSupport value="true"/>
-            <binding>
-                <strength value="extensible"/>
-                <description value="Geographical location history"/>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-geographical-location-history"/>
-            </binding>
         </element>
         <element id="Observation.component.value[x]:valueCodeableConcept.extension">
             <path value="Observation.component.valueCodeableConcept.extension"/>
@@ -118,7 +102,20 @@
         </element>
         <element id="Observation.component.value[x]:valueCodeableConcept.coding">
             <path value="Observation.component.valueCodeableConcept.coding"/>
+            <example>
+                <label value="Example for coding"/>
+                <valueCoding>
+                    <system value="urn:iso:std:iso:3166"/>
+                    <code value="FJI"/>
+                    <display value="Fiji"/>
+                </valueCoding>
+            </example>
             <mustSupport value="true"/>
+            <binding>
+                <strength value="extensible"/>
+                <description value="Geographical location history"/>
+                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-geographical-location-history"/>
+            </binding>
         </element>
         <element id="Observation.component.value[x]:valueCodeableConcept.text">
             <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">

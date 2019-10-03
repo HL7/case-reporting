@@ -37,10 +37,12 @@ active: terminology
 - [Reportability Priority (eCR) Value Set Value Set](ValueSet-valueset-reportability-priority-ecr.html)
 - [Therapeutic Response to Medication](ValueSet-2.16.840.1.113883.10.20.15.2.5.12.html)
 - [US Standard Occupational Classification Value Set Value Set](ValueSet-valueset-oes.html)
+- [Value Set eCR Task BusinessStatus](ValueSet-valueset-ecr-task-businessstatus.html)
 
 
 ### Code Systems
 
+- [Code System Task Business Status](CodeSystem-codesystem-task-businessStatus.html)
 - [US Standard Occupational Classification Code System](CodeSystem-codesystem-oes.html)
 
 
