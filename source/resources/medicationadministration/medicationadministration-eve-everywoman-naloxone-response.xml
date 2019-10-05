@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MedicationAdministration
     xmlns="http://hl7.org/fhir">
-    <id value="medicationadministration-eve-everywoman-azithromycin"/>
+    <id value="medicationadministration-eve-everywoman-naloxone-response"/>
     <meta>
-        <versionId value="10"/>
+        <versionId value="7"/>
         <lastUpdated value="2019-10-05T03:11:22.000-04:00"/>
     </meta>
     <text>
@@ -16,19 +16,27 @@
                     <td style="font-weight: bold">id:
             </td>
                     <td>
-                        <span title="id">medicationadministration-eve-everywoman-azithromycin</span>
+                        <span title="id">medicationadministration-eve-everywoman-naloxone-response</span>
                     </td>
                 </tr>
                 <tr>
-                    <td style="font-weight: bold">meta:
+                    <td style="font-weight: bold">therapeutic-medication-response-extension:
             </td>
                     <td>
                         <ul style="list-style:none; padding-left:0; margin:0 0;">
                             <li>
-                                <span title="versionId">6</span>
-                            </li>
-                            <li>
-                                <span title="lastUpdated">2019-10-03T03:29:30.000-04:00</span>
+                                <ul style="list-style:none; padding-left:0; margin:0 0;">
+                                    <li>
+                                        <span title="display">Patient's condition improved (finding)</span>  (
+                                        <span title="code">268910001</span> )
+          
+                                    </li>
+                                    <li>
+                                        <span title="system">
+                                            <a href="http://snomed.info/sct">http://snomed.info/sct</a>
+                                        </span>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </td>
@@ -46,21 +54,14 @@
                     <td>
                         <ul style="list-style:none; padding-left:0; margin:0 0;">
                             <li>
-                                <span title="text">Azithromycin 500 MG Oral Tablet</span>
+                                <span title="display">naloxone HCl 0.4 MG in 1 ML Injection</span>  (
+                                <span title="code">1659929</span> )
+          
                             </li>
                             <li>
-                                <ul style="list-style:none; padding-left:0; margin:0 0;">
-                                    <li>
-                                        <span title="display">Azithromycin 500 MG Oral Tablet</span>  (
-                                        <span title="code">248656</span> )
-          
-                                    </li>
-                                    <li>
-                                        <span title="system">
-                                            <a href="http://www.nlm.nih.gov/research/umls/rxnorm">http://www.nlm.nih.gov/research/umls/rxnorm</a>
-                                        </span>
-                                    </li>
-                                </ul>
+                                <span title="system">
+                                    <a href="http://www.nlm.nih.gov/research/umls/rxnorm">http://www.nlm.nih.gov/research/umls/rxnorm</a>
+                                </span>
                             </li>
                         </ul>
                     </td>
@@ -97,20 +98,13 @@
                     <td>
                         <table>
                             <tr>
-                                <td style="font-weight: bold">text:
-            </td>
-                                <td>
-                                    <span title="text">Two tablets at once</span>
-                                </td>
-                            </tr>
-                            <tr>
                                 <td style="font-weight: bold">route:
             </td>
                                 <td>
                                     <ul style="list-style:none; padding-left:0; margin:0 0;">
                                         <li>
-                                            <span title="display">Oral Route</span>  (
-                                            <span title="code">26643006</span> )
+                                            <span title="display">Gluteus maximus muscle</span>  (
+                                            <span title="code">206007</span> )
           
                                         </li>
                                         <li>
@@ -127,8 +121,8 @@
                                 <td>
                                     <ul style="list-style:none; padding-left:0; margin:0 0;">
                                         <li>
-                                            <span title="display">Swallow - dosing instruction imperative (qualifier value)</span>  (
-                                            <span title="code">421521009</span> )
+                                            <span title="display">Inject - dosing instruction imperative (qualifier value)</span>  (
+                                            <span title="code">422145002</span> )
           
                                         </li>
                                         <li>
@@ -147,12 +141,12 @@
                                         <li>
                                             <ul style="list-style:none; padding-left:0; margin:0 0;">
                                                 <li>
-                                                    <span title="value">2</span>
-                                                    <span title="code">TAB</span>
+                                                    <span title="value">1</span>
+                                                    <span title="code">mL</span>
                                                 </li>
                                                 <li>
                                                     <span title="system">
-                                                        <a href="http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm">http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm</a>
+                                                        <a href="http://unitsofmeasure.org">http://unitsofmeasure.org</a>
                                                     </span>
                                                 </li>
                                             </ul>
@@ -166,14 +160,22 @@
             </table>
         </div>
     </text>
+    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/therapeutic-medication-response-extension">
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="268910001"/>
+                <display value="Patient's condition improved (finding)"/>
+            </coding>
+        </valueCodeableConcept>
+    </extension>
     <status value="completed"/>
     <medicationCodeableConcept>
         <coding>
             <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
-            <code value="248656"/>
-            <display value="Azithromycin 500 MG Oral Tablet"/>
+            <code value="1659929"/>
+            <display value="naloxone HCl 0.4 MG in 1 ML Injection"/>
         </coding>
-        <text value="Azithromycin 500 MG Oral Tablet"/>
     </medicationCodeableConcept>
     <subject>
         <reference value="Patient/patient-ecr-eve-everywoman"/>
@@ -184,26 +186,25 @@
         <end value="2018-03-07"/>
     </effectivePeriod>
     <dosage>
-        <text value="Two tablets at once"/>
         <route>
             <coding>
                 <system value="http://snomed.info/sct"/>
-                <code value="26643006"/>
-                <display value="Oral Route"/>
+                <code value="206007"/>
+                <display value="Gluteus maximus muscle"/>
             </coding>
         </route>
         <method>
             <coding>
                 <system value="http://snomed.info/sct"/>
-                <code value="421521009"/>
-                <display value="Swallow - dosing instruction imperative (qualifier value)"/>
+                <code value="422145002"/>
+                <display value="Inject - dosing instruction imperative (qualifier value)"/>
             </coding>
         </method>
         <dose>
-            <value value="2"/>
-            <unit value="TAB"/>
-            <system value="http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"/>
-            <code value="TAB"/>
+            <value value="1"/>
+            <unit value="mL"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="mL"/>
         </dose>
     </dosage>
 </MedicationAdministration>

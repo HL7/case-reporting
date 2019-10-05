@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-eicr-processing-status-reason-observation"/>
     <meta>
-        <versionId value="8"/>
-        <lastUpdated value="2019-08-12T13:14:57.000-04:00"/>
+        <versionId value="13"/>
+        <lastUpdated value="2019-10-04T02:02:13.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation"/>
     <version value="1.0.0"/>
@@ -41,7 +41,6 @@
         </element>
         <element id="Observation.code">
             <path value="Observation.code"/>
-            <definition value="If the incoming eICR was not successfully processed for a determination of reportability, contains the reason it was not processed."/>
             <patternCodeableConcept>
                 <coding>
                     <system value="urn:oid:2.16.840.1.114222.4.5.232"/>
@@ -50,16 +49,15 @@
                 </coding>
             </patternCodeableConcept>
         </element>
-        <element id="Observation.value[x]:valueCodeableConcept">
-            <path value="Observation.valueCodeableConcept"/>
-            <sliceName value="valueCodeableConcept"/>
+        <element id="Observation.value[x]">
+            <path value="Observation.value[x]"/>
+            <short value="Processing status reason"/>
             <definition value="If the incoming eICR was not successfully processed for a determination of reportability, contains the reason it was not processed."/>
-            <min value="1"/>
             <type>
                 <code value="CodeableConcept"/>
             </type>
             <example>
-                <label value="General"/>
+                <label value="Example for CodeableConcept"/>
                 <valueCodeableConcept>
                     <coding>
                         <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
@@ -68,10 +66,10 @@
                     </coding>
                 </valueCodeableConcept>
             </example>
-            <mustSupport value="true"/>
             <binding>
                 <strength value="extensible"/>
                 <description value="This value set contains codes that describe the reason for the processing status (warning or error)."/>
+                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-eicr-processing-status-reason-ecr"/>
             </binding>
         </element>
         <element id="Observation.component">
@@ -100,6 +98,7 @@
                 </extension>
                 <strength value="extensible"/>
                 <description value="This value set contains codes that describe the type of eICR processing status detail."/>
+                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-eicr-processing-status-reason-detail-type-ecr"/>
             </binding>
         </element>
         <element id="Observation.component.value[x]">
@@ -125,18 +124,7 @@
             <mustSupport value="true"/>
             <mapping>
                 <identity value="CDA"/>
-                <map value="eICR Processing Status/eICR Processing Status Reason/eICR Processing Status Reason Detail[code=RRVS33]/value"/>
-                <comment value="Expected RCTC Version"/>
-            </mapping>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="eICR Processing Status Detail[code=”RRVS32”]/value"/>
-                <comment value="Inactive RCTC Code"/>
-            </mapping>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="eICR Processing Status Reason Detail[code=”RRVS31”]/value"/>
-                <comment value="Outdated RCTC Version"/>
+                <map value="eICR Processing Status/eICR Processing Status Reason/eICR Processing Status Reason Detail/value"/>
             </mapping>
         </element>
     </differential>

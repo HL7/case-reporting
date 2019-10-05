@@ -43,6 +43,7 @@ active: terminology
 ### Code Systems
 
 - [Code System Task Business Status](CodeSystem-codesystem-task-businessStatus.html)
+- [PHIN VS (CDC Local Coding System)](CodeSystem-2.16.840.1.114222.4.5.274.html)
 - [US Standard Occupational Classification Code System](CodeSystem-codesystem-oes.html)
 
 

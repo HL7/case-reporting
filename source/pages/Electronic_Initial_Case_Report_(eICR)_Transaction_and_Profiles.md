@@ -4,7 +4,7 @@ layout: default
 active: Electronic Initial Case Report (eICR) Transaction and Profiles
 ---
 
-[Previous Page](toc.html)
+[Previous Page](profiles.html)
 
 ### Electronic Initial Case Report (eICR) Transaction and Profiles
 
@@ -37,9 +37,5 @@ The following profiles and extensions have been defined for the eICR transaction
   <li><a href="StructureDefinition-eicr-initiation-reason-extension.html">eICR Manually Initiated Reason</a></li>
   <li><a href="StructureDefinition-travel-history-address-extension.html">Travel History Address</a></li>
 </ul>
-
-
-
-
 
 [Next Page](Reportability_Response_(RR)_Transaction_and_Profiles.html)

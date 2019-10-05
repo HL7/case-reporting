@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="pregnancy-status-recorded-date-extension"/>
+    <id value="date-determined-extension"/>
     <meta>
-        <versionId value="15"/>
-        <lastUpdated value="2019-10-02T06:31:33.000-04:00"/>
+        <versionId value="4"/>
+        <lastUpdated value="2019-10-03T20:11:34.000-04:00"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-recorded-date-extension"/>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/date-determined-extension"/>
     <version value="1.0.0"/>
-    <name value="Pregnancy_Status_Recorded_Date_Extension"/>
-    <title value="Pregnancy Status Recorded Date Extension"/>
+    <name value="Date_Determined_Extension"/>
+    <title value="Date Determined Extension"/>
     <status value="active"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="The date the pregnancy status was recorded."/>
+    <description value="The date a status or observation was determined (date of determination)."/>
     <fhirVersion value="4.0.0"/>
-    <mapping>
-        <identity value="CDA"/>
-        <name value="eCR FHIR to CDA Mapping"/>
-        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
-    </mapping>
     <kind value="complex-type"/>
     <abstract value="false"/>
     <context>
@@ -34,18 +29,16 @@
         </element>
         <element id="Extension.url">
             <path value="Extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-recorded-date-extension"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/date-determined-extension"/>
         </element>
         <element id="Extension.value[x]">
             <path value="Extension.value[x]"/>
+            <short value="Determination date."/>
+            <definition value="Represents the determination date of a status or observation."/>
             <min value="1"/>
             <type>
                 <code value="dateTime"/>
             </type>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="Pregnancy Status (SUPPLEMENTAL PREGNANCY)/author/time/@value"/>
-            </mapping>
         </element>
     </differential>
 </StructureDefinition>

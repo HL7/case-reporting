@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-priority-extension"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2019-06-24T21:37:23.000-04:00"/>
+        <versionId value="7"/>
+        <lastUpdated value="2019-10-04T03:58:38.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-priority-extension"/>
     <version value="1.0.0"/>
@@ -40,15 +40,17 @@
             <path value="Extension.url"/>
             <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-priority-extension"/>
         </element>
-        <element id="Extension.value[x]:valueCodeableConcept">
-            <path value="Extension.valueCodeableConcept"/>
-            <sliceName value="valueCodeableConcept"/>
+        <element id="Extension.value[x]">
+            <path value="Extension.value[x]"/>
+            <short value="Reportability priority"/>
+            <definition value="Priority given to the whole communication or one or more external resources."/>
             <min value="1"/>
+            <max value="1"/>
             <type>
                 <code value="CodeableConcept"/>
             </type>
             <example>
-                <label value="General"/>
+                <label value="Example for CodeableConcept"/>
                 <valueCodeableConcept>
                     <coding>
                         <system value="urn:oid:2.16.840.1.114222.4.5.232"/>
@@ -59,7 +61,8 @@
             </example>
             <binding>
                 <strength value="extensible"/>
-                <description value="Priority given to the whole communication or one or more external resources"/>
+                <description value="This value set contains codes that describe the reportability priority in a Reportability Response."/>
+                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-reportability-priority-ecr"/>
             </binding>
         </element>
     </differential>

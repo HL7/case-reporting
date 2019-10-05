@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="pregnancy-status-observation"/>
     <meta>
-        <versionId value="47"/>
-        <lastUpdated value="2019-10-02T05:23:48.000-04:00"/>
+        <versionId value="49"/>
+        <lastUpdated value="2019-10-03T20:41:15.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation"/>
     <version value="1.0.0"/>
@@ -13,7 +13,7 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range.&#xA;&#xA;This profile includes the determination method, determination date, and recorded date of the pregnancy status.&#xA;&#xA;Use the effectiveTime to indicate the date range over which the patient was pregnant/possibly pregnant/not pregnant/unknown. To record the date that the pregnancy status was recorded, use the pregnancy-status-recorded-date-extension and to record the date on which the pregnancy status determination was made, use the determination-date-extension."/>
+    <description value="This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range.&#xA;&#xA;This profile includes the determination method, determination date, and recorded date of the pregnancy status.&#xA;&#xA;Use the effectivePeriod to indicate the date range over which the patient was pregnant/possibly pregnant/not pregnant/unknown. To record the date that the pregnancy status was recorded, use the date-recorded-extension and to record the date on which the pregnancy status determination was made, use the date-determined-extension. If the effectivePeriod.end is not present it is assumed that the date range over which the pregnancy status is asserted is from effectivePeriod.start to the date in the date-recorded-extension. For example, if the effectivePeriod.start has been recorded as two months prior to the date contained in the date-recorded-extension, and there is no effectivePeriod.end recorded, no assumptions can be made about the pregnancy status after the date contained in the date-recorded-extension."/>
     <fhirVersion value="4.0.0"/>
     <mapping>
         <identity value="eCR-CDA"/>
@@ -45,10 +45,12 @@
         <element id="Observation.extension:extensionPregnancyStatusRecordedDate">
             <path value="Observation.extension"/>
             <sliceName value="extensionPregnancyStatusRecordedDate"/>
+            <short value="Pregnancy Status Recorded Date"/>
+            <definition value="The date the pregnancy status was recorded."/>
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-recorded-date-extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/date-recorded-extension"/>
             </type>
             <mustSupport value="true"/>
             <mapping>
@@ -59,10 +61,12 @@
         <element id="Observation.extension:extensionPregnancyStatusDeterminationDate">
             <path value="Observation.extension"/>
             <sliceName value="extensionPregnancyStatusDeterminationDate"/>
+            <short value="Pregnancy Status Determination Date"/>
+            <definition value="The date the pregnancy status was determined."/>
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/determination-date-extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/date-determined-extension"/>
             </type>
             <mustSupport value="true"/>
             <mapping>
@@ -168,7 +172,7 @@
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/determination-date-extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/date-determined-extension"/>
             </type>
             <mustSupport value="true"/>
             <mapping>
@@ -228,7 +232,7 @@
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/determination-date-extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/date-determined-extension"/>
             </type>
             <mustSupport value="true"/>
             <mapping>
