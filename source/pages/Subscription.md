@@ -4,7 +4,7 @@ layout: default
 active: Subscription
 ---
 
-[Previous Page](FHIR_Messaging_and_Basic_REST_Options.html)
+[Previous Page](Transport_Options.html)
 
 This implementation guide assumes that EHRs or other systems will be able to generate timely notifications to begin the triggering process when resources containing codes in the trigger code value sets appear in the system. Those notifications would go to an associated system or process in clinical care that could begin the initial case reporting process, and would likely access more data from the EHR.
 

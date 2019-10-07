@@ -1,10 +1,12 @@
 ---
-title: FHIR Messaging and Basic REST Options
+title: Transport Options
 layout: default
-active: FHIR Messaging and Basic REST Options
+active: Transport Options
 ---
 
 [Previous Page](Electronic_Reporting_and_Surveillance_Distribution_(eRSD)_Transaction_and_Profiles.html)
+
+There are two supported transport options that can be used individually or in combination. This flexibility is needed to support point-to-point transport as well as transport thought Health Information Exchanges and Health Information Networks.
 
 ### FHIR Messaging Option
 
