@@ -6,7 +6,7 @@ active: Transport Options
 
 [Previous Page](Electronic_Reporting_and_Surveillance_Distribution_(eRSD)_Transaction_and_Profiles.html)
 
-There are two supported transport options that can be used individually or in combination. This flexibility is needed to support point-to-point transport as well as transport thought Health Information Exchanges and Health Information Networks.
+There are two supported transport options that can be used individually or in combination. This flexibility is needed to support point-to-point transport as well as transport through Health Information Exchanges and Health Information Networks.
 
 ### FHIR Messaging Option
 
