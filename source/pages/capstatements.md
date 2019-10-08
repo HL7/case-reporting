@@ -24,11 +24,7 @@ active: capstatements
 </thead>
 <tbody>
 <tr>
-<td><a href="CapabilityStatement-capabilitystatement-ecr-client.html">CapabilityStatement_eCR_Client</a></td>
-<td>This resource defines the expected capabilities </td>
-</tr>
-<tr>
-<td><a href="CapabilityStatement-capabilitystatement-ecr-server.html">CapabilityStatement_eCR_Server</a></td>
+<td><a href="CapabilityStatement-capabilitystatement-ecr-server.html">CapabilityStatement_eCR</a></td>
 <td>This resource defines the expected capabilities </td>
 </tr>
 <tr>
