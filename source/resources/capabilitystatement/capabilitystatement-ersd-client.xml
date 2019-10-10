@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="capabilitystatement-ersd-client"/>
     <meta>
-        <versionId value="9"/>
-        <lastUpdated value="2019-10-01T14:11:34.000-04:00"/>
+        <versionId value="10"/>
+        <lastUpdated value="2019-10-10T01:54:50.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/CapabilityStatement/capabilitystatement-ersd-client"/>
     <version value="1.0"/>
@@ -24,27 +24,18 @@
             <type value="Bundle"/>
             <documentation value="The Bundle represents the artifacts that are to be distributed to subscribers. The Bundle contains the information necessary for implementers to update their systems. The Bundle typically includes PlanDefinition and ValueSet resources. The Bundle may also contain a message from the administrator that indicates the severity of the update."/>
             <interaction>
-                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-                    <valueCode value="SHALL"/>
-                </extension>
                 <code value="read"/>
             </interaction>
         </resource>
         <resource>
             <type value="ValueSet"/>
             <interaction>
-                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-                    <valueCode value="SHALL"/>
-                </extension>
                 <code value="read"/>
             </interaction>
         </resource>
         <resource>
             <type value="PlanDefinition"/>
             <interaction>
-                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-                    <valueCode value="SHALL"/>
-                </extension>
                 <code value="read"/>
             </interaction>
         </resource>
@@ -52,9 +43,6 @@
             <type value="Person"/>
             <documentation value="The Person resource is used by the eRSD server to associate one or more Subscriptions to an individual. The Person contains references to the Subscriptions associated with the Person."/>
             <interaction>
-                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-                    <valueCode value="MAY"/>
-                </extension>
                 <code value="read"/>
             </interaction>
         </resource>
@@ -62,9 +50,6 @@
             <type value="Subscription"/>
             <documentation value="A Subscription is used to notify a Person using the specified channel (email, rest-hook or email-based SMS) that a Bundle has been updated on the FHIR Server."/>
             <interaction>
-                <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-                    <valueCode value="MAY"/>
-                </extension>
                 <code value="read"/>
             </interaction>
         </resource>

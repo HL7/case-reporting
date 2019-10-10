@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-encounter"/>
     <meta>
-        <versionId value="31"/>
-        <lastUpdated value="2019-10-02T04:48:38.000-04:00"/>
+        <versionId value="45"/>
+        <lastUpdated value="2019-10-10T04:41:29.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
     <version value="1.0.0"/>
@@ -46,11 +46,27 @@
         </element>
         <element id="Encounter.class">
             <path value="Encounter.class"/>
+            <definition value="Where a trigger occurs outside of an encounter use code=&quot;PHC2237&quot; | codeSystem=&quot;urn:oid:2.16.840.1.114222.4.5.274&quot; | codeSystemName=&quot;PHIN VS (CDC Local Coding System)&quot; (External Historical Encounter)."/>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="eICR-CDA"/>
+                <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/componentOf/encompassingEncounter/code"/>
+            </mapping>
         </element>
         <element id="Encounter.type">
             <path value="Encounter.type"/>
-            <definition value="Where a trigger occurs outside of an encounter use code=&quot;PHC2237&quot; | codeSystem=&quot;urn:oid:2.16.840.1.114222.4.5.274&quot; | codeSystemName=&quot;PHIN VS (CDC Local Coding System)&quot; (External Historical Encounter)."/>
+            <mapping>
+                <identity value="eICR-CDA"/>
+                <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/componentOf/encompassingEncounter/code/translation"/>
+            </mapping>
+        </element>
+        <element id="Encounter.subject">
+            <path value="Encounter.subject"/>
+            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-patient"/>
+            </type>
             <mustSupport value="true"/>
         </element>
         <element id="Encounter.participant">
@@ -98,13 +114,13 @@
             <path value="Encounter.period"/>
             <short value="Patient encounter start and end times"/>
             <definition value="Start and end times of the patient encounter in which the eICR was triggered. Not present when a trigger occurs outside of an encounter."/>
-            <max value="1"/>
             <mustSupport value="true"/>
         </element>
         <element id="Encounter.period.start">
             <path value="Encounter.period.start"/>
             <short value="Encounter start."/>
             <definition value="Start of the encounter."/>
+            <mustSupport value="true"/>
             <mapping>
                 <identity value="CDA"/>
                 <map value="ClinicalDocument/componentOf/encompassingEncounter/effectiveTime/low"/>
@@ -115,57 +131,11 @@
             <path value="Encounter.period.end"/>
             <short value="Encounter end."/>
             <definition value="This value is associated with the patient's departure (e.g. discharge). If the patient has been discharged then end SHALL be present."/>
+            <mustSupport value="true"/>
             <mapping>
                 <identity value="CDA"/>
                 <map value="ClinicalDocument/componentOf/encompassingEncounter/effectiveTime/high"/>
                 <comment value="Discharge/Visit end Date/Time"/>
-            </mapping>
-        </element>
-        <element id="Encounter.diagnosis">
-            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
-                <valueString value="Diagnosis"/>
-            </extension>
-            <path value="Encounter.diagnosis"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eICR-CDA"/>
-                <map value="[eICR R2 STU2] Encounter Diagnosis (V2)"/>
-            </mapping>
-        </element>
-        <element id="Encounter.diagnosis.extension">
-            <path value="Encounter.diagnosis.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-        </element>
-        <element id="Encounter.diagnosis.extension:eICRTriggerCodeFlag">
-            <path value="Encounter.diagnosis.extension"/>
-            <sliceName value="eICRTriggerCodeFlag"/>
-            <short value="eICR Trigger Code Flag"/>
-            <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following sections:;&#xA;&#xA;- Encounters Section;&#xA;- Problem Section;&#xA;&#xA;- Plan of Treatment Section;&#xA;- Results Section"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
-            </type>
-            <mapping>
-                <identity value="eICR-CDA"/>
-                <map value="[eICR R2 STU2] Initial Case Report Trigger Code Problem Observation"/>
-            </mapping>
-        </element>
-        <element id="Encounter.diagnosis.condition">
-            <path value="Encounter.diagnosis.condition"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
-            </type>
-            <mapping>
-                <identity value="eICR-CDA"/>
-                <map value="[eICR R2 STU2] Problem Observation (V3)"/>
             </mapping>
         </element>
         <element id="Encounter.location">
@@ -177,7 +147,7 @@
             <isModifier value="false"/>
             <mapping>
                 <identity value="eICR-CDA"/>
-                <map value="[eICR R2 STU2] ClinicalDocument/componentOf/encompassingEncounter/location/healthCareFacility/code"/>
+                <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/componentOf/encompassingEncounter/location/healthCareFacility/code"/>
             </mapping>
         </element>
         <element id="Encounter.location.location">
@@ -186,7 +156,7 @@
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-location"/>
             </type>
-            <mustSupport value="false"/>
+            <mustSupport value="true"/>
             <isModifier value="false"/>
         </element>
         <element id="Encounter.serviceProvider">

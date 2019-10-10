@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="rr-manually-initiated-eicr-extension"/>
+    <id value="rr-eicr-initiation-type-extension"/>
     <meta>
-        <versionId value="7"/>
-        <lastUpdated value="2019-08-27T02:01:57.000-04:00"/>
+        <versionId value="4"/>
+        <lastUpdated value="2019-10-10T02:52:12.000-04:00"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-manually-initiated-eicr-extension"/>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-initiation-type-eicr-extension"/>
     <version value="1.0.0"/>
-    <name value="RR_Manually_Initiated_Eicr_Extension"/>
-    <title value="Manually Initiated eICR Extension"/>
+    <name value="RR_Eicr_Initiation_Type_Extension"/>
+    <title value="eICR Initiation Type Extension"/>
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Extension profile represents whether or not the eICR CDA document for which this Reportability Response is a response, was manually initiated by the provider. The eICR could also contain RCTC trigger codes."/>
+    <description value="If present this Extension profile represents that the eICR for which this Reportability Response is a response, was either manually or alternately initiated by the provider. The eICR could also contain RCTC trigger codes."/>
     <fhirVersion value="4.0.0"/>
     <kind value="complex-type"/>
     <abstract value="false"/>
@@ -39,15 +39,18 @@
         </element>
         <element id="Extension.url">
             <path value="Extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-manually-initiated-eicr-extension"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-initiation-type-eicr-extension"/>
         </element>
-        <element id="Extension.value[x]:valueBoolean">
-            <path value="Extension.valueBoolean"/>
-            <sliceName value="valueBoolean"/>
-            <min value="1"/>
+        <element id="Extension.value[x]">
+            <path value="Extension.value[x]"/>
             <type>
-                <code value="boolean"/>
+                <code value="code"/>
             </type>
+            <binding>
+                <strength value="extensible"/>
+                <description value="This value set contains codes that describe alternative eICR initiation types."/>
+                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-eicr-initiation-ecr"/>
+            </binding>
         </element>
     </differential>
 </StructureDefinition>

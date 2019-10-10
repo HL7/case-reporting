@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-composition"/>
     <meta>
-        <versionId value="88"/>
-        <lastUpdated value="2019-10-02T01:28:26.000-04:00"/>
+        <versionId value="112"/>
+        <lastUpdated value="2019-10-10T06:07:30.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
     <version value="1.0.0"/>
@@ -131,6 +131,10 @@
             </type>
             <mustSupport value="true"/>
             <isModifier value="false"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] ClinicalDocument/componentOf/encompassingEncounter"/>
+            </mapping>
         </element>
         <element id="Composition.date">
             <path value="Composition.date"/>
@@ -178,6 +182,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceEncountersSection"/>
             <short value="Encounters Section"/>
+            <definition value="Encounters Section"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -189,7 +194,8 @@
         </element>
         <element id="Composition.section:sliceEncountersSection.code">
             <path value="Composition.section.code"/>
-            <short value="Encounters"/>
+            <short value="Encounters Section code"/>
+            <definition value="Encounters Section code"/>
             <min value="1"/>
             <patternCodeableConcept>
                 <coding>
@@ -205,6 +211,8 @@
         </element>
         <element id="Composition.section:sliceEncountersSection.text">
             <path value="Composition.section.text"/>
+            <short value="Encounters Section narrative"/>
+            <definition value="Encounters Section narrative"/>
             <min value="1"/>
             <mustSupport value="true"/>
             <mapping>
@@ -216,25 +224,46 @@
             <path value="Composition.section.entry"/>
             <slicing>
                 <discriminator>
-                    <type value="profile"/>
+                    <type value="type"/>
                     <path value="resolve()"/>
                 </discriminator>
                 <rules value="open"/>
             </slicing>
             <mustSupport value="true"/>
         </element>
-        <element id="Composition.section:sliceEncountersSection.entry:sliceEICREncounter">
+        <element id="Composition.section:sliceEncountersSection.entry:sliceEICREncounterDiagnosis">
             <path value="Composition.section.entry"/>
-            <sliceName value="sliceEICREncounter"/>
+            <sliceName value="sliceEICREncounterDiagnosis"/>
+            <short value="Encounter Diagnosis entry"/>
+            <definition value="The eICR Trigger Code Flag (extension) is present for an Encounter Diagnosis, based on a trigger code match of the diagnosis (condition.code) to the eRSD PlanDefinition Diagnosis Trigger.&#xA;&#xA;Set Condition.category=&quot;encounter-diagnosis&quot; in eICR Condition when used as an Encounter Diagnosis."/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
             </type>
             <mustSupport value="true"/>
             <mapping>
                 <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Encounters Section (entries required) (V3)/Encounter Activities (V3)"/>
+                <map value="[eICR R2 STU2] Encounter Activities (V3)/Problem Observation (V3) + Encounter Activities (V3)/Initial Case Report Trigger Code Problem Observation (V2)"/>
             </mapping>
+        </element>
+        <element id="Composition.section:sliceEncountersSection.entry:sliceEICREncounterDiagnosis.extension">
+            <path value="Composition.section.entry.extension"/>
+            <slicing>
+                <rules value="open"/>
+            </slicing>
+        </element>
+        <element id="Composition.section:sliceEncountersSection.entry:sliceEICREncounterDiagnosis.extension:sliceTriggerEncounterDiagnosis">
+            <path value="Composition.section.entry.extension"/>
+            <sliceName value="sliceTriggerEncounterDiagnosis"/>
+            <short value="Trigger code flag"/>
+            <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. "/>
+            <min value="0"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
+            </type>
+            <mustSupport value="true"/>
         </element>
         <element id="Composition.section:sliceHistoryOfPresentIllnessSection">
             <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
@@ -243,6 +272,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceHistoryOfPresentIllnessSection"/>
             <short value="History of Present Illness Section"/>
+            <definition value="History of Present Illness Section"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -254,7 +284,8 @@
         </element>
         <element id="Composition.section:sliceHistoryOfPresentIllnessSection.code">
             <path value="Composition.section.code"/>
-            <short value="History of Present Illness"/>
+            <short value="History of Present Illness code"/>
+            <definition value="History of Present Illness code"/>
             <min value="1"/>
             <patternCodeableConcept>
                 <coding>
@@ -271,8 +302,8 @@
         </element>
         <element id="Composition.section:sliceHistoryOfPresentIllnessSection.text">
             <path value="Composition.section.text"/>
-            <short value="History of present illness"/>
-            <definition value="History of present illness"/>
+            <short value="History of Present Illness narrative"/>
+            <definition value="History of Present Illness narrative"/>
             <min value="1"/>
             <mustSupport value="true"/>
             <mapping>
@@ -288,6 +319,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceReasonForVisitSection"/>
             <short value="Reason for Visit Section"/>
+            <definition value="Reason for Visit Section"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -299,7 +331,8 @@
         </element>
         <element id="Composition.section:sliceReasonForVisitSection.code">
             <path value="Composition.section.code"/>
-            <short value="Reason for Visit"/>
+            <short value="Reason for Visit code"/>
+            <definition value="Reason for Visit code"/>
             <min value="1"/>
             <patternCodeableConcept>
                 <coding>
@@ -316,8 +349,8 @@
         </element>
         <element id="Composition.section:sliceReasonForVisitSection.text">
             <path value="Composition.section.text"/>
-            <short value="Reason for visit"/>
-            <definition value="Reason for visit"/>
+            <short value="Reason for Visit narrative"/>
+            <definition value="Reason for Visit narrative"/>
             <min value="1"/>
             <mustSupport value="true"/>
             <mapping>
@@ -333,6 +366,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceSocialHistorySection"/>
             <short value="Social History Section"/>
+            <definition value="Social History Section"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -344,7 +378,8 @@
         </element>
         <element id="Composition.section:sliceSocialHistorySection.code">
             <path value="Composition.section.code"/>
-            <short value="Social History"/>
+            <short value="Social History Section code"/>
+            <definition value="Social History Section code"/>
             <min value="1"/>
             <patternCodeableConcept>
                 <coding>
@@ -361,6 +396,8 @@
         </element>
         <element id="Composition.section:sliceSocialHistorySection.text">
             <path value="Composition.section.text"/>
+            <short value="Social History Section narrative"/>
+            <definition value="Social History Section narrative"/>
             <min value="1"/>
             <mustSupport value="true"/>
             <mapping>
@@ -382,6 +419,8 @@
         <element id="Composition.section:sliceSocialHistorySection.entry:sliceODHPastOrPresentJob">
             <path value="Composition.section.entry"/>
             <sliceName value="sliceODHPastOrPresentJob"/>
+            <short value="ODH Past or Present Job entry"/>
+            <definition value="ODH Past or Present Job entry"/>
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/odh/StructureDefinition/odh-PastOrPresentJob"/>
@@ -395,6 +434,8 @@
         <element id="Composition.section:sliceSocialHistorySection.entry:sliceODHUsualWork">
             <path value="Composition.section.entry"/>
             <sliceName value="sliceODHUsualWork"/>
+            <short value="ODH Usual Work entry"/>
+            <definition value="ODH Usual Work entry"/>
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/odh/StructureDefinition/odh-UsualWork"/>
@@ -408,6 +449,8 @@
         <element id="Composition.section:sliceSocialHistorySection.entry:sliceTravelHistory">
             <path value="Composition.section.entry"/>
             <sliceName value="sliceTravelHistory"/>
+            <short value="ODH Travel History entry"/>
+            <definition value="ODH Travel History entry"/>
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-observation"/>
@@ -419,28 +462,6 @@
                 <map value="[eICR R2 STU2] Travel History"/>
             </mapping>
         </element>
-        <element id="Composition.section:sliceSocialHistorySection.entry:sliceOccupationHistory">
-            <path value="Composition.section.entry"/>
-            <sliceName value="sliceOccupationHistory"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-occupation-history-observation"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Past or Present Occupation"/>
-            </mapping>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Usual Occupation Observation"/>
-            </mapping>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Occupational Hazard Observation"/>
-            </mapping>
-        </element>
         <element id="Composition.section:sliceProblemSection">
             <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
                 <valueString value="Section"/>
@@ -448,6 +469,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceProblemSection"/>
             <short value="Problem Section"/>
+            <definition value="Problem Section"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -459,7 +481,8 @@
         </element>
         <element id="Composition.section:sliceProblemSection.code">
             <path value="Composition.section.code"/>
-            <short value="Problem List"/>
+            <short value="Problem Section code"/>
+            <definition value="Problem Section code"/>
             <min value="1"/>
             <patternCodeableConcept>
                 <coding>
@@ -476,6 +499,8 @@
         </element>
         <element id="Composition.section:sliceProblemSection.text">
             <path value="Composition.section.text"/>
+            <short value="Problem Section narrative"/>
+            <definition value="Problem Section narrative"/>
             <min value="1"/>
             <mustSupport value="true"/>
             <mapping>
@@ -497,6 +522,8 @@
         <element id="Composition.section:sliceProblemSection.entry:sliceEICRCondition">
             <path value="Composition.section.entry"/>
             <sliceName value="sliceEICRCondition"/>
+            <short value="eICR Condition entry"/>
+            <definition value="The eICR Trigger Code Flag (extension) is present for an eICR Condition (diagnosis), based on a trigger code match of the diagnosis (condition.code) to the eRSD PlanDefinition Diagnosis Trigger."/>
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
@@ -505,13 +532,7 @@
             <isModifier value="false"/>
             <mapping>
                 <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Problem Observation (V3)"/>
-                <comment value="Problem (if extensionTriggerConditionnot present)"/>
-            </mapping>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Initial Case Report Trigger Code Problem Observation (V2)"/>
-                <comment value="Diagnosis Trigger (if extensionTriggerConditionpresent)"/>
+                <map value="[eICR R2 STU2] Problem Observation (V3) + Initial Case Report Trigger Code Problem Observation (V2)"/>
             </mapping>
         </element>
         <element id="Composition.section:sliceProblemSection.entry:sliceEICRCondition.extension">
@@ -523,11 +544,6 @@
                 </discriminator>
                 <rules value="open"/>
             </slicing>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="Initial Case Report Trigger Code Problem Observation"/>
-                <comment value="Diagnosis (Trigger)"/>
-            </mapping>
         </element>
         <element id="Composition.section:sliceProblemSection.entry:sliceEICRCondition.extension:sliceTriggerCondition">
             <path value="Composition.section.entry.extension"/>
@@ -557,6 +573,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceMedicationsAdministeredSection"/>
             <short value="Medications Administered Section"/>
+            <definition value="Medications Administered Section"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -568,7 +585,8 @@
         </element>
         <element id="Composition.section:sliceMedicationsAdministeredSection.code">
             <path value="Composition.section.code"/>
-            <short value="Medications Administered"/>
+            <short value="Medications Administered Section code"/>
+            <definition value="Medications Administered Section code"/>
             <min value="1"/>
             <patternCodeableConcept>
                 <coding>
@@ -578,11 +596,21 @@
             </patternCodeableConcept>
             <mustSupport value="true"/>
             <isModifier value="false"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Medications Administered Section (V2)/code"/>
+            </mapping>
         </element>
         <element id="Composition.section:sliceMedicationsAdministeredSection.text">
             <path value="Composition.section.text"/>
+            <short value="Medications Administered Section narrative"/>
+            <definition value="Medications Administered Section narrative"/>
             <min value="1"/>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Medications Administered Section (V2)/text"/>
+            </mapping>
         </element>
         <element id="Composition.section:sliceMedicationsAdministeredSection.entry">
             <path value="Composition.section.entry"/>
@@ -598,12 +626,18 @@
         <element id="Composition.section:sliceMedicationsAdministeredSection.entry:sliceMedicationAdministration">
             <path value="Composition.section.entry"/>
             <sliceName value="sliceMedicationAdministration"/>
+            <short value="Medication Administration entry"/>
+            <definition value="The eICR Trigger Code Flag (extension) is present for an MedicationAdministration, based on a trigger code match of the medication (MedicationAdministration.medicationCodeableConcept) to the eRSD PlanDefinition Medications Trigger."/>
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/StructureDefinition/MedicationAdministration"/>
             </type>
             <mustSupport value="true"/>
             <isModifier value="false"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Medication Activity (V2)/Medication Information (V2) + Medication Activity (V2)/Initial Case Report Trigger Code Medication Information"/>
+            </mapping>
         </element>
         <element id="Composition.section:sliceMedicationsAdministeredSection.entry:sliceMedicationAdministration.extension">
             <path value="Composition.section.entry.extension"/>
@@ -618,6 +652,8 @@
         <element id="Composition.section:sliceMedicationsAdministeredSection.entry:sliceMedicationAdministration.extension:sliceTriggerMedicationAdministered">
             <path value="Composition.section.entry.extension"/>
             <sliceName value="sliceTriggerMedicationAdministered"/>
+            <short value="eICR Trigger Code Flag"/>
+            <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eICR to be generated."/>
             <max value="1"/>
             <type>
                 <code value="Extension"/>
@@ -631,6 +667,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceResultsSection"/>
             <short value="Results Section"/>
+            <definition value="Results Section"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -642,7 +679,8 @@
         </element>
         <element id="Composition.section:sliceResultsSection.code">
             <path value="Composition.section.code"/>
-            <short value="Relevant diagnostic tests and/or laboratory data"/>
+            <short value="Results Section code"/>
+            <definition value="Results Section code"/>
             <min value="1"/>
             <patternCodeableConcept>
                 <coding>
@@ -652,11 +690,21 @@
             </patternCodeableConcept>
             <mustSupport value="true"/>
             <isModifier value="false"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Results Section (entries required) (V3)/code"/>
+            </mapping>
         </element>
         <element id="Composition.section:sliceResultsSection.text">
             <path value="Composition.section.text"/>
+            <short value="Results Section narrative"/>
+            <definition value="Results Section narrative"/>
             <min value="1"/>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Results Section (entries required) (V3)/text"/>
+            </mapping>
         </element>
         <element id="Composition.section:sliceResultsSection.entry">
             <path value="Composition.section.entry"/>
@@ -678,6 +726,10 @@
             </type>
             <mustSupport value="true"/>
             <isModifier value="false"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Result Observation (V3) + Initial Case Report Trigger Code Result Observation (V2)"/>
+            </mapping>
         </element>
         <element id="Composition.section:sliceResultsSection.entry:sliceUSCoreObservationResults.extension">
             <path value="Composition.section.entry.extension"/>
@@ -712,6 +764,7 @@
             <path value="Composition.section"/>
             <sliceName value="slicePlanOfTreatmentSection"/>
             <short value="Plan of Treatment Section"/>
+            <definition value="Plan of Treatment Section"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -733,11 +786,19 @@
             </patternCodeableConcept>
             <mustSupport value="true"/>
             <isModifier value="false"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Plan of Treatment Section (V2)/code"/>
+            </mapping>
         </element>
         <element id="Composition.section:slicePlanOfTreatmentSection.text">
             <path value="Composition.section.text"/>
             <min value="1"/>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Plan of Treatment Section (V2)/text"/>
+            </mapping>
         </element>
         <element id="Composition.section:slicePlanOfTreatmentSection.entry">
             <path value="Composition.section.entry"/>
@@ -753,7 +814,7 @@
         <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceEICRServiceRequest">
             <path value="Composition.section.entry"/>
             <sliceName value="sliceEICRServiceRequest"/>
-            <short value="eICR Service Request"/>
+            <short value="eICR Service Request entry"/>
             <definition value="The eICR Trigger Code Flag (extension) is present for a laboratory test order, based on a trigger code match of the lab test (observation.code) to the eRSD PlanDefinition Lab Obs Test Name Trigger or the lab test result (observation.value) to the eRSD PlanDefinition Organism Substance Trigger."/>
             <type>
                 <code value="Reference"/>
@@ -761,6 +822,10 @@
             </type>
             <mustSupport value="true"/>
             <isModifier value="false"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Planned Observation (V2) + Initial Case Report Trigger Code Lab Test Order (V2)"/>
+            </mapping>
         </element>
         <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceEICRServiceRequest.extension">
             <path value="Composition.section.entry.extension"/>
@@ -791,13 +856,18 @@
         <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceUSCoreMedicationRequest">
             <path value="Composition.section.entry"/>
             <sliceName value="sliceUSCoreMedicationRequest"/>
-            <short value="US Core Medication Request"/>
+            <short value="US Core Medication Request entry"/>
+            <definition value="The eICR Trigger Code Flag (extension) is present for a MedicationRequest, based on a trigger code match of the medication (MedicationRequest.medicationCodeableConcept) to the eRSD PlanDefinition Medications Trigger."/>
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"/>
             </type>
             <mustSupport value="true"/>
             <isModifier value="false"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Planned Medication Activity (V2)/Medication Information (V2) + Planned Medication Activity (V2)/Initial Case Report Trigger Code Medication Information"/>
+            </mapping>
         </element>
         <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceUSCoreMedicationRequest.extension">
             <path value="Composition.section.entry.extension"/>
@@ -832,6 +902,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceImmunizationsSection"/>
             <short value="Immunizations Section"/>
+            <definition value="Immunizations Section"/>
             <max value="1"/>
             <mustSupport value="true"/>
             <isModifier value="false"/>
@@ -852,11 +923,19 @@
             </patternCodeableConcept>
             <mustSupport value="true"/>
             <isModifier value="false"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Immunizations Section (entries required) (V3)/code"/>
+            </mapping>
         </element>
         <element id="Composition.section:sliceImmunizationsSection.text">
             <path value="Composition.section.text"/>
             <min value="1"/>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Immunizations Section (entries required) (V3)/text"/>
+            </mapping>
         </element>
         <element id="Composition.section:sliceImmunizationsSection.entry">
             <path value="Composition.section.entry"/>
@@ -872,6 +951,8 @@
         <element id="Composition.section:sliceImmunizationsSection.entry:sliceUSCoreImmunization">
             <path value="Composition.section.entry"/>
             <sliceName value="sliceUSCoreImmunization"/>
+            <short value="Immunization entry"/>
+            <definition value="The eICR Trigger Code Flag (extension) is present for an Immunization, based on a trigger code match of the vaccine (Immunization.vaccineCode) to the eRSD PlanDefinition Immunizations Trigger."/>
             <min value="1"/>
             <type>
                 <code value="Reference"/>
@@ -880,8 +961,8 @@
             <mustSupport value="true"/>
             <isModifier value="false"/>
             <mapping>
-                <identity value="CDA"/>
-                <map value="Immunization Activity (V3)"/>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Immunization Activity (V3)/Immunization Medication Information (V2) + Immunization Activity (V3)/Initial Case Report Trigger Code Immunization Medication Information"/>
                 <comment value="Immunization Status"/>
             </mapping>
         </element>
@@ -912,6 +993,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceVitalSignsSection"/>
             <short value="Vital Signs Section"/>
+            <definition value="Vital Signs Section"/>
             <max value="1"/>
             <mustSupport value="true"/>
             <isModifier value="false"/>
@@ -932,11 +1014,19 @@
             </patternCodeableConcept>
             <mustSupport value="true"/>
             <isModifier value="false"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Vital Signs Section (entries required) (V3)/code"/>
+            </mapping>
         </element>
         <element id="Composition.section:sliceVitalSignsSection.text">
             <path value="Composition.section.text"/>
             <min value="1"/>
             <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Vital Signs Section (entries required) (V3)/text"/>
+            </mapping>
         </element>
         <element id="Composition.section:sliceVitalSignsSection.entry">
             <path value="Composition.section.entry"/>
@@ -959,10 +1049,16 @@
             </type>
             <mustSupport value="true"/>
             <isModifier value="false"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Vital Signs Organizer (V3)/Vital Sign Observation (V2)"/>
+            </mapping>
         </element>
         <element id="Composition.section:slicePregnancySection">
             <path value="Composition.section"/>
             <sliceName value="slicePregnancySection"/>
+            <short value="Pregnancy Section"/>
+            <definition value="Pregnancy Section"/>
             <max value="1"/>
             <mustSupport value="true"/>
             <mapping>

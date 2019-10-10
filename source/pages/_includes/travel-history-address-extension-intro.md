@@ -4,4 +4,4 @@ layout: default
 active: StructureDefinition-travel-history-address-extension-intro
 ---
 
-This Extension profile represents where the patient traveled to as an address e.g.: country, state, city, street address (if applicable). At the least, address must contain the country.
+This Extension profile represents where the patient traveled to as an address e.g.: country, state, city, street address (if applicable). At the least, address must contain the country. State is required if the country is US. If country is not specified, it's assumed to be US. If country is something other than US, the state **MAY** be present but **MAY** be bound to different vocabularies.

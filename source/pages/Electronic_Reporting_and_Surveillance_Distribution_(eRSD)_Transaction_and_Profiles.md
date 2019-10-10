@@ -29,7 +29,8 @@ The Subscription does not require FHIR implementation on the receiving (EHR) end
 </ul>
 
 <ul>
-  <li><a href="StructureDefinition-ersd-valueset-library.html">eRSD Valueset Library</a></li>
+  <li><a href="StructureDefinition-ersd-valueset-library.html">eRSD ValueSet Library</a></li>
+	<li><a href="StructureDefinition-ersd-valueset.html">eRSD ValueSet</a></li>
 </ul>
 
 [Next Page](Transport_Options.html)

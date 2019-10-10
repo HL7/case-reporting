@@ -4,4 +4,4 @@ layout: default
 active: CapabilityStatement-capabilitystatement-ecr-server-intro
 ---
 
-This resource defines the expected capabilities 
+This resource defines the expected capabilities for both client and serve participating in eCR exchange
