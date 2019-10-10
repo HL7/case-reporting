@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="capabilitystatement-ersd-client"/>
     <meta>
-        <versionId value="10"/>
-        <lastUpdated value="2019-10-10T01:54:50.000-04:00"/>
+        <versionId value="13"/>
+        <lastUpdated value="2019-10-10T12:06:31.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/CapabilityStatement/capabilitystatement-ersd-client"/>
     <version value="1.0"/>
@@ -22,6 +22,8 @@
         <mode value="client"/>
         <resource>
             <type value="Bundle"/>
+            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-message-bundle"/>
             <documentation value="The Bundle represents the artifacts that are to be distributed to subscribers. The Bundle contains the information necessary for implementers to update their systems. The Bundle typically includes PlanDefinition and ValueSet resources. The Bundle may also contain a message from the administrator that indicates the severity of the update."/>
             <interaction>
                 <code value="read"/>
@@ -29,12 +31,15 @@
         </resource>
         <resource>
             <type value="ValueSet"/>
+            <documentation value="A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between CodeSystem definitions and their use in coded elements."/>
             <interaction>
                 <code value="read"/>
             </interaction>
         </resource>
         <resource>
             <type value="PlanDefinition"/>
+            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
+            <documentation value="A plan definition is a pre-defined group of actions to be taken in particular circumstances, such as the triggering of a ERSD subscription, often including conditional elements, options, and other decision points."/>
             <interaction>
                 <code value="read"/>
             </interaction>

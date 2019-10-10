@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="capabilitystatement-ecr-server"/>
     <meta>
-        <versionId value="23"/>
-        <lastUpdated value="2019-10-09T20:07:16.000-04:00"/>
+        <versionId value="33"/>
+        <lastUpdated value="2019-10-10T17:14:58.000-04:00"/>
     </meta>
     <text>
         <status value="generated"/>
@@ -37,6 +37,7 @@
         <resource>
             <type value="Composition"/>
             <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
+            <documentation value="Defines a set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. The Composition resource provides the basic structure of a FHIR document. The full content of the document is expressed using a Bundle containing the Composition and its entries."/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -53,6 +54,7 @@
         <resource>
             <type value="Communication"/>
             <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication"/>
+            <documentation value="This resource is a record of a communication even if it is planned or has failed. A communication is a conveyance of information from one entity, a sender, to another entity, a receiver. The sender and receivers may be patients, practitioners, related persons, organizations, or devices. "/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -71,11 +73,8 @@
             <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization"/>
             <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization"/>
             <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization-extension"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization-extension"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization-extension"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization-extension"/>
             <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization"/>
+            <documentation value="This resource may be used in a shared registry of contact and other information for various organizations or it can be used merely as a support for other resources that need to reference organizations, perhaps as a document, message or as a contained resource."/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -91,6 +90,8 @@
         </resource>
         <resource>
             <type value="Encounter"/>
+            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
+            <documentation value="An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient."/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -106,8 +107,8 @@
         </resource>
         <resource>
             <type value="Location"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-location"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-location-relevance-extension"/>
+            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-location"/>
+            <documentation value="Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated."/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -129,6 +130,7 @@
             <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation"/>
             <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-outcome-observation"/>
             <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation"/>
+            <documentation value="Observation allows expressing a name-value pair or structured collection of name-value pairs."/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -144,6 +146,7 @@
         </resource>
         <resource>
             <type value="StructureDefinition"/>
+            <documentation value="A definition of a FHIR structure. This resource is used to describe the underlying resources, data types defined in FHIR, and also for describing extensions and constraints on resources and data types."/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -159,6 +162,8 @@
         </resource>
         <resource>
             <type value="PlanDefinition"/>
+            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
+            <documentation value="This resource allows for the definition of various types of plans as a sharable, consumable, and executable artifact. The resource is general enough to support the description of a broad range of clinical artifacts such as clinical decision support rules, order sets and protocols. A plan definition is a pre-defined group of actions to be taken in particular circumstances, often including conditional elements, options, and other decision points."/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -177,27 +182,50 @@
         <mode value="client"/>
         <resource>
             <type value="Composition"/>
+            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
+            <documentation value="Defines a set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. The Composition resource provides the basic structure of a FHIR document. The full content of the document is expressed using a Bundle containing the Composition and its entries."/>
         </resource>
         <resource>
             <type value="Communication"/>
+            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication"/>
+            <documentation value="This resource is a record of a communication even if it is planned or has failed. A communication is a conveyance of information from one entity, a sender, to another entity, a receiver. The sender and receivers may be patients, practitioners, related persons, organizations, or devices. "/>
         </resource>
         <resource>
             <type value="Organization"/>
+            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization"/>
+            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization"/>
+            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization"/>
+            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization"/>
+            <documentation value="This resource may be used in a shared registry of contact and other information for various organizations or it can be used merely as a support for other resources that need to reference organizations, perhaps as a document, message or as a contained resource."/>
         </resource>
         <resource>
             <type value="Encounter"/>
+            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
+            <documentation value="An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient."/>
         </resource>
         <resource>
             <type value="Location"/>
+            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-location"/>
+            <documentation value="Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated."/>
         </resource>
         <resource>
             <type value="Observation"/>
+            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-observation"/>
+            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation"/>
+            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation"/>
+            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-outcome-observation"/>
+            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation"/>
+            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-occupation-history-observation"/>
+            <documentation value="Observation allows expressing a name-value pair or structured collection of name-value pairs."/>
         </resource>
         <resource>
             <type value="PlanDefinition"/>
+            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
+            <documentation value="This resource allows for the definition of various types of plans as a sharable, consumable, and executable artifact. The resource is general enough to support the description of a broad range of clinical artifacts such as clinical decision support rules, order sets and protocols. A plan definition is a pre-defined group of actions to be taken in particular circumstances, often including conditional elements, options, and other decision points."/>
         </resource>
         <resource>
             <type value="StructureDefinition"/>
+            <documentation value="A definition of a FHIR structure. This resource is used to describe the underlying resources, data types defined in FHIR, and also for describing extensions and constraints on resources and data types."/>
         </resource>
     </rest>
 </CapabilityStatement>

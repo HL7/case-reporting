@@ -14,29 +14,29 @@ One approach for this is using the current FHIR R4 Subscription model, where a u
 ## Topics:
 **Diagnosis_Problem**
 
-Condition?code:in=http%3A%2F%2Fhl7.org%2Ffhir%2Fus%2Fecr%2FValueSet%2Fdxtc
+Condition?code:in=http://hl7.org/fhir/us/ecr/ValueSet/dxtc
 
 **Organism_Substance**
 
-Condition?code:in=http%3A%2F%2Fhl7.org%2Ffhir%2Fus%2Fecr%2FValueSet%2Fostc
+Condition?code:in=http://hl7.org/fhir/us/ecr/ValueSet/ostc
 
 **Lab Order Test**
 
-ServiceRequest?code:in=http%3A%2F%2Fhl7.org%2Ffhir%2Fus%2Fecr%2FValueSet%2Flotc
+ServiceRequest?code:in=http://hl7.org/fhir/us/ecr/ValueSet/lotc
 
 **Lab Obs Test Name**
 
-Observation?code:in=http%3A%2F%2Fhl7.org%2Ffhir%2Fus%2Fecr%2FValueSet%2Flrtc
+Observation?code:in=http://hl7.org/fhir/us/ecr/ValueSet/lrtc
 
 **Medications**
 
-MedicationAdministration?code:in=http%3A%2F%2Fhl7.org%2Ffhir%2Fus%2Fecr%2FValueSet%2Fmrtc
+MedicationAdministration?code:in=http://hl7.org/fhir/us/ecr/ValueSet/mrtc
 
-MedicationDispense?code:in=http%3A%2F%2Fhl7.org%2Ffhir%2Fus%2Fecr%2FValueSet%2Fmrtc
+MedicationDispense?code:in=http://hl7.org/fhir/us/ecr/ValueSet/mrtc
 
-MedicationRequest?code:in=http%3A%2F%2Fhl7.org%2Ffhir%2Fus%2Fecr%2FValueSet%2Fmrtc
+MedicationRequest?code:in=http://hl7.org/fhir/us/ecr/ValueSet/mrtc
 
-MedicationStatement?code:in=http%3A%2F%2Fhl7.org%2Ffhir%2Fus%2Fecr%2FValueSet%2Fmrtc
+MedicationStatement?code:in=http://hl7.org/fhir/us/ecr/ValueSet/mrtc
 
 
 
