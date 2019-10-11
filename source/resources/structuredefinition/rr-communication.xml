@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-communication"/>
     <meta>
-        <versionId value="51"/>
-        <lastUpdated value="2019-10-11T00:08:30.000-04:00"/>
+        <versionId value="52"/>
+        <lastUpdated value="2019-10-11T04:19:30.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication"/>
     <version value="1.0.0"/>
@@ -291,10 +291,6 @@
             </type>
             <mustSupport value="true"/>
         </element>
-        <element id="Communication.payload:sliceEICRInformation.extension:extensionEICRProcessingStatus.url">
-            <path value="Communication.payload.extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-extension"/>
-        </element>
         <element id="Communication.payload:sliceEICRInformation.extension:extensionAlternatelyManuallyInitiatedEICR">
             <path value="Communication.payload.extension"/>
             <sliceName value="extensionAlternatelyManuallyInitiatedEICR"/>
@@ -307,14 +303,6 @@
                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-initiation-type-eicr-extension"/>
             </type>
             <mustSupport value="true"/>
-        </element>
-        <element id="Communication.payload:sliceEICRInformation.extension:extensionAlternatelyManuallyInitiatedEICR.url">
-            <path value="Communication.payload.extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-manually-initiated-eicr-extension"/>
-            <mapping>
-                <identity value="identity"/>
-                <map value="map"/>
-            </mapping>
         </element>
         <element id="Communication.payload:sliceEICRInformation.extension:extensionEICRReceiptTime">
             <path value="Communication.payload.extension"/>

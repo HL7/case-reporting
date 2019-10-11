@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-composition"/>
     <meta>
-        <versionId value="117"/>
-        <lastUpdated value="2019-10-11T01:00:25.000-04:00"/>
+        <versionId value="119"/>
+        <lastUpdated value="2019-10-11T05:51:18.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
     <version value="1.0.0"/>
@@ -13,7 +13,7 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Composition profile represents an electronic initial case report (eICR). It describes the content requirements for the eICR including:         &#xA;&#xA;* patient demographics         &#xA;* patient pregnancy status         &#xA;* patient occupation and travel history         &#xA;* provider and facility information         &#xA;* laboratory orders, tests, and results         &#xA;* signs, symptoms, and diagnoses&#xA;* medication and immunization information&#xA;* flags for the existence of reportable condition trigger codes in diagnoses, ordered/resulted laboratory tests, medications, and immunizations&#xA;&#xA;TODO - update"/>
+    <description value="This Composition profile represents an electronic initial case report (eICR). It describes the content requirements for the eICR including:         &#xA;&#xA;* patient demographics         &#xA;* patient pregnancy status         &#xA;* patient occupation and travel history         &#xA;* provider and facility information         &#xA;* laboratory orders, tests, and results         &#xA;* signs, symptoms, and diagnoses&#xA;* medication and immunization information&#xA;* flags for the existence of reportable condition trigger codes in diagnoses, ordered/resulted laboratory tests, medications, and immunizations"/>
     <fhirVersion value="4.0.0"/>
     <mapping>
         <identity value="eCR-CDA"/>
@@ -249,6 +249,10 @@
         <element id="Composition.section:sliceEncountersSection.entry:sliceEICREncounterDiagnosis.extension">
             <path value="Composition.section.entry.extension"/>
             <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
                 <rules value="open"/>
             </slicing>
         </element>
