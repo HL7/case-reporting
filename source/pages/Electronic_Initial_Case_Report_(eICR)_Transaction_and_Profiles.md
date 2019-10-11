@@ -16,7 +16,7 @@ There may be several different intermediaries involved in the transmission inclu
 In this implementation guide the reference transport transaction is a FHIR POST, but other transport mechanisms may be added or substituted as the data travel to the appropriate public health agencies.
 In the FHIR eICR transaction to PHAs the RR payload may be added to provide the PHAs with information about what has been determined to be reportable, what PHAs have been sent eICR information, and what else has been communicated to healthcare.
 
-The following profiles and extensions have been defined for the eICR transactions. The eICR Composition profile is the starting point for the transaction and all the other profiles are referenced from that profile.
+The following profiles and extensions have been defined for the eICR transactions. The eICR Composition profile is the starting point for the transaction and all the other profiles are referenced from that profile (see diagram below).
 
 #### Profiles
 <ul>
@@ -45,5 +45,7 @@ The following profiles and extensions have been defined for the eICR transaction
 	<li><a href="StructureDefinition-date-determined-extension.html">Date Determined Extension</a></li>
 	<li><a href="StructureDefinition-date-recorded-extension.html">Date Recorded Extension</a></li>
 </ul>
+
+<table><tr><td><img src="FHIR eICR Profile Hierarchy.png" /></td></tr></table>
 
 [Next Page](Reportability_Response_(RR)_Transaction_and_Profiles.html)

@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-composition"/>
     <meta>
-        <versionId value="113"/>
-        <lastUpdated value="2019-10-10T16:57:18.000-04:00"/>
+        <versionId value="117"/>
+        <lastUpdated value="2019-10-11T01:00:25.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
     <version value="1.0.0"/>
@@ -1102,33 +1102,11 @@
                 <rules value="open"/>
             </slicing>
         </element>
-        <element id="Composition.section:slicePregnancySection.entry:slicePostpartumStatus">
-            <path value="Composition.section.entry"/>
-            <sliceName value="slicePostpartumStatus"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/postpartum-status"/>
-            </type>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Postpartum Status"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:slicePregnancySection.entry:sliceLastMenstrualPeriod">
-            <path value="Composition.section.entry"/>
-            <sliceName value="sliceLastMenstrualPeriod"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/last-menstrual-period"/>
-            </type>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Last Menstrual Period (V2)"/>
-            </mapping>
-        </element>
         <element id="Composition.section:slicePregnancySection.entry:slicePregnancyStatusObservation">
             <path value="Composition.section.entry"/>
             <sliceName value="slicePregnancyStatusObservation"/>
+            <short value="Pregnancy Status Observation entry"/>
+            <definition value="Pregnancy Status Observation entry"/>
             <min value="1"/>
             <max value="*"/>
             <type>
@@ -1138,6 +1116,45 @@
             <mapping>
                 <identity value="eCR-CDA"/>
                 <map value="[eICR R2 STU2] Pregnancy Status Observation (SUPPLEMENTAL PREGNANCY)"/>
+            </mapping>
+        </element>
+        <element id="Composition.section:slicePregnancySection.entry:slicePregnancyOutcome">
+            <path value="Composition.section.entry"/>
+            <sliceName value="slicePregnancyOutcome"/>
+            <short value="Pregnancy Outcome entry"/>
+            <definition value="Pregnancy Outcome entry"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-outcome-observation"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Composition.section:slicePregnancySection.entry:sliceLastMenstrualPeriod">
+            <path value="Composition.section.entry"/>
+            <sliceName value="sliceLastMenstrualPeriod"/>
+            <short value="Last Menstrual Period entry"/>
+            <definition value="Last Menstrual Period entry"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/last-menstrual-period"/>
+            </type>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Last Menstrual Period (V2)"/>
+            </mapping>
+        </element>
+        <element id="Composition.section:slicePregnancySection.entry:slicePostpartumStatus">
+            <path value="Composition.section.entry"/>
+            <sliceName value="slicePostpartumStatus"/>
+            <short value="Postpartum Status entry"/>
+            <definition value="Postpartum Status entry"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/postpartum-status"/>
+            </type>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Postpartum Status"/>
             </mapping>
         </element>
     </differential>

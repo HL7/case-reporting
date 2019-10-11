@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-eicr-initiation-type-extension"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2019-10-10T02:52:12.000-04:00"/>
+        <versionId value="6"/>
+        <lastUpdated value="2019-10-11T00:11:10.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-initiation-type-eicr-extension"/>
     <version value="1.0.0"/>
@@ -15,6 +15,11 @@
     <publisher value="HL7 Public Health Work Group"/>
     <description value="If present this Extension profile represents that the eICR for which this Reportability Response is a response, was either manually or alternately initiated by the provider. The eICR could also contain RCTC trigger codes."/>
     <fhirVersion value="4.0.0"/>
+    <mapping>
+        <identity value="eCR-CDA"/>
+        <name value="eCR FHIR to CDA Mapping"/>
+        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
+    </mapping>
     <kind value="complex-type"/>
     <abstract value="false"/>
     <context>
@@ -27,14 +32,12 @@
     <differential>
         <element id="Extension">
             <path value="Extension"/>
-            <short value="Manually Initiated eICR"/>
-            <definition value="This extension indicates whether or not the eICR CDA document for which this Reportability Response is a response, was manually initiated by the provider. The eICR could also contain RCTC trigger codes."/>
             <min value="1"/>
             <max value="1"/>
             <isModifier value="false"/>
             <mapping>
-                <identity value="cda-rr"/>
-                <map value="Manually Initiated eICR"/>
+                <identity value="eCR-CDA"/>
+                <map value="Manually/Alternately Initiated eICR"/>
             </mapping>
         </element>
         <element id="Extension.url">

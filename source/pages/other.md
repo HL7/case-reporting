@@ -57,7 +57,15 @@ active: other
 </tr>
 <tr>
 <td>Condition</td>
+<td><a href="Condition-condition-eicr-eve-everywoman-diabetes.html">condition-eicr-eve-everywoman-diabetes</a></td>
+</tr>
+<tr>
+<td>Condition</td>
 <td><a href="Condition-condition-eicr-eve-everywoman-pertussis.html">condition-eicr-eve-everywoman-pertussis</a></td>
+</tr>
+<tr>
+<td>Condition</td>
+<td><a href="Condition-condition-eicr-eve-everywoman-zika.html">condition-eicr-eve-everywoman-zika</a></td>
 </tr>
 <tr>
 <td>Device</td>
@@ -65,7 +73,19 @@ active: other
 </tr>
 <tr>
 <td>Encounter</td>
-<td><a href="Encounter-encounter-eicr-diagnosis-eve-everywoman-20180401.html">encounter-eicr-diagnosis-eve-everywoman-20180401</a></td>
+<td><a href="Encounter-encounter-eicr-eve-everywoman-completed-inpatient.html">encounter-eicr-eve-everywoman-completed-inpatient</a></td>
+</tr>
+<tr>
+<td>Encounter</td>
+<td><a href="Encounter-encounter-eicr-eve-everywoman-current-inpatient.html">encounter-eicr-eve-everywoman-current-inpatient</a></td>
+</tr>
+<tr>
+<td>Encounter</td>
+<td><a href="Encounter-encounter-eicr-eve-everywoman-external-historical.html">encounter-eicr-eve-everywoman-external-historical</a></td>
+</tr>
+<tr>
+<td>Encounter</td>
+<td><a href="Encounter-encounter-eicr-eve-everywoman-outpatient.html">encounter-eicr-eve-everywoman-outpatient</a></td>
 </tr>
 <tr>
 <td>Endpoint</td>
@@ -178,6 +198,10 @@ active: other
 <tr>
 <td>Practitioner</td>
 <td><a href="Practitioner-practitioner-us-core-henry-seven.html">practitioner-us-core-henry-seven</a></td>
+</tr>
+<tr>
+<td>PractitionerRole</td>
+<td><a href="PractitionerRole-practitionerrole-henry-seven.html">practitionerrole-henry-seven</a></td>
 </tr>
 <tr>
 <td>ServiceRequest</td>

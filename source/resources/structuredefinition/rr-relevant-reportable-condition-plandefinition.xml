@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-relevant-reportable-condition-plandefinition"/>
     <meta>
-        <versionId value="39"/>
-        <lastUpdated value="2019-10-02T18:11:08.000-04:00"/>
+        <versionId value="40"/>
+        <lastUpdated value="2019-10-11T00:22:08.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
     <version value="1.0.0"/>
@@ -100,21 +100,9 @@
             <min value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization-extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization"/>
             </type>
             <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.publisher.extension:rulesAuthoringAgency.url">
-            <path value="PlanDefinition.publisher.extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization-extension"/>
-        </element>
-        <element id="PlanDefinition.publisher.extension:rulesAuthoringAgency.value[x]:valueReference">
-            <path value="PlanDefinition.publisher.extension.valueReference"/>
-            <sliceName value="valueReference"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization"/>
-            </type>
         </element>
         <element id="PlanDefinition.jurisdiction">
             <path value="PlanDefinition.jurisdiction"/>

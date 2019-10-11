@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-communication"/>
     <meta>
-        <versionId value="49"/>
-        <lastUpdated value="2019-10-10T02:54:25.000-04:00"/>
+        <versionId value="51"/>
+        <lastUpdated value="2019-10-11T00:08:30.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication"/>
     <version value="1.0.0"/>
@@ -258,7 +258,7 @@
             <path value="Communication.payload"/>
             <sliceName value="sliceEICRInformation"/>
             <short value="Electronic Initial Case Report Information"/>
-            <definition value="This payload slice contains information about the eICR Composition to which this Communication is a response. The date/time of receipt and a document reference are represented in the referenced Electronic Initial Case Report Composition Profile and the processing status of the eICR Composition is contained in the eICR Processing Status profile. If the eICR Composition was manually initiated by a healthcare provider, this is indicated by the presence of the Manually Initiated eICR extension.&#xA;&#xA;This payload slice is always present in the Reportability Response Communication.&#xA;&#xA;The text element (narrative block) in this section is only populated and displayed when the eICR CDA document was not processed (eICR Processing Status/code=&quot;RRVS22&quot;, &quot;eICR was not processed - error&quot;) and that text element contains the eICR processing status reason(s).&#xA;"/>
+            <definition value="This payload slice contains information about the eICR Composition to which this Communication is a response. The date/time of receipt and a document reference are represented in the referenced Electronic Initial Case Report Composition Profile and the processing status of the eICR Composition is contained in the eICR Processing Status profile. If the eICR Composition was manually or alternately initiated by a healthcare provider, this is indicated by the presence of the Initiation Type eICR extension.&#xA;&#xA;This payload slice is always present in the Reportability Response Communication.&#xA;&#xA;The text element (narrative block) in this section is only populated and displayed when the eICR CDA document was not processed (eICR Processing Status/code=&quot;RRVS22&quot;, &quot;eICR was not processed - error&quot;) and that text element contains the eICR processing status reason(s).&#xA;"/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
@@ -291,12 +291,6 @@
             </type>
             <mustSupport value="true"/>
         </element>
-        <element id="Communication.payload:sliceEICRInformation.extension:extensionEICRProcessingStatus.id">
-            <path value="Communication.payload.extension.id"/>
-            <min value="1"/>
-            <fixedString value="eicr-processing-status"/>
-            <mustSupport value="true"/>
-        </element>
         <element id="Communication.payload:sliceEICRInformation.extension:extensionEICRProcessingStatus.url">
             <path value="Communication.payload.extension.url"/>
             <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-extension"/>
@@ -305,24 +299,14 @@
             <path value="Communication.payload.extension"/>
             <sliceName value="extensionAlternatelyManuallyInitiatedEICR"/>
             <short value="Alternately or Manually Initiated eICR"/>
-            <definition value="This extension indicates whether or not the eICR CDA document for which this Reportability Response is a response, was either alternately or manually initiated. The eICR could also contain RCTC trigger codes (automatic trigger code initiation)."/>
-            <min value="1"/>
+            <definition value="The presence of this extension indicates whether or not the eICR CDA document for which this Reportability Response is a response, was either alternately or manually initiated. The eICR could also contain RCTC trigger codes (automatic trigger code initiation)."/>
+            <min value="0"/>
             <max value="1"/>
             <type>
                 <code value="Extension"/>
                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-initiation-type-eicr-extension"/>
             </type>
             <mustSupport value="true"/>
-        </element>
-        <element id="Communication.payload:sliceEICRInformation.extension:extensionAlternatelyManuallyInitiatedEICR.id">
-            <path value="Communication.payload.extension.id"/>
-            <min value="1"/>
-            <fixedString value="manually-initiated-eicr"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="Manually Initiated eICR/code=PHC1464]"/>
-            </mapping>
         </element>
         <element id="Communication.payload:sliceEICRInformation.extension:extensionAlternatelyManuallyInitiatedEICR.url">
             <path value="Communication.payload.extension.url"/>

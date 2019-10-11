@@ -28,7 +28,7 @@ It also should be provided to EHR System Administrators to confirm reporting and
 
 The Communication resource was chosen rather than the Composition resource for the top level Reportability Response resource as the use case of the response back to the provider is more suited to Communication in that it is a record of communication that has occurred and simply a conveyance of information from the sender to a receiver. This differs from Composition which is a structure for grouping information for purposes of persistence and attestability.
 
-The following profiles and extensions have been defined for the Reportability Response transactions. The Reportability Response Communication profile is the starting point and all the other profiles are referenced from this profile.
+The following profiles and extensions have been defined for the Reportability Response transactions. The Reportability Response Communication profile is the starting point and all the other profiles are referenced from this profile (see diagram below).
 
 #### Profiles
 <ul>
@@ -61,5 +61,7 @@ The following profiles and extensions have been defined for the Reportability Re
   <li><a href="StructureDefinition-rr-routing-entity-organization-extension.html">Routing Entity Organization Extension</a></li>
   <li><a href="StructureDefinition-rr-eicr-receipt-time-extension.html">eICR Receipt Time Extension</a></li>
 </ul>
+
+<table><tr><td><img src="FHIR RR Profile Hierarchy.png" /></td></tr></table>
 
 [Next Page](Electronic_Reporting_and_Surveillance_Distribution_(eRSD)_Transaction_and_Profiles.html)
