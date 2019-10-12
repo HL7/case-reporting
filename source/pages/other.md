@@ -216,6 +216,18 @@ active: other
 <td><a href="ServiceRequest-servicerequest-eicr-zika.html">servicerequest-eicr-zika</a></td>
 </tr>
 <tr>
+<td>Subscription</td>
+<td><a href="Subscription-subscription-dxtc.html">subscription-dxtc</a></td>
+</tr>
+<tr>
+<td>Subscription</td>
+<td><a href="Subscription-subscription-lotc.html">subscription-lotc</a></td>
+</tr>
+<tr>
+<td>Subscription</td>
+<td><a href="Subscription-subscription-ostc.html">subscription-ostc</a></td>
+</tr>
+<tr>
 <td>Task</td>
 <td><a href="Task-task-ecr-ehr-requested-eicr.html">task-ecr-ehr-requested-eicr</a></td>
 </tr>

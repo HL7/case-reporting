@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="encounter-eicr-eve-everywoman-external-historical"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2019-10-11T05:02:45.000-04:00"/>
+        <versionId value="3"/>
+        <lastUpdated value="2019-10-11T22:32:46.000-04:00"/>
         <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
     </meta>
     <text>
@@ -23,6 +23,18 @@
                     <td style="font-weight: bold">meta</td>
                     <td>
                         <table>
+                            <tr>
+                                <td style="font-weight: bold">versionId</td>
+                                <td>
+                                    <span title="versionId">2</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">lastUpdated</td>
+                                <td>
+                                    <span title="lastUpdated">2019-10-11T05:02:45.000-04:00</span>
+                                </td>
+                            </tr>
                             <tr>
                                 <td style="font-weight: bold">profile</td>
                                 <td>
@@ -72,6 +84,23 @@
                     </td>
                 </tr>
                 <tr>
+                    <td style="font-weight: bold">type</td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td style="font-weight: bold">data-absent-reason</td>
+                                <td>
+                                    <ul style="list-style:none; padding-left:0; margin:0 0;">
+                                        <li>
+                                            <span title="valueCode">not-applicable</span>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
                     <td style="font-weight: bold">subject</td>
                     <td>
                         <ul style="list-style:none; padding-left:0; margin:0 0;">
@@ -94,10 +123,8 @@
                                             <ul style="list-style:none; padding-left:0; margin:0 0;">
                                                 <li>
                                                     <span title="display">attender</span>  (
-                                                    
                                                     <span title="code">ATND</span> )
           
-                                                
                                                 </li>
                                                 <li>
                                                     <span title="system">
@@ -158,6 +185,11 @@
         <code value="PHC2237"/>
         <display value="External Historical Encounter"/>
     </class>
+    <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+            <valueCode value="not-applicable"/>
+        </extension>
+    </type>
     <subject>
         <reference value="Patient/patient-ecr-eve-everywoman"/>
         <display value="Eve Everywoman"/>
