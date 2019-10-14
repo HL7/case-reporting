@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="ersd-plandefinition"/>
     <meta>
-        <versionId value="130"/>
-        <lastUpdated value="2019-10-11T05:49:50.000-04:00"/>
+        <versionId value="132"/>
+        <lastUpdated value="2019-10-13T18:46:50.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
     <version value="1.0.0"/>
@@ -127,15 +127,6 @@
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:sliceMatchTrigger.trigger.type">
-            <path value="PlanDefinition.action.trigger.type"/>
-            <fixedCode value="named-event"/>
-        </element>
-        <element id="PlanDefinition.action:sliceMatchTrigger.trigger.name">
-            <path value="PlanDefinition.action.trigger.name"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-        </element>
         <element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceERSDValueSet">
             <path value="PlanDefinition.action.trigger"/>
             <sliceName value="sliceERSDValueSet"/>
@@ -143,6 +134,10 @@
             <definition value="."/>
             <min value="1"/>
             <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceERSDValueSet.type">
+            <path value="PlanDefinition.action.trigger.type"/>
+            <fixedCode value="data-changed"/>
         </element>
         <element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceERSDValueSet.data">
             <path value="PlanDefinition.action.trigger.data"/>

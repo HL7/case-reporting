@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="practitionerrole-henry-seven"/>
     <meta>
-        <versionId value="6"/>
-        <lastUpdated value="2019-10-11T04:49:24.000-04:00"/>
+        <versionId value="8"/>
+        <lastUpdated value="2019-10-14T01:24:13.000-04:00"/>
         <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-practitionerrole"/>
     </meta>
     <text>
@@ -26,13 +26,13 @@
                             <tr>
                                 <td style="font-weight: bold">versionId</td>
                                 <td>
-                                    <span title="versionId">2</span>
+                                    <span title="versionId">6</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="font-weight: bold">lastUpdated</td>
                                 <td>
-                                    <span title="lastUpdated">2019-10-11T02:28:16.000-04:00</span>
+                                    <span title="lastUpdated">2019-10-11T04:49:24.000-04:00</span>
                                 </td>
                             </tr>
                             <tr>
@@ -42,6 +42,21 @@
                                 </td>
                             </tr>
                         </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold">identifier</td>
+                    <td>
+                        <ul style="list-style:none; padding-left:0; margin:0 0;">
+                            <li>
+                                <span title="system">
+                                    <a href="http://hl7.org/fhir/sid/us-npi">http://hl7.org/fhir/sid/us-npi</a>
+                                </span>
+                            </li>
+                            <li>
+                                <span title="value">9941339108</span>
+                            </li>
+                        </ul>
                     </td>
                 </tr>
                 <tr>
@@ -100,7 +115,7 @@
                                     </li>
                                     <li>
                                         <span title="system">
-                                            <a href="http://snomed.info/sct ">http://snomed.info/sct </a>
+                                            <a href="http://snomed.info/sct">http://snomed.info/sct</a>
                                         </span>
                                     </li>
                                 </ul>
@@ -119,9 +134,32 @@
                         </ul>
                     </td>
                 </tr>
+                <tr>
+                    <td style="font-weight: bold">telecom</td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td style="font-weight: bold">system</td>
+                                <td>
+                                    <span title="system">email</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">value</td>
+                                <td>
+                                    <span title="value">henry.seven@example.com</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
             </table>
         </div>
     </text>
+    <identifier>
+        <system value="http://hl7.org/fhir/sid/us-npi"/>
+        <value value="9941339108"/>
+    </identifier>
     <practitioner>
         <reference value="Practitioner/practitioner-us-core-henry-seven"/>
         <display value="Henry Seven, MD"/>
@@ -148,4 +186,8 @@
         <reference value="Location/location-ecr-salem-medical-center"/>
         <display value="Salem Medical Center"/>
     </location>
+    <telecom>
+        <system value="email"/>
+        <value value="henry.seven@example.com"/>
+    </telecom>
 </PractitionerRole>
