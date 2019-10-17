@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-composition"/>
     <meta>
-        <versionId value="119"/>
-        <lastUpdated value="2019-10-11T05:51:18.000-04:00"/>
+        <versionId value="123"/>
+        <lastUpdated value="2019-10-15T19:44:51.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
     <version value="1.0.0"/>
@@ -47,12 +47,28 @@
                 <rules value="open"/>
             </slicing>
         </element>
+        <element id="Composition.extension:extensionEICRInitiationType">
+            <path value="Composition.extension"/>
+            <sliceName value="extensionEICRInitiationType"/>
+            <short value="Initial Case Report Initiation Type"/>
+            <min value="0"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-initiation-type-extension"/>
+            </type>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] ClinicalDocument/documentationOf/serviceEvent/code"/>
+            </mapping>
+        </element>
         <element id="Composition.extension:extensionEICRInitiationReason">
             <path value="Composition.extension"/>
             <sliceName value="extensionEICRInitiationReason"/>
             <short value="Initial Case Report Initiation Reason"/>
-            <definition value="The presence of this extension indicates this eICR was either alternately or manually initiated and contains the reason for the initiation of the eICR."/>
-            <max value="1"/>
+            <min value="0"/>
+            <max value="*"/>
             <type>
                 <code value="Extension"/>
                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-initiation-reason-extension"/>

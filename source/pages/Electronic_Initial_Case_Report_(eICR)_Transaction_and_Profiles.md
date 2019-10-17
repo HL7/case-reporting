@@ -8,15 +8,17 @@ active: Electronic Initial Case Report (eICR) Transaction and Profiles
 
 ### Electronic Initial Case Report (eICR) Transaction and Profiles
 
-The eICR transaction involves the transmission of data identified by a Council of State and Territorial Epidemiologists Task Force as being important to a case report.
-It also includes the trigger codes that matched to initiate the repooccurt, a step toward a structured travel history, and a vital sign snapshot.
-The eICR is conveyed as an unsolicited push transaction from healthcare to public health.
-There may be several different intermediaries involved in the transmission including Health Information Exchanges, Health Data Networks, and the Association of Public Health Laboratories (APHL) AIMS platform. 
+The eICR transaction involves the transmission of data identified by a Council of State and Territorial Epidemiologists Task Force as being important to a case report. 
 
-In this implementation guide the reference transport transaction is a FHIR POST, but other transport mechanisms may be added or substituted as the data travel to the appropriate public health agencies.
+An eICR document can be automatically initiated by matching on trigger codes, manually initiated by an action of the provider of care because they suspect there may be a reportable condition or alternately initiated by automated, forced reporting. The following matrix illustrates the types of initiation:
+
+<table><tr><td><img src="InitiationTypeTable.jpg" style="width:100%;"/></td></tr></table>
+
+The eICR also includes a step toward a structured travel history, pregnancy information, occupational data, therapeutic response to medication, homeless information and a vital sign snapshot. The eICR may be conveyed through FHIR messaging or as an unsolicited push transaction from healthcare to public health (see <a href="Transport_Options.html">Transport Options</a> for further details). There may be several different intermediaries involved in the transmission including Health Information Exchanges, Health Data Networks, and the Association of Public Health Laboratories (APHL) AIMS platform. 
+
 In the FHIR eICR transaction to PHAs the RR payload may be added to provide the PHAs with information about what has been determined to be reportable, what PHAs have been sent eICR information, and what else has been communicated to healthcare.
 
-The following profiles and extensions have been defined for the eICR transactions. The eICR Composition profile is the starting point for the transaction and all the other profiles are referenced from that profile (see diagram below).
+The following profiles and extensions have been defined for the eICR transactions. The eICR Composition profile is the starting point for the transaction and all the other profiles are referenced from that profile (see diagram below for the main profile relationships).
 
 #### Profiles
 <ul>
@@ -38,6 +40,7 @@ The following profiles and extensions have been defined for the eICR transaction
 #### Extensions
 <ul>
   <li><a href="StructureDefinition-eicr-trigger-code-flag-extension.html">eICR Trigger Code Flag Extension</a></li>
+	<li><a href="StructureDefinition-eicr-initiation-type-extension.html">eICR Initiation Type Extension</a></li>
   <li><a href="StructureDefinition-eicr-initiation-reason-extension.html">eICR Manually Initiated Reason Extension</a></li>
   <li><a href="StructureDefinition-ecr-organization-extension.html">eCR Organization Extension</a></li>
   <li><a href="StructureDefinition-travel-history-address-extension.html">Travel History Address Extension</a></li>
@@ -46,6 +49,6 @@ The following profiles and extensions have been defined for the eICR transaction
 	<li><a href="StructureDefinition-date-recorded-extension.html">Date Recorded Extension</a></li>
 </ul>
 
-<table><tr><td><img src="FHIR eICR Profile Hierarchy.png" /></td></tr></table>
+<table><tr><td><img src="FHIR eICR Profile Hierarchy.png" style="width:100%;" /></td></tr></table>
 
 [Next Page](Reportability_Response_(RR)_Transaction_and_Profiles.html)

@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="capabilitystatement-ecr"/>
     <meta>
-        <versionId value="12"/>
-        <lastUpdated value="2019-10-13T20:25:21.000-04:00"/>
+        <versionId value="21"/>
+        <lastUpdated value="2019-10-14T16:55:35.000-04:00"/>
     </meta>
     <text>
         <status value="generated"/>
@@ -2359,7 +2359,7 @@
         <resource>
             <type value="Communication"/>
             <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication"/>
-            <documentation value="This resource is a record of a communication even if it is planned or has failed. A communication is a conveyance of information from one entity, a sender, to another entity, a receiver. The sender and receivers may be patients, practitioners, related persons, organizations, or devices. "/>
+            <documentation value="This Communication profile represents the Reportability Response that will be created in response to an electronic Initial Case Report Composition. The sharing of the Reportability Response with clinical care will serve several functions, including to:&#xA;&#xA;- Communicate the reportability status, for the responsible PHA(s)of each condition included in the electronic Initial Case Report (eICR)&#xA;- Identify who (a PHA or an intermediary) prepared the Reportability Response&#xA;- Indicate whether the eICR has been sent to one or more PHA(s)&#xA;- Identify which PHA(s) has/have been sent the eICR&#xA;- Provide contact information for the responsible PHA(s)&#xA;- Provide suggested or required clinical follow-up activities from the responsible PHA(s), including any additional reporting needs or infection control activities&#xA;- Provide access to clinical support resources suggested by the responsible PHA(s) for identified reportable conditions&#xA;- Confirm eICR receipt and processing&#xA;&#xA;A Reportability Response will also, when requested, be shared with the responsible PHAs (when they have not constructed it) for their internal use, so they understand what has been shared with clinical care and, and to monitor/audit decision support algorithm effectivesness and implementation. When a condition is considered reportable to more than one PHA, the Reportability Response can be helpful in communicating reporting that has been done to other PHAs."/>
             <interaction>
                 <code value="create"/>
             </interaction>
@@ -2379,7 +2379,7 @@
             <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization"/>
             <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization"/>
             <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization"/>
-            <documentation value="This resource may be used in a shared registry of contact and other information for various organizations or it can be used merely as a support for other resources that need to reference organizations, perhaps as a document, message or as a contained resource."/>
+            <documentation value="This Organization profile represents the following organizations for electronic case reporting:&#xA;&#xA;- Initial Case Report source provider facility/office name&#xA;- Initial Case Report source facility&#xA;- Reportability Response recipients&#xA;- Reportability Response responsible agency&#xA;- Reportability Response routing entity&#xA;- Reportability Response rules authoring agency&#xA;- &#xA;It is based on the US Core Organization profile with a further restriction of Must Support on the type and contact data elements."/>
             <interaction>
                 <code value="create"/>
             </interaction>
@@ -2396,7 +2396,7 @@
         <resource>
             <type value="Encounter"/>
             <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
-            <documentation value="An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient."/>
+            <documentation value="This Encounter profile represents the encounter related to the eICR event."/>
             <interaction>
                 <code value="create"/>
             </interaction>
@@ -2413,7 +2413,7 @@
         <resource>
             <type value="Location"/>
             <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-location"/>
-            <documentation value="Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated."/>
+            <documentation value="This Location profile represents the location/facility in which care was provided when the eICR was triggered."/>
             <interaction>
                 <code value="create"/>
             </interaction>
@@ -2453,7 +2453,7 @@
         <resource>
             <type value="PlanDefinition"/>
             <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
-            <documentation value="This resource allows for the definition of various types of plans as a sharable, consumable, and executable artifact. The resource is general enough to support the description of a broad range of clinical artifacts such as clinical decision support rules, order sets and protocols. A plan definition is a pre-defined group of actions to be taken in particular circumstances, often including conditional elements, options, and other decision points."/>
+            <documentation value="This PlanDefinition in the Reportability Response transaction represents reportability information for a condition-jurisdiction pair, based on the PHA in which is located the patients home, the provider facility or both locations. The Determination of Reportability, Determination of Reportability Reason, and Determination of Reportability Rule are contained in extensions. This profile also contains extensions for the Responsible Agency, the Rules Authoring Agency, and the Routing Entity. The Relevant Reportable Condition is contained in goal.addresses and any External Resources are contained in action (one action contains the information for one External Resource)."/>
             <interaction>
                 <code value="create"/>
             </interaction>
@@ -2486,6 +2486,55 @@
         <resource>
             <type value="PractitionerRole"/>
             <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-practitionerrole"/>
+            <documentation value="This PractitionerRole represents the roles and organizations a practitioner involved in eCR is associated with. It is based on the US Core PractitionerRole profile with a further restriction of a mandatory identifier data element."/>
+            <interaction>
+                <code value="create"/>
+            </interaction>
+            <interaction>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <code value="delete"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="ServiceDefinition"/>
+            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-servicerequest"/>
+            <documentation value="This profile is used to convey eICR laboratory orders and other diagnostics for the eICR event"/>
+            <interaction>
+                <code value="create"/>
+            </interaction>
+            <interaction>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <code value="delete"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="Bundle"/>
+            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-message-bundle"/>
+        </resource>
+        <resource>
+            <type value="MessageHeader"/>
+            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader"/>
+            <documentation value="This MessageHeader profile represents metadata to support the eCR messaging paradigm. It requires data elements destination, sender, source, and focus. The focus of an eCR MessageHeader profile is the eCR Task profile."/>
+        </resource>
+        <resource>
+            <type value="Task"/>
+            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-task"/>
+            <documentation value="This Task profile represents the state of completion of the eCR activity. It is used in both the messaging and RESTful paradigms. to support the eCR messaging paradigm. The focus of an eCR Task is either the eICR document Bundle or the RR Communication."/>
+        </resource>
+        <resource>
+            <type value="Practitioner"/>
+            <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
             <interaction>
                 <code value="create"/>
             </interaction>
@@ -2522,7 +2571,7 @@
         <resource>
             <type value="Communication"/>
             <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication"/>
-            <documentation value="This resource is a record of a communication even if it is planned or has failed. A communication is a conveyance of information from one entity, a sender, to another entity, a receiver. The sender and receivers may be patients, practitioners, related persons, organizations, or devices. "/>
+            <documentation value="This Communication profile represents the Reportability Response that will be created in response to an electronic Initial Case Report Composition. The sharing of the Reportability Response with clinical care will serve several functions, including to:&#xA;&#xA;- Communicate the reportability status, for the responsible PHA(s)of each condition included in the electronic Initial Case Report (eICR)&#xA;- Identify who (a PHA or an intermediary) prepared the Reportability Response&#xA;- Indicate whether the eICR has been sent to one or more PHA(s)&#xA;- Identify which PHA(s) has/have been sent the eICR&#xA;- Provide contact information for the responsible PHA(s)&#xA;- Provide suggested or required clinical follow-up activities from the responsible PHA(s), including any additional reporting needs or infection control activities&#xA;- Provide access to clinical support resources suggested by the responsible PHA(s) for identified reportable conditions&#xA;- Confirm eICR receipt and processing&#xA;&#xA;A Reportability Response will also, when requested, be shared with the responsible PHAs (when they have not constructed it) for their internal use, so they understand what has been shared with clinical care and, and to monitor/audit decision support algorithm effectivesness and implementation. When a condition is considered reportable to more than one PHA, the Reportability Response can be helpful in communicating reporting that has been done to other PHAs."/>
             <interaction>
                 <code value="create"/>
             </interaction>
@@ -2542,7 +2591,7 @@
             <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization"/>
             <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization"/>
             <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization"/>
-            <documentation value="This resource may be used in a shared registry of contact and other information for various organizations or it can be used merely as a support for other resources that need to reference organizations, perhaps as a document, message or as a contained resource."/>
+            <documentation value="This Organization profile represents the following organizations for electronic case reporting:&#xA;&#xA;- Initial Case Report source provider facility/office name&#xA;- Initial Case Report source facility&#xA;- Reportability Response recipients&#xA;- Reportability Response responsible agency&#xA;- Reportability Response routing entity&#xA;- Reportability Response rules authoring agency&#xA;- &#xA;It is based on the US Core Organization profile with a further restriction of Must Support on the type and contact data elements."/>
             <interaction>
                 <code value="create"/>
             </interaction>
@@ -2559,7 +2608,7 @@
         <resource>
             <type value="Encounter"/>
             <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
-            <documentation value="An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient."/>
+            <documentation value="This Encounter profile represents the encounter related to the eICR event."/>
             <interaction>
                 <code value="create"/>
             </interaction>
@@ -2576,7 +2625,7 @@
         <resource>
             <type value="Location"/>
             <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-location"/>
-            <documentation value="Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated."/>
+            <documentation value="This Location profile represents the location/facility in which care was provided when the eICR was triggered.This Location profile represents the location/facility in which care was provided when the eICR was triggered."/>
             <interaction>
                 <code value="create"/>
             </interaction>
@@ -2616,7 +2665,7 @@
         <resource>
             <type value="PlanDefinition"/>
             <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
-            <documentation value="This resource allows for the definition of various types of plans as a sharable, consumable, and executable artifact. The resource is general enough to support the description of a broad range of clinical artifacts such as clinical decision support rules, order sets and protocols. A plan definition is a pre-defined group of actions to be taken in particular circumstances, often including conditional elements, options, and other decision points."/>
+            <documentation value="This PlanDefinition in the Reportability Response transaction represents reportability information for a condition-jurisdiction pair, based on the PHA in which is located the patients home, the provider facility or both locations. The Determination of Reportability, Determination of Reportability Reason, and Determination of Reportability Rule are contained in extensions. This profile also contains extensions for the Responsible Agency, the Rules Authoring Agency, and the Routing Entity. The Relevant Reportable Condition is contained in goal.addresses and any External Resources are contained in action (one action contains the information for one External Resource)."/>
             <interaction>
                 <code value="create"/>
             </interaction>
@@ -2649,6 +2698,40 @@
         <resource>
             <type value="PractitionerRole"/>
             <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-practitionerrole"/>
+            <documentation value="This PractitionerRole represents the roles and organizations a practitioner involved in eCR is associated with. It is based on the US Core PractitionerRole profile with a further restriction of a mandatory identifier data element."/>
+            <interaction>
+                <code value="create"/>
+            </interaction>
+            <interaction>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <code value="delete"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="ServiceDefinition"/>
+            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-servicerequest"/>
+        </resource>
+        <resource>
+            <type value="Bundle"/>
+            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-message-bundle"/>
+        </resource>
+        <resource>
+            <type value="MessageHeader"/>
+            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader"/>
+        </resource>
+        <resource>
+            <type value="Task"/>
+            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-task"/>
+        </resource>
+        <resource>
+            <type value="Practitioner"/>
+            <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
             <interaction>
                 <code value="create"/>
             </interaction>

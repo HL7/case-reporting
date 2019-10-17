@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="rr-eicr-initiation-type-extension"/>
+    <id value="eicr-initiation-type-extension"/>
     <meta>
-        <versionId value="8"/>
-        <lastUpdated value="2019-10-14T03:48:36.000-04:00"/>
+        <versionId value="3"/>
+        <lastUpdated value="2019-10-14T22:28:49.000-04:00"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-initiation-type-extension"/>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-initiation-type-extension"/>
     <version value="1.0.0"/>
-    <name value="RR_Eicr_Initiation_Type_Extension"/>
+    <name value="Eicr_Initiation_Type_Extension"/>
     <title value="eICR Initiation Type Extension"/>
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="If present this Extension profile represents that the eICR for which this Reportability Response is a response, was either manually or alternately initiated by the provider. The eICR could also contain RCTC trigger codes."/>
+    <description value="This Extension profile represents that the eICR, was either manually or alternately initiated by the provider. When code is set to PHC1464, it indicates that the eICR was manually initiated by an action of the provider of care because they suspect there may be a reportable condition. When the code is set to PHC2235, it indicates that the eICR was initiated by automated, forced reporting. Unlike eICRs manually initiated by a provider, PHC2235 will be routed only to the public health agency of the jurisdiction of care unless another reportable condition is found. The eICR could also contain RCTC trigger codes.&#xA;&#xA;"/>
     <fhirVersion value="4.0.0"/>
-    <mapping>
-        <identity value="eCR-CDA"/>
-        <name value="eCR FHIR to CDA Mapping"/>
-        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
-    </mapping>
     <kind value="complex-type"/>
     <abstract value="false"/>
     <context>
@@ -35,14 +30,10 @@
             <min value="1"/>
             <max value="1"/>
             <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="Manually/Alternately Initiated eICR"/>
-            </mapping>
         </element>
         <element id="Extension.url">
             <path value="Extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-initiation-type-extension"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-initiation-type-extension"/>
         </element>
         <element id="Extension.value[x]">
             <path value="Extension.value[x]"/>

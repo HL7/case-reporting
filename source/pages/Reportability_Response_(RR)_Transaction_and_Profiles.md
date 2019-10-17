@@ -49,7 +49,7 @@ The following profiles and extensions have been defined for the Reportability Re
 <ul>
   <li><a href="StructureDefinition-ecr-organization-extension.html">eCR Organization Extension</a></li>
   <li><a href="StructureDefinition-rr-location-relevance-extension.html">Location Relevance Extension</a></li>
-  <li><a href="StructureDefinition-rr-eicr-initiation-type-extension.html">eICR Initiation Type Extension</a></li>
+  <li><a href="StructureDefinition-eicr-initiation-type-extension.html">eICR Initiation Type Extension</a></li>
   <li><a href="StructureDefinition-rr-eicr-processing-status-extension.html">eICR Processing Status Extension</a></li>
   <li><a href="StructureDefinition-rr-determination-of-reportability-extension.html">Extension Determination of Reportability</a></li>
   <li><a href="StructureDefinition-rr-determination-of-reportability-reason-extension.html">Extension Determination of Reportability Reason</a></li>

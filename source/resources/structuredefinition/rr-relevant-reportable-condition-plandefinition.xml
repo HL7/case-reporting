@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-relevant-reportable-condition-plandefinition"/>
     <meta>
-        <versionId value="41"/>
-        <lastUpdated value="2019-10-14T00:50:09.000-04:00"/>
+        <versionId value="43"/>
+        <lastUpdated value="2019-10-14T22:06:46.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
     <version value="1.0.0"/>
@@ -121,8 +121,8 @@
             </slicing>
             <min value="1"/>
             <mapping>
-                <identity value="CDA"/>
-                <map value="Reportability Response Coded Information Organizer/Relevant Reportable Condition Observation/Reportability Information Organizer/code"/>
+                <identity value="eCR-CDA"/>
+                <map value="[RR R1 STU1] Reportability Information Organizer/code"/>
                 <comment value="Location Relevance"/>
             </mapping>
         </element>
@@ -138,7 +138,7 @@
             <mustSupport value="true"/>
             <mapping>
                 <identity value="eCR-CDA"/>
-                <map value="Reportability Response Coded Information Organizer/Relevant Reportable Condition Observation/Reportability Information Organizer/code"/>
+                <map value="[RR R1 STU1] Reportability Information Organizer/code"/>
                 <comment value="Location Relevance"/>
             </mapping>
         </element>
@@ -205,7 +205,7 @@
             <mustSupport value="true"/>
             <mapping>
                 <identity value="eCR-CDA"/>
-                <map value="Relevant Reportable Condition Observation/value"/>
+                <map value="[RR R1 STU1] Relevant Reportable Condition Observation/value"/>
             </mapping>
         </element>
         <element id="PlanDefinition.goal.addresses.coding.system">
@@ -237,8 +237,8 @@
         <element id="PlanDefinition.action.priority">
             <path value="PlanDefinition.action.priority"/>
             <mapping>
-                <identity value="CDA"/>
-                <map value="../External Resource/priorityCode"/>
+                <identity value="eCR-CDA"/>
+                <map value="[RR R1 STU1] ../External Resource/priorityCode"/>
                 <comment value="External Resource Priority"/>
             </mapping>
         </element>
@@ -269,8 +269,8 @@
                 <rules value="open"/>
             </slicing>
             <mapping>
-                <identity value="CDA"/>
-                <map value="CDA | ../External Resources/code"/>
+                <identity value="eCR-CDA"/>
+                <map value="[RR R1 STU1] ../External Resources/code"/>
                 <comment value="External Resource Category"/>
             </mapping>
         </element>
@@ -310,8 +310,8 @@
             <mustSupport value="true"/>
             <isModifier value="false"/>
             <mapping>
-                <identity value="CDA"/>
-                <map value="../External Resources/External Reference/code/originalText"/>
+                <identity value="eCR-CDA"/>
+                <map value="[RR R1 STU1] ../External Resources/External Reference/code/originalText"/>
                 <comment value="External Resource Description"/>
             </mapping>
         </element>
@@ -322,8 +322,8 @@
             <mustSupport value="true"/>
             <isModifier value="false"/>
             <mapping>
-                <identity value="CDA"/>
-                <map value="../External Resources/External Reference/code/text/reference[http:][https:]"/>
+                <identity value="eCR-CDA"/>
+                <map value="[RR R1 STU1] ../External Resources/External Reference/code/text/reference[http:][https:]"/>
                 <comment value="External Resource Link"/>
             </mapping>
         </element>
