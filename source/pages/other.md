@@ -25,11 +25,11 @@ active: other
 <tbody>
 <tr>
 <td>Bundle</td>
-<td><a href="Bundle-bundle-ecr-document-pertussis-zika.html">bundle-ecr-document-pertussis-zika</a></td>
+<td><a href="Bundle-bundle-ecr-message-zika.html">bundle-ecr-message-zika</a></td>
 </tr>
 <tr>
 <td>Bundle</td>
-<td><a href="Bundle-bundle-ecr-message-zika.html">bundle-ecr-message-zika</a></td>
+<td><a href="Bundle-bundle-eicr-document-pertussis-zika.html">bundle-eicr-document-pertussis-zika</a></td>
 </tr>
 <tr>
 <td>Bundle</td>
