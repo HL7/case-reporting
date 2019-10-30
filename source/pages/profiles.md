@@ -1,5 +1,5 @@
 ---
-title: Profiles
+title: profiles
 layout: default
 active: profiles
 ---
