@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="travel-history-observation"/>
     <meta>
-        <versionId value="14"/>
-        <lastUpdated value="2019-10-23T13:56:36.000-04:00"/>
+        <versionId value="16"/>
+        <lastUpdated value="2019-10-29T23:11:56.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-observation"/>
     <version value="1.0.0"/>
@@ -36,7 +36,7 @@
                 </coding>
             </patternCodeableConcept>
             <example>
-                <label value="General"/>
+                <label value="for Observation.code"/>
                 <valueCodeableConcept>
                     <coding>
                         <system value="http://snomed.info/sct"/>
@@ -102,7 +102,7 @@
         <element id="Observation.component.value[x].coding">
             <path value="Observation.component.value[x].coding"/>
             <example>
-                <label value="Example for coding"/>
+                <label value="for coding"/>
                 <valueCoding>
                     <system value="urn:iso:std:iso:3166"/>
                     <code value="FJI"/>
@@ -117,10 +117,11 @@
             </binding>
         </element>
         <element id="Observation.component.value[x].text">
-            <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-                <valueBoolean value="true"/>
-            </extension>
             <path value="Observation.component.value[x].text"/>
+            <example>
+                <label value="for text"/>
+                <valueString value="Spent 8 years in the UK during the BSE outbreak"/>
+            </example>
             <mustSupport value="true"/>
         </element>
     </differential>
