@@ -39,7 +39,7 @@ active: terminology
 - [PHIN VS (CDC Local Coding System)](CodeSystem-2.16.840.1.114222.4.5.274.html)
 
 
-### Example Value Sets
+### Example Value Sets (Not for operational use)
 
 - [Example Diagnosis Problem Triggers for Public Health Reporting](ValueSet-valueset-dxtc-example.html)
 - [Example Immunizations Triggers for Public Health Reporting](ValueSet-valueset-iztc-example.html)

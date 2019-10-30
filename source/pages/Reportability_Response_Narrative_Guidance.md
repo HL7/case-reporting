@@ -616,4 +616,4 @@ The examples below provide example text for *Providers / Reporters* for these ty
 >
 > eICR was not processed due to an error of: fatal problem with the eICR that was received.
 
-[Next Page](History.html)
+[Next Page](Relationship_to_Other_Standards.html)
