@@ -13,5 +13,5 @@ active: toc
         * <a href="Subscription.html">Subscription</a>
     * <a href="Implementation_Guidance.html">Implementation Guidance</a>
         * <a href="Design_Considerations.html">Design Considerations</a>
-        * <a href="Narrative_Guidance.html">Narrative Guidance</a>
+        * <a href="Reportability_Response_Narrative_Guidance.html">Reportability Response Narrative Guidance</a>
     * <a href="History.html">History</a>

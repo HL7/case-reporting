@@ -53,4 +53,4 @@ Also, like the CDA Reportability Response, the FHIR version needs to be able to 
 HIE Retrieve Form for Data Capture (RFD) web forms have been demonstrated to support this investigation supplemental data need. As reporting rules become distributable to rules engines running in healthcare, it may be possible for FHIR RESTful queries from the rules engine to the EHR in order to provide additional condition and/or jurisdiction specific data.
 
 
-[Next Page](Narrative_Guidance.html)
+[Next Page](Reportability_Response_Narrative_Guidance.html)

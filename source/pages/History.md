@@ -4,7 +4,7 @@ layout: default
 active: History
 ---
 
-[Previous Page](Narrative_Guidance.html)
+[Previous Page](Reportability_Response_Narrative_Guidance.html)
 
 The Electronic Case Reporting (eCR) Implementation Guide supports Reporting, investigation, and management via electronic transmission of clinical data from Electronic Health Records to Public Health Agencies, along with the management and processing of population cases. Ths IG covers Bi-directional information exchange and triggering and decision support.
 
