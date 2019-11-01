@@ -4,7 +4,7 @@ layout: default
 active: Implementation Guidance
 ---
 
-[Previous Page](Subscription.html)
+[Previous Page](Transport_Options.html)
 
 <ul>
 	<li><a href="Design_Considerations.html">Design Considerations</a></li>

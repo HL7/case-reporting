@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-encounter"/>
     <meta>
-        <versionId value="50"/>
-        <lastUpdated value="2019-10-11T22:47:45.000-04:00"/>
+        <versionId value="52"/>
+        <lastUpdated value="2019-10-30T19:08:31.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
     <version value="1.0.0"/>
@@ -13,7 +13,7 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Encounter profile represents the encounter related to the eICR event."/>
+    <description value="This Encounter profile represents the encounter related to the eICR event. The provider in charge of care and the location (facility) in which care was provided when the case was triggered are contained in the encounter, along with the visit/encounter identifier.&#xA;&#xA;Where a trigger occurs outside of an encounter use classe=&quot;PHC2237&quot; | system=&quot;2.16.840.1.114222.4.5.274&quot; (External Historical Encounter) and omit period, participant, location, and serviceProvider. In this case, the responsible provider and facility are assumed to be contained in the eICR Composition.author."/>
     <fhirVersion value="4.0.0"/>
     <mapping>
         <identity value="eICR-CDA"/>
@@ -94,7 +94,6 @@
                 <rules value="open"/>
             </slicing>
             <definition value="The provider in charge of care and the facility in which care was provided during the encounter in which the eICR was triggered"/>
-            <min value="1"/>
             <mustSupport value="true"/>
         </element>
         <element id="Encounter.participant:sliceResponsibleProvider">
@@ -102,7 +101,6 @@
             <sliceName value="sliceResponsibleProvider"/>
             <short value="Responsible provider"/>
             <definition value="The provider in charge of care and the facility in which care was provided during the encounter in which the eICR was triggered"/>
-            <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
         </element>

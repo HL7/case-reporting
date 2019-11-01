@@ -18,10 +18,11 @@ The eICR also includes semi-structured travel history, pregnancy information, oc
 
 A Reportability Response will always be returned to the sending healthcare organization for every eICR received. A Reportability Response may also be sent to PHAs with the FHIR eICR transaction to provide the PHAs with information about what has been determined to be reportable, what PHAs have been sent eICR information, and what else has been communicated to healthcare.
 
-The following profiles and extensions have been defined for the eICR transactions. The eICR Composition profile (contained in a Document Bundle) is the starting point for the transaction and all the other profiles are referenced from that profile (see diagram below for the main profile relationships).
+The following profiles and extensions have been defined for the eICR transactions. The eICR Composition profile (which is contained in a eICR Document Bundle) is the starting point for the transaction and all the other profiles are referenced from that profile (see diagram below for the main profile relationships).
 
 #### Profiles
 <ul>
+  <li><b>Containing Bundle:</b> <a href="StructureDefinition-eicr-document-bundle.html">eICR Document Bundle</a></li>
   <li><b>Starting point:</b> <a href="StructureDefinition-eicr-composition.html">eICR Composition</a></li>
   <li><a href="StructureDefinition-ecr-patient.html">eICR Patient</a></li>
   <li><a href="StructureDefinition-ecr-practitionerrole.html">eICR PractitionerRole</a></li>
@@ -35,6 +36,7 @@ The following profiles and extensions have been defined for the eICR transaction
   <li><a href="StructureDefinition-last-menstrual-period.html">Last Menstrual Period</a></li>
   <li><a href="StructureDefinition-postpartum-status.html">Postpartum Status</a></li>
   <li><a href="StructureDefinition-travel-history-observation.html">Travel History Observation</a></li>
+  <li><a href="StructureDefinition-characteristics-of-home-environment.html">Characteristics of Home Environment</a></li>
 </ul>
 
 #### Extensions

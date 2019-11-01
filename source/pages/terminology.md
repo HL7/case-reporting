@@ -11,7 +11,7 @@ active: terminology
 
 <br/>
 
-### Value Sets
+### Value Sets in this Guide
 
 - [Determination of Reportability (eCR) Value Set](ValueSet-valueset-determination-of-reportability-ecr.html)
 - [eICR Initiation](ValueSet-valueset-eicr-initiation-ecr.html)
@@ -31,6 +31,11 @@ active: terminology
 - [Reportability Priority (eCR) Value Set Value Set](ValueSet-valueset-reportability-priority-ecr.html)
 - [Therapeutic Response to Medication](ValueSet-2.16.840.1.113883.10.20.15.2.5.12.html)
 - [Value Set eCR Task BusinessStatus](ValueSet-valueset-ecr-task-businessstatus.html)
+
+
+### External Value Sets
+
+- [Residence and Accommodation Type (VSAC)](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.49/expansion)
 
 
 ### Code Systems

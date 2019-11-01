@@ -4,7 +4,7 @@ layout: default
 active: Transport Options
 ---
 
-[Previous Page](Electronic_Reporting_and_Surveillance_Distribution_(eRSD)_Transaction_and_Profiles.html)
+[Previous Page](Subscription_Service.html)
 
 There are two supported transport options that can be used individually or in combination. This flexibility is needed to support point-to-point transport as well as transport through Health Information Exchanges and Health Information Networks.
 
@@ -38,4 +38,4 @@ The following profiles have been defined for the RESTful Submit Option:
 The focus of the <a href="StructureDefinition-ecr-task.html">eCR Task</a> is either the <a href="StructureDefinition-eicr-document-bundle.html">eICR Document Bundle</a> or the <a href="StructureDefinition-rr-communication.html">RR Communication</a>.
 
 
-[Next Page](Subscription.html)
+[Next Page](Implementation_Guidance.html)

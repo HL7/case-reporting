@@ -1,10 +1,10 @@
 ---
-title: Subscription
+title: Subscription Service
 layout: default
-active: Subscription
+active: Subscription Service
 ---
 
-[Previous Page](Transport_Options.html)
+[Previous Page](Electronic_Reporting_and_Surveillance_Distribution_(eRSD)_Transaction_and_Profiles.html)
 
 This implementation guide assumes that EHRs or other systems will be able to generate timely notifications to begin the triggering process when resources containing codes in the trigger code value sets appear in the system. Those notifications would go to an associated system or process in clinical care that could begin the initial case reporting process, and would likely access more data from the EHR.
 
@@ -38,10 +38,4 @@ MedicationRequest?code:in=http://hl7.org/fhir/us/ecr/ValueSet/mrtc
 
 MedicationStatement?code:in=http://hl7.org/fhir/us/ecr/ValueSet/mrtc
 
-
-
-
-
-
-
-[Next Page](Implementation_Guidance.html)
+[Next Page](Transport_Options.html)
