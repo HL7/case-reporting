@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="ecr-patient"/>
     <meta>
-        <versionId value="39"/>
-        <lastUpdated value="2019-10-01T02:04:32.000-04:00"/>
+        <versionId value="40"/>
+        <lastUpdated value="2019-10-31T22:24:09.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-patient"/>
     <version value="1.0.0"/>
@@ -14,7 +14,7 @@
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
     <description value="This Patient profile represents an eCR Patient. It is based on the **US Core Patient** profile with further restrictions to allow masking of some data elements."/>
-    <fhirVersion value="4.0.1"/>
+    <fhirVersion value="4.0.0"/>
     <mapping>
         <identity value="eCR-CDA"/>
         <name value="eCR FHIR to CDA Mapping"/>
@@ -337,6 +337,7 @@
         </element>
         <element id="Patient.address">
             <path value="Patient.address"/>
+            <definition value="If the patient is homeless, complete as much address information as possible (city, zip, county, etc.) and use the Characteristics of Home Environment profile in the Social History Section of the eICR Composition to indicate that the patient is homeless."/>
             <mustSupport value="true"/>
             <mapping>
                 <identity value="eCR-CDA"/>
