@@ -1,9 +1,3 @@
----
-title: StructureDefinition-eicr-composition-intro
-layout: default
-active: StructureDefinition-eicr-composition-intro
----
-
 This Composition profile represents an electronic initial case report (eICR). It describes the content requirements for the eICR including:         
 
 * patient demographics         

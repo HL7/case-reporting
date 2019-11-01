@@ -1,9 +1,3 @@
----
-title: StructureDefinition-ecr-organization-intro
-layout: default
-active: StructureDefinition-ecr-organization-intro
----
-
 This Organization profile represents the following organizations for electronic case reporting:
 
 * Initial Case Report source provider facility/office name

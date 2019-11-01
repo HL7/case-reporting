@@ -1,9 +1,3 @@
----
-title: StructureDefinition-eicr-initiation-reason-extension-intro
-layout: default
-active: StructureDefinition-eicr-initiation-reason-extension-intro
----
-
 This extension contains an explanation for the manual or alternate initiation of the eICR. If there are multiple distinct reasons for manual or alternate initiation then each reason should be contained in a separate eICR Initiation Reason Extension. 
 
 The reason may be entered either as:

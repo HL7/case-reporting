@@ -1,9 +1,3 @@
----
-title: StructureDefinition-pregnancy-status-observation-intro
-layout: default
-active: StructureDefinition-pregnancy-status-observation-intro
----
-
 This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range.
 
 This profile includes the determination method, determination date, and recorded date of the pregnancy status.

@@ -1,9 +1,3 @@
----
-title: StructureDefinition-rr-communication-intro
-layout: default
-active: StructureDefinition-rr-communication-intro
----
-
 This Communication profile represents the Reportability Response that will be created in response to an electronic Initial Case Report Composition. The sharing of the Reportability Response with clinical care will serve several functions, including to: 
 
 * Communicate the reportability status, for the responsible PHA(s)of each condition included in the electronic Initial Case Report (eICR)     

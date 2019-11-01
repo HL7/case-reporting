@@ -1,9 +1,3 @@
----
-title: CapabilityStatement-capabilitystatement-ersd-client-intro
-layout: default
-active: CapabilityStatement-capabilitystatement-ersd-client-intro
----
-
 This section describes the expected capabilities of a client consuming eRSD resources including the Reportable Conditions Trigger Codes (RCTC).
 
 #### Conformance requirements for an eRSD Client

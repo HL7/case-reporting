@@ -1,9 +1,3 @@
----
-title: StructureDefinition-travel-history-observation-intro
-layout: default
-active: StructureDefinition-travel-history-observation-intro
----
-
 This Observation profile represents the following for eCR:
 
 * the Initial Case Report subject's travel history as a string, an address, or a coded location

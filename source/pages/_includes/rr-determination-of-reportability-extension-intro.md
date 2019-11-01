@@ -1,9 +1,3 @@
----
-title: StructureDefinition-rr-determination-of-reportability-extension-intro
-layout: default
-active: StructureDefinition-rr-determination-of-reportability-extension-intro
----
-
 This Extension profile represents the determination of reportability. Reportability is "the quality or state of being reportable or not". Reportability does not equate to the patient having a condition or meeting a case definition (definitively being a case).
 
 For each condition included in the eICR and the relevant public health agency(s), this element indicates the determination of whether the condition is reportable to public health. 

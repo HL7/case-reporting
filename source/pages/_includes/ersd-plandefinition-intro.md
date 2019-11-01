@@ -1,9 +1,3 @@
----
-title: StructureDefinition-ersd-plandefinition-intro
-layout: default
-active: StructureDefinition-ersd-plandefinition-intro
----
-
 This PlanDefinition profile defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician.
 
 The profile defines three timing-related parameters for initiating case reports from Electronic Health Records (the standard does not specify the hour value for the delay of the send - public health can determine the specific value appropriate for implementation and may adjust based on review of the data available at different times) the standard conveys the parameters to clinical care but it does not require their implementation.  Any requirement for timing in implementation would require regulation.
