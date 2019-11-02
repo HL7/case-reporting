@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-trigger-code-flag-extension"/>
     <meta>
-        <versionId value="18"/>
-        <lastUpdated value="2019-10-02T01:08:33.000-04:00"/>
+        <versionId value="19"/>
+        <lastUpdated value="2019-11-02T01:00:11.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
     <version value="1.0.0"/>
@@ -13,7 +13,7 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Extension profile represents a flag which, if it is present, indicates that the **target** reference represents a triggering event and caused the eCR to be generated. It also contains the identifier and version of the RCTC value from which the code was matched. It is used in the eICR Composition profile in the following sections:&#xA;&#xA;* Encounters Section&#xA;* Problem Section&#xA;* Plan of Treatment Section&#xA;* Results Section&#xA;* Medications Section&#xA;* Immunization Section"/>
+    <description value="This Extension profile represents a flag which, if it is present, indicates that the **target** reference represents a triggering event and caused the eCR to be generated. It also contains the RCTC OID and RCTC version of the value set from which the code was matched. It is used in the eICR Composition profile in the following sections:&#xA;&#xA;* Encounters Section&#xA;* Problem Section&#xA;* Plan of Treatment Section&#xA;* Results Section&#xA;* Medications Section&#xA;* Immunization Section"/>
     <fhirVersion value="4.0.0"/>
     <mapping>
         <identity value="eCR-CDA"/>
@@ -71,6 +71,10 @@
                 <label value="General"/>
                 <valueOid value="urn:oid:2.16.840.1.114222.4.11.7508"/>
             </example>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] @sdtc:valueSet (Any of the eICR trigger code templates)"/>
+            </mapping>
         </element>
         <element id="Extension.extension:extensionTriggerCodeValueSetVersion">
             <path value="Extension.extension"/>
@@ -93,6 +97,10 @@
                 <label value="General"/>
                 <valueString value="19/05/2019"/>
             </example>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] @sdtc:valueSetVersion (Any of the eICR trigger code templates)"/>
+            </mapping>
         </element>
         <element id="Extension.url">
             <path value="Extension.url"/>

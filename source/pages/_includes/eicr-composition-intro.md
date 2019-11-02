@@ -8,4 +8,5 @@ This Composition profile represents an electronic initial case report (eICR). It
 * signs, symptoms, and diagnoses
 * medication and immunization information
 * flags for the existence of reportable condition trigger codes in diagnoses, ordered/resulted laboratory tests, medications, and immunizations
+    * flags contain RCTC OID and RCTC version
 * codes indicating whether the eICR was manually or alternately initiated

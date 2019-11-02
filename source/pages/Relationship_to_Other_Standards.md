@@ -19,4 +19,4 @@ This aggregate FHIR electronic case reporting STU implementation guide (hereby k
  
 XSLT transforms will be made available to facilitate the conversion of eICR and RR transactions between CDA and FHIR formats. These transforms and other supportive material can be found in GForge in the [FHIR_IG_eCR SVN folder](https://gforge.hl7.org/gf/project/pher/scmsvn/?action=browse&path=%2Ftrunk%2FFHIR_IG_eCR%2F).
 
-[Next Page](History.html)
+[Next Page](Acknowledgements.html)

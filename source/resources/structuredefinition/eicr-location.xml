@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-location"/>
     <meta>
-        <versionId value="15"/>
-        <lastUpdated value="2019-10-02T05:13:28.000-04:00"/>
+        <versionId value="17"/>
+        <lastUpdated value="2019-11-02T01:22:11.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-location"/>
     <version value="1.0.0"/>
@@ -47,6 +47,7 @@
         </element>
         <element id="Location.name">
             <path value="Location.name"/>
+            <mustSupport value="true"/>
             <mapping>
                 <identity value="CDA"/>
                 <map value="ClincalDocument/componentOf/encompassingEncounter/responsibleParty/representedOrganization/name"/>
@@ -62,6 +63,8 @@
             <path value="Location.type"/>
             <short value="Facility Type"/>
             <definition value="Facility Type. The binding to the ServiceDeliveryLocationRoleType value set is extensible, so, for concepts that are not represented in this value set, it is possible to use another code from a recognized code system.&#xA;To represent &quot;Correctional Facility&quot; use SNOMED CT code 257656006: Correctional Facility.&#xA;"/>
+            <min value="1"/>
+            <max value="1"/>
             <mustSupport value="true"/>
             <isModifier value="false"/>
             <binding>
@@ -77,6 +80,7 @@
         </element>
         <element id="Location.telecom">
             <path value="Location.telecom"/>
+            <mustSupport value="true"/>
             <mapping>
                 <identity value="CDA"/>
                 <map value="ClincalDocument/componentOf/encompassingEncounter/location/healthCareFacility/serviceProviderOrganization/telecom"/>
@@ -85,6 +89,7 @@
         </element>
         <element id="Location.address">
             <path value="Location.address"/>
+            <mustSupport value="true"/>
             <mapping>
                 <identity value="CDA"/>
                 <map value="ClincalDocument/componentOf/encompassingEncounter/location/healthCareFacility/location/addr"/>
