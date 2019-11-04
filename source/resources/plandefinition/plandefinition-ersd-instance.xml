@@ -947,7 +947,7 @@
     </action>
     <action id="create-eicr">
         <description value="This action represents the initial creation of the eICR."/>
-        <textEquivalent value="eICR construction delay (x hours) - time after trigger event before an eICR should be created."/>
+        <textEquivalent value="eICR construction delay (offsetDuration.value = x hours) - time after trigger event before an eICR should be created."/>
         <relatedAction>
             <actionId value="match-trigger"/>
             <relationship value="after"/>
@@ -959,7 +959,7 @@
     </action>
     <action id="periodic-update-eicr">
         <description value="This action represents the periodic update of the eICR."/>
-        <textEquivalent value="eICR periodic update (y hours) – the time after an initial eICR creation to send a new eICR as an update during long encounters."/>
+        <textEquivalent value="eICR periodic update (repeat.frequency = y hours) – the time after an initial eICR creation to send a new eICR as an update during long encounters."/>
         <trigger>
             <type value="periodic"/>
             <timingTiming>
@@ -995,7 +995,7 @@
     </action>
     <action id="close-out-eicr">
         <description value="This action represents the close out of an eICR encounter."/>
-        <textEquivalent value="eICR encounter close out (z hours) – the time after the end of the encounter to create the final eICR when there have been one or more trigger events."/>
+        <textEquivalent value="eICR encounter close out (timingTiming.repeat.duration = z hours) – the time after the end of the encounter to create the final eICR when there have been one or more trigger events."/>
         <trigger>
             <type value="data-added"/>
             <data>

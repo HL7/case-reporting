@@ -207,7 +207,7 @@
       <path value="PlanDefinition.action.textEquivalent" />
       <definition value="Text equivalent of the &quot;create-ecir&quot; action." />
       <min value="1" />
-      <fixedString value="eICR construction delay (x hours) - time after trigger event before an eICR should be created." />
+      <fixedString value="eICR construction delay (offsetDuration.value = x hours) - time after trigger event before an eICR should be created." />
       <mustSupport value="true" />
     </element>
     <element id="PlanDefinition.action:sliceCreateEICR.relatedAction">
@@ -269,7 +269,7 @@
     <element id="PlanDefinition.action:slicePeriodicUpdateEICR.textEquivalent">
       <path value="PlanDefinition.action.textEquivalent" />
       <min value="1" />
-      <fixedString value="eICR periodic update (y hours) – the time after an initial eICR creation to send a new eICR as an update during long encounters." />
+      <fixedString value="eICR periodic update (repeat.frequency = y hours) – the time after an initial eICR creation to send a new eICR as an update during long encounters." />
       <mustSupport value="true" />
     </element>
     <element id="PlanDefinition.action:slicePeriodicUpdateEICR.trigger">
@@ -457,7 +457,7 @@
       <path value="PlanDefinition.action.textEquivalent" />
       <min value="1" />
       <fixedString
-        value="eICR encounter close out (z hours) – the time after the end of the encounter to create the final eICR when there have been one or more trigger events." />
+        value="eICR encounter close out (timingTiming.repeat.duration = z hours) – the time after the end of the encounter to create the final eICR when there have been one or more trigger events." />
       <mustSupport value="true" />
     </element>
     <element id="PlanDefinition.action:sliceCloseOutEICR.trigger">
@@ -523,7 +523,7 @@
     <element id="PlanDefinition.action:sliceCloseOutEICR.timing[x].repeat">
       <path value="PlanDefinition.action.timing[x].repeat" />
       <short value="Close out eICR [z] hours after end of encounter." />
-      <definition value="Repeat update of eICR every [y] hours." />
+      <definition value="Close out eICR [z] hours after end of encounter." />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
