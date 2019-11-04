@@ -230,6 +230,13 @@
       <type>
         <code value="Duration" />
       </type>
+      <example>
+        <label value="for offset duration of 1 hour" />
+        <valueDuration>
+          <value value="1" />
+          <unit value="h" />
+        </valueDuration>
+      </example>
     </element>
     <element id="PlanDefinition.action:sliceCreateEICR.relatedAction.offset[x].value">
       <path value="PlanDefinition.action.relatedAction.offset[x].value" />
@@ -271,7 +278,8 @@
     <element id="PlanDefinition.action:slicePeriodicUpdateEICR.textEquivalent">
       <path value="PlanDefinition.action.textEquivalent" />
       <min value="1" />
-      <fixedString value="eICR periodic update (repeat.frequency = y hours) – the time after an initial eICR creation to send a new eICR as an update during long encounters." />
+      <fixedString
+        value="eICR periodic update (repeat.frequency = y hours) – the time after an initial eICR creation to send a new eICR as an update during long encounters." />
       <mustSupport value="true" />
     </element>
     <element id="PlanDefinition.action:slicePeriodicUpdateEICR.trigger">
@@ -295,13 +303,13 @@
       <mustSupport value="true" />
       <example>
         <label value="for periodic update of once every 24 hours" />
-        <timingTiming>
+        <valueTiming>
           <repeat>
-            <frequency value="1"/>
-            <period value="24"/>
-            <periodUnit value="h"/>
+            <frequency value="1" />
+            <period value="24" />
+            <periodUnit value="h" />
           </repeat>
-        </timingTiming>
+        </valueTiming>
       </example>
     </element>
     <element id="PlanDefinition.action:slicePeriodicUpdateEICR.trigger.timing[x].repeat">
@@ -484,8 +492,8 @@
     </element>
     <element id="PlanDefinition.action:sliceCloseOutEICR.trigger.data">
       <path value="PlanDefinition.action.trigger.data" />
-      <short value="Trigger when Encounter.period.end is added." />
-      <definition value="Trigger when encounter.period.end is added." />
+      <short value="Trigger z hours after Encounter.period.end is added." />
+      <definition value="Trigger z hours after when encounter.period.end is added." />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
@@ -531,6 +539,18 @@
         <code value="Timing" />
       </type>
       <mustSupport value="true" />
+      <example>
+        <label value="of close out duration of 24 hours after end of encounter" />
+        <valueTiming>
+          <repeat>
+            <count value="1" />
+            <duration value="24" />
+            <durationUnit value="h" />
+            <frequency value="1" />
+            <periodUnit value="h" />
+          </repeat>
+        </valueTiming>
+      </example>
     </element>
     <element id="PlanDefinition.action:sliceCloseOutEICR.timing[x].repeat">
       <path value="PlanDefinition.action.timing[x].repeat" />
