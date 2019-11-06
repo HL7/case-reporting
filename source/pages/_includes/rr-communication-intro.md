@@ -1,6 +1,6 @@
 This Communication profile represents the Reportability Response that will be created in response to an electronic Initial Case Report Composition. The sharing of the Reportability Response with clinical care will serve several functions, including to: 
 
-* Communicate the reportability status, for the responsible PHA(s)of each condition included in the electronic Initial Case Report (eICR)     
+* Communicate the reportability status, for the responsible PHA(s) of each condition included in the electronic Initial Case Report (eICR)     
 * Identify who (a PHA or an intermediary) prepared the Reportability Response     
 * Indicate whether the eICR has been sent to one or more PHA(s)     
 * Identify which PHA(s) has/have been sent the eICR     
