@@ -13,7 +13,7 @@ active: other
 
 <!-- end TOC -->
 
-### Other Resources
+### Examples
 
 <table>
 <thead>
