@@ -1,5 +1,5 @@
 ---
-title: Other resources defined for this Guide
+title: Examples defined for this Guide
 layout: default
 active: other
 ---
