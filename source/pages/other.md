@@ -12,9 +12,6 @@ active: other
 {:toc} -->
 
 <!-- end TOC -->
-
-### Examples
-
 <table>
 <thead>
 <tr>
