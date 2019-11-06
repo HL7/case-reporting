@@ -13,7 +13,7 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Extension profile represents where the patient traveled to as an address e.g.: country, state, city, street address (if applicable). At the least, address must contain the country. State is required if the country is US. If country is not specified, it's assumed to be US. If country is something other than US, the state **MAY** be present but **MAY** be bound to different vocabularies."/>
+    <description value="This Extension profile represents where the patient traveled to as an address e.g.: country, state, city, street address (if applicable). At the least, address must contain the country. State is required if the country is US. If country is something other than US, the state **MAY** be present but **MAY** be bound to different vocabularies."/>
     <fhirVersion value="4.0.0"/>
     <kind value="complex-type"/>
     <abstract value="false"/>
@@ -41,7 +41,7 @@
                 <code value="Address"/>
             </type>
             <example>
-                <label value="Example for Address"/>
+                <label value="for Address"/>
                 <valueAddress>
                     <text value="Nadi FIJI"/>
                     <city value="Nadi"/>
@@ -56,10 +56,6 @@
         </element>
         <element id="Extension.value[x].type">
             <path value="Extension.value[x].type"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Extension.value[x].text">
-            <path value="Extension.value[x].text"/>
             <mustSupport value="true"/>
         </element>
         <element id="Extension.value[x].line">
@@ -80,7 +76,7 @@
             <binding>
                 <strength value="preferred"/>
                 <description value="United States Postal Service Two–Letter State and Possession Abbreviations"/>
-                <valueSet value="https://www.usps.com"/>
+              <valueSet value="http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state"/>
             </binding>
         </element>
         <element id="Extension.value[x].postalCode">

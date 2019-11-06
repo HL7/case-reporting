@@ -37,6 +37,8 @@ The following is a listing of all profiles that have been defined for this imple
 	<li><a href="StructureDefinition-eicr-location.html">eICR Location</a></li>
 	<li><a href="StructureDefinition-eicr-servicerequest.html">eICR Lab Order</a></li>
 	<li><a href="StructureDefinition-ersd-plandefinition.html">eRSD PlanDefinition</a></li>
+	<li><a href="StructureDefinition-ersd-valueset-library.html">eRSD ValueSet Library</a></li>
+	<li><a href="StructureDefinition-ersd-valueset.html">eRSD ValueSet</a></li>
 	<li><a href="StructureDefinition-last-menstrual-period.html">Last Menstrual Period</a></li>
 	<li><a href="StructureDefinition-postpartum-status.html">Postpartum Status</a></li>
 	<li><a href="StructureDefinition-pregnancy-outcome-observation.html">Pregnancy Outcome Observation</a></li>
@@ -63,10 +65,8 @@ The following is a listing of all extensions that have been defined for this imp
 	<li><a href="StructureDefinition-eicr-initiation-reason-extension.html">eICR Manually Initiated Reason Extension</a></li>
 	<li><a href="StructureDefinition-eicr-initiation-type-extension.html">eICR Initiation Type Extension</a></li>
 	<li><a href="StructureDefinition-eicr-trigger-code-flag-extension.html">eICR Trigger Code Flag Extension</a></li>
-	<li><a href="StructureDefinition-ersd-valueset-library.html">eRSD ValueSet Library</a></li>
-	<li><a href="StructureDefinition-ersd-valueset.html">eRSD ValueSet</a></li>
-	<li><a href="StructureDefinition-rr-determination-of-reportability-extension.html">Extension Determination of Reportability</a></li>
-	<li><a href="StructureDefinition-rr-determination-of-reportability-reason-extension.html">Extension Determination of Reportability Reason</a></li>
+	<li><a href="StructureDefinition-rr-determination-of-reportability-extension.html">Determination of Reportability Extension</a></li>
+	<li><a href="StructureDefinition-rr-determination-of-reportability-reason-extension.html">Determination of Reportability Reason Extension</a></li>
 	<li><a href="StructureDefinition-rr-determination-of-reportability-rule-extension.html">Determination of Reportability Rule Extension</a></li>
 	<li><a href="StructureDefinition-rr-eicr-processing-status-extension.html">eICR Processing Status Extension</a></li>
 	<li><a href="StructureDefinition-rr-eicr-receipt-time-extension.html">eICR Receipt Time Extension</a></li>
