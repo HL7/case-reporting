@@ -122,31 +122,16 @@
         </element>
         <element id="Observation.component:sliceBirthOrder.code">
             <path value="Observation.component.code"/>
+          <patternCodeableConcept>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="73771-8"/>
+              <display value="Birth order"/>
+            </coding>
+          </patternCodeableConcept>
             <mustSupport value="true"/>
         </element>
-        <element id="Observation.component:sliceBirthOrder.code.coding">
-            <path value="Observation.component.code.coding"/>
-        </element>
-        <element id="Observation.component:sliceBirthOrder.code.coding.system">
-            <path value="Observation.component.code.coding.system"/>
-            <min value="1"/>
-            <max value="1"/>
-            <fixedUri value="http://loinc.org"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Observation.component:sliceBirthOrder.code.coding.code">
-            <path value="Observation.component.code.coding.code"/>
-            <min value="1"/>
-            <max value="1"/>
-            <fixedCode value="73771-8"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Observation.component:sliceBirthOrder.code.coding.display">
-            <path value="Observation.component.code.coding.display"/>
-            <min value="1"/>
-            <max value="1"/>
-            <fixedString value="Birth order"/>
-        </element>
+
         <element id="Observation.component:sliceBirthOrder.value[x]">
             <path value="Observation.component.value[x]"/>
             <short value="Birth order value (1, 2, 3, 4, etc.)"/>
