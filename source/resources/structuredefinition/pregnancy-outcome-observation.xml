@@ -3,24 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="pregnancy-outcome-observation"/>
     <meta>
-        <versionId value="8"/>
-        <lastUpdated value="2019-10-02T01:11:23.000-04:00"/>
-        <security>
-            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
-            <code value="everyone^write"/>
-        </security>
-        <security>
-            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
-            <code value="user^s7DIn2HM^read"/>
-        </security>
-        <security>
-            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
-            <code value="everyone^read"/>
-        </security>
-        <security>
-            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
-            <code value="user^s7DIn2HM^write"/>
-        </security>
+        <versionId value="19"/>
+        <lastUpdated value="2019-11-11T19:32:32.000-05:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-outcome-observation"/>
     <version value="1.0.0"/>
@@ -62,7 +46,7 @@
         </element>
         <element id="Observation.focus">
             <path value="Observation.focus"/>
-            <short value="Pregnancy Status Observation focus"/>
+            <short value="The related Pregnancy Status Observation"/>
             <definition value="The focus is the related Pregnancy Status Observation."/>
             <min value="1"/>
             <max value="1"/>
@@ -76,6 +60,9 @@
             <path value="Observation.effective[x]"/>
             <short value="Pregnancy outcome date."/>
             <definition value="Date on which the pregnancy outcome occurred."/>
+            <type>
+                <code value="dateTime"/>
+            </type>
             <mustSupport value="true"/>
             <mapping>
                 <identity value="eCR-CDA"/>
@@ -115,23 +102,22 @@
             <path value="Observation.component"/>
             <sliceName value="sliceBirthOrder"/>
             <short value="Birth order"/>
-            <definition value="The order born in the delivery, live born or fetal death (1st, 2nd, 3rd, 4th, 5th, 6th, 7th, etc.). All live births and fetal losses are included. If the pregnancy plurality is 1 then this value will also be 1."/>
+            <definition value="Represents the order born in the delivery, live born or fetal death (1st, 2nd, 3rd, 4th, 5th, 6th, 7th, etc.). All live births and fetal losses are included. If the pregnancy plurality is 1 then this value will also be 1."/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
         </element>
         <element id="Observation.component:sliceBirthOrder.code">
             <path value="Observation.component.code"/>
-          <patternCodeableConcept>
-            <coding>
-              <system value="http://loinc.org"/>
-              <code value="73771-8"/>
-              <display value="Birth order"/>
-            </coding>
-          </patternCodeableConcept>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://loinc.org"/>
+                    <code value="73771-8"/>
+                    <display value="Birth order"/>
+                </coding>
+            </patternCodeableConcept>
             <mustSupport value="true"/>
         </element>
-
         <element id="Observation.component:sliceBirthOrder.value[x]">
             <path value="Observation.component.value[x]"/>
             <short value="Birth order value (1, 2, 3, 4, etc.)"/>

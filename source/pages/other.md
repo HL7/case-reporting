@@ -12,6 +12,7 @@ active: other
 {:toc} -->
 
 <!-- end TOC -->
+
 <table>
 <thead>
 <tr>
@@ -127,6 +128,10 @@ active: other
 <tr>
 <td>Observation</td>
 <td><a href="Observation-observation-odh-usual-work-eve-everywoman.html">observation-odh-usual-work-eve-everywoman</a></td>
+</tr>
+<tr>
+<td>Observation</td>
+<td><a href="Observation-observation-pregnancy-outcome-eve-everywoman.html">observation-pregnancy-outcome-eve-everywoman</a></td>
 </tr>
 <tr>
 <td>Observation</td>

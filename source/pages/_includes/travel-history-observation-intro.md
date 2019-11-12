@@ -6,3 +6,4 @@ This Observation profile represents the following for eCR:
 * free text describing the travel history details and location can be entered using the Observation.component.valueCodeableConcept.text element
 * use component.codeableConcept to record a coded location
 * use component.extension to record a specific address
+* where a more granular address than state is known (e.g. city, street) it is appropriate to use the extension to record an address rather than using the coded location.

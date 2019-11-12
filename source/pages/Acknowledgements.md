@@ -15,6 +15,7 @@ This guide was produced and developed through a collaborative effort of the Cent
 * Sean McIlvenna, IT Manager and Senior Software Architect, Lantana Consulting Group
 * Wendy L. Wise, Senior Project Manager, Lantana Consulting Group
 
+
 This and predecessor documents were reviewed by many national and state public health organizations, standards development organizations and vendors. The authors and editors would like to express gratitude to these reviewers for their thoughtful comments and support during development of this guide. In addition, special thanks need to be expressed to the following organizations who contributed to this document: 
 *	Association of Public Health Laboratories 
 *	Association of State and Territorial Health Officials
@@ -27,6 +28,7 @@ This and predecessor documents were reviewed by many national and state public h
     *	National Institute for Occupational Safety and Health (NIOSH)
 *	Council of State and Territorial Epidemiologists
 *	Public Health Informatics Institute
+
 
 Others who contributed to this, and predecessor, documents include:
 * Chad Albent - InterSystems
