@@ -14,6 +14,8 @@ active: terminology
 ### Value Sets in this Guide
 
 - [Determination of Reportability (eCR) Value Set](ValueSet-valueset-determination-of-reportability-ecr.html)
+- [eCR MessageHeader Event Value Set](ValueSet-valueset-ecr-messageheader-event.html)
+- [eCR Task BusinessStatus Value Set](ValueSet-valueset-ecr-task-businessstatus.html)
 - [eICR Initiation](ValueSet-valueset-eicr-initiation-ecr.html)
 - [eICR Processing Status (eCR) Value Set](ValueSet-valueset-eicr-processing-status-ecr.html)
 - [eICR Processing Status Reason (eCR) Value Set](ValueSet-valueset-eicr-processing-status-reason-ecr.html)
@@ -26,11 +28,10 @@ active: terminology
 - [Location Relevance (eCR) Value Set](ValueSet-valueset-location-relevance-ecr.html)
 - [Postpartum Status](ValueSet-2.16.840.1.113883.11.20.9.87.html)
 - [Pregnancy Outcome](ValueSet-2.16.840.1.113883.11.20.9.86.html)
-- [Pregnancy Status](ValueSet-pregnancy-status.html)
 - [Pregnancy Status Determination Method](ValueSet-2.16.840.1.113883.11.20.9.80.html)
+- [Pregnancy Status](ValueSet-pregnancy-status.html)
 - [Reportability Priority (eCR) Value Set Value Set](ValueSet-valueset-reportability-priority-ecr.html)
 - [Therapeutic Response to Medication](ValueSet-2.16.840.1.113883.10.20.15.2.5.12.html)
-- [Value Set eCR Task BusinessStatus](ValueSet-valueset-ecr-task-businessstatus.html)
 
 
 ### External Value Sets
@@ -40,8 +41,9 @@ active: terminology
 
 ### Code Systems
 
-- [Code System Task Business Status](CodeSystem-codesystem-task-businessStatus.html)
+- [MessageHeader Event Code System ](CodeSystem-codesystem-messageHeader-event.html)
 - [PHIN VS (CDC Local Coding System)](CodeSystem-2.16.840.1.114222.4.5.274.html)
+- [Task Business Status Code Syste](CodeSystem-codesystem-task-businessStatus.html)
 
 
 ### Example Value Sets (Not for operational use)

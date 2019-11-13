@@ -1,0 +1,1 @@
+This value set contains codes that identify the event an eCR message represents.

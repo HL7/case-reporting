@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="ecr-messageheader"/>
     <meta>
-        <versionId value="11"/>
-        <lastUpdated value="2019-10-01T05:13:18.000-04:00"/>
+        <versionId value="13"/>
+        <lastUpdated value="2019-11-13T00:54:40.000-05:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader"/>
     <version value="1.0.0"/>
@@ -23,6 +23,17 @@
     <differential>
         <element id="MessageHeader">
             <path value="MessageHeader"/>
+        </element>
+        <element id="MessageHeader.event[x]">
+            <path value="MessageHeader.event[x]"/>
+            <type>
+                <code value="Coding"/>
+            </type>
+            <mustSupport value="true"/>
+            <binding>
+                <strength value="extensible"/>
+                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-ecr-messageheader-event"/>
+            </binding>
         </element>
         <element id="MessageHeader.destination">
             <path value="MessageHeader.destination"/>

@@ -12,6 +12,7 @@ active: home
 {:toc}
 
 <!-- end TOC -->
+
 # Introduction and Purpose
 With the adoption and maturing of Electronic Health Records (EHRs) there are opportunities to better support public health surveillance as well as the delivery of relevant public health information to clinical care. Electronic Case Reporting (eCR) can provide more complete and timely case data, support disease / condition monitoring, and assist in outbreak management and control. It can also improve bidirectional communications through the delivery of public health information in the context of a patients condition and local disease trends and by facilitating ad hoc communications. eCR will also reduce healthcare provider burden by automating the completion of legal reporting requirements.
 
