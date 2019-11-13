@@ -25,7 +25,7 @@
 - [Profiles & Extensions](profiles.html)
 - [Terminology](terminology.html)
 - [Capability Statements](capstatements.html)
-- [Exanoles](other.html)
+- [Examples](other.html)
 - [Downloads](downloads.html)
 
 <!-- ******* how to create a dropdown menu in md ********
