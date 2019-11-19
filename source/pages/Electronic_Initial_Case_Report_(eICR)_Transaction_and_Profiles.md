@@ -29,7 +29,7 @@ The following profiles and extensions have been defined for the eICR transaction
   <li><a href="StructureDefinition-ecr-organization.html">eCR Organization</a></li>
   <li><a href="StructureDefinition-eicr-encounter.html">eICR Encounter</a></li>
   <li><a href="StructureDefinition-eicr-condition.html">eICR Condition</a></li>
-  <li><a href="StructureDefinition-eicr-servicerequest.html">eICR Lab Order</a></li>
+  <li><a href="StructureDefinition-eicr-servicerequest.html">eICR ServiceRequest</a></li>
   <li><a href="StructureDefinition-eicr-location.html">eICR Location</a></li>
   <li><a href="StructureDefinition-pregnancy-status-observation.html">Pregnancy Status Observation</a></li>
   <li><a href="StructureDefinition-pregnancy-outcome-observation.html">Pregnancy Outcome Observation</a></li>
