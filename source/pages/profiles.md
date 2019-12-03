@@ -26,6 +26,8 @@ The following is a listing of all profiles that have been defined for this imple
 
 <ul>
 	<li><a href="StructureDefinition-characteristics-of-home-environment.html">Characteristics of Home Environment</a></li>
+	<li><a href="StructureDefinition-ecr-message-bundle.html">eCR Message Bundle</a></li>
+	<li><a href="StructureDefinition-ecr-messageheader.html">eCR MessageHeader</a></li>
 	<li><a href="StructureDefinition-ecr-organization.html">eCR Organization</a></li>
 	<li><a href="StructureDefinition-ecr-patient.html">eCR Patient</a></li>
 	<li><a href="StructureDefinition-ecr-practitionerrole.html">eCR PractitionerRole</a></li>
@@ -62,7 +64,7 @@ The following is a listing of all extensions that have been defined for this imp
 	<li><a href="StructureDefinition-date-determined-extension.html">Date Determined Extension</a></li>
 	<li><a href="StructureDefinition-date-recorded-extension.html">Date Recorded Extension</a></li>
 	<li><a href="StructureDefinition-ecr-organization-extension.html">eCR Organization Extension</a></li>
-	<li><a href="StructureDefinition-eicr-initiation-reason-extension.html">eICR Manually Initiated Reason Extension</a></li>
+	<li><a href="StructureDefinition-eicr-initiation-reason-extension.html">eICR Initiation Reason Extension</a></li>
 	<li><a href="StructureDefinition-eicr-initiation-type-extension.html">eICR Initiation Type Extension</a></li>
 	<li><a href="StructureDefinition-eicr-trigger-code-flag-extension.html">eICR Trigger Code Flag Extension</a></li>
 	<li><a href="StructureDefinition-rr-determination-of-reportability-extension.html">Determination of Reportability Extension</a></li>
@@ -72,7 +74,7 @@ The following is a listing of all extensions that have been defined for this imp
 	<li><a href="StructureDefinition-rr-eicr-receipt-time-extension.html">eICR Receipt Time Extension</a></li>
 	<li><a href="StructureDefinition-rr-external-resource-type-extension.html">External Resource Type Extension</a></li>
 	<li><a href="StructureDefinition-rr-location-relevance-extension.html">Location Relevance Extension</a></li>
-	<li><a href="StructureDefinition-rr-priority-extension.html">External Resource Priority Extension</a></li>
+	<li><a href="StructureDefinition-rr-priority-extension.html">Reportability Response Priority Extension</a></li>
 	<li><a href="StructureDefinition-rr-responsible-agency-organization-extension.html">Responsible Agency Organization Extension</a></li>
 	<li><a href="StructureDefinition-rr-routing-entity-organization-extension.html">Routing Entity Organization Extension</a></li>
 	<li><a href="StructureDefinition-rr-rules-authoring-agency-organization-extension.html">Rules Authoring Agency Organization Extension</a></li>
