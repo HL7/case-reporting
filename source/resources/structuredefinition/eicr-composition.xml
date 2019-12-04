@@ -47,6 +47,22 @@
                 <rules value="open"/>
             </slicing>
         </element>
+        <element id="Composition.extension:extensionClinicalDocumentVersionNumber">
+          <path value="Composition.extension"/>
+          <sliceName value="extensionClinicalDocumentVersionNumber"/>
+          <short value="Clinical Document Version Number"/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="Extension"/>
+            <profile value="http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber"/>
+          </type>
+          <mustSupport value="true"/>
+          <mapping>
+            <identity value="eCR-CDA"/>
+            <map value="[eICR R2 STU2] ClinicalDocument/versionNumber"/>
+          </mapping>
+        </element>
         <element id="Composition.extension:extensionEICRInitiationType">
             <path value="Composition.extension"/>
             <sliceName value="extensionEICRInitiationType"/>
