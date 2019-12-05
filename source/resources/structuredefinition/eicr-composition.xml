@@ -5,14 +5,6 @@
     <meta>
         <versionId value="152"/>
         <lastUpdated value="2019-12-04T18:48:38.000-05:00"/>
-        <security>
-            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
-            <code value="everyone^write"/>
-        </security>
-        <security>
-            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
-            <code value="everyone^read"/>
-        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
     <version value="1.0.0"/>
@@ -62,6 +54,10 @@
             <definition value="eICR Composition versionNumber. This is equivalent to ClinicalDocument.versionNumber in CDA. The id of the containing Bundle is equivalent to ClinicalDocument.id in CDA and Composition.identifier is equivalent to ClinicalDocument.setId in CDA. This is a version specific identifier for the composition, assigned when each version is created/updated.&#xA;&#xA;While each resource, including the composition itself, has its own version identifier, this is a formal identifier for the logical version of the composition as a whole. It would remain constant if the resources were moved to a new server, and all got new individual resource versions, for example."/>
             <min value="1"/>
             <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber"/>
+            </type>
             <mustSupport value="true"/>
             <mapping>
                 <identity value="eCR-CDA"/>
