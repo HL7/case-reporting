@@ -252,7 +252,7 @@
             <path value="Communication.payload"/>
             <sliceName value="sliceEICRInformation"/>
             <short value="Electronic Initial Case Report Information"/>
-            <definition value="This payload slice contains information about the eICR Composition to which this Communication is a response. The date/time of receipt and a document reference are represented in the referenced Electronic Initial Case Report Composition Profile and the processing status of the eICR Composition is contained in the eICR Processing Status profile. If the eICR Composition was manually or alternately initiated by a healthcare provider, this is indicated by the presence of the Initiation Type eICR extension.&#xA;&#xA;This payload slice is always present in the Reportability Response Communication.&#xA;&#xA;The text element (narrative block) in this section is only populated and displayed when the eICR CDA document was not processed (eICR Processing Status/code=&quot;RRVS22&quot;, &quot;eICR was not processed - error&quot;) and that text element contains the eICR processing status reason(s).&#xA;"/>
+            <definition value="This payload slice contains information about the eICR Document to which this Communication is a response. The date/time of receipt and a document reference are represented in the Electronic Initial Case Report Composition Profile (contained in the eICR Document Bundle) and the processing status of the eICR Document is contained in the eICR Processing Status profile. If the eICR Document was manually or alternately initiated by a healthcare provider, this is indicated by the presence of the Initiation Type eICR extension.&#xA;&#xA;This payload slice is always present in the Reportability Response Communication.&#xA;&#xA;The text element (narrative block) in this section is only populated and displayed when the eICR Document was not processed (eICR Processing Status/code=&quot;RRVS22&quot;, &quot;eICR was not processed - error&quot;) and that text element contains the eICR processing status reason(s).&#xA;"/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
@@ -322,20 +322,20 @@
         </element>
         <element id="Communication.payload:sliceEICRInformation.content[x]">
             <path value="Communication.payload.content[x]"/>
-            <short value="Reference to eICR Composition"/>
+            <short value="Reference to eICR Document Bundle"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
             </type>
             <mustSupport value="true"/>
         </element>
         <element id="Communication.payload:sliceEICRInformation.content[x].reference">
             <path value="Communication.payload.content[x].reference"/>
-            <mustSupport value="false"/>
         </element>
         <element id="Communication.payload:sliceEICRInformation.content[x].identifier">
             <path value="Communication.payload.content[x].identifier"/>
-            <short value="eICR Composition id"/>
+            <short value="eICR Document Bundle id"/>
+            <short value="eICR Document Bundle id"/>
             <mustSupport value="true"/>
         </element>
         <element id="Communication.payload:sliceEICRInformation.content[x].display">
