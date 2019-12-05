@@ -3,8 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-composition"/>
     <meta>
-        <versionId value="136"/>
-        <lastUpdated value="2019-11-11T19:03:08.000-05:00"/>
+        <versionId value="152"/>
+        <lastUpdated value="2019-12-04T18:48:38.000-05:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
     <version value="1.0.0"/>
@@ -47,22 +55,19 @@
                 <rules value="open"/>
             </slicing>
         </element>
-        <!--<element id="Composition.extension:extensionClinicalDocumentVersionNumber">
-          <path value="Composition.extension"/>
-          <sliceName value="extensionClinicalDocumentVersionNumber"/>
-          <short value="Clinical Document Version Number"/>
-          <min value="1"/>
-          <max value="1"/>
-          <type>
-            <code value="Extension"/>
-            <profile value="http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber"/>
-          </type>
-          <mustSupport value="true"/>
-          <mapping>
-            <identity value="eCR-CDA"/>
-            <map value="[eICR R2 STU2] ClinicalDocument/versionNumber"/>
-          </mapping>
-        </element>-->
+        <element id="Composition.extension:sliceExtensionVersionNumber">
+            <path value="Composition.extension"/>
+            <sliceName value="sliceExtensionVersionNumber"/>
+            <short value="eICR Composition versionNumber"/>
+            <definition value="eICR Composition versionNumber. This is equivalent to ClinicalDocument.versionNumber in CDA. The id of the containing Bundle is equivalent to ClinicalDocument.id in CDA and Composition.identifier is equivalent to ClinicalDocument.setId in CDA. This is a version specific identifier for the composition, assigned when each version is created/updated.&#xA;&#xA;While each resource, including the composition itself, has its own version identifier, this is a formal identifier for the logical version of the composition as a whole. It would remain constant if the resources were moved to a new server, and all got new individual resource versions, for example."/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] ClinicalDocument.versionNumber"/>
+            </mapping>
+        </element>
         <element id="Composition.extension:extensionEICRInitiationType">
             <path value="Composition.extension"/>
             <sliceName value="extensionEICRInitiationType"/>
@@ -98,15 +103,15 @@
         </element>
         <element id="Composition.identifier">
             <path value="Composition.identifier"/>
-            <short value="eICR Document Id"/>
-            <definition value="ID of the eICR Document"/>
+            <short value="eICR Composition identifier"/>
+            <definition value="eICR Composition identifier. This is equivalent to ClinicalDocument.setId in CDA. The id of the containing Bundle is equivalent to ClinicalDocument.id in CDA and Composition.sliceExtensionVersionNumber is equivalent to ClinicalDocument.versionNumber in CDA."/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
             <mapping>
                 <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] ClinicalDocument/identifier"/>
-                <comment value="ID of the eICR Document"/>
+                <map value="[eICR R2 STU2] ClinicalDocument/setId"/>
+                <comment value="setId of the eICR Document"/>
             </mapping>
         </element>
         <element id="Composition.type">
@@ -197,6 +202,58 @@
                 <identity value="eCR-CDA"/>
                 <map value="[eICR R2 STU2] ClinicalDocument/author"/>
             </mapping>
+        </element>
+        <element id="Composition.relatesTo">
+            <path value="Composition.relatesTo"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="code"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Composition.relatesTo:sliceTransformedCDA">
+            <path value="Composition.relatesTo"/>
+            <sliceName value="sliceTransformedCDA"/>
+            <short value="CDA Document that this Composition is transformed from"/>
+            <definition value="CDA Document that this Composition is transformed from"/>
+            <min value="0"/>
+            <max value="1"/>
+        </element>
+        <element id="Composition.relatesTo:sliceTransformedCDA.extension">
+            <path value="Composition.relatesTo.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+        </element>
+        <element id="Composition.relatesTo:sliceTransformedCDA.code">
+            <path value="Composition.relatesTo.code"/>
+            <fixedCode value="transforms"/>
+        </element>
+        <element id="Composition.relatesTo:sliceTransformedCDA.target[x]">
+            <path value="Composition.relatesTo.target[x]"/>
+            <short value="setId from the CDA document transformed"/>
+            <definition value="setId from the CDA document transformed"/>
+            <type>
+                <code value="Identifier"/>
+            </type>
+        </element>
+        <element id="Composition.relatesTo:sliceTransformedCDA.extension:sliceExtensionVersionNumber">
+            <path value="Composition.relatesTo.extension"/>
+            <sliceName value="sliceExtensionVersionNumber"/>
+            <short value="versionNumber from the CDA document transformed"/>
+            <definition value="versionNumber from the CDA document transformed"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber"/>
+            </type>
         </element>
         <element id="Composition.section">
             <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">

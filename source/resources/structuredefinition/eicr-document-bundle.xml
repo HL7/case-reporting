@@ -4,7 +4,23 @@
     <id value="eicr-document-bundle"/>
     <meta>
         <versionId value="21"/>
-        <lastUpdated value="2019-10-14T00:07:54.000-04:00"/>
+        <lastUpdated value="2019-12-04T18:49:02.000-05:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^write"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^read"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
     <version value="1.0.0"/>
@@ -15,6 +31,11 @@
     <publisher value="HL7 Public Health Work Group"/>
     <description value="This Bundle profile represents an eICR Document Bundle. It contains the eICR Composition."/>
     <fhirVersion value="4.0.0"/>
+    <mapping>
+        <identity value="eCR-CDA"/>
+        <name value="eCR FHIR to CDA Mapping"/>
+        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
+    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Bundle"/>
@@ -23,6 +44,18 @@
     <differential>
         <element id="Bundle">
             <path value="Bundle"/>
+        </element>
+        <element id="Bundle.id">
+            <path value="Bundle.id"/>
+            <short value="eICR Document Bundle id"/>
+            <definition value="eICR Document Bundle id. This is equivalent to ClinicalDocument.id in CDA. The identifier of the contained Composition is equivalent to ClinicalDocument.setID in CDA and Composition.sliceExtensionVersionNumber is equivalent to ClinicalDocument.versionNumber in CDA."/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] ClinicalDocument.id"/>
+            </mapping>
         </element>
         <element id="Bundle.type">
             <path value="Bundle.type"/>
