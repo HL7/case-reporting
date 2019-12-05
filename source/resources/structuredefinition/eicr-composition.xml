@@ -218,37 +218,16 @@
             <min value="0"/>
             <max value="1"/>
         </element>
-        <element id="Composition.relatesTo:sliceTransformedCDA.extension">
-            <path value="Composition.relatesTo.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-        </element>
         <element id="Composition.relatesTo:sliceTransformedCDA.code">
             <path value="Composition.relatesTo.code"/>
             <fixedCode value="transforms"/>
         </element>
         <element id="Composition.relatesTo:sliceTransformedCDA.target[x]">
             <path value="Composition.relatesTo.target[x]"/>
-            <short value="setId from the CDA document transformed"/>
-            <definition value="setId from the CDA document transformed"/>
+            <short value="ClinicalDocument/id from the CDA document transformed"/>
+            <definition value="ClinicalDocument/id from the CDA document transformed"/>
             <type>
                 <code value="Identifier"/>
-            </type>
-        </element>
-        <element id="Composition.relatesTo:sliceTransformedCDA.extension:sliceExtensionVersionNumber">
-            <path value="Composition.relatesTo.extension"/>
-            <sliceName value="sliceExtensionVersionNumber"/>
-            <short value="versionNumber from the CDA document transformed"/>
-            <definition value="versionNumber from the CDA document transformed"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber"/>
             </type>
         </element>
         <element id="Composition.section">
