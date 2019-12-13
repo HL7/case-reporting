@@ -6,3 +6,5 @@ This Extension profile represents a flag which, if it is present, indicates that
 * Results Section
 * Medications Section
 * Immunization Section
+
+It is also used in the eICR Encounter in the diagnosis.
