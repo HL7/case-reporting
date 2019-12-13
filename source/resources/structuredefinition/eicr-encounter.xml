@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-encounter"/>
     <meta>
-        <versionId value="53"/>
-        <lastUpdated value="2019-11-05T20:50:52.000-05:00"/>
+        <versionId value="54"/>
+        <lastUpdated value="2019-12-13T01:46:32.000-05:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
     <version value="1.0.0"/>
@@ -120,7 +120,7 @@
             <definition value="The provider in charge of care and the facility in which care was provided during the encounter in which the eICR was triggered"/>
             <type>
                 <code value="Reference"/>
-              <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-practitionerrole"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-practitionerrole"/>
             </type>
         </element>
         <element id="Encounter.period">
@@ -128,6 +128,45 @@
             <short value="Patient encounter start and end times"/>
             <definition value="Start and end times of the patient encounter in which the eICR was triggered. Not present when a trigger occurs outside of an encounter."/>
             <mustSupport value="true"/>
+        </element>
+        <element id="Encounter.diagnosis">
+            <path value="Encounter.diagnosis"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Encounter.diagnosis.extension">
+            <path value="Encounter.diagnosis.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Encounter.diagnosis.condition">
+            <path value="Encounter.diagnosis.condition"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Encounter.diagnosis.extension:sliceEncounterDiagnosisTrigger">
+            <path value="Encounter.diagnosis.extension"/>
+            <sliceName value="sliceEncounterDiagnosisTrigger"/>
+            <short value="eICR Trigger Code Flag"/>
+            <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated."/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
+            </type>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="eICR-CDA"/>
+                <map value="[eICR R2 STU2] Initial Case Report Trigger Code Problem Observation"/>
+            </mapping>
         </element>
         <element id="Encounter.period.start">
             <path value="Encounter.period.start"/>

@@ -1,249 +1,254 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition
-    xmlns="http://hl7.org/fhir">
-    <id value="eicr-composition"/>
-    <meta>
-        <versionId value="152"/>
-        <lastUpdated value="2019-12-04T18:48:38.000-05:00"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
-    <version value="1.0.0"/>
-    <name value="Eicr_Composition"/>
-    <title value="Electronic Initial Case Report Composition"/>
-    <status value="active"/>
-    <experimental value="false"/>
-    <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Composition profile represents an electronic initial case report (eICR). It describes the content requirements for the eICR including:         &#xA;&#xA;* patient demographics         &#xA;* patient pregnancy status         &#xA;* patient occupation and travel history         &#xA;* provider and facility information         &#xA;* laboratory orders, tests, and results         &#xA;* signs, symptoms, and diagnoses&#xA;* medication and immunization information&#xA;* flags for the existence of reportable condition trigger codes in diagnoses, ordered/resulted laboratory tests, medications, and immunizations&#xA;    * flags contain RCTC OID and RCTC version&#xA;* codes indicating whether the eICR was manually or alternately initiated"/>
-    <fhirVersion value="4.0.0"/>
-    <mapping>
-        <identity value="eCR-CDA"/>
-        <name value="eCR FHIR to CDA Mapping"/>
-        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
-    </mapping>
-    <kind value="resource"/>
-    <abstract value="false"/>
-    <type value="Composition"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Composition"/>
-    <derivation value="constraint"/>
-    <differential>
-        <element id="Composition">
-            <path value="Composition"/>
-            <short value="eICR Composition Profile"/>
-            <definition value="The Electronic Case Reporting Composition profile establishes the core elements, extensions, vocabularies and value sets for representing an electronic initial case report (eICR). It describes the content requirements for the initial Case Report including:         &#xA;&#xA;- Patient demographics         &#xA;- Patient pregnancy status         &#xA;- Patient occupation and travel history         &#xA;- Provider and Facility information         &#xA;- Laboratory orders tests and results         &#xA;- Signs and Symptoms and Diagnosis         &#xA;- Medication and Immunization History         &#xA;- Flags for the existence of reportable condition trigger codes in diagnoses and ordered/resulted laboratory tests."/>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] 1.1.2 Initial Public Health Case Report Document (eICR) (V3)"/>
-            </mapping>
-        </element>
-        <element id="Composition.extension">
-            <path value="Composition.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-        </element>
-        <element id="Composition.extension:sliceExtensionVersionNumber">
-            <path value="Composition.extension"/>
-            <sliceName value="sliceExtensionVersionNumber"/>
-            <short value="eICR Composition versionNumber"/>
-            <definition value="eICR Composition versionNumber. This is equivalent to ClinicalDocument.versionNumber in CDA. The id of the containing Bundle is equivalent to ClinicalDocument.id in CDA and Composition.identifier is equivalent to ClinicalDocument.setId in CDA. This is a version specific identifier for the composition, assigned when each version is created/updated.&#xA;&#xA;While each resource, including the composition itself, has its own version identifier, this is a formal identifier for the logical version of the composition as a whole. It would remain constant if the resources were moved to a new server, and all got new individual resource versions, for example."/>
-            <min value="1"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber"/>
-            </type>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] ClinicalDocument.versionNumber"/>
-            </mapping>
-        </element>
-        <element id="Composition.extension:extensionEICRInitiationType">
-            <path value="Composition.extension"/>
-            <sliceName value="extensionEICRInitiationType"/>
-            <short value="Initial Case Report Initiation Type"/>
-            <min value="0"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-initiation-type-extension"/>
-            </type>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] ClinicalDocument/documentationOf/serviceEvent/code"/>
-            </mapping>
-        </element>
-        <element id="Composition.extension:extensionEICRInitiationReason">
-            <path value="Composition.extension"/>
-            <sliceName value="extensionEICRInitiationReason"/>
-            <short value="Initial Case Report Initiation Reason"/>
-            <min value="0"/>
-            <max value="*"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-initiation-reason-extension"/>
-            </type>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Initial Case Report initiation Reason (V2)/value"/>
-                <comment value="Initiation Reason"/>
-            </mapping>
-        </element>
-        <element id="Composition.identifier">
-            <path value="Composition.identifier"/>
-            <short value="eICR Composition identifier"/>
-            <definition value="eICR Composition identifier. This is equivalent to ClinicalDocument.setId in CDA. The id of the containing Bundle is equivalent to ClinicalDocument.id in CDA and Composition.sliceExtensionVersionNumber is equivalent to ClinicalDocument.versionNumber in CDA."/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] ClinicalDocument/setId"/>
-                <comment value="setId of the eICR Document"/>
-            </mapping>
-        </element>
-        <element id="Composition.type">
-            <path value="Composition.type"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://loinc.org"/>
-                    <code value="55751-2"/>
-                </coding>
-            </patternCodeableConcept>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] ClinicalDocument/code"/>
-            </mapping>
-        </element>
-        <element id="Composition.category">
-            <path value="Composition.category"/>
-            <short value="Manual/Alternate Initiation"/>
-            <definition value="When code is set to &quot;PHC1464: Manually Initiated eICR&quot;, this flags that this eICR is manually initiated. When the code is set to &quot;PHC2235: Alternately Initiated eICR&quot;, it indicates that this eICR was initiated by automated process and is intended to force reporting to the responsible Public Health Agency (PHA) for the jurisdiction of care. Unlike eICRs manually initiated by a provider, which are force reported to all relevant jurisdictions, PHC2235 will be sent to, and only to, the PHA of the jurisdiction of care. If a reportable condition is found by public health decision support then the alternately initiated eICR may also be reported to the jurisdiction of residence PHA."/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <binding>
-                <strength value="extensible"/>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-eicr-initiation-ecr"/>
-            </binding>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] ClinicalDocument/documentationOf/serviceEvent/code"/>
-                <comment value="Alternate/Manual Initiation Type"/>
-            </mapping>
-        </element>
-        <element id="Composition.subject">
-            <path value="Composition.subject"/>
-            <short value="Patient"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-patient"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] ClinicalDocument/recordTarget"/>
-                <comment value="Patient"/>
-            </mapping>
-        </element>
-        <element id="Composition.encounter">
-            <path value="Composition.encounter"/>
-            <short value="Encounter related to the eICR event"/>
-            <definition value="This Encounter profile represents the encounter related to the eICR event."/>
-            <min value="1"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] ClinicalDocument/componentOf/encompassingEncounter"/>
-            </mapping>
-        </element>
-        <element id="Composition.date">
-            <path value="Composition.date"/>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] ClinicalDocument/effectiveTime"/>
-                <comment value="Date of the Report"/>
-            </mapping>
-        </element>
-        <element id="Composition.author">
-            <path value="Composition.author"/>
-            <definition value="It is possible to have multiple authors - especially in the case where the default author is the organization. For public health reporting this could contain the contact details for the Infection Control Professional (ICP) specific to the condition being reported on. If the main author of the document is not a person, it is recommended to have an additional person author contact who is specific for a disease for follow-up requirements. This person could be the ICP. Where a trigger occurs outside of an encounter the author will represent the Provider and Facility for reporting purposes."/>
-            <max value="*"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-practitionerrole"/>
-                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] ClinicalDocument/author"/>
-            </mapping>
-        </element>
-        <element id="Composition.relatesTo">
-            <path value="Composition.relatesTo"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="code"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Composition.relatesTo:sliceTransformedCDA">
-            <path value="Composition.relatesTo"/>
-            <sliceName value="sliceTransformedCDA"/>
-            <short value="CDA Document that this Composition is transformed from"/>
-            <definition value="CDA Document that this Composition is transformed from"/>
-            <min value="0"/>
-            <max value="1"/>
-        </element>
-        <element id="Composition.relatesTo:sliceTransformedCDA.code">
-            <path value="Composition.relatesTo.code"/>
-            <fixedCode value="transforms"/>
-        </element>
-        <element id="Composition.relatesTo:sliceTransformedCDA.target[x]">
-            <path value="Composition.relatesTo.target[x]"/>
-            <short value="ClinicalDocument/id from the CDA document transformed"/>
-            <definition value="ClinicalDocument/id from the CDA document transformed"/>
-            <type>
-                <code value="Identifier"/>
-            </type>
-        </element>
-        <element id="Composition.section">
-            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
-                <valueString value="Section"/>
-            </extension>
-            <path value="Composition.section"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="code"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-        </element>
-        <element id="Composition.section:sliceEncountersSection">
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="eicr-composition" />
+  <meta>
+    <versionId value="152" />
+    <lastUpdated value="2019-12-04T18:48:38.000-05:00" />
+  </meta>
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition" />
+  <version value="1.0.0" />
+  <name value="Eicr_Composition" />
+  <title value="Electronic Initial Case Report Composition" />
+  <status value="active" />
+  <experimental value="false" />
+  <publisher value="HL7 Public Health Work Group" />
+  <description
+    value="This Composition profile represents an electronic initial case report (eICR). It describes the content requirements for the eICR including:         &#xA;&#xA;* patient demographics         &#xA;* patient pregnancy status         &#xA;* patient occupation and travel history         &#xA;* provider and facility information         &#xA;* laboratory orders, tests, and results         &#xA;* signs, symptoms, and diagnoses&#xA;* medication and immunization information&#xA;* flags for the existence of reportable condition trigger codes in diagnoses, ordered/resulted laboratory tests, medications, and immunizations&#xA;    * flags contain RCTC OID and RCTC version&#xA;* codes indicating whether the eICR was manually or alternately initiated" />
+  <fhirVersion value="4.0.0" />
+  <mapping>
+    <identity value="eCR-CDA" />
+    <name value="eCR FHIR to CDA Mapping" />
+    <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)." />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Composition" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Composition" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Composition">
+      <path value="Composition" />
+      <short value="eICR Composition Profile" />
+      <definition
+        value="The Electronic Case Reporting Composition profile establishes the core elements, extensions, vocabularies and value sets for representing an electronic initial case report (eICR). It describes the content requirements for the initial Case Report including:         &#xA;&#xA;- Patient demographics         &#xA;- Patient pregnancy status         &#xA;- Patient occupation and travel history         &#xA;- Provider and Facility information         &#xA;- Laboratory orders tests and results         &#xA;- Signs and Symptoms and Diagnosis         &#xA;- Medication and Immunization History         &#xA;- Flags for the existence of reportable condition trigger codes in diagnoses and ordered/resulted laboratory tests." />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] 1.1.2 Initial Public Health Case Report Document (eICR) (V3)" />
+      </mapping>
+    </element>
+    <element id="Composition.extension">
+      <path value="Composition.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.extension:sliceExtensionVersionNumber">
+      <path value="Composition.extension" />
+      <sliceName value="sliceExtensionVersionNumber" />
+      <short value="eICR Composition versionNumber" />
+      <definition
+        value="eICR Composition versionNumber. This is equivalent to ClinicalDocument.versionNumber in CDA. The id of the containing Bundle is equivalent to ClinicalDocument.id in CDA and Composition.identifier is equivalent to ClinicalDocument.setId in CDA. This is a version specific identifier for the composition, assigned when each version is created/updated.&#xA;&#xA;While each resource, including the composition itself, has its own version identifier, this is a formal identifier for the logical version of the composition as a whole. It would remain constant if the resources were moved to a new server, and all got new individual resource versions, for example." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber" />
+      </type>
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] ClinicalDocument.versionNumber" />
+      </mapping>
+    </element>
+    <element id="Composition.extension:extensionEICRInitiationType">
+      <path value="Composition.extension" />
+      <sliceName value="extensionEICRInitiationType" />
+      <short value="Initial Case Report Initiation Type" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-initiation-type-extension" />
+      </type>
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] ClinicalDocument/documentationOf/serviceEvent/code" />
+      </mapping>
+    </element>
+    <element id="Composition.extension:extensionEICRInitiationReason">
+      <path value="Composition.extension" />
+      <sliceName value="extensionEICRInitiationReason" />
+      <short value="Initial Case Report Initiation Reason" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-initiation-reason-extension" />
+      </type>
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Initial Case Report initiation Reason (V2)/value" />
+        <comment value="Initiation Reason" />
+      </mapping>
+    </element>
+    <element id="Composition.identifier">
+      <path value="Composition.identifier" />
+      <short value="eICR Composition identifier" />
+      <definition
+        value="eICR Composition identifier. This is equivalent to ClinicalDocument.setId in CDA. The id of the containing Bundle is equivalent to ClinicalDocument.id in CDA and Composition.sliceExtensionVersionNumber is equivalent to ClinicalDocument.versionNumber in CDA." />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] ClinicalDocument/setId" />
+        <comment value="setId of the eICR Document" />
+      </mapping>
+    </element>
+    <element id="Composition.type">
+      <path value="Composition.type" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="55751-2" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] ClinicalDocument/code" />
+      </mapping>
+    </element>
+    <element id="Composition.category">
+      <path value="Composition.category" />
+      <short value="Manual/Alternate Initiation" />
+      <definition
+        value="When code is set to &quot;PHC1464: Manually Initiated eICR&quot;, this flags that this eICR is manually initiated. When the code is set to &quot;PHC2235: Alternately Initiated eICR&quot;, it indicates that this eICR was initiated by automated process and is intended to force reporting to the responsible Public Health Agency (PHA) for the jurisdiction of care. Unlike eICRs manually initiated by a provider, which are force reported to all relevant jurisdictions, PHC2235 will be sent to, and only to, the PHA of the jurisdiction of care. If a reportable condition is found by public health decision support then the alternately initiated eICR may also be reported to the jurisdiction of residence PHA." />
+      <max value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="extensible" />
+        <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-eicr-initiation-ecr" />
+      </binding>
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] ClinicalDocument/documentationOf/serviceEvent/code" />
+        <comment value="Alternate/Manual Initiation Type" />
+      </mapping>
+    </element>
+    <element id="Composition.subject">
+      <path value="Composition.subject" />
+      <short value="Patient" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-patient" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] ClinicalDocument/recordTarget" />
+        <comment value="Patient" />
+      </mapping>
+    </element>
+    <element id="Composition.encounter">
+      <path value="Composition.encounter" />
+      <short value="Encounter related to the eICR event" />
+      <definition value="This Encounter profile represents the encounter related to the eICR event." />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] ClinicalDocument/componentOf/encompassingEncounter" />
+      </mapping>
+    </element>
+    <element id="Composition.date">
+      <path value="Composition.date" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] ClinicalDocument/effectiveTime" />
+        <comment value="Date of the Report" />
+      </mapping>
+    </element>
+    <element id="Composition.author">
+      <path value="Composition.author" />
+      <definition
+        value="It is possible to have multiple authors - especially in the case where the default author is the organization. For public health reporting this could contain the contact details for the Infection Control Professional (ICP) specific to the condition being reported on. If the main author of the document is not a person, it is recommended to have an additional person author contact who is specific for a disease for follow-up requirements. This person could be the ICP. Where a trigger occurs outside of an encounter the author will represent the Provider and Facility for reporting purposes." />
+      <max value="*" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-practitionerrole" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] ClinicalDocument/author" />
+      </mapping>
+    </element>
+    <element id="Composition.relatesTo">
+      <path value="Composition.relatesTo" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.relatesTo:sliceTransformedCDA">
+      <path value="Composition.relatesTo" />
+      <sliceName value="sliceTransformedCDA" />
+      <short value="CDA Document that this Composition is transformed from" />
+      <definition value="CDA Document that this Composition is transformed from" />
+      <min value="0" />
+      <max value="1" />
+    </element>
+    <element id="Composition.relatesTo:sliceTransformedCDA.code">
+      <path value="Composition.relatesTo.code" />
+      <fixedCode value="transforms" />
+    </element>
+    <element id="Composition.relatesTo:sliceTransformedCDA.target[x]">
+      <path value="Composition.relatesTo.target[x]" />
+      <short value="ClinicalDocument/id from the CDA document transformed" />
+      <definition value="ClinicalDocument/id from the CDA document transformed" />
+      <type>
+        <code value="Identifier" />
+      </type>
+    </element>
+    <element id="Composition.section">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <!--<element id="Composition.section:sliceEncountersSection">
             <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
                 <valueString value="Section"/>
             </extension>
@@ -337,892 +342,905 @@
             </type>
             <mustSupport value="true"/>
         </element>
-        <element id="Composition.section:sliceHistoryOfPresentIllnessSection">
-            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
-                <valueString value="Section"/>
-            </extension>
-            <path value="Composition.section"/>
-            <sliceName value="sliceHistoryOfPresentIllnessSection"/>
-            <short value="History of Present Illness Section"/>
-            <definition value="History of Present Illness Section"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] History of Present Illness Section"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceHistoryOfPresentIllnessSection.code">
-            <path value="Composition.section.code"/>
-            <short value="History of Present Illness code"/>
-            <definition value="History of Present Illness code"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://loinc.org"/>
-                    <code value="10164-2"/>
-                </coding>
-            </patternCodeableConcept>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] History of Present Illness Section/code"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceHistoryOfPresentIllnessSection.text">
-            <path value="Composition.section.text"/>
-            <short value="History of Present Illness narrative"/>
-            <definition value="History of Present Illness narrative"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] History of Present Illness Section/text"/>
-                <comment value="History of Present Illness"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceReasonForVisitSection">
-            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
-                <valueString value="Section"/>
-            </extension>
-            <path value="Composition.section"/>
-            <sliceName value="sliceReasonForVisitSection"/>
-            <short value="Reason for Visit Section"/>
-            <definition value="Reason for Visit Section"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Reason for Visit Section"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceReasonForVisitSection.code">
-            <path value="Composition.section.code"/>
-            <short value="Reason for Visit code"/>
-            <definition value="Reason for Visit code"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://loinc.org"/>
-                    <code value="29299-5"/>
-                </coding>
-            </patternCodeableConcept>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Reason for Visit Section/code"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceReasonForVisitSection.text">
-            <path value="Composition.section.text"/>
-            <short value="Reason for Visit narrative"/>
-            <definition value="Reason for Visit narrative"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Reason for Visit Section/text"/>
-                <comment value="Reason for Visit"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceSocialHistorySection">
-            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
-                <valueString value="Section"/>
-            </extension>
-            <path value="Composition.section"/>
-            <sliceName value="sliceSocialHistorySection"/>
-            <short value="Social History Section"/>
-            <definition value="Social History Section"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Social History Section (V3)"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceSocialHistorySection.code">
-            <path value="Composition.section.code"/>
-            <short value="Social History Section code"/>
-            <definition value="Social History Section code"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://loinc.org"/>
-                    <code value="29762-2"/>
-                </coding>
-            </patternCodeableConcept>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Social History Section (V3)/code"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceSocialHistorySection.text">
-            <path value="Composition.section.text"/>
-            <short value="Social History Section narrative"/>
-            <definition value="Social History Section narrative"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Social History Section (V3)/text"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceSocialHistorySection.entry">
-            <path value="Composition.section.entry"/>
-            <slicing>
-                <discriminator>
-                    <type value="profile"/>
-                    <path value="resolve()"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Composition.section:sliceSocialHistorySection.entry:sliceCharacteristicsOfHomeEnvironment">
-            <path value="Composition.section.entry"/>
-            <sliceName value="sliceCharacteristicsOfHomeEnvironment"/>
-            <short value="Characteristics of Home Environment"/>
-            <definition value="If the patient is homeless, complete as much address information as possible (city, zip, county, etc.) and use the Characteristics of Home Environment profile to indicate that the patient is homeless."/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/characteristics-of-home-environment"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Composition.section:sliceSocialHistorySection.entry:sliceODHPastOrPresentJob">
-            <path value="Composition.section.entry"/>
-            <sliceName value="sliceODHPastOrPresentJob"/>
-            <short value="ODH Past or Present Job entry"/>
-            <definition value="ODH Past or Present Job entry"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/odh/StructureDefinition/odh-PastOrPresentJob"/>
-            </type>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Past or Present Occupation Observation"/>
-                <comment value="Current Occupation, Current Industry, Current Job Title, Current Employer Name, Current Employer Phone, Current Employer Address"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceSocialHistorySection.entry:sliceODHUsualWork">
-            <path value="Composition.section.entry"/>
-            <sliceName value="sliceODHUsualWork"/>
-            <short value="ODH Usual Work entry"/>
-            <definition value="ODH Usual Work entry"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/odh/StructureDefinition/odh-UsualWork"/>
-            </type>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Usual Occupation Observation"/>
-                <comment value="Usual Occupation, Usual Industry, Occupational Exposure"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceSocialHistorySection.entry:sliceTravelHistory">
-            <path value="Composition.section.entry"/>
-            <sliceName value="sliceTravelHistory"/>
-            <short value="ODH Travel History entry"/>
-            <definition value="ODH Travel History entry"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-observation"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Travel History"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceProblemSection">
-            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
-                <valueString value="Section"/>
-            </extension>
-            <path value="Composition.section"/>
-            <sliceName value="sliceProblemSection"/>
-            <short value="Problem Section"/>
-            <definition value="Problem Section"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Problem Section (entries required) (V3)"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceProblemSection.code">
-            <path value="Composition.section.code"/>
-            <short value="Problem Section code"/>
-            <definition value="Problem Section code"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://loinc.org"/>
-                    <code value="11450-4"/>
-                </coding>
-            </patternCodeableConcept>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Problem Section (entries required) (V3)/code"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceProblemSection.text">
-            <path value="Composition.section.text"/>
-            <short value="Problem Section narrative"/>
-            <definition value="Problem Section narrative"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Problem Section (entries required) (V3)/text"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceProblemSection.entry">
-            <path value="Composition.section.entry"/>
-            <slicing>
-                <discriminator>
-                    <type value="profile"/>
-                    <path value="resolve()"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Composition.section:sliceProblemSection.entry:sliceEICRCondition">
-            <path value="Composition.section.entry"/>
-            <sliceName value="sliceEICRCondition"/>
-            <short value="eICR Condition entry"/>
-            <definition value="The eICR Trigger Code Flag (extension) is present for an eICR Condition (diagnosis), based on a trigger code match of the diagnosis (condition.code) to the eRSD PlanDefinition Diagnosis Trigger."/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Problem Observation (V3) + Initial Case Report Trigger Code Problem Observation (V2)"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceProblemSection.entry:sliceEICRCondition.extension">
-            <path value="Composition.section.entry.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-        </element>
-        <element id="Composition.section:sliceProblemSection.entry:sliceEICRCondition.extension:sliceTriggerCondition">
-            <path value="Composition.section.entry.extension"/>
-            <sliceName value="sliceTriggerCondition"/>
-            <short value="eICR Trigger Code Flag"/>
-            <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated."/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
-            </type>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Initial Case Report Trigger Code Problem Observation"/>
-                <comment value="Diagnosis Trigger"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceMedicationsAdministeredSection">
-            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
-                <valueString value="Section"/>
-            </extension>
-            <path value="Composition.section"/>
-            <sliceName value="sliceMedicationsAdministeredSection"/>
-            <short value="Medications Administered Section"/>
-            <definition value="Medications Administered Section"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Medications Administered Section (V2)"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceMedicationsAdministeredSection.code">
-            <path value="Composition.section.code"/>
-            <short value="Medications Administered Section code"/>
-            <definition value="Medications Administered Section code"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://loinc.org"/>
-                    <code value="29549-3"/>
-                </coding>
-            </patternCodeableConcept>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Medications Administered Section (V2)/code"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceMedicationsAdministeredSection.text">
-            <path value="Composition.section.text"/>
-            <short value="Medications Administered Section narrative"/>
-            <definition value="Medications Administered Section narrative"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Medications Administered Section (V2)/text"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceMedicationsAdministeredSection.entry">
-            <path value="Composition.section.entry"/>
-            <slicing>
-                <discriminator>
-                    <type value="profile"/>
-                    <path value="resolve()"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Composition.section:sliceMedicationsAdministeredSection.entry:sliceMedicationAdministration">
-            <path value="Composition.section.entry"/>
-            <sliceName value="sliceMedicationAdministration"/>
-            <short value="Medication Administration entry"/>
-            <definition value="The eICR Trigger Code Flag (extension) is present for an MedicationAdministration, based on a trigger code match of the medication (MedicationAdministration.medicationCodeableConcept) to the eRSD PlanDefinition Medications Trigger."/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/MedicationAdministration"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Medication Activity (V2)/Medication Information (V2) + Medication Activity (V2)/Initial Case Report Trigger Code Medication Information"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceMedicationsAdministeredSection.entry:sliceMedicationAdministration.extension">
-            <path value="Composition.section.entry.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-        </element>
-        <element id="Composition.section:sliceMedicationsAdministeredSection.entry:sliceMedicationAdministration.extension:sliceTriggerMedicationAdministered">
-            <path value="Composition.section.entry.extension"/>
-            <sliceName value="sliceTriggerMedicationAdministered"/>
-            <short value="eICR Trigger Code Flag"/>
-            <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eICR to be generated."/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
-            </type>
-        </element>
-        <element id="Composition.section:sliceResultsSection">
-            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
-                <valueString value="Section"/>
-            </extension>
-            <path value="Composition.section"/>
-            <sliceName value="sliceResultsSection"/>
-            <short value="Results Section"/>
-            <definition value="Results Section"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Results Section (entries required) (V3)"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceResultsSection.code">
-            <path value="Composition.section.code"/>
-            <short value="Results Section code"/>
-            <definition value="Results Section code"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://loinc.org"/>
-                    <code value="30954-2"/>
-                </coding>
-            </patternCodeableConcept>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Results Section (entries required) (V3)/code"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceResultsSection.text">
-            <path value="Composition.section.text"/>
-            <short value="Results Section narrative"/>
-            <definition value="Results Section narrative"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Results Section (entries required) (V3)/text"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceResultsSection.entry">
-            <path value="Composition.section.entry"/>
-            <slicing>
-                <discriminator>
-                    <type value="profile"/>
-                    <path value="resolve()"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-        </element>
-        <element id="Composition.section:sliceResultsSection.entry:sliceUSCoreObservationResults">
-            <path value="Composition.section.entry"/>
-            <sliceName value="sliceUSCoreObservationResults"/>
-            <definition value="The eICR Trigger Code Flag (extension) is present for a laboratory result, based on a trigger code match of either the lab test (observation.code) to the eRSD PlanDefinition Lab Obs Test Name Trigger or the lab test result (observation.value) to the eRSD PlanDefinition Organism Substance Trigger."/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Result Observation (V3) + Initial Case Report Trigger Code Result Observation (V2)"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceResultsSection.entry:sliceUSCoreObservationResults.extension">
-            <path value="Composition.section.entry.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-        </element>
-        <element id="Composition.section:sliceResultsSection.entry:sliceUSCoreObservationResults.extension:sliceTriggerUSCoreObservationResults">
-            <path value="Composition.section.entry.extension"/>
-            <sliceName value="sliceTriggerUSCoreObservationResults"/>
-            <short value="eICR Trigger Code Flag"/>
-            <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. "/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Composition.section:slicePlanOfTreatmentSection">
-            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
-                <valueString value="Section"/>
-            </extension>
-            <path value="Composition.section"/>
-            <sliceName value="slicePlanOfTreatmentSection"/>
-            <short value="Plan of Treatment Section"/>
-            <definition value="Plan of Treatment Section"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Plan of Treatment Section (V2)"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:slicePlanOfTreatmentSection.code">
-            <path value="Composition.section.code"/>
-            <short value="Plan of Treatment"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://loinc.org"/>
-                    <code value="18776-5"/>
-                </coding>
-            </patternCodeableConcept>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Plan of Treatment Section (V2)/code"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:slicePlanOfTreatmentSection.text">
-            <path value="Composition.section.text"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Plan of Treatment Section (V2)/text"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:slicePlanOfTreatmentSection.entry">
-            <path value="Composition.section.entry"/>
-            <slicing>
-                <discriminator>
-                    <type value="profile"/>
-                    <path value="resolve()"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceEICRServiceRequest">
-            <path value="Composition.section.entry"/>
-            <sliceName value="sliceEICRServiceRequest"/>
-            <short value="eICR Service Request entry"/>
-            <definition value="The eICR Trigger Code Flag (extension) is present for a laboratory test order, based on a trigger code match of the lab test (observation.code) to the eRSD PlanDefinition Lab Obs Test Name Trigger or the lab test result (observation.value) to the eRSD PlanDefinition Organism Substance Trigger."/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-servicerequest"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Planned Observation (V2) + Initial Case Report Trigger Code Lab Test Order (V2)"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceEICRServiceRequest.extension">
-            <path value="Composition.section.entry.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-        </element>
-        <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceEICRServiceRequest.extension:sliceTriggerEICRServiceRequest">
-            <path value="Composition.section.entry.extension"/>
-            <sliceName value="sliceTriggerEICRServiceRequest"/>
-            <short value="eICR Trigger Code Flag"/>
-            <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated."/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceUSCoreMedicationRequest">
-            <path value="Composition.section.entry"/>
-            <sliceName value="sliceUSCoreMedicationRequest"/>
-            <short value="US Core Medication Request entry"/>
-            <definition value="The eICR Trigger Code Flag (extension) is present for a MedicationRequest, based on a trigger code match of the medication (MedicationRequest.medicationCodeableConcept) to the eRSD PlanDefinition Medications Trigger."/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Planned Medication Activity (V2)/Medication Information (V2) + Planned Medication Activity (V2)/Initial Case Report Trigger Code Medication Information"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceUSCoreMedicationRequest.extension">
-            <path value="Composition.section.entry.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-        </element>
-        <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceUSCoreMedicationRequest.extension:sliceTriggerUSCoreMedicationRequest">
-            <path value="Composition.section.entry.extension"/>
-            <sliceName value="sliceTriggerUSCoreMedicationRequest"/>
-            <short value="eICR Trigger Code Flag"/>
-            <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated."/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Composition.section:sliceImmunizationsSection">
-            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
-                <valueString value="Section"/>
-            </extension>
-            <path value="Composition.section"/>
-            <sliceName value="sliceImmunizationsSection"/>
-            <short value="Immunizations Section"/>
-            <definition value="Immunizations Section"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Immunizations Section (entries required) (V3)"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceImmunizationsSection.code">
-            <path value="Composition.section.code"/>
-            <short value="Immunizations"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://loinc.org"/>
-                    <code value="11369-6"/>
-                </coding>
-            </patternCodeableConcept>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Immunizations Section (entries required) (V3)/code"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceImmunizationsSection.text">
-            <path value="Composition.section.text"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Immunizations Section (entries required) (V3)/text"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceImmunizationsSection.entry">
-            <path value="Composition.section.entry"/>
-            <slicing>
-                <discriminator>
-                    <type value="profile"/>
-                    <path value="resolve()"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Composition.section:sliceImmunizationsSection.entry:sliceUSCoreImmunization">
-            <path value="Composition.section.entry"/>
-            <sliceName value="sliceUSCoreImmunization"/>
-            <short value="Immunization entry"/>
-            <definition value="The eICR Trigger Code Flag (extension) is present for an Immunization, based on a trigger code match of the vaccine (Immunization.vaccineCode) to the eRSD PlanDefinition Immunizations Trigger."/>
-            <min value="1"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Immunization Activity (V3)/Immunization Medication Information (V2) + Immunization Activity (V3)/Initial Case Report Trigger Code Immunization Medication Information"/>
-                <comment value="Immunization Status"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceImmunizationsSection.entry:sliceUSCoreImmunization.extension">
-            <path value="Composition.section.entry.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-        </element>
-        <element id="Composition.section:sliceImmunizationsSection.entry:sliceUSCoreImmunization.extension:sliceTriggerImmunization">
-            <path value="Composition.section.entry.extension"/>
-            <sliceName value="sliceTriggerImmunization"/>
-            <short value="eICR Trigger Code Flag"/>
-            <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated."/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
-            </type>
-        </element>
-        <element id="Composition.section:sliceVitalSignsSection">
-            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
-                <valueString value="Section"/>
-            </extension>
-            <path value="Composition.section"/>
-            <sliceName value="sliceVitalSignsSection"/>
-            <short value="Vital Signs Section"/>
-            <definition value="Vital Signs Section"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Vital Signs Section (entries required) (V3)"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceVitalSignsSection.code">
-            <path value="Composition.section.code"/>
-            <short value="Vital Signs"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://loinc.org"/>
-                    <code value="8716-3"/>
-                </coding>
-            </patternCodeableConcept>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Vital Signs Section (entries required) (V3)/code"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceVitalSignsSection.text">
-            <path value="Composition.section.text"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Vital Signs Section (entries required) (V3)/text"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceVitalSignsSection.entry">
-            <path value="Composition.section.entry"/>
-            <slicing>
-                <discriminator>
-                    <type value="profile"/>
-                    <path value="resolve()"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Composition.section:sliceVitalSignsSection.entry:sliceVitalSigns">
-            <path value="Composition.section.entry"/>
-            <sliceName value="sliceVitalSigns"/>
-            <min value="1"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/vitalsigns"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Vital Signs Organizer (V3)/Vital Sign Observation (V2)"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:slicePregnancySection">
-            <path value="Composition.section"/>
-            <sliceName value="slicePregnancySection"/>
-            <short value="Pregnancy Section"/>
-            <definition value="Pregnancy Section"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Pregnancy Section"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:slicePregnancySection.code">
-            <path value="Composition.section.code"/>
-            <short value="Pregnancy summary Document"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://loinc.org"/>
-                    <code value="90767-5"/>
-                </coding>
-            </patternCodeableConcept>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Pregnancy Section/code"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:slicePregnancySection.text">
-            <path value="Composition.section.text"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Pregnancy Section/text"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:slicePregnancySection.entry">
-            <path value="Composition.section.entry"/>
-            <slicing>
-                <discriminator>
-                    <type value="profile"/>
-                    <path value="resolve()"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-        </element>
-        <element id="Composition.section:slicePregnancySection.entry:slicePregnancyStatusObservation">
-            <path value="Composition.section.entry"/>
-            <sliceName value="slicePregnancyStatusObservation"/>
-            <short value="Pregnancy Status Observation entry"/>
-            <definition value="Pregnancy Status Observation entry"/>
-            <min value="1"/>
-            <max value="*"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation"/>
-            </type>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Pregnancy Status Observation (SUPPLEMENTAL PREGNANCY)"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:slicePregnancySection.entry:slicePregnancyOutcome">
-            <path value="Composition.section.entry"/>
-            <sliceName value="slicePregnancyOutcome"/>
-            <short value="Pregnancy Outcome entry"/>
-            <definition value="Pregnancy Outcome entry"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-outcome-observation"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Composition.section:slicePregnancySection.entry:sliceLastMenstrualPeriod">
-            <path value="Composition.section.entry"/>
-            <sliceName value="sliceLastMenstrualPeriod"/>
-            <short value="Last Menstrual Period entry"/>
-            <definition value="Last Menstrual Period entry"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/last-menstrual-period"/>
-            </type>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Last Menstrual Period (V2)"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:slicePregnancySection.entry:slicePostpartumStatus">
-            <path value="Composition.section.entry"/>
-            <sliceName value="slicePostpartumStatus"/>
-            <short value="Postpartum Status entry"/>
-            <definition value="Postpartum Status entry"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/postpartum-status"/>
-            </type>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Postpartum Status"/>
-            </mapping>
-        </element>
-    </differential>
+        -->
+    <element id="Composition.section:sliceHistoryOfPresentIllnessSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceHistoryOfPresentIllnessSection" />
+      <short value="History of Present Illness Section" />
+      <definition value="History of Present Illness Section" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] History of Present Illness Section" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceHistoryOfPresentIllnessSection.code">
+      <path value="Composition.section.code" />
+      <short value="History of Present Illness code" />
+      <definition value="History of Present Illness code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="10164-2" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] History of Present Illness Section/code" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceHistoryOfPresentIllnessSection.text">
+      <path value="Composition.section.text" />
+      <short value="History of Present Illness narrative" />
+      <definition value="History of Present Illness narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] History of Present Illness Section/text" />
+        <comment value="History of Present Illness" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceReasonForVisitSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceReasonForVisitSection" />
+      <short value="Reason for Visit Section" />
+      <definition value="Reason for Visit Section" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Reason for Visit Section" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceReasonForVisitSection.code">
+      <path value="Composition.section.code" />
+      <short value="Reason for Visit code" />
+      <definition value="Reason for Visit code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="29299-5" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Reason for Visit Section/code" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceReasonForVisitSection.text">
+      <path value="Composition.section.text" />
+      <short value="Reason for Visit narrative" />
+      <definition value="Reason for Visit narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Reason for Visit Section/text" />
+        <comment value="Reason for Visit" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceSocialHistorySection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceSocialHistorySection" />
+      <short value="Social History Section" />
+      <definition value="Social History Section" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Social History Section (V3)" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceSocialHistorySection.code">
+      <path value="Composition.section.code" />
+      <short value="Social History Section code" />
+      <definition value="Social History Section code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="29762-2" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Social History Section (V3)/code" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceSocialHistorySection.text">
+      <path value="Composition.section.text" />
+      <short value="Social History Section narrative" />
+      <definition value="Social History Section narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Social History Section (V3)/text" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceSocialHistorySection.entry">
+      <path value="Composition.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceSocialHistorySection.entry:sliceCharacteristicsOfHomeEnvironment">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceCharacteristicsOfHomeEnvironment" />
+      <short value="Characteristics of Home Environment" />
+      <definition
+        value="If the patient is homeless, complete as much address information as possible (city, zip, county, etc.) and use the Characteristics of Home Environment profile to indicate that the patient is homeless." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/characteristics-of-home-environment" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceSocialHistorySection.entry:sliceODHPastOrPresentJob">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceODHPastOrPresentJob" />
+      <short value="ODH Past or Present Job entry" />
+      <definition value="ODH Past or Present Job entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/odh/StructureDefinition/odh-PastOrPresentJob" />
+      </type>
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Past or Present Occupation Observation" />
+        <comment value="Current Occupation, Current Industry, Current Job Title, Current Employer Name, Current Employer Phone, Current Employer Address" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceSocialHistorySection.entry:sliceODHUsualWork">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceODHUsualWork" />
+      <short value="ODH Usual Work entry" />
+      <definition value="ODH Usual Work entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/odh/StructureDefinition/odh-UsualWork" />
+      </type>
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Usual Occupation Observation" />
+        <comment value="Usual Occupation, Usual Industry, Occupational Exposure" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceSocialHistorySection.entry:sliceTravelHistory">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceTravelHistory" />
+      <short value="ODH Travel History entry" />
+      <definition value="ODH Travel History entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-observation" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Travel History" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceProblemSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceProblemSection" />
+      <short value="Problem Section" />
+      <definition value="Problem Section" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Problem Section (entries required) (V3)" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceProblemSection.code">
+      <path value="Composition.section.code" />
+      <short value="Problem Section code" />
+      <definition value="Problem Section code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="11450-4" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Problem Section (entries required) (V3)/code" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceProblemSection.text">
+      <path value="Composition.section.text" />
+      <short value="Problem Section narrative" />
+      <definition value="Problem Section narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Problem Section (entries required) (V3)/text" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceProblemSection.entry">
+      <path value="Composition.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceProblemSection.entry:sliceEICRCondition">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceEICRCondition" />
+      <short value="eICR Condition entry" />
+      <definition
+        value="The eICR Trigger Code Flag (extension) is present for an eICR Condition (diagnosis), based on a trigger code match of the diagnosis (condition.code) to the eRSD PlanDefinition Diagnosis Trigger." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Problem Observation (V3) + Initial Case Report Trigger Code Problem Observation (V2)" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceProblemSection.entry:sliceEICRCondition.extension">
+      <path value="Composition.section.entry.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:sliceProblemSection.entry:sliceEICRCondition.extension:sliceTriggerCondition">
+      <path value="Composition.section.entry.extension" />
+      <sliceName value="sliceTriggerCondition" />
+      <short value="eICR Trigger Code Flag" />
+      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated." />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension" />
+      </type>
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Initial Case Report Trigger Code Problem Observation" />
+        <comment value="Diagnosis Trigger" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceMedicationsAdministeredSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceMedicationsAdministeredSection" />
+      <short value="Medications Administered Section" />
+      <definition value="Medications Administered Section" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Medications Administered Section (V2)" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceMedicationsAdministeredSection.code">
+      <path value="Composition.section.code" />
+      <short value="Medications Administered Section code" />
+      <definition value="Medications Administered Section code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="29549-3" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Medications Administered Section (V2)/code" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceMedicationsAdministeredSection.text">
+      <path value="Composition.section.text" />
+      <short value="Medications Administered Section narrative" />
+      <definition value="Medications Administered Section narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Medications Administered Section (V2)/text" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceMedicationsAdministeredSection.entry">
+      <path value="Composition.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceMedicationsAdministeredSection.entry:sliceMedicationAdministration">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceMedicationAdministration" />
+      <short value="Medication Administration entry" />
+      <definition
+        value="The eICR Trigger Code Flag (extension) is present for an MedicationAdministration, based on a trigger code match of the medication (MedicationAdministration.medicationCodeableConcept) to the eRSD PlanDefinition Medications Trigger." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/MedicationAdministration" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map
+          value="[eICR R2 STU2] Medication Activity (V2)/Medication Information (V2) + Medication Activity (V2)/Initial Case Report Trigger Code Medication Information"
+         />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceMedicationsAdministeredSection.entry:sliceMedicationAdministration.extension">
+      <path value="Composition.section.entry.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:sliceMedicationsAdministeredSection.entry:sliceMedicationAdministration.extension:sliceTriggerMedicationAdministered">
+      <path value="Composition.section.entry.extension" />
+      <sliceName value="sliceTriggerMedicationAdministered" />
+      <short value="eICR Trigger Code Flag" />
+      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eICR to be generated." />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension" />
+      </type>
+    </element>
+    <element id="Composition.section:sliceResultsSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceResultsSection" />
+      <short value="Results Section" />
+      <definition value="Results Section" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Results Section (entries required) (V3)" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceResultsSection.code">
+      <path value="Composition.section.code" />
+      <short value="Results Section code" />
+      <definition value="Results Section code" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="30954-2" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Results Section (entries required) (V3)/code" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceResultsSection.text">
+      <path value="Composition.section.text" />
+      <short value="Results Section narrative" />
+      <definition value="Results Section narrative" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Results Section (entries required) (V3)/text" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceResultsSection.entry">
+      <path value="Composition.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:sliceResultsSection.entry:sliceUSCoreObservationResults">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceUSCoreObservationResults" />
+      <definition
+        value="The eICR Trigger Code Flag (extension) is present for a laboratory result, based on a trigger code match of either the lab test (observation.code) to the eRSD PlanDefinition Lab Obs Test Name Trigger or the lab test result (observation.value) to the eRSD PlanDefinition Organism Substance Trigger." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Result Observation (V3) + Initial Case Report Trigger Code Result Observation (V2)" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceResultsSection.entry:sliceUSCoreObservationResults.extension">
+      <path value="Composition.section.entry.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:sliceResultsSection.entry:sliceUSCoreObservationResults.extension:sliceTriggerUSCoreObservationResults">
+      <path value="Composition.section.entry.extension" />
+      <sliceName value="sliceTriggerUSCoreObservationResults" />
+      <short value="eICR Trigger Code Flag" />
+      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. " />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="slicePlanOfTreatmentSection" />
+      <short value="Plan of Treatment Section" />
+      <definition value="Plan of Treatment Section" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Plan of Treatment Section (V2)" />
+      </mapping>
+    </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection.code">
+      <path value="Composition.section.code" />
+      <short value="Plan of Treatment" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="18776-5" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Plan of Treatment Section (V2)/code" />
+      </mapping>
+    </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection.text">
+      <path value="Composition.section.text" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Plan of Treatment Section (V2)/text" />
+      </mapping>
+    </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection.entry">
+      <path value="Composition.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceEICRServiceRequest">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceEICRServiceRequest" />
+      <short value="eICR Service Request entry" />
+      <definition
+        value="The eICR Trigger Code Flag (extension) is present for a laboratory test order, based on a trigger code match of the lab test (observation.code) to the eRSD PlanDefinition Lab Obs Test Name Trigger or the lab test result (observation.value) to the eRSD PlanDefinition Organism Substance Trigger." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-servicerequest" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Planned Observation (V2) + Initial Case Report Trigger Code Lab Test Order (V2)" />
+      </mapping>
+    </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceEICRServiceRequest.extension">
+      <path value="Composition.section.entry.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceEICRServiceRequest.extension:sliceTriggerEICRServiceRequest">
+      <path value="Composition.section.entry.extension" />
+      <sliceName value="sliceTriggerEICRServiceRequest" />
+      <short value="eICR Trigger Code Flag" />
+      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated." />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceUSCoreMedicationRequest">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceUSCoreMedicationRequest" />
+      <short value="US Core Medication Request entry" />
+      <definition
+        value="The eICR Trigger Code Flag (extension) is present for a MedicationRequest, based on a trigger code match of the medication (MedicationRequest.medicationCodeableConcept) to the eRSD PlanDefinition Medications Trigger." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map
+          value="[eICR R2 STU2] Planned Medication Activity (V2)/Medication Information (V2) + Planned Medication Activity (V2)/Initial Case Report Trigger Code Medication Information"
+         />
+      </mapping>
+    </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceUSCoreMedicationRequest.extension">
+      <path value="Composition.section.entry.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:slicePlanOfTreatmentSection.entry:sliceUSCoreMedicationRequest.extension:sliceTriggerUSCoreMedicationRequest">
+      <path value="Composition.section.entry.extension" />
+      <sliceName value="sliceTriggerUSCoreMedicationRequest" />
+      <short value="eICR Trigger Code Flag" />
+      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated." />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceImmunizationsSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceImmunizationsSection" />
+      <short value="Immunizations Section" />
+      <definition value="Immunizations Section" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Immunizations Section (entries required) (V3)" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceImmunizationsSection.code">
+      <path value="Composition.section.code" />
+      <short value="Immunizations" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="11369-6" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Immunizations Section (entries required) (V3)/code" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceImmunizationsSection.text">
+      <path value="Composition.section.text" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Immunizations Section (entries required) (V3)/text" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceImmunizationsSection.entry">
+      <path value="Composition.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceImmunizationsSection.entry:sliceUSCoreImmunization">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceUSCoreImmunization" />
+      <short value="Immunization entry" />
+      <definition
+        value="The eICR Trigger Code Flag (extension) is present for an Immunization, based on a trigger code match of the vaccine (Immunization.vaccineCode) to the eRSD PlanDefinition Immunizations Trigger." />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map
+          value="[eICR R2 STU2] Immunization Activity (V3)/Immunization Medication Information (V2) + Immunization Activity (V3)/Initial Case Report Trigger Code Immunization Medication Information" />
+        <comment value="Immunization Status" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceImmunizationsSection.entry:sliceUSCoreImmunization.extension">
+      <path value="Composition.section.entry.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:sliceImmunizationsSection.entry:sliceUSCoreImmunization.extension:sliceTriggerImmunization">
+      <path value="Composition.section.entry.extension" />
+      <sliceName value="sliceTriggerImmunization" />
+      <short value="eICR Trigger Code Flag" />
+      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated." />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension" />
+      </type>
+    </element>
+    <element id="Composition.section:sliceVitalSignsSection">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="sliceVitalSignsSection" />
+      <short value="Vital Signs Section" />
+      <definition value="Vital Signs Section" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Vital Signs Section (entries required) (V3)" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceVitalSignsSection.code">
+      <path value="Composition.section.code" />
+      <short value="Vital Signs" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="8716-3" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Vital Signs Section (entries required) (V3)/code" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceVitalSignsSection.text">
+      <path value="Composition.section.text" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Vital Signs Section (entries required) (V3)/text" />
+      </mapping>
+    </element>
+    <element id="Composition.section:sliceVitalSignsSection.entry">
+      <path value="Composition.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:sliceVitalSignsSection.entry:sliceVitalSigns">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceVitalSigns" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/vitalsigns" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Vital Signs Organizer (V3)/Vital Sign Observation (V2)" />
+      </mapping>
+    </element>
+    <element id="Composition.section:slicePregnancySection">
+      <path value="Composition.section" />
+      <sliceName value="slicePregnancySection" />
+      <short value="Pregnancy Section" />
+      <definition value="Pregnancy Section" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Pregnancy Section" />
+      </mapping>
+    </element>
+    <element id="Composition.section:slicePregnancySection.code">
+      <path value="Composition.section.code" />
+      <short value="Pregnancy summary Document" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="90767-5" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Pregnancy Section/code" />
+      </mapping>
+    </element>
+    <element id="Composition.section:slicePregnancySection.text">
+      <path value="Composition.section.text" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Pregnancy Section/text" />
+      </mapping>
+    </element>
+    <element id="Composition.section:slicePregnancySection.entry">
+      <path value="Composition.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:slicePregnancySection.entry:slicePregnancyStatusObservation">
+      <path value="Composition.section.entry" />
+      <sliceName value="slicePregnancyStatusObservation" />
+      <short value="Pregnancy Status Observation entry" />
+      <definition value="Pregnancy Status Observation entry" />
+      <min value="1" />
+      <max value="*" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation" />
+      </type>
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Pregnancy Status Observation (SUPPLEMENTAL PREGNANCY)" />
+      </mapping>
+    </element>
+    <element id="Composition.section:slicePregnancySection.entry:slicePregnancyOutcome">
+      <path value="Composition.section.entry" />
+      <sliceName value="slicePregnancyOutcome" />
+      <short value="Pregnancy Outcome entry" />
+      <definition value="Pregnancy Outcome entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-outcome-observation" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:slicePregnancySection.entry:sliceLastMenstrualPeriod">
+      <path value="Composition.section.entry" />
+      <sliceName value="sliceLastMenstrualPeriod" />
+      <short value="Last Menstrual Period entry" />
+      <definition value="Last Menstrual Period entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/last-menstrual-period" />
+      </type>
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Last Menstrual Period (V2)" />
+      </mapping>
+    </element>
+    <element id="Composition.section:slicePregnancySection.entry:slicePostpartumStatus">
+      <path value="Composition.section.entry" />
+      <sliceName value="slicePostpartumStatus" />
+      <short value="Postpartum Status entry" />
+      <definition value="Postpartum Status entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/postpartum-status" />
+      </type>
+      <mapping>
+        <identity value="eCR-CDA" />
+        <map value="[eICR R2 STU2] Postpartum Status" />
+      </mapping>
+    </element>
+  </differential>
 </StructureDefinition>
