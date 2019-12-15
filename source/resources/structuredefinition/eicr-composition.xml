@@ -837,7 +837,7 @@
       <sliceName value="sliceTriggerUSCoreObservationResults" />
       <short value="eICR Trigger Code Flag" />
       <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. " />
-      <max value="1" />
+      <max value="*" />
       <type>
         <code value="Extension" />
         <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension" />
@@ -1037,7 +1037,6 @@
       <short value="Immunization entry" />
       <definition
         value="The eICR Trigger Code Flag (extension) is present for an Immunization, based on a trigger code match of the vaccine (Immunization.vaccineCode) to the eRSD PlanDefinition Immunizations Trigger." />
-      <min value="1" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization" />
@@ -1127,7 +1126,6 @@
     <element id="Composition.section:sliceVitalSignsSection.entry:sliceVitalSigns">
       <path value="Composition.section.entry" />
       <sliceName value="sliceVitalSigns" />
-      <min value="1" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/vitalsigns" />
