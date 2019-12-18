@@ -1,46 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition
-    xmlns="http://hl7.org/fhir">
-    <id value="ecr-organization-extension"/>
-    <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2019-10-02T07:57:40.000-04:00"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization-extension"/>
-    <version value="1.0.0"/>
-    <name value="Ecr_Organization_Extension"/>
-    <title value="eCR Organization Extension"/>
-    <status value="draft"/>
-    <date value="2018-08-01"/>
-    <description value="This extension represents an eCR Organization"/>
-    <fhirVersion value="4.0.0"/>
-    <kind value="complex-type"/>
-    <abstract value="false"/>
-    <context>
-        <type value="element"/>
-        <expression value="PlanDefinition"/>
-    </context>
-    <type value="Extension"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-    <derivation value="constraint"/>
-    <differential>
-        <element id="Extension">
-            <path value="Extension"/>
-            <short value="eCR Organization"/>
-            <definition value="This extension represents an eCR Organization."/>
-            <isModifier value="false"/>
-        </element>
-        <element id="Extension.url">
-            <path value="Extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization-extension"/>
-        </element>
-        <element id="Extension.value[x]">
-            <path value="Extension.value[x]"/>
-            <min value="1"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization"/>
-            </type>
-        </element>
-    </differential>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ecr-organization-extension" />
+  <meta>
+    <versionId value="3" />
+    <lastUpdated value="2019-10-02T07:57:40.000-04:00" />
+  </meta>
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization-extension" />
+  <version value="1.0.0" />
+  <name value="Ecr_Organization_Extension" />
+  <title value="eCR Organization Extension" />
+  <status value="active" />
+  <date value="2018-08-01" />
+  <description value="This extension represents an eCR Organization" />
+  <fhirVersion value="4.0.0" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="PlanDefinition" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="eCR Organization" />
+      <definition value="This extension represents an eCR Organization." />
+      <isModifier value="false" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization-extension" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization" />
+      </type>
+    </element>
+  </differential>
 </StructureDefinition>
