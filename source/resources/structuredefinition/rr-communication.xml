@@ -38,11 +38,12 @@
         </element>
         <element id="Communication.text">
             <path value="Communication.text"/>
+            <short value="Text narrative SHOULD conform to requirements laid out on the Narrative Guidance tab"/>
             <definition value="The narrative structure of a Reportability Response Comminication can take two different forms, depending on the processing status of the eICR Composition document to which it is a response. These forms are as follows: &#xA;&#xA;- If the eICR was processed, then the narrative text will be populated with data from Communication.topic, Communication.payload[Reportability Response Summary], Communication.payload[Relevant Reportable Condition], and Communication.payload[Electronic Initial Case Report Information] &#xA;&#xA;- If the eICR was not processed and has errors, then the narrative text will only be populated with data from Communication.payload[Electronic Initial Case Report Information]"/>
             <min value="1"/>
             <constraint>
                 <key value="nar-1"/>
-                <severity value="error"/>
+                <severity value="warning"/>
                 <human value="Text narrative SHOULD conform to requirements laid out on the Narrative Guidance tab"/>
             </constraint>
             <mustSupport value="true"/>
