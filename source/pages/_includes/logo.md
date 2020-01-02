@@ -14,5 +14,5 @@ can only resize using html  or css ;-(
 
 
 <a no-external="true" href="http://www.hl7.org">
-<img alt="visit our website" class="img-responsive project-logo" src="assets/images/hl7-logo.png"/>
+<img height="50" alt="visit our website" class="img-responsive project-logo" src="assets/images/hl7-logo.png"/>
 </a>
