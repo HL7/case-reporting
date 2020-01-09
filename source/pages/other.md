@@ -83,7 +83,7 @@ active: other
 </tr>
 <tr>
 <td>Encounter</td>
-<td><a href="Encounter-encounter-eicr-eve-everywoman-external-historical.html">encounter-eicr-eve-everywoman-external-historical</a></td>
+<td><a href="Encounter-encounter-eicr-eve-everywoman-external-encounter.html">encounter-eicr-eve-everywoman-external-encounter</a></td>
 </tr>
 <tr>
 <td>Encounter</td>
