@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="bundle-eicr-document-zika" />
    <meta>
       <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
    </meta>
    <identifier>
       <system value="urn:ietf:rfc:3986"/>
-      <value value="urn:uuid:cd6969a6-9850-46be-8cf0-f2f5695ca385"/>
+      <value value="urn:uuid:b9271693-8f89-42e8-8d92-be56b78fcd42"/>
    </identifier>
    <type value="document"/>
    <timestamp value="2018-11-07T09:44:21.666-05:00"/>
    <entry>
-      <fullUrl value="urn:uuid:83783630-7645-43eb-a4d1-e61737efb224"/>
+      <fullUrl value="urn:uuid:0bacec0e-f86e-4bf8-a74d-768a78723a92"/>
       <resource>
          <Composition>
             <meta>
@@ -21,7 +20,7 @@
             <language value="en-US"/>
             <text>
                <status value="generated"/>
-               <div xmlns="http://www.w3.org/1999/xhtml">
+               <div xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
                   <table class="header_table"
                          style="border: 1pt inset #00008b; line-height: 10pt; width: 100%;">
                      <tbody>
@@ -136,7 +135,7 @@
             </extension>
             <identifier>
                <system value="urn:ietf:rfc:3986"/>
-               <value value="urn:uuid:0e7b5d5e-158f-4e8c-8c3f-02bfb80ae296"/>
+               <value value="urn:uuid:341e978e-957d-4a7d-8bdd-528bae9b3cff"/>
             </identifier>
             <status value="final"/>
             <type>
@@ -147,19 +146,19 @@
                </coding>
             </type>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <encounter>
-               <reference value="urn:uuid:e47a7f83-a9ee-4e4e-8733-1dd7677c3b67"/>
+               <reference value="urn:uuid:7f246788-0cb7-4c7b-8471-9ee09f6b8ef8"/>
             </encounter>
             <date value="2018-11-07T09:44:21.666-05:00"/>
             <author>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </author>
             <title value="Initial Public Health Case Report"/>
             <confidentiality value="N"/>
             <custodian>
-               <reference value="urn:uuid:d3b6531c-2fa0-4783-8567-23126579df16"/>
+               <reference value="urn:uuid:f2010a21-8ec3-4539-9110-0e8bb8434e3e"/>
             </custodian>
             <relatesTo>
                <code value="transforms"/>
@@ -168,6 +167,64 @@
                   <value value="db734647-fc99-424c-a864-7e3cda82e704"/>
                </targetIdentifier>
             </relatesTo>
+            <section>
+               <title value="Plan of Treatment"/>
+               <code>
+                  <coding>
+                     <system value="http://loinc.org"/>
+                     <code value="18776-5"/>
+                     <display value="Plan of Treatment"/>
+                  </coding>
+               </code>
+               <text>
+                  <status value="generated"/>
+                  <div xmlns="http://www.w3.org/1999/xhtml">
+                     <table>
+                        <thead>
+                           <tr>
+                              <th>Initial Case Report Trigger<br/>Code Lab Test Order</th>
+                              <th>Trigger Code</th>
+                              <th>Trigger Code codeSystem</th>
+                              <th>RCTC OID</th>
+                              <th>RCTC Version</th>
+                              <th>Ordered Date</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td>Zika virus envelope (E) gene [Presence] in Serum<br/>by Probe and target amplification method</td>
+                              <td>80825-3</td>
+                              <td>LOINC</td>
+                              <td>2.16.840.1.114222.4.11.7508</td>
+                              <td>19/05/2018</td>
+                              <td>NOV 8, 2018</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </text>
+               <!--2.16.840.1.113883.10.20.22.4.44-->
+               <!--2.16.840.1.113883.10.20.22.4.44:2014-06-09-->
+               <!--2.16.840.1.113883.10.20.15.2.3.4:2019-04-01-->
+               <entry>
+                  <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension">
+                     <extension url="triggerCodeValueSet">
+                        <valueOid value="urn:oid:2.16.840.1.114222.4.11.7508"/>
+                     </extension>
+                     <extension url="triggerCodeValueSetVersion">
+                        <valueString value="12/12/2018"/>
+                     </extension>
+                     <extension url="triggerCode">
+                        <valueCoding>
+                           <system value="http://loinc.org"/>
+                           <code value="80825-3"/>
+                           <display value="Zika virus envelope (E) gene [Presence] in Serum by Probe and target amplification method"/>
+                        </valueCoding>
+                     </extension>
+                  </extension>
+                  <reference value="urn:uuid:ceeaca59-8912-4d1a-917f-bf164603e65f"/>
+               </entry>
+            </section>
             <section>
                <title value="History of Present Illness"/>
                <code>
@@ -236,7 +293,7 @@
                         </valueCoding>
                      </extension>
                   </extension>
-                  <reference value="urn:uuid:861ceb57-0722-4ada-a44b-bbf4323d71ef"/>
+                  <reference value="urn:uuid:11bfd556-e899-4fd1-be88-570d7c76775c"/>
                </entry>
             </section>
             <section>
@@ -317,22 +374,22 @@
                <!--2.16.840.1.113883.10.20.22.4.4-->
                <!--2.16.840.1.113883.10.20.22.4.4:2015-08-01-->
                <entry>
-                  <reference value="urn:uuid:c6ebf9d2-5a50-40a4-bfb5-9e8d5e5bd294"/>
+                  <reference value="urn:uuid:e6554ccc-5061-4560-aa44-b1fdf55c4256"/>
                </entry>
                <!--2.16.840.1.113883.10.20.22.4.4-->
                <!--2.16.840.1.113883.10.20.22.4.4:2015-08-01-->
                <entry>
-                  <reference value="urn:uuid:d177ffba-c0c9-4042-acab-631da5e1222a"/>
+                  <reference value="urn:uuid:17978e99-ffd9-40b4-8a9b-5fe13ca6d762"/>
                </entry>
                <!--2.16.840.1.113883.10.20.22.4.4-->
                <!--2.16.840.1.113883.10.20.22.4.4:2015-08-01-->
                <entry>
-                  <reference value="urn:uuid:0fd67d58-4116-4755-9179-118ec244198f"/>
+                  <reference value="urn:uuid:beaa658b-0eae-43c0-8878-3a2d0dca20ec"/>
                </entry>
                <!--2.16.840.1.113883.10.20.22.4.4-->
                <!--2.16.840.1.113883.10.20.22.4.4:2015-08-01-->
                <entry>
-                  <reference value="urn:uuid:1f824606-3cf1-4f5a-8e76-f41a906c8372"/>
+                  <reference value="urn:uuid:cb171f9c-3f72-4adf-aa0f-16e1b0733ece"/>
                </entry>
             </section>
             <section>
@@ -547,7 +604,7 @@
                         </valueCoding>
                      </extension>
                   </extension>
-                  <reference value="urn:uuid:9c2687ac-5851-4aab-aa09-79651c5cdd86"/>
+                  <reference value="urn:uuid:a6aa2f78-420a-4cff-a959-0e4aa754383b"/>
                </entry>
                <!--2.16.840.1.113883.10.20.22.4.1-->
                <!--2.16.840.1.113883.10.20.22.4.1:2015-08-01-->
@@ -567,7 +624,7 @@
                         </valueCoding>
                      </extension>
                   </extension>
-                  <reference value="urn:uuid:463ae52c-4de5-4ac9-87b9-ae96c59c48fb"/>
+                  <reference value="urn:uuid:ae2ec8da-b7b6-4ebe-a459-8ebb261d29d8"/>
                </entry>
                <!--2.16.840.1.113883.10.20.22.4.1-->
                <!--2.16.840.1.113883.10.20.22.4.1:2015-08-01-->
@@ -602,7 +659,7 @@
                         </valueCoding>
                      </extension>
                   </extension>
-                  <reference value="urn:uuid:2a642328-d2d1-44c3-9044-dc435447d13d"/>
+                  <reference value="urn:uuid:c92f1ae2-8220-4835-b277-7c26e484f740"/>
                </entry>
             </section>
             <section>
@@ -657,7 +714,7 @@
                </text>
                <!--2.16.840.1.113883.10.20.22.4.52:2015-08-01-->
                <entry>
-                  <reference value="urn:uuid:cdf38687-079e-41cb-9d25-68805f11d78e"/>
+                  <reference value="urn:uuid:ecc55461-e5a1-4c7e-bc6c-8e4c7bacbedb"/>
                </entry>
                <!--2.16.840.1.113883.10.20.22.4.52:2015-08-01-->
                <entry>
@@ -676,7 +733,7 @@
                         </valueCoding>
                      </extension>
                   </extension>
-                  <reference value="urn:uuid:6f756377-56aa-47aa-a765-910350c30b74"/>
+                  <reference value="urn:uuid:232bfb1b-3467-4011-b3e2-afa3b500adab"/>
                </entry>
             </section>
             <section>
@@ -834,39 +891,39 @@
                </text>
                <!--2.16.840.1.113883.10.20.22.4.109-->
                <entry>
-                  <reference value="urn:uuid:42abca22-fb5b-47af-a232-bf2a01a8e885"/>
+                  <reference value="urn:uuid:6cccab35-a37f-41ba-98fb-524ba30f3576"/>
                </entry>
                <!--2.16.840.1.113883.10.20.15.2.3.1:2016-12-01-->
                <entry>
-                  <reference value="urn:uuid:fbd4f962-c923-4e50-8906-b844bf4a8674"/>
+                  <reference value="urn:uuid:ee1d2c55-d877-4169-92d0-ad983d6d9861"/>
                </entry>
                <!--2.16.840.1.113883.10.20.15.2.3.1:2016-12-01-->
                <entry>
-                  <reference value="urn:uuid:aca1f71a-46ad-430d-aca8-c6cb4c75ba85"/>
+                  <reference value="urn:uuid:72cc0465-ab96-4f6d-ac75-d68d8087d276"/>
                </entry>
                <!--2.16.840.1.113883.10.20.15.2.3.1:2016-12-01-->
                <entry>
-                  <reference value="urn:uuid:18c8db61-2a7c-421c-9ebb-becb698651ae"/>
+                  <reference value="urn:uuid:07ed3537-052f-4a25-b13f-66ce511cb8fe"/>
                </entry>
                <!--2.16.840.1.113883.10.20.15.2.3.1:2016-12-01-->
                <entry>
-                  <reference value="urn:uuid:c3df1542-af6a-4ce5-8b7a-c52ed9c333e9"/>
+                  <reference value="urn:uuid:d0129170-274a-4d42-b470-b04a5483d12e"/>
                </entry>
                <!--2.16.840.1.113883.10.20.15.2.3.1:2016-12-01-->
                <entry>
-                  <reference value="urn:uuid:cb86752d-af68-45fc-922a-b1a25f5a7197"/>
+                  <reference value="urn:uuid:79485bcd-b7c6-4377-8a1f-8e9ed7f14ecf"/>
                </entry>
                <!--2.16.840.1.113883.10.20.15.2.3.1:2016-12-01-->
                <entry>
-                  <reference value="urn:uuid:073e40e4-c411-4bb4-ab87-ad923dd12e9e"/>
+                  <reference value="urn:uuid:0f49df59-270f-457e-a026-b54f2d68b731"/>
                </entry>
                <!--2.16.840.1.113883.10.20.22.4.221:2017-11-30-->
                <entry>
-                  <reference value="urn:uuid:4a088b2e-7296-4b72-a055-006bd846b2a5"/>
+                  <reference value="urn:uuid:d95829af-d63b-40a3-af04-6d1636f8f82c"/>
                </entry>
                <!--2.16.840.1.113883.10.20.22.4.217:2017-11-30-->
                <entry>
-                  <reference value="urn:uuid:8631ead9-6368-4faf-bb62-449b26b49282"/>
+                  <reference value="urn:uuid:f9d3ea8a-30e4-45b1-8ced-476f53c921f8"/>
                </entry>
             </section>
             <section>
@@ -1018,15 +1075,15 @@
                <!--2.16.840.1.113883.10.20.15.3.8-->
                <!--2.16.840.1.113883.10.20.22.4.293:2018-04-01-->
                <entry>
-                  <reference value="urn:uuid:15ac85cc-efba-4671-bae6-c8331ffbd276"/>
+                  <reference value="urn:uuid:9b12da0e-4867-4308-a72b-13ecefe58dad"/>
                </entry>
                <!--2.16.840.1.113883.10.20.30.3.34:2014-06-09-->
                <entry>
-                  <reference value="urn:uuid:5726a7c9-e370-4ba7-a9b1-8917eda6a7f8"/>
+                  <reference value="urn:uuid:ae716799-83fd-4095-842b-be74dda0c1f8"/>
                </entry>
                <!--2.16.840.1.113883.10.20.22.4.285:2018-04-01-->
                <entry>
-                  <reference value="urn:uuid:ed34d9f9-0dae-49a9-afcd-9d80d1728f84"/>
+                  <reference value="urn:uuid:1b55ed35-1f8d-4297-b11e-b581f2aa0667"/>
                </entry>
             </section>
             <section>
@@ -1075,14 +1132,14 @@
                <!--2.16.840.1.113883.10.20.22.4.26-->
                <!--2.16.840.1.113883.10.20.22.4.26:2015-08-01-->
                <entry>
-                  <reference value="urn:uuid:193d2512-a1a5-4fe9-860d-8ea6fc3fbb8b"/>
+                  <reference value="urn:uuid:6f11e581-06b1-4ec1-8853-693c77044b21"/>
                </entry>
             </section>
          </Composition>
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+      <fullUrl value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
       <resource>
          <Patient>
             <meta>
@@ -1225,7 +1282,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:e47a7f83-a9ee-4e4e-8733-1dd7677c3b67"/>
+      <fullUrl value="urn:uuid:7f246788-0cb7-4c7b-8471-9ee09f6b8ef8"/>
       <resource>
          <Encounter>
             <meta>
@@ -1250,11 +1307,11 @@
                </coding>
             </type>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <participant>
                <individual>
-                  <reference value="urn:uuid:bc0591db-adfa-4a8e-b5c1-6dc110d17b9c"/>
+                  <reference value="urn:uuid:ad327c6b-db6f-475a-921b-3489fd9edc84"/>
                </individual>
             </participant>
             <period>
@@ -1262,27 +1319,27 @@
             </period>
             <diagnosis>
                <condition><!--2.16.840.1.113883.10.20.22.4.4--><!--2.16.840.1.113883.10.20.22.4.4:2015-08-01--><!--2.16.840.1.113883.10.20.15.2.3.3:2019-04-01-->
-                  <reference value="urn:uuid:209f6b99-15a9-4a83-8467-4cde1d717bde"/>
+                  <reference value="urn:uuid:d44f44ff-8508-4782-af2a-cdc4ffc99bdc"/>
                </condition>
             </diagnosis>
             <diagnosis>
                <condition><!--2.16.840.1.113883.10.20.22.4.4--><!--2.16.840.1.113883.10.20.22.4.4:2015-08-01-->
-                  <reference value="urn:uuid:120d8d5e-819d-4fa9-a411-b60041435d10"/>
+                  <reference value="urn:uuid:9c2b756e-cb78-405d-a185-ffd1e7510665"/>
                </condition>
             </diagnosis>
             <location>
                <location>
-                  <reference value="urn:uuid:4d8a23b3-b14b-43ce-850f-749fe839857a"/>
+                  <reference value="urn:uuid:4c72b9bd-891c-411a-8973-1e373df7a2ce"/>
                </location>
             </location>
             <serviceProvider>
-               <reference value="urn:uuid:39af7681-bc92-4830-9001-5531adbd9029"/>
+               <reference value="urn:uuid:983ef07a-3edf-45c0-bafd-10b36256ece6"/>
             </serviceProvider>
          </Encounter>
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:bc0591db-adfa-4a8e-b5c1-6dc110d17b9c"/>
+      <fullUrl value="urn:uuid:ad327c6b-db6f-475a-921b-3489fd9edc84"/>
       <resource>
          <PractitionerRole>
             <meta>
@@ -1295,10 +1352,10 @@
                <value value="6666666666666"/>
             </identifier>
             <practitioner>
-               <reference value="urn:uuid:306b9244-162d-450b-a125-aca42666e3c6"/>
+               <reference value="urn:uuid:546c852c-4db1-4e4f-a366-484e65235c6a"/>
             </practitioner>
             <organization>
-               <reference value="urn:uuid:40518b5e-d89b-477e-a44f-f9bad262745c"/>
+               <reference value="urn:uuid:526fe311-c88b-4300-a91b-b453a6838633"/>
             </organization>
             <telecom>
                <system value="phone"/>
@@ -1319,7 +1376,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:306b9244-162d-450b-a125-aca42666e3c6"/>
+      <fullUrl value="urn:uuid:546c852c-4db1-4e4f-a366-484e65235c6a"/>
       <resource>
          <Practitioner><!--assignedEntity[cda:id[@root="2.16.840.1.113883.4.6"]]/assignedPerson-->
             <meta>
@@ -1369,7 +1426,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:40518b5e-d89b-477e-a44f-f9bad262745c"/>
+      <fullUrl value="urn:uuid:526fe311-c88b-4300-a91b-b453a6838633"/>
       <resource>
          <Organization>
             <meta>
@@ -1378,7 +1435,7 @@
             </meta>
             <identifier>
                <system value="urn:ietf:rfc:3986"/>
-               <value value="urn:uuid:40518b5e-d89b-477e-a44f-f9bad262745c"/>
+               <value value="urn:uuid:526fe311-c88b-4300-a91b-b453a6838633"/>
             </identifier>
             <active value="true"/>
             <name value="Community Health and Hospitals"/>
@@ -1408,7 +1465,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:4d8a23b3-b14b-43ce-850f-749fe839857a"/>
+      <fullUrl value="urn:uuid:4c72b9bd-891c-411a-8973-1e373df7a2ce"/>
       <resource>
          <Location>
             <meta>
@@ -1448,7 +1505,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:39af7681-bc92-4830-9001-5531adbd9029"/>
+      <fullUrl value="urn:uuid:983ef07a-3edf-45c0-bafd-10b36256ece6"/>
       <resource>
          <Organization>
             <meta>
@@ -1457,7 +1514,7 @@
             </meta>
             <identifier>
                <system value="urn:ietf:rfc:3986"/>
-               <value value="urn:uuid:39af7681-bc92-4830-9001-5531adbd9029"/>
+               <value value="urn:uuid:983ef07a-3edf-45c0-bafd-10b36256ece6"/>
             </identifier>
             <active value="true"/>
             <name value="Good Health Hospital Service Provider Organization"/>
@@ -1482,7 +1539,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+      <fullUrl value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
       <resource>
          <PractitionerRole><!--author/assignedAuthor-->
             <identifier>
@@ -1490,10 +1547,10 @@
                <value value="urn:uuid:ec399842-7c0d-4cfc-ada3-f11a799d0460"/>
             </identifier>
             <practitioner>
-               <reference value="urn:uuid:b2677db8-e9bb-46f5-8df0-343f28c3df58"/>
+               <reference value="urn:uuid:df7225e4-c3a1-49fc-9316-d68f88cd9af3"/>
             </practitioner>
             <organization>
-               <reference value="urn:uuid:4d9952ea-edbc-48c4-a8b9-0f7a57866827"/>
+               <reference value="urn:uuid:276537d2-3cea-4c48-b5a9-6620a51b7a7f"/>
             </organization>
             <code>
                <coding>
@@ -1511,7 +1568,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:b2677db8-e9bb-46f5-8df0-343f28c3df58"/>
+      <fullUrl value="urn:uuid:df7225e4-c3a1-49fc-9316-d68f88cd9af3"/>
       <resource>
          <Practitioner><!--assignedAuthor[cda:id[@root="ec399842-7c0d-4cfc-ada3-f11a799d0460"]]/assignedPerson-->
             <meta>
@@ -1551,7 +1608,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:4d9952ea-edbc-48c4-a8b9-0f7a57866827"/>
+      <fullUrl value="urn:uuid:276537d2-3cea-4c48-b5a9-6620a51b7a7f"/>
       <resource>
          <Organization>
             <meta>
@@ -1582,7 +1639,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:d3b6531c-2fa0-4783-8567-23126579df16"/>
+      <fullUrl value="urn:uuid:f2010a21-8ec3-4539-9110-0e8bb8434e3e"/>
       <resource>
          <Organization>
             <meta>
@@ -1611,7 +1668,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:9676b9b9-01e9-4228-ac2f-97b8c4bf4c58"/>
+      <fullUrl value="urn:uuid:ceeaca59-8912-4d1a-917f-bf164603e65f"/>
       <resource>
          <ServiceRequest>
             <meta>
@@ -1632,14 +1689,14 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <occurrenceDateTime value="2018-11-08"/>
          </ServiceRequest>
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:861ceb57-0722-4ada-a44b-bbf4323d71ef"/>
+      <fullUrl value="urn:uuid:11bfd556-e899-4fd1-be88-570d7c76775c"/>
       <resource>
          <MedicationAdministration>
             <meta>
@@ -1659,12 +1716,12 @@
                </coding>
             </medicationCodeableConcept>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectiveDateTime value="2018-11-07T11:15:25.000-07:00"/>
             <performer>
                <actor>
-                  <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+                  <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
                </actor>
             </performer>
             <dosage>
@@ -1680,7 +1737,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:c6ebf9d2-5a50-40a4-bfb5-9e8d5e5bd294"/>
+      <fullUrl value="urn:uuid:e6554ccc-5061-4560-aa44-b1fdf55c4256"/>
       <resource>
          <Condition>
             <meta>
@@ -1717,17 +1774,17 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <onsetDateTime value="2018-11-01"/>
             <asserter>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </asserter>
          </Condition>
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:d177ffba-c0c9-4042-acab-631da5e1222a"/>
+      <fullUrl value="urn:uuid:17978e99-ffd9-40b4-8a9b-5fe13ca6d762"/>
       <resource>
          <Condition>
             <meta>
@@ -1764,17 +1821,17 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <onsetDateTime value="2018-11-04"/>
             <asserter>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </asserter>
          </Condition>
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:0fd67d58-4116-4755-9179-118ec244198f"/>
+      <fullUrl value="urn:uuid:beaa658b-0eae-43c0-8878-3a2d0dca20ec"/>
       <resource>
          <Condition>
             <meta>
@@ -1811,17 +1868,17 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <onsetDateTime value="2018-11-01"/>
             <asserter>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </asserter>
          </Condition>
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:1f824606-3cf1-4f5a-8e76-f41a906c8372"/>
+      <fullUrl value="urn:uuid:cb171f9c-3f72-4adf-aa0f-16e1b0733ece"/>
       <resource>
          <Condition>
             <meta>
@@ -1858,17 +1915,17 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <onsetDateTime value="2018-11-04"/>
             <asserter>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </asserter>
          </Condition>
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:9c2687ac-5851-4aab-aa09-79651c5cdd86"/>
+      <fullUrl value="urn:uuid:a6aa2f78-420a-4cff-a959-0e4aa754383b"/>
       <resource>
          <Observation>
             <meta>
@@ -1894,22 +1951,22 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <hasMember><!--2.16.840.1.113883.10.20.22.4.2--><!--2.16.840.1.113883.10.20.22.4.2:2015-08-01-->
-               <reference value="urn:uuid:9b817cae-7d2b-46c7-85b1-8a05b7b8a07c"/>
+               <reference value="urn:uuid:341b5905-339f-443e-9671-c7ee65a4d104"/>
             </hasMember>
             <hasMember><!--2.16.840.1.113883.10.20.22.4.2--><!--2.16.840.1.113883.10.20.22.4.2:2015-08-01-->
-               <reference value="urn:uuid:805421cd-ee34-43e2-8204-035b26c7c49d"/>
+               <reference value="urn:uuid:f8c53d5b-906e-4a93-ab89-56cf6cab1305"/>
             </hasMember>
          </Observation>
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:9b817cae-7d2b-46c7-85b1-8a05b7b8a07c"/>
+      <fullUrl value="urn:uuid:341b5905-339f-443e-9671-c7ee65a4d104"/>
       <resource>
          <Observation>
             <meta>
@@ -1935,11 +1992,11 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectiveDateTime value="2018-11-07"/>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <valueQuantity>
                <value value="35.3"/>
@@ -1967,7 +2024,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:805421cd-ee34-43e2-8204-035b26c7c49d"/>
+      <fullUrl value="urn:uuid:f8c53d5b-906e-4a93-ab89-56cf6cab1305"/>
       <resource>
          <Observation>
             <meta>
@@ -1993,11 +2050,11 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectiveDateTime value="2018-11-07"/>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <valueQuantity>
                <value value="5.2"/>
@@ -2024,7 +2081,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:463ae52c-4de5-4ac9-87b9-ae96c59c48fb"/>
+      <fullUrl value="urn:uuid:ae2ec8da-b7b6-4ebe-a459-8ebb261d29d8"/>
       <resource>
          <Observation>
             <meta>
@@ -2050,19 +2107,19 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <hasMember><!--2.16.840.1.113883.10.20.22.4.2--><!--2.16.840.1.113883.10.20.22.4.2:2015-08-01--><!--2.16.840.1.113883.10.20.15.2.3.2:2019-04-01-->
-               <reference value="urn:uuid:8ab1fc19-338a-4afa-9e90-2f1e4433a3fe"/>
+               <reference value="urn:uuid:c9b05527-5f37-4f00-b5bf-c420d5417385"/>
             </hasMember>
          </Observation>
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:8ab1fc19-338a-4afa-9e90-2f1e4433a3fe"/>
+      <fullUrl value="urn:uuid:c9b05527-5f37-4f00-b5bf-c420d5417385"/>
       <resource>
          <Observation>
             <meta>
@@ -2088,11 +2145,11 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectiveDateTime value="2018-11-07"/>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <valueQuantity>
                <value value="100"/>
@@ -2115,7 +2172,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:2a642328-d2d1-44c3-9044-dc435447d13d"/>
+      <fullUrl value="urn:uuid:c92f1ae2-8220-4835-b277-7c26e484f740"/>
       <resource>
          <Observation>
             <meta>
@@ -2141,19 +2198,19 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <hasMember><!--2.16.840.1.113883.10.20.22.4.2--><!--2.16.840.1.113883.10.20.22.4.2:2015-08-01--><!--2.16.840.1.113883.10.20.15.2.3.2:2019-04-01-->
-               <reference value="urn:uuid:2c388971-a2ad-4af9-884c-bafe2cc703b4"/>
+               <reference value="urn:uuid:13961764-8a9b-40f2-bf54-500042e06abe"/>
             </hasMember>
          </Observation>
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:2c388971-a2ad-4af9-884c-bafe2cc703b4"/>
+      <fullUrl value="urn:uuid:13961764-8a9b-40f2-bf54-500042e06abe"/>
       <resource>
          <Observation>
             <meta>
@@ -2184,11 +2241,11 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectiveDateTime value="2018-11-07"/>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <valueCodeableConcept>
                <coding>
@@ -2208,7 +2265,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:cdf38687-079e-41cb-9d25-68805f11d78e"/>
+      <fullUrl value="urn:uuid:ecc55461-e5a1-4c7e-bc6c-8e4c7bacbedb"/>
       <resource>
          <Immunization>
             <meta>
@@ -2228,7 +2285,7 @@
                </coding>
             </vaccineCode>
             <patient>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </patient>
             <occurrenceDateTime value="2018-11-07"/>
             <!--Defaulting primarySource to false since this info is not in the C-CDA Immunization Activity template-->
@@ -2244,7 +2301,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:6f756377-56aa-47aa-a765-910350c30b74"/>
+      <fullUrl value="urn:uuid:232bfb1b-3467-4011-b3e2-afa3b500adab"/>
       <resource>
          <Immunization>
             <meta>
@@ -2264,7 +2321,7 @@
                </coding>
             </vaccineCode>
             <patient>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </patient>
             <occurrenceDateTime value="2018-11-07"/>
             <!--Defaulting primarySource to false since this info is not in the C-CDA Immunization Activity template-->
@@ -2280,7 +2337,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:42abca22-fb5b-47af-a232-bf2a01a8e885"/>
+      <fullUrl value="urn:uuid:6cccab35-a37f-41ba-98fb-524ba30f3576"/>
       <resource>
          <Observation><!--Characteristics of Home Environment-->
             <meta>
@@ -2300,11 +2357,11 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectiveDateTime value="2018-11-09"/>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <valueCodeableConcept>
                <coding>
@@ -2317,7 +2374,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:fbd4f962-c923-4e50-8906-b844bf4a8674"/>
+      <fullUrl value="urn:uuid:ee1d2c55-d877-4169-92d0-ad983d6d9861"/>
       <resource>
          <Observation><!--Travel History-->
             <meta>
@@ -2337,20 +2394,20 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectivePeriod>
                <start value="1999"/>
                <end value="2007"/>
             </effectivePeriod>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
          </Observation>
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:aca1f71a-46ad-430d-aca8-c6cb4c75ba85"/>
+      <fullUrl value="urn:uuid:72cc0465-ab96-4f6d-ac75-d68d8087d276"/>
       <resource>
          <Observation><!--Travel History-->
             <meta>
@@ -2370,14 +2427,14 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectivePeriod>
                <start value="2018-10-19"/>
                <end value="2018-11-09"/>
             </effectivePeriod>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <component>
                <code>
@@ -2399,7 +2456,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:18c8db61-2a7c-421c-9ebb-becb698651ae"/>
+      <fullUrl value="urn:uuid:07ed3537-052f-4a25-b13f-66ce511cb8fe"/>
       <resource>
          <Observation><!--Travel History-->
             <meta>
@@ -2419,14 +2476,14 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectivePeriod>
                <start value="2018-04-25"/>
                <end value="2018-04-30"/>
             </effectivePeriod>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <component>
                <code>
@@ -2449,7 +2506,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:c3df1542-af6a-4ce5-8b7a-c52ed9c333e9"/>
+      <fullUrl value="urn:uuid:d0129170-274a-4d42-b470-b04a5483d12e"/>
       <resource>
          <Observation><!--Travel History-->
             <meta>
@@ -2469,14 +2526,14 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectivePeriod>
                <start value="2018-05-06"/>
                <end value="2018-05-15"/>
             </effectivePeriod>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <component>
                <code>
@@ -2500,7 +2557,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:cb86752d-af68-45fc-922a-b1a25f5a7197"/>
+      <fullUrl value="urn:uuid:79485bcd-b7c6-4377-8a1f-8e9ed7f14ecf"/>
       <resource>
          <Observation><!--Travel History-->
             <meta>
@@ -2520,14 +2577,14 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectivePeriod>
                <start value="2018-07-13"/>
                <end value="2018-07-15"/>
             </effectivePeriod>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <component>
                <code>
@@ -2551,7 +2608,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:073e40e4-c411-4bb4-ab87-ad923dd12e9e"/>
+      <fullUrl value="urn:uuid:0f49df59-270f-457e-a026-b54f2d68b731"/>
       <resource>
          <Observation><!--Travel History-->
             <meta>
@@ -2571,14 +2628,14 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectivePeriod>
                <start value="2018-10-22"/>
                <end value="2018-10-30"/>
             </effectivePeriod>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <component>
                <code>
@@ -2604,7 +2661,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:4a088b2e-7296-4b72-a055-006bd846b2a5"/>
+      <fullUrl value="urn:uuid:d95829af-d63b-40a3-af04-6d1636f8f82c"/>
       <resource>
          <Observation><!--ODH Usual Work-->
             <meta>
@@ -2624,13 +2681,13 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectivePeriod>
                <start value="1996-11-24"/>
             </effectivePeriod>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <valueCodeableConcept>
                <coding>
@@ -2659,7 +2716,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:8631ead9-6368-4faf-bb62-449b26b49282"/>
+      <fullUrl value="urn:uuid:f9d3ea8a-30e4-45b1-8ced-476f53c921f8"/>
       <resource>
          <Observation><!--ODH Past or Present Job-->
             <meta>
@@ -2679,13 +2736,13 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectivePeriod>
                <start value="2015-04-24"/>
             </effectivePeriod>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <valueCodeableConcept>
                <coding>
@@ -2724,7 +2781,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:15ac85cc-efba-4671-bae6-c8331ffbd276"/>
+      <fullUrl value="urn:uuid:9b12da0e-4867-4308-a72b-13ecefe58dad"/>
       <resource>
          <Observation><!--Pregnancy Status Observation-->
             <meta>
@@ -2752,13 +2809,13 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectivePeriod>
                <start value="2017-08-26"/>
             </effectivePeriod>
             <performer>
-               <reference value="urn:uuid:a89ecaec-973f-4997-b522-841db3f58f87"/>
+               <reference value="urn:uuid:b3e38ecb-c9fa-458e-8eed-1468b1d27fb7"/>
             </performer>
             <valueCodeableConcept>
                <coding>
@@ -2807,7 +2864,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:4f56f13c-304e-476d-b82a-c0d62dc8376e"/>
+      <fullUrl value="urn:uuid:83247413-387f-4436-bd22-c1d16fb01af4"/>
       <resource>
          <Observation><!--Pregnancy Outcome Observation-->
             <meta>
@@ -2827,15 +2884,15 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <!--Reference to related Pregnancy Observation-->
             <focus>
-               <reference value="urn:uuid:15ac85cc-efba-4671-bae6-c8331ffbd276"/>
+               <reference value="urn:uuid:9b12da0e-4867-4308-a72b-13ecefe58dad"/>
             </focus>
             <effectiveDateTime value="2018-01-05T08:50:00+10:00"/>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <!--Birth Order component-->
             <component>
@@ -2852,7 +2909,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:5726a7c9-e370-4ba7-a9b1-8917eda6a7f8"/>
+      <fullUrl value="urn:uuid:ae716799-83fd-4095-842b-be74dda0c1f8"/>
       <resource>
          <Observation><!--Last Menstrual Period-->
             <meta>
@@ -2872,11 +2929,11 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectiveDateTime value="2018-01-05T10:15:00+10:00"/>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <!--Start of last menstrual period-->
             <valueDateTime value="2017-08-01"/>
@@ -2884,7 +2941,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:ed34d9f9-0dae-49a9-afcd-9d80d1728f84"/>
+      <fullUrl value="urn:uuid:1b55ed35-1f8d-4297-b11e-b581f2aa0667"/>
       <resource>
          <Observation><!--Postpartum Status-->
             <meta>
@@ -2904,11 +2961,11 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectiveDateTime value="2018-01-05T10:15:00+10:00"/>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <!--Postpartum status-->
             <valueCodeableConcept>
@@ -2922,7 +2979,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:193d2512-a1a5-4fe9-860d-8ea6fc3fbb8b"/>
+      <fullUrl value="urn:uuid:6f11e581-06b1-4ec1-8853-693c77044b21"/>
       <resource>
          <Observation>
             <identifier>
@@ -2949,44 +3006,44 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectiveDateTime value="2014-05-20T19:36:05.000-05:00"/>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <hasMember><!--2.16.840.1.113883.10.20.22.4.27--><!--2.16.840.1.113883.10.20.22.4.27:2014-06-09-->
-               <reference value="urn:uuid:dac9eff2-48a9-4e4f-8798-f7bcd4881342"/>
+               <reference value="urn:uuid:d3666601-a8f7-4cd9-b030-7bcc7496742f"/>
             </hasMember>
             <hasMember><!--2.16.840.1.113883.10.20.22.4.27--><!--2.16.840.1.113883.10.20.22.4.27:2014-06-09-->
-               <reference value="urn:uuid:51c5cba1-8053-4700-a301-78158390fd64"/>
+               <reference value="urn:uuid:878f0063-a127-43a2-949d-86220cf4a285"/>
             </hasMember>
             <hasMember><!--2.16.840.1.113883.10.20.22.4.27--><!--2.16.840.1.113883.10.20.22.4.27:2014-06-09-->
-               <reference value="urn:uuid:00285fa8-db6a-48b0-bb4d-ba73325fbfb2"/>
+               <reference value="urn:uuid:23447c06-a419-4af6-bb9d-dc3e11746fe2"/>
             </hasMember>
             <hasMember><!--2.16.840.1.113883.10.20.22.4.27--><!--2.16.840.1.113883.10.20.22.4.27:2014-06-09-->
-               <reference value="urn:uuid:b646b4ab-1529-43c5-a8a4-64092d1ac343"/>
+               <reference value="urn:uuid:70bcbf17-c140-4984-bb3c-71318541c3d3"/>
             </hasMember>
             <hasMember><!--2.16.840.1.113883.10.20.22.4.27--><!--2.16.840.1.113883.10.20.22.4.27:2014-06-09-->
-               <reference value="urn:uuid:c2ad0eb6-9204-438e-af6e-221afbbec047"/>
+               <reference value="urn:uuid:d3ca6b6c-45c7-4814-afeb-2069204c5b89"/>
             </hasMember>
             <hasMember><!--2.16.840.1.113883.10.20.22.4.27--><!--2.16.840.1.113883.10.20.22.4.27:2014-06-09-->
-               <reference value="urn:uuid:02536e0d-f101-4767-9b50-de86ade793f0"/>
+               <reference value="urn:uuid:df589541-00f9-4c34-ab8d-ba1925a7af63"/>
             </hasMember>
             <hasMember><!--2.16.840.1.113883.10.20.22.4.27--><!--2.16.840.1.113883.10.20.22.4.27:2014-06-09-->
-               <reference value="urn:uuid:19c25d71-7426-41f5-b004-ca6e912b2ac3"/>
+               <reference value="urn:uuid:b61c4711-eeaf-4944-9d49-c93404b15127"/>
             </hasMember>
             <hasMember><!--2.16.840.1.113883.10.20.22.4.27--><!--2.16.840.1.113883.10.20.22.4.27:2014-06-09-->
-               <reference value="urn:uuid:3f7e58e7-b6e7-45c2-870b-06b8b48e85dc"/>
+               <reference value="urn:uuid:02993de9-08ab-48bc-92f4-89d47130fc87"/>
             </hasMember>
             <hasMember><!--2.16.840.1.113883.10.20.22.4.27--><!--2.16.840.1.113883.10.20.22.4.27:2014-06-09-->
-               <reference value="urn:uuid:c7233de0-5bb0-43ae-9878-d9064ebfcbf3"/>
+               <reference value="urn:uuid:9b581087-176b-4241-b7c1-c106926be5ce"/>
             </hasMember>
          </Observation>
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:dac9eff2-48a9-4e4f-8798-f7bcd4881342"/>
+      <fullUrl value="urn:uuid:d3666601-a8f7-4cd9-b030-7bcc7496742f"/>
       <resource>
          <Observation>
             <meta>
@@ -3012,11 +3069,11 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectiveDateTime value="2014-05-20T19:36:05.000-05:00"/>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <valueQuantity>
                <value value="120"/>
@@ -3026,7 +3083,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:51c5cba1-8053-4700-a301-78158390fd64"/>
+      <fullUrl value="urn:uuid:878f0063-a127-43a2-949d-86220cf4a285"/>
       <resource>
          <Observation>
             <meta>
@@ -3052,11 +3109,11 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectiveDateTime value="2014-05-20T19:36:05.000-05:00"/>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <valueQuantity>
                <value value="80"/>
@@ -3066,7 +3123,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:00285fa8-db6a-48b0-bb4d-ba73325fbfb2"/>
+      <fullUrl value="urn:uuid:23447c06-a419-4af6-bb9d-dc3e11746fe2"/>
       <resource>
          <Observation>
             <meta>
@@ -3092,11 +3149,11 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectiveDateTime value="2014-05-20T19:36:05.000-05:00"/>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <valueQuantity>
                <value value="80"/>
@@ -3106,7 +3163,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:b646b4ab-1529-43c5-a8a4-64092d1ac343"/>
+      <fullUrl value="urn:uuid:70bcbf17-c140-4984-bb3c-71318541c3d3"/>
       <resource>
          <Observation>
             <meta>
@@ -3132,11 +3189,11 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectiveDateTime value="2014-05-20T19:36:05.000-05:00"/>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <valueQuantity>
                <value value="99.0"/>
@@ -3146,7 +3203,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:c2ad0eb6-9204-438e-af6e-221afbbec047"/>
+      <fullUrl value="urn:uuid:d3ca6b6c-45c7-4814-afeb-2069204c5b89"/>
       <resource>
          <Observation>
             <meta>
@@ -3172,11 +3229,11 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectiveDateTime value="2014-05-20T19:36:05.000-05:00"/>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <valueQuantity>
                <value value="18"/>
@@ -3186,7 +3243,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:02536e0d-f101-4767-9b50-de86ade793f0"/>
+      <fullUrl value="urn:uuid:df589541-00f9-4c34-ab8d-ba1925a7af63"/>
       <resource>
          <Observation>
             <meta>
@@ -3212,11 +3269,11 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectiveDateTime value="2014-05-20T19:36:05.000-05:00"/>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <valueQuantity>
                <value value="67"/>
@@ -3226,7 +3283,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:19c25d71-7426-41f5-b004-ca6e912b2ac3"/>
+      <fullUrl value="urn:uuid:b61c4711-eeaf-4944-9d49-c93404b15127"/>
       <resource>
          <Observation>
             <meta>
@@ -3252,11 +3309,11 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectiveDateTime value="2014-05-20T19:36:05.000-05:00"/>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <valueQuantity>
                <value value="239.9"/>
@@ -3266,7 +3323,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:3f7e58e7-b6e7-45c2-870b-06b8b48e85dc"/>
+      <fullUrl value="urn:uuid:02993de9-08ab-48bc-92f4-89d47130fc87"/>
       <resource>
          <Observation>
             <meta>
@@ -3292,11 +3349,11 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectiveDateTime value="2014-05-20T19:36:05.000-05:00"/>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <valueQuantity>
                <value value="37.58"/>
@@ -3306,7 +3363,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:c7233de0-5bb0-43ae-9878-d9064ebfcbf3"/>
+      <fullUrl value="urn:uuid:9b581087-176b-4241-b7c1-c106926be5ce"/>
       <resource>
          <Observation>
             <meta>
@@ -3332,11 +3389,11 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:388c8de1-4602-4713-8789-e745d66300e1"/>
+               <reference value="urn:uuid:22b24329-aa91-46a7-9603-955da7f498be"/>
             </subject>
             <effectiveDateTime value="2014-05-20T19:36:05.000-05:00"/>
             <performer>
-               <reference value="urn:uuid:6fc46bdb-04b0-4e45-bb25-38e482c00ec9"/>
+               <reference value="urn:uuid:6b54cdf3-8e10-4ec4-910b-8187b378eccb"/>
             </performer>
             <valueQuantity>
                <value value="98"/>
