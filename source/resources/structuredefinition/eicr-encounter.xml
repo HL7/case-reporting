@@ -3,17 +3,17 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-encounter"/>
     <meta>
-        <versionId value="54"/>
-        <lastUpdated value="2019-12-13T01:46:32.000-05:00"/>
+        <versionId value="60"/>
+        <lastUpdated value="2020-01-12T21:36:51.000-05:00"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
+    <url value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
     <version value="1.0.0"/>
     <name value="Eicr_Encounter"/>
     <title value="eICR Encounter"/>
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-  <description value="This Encounter profile represents the encounter related to the eICR event. The provider in charge of care and the location (facility) in which care was provided when the case was triggered are contained in the encounter, along with the visit/encounter identifier.&#xA;&#xA;A trigger on an encounter diagnosis is indicated by the eICR Trigger Code Flag Extension in the diagnosis.&#xA;&#xA;Where a trigger occurs outside of an encounter use code=&quot;PHC2237&quot; \| system=&quot;2.16.840.1.114222.4.5.274&quot; (External Encounter) and omit period, participant, location, and serviceProvider. In this case, the responsible provider and facility are assumed to be contained in the eICR Composition.author."/>
+    <description value="This Encounter profile represents the encounter related to the eICR event. Contained in the Encounter.participant, is the provider in charge of care (represented by the PractitionerRole.Practitioner) and the provider facility (represented by the PractitionerRole.Organization). The location (facility) in which care was provided when the case was triggered is contained in the encounter.location.&#xA;&#xA;A trigger on an encounter diagnosis is indicated by the eICR Trigger Code Flag Extension in the diagnosis.&#xA;&#xA;Where a trigger occurs outside of an encounter use code=&quot;PHC2237&quot; \| system=&quot;2.16.840.1.114222.4.5.274&quot; (External Encounter) and omit period, participant, location, and serviceProvider. In this case, the responsible provider and facility information is contained in the eICR Composition.author."/>
     <fhirVersion value="4.0.0"/>
     <mapping>
         <identity value="eICR-CDA"/>
@@ -44,6 +44,20 @@
                 <comment value="Encounter/visit id"/>
             </mapping>
         </element>
+        <element id="Encounter.status">
+            <path value="Encounter.status"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Encounter.identifier.system">
+            <path value="Encounter.identifier.system"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Encounter.identifier.value">
+            <path value="Encounter.identifier.value"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
         <element id="Encounter.class">
             <path value="Encounter.class"/>
             <short value="Class of encounter"/>
@@ -57,10 +71,14 @@
         <element id="Encounter.type">
             <path value="Encounter.type"/>
             <short value="Type of encounter"/>
-            <definition value="Use data-absent-reason extension (not-applicable) if the trigger occurs outside of an encounter."/>
+            <definition value="Specific type of encounter"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
+            <binding>
+                <strength value="extensible"/>
+                <valueSet value="http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type"/>
+            </binding>
             <mapping>
                 <identity value="eICR-CDA"/>
                 <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/componentOf/encompassingEncounter/code/translation"/>
@@ -107,12 +125,18 @@
         <element id="Encounter.participant:sliceResponsibleProvider.type">
             <path value="Encounter.participant.type"/>
             <short value="Responsible provider"/>
+            <min value="1"/>
             <patternCodeableConcept>
                 <coding>
                     <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
                     <code value="ATND"/>
                 </coding>
             </patternCodeableConcept>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Encounter.participant.period">
+            <path value="Encounter.participant.period"/>
+            <mustSupport value="true"/>
         </element>
         <element id="Encounter.participant:sliceResponsibleProvider.individual">
             <path value="Encounter.participant.individual"/>
