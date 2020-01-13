@@ -1,1 +1,1 @@
-This value set contains codes representing pregnancy statuses. It includes all the codes from: [Extended pregnancy status VSAC link](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1099.24/expansion) plus the V3 nullFlavor 'Unknown'.
+This value set contains codes representing pregnancy statuses. It includes all the codes from: [Extended pregnancy status VSAC](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1099.24/expansion) plus the V3 nullFlavor 'Unknown'.
