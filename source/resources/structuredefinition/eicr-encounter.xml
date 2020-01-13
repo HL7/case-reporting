@@ -1,249 +1,251 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition
-    xmlns="http://hl7.org/fhir">
-    <id value="eicr-encounter"/>
-    <meta>
-        <versionId value="60"/>
-        <lastUpdated value="2020-01-12T21:36:51.000-05:00"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
-    <version value="1.0.0"/>
-    <name value="Eicr_Encounter"/>
-    <title value="eICR Encounter"/>
-    <status value="active"/>
-    <experimental value="false"/>
-    <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Encounter profile represents the encounter related to the eICR event. Contained in the Encounter.participant, is the provider in charge of care (represented by the PractitionerRole.Practitioner) and the provider facility (represented by the PractitionerRole.Organization). The location (facility) in which care was provided when the case was triggered is contained in the encounter.location.&#xA;&#xA;A trigger on an encounter diagnosis is indicated by the eICR Trigger Code Flag Extension in the diagnosis.&#xA;&#xA;Where a trigger occurs outside of an encounter use code=&quot;PHC2237&quot; \| system=&quot;2.16.840.1.114222.4.5.274&quot; (External Encounter) and omit period, participant, location, and serviceProvider. In this case, the responsible provider and facility information is contained in the eICR Composition.author."/>
-    <fhirVersion value="4.0.0"/>
-    <mapping>
-        <identity value="eICR-CDA"/>
-        <name value="eCR FHIR to CDA Mapping"/>
-        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR"/>
-    </mapping>
-    <kind value="resource"/>
-    <abstract value="false"/>
-    <type value="Encounter"/>
-  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
-    <derivation value="constraint"/>
-    <differential>
-        <element id="Encounter">
-            <path value="Encounter"/>
-            <short value="eICR Encounter"/>
-            <definition value="The Electronic Case Reporting Encounter profile is based on the Encounter resource and establishes the core elements, extensions, vocabularies and value sets for representing the following encounters for electronic case reporting:&#xA;&#xA;- Initial Case Report encounter related to the reported event."/>
-            <mustSupport value="false"/>
-            <isModifier value="false"/>
-        </element>
-        <element id="Encounter.identifier">
-            <path value="Encounter.identifier"/>
-            <definition value="Visit or encounter id. Not present when a trigger occurs outside of an encounter."/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eICR-CDA"/>
-                <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/componentOf/encompassingEncounter/id"/>
-                <comment value="Encounter/visit id"/>
-            </mapping>
-        </element>
-        <element id="Encounter.status">
-            <path value="Encounter.status"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Encounter.identifier.system">
-            <path value="Encounter.identifier.system"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Encounter.identifier.value">
-            <path value="Encounter.identifier.value"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Encounter.class">
-            <path value="Encounter.class"/>
-            <short value="Class of encounter"/>
-            <definition value="Where a trigger occurs outside of an encounter use code=&quot;PHC2237&quot; | system=&quot;http://phinvads.cdc.gov/2.16.840.1.114222.4.5.274&quot; | display=&quot;External Encounter&quot;."/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eICR-CDA"/>
-                <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/componentOf/encompassingEncounter/code"/>
-            </mapping>
-        </element>
-        <element id="Encounter.type">
-            <path value="Encounter.type"/>
-            <short value="Type of encounter"/>
-            <definition value="Specific type of encounter"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <binding>
-                <strength value="extensible"/>
-                <valueSet value="http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type"/>
-            </binding>
-            <mapping>
-                <identity value="eICR-CDA"/>
-                <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/componentOf/encompassingEncounter/code/translation"/>
-            </mapping>
-        </element>
-        <element id="Encounter.type.extension">
-            <path value="Encounter.type.extension"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Encounter.subject">
-            <path value="Encounter.subject"/>
-            <min value="1"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-patient"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Encounter.participant">
-            <path value="Encounter.participant"/>
-            <slicing>
-                <discriminator>
-                    <type value="type"/>
-                    <path value="type"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-            <definition value="The provider in charge of care and the facility in which care was provided during the encounter in which the eICR was triggered"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Encounter.participant:sliceResponsibleProvider">
-            <path value="Encounter.participant"/>
-            <sliceName value="sliceResponsibleProvider"/>
-            <short value="Responsible provider"/>
-            <definition value="The provider in charge of care and the facility in which care was provided during the encounter in which the eICR was triggered"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Encounter.participant:sliceResponsibleProvider.type">
-            <path value="Encounter.participant.type"/>
-            <short value="Responsible provider"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
-                    <code value="ATND"/>
-                </coding>
-            </patternCodeableConcept>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Encounter.participant.period">
-            <path value="Encounter.participant.period"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Encounter.participant:sliceResponsibleProvider.individual">
-            <path value="Encounter.participant.individual"/>
-            <short value="Responsible Provider"/>
-            <definition value="The provider in charge of care and the facility in which care was provided during the encounter in which the eICR was triggered"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-practitionerrole"/>
-            </type>
-        </element>
-        <element id="Encounter.period">
-            <path value="Encounter.period"/>
-            <short value="Patient encounter start and end times"/>
-            <definition value="Start and end times of the patient encounter in which the eICR was triggered. Not present when a trigger occurs outside of an encounter."/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Encounter.diagnosis">
-            <path value="Encounter.diagnosis"/>
-            <short value="Encounter diagnosis"/>
-            <definition value="Encounter diagnosis"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Encounter.diagnosis.extension">
-            <path value="Encounter.diagnosis.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Encounter.diagnosis.condition">
-            <path value="Encounter.diagnosis.condition"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Encounter.diagnosis.extension:sliceEncounterDiagnosisTrigger">
-            <path value="Encounter.diagnosis.extension"/>
-            <sliceName value="sliceEncounterDiagnosisTrigger"/>
-            <short value="eICR Trigger Code Flag"/>
-            <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated."/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
-            </type>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eICR-CDA"/>
-                <map value="[eICR R2 STU2] Initial Case Report Trigger Code Problem Observation"/>
-            </mapping>
-        </element>
-        <element id="Encounter.period.start">
-            <path value="Encounter.period.start"/>
-            <short value="Encounter start."/>
-            <definition value="Start of the encounter."/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="ClinicalDocument/componentOf/encompassingEncounter/effectiveTime/low"/>
-                <comment value="Admission/Visit Date/Time"/>
-            </mapping>
-        </element>
-        <element id="Encounter.period.end">
-            <path value="Encounter.period.end"/>
-            <short value="Encounter end."/>
-            <definition value="This value is associated with the patient's departure (e.g. discharge). If the patient has been discharged then end SHALL be present."/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="ClinicalDocument/componentOf/encompassingEncounter/effectiveTime/high"/>
-                <comment value="Discharge/Visit end Date/Time"/>
-            </mapping>
-        </element>
-        <element id="Encounter.location">
-            <path value="Encounter.location"/>
-            <short value="eICR encounter location"/>
-            <definition value="Location of the facility in which the eICR encounter took place"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eICR-CDA"/>
-                <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/componentOf/encompassingEncounter/location/healthCareFacility/code"/>
-            </mapping>
-        </element>
-        <element id="Encounter.location.location">
-            <path value="Encounter.location.location"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-location"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-        </element>
-        <element id="Encounter.serviceProvider">
-            <path value="Encounter.serviceProvider"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-    </differential>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="eicr-encounter" />
+  <meta>
+    <versionId value="60" />
+    <lastUpdated value="2020-01-12T21:36:51.000-05:00" />
+  </meta>
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter" />
+  <version value="1.0.0" />
+  <name value="Eicr_Encounter" />
+  <title value="eICR Encounter" />
+  <status value="active" />
+  <experimental value="false" />
+  <publisher value="HL7 Public Health Work Group" />
+  <description
+    value="This Encounter profile represents the encounter related to the eICR event. Contained in the Encounter.participant, is the provider in charge of care (represented by the PractitionerRole.Practitioner) and the provider facility (represented by the PractitionerRole.Organization). The location (facility) in which care was provided when the case was triggered is contained in the encounter.location.&#xA;&#xA;A trigger on an encounter diagnosis is indicated by the eICR Trigger Code Flag Extension in the diagnosis.&#xA;&#xA;Where a trigger occurs outside of an encounter use code=&quot;PHC2237&quot; \| system=&quot;2.16.840.1.114222.4.5.274&quot; (External Encounter) and omit period, participant, location, and serviceProvider. In this case, the responsible provider and facility information is contained in the eICR Composition.author." />
+  <fhirVersion value="4.0.0" />
+  <mapping>
+    <identity value="eICR-CDA" />
+    <name value="eCR FHIR to CDA Mapping" />
+    <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Encounter" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Encounter" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Encounter">
+      <path value="Encounter" />
+      <short value="eICR Encounter" />
+      <definition
+        value="The Electronic Case Reporting Encounter profile is based on the Encounter resource and establishes the core elements, extensions, vocabularies and value sets for representing the following encounters for electronic case reporting:&#xA;&#xA;- Initial Case Report encounter related to the reported event." />
+      <mustSupport value="false" />
+      <isModifier value="false" />
+    </element>
+    <element id="Encounter.identifier">
+      <path value="Encounter.identifier" />
+      <definition value="Visit or encounter id. Not present when a trigger occurs outside of an encounter." />
+      <max value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eICR-CDA" />
+        <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/componentOf/encompassingEncounter/id" />
+        <comment value="Encounter/visit id" />
+      </mapping>
+    </element>
+    <element id="Encounter.status">
+      <path value="Encounter.status" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.identifier.system">
+      <path value="Encounter.identifier.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.identifier.value">
+      <path value="Encounter.identifier.value" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.class">
+      <path value="Encounter.class" />
+      <short value="Class of encounter" />
+      <definition
+        value="Where a trigger occurs outside of an encounter use code=&quot;PHC2237&quot; | system=&quot;http://phinvads.cdc.gov/2.16.840.1.114222.4.5.274&quot; | display=&quot;External Encounter&quot;." />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eICR-CDA" />
+        <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/componentOf/encompassingEncounter/code" />
+      </mapping>
+    </element>
+    <element id="Encounter.type">
+      <path value="Encounter.type" />
+      <short value="Type of encounter" />
+      <definition value="Specific type of encounter" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="extensible" />
+        <valueSet value="http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type" />
+      </binding>
+      <mapping>
+        <identity value="eICR-CDA" />
+        <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/componentOf/encompassingEncounter/code/translation" />
+      </mapping>
+    </element>
+    <element id="Encounter.type.extension">
+      <path value="Encounter.type.extension" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.subject">
+      <path value="Encounter.subject" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-patient" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.participant">
+      <path value="Encounter.participant" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="type" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <definition value="The provider in charge of care and the facility in which care was provided during the encounter in which the eICR was triggered" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.participant:sliceResponsibleProvider">
+      <path value="Encounter.participant" />
+      <sliceName value="sliceResponsibleProvider" />
+      <short value="Responsible provider" />
+      <definition value="The provider in charge of care and the facility in which care was provided during the encounter in which the eICR was triggered" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.participant:sliceResponsibleProvider.type">
+      <path value="Encounter.participant.type" />
+      <short value="Responsible provider" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType" />
+          <code value="ATND" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.participant.period">
+      <path value="Encounter.participant.period" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.participant:sliceResponsibleProvider.individual">
+      <path value="Encounter.participant.individual" />
+      <short value="Responsible Provider" />
+      <definition value="The provider in charge of care and the facility in which care was provided during the encounter in which the eICR was triggered" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-practitionerrole" />
+      </type>
+    </element>
+    <element id="Encounter.period">
+      <path value="Encounter.period" />
+      <short value="Patient encounter start and end times" />
+      <definition value="Start and end times of the patient encounter in which the eICR was triggered. Not present when a trigger occurs outside of an encounter." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.diagnosis">
+      <path value="Encounter.diagnosis" />
+      <short value="Encounter diagnosis" />
+      <definition value="Encounter diagnosis" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.diagnosis.extension">
+      <path value="Encounter.diagnosis.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.diagnosis.condition">
+      <path value="Encounter.diagnosis.condition" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.diagnosis.extension:sliceEncounterDiagnosisTrigger">
+      <path value="Encounter.diagnosis.extension" />
+      <sliceName value="sliceEncounterDiagnosisTrigger" />
+      <short value="eICR Trigger Code Flag" />
+      <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated." />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension" />
+      </type>
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="eICR-CDA" />
+        <map value="[eICR R2 STU2] Initial Case Report Trigger Code Problem Observation" />
+      </mapping>
+    </element>
+    <element id="Encounter.period.start">
+      <path value="Encounter.period.start" />
+      <short value="Encounter start." />
+      <definition value="Start of the encounter." />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="CDA" />
+        <map value="ClinicalDocument/componentOf/encompassingEncounter/effectiveTime/low" />
+        <comment value="Admission/Visit Date/Time" />
+      </mapping>
+    </element>
+    <element id="Encounter.period.end">
+      <path value="Encounter.period.end" />
+      <short value="Encounter end." />
+      <definition value="This value is associated with the patient's departure (e.g. discharge). If the patient has been discharged then end SHALL be present." />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="CDA" />
+        <map value="ClinicalDocument/componentOf/encompassingEncounter/effectiveTime/high" />
+        <comment value="Discharge/Visit end Date/Time" />
+      </mapping>
+    </element>
+    <element id="Encounter.location">
+      <path value="Encounter.location" />
+      <short value="eICR encounter location" />
+      <definition value="Location of the facility in which the eICR encounter took place" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <mapping>
+        <identity value="eICR-CDA" />
+        <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/componentOf/encompassingEncounter/location/healthCareFacility/code" />
+      </mapping>
+    </element>
+    <element id="Encounter.location.location">
+      <path value="Encounter.location.location" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-location" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Encounter.serviceProvider">
+      <path value="Encounter.serviceProvider" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+  </differential>
 </StructureDefinition>
