@@ -155,6 +155,28 @@
       <definition value="Start and end times of the patient encounter in which the eICR was triggered. Not present when a trigger occurs outside of an encounter." />
       <mustSupport value="true" />
     </element>
+    <element id="Encounter.period.start">
+      <path value="Encounter.period.start" />
+      <short value="Encounter start." />
+      <definition value="Start of the encounter." />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="CDA" />
+        <map value="ClinicalDocument/componentOf/encompassingEncounter/effectiveTime/low" />
+        <comment value="Admission/Visit Date/Time" />
+      </mapping>
+    </element>
+    <element id="Encounter.period.end">
+      <path value="Encounter.period.end" />
+      <short value="Encounter end." />
+      <definition value="This value is associated with the patient's departure (e.g. discharge). If the patient has been discharged then end SHALL be present." />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="CDA" />
+        <map value="ClinicalDocument/componentOf/encompassingEncounter/effectiveTime/high" />
+        <comment value="Discharge/Visit end Date/Time" />
+      </mapping>
+    </element>
     <element id="Encounter.diagnosis">
       <path value="Encounter.diagnosis" />
       <short value="Encounter diagnosis" />
@@ -194,28 +216,6 @@
       <mapping>
         <identity value="eICR-CDA" />
         <map value="[eICR R2 STU2] Initial Case Report Trigger Code Problem Observation" />
-      </mapping>
-    </element>
-    <element id="Encounter.period.start">
-      <path value="Encounter.period.start" />
-      <short value="Encounter start." />
-      <definition value="Start of the encounter." />
-      <mustSupport value="true" />
-      <mapping>
-        <identity value="CDA" />
-        <map value="ClinicalDocument/componentOf/encompassingEncounter/effectiveTime/low" />
-        <comment value="Admission/Visit Date/Time" />
-      </mapping>
-    </element>
-    <element id="Encounter.period.end">
-      <path value="Encounter.period.end" />
-      <short value="Encounter end." />
-      <definition value="This value is associated with the patient's departure (e.g. discharge). If the patient has been discharged then end SHALL be present." />
-      <mustSupport value="true" />
-      <mapping>
-        <identity value="CDA" />
-        <map value="ClinicalDocument/componentOf/encompassingEncounter/effectiveTime/high" />
-        <comment value="Discharge/Visit end Date/Time" />
       </mapping>
     </element>
     <element id="Encounter.location">
