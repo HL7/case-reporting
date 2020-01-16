@@ -116,20 +116,6 @@
       </type>
       <mustSupport value="true" />
     </element>
-    <element id="Communication.recipient">
-      <path value="Communication.recipient" />
-      <short value="Reportability Response recipients" />
-      <definition
-        value="Reporting may be identified for multiple PHAs by the PHA system (or its intermediary) (because the patient's residence and the provider location are in separate jurisdictions) including other identified organization (such as an HIE) to which the eICR (if deemed reportable) and/or the Reportability Response will be routed." />
-      <min value="1" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization" />
-        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-practitionerrole" />
-      </type>
-      <mustSupport value="true" />
-    </element>
     <element id="Communication.topic">
       <path value="Communication.topic" />
       <short value="Reportability Response Subject" />
@@ -143,16 +129,6 @@
         <map value="[RR R1 STU1] Reportability Response Subject/text" />
       </mapping>
     </element>
-    <element id="Communication.encounter">
-      <path value="Communication.encounter" />
-      <short value="eICR Encounter" />
-      <definition value="The encounter in which the eICR was triggered." />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter" />
-      </type>
-      <mustSupport value="true" />
-    </element>
     <element id="Communication.topic.text">
       <path value="Communication.topic.text" />
       <short value="Reportability Response Subject text" />
@@ -164,9 +140,33 @@
       </example>
       <mustSupport value="true" />
     </element>
+    <element id="Communication.encounter">
+      <path value="Communication.encounter" />
+      <short value="eICR Encounter" />
+      <definition value="The encounter in which the eICR was triggered." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter" />
+      </type>
+      <mustSupport value="true" />
+    </element>
     <element id="Communication.sent">
       <path value="Communication.sent" />
       <min value="1" />
+    </element>
+    <element id="Communication.recipient">
+      <path value="Communication.recipient" />
+      <short value="Reportability Response recipients" />
+      <definition
+        value="Reporting may be identified for multiple PHAs by the PHA system (or its intermediary) (because the patient's residence and the provider location are in separate jurisdictions) including other identified organization (such as an HIE) to which the eICR (if deemed reportable) and/or the Reportability Response will be routed." />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-practitionerrole" />
+      </type>
+      <mustSupport value="true" />
     </element>
     <element id="Communication.sender">
       <path value="Communication.sender" />
