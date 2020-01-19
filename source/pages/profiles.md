@@ -63,7 +63,6 @@ The following is a listing of all extensions that have been defined for this imp
 <ul>
 	<li><a href="StructureDefinition-date-determined-extension.html">Date Determined Extension</a></li>
 	<li><a href="StructureDefinition-date-recorded-extension.html">Date Recorded Extension</a></li>
-	<li><a href="StructureDefinition-ecr-organization-extension.html">eCR Organization Extension</a></li>
 	<li><a href="StructureDefinition-eicr-initiation-reason-extension.html">eICR Initiation Reason Extension</a></li>
 	<li><a href="StructureDefinition-eicr-initiation-type-extension.html">eICR Initiation Type Extension</a></li>
 	<li><a href="StructureDefinition-eicr-trigger-code-flag-extension.html">eICR Trigger Code Flag Extension</a></li>
