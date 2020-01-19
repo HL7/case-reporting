@@ -18,8 +18,11 @@
     <kind value="complex-type"/>
     <abstract value="false"/>
     <context>
-        <type value="element"/>
-      <expression value="Observation.component.value[x]"/>
+<!--        <type value="element"/>-->
+      <type value="fhirpath"/>
+<!--      <expression value="Observation.component.value[x]"/>-->
+      <expression value="(Observation.component.value as CodeableConcept)]"/>
+      
     </context>
     <type value="Extension"/>
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
