@@ -139,7 +139,59 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceERSDValueSet">
+    <element id="PlanDefinition.action:sliceMatchTrigger.trigger">
+      <path value="PlanDefinition.action.trigger" />
+      <short value="When the &quot;match-trigger&quot; action should be triggered." />
+      <definition value="When the &quot;match-trigger&quot; action should be triggered." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:sliceMatchTrigger.trigger.type">
+      <path value="PlanDefinition.action.trigger.type" />
+      <fixedCode value="data-changed" />
+    </element>
+    <element id="PlanDefinition.action:sliceMatchTrigger.trigger.data">
+      <path value="PlanDefinition.action.trigger.data" />
+      <short value="A triggering value set." />
+      <definition value="A triggering value set for the action." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:sliceMatchTrigger.trigger.data.type">
+      <path value="PlanDefinition.action.trigger.data.type" />
+      <short value="The type of trigger data." />
+      <definition value="The trigger codes that match to the codes in the eRSD value sets are of CodeableConcept data type." />
+      <fixedCode value="CodeableConcept" />
+    </element>
+    <element id="PlanDefinition.action:sliceMatchTrigger.trigger.data.codeFilter">
+      <path value="PlanDefinition.action.trigger.data.codeFilter" />
+      <short value="Match based on code." />
+      <definition value="Make a match (trigger) based on code." />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:sliceMatchTrigger.trigger.data.codeFilter.path">
+      <path value="PlanDefinition.action.trigger.data.codeFilter.path" />
+      <short value="Path to the code to match" />
+      <definition
+        value="Path to the code to match:&#xA;&#xA;* Diagnosis: Condition.code&#xA;* Immunization: Immunization.vaccineCode&#xA;* Lab Order: ServiceRequest.code&#xA;* Lab Observation: Observation.code&#xA;* Medication: MedicationAdministration.medicationCodeableConcept&#xA;* Organism/Substance: Observation.value" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:sliceMatchTrigger.trigger.data.codeFilter.valueSet">
+      <path value="PlanDefinition.action.trigger.data.codeFilter.valueSet" />
+      <short value="eRSD value set containing trigger codes." />
+      <definition value="One of the eRSD value sets containing trigger codes for use in matching to the data." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="canonical" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-valueset" />
+      </type>
+    </element>
+    
+    <!--<element id="PlanDefinition.action:sliceMatchTrigger.trigger:sliceERSDValueSet">
       <path value="PlanDefinition.action.trigger" />
       <sliceName value="sliceERSDValueSet" />
       <short value="When the &quot;match-trigger&quot; action should be triggered." />
@@ -191,7 +243,7 @@
         <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-valueset" />
       </type>
     </element>
-    <element id="PlanDefinition.action:sliceCreateEICR">
+    --><element id="PlanDefinition.action:sliceCreateEICR">
       <path value="PlanDefinition.action" />
       <sliceName value="sliceCreateEICR" />
       <short value="Create eICR" />
