@@ -54,6 +54,10 @@ active: other
       <td><a href="Composition-composition-eicr-zika.html">Initial Public Health Case Report - Zika Example</a></td>
     </tr>
     <tr>
+      <td>Composition</td>
+      <td><a href="Composition-composition-eicr-zika-manual-initiation.html">Initial Public Health Case Report - Manually Initiated Example</a></td>
+    </tr>
+    <tr>
       <td>Condition</td>
       <td><a href="Condition-condition-eicr-eve-everywoman-common-cold.html">condition-eicr-eve-everywoman-common-cold</a></td>
     </tr>
@@ -175,7 +179,7 @@ active: other
     </tr>
     <tr>
       <td>Organization</td>
-      <td><a href="Organization-organization-ecr-acme-laboratory.html">Acme_Labs</a></td>
+      <td><a href="Organization-organization-ecr-acme-laboratory.html">Acme Labs</a></td>
     </tr>
     <tr>
       <td>Organization</td>
