@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bundle xmlns="http://hl7.org/fhir">
-   <id value="RR-collection-bundle-d35e13"/>
+   <id value="RR-collection-bundle-d36e13"/>
    <identifier>
       <system value="urn:ietf:rfc:3986"/>
-      <value value="urn:uuid:1a121d5b-c2c3-4f8d-bdb4-2579b5a6c02e"/>
+      <value value="urn:uuid:1bc0426b-ac01-4a5b-87ae-28675bfd856d"/>
    </identifier>
    <type value="collection"/>
    <timestamp value="2017-11-14T12:15:00.000-07:00"/>
    <entry>
-      <fullUrl value="urn:uuid:24bd7d51-536a-41e0-aff7-9dc581903984"/>
+      <fullUrl value="urn:uuid:0a9de942-a56e-403d-9a9b-b5089cedc715"/>
       <resource>
          <Communication>
-            <id value="RR-communication-d35e13"/>
+            <id value="RR-communication-d36e13"/>
             <meta>
                <profile value="http://hl7.org/fhir/ccda/StructureDefinition/CCDA-on-FHIR-US-Realm-Header"/>
                <!--CDA templateId: urn:hl7ii:2.16.840.1.113883.10.20.22.1.1:2015-08-01-->
@@ -27,6 +27,12 @@
                   </coding>
                </valueCodeableConcept>
             </extension>
+            <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-transformed-from-cda-extension">
+               <identifier>
+                  <system value="urn:ietf:rfc:3986"/>
+                  <value value="urn:uuid:db734647-fc99-424c-a864-7e3cda82e703"/>
+               </identifier>
+            </extension>
             <identifier>
                <system value="urn:ietf:rfc:3986"/>
                <value value="urn:uuid:18218889-5d7d-47d4-b329-31bb1c28d3b3"/>
@@ -40,63 +46,68 @@
                </coding>
             </category>
             <subject>
-               <reference value="urn:uuid:25636382-b10b-419c-8287-b9324acdded6"/>
+               <reference value="urn:uuid:d8d0c51d-568f-4bfd-bc5d-c391d3fade0f"/>
             </subject>
             <topic>
                <text value="Subject: Public Health Reporting Communication: one or more conditions are reportable, or may be reportable, to public health."/>
             </topic>
             <encounter>
-               <reference value="urn:uuid:02dfc9d5-679a-423d-877e-9fa8cf928cd2"/>
+               <reference value="urn:uuid:92fdd219-e92a-4ae2-8994-364b6fdecd3c"/>
             </encounter>
             <sent value="2017-11-14T12:15:00.000-07:00"/>
             <recipient>
-               <reference value="urn:uuid:0bd67967-2833-49a9-8d2d-1e7e27385e6c"/>
+               <reference value="urn:uuid:355ccdb5-edd7-4863-9b86-6f75897df8a6"/>
             </recipient>
             <sender>
-               <reference value="urn:uuid:4589240f-fcd9-4c7c-9c47-0a29e26a7f27"/>
+               <reference value="urn:uuid:68cb1edd-81f3-4fdc-a4c9-8b24d40d3c47"/>
             </sender>
             <payload id="reportability-response-summary">
                <contentString value="Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient. &#34;Zika virus disease (disorder)&#34; is reportable to &#34;State Department of Health&#34;. An initial case report was sent to &#34;State Department of Health&#34;. Additional information may be required for this report."/>
             </payload>
             <payload id="eicr-information">
-               <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-extension">
+               <extension id="eicr-processing-status"
+                          url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-extension">
                   <extension url="eICRProcessingStatus">
                      <valueReference>
-                        <reference value="urn:uuid:df39d5cf-1709-4dd8-93d8-7d061578c655"/>
+                        <reference value="urn:uuid:3f0300ea-4188-4805-ad66-f152b4bd3e72"/>
                      </valueReference>
                   </extension>
+                  <extension url="eICRValidationOutput">
+                     <valueString value="&lt;html&gt;&lt;head&gt;&lt;title&gt; Results &lt;/title&gt;&lt;style type=&#34;text/css&#34; /&gt;&lt;/head&gt;&lt;body&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Severity&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;th&gt;File&lt;/th&gt;&lt;th&gt;Location&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;error&lt;/td&gt;&lt;td&gt;SHOULD contain zero or one [0..1] setId (CONF:1098-32752).&lt;/td&gt;&lt;td&gt;C:\Users\user1\Documents\Work\Lantana\SVN\ClientProjects\ReportabilityResponse\xml\samples\CDAR2_IG_PHCR_R2_RR_D1_2017AUG_SAMPLE.xml&lt;/td&gt;&lt;td&gt;&lt;p&gt;Start line 415:70&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;error&lt;/td&gt;&lt;td&gt;SHOULD contain zero or one [0..1] versionNumber (CONF:1098-32753).&lt;/td&gt;&lt;td&gt;C:\Users\user1\Documents\Work\Lantana\SVN\ClientProjects\ReportabilityResponse\xml\samples\CDAR2_IG_PHCR_R2_RR_D1_2017AUG_SAMPLE.xml&lt;/td&gt;&lt;td&gt;&lt;p&gt;Start line 415:70&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;"/>
+                  </extension>
+               </extension>
+               <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-initiation-type-extension">
+                  <valueCodeableConcept>
+                     <coding>
+                        <system value="http://phinvads.cdc.gov/2.16.840.1.114222.4.5.274"/>
+                        <code value="PHC1464"/>
+                        <display value="Manually Initiated eICR"/>
+                     </coding>
+                  </valueCodeableConcept>
                </extension>
                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-receipt-time-extension">
                   <extension url="extensionEICRReceiptTime">
                      <valueDateTime value="2016-11-07T09:44:21.000-05:15"/>
                   </extension>
                </extension>
-               <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-initiation-type-extension">
-                  <codeableConcept>
-                     <coding>
-                        <system value="http://phinvads.cdc.gov/2.16.840.1.114222.4.5.274"/>
-                        <code value="PHC1464"/>
-                        <display value="Manually Initiated eICR"/>
-                     </coding>
-                  </codeableConcept>
-               </extension>
                <contentReference>
                   <identifier>
-                     <value value="db734647-fc99-424c-a864-7e3cda82e703"/>
+                     <system value="urn:ietf:rfc:3986"/>
+                     <value value="urn:uuid:db734647-fc99-424c-a864-7e3cda82e703"/>
                   </identifier>
                   <display value="CDAR2_IG_PHCR_R2_RR_D1_2019MAY_SAMPLE.xml"/>
                </contentReference>
             </payload>
             <payload id="relevant-reportable-condition">
                <contentReference>
-                  <reference value="urn:uuid:a3e1d503-cc7a-4e7b-a675-7ec7c08facac"/>
+                  <reference value="urn:uuid:84cac67f-62aa-40e9-8d20-1d72e47b07ef"/>
                </contentReference>
             </payload>
          </Communication>
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:25636382-b10b-419c-8287-b9324acdded6"/>
+      <fullUrl value="urn:uuid:d8d0c51d-568f-4bfd-bc5d-c391d3fade0f"/>
       <resource>
          <Patient>
             <meta>
@@ -187,7 +198,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:02dfc9d5-679a-423d-877e-9fa8cf928cd2"/>
+      <fullUrl value="urn:uuid:92fdd219-e92a-4ae2-8994-364b6fdecd3c"/>
       <resource>
          <Encounter>
             <identifier>
@@ -208,11 +219,11 @@
                </coding>
             </type>
             <subject>
-               <reference value="urn:uuid:25636382-b10b-419c-8287-b9324acdded6"/>
+               <reference value="urn:uuid:d8d0c51d-568f-4bfd-bc5d-c391d3fade0f"/>
             </subject>
             <participant>
                <individual>
-                  <reference value="urn:uuid:53697144-29e9-4d6b-99ac-09443c97a2ef"/>
+                  <reference value="urn:uuid:0b036e30-2c83-4b68-b750-7c3e180eecb3"/>
                </individual>
             </participant>
             <period>
@@ -221,17 +232,17 @@
             </period>
             <location>
                <location>
-                  <reference value="urn:uuid:87c5cf7f-2c5b-4823-bb32-af50dd47029e"/>
+                  <reference value="urn:uuid:fae1b272-0308-4274-b761-2120142cbf12"/>
                </location>
             </location>
             <serviceProvider>
-               <reference value="urn:uuid:8daa8fd3-e32d-4bfd-bdea-43297560858d"/>
+               <reference value="urn:uuid:123072b5-24ba-4a07-bdcc-d897652e94c8"/>
             </serviceProvider>
          </Encounter>
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:53697144-29e9-4d6b-99ac-09443c97a2ef"/>
+      <fullUrl value="urn:uuid:0b036e30-2c83-4b68-b750-7c3e180eecb3"/>
       <resource>
          <PractitionerRole><!--responsibleParty/assignedEntity-->
             <identifier>
@@ -239,10 +250,10 @@
                <value value="6666666666666"/>
             </identifier>
             <practitioner>
-               <reference value="urn:uuid:510627e9-ce0c-4d28-8a1a-0c5b687564ab"/>
+               <reference value="urn:uuid:73ef0abb-6c54-4f7f-8739-f827dd1bf111"/>
             </practitioner>
             <organization>
-               <reference value="urn:uuid:2b901c1b-b350-4491-8f44-4148c184b6b9"/>
+               <reference value="urn:uuid:23d14c5a-072d-43f1-861d-1f773f8f89e4"/>
             </organization>
             <telecom>
                <system value="phone"/>
@@ -263,7 +274,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:510627e9-ce0c-4d28-8a1a-0c5b687564ab"/>
+      <fullUrl value="urn:uuid:73ef0abb-6c54-4f7f-8739-f827dd1bf111"/>
       <resource>
          <Practitioner><!--assignedEntity[cda:id[@root="2.16.840.1.113883.4.6"]]/assignedPerson-->
             <meta>
@@ -313,12 +324,12 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:2b901c1b-b350-4491-8f44-4148c184b6b9"/>
+      <fullUrl value="urn:uuid:23d14c5a-072d-43f1-861d-1f773f8f89e4"/>
       <resource>
          <Organization>
             <identifier>
                <system value="urn:ietf:rfc:3986"/>
-               <value value="urn:uuid:2b901c1b-b350-4491-8f44-4148c184b6b9"/>
+               <value value="urn:uuid:23d14c5a-072d-43f1-861d-1f773f8f89e4"/>
             </identifier>
             <active value="true"/>
             <name value="RepresentedOrganization Level Seven Healthcare, Inc."/>
@@ -348,7 +359,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:87c5cf7f-2c5b-4823-bb32-af50dd47029e"/>
+      <fullUrl value="urn:uuid:fae1b272-0308-4274-b761-2120142cbf12"/>
       <resource>
          <Location>
             <identifier>
@@ -379,12 +390,12 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:8daa8fd3-e32d-4bfd-bdea-43297560858d"/>
+      <fullUrl value="urn:uuid:123072b5-24ba-4a07-bdcc-d897652e94c8"/>
       <resource>
          <Organization>
             <identifier>
                <system value="urn:ietf:rfc:3986"/>
-               <value value="urn:uuid:8daa8fd3-e32d-4bfd-bdea-43297560858d"/>
+               <value value="urn:uuid:123072b5-24ba-4a07-bdcc-d897652e94c8"/>
             </identifier>
             <active value="true"/>
             <name value="SerivceProviderOrganization Level Seven Healthcare, Inc."/>
@@ -404,7 +415,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:5b0f927f-6ced-46e0-af8d-82a6de97713e"/>
+      <fullUrl value="urn:uuid:f2b6f61f-047b-4384-9e0f-dea65747d9bb"/>
       <resource>
          <Location><!--cda:assignedAuthor[cda:assignedAuthoringDevice]-->
             <telecom>
@@ -423,7 +434,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:4589240f-fcd9-4c7c-9c47-0a29e26a7f27"/>
+      <fullUrl value="urn:uuid:68cb1edd-81f3-4fdc-a4c9-8b24d40d3c47"/>
       <resource>
          <Device>
             <identifier>
@@ -436,13 +447,13 @@
                <value value="RR Authoring Platform"/>
             </version>
             <location>
-               <reference value="urn:uuid:5b0f927f-6ced-46e0-af8d-82a6de97713e"/>
+               <reference value="urn:uuid:f2b6f61f-047b-4384-9e0f-dea65747d9bb"/>
             </location>
          </Device>
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:f7ee2118-118c-42a4-9dd7-4fd88addb24f"/>
+      <fullUrl value="urn:uuid:d717c2c2-624b-473c-86c7-18e7659974fc"/>
       <resource>
          <Organization>
             <identifier>
@@ -467,12 +478,12 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:0bd67967-2833-49a9-8d2d-1e7e27385e6c"/>
+      <fullUrl value="urn:uuid:355ccdb5-edd7-4863-9b86-6f75897df8a6"/>
       <resource>
          <Organization>
             <identifier>
                <system value="urn:ietf:rfc:3986"/>
-               <value value="urn:uuid:0bd67967-2833-49a9-8d2d-1e7e27385e6c"/>
+               <value value="urn:uuid:355ccdb5-edd7-4863-9b86-6f75897df8a6"/>
             </identifier>
             <active value="true"/>
             <name value="ReceivedOrganization Level Seven Healthcare, Inc."/>
@@ -506,35 +517,7 @@
    <!--No template match for 2.16.840.1.113883.10.20.22.4.20: 2014-06-09-->
    <!--No template match for 2.16.840.1.113883.10.20.15.2.3.8: 2017-04-01-->
    <entry>
-      <fullUrl value="urn:uuid:1867c842-14c6-4d8e-8c82-db97d5787031"/>
-      <resource>
-         <Observation><!--Processing as generic observation: 2.16.840.1.113883.10.20.15.2.3.30:2017-04-01-->
-            <status value="final"/>
-            <code>
-               <coding>
-                  <system value="urn:oid:2.16.840.1.114222.4.5.232"/>
-                  <code value="RR9"/>
-                  <display value="Reportability response priority"/>
-               </coding>
-            </code>
-            <subject>
-               <reference value="urn:uuid:25636382-b10b-419c-8287-b9324acdded6"/>
-            </subject>
-            <!--Using document effective time as issued date-->
-            <issued value="2017-11-14T12:15:00.000-07:00"/>
-            <performer/>
-            <valueCodeableConcept>
-               <coding>
-                  <system value="http://phinvads.cdc.gov/2.16.840.1.114222.4.5.274"/>
-                  <code value="RRVS14"/>
-                  <display value="Action required"/>
-               </coding>
-            </valueCodeableConcept>
-         </Observation>
-      </resource>
-   </entry>
-   <entry>
-      <fullUrl value="urn:uuid:a3e1d503-cc7a-4e7b-a675-7ec7c08facac"/>
+      <fullUrl value="urn:uuid:84cac67f-62aa-40e9-8d20-1d72e47b07ef"/>
       <resource>
          <PlanDefinition>
             <meta>
@@ -559,7 +542,7 @@
             <publisher>
                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization-extension">
                   <valueReference>
-                     <reference value="urn:uuid:079de40a-4db1-4253-9628-46f8a49fe80b"/>
+                     <reference value="urn:uuid:d3c38450-c4cb-4dac-b047-c061c03a1d21"/>
                   </valueReference>
                </extension>
             </publisher>
@@ -575,12 +558,12 @@
                </extension>
                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-ecr-organization">
                   <valueReference>
-                     <reference value="urn:uuid:0a71c902-4e9b-4a97-902b-972bf4a1359a"/>
+                     <reference value="urn:uuid:16309df1-a0f5-46b8-adae-953f0d622ec4"/>
                   </valueReference>
                </extension>
                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/extension-ecr-organization">
                   <valueReference>
-                     <reference value="urn:uuid:5de6ccb5-14ca-4ce0-98dc-fd6af0eb622a"/>
+                     <reference value="urn:uuid:532e2879-b48f-45e2-b591-47ad365c912d"/>
                   </valueReference>
                </extension>
             </jurisdiction>
@@ -808,7 +791,7 @@
       </resource>
    </entry>
    <entry xmlns:lcg="http://www.lantanagroup.com">
-      <fullUrl value="urn:uuid:1ec43185-4a3e-47d2-9769-0d3fd8ddb2c3"/>
+      <fullUrl value="urn:uuid:1ee3393d-97b0-44e5-ad66-f2e0ba8f5407"/>
       <resource>
          <DocumentReference>
             <status value="current"/>
@@ -829,7 +812,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:5677304f-69eb-4484-93a8-c38570408352"/>
+      <fullUrl value="urn:uuid:e8007db6-5b31-4861-b744-77122de0dfa3"/>
       <resource>
          <Observation><!--Processing Status Reason-->
             <meta>
@@ -875,31 +858,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:81d9af6f-7873-4321-98c4-5161d69b6024"/>
-      <resource>
-         <Observation><!--Processing as generic observation: 2.16.840.1.113883.10.20.15.2.3.33:2017-04-01-->
-            <identifier>
-               <system value="urn:ietf:rfc:3986"/>
-               <value value="urn:uuid:80f7b4ff-4d96-46ef-ae8f-af1f9c1f206e"/>
-            </identifier>
-            <status value="final"/>
-            <code>
-               <coding>
-                  <system value="urn:oid:2.16.840.1.114222.4.5.232"/>
-                  <code value="RR10"/>
-                  <display value="eICR Validation Output"/>
-               </coding>
-            </code>
-            <subject>
-               <reference value="urn:uuid:25636382-b10b-419c-8287-b9324acdded6"/>
-            </subject>
-            <!--Using document effective time as issued date-->
-            <issued value="2017-11-14T12:15:00.000-07:00"/>
-            <performer/> Results SeverityDescriptionFileLocationerrorSHOULD contain zero or one [0..1] setId (CONF:1098-32752).C:\Users\user1\Documents\Work\Lantana\SVN\ClientProjects\ReportabilityResponse\xml\samples\CDAR2_IG_PHCR_R2_RR_D1_2017AUG_SAMPLE.xmlStart line 415:70errorSHOULD contain zero or one [0..1] versionNumber (CONF:1098-32753).C:\Users\user1\Documents\Work\Lantana\SVN\ClientProjects\ReportabilityResponse\xml\samples\CDAR2_IG_PHCR_R2_RR_D1_2017AUG_SAMPLE.xmlStart line 415:70</Observation>
-      </resource>
-   </entry>
-   <entry>
-      <fullUrl value="urn:uuid:df39d5cf-1709-4dd8-93d8-7d061578c655"/>
+      <fullUrl value="urn:uuid:3f0300ea-4188-4805-ad66-f152b4bd3e72"/>
       <resource>
          <Observation><!--Processing Status-->
             <meta>
@@ -915,14 +874,14 @@
                </coding>
             </code>
             <hasMember>
-               <reference value="urn:uuid:5677304f-69eb-4484-93a8-c38570408352"/>
+               <reference value="urn:uuid:e8007db6-5b31-4861-b744-77122de0dfa3"/>
             </hasMember>
          </Observation>
       </resource>
    </entry>
    <!--No template match for 2.16.840.1.113883.10.20.15.2.3.22: 2017-04-01-->
    <entry>
-      <fullUrl value="urn:uuid:5de6ccb5-14ca-4ce0-98dc-fd6af0eb622a"/>
+      <fullUrl value="urn:uuid:532e2879-b48f-45e2-b591-47ad365c912d"/>
       <resource>
          <Organization>
             <meta>
@@ -935,13 +894,13 @@
             </identifier>
             <active value="true"/>
             <type>
-               <codeableConcept>
+               <CodeableConcept>
                   <coding>
                      <system value="urn:oid:2.16.840.1.114222.4.5.232"/>
                      <code value="RR8"/>
                      <display value="Responsible Agency"/>
                   </coding>
-               </codeableConcept>
+               </CodeableConcept>
             </type>
             <name value="State Department of Health"/>
             <telecom>
@@ -975,7 +934,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:079de40a-4db1-4253-9628-46f8a49fe80b"/>
+      <fullUrl value="urn:uuid:d3c38450-c4cb-4dac-b047-c061c03a1d21"/>
       <resource>
          <Organization>
             <meta>
@@ -988,13 +947,13 @@
             </identifier>
             <active value="true"/>
             <type>
-               <codeableConcept>
+               <CodeableConcept>
                   <coding>
                      <system value="urn:oid:2.16.840.1.114222.4.5.232"/>
                      <code value="RR12"/>
                      <display value="Rules Authoring Agency"/>
                   </coding>
-               </codeableConcept>
+               </CodeableConcept>
             </type>
             <name value="State Department of Health"/>
             <telecom>
@@ -1028,7 +987,7 @@
       </resource>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:0a71c902-4e9b-4a97-902b-972bf4a1359a"/>
+      <fullUrl value="urn:uuid:16309df1-a0f5-46b8-adae-953f0d622ec4"/>
       <resource>
          <Organization>
             <meta>
@@ -1041,13 +1000,13 @@
             </identifier>
             <active value="true"/>
             <type>
-               <codeableConcept>
+               <CodeableConcept>
                   <coding>
                      <system value="urn:oid:2.16.840.1.114222.4.5.232"/>
                      <code value="RR7"/>
                      <display value="Routing Entity"/>
                   </coding>
-               </codeableConcept>
+               </CodeableConcept>
             </type>
             <name value="State Department of Health Routing Agency"/>
             <telecom>
