@@ -694,28 +694,15 @@
     </element>
     <element id="PlanDefinition.action:sliceRouteAndSendEICR.relatedAction">
       <path value="PlanDefinition.action.relatedAction" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="actionId" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-      <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="PlanDefinition.action:sliceRouteAndSendEICR.relatedAction:sliceAfterValidateEICR">
-      <path value="PlanDefinition.action.relatedAction" />
-      <sliceName value="sliceAfterValidateEICR" />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="PlanDefinition.action:sliceRouteAndSendEICR.relatedAction:sliceAfterValidateEICR.actionId">
+    <element id="PlanDefinition.action:sliceRouteAndSendEICR.relatedAction.actionId">
       <path value="PlanDefinition.action.relatedAction.actionId" />
       <fixedId value="validate-eicr" />
     </element>
-    <element id="PlanDefinition.action:sliceRouteAndSendEICR.relatedAction:sliceAfterValidateEICR.relationship">
+    <element id="PlanDefinition.action:sliceRouteAndSendEICR.relatedAction.relationship">
       <path value="PlanDefinition.action.relatedAction.relationship" />
       <fixedCode value="after" />
     </element>
