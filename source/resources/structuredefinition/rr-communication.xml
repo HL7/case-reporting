@@ -232,29 +232,6 @@
         <map value="[RR R1 STU1] Reportability Response Summary/text" />
       </mapping>
     </element>
-    <element id="Communication.payload:sliceRelevantReportableCondition">
-      <path value="Communication.payload" />
-      <sliceName value="sliceRelevantReportableCondition" />
-      <short value="Relevant Reportable Condition" />
-      <definition
-        value="This payload slice is present in the Reportabilty Response if the eICR was processed and is not present if the eICR was not processed. It contains a Reportability Response PlanDefinition and repeats for each uniqe condition-PHA pair." />
-      <mustSupport value="true" />
-    </element>
-    <element id="Communication.payload:sliceRelevantReportableCondition.id">
-      <path value="Communication.payload.id" />
-      <min value="1" />
-      <fixedString value="relevant-reportable-condition" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Communication.payload:sliceRelevantReportableCondition.content[x]">
-      <path value="Communication.payload.content[x]" />
-      <short value="Reference to Relevant Reportable Condition PlanDefinition" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition" />
-      </type>
-      <mustSupport value="true" />
-    </element>
     <element id="Communication.payload:sliceEICRInformation">
       <path value="Communication.payload" />
       <sliceName value="sliceEICRInformation" />
@@ -356,5 +333,28 @@
         value="The filename (or other identifying string) is recommended primarily for dealing with eICR error cases. In the case where an eICR document is unreadable for some reason, it is possible that the only identifying information is the eICR filename (or other identifying string)." />
       <mustSupport value="true" />
     </element>
-  </differential>
+    <element id="Communication.payload:sliceRelevantReportableCondition">
+      <path value="Communication.payload" />
+      <sliceName value="sliceRelevantReportableCondition" />
+      <short value="Relevant Reportable Condition" />
+      <definition
+        value="This payload slice is present in the Reportabilty Response if the eICR was processed and is not present if the eICR was not processed. It contains a Reportability Response PlanDefinition and repeats for each uniqe condition-PHA pair." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Communication.payload:sliceRelevantReportableCondition.id">
+      <path value="Communication.payload.id" />
+      <min value="1" />
+      <fixedString value="relevant-reportable-condition" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Communication.payload:sliceRelevantReportableCondition.content[x]">
+      <path value="Communication.payload.content[x]" />
+      <short value="Reference to Relevant Reportable Condition PlanDefinition" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    </differential>
 </StructureDefinition>
