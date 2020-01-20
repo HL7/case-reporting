@@ -19,9 +19,9 @@
     <abstract value="false"/>
     <context>
 <!--        <type value="element"/>-->
-      <type value="element"/>
-      <expression value="Observation.component.value"/>
-<!--      <expression value="Observation.component.value.ofType(CodeableConcept)"/>-->
+      <type value="fhirpath"/>
+<!--      <expression value="Observation.component.value"/>-->
+      <expression value="Observation.component.(value as CodeableConcept)"/>
       
     </context>
     <type value="Extension"/>
