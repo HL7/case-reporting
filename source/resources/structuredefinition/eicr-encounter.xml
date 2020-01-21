@@ -194,14 +194,6 @@
       </slicing>
       <mustSupport value="true" />
     </element>
-    <element id="Encounter.diagnosis.condition">
-      <path value="Encounter.diagnosis.condition" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition" />
-      </type>
-      <mustSupport value="true" />
-    </element>
     <element id="Encounter.diagnosis.extension:sliceEncounterDiagnosisTrigger">
       <path value="Encounter.diagnosis.extension" />
       <sliceName value="sliceEncounterDiagnosisTrigger" />
@@ -217,6 +209,14 @@
         <identity value="eICR-CDA" />
         <map value="[eICR R2 STU2] Initial Case Report Trigger Code Problem Observation" />
       </mapping>
+    </element>
+    <element id="Encounter.diagnosis.condition">
+      <path value="Encounter.diagnosis.condition" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition" />
+      </type>
+      <mustSupport value="true" />
     </element>
     <element id="Encounter.location">
       <path value="Encounter.location" />
