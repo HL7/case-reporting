@@ -37,6 +37,42 @@
       </slicing>
       <min value="1" />
     </element>
+    <element id="ValueSet.extension:extensionValueSetSteward">
+      <path value="ValueSet.extension" />
+      <sliceName value="extensionValueSetSteward" />
+      <short value="Value set steward" />
+      <definition
+        value="The entity that is responsible for the content of the Value Set Definition. This is a textual description of the organizational entity responsible for the content and maintenance." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/valueset-steward" />
+      </type>
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="RCTC" />
+        <map value="Individual value set tab.Steward" />
+      </mapping>
+    </element>
+    <element id="ValueSet.extension:extensionValueSetAuthor">
+      <path value="ValueSet.extension" />
+      <sliceName value="extensionValueSetAuthor" />
+      <short value="Value set author" />
+      <definition
+        value="The entity or set of entities that create and may modify the Value Set Definition content. The name of a group or an individual, along with contact details." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/valueset-author" />
+      </type>
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="RCTC" />
+        <map value="Individual value set tab.Author" />
+      </mapping>
+    </element>
     <element id="ValueSet.identifier">
       <path value="ValueSet.identifier" />
       <short value="RCTC value set OID" />
@@ -87,41 +123,5 @@
         <map value="Individual value set tab.Clinical Focus + Data Element Scope + Inclusion Criteria + Exclusion Criteria + Note" />
       </mapping>
     </element>
-    <element id="ValueSet.extension:extensionValueSetSteward">
-      <path value="ValueSet.extension" />
-      <sliceName value="extensionValueSetSteward" />
-      <short value="Value set steward" />
-      <definition
-        value="The entity that is responsible for the content of the Value Set Definition. This is a textual description of the organizational entity responsible for the content and maintenance." />
-      <min value="1" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/valueset-steward" />
-      </type>
-      <mustSupport value="true" />
-      <mapping>
-        <identity value="RCTC" />
-        <map value="Individual value set tab.Steward" />
-      </mapping>
-    </element>
-    <element id="ValueSet.extension:extensionValueSetAuthor">
-      <path value="ValueSet.extension" />
-      <sliceName value="extensionValueSetAuthor" />
-      <short value="Value set author" />
-      <definition
-        value="The entity or set of entities that create and may modify the Value Set Definition content. The name of a group or an individual, along with contact details." />
-      <min value="1" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/valueset-author" />
-      </type>
-      <mustSupport value="true" />
-      <mapping>
-        <identity value="RCTC" />
-        <map value="Individual value set tab.Author" />
-      </mapping>
-    </element>
-  </differential>
+    </differential>
 </StructureDefinition>
