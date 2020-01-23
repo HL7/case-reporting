@@ -35,10 +35,15 @@ active: terminology
 - [Reportability Priority (eCR) Value Set Value Set (PHIN VADS)](http://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.5)
 - [Therapeutic Response to Medication (VSAC)](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.10.20.15.2.5.12/expansion)
 
-### Code Systems
+### Code Systems Defined for this Guide
 
-- [MessageHeader Event Code System ](CodeSystem-codesystem-messageHeader-event.html)
-- [Task Business Status Code Syste](CodeSystem-codesystem-task-businessStatus.html)
+- [MessageHeader Event Code System](CodeSystem-codesystem-messageHeader-event.html)
+- [Task Business Status Code System](CodeSystem-codesystem-task-businessStatus.html)
+
+### Non-Standard External Code Systems
+
+- [PHIN VS (CDC Local Coding System)](https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.114222.4.5.274)
+- [PHIN Questions (CDC Local Coding System)](https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.114222.4.5.232)
 
 ### Example Value Sets (Not for operational use)
 
