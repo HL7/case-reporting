@@ -11,34 +11,33 @@ active: terminology
 
 <br/>
 
-### Value Sets Defined in this Guide
+### Value Sets Defined for this Guide
 
 
 - [eCR MessageHeader Event Value Set](ValueSet-valueset-ecr-messageheader-event.html)
 - [eCR Task BusinessStatus Value Set](ValueSet-valueset-ecr-task-businessstatus.html)
-- [eICR Initiation](ValueSet-valueset-eicr-initiation-ecr.html)
-- [eICR Processing Status (eCR) Value Set](ValueSet-valueset-eicr-processing-status-ecr.html)
-- [eICR Processing Status Reason (eCR) Value Set](ValueSet-valueset-eicr-processing-status-reason-ecr.html)
-- [eICR Processing Status Reason Detail Type (eCR) Value Set](ValueSet-valueset-eicr-processing-status-reason-detail-type-ecr.html)
-- [Estimated Date of Delivery Including Method](ValueSet-2.16.840.1.113883.11.20.9.81.html)
-- [Estimated Gestational Age Code Including Method](ValueSet-2.16.840.1.113883.11.20.9.82.html)
+
 - [Extended Pregnancy Status](ValueSet-2.16.840.1.113762.1.4.1099.24.html)
-- [External Resource Type (eCR) Value Set](ValueSet-valueset-external-resource-type-ecr.html)
-- [Geographical Location History Value Set](ValueSet-valueset-geographical-location-history.html)
-- [Location Relevance (eCR) Value Set](ValueSet-valueset-location-relevance-ecr.html)
-- [Postpartum Status](ValueSet-2.16.840.1.113883.11.20.9.87.html)
-- [Pregnancy Outcome](ValueSet-2.16.840.1.113883.11.20.9.86.html)
-- [Pregnancy Status Determination Method](ValueSet-2.16.840.1.113883.11.20.9.80.html)
 - [Pregnancy Status](ValueSet-pregnancy-status.html)
-- [Reportability Priority (eCR) Value Set Value Set](ValueSet-valueset-reportability-priority-ecr.html)
-- [Therapeutic Response to Medication](ValueSet-2.16.840.1.113883.10.20.15.2.5.12.html)
 
-
-### External Value Sets
+### External Value Sets Defined for this Guide
 
 - [Residence and Accommodation Type (VSAC)](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.49/expansion)
 - [Determination of Reportability (eCR) Value Set (PHIN VADS)](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.3)
-
+- [eICR Initiation (PHIN VADS)](http://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15)
+- [eICR Processing Status (eCR) Value Set (PHIN VADS)](http://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.8)
+- [eICR Processing Status Reason (eCR) Value Set (PHIN VADS)](http://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.7)
+- [eICR Processing Status Reason Detail Type (eCR) Value Set (PHIN VADS)](http://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.10)
+- [Estimated Date of Delivery Including Method (VSAC)](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.81/expansion)
+- [Estimated Gestational Age Code Including Method (VSAC)](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.82/expansion)
+- [External Resource Type (eCR) Value Set (PHIN VADS)](http://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.4)
+- [Geographical Location History Value Set (PHIN VADS)](http://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.3201) 
+- [Location Relevance (eCR) Value Set (PHIN VADS)](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.6)
+- [Postpartum Status (VSAC)](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.87/expansion)
+- [Pregnancy Outcome (VSAC)](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.86/expansion)
+- [Pregnancy Status Determination Method (VSAC)](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.80/expansion)
+- [Reportability Priority (eCR) Value Set Value Set [PHIN VADS](http://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.5)
+- [Therapeutic Response to Medication (VSAC)](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.10.20.15.2.5.12/expansion)
 
 ### Code Systems
 
