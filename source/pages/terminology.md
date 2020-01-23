@@ -24,7 +24,7 @@ active: terminology
 
 - [Residence and Accommodation Type (VSAC)](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.49/expansion)
 - [Determination of Reportability (eCR) Value Set (PHIN VADS)](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.3)
-- [eICR Initiation (PHIN VADS)](http://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15)
+- [eICR Initiation (PHIN VADS)](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.11)
 - [eICR Processing Status (eCR) Value Set (PHIN VADS)](http://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.8)
 - [eICR Processing Status Reason (eCR) Value Set (PHIN VADS)](http://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.7)
 - [eICR Processing Status Reason Detail Type (eCR) Value Set (PHIN VADS)](http://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.10)
