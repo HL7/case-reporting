@@ -11,9 +11,9 @@ active: terminology
 
 <br/>
 
-### Value Sets in this Guide
+### Value Sets Defined in this Guide
 
-- [Determination of Reportability (eCR) Value Set](ValueSet-valueset-determination-of-reportability-ecr.html)
+
 - [eCR MessageHeader Event Value Set](ValueSet-valueset-ecr-messageheader-event.html)
 - [eCR Task BusinessStatus Value Set](ValueSet-valueset-ecr-task-businessstatus.html)
 - [eICR Initiation](ValueSet-valueset-eicr-initiation-ecr.html)
@@ -37,6 +37,7 @@ active: terminology
 ### External Value Sets
 
 - [Residence and Accommodation Type (VSAC)](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.49/expansion)
+- [Determination of Reportability (eCR) Value Set (PHIN VADS)](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.3)
 
 
 ### Code Systems
