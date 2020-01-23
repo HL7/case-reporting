@@ -42,7 +42,6 @@ active: terminology
 ### Code Systems
 
 - [MessageHeader Event Code System ](CodeSystem-codesystem-messageHeader-event.html)
-- [PHIN VS (CDC Local Coding System)](CodeSystem-2.16.840.1.114222.4.5.274.html)
 - [Task Business Status Code Syste](CodeSystem-codesystem-task-businessStatus.html)
 
 
