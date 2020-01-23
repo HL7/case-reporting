@@ -8,15 +8,11 @@ active: terminology
 <!-- * Do not remove this line (it will not be displayed)
 {:toc} -->
 <!-- end TOC -->
-
 <br/>
-
 ### Value Sets Defined for this Guide
-
 
 - [eCR MessageHeader Event Value Set](ValueSet-valueset-ecr-messageheader-event.html)
 - [eCR Task BusinessStatus Value Set](ValueSet-valueset-ecr-task-businessstatus.html)
-
 - [Extended Pregnancy Status](ValueSet-2.16.840.1.113762.1.4.1099.24.html)
 - [Pregnancy Status](ValueSet-pregnancy-status.html)
 
@@ -36,14 +32,13 @@ active: terminology
 - [Postpartum Status (VSAC)](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.87/expansion)
 - [Pregnancy Outcome (VSAC)](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.86/expansion)
 - [Pregnancy Status Determination Method (VSAC)](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.80/expansion)
-- [Reportability Priority (eCR) Value Set Value Set [PHIN VADS](http://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.5)
+- [Reportability Priority (eCR) Value Set Value Set (PHIN VADS)](http://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.5)
 - [Therapeutic Response to Medication (VSAC)](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.10.20.15.2.5.12/expansion)
 
 ### Code Systems
 
 - [MessageHeader Event Code System ](CodeSystem-codesystem-messageHeader-event.html)
 - [Task Business Status Code Syste](CodeSystem-codesystem-task-businessStatus.html)
-
 
 ### Example Value Sets (Not for operational use)
 
