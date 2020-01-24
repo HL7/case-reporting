@@ -14,7 +14,7 @@ active: terminology
 - [eCR MessageHeader Event Value Set](ValueSet-valueset-ecr-messageheader-event.html)
 - [eCR Task BusinessStatus Value Set](ValueSet-valueset-ecr-task-businessstatus.html)
 - [Extended Pregnancy Status](ValueSet-2.16.840.1.113762.1.4.1099.24.html)
-- [Pregnancy Status](ValueSet-pregnancy-status.html)
+- [Pregnancy Status](ValueSet-valueset-pregnancy-status.html)
 
 ### External Value Sets Defined for this Guide
 
