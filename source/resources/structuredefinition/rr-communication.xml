@@ -327,7 +327,12 @@
         <rules value="open" />
       </slicing>-->
       <short value="Reference to eICR Document Bundle or eICR CDA document"/>
-      <definition value="Reference to eICR Document Bundle or eICR CDA document. If Reference, use id for eICR Document Bundle id. Use display for eICR fileName (or other identifying string): recommended primarily for dealing with eICR error cases. In the case where an eICR document is unreadable for some reason, it is possible that the only identifying information is the eICR filename (or other identifying string)." />
+      <definition value="Reference to eICR Document Bundle or eICR CDA document. 
+        * If Reference:
+        ** use id for eICR Document Bundle id. 
+        ** Use display for eICR fileName (or other identifying string): recommended primarily for dealing with eICR error cases. In the case where an eICR document is unreadable for some reason, it is possible that the only identifying information is the eICR filename (or other identifying string).
+        * If Attachment:
+        ** use " />
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle" />
