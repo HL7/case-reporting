@@ -319,16 +319,25 @@
     </element>
     <element id="Communication.payload:sliceEICRInformation.content[x]">
       <path value="Communication.payload.content[x]" />
-      <slicing>
+      <!--<slicing>
         <discriminator>
           <type value="type" />
           <path value="$this" />
         </discriminator>
         <rules value="open" />
-      </slicing>
+      </slicing>-->
+      <short value="Reference to eICR Document Bundle or eICR CDA document"/>
+      <definition value="Reference to eICR Document Bundle or eICR CDA document. If Reference, use id for eICR Document Bundle id. Use display for eICR fileName (or other identifying string): recommended primarily for dealing with eICR error cases. In the case where an eICR document is unreadable for some reason, it is possible that the only identifying information is the eICR filename (or other identifying string)." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle" />
+      </type>
+      <type>
+        <code value="Attachment" />
+      </type>
       <mustSupport value="true" />
     </element>
-    <element id="Communication.payload:sliceEICRInformation.content[x]:sliceReference">
+    <!--<element id="Communication.payload:sliceEICRInformation.content[x]:sliceReference">
       <path value="Communication.payload.content[x]" />
       <short value="Reference to eICR Document Bundle"/>
       <type>
@@ -346,9 +355,9 @@
       <mustSupport value="true" />
     </element>
     <element id="Communication.payload:sliceEICRInformation.content[x]:sliceReference.display">
-      <!--<extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+      <!-\-<extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true" />
-      </extension>-->
+      </extension>-\->
       <path value="Communication.payload.content[x].display" />
       <short value="eICR filename (or other identifying string)" />
       <definition
@@ -362,7 +371,7 @@
         <code value="Attachment" />
       </type>
       <mustSupport value="true" />
-    </element>
+    </element>-->
     <element id="Communication.payload:sliceRelevantReportableCondition">
       <path value="Communication.payload" />
       <sliceName value="sliceRelevantReportableCondition" />
