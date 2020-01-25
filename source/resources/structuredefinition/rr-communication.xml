@@ -319,32 +319,51 @@
     </element>
     <element id="Communication.payload:sliceEICRInformation.content[x]">
       <path value="Communication.payload.content[x]" />
-      <short value="Reference to eICR Document Bundle (Reference) or eICR CDA Document (Attachment)" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <type>
+        <code value="Attachment" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Communication.payload:sliceEICRInformation.content[x]:sliceReference">
+      <path value="Communication.payload.content[x]" />
+      <short value="Reference to eICR Document Bundle"/>
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle" />
       </type>
-      <!--<type>
-        <code value="Attachment" />
-      </type>-->
       <mustSupport value="true" />
     </element>
-    <element id="Communication.payload:sliceEICRInformation.content[x].reference">
+    <element id="Communication.payload:sliceEICRInformation.content[x]:sliceReference.reference">
       <path value="Communication.payload.content[x].reference" />
     </element>
-    <element id="Communication.payload:sliceEICRInformation.content[x].identifier">
+    <element id="Communication.payload:sliceEICRInformation.content[x]:sliceReference.identifier">
       <path value="Communication.payload.content[x].identifier" />
       <short value="eICR Document Bundle id" />
       <mustSupport value="true" />
     </element>
-    <element id="Communication.payload:sliceEICRInformation.content[x].display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+    <element id="Communication.payload:sliceEICRInformation.content[x]:sliceReference.display">
+      <!--<extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true" />
-      </extension>
+      </extension>-->
       <path value="Communication.payload.content[x].display" />
       <short value="eICR filename (or other identifying string)" />
       <definition
         value="The filename (or other identifying string) is recommended primarily for dealing with eICR error cases. In the case where an eICR document is unreadable for some reason, it is possible that the only identifying information is the eICR filename (or other identifying string)." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Communication.payload:sliceEICRInformation.content[x]:sliceAttachment">
+      <path value="Communication.payload.content[x]" />
+      <short value="eICR CDA document"/>
+      <type>
+        <code value="Attachment" />
+      </type>
       <mustSupport value="true" />
     </element>
     <element id="Communication.payload:sliceRelevantReportableCondition">
