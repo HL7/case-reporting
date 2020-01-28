@@ -52,6 +52,10 @@
           <type value="value" />
           <path value="url" />
         </discriminator>
+        <discriminator>
+          <type value="value" />
+          <path value="extension.type" />
+        </discriminator>
         <rules value="open" />
       </slicing>
     </element>
@@ -72,23 +76,32 @@
         <map value="[RR R1 STU1] Reportability Response Priority/value" />
       </mapping>
     </element>
-    <element id="Communication.extension:reportabilityResponseCDADocumentId">
+    
+    <element id="Communication.extension:transformedFrom">
       <path value="Communication.extension" />
-      <sliceName value="reportabilityResponseCDADocumentId" />
-      <short value="Id of CDA RR this is transformed from" />
-      <definition
-        value="ClinicalDocument/id of the RR CDA document that this was transformed from" />
+      <sliceName value="transformedFrom" />
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-transformed-from-cda-extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/relates-to-extension" />
       </type>
       <mustSupport value="true" />
-      <mapping>
-        <identity value="eCR-CDA" />
-        <map value="[RR R1 STU1] Reportability Response ClinicalDocument/id" />
-      </mapping>
     </element>
+    
+    <element id="Communication.extension:transformedFrom.extension.type">
+      <path value="Communication.extension.extension.type" />
+      <fixedCode value="transforms"/>
+    </element>
+    
+    <element id="Communication.extension:transformedFrom.extension.targetIdentifier">
+      <path value="Communication.extension.targetIdentifer" />
+    </element>
+    <element id="Communication.extension:transformedFrom.extension.versionNumber">
+      <path value="Communication.extension.versionNumber" />
+    </element>
+    
+    
+    
     <element id="Communication.identifier">
       <path value="Communication.identifier" />
       <min value="1" />
@@ -188,8 +201,7 @@
     <element id="Communication.sender">
       <path value="Communication.sender" />
       <short value="Author" />
-      <definition
-        value="For the Reportability Response communication, this will most likely be the software that is generating the response, though this will not always the be case." />
+      <definition value="For the Reportability Response communication, this will most likely be the software that is generating the response, though this will not always the be case." />
       <min value="1" />
       <type>
         <code value="Reference" />
@@ -319,8 +331,9 @@
     </element>
     <element id="Communication.payload:sliceEICRInformation.content[x]">
       <path value="Communication.payload.content[x]" />
-      <short value="Reference to eICR Document Bundle or eICR CDA document"/>
-      <definition value="Reference to eICR Document Bundle or eICR CDA document. If Reference: 1. Use id for eICR Document Bundle id 2. Use display for eICR file name (or other identifying string): recommended primarily for dealing with eICR error cases. In the case where an eICR document is unreadable for some reason, it is possible that the only identifying information is the eICR filename (or other identifying string). If Attachment: 1. Use url for eICR Document id. 2. Use title for eICR file name (or other identifying string)." />
+      <short value="Reference to eICR Document Bundle or eICR CDA document" />
+      <definition
+        value="Reference to eICR Document Bundle or eICR CDA document. If Reference: 1. Use id for eICR Document Bundle id 2. Use display for eICR file name (or other identifying string): recommended primarily for dealing with eICR error cases. In the case where an eICR document is unreadable for some reason, it is possible that the only identifying information is the eICR filename (or other identifying string). If Attachment: 1. Use url for eICR Document id. 2. Use title for eICR file name (or other identifying string)." />
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle" />
@@ -353,5 +366,5 @@
       </type>
       <mustSupport value="true" />
     </element>
-    </differential>
+  </differential>
 </StructureDefinition>

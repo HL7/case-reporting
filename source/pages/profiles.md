@@ -77,7 +77,7 @@ The following is a listing of all extensions that have been defined for this imp
 	<li><a href="StructureDefinition-rr-responsible-agency-organization-extension.html">Responsible Agency Organization Extension</a></li>
 	<li><a href="StructureDefinition-rr-routing-entity-organization-extension.html">Routing Entity Organization Extension</a></li>
 	<li><a href="StructureDefinition-rr-rules-authoring-agency-organization-extension.html">Rules Authoring Agency Organization Extension</a></li>
-	<li><a href="StructureDefinition-rr-transformed-from-cda-extension.html">RR Transformed From CDA Extension</a></li>
+	<li><a href="StructureDefinition-relates-to-extension.html">Relates To Extension</a></li>
 	<li><a href="StructureDefinition-therapeutic-medication-response-extension.html">Therapeutic Medication Response Extension</a></li>
 	<li><a href="StructureDefinition-travel-history-address-extension.html">Travel History Address Extension</a></li>
 </ul>
