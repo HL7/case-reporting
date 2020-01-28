@@ -31,7 +31,7 @@
     <element id="Extension.extension:type">
       <path value="Extension.extension" />
       <sliceName value="type" />
-      <short value="replaces | transforms | signs | appends"/>
+      
       <definition value="The type of relationship that this resource has with anther resource/structure."/>
       <min value="1" />
       <max value="1" />
@@ -48,10 +48,11 @@
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="code" />
+      <fixedUri value="type" />
     </element>
     <element id="Extension.extension:type.value[x]">
       <path value="Extension.extension.value[x]" />
+      <short value="replaces | transforms | signs | appends"/>
       <min value="1" />
       <max value="1" />
       <type>
@@ -94,10 +95,6 @@
       <min value="0" />
       <type>
         <code value="Identifier" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Communication" />
       </type>
     </element>
     
