@@ -17,6 +17,6 @@ Both the CDA and FHIR versions of the eICR are intended to be used as an all-jur
  
 This aggregate FHIR electronic case reporting STU implementation guide (hereby known as FHIR eCR) also includes an [electronic Reporting and Surveillance Distribution (eRSD) transaction](Electronic_Reporting_and_Surveillance_Distribution_(eRSD)_Transaction_and_Profiles.html) that includes the Reportable Condition Trigger Codes (RCTC) and other reporting guidance. A distribution service for the eRSD transaction including the RCTC trigger codes can be found at [https://ersd.aimsplatform.org](https://ersd.aimsplatform.org).
  
-XSLT transforms will be made available to facilitate the conversion of eICR and RR transactions between CDA and FHIR formats. These transforms and other supportive material can be found in GForge in the [FHIR_IG_eCR SVN folder](Bi-directional FHIR <-> CDA transforms will be available at the following GForge link: https://gforge.hl7.org/gf/project/pher/scmsvn/?action=browse&path=%2Ftrunk%2FFHIR_IG_eCR%2FFHIR_IG_eCR_R1_D1%2F).
+XSLT transforms will be made available to facilitate the conversion of eICR and RR transactions between CDA and FHIR formats. These transforms and other supportive material can be found in GForge in the [FHIR_IG_eCR SVN folder](https://gforge.hl7.org/gf/project/pher/scmsvn/?action=browse&path=%2Ftrunk%2FFHIR_IG_eCR%2FFHIR_IG_eCR_R1_D1%2F).
 
 [Next Page](Acknowledgements.html)
