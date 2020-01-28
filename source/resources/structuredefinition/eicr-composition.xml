@@ -215,32 +215,32 @@
       </slicing>
       <mustSupport value="true" />
     </element>
-    <element id="Composition.relatesTo:sliceTransformedCDA">
+    <element id="Composition.relatesTo:sliceTransformed">
       <path value="Composition.relatesTo" />
-      <sliceName value="sliceTransformedCDA" />
-      <short value="CDA Document that this Composition is transformed from" />
-      <definition value="CDA Document that this Composition is transformed from" />
+      <sliceName value="sliceTransformed" />
+      <short value="Document or Composition that this Composition is transformed from" />
+      <definition value="Document of Composition that this Composition is transformed from" />
       <min value="0" />
       <max value="1" />
     </element>
-    <element id="Composition.relatesTo:sliceTransformedCDA.code">
+    <element id="Composition.relatesTo:sliceTransformed.code">
       <path value="Composition.relatesTo.code" />
       <fixedCode value="transforms" />
     </element>
-    <element id="Composition.relatesTo:sliceTransformedCDA.target[x]">
+    <element id="Composition.relatesTo:sliceTransformed.target[x]">
       <path value="Composition.relatesTo.target[x]" />
-      <short value="ClinicalDocument/id from the CDA document transformed" />
-      <definition value="ClinicalDocument/id from the CDA document transformed" />
+      <short value="Identifier of the Document or Composition transformed" />
+      <definition value="Identifier of the Document or Composition transformed" />
       <type>
         <code value="Identifier" />
       </type>
     </element>
     
-    <element id="Composition.relatesTo:sliceRelatedDocument">
+    <element id="Composition.relatesTo:sliceReplaced">
       <path value="Composition.relatesTo" />
-      <sliceName value="sliceRelatedDocument" />
-      <short value="CDA document or FHIR Composition that this Composition replaces" />
-      <definition value="CDA document or FHIR Composition that this Composition replaces" />
+      <sliceName value="sliceReplaced" />
+      <short value="Document or Composition that this Composition replaces" />
+      <definition value="Document or Composition that this Composition replaces" />
       <min value="0" />
       <max value="1" />
     </element>
@@ -250,8 +250,8 @@
     </element>
     <element id="Composition.relatesTo:sliceRelatedDocument.target[x]">
       <path value="Composition.relatesTo.target[x]" />
-      <short value="Replaced Composition reference or CDA document indentfier" />
-      <definition value="Replaced Composition reference or CDA document indentfier" />
+      <short value="Identifier/Reference to the Document or Composition transformed" />
+      <definition value="Identifier/Reference to the Document or Composition transformed" />
     </element>
     
     <element id="Composition.section">
