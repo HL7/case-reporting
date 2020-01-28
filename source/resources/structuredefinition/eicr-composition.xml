@@ -235,6 +235,25 @@
         <code value="Identifier" />
       </type>
     </element>
+    
+    <element id="Composition.relatesTo:sliceRelatedDocument">
+      <path value="Composition.relatesTo" />
+      <sliceName value="sliceRelatedDocument" />
+      <short value="CDA document or FHIR Composition that this Composition replaces" />
+      <definition value="CDA document or FHIR Composition that this Composition replaces" />
+      <min value="0" />
+      <max value="1" />
+    </element>
+    <element id="Composition.relatesTo:sliceRelatedDocument.code">
+      <path value="Composition.relatesTo.code" />
+      <fixedCode value="replaces" />
+    </element>
+    <element id="Composition.relatesTo:sliceRelatedDocument.target[x]">
+      <path value="Composition.relatesTo.target[x]" />
+      <short value="Replaced Composition reference or CDA document indentfier" />
+      <definition value="Replaced Composition reference or CDA document indentfier" />
+    </element>
+    
     <element id="Composition.section">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
         <valueString value="Section" />
