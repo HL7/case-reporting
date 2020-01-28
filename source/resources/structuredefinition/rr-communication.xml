@@ -64,7 +64,7 @@
       <sliceName value="reportabilityResponsePriority" />
       <short value="Reportability Response Priority" />
       <definition
-        value="Rrepresents a priority for the reportability response communication overall. It has been calculated from the highest priority of any included External Resources or the highest priority of included conditions based on a separate, jurisdictionally developed priority list.&#xD;&#xA;This “communication”-level priority should be used for EHR workflow including notification, alerting, routing and queueing." />
+        value="Represents a priority for the reportability response communication overall. It has been calculated from the highest priority of any included External Resources or the highest priority of included conditions based on a separate, jurisdictionally developed priority list.&#xD;&#xA;This “communication”-level priority should be used for EHR workflow including notification, alerting, routing and queueing." />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -77,49 +77,19 @@
       </mapping>
     </element>
     
-    <element id="Communication.extension:transformedFrom">
+    <element id="Communication.extension:relatesTo">
       <path value="Communication.extension" />
-      <sliceName value="transformedFrom" />
-      <max value="1" />
+      <sliceName value="relatesTo" />
+      <short value="Represents either a 'transforms' or a 'replaces' structure that this Communication is related to." />
+      <definition
+        value="Represents either a 'transforms' or a 'replaces' structure that this Communication is related to." />
+      <max value="2" />
       <type>
         <code value="Extension" />
         <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/relates-to-extension" />
       </type>
       <mustSupport value="true" />
     </element>
-    <element id="Communication.extension:transformedFrom.extension.type">
-      <path value="Communication.extension.extension.type" />
-      <fixedCode value="transforms"/>
-    </element>
-    <element id="Communication.extension:transformedFrom.extension.targetIdentifier">
-      <path value="Communication.extension.targetIdentifer" />
-    </element>
-    <element id="Communication.extension:transformedFrom.extension.versionNumber">
-      <path value="Communication.extension.versionNumber" />
-    </element>
-    
-    <element id="Communication.extension:hasReplaced">
-      <path value="Communication.extension" />
-      <sliceName value="hasReplaced" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/relates-to-extension" />
-      </type>
-      <mustSupport value="true" />
-    </element>
-    <element id="Communication.extension:replaced.extension.type">
-      <path value="Communication.extension.extension.type" />
-      <fixedCode value="replaces"/>
-    </element>
-    <element id="Communication.extension:transformedFrom.extension.targetReference">
-      <path value="Communication.extension.targetReference" />
-    </element>
-    <element id="Communication.extension:transformedFrom.extension.versionNumber">
-      <path value="Communication.extension.versionNumber" />
-    </element>
-    
-    
     
     <element id="Communication.identifier">
       <path value="Communication.identifier" />
