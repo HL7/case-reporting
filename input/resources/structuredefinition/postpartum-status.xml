@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="postpartum-status"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2020-10-12T23:39:25.718+00:00"/>
+        <source value="#5YVRqzWsiYZZUQj9"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/postpartum-status"/>
+    <version value="1.0.0"/>
+    <name value="Postpartum_Status"/>
+    <title value="Postpartum Status"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This profile represents the postpartum status of a patient. If the profile is present, the patient is in the postpartum period and further information about the postpartum status is communicated by the code chosen.&#xA;The postpartum period, also known as the puerperium, refers to the time after delivery when maternal physiological changes related to pregnancy return to the nonpregnant state. There is consensus that the postpartum period begins upon delivery of the infant. The end is less well defined but is often considered the six to eight weeks after delivery because the effects of pregnancy on many systems have largely returned to the pre-pregnancy state.&#xA;"/>
+    <fhirVersion value="4.0.1"/>
+    <mapping>
+        <identity value="eCR-CDA"/>
+        <name value="eCR FHIR to CDA Mapping"/>
+        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
+    </mapping>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Observation"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Observation">
+            <path value="Observation"/>
+        </element>
+        <element id="Observation.code">
+            <path value="Observation.code"/>
+            <min value="1"/>
+            <max value="1"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://snomed.info/sct"/>
+                    <code value="249197004"/>
+                    <display value="Maternal condition during puerperium (observable entity)"/>
+                </coding>
+            </patternCodeableConcept>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Postpartum Status/code"/>
+            </mapping>
+        </element>
+        <element id="Observation.effective[x]">
+            <path value="Observation.effective[x]"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Postpartum Status/effectiveTime"/>
+            </mapping>
+        </element>
+        <element id="Observation.value[x]">
+            <path value="Observation.value[x]"/>
+            <short value="Postpartum status"/>
+            <min value="1"/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <mustSupport value="true"/>
+            <binding>
+                <strength value="extensible"/>
+                <description value="The codes represent the point within the postpartum period for which a postpartum status is observed."/>
+                <valueSet value="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.87/expansion"/>
+            </binding>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Postpartum Status/value"/>
+                <comment value="Postpartum Status"/>
+            </mapping>
+        </element>
+    </differential>
+</StructureDefinition>

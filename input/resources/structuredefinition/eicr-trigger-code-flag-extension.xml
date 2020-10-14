@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="eicr-trigger-code-flag-extension"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2020-10-12T23:39:25.375+00:00"/>
+        <source value="#MpR4Jl52679NoqES"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
+    <version value="1.0.0"/>
+    <name value="Eicr_Trigger_Code_Flag_Extension"/>
+    <title value="eICR Trigger Code Flag Extension"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This Extension profile represents a flag which, if it is present, indicates that the **target** reference represents a triggering event and caused the eCR to be generated. It contains the trigger code which is the same as the trigger code in the resource and is used to identify which code(s) in a resource that allows multiple trigger codes (e.g. US Core Observation Lab where a trigger code could be contained in either the code (lab test) or the value (lab test result) or in the case of a battery or panel of tests, in the hasMember as another US Core Observation Lab code or value). It also contains the RCTC OID and RCTC version of the value set from which the code was matched. &#xA;&#xA;It is available for use in the following places:&#xA;&#xA;* eICR Encounter&#xA;	* flags a code contained in Condition.code (eICR Condition) which is contained in Encounter.diagnosis (eICR Encounter) - diagnosis&#xA;* Problem Section entry&#xA;	* flags a code contained in Condition.code (eICR Condition) - diagnosis&#xA;* Plan of Treatment Section entry&#xA;	* flags a code contained in ServiceRequest.code (eICR ServiceRequest) - test being requested&#xA;* Results Section entry&#xA;	* flags codes contained in:&#xA;		* Observation.code (US Core Laboratory Result Observation Profile code) - test performed/battery or panel name&#xA;		* Observation.value (US Core Laboratory Result Observation Profile value) - test result&#xA;		* Observation.code referenced in containing Observation.hasMember (US Core Laboratory Result Observation Profile code) - member of panel test performed&#xA;		* Observation.value referenced in containing Observation.hasMember (US Core Laboratory Result Observation Profile value) - member of panel test result&#xA;* Medications Section entry&#xA;	* flags a code contained in MedicationAdministration.medicationCodeableConcept - medication&#xA;* Immunization Section entry&#xA;	* flags a code contained in US Core Immunization (Immunization.vaccineCode) - vaccine&#xA;&#xA;"/>
+    <fhirVersion value="4.0.1"/>
+    <mapping>
+        <identity value="eCR-CDA"/>
+        <name value="eCR FHIR to CDA Mapping"/>
+        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
+    </mapping>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <context>
+        <type value="element"/>
+        <expression value="Composition.section.entry"/>
+    </context>
+    <context>
+        <type value="element"/>
+        <expression value="Encounter.diagnosis"/>
+    </context>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Extension">
+            <path value="Extension"/>
+            <short value="eICR Trigger Code Flag"/>
+            <definition value="Definition: A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following places:&#xD;&#xD;&#xA;- Composition[eICR Composition].section[Problem Section].entry&#xD;- Composition[eICR Composition].section[Results Section].entry&#xD;&#xA;- Composition[eICR Composition].section[Plan of Treatment Section].entry&#xD;- Encounter[eICR Encounter].diagnosis"/>
+            <max value="*"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Extension.extension">
+            <path value="Extension.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+        </element>
+        <element id="Extension.extension:extensionTriggerCodeValueSet">
+            <path value="Extension.extension"/>
+            <sliceName value="extensionTriggerCodeValueSet"/>
+            <short value="RCTC value set OID"/>
+            <definition value="RCTC value set OID"/>
+            <min value="1"/>
+            <max value="1"/>
+        </element>
+        <element id="Extension.extension:extensionTriggerCodeValueSet.url">
+            <path value="Extension.extension.url"/>
+            <fixedUri value="triggerCodeValueSet"/>
+        </element>
+        <element id="Extension.extension:extensionTriggerCodeValueSet.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <type>
+                <code value="oid"/>
+            </type>
+            <example>
+                <label value="General"/>
+                <valueOid value="urn:oid:2.16.840.1.114222.4.11.7508"/>
+            </example>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] @sdtc:valueSet (Any of the eICR trigger code templates)"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:extensionTriggerCodeValueSetVersion">
+            <path value="Extension.extension"/>
+            <sliceName value="extensionTriggerCodeValueSetVersion"/>
+            <short value="RCTC value set version"/>
+            <definition value="RCTC value set version"/>
+            <min value="1"/>
+            <max value="1"/>
+        </element>
+        <element id="Extension.extension:extensionTriggerCodeValueSetVersion.url">
+            <path value="Extension.extension.url"/>
+            <fixedUri value="triggerCodeValueSetVersion"/>
+        </element>
+        <element id="Extension.extension:extensionTriggerCodeValueSetVersion.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <min value="1"/>
+            <type>
+                <code value="string"/>
+            </type>
+            <example>
+                <label value="General"/>
+                <valueString value="19/05/2019"/>
+            </example>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] @sdtc:valueSetVersion (Any of the eICR trigger code templates)"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:extensionTriggerCode">
+            <path value="Extension.extension"/>
+            <sliceName value="extensionTriggerCode"/>
+            <short value="Trigger code"/>
+            <definition value="Trigger code - this code is the same as the trigger code in the resource and is used to identify which code(s) in a resource that allows multiple trigger codes (e.g. US Core Observation Lab where a trigger code could be contained in either the code (lab test) or the value (lab test result) or in the case of a battery or panel of tests, in the hasMember as another US Core Observation Lab code or value)."/>
+            <min value="1"/>
+            <max value="1"/>
+        </element>
+        <element id="Extension.extension:extensionTriggerCode.url">
+            <path value="Extension.extension.url"/>
+            <fixedUri value="triggerCode"/>
+        </element>
+        <element id="Extension.extension:extensionTriggerCode.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <min value="1"/>
+            <type>
+                <code value="Coding"/>
+            </type>
+            <example>
+                <label value="General"/>
+                <valueCoding>
+                    <system value="http://snomed.info/sct"/>
+                    <code value="3928002"/>
+                    <display value="Zika virus disease (disorder)"/>
+                </valueCoding>
+            </example>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Any of the eICR trigger codes (code, value[xsi:type='CD'], or translation"/>
+            </mapping>
+        </element>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
+        </element>
+        <element id="Extension.value[x]">
+            <path value="Extension.value[x]"/>
+            <min value="0"/>
+            <max value="0"/>
+        </element>
+    </differential>
+</StructureDefinition>

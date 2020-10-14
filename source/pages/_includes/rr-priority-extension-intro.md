@@ -1,1 +1,0 @@
-This Extension profile represents the priority given to the whole communication or one or more external resources.

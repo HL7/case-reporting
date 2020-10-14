@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="last-menstrual-period"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2020-10-12T23:39:25.695+00:00"/>
+        <source value="#CNQWQPRbuNgHXcod"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/last-menstrual-period"/>
+    <version value="1.0.0"/>
+    <name value="Last_Menstrual_Period"/>
+    <title value="Last Menstrual Period"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This profile represents the date of the last menstrual period of the patient. If known, the first day of last menstrual period should be captured. The effectiveTime captures the observation date."/>
+    <fhirVersion value="4.0.1"/>
+    <mapping>
+        <identity value="eCR-CDA"/>
+        <name value="eCR FHIR to CDA Mapping"/>
+        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
+    </mapping>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Observation"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Observation">
+            <path value="Observation"/>
+        </element>
+        <element id="Observation.code">
+            <path value="Observation.code"/>
+            <min value="1"/>
+            <max value="1"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://loinc.org"/>
+                    <code value="8665-2"/>
+                    <display value="Last menstrual period start date"/>
+                </coding>
+            </patternCodeableConcept>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="Last Menstrual Period (V2)/code"/>
+            </mapping>
+        </element>
+        <element id="Observation.effective[x]">
+            <path value="Observation.effective[x]"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="dateTime"/>
+            </type>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Last Menstrual Period/effectiveTime"/>
+            </mapping>
+        </element>
+        <element id="Observation.value[x]">
+            <path value="Observation.value[x]"/>
+            <short value="Start of last menstrual period"/>
+            <definition value="Time of the start of the last menstrual period."/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="dateTime"/>
+            </type>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="Last Menstrual Period/value"/>
+                <comment value="Last menstrual period (LMP)"/>
+            </mapping>
+        </element>
+    </differential>
+</StructureDefinition>

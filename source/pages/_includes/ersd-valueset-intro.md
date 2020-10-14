@@ -1,1 +1,0 @@
-This profile describes the eRSD value sets.

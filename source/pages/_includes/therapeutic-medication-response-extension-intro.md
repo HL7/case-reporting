@@ -1,1 +1,0 @@
-This Extension profile represents represents a therapeutic response (as opposed to an undesired reaction) to the administration of a medication.

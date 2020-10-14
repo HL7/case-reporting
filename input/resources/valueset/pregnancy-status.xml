@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet
+    xmlns="http://hl7.org/fhir">
+    <id value="pregnancy-status"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2020-02-11T22:57:34.098+00:00"/>
+        <source value="#o4VHfWeefwu4p6CP"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/ValueSet/pregnancy-status"/>
+    <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="2.16.840.1.113883.11.20.9.85"/>
+    </identifier>
+    <version value="0.2.0"/>
+    <name value="Pregnancy_Status"/>
+    <title value="Pregnancy Status"/>
+    <status value="active"/>
+    <date value="2018-08-01T00:00:00+10:00"/>
+    <description value="This value set contains codes representing pregnancy statuses."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+    </jurisdiction>
+    <compose>
+        <include>
+            <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1099.24"/>
+        </include>
+        <include>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor"/>
+            <concept>
+                <code value="UNK"/>
+                <display value="Unknown"/>
+            </concept>
+        </include>
+    </compose>
+</ValueSet>

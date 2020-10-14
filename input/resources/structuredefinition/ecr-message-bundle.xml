@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="ecr-message-bundle"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2020-10-12T23:39:24.975+00:00"/>
+        <source value="#POi3xnynFimK0jpK"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-message-bundle"/>
+    <version value="1.0.0"/>
+    <name value="Ecr_Message_Bundle"/>
+    <title value="eCR Message Bundle"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This Bundle profile represents an eICR Message Bundle. It contains the eCR MessageHeader and is for use in the eCR messaging paradigm."/>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Bundle"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Bundle">
+            <path value="Bundle"/>
+        </element>
+        <element id="Bundle.type">
+            <path value="Bundle.type"/>
+            <fixedCode value="message"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Bundle.entry">
+            <path value="Bundle.entry"/>
+            <slicing>
+                <discriminator>
+                    <type value="profile"/>
+                    <path value="$this.resource"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Bundle.entry:sliceMessageHeader">
+            <path value="Bundle.entry"/>
+            <sliceName value="sliceMessageHeader"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Bundle.entry:sliceMessageHeader.resource">
+            <path value="Bundle.entry.resource"/>
+            <type>
+                <code value="Resource"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader"/>
+            </type>
+        </element>
+    </differential>
+</StructureDefinition>

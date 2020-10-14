@@ -1,1 +1,0 @@
-This Extension profile represents the type/category of one or more external resources.

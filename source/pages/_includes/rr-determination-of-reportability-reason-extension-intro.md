@@ -1,1 +1,0 @@
-This Extension profile represents the reason for the determination of reportability.

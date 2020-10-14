@@ -1,1 +1,0 @@
-The date a status or observation was recorded (recorded date).

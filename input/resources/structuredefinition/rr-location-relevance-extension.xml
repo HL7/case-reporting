@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="rr-location-relevance-extension"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2020-10-12T23:39:24.380+00:00"/>
+        <source value="#Kqvs0zBQesjmFfur"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-location-relevance-extension"/>
+    <version value="1.0.0"/>
+    <name value="RR_Location_Relevance_Extension"/>
+    <title value="Location Relevance Extension"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This Extension profile represents a code indicating whether the responsible PHA is relevant because of the patient's home address, the provider facility address, or both."/>
+    <fhirVersion value="4.0.1"/>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <context>
+        <type value="element"/>
+        <expression value="PlanDefinition.jurisdiction"/>
+    </context>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Extension">
+            <path value="Extension"/>
+            <short value="Location relevance"/>
+            <definition value="A code indicating whether the responsible PHA is relevant because of the patient's home address, the provider facility address, or both."/>
+            <max value="1"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-location-relevance-extension"/>
+        </element>
+        <element id="Extension.value[x]">
+            <path value="Extension.value[x]"/>
+            <short value="Location Relevance"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <example>
+                <label value="Example for CodeableConcept"/>
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
+                        <code value="RRVS5"/>
+                        <display value="Patient home address"/>
+                    </coding>
+                </valueCodeableConcept>
+            </example>
+            <binding>
+                <strength value="extensible"/>
+                <description value="This value set contains codes to indicate the location because of which the responsible agency is relevant."/>
+                <valueSet value="https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.6"/>
+            </binding>
+        </element>
+    </differential>
+</StructureDefinition>

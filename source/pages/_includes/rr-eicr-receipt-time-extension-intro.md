@@ -1,1 +1,0 @@
-This Extension profile represents the date and time of eICR receipt

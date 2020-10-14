@@ -1,1 +1,0 @@
-This code system contains codes that identify the event a message represents.

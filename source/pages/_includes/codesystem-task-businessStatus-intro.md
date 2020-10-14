@@ -1,1 +1,0 @@
-This code system contains codes that describe the business status of a task.

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="characteristics-of-home-environment"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2020-10-12T23:39:24.913+00:00"/>
+        <source value="#5YPTkj8js5x7CAZ2"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/characteristics-of-home-environment"/>
+    <version value="1.0.0"/>
+    <name value="Characteristics_of_Home_Environment"/>
+    <title value="Characteristics of Home Environment"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This profile represents the patient's home environment including, but not limited to, type of residence (trailer, single family home, assisted living), living arrangement (e.g., alone, with parents), and housing status (e.g., evicted, homeless, home owner)."/>
+    <fhirVersion value="4.0.1"/>
+    <mapping>
+        <identity value="eCR-CDA"/>
+        <name value="eCR FHIR to CDA Mapping"/>
+        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
+    </mapping>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Observation"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Observation">
+            <path value="Observation"/>
+        </element>
+        <element id="Observation.code">
+            <path value="Observation.code"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://loinc.org"/>
+                    <code value="75274-1"/>
+                    <display value="Characteristics of residence"/>
+                </coding>
+            </patternCodeableConcept>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Characteristics of Home Environment/code"/>
+            </mapping>
+        </element>
+        <element id="Observation.value[x]">
+            <path value="Observation.value[x]"/>
+            <short value="Characteristic of home environment"/>
+            <definition value="Characteristic of home environment"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <example>
+                <label value="Example for &quot;homeless&quot;"/>
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://snomed.info/sct"/>
+                        <code value="32911000"/>
+                        <display value="Homeless"/>
+                    </coding>
+                </valueCodeableConcept>
+            </example>
+            <mustSupport value="true"/>
+            <binding>
+                <strength value="extensible"/>
+                <valueSet value="https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.49/expansion"/>
+            </binding>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Characteristics of Home Environment/value"/>
+            </mapping>
+        </element>
+    </differential>
+</StructureDefinition>

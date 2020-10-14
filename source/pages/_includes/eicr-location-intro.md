@@ -1,1 +1,0 @@
-This Location profile represents the location/facility in which care was provided when the eICR was triggered.

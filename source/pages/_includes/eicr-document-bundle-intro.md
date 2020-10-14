@@ -1,1 +1,0 @@
-This Bundle profile represents an eICR Document Bundle. It contains the eICR Composition.

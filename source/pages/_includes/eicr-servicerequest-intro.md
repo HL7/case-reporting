@@ -1,1 +1,0 @@
-This ServiceRequest profile represents eICR laboratory orders and other diagnostics for the eICR event.

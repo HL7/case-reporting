@@ -1,1 +1,0 @@
-This extension represents an RR Responsible Agency Organization

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="rr-rules-authoring-agency-organization"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2020-10-12T23:39:24.382+00:00"/>
+        <source value="#sZgLqiH3CpCh8Kkv"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization"/>
+    <version value="1.0.0"/>
+    <name value="RR_Rules_Authoring_Agency_Organization"/>
+    <title value="Rules Authoring Agency Organization"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This Organization profile represents the Rules Authoring Agency which is the originator of the rules that are being executed in decision support to determine reportability. This may be a state or local PHA. In the majority of cases the Rules Authoring Agency will be the same as the Responsible Agency. Usually, a Local Public Health Agency will inherit rules from its relevant state agency, but a Local agency can adopt, replace or supplement relevant state rules. It is based on the [eCR Organization](StructureDefinition-ecr-organization.html) profile with a further restriction setting the **type** data element to 'Rules Authoring Agency'."/>
+    <fhirVersion value="4.0.1"/>
+    <mapping>
+        <identity value="CDA"/>
+        <name value="RR Rules Authoring Agency Organization mapping to CDA"/>
+        <comment value="This table maps RR Rules Authoring Agency profile to CDA"/>
+    </mapping>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Organization"/>
+    <baseDefinition value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-organization"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Organization">
+            <path value="Organization"/>
+            <short value="Rules Authoring Agency"/>
+            <definition value="The Rules Authoring Agency profile is based on the eCR Organization profile and sets the type to 'Rules Authoring Agency'. The Rules Authoring Agency is whose rules are being executed in decision support to determine reportability. This may be a State or Local PHA. In the majority of cases the Rules Authoring Agency will be the same as the Responsible Agency. Usually, a Local Public Health Agency will inherit rules from its relevant State agency, but a Local agency can adopt, replace or supplement relevant state rules."/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Organization.text">
+            <path value="Organization.text"/>
+            <short value="Rules Authoring Agency Description"/>
+            <definition value="Description of the Rules Authoring Agency"/>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Reportability Response Coded Information Organizer/Relevant Reportable Condition Observation/Reportability Information Organizer/Rules Authoring Agency/participantRole/playingEntity/desc"/>
+            </mapping>
+        </element>
+        <element id="Organization.identifier">
+            <path value="Organization.identifier"/>
+            <short value="Rules Authoring Agency Id"/>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Reportability Response Coded Information Organizer/Relevant Reportable Condition Observation/Reportability Information Organizer/Rules Authoring Agency/participantRole/id"/>
+            </mapping>
+        </element>
+        <element id="Organization.type">
+            <path value="Organization.type"/>
+            <min value="1"/>
+            <max value="1"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="urn:oid:2.16.840.1.114222.4.5.232"/>
+                    <code value="RR12"/>
+                    <display value="Rules Authoring Agency"/>
+                </coding>
+            </patternCodeableConcept>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Organization.name">
+            <path value="Organization.name"/>
+            <short value="Rules Authoring Agency Name"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Reportability Response Coded Information Organizer/Relevant Reportable Condition Observation/Reportability Information Organizer/Rules Authoring Agency/participantRole/playingEntity/name"/>
+            </mapping>
+        </element>
+        <element id="Organization.telecom">
+            <path value="Organization.telecom"/>
+            <short value="Rules Authoring Agency Contact Information"/>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Reportability Response Coded Information Organizer/Relevant Reportable Condition Observation/Reportability Information Organizer/Rules Authoring Agency/participantRole/telecom"/>
+            </mapping>
+        </element>
+        <element id="Organization.address">
+            <path value="Organization.address"/>
+            <short value="Rules Authoring Agency Address"/>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="CDA"/>
+                <map value="Reportability Response Coded Information Organizer/Relevant Reportable Condition Observation/Reportability Information Organizer/Rules Authoring Agency/participantRole/addr"/>
+            </mapping>
+        </element>
+    </differential>
+</StructureDefinition>

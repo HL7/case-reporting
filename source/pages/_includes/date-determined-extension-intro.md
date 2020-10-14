@@ -1,1 +1,0 @@
-The date a status or observation was determined (date of determination).

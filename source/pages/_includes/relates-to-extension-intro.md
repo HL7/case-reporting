@@ -1,1 +1,0 @@
-This Extension profile represents relationships with other structures that already exist.

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="ecr-practitionerrole"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2020-10-12T23:39:24.990+00:00"/>
+        <source value="#Um6D3HOjzRx5D6s5"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-practitionerrole"/>
+    <version value="1.0.0"/>
+    <name value="Ecr_PractitionerRole"/>
+    <title value="eCR PractitionerRole"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This PractitionerRole represents the roles and organizations a practitioner involved in eCR is associated with. It is based on the **US Core PractitionerRole** profile with a further restriction of a mandatory **identifier** data element."/>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="PractitionerRole"/>
+    <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="PractitionerRole.identifier">
+            <path value="PractitionerRole.identifier"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PractitionerRole.location">
+            <path value="PractitionerRole.location"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-location"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+    </differential>
+</StructureDefinition>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="rr-external-resource-type-extension"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2020-10-12T23:39:24.125+00:00"/>
+        <source value="#ynlZikKjGWMLWXun"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-type-extension"/>
+    <version value="1.0.0"/>
+    <name value="RR_External_Resource_Type_Extension"/>
+    <title value="External Resource Type Extension"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This Extension profile represents the type/category of one or more external resources."/>
+    <fhirVersion value="4.0.1"/>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <context>
+        <type value="element"/>
+        <expression value="PlanDefinition.action.documentation"/>
+    </context>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Extension">
+            <path value="Extension"/>
+            <short value="External Resource Type/Category"/>
+            <definition value="Type/category of one or more external resources."/>
+            <max value="1"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-type-extension"/>
+        </element>
+        <element id="Extension.value[x]">
+            <path value="Extension.value[x]"/>
+            <short value="Type/category of external resource(s)"/>
+            <definition value="A code that describes the type/category of an external resource used in a Reportability Response."/>
+            <min value="1"/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <binding>
+                <strength value="extensible"/>
+                <description value="This value set contains codes that describe the type/category of an external resource used in a Reportability Response."/>
+                <valueSet value="https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.4"/>
+            </binding>
+        </element>
+    </differential>
+</StructureDefinition>

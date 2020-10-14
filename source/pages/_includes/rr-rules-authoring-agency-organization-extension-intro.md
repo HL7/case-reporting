@@ -1,1 +1,0 @@
-This extension represents an RR Rules Authoring Agency Organization
