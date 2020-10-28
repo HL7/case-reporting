@@ -18,13 +18,13 @@ The following profiles and extensions have been defined for the eICR transaction
 <ul>
   <li><b>Containing Bundle:</b> <a href="StructureDefinition-eicr-document-bundle.html">eICR Document Bundle</a></li>
   <li><b>Starting point:</b> <a href="StructureDefinition-eicr-composition.html">eICR Composition</a></li>
-  <li><a href="StructureDefinition-ecr-patient.html">eICR Patient</a></li>
-  <li><a href="StructureDefinition-ecr-practitionerrole.html">eICR PractitionerRole</a></li>
-  <li><a href="StructureDefinition-ecr-organization.html">eCR Organization</a></li>
-  <li><a href="StructureDefinition-eicr-encounter.html">eICR Encounter</a></li>
+  <li><a href="StructureDefinition-us-ph-patient.html">eICR Patient</a></li>
+  <li><a href="StructureDefinition-us-ph-practitionerrole.html">eICR PractitionerRole</a></li>
+  <li><a href="StructureDefinition-us-ph-organization.html">eCR Organization</a></li>
+  <li><a href="StructureDefinition-us-ph-encounter.html">eICR Encounter</a></li>
   <li><a href="StructureDefinition-eicr-condition.html">eICR Condition</a></li>
   <li><a href="StructureDefinition-eicr-servicerequest.html">eICR Lab Order</a></li>
-  <li><a href="StructureDefinition-eicr-location.html">eICR Location</a></li>
+  <li><a href="StructureDefinition-us-ph-location.html">eICR Location</a></li>
   <li><a href="StructureDefinition-pregnancy-status-observation.html">Pregnancy Status Observation</a></li>
   <li><a href="StructureDefinition-pregnancy-outcome-observation.html">Pregnancy Outcome Observation</a></li>
   <li><a href="StructureDefinition-last-menstrual-period.html">Last Menstrual Period</a></li>
