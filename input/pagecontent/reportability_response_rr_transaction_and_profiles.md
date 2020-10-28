@@ -33,10 +33,10 @@ The following profiles and extensions have been defined for the Reportability Re
   <li><a href="StructureDefinition-rr-routing-entity-organization.html">Routing Entity Organization</a></li>
   <li><a href="StructureDefinition-rr-eicr-processing-status-observation.html">eICR Processing Status Observation</a></li>
   <li><a href="StructureDefinition-rr-eicr-processing-status-reason-observation.html">eICR Processing Status Reason Observation</a></li>
-  <li><a href="StructureDefinition-ecr-organization.html">eCR Organization</a></li>
-  <li><a href="StructureDefinition-eicr-encounter.html">eICR Encounter</a></li>
-  <li><a href="StructureDefinition-eicr-encounter.html">eCR PractitionerRole</a></li>
-  <li><a href="StructureDefinition-eicr-encounter.html">eCR Patient</a></li>
+  <li><a href="StructureDefinition-us-ph-organization.html">eCR Organization</a></li>
+  <li><a href="StructureDefinition-us-ph-encounter.html">eICR Encounter</a></li>
+  <li><a href="StructureDefinition-us-ph-practitionerrole.html">eCR PractitionerRole</a></li>
+  <li><a href="StructureDefinition-us-ph-patient.html">eCR Patient</a></li>
 </ul>
 
 #### Extensions

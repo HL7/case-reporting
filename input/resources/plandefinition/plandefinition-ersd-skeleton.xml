@@ -1,61 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PlanDefinition xmlns="http://hl7.org/fhir">
-  <id value="plandefinition-ersd-skeleton"/>
-  <meta>
-    <versionId value="3"/>
-    <lastUpdated value="2020-10-21T16:23:19.796+00:00"/>
-    <source value="#AV25Cs0p9gf7S1Tk"/>
-    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
-  </meta>
-  <url value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-example"/>
-  <version value="0.1"/>
-  <name value="PlanDefinition_eRSD_Skeleton_Instance"/>
-  <title value="eRSD PlanDefinition Skeleton Instance"/>
-  <type>
-    <coding>
-      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
-      <code value="workflow-definition"/>
-      <display value="Workflow Definition"/>
-    </coding>
-  </type>
-  <status value="active"/>
-  <date value="2020-07-31T12:32:29.858-05:00"/>
-  <effectivePeriod>
-    <start value="2020-12-01"/>
-  </effectivePeriod>
-  <relatedArtifact>
-    <type value="depends-on"/>
-    <label value="RCTC Value Set Library of Trigger Codes"/>
-    <resource value="http://hl7.org/fhir/us/ecr/Library/rctc"/>
-  </relatedArtifact>
-  <library value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
-  <action id="start">
-    <description value="This action represents the start of an encounter."/>
-    <textEquivalent value="Start"/>
-    <code>
-      <coding>
-        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ExecutableTaskTypes"/>
-        <code value="start"/>
-      </coding>
-    </code>
-    <trigger>
-      <type value="named-event"/>
-      <name value="encounter-start"/>
-    </trigger>
-    <relatedAction>
-      <actionId value="check-reportable"/>
-      <relationship value="before-start"/>
-      <offsetDuration>
-        <value value="1"/>
-        <code value="h"/>
-      </offsetDuration>
-    </relatedAction>
-  </action>
-  <action id="check-reportable">
-    <description value="This action represents the check to determine whether an event or situation is suspected reportable."/>
-    <textEquivalent value="Check Reportable"/>
-    <action>
-      <code>
+<PlanDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="plandefinition-ersd-skeleton"/>
+    <meta>
+        <versionId value="3"/>
+        <lastUpdated value="2020-10-28T06:46:34.193+00:00"/>
+        <source value="#XqswQ9TFcZ3l7jIc"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-skeleton"/>
+    <version value="0.1"/>
+    <name value="PlanDefinition_eRSD_Skeleton_Instance"/>
+    <title value="eRSD PlanDefinition Skeleton Instance"/>
+    <type>
         <coding>
           <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ExecutableTaskTypes"/>
           <code value="check-reportable"/>
@@ -123,22 +80,31 @@
         </offsetDuration>
       </relatedAction>
     </action>
-    <action>
-      <condition>
-        <kind value="applicability"/>
-        <expression>
-          <language value="text/cql.identifier"/>
-          <expression value="Is Encounter In Progress"/>
-        </expression>
-      </condition>
-      <relatedAction>
-        <actionId value="create-and-report-eicr"/>
-        <relationship value="before-start"/>
-        <offsetDuration>
-          <value value="24"/>
-          <code value="h"/>
-        </offsetDuration>
-      </relatedAction>
+    <action id="close-out-eicr">
+        <description value="This action represents the close out of an eICR encounter."/>
+        <textEquivalent value="eICR encounter close out (timingTiming.repeat.duration = z hours) - the time after the end of the encounter to create the final eICR when there have been one or more trigger events."/>
+        <trigger>
+            <type value="data-added"/>
+            <data>
+                <type value="Encounter"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter"/>
+                <dateFilter>
+                    <path value="period.end"/>
+                </dateFilter>
+            </data>
+        </trigger>
+        <relatedAction>
+            <actionId value="create-eicr"/>
+            <relationship value="after"/>
+        </relatedAction>
+        <timingTiming>
+            <repeat>
+                <count value="1"/>
+                <duration value="24"/>
+                <durationUnit value="h"/>
+                <frequency value="1"/>
+            </repeat>
+        </timingTiming>
     </action>
   </action>
   <action id="create-eicr">
