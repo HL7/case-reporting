@@ -14,71 +14,192 @@
     <title value="eRSD PlanDefinition Skeleton Instance"/>
     <type>
         <coding>
-          <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ExecutableTaskTypes"/>
-          <code value="check-reportable"/>
+            <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+            <code value="eca-rule"/>
+            <display value="ECA Rule"/>
         </coding>
-      </code>
-      <condition>
-        <kind value="applicability"/>
-        <expression>
-          <language value="text/cql.identifier"/>
-          <expression value="Is Reportable"/>
-        </expression>
-      </condition>
-      <relatedAction>
-        <actionId value="create-and-report-eicr"/>
-        <relationship value="before-start"/>
-      </relatedAction>
+    </type>
+    <status value="active"/>
+    <date value="2020-07-29T01:00:00.000-05:00"/>
+    <action id="match-trigger">
+        <description value="This action represents the matching of a trigger code to one of the values in the eRSD value sets."/>
+        <textEquivalent value="Match of a code to one of the values in the eRSD value sets."/>
+        <trigger>
+            <type value="data-changed"/>
+            <data>
+                <type value="Condition"/>
+                <codeFilter>
+                    <path value="code"/>
+                    <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc"/>
+                </codeFilter>
+            </data>
+        </trigger>
+        <trigger>
+            <type value="data-changed"/>
+            <data>
+                <type value="Immunization"/>
+                <codeFilter>
+                    <path value="vaccineCode"/>
+                    <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-iztc"/>
+                </codeFilter>
+            </data>
+        </trigger>
+        <trigger>
+            <type value="data-changed"/>
+            <data>
+                <type value="ServiceRequest"/>
+                <codeFilter>
+                    <path value="code"/>
+                    <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc"/>
+                </codeFilter>
+            </data>
+        </trigger>
+        <trigger>
+            <type value="data-changed"/>
+            <data>
+                <type value="Observation"/>
+                <codeFilter>
+                    <path value="code"/>
+                    <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc"/>
+                </codeFilter>
+            </data>
+        </trigger>
+        <trigger>
+            <type value="data-changed"/>
+            <data>
+                <type value="MedicationAdministration"/>
+                <codeFilter>
+                    <path value="code"/>
+                    <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc"/>
+                </codeFilter>
+            </data>
+        </trigger>
+        <trigger>
+            <type value="data-changed"/>
+            <data>
+                <type value="Observation"/>
+                <codeFilter>
+                    <path value="code"/>
+                    <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc"/>
+                </codeFilter>
+            </data>
+        </trigger>
     </action>
-    <action>
-      <condition>
-        <kind value="applicability"/>
-        <expression>
-          <language value="text/cql.identifier"/>
-          <expression value="Is Encounter In Progress"/>
-        </expression>
-      </condition>
-      <relatedAction>
-        <actionId value="check-reportable"/>
-        <relationship value="before-start"/>
-        <offsetDuration>
-          <value value="6"/>
-          <code value="h"/>
-        </offsetDuration>
-      </relatedAction>
+    <action id="create-eicr">
+        <description value="This action represents the initial creation of the eICR."/>
+        <textEquivalent value="eICR construction delay (offsetDuration.value = x hours) - time after trigger event before an eICR should be created."/>
+        <relatedAction>
+            <actionId value="match-trigger"/>
+            <relationship value="after"/>
+            <offsetDuration>
+                <value value="1"/>
+                <unit value="h"/>
+            </offsetDuration>
+        </relatedAction>
     </action>
-  </action>
-  <action id="create-and-report-eicr">
-    <description value="This action represents the creation and reporting of an eICR."/>
-    <textEquivalent value="Create and Report eICR"/>
-    <code>
-      <coding>
-        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ExecutableTaskTypes"/>
-        <code value="create-and-report-eicr"/>
-      </coding>
-    </code>
-    <action>
-      <relatedAction>
-        <actionId value="report-eicr"/>
-        <relationship value="before-start"/>
-      </relatedAction>
+    <action id="periodic-update-eicr">
+        <description value="This action represents the periodic recheck for matching of a trigger code to one of the values in the eRSD value sets."/>
+        <textEquivalent value="eICR periodic recheck for a trigger match (repeat.frequency = y hours) - the time after an initial match-trigger action."/>
+        <trigger>
+            <type value="periodic"/>
+            <timingTiming>
+                <repeat>
+                    <frequency value="1"/>
+                    <period value="6"/>
+                    <periodUnit value="h"/>
+                </repeat>
+            </timingTiming>
+        </trigger>
+        <trigger>
+            <type value="data-changed"/>
+            <data>
+                <type value="Condition"/>
+                <codeFilter>
+                    <path value="code"/>
+                    <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc"/>
+                </codeFilter>
+            </data>
+        </trigger>
+        <trigger>
+            <type value="data-changed"/>
+            <data>
+                <type value="Immunization"/>
+                <codeFilter>
+                    <path value="vaccineCode"/>
+                    <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-iztc"/>
+                </codeFilter>
+            </data>
+        </trigger>
+        <trigger>
+            <type value="data-changed"/>
+            <data>
+                <type value="ServiceRequest"/>
+                <codeFilter>
+                    <path value="code"/>
+                    <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc"/>
+                </codeFilter>
+            </data>
+        </trigger>
+        <trigger>
+            <type value="data-changed"/>
+            <data>
+                <type value="Observation"/>
+                <codeFilter>
+                    <path value="code"/>
+                    <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc"/>
+                </codeFilter>
+            </data>
+        </trigger>
+        <trigger>
+            <type value="data-changed"/>
+            <data>
+                <type value="MedicationAdministration"/>
+                <codeFilter>
+                    <path value="code"/>
+                    <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc"/>
+                </codeFilter>
+            </data>
+        </trigger>
+        <trigger>
+            <type value="data-changed"/>
+            <data>
+                <type value="Observation"/>
+                <codeFilter>
+                    <path value="code"/>
+                    <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc"/>
+                </codeFilter>
+            </data>
+        </trigger>
+        <condition>
+            <kind value="start"/>
+            <expression>
+                <description value="Encounter is active."/>
+                <language value="text/cql"/>
+                <expression value="encounter.period.start != null and encounter.period.end = null"/></expression>
+        </condition>
+        <condition>
+            <kind value="stop"/>
+            <expression>
+                <description value="Encounter is closed."/>
+                <language value="text/cql"/>
+                <expression value="encounter.period.end != null"/></expression>
+        </condition>
+        <relatedAction>
+            <actionId value="match-trigger"/>
+            <relationship value="after"/>
+            <offsetDuration>
+                <value value="6"/>
+                <unit value="h"/>
+            </offsetDuration>
+        </relatedAction>
     </action>
-    <action>
-      <condition>
-        <kind value="applicability"/>
-        <expression>
-          <language value="text/cql.identifier"/>
-          <expression value="Is Encounter Complete"/>
-        </expression>
-      </condition>
-      <relatedAction>
-        <actionId value="report-eicr"/>
-        <relationship value="before-start"/>
-        <offsetDuration>
-          <value value="24"/>
-          <code value="h"/>
-        </offsetDuration>
-      </relatedAction>
+    <action id="create-eicr-after-recheck">
+        <description value="This action represents the creation of the eICR after a trigger match recheck."/>
+        <textEquivalent value="eICR construction delay (offsetDuration.value = x hours) - time after trigger event before an eICR should be created."/>
+        <relatedAction>
+            <actionId value="recheck-match-trigger"/>
+            <relationship value="after"/>
+        </relatedAction>
     </action>
     <action id="close-out-eicr">
         <description value="This action represents the close out of an eICR encounter."/>
@@ -106,59 +227,24 @@
             </repeat>
         </timingTiming>
     </action>
-  </action>
-  <action id="create-eicr">
-    <description value="This action represents the creation of an eICR."/>
-    <textEquivalent value="Create eICR."/>
-    <code>
-      <coding>
-        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ExecutableTaskTypes"/>
-        <code value="create-eicr"/>
-      </coding>
-    </code>
-  </action>
-  <action id="validate-eicr">
-    <description value="This action represents the validation of an eICR."/>
-    <textEquivalent value="Validate eICR."/>
-    <code>
-      <coding>
-        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ExecutableTaskTypes"/>
-        <code value="validate-eicr"/>
-      </coding>
-    </code>
-  </action>
-  <action id="route-and-send-eicr">
-    <description value="This action represents the routing and sending of an eICR."/>
-    <textEquivalent value="Route and send eICR"/>
-    <code>
-      <coding>
-        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ExecutableTaskTypes"/>
-        <code value="route-and-send-eicr"/>
-      </coding>
-    </code>
-  </action>
-  <action id="report-eicr">
-    <description value="This action represents the reporting of an eICR."/>
-    <textEquivalent value="Report eICR"/>
-    <action>
-      <code>
-        <coding>
-          <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ExecutableTaskTypes"/>
-          <code value="report-eicr"/>
-        </coding>
-      </code>
-      <relatedAction>
-        <actionId value="create-eicr"/>
-        <relationship value="before-start"/>
-      </relatedAction>
-      <relatedAction>
-        <actionId value="validate-eicr"/>
-        <relationship value="before-start"/>
-      </relatedAction>
-      <relatedAction>
-        <actionId value="route-and-send-eicr"/>
-        <relationship value="before-start"/>
-      </relatedAction>
+    <action id="validate-eicr">
+        <description value="This action represents the validation of an eICR."/>
+        <textEquivalent value="Validate eICR."/>
+        <trigger>
+            <type value="data-changed"/>
+            <name value="eicr-created"/>
+            <data>
+                <type value="Composition"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
+            </data>
+        </trigger>
     </action>
-  </action>
+    <action id="route-and-send-eicr">
+        <description value="This action represents the routing and sending of an eICR."/>
+        <textEquivalent value="Route and send eICR"/>
+        <relatedAction>
+            <actionId value="validate-eicr"/>
+            <relationship value="after"/>
+        </relatedAction>
+    </action>
 </PlanDefinition>
