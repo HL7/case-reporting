@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="78"/>
-        <lastUpdated value="2020-10-28T08:24:45.866+00:00"/>
-        <source value="#X0cp2W5A3AcCHBUq"/>
+        <versionId value="93"/>
+        <lastUpdated value="2020-10-30T05:58:15.782+00:00"/>
+        <source value="#VXHdnB9jDUKDw3hx"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.0.0"/>
@@ -22,10 +22,17 @@
         </telecom>
     </contact>
     <description value="# Introduction and Purpose&#xA;&#xA;With the adoption and maturing of Electronic Health Records (EHRs) there are opportunities to better support public health surveillance as well as the delivery of relevant public health information to clinical care. Electronic Case Reporting (eCR) can provide more complete and timely case data, support disease / condition monitoring, and assist in outbreak management and control. It can also improve bidirectional communications through the delivery of public health information in the context of a patient's condition and local disease trends and by facilitating ad hoc communications. eCR will also reduce healthcare provider burden by automating the completion of legal reporting requirements.&#xA;&#xA;With the advent of FHIR standards, there is a need for FHIR implementation guidance to specify appropriate resources and transactions needed for the eCR process. FHIR offers opportunities to further enable automated triggering and reporting of cases from EHRs, to ease implementation and integration, to support the acquisition of investigation supplemental data, and to connect public health information (e.g., guidelines) and clinical workflow. Over time, FHIR may also support the distribution of reporting rules to clinical care to better align data authorities and make broader clinical data available to public health decision support services inside the clinical care environment.&#xA;&#xA;For more supporting information, use cases, and other background context and material, see Volume 1 of both the [HL7 CDA R2 Electronic Initial Case Report (eICR) Standard for Trial Use (STU) IG](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=436) (see the link under &quot;STU Documents&quot; for STU 2.0) and the [HL7 CDA R2 Reportability Response (RR) STU IG](https://www.hl7.org/implement/standards/product_brief.cfm?product_id=470).&#xA;&#xA;# Stakeholders&#xA;* Regulatory Agencies&#xA;* Standards Development Organizations&#xA;* Vendors: EHR, PHR; Health Care IT; Clinical Decision Support Systems, Public Health Surveillance Systems&#xA;* Providers: Ambulatory and Healthcare Institutions (hospitals, long term care, mental health)&#xA;* Local, State, Tribal and Federal Public Health Agencies"/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+    </jurisdiction>
     <packageId value="hl7.fhir.us.ecr"/>
     <fhirVersion value="4.0.1"/>
     <dependsOn>
-        <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core-3.0.0"/>
+        <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
         <packageId value="hl7.fhir.us.core"/>
         <version value="3.1.1"/>
     </dependsOn>
@@ -35,44 +42,6 @@
         <version value="1.0.0"/>
     </dependsOn>
     <definition>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/ersd-computablelibrary"/>
-                <display value="eRSD Computable Library"/>
-            </reference>
-            <name value="Ersd_ComputableLibrary"/>
-            <description value="The computable library profile sets the minimum expectations for a computable CQL library."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/ersd-executablelibrary"/>
-                <display value="eRSD Executable Library"/>
-            </reference>
-            <name value="Ersd_ExecutableLibrary"/>
-            <description value="This profile sets the minimum expectations for an executable CQL library. Specifically, the profile requires that the library contain one of ELM XML or JSON content, the compiled representation of the CQL logic."/>
-            <exampleBoolean value="false"/>
-        </resource>
-
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/ersd-computablevalueset"/>
-                <display value="eRSD Computable ValueSet"/>
-            </reference>
-            <name value="Ersd_ComputableValueSet"/>
-            <description value="Defines a computable value set as one that SHALL have an expression-based definition (i.e. a value set defined intensionally using expressions of the code systems involved) and MAY have an expansion included. The expression-based definition SHALL be represented in only one of three ways; using the compose element, using the expression extension, or using the rules-text extension to provide a step-by-step process for expanding the value set definition."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/ersd-executablevalueset"/>
-                <display value="eRSD Executable ValueSet"/>
-            </reference>
-            <name value="Ersd_ExecutableValueSet"/>
-            <description value="Defines an executable value set as one that SHALL have an expansion included, as well as a usage warning indicating the expansion is a point-in-time snapshot and must be maintained over time for production usage."/>
-            <exampleBoolean value="false"/>
-        </resource>
-
         <resource>
             <reference>
                 <reference value="StructureDefinition/us-ph-organization"/>
@@ -349,6 +318,7 @@
                 <display value="bundle-eicr-document-zika"/>
             </reference>
             <name value="bundle-eicr-document-zika"/>
+            <description value="Example of eICR Document Bundle profile (Eve Everywoman, Zika)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
         </resource>
@@ -358,6 +328,7 @@
                 <display value="bundle-ecr-message-zika"/>
             </reference>
             <name value="bundle-ecr-message-zika"/>
+            <description value="Example of eCR Message Bundle profile (Eve Everywoman, Zika)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-message-bundle"/>
         </resource>
@@ -367,6 +338,7 @@
                 <display value="Initial Public Health Case Report"/>
             </reference>
             <name value="Initial Public Health Case Report"/>
+            <description value="Example of eICR Composition profile (Eve Everywoman, Zika)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
         </resource>
@@ -376,6 +348,7 @@
                 <display value="Initial Public Health Case Report"/>
             </reference>
             <name value="Initial Public Health Case Report"/>
+            <description value="Example of eICR Composition profile (Eve Everywoman, Pertussis &amp; Zika)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
         </resource>
@@ -385,6 +358,7 @@
                 <display value="device-ecr-software-ymca"/>
             </reference>
             <name value="device-ecr-software-ymca"/>
+            <description value="Example of Device resource (YMCA software)"/>
             <exampleBoolean value="true"/>
         </resource>
         <resource>
@@ -393,6 +367,7 @@
                 <display value="endpoint-ecr-ymca"/>
             </reference>
             <name value="endpoint-ecr-ymca"/>
+            <description value="Example of Endpoint resource (YMCA endpoint)"/>
             <exampleBoolean value="true"/>
         </resource>
         <resource>
@@ -401,6 +376,7 @@
                 <display value="endpoint-ecr-salem-medical-center"/>
             </reference>
             <name value="endpoint-ecr-salem-medical-center"/>
+            <description value="Example of Endpoint resource (Salem Medical Center endpoint)"/>
             <exampleBoolean value="true"/>
         </resource>
         <resource>
@@ -681,26 +657,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="Library/library-RuleFilters-1.0.0"/>
-                <display value="library-RuleFilters-1.0.0"/>
-            </reference>
-            <name value="library-RuleFilters"/>
-            <description value="An example library with logic for determining whether or not an event or situation is reportable."/>
-            <exampleBoolean value="true"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-executablelibrary"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Library/library-FHIRHelpers-4.0.1"/>
-                <display value="library-FHIRHelpers-4.0.1"/>
-            </reference>
-            <name value="library-FHIRHelpers"/>
-            <description value="CQL FHIRHelpers Library."/>
-            <exampleBoolean value="true"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-executablelibrary"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="MedicationAdministration/medicationadministration-eve-everywoman-azithromycin"/>
                 <display value="medicationadministration-eve-everywoman-azithromycin"/>
             </reference>
@@ -862,51 +818,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="CodeSystem/codesystem-ersd-jurisdiction"/>
-                <display value="Code System ERSD Jurisdictions"/>
-            </reference>
-            <name value="Code System eRSD Jurisdictions"/>
-            <description value="This code system describes jurisdictions that require public health reporting."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="CodeSystem/codesystem-ersd-usage-context"/>
-                <display value="Code System ERSD Usage Context"/>
-            </reference>
-            <name value="Code System eRSD Usage Context"/>
-            <description value="This code system contains codes that identify the use context of a valueset."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="CodeSystem/codesystem-ersd-usage-context-type"/>
-                <display value="Code System ERSD Usage Context Types"/>
-            </reference>
-            <name value="Code System eRSD Usage Context Types"/>
-            <description value="This code system contains codes that identify the use context type of a valueset."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="CodeSystem/codesystem-executabletask-type"/>
-                <display value="Code System ExecutableTask Type"/>
-            </reference>
-            <name value="Code System Executable Task Type"/>
-            <description value="This code system contains codes that describe the executable task type."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="CodeSystem/codesystem-ersd-endpoint-connection-type"/>
-                <display value="Code System Endpoint Connection Type"/>
-            </reference>
-            <name value="Code System Endpoint Connection Type"/>
-            <description value="This code system contains codes that identify the HL7 FHIR File type."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="CodeSystem/codesystem-task-businessStatus"/>
                 <display value="Code System Task Business Status"/>
             </reference>
@@ -921,15 +832,6 @@
             </reference>
             <name value="Value Set eCR Task BusinessStatus"/>
             <description value="This value set contains codes that describe the eCR task businessStatus."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/valueset-ersd-endpoint-connection-type"/>
-                <display value="Value Set eRSD Endpoint Connection Type"/>
-            </reference>
-            <name value="Value Set eRSD Endpoint Connection Type"/>
-            <description value="This value set contains code that describe the eRSD supported endpoint connection types."/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
@@ -1151,6 +1053,7 @@
                 <display value="bundle-rr-collection-communication"/>
             </reference>
             <name value="bundle-rr-collection-communication"/>
+            <description value="Example of Reportability Response Communication collection bundle"/>
             <exampleBoolean value="true"/>
         </resource>
         <resource>
@@ -1164,44 +1067,34 @@
         </resource>
         <resource>
             <reference>
-                <reference value="PlanDefinition/plandefinition-ersd-skeleton"/>
-                <display value="eRSD PlanDefinition Skeleton Instance"/>
-            </reference>
-            <name value="eRSD PlanDefinition Skeleton Instance"/>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="Composition/composition-eicr-zika-manual-initiation"/>
                 <display value="Initial Public Health Case Report - Zika Example"/>
             </reference>
             <name value="Initial Public Health Case Report - Zika Example"/>
+            <description value="Example of eICR Composition profile (Eve Everywoman, Zika)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
         </resource>
         <resource>
             <reference>
                 <reference value="Encounter/encounter-eicr-eve-everywoman-external-encounter"/></reference>
+            <name value="encounter-eicr-eve-everywoman-external-encounter"/>
+            <description value="Example of US Public Health Encounter profile (Eve Everywoman, external encounter)"/>
             <exampleBoolean value="true"/>
         </resource>
         <resource>
             <reference>
                 <reference value="Observation/observation-postpartum-status-eve-everywoman"/></reference>
+            <name value="observation-postpartum-status-eve-everywoman"/>
+            <description value="Example of Postpartum Status profile (Eve Everywoman)"/>
             <exampleBoolean value="true"/>
         </resource>
         <resource>
             <reference>
                 <reference value="Observation/observation-last-menstrual-period-eve-everywoman"/></reference>
+            <name value="observation-last-menstrual-period-eve-everywoman"/>
+            <description value="Example of Last Menstrual Period (Eve Everywoman)"/>
             <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/valueset-pregnancy-status"/>
-                <display value="Pregnancy Status"/>
-            </reference>
-            <name value="Pregnancy Status"/>
-            <description value="This value set contains codes representing pregnancy statuses. It includes all the codes from: [Extended pregnancy status VSAC](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1099.24/expansion) plus the V3 nullFlavor 'Unknown'."/>
-            <exampleBoolean value="false"/>
         </resource>
         <resource>
             <reference>
@@ -1210,6 +1103,134 @@
             </reference>
             <name value="Postpartum_Status"/>
             <description value="This profile represents the postpartum status of a patient. If the profile is present, the patient is in the postpartum period and further information about the postpartum status is communicated by the code chosen.&#xA;The postpartum period, also known as the puerperium, refers to the time after delivery when maternal physiological changes related to pregnancy return to the nonpregnant state. There is consensus that the postpartum period begins upon delivery of the infant. The end is less well defined but is often considered the six to eight weeks after delivery because the effects of pregnancy on many systems have largely returned to the pre-pregnancy state.&#xA;"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-us-core-results-eve-everywoman-lymphocytes"/>
+                <display value="observation-us-core-results-eve-everywoman-lymphocytes"/>
+            </reference>
+            <name value="observation-us-core-results-eve-everywoman-lymphocytes"/>
+            <description value="Example of US Core Results profile (Eve Everywoman, lymphocytes)"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ersd-computablelibrary"/>
+                <display value="eRSD Computable Library"/>
+            </reference>
+            <name value="eRSD Computable Library"/>
+            <description value="The computable library profile sets the minimum expectations for a computable CQL library"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ersd-executablelibrary"/>
+                <display value="eRSD Executable Library"/>
+            </reference>
+            <name value="eRSD Executable Library"/>
+            <description value="This profile sets the minimum expectations for an executable CQL library. Specifically, the profile requires that the library contain one of ELM XML or JSON content, the compiled representation of the CQL logic."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ersd-computablevalueset"/>
+                <display value="eRSD Computable ValueSet"/>
+            </reference>
+            <name value="eRSD Computable ValueSet"/>
+            <description value="Defines a computable value set as one that SHALL have an expression-based definition (i.e. a value set defined intensionally using expressions of the code systems involved) and MAY have an expansion included. The expression-based definition SHALL be represented in only one of three ways; using the compose element, using the expression extension, or using the rules-text extension to provide a step-by-step process for expanding the value set definition"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ersd-executablevalueset"/>
+                <display value="eRSD Executable ValueSet"/>
+            </reference>
+            <name value="eRSD Executable ValueSet"/>
+            <description value="Defines an executable value set as one that SHALL have an expansion included, as well as a usage warning indicating the expansion is a point-in-time snapshot and must be maintained over time for production usage."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Library/library-RuleFilters-1.0.0"/>
+                <display value="Rule Filters"/>
+            </reference>
+            <name value="Rule Filters"/>
+            <description value="An example library with logic for determining whether or not an event or situation is reportable."/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-executablelibrary"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Library/library-FHIRHelpers-4.0.1"/>
+                <display value="FHIRHelpers"/>
+            </reference>
+            <name value="FHIRHelpers"/>
+            <description value="CQL FHIRHelpers Library."/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-executablelibrary"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/codesystem-ersd-usage-context-type"/>
+                <display value="eRSD Usage Context Type Code System"/>
+            </reference>
+            <name value="eRSD Usage Context Type Code System"/>
+            <description value="This code system contains codes that identify the use context type of a valueset."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/codesystem-ersd-endpoint-connection-type"/>
+                <display value="eRSD Endpoint Connection Type"/>
+            </reference>
+            <name value="eRSD Endpoint Connection Type"/>
+            <description value="This code system contains codes that identify the HL7 FHIR File type."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/codesystem-executabletask-type"/>
+                <display value="Executable Task Types Code System"/>
+            </reference>
+            <name value="Executable Task Types Code System"/>
+            <description value="This code system contains codes that describe the executable task types."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/codesystem-ersd-usage-context"/>
+                <display value="eRSD Usage Context Code System"/>
+            </reference>
+            <name value="eRSD Usage Context Code System"/>
+            <description value="This code system contains codes that identify the use context of a valueset."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/codesystem-ersd-jurisdiction"/>
+                <display value="eRSD Jurisdictions"/>
+            </reference>
+            <name value="eRSD Jurisdictions"/>
+            <description value="This code system describes jurisdictions that require public health reporting."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-ersd-endpoint-connection-type"/>
+                <display value="eRSD Endpoint Connection Type Codes"/>
+            </reference>
+            <name value="eRSD Endpoint Connection Type Codes"/>
+            <description value="Set of endpoint connection types specified as being supported by APHL"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/runtime-valueset"/>
+                <display value="Runtime Value Set"/>
+            </reference>
+            <name value="Runtime Value Set"/>
+            <description value="This profile describes value sets containing runtime codes."/>
             <exampleBoolean value="false"/>
         </resource>
         <page>
@@ -1261,12 +1282,12 @@
                     <generation value="markdown"/>
                 </page>
                 <page>
-                    <nameUrl value="ersd-jurisdictions-codesystem-query.html"/>
+                    <nameUrl value="ersd_jurisdictions_codesystem_query.html"/>
                     <title value="ERSD Jurisdictions CodeSystem Query"/>
                     <generation value="markdown"/>
                 </page>
                 <page>
-                    <nameUrl value="ersd-jurisdictions-codesystem-configuration.html"/>
+                    <nameUrl value="ersd_jurisdictions_codesystem_configuration.html"/>
                     <title value="ERSD Jurisdictions CodeSystem Configuration"/>
                     <generation value="markdown"/>
                 </page>

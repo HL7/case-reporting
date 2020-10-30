@@ -1,4 +1,4 @@
-[Previous Page - Reportability Response Narrative Guidance](reportability_response_narrative_guidance.html)
+[Previous Page - ERSD Jurisdictions CodeSystem Configuration](ersd_jurisdictions_codesystem_configuration.html)
 
 In coordination with the publication of this FHIR standard, an updated version 2.0 of the [HL7 CDA R2 Electronic Initial Case Report (eICR) Standard for Trial Use (STU) IG](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=436) (see the link under "STU Documents" for STU 2.0) is also being published. The FHIR [eICR transaction](Electronic_Initial_Case_Report_(eICR)_Transaction_and_Profiles.html) in this implementation guide and the separately published CDA eICR implementation guide standard will now be maintained in tight coordination with each other. 
  
