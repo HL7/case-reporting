@@ -3,9 +3,33 @@
     xmlns="http://hl7.org/fhir">
     <id value="runtime-valueset"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2020-10-30T06:06:30.532+00:00"/>
-        <source value="#eb9AsZJVcGbL5ooc"/>
+        <versionId value="9"/>
+        <lastUpdated value="2020-10-30T06:28:41.074+00:00"/>
+        <source value="#a1OJAGJuKkYizbWR"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="group^1702^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="group^1702^write"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^write"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/runtime-valueset"/>
     <version value="1.0.0"/>
@@ -245,7 +269,7 @@
             </slicing>
             <short value="Extension"/>
             <definition value="An Extension"/>
-            <min value="1"/>
+            <min value="0"/>
             <max value="*"/>
             <base>
                 <path value="DomainResource.extension"/>
@@ -292,7 +316,7 @@
                 <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
                 <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
             </constraint>
-            <mustSupport value="true"/>
+            <mustSupport value="false"/>
             <isModifier value="false"/>
         </element>
         <element id="ValueSet.extension:extensionValueSetAuthor">
@@ -329,7 +353,6 @@
                 <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
                 <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
             </constraint>
-            <mustSupport value="true"/>
             <isModifier value="false"/>
         </element>
         <element id="ValueSet.modifierExtension">
@@ -405,7 +428,7 @@
             <type>
                 <code value="Identifier"/>
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="false"/>
             <isModifier value="false"/>
             <isSummary value="true"/>
             <mapping>
@@ -464,7 +487,7 @@
                 <code value="string"/>
             </type>
             <condition value="inv-0"/>
-            <mustSupport value="true"/>
+            <mustSupport value="false"/>
             <isModifier value="false"/>
             <isSummary value="true"/>
         </element>
@@ -483,7 +506,7 @@
             <type>
                 <code value="string"/>
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="false"/>
             <isModifier value="false"/>
             <isSummary value="true"/>
             <mapping>
@@ -506,7 +529,7 @@
             <type>
                 <code value="code"/>
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="false"/>
             <isModifier value="true"/>
             <isModifierReason value="This is labeled as &quot;Is Modifier&quot; because applications should not use a retired {{title}} without due consideration"/>
             <isSummary value="true"/>
@@ -654,6 +677,7 @@
             <type>
                 <code value="markdown"/>
             </type>
+            <mustSupport value="true"/>
             <isModifier value="false"/>
             <isSummary value="false"/>
             <mapping>
@@ -672,7 +696,7 @@
             <comment value="When multiple useContexts are specified, there is no expectation that all or any of the contexts apply."/>
             <requirements value="Assist in searching for appropriate content."/>
             <min value="1"/>
-            <max value="1"/>
+            <max value="*"/>
             <base>
                 <path value="ValueSet.useContext"/>
                 <min value="0"/>
@@ -2255,7 +2279,6 @@
                 </discriminator>
                 <rules value="open"/>
             </slicing>
-            <min value="1"/>
         </element>
         <element id="ValueSet.extension:extensionValueSetSteward">
             <path value="ValueSet.extension"/>
@@ -2268,7 +2291,7 @@
                 <code value="Extension"/>
                 <profile value="http://hl7.org/fhir/StructureDefinition/valueset-steward"/>
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="false"/>
         </element>
         <element id="ValueSet.extension:extensionValueSetAuthor">
             <path value="ValueSet.extension"/>
@@ -2281,37 +2304,33 @@
                 <code value="Extension"/>
                 <profile value="http://hl7.org/fhir/StructureDefinition/valueset-author"/>
             </type>
-            <mustSupport value="true"/>
         </element>
         <element id="ValueSet.identifier">
             <path value="ValueSet.identifier"/>
             <min value="1"/>
-            <mustSupport value="true"/>
+            <mustSupport value="false"/>
         </element>
         <element id="ValueSet.name">
             <path value="ValueSet.name"/>
             <min value="1"/>
-            <mustSupport value="true"/>
+            <mustSupport value="false"/>
         </element>
         <element id="ValueSet.title">
             <path value="ValueSet.title"/>
             <min value="1"/>
-            <mustSupport value="true"/>
+            <mustSupport value="false"/>
         </element>
         <element id="ValueSet.status">
             <path value="ValueSet.status"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
+            <mustSupport value="false"/>
         </element>
         <element id="ValueSet.description">
-            <path value="Valueset.description"/>
-            <min value="1"/>
+            <path value="ValueSet.description"/>
             <mustSupport value="true"/>
         </element>
         <element id="ValueSet.useContext">
             <path value="ValueSet.useContext"/>
             <min value="1"/>
-            <max value="1"/>
         </element>
     </differential>
 </StructureDefinition>
