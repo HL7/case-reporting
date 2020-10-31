@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="us-ph-plandefinition"/>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-plandefinition"/>
+    <version value="1.0.0"/>
+    <name value="USPublicHealthPlanDefinition"/>
+    <title value="US Public Health PlanDefinitions"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This profile describes the US Public Health PlanDefinitions."/>
+    <fhirVersion value="4.0.1"/>
+    <mapping>
+        <identity value="workflow"/>
+        <uri value="http://hl7.org/fhir/workflow"/>
+        <name value="Workflow Pattern"/>
+    </mapping>
+    <mapping>
+        <identity value="w5"/>
+        <uri value="http://hl7.org/fhir/fivews"/>
+        <name value="FiveWs Pattern Mapping"/>
+    </mapping>
+    <mapping>
+        <identity value="objimpl"/>
+        <uri value="http://hl7.org/fhir/object-implementation"/>
+        <name value="Object Implementation Information"/>
+    </mapping>
+    <mapping>
+        <identity value="rim"/>
+        <uri value="http://hl7.org/v3"/>
+        <name value="RIM Mapping"/>
+    </mapping>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="PlanDefinition"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/shareableplandefinition"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="PlanDefinition">
+            <path value="PlanDefinition"/>
+            <short value="US Public Health PlanDefinition"/>
+            <definition value="Defines a shareable US Public Health PlanDefinition."/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.version">
+            <path value="PlanDefinition.version"/>
+            <short value="Business version of the eRSD"/>
+            <definition value="Business version of the eRSD"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.name">
+            <path value="PlanDefinition.name"/>
+            <short value="Name for this eRSD (computer friendly)"/>
+            <definition value="Name for this eRSD (computer friendly)"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.title">
+            <path value="PlanDefinition.title"/>
+            <short value="Title for this eRSD"/>
+            <definition value="Title for this eRSD"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.type">
+            <path value="PlanDefinition.type"/>
+            <short value="Type of this eRSD"/>
+            <definition value="Type of this eRSD"/>
+            <fixedCodeableConcept>
+                <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+                    <code value="workflow-definition"/>
+                </coding>
+            </fixedCodeableConcept>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.date">
+            <path value="PlanDefinition.date"/>
+            <short value="Date the eRSD was published"/>
+            <definition value="Date the eRSD was published"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.publisher">
+            <path value="PlanDefinition.publisher"/>
+            <short value="Name of the agency that published this eRSD"/>
+            <definition value="Name of the agency that published this eRSD"/>
+        </element>
+        <element id="PlanDefinition.effectivePeriod">
+            <path value="PlanDefinition.effectivePeriod"/>
+            <short value="When the eRSD is expected to be used"/>
+            <definition value="The period during which the eRSD is expected to be used"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.effectivePeriod.start">
+            <path value="PlanDefinition.effectivePeriod.start"/>
+            <short value="The start of the time period when this eRSD goes in effect"/>
+            <definition value="The start of the time period when this eRSD goes in effect"/>
+            <min value="1"/>
+        </element>
+        <element id="PlanDefinition.library">
+            <path value="PlanDefinition.library"/>
+            <mustSupport value="true"/>
+        </element>        
+    </differential>
+</StructureDefinition>

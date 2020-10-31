@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition
-    xmlns="http://hl7.org/fhir">
-    <id value="ersd-valueset"/>
-    <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2020-10-28T06:46:35.358+00:00"/>
-        <source value="#kndw5Om9L1XTYfwC"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-valueset"/>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="us-ph-valueset"/>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset"/>
     <version value="1.0.0"/>
-    <name value="Ersd_ValueSet"/>
-    <title value="eRSD Value Set"/>
+    <name value="USPublicHealthValueSet"/>
+    <title value="US Public Health Value Set"/>
     <status value="active"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This profile describes the eRSD value sets."/>
+    <description value="This profile describes the US Public Health value sets."/>
     <fhirVersion value="4.0.1"/>
     <mapping>
         <identity value="RCTC"/>
@@ -22,7 +16,7 @@
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="ValueSet"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/ValueSet"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
     <derivation value="constraint"/>
     <differential>
         <element id="ValueSet">
@@ -86,13 +80,15 @@
         </element>
         <element id="ValueSet.name">
             <path value="ValueSet.name"/>
+            <short value="RCTC value set name"/>
+            <definition value="The name of the RCTC value set."/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
         <element id="ValueSet.title">
             <path value="ValueSet.title"/>
-            <short value="RCTC value set name"/>
-            <definition value="The name of the RCTC value set."/>
+            <short value="RCTC value set title"/>
+            <definition value="The title of the RCTC value set."/>
             <min value="1"/>
             <mustSupport value="true"/>
             <mapping>
