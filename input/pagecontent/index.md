@@ -37,4 +37,4 @@ For more supporting information, use cases, and other background context and mat
 
 
 
-[Next Page - Transaction Profiles](transaction_profiles.html)
+[Next Page - Notice to Ballot Commenters](notice_to_ballot_commenters.html)
