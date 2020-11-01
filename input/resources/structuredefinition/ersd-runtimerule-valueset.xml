@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition xmlns="http://hl7.org/fhir">
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
     <id value="ersd-runtimerule-valueset"/>
     <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2020-10-28T06:46:35.358+00:00"/>
-        <source value="#kndw5Om9L1XTYfwC"/>
+        <versionId value="1"/>
+        <lastUpdated value="2020-10-31T22:28:48.290+00:00"/>
+        <source value="#C8eH7xWksLT2R5x6"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-runtimerule-valueset"/>
     <version value="1.0.0"/>
@@ -28,34 +29,33 @@
             <path value="ValueSet"/>
         </element>
         <element id="ValueSet.useContext">
-          <path value="ValueSet.useContext"/>
-          <slicing>
-            <discriminator>
-              <type value="pattern"/>
-              <path value="code"/>
-            </discriminator>
-          </slicing>
-          <!-- net cardinality rules -->
-          <min value="1"/>
-          <max value="1"/>
+            <path value="ValueSet.useContext"/>
+            <slicing>
+                <discriminator>
+                    <type value="pattern"/>
+                    <path value="code"/>
+                </discriminator>
+            </slicing>
+            <min value="1"/>
+            <max value="1"/>
         </element>
         <element id="ValueSet.useContext:reportingContext">
-          <path value="ValueSet.useContext"/>
-          <sliceName value="reportingContext"/>
-          <min value="1"/>
-          <max value="1"/>
+            <path value="ValueSet.useContext"/>
+            <sliceName value="reportingContext"/>
+            <min value="1"/>
+            <max value="1"/>
         </element>
         <element id="ValueSet.useContext:reportingContext.code">
-          <path value="ValueSet.useContext.code"/>
-          <min value="1"/>
-          <max value="1"/>
-          <fixedCodeableConcept>
-            <coding>
-              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ersd-usage-context-type" />
-              <code value="reporting" />
-              <display value="Reporting" />
-            </coding>
-          </fixedCodeableConcept>
+            <path value="ValueSet.useContext.code"/>
+            <min value="1"/>
+            <max value="1"/>
+            <fixedCodeableConcept>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ersd-usage-context-type"/>
+                    <code value="reporting"/>
+                    <display value="Reporting"/>
+                </coding>
+            </fixedCodeableConcept>
         </element>
         <element id="ValueSet.useContext:reportingContext.valueCodeableConcept">
             <path value="ValueSet.useContext.valueCodeableConcept"/>
@@ -63,14 +63,14 @@
             <definition value="The eRSD use context of the value set."/>
             <min value="1"/>
             <max value="1"/>
-            <mustSupport value="true"/>
             <fixedCodeableConcept>
-              <coding>
-                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ersd-usage-context" />
-                <code value="runtime-rule" />
-                <display value="Runtime Rule" />
-              </coding>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ersd-usage-context"/>
+                    <code value="runtime-rule"/>
+                    <display value="Runtime Rule"/>
+                </coding>
             </fixedCodeableConcept>
+            <mustSupport value="true"/>
         </element>
     </differential>
 </StructureDefinition>
