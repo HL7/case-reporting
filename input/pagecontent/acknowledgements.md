@@ -84,3 +84,5 @@ Others who contributed to this, and predecessor, documents include:
 * Danny Wise, AllScripts
 * Mike Yaskanin, Altarum Institute
 * Daniel Zhang, Epic
+
+[Next Page - Downloads](downloads.html)
