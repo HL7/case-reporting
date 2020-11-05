@@ -160,4 +160,4 @@ The "zip_code" column becomes the concept property valueCode for `code: "postalc
 
 This CodeSystem allows the ability to use CQL to match the Patient and Encounter addresses with the appropriate Public Health Agency that requires reporting.  This matching is done by comparing postal codes from the Patient and Encounter addresses with postal codes designated to specific Public Health Agencies.  If a postal code has not been specified for a Public Health Agency, matching is done by State, District, or Territory.
 
-[Next Page - Relationship to Other Standards](relationship_to_other_standards.html)
+[Next Page - Rule Filter Generation](rule_filter_generation.html)

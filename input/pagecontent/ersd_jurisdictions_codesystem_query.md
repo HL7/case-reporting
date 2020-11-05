@@ -1,4 +1,4 @@
-[Previous Page - Reportability Response Narrative Guidance](reportability_response_narrative_guidance.html)
+[Previous Page - ERSD Narrative Guidance](ersd_narrative_guidance.html)
 
 This document provides instructions for how to use the eRSD Jurisdictions CodeSystem with CQL queries to identify relevant jurisdictions for a Patient and Encounter.
 
