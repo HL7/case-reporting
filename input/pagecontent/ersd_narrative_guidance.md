@@ -62,10 +62,14 @@ And the inclusion of an associated ExampleScenario:
 
 ### Jurisdiction Determination
 
-<a href="ersd_jurisdictions_codesystem_query.html">Jurisdiction Code System Query</a></li>
+<a href="ersd_jurisdictions_codesystem_query.html">Jurisdiction Code System Query</a>
 
 ### Suspected Reportable Determination Logic
 
-<a href="rule_filter_generation.html">Rule Filter Generation</a></li>
+<a href="rule_filter_generation.html">Rule Filter Generation</a>
+
+
+
+
 
 [Next Page - eRSD Jurisdictions CodeSystem Query](ersd_jurisdictions_codesystem_query.html)

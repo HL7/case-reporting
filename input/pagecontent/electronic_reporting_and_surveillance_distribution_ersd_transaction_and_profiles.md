@@ -14,18 +14,6 @@ The Create eICR action involves the marshaling of FHIR resources needed to creat
 
 The [FHIR Subscription service](subscription_service.html) (also see Subscription examples on the <a href="artifacts.html">Artifacts Index page</a>) supports public health needs for the routine and emergent distribution of the eRSD. The Subscription does not require FHIR implementation on the receiving (EHR) end of the transaction, but can provide XML or JSON formats via RESTful query or proactive notification channels.
 
-### Overview
-
-This diagram shows the behavior expected of the eRSD:
-
-<table><tr><td><img src="ersd-processing.drawio.svg" /></td></tr></table>
-
-1. Encounter begins
-2. Every 24 hours, the system checks for reportable events
-3. If a reportable event occurs, the system generates and submits an eICR
-4. Encounter ends
-5. If a reportable event has occurred, the system generates and submits an eCR.
-
 ##### Workflow Definition
 
 The current PlanDefinition uses ECA Rules, we propose using Workflow Definition instead. The execution semantics of an ECA Rule are such that it would be difficult to fully orchestrate the reporting process without multiple PlanDefinition ECA Rules that were coordinated via state. By using a Workflow Definition, we can describe the overall process and take advantage of the execution semantics provided by worfklows to simplify the representation. Specifically, we make the following proposed changes:
@@ -57,6 +45,10 @@ The current PlanDefinition uses ECA Rules, we propose using Workflow Definition 
 
 *  When applying the eRSD each action may be represented using a Task, but in order to do this there is a need to relate the Tasks in some temporal way.  relativeTo is a complex extension on the StructureDefinition Task to reference the resource type, path to the timing element of that resource, and optional offset duration.  This would allow us to create a task 24 hours after the Encounter begins for example.
 
+### Reporting Process
+
+[ERSD Narrative Guidance](ersd_narrative_guidance.html)
+
 ### Jurisdiction Determination
 
 <a href="ersd_jurisdictions_codesystem_query.html">Jurisdiction Code System Query</a>
@@ -65,5 +57,14 @@ The current PlanDefinition uses ECA Rules, we propose using Workflow Definition 
 
 <a href="rule_filter_generation.html">Rule Filter Generation</a>
 
+### Additional Links
+<ul>
+  <li><a href="StructureDefinition-ersd-plandefinition.html">eRSD PlanDefinition</a></li>
+</ul>
+
+<ul>
+  <li><a href="StructureDefinition-ersd-valueset-library.html">eRSD ValueSet Library</a></li>
+	<li><a href="StructureDefinition-ersd-valueset.html">eRSD ValueSet</a></li>
+</ul>
 
 [Next Page - Subscription Service](subscription_service.html)
