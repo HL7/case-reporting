@@ -38,7 +38,6 @@ The following profiles and extensions have been defined for the eICR transaction
   <li><a href="StructureDefinition-eicr-trigger-code-flag-extension.html">eICR Trigger Code Flag Extension</a></li>
   <li><a href="StructureDefinition-eicr-initiation-type-extension.html">eICR Initiation Type Extension</a></li>
   <li><a href="StructureDefinition-eicr-initiation-reason-extension.html">eICR Manually Initiated Reason Extension</a></li>
-  <li><a href="StructureDefinition-ecr-organization-extension.html">eCR Organization Extension</a></li>
   <li><a href="StructureDefinition-travel-history-address-extension.html">Travel History Address Extension</a></li>
   <li><a href="StructureDefinition-therapeutic-medication-response-extension.html">Therapeutic Medication Response Extension</a></li>
   <li><a href="StructureDefinition-date-determined-extension.html">Date Determined Extension</a></li>

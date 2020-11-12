@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="134"/>
-        <lastUpdated value="2020-11-12T00:56:41.698+00:00"/>
-        <source value="#Uo3t7oonNBkXUPFb"/>
+        <versionId value="159"/>
+        <lastUpdated value="2020-11-12T20:32:36.536+00:00"/>
+        <source value="#z40CSCuEqzthiI5u"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.0.0"/>
@@ -42,31 +42,269 @@
         <version value="1.0.0"/>
     </dependsOn>
     <definition>
+        <grouping id="us-public-health-profiles">
+            <name value="US Public Health Profiles"/>
+        </grouping>
+        <grouping id="eicr-profiles">
+            <name value="eICR Profiles"/>
+        </grouping>
+        <grouping id="reportability-response-profiles">
+            <name value="Reportability Response Profiles"/>
+        </grouping>
+        <grouping id="ersd-profiles">
+            <name value="eRSD Profiles"/>
+        </grouping>
+        <grouping id="extensions">
+            <name value="Extensions"/>
+        </grouping>
+        <grouping id="capability-statements">
+            <name value="Capability Statements"/>
+        </grouping>
+        <grouping id="us-public-health-examples">
+            <name value="US Public Health Examples"/>
+        </grouping>
+        <grouping id="eicr-examples">
+            <name value="eICR Examples"/>
+        </grouping>
+        <grouping id="reportability-response-examples">
+            <name value="Reportability Response Examples"/>
+        </grouping>
+        <grouping id="ersd-examples">
+            <name value="eRSD Examples"/>
+        </grouping>
         <resource>
             <reference>
-                <reference value="StructureDefinition/us-ph-organization"/>
-                <display value="us-ph-organization"/>
+                <reference value="Organization/organization-ecr-acme-laboratory"/>
+                <display value="Acme_Labs"/>
             </reference>
-            <name value="USPublicHealthOrganization"/>
-            <description value="This Organization profile represents the following organizations for electronic case reporting:&#xA;&#xA;* Initial Case Report source provider facility/office name&#xA;* Initial Case Report source facility&#xA;* Reportability Response recipients&#xA;* Reportability Response responsible agency  &#xA;* Reportability Response routing entity&#xA;* Reportability Response rules authoring agency&#xA;&#xA;It is based on the **US Core Organization** profile with a further restriction of *Must Support* on the **type** and **contact** data elements."/>
+            <name value="US PH Organization Example: Acme Labs"/>
+            <description value="Example of US Public Health Organization profile (Acme Labs)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
+            <groupingId value="us-public-health-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/bundle-ecr-message-zika"/>
+                <display value="bundle-ecr-message-zika"/>
+            </reference>
+            <name value="eCR Message Bundle Example: bundle-ecr-message-zika"/>
+            <description value="Example of eCR Message Bundle profile (Eve Everywoman, Zika)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-message-bundle"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/bundle-eicr-document-pertussis-zika"/>
+                <display value="bundle-eicr-document-pertussis-zika"/>
+            </reference>
+            <name value="eICR Document Bundle Example: bundle-eicr-document-pertussis-zika"/>
+            <description value="Example of eICR Document Bundle profile"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/bundle-eicr-document-zika"/>
+                <display value="bundle-eicr-document-zika"/>
+            </reference>
+            <name value="eICR Document Bundle Example: bundle-eicr-document-zika"/>
+            <description value="Example of eICR Document Bundle profile (Eve Everywoman, Zika)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/bundle-eRSD"/>
+                <display value="bundle-eRSD"/>
+            </reference>
+            <name value="eRSD Bundle Example: bundle-eRSD"/>
+            <description value="Example of bundle-eRSD profile"/>
+            <exampleBoolean value="true"/>
+            <groupingId value="ersd-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/bundle-rr-collection-communication"/>
+                <display value="bundle-rr-collection-communication"/>
+            </reference>
+            <name value="bundle-rr-collection-communication"/>
+            <description value="Example of Reportability Response Communication collection bundle"/>
+            <exampleBoolean value="true"/>
+            <groupingId value="reportability-response-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/capabilitystatement-ecr"/>
+                <display value="CapabilityStatement_eCR"/>
+            </reference>
+            <name value="CapabilityStatement_eCR"/>
+            <description value="This resource defines the expected capabilities for both client and server participating in eCR exchange"/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/us-ph-patient"/>
-                <display value="us-ph-patient"/>
+                <reference value="CapabilityStatement/capabilitystatement-ersd-client"/>
+                <display value="CapabilityStatement_eRSD_Client"/>
             </reference>
-            <name value="USPublicHealthPatient"/>
-            <description value="This Patient profile represents a US Public Health Patient. It is based on the **US Core Patient** profile with further restrictions to allow masking of some data elements and the addition of the patient-genderIdentity extension."/>
+            <name value="CapabilityStatement_eRSD_Client"/>
+            <description value="This section describes the expected capabilities of a client consuming eRSD resources including the Reportable Conditions Trigger Codes (RCTC).&#xA;&#xA;#### Conformance requirements for an eRSD Client&#xA;&#xA;The eRSD Client **SHALL**:&#xA;&#xA;- Support fetching the eRSD Bundle using the supported RESTful interactions.&#xA;- Support processing PlanDefinition and ValueSet resources that are included in the Bundle.&#xA;&#xA;The eRSD Client **MAY**:&#xA;&#xA;- Support fetching and reading a Person resource.&#xA;- Support fetching and reading Subscription resources associated with a Person."/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/us-ph-practitionerrole"/>
-                <display value="us-ph-practitionerrole"/>
+                <reference value="StructureDefinition/characteristics-of-home-environment"/>
+                <display value="Characteristics of Home Environment"/>
             </reference>
-            <name value="USPublicHealthPractitionerRole"/>
-            <description value="This PractitionerRole represents the roles and organizations a practitioner involved in eCR is associated with. It is based on the **US Core PractitionerRole** profile with a further restriction of a mandatory **identifier** data element."/>
+            <name value="Characteristics of Home Environment"/>
+            <description value="This profile represents the patient's home environment including, but not limited to, type of residence (trailer, single family home, assisted living), living arrangement (e.g., alone, with parents), and housing status (e.g., evicted, homeless, home owner)."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="eicr-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Location/location-ecr-salem-medical-center"/>
+                <display value="Clinic Bldg A, Salem Medical Center"/>
+            </reference>
+            <name value="US PH Location Example: Clinic Bldg A, Salem Medical Center"/>
+            <description value="Example of US Public Health profile (Salem Medical Center)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-location"/>
+            <groupingId value="us-public-health-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/codesystem-task-businessStatus"/>
+                <display value="Code System Task Business Status"/>
+            </reference>
+            <name value="Code System Task Business Status"/>
+            <description value="This code system contains codes that describe the business status of a task."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Communication/communication-rr-one-cond-one-pha"/>
+                <display value="communication-rr-one-cond-one-pha"/>
+            </reference>
+            <name value="RR Communication profile example: One condition, one PHA"/>
+            <description value="Example of RR Communication profile (One condition, one PHA"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication"/>
+            <groupingId value="reportability-response-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Communication/communication-rr-single-single-html-validation-output"/>
+                <display value="communication-rr-single-single-html-validation-output"/>
+            </reference>
+            <name value="RR Communication profile example: One condition, one PHA, with validation output"/>
+            <description value="Example of RR Communication profile (One condition, one PHA, with validation output)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication"/>
+            <groupingId value="reportability-response-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Condition/condition-eicr-eve-everywoman-common-cold"/>
+                <display value="condition-eicr-eve-everywoman-common-cold"/>
+            </reference>
+            <name value="eICR Condition example: Eve Everywoman- common cold"/>
+            <description value="Example of eICR Condition profile (Eve Everywoman: common cold)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Condition/condition-eicr-eve-everywoman-diabetes"/>
+                <display value="condition-eicr-eve-everywoman-diabetes"/>
+            </reference>
+            <name value="eICR Condition example: Eve Everywoman - diabetes"/>
+            <description value="Example of eICR Condition profile (Eve Everywoman: diabetes)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Condition/condition-eicr-eve-everywoman-pertussis"/>
+                <display value="condition-eicr-eve-everywoman-pertussis"/>
+            </reference>
+            <name value="eICR Condition example: Eve Everywoman - pertussis"/>
+            <description value="Example of eICR Condition profile (Eve Everywoman: pertussis)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Condition/condition-eicr-eve-everywoman-zika"/>
+                <display value="condition-eicr-eve-everywoman-zika"/>
+            </reference>
+            <name value="eICR Condition example: Eve Everywoman - zika"/>
+            <description value="Example of eICR Condition profile (Eve Everywoman: zika)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/date-determined-extension"/>
+                <display value="Date_Determined_Extension"/>
+            </reference>
+            <name value="Date_Determined_Extension"/>
+            <description value="The date a status or observation was determined (date of determination)."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/date-recorded-extension"/>
+                <display value="Date_Recorded_Extension"/>
+            </reference>
+            <name value="Date_Recorded_Extension"/>
+            <description value="The date a status or observation was recorded (recorded date)."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Device/device-ecr-software-ymca"/>
+                <display value="device-ecr-software-ymca"/>
+            </reference>
+            <name value="device-ecr-software-ymca"/>
+            <description value="Example of Device resource (YMCA software)"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/disability-status"/>
+                <display value="DisabilityStatus"/>
+            </reference>
+            <name value="DisabilityStatus"/>
+            <description value="This profile represents the Disability Element defined here: https://aspe.hhs.gov/basic-report/hhs-implementation-guidance-data-collection-standards-race-ethnicity-sex-primary-language-and-disability-status"/>
+            <exampleBoolean value="false"/>
+            <groupingId value="eicr-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-ecr-messageheader-event"/>
+                <display value="eCR MessageHeader Event"/>
+            </reference>
+            <name value="eCR MessageHeader Event"/>
+            <description value="This value set contains codes that identify the event an eCR message represents."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ecr-message-bundle"/>
+                <display value="Ecr_Message_Bundle"/>
+            </reference>
+            <name value="Ecr_Message_Bundle"/>
+            <description value="This Bundle profile represents an eICR Message Bundle. It contains the eCR MessageHeader and is for use in the eCR messaging paradigm."/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
@@ -89,48 +327,13 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ecr-message-bundle"/>
-                <display value="Ecr_Message_Bundle"/>
+                <reference value="StructureDefinition/eicr-initiation-type-extension"/>
+                <display value="eICR Initiation Type Extension"/>
             </reference>
-            <name value="Ecr_Message_Bundle"/>
-            <description value="This Bundle profile represents an eICR Message Bundle. It contains the eCR MessageHeader and is for use in the eCR messaging paradigm."/>
+            <name value="eICR Initiation Type Extension"/>
+            <description value="This Extension profile represents that the eICR, was either manually or alternately initiated by the provider. When code is set to PHC1464, it indicates that the eICR was manually initiated by an action of the provider of care because they suspect there may be a reportable condition. When the code is set to PHC2235, it indicates that the eICR was initiated by automated, forced reporting. Unlike eICRs manually initiated by a provider, PHC2235 will be routed only to the public health agency of the jurisdiction of care unless another reportable condition is found. The eICR could also contain RCTC trigger codes.&#xA;&#xA;"/>
             <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/eicr-condition"/>
-                <display value="Eicr_Condition"/>
-            </reference>
-            <name value="Eicr_Condition"/>
-            <description value="This Condition profile represents the signs, symptoms, and diagnoses related to an eICR event. It is based on the **US Core Condition** profile with a further restriction of a *Must Support* constraint on the **onset\[x]** data element."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/eicr-servicerequest"/>
-                <display value="eicr-servicerequest"/>
-            </reference>
-            <name value="Eicr_ServiceRequest"/>
-            <description value="This ServiceRequest profile represents eICR laboratory orders and other diagnostics for the eICR event."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/us-ph-encounter"/>
-                <display value="us-ph-encounter"/>
-            </reference>
-            <name value="USPublicHealthEncounter"/>
-            <description value="This Encounter profile represents the encounter related to the eICR event. Contained in the Encounter.participant, is the provider in charge of care (represented by the PractitionerRole.Practitioner) and the provider facility (represented by the PractitionerRole.Organization). The location (facility) in which care was provided when the case was triggered is contained in the encounter.location.&#xA;&#xA;A trigger on an encounter diagnosis is indicated by the eICR Trigger Code Flag Extension in the diagnosis.&#xA;&#xA;Where a trigger occurs outside of an encounter use code=&quot;PHC2237&quot; \| system=&quot;2.16.840.1.114222.4.5.274&quot; (External Encounter) and omit period, participant, location, and serviceProvider. In this case, the responsible provider and facility information is contained in the eICR Composition.author."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/us-ph-location"/>
-                <display value="us-ph-location"/>
-            </reference>
-            <name value="USPublicHealthLocation"/>
-            <description value="This Location profile represents the location/facility in which care was provided when the eICR was triggered."/>
-            <exampleBoolean value="false"/>
+            <groupingId value="extensions"/>
         </resource>
         <resource>
             <reference>
@@ -140,6 +343,17 @@
             <name value="Eicr_Composition"/>
             <description value="This Composition profile represents an electronic initial case report (eICR). It describes the content requirements for the eICR including:         &#xA;&#xA;* patient demographics         &#xA;* patient pregnancy status         &#xA;* patient occupation and travel history         &#xA;* provider and facility information         &#xA;* laboratory orders, tests, and results         &#xA;* signs, symptoms, and diagnoses&#xA;* medication and immunization information&#xA;* flags for the existence of reportable condition trigger codes in diagnoses, ordered/resulted laboratory tests, medications, and immunizations&#xA;    * flags contain RCTC OID and RCTC version&#xA;* codes indicating whether the eICR was manually or alternately initiated"/>
             <exampleBoolean value="false"/>
+            <groupingId value="eicr-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-condition"/>
+                <display value="Eicr_Condition"/>
+            </reference>
+            <name value="Eicr_Condition"/>
+            <description value="This Condition profile represents the signs, symptoms, and diagnoses related to an eICR event. It is based on the **US Core Condition** profile with a further restriction of a *Must Support* constraint on the **onset\[x]** data element."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="eicr-profiles"/>
         </resource>
         <resource>
             <reference>
@@ -149,466 +363,7 @@
             <name value="Eicr_Document_Bundle"/>
             <description value="This Bundle profile represents an eICR Document Bundle. It contains the eICR Composition."/>
             <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/eicr-trigger-code-flag-extension"/>
-                <display value="Eicr_Trigger_Code_Flag_Extension"/>
-            </reference>
-            <name value="Eicr_Trigger_Code_Flag_Extension"/>
-            <description value="This Extension profile represents a flag which, if it is present, indicates that the **target** reference represents a triggering event and caused the eCR to be generated. It contains the trigger code which is the same as the trigger code in the resource and is used to identify which code(s) in a resource that allows multiple trigger codes (e.g. US Core Observation Lab where a trigger code could be contained in either the code (lab test) or the value (lab test result) or in the case of a battery or panel of tests, in the hasMember as another US Core Observation Lab code or value). It also contains the RCTC OID and RCTC version of the value set from which the code was matched. &#xA;&#xA;It is available for use in the following places:&#xA;&#xA;* eICR Encounter&#xA;	* flags a code contained in Condition.code (eICR Condition) which is contained in Encounter.diagnosis (eICR Encounter) - diagnosis&#xA;* Problem Section entry&#xA;	* flags a code contained in Condition.code (eICR Condition) - diagnosis&#xA;* Plan of Treatment Section entry&#xA;	* flags a code contained in ServiceRequest.code (eICR ServiceRequest) - test being requested&#xA;* Results Section entry&#xA;	* flags codes contained in:&#xA;		* Observation.code (US Core Laboratory Result Observation Profile code) - test performed/battery or panel name&#xA;		* Observation.value (US Core Laboratory Result Observation Profile value) - test result&#xA;		* Observation.code referenced in containing Observation.hasMember (US Core Laboratory Result Observation Profile code) - member of panel test performed&#xA;		* Observation.value referenced in containing Observation.hasMember (US Core Laboratory Result Observation Profile value) - member of panel test result&#xA;* Medications Section entry&#xA;	* flags a code contained in MedicationAdministration.medicationCodeableConcept - medication&#xA;* Immunization Section entry&#xA;	* flags a code contained in US Core Immunization (Immunization.vaccineCode) - vaccine&#xA;* Procedures Section entry&#xA;	* flags a code contained in US Core Procedure (Procedure.code) - procedure&#xA;&#xA;"/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
-                <display value="RR_Relevant_Reportable_Condition_Plandefinition"/>
-            </reference>
-            <name value="RR_Relevant_Reportable_Condition_Plandefinition"/>
-            <description value="This PlanDefinition in the Reportability Response transaction represents reportability information for a condition-jurisdiction pair, based on the PHA in which is located the patient's home, the provider facility or both locations. The Determination of Reportability, Determination of Reportability Reason, and Determination of Reportability Rule are contained in extensions. This profile also contains extensions for the Responsible Agency, the Rules Authoring Agency, and the Routing Entity. The Relevant Reportable Condition is contained in goal.addresses and any External Resources are contained in action (one action may contain multiple External Resources (documentation)). &#xA;&#xA;"/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-communication"/>
-                <display value="RR_Communication"/>
-            </reference>
-            <name value="RR_Communication"/>
-            <description value="This Communication profile represents the Reportability Response that will be created in response to an electronic Initial Case Report Composition. The sharing of the Reportability Response with clinical care will serve several functions, including to: &#xA;&#xA;* Communicate the reportability status, for the responsible PHA(s) of each condition included in the electronic Initial Case Report (eICR)     &#xA;* Identify who (a PHA or an intermediary) prepared the Reportability Response     &#xA;* Indicate whether the eICR has been sent to one or more PHA(s)     &#xA;* Identify which PHA(s) has/have been sent the eICR     &#xA;* Provide contact information for the responsible PHA(s)     &#xA;* Provide suggested or required clinical follow-up activities from the responsible PHA(s), including any additional reporting needs or infection control activities     &#xA;* Provide access to clinical support resources suggested by the responsible PHA(s) for identified reportable conditions     &#xA;* Confirm eICR receipt and processing     &#xA;&#xA;A Reportability Response will also, when requested, be shared with the responsible PHAs (when they have not constructed it) for their internal use, so they understand what has been shared with clinical care and, and to monitor/audit decision support algorithm effectivesness and implementation. When a condition is considered reportable to more than one PHA, the Reportability Response can be helpful in communicating reporting that has been done to other PHAs.     &#xA;&#xA;The Reportability Response Communication is also structured to allow:     &#xA;&#xA;* Notification, alerting, routing and queueing in work or message management systems for healthcare personnel     &#xA;* Dynamic and static URIs for supplemental data collection and the provision of information resources"/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-eicr-processing-status-reason-observation"/>
-                <display value="RR_Eicr_Processing_Status_Reason_Observation"/>
-            </reference>
-            <name value="RR_Eicr_Processing_Status_Reason_Observation"/>
-            <description value="This Observation profile represents, if the incoming eICR was not successfully processed for a determination of reportability, the reason it was not processed.  If any of the trigger codes used to generate the eICR are from an outdated version of the RCTC or the codes are marked as inactive in the latest version of the RCTC, these are flagged and component observations will hold the details of the outdated and expected versions of the RCTC."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-responsible-agency-organization"/>
-                <display value="RR_Responsible_Agency_Organization"/>
-            </reference>
-            <name value="RR_Responsible_Agency_Organization"/>
-            <description value="This Organization profile represents the Responsible Agency which is a PHA to which reporting is legally required. This can be the PHA relevant to the location in which care was provided and/or where the patient lives. It is based on the [eCR Organization](StructureDefinition-us-ph-organization.html) profile with a further restriction setting the **type** data element to 'Responsible Agency'."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-rules-authoring-agency-organization"/>
-                <display value="RR_Rules_Authoring_Agency_Organization"/>
-            </reference>
-            <name value="RR_Rules_Authoring_Agency_Organization"/>
-            <description value="This Organization profile represents the Rules Authoring Agency which is the originator of the rules that are being executed in decision support to determine reportability. This may be a state or local PHA. In the majority of cases the Rules Authoring Agency will be the same as the Responsible Agency. Usually, a Local Public Health Agency will inherit rules from its relevant state agency, but a Local agency can adopt, replace or supplement relevant state rules. It is based on the [eCR Organization](StructureDefinition-us-ph-organization.html) profile with a further restriction setting the **type** data element to 'Rules Authoring Agency'."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-routing-entity-organization"/>
-                <display value="RR_Routing_Entity_Organization"/>
-            </reference>
-            <name value="RR_Routing_Entity_Organization"/>
-            <description value="This Organization profile represents the Routing Entity which is a PHA or other organization identified by the PHA (such as an HIE) to which the eICR and/or the Reportability Response will be provided immediately following the creation of the Reportability Response. This entity may just be acting to route the eICR and Reportability Response on their way to a Responsible Agency.  It is based on the [eCR Organization](StructureDefinition-us-ph-organization.html) profile with a further restriction setting the **type** data element to 'Routing Entity'."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-eicr-processing-status-observation"/>
-                <display value="RR_Eicr_Processing_Status_Observation"/>
-            </reference>
-            <name value="RR_Eicr_Processing_Status_Observation"/>
-            <description value="This Observation profile represents the  eICR processing status. If it was not processed or was processed with a warning, the reason and details will be contained in the related eICR Processing Status Reason profile."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-determination-of-reportability-rule-extension"/>
-                <display value="RR_Determination_of_Reportability_Rule_Extension"/>
-            </reference>
-            <name value="RR_Determination_of_Reportability_Rule_Extension"/>
-            <description value="This Extension profile represents a rule that led to the determination of reportability."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-determination-of-reportability-reason-extension"/>
-                <display value="RR_Determination_of_Reportability_Reason_Extension"/>
-            </reference>
-            <name value="RR_Determination_of_Reportability_Reason_Extension"/>
-            <description value="This Extension profile represents the reason for the determination of reportability."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-location-relevance-extension"/>
-                <display value="RR_Location_Relevance_Extension"/>
-            </reference>
-            <name value="RR_Location_Relevance_Extension"/>
-            <description value="This Extension profile represents a code indicating whether the responsible PHA is relevant because of the patient's home address, the provider facility address, or both."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-eicr-receipt-time-extension"/>
-                <display value="RR_Eicr_Receipt_Time_Extension"/>
-            </reference>
-            <name value="RR_Eicr_Receipt_Time_Extension"/>
-            <description value="This Extension profile represents the date and time of eICR receipt"/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-eicr-processing-status-extension"/>
-                <display value="RR_Eicr_Processing_Status_Extension"/>
-            </reference>
-            <name value="RR_Eicr_Processing_Status_Extension"/>
-            <description value="This Extension profile represents the eICR processing status. If the eICR was not processed or was processed with a warning, the reason will be contained in the eICR Processing Status Reason. If there is any output from a validator, that output will be contained in the eICR Validation Output.&#xA;&#xA;If any of the trigger codes used to generate the eICR are from an outdated version of the RCTC or the codes are marked as inactive in the latest version of the RCTC, these are flagged and and the eICR Processing Status Reason Detail will hold the details of the outdated and expected versions of the RCTC."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-external-resource-type-extension"/>
-                <display value="RR_External_Resource_Type_Extension"/>
-            </reference>
-            <name value="RR_External_Resource_Type_Extension"/>
-            <description value="This Extension profile represents the type/category of one or more external resources."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-priority-extension"/>
-                <display value="RR_Priority_Extension"/>
-            </reference>
-            <name value="RR_Priority_Extension"/>
-            <description value="This Extension profile represents the priority given to the whole communication or one or more external resources."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-determination-of-reportability-extension"/>
-                <display value="RR_Determination_of_Reportability_Extension"/>
-            </reference>
-            <name value="RR_Determination_of_Reportability_Extension"/>
-            <description value="This Extension profile represents the determination of reportability. Reportability is &quot;the quality or state of being reportable or not&quot;. Reportability does not equate to the patient having a condition or meeting a case definition (definitively being a case).&#xA;&#xA;For each condition included in the eICR and the relevant public health agency(s), this element indicates the determination of whether the condition is reportable to public health. &#xA;&#xA;The values that can be used for the Determination of Reportability are described below.&#xA;&#xA;A possible condition is:&#xA;&#xA;* Reportable - The information provided meets reporting criteria for an associated PHA.&#xA;&#xA;A possible condition:&#xA;&#xA;* May be Reportable - The information provided may meet reporting criteria if additional information is provided. The Reportability Response will also be able to share the information needed to definitively determine reportability.&#xA;&#xA;A possible condition is:&#xA;&#xA;* Not Reportable - The information provided conclusively does not meet reporting criteria.&#xA;&#xA;Some decision support systems may not be able to fully differentiate between possible conditions that are Not Reportable and those that May be Reportable if additional information is provided. In these circumstances there may only be a reportability determination of:&#xA;&#xA;* No Reporting Rule Met - The information provided does not meet reporting criteria or may meet reporting criteria if additional information is provided.&#xA;&#xA;The determination of No Reporting Rule Met may be provided for a possible condition or for all conditions in the  eICR."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/travel-history-observation"/>
-                <display value="Travel_History_Observation"/>
-            </reference>
-            <name value="Travel_History_Observation"/>
-            <description value="This Observation profile represents the following for eCR:&#xA;&#xA;* the Initial Case Report subject's travel history as a string, an address, or a coded location&#xA;* Observation.effectiveTime contains the date or period of time spent in the location&#xA;* it is possible to have multiple Observation.components, each containing a different location, but there is only a single effectiveTime. This allows for cases where a patient cannot remember exact dates of travel (e.g. I traveled to London, Paris, and Berlin in July and August 2016). However, most uses will involve a single component (location)&#xA;* free text describing the travel history details and location can be entered using the Observation.component.valueCodeableConcept.text element&#xA;* use component.codeableConcept to record a coded location&#xA;* use component.extension to record a specific address&#xA;* where a more granular address than state is known (e.g. city, street) it is appropriate to use the extension to record an address rather than using the coded location."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/travel-history-address-extension"/>
-                <display value="Travel_History_Address_Extension"/>
-            </reference>
-            <name value="Travel_History_Address_Extension"/>
-            <description value="This Extension profile represents where the patient traveled to as an address e.g.: country, state, city, street address (if applicable). At the least, address must contain the country. State is required if the country is US. If country is something other than US, the state **MAY** be present but **MAY** be bound to different vocabularies."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Bundle/bundle-eicr-document-zika"/>
-                <display value="bundle-eicr-document-zika"/>
-            </reference>
-            <name value="bundle-eicr-document-zika"/>
-            <description value="Example of eICR Document Bundle profile (Eve Everywoman, Zika)"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Bundle/bundle-ecr-message-zika"/>
-                <display value="bundle-ecr-message-zika"/>
-            </reference>
-            <name value="bundle-ecr-message-zika"/>
-            <description value="Example of eCR Message Bundle profile (Eve Everywoman, Zika)"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-message-bundle"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Composition/composition-eicr-zika"/>
-                <display value="Initial Public Health Case Report"/>
-            </reference>
-            <name value="Initial Public Health Case Report"/>
-            <description value="Example of eICR Composition profile (Eve Everywoman, Zika)"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Composition/composition-eicr-pertussis-zika"/>
-                <display value="Initial Public Health Case Report"/>
-            </reference>
-            <name value="Initial Public Health Case Report"/>
-            <description value="Example of eICR Composition profile (Eve Everywoman, Pertussis &amp; Zika)"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Device/device-ecr-software-ymca"/>
-                <display value="device-ecr-software-ymca"/>
-            </reference>
-            <name value="device-ecr-software-ymca"/>
-            <description value="Example of Device resource (YMCA software)"/>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Endpoint/endpoint-ecr-ymca"/>
-                <display value="endpoint-ecr-ymca"/>
-            </reference>
-            <name value="endpoint-ecr-ymca"/>
-            <description value="Example of Endpoint resource (YMCA endpoint)"/>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Endpoint/endpoint-ecr-salem-medical-center"/>
-                <display value="endpoint-ecr-salem-medical-center"/>
-            </reference>
-            <name value="endpoint-ecr-salem-medical-center"/>
-            <description value="Example of Endpoint resource (Salem Medical Center endpoint)"/>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Immunization/immunization-ecr-pneumo"/>
-                <display value="immunization-ecr-pneumo"/>
-            </reference>
-            <name value="immunization-ecr-pneumo"/>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Location/location-ecr-salem-medical-center"/>
-                <display value="Clinic Bldg A, Salem Medical Center"/>
-            </reference>
-            <name value="Clinic Bldg A, Salem Medical Center"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-location"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/observation-rr-eicr-processing-status"/>
-                <display value="observation-rr-eicr-processing-status"/>
-            </reference>
-            <name value="observation-rr-eicr-processing-status"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/observation-rr-eicr-processing-status-reason"/>
-                <display value="observation-rr-eicr-processing-status-reason"/>
-            </reference>
-            <name value="observation-rr-eicr-processing-status-reason"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/observation-pregnancy-status-eve-everywoman"/>
-                <display value="observation-pregnancy-status-eve-everywoman"/>
-            </reference>
-            <name value="observation-pregnancy-status-eve-everywoman"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/observation-travel-history-eve-everywoman-201801"/>
-                <display value="observation-travel-history-eve-everywoman-201801"/>
-            </reference>
-            <name value="observation-travel-history-eve-everywoman-201801"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-observation"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/observation-travel-history-eve-everywoman-1999"/>
-                <display value="observation-travel-history-eve-everywoman-1999"/>
-            </reference>
-            <name value="observation-travel-history-eve-everywoman-1999"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-observation"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/observation-travel-history-eve-everywoman-201610"/>
-                <display value="observation-travel-history-eve-everywoman-201610"/>
-            </reference>
-            <name value="observation-travel-history-eve-everywoman-201610"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-observation"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Organization/organization-ecr-health-authority-west"/>
-                <display value="Health Authority West"/>
-            </reference>
-            <name value="Health Authority West"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Organization/organization-rr-responsible-agency-haw"/>
-                <display value="Health Authority West Responsible Agency"/>
-            </reference>
-            <name value="Health Authority West Responsible Agency"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Organization/organization-rr-routing-entity-haw"/>
-                <display value="Health Authority West Routing Entity"/>
-            </reference>
-            <name value="Health Authority West Routing Entity"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Organization/organization-rr-rules-authoring-agency-haw"/>
-                <display value="Health Authority West Rules Authoring Agency"/>
-            </reference>
-            <name value="Health Authority West Rules Authoring Agency"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Organization/organization-ecr-salem-medical-center"/>
-                <display value="organization-ecr-salem-medical-center"/>
-            </reference>
-            <name value="organization-ecr-salem-medical-center"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Patient/patient-ecr-eve-everywoman"/>
-                <display value="Patient Eve L Everywoman"/>
-            </reference>
-            <name value="Patient Eve L Everywoman"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="PlanDefinition/plandefinition-rr-relevant-reportable-condition"/>
-                <display value="ReportableConditionDetermination"/>
-            </reference>
-            <name value="ReportableConditionDetermination"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Practitioner/practitioner-us-core-henry-seven"/>
-                <display value="Practitioner Seven Henry"/>
-            </reference>
-            <name value="Practitioner Seven Henry"/>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ServiceRequest/servicerequest-eicr-zika"/>
-                <display value="servicerequest-eicr-zika"/>
-            </reference>
-            <name value="servicerequest-eicr-zika"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-servicerequest"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ServiceRequest/servicerequest-eicr-eve-everywoman-zika"/>
-                <display value="servicerequest-eicr-eve-everywoman-zika"/>
-            </reference>
-            <name value="servicerequest-eicr-eve-everywoman-zika"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-servicerequest"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Communication/communication-rr-single-single-html-validation-output"/>
-                <display value="communication-rr-single-single-html-validation-output"/>
-            </reference>
-            <name value="communication-rr-single-single-html-validation-output"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/ersd-plandefinition"/>
-                <display value="ersd-plandefinition"/>
-            </reference>
-            <name value="ERSD_PlanDefinition"/>
-            <description value="This PlanDefinition profile defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician.&#xA;&#xA;The profile defines four timing-related parameters for initiating case reports from Electronic Health Records (the standard does not specify the hour value for the delay of the send - public health operations will determine the specific value appropriate for implementation) the standard conveys the parameters to clinical care but it does not require their implementation.&#xA;&#xA;* Delay initial eICR construction (for example 1 hour) - the time after start of the encounter when the trigger events would not immediately cause an eICR to be composed and sent. (This delay is intended to allow adequate data to be recorded in the EHR, but is not so long as to delay reporting in critical circumstances.)  If there is a trigger and the encounter is closed before the specified delay value (for example the encounter is closed in 30 minutes when the specified delay value is 1 hour) the eICR should be created and sent.&#xA;* eICR reportable check period (for example 6 hours) - the time interval on which reportability should be checked after the initial reportability check. If the event is reportable then the eICR should be created and sent, otherwise, if the encounter is still open then check reportable should be scheduled again at the specified interval (for example 6 hours from the time of the current check).&#xA;* eICR periodic update (for example 24 hours) - the time after an initial eICR creation to send new eICRs as updates during long encounters. (These updates should only be produced until the end of the encounter).&#xA;* eICR encounter close-out (for example 24 hours or 0 hours for no delay) - the time after the end of an encounter for a final eICR to be sent when there has been one or more trigger events in the encounter. (The close-out eICR is intended to provide the full data available at the end of an encounter.)&#xA;&#xA;"/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Bundle/bundle-eRSD"/>
-                <display value="bundle-eRSD"/>
-            </reference>
-            <name value="bundle-eRSD"/>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="CapabilityStatement/capabilitystatement-ersd-client"/>
-                <display value="CapabilityStatement_eRSD_Client"/>
-            </reference>
-            <name value="CapabilityStatement_eRSD_Client"/>
-            <description value="This section describes the expected capabilities of a client consuming eRSD resources including the Reportable Conditions Trigger Codes (RCTC).&#xA;&#xA;#### Conformance requirements for an eRSD Client&#xA;&#xA;The eRSD Client **SHALL**:&#xA;&#xA;- Support fetching the eRSD Bundle using the supported RESTful interactions.&#xA;- Support processing PlanDefinition and ValueSet resources that are included in the Bundle.&#xA;&#xA;The eRSD Client **MAY**:&#xA;&#xA;- Support fetching and reading a Person resource.&#xA;- Support fetching and reading Subscription resources associated with a Person."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/therapeutic-medication-response-extension"/>
-                <display value="Therapeutic_Medication_Response_Extension"/>
-            </reference>
-            <name value="Therapeutic_Medication_Response_Extension"/>
-            <description value="This Extension profile represents represents a therapeutic response (as opposed to an undesired reaction) to the administration of a medication."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/pregnancy-status"/>
-                <display value="Pregnancy Status"/>
-            </reference>
-            <name value="Pregnancy Status"/>
-            <description value="This value set contains codes representing pregnancy statuses."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/pregnancy-status-observation"/>
-                <display value="Pregnancy_Status_Observation"/>
-            </reference>
-            <name value="Pregnancy_Status_Observation"/>
-            <description value="This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range.&#xA;&#xA;This profile includes the determination method, determination date, and recorded date of the pregnancy status.&#xA;&#xA;Use the effectivePeriod to indicate the date range over which the patient was pregnant/possibly pregnant/not pregnant/unknown. To record the date that the pregnancy status was recorded, use the date-recorded-extension and to record the date on which the pregnancy status determination was made, use the date-determined-extension. If the effectivePeriod.end is not present it is assumed that the date range over which the pregnancy status is asserted is from effectivePeriod.start to the date in the date-recorded-extension. For example, if the effectivePeriod.start has been recorded as two months prior to the date contained in the date-recorded-extension, and there is no effectivePeriod.end recorded, no assumptions can be made about the pregnancy status after the date contained in the date-recorded-extension."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/pregnancy-outcome-observation"/>
-                <display value="Pregnancy_Outcome_Observation"/>
-            </reference>
-            <name value="Pregnancy_Outcome_Observation"/>
-            <description value="This profile represents a result of the pregnancy such as live birth, still birth, miscarriage, etc. The order born in the delivery, live born or fetal death (1st, 2nd, 3rd, 4th, 5th, 6th, 7th, etc.) is contained in Observation.component. All live births and fetal losses are included. If the pregnancy plurality is 1 then this value will also be 1."/>
-            <exampleBoolean value="false"/>
+            <groupingId value="eicr-profiles"/>
         </resource>
         <resource>
             <reference>
@@ -618,95 +373,241 @@
             <name value="Eicr_Initiation_Reason_Extension"/>
             <description value="This extension contains an explanation for the manual or alternate initiation of the eICR. If there are multiple distinct reasons for manual or alternate initiation then each reason should be contained in a separate eICR Initiation Reason Extension. &#xA;&#xA;The reason may be entered either as:&#xA;* free text (string) &#xA;* coded value (valueCodeableConcept) (not necessarily initiated by a provider of care but might be &quot;programmed-in&quot; by the EHR implementer for some purpose)"/>
             <exampleBoolean value="false"/>
+            <groupingId value="eicr-profiles"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/last-menstrual-period"/>
-                <display value="Last_Menstrual_Period"/>
+                <reference value="StructureDefinition/eicr-servicerequest"/>
+                <display value="eicr-servicerequest"/>
             </reference>
-            <name value="Last_Menstrual_Period"/>
-            <description value="This profile represents the date of the last menstrual period of the patient. If known, the first day of last menstrual period should be captured. The effectiveTime captures the observation date."/>
+            <name value="Eicr_ServiceRequest"/>
+            <description value="This ServiceRequest profile represents eICR laboratory orders and other diagnostics for the eICR event."/>
             <exampleBoolean value="false"/>
+            <groupingId value="eicr-profiles"/>
         </resource>
         <resource>
             <reference>
-                <reference value="Observation/observation-us-core-results-eve-everywoman-pertussis"/>
-                <display value="observation-us-core-results-eve-everywoman-pertussis"/>
+                <reference value="StructureDefinition/eicr-trigger-code-flag-extension"/>
+                <display value="Eicr_Trigger_Code_Flag_Extension"/>
             </reference>
-            <name value="observation-us-core-results-eve-everywoman-pertussis"/>
+            <name value="Eicr_Trigger_Code_Flag_Extension"/>
+            <description value="This Extension profile represents a flag which, if it is present, indicates that the **target** reference represents a triggering event and caused the eCR to be generated. It contains the trigger code which is the same as the trigger code in the resource and is used to identify which code(s) in a resource that allows multiple trigger codes (e.g. US Core Observation Lab where a trigger code could be contained in either the code (lab test) or the value (lab test result) or in the case of a battery or panel of tests, in the hasMember as another US Core Observation Lab code or value). It also contains the RCTC OID and RCTC version of the value set from which the code was matched. &#xA;&#xA;It is available for use in the following places:&#xA;&#xA;* eICR Encounter&#xA;	* flags a code contained in Condition.code (eICR Condition) which is contained in Encounter.diagnosis (eICR Encounter) - diagnosis&#xA;* Problem Section entry&#xA;	* flags a code contained in Condition.code (eICR Condition) - diagnosis&#xA;* Plan of Treatment Section entry&#xA;	* flags a code contained in ServiceRequest.code (eICR ServiceRequest) - test being requested&#xA;* Results Section entry&#xA;	* flags codes contained in:&#xA;		* Observation.code (US Core Laboratory Result Observation Profile code) - test performed/battery or panel name&#xA;		* Observation.value (US Core Laboratory Result Observation Profile value) - test result&#xA;		* Observation.code referenced in containing Observation.hasMember (US Core Laboratory Result Observation Profile code) - member of panel test performed&#xA;		* Observation.value referenced in containing Observation.hasMember (US Core Laboratory Result Observation Profile value) - member of panel test result&#xA;* Medications Section entry&#xA;	* flags a code contained in MedicationAdministration.medicationCodeableConcept - medication&#xA;* Immunization Section entry&#xA;	* flags a code contained in US Core Immunization (Immunization.vaccineCode) - vaccine&#xA;* Procedures Section entry&#xA;	* flags a code contained in US Core Procedure (Procedure.code) - procedure&#xA;&#xA;"/>
+            <exampleBoolean value="false"/>
+            <groupingId value="extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Encounter/encounter-eicr-eve-everywoman-completed-inpatient"/>
+                <display value="encounter-eicr-eve-everywoman-completed-inpatient"/>
+            </reference>
+            <name value="US PH Encounter Example: encounter-eicr-eve-everywoman-completed-inpatient"/>
+            <description value="Example of US Public Health Encounter profile (Eve Everywoman: completed inpatient)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter"/>
+            <groupingId value="us-public-health-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Encounter/encounter-eicr-eve-everywoman-current-inpatient"/>
+                <display value="encounter-eicr-eve-everywoman-current-inpatient"/>
+            </reference>
+            <name value="US PH Encounter Example: encounter-eicr-eve-everywoman-current-inpatient"/>
+            <description value="Example of US Public Health Encounter profile (Eve Everywoman: current inpatient)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter"/>
+            <groupingId value="us-public-health-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Encounter/encounter-eicr-eve-everywoman-external-encounter"/></reference>
+            <name value="US PH Encounter Example: encounter-eicr-eve-everywoman-external-encounter"/>
+            <description value="Example of US Public Health Encounter profile (Eve Everywoman, external encounter)"/>
+            <exampleBoolean value="true"/>
+            <groupingId value="us-public-health-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Encounter/encounter-eicr-eve-everywoman-external-historical"/>
+                <display value="encounter-eicr-eve-everywoman-external-historical"/>
+            </reference>
+            <name value="US PH Encounter Example: encounter-eicr-eve-everywoman-external-historical"/>
+            <description value="Example of US Public Health Encounter profile (Eve Everywoman: external historical)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter"/>
+            <groupingId value="us-public-health-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Encounter/encounter-eicr-eve-everywoman-outpatient"/>
+                <display value="encounter-eicr-eve-everywoman-outpatient"/>
+            </reference>
+            <name value="US PH Encounter Example: encounter-eicr-eve-everywoman-outpatient"/>
+            <description value="Example of US Public Health Encounter profile (Eve Everywoman: outpatient)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter"/>
+            <groupingId value="us-public-health-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Endpoint/endpoint-ecr-salem-medical-center"/>
+                <display value="endpoint-ecr-salem-medical-center"/>
+            </reference>
+            <name value="Endpoint Example: endpoint-ecr-salem-medical-center"/>
+            <description value="Example of Endpoint resource (Salem Medical Center endpoint)"/>
             <exampleBoolean value="true"/>
         </resource>
         <resource>
             <reference>
-                <reference value="Communication/communication-rr-one-cond-one-pha"/>
-                <display value="communication-rr-one-cond-one-pha"/>
+                <reference value="Endpoint/endpoint-ecr-ymca"/>
+                <display value="endpoint-ecr-ymca"/>
             </reference>
-            <name value="communication-rr-one-cond-one-pha"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Library/library-rctc"/>
-                <display value="library-rctc"/>
-            </reference>
-            <name value="library-rctc"/>
-            <description value="This release includes code updates for the existing conditions and adds codes for Parkinson’s disease and 13 enteric conditions. Medication codes have also been added to this version."/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-valueset-library"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="MedicationAdministration/medicationadministration-eve-everywoman-azithromycin"/>
-                <display value="medicationadministration-eve-everywoman-azithromycin"/>
-            </reference>
-            <name value="medicationadministration-eve-everywoman-azithromycin"/>
+            <name value="Endpoint Example: endpoint-ecr-ymca"/>
+            <description value="Example of Endpoint resource (YMCA endpoint)"/>
             <exampleBoolean value="true"/>
         </resource>
         <resource>
             <reference>
-                <reference value="Task/task-ecr-ehr-requested-eicr"/>
-                <display value="task-ecr-ehr-requested-eicr"/>
+                <reference value="StructureDefinition/ersd-computablelibrary"/>
+                <display value="eRSD Computable Library"/>
             </reference>
-            <name value="task-ecr-ehr-requested-eicr"/>
+            <name value="eRSD Computable Library"/>
+            <description value="The computable library profile sets the minimum expectations for a computable CQL library"/>
             <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-task"/>
+            <groupingId value="ersd-profiles"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ersd-valueset-library"/>
-                <display value="Ersd_Valueset_Library"/>
+                <reference value="StructureDefinition/ersd-computablevalueset"/>
+                <display value="eRSD Computable ValueSet"/>
             </reference>
-            <name value="Ersd_Valueset_Library"/>
-            <description value="Defines the library containing the eRSD value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses. "/>
+            <name value="eRSD Computable ValueSet"/>
+            <description value="Defines a computable value set as one that SHALL have an expression-based definition (i.e. a value set defined intensionally using expressions of the code systems involved) and MAY have an expansion included. The expression-based definition SHALL be represented in only one of three ways; using the compose element, using the expression extension, or using the rules-text extension to provide a step-by-step process for expanding the value set definition"/>
+            <exampleBoolean value="false"/>
+            <groupingId value="ersd-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/ersd-endpoint-connection-type"/>
+                <display value="eRSD Endpoint Connection Type"/>
+            </reference>
+            <name value="eRSD Endpoint Connection Type"/>
+            <description value="This code system contains codes that identify the HL7 FHIR File type."/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
             <reference>
-                <reference value="PlanDefinition/plandefinition-ersd-instance"/>
-                <display value="PlanDefinition_eRSD_Instance"/>
+                <reference value="ValueSet/valueset-ersd-endpoint-connection-type"/>
+                <display value="eRSD Endpoint Connection Type Codes"/>
             </reference>
-            <name value="PlanDefinition_eRSD_Instance"/>
+            <name value="eRSD Endpoint Connection Type Codes"/>
+            <description value="Set of endpoint connection types specified as being supported by APHL"/>
             <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
         </resource>
         <resource>
             <reference>
-                <reference value="Organization/organization-ecr-ymca-center"/>
-                <display value="YMCA"/>
+                <reference value="StructureDefinition/ersd-executablelibrary"/>
+                <display value="eRSD Executable Library"/>
             </reference>
-            <name value="YMCA"/>
+            <name value="eRSD Executable Library"/>
+            <description value="This profile sets the minimum expectations for an executable CQL library. Specifically, the profile requires that the library contain one of ELM XML or JSON content, the compiled representation of the CQL logic."/>
             <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
+            <groupingId value="ersd-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ersd-executablevalueset"/>
+                <display value="eRSD Executable ValueSet"/>
+            </reference>
+            <name value="eRSD Executable ValueSet"/>
+            <description value="Defines an executable value set as one that SHALL have an expansion included, as well as a usage warning indicating the expansion is a point-in-time snapshot and must be maintained over time for production usage."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="ersd-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/ersd-jurisdictions-example"/>
+                <display value="eRSD Jurisdictions Example"/>
+            </reference>
+            <name value="eRSD Jurisdictions Example"/>
+            <description value="This code system describes jurisdictions that require public health reporting."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/ersd-jurisdiction-types"/>
+                <display value="eRSD JurisdictionTypes"/>
+            </reference>
+            <name value="eRSD JurisdictionTypes"/>
+            <description value="This code system describes the possible types of jurisdictions that require public health reporting."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ersd-supplemental-valueset"/>
+                <display value="eRSD Supplemental Value Set"/>
+            </reference>
+            <name value="eRSD Supplemental ValueSet"/>
+            <description value="This profile describes the eRSD Supplemental value sets."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="ersd-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ersd-triggering-valueset"/>
+                <display value="eRSD Triggering Value Set"/>
+            </reference>
+            <name value="eRSD Triggering ValueSet"/>
+            <description value="This profile describes the eRSD Triggering value sets."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="ersd-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/ersd-usage-context"/>
+                <display value="eRSD Usage Context Code System"/>
+            </reference>
+            <name value="eRSD Usage Context Code System"/>
+            <description value="This code system contains codes that identify the use context of a valueset."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/ersd-usage-context-type"/>
+                <display value="eRSD Usage Context Type Code System"/>
+            </reference>
+            <name value="eRSD Usage Context Type Code System"/>
+            <description value="This code system contains codes that identify the use context type of a valueset."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ersd-plandefinition"/>
+                <display value="ersd-plandefinition"/>
+            </reference>
+            <name value="eRSD PlanDefinition"/>
+            <description value="This PlanDefinition profile defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician.&#xA;&#xA;The profile defines four timing-related parameters for initiating case reports from Electronic Health Records (the standard does not specify the hour value for the delay of the send - public health operations will determine the specific value appropriate for implementation) the standard conveys the parameters to clinical care but it does not require their implementation.&#xA;&#xA;* Delay initial eICR construction (for example 1 hour) - the time after start of the encounter when the trigger events would not immediately cause an eICR to be composed and sent. (This delay is intended to allow adequate data to be recorded in the EHR, but is not so long as to delay reporting in critical circumstances.)  If there is a trigger and the encounter is closed before the specified delay value (for example the encounter is closed in 30 minutes when the specified delay value is 1 hour) the eICR should be created and sent.&#xA;* eICR reportable check period (for example 6 hours) - the time interval on which reportability should be checked after the initial reportability check. If the event is reportable then the eICR should be created and sent, otherwise, if the encounter is still open then check reportable should be scheduled again at the specified interval (for example 6 hours from the time of the current check).&#xA;* eICR periodic update (for example 24 hours) - the time after an initial eICR creation to send new eICRs as updates during long encounters. (These updates should only be produced until the end of the encounter).&#xA;* eICR encounter close-out (for example 24 hours or 0 hours for no delay) - the time after the end of an encounter for a final eICR to be sent when there has been one or more trigger events in the encounter. (The close-out eICR is intended to provide the full data available at the end of an encounter.)&#xA;&#xA;"/>
+            <exampleBoolean value="false"/>
+            <groupingId value="ersd-profiles"/>
         </resource>
         <resource>
             <reference>
                 <reference value="StructureDefinition/ersd-valueset"/>
                 <display value="Ersd_ValueSet"/>
             </reference>
-            <name value="Ersd_ValueSet"/>
+            <name value="ersd ValueSet"/>
             <description value="This profile describes the eRSD value sets."/>
             <exampleBoolean value="false"/>
+            <groupingId value="ersd-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ersd-valueset-library"/>
+                <display value="Ersd_Valueset_Library"/>
+            </reference>
+            <name value="eRSD Valueset Library"/>
+            <description value="Defines the library containing the eRSD value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses. "/>
+            <exampleBoolean value="false"/>
+            <groupingId value="ersd-profiles"/>
         </resource>
         <resource>
             <reference>
@@ -764,271 +665,158 @@
         </resource>
         <resource>
             <reference>
+                <reference value="CodeSystem/executabletask-type"/>
+                <display value="Executable Task Types Code System"/>
+            </reference>
+            <name value="Executable Task Types Code System"/>
+            <description value="This code system contains codes that describe the executable task types."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
                 <reference value="ValueSet/2.16.840.1.113762.1.4.1099.24"/>
                 <display value="Extended_Pregnancy_Status"/>
             </reference>
-            <name value="Extended_Pregnancy_Status"/>
+            <name value="Extended Pregnancy Status Value Set"/>
             <description value="Defines the status of pregnancy. [Extended pregnancy status VSAC link](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1099.24/expansion)"/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
             <reference>
-                <reference value="Organization/organization-ecr-acme-laboratory"/>
-                <display value="Acme_Labs"/>
+                <reference value="Library/FHIRHelpers"/>
+                <display value="FHIRHelpers"/>
             </reference>
-            <name value="Acme_Labs"/>
+            <name value="FHIR Helpers Library"/>
+            <description value="CQL FHIR Helpers Library"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-executablelibrary"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/organization-ecr-health-authority-west"/>
+                <display value="Health Authority West"/>
+            </reference>
+            <name value="US PH Organization Example: Health Authority West"/>
+            <description value="Example of US Public Health Organization profile (Health Authority West)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/rr-responsible-agency-organization-extension"/>
-                <display value="RR_Responsible_Agency_Organization_Extension"/>
+                <reference value="Organization/organization-rr-responsible-agency-haw"/>
+                <display value="Health Authority West Responsible Agency"/>
             </reference>
-            <name value="RR_Responsible_Agency_Organization_Extension"/>
-            <description value="This extension represents an RR Responsible Agency Organization"/>
+            <name value="RR Responsible Agency Organization Example: Health Authority West Responsible Agency"/>
+            <description value="Example of RR Responsible Agency Organization profile (Health Authority West Responsible Agency)"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization"/>
+            <groupingId value="reportability-response-examples"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/rr-routing-entity-organization-extension"/>
-                <display value="RR_Routing_Entity_Organization_Extension"/>
+                <reference value="Organization/organization-rr-routing-entity-haw"/>
+                <display value="Health Authority West Routing Entity"/>
             </reference>
-            <name value="RR_Routing_Entity_Organization_Extension"/>
-            <description value="This extension represents an RR Routing Entity Organization"/>
+            <name value="RR Routing Entity Organization Example: Health Authority West Routing Entity"/>
+            <description value="Example of RR Routing Entity Organization Example profile (Health Authority West Routing Entity)"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization"/>
+            <groupingId value="reportability-response-examples"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/rr-rules-authoring-agency-organization-extension"/>
-                <display value="RR Rules Authoring Agency Organization Extension"/>
+                <reference value="Organization/organization-rr-rules-authoring-agency-haw"/>
+                <display value="Health Authority West Rules Authoring Agency"/>
             </reference>
-            <name value="RR_Rules_Authoring_Agency_Organization_Extension"/>
-            <description value="This extension represents an RR Rules Authoring Agency Organization"/>
+            <name value="RR Rules Authoring Agency Organization Example: Health Authority West Rules Authoring Agency"/>
+            <description value="Example of RR Rules Authoring Agency profile (Health Authority West Rules Authoring Agency)"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization"/>
+            <groupingId value="reportability-response-examples"/>
         </resource>
         <resource>
             <reference>
-                <reference value="MessageHeader/messageheader-ecr-requested-eicr"/>
-                <display value="messageheader-ecr-requested-eicr"/>
+                <reference value="Immunization/immunization-ecr-pneumo"/>
+                <display value="immunization-ecr-pneumo"/>
             </reference>
-            <name value="messageheader-ecr-requested-eicr"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader"/>
+            <name value="immunization-ecr-pneumo"/>
+            <description value="Example of US Core Immunization profile"/>
+            <exampleBoolean value="true"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
-                <reference value="CodeSystem/codesystem-task-businessStatus"/>
-                <display value="Code System Task Business Status"/>
+                <reference value="Composition/composition-eicr-zika"/>
+                <display value="Initial Public Health Case Report"/>
             </reference>
-            <name value="Code System Task Business Status"/>
-            <description value="This code system contains codes that describe the business status of a task."/>
+            <name value="eICR Composition Example: Initial Public Health Case Report - Eve Everywoman, Zika"/>
+            <description value="Example of eICR Composition profile (Eve Everywoman, Zika)"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
-                <reference value="ValueSet/valueset-ecr-task-businessstatus"/>
-                <display value="Value Set eCR Task BusinessStatus"/>
+                <reference value="Composition/composition-eicr-pertussis-zika"/>
+                <display value="Initial Public Health Case Report"/>
             </reference>
-            <name value="Value Set eCR Task BusinessStatus"/>
-            <description value="This value set contains codes that describe the eCR task businessStatus."/>
+            <name value="eICR Composition Example: Initial Public Health Case Report - Eve Everywoman, Pertussis and Zika"/>
+            <description value="Example of eICR Composition profile (Eve Everywoman, Pertussis and Zika)"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/date-determined-extension"/>
-                <display value="Date_Determined_Extension"/>
+                <reference value="Composition/composition-eicr-zika-manual-initiation"/>
+                <display value="Initial Public Health Case Report - Zika Example"/>
             </reference>
-            <name value="Date_Determined_Extension"/>
-            <description value="The date a status or observation was determined (date of determination)."/>
+            <name value="eICR Composition Example: Initial Public Health Case Report - Eve Everywoman, Zika, Manual Initiation"/>
+            <description value="Example of eICR Composition profile (Eve Everywoman, Zika, Manual Initiation)"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/date-recorded-extension"/>
-                <display value="Date_Recorded_Extension"/>
+                <reference value="StructureDefinition/last-menstrual-period"/>
+                <display value="Last_Menstrual_Period"/>
             </reference>
-            <name value="Date_Recorded_Extension"/>
-            <description value="The date a status or observation was recorded (recorded date)."/>
+            <name value="Last_Menstrual_Period"/>
+            <description value="This profile represents the date of the last menstrual period of the patient. If known, the first day of last menstrual period should be captured. The effectiveTime captures the observation date."/>
             <exampleBoolean value="false"/>
+            <groupingId value="eicr-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Library/library-rctc"/>
+                <display value="library-rctc"/>
+            </reference>
+            <name value="library-rctc"/>
+            <description value="RCTC Library"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-valueset-library"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="MedicationAdministration/medicationadministration-eve-everywoman-azithromycin"/>
+                <display value="medicationadministration-eve-everywoman-azithromycin"/>
+            </reference>
+            <name value="MedicationAdministration Example: Eve Everywoman, azithromycin"/>
+            <description value="Example of MedicationAdministration resource (Eve Everywoman, azithromycin)"/>
+            <exampleBoolean value="true"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
                 <reference value="MedicationAdministration/medicationadministration-eve-everywoman-naloxone-response"/>
                 <display value="medicationadministration-eve-everywoman-naloxone-response"/>
             </reference>
-            <name value="medicationadministration-eve-everywoman-naloxone-response"/>
+            <name value="MedicationAdministration Example: Eve Everywoman, naloxone response"/>
+            <description value="Example of MedicationAdministration resource with Therapeutic Medication Response extension (Eve Everywoman: naloxone response)"/>
             <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Encounter/encounter-eicr-eve-everywoman-outpatient"/>
-                <display value="encounter-eicr-eve-everywoman-outpatient"/>
-            </reference>
-            <name value="encounter-eicr-eve-everywoman-outpatient"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Encounter/encounter-eicr-eve-everywoman-current-inpatient"/>
-                <display value="encounter-eicr-eve-everywoman-current-inpatient"/>
-            </reference>
-            <name value="encounter-eicr-eve-everywoman-current-inpatient"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Encounter/encounter-eicr-eve-everywoman-external-historical"/>
-                <display value="encounter-eicr-eve-everywoman-external-historical"/>
-            </reference>
-            <name value="encounter-eicr-eve-everywoman-external-historical"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Encounter/encounter-eicr-eve-everywoman-completed-inpatient"/>
-                <display value="encounter-eicr-eve-everywoman-completed-inpatient"/>
-            </reference>
-            <name value="encounter-eicr-eve-everywoman-completed-inpatient"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Condition/condition-eicr-eve-everywoman-pertussis"/>
-                <display value="condition-eicr-eve-everywoman-pertussis"/>
-            </reference>
-            <name value="condition-eicr-eve-everywoman-pertussis"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Condition/condition-eicr-eve-everywoman-common-cold"/>
-                <display value="condition-eicr-eve-everywoman-common-cold"/>
-            </reference>
-            <name value="condition-eicr-eve-everywoman-common-cold"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Condition/condition-eicr-eve-everywoman-zika"/>
-                <display value="condition-eicr-eve-everywoman-zika"/>
-            </reference>
-            <name value="condition-eicr-eve-everywoman-zika"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Condition/condition-eicr-eve-everywoman-diabetes"/>
-                <display value="condition-eicr-eve-everywoman-diabetes"/>
-            </reference>
-            <name value="condition-eicr-eve-everywoman-diabetes"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="PractitionerRole/practitionerrole-henry-seven"/></reference>
-            <name value="practitionerrole-henry-seven"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-practitionerrole"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Subscription/subscription-dxtc"/>
-                <display value="subscription-dxtc"/>
-            </reference>
-            <name value="subscription-dxtc"/>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Subscription/subscription-ostc"/>
-                <display value="subscription-ostc"/>
-            </reference>
-            <name value="subscription-ostc"/>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Subscription/subscription-lotc"/>
-                <display value="subscription-lotc"/>
-            </reference>
-            <name value="subscription-lotc"/>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="CapabilityStatement/capabilitystatement-ecr"/>
-                <display value="CapabilityStatement_eCR"/>
-            </reference>
-            <name value="CapabilityStatement_eCR"/>
-            <description value="This resource defines the expected capabilities for both client and server participating in eCR exchange"/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/eicr-initiation-type-extension"/>
-                <display value="eICR Initiation Type Extension"/>
-            </reference>
-            <name value="eICR Initiation Type Extension"/>
-            <description value="This Extension profile represents that the eICR, was either manually or alternately initiated by the provider. When code is set to PHC1464, it indicates that the eICR was manually initiated by an action of the provider of care because they suspect there may be a reportable condition. When the code is set to PHC2235, it indicates that the eICR was initiated by automated, forced reporting. Unlike eICRs manually initiated by a provider, PHC2235 will be routed only to the public health agency of the jurisdiction of care unless another reportable condition is found. The eICR could also contain RCTC trigger codes.&#xA;&#xA;"/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Bundle/bundle-eicr-document-pertussis-zika"/>
-                <display value="bundle-eicr-document-pertussis-zika"/>
-            </reference>
-            <name value="bundle-eicr-document-pertussis-zika"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/observation-odh-usual-work-eve-everywoman"/></reference>
-            <name value="observation-odh-usual-work-eve-everywoman"/>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/characteristics-of-home-environment"/>
-                <display value="Characteristics of Home Environment"/>
-            </reference>
-            <name value="Characteristics of Home Environment"/>
-            <description value="This profile represents the patient's home environment including, but not limited to, type of residence (trailer, single family home, assisted living), living arrangement (e.g., alone, with parents), and housing status (e.g., evicted, homeless, home owner)."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/observation-characteristics-of-home-environment-eve-everywoman"/>
-                <display value="observation-characteristics-of-home-environment-eve-everywoman"/>
-            </reference>
-            <name value="observation-characteristics-of-home-environment-eve-everywoman"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/characteristics-of-home-environment"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/observation-pregnancy-outcome-eve-everywoman"/></reference>
-            <name value="observation-pregnancy-outcome-eve-everywoman"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-outcome-observation"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/valueset-ecr-messageheader-event"/>
-                <display value="eCR MessageHeader Event"/>
-            </reference>
-            <name value="eCR MessageHeader Event"/>
-            <description value="This value set contains codes that identify the event an eCR message represents."/>
-            <exampleBoolean value="false"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
@@ -1041,53 +829,24 @@
         </resource>
         <resource>
             <reference>
-                <reference value="Observation/observation-odh-past-or-present-job-eve-everywoman"/>
-                <display value="observation-odh-past-or-present-job-eve-everywoman"/>
+                <reference value="MessageHeader/messageheader-ecr-requested-eicr"/>
+                <display value="messageheader-ecr-requested-eicr"/>
             </reference>
-            <name value="observation-odh-past-or-present-job-eve-everywoman"/>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Bundle/bundle-rr-collection-communication"/>
-                <display value="bundle-rr-collection-communication"/>
-            </reference>
-            <name value="bundle-rr-collection-communication"/>
-            <description value="Example of Reportability Response Communication collection bundle"/>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/relates-to-extension"/>
-                <display value="Relates To Extension"/>
-            </reference>
-            <name value="Relates To Extension"/>
-            <description value="This Extension profile represents relationships with other structures that already exist"/>
+            <name value="eCR MessageHeader Example: Requested eICR"/>
+            <description value="Example of eCR MessageHeader profile (Requested eICR)"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader"/>
         </resource>
         <resource>
             <reference>
-                <reference value="Composition/composition-eicr-zika-manual-initiation"/>
-                <display value="Initial Public Health Case Report - Zika Example"/>
+                <reference value="Observation/observation-characteristics-of-home-environment-eve-everywoman"/>
+                <display value="observation-characteristics-of-home-environment-eve-everywoman"/>
             </reference>
-            <name value="Initial Public Health Case Report - Zika Example"/>
-            <description value="Example of eICR Composition profile (Eve Everywoman, Zika)"/>
+            <name value="Characteristics of Home Environment Example: Eve Everywoman"/>
+            <description value="Example of Characteristics of Home Environment profile (Eve Everywoman)"/>
             <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Encounter/encounter-eicr-eve-everywoman-external-encounter"/></reference>
-            <name value="encounter-eicr-eve-everywoman-external-encounter"/>
-            <description value="Example of US Public Health Encounter profile (Eve Everywoman, external encounter)"/>
-            <exampleBoolean value="true"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/observation-postpartum-status-eve-everywoman"/></reference>
-            <name value="observation-postpartum-status-eve-everywoman"/>
-            <description value="Example of Postpartum Status profile (Eve Everywoman)"/>
-            <exampleBoolean value="true"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/characteristics-of-home-environment"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
@@ -1095,15 +854,108 @@
             <name value="observation-last-menstrual-period-eve-everywoman"/>
             <description value="Example of Last Menstrual Period (Eve Everywoman)"/>
             <exampleBoolean value="true"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/postpartum-status"/>
-                <display value="Postpartum_Status"/>
+                <reference value="Observation/observation-odh-past-or-present-job-eve-everywoman"/>
+                <display value="observation-odh-past-or-present-job-eve-everywoman"/>
             </reference>
-            <name value="Postpartum_Status"/>
-            <description value="This profile represents the postpartum status of a patient. If the profile is present, the patient is in the postpartum period and further information about the postpartum status is communicated by the code chosen.&#xA;The postpartum period, also known as the puerperium, refers to the time after delivery when maternal physiological changes related to pregnancy return to the nonpregnant state. There is consensus that the postpartum period begins upon delivery of the infant. The end is less well defined but is often considered the six to eight weeks after delivery because the effects of pregnancy on many systems have largely returned to the pre-pregnancy state.&#xA;"/>
+            <name value="observation-odh-past-or-present-job-eve-everywoman"/>
+            <description value="Example of ODH Past or Present Job profile (Eve Everywoman)"/>
+            <exampleBoolean value="true"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-odh-usual-work-eve-everywoman"/></reference>
+            <name value="observation-odh-usual-work-eve-everywoman"/>
+            <description value="Example of ODH Usual Work profile (Eve Everywoman)"/>
+            <exampleBoolean value="true"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-postpartum-status-eve-everywoman"/></reference>
+            <name value="observation-postpartum-status-eve-everywoman"/>
+            <description value="Example of Postpartum Status profile (Eve Everywoman)"/>
+            <exampleBoolean value="true"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-pregnancy-outcome-eve-everywoman"/></reference>
+            <name value="Pregnancy Outcome Observation Example: Eve Everywoman"/>
+            <description value="Example of Pregnancy Outcome Observation profile (Eve Everywoman)"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-outcome-observation"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-pregnancy-status-eve-everywoman"/>
+                <display value="observation-pregnancy-status-eve-everywoman"/>
+            </reference>
+            <name value="Pregnancy Status Observation Example: Eve Everywoman"/>
+            <description value="Example of Pregnancy Status Observation profile (Eve Everywoman)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-rr-eicr-processing-status"/>
+                <display value="observation-rr-eicr-processing-status"/>
+            </reference>
+            <name value="observation-rr-eicr-processing-status"/>
+            <description value="Example of RR eCIR Processing Status Observation profile"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation"/>
+            <groupingId value="reportability-response-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-rr-eicr-processing-status-reason"/>
+                <display value="observation-rr-eicr-processing-status-reason"/>
+            </reference>
+            <name value="observation-rr-eicr-processing-status-reason"/>
+            <description value="Example of RR eICR Processing Status Reason Observation profile"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation"/>
+            <groupingId value="reportability-response-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-travel-history-eve-everywoman-1999"/>
+                <display value="observation-travel-history-eve-everywoman-1999"/>
+            </reference>
+            <name value="observation-travel-history-eve-everywoman-1999"/>
+            <description value="Example of Travel History Observation profile (Eve Everywoman)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-observation"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-travel-history-eve-everywoman-201610"/>
+                <display value="observation-travel-history-eve-everywoman-201610"/>
+            </reference>
+            <name value="observation-travel-history-eve-everywoman-201610"/>
+            <description value="Example of Travel History Observation profile (Eve Everywoman - October 2016)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-observation"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-travel-history-eve-everywoman-201801"/>
+                <display value="observation-travel-history-eve-everywoman-201801"/>
+            </reference>
+            <name value="observation-travel-history-eve-everywoman-201801"/>
+            <description value="Example of Travel History Observation profile (Eve Everywoman - January 2018)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-observation"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
@@ -1113,132 +965,318 @@
             <name value="observation-us-core-results-eve-everywoman-lymphocytes"/>
             <description value="Example of US Core Results profile (Eve Everywoman, lymphocytes)"/>
             <exampleBoolean value="true"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ersd-computablelibrary"/>
-                <display value="eRSD Computable Library"/>
+                <reference value="Observation/observation-us-core-results-eve-everywoman-pertussis"/>
+                <display value="observation-us-core-results-eve-everywoman-pertussis"/>
             </reference>
-            <name value="eRSD Computable Library"/>
-            <description value="The computable library profile sets the minimum expectations for a computable CQL library"/>
-            <exampleBoolean value="false"/>
+            <name value="observation-us-core-results-eve-everywoman-pertussis"/>
+            <description value="Example of US Core Results profile (Eve Everywoman: Pertussis)"/>
+            <exampleBoolean value="true"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ersd-executablelibrary"/>
-                <display value="eRSD Executable Library"/>
+                <reference value="Organization/organization-ecr-salem-medical-center"/>
+                <display value="organization-ecr-salem-medical-center"/>
             </reference>
-            <name value="eRSD Executable Library"/>
-            <description value="This profile sets the minimum expectations for an executable CQL library. Specifically, the profile requires that the library contain one of ELM XML or JSON content, the compiled representation of the CQL logic."/>
+            <name value="US PH Organization Example: Salem Medical Center"/>
+            <description value="Example of US Public Health Organization profile (Salem Medical Center)"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ersd-computablevalueset"/>
-                <display value="eRSD Computable ValueSet"/>
+                <reference value="Patient/patient-ecr-eve-everywoman"/>
+                <display value="Patient Eve Everywoman"/>
             </reference>
-            <name value="eRSD Computable ValueSet"/>
-            <description value="Defines a computable value set as one that SHALL have an expression-based definition (i.e. a value set defined intensionally using expressions of the code systems involved) and MAY have an expansion included. The expression-based definition SHALL be represented in only one of three ways; using the compose element, using the expression extension, or using the rules-text extension to provide a step-by-step process for expanding the value set definition"/>
+            <name value="US PH Patient Example: Eve Everywoman"/>
+            <description value="Example of US Public Health Patient profile (Eve Everywoman)"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ersd-executablevalueset"/>
-                <display value="eRSD Executable ValueSet"/>
+                <reference value="PlanDefinition/plandefinition-ersd-instance"/>
+                <display value="PlanDefinition_eRSD_Instance"/>
             </reference>
-            <name value="eRSD Executable ValueSet"/>
-            <description value="Defines an executable value set as one that SHALL have an expansion included, as well as a usage warning indicating the expansion is a point-in-time snapshot and must be maintained over time for production usage."/>
+            <name value="PlanDefinition_eRSD_Instance"/>
+            <description value="Instance of eRSD PlanDefinition profile"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
         </resource>
         <resource>
             <reference>
-                <reference value="ValueSet/valueset-ersd-endpoint-connection-type"/>
-                <display value="eRSD Endpoint Connection Type Codes"/>
+                <reference value="StructureDefinition/postpartum-status"/>
+                <display value="Postpartum_Status"/>
             </reference>
-            <name value="eRSD Endpoint Connection Type Codes"/>
-            <description value="Set of endpoint connection types specified as being supported by APHL"/>
+            <name value="Postpartum_Status"/>
+            <description value="This profile represents the postpartum status of a patient. If the profile is present, the patient is in the postpartum period and further information about the postpartum status is communicated by the code chosen.&#xA;The postpartum period, also known as the puerperium, refers to the time after delivery when maternal physiological changes related to pregnancy return to the nonpregnant state. There is consensus that the postpartum period begins upon delivery of the infant. The end is less well defined but is often considered the six to eight weeks after delivery because the effects of pregnancy on many systems have largely returned to the pre-pregnancy state.&#xA;"/>
             <exampleBoolean value="false"/>
+            <groupingId value="eicr-profiles"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/runtime-valueset"/>
-                <display value="Runtime Value Set"/>
+                <reference value="Practitioner/practitioner-us-core-henry-seven"/>
+                <display value="Practitioner Seven Henry"/>
             </reference>
-            <name value="Runtime Value Set"/>
-            <description value="This profile describes value sets containing runtime codes."/>
-            <exampleBoolean value="false"/>
+            <name value="US Core Practitioner Example: Henry Seven"/>
+            <description value="Example of US Core Practitioner (Henry Seven)"/>
+            <exampleBoolean value="true"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/us-ph-valueset"/>
-                <display value="US Public Health Value Set"/>
-            </reference>
-            <name value="US Public Health Value Set"/>
-            <description value="This profile describes the US Public Health value sets."/>
+                <reference value="PractitionerRole/practitionerrole-henry-seven"/></reference>
+            <name value="US PH PractitionerRole Example: Henry Seven"/>
+            <description value="Example of US Public Health PractitionerRole profile (Henry Seven)"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-practitionerrole"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/us-ph-plandefinition"/>
-                <display value="US Public Health PlanDefinitions"/>
+                <reference value="ValueSet/pregnancy-status"/>
+                <display value="Pregnancy Status"/>
             </reference>
-            <name value="US Public Health PlanDefinitions"/>
-            <description value="This profile describes the US Public Health PlanDefinitions."/>
+            <name value="Pregnancy Status"/>
+            <description value="This value set contains codes representing pregnancy statuses."/>
             <exampleBoolean value="false"/>
+            <groupingId value="eicr-profiles"/>
         </resource>
         <resource>
             <reference>
-                <reference value="CodeSystem/ersd-jurisdiction-types"/>
-                <display value="eRSD JurisdictionTypes"/>
+                <reference value="StructureDefinition/pregnancy-outcome-observation"/>
+                <display value="Pregnancy_Outcome_Observation"/>
             </reference>
-            <name value="eRSD JurisdictionTypes"/>
-            <description value="This code system describes the possible types of jurisdictions that require public health reporting."/>
+            <name value="Pregnancy_Outcome_Observation"/>
+            <description value="This profile represents a result of the pregnancy such as live birth, still birth, miscarriage, etc. The order born in the delivery, live born or fetal death (1st, 2nd, 3rd, 4th, 5th, 6th, 7th, etc.) is contained in Observation.component. All live births and fetal losses are included. If the pregnancy plurality is 1 then this value will also be 1."/>
             <exampleBoolean value="false"/>
+            <groupingId value="eicr-profiles"/>
         </resource>
         <resource>
             <reference>
-                <reference value="CodeSystem/ersd-usage-context"/>
-                <display value="eRSD Usage Context Code System"/>
+                <reference value="StructureDefinition/pregnancy-status-observation"/>
+                <display value="Pregnancy_Status_Observation"/>
             </reference>
-            <name value="eRSD Usage Context Code System"/>
-            <description value="This code system contains codes that identify the use context of a valueset."/>
+            <name value="Pregnancy_Status_Observation"/>
+            <description value="This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range.&#xA;&#xA;This profile includes the determination method, determination date, and recorded date of the pregnancy status.&#xA;&#xA;Use the effectivePeriod to indicate the date range over which the patient was pregnant/possibly pregnant/not pregnant/unknown. To record the date that the pregnancy status was recorded, use the date-recorded-extension and to record the date on which the pregnancy status determination was made, use the date-determined-extension. If the effectivePeriod.end is not present it is assumed that the date range over which the pregnancy status is asserted is from effectivePeriod.start to the date in the date-recorded-extension. For example, if the effectivePeriod.start has been recorded as two months prior to the date contained in the date-recorded-extension, and there is no effectivePeriod.end recorded, no assumptions can be made about the pregnancy status after the date contained in the date-recorded-extension."/>
             <exampleBoolean value="false"/>
+            <groupingId value="eicr-profiles"/>
         </resource>
         <resource>
             <reference>
-                <reference value="CodeSystem/ersd-endpoint-connection-type"/>
-                <display value="eRSD Endpoint Connection Type"/>
+                <reference value="StructureDefinition/real-d-race-ethnicity-extension"/>
+                <display value="real-d-race-ethnicity-extension"/>
             </reference>
-            <name value="eRSD Endpoint Connection Type"/>
-            <description value="This code system contains codes that identify the HL7 FHIR File type."/>
+            <name value="Race, Ethnicity, Language, and Disability (REAL D) Race and Ethnicity Extension"/>
+            <description value="Concepts used to identify race, ethnicity, tribal affiliation, country of origin, or ancestry. These are the REAL D codes required in Oregon."/>
             <exampleBoolean value="false"/>
+            <groupingId value="eicr-profiles"/>
         </resource>
         <resource>
             <reference>
-                <reference value="CodeSystem/ersd-usage-context-type"/>
-                <display value="eRSD Usage Context Type Code System"/>
+                <reference value="StructureDefinition/relates-to-extension"/>
+                <display value="Relates To Extension"/>
             </reference>
-            <name value="eRSD Usage Context Type Code System"/>
-            <description value="This code system contains codes that identify the use context type of a valueset."/>
+            <name value="Relates To Extension"/>
+            <description value="This Extension profile represents relationships with other structures that already exist"/>
             <exampleBoolean value="false"/>
+            <groupingId value="extensions"/>
         </resource>
         <resource>
             <reference>
-                <reference value="CodeSystem/executabletask-type"/>
-                <display value="Executable Task Types Code System"/>
+                <reference value="PlanDefinition/plandefinition-rr-relevant-reportable-condition"/>
+                <display value="ReportableConditionDetermination"/>
             </reference>
-            <name value="Executable Task Types Code System"/>
-            <description value="This code system contains codes that describe the executable task types."/>
+            <name value="RR Relevant Reportable Condition PlanDefinition Example"/>
+            <description value="Example of RR Relevant Reportable Condition PlanDefinition profile"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
+            <groupingId value="reportability-response-examples"/>
         </resource>
         <resource>
             <reference>
-                <reference value="CodeSystem/ersd-jurisdictions-example"/>
-                <display value="eRSD Jurisdictions Example"/>
+                <reference value="StructureDefinition/rr-communication"/>
+                <display value="RR_Communication"/>
             </reference>
-            <name value="eRSD Jurisdictions Example"/>
-            <description value="This code system describes jurisdictions that require public health reporting."/>
+            <name value="RR_Communication"/>
+            <description value="This Communication profile represents the Reportability Response that will be created in response to an electronic Initial Case Report Composition. The sharing of the Reportability Response with clinical care will serve several functions, including to: &#xA;&#xA;* Communicate the reportability status, for the responsible PHA(s) of each condition included in the electronic Initial Case Report (eICR)     &#xA;* Identify who (a PHA or an intermediary) prepared the Reportability Response     &#xA;* Indicate whether the eICR has been sent to one or more PHA(s)     &#xA;* Identify which PHA(s) has/have been sent the eICR     &#xA;* Provide contact information for the responsible PHA(s)     &#xA;* Provide suggested or required clinical follow-up activities from the responsible PHA(s), including any additional reporting needs or infection control activities     &#xA;* Provide access to clinical support resources suggested by the responsible PHA(s) for identified reportable conditions     &#xA;* Confirm eICR receipt and processing     &#xA;&#xA;A Reportability Response will also, when requested, be shared with the responsible PHAs (when they have not constructed it) for their internal use, so they understand what has been shared with clinical care and, and to monitor/audit decision support algorithm effectivesness and implementation. When a condition is considered reportable to more than one PHA, the Reportability Response can be helpful in communicating reporting that has been done to other PHAs.     &#xA;&#xA;The Reportability Response Communication is also structured to allow:     &#xA;&#xA;* Notification, alerting, routing and queueing in work or message management systems for healthcare personnel     &#xA;* Dynamic and static URIs for supplemental data collection and the provision of information resources"/>
             <exampleBoolean value="false"/>
+            <groupingId value="reportability-response-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-determination-of-reportability-extension"/>
+                <display value="RR_Determination_of_Reportability_Extension"/>
+            </reference>
+            <name value="RR_Determination_of_Reportability_Extension"/>
+            <description value="This Extension profile represents the determination of reportability. Reportability is &quot;the quality or state of being reportable or not&quot;. Reportability does not equate to the patient having a condition or meeting a case definition (definitively being a case).&#xA;&#xA;For each condition included in the eICR and the relevant public health agency(s), this element indicates the determination of whether the condition is reportable to public health. &#xA;&#xA;The values that can be used for the Determination of Reportability are described below.&#xA;&#xA;A possible condition is:&#xA;&#xA;* Reportable - The information provided meets reporting criteria for an associated PHA.&#xA;&#xA;A possible condition:&#xA;&#xA;* May be Reportable - The information provided may meet reporting criteria if additional information is provided. The Reportability Response will also be able to share the information needed to definitively determine reportability.&#xA;&#xA;A possible condition is:&#xA;&#xA;* Not Reportable - The information provided conclusively does not meet reporting criteria.&#xA;&#xA;Some decision support systems may not be able to fully differentiate between possible conditions that are Not Reportable and those that May be Reportable if additional information is provided. In these circumstances there may only be a reportability determination of:&#xA;&#xA;* No Reporting Rule Met - The information provided does not meet reporting criteria or may meet reporting criteria if additional information is provided.&#xA;&#xA;The determination of No Reporting Rule Met may be provided for a possible condition or for all conditions in the  eICR."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="reportability-response-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-determination-of-reportability-reason-extension"/>
+                <display value="RR_Determination_of_Reportability_Reason_Extension"/>
+            </reference>
+            <name value="RR_Determination_of_Reportability_Reason_Extension"/>
+            <description value="This Extension profile represents the reason for the determination of reportability."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="reportability-response-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-determination-of-reportability-rule-extension"/>
+                <display value="RR_Determination_of_Reportability_Rule_Extension"/>
+            </reference>
+            <name value="RR_Determination_of_Reportability_Rule_Extension"/>
+            <description value="This Extension profile represents a rule that led to the determination of reportability."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="reportability-response-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-eicr-processing-status-extension"/>
+                <display value="RR_Eicr_Processing_Status_Extension"/>
+            </reference>
+            <name value="RR_Eicr_Processing_Status_Extension"/>
+            <description value="This Extension profile represents the eICR processing status. If the eICR was not processed or was processed with a warning, the reason will be contained in the eICR Processing Status Reason. If there is any output from a validator, that output will be contained in the eICR Validation Output.&#xA;&#xA;If any of the trigger codes used to generate the eICR are from an outdated version of the RCTC or the codes are marked as inactive in the latest version of the RCTC, these are flagged and and the eICR Processing Status Reason Detail will hold the details of the outdated and expected versions of the RCTC."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="reportability-response-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-eicr-processing-status-observation"/>
+                <display value="RR_Eicr_Processing_Status_Observation"/>
+            </reference>
+            <name value="RR_Eicr_Processing_Status_Observation"/>
+            <description value="This Observation profile represents the  eICR processing status. If it was not processed or was processed with a warning, the reason and details will be contained in the related eICR Processing Status Reason profile."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="reportability-response-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-eicr-processing-status-reason-observation"/>
+                <display value="RR_Eicr_Processing_Status_Reason_Observation"/>
+            </reference>
+            <name value="RR_Eicr_Processing_Status_Reason_Observation"/>
+            <description value="This Observation profile represents, if the incoming eICR was not successfully processed for a determination of reportability, the reason it was not processed.  If any of the trigger codes used to generate the eICR are from an outdated version of the RCTC or the codes are marked as inactive in the latest version of the RCTC, these are flagged and component observations will hold the details of the outdated and expected versions of the RCTC."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="reportability-response-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-eicr-receipt-time-extension"/>
+                <display value="RR_Eicr_Receipt_Time_Extension"/>
+            </reference>
+            <name value="RR_Eicr_Receipt_Time_Extension"/>
+            <description value="This Extension profile represents the date and time of eICR receipt"/>
+            <exampleBoolean value="false"/>
+            <groupingId value="extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-external-resource-type-extension"/>
+                <display value="RR_External_Resource_Type_Extension"/>
+            </reference>
+            <name value="RR_External_Resource_Type_Extension"/>
+            <description value="This Extension profile represents the type/category of one or more external resources."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-location-relevance-extension"/>
+                <display value="RR_Location_Relevance_Extension"/>
+            </reference>
+            <name value="RR_Location_Relevance_Extension"/>
+            <description value="This Extension profile represents a code indicating whether the responsible PHA is relevant because of the patient's home address, the provider facility address, or both."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-priority-extension"/>
+                <display value="RR_Priority_Extension"/>
+            </reference>
+            <name value="RR_Priority_Extension"/>
+            <description value="This Extension profile represents the priority given to the whole communication or one or more external resources."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
+                <display value="RR_Relevant_Reportable_Condition_Plandefinition"/>
+            </reference>
+            <name value="RR_Relevant_Reportable_Condition_Plandefinition"/>
+            <description value="This PlanDefinition in the Reportability Response transaction represents reportability information for a condition-jurisdiction pair, based on the PHA in which is located the patient's home, the provider facility or both locations. The Determination of Reportability, Determination of Reportability Reason, and Determination of Reportability Rule are contained in extensions. This profile also contains extensions for the Responsible Agency, the Rules Authoring Agency, and the Routing Entity. The Relevant Reportable Condition is contained in goal.addresses and any External Resources are contained in action (one action may contain multiple External Resources (documentation)). &#xA;&#xA;"/>
+            <exampleBoolean value="false"/>
+            <groupingId value="reportability-response-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-responsible-agency-organization"/>
+                <display value="RR_Responsible_Agency_Organization"/>
+            </reference>
+            <name value="RR_Responsible_Agency_Organization"/>
+            <description value="This Organization profile represents the Responsible Agency which is a PHA to which reporting is legally required. This can be the PHA relevant to the location in which care was provided and/or where the patient lives. It is based on the [eCR Organization](StructureDefinition-us-ph-organization.html) profile with a further restriction setting the **type** data element to 'Responsible Agency'."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="reportability-response-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-responsible-agency-organization-extension"/>
+                <display value="RR_Responsible_Agency_Organization_Extension"/>
+            </reference>
+            <name value="RR_Responsible_Agency_Organization_Extension"/>
+            <description value="This extension represents an RR Responsible Agency Organization"/>
+            <exampleBoolean value="false"/>
+            <groupingId value="extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-routing-entity-organization"/>
+                <display value="RR_Routing_Entity_Organization"/>
+            </reference>
+            <name value="RR_Routing_Entity_Organization"/>
+            <description value="This Organization profile represents the Routing Entity which is a PHA or other organization identified by the PHA (such as an HIE) to which the eICR and/or the Reportability Response will be provided immediately following the creation of the Reportability Response. This entity may just be acting to route the eICR and Reportability Response on their way to a Responsible Agency.  It is based on the [eCR Organization](StructureDefinition-us-ph-organization.html) profile with a further restriction setting the **type** data element to 'Routing Entity'."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="reportability-response-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-routing-entity-organization-extension"/>
+                <display value="RR_Routing_Entity_Organization_Extension"/>
+            </reference>
+            <name value="RR_Routing_Entity_Organization_Extension"/>
+            <description value="This extension represents an RR Routing Entity Organization"/>
+            <exampleBoolean value="false"/>
+            <groupingId value="extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-rules-authoring-agency-organization"/>
+                <display value="RR_Rules_Authoring_Agency_Organization"/>
+            </reference>
+            <name value="RR_Rules_Authoring_Agency_Organization"/>
+            <description value="This Organization profile represents the Rules Authoring Agency which is the originator of the rules that are being executed in decision support to determine reportability. This may be a state or local PHA. In the majority of cases the Rules Authoring Agency will be the same as the Responsible Agency. Usually, a Local Public Health Agency will inherit rules from its relevant state agency, but a Local agency can adopt, replace or supplement relevant state rules. It is based on the [eCR Organization](StructureDefinition-us-ph-organization.html) profile with a further restriction setting the **type** data element to 'Rules Authoring Agency'."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="reportability-response-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-rules-authoring-agency-organization-extension"/>
+                <display value="RR Rules Authoring Agency Organization Extension"/>
+            </reference>
+            <name value="RR_Rules_Authoring_Agency_Organization_Extension"/>
+            <description value="This extension represents an RR Rules Authoring Agency Organization"/>
+            <exampleBoolean value="false"/>
+            <groupingId value="extensions"/>
         </resource>
         <resource>
             <reference>
@@ -1252,49 +1290,102 @@
         </resource>
         <resource>
             <reference>
-                <reference value="Library/FHIRHelpers"/>
-                <display value="FHIRHelpers"/>
+                <reference value="StructureDefinition/runtime-valueset"/>
+                <display value="Runtime Value Set"/>
             </reference>
-            <name value="FHIRHelpers"/>
-            <description value="CQL FHIRHelpers Library."/>
+            <name value="Runtime ValueSet"/>
+            <description value="This profile describes value sets containing runtime codes."/>
             <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-executablelibrary"/>
+            <groupingId value="ersd-profiles"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/us-ph-emergency-outbreak-information"/>
-                <display value="US Public Health Emergency Outbreak Information"/>
+                <reference value="ServiceRequest/servicerequest-eicr-eve-everywoman-zika"/>
+                <display value="servicerequest-eicr-eve-everywoman-zika"/>
             </reference>
-            <name value="US Public Health Emergency Outbreak Information"/>
-            <description value="This profile represents information that is required during a public health emergency/outbreak. This information will be recorded using a question/answer pattern with questions specific to the public health emergency/outbreak."/>
+            <name value="eICR ServiceRequest Example: Eve Everywoman - Zika"/>
+            <description value="Example of eICR ServiceRequest profile (Eve Everywoman - zika"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-servicerequest"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/us-ph-procedure"/>
-                <display value="US Public Health Procedure"/>
+                <reference value="ServiceRequest/servicerequest-eicr-zika"/>
+                <display value="servicerequest-eicr-zika"/>
             </reference>
-            <name value="US Public Health Procedure"/>
-            <description value="This profile defines constraints on the US Core Procedure profile for US Public Health use cases."/>
+            <name value="eICR ServiceRequest Example"/>
+            <description value="Example of eICR ServiceRequest profile"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-servicerequest"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/disability-status"/>
-                <display value="DisabilityStatus"/>
+                <reference value="Subscription/subscription-dxtc"/>
+                <display value="subscription-dxtc"/>
             </reference>
-            <name value="DisabilityStatus"/>
-            <description value="This profile represents the Disability Element defined here: https://aspe.hhs.gov/basic-report/hhs-implementation-guidance-data-collection-standards-race-ethnicity-sex-primary-language-and-disability-status&#xA;        &#xA;        The six item set of questions used on ACS and other major surveys to gauge disability is the data standard for survey questions on disability. Note the age thresholds for survey participants for the different disability questions.&#xA;        &#xA;        Data Standard for Disability Status&#xA;        &#xA;        1. Are you deaf or do you have serious difficulty hearing?&#xA;        2. Are you blind or do you have serious difficulty seeing, even when wearing glasses? &#xA;        3. Because of a physical, mental, or emotional condition, do you have serious difficulty concentrating, remembering, or making decisions? (5 years old or older)&#xA;        4. Do you have serious difficulty walking or climbing stairs? (5 years old or older)&#xA;        5. Do you have difficulty dressing or bathing? (5 years old or older)&#xA;        6. Because of a physical, mental, or emotional condition, do you have difficulty doing errands alone such as visiting a doctor's office or shopping? (15 years old or older)&#xA;        &#xA;        The six-item disability standard represents a minimum standard and the questions and answer categories cannot be changed. Additional questions on disability may be added to any survey as long as the minimum standard is included. If the ACS changes the disability questions in the future, HHS will revisit the standard and modify as necessary.&#xA;        &#xA;        Rationale for Disability Data Standard&#xA;        &#xA;        The six item set of questions used on the ACS and other major surveys to measure disability was developed by a federal interagency committee and reflects the change in how disability is conceptualized consistent with the International Classification of Functioning, Disability, and Health. The question set defines disability from a functional perspective and was developed so that disparities between the 'disabled' and 'nondisabled' population can be monitored. The question set went through several rounds of cognitive and field testing and has been adopted in many federal data collection systems. OMB has encouraged the use of this question set by other federal agencies conducting similar population studies due to the extensive testing used in the development of these measures, including the findings that alternative measures did not test as well. Cognitive testing of these questions revealed that the six questions must be used as a set to assure a meaningful measure of disability.[vi]"/>
-            <exampleBoolean value="false"/>
+            <name value="subscription-dxtc"/>
+            <description value="Example of Subscription resource (dxtc)"/>
+            <exampleBoolean value="true"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/real-d-race-ethnicity-extension"/>
-                <display value="real-d-race-ethnicity-extension"/>
+                <reference value="Subscription/subscription-lotc"/>
+                <display value="subscription-lotc"/>
             </reference>
-            <name value="Race, Ethnicity, Language, and Disability (REAL D) Race and Ethnicity Extension"/>
-            <description value="Concepts used to identify race, ethnicity, tribal affiliation, country of origin, or ancestry. These are the REAL D codes required in Oregon."/>
+            <name value="subscription-lotc"/>
+            <description value="Example of Subscription resource (lotc)"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Subscription/subscription-ostc"/>
+                <display value="subscription-ostc"/>
+            </reference>
+            <name value="subscription-ostc"/>
+            <description value="Example of Subscription resource (ostc)"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Task/task-ecr-ehr-requested-eicr"/>
+                <display value="task-ecr-ehr-requested-eicr"/>
+            </reference>
+            <name value="task-ecr-ehr-requested-eicr"/>
+            <description value="Example of eCR Task profile"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-task"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/therapeutic-medication-response-extension"/>
+                <display value="Therapeutic_Medication_Response_Extension"/>
+            </reference>
+            <name value="Therapeutic Medication Response Extension"/>
+            <description value="This Extension profile represents represents a therapeutic response (as opposed to an undesired reaction) to the administration of a medication."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/travel-history-address-extension"/>
+                <display value="Travel_History_Address_Extension"/>
+            </reference>
+            <name value="Travel_History_Address_Extension"/>
+            <description value="This Extension profile represents where the patient traveled to as an address e.g.: country, state, city, street address (if applicable). At the least, address must contain the country. State is required if the country is US. If country is something other than US, the state **MAY** be present but **MAY** be bound to different vocabularies."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/travel-history-observation"/>
+                <display value="Travel_History_Observation"/>
+            </reference>
+            <name value="Travel History Observation"/>
+            <description value="This Observation profile represents the following for eCR:&#xA;&#xA;* the Initial Case Report subject's travel history as a string, an address, or a coded location&#xA;* Observation.effectiveTime contains the date or period of time spent in the location&#xA;* it is possible to have multiple Observation.components, each containing a different location, but there is only a single effectiveTime. This allows for cases where a patient cannot remember exact dates of travel (e.g. I traveled to London, Paris, and Berlin in July and August 2016). However, most uses will involve a single component (location)&#xA;* free text describing the travel history details and location can be entered using the Observation.component.valueCodeableConcept.text element&#xA;* use component.codeableConcept to record a coded location&#xA;* use component.extension to record a specific address&#xA;* where a more granular address than state is known (e.g. city, street) it is appropriate to use the extension to record an address rather than using the coded location."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="eicr-profiles"/>
         </resource>
         <resource>
             <reference>
@@ -1304,6 +1395,17 @@
             <name value="Tribal Affiliation Extension"/>
             <description value="Affiliated tribe name and whether or not the patient is an enrolled member"/>
             <exampleBoolean value="false"/>
+            <groupingId value="extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-emergency-outbreak-information"/>
+                <display value="US Public Health Emergency Outbreak Information"/>
+            </reference>
+            <name value="US Public Health Emergency Outbreak Information"/>
+            <description value="This profile represents information that is required during a public health emergency/outbreak. This information will be recorded using a question/answer pattern with questions specific to the public health emergency/outbreak."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-public-health-profiles"/>
         </resource>
         <resource>
             <reference>
@@ -1313,6 +1415,37 @@
             <name value="US Public Health Exposure Information Information"/>
             <description value="This profile represents patient exposure information."/>
             <exampleBoolean value="false"/>
+            <groupingId value="us-public-health-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-plandefinition"/>
+                <display value="US Public Health PlanDefinitions"/>
+            </reference>
+            <name value="US Public Health PlanDefinitions"/>
+            <description value="This profile describes the US Public Health PlanDefinitions."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-public-health-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-procedure"/>
+                <display value="US Public Health Procedure"/>
+            </reference>
+            <name value="US Public Health Procedure"/>
+            <description value="This profile defines constraints on the US Core Procedure profile for US Public Health use cases."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-public-health-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-valueset"/>
+                <display value="US Public Health Value Set"/>
+            </reference>
+            <name value="US Public Health Value Set"/>
+            <description value="This profile describes the US Public Health value sets."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-public-health-profiles"/>
         </resource>
         <resource>
             <reference>
@@ -1322,24 +1455,77 @@
             <name value="Usage Warning"/>
             <description value="An extra warning about the correct use of the value set."/>
             <exampleBoolean value="false"/>
+            <groupingId value="ersd-profiles"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ersd-supplemental-valueset"/>
-                <display value="eRSD Supplemental Value Set"/>
+                <reference value="StructureDefinition/us-ph-encounter"/>
+                <display value="us-ph-encounter"/>
             </reference>
-            <name value="eRSD Supplemental Value Set"/>
-            <description value="This profile describes the eRSD Supplemental value sets."/>
+            <name value="USPublicHealthEncounter"/>
+            <description value="This Encounter profile represents the encounter related to the eICR event. Contained in the Encounter.participant, is the provider in charge of care (represented by the PractitionerRole.Practitioner) and the provider facility (represented by the PractitionerRole.Organization). The location (facility) in which care was provided when the case was triggered is contained in the encounter.location.&#xA;&#xA;A trigger on an encounter diagnosis is indicated by the eICR Trigger Code Flag Extension in the diagnosis.&#xA;&#xA;Where a trigger occurs outside of an encounter use code=&quot;PHC2237&quot; \| system=&quot;2.16.840.1.114222.4.5.274&quot; (External Encounter) and omit period, participant, location, and serviceProvider. In this case, the responsible provider and facility information is contained in the eICR Composition.author."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-public-health-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-location"/>
+                <display value="us-ph-location"/>
+            </reference>
+            <name value="USPublicHealthLocation"/>
+            <description value="This Location profile represents the location/facility in which care was provided when the eICR was triggered."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-public-health-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-organization"/>
+                <display value="us-ph-organization"/>
+            </reference>
+            <name value="USPublicHealthOrganization"/>
+            <description value="This Organization profile represents the following organizations for electronic case reporting:&#xA;&#xA;* Initial Case Report source provider facility/office name&#xA;* Initial Case Report source facility&#xA;* Reportability Response recipients&#xA;* Reportability Response responsible agency  &#xA;* Reportability Response routing entity&#xA;* Reportability Response rules authoring agency&#xA;&#xA;It is based on the **US Core Organization** profile with a further restriction of *Must Support* on the **type** and **contact** data elements."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-public-health-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-patient"/>
+                <display value="us-ph-patient"/>
+            </reference>
+            <name value="USPublicHealthPatient"/>
+            <description value="This Patient profile represents a US Public Health Patient. It is based on the **US Core Patient** profile with further restrictions to allow masking of some data elements and the addition of the patient-genderIdentity extension."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-public-health-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-practitionerrole"/>
+                <display value="us-ph-practitionerrole"/>
+            </reference>
+            <name value="USPublicHealthPractitionerRole"/>
+            <description value="This PractitionerRole represents the roles and organizations a practitioner involved in eCR is associated with. It is based on the **US Core PractitionerRole** profile with a further restriction of a mandatory **identifier** data element."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-public-health-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/valueset-ecr-task-businessstatus"/>
+                <display value="Value Set eCR Task BusinessStatus"/>
+            </reference>
+            <name value="Value Set eCR Task BusinessStatus"/>
+            <description value="This value set contains codes that describe the eCR task businessStatus."/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ersd-triggering-valueset"/>
-                <display value="eRSD Triggering Value Set"/>
+                <reference value="Organization/organization-ecr-ymca-center"/>
+                <display value="YMCA"/>
             </reference>
-            <name value="eRSD Triggering Value Set"/>
-            <description value="This profile describes the eRSD Triggering value sets."/>
+            <name value="US PH Organization Example: YMCA"/>
+            <description value="Example of US Public Health Organization profile"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <page>
             <nameUrl value="index.html"/>
