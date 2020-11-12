@@ -610,4 +610,4 @@ The examples below provide example text for *Providers / Reporters* for these ty
 >
 > eICR was not processed due to an error of: fatal problem with the eICR that was received.
 
-[Next Page - ERSD Narrative Guidance](ersd_narrative_guidance.html)
+[Next Page - ERSD Jurisdictions CodeSystem Query](ersd_jurisdictions_codesystem_query.html)

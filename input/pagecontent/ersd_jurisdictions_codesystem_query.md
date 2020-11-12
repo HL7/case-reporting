@@ -1,4 +1,4 @@
-[Previous Page - ERSD Narrative Guidance](ersd_narrative_guidance.html)
+[Previous Page - Reportability Response Narrative Guidance](reportability_response_narrative_guidance.html)
 
 This document provides instructions for how to use the eRSD Jurisdictions CodeSystem with CQL queries to identify relevant jurisdictions for a Patient and Encounter.
 
@@ -9,8 +9,8 @@ This document provides instructions for how to use the eRSD Jurisdictions CodeSy
 ### Dependencies
 
 The following tools are needed to perform this operation:
-* The APHL-IG repository
 * Atom (download available at [https://atom.io/](https://atom.io/))
+* [RuleFilter CQL](Library-RuleFilters.html)
 * CQL plugin for Atom (instructions in CQL Query section below)
 
 ### CodeSystem
@@ -111,11 +111,11 @@ Each jurisdiction has a set of properties connected with it that specify what ty
 
 ### CQL Query
 
-The APHL-IG contains a `RuleFilters-1.0.0.cql` file in the `/input/pagecontent/cql` folder.  This file contains CQL code that uses the test cases in the `/input/tests/RuleFilters-1.0.0` folder.  The `CodeSystem-ersd-jurisdictions.json` file will need to be copied and pasted to the `/input/tests/RuleFilters-1.0.0/Reportable/CodeSystem` folder in order for the test cases to work.
+[RuleFilter Library](Library-RuleFilters.html) This file contains CQL code that uses the test cases in the `/input/tests/RuleFilters-1.0.0` folder.  The `CodeSystem-ersd-jurisdictions.json` file will need to be copied and pasted to the `/input/tests/RuleFilters-1.0.0/Reportable/CodeSystem` folder in order for the test cases to work.
 
 The CQL code is setup to match Chlamydia test results with relevant jurisdictions.  CQL must be run in Atom using the CQL plugin.  To install the plugin, open Atom and click "File" then "Settings".  A Settings tab will open up.  Navigate to "Install" and search for "cql".  Find the package named "language-cql" authored by cqframework and click "Install".
 
-In Atom, open the `RuleFilters-1.0.0.cql` file.  The code related to jursdiction querying is as follows:
+In Atom, open the `RuleFilter Library cql`.  The code related to jursdiction querying is as follows:
 
 ```cql
 codesystem "JurisdictionsList": 'http://hl7.org/fhir/us/ecr/CodeSystem/ersd-jurisdictions'
@@ -209,5 +209,6 @@ Jurisdiction Codes Relevant to Addresses = [Tuple {
 }]
 ```
 As shown in the [CodeSystem example](#codesystem), Alaska has no specified postal codes.  Therefore, anywhere in Alaska will report only to the Alaska Department of Health and Social Services.
+
 
 [Next Page - ERSD Jurisdictions CodeSystem Configuration](ersd_jurisdictions_codesystem_configuration.html)

@@ -12,7 +12,6 @@ The following tools are needed to perform this operation:
 * Microsoft Excel
 * Java/Maven
 * The CQFramework CQF-Tooling Github repository: [https://github.com/cqframework/cqf-tooling](https://github.com/cqframework/cqf-tooling)
-* The APHL-IG repository
 
 ### RCKMS CSV File
 
@@ -44,12 +43,12 @@ The CQF-Tooling repository needs to be cloned onto the local machine.  Go to [ht
 From your command line terminal, navigate to the root directory of the CQF-Tooling repository and type the following command:
 
 ```
-mvn exec:java -Dexec.args="-JurisdictionsXlsxToCodeSystem -pts=C:/Users/me/aphl-ig/input/vocabulary/codesystem/sources/rckms-jurisdictions.xlsx -op=C:/Users/me/aphl-ig/input/vocabulary/codesystem"
+mvn exec:java -Dexec.args="-JurisdictionsXlsxToCodeSystem -pts=C:/Users/me/case-reporting/input/vocabulary/codesystem/sources/rckms-jurisdictions.xlsx -op=C:/Users/me/case-reporting/input/vocabulary/codesystem"
 ```
 
-The `-pts` (path to source) argument is the path to where the .csv file is currently located.  Details of the path will change depending on where the file is stored on the local machine.  The file should be saved in the  APHL-IG under the `/input/vocabulary/codesystem/sources` folder.
+The `-pts` (path to source) argument is the path to where the .csv file is currently located.  Details of the path will change depending on where the file is stored on the local machine.  The file should be saved in the  Case-Reporting IG under the `/input/vocabulary/codesystem/sources` folder.
 
-The `-op` (output path) argument is the path to where the generated CodeSystem will be placed.  This must be in the APHL-IG under the `input/vocabulary/codesystem` folder for other IG tools to work properly.
+The `-op` (output path) argument is the path to where the generated CodeSystem will be placed.  This must be in the Case-Reporting IG under the `input/vocabulary/codesystem` folder for other IG tools to work properly.
 
 In the example command above, the actual .csv filename is `rckms-jurisdictions.xlsx`.
 
@@ -159,5 +158,6 @@ The "state" column becomes the concept property valueCode for `code: "state"`.  
 The "zip_code" column becomes the concept property valueCode for `code: "postalcode"`.  This represents postal codes that report to the specified jurisdiction. If no postal code has been specified, this property will be skipped rather than generating a valueCode that says `(null)`.
 
 This CodeSystem allows the ability to use CQL to match the Patient and Encounter addresses with the appropriate Public Health Agency that requires reporting.  This matching is done by comparing postal codes from the Patient and Encounter addresses with postal codes designated to specific Public Health Agencies.  If a postal code has not been specified for a Public Health Agency, matching is done by State, District, or Territory.
+
 
 [Next Page - Rule Filter Generation](rule_filter_generation.html)
