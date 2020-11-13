@@ -1,4 +1,4 @@
-[Previous Page - Reportability Response Narrative Guidance](reportability_response_narrative_guidance.html)
+[Previous Page - eRSD Narrative Guidance](ersd_narrative_guidance.html)
 
 This document provides instructions for how to use the eRSD Jurisdictions CodeSystem with CQL queries to identify relevant jurisdictions for a Patient and Encounter.
 
@@ -211,4 +211,4 @@ Jurisdiction Codes Relevant to Addresses = [Tuple {
 As shown in the [CodeSystem example](#codesystem), Alaska has no specified postal codes.  Therefore, anywhere in Alaska will report only to the Alaska Department of Health and Social Services.
 
 
-[Next Page - ERSD Jurisdictions CodeSystem Configuration](ersd_jurisdictions_codesystem_configuration.html)
+[Next Page - eRSD Jurisdictions CodeSystem Configuration](ersd_jurisdictions_codesystem_configuration.html)

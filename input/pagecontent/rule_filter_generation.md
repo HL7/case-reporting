@@ -1,4 +1,4 @@
-[Previous Page - ERSD Jurisdictions CodeSystem Configuration](ersd_jurisdictions_codesystem_configuration.html)
+[Previous Page - eRSD Jurisdictions CodeSystem Configuration](ersd_jurisdictions_codesystem_configuration.html)
 
 This document details the generation of CQL rule filters
 

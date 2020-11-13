@@ -1,4 +1,4 @@
-[Previous Page - ERSD Jurisdictions CodeSystem Query](ersd_jurisdictions_codesystem_query.html)
+[Previous Page - eRSD Jurisdictions CodeSystem Query](ersd_jurisdictions_codesystem_query.html)
 
 This document describes the eRSD Jurisdictions CodeSystem and explains how it is built.
 

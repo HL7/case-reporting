@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="177"/>
-        <lastUpdated value="2020-11-13T00:26:17.035+00:00"/>
-        <source value="#AGpcxBbtyj3rqrra"/>
+        <versionId value="193"/>
+        <lastUpdated value="2020-11-13T02:49:18.962+00:00"/>
+        <source value="#N2XSJd0FqcKGqwDy"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.0.0"/>
@@ -51,14 +51,14 @@
         <grouping id="reportability-response-profiles">
             <name value="Reportability Response Profiles"/>
         </grouping>
-        <grouping id="ersd-profiles">
-            <name value="eRSD Profiles"/>
+        <grouping id="ersd-profiles-instances">
+            <name value="eRSD Profiles/Instances"/>
+        </grouping>
+        <grouping id="transport-profiles">
+            <name value="Transport Profiles"/>
         </grouping>
         <grouping id="extensions">
             <name value="Extensions"/>
-        </grouping>
-        <grouping id="capability-statements">
-            <name value="Capability Statements"/>
         </grouping>
         <grouping id="us-public-health-examples">
             <name value="US Public Health Examples"/>
@@ -71,6 +71,15 @@
         </grouping>
         <grouping id="ersd-examples">
             <name value="eRSD Examples"/>
+        </grouping>
+        <grouping id="subscription-examples">
+            <name value="Subscription Examples"/>
+        </grouping>
+        <grouping id="transport-examples">
+            <name value="Transport Examples"/>
+        </grouping>
+        <grouping id="capability-statements">
+            <name value="Capability Statements"/>
         </grouping>
         <resource>
             <reference>
@@ -280,6 +289,7 @@
             <name value="device-ecr-software-ymca"/>
             <description value="Example of Device resource (YMCA software)"/>
             <exampleBoolean value="true"/>
+            <groupingId value="transport-examples"/>
         </resource>
         <resource>
             <reference>
@@ -308,6 +318,7 @@
             <name value="Ecr_Message_Bundle"/>
             <description value="This Bundle profile represents an eICR Message Bundle. It contains the eCR MessageHeader and is for use in the eCR messaging paradigm."/>
             <exampleBoolean value="false"/>
+            <groupingId value="transport-profiles"/>
         </resource>
         <resource>
             <reference>
@@ -317,6 +328,7 @@
             <name value="Ecr_MessageHeader"/>
             <description value="This MessageHeader profile represents metadata to support the eCR messaging paradigm. It requires data elements destination, sender, source, and focus. The focus of an eCR MessageHeader profile is the eCR Task profile."/>
             <exampleBoolean value="false"/>
+            <groupingId value="transport-profiles"/>
         </resource>
         <resource>
             <reference>
@@ -326,6 +338,7 @@
             <name value="Ecr_Task"/>
             <description value="This Task profile represents the state of completion of the eCR activity. It is used in both the messaging and RESTful paradigms. to support the eCR messaging paradigm.  The focus of an eCR Task is either the eICR document Bundle or the RR Communication."/>
             <exampleBoolean value="false"/>
+            <groupingId value="transport-profiles"/>
         </resource>
         <resource>
             <reference>
@@ -457,6 +470,7 @@
             <name value="Endpoint Example: endpoint-ecr-salem-medical-center"/>
             <description value="Example of Endpoint resource (Salem Medical Center endpoint)"/>
             <exampleBoolean value="true"/>
+            <groupingId value="transport-examples"/>
         </resource>
         <resource>
             <reference>
@@ -466,6 +480,7 @@
             <name value="Endpoint Example: endpoint-ecr-ymca"/>
             <description value="Example of Endpoint resource (YMCA endpoint)"/>
             <exampleBoolean value="true"/>
+            <groupingId value="transport-examples"/>
         </resource>
         <resource>
             <reference>
@@ -475,7 +490,7 @@
             <name value="eRSD Computable Library"/>
             <description value="The computable library profile sets the minimum expectations for a computable CQL library"/>
             <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles"/>
+            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
             <reference>
@@ -485,7 +500,7 @@
             <name value="eRSD Computable ValueSet"/>
             <description value="Defines a computable value set as one that SHALL have an expression-based definition (i.e. a value set defined intensionally using expressions of the code systems involved) and MAY have an expansion included. The expression-based definition SHALL be represented in only one of three ways; using the compose element, using the expression extension, or using the rules-text extension to provide a step-by-step process for expanding the value set definition"/>
             <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles"/>
+            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
             <reference>
@@ -513,7 +528,7 @@
             <name value="eRSD Executable Library"/>
             <description value="This profile sets the minimum expectations for an executable CQL library. Specifically, the profile requires that the library contain one of ELM XML or JSON content, the compiled representation of the CQL logic."/>
             <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles"/>
+            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
             <reference>
@@ -523,7 +538,7 @@
             <name value="eRSD Executable ValueSet"/>
             <description value="Defines an executable value set as one that SHALL have an expansion included, as well as a usage warning indicating the expansion is a point-in-time snapshot and must be maintained over time for production usage."/>
             <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles"/>
+            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
             <reference>
@@ -552,7 +567,7 @@
             <name value="eRSD Supplemental ValueSet"/>
             <description value="This profile describes the eRSD Supplemental value sets."/>
             <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles"/>
+            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
             <reference>
@@ -562,7 +577,7 @@
             <name value="eRSD Triggering ValueSet"/>
             <description value="This profile describes the eRSD Triggering value sets."/>
             <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles"/>
+            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
             <reference>
@@ -590,7 +605,7 @@
             <name value="eRSD PlanDefinition"/>
             <description value="This PlanDefinition profile defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician.&#xA;&#xA;The profile defines four timing-related parameters for initiating case reports from Electronic Health Records (the standard does not specify the hour value for the delay of the send - public health operations will determine the specific value appropriate for implementation) the standard conveys the parameters to clinical care but it does not require their implementation.&#xA;&#xA;* Delay initial eICR construction (for example 1 hour) - the time after start of the encounter when the trigger events would not immediately cause an eICR to be composed and sent. (This delay is intended to allow adequate data to be recorded in the EHR, but is not so long as to delay reporting in critical circumstances.)  If there is a trigger and the encounter is closed before the specified delay value (for example the encounter is closed in 30 minutes when the specified delay value is 1 hour) the eICR should be created and sent.&#xA;* eICR reportable check period (for example 6 hours) - the time interval on which reportability should be checked after the initial reportability check. If the event is reportable then the eICR should be created and sent, otherwise, if the encounter is still open then check reportable should be scheduled again at the specified interval (for example 6 hours from the time of the current check).&#xA;* eICR periodic update (for example 24 hours) - the time after an initial eICR creation to send new eICRs as updates during long encounters. (These updates should only be produced until the end of the encounter).&#xA;* eICR encounter close-out (for example 24 hours or 0 hours for no delay) - the time after the end of an encounter for a final eICR to be sent when there has been one or more trigger events in the encounter. (The close-out eICR is intended to provide the full data available at the end of an encounter.)&#xA;&#xA;"/>
             <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles"/>
+            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
             <reference>
@@ -600,7 +615,7 @@
             <name value="ersd ValueSet"/>
             <description value="This profile describes the eRSD value sets."/>
             <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles"/>
+            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
             <reference>
@@ -610,7 +625,7 @@
             <name value="eRSD Valueset Library"/>
             <description value="Defines the library containing the eRSD value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses. "/>
             <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles"/>
+            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
             <reference>
@@ -693,6 +708,7 @@
             <description value="CQL FHIR Helpers Library"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-executablelibrary"/>
+            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
             <reference>
@@ -800,6 +816,7 @@
             <description value="RCTC Library"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-valueset-library"/>
+            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
             <reference>
@@ -839,6 +856,7 @@
             <description value="Example of eCR MessageHeader profile (Requested eICR)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader"/>
+            <groupingId value="transport-examples"/>
         </resource>
         <resource>
             <reference>
@@ -1011,6 +1029,7 @@
             <description value="Instance of eRSD PlanDefinition profile"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
+            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
             <reference>
@@ -1290,6 +1309,7 @@
             <description value="An example library with logic for determining whether or not an event or situation is reportable."/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-executablelibrary"/>
+            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
             <reference>
@@ -1299,7 +1319,7 @@
             <name value="Runtime ValueSet"/>
             <description value="This profile describes value sets containing runtime codes."/>
             <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles"/>
+            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
             <reference>
@@ -1331,6 +1351,7 @@
             <name value="subscription-dxtc"/>
             <description value="Example of Subscription resource (dxtc)"/>
             <exampleBoolean value="true"/>
+            <groupingId value="subscription-examples"/>
         </resource>
         <resource>
             <reference>
@@ -1340,6 +1361,7 @@
             <name value="subscription-lotc"/>
             <description value="Example of Subscription resource (lotc)"/>
             <exampleBoolean value="true"/>
+            <groupingId value="subscription-examples"/>
         </resource>
         <resource>
             <reference>
@@ -1349,6 +1371,7 @@
             <name value="subscription-ostc"/>
             <description value="Example of Subscription resource (ostc)"/>
             <exampleBoolean value="true"/>
+            <groupingId value="subscription-examples"/>
         </resource>
         <resource>
             <reference>
@@ -1359,6 +1382,7 @@
             <description value="Example of eCR Task profile"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-task"/>
+            <groupingId value="transport-examples"/>
         </resource>
         <resource>
             <reference>
@@ -1458,7 +1482,7 @@
             <name value="Usage Warning"/>
             <description value="An extra warning about the correct use of the value set."/>
             <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles"/>
+            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
             <reference>
@@ -1535,40 +1559,40 @@
                 <reference value="StructureDefinition/ersd-triggering-valueset-library"/>
                 <display value="ERSDTriggeringValuesetLibrary"/>
             </reference>
-            <name value="ERSDTriggeringValuesetLibrary"/>
+            <name value="eRSD Triggering ValueSet Library"/>
             <description value="Defines the library containing the eRSD triggering value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses. "/>
             <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles"/>
+            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
             <reference>
                 <reference value="StructureDefinition/ersd-supplemental-valueset-library"/>
                 <display value="ERSDSupplementalValuesetLibrary"/>
             </reference>
-            <name value="ERSDSupplementalValuesetLibrary"/>
+            <name value="eRSD Supplemental ValueSet Library"/>
             <description value="Defines the library containing the eRSD supplemental value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses. "/>
             <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles"/>
+            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
             <reference>
                 <reference value="StructureDefinition/ersd-supplemental-bundle"/>
                 <display value="ERSDSupplementalBundle"/>
             </reference>
-            <name value="ERSDSupplementalBundle"/>
+            <name value="eRSD Supplemental Bundle"/>
             <description value="This Bundle profile represents an eRSD Supplemental Bundle. It contains the eRSD Supplements."/>
             <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles"/>
+            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
             <reference>
                 <reference value="StructureDefinition/ersd-specification-bundle"/>
                 <display value="ERSDSpecificationBundle"/>
             </reference>
-            <name value="ERSDSpecificationBundle"/>
+            <name value="eRSD Specification Bundle"/>
             <description value="This Bundle profile represents an eRSD Specification Bundle. It contains the eRSD Specification."/>
             <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles"/>
+            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <page>
             <nameUrl value="index.html"/>
@@ -1605,7 +1629,7 @@
                 </page>
                 <page>
                     <nameUrl value="electronic_reporting_and_surveillance_distribution_ersd_transaction_and_profiles.html"/>
-                    <title value="electronic Reporting and Surveillance Distribution (eRSD) Transaction and Profiles"/>
+                    <title value="Electronic Reporting and Surveillance Distribution (eRSD) Transaction and Profiles"/>
                     <generation value="markdown"/>
                     <page>
                         <nameUrl value="subscription_service.html"/>
@@ -1634,13 +1658,18 @@
                     <generation value="markdown"/>
                 </page>
                 <page>
+                    <nameUrl value="ersd_narrative_guidance.html"/>
+                    <title value="eRSD Narrative Guidance"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
                     <nameUrl value="ersd_jurisdictions_codesystem_query.html"/>
-                    <title value="ERSD Jurisdictions CodeSystem Query"/>
+                    <title value="eRSD Jurisdictions CodeSystem Query"/>
                     <generation value="markdown"/>
                 </page>
                 <page>
                     <nameUrl value="ersd_jurisdictions_codesystem_configuration.html"/>
-                    <title value="ERSD Jurisdictions CodeSystem Configuration"/>
+                    <title value="eRSD Jurisdictions CodeSystem Configuration"/>
                     <generation value="markdown"/>
                 </page>
                 <page>

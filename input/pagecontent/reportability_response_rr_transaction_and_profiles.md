@@ -41,7 +41,6 @@ The following profiles and extensions have been defined for the Reportability Re
 
 #### Extensions
 <ul>
-  <li><a href="StructureDefinition-ecr-organization-extension.html">eCR Organization Extension</a></li>
   <li><a href="StructureDefinition-rr-location-relevance-extension.html">Location Relevance Extension</a></li>
   <li><a href="StructureDefinition-eicr-initiation-type-extension.html">eICR Initiation Type Extension</a></li>
   <li><a href="StructureDefinition-rr-eicr-processing-status-extension.html">eICR Processing Status Extension</a></li>
@@ -58,4 +57,4 @@ The following profiles and extensions have been defined for the Reportability Re
 
 <table><tr><td><img src="FHIR RR Profile Hierarchy.png" /></td></tr></table>
 
-[Next Page - electronic Reporting and Surveillance Distribution (eRSD) Transaction and Profiles](electronic_reporting_and_surveillance_distribution_ersd_transaction_and_profiles.html)
+[Next Page - Electronic Reporting and Surveillance Distribution (eRSD) Transaction and Profiles](electronic_reporting_and_surveillance_distribution_ersd_transaction_and_profiles.html)
