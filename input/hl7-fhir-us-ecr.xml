@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="173"/>
-        <lastUpdated value="2020-11-12T22:09:19.390+00:00"/>
-        <source value="#jUoB7edNW70AGKCL"/>
+        <versionId value="177"/>
+        <lastUpdated value="2020-11-13T00:26:17.035+00:00"/>
+        <source value="#AGpcxBbtyj3rqrra"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.0.0"/>
@@ -60,11 +60,17 @@
         <grouping id="capability-statements">
             <name value="Capability Statements"/>
         </grouping>
+        <grouping id="us-public-health-examples">
+            <name value="US Public Health Examples"/>
+        </grouping>
         <grouping id="eicr-examples">
             <name value="eICR Examples"/>
         </grouping>
         <grouping id="reportability-response-examples">
             <name value="Reportability Response Examples"/>
+        </grouping>
+        <grouping id="ersd-examples">
+            <name value="eRSD Examples"/>
         </grouping>
         <resource>
             <reference>
@@ -75,6 +81,7 @@
             <description value="Example of US Public Health Organization profile (Acme Labs)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <resource>
             <reference>
@@ -85,6 +92,7 @@
             <description value="Example of eCR Message Bundle profile (Eve Everywoman, Zika)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-message-bundle"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
@@ -116,6 +124,7 @@
             <name value="eRSD Bundle Example: bundle-eRSD"/>
             <description value="Example of bundle-eRSD profile"/>
             <exampleBoolean value="true"/>
+            <groupingId value="ersd-examples"/>
         </resource>
         <resource>
             <reference>
@@ -135,6 +144,7 @@
             <name value="CapabilityStatement_eCR"/>
             <description value="This resource defines the expected capabilities for both client and server participating in eCR exchange"/>
             <exampleBoolean value="false"/>
+            <groupingId value="capability-statements"/>
         </resource>
         <resource>
             <reference>
@@ -144,6 +154,7 @@
             <name value="CapabilityStatement_eRSD_Client"/>
             <description value="This section describes the expected capabilities of a client consuming eRSD resources including the Reportable Conditions Trigger Codes (RCTC).&#xA;&#xA;#### Conformance requirements for an eRSD Client&#xA;&#xA;The eRSD Client **SHALL**:&#xA;&#xA;- Support fetching the eRSD Bundle using the supported RESTful interactions.&#xA;- Support processing PlanDefinition and ValueSet resources that are included in the Bundle.&#xA;&#xA;The eRSD Client **MAY**:&#xA;&#xA;- Support fetching and reading a Person resource.&#xA;- Support fetching and reading Subscription resources associated with a Person."/>
             <exampleBoolean value="false"/>
+            <groupingId value="capability-statements"/>
         </resource>
         <resource>
             <reference>
@@ -164,6 +175,7 @@
             <description value="Example of US Public Health profile (Salem Medical Center)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-location"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <resource>
             <reference>
@@ -201,7 +213,8 @@
                 <reference value="Condition/condition-eicr-eve-everywoman-common-cold"/>
                 <display value="condition-eicr-eve-everywoman-common-cold"/>
             </reference>
-            <name value="condition-eicr-eve-everywoman-common-cold"/>
+            <name value="eICR Condition example: Eve Everywoman- common cold"/>
+            <description value="Example of eICR Condition profile (Eve Everywoman: common cold)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
             <groupingId value="eicr-examples"/>
@@ -211,7 +224,8 @@
                 <reference value="Condition/condition-eicr-eve-everywoman-diabetes"/>
                 <display value="condition-eicr-eve-everywoman-diabetes"/>
             </reference>
-            <name value="condition-eicr-eve-everywoman-diabetes"/>
+            <name value="eICR Condition example: Eve Everywoman - diabetes"/>
+            <description value="Example of eICR Condition profile (Eve Everywoman: diabetes)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
             <groupingId value="eicr-examples"/>
@@ -221,7 +235,8 @@
                 <reference value="Condition/condition-eicr-eve-everywoman-pertussis"/>
                 <display value="condition-eicr-eve-everywoman-pertussis"/>
             </reference>
-            <name value="condition-eicr-eve-everywoman-pertussis"/>
+            <name value="eICR Condition example: Eve Everywoman - pertussis"/>
+            <description value="Example of eICR Condition profile (Eve Everywoman: pertussis)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
             <groupingId value="eicr-examples"/>
@@ -231,7 +246,8 @@
                 <reference value="Condition/condition-eicr-eve-everywoman-zika"/>
                 <display value="condition-eicr-eve-everywoman-zika"/>
             </reference>
-            <name value="condition-eicr-eve-everywoman-zika"/>
+            <name value="eICR Condition example: Eve Everywoman - zika"/>
+            <description value="Example of eICR Condition profile (Eve Everywoman: zika)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
             <groupingId value="eicr-examples"/>
@@ -244,7 +260,7 @@
             <name value="Date_Determined_Extension"/>
             <description value="The date a status or observation was determined (date of determination)."/>
             <exampleBoolean value="false"/>
-            <groupingId value="reportability-response-profiles"/>
+            <groupingId value="extensions"/>
         </resource>
         <resource>
             <reference>
@@ -254,7 +270,7 @@
             <name value="Date_Recorded_Extension"/>
             <description value="The date a status or observation was recorded (recorded date)."/>
             <exampleBoolean value="false"/>
-            <groupingId value="reportability-response-profiles"/>
+            <groupingId value="extensions"/>
         </resource>
         <resource>
             <reference>
@@ -379,7 +395,7 @@
             <name value="Eicr_Trigger_Code_Flag_Extension"/>
             <description value="This Extension profile represents a flag which, if it is present, indicates that the **target** reference represents a triggering event and caused the eCR to be generated. It contains the trigger code which is the same as the trigger code in the resource and is used to identify which code(s) in a resource that allows multiple trigger codes (e.g. US Core Observation Lab where a trigger code could be contained in either the code (lab test) or the value (lab test result) or in the case of a battery or panel of tests, in the hasMember as another US Core Observation Lab code or value). It also contains the RCTC OID and RCTC version of the value set from which the code was matched. &#xA;&#xA;It is available for use in the following places:&#xA;&#xA;* eICR Encounter&#xA;	* flags a code contained in Condition.code (eICR Condition) which is contained in Encounter.diagnosis (eICR Encounter) - diagnosis&#xA;* Problem Section entry&#xA;	* flags a code contained in Condition.code (eICR Condition) - diagnosis&#xA;* Plan of Treatment Section entry&#xA;	* flags a code contained in ServiceRequest.code (eICR ServiceRequest) - test being requested&#xA;* Results Section entry&#xA;	* flags codes contained in:&#xA;		* Observation.code (US Core Laboratory Result Observation Profile code) - test performed/battery or panel name&#xA;		* Observation.value (US Core Laboratory Result Observation Profile value) - test result&#xA;		* Observation.code referenced in containing Observation.hasMember (US Core Laboratory Result Observation Profile code) - member of panel test performed&#xA;		* Observation.value referenced in containing Observation.hasMember (US Core Laboratory Result Observation Profile value) - member of panel test result&#xA;* Medications Section entry&#xA;	* flags a code contained in MedicationAdministration.medicationCodeableConcept - medication&#xA;* Immunization Section entry&#xA;	* flags a code contained in US Core Immunization (Immunization.vaccineCode) - vaccine&#xA;* Procedures Section entry&#xA;	* flags a code contained in US Core Procedure (Procedure.code) - procedure&#xA;&#xA;"/>
             <exampleBoolean value="false"/>
-            <groupingId value="eicr-profiles"/>
+            <groupingId value="extensions"/>
         </resource>
         <resource>
             <reference>
@@ -387,8 +403,10 @@
                 <display value="encounter-eicr-eve-everywoman-completed-inpatient"/>
             </reference>
             <name value="US PH Encounter Example: encounter-eicr-eve-everywoman-completed-inpatient"/>
+            <description value="Example of US Public Health Encounter profile (Eve Everywoman: completed inpatient)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <resource>
             <reference>
@@ -396,33 +414,40 @@
                 <display value="encounter-eicr-eve-everywoman-current-inpatient"/>
             </reference>
             <name value="US PH Encounter Example: encounter-eicr-eve-everywoman-current-inpatient"/>
+            <description value="Example of US Public Health Encounter profile (Eve Everywoman: current inpatient)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <resource>
             <reference>
                 <reference value="Encounter/encounter-eicr-eve-everywoman-external-encounter"/></reference>
-            <name value="encounter-eicr-eve-everywoman-external-encounter"/>
+            <name value="US PH Encounter Example: encounter-eicr-eve-everywoman-external-encounter"/>
             <description value="Example of US Public Health Encounter profile (Eve Everywoman, external encounter)"/>
             <exampleBoolean value="true"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <resource>
             <reference>
                 <reference value="Encounter/encounter-eicr-eve-everywoman-external-historical"/>
                 <display value="encounter-eicr-eve-everywoman-external-historical"/>
             </reference>
-            <name value="encounter-eicr-eve-everywoman-external-historical"/>
+            <name value="US PH Encounter Example: encounter-eicr-eve-everywoman-external-historical"/>
+            <description value="Example of US Public Health Encounter profile (Eve Everywoman: external historical)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <resource>
             <reference>
                 <reference value="Encounter/encounter-eicr-eve-everywoman-outpatient"/>
                 <display value="encounter-eicr-eve-everywoman-outpatient"/>
             </reference>
-            <name value="encounter-eicr-eve-everywoman-outpatient"/>
+            <name value="US PH Encounter Example: encounter-eicr-eve-everywoman-outpatient"/>
+            <description value="Example of US Public Health Encounter profile (Eve Everywoman: outpatient)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <resource>
             <reference>
@@ -508,6 +533,7 @@
             <name value="eRSD Jurisdictions Example"/>
             <description value="This code system describes jurisdictions that require public health reporting."/>
             <exampleBoolean value="false"/>
+            <groupingId value="ersd-examples"/>
         </resource>
         <resource>
             <reference>
@@ -523,7 +549,7 @@
                 <reference value="StructureDefinition/ersd-supplemental-valueset"/>
                 <display value="eRSD Supplemental Value Set"/>
             </reference>
-            <name value="eRSD Supplemental Value Set"/>
+            <name value="eRSD Supplemental ValueSet"/>
             <description value="This profile describes the eRSD Supplemental value sets."/>
             <exampleBoolean value="false"/>
             <groupingId value="ersd-profiles"/>
@@ -533,7 +559,7 @@
                 <reference value="StructureDefinition/ersd-triggering-valueset"/>
                 <display value="eRSD Triggering Value Set"/>
             </reference>
-            <name value="eRSD Triggering Value Set"/>
+            <name value="eRSD Triggering ValueSet"/>
             <description value="This profile describes the eRSD Triggering value sets."/>
             <exampleBoolean value="false"/>
             <groupingId value="ersd-profiles"/>
@@ -571,7 +597,7 @@
                 <reference value="StructureDefinition/ersd-valueset"/>
                 <display value="Ersd_ValueSet"/>
             </reference>
-            <name value="eRSD ValueSet"/>
+            <name value="ersd ValueSet"/>
             <description value="This profile describes the eRSD value sets."/>
             <exampleBoolean value="false"/>
             <groupingId value="ersd-profiles"/>
@@ -664,7 +690,7 @@
                 <display value="FHIRHelpers"/>
             </reference>
             <name value="FHIR Helpers Library"/>
-            <description value="CQL FHIRHelpers Library."/>
+            <description value="CQL FHIR Helpers Library"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-executablelibrary"/>
         </resource>
@@ -674,15 +700,18 @@
                 <display value="Health Authority West"/>
             </reference>
             <name value="US PH Organization Example: Health Authority West"/>
+            <description value="Example of US Public Health Organization profile (Health Authority West)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <resource>
             <reference>
                 <reference value="Organization/organization-rr-responsible-agency-haw"/>
                 <display value="Health Authority West Responsible Agency"/>
             </reference>
-            <name value="Health Authority West Responsible Agency"/>
+            <name value="RR Responsible Agency Organization Example: Health Authority West Responsible Agency"/>
+            <description value="Example of RR Responsible Agency Organization profile (Health Authority West Responsible Agency)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization"/>
             <groupingId value="reportability-response-examples"/>
@@ -692,7 +721,8 @@
                 <reference value="Organization/organization-rr-routing-entity-haw"/>
                 <display value="Health Authority West Routing Entity"/>
             </reference>
-            <name value="Health Authority West Routing Entity"/>
+            <name value="RR Routing Entity Organization Example: Health Authority West Routing Entity"/>
+            <description value="Example of RR Routing Entity Organization Example profile (Health Authority West Routing Entity)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization"/>
             <groupingId value="reportability-response-examples"/>
@@ -702,7 +732,8 @@
                 <reference value="Organization/organization-rr-rules-authoring-agency-haw"/>
                 <display value="Health Authority West Rules Authoring Agency"/>
             </reference>
-            <name value="Health Authority West Rules Authoring Agency"/>
+            <name value="RR Rules Authoring Agency Organization Example: Health Authority West Rules Authoring Agency"/>
+            <description value="Example of RR Rules Authoring Agency profile (Health Authority West Rules Authoring Agency)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization"/>
             <groupingId value="reportability-response-examples"/>
@@ -713,6 +744,7 @@
                 <display value="immunization-ecr-pneumo"/>
             </reference>
             <name value="immunization-ecr-pneumo"/>
+            <description value="Example of US Core Immunization profile"/>
             <exampleBoolean value="true"/>
             <groupingId value="eicr-examples"/>
         </resource>
@@ -721,7 +753,7 @@
                 <reference value="Composition/composition-eicr-zika"/>
                 <display value="Initial Public Health Case Report"/>
             </reference>
-            <name value="Initial Public Health Case Report"/>
+            <name value="eICR Composition Example: Initial Public Health Case Report - Eve Everywoman, Zika"/>
             <description value="Example of eICR Composition profile (Eve Everywoman, Zika)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
@@ -732,8 +764,8 @@
                 <reference value="Composition/composition-eicr-pertussis-zika"/>
                 <display value="Initial Public Health Case Report"/>
             </reference>
-            <name value="Initial Public Health Case Report"/>
-            <description value="Example of eICR Composition profile (Eve Everywoman, Pertussis &amp; Zika)"/>
+            <name value="eICR Composition Example: Initial Public Health Case Report - Eve Everywoman, Pertussis and Zika"/>
+            <description value="Example of eICR Composition profile (Eve Everywoman, Pertussis and Zika)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
             <groupingId value="eicr-examples"/>
@@ -743,10 +775,11 @@
                 <reference value="Composition/composition-eicr-zika-manual-initiation"/>
                 <display value="Initial Public Health Case Report - Zika Example"/>
             </reference>
-            <name value="Initial Public Health Case Report - Zika Example"/>
-            <description value="Example of eICR Composition profile (Eve Everywoman, Zika)"/>
+            <name value="eICR Composition Example: Initial Public Health Case Report - Eve Everywoman, Zika, Manual Initiation"/>
+            <description value="Example of eICR Composition profile (Eve Everywoman, Zika, Manual Initiation)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
@@ -764,7 +797,7 @@
                 <display value="library-rctc"/>
             </reference>
             <name value="library-rctc"/>
-            <description value="This release includes code updates for the existing conditions and adds codes for Parkinson’s disease and 13 enteric conditions. Medication codes have also been added to this version."/>
+            <description value="RCTC Library"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-valueset-library"/>
         </resource>
@@ -773,16 +806,20 @@
                 <reference value="MedicationAdministration/medicationadministration-eve-everywoman-azithromycin"/>
                 <display value="medicationadministration-eve-everywoman-azithromycin"/>
             </reference>
-            <name value="medicationadministration-eve-everywoman-azithromycin"/>
+            <name value="MedicationAdministration Example: Eve Everywoman, azithromycin"/>
+            <description value="Example of MedicationAdministration resource (Eve Everywoman, azithromycin)"/>
             <exampleBoolean value="true"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
                 <reference value="MedicationAdministration/medicationadministration-eve-everywoman-naloxone-response"/>
                 <display value="medicationadministration-eve-everywoman-naloxone-response"/>
             </reference>
-            <name value="medicationadministration-eve-everywoman-naloxone-response"/>
+            <name value="MedicationAdministration Example: Eve Everywoman, naloxone response"/>
+            <description value="Example of MedicationAdministration resource with Therapeutic Medication Response extension (Eve Everywoman: naloxone response)"/>
             <exampleBoolean value="true"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
@@ -798,7 +835,8 @@
                 <reference value="MessageHeader/messageheader-ecr-requested-eicr"/>
                 <display value="messageheader-ecr-requested-eicr"/>
             </reference>
-            <name value="messageheader-ecr-requested-eicr"/>
+            <name value="eCR MessageHeader Example: Requested eICR"/>
+            <description value="Example of eCR MessageHeader profile (Requested eICR)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader"/>
         </resource>
@@ -807,9 +845,11 @@
                 <reference value="Observation/observation-characteristics-of-home-environment-eve-everywoman"/>
                 <display value="observation-characteristics-of-home-environment-eve-everywoman"/>
             </reference>
-            <name value="observation-characteristics-of-home-environment-eve-everywoman"/>
+            <name value="Characteristics of Home Environment Example: Eve Everywoman"/>
+            <description value="Example of Characteristics of Home Environment profile (Eve Everywoman)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/characteristics-of-home-environment"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
@@ -817,6 +857,7 @@
             <name value="observation-last-menstrual-period-eve-everywoman"/>
             <description value="Example of Last Menstrual Period (Eve Everywoman)"/>
             <exampleBoolean value="true"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
@@ -824,13 +865,17 @@
                 <display value="observation-odh-past-or-present-job-eve-everywoman"/>
             </reference>
             <name value="observation-odh-past-or-present-job-eve-everywoman"/>
+            <description value="Example of ODH Past or Present Job profile (Eve Everywoman)"/>
             <exampleBoolean value="true"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
                 <reference value="Observation/observation-odh-usual-work-eve-everywoman"/></reference>
             <name value="observation-odh-usual-work-eve-everywoman"/>
+            <description value="Example of ODH Usual Work profile (Eve Everywoman)"/>
             <exampleBoolean value="true"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
@@ -838,22 +883,27 @@
             <name value="observation-postpartum-status-eve-everywoman"/>
             <description value="Example of Postpartum Status profile (Eve Everywoman)"/>
             <exampleBoolean value="true"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
                 <reference value="Observation/observation-pregnancy-outcome-eve-everywoman"/></reference>
-            <name value="observation-pregnancy-outcome-eve-everywoman"/>
+            <name value="Pregnancy Outcome Observation Example: Eve Everywoman"/>
+            <description value="Example of Pregnancy Outcome Observation profile (Eve Everywoman)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-outcome-observation"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
                 <reference value="Observation/observation-pregnancy-status-eve-everywoman"/>
                 <display value="observation-pregnancy-status-eve-everywoman"/>
             </reference>
-            <name value="observation-pregnancy-status-eve-everywoman"/>
+            <name value="Pregnancy Status Observation Example: Eve Everywoman"/>
+            <description value="Example of Pregnancy Status Observation profile (Eve Everywoman)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
@@ -861,8 +911,10 @@
                 <display value="observation-rr-eicr-processing-status"/>
             </reference>
             <name value="observation-rr-eicr-processing-status"/>
+            <description value="Example of RR eCIR Processing Status Observation profile"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation"/>
+            <groupingId value="reportability-response-examples"/>
         </resource>
         <resource>
             <reference>
@@ -870,8 +922,10 @@
                 <display value="observation-rr-eicr-processing-status-reason"/>
             </reference>
             <name value="observation-rr-eicr-processing-status-reason"/>
+            <description value="Example of RR eICR Processing Status Reason Observation profile"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation"/>
+            <groupingId value="reportability-response-examples"/>
         </resource>
         <resource>
             <reference>
@@ -879,8 +933,10 @@
                 <display value="observation-travel-history-eve-everywoman-1999"/>
             </reference>
             <name value="observation-travel-history-eve-everywoman-1999"/>
+            <description value="Example of Travel History Observation profile (Eve Everywoman)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-observation"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
@@ -888,8 +944,10 @@
                 <display value="observation-travel-history-eve-everywoman-201610"/>
             </reference>
             <name value="observation-travel-history-eve-everywoman-201610"/>
+            <description value="Example of Travel History Observation profile (Eve Everywoman - October 2016)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-observation"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
@@ -897,8 +955,10 @@
                 <display value="observation-travel-history-eve-everywoman-201801"/>
             </reference>
             <name value="observation-travel-history-eve-everywoman-201801"/>
+            <description value="Example of Travel History Observation profile (Eve Everywoman - January 2018)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-observation"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
@@ -908,6 +968,7 @@
             <name value="observation-us-core-results-eve-everywoman-lymphocytes"/>
             <description value="Example of US Core Results profile (Eve Everywoman, lymphocytes)"/>
             <exampleBoolean value="true"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
@@ -915,25 +976,31 @@
                 <display value="observation-us-core-results-eve-everywoman-pertussis"/>
             </reference>
             <name value="observation-us-core-results-eve-everywoman-pertussis"/>
+            <description value="Example of US Core Results profile (Eve Everywoman: Pertussis)"/>
             <exampleBoolean value="true"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
                 <reference value="Organization/organization-ecr-salem-medical-center"/>
                 <display value="organization-ecr-salem-medical-center"/>
             </reference>
-            <name value="organization-ecr-salem-medical-center"/>
+            <name value="US PH Organization Example: Salem Medical Center"/>
+            <description value="Example of US Public Health Organization profile (Salem Medical Center)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <resource>
             <reference>
                 <reference value="Patient/patient-ecr-eve-everywoman"/>
-                <display value="Patient Eve L Everywoman"/>
+                <display value="Patient Eve Everywoman"/>
             </reference>
-            <name value="Patient Eve L Everywoman"/>
+            <name value="US PH Patient Example: Eve Everywoman"/>
+            <description value="Example of US Public Health Patient profile (Eve Everywoman)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <resource>
             <reference>
@@ -941,6 +1008,7 @@
                 <display value="PlanDefinition_eRSD_Instance"/>
             </reference>
             <name value="PlanDefinition_eRSD_Instance"/>
+            <description value="Instance of eRSD PlanDefinition profile"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
         </resource>
@@ -959,15 +1027,18 @@
                 <reference value="Practitioner/practitioner-us-core-henry-seven"/>
                 <display value="Practitioner Seven Henry"/>
             </reference>
-            <name value="Practitioner Seven Henry"/>
+            <name value="US Core Practitioner Example: Henry Seven"/>
+            <description value="Example of US Core Practitioner (Henry Seven)"/>
             <exampleBoolean value="true"/>
         </resource>
         <resource>
             <reference>
                 <reference value="PractitionerRole/practitionerrole-henry-seven"/></reference>
-            <name value="practitionerrole-henry-seven"/>
+            <name value="US PH PractitionerRole Example: Henry Seven"/>
+            <description value="Example of US Public Health PractitionerRole profile (Henry Seven)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-practitionerrole"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <resource>
             <reference>
@@ -1017,15 +1088,18 @@
             <name value="Relates To Extension"/>
             <description value="This Extension profile represents relationships with other structures that already exist"/>
             <exampleBoolean value="false"/>
+            <groupingId value="extensions"/>
         </resource>
         <resource>
             <reference>
                 <reference value="PlanDefinition/plandefinition-rr-relevant-reportable-condition"/>
                 <display value="ReportableConditionDetermination"/>
             </reference>
-            <name value="ReportableConditionDetermination"/>
+            <name value="RR Relevant Reportable Condition PlanDefinition Example"/>
+            <description value="Example of RR Relevant Reportable Condition PlanDefinition profile"/>
             <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
+            <groupingId value="reportability-response-examples"/>
         </resource>
         <resource>
             <reference>
@@ -1105,7 +1179,7 @@
             <name value="RR_Eicr_Receipt_Time_Extension"/>
             <description value="This Extension profile represents the date and time of eICR receipt"/>
             <exampleBoolean value="false"/>
-            <groupingId value="reportability-response-profiles"/>
+            <groupingId value="extensions"/>
         </resource>
         <resource>
             <reference>
@@ -1115,7 +1189,7 @@
             <name value="RR_External_Resource_Type_Extension"/>
             <description value="This Extension profile represents the type/category of one or more external resources."/>
             <exampleBoolean value="false"/>
-            <groupingId value="reportability-response-profiles"/>
+            <groupingId value="extensions"/>
         </resource>
         <resource>
             <reference>
@@ -1125,7 +1199,7 @@
             <name value="RR_Location_Relevance_Extension"/>
             <description value="This Extension profile represents a code indicating whether the responsible PHA is relevant because of the patient's home address, the provider facility address, or both."/>
             <exampleBoolean value="false"/>
-            <groupingId value="reportability-response-profiles"/>
+            <groupingId value="extensions"/>
         </resource>
         <resource>
             <reference>
@@ -1135,7 +1209,7 @@
             <name value="RR_Priority_Extension"/>
             <description value="This Extension profile represents the priority given to the whole communication or one or more external resources."/>
             <exampleBoolean value="false"/>
-            <groupingId value="reportability-response-profiles"/>
+            <groupingId value="extensions"/>
         </resource>
         <resource>
             <reference>
@@ -1165,7 +1239,7 @@
             <name value="RR_Responsible_Agency_Organization_Extension"/>
             <description value="This extension represents an RR Responsible Agency Organization"/>
             <exampleBoolean value="false"/>
-            <groupingId value="reportability-response-profiles"/>
+            <groupingId value="extensions"/>
         </resource>
         <resource>
             <reference>
@@ -1185,7 +1259,7 @@
             <name value="RR_Routing_Entity_Organization_Extension"/>
             <description value="This extension represents an RR Routing Entity Organization"/>
             <exampleBoolean value="false"/>
-            <groupingId value="reportability-response-profiles"/>
+            <groupingId value="extensions"/>
         </resource>
         <resource>
             <reference>
@@ -1205,7 +1279,7 @@
             <name value="RR_Rules_Authoring_Agency_Organization_Extension"/>
             <description value="This extension represents an RR Rules Authoring Agency Organization"/>
             <exampleBoolean value="false"/>
-            <groupingId value="reportability-response-profiles"/>
+            <groupingId value="extensions"/>
         </resource>
         <resource>
             <reference>
@@ -1222,7 +1296,7 @@
                 <reference value="StructureDefinition/runtime-valueset"/>
                 <display value="Runtime Value Set"/>
             </reference>
-            <name value="Runtime Value Set"/>
+            <name value="Runtime ValueSet"/>
             <description value="This profile describes value sets containing runtime codes."/>
             <exampleBoolean value="false"/>
             <groupingId value="ersd-profiles"/>
@@ -1232,18 +1306,22 @@
                 <reference value="ServiceRequest/servicerequest-eicr-eve-everywoman-zika"/>
                 <display value="servicerequest-eicr-eve-everywoman-zika"/>
             </reference>
-            <name value="servicerequest-eicr-eve-everywoman-zika"/>
+            <name value="eICR ServiceRequest Example: Eve Everywoman - Zika"/>
+            <description value="Example of eICR ServiceRequest profile (Eve Everywoman - zika"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-servicerequest"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
                 <reference value="ServiceRequest/servicerequest-eicr-zika"/>
                 <display value="servicerequest-eicr-zika"/>
             </reference>
-            <name value="servicerequest-eicr-zika"/>
+            <name value="eICR ServiceRequest Example"/>
+            <description value="Example of eICR ServiceRequest profile"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-servicerequest"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
@@ -1251,6 +1329,7 @@
                 <display value="subscription-dxtc"/>
             </reference>
             <name value="subscription-dxtc"/>
+            <description value="Example of Subscription resource (dxtc)"/>
             <exampleBoolean value="true"/>
         </resource>
         <resource>
@@ -1259,6 +1338,7 @@
                 <display value="subscription-lotc"/>
             </reference>
             <name value="subscription-lotc"/>
+            <description value="Example of Subscription resource (lotc)"/>
             <exampleBoolean value="true"/>
         </resource>
         <resource>
@@ -1267,6 +1347,7 @@
                 <display value="subscription-ostc"/>
             </reference>
             <name value="subscription-ostc"/>
+            <description value="Example of Subscription resource (ostc)"/>
             <exampleBoolean value="true"/>
         </resource>
         <resource>
@@ -1275,6 +1356,7 @@
                 <display value="task-ecr-ehr-requested-eicr"/>
             </reference>
             <name value="task-ecr-ehr-requested-eicr"/>
+            <description value="Example of eCR Task profile"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-task"/>
         </resource>
@@ -1373,7 +1455,7 @@
                 <reference value="StructureDefinition/ersd-usageWarning"/>
                 <display value="Usage Warning"/>
             </reference>
-            <name value="eRSD Usage Warning"/>
+            <name value="Usage Warning"/>
             <description value="An extra warning about the correct use of the value set."/>
             <exampleBoolean value="false"/>
             <groupingId value="ersd-profiles"/>
@@ -1442,9 +1524,51 @@
                 <reference value="Organization/organization-ecr-ymca-center"/>
                 <display value="YMCA"/>
             </reference>
-            <name value="YMCA"/>
+            <name value="US PH Organization Example: YMCA"/>
+            <description value="Example of US Public Health Organization profile"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
+            <groupingId value="us-public-health-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ersd-triggering-valueset-library"/>
+                <display value="ERSDTriggeringValuesetLibrary"/>
+            </reference>
+            <name value="ERSDTriggeringValuesetLibrary"/>
+            <description value="Defines the library containing the eRSD triggering value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses. "/>
+            <exampleBoolean value="false"/>
+            <groupingId value="ersd-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ersd-supplemental-valueset-library"/>
+                <display value="ERSDSupplementalValuesetLibrary"/>
+            </reference>
+            <name value="ERSDSupplementalValuesetLibrary"/>
+            <description value="Defines the library containing the eRSD supplemental value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses. "/>
+            <exampleBoolean value="false"/>
+            <groupingId value="ersd-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ersd-supplemental-bundle"/>
+                <display value="ERSDSupplementalBundle"/>
+            </reference>
+            <name value="ERSDSupplementalBundle"/>
+            <description value="This Bundle profile represents an eRSD Supplemental Bundle. It contains the eRSD Supplements."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="ersd-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ersd-specification-bundle"/>
+                <display value="ERSDSpecificationBundle"/>
+            </reference>
+            <name value="ERSDSpecificationBundle"/>
+            <description value="This Bundle profile represents an eRSD Specification Bundle. It contains the eRSD Specification."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="ersd-profiles"/>
         </resource>
         <page>
             <nameUrl value="index.html"/>
