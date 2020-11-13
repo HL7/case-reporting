@@ -2,7 +2,7 @@
 
 ### electronic Reporting and Surveillance Distribution (eRSD) Transaction and Profiles
 
-The eRSD transaction includes a constrained FHIR PlanDefinition resource profile, a family of actions, and a [FHIR Subscription service](subscription_service.html). It supports the distribution of reporting guidance and parameters, trigger code value sets, and more complex reporting rules and clinician / reporter support resources. This work seeks to align with developing public health guidelines that cover the same conditions. The PlanDefinition includes guidance for the overall orchestration of electronic case reporting. Each member of the family of actions (Match Trigger, Create eICR, Periodic Update eICR, Close Out eICR, Validate eICR, Route and Send eICR) aligns with what may be different healthcare information systems or modules involved in reporting. The narrative elements of this profile will be used to help structure and guide implementation until EHRs have the ability to automatically consume them. 
+The eRSD transaction includes a constrained FHIR PlanDefinition resource profile, a family of actions, and a [FHIR Subscription service](subscription_service.html). It supports the distribution of reporting guidance and parameters, trigger code value sets, and more complex reporting rules and clinician / reporter support resources. This work seeks to align with developing public health guidelines that cover the same conditions. The PlanDefinition includes guidance for the overall orchestration of electronic case reporting. Each member of the family of actions (Match Trigger, Create eICR, Periodic Update eICR, Close Out eICR, Validate eICR, Route and Send eICR) aligns with what may be different healthcare information systems or modules involved in reporting. The narrative elements of this profile will be used to help structure and guide implementation until EHRs have the ability to automatically consume them.
 
 Triggering value sets and metadata can be used for EHR implementations whether they are FHIR-based or not.
 
@@ -12,7 +12,7 @@ The ExecutableValueSet profile provides support for including a persisted point-
 
 The Create eICR action involves the marshaling of FHIR resources needed to create the eICR profile included in this standard and the Route and Send eICR action involves the transmission of the eICR to either the APHL AIMS Platform, a Public Health Agency (PHA), or a Health information Exchange or Health Data Network on the way to a PHA.
 
-The [FHIR Subscription service](subscription_service.html) (also see Subscription examples on the <a href="artifacts.html#subscription-examples">Artifacts Index page</a>) supports public health needs for the routine and emergent distribution of the eRSD. The Subscription does not require FHIR implementation on the receiving (EHR) end of the transaction, but can provide XML or JSON formats via RESTful query or proactive notification channels. 
+The [FHIR Subscription service](subscription_service.html) (also see Subscription examples on the <a href="artifacts.html#subscription-examples">Artifacts Index page</a>) supports public health needs for the routine and emergent distribution of the eRSD. The Subscription does not require FHIR implementation on the receiving (EHR) end of the transaction, but can provide XML or JSON formats via RESTful query or proactive notification channels.
 
 ### Overview
 
@@ -37,7 +37,23 @@ The current PlanDefinition uses ECA Rules, we propose using Workflow Definition 
 5. Introduction of two different "loops" in the structure, one for the reportability check, and one for the creation and send of reports for a suspected reportable event.
 6. All logic for determining reportability of an event is expressed in a single library associated with the PlanDefinition.
 
+#### Profiles
+<ul>
+  <li><a href="StructureDefinition-ersd-plandefinition.html">eRSD PlanDefinition</a></li>
+  <li><a href="StructureDefinition-ersd-specification-bundle.html">eRSD Specification Bundle</a></li>
+  <li><a href="StructureDefinition-ersd-supplemental-bundle.html">eRSD Supplemental Bundle</a></li>
+  <li><a href="StructureDefinition-ersd-supplemental-valueset.html">eRSD Supplemental ValueSet</a></li>  
+  <li><a href="StructureDefinition-ersd-supplemental-valueset-library.html">eRSD Supplemental ValueSet Library</a></li>  
+  <li><a href="StructureDefinition-ersd-triggering-valueset.html">eRSD Triggering ValueSet</a></li>
+  <li><a href="StructureDefinition-ersd-triggering-valueset-library.html">eRSD Triggering ValueSet Library</a></li>
+  <li><a href="StructureDefinition-ersd-valueset-library.html">eRSD ValueSet Library</a></li>
+  <li><a href="StructureDefinition-ersd-valueset.html">eRSD ValueSet</a></li>
+</ul>
+
 #### Extensions
+<ul>
+  <li><a href="StructureDefinition-ersd-usageWarning.html">eRSD Usage Warning Extension</a></li>
+</ul>
 
 *  When applying the eRSD each action may be represented using a Task, but in order to do this there is a need to relate the Tasks in some temporal way.  relativeTo is a complex extension on the StructureDefinition Task to reference the resource type, path to the timing element of that resource, and optional offset duration.  This would allow us to create a task 24 hours after the Encounter begins for example.
 
@@ -49,13 +65,5 @@ The current PlanDefinition uses ECA Rules, we propose using Workflow Definition 
 
 <a href="rule_filter_generation.html">Rule Filter Generation</a>
 
-<ul>
-  <li><a href="StructureDefinition-ersd-plandefinition.html">eRSD PlanDefinition</a></li>
-</ul>
-
-<ul>
-  <li><a href="StructureDefinition-ersd-valueset-library.html">eRSD ValueSet Library</a></li>
-	<li><a href="StructureDefinition-ersd-valueset.html">eRSD ValueSet</a></li>
-</ul>
 
 [Next Page - Subscription Service](subscription_service.html)
