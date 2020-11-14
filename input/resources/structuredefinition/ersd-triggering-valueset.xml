@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="ersd-triggering-valueset"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2020-11-14T03:13:22.493+00:00"/>
-        <source value="#Xp4YkBaIAxmVZOLf"/>
+        <versionId value="4"/>
+        <lastUpdated value="2020-11-14T03:39:42.581+00:00"/>
+        <source value="#VNLxc2iJcAIB1uDK"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-triggering-valueset"/>
     <version value="1.0.0"/>
@@ -24,7 +24,6 @@
     <type value="ValueSet"/>
     <baseDefinition value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset"/>
     <derivation value="constraint"/>
-    
     <differential>
         <element id="ValueSet">
             <path value="ValueSet"/>
@@ -52,16 +51,19 @@
             <max value="1"/>
             <fixedCoding>
                 <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ersd-usage-context"/>
-                <code value="triggering"/>
-                <display value="Triggering"/>
+                <code value="reporting"/>
+                <display value="Reporting"/>
             </fixedCoding>
         </element>
-        <element id="ValueSet.useContext:reportingContext.valueCodeableConcept">
-            <path value="ValueSet.useContext.valueCodeableConcept"/>
+        <element id="ValueSet.useContext:reportingContext.value[x]">
+            <path value="ValueSet.useContext.value[x]"/>
             <short value="value set useContext"/>
             <definition value="The eRSD use context of the value set."/>
             <min value="1"/>
             <max value="1"/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
             <fixedCodeableConcept>
                 <coding>
                     <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ersd-usage-context"/>
@@ -69,7 +71,6 @@
                     <display value="Triggering"/>
                 </coding>
             </fixedCodeableConcept>
-            <mustSupport value="true"/>
         </element>
     </differential>
 </StructureDefinition>

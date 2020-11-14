@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="ersd-supplemental-valueset"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2020-11-14T03:10:25.274+00:00"/>
-        <source value="#e8HZ7Mzw8rzB5x4F"/>
+        <versionId value="3"/>
+        <lastUpdated value="2020-11-14T03:40:49.194+00:00"/>
+        <source value="#zWCqhluk4vx6fVax"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-supplemental-valueset"/>
     <version value="1.0.0"/>
@@ -24,7 +24,6 @@
     <type value="ValueSet"/>
     <baseDefinition value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset"/>
     <derivation value="constraint"/>
-    
     <differential>
         <element id="ValueSet">
             <path value="ValueSet"/>
@@ -57,12 +56,15 @@
                 <display value="Reporting"/>
             </fixedCoding>
         </element>
-        <element id="ValueSet.useContext:reportingContext.valueCodeableConcept">
-            <path value="ValueSet.useContext.valueCodeableConcept"/>
+        <element id="ValueSet.useContext:reportingContext.value[x]">
+            <path value="ValueSet.useContext.value[x]"/>
             <short value="value set useContext"/>
             <definition value="The eRSD use context of the value set."/>
             <min value="1"/>
             <max value="1"/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
             <fixedCodeableConcept>
                 <coding>
                     <system value="http://hl7.org/fhir/us/ecr/CodeSystem/ersd-usage-context"/>
