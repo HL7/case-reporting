@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-composition"/>
     <meta>
-        <versionId value="18"/>
-        <lastUpdated value="2020-11-13T04:52:13.028+00:00"/>
-        <source value="#zR0YoordLnepih3m"/>
+        <versionId value="24"/>
+        <lastUpdated value="2020-11-14T04:16:22.477+00:00"/>
+        <source value="#vw0ss28Hr6Cocksd"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
     <version value="1.0.0"/>
@@ -26,6 +26,7 @@
     <type value="Composition"/>
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Composition"/>
     <derivation value="constraint"/>
+    
     <differential>
         <element id="Composition">
             <path value="Composition"/>
@@ -69,6 +70,7 @@
             <path value="Composition.extension"/>
             <sliceName value="extensionEICRInitiationType"/>
             <short value="Initial Case Report Initiation Type"/>
+            <definition value="When set to &quot;PHC1464: Manually Initiated eICR&quot;, indicates that this document is manually initiated. When set to &quot;PHC2235: Alternately Initiated eICR&quot;, indicates that this eICR document was initiated by automated process and is intended to force reporting to the responsible Public Health Agency (PHA) for the jurisdiction of care. Unlike eICRs manually initiated by a provider, which are force reported to all relevant jurisdictions, PHC2235 will be sent to, and only to, the PHA of the jurisdiction of care. If a reportable condition is found by public health decision support then the alternately initiated eICR may also be reported to the jurisdiction of residence PHA."/>
             <min value="0"/>
             <max value="1"/>
             <type>
@@ -85,6 +87,7 @@
             <path value="Composition.extension"/>
             <sliceName value="extensionEICRInitiationReason"/>
             <short value="Initial Case Report Initiation Reason"/>
+            <definition value="An explanation for the manual or alternate initiation of the eICR."/>
             <min value="0"/>
             <max value="*"/>
             <type>
@@ -113,6 +116,8 @@
         </element>
         <element id="Composition.type">
             <path value="Composition.type"/>
+            <short value="Public Health Case Report"/>
+            <definition value="The type of this Composition is a Public Health Case Report"/>
             <patternCodeableConcept>
                 <coding>
                     <system value="http://loinc.org"/>
@@ -125,25 +130,10 @@
                 <map value="[eICR R2 STU2] ClinicalDocument/code"/>
             </mapping>
         </element>
-        <element id="Composition.category">
-            <path value="Composition.category"/>
-            <short value="Manual/Alternate Initiation"/>
-            <definition value="When code is set to &quot;PHC1464: Manually Initiated eICR&quot;, this flags that this eICR is manually initiated. When the code is set to &quot;PHC2235: Alternately Initiated eICR&quot;, it indicates that this eICR was initiated by automated process and is intended to force reporting to the responsible Public Health Agency (PHA) for the jurisdiction of care. Unlike eICRs manually initiated by a provider, which are force reported to all relevant jurisdictions, PHC2235 will be sent to, and only to, the PHA of the jurisdiction of care. If a reportable condition is found by public health decision support then the alternately initiated eICR may also be reported to the jurisdiction of residence PHA."/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <binding>
-                <strength value="required"/>
-                <valueSet value="http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.113883.10.20.15.2.5.11"/>
-            </binding>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] ClinicalDocument/documentationOf/serviceEvent/code"/>
-                <comment value="Alternate/Manual Initiation Type"/>
-            </mapping>
-        </element>
         <element id="Composition.subject">
             <path value="Composition.subject"/>
             <short value="Patient"/>
+            <definition value="The subject of this Composition is the patient."/>
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
@@ -184,6 +174,7 @@
         </element>
         <element id="Composition.author">
             <path value="Composition.author"/>
+            <short value="The author(s) of the eICR"/>
             <definition value="It is possible to have multiple authors - especially in the case where the default author is the organization. For public health reporting this could contain the contact details for the Infection Control Professional (ICP) specific to the condition being reported on. If the main author of the document is not a person, it is recommended to have an additional person author contact who is specific for a disease for follow-up requirements. This person could be the ICP. Where a trigger occurs outside of an encounter the author will represent the Provider and Facility for reporting purposes."/>
             <max value="*"/>
             <type>
@@ -315,7 +306,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceHistoryOfPresentIllnessSection"/>
             <short value="History of Present Illness Section"/>
-            <definition value="History of Present Illness Section"/>
+            <definition value="The History of Present Illness section describes the history related to the reason for the encounter. It contains the historical details leading up to and pertaining to the patient’s current complaint or reason for seeking medical care."/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -362,7 +353,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceReviewOfSystemsSection"/>
             <short value="Review of Systems Section"/>
-            <definition value="Review of Systems Section"/>
+            <definition value="The Review of Systems Section contains a relevant collection of symptoms and functions systematically gathered by a clinician. It includes symptoms the patient is currently experiencing, some of which were not elicited during the history of present illness, as well as a potentially large number of pertinent negatives, for example, symptoms that the patient denied experiencing."/>
             <min value="0"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -409,7 +400,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceProblemSection"/>
             <short value="Problem Section"/>
-            <definition value="Problem Section"/>
+            <definition value="This section lists and describes all relevant clinical problems at the time the document is generated. At a minimum, all pertinent current and historical problems should be listed. Overall health status may be represented in this section."/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -578,7 +569,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceMedicationsAdministeredSection"/>
             <short value="Medications Administered Section"/>
-            <definition value="Medications Administered Section"/>
+            <definition value="The Medications Administered Section defines medications administered during the encounter."/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -672,7 +663,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceResultsSection"/>
             <short value="Results Section"/>
-            <definition value="Results Section"/>
+            <definition value="The Results Section contains observations of results generated by laboratories, imaging procedures, and other procedures. The scope includes observations such as hematology, chemistry, serology, virology, toxicology, microbiology, plain x-ray, ultrasound, CT, MRI, angiography, echocardiography, nuclear medicine, pathology, and procedure observations. The section often includes notable results such as abnormal values or relevant trends, and could contain all results for the period of time being documented.&#xA;&#xA;Laboratory results are typically generated by laboratories providing analytic services in areas such as chemistry, hematology, serology, histology, cytology, anatomic pathology, microbiology, and/or virology. These observations are based on analysis of specimens obtained from the patient and submitted to the laboratory. Imaging results are typically generated by a clinician reviewing the output of an imaging procedure, such as where a cardiologist reports the left ventricular ejection fraction based on the review of a cardiac echocardiogram.&#xA;&#xA;Procedure results are typically generated by a clinician to provide more granular information about component observations made during a procedure, such as where a gastroenterologist reports the size of a polyp observed during a colonoscopy.&#xA;"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -765,7 +756,7 @@
             <path value="Composition.section"/>
             <sliceName value="slicePlanOfTreatmentSection"/>
             <short value="Plan of Treatment Section"/>
-            <definition value="Plan of Treatment Section"/>
+            <definition value="This section, contains data that define pending orders, interventions, encounters, services, and procedures for the patient. It is limited to prospective, unfulfilled, or incomplete orders and requests only. All active, incomplete, or pending orders, appointments, referrals, procedures, services, or any other pending event of clinical significance to the current care of the patient should be listed. "/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -777,7 +768,8 @@
         </element>
         <element id="Composition.section:slicePlanOfTreatmentSection.code">
             <path value="Composition.section.code"/>
-            <short value="Plan of Treatment"/>
+            <short value="Plan of Treatment code"/>
+            <definition value="Plan of Treatment code"/>
             <min value="1"/>
             <patternCodeableConcept>
                 <coding>
@@ -794,6 +786,8 @@
         </element>
         <element id="Composition.section:slicePlanOfTreatmentSection.text">
             <path value="Composition.section.text"/>
+            <short value="Plan of Treatment narrative"/>
+            <definition value="Plan of Treatment narrative"/>
             <min value="1"/>
             <mustSupport value="true"/>
             <mapping>
@@ -895,7 +889,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceImmunizationsSection"/>
             <short value="Immunizations Section"/>
-            <definition value="Immunizations Section"/>
+            <definition value="The Immunizations Section defines a patient's current immunization status and pertinent immunization history. The primary use case for the Immunization Section is to enable communication of a patient's immunization status. The section should include current immunization status, and may contain the entire immunization history that is relevant to the period of time being summarized."/>
             <max value="1"/>
             <mustSupport value="true"/>
             <isModifier value="false"/>
@@ -906,7 +900,8 @@
         </element>
         <element id="Composition.section:sliceImmunizationsSection.code">
             <path value="Composition.section.code"/>
-            <short value="Immunizations"/>
+            <short value="Immunizations code"/>
+            <definition value="Immunizations code"/>
             <min value="1"/>
             <patternCodeableConcept>
                 <coding>
@@ -923,6 +918,8 @@
         </element>
         <element id="Composition.section:sliceImmunizationsSection.text">
             <path value="Composition.section.text"/>
+            <short value="Immunizations narrative"/>
+            <definition value="Immunizations narrative"/>
             <min value="1"/>
             <mustSupport value="true"/>
             <mapping>
@@ -1085,7 +1082,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceVitalSignsSection"/>
             <short value="Vital Signs Section"/>
-            <definition value="Vital Signs Section"/>
+            <definition value="The Vital Signs Section contains relevant vital signs for the eICR. The section should include notable vital signs such as the most recent, maximum and/or minimum, baseline, or relevant trends. Vital signs are represented in the same way as other results, but are aggregated into their own section to follow clinical conventions."/>
             <max value="1"/>
             <mustSupport value="true"/>
             <isModifier value="false"/>
@@ -1096,7 +1093,8 @@
         </element>
         <element id="Composition.section:sliceVitalSignsSection.code">
             <path value="Composition.section.code"/>
-            <short value="Vital Signs"/>
+            <short value="Vital Signs code"/>
+            <definition value="Vital Signs code"/>
             <min value="1"/>
             <patternCodeableConcept>
                 <coding>
@@ -1113,6 +1111,8 @@
         </element>
         <element id="Composition.section:sliceVitalSignsSection.text">
             <path value="Composition.section.text"/>
+            <short value="Vital Signs narrative"/>
+            <definition value="Vital Signs narrative"/>
             <min value="1"/>
             <mustSupport value="true"/>
             <mapping>
@@ -1152,7 +1152,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceSocialHistorySection"/>
             <short value="Social History Section"/>
-            <definition value="Social History Section"/>
+            <definition value="This section contains social history data that influence a patient’s physical, psychological or emotional health such as occupation, home environment, travel history, and disability status."/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -1262,7 +1262,8 @@
         <element id="Composition.section:sliceSocialHistorySection.entry:sliceDisabilityStatus">
             <path value="Composition.section.entry"/>
             <sliceName value="sliceDisabilityStatus"/>
-            <short value="Disabiltiy Status"/>
+            <short value="Disabiltiy Status entry"/>
+            <definition value="Disability status entry"/>
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/disability-status"/>
@@ -1272,6 +1273,8 @@
         <element id="Composition.section:sliceSocialHistorySection.entry:sliceExposureInformation">
             <path value="Composition.section.entry"/>
             <sliceName value="sliceExposureInformation"/>
+            <short value="Exposure Information entry"/>
+            <definition value="Exposure Information entry"/>
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-exposure-information"/>
@@ -1281,7 +1284,7 @@
             <path value="Composition.section"/>
             <sliceName value="slicePregnancySection"/>
             <short value="Pregnancy Section"/>
-            <definition value="Pregnancy Section"/>
+            <definition value="The Pregnancy Section contains a patient's current and past pregnancy history information."/>
             <max value="1"/>
             <mustSupport value="true"/>
             <mapping>
@@ -1291,7 +1294,8 @@
         </element>
         <element id="Composition.section:slicePregnancySection.code">
             <path value="Composition.section.code"/>
-            <short value="Pregnancy summary Document"/>
+            <short value="Pregnancy summary Document code"/>
+            <definition value="Pregnancy summary Document code"/>
             <min value="1"/>
             <patternCodeableConcept>
                 <coding>
@@ -1307,6 +1311,8 @@
         </element>
         <element id="Composition.section:slicePregnancySection.text">
             <path value="Composition.section.text"/>
+            <short value="Pregnancy summary Document narrative"/>
+            <definition value="Pregnancy summary Document narrative"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -1387,7 +1393,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceReportabilityResponseInformationSection"/>
             <short value="Reportability Response Information Section"/>
-            <definition value="Reportability Response Information Section"/>
+            <definition value="Each Reportability Response Information Section contains information about a Reportability Response that was generated in response to this eICR."/>
             <min value="0"/>
             <max value="1"/>
             <mustSupport value="true"/>
