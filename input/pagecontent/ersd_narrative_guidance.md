@@ -15,7 +15,7 @@ A diagram of this workflow is shown below.
 
 ### ERSDPlanDefinitionActions
 
-The eRSD PlanDefintion profile defines the following actions:
+The eRSD PlanDefinition profile defines the following actions:
 
 NOTE: The offsets (1 h, 6h, and 24h, are parameters to the specification)
 

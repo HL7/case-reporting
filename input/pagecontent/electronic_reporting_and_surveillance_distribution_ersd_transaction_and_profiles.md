@@ -12,7 +12,7 @@ The ExecutableValueSet profile provides support for including a persisted point-
 
 The Create eICR action involves the marshaling of FHIR resources needed to create the eICR profile included in this standard and the Route and Send eICR action involves the transmission of the eICR to either the APHL AIMS Platform, a Public Health Agency (PHA), or a Health information Exchange or Health Data Network on the way to a PHA.
 
-The [FHIR Subscription service](subscription_service.html) (also see Subscription examples on the <a href="artifacts.html#subscription-examples">Artifacts Index page</a>) supports public health needs for the routine and emergent distribution of the eRSD. The Subscription does not require FHIR implementation on the receiving (EHR) end of the transaction, but can provide XML or JSON formats via RESTful query or proactive notification channels.
+The [FHIR Subscription service](subscription_service.html) (also see Subscription examples on the <a href="artifacts.html">Artifacts Index page</a>) supports public health needs for the routine and emergent distribution of the eRSD. The Subscription does not require FHIR implementation on the receiving (EHR) end of the transaction, but can provide XML or JSON formats via RESTful query or proactive notification channels.
 
 ### Overview
 
