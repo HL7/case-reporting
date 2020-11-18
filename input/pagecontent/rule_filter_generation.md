@@ -1,5 +1,7 @@
 [Previous Page - eRSD Jurisdictions CodeSystem Configuration](ersd_jurisdictions_codesystem_configuration.html)
 
+[Previous Page - eRSD Jurisdictions CodeSystem Configuration](ersd_jurisdictions_codesystem_configuration.html)
+
 This document details the generation of CQL rule filters
 
 ### Overview
@@ -305,5 +307,7 @@ define "IsReportable":
     or <other condition criteria>...
 ```
 
+
+[Next Page - Relationship to Other Standards](relationship_to_other_standards.html)
 
 [Next Page - Relationship to Other Standards](relationship_to_other_standards.html)

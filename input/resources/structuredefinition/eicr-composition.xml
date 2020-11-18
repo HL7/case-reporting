@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-composition"/>
     <meta>
-        <versionId value="25"/>
-        <lastUpdated value="2020-11-15T23:50:14.788+00:00"/>
-        <source value="#mybqPNzDBawkUZv5"/>
+        <versionId value="27"/>
+        <lastUpdated value="2020-11-18T02:55:32.035+00:00"/>
+        <source value="#JrgDwRJpRgE0ACmM"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
     <version value="1.0.0"/>
@@ -26,6 +26,7 @@
     <type value="Composition"/>
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Composition"/>
     <derivation value="constraint"/>
+    
     <differential>
         <element id="Composition">
             <path value="Composition"/>
@@ -399,7 +400,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceProblemSection"/>
             <short value="Problem Section"/>
-            <definition value="This section lists and describes all relevant clinical problems at the time the document is generated. At a minimum, all pertinent current and historical problems should be listed. Overall health status may be represented in this section."/>
+            <definition value="This section lists and describes all the patient's current problems on the maintained problem list."/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -1364,7 +1365,7 @@
             <definition value="Last Menstrual Period entry"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/last-menstrual-period"/>
+                <targetProfile value="http://hl7.org/fhir/us/fhir-vr-common-library/StructureDefinition/Observation-last-menstrual-period"/>
             </type>
             <mapping>
                 <identity value="eCR-CDA"/>

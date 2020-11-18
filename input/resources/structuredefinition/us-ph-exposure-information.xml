@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-exposure-information"/>
     <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2020-11-17T06:16:20.230+00:00"/>
-        <source value="#OfGsKDN0aC7jU1h0"/>
+        <versionId value="9"/>
+        <lastUpdated value="2020-11-18T09:10:18.161+00:00"/>
+        <source value="#TyPNOieuaKumBNUR"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-exposure-information"/>
     <version value="1.0.0"/>
@@ -14,7 +14,7 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This profile represents patient exposure information, it can be used for any question/answer pair that needs to be tracked during a outbreak/public health emergency."/>
+    <description value="This profile represents patient exposure information. The type of exposure is contained in Observation.code (environmental, activity, event, location, person, animal, etc.). If the exposure is an entity (person, animal, location) then it is represented in Observation.focus which is a reference to a Patient, RelatedPerson, Location, Group, etc.). (An animal would be represented by a RelatedPerson that contains the [Extension Practitioner Animal Species](https://www.hl7.org/fhir/extension-practitioner-animalspecies.html). Free text information about the exposure can be recorded in Observation.valueString and the date or period of exposure is held in Observation.effective[x].&#xA;&#xA;The following are some exposures that might be captured in this profile:&#xA;* Environmental exposures&#xA;** Living facilities&#xA;** Work facilities&#xA;** School facilities&#xA;&#xA;* Contact exposures&#xA;** Person &#xA;** Animal&#xA;&#xA;* Event Exposures&#xA;** Sporting event&#xA;** Rally&#xA;** Wedding"/>
     <fhirVersion value="4.0.1"/>
     <kind value="resource"/>
     <abstract value="false"/>
@@ -44,6 +44,28 @@
             <path value="Observation.code"/>
             <min value="1"/>
             <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.subject">
+            <path value="Observation.subject"/>
+            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+            </type>
+        </element>
+        <element id="Observation.focus">
+            <path value="Observation.focus"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Group"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Location"/>
+            </type>
+        </element>
+        <element id="Observation.effective[x]">
+            <path value="Observation.effective[x]"/>
             <mustSupport value="true"/>
         </element>
         <element id="Observation.value[x]">

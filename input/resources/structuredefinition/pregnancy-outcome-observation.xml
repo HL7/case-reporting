@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="pregnancy-outcome-observation"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2020-11-13T03:55:34.289+00:00"/>
-        <source value="#D8iFsyJutt7ovbQv"/>
+        <versionId value="5"/>
+        <lastUpdated value="2020-11-18T03:04:35.511+00:00"/>
+        <source value="#KwAUR5So22fz7Flw"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-outcome-observation"/>
     <version value="1.0.0"/>
@@ -26,6 +26,7 @@
     <type value="Observation"/>
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation"/>
     <derivation value="constraint"/>
+    
     <differential>
         <element id="Observation">
             <path value="Observation"/>
@@ -44,6 +45,14 @@
                 <identity value="eCR-CDA"/>
                 <map value="[eICR R2 STU2] Pregnancy Outcome/code"/>
             </mapping>
+        </element>
+        <element id="Observation.subject">
+            <path value="Observation.subject"/>
+            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+            </type>
         </element>
         <element id="Observation.focus">
             <path value="Observation.focus"/>

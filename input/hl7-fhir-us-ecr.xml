@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="221"/>
-        <lastUpdated value="2020-11-17T07:03:54.685+00:00"/>
-        <source value="#IrIt6N92h2LVRE6Z"/>
+        <versionId value="226"/>
+        <lastUpdated value="2020-11-18T09:13:13.636+00:00"/>
+        <source value="#eKXexAtv78uMm4lL"/>
     </meta>
     
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
@@ -52,6 +52,11 @@
         <uri value="http://fhir.org/packages/us.nlm.vsac/ImplementationGuide/us.nlm.vsac"/>
         <packageId value="us.nlm.vsac"/>
         <version value="0.3.0"/>
+    </dependsOn>
+    <dependsOn>
+        <uri value="http://hl7.org/fhir/us/fhir-vr-common-library/ImplementationGuide/hl7.fhir.us.fhir-vr-common-library"/>
+        <packageId value="hl7.fhir.us.fhir-vr-common-library"/>
+        <version value="current"/>
     </dependsOn>
     <definition>
         <grouping id="us-public-health-profiles">
@@ -752,16 +757,6 @@
             <description value="Example of US Core Immunization profile"/>
             <exampleBoolean value="true"/>
             <groupingId value="eicr-examples"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/last-menstrual-period"/>
-                <display value="Last_Menstrual_Period"/>
-            </reference>
-            <name value="Last Menstrual Period"/>
-            <description value="This profile represents the date of the last menstrual period of the patient. If known, the first day of last menstrual period should be captured. The effectiveTime captures the observation date."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="eicr-profiles"/>
         </resource>
         <resource>
             <reference>
@@ -1512,7 +1507,7 @@
                 <display value="US Public Health Exposure Information Information"/>
             </reference>
             <name value="US Public Health Exposure Information Information"/>
-            <description value="This profile represents patient exposure information, it can be used for any question/answer pair that needs to be tracked during a outbreak/public health emergency."/>
+            <description value="This profile represents patient exposure information. The type of exposure is contained in Observation.code (environmental, activity, event, location, person, animal, etc.). If the exposure is an entity (person, animal, location) then it is represented in Observation.focus which is a reference to a Patient, RelatedPerson, Location, Group, etc.). (An animal would be represented by a RelatedPerson that contains the [Extension Practitioner Animal Species](https://www.hl7.org/fhir/extension-practitioner-animalspecies.html). Free text information about the exposure can be recorded in Observation.valueString and the date or period of exposure is held in Observation.effective[x].&#xA;&#xA;The following are some exposures that might be captured in this profile:&#xA;* Environmental exposures&#xA;** Living facilities&#xA;** Work facilities&#xA;** School facilities&#xA;&#xA;* Contact exposures&#xA;** Person &#xA;** Animal&#xA;&#xA;* Event Exposures&#xA;** Sporting event&#xA;** Rally&#xA;** Wedding"/>
             <exampleBoolean value="false"/>
             <groupingId value="us-public-health-profiles"/>
         </resource>
@@ -1603,6 +1598,15 @@
             </reference>
             <name value="Value Set eCR Task BusinessStatus"/>
             <description value="This value set contains codes that describe the eCR task businessStatus."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-transportation-details"/>
+                <display value="USPublicHealthTransportationDetails"/>
+            </reference>
+            <name value="USPublicHealthTransportationDetails"/>
+            <description value="This Observation profile represents transportation details such as the type of transport (plant, train, ship, etc.) along with any associated information (e.g. name of cruise ship, flight number, airport, seat number, cabin number, etc.)."/>
             <exampleBoolean value="false"/>
         </resource>
         <page>

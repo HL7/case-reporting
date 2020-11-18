@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="us-ph-transportation-details"/>
+    <meta>
+        <versionId value="10"/>
+        <lastUpdated value="2020-11-18T05:13:53.789+00:00"/>
+        <source value="#fgVFnVA362jegsGe"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-transportation-details"/>
+    <version value="1.0.0"/>
+    <name value="USPublicHealthTransportationDetails"/>
+    <title value="US Public Health Transportation Details"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This Observation profile represents transportation details such as the type of transport (plant, train, ship, etc.) along with any associated information (e.g. name of cruise ship, flight number, airport, seat number, cabin number, etc.)."/>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Observation"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+    <derivation value="constraint"/>
+    
+    <differential>
+        <element id="Observation">
+            <path value="Observation"/>
+        </element>
+        <element id="Observation.category">
+            <path value="Observation.category"/>
+            <short value="Transportation"/>
+            <min value="1"/>
+            <max value="1"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/v3-ActClass"/>
+                    <code value="TRNS"/>
+                </coding>
+            </patternCodeableConcept>
+        </element>
+        <element id="Observation.code">
+            <path value="Observation.code"/>
+            <short value="Transportation details"/>
+            <min value="1"/>
+            <max value="1"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://snomed.info/sct"/>
+                    <code value="424483007"/>
+                </coding>
+            </patternCodeableConcept>
+        </element>
+        <element id="Observation.effective[x]">
+            <path value="Observation.effective[x]"/>
+            <short value="Date or period of transportation"/>
+            <type>
+                <code value="dateTime"/>
+            </type>
+            <type>
+                <code value="Period"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.value[x]">
+            <path value="Observation.value[x]"/>
+            <short value="Type of transport vehicle"/>
+            <definition value="All codes in the hierarchy under: SNOMED: 36030000 |Transport vehicle, device (physical object)|"/>
+            <min value="1"/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <binding>
+                <strength value="preferred"/>
+            </binding>
+        </element>
+        <element id="Observation.component">
+            <path value="Observation.component"/>
+            <short value="Information about the mode of transportation (ship name, flight number, seat number, etc.)"/>
+            <definition value="Information about the mode of transportation (ship name, flight number, seat number, etc.)"/>
+        </element>
+        <element id="Observation.component.code">
+            <path value="Observation.component.code"/>
+            <short value="Type of transportation information"/>
+            <definition value="Type of transportation information (ship name, flight number, seat number, etc.)"/>
+        </element>
+        <element id="Observation.component.value[x]">
+            <path value="Observation.component.value[x]"/>
+            <min value="1"/>
+        </element>
+    </differential>
+</StructureDefinition>

@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="characteristics-of-home-environment"/>
     <meta>
-        <versionId value="6"/>
-        <lastUpdated value="2020-11-13T04:52:12.737+00:00"/>
-        <source value="#26H4CzSkGKiV2hxI"/>
+        <versionId value="7"/>
+        <lastUpdated value="2020-11-18T03:01:25.622+00:00"/>
+        <source value="#ivyZKiszvKHYImBO"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/characteristics-of-home-environment"/>
     <version value="1.0.0"/>
@@ -33,6 +33,7 @@
     <type value="Observation"/>
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation"/>
     <derivation value="constraint"/>
+    
     <differential>
         <element id="Observation">
             <path value="Observation"/>
@@ -51,6 +52,14 @@
                 <identity value="eCR-CDA"/>
                 <map value="[eICR R2 STU2] Characteristics of Home Environment/code"/>
             </mapping>
+        </element>
+        <element id="Observation.subject">
+            <path value="Observation.subject"/>
+            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+            </type>
         </element>
         <element id="Observation.value[x]">
             <path value="Observation.value[x]"/>

@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-servicerequest"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2020-10-28T08:24:45.645+00:00"/>
-        <source value="#fAkPFLPbFIGrAzik"/>
+        <versionId value="5"/>
+        <lastUpdated value="2020-11-18T03:03:22.367+00:00"/>
+        <source value="#Fgfus5RKegH9lRkV"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-servicerequest"/>
     <version value="1.0.0"/>
@@ -21,6 +21,7 @@
     <type value="ServiceRequest"/>
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/ServiceRequest"/>
     <derivation value="constraint"/>
+    
     <differential>
         <element id="ServiceRequest">
             <path value="ServiceRequest"/>
@@ -50,6 +51,13 @@
                 <description value="This value set includes all the LOINC codes which relate to Diagnostic Orders."/>
                 <valueSet value="http://hl7.org/fhir/ValueSet/report-codes"/>
             </binding>
+        </element>
+        <element id="ServiceRequest.subject">
+            <path value="ServiceRequest.subject"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+            </type>
         </element>
         <element id="ServiceRequest.authoredOn">
             <path value="ServiceRequest.authoredOn"/>
