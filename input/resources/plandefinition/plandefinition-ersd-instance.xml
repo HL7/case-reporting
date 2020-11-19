@@ -33,8 +33,8 @@
     </relatedArtifact>
     <library value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
     <action id="start">
-        <description value="This action represents the start of an encounter."/>
-        <textEquivalent value="Start"/>
+        <description value="This action represents the start of an Encounter upon matching of a trigger code to one of the values in the eRSD value sets."/>
+        <textEquivalent value="This action represents the start of an Encounter upon matching of a trigger code to one of the values in the eRSD value sets."/>
         <code>
             <coding>
                 <system value="http://hl7.org/fhir/us/ecr/CodeSystem/executabletask-type"/>
@@ -44,6 +44,13 @@
         <trigger>
             <type value="named-event"/>
             <name value="encounter-start"/>
+            <data>
+              <type value="Encounter"/>
+              <codeFilter>
+                <path value="diagnosis.condition.resolve().code"/>
+                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"/>
+              </codeFilter>
+            </data>
         </trigger>
         <relatedAction>
             <actionId value="check-reportable"/>
@@ -56,20 +63,21 @@
         </relatedAction>
     </action>
     <action id="check-reportable">
-        <description value="This action represents the check to determine whether an event or situation is suspected reportable."/>
+        <description value="This action represents the check for suspected reportability of the eICR."/>
         <textEquivalent value="Check Reportable"/>
+        <code>
+            <coding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/executabletask-type"/>
+                <code value="check-reportable"/>
+            </coding>
+        </code>
         <action>
-            <code>
-                <coding>
-                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/executabletask-type"/>
-                    <code value="check-reportable"/>
-                </coding>
-            </code>
             <condition>
                 <kind value="applicability"/>
                 <expression>
                     <language value="text/cql.identifier"/>
-                    <expression value="Is Reportable"/></expression>
+                    <expression value="Is Reportable"/>
+                </expression>
             </condition>
             <relatedAction>
                 <actionId value="create-and-report-eicr"/>
@@ -81,7 +89,8 @@
                 <kind value="applicability"/>
                 <expression>
                     <language value="text/cql.identifier"/>
-                    <expression value="Is Encounter In Progress"/></expression>
+                    <expression value="Is Encounter In Progress"/>
+                </expression>
             </condition>
             <relatedAction>
                 <actionId value="check-reportable"/>
@@ -95,7 +104,7 @@
         </action>
     </action>
     <action id="create-and-report-eicr">
-        <description value="This action represents the creation and reporting of an eICR."/>
+        <description value="This action represents the creation and reporting of the eICR."/>
         <textEquivalent value="Create and Report eICR"/>
         <code>
             <coding>
@@ -114,7 +123,8 @@
                 <kind value="applicability"/>
                 <expression>
                     <language value="text/cql.identifier"/>
-                    <expression value="Is Encounter Complete"/></expression>
+                    <expression value="Is Encounter Complete"/>
+                </expression>
             </condition>
             <relatedAction>
                 <actionId value="report-eicr"/>
@@ -131,7 +141,8 @@
                 <kind value="applicability"/>
                 <expression>
                     <language value="text/cql.identifier"/>
-                    <expression value="Is Encounter In Progress"/></expression>
+                    <expression value="Is Encounter In Progress"/>
+                </expression>
             </condition>
             <relatedAction>
                 <actionId value="create-and-report-eicr"/>
@@ -144,72 +155,46 @@
             </relatedAction>
         </action>
     </action>
-    <action id="create-eicr">
-        <description value="This action represents the creation of an eICR."/>
-        <textEquivalent value="Create eICR."/>
-        <code>
-            <coding>
-                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/executabletask-type"/>
-                <code value="create-eicr"/>
-            </coding>
-        </code>
-    </action>
-    <action id="validate-eicr">
-        <description value="This action represents the validation of an eICR."/>
-        <textEquivalent value="Validate eICR."/>
-        <code>
-            <coding>
-                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/executabletask-type"/>
-                <code value="validate-eicr"/>
-            </coding>
-        </code>
-    </action>
-    <action id="route-and-send-eicr">
-        <description value="This action represents the routing and sending of an eICR."/>
-        <textEquivalent value="Route and send eICR"/>
-        <code>
-            <coding>
-                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/executabletask-type"/>
-                <code value="route-and-send-eicr"/>
-            </coding>
-        </code>
-    </action>
     <action id="report-eicr">
-        <description value="This action represents the reporting of an eICR."/>
+        <description value="This action represents the reporting of the eICR."/>
         <textEquivalent value="Report eICR"/>
-        <action>
+        <action id="create-eicr">
+            <description value="This action represents the creation of the eICR."/>
+            <textEquivalent value="Create eICR."/>
             <code>
                 <coding>
                     <system value="http://hl7.org/fhir/us/ecr/CodeSystem/executabletask-type"/>
-                    <code value="report-eicr"/>
+                    <code value="create-eicr"/>
                 </coding>
             </code>
             <relatedAction>
-                <actionId value="create-eicr"/>
-                <relationship value="before-start"/>
+              <actionId value="validate-eicr"/>
+              <relationship value="before-start"/>
             </relatedAction>
         </action>
-        <action id="close-out-eicr">
-            <description value="This action represents the close out of an eICR encounter."/>
-            <textEquivalent value="eICR encounter close out (timingTiming.repeat.duration = z hours) - the time after the end of the encounter to create the final eICR when there have been one or more trigger events."/>
-            <trigger>
-                <type value="data-added"/>
-                <data>
-                    <type value="Encounter"/>
-                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter"/>
-                    <dateFilter>
-                        <path value="period.end"/>
-                    </dateFilter>
-                </data>
-            </trigger>
+        <action id="validate-eicr">
+            <description value="This action represents the validation of the eICR."/>
+            <textEquivalent value="Validate eICR."/>
+            <code>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/executabletask-type"/>
+                    <code value="validate-eicr"/>
+                </coding>
+            </code>
             <relatedAction>
-                <actionId value="validate-eicr"/>
-                <relationship value="before-start"/>
+              <actionId value="route-and-send-eicr"/>
+              <relationship value="before-start"/>
             </relatedAction>
-            <relatedAction>
-                <actionId value="route-and-send-eicr"/>
-                <relationship value="before-start"/>
-            </relatedAction>
+        </action>
+        <action id="route-and-send-eicr">
+            <description value="This action represents the routing and sending of the eICR."/>
+            <textEquivalent value="Route and send eICR"/>
+            <code>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/executabletask-type"/>
+                    <code value="route-and-send-eicr"/>
+                </coding>
+            </code>
         </action>
     </action>
 </PlanDefinition>

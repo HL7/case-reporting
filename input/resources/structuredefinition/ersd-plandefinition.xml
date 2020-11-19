@@ -58,7 +58,7 @@
                 <ordered value="true"/>
                 <rules value="open"/>
             </slicing>
-            <min value="7"/>
+            <min value="4"/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action:encounterStart">
@@ -175,6 +175,7 @@
             <path value="PlanDefinition.action.relatedAction.offsetDuration.unit"/>
             <fixedString value="h"/>
         </element>
+
         <element id="PlanDefinition.action:checkReportable">
             <path value="PlanDefinition.action"/>
             <sliceName value="checkReportable"/>
@@ -202,101 +203,108 @@
             </code>
             <min value="1"/>
         </element>
-        <element id="PlanDefinition.action:checkReportable.condition">
-            <path value="PlanDefinition.action.condition"/>
-        </element>
-        <element id="PlanDefinition.action:checkReportable.condition.id">
-            <path value="PlanDefinition.action.condition.id"/>
-            <fixedString value="is-suspected-reportable"/>
-        </element>
-        <element id="PlanDefinition.action:checkReportable.condition.kind">
-            <path value="PlanDefinition.action.condition.kind"/>
-            <fixedCode value="applicability"/>
-        </element>
-        <element id="PlanDefinition.action:checkReportable.condition.expression">
-            <path value="PlanDefinition.action.condition.expression"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:checkReportable.condition.expression.language">
-            <path value="PlanDefinition.action.condition.expression.language"/>
-            <fixedCode value="text/cql.identifier"/>
-        </element>
-        <element id="PlanDefinition.action:checkReportable.condition.expression.expression">
-            <path value="PlanDefinition.action.condition.expression.expression"/>
-            <fixedString value="Is Reportable"/>
-        </element>
-        <element id="PlanDefinition.action:checkReportable.relatedAction">
-            <path value="PlanDefinition.action.relatedAction"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:checkReportable.relatedAction.actionId">
-            <path value="PlanDefinition.action.relatedAction.actionId"/>
-            <fixedId value="create-and-report-eicr"/>
-        </element>
-        <element id="PlanDefinition.action:checkReportable.relatedAction.relationship">
-            <path value="PlanDefinition.action.relatedAction.relationship"/>
-            <fixedCode value="before-start"/>
-        </element>
         <element id="PlanDefinition.action:checkReportable.action">
             <path value="PlanDefinition.action.action"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="kind"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <min value="2"/>
+        </element>
+        <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable">
+            <path value="PlanDefinition.action.action"/>
+            <sliceName value="isEncounterReportable"/>
+            <min value="1"/>
+            <max value="1"/>
             <type>
                 <code value="BackboneElement"/>
             </type>
+            <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:checkReportable.action.condition">
+        <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.condition">
             <path value="PlanDefinition.action.action.condition"/>
         </element>
-        <element id="PlanDefinition.action:checkReportable.action.condition.id">
+        <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.condition.id">
             <path value="PlanDefinition.action.action.condition.id"/>
-            <fixedString value="is-encounter-in-progress"/>
+            <fixedString value="is-encounter-reportable"/>
         </element>
-        <element id="PlanDefinition.action:checkReportable.action.condition.kind">
+        <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.condition.kind">
             <path value="PlanDefinition.action.action.condition.kind"/>
             <fixedCode value="applicability"/>
         </element>
-        <element id="PlanDefinition.action:checkReportable.action.condition.expression">
+        <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.condition.expression">
             <path value="PlanDefinition.action.action.condition.expression"/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:checkReportable.action.condition.expression.language">
+        <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.condition.expression.language">
             <path value="PlanDefinition.action.action.condition.expression.language"/>
             <fixedCode value="text/cql.identifier"/>
         </element>
-        <element id="PlanDefinition.action:checkReportable.action.condition.expression.expression">
+        <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.condition.expression.expression">
             <path value="PlanDefinition.action.action.condition.expression.expression"/>
-            <fixedString value="Is Encounter In Progress"/>
+            <fixedString value="Is Reportable"/>
         </element>
-        <element id="PlanDefinition.action:checkReportable.action.relatedAction">
+        <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.relatedAction">
             <path value="PlanDefinition.action.action.relatedAction"/>
         </element>
-        <element id="PlanDefinition.action:checkReportable.action.relatedAction.actionId">
+        <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.relatedAction.actionId">
             <path value="PlanDefinition.action.action.relatedAction.actionId"/>
-            <fixedId value="check-reportable"/>
+            <fixedId value="create-and-report-eicr"/>
         </element>
-        <element id="PlanDefinition.action:checkReportable.action.relatedAction.relationship">
+        <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.relatedAction.relationship">
             <path value="PlanDefinition.action.action.relatedAction.relationship"/>
             <fixedCode value="before-start"/>
         </element>
-        <element id="PlanDefinition.action:checkReportable.action.relatedAction.offsetDuration">
-            <path value="PlanDefinition.action.action.relatedAction.offsetDuration"/>
-            <min value="0"/>
+        <element id="PlanDefinition.action:checkReportable.action:encounterInProgress">
+            <path value="PlanDefinition.action.action"/>
+            <sliceName value="isEncounterReportable"/>
+            <min value="1"/>
             <max value="1"/>
             <type>
-                <code value="Duration"/>
+                <code value="BackboneElement"/>
             </type>
+            <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:checkReportable.action.relatedAction.offsetDuration.value">
-            <path value="PlanDefinition.action.action.relatedAction.offsetDuration.value"/>
-            <fixedDecimal value="6"/>
+        <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.condition">
+            <path value="PlanDefinition.action.action.condition"/>
         </element>
-        <element id="PlanDefinition.action:checkReportable.action.relatedAction.offsetDuration.unit">
-            <path value="PlanDefinition.action.action.relatedAction.offsetDuration.unit"/>
-            <fixedString value="h"/>
+        <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.condition.id">
+            <path value="PlanDefinition.action.action.condition.id"/>
+            <fixedString value="is-encounter-reportable"/>
         </element>
+        <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.condition.kind">
+            <path value="PlanDefinition.action.action.condition.kind"/>
+            <fixedCode value="applicability"/>
+        </element>
+        <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.condition.expression">
+            <path value="PlanDefinition.action.action.condition.expression"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.condition.expression.language">
+            <path value="PlanDefinition.action.action.condition.expression.language"/>
+            <fixedCode value="text/cql.identifier"/>
+        </element>
+        <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.condition.expression.expression">
+            <path value="PlanDefinition.action.action.condition.expression.expression"/>
+            <fixedString value="Is Reportable"/>
+        </element>
+        <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.relatedAction">
+            <path value="PlanDefinition.action.action.relatedAction"/>
+        </element>
+        <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.relatedAction.actionId">
+            <path value="PlanDefinition.action.action.relatedAction.actionId"/>
+            <fixedId value="create-and-report-eicr"/>
+        </element>
+        <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.relatedAction.relationship">
+            <path value="PlanDefinition.action.action.relatedAction.relationship"/>
+            <fixedCode value="before-start"/>
+        </element>
+
         <element id="PlanDefinition.action:createAndReport">
             <path value="PlanDefinition.action"/>
             <sliceName value="createAndReport"/>
@@ -317,20 +325,6 @@
                 <display value="Create And Report eICR"/>
             </code>
             <min value="1"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.relatedAction">
-            <path value="PlanDefinition.action.relatedAction"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.relatedAction.actionId">
-            <path value="PlanDefinition.action.relatedAction.actionId"/>
-            <fixedId value="report-eicr"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.relatedAction.relationship">
-            <path value="PlanDefinition.action.relatedAction.relationship"/>
-            <fixedCode value="before-start"/>
         </element>
         <element id="PlanDefinition.action:createAndReport.action">
             <path value="PlanDefinition.action.action"/>
@@ -465,6 +459,7 @@
             <path value="PlanDefinition.action.action.relatedAction.offsetDuration.unit"/>
             <fixedString value="h"/>
         </element>
+
         <element id="PlanDefinition.action:reportEicr">
             <path value="PlanDefinition.action"/>
             <sliceName value="reportEicr"/>
@@ -481,138 +476,97 @@
             <path value="PlanDefinition.action.description"/>
             <fixedString value="This action represents the reporting of the eICR."/>
         </element>
-        <element id="PlanDefinition.action:reportEicr.relatedAction">
-            <path value="PlanDefinition.action.relatedAction"/>
+        <element id="PlanDefinition.action:reportEicr.action">
+            <path value="PlanDefinition.action.action"/>
             <slicing>
                 <discriminator>
                     <type value="value"/>
-                    <path value="kind"/>
+                    <path value="id"/>
                 </discriminator>
+                <ordered value="true"/>
                 <rules value="open"/>
             </slicing>
             <min value="3"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:reportEicr.relatedAction:createEicr">
-            <path value="PlanDefinition.action.relatedAction"/>
+        <element id="PlanDefinition.action:reportEicr.action:createEicr">
+            <path value="PlanDefinition.action.action"/>
             <sliceName value="createEicr"/>
             <min value="1"/>
             <max value="1"/>
         </element>
-        <element id="PlanDefinition.action:reportEicr.relatedAction:createEicr.actionId">
-            <path value="PlanDefinition.action.relatedAction.actionId"/>
-            <fixedId value="create-eicr"/>
-        </element>
-        <element id="PlanDefinition.action:reportEicr.relatedAction:createEicr.relationship">
-            <path value="PlanDefinition.action.relatedAction.relationship"/>
-            <fixedCode value="before-start"/>
-        </element>
-        <element id="PlanDefinition.action:reportEicr.relatedAction:validateEicr">
-            <path value="PlanDefinition.action.relatedAction"/>
-            <sliceName value="validateEicr"/>
-            <min value="1"/>
-            <max value="1"/>
-        </element>
-        <element id="PlanDefinition.action:reportEicr.relatedAction:validateEicr.actionId">
-            <path value="PlanDefinition.action.relatedAction.actionId"/>
-            <fixedId value="validate-eicr"/>
-        </element>
-        <element id="PlanDefinition.action:reportEicr.relatedAction:validateEicr.relationship">
-            <path value="PlanDefinition.action.relatedAction.relationship"/>
-            <fixedCode value="before-start*"/>
-        </element>
-        <element id="PlanDefinition.action:reportEicr.relatedAction:routeAndSendEicr">
-            <path value="PlanDefinition.action.relatedAction"/>
-            <sliceName value="routeAndSendEicr"/>
-            <min value="1"/>
-            <max value="1"/>
-        </element>
-        <element id="PlanDefinition.action:reportEicr.relatedAction:routeAndSendEicr.actionId">
-            <path value="PlanDefinition.action.relatedAction.actionId"/>
-            <fixedId value="route-and-send-eicr"/>
-        </element>
-        <element id="PlanDefinition.action:reportEicr.relatedAction:routeAndSendEicr.relationship">
-            <path value="PlanDefinition.action.relatedAction.relationship"/>
-            <fixedCode value="before-start"/>
-        </element>
-        <element id="PlanDefinition.action:createEicr">
-            <path value="PlanDefinition.action"/>
-            <sliceName value="createEicr"/>
-            <min value="1"/>
-            <max value="1"/>
-        </element>
-        <element id="PlanDefinition.action:createEicr.id">
-            <path value="PlanDefinition.action.id"/>
+        <element id="PlanDefinition.action:reportEicr.action:createEicr.id">
+            <path value="PlanDefinition.action.action.id"/>
             <min value="1"/>
             <fixedString value="create-eicr"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:createEicr.description">
-            <path value="PlanDefinition.action.description"/>
+        <element id="PlanDefinition.action:reportEicr.action:createEicr.description">
+            <path value="PlanDefinition.action.action.description"/>
             <fixedString value="This action represents the creation of the eICR."/>
         </element>
-        <element id="PlanDefinition.action:createEicr.code">
-            <path value="PlanDefinition.action.code"/>
+        <element id="PlanDefinition.action:reportEicr.action:createEicr.code">
+            <path value="PlanDefinition.action.action.code"/>
             <code>
                 <system value="http://hl7.org/fhir/us/ecr/CodeSystem/executabletask-type"/>
                 <code value="create-eicr"/>
                 <display value="eICR construction."/>
             </code>
         </element>
-        <element id="PlanDefinition.action:validateEicr">
-            <path value="PlanDefinition.action"/>
+        <element id="PlanDefinition.action:reportEicr.action:validateEicr">
+            <path value="PlanDefinition.action.action"/>
             <sliceName value="validateEicr"/>
             <min value="1"/>
             <max value="1"/>
         </element>
-        <element id="PlanDefinition.action:validateEicr.id">
-            <path value="PlanDefinition.action.id"/>
+        <element id="PlanDefinition.action:reportEicr.action:validateEicr.id">
+            <path value="PlanDefinition.action.action.id"/>
             <min value="1"/>
             <fixedString value="validate-eicr"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:validateEicr.description">
-            <path value="PlanDefinition.action.description"/>
-            <fixedString value="This action represents the validation of an eICR."/>
+        <element id="PlanDefinition.action:reportEicr.action:validateEicr.description">
+            <path value="PlanDefinition.action.action.description"/>
+            <fixedString value="This action represents the validation of the eICR."/>
         </element>
-        <element id="PlanDefinition.action:validateEicr.code">
-            <path value="PlanDefinition.action.code"/>
+        <element id="PlanDefinition.action:reportEicr.action:validateEicr.code">
+            <path value="PlanDefinition.action.action.code"/>
             <code>
                 <system value="http://hl7.org/fhir/us/ecr/CodeSystem/executabletask-type"/>
                 <code value="validate-eicr"/>
                 <display value="Validate EICR."/>
             </code>
         </element>
-        <element id="PlanDefinition.action:routeAndSendEicr">
-            <path value="PlanDefinition.action"/>
+        <element id="PlanDefinition.action:reportEicr.action:routeAndSendEicr">
+            <path value="PlanDefinition.action.action"/>
             <sliceName value="routeAndSendEicr"/>
             <short value="Route and send eICR"/>
             <definition value="Defines the routing and sending of the eICR."/>
             <min value="1"/>
             <max value="1"/>
         </element>
-        <element id="PlanDefinition.action:routeAndSendEicr.id">
-            <path value="PlanDefinition.action.id"/>
+        <element id="PlanDefinition.action:reportEicr.action:routeAndSendEicr.id">
+            <path value="PlanDefinition.action.action.id"/>
             <min value="1"/>
             <fixedString value="route-and-send-eicr"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:routeAndSendEicr.description">
-            <path value="PlanDefinition.action.description"/>
+        <element id="PlanDefinition.action:reportEicr.action:routeAndSendEicr.description">
+            <path value="PlanDefinition.action.action.description"/>
             <short value="Description of the route and send action."/>
             <definition value="Description of the route and send action."/>
             <min value="1"/>
-            <fixedString value="This action represents the routing and sending of an eICR."/>
+            <fixedString value="This action represents the routing and sending of the eICR."/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:routeAndSendEicr.textEquivalent">
-            <path value="PlanDefinition.action.textEquivalent"/>
+        <element id="PlanDefinition.action:reportEicr.action:routeAndSendEicr.textEquivalent">
+            <path value="PlanDefinition.action.action.textEquivalent"/>
             <min value="1"/>
             <fixedString value="Route and send eICR"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:routeAndSendEicr.code">
-            <path value="PlanDefinition.action.code"/>
+        <element id="PlanDefinition.action:reportEicr.action:routeAndSendEicr.code">
+            <path value="PlanDefinition.action.action.code"/>
             <code>
                 <system value="http://hl7.org/fhir/us/ecr/CodeSystem/executabletask-type"/>
                 <code value="route-and-send-eicr"/>
