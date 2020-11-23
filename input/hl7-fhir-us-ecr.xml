@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="229"/>
-        <lastUpdated value="2020-11-20T20:50:47.172+00:00"/>
-        <source value="#ZwYsGjuawRJaEpAt"/>
+        <versionId value="234"/>
+        <lastUpdated value="2020-11-23T22:36:13.247+00:00"/>
+        <source value="#R6CuMEovzDl7Hem6"/>
     </meta>
     <contained>
         <DocumentReference>
@@ -227,8 +227,8 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ecr-messageheader"/>
-                <display value="Ecr_MessageHeader"/>
+                <reference value="StructureDefinition/us-ph-messageheader"/>
+                <display value="eCR MessageHeader"/>
             </reference>
             <name value="eCR Message Header"/>
             <description value="This MessageHeader profile represents metadata to support the eCR messaging paradigm. It requires data elements destination, sender, source, and focus. The focus of an eCR MessageHeader profile is the eCR Task profile."/>
@@ -766,16 +766,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="Library/FHIR-ModelInfo"/>
-                <display value="FHIR-ModelInfo"/>
-            </reference>
-            <name value="FHIR ModelInfo Library"/>
-            <description value="CQL FHIR ModelInfo Library"/>
-            <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles-instances"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="Immunization/immunization-ecr-pneumo"/>
                 <display value="immunization-ecr-pneumo"/>
             </reference>
@@ -1282,16 +1272,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/runtime-valueset"/>
-                <display value="Runtime Value Set"/>
-            </reference>
-            <name value="Runtime ValueSet"/>
-            <description value="This profile describes value sets containing runtime codes."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles-instances"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="Subscription/subscription-dxtc"/>
                 <display value="subscription-dxtc"/>
             </reference>
@@ -1638,15 +1618,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ext-namedEventType"/>
-                <display value="Named Event Type"/>
-            </reference>
-            <name value="Named Event Type"/>
-            <description value="Indicates the types of named events to subscribe to from the HER."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="ValueSet/us-ph-triggerdefinition-namedevent"/>
                 <display value="US Public Health TriggerDefinition NamedEvent"/>
             </reference>
@@ -1661,6 +1632,24 @@
             </reference>
             <name value="US Public Health TriggerDefinition Named Events"/>
             <description value="The US Public Health TriggerDefinition NamedEvents CodeSystem is a 'starter set' of codes supported for identifying named events to subscribe to in clinical workflows."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Library/FHIR-ModelInfo"/>
+                <display value="FHIR Model Definition"/>
+            </reference>
+            <name value="FHIR Model Definition"/>
+            <description value="Model definition for the FHIR R4 (v4.0.1) Model"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-namedEventType"/>
+                <display value="US Public Health Named Event Type"/>
+            </reference>
+            <name value="US Public Health Named Event Type"/>
+            <description value="Indicates the types of named events to subscribe to from the HER."/>
             <exampleBoolean value="false"/>
         </resource>
         <page>
