@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="ersd-plandefinition"/>
     <meta>
-        <versionId value="9"/>
-        <lastUpdated value="2020-11-16T00:10:08.566+00:00"/>
-        <source value="#AJUnzOMPSNrJcN6f"/>
+        <versionId value="13"/>
+        <lastUpdated value="2020-11-19T21:24:21.174+00:00"/>
+        <source value="#ZENVDmxSWibEuaLk"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
     <version value="1.0.0"/>
@@ -99,6 +99,90 @@
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
+        <element id="PlanDefinition.action:encounterStart.trigger.extension">
+            <path value="PlanDefinition.action.trigger.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <description value="Extensions are always sliced by (at least) url"/>
+                <rules value="open"/>
+            </slicing>
+            <short value="Additional content defined by implementations"/>
+            <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+            <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+            <alias value="extensions"/>
+            <alias value="user content"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <constraint>
+                <key value="ele-1"/>
+                <severity value="error"/>
+                <human value="All FHIR elements must have a @value or children"/>
+                <expression value="hasValue() or (children().count() &gt; id.count())"/>
+                <xpath value="@value|f:*|h:div"/>
+                <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+            </constraint>
+            <constraint>
+                <key value="ext-1"/>
+                <severity value="error"/>
+                <human value="Must have either extensions or value[x], not both"/>
+                <expression value="extension.exists() != value.exists()"/>
+                <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+                <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+            </constraint>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="PlanDefinition.action:encounterStart.trigger.extension:namedEventType">
+            <path value="PlanDefinition.action.trigger.extension"/>
+            <sliceName value="namedEventType"/>
+            <short value="Indicates the types of named events to subscribe to from the HER."/>
+            <definition value="Indicates the types of named events to subscribe to from the HER."/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ext-namedEventType"/>
+            </type>
+            <constraint>
+                <key value="ele-1"/>
+                <severity value="error"/>
+                <human value="All FHIR elements must have a @value or children"/>
+                <expression value="hasValue() or (children().count() &gt; id.count())"/>
+                <xpath value="@value|f:*|h:div"/>
+                <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+            </constraint>
+            <constraint>
+                <key value="ext-1"/>
+                <severity value="error"/>
+                <human value="Must have either extensions or value[x], not both"/>
+                <expression value="extension.exists() != value.exists()"/>
+                <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+                <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+            </constraint>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+        </element>
         <element id="PlanDefinition.action:encounterStart.trigger.type">
             <path value="PlanDefinition.action.trigger.type"/>
             <fixedCode value="named-event"/>
@@ -175,7 +259,6 @@
             <path value="PlanDefinition.action.relatedAction.offsetDuration.unit"/>
             <fixedString value="h"/>
         </element>
-
         <element id="PlanDefinition.action:checkReportable">
             <path value="PlanDefinition.action"/>
             <sliceName value="checkReportable"/>
@@ -304,7 +387,6 @@
             <path value="PlanDefinition.action.action.relatedAction.relationship"/>
             <fixedCode value="before-start"/>
         </element>
-
         <element id="PlanDefinition.action:createAndReport">
             <path value="PlanDefinition.action"/>
             <sliceName value="createAndReport"/>
@@ -459,7 +541,6 @@
             <path value="PlanDefinition.action.action.relatedAction.offsetDuration.unit"/>
             <fixedString value="h"/>
         </element>
-
         <element id="PlanDefinition.action:reportEicr">
             <path value="PlanDefinition.action"/>
             <sliceName value="reportEicr"/>

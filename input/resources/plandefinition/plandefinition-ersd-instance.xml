@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="plandefinition-ersd-instance"/>
     <meta>
-        <versionId value="8"/>
-        <lastUpdated value="2020-11-16T04:08:53.437+00:00"/>
-        <source value="#h8ZE5QlJBnMLtSlO"/>
+        <versionId value="10"/>
+        <lastUpdated value="2020-11-19T18:14:48.259+00:00"/>
+        <source value="#0QhwFPpa6bVUpuXI"/>
         <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance"/>
@@ -45,11 +45,11 @@
             <type value="named-event"/>
             <name value="encounter-start"/>
             <data>
-              <type value="Encounter"/>
-              <codeFilter>
-                <path value="diagnosis.condition.resolve().code"/>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"/>
-              </codeFilter>
+                <type value="Encounter"/>
+                <codeFilter>
+                    <path value="diagnosis.condition.resolve().code"/>
+                    <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"/>
+                </codeFilter>
             </data>
         </trigger>
         <relatedAction>
@@ -76,8 +76,7 @@
                 <kind value="applicability"/>
                 <expression>
                     <language value="text/cql.identifier"/>
-                    <expression value="Is Reportable"/>
-                </expression>
+                    <expression value="Is Reportable"/></expression>
             </condition>
             <relatedAction>
                 <actionId value="create-and-report-eicr"/>
@@ -89,8 +88,7 @@
                 <kind value="applicability"/>
                 <expression>
                     <language value="text/cql.identifier"/>
-                    <expression value="Is Encounter In Progress"/>
-                </expression>
+                    <expression value="Is Encounter In Progress"/></expression>
             </condition>
             <relatedAction>
                 <actionId value="check-reportable"/>
@@ -123,8 +121,7 @@
                 <kind value="applicability"/>
                 <expression>
                     <language value="text/cql.identifier"/>
-                    <expression value="Is Encounter Complete"/>
-                </expression>
+                    <expression value="Is Encounter Complete"/></expression>
             </condition>
             <relatedAction>
                 <actionId value="report-eicr"/>
@@ -141,8 +138,7 @@
                 <kind value="applicability"/>
                 <expression>
                     <language value="text/cql.identifier"/>
-                    <expression value="Is Encounter In Progress"/>
-                </expression>
+                    <expression value="Is Encounter In Progress"/></expression>
             </condition>
             <relatedAction>
                 <actionId value="create-and-report-eicr"/>
@@ -168,8 +164,8 @@
                 </coding>
             </code>
             <relatedAction>
-              <actionId value="validate-eicr"/>
-              <relationship value="before-start"/>
+                <actionId value="validate-eicr"/>
+                <relationship value="before-start"/>
             </relatedAction>
         </action>
         <action id="validate-eicr">
@@ -182,8 +178,8 @@
                 </coding>
             </code>
             <relatedAction>
-              <actionId value="route-and-send-eicr"/>
-              <relationship value="before-start"/>
+                <actionId value="route-and-send-eicr"/>
+                <relationship value="before-start"/>
             </relatedAction>
         </action>
         <action id="route-and-send-eicr">
