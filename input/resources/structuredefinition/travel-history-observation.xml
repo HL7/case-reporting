@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="travel-history-observation"/>
     <meta>
-        <versionId value="11"/>
-        <lastUpdated value="2020-11-24T10:23:56.782+00:00"/>
-        <source value="#pp8WpVcZlY7xYwCq"/>
+        <versionId value="13"/>
+        <lastUpdated value="2020-11-24T10:56:27.036+00:00"/>
+        <source value="#o4Un0dr9QfBHLqrD"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-observation"/>
     <version value="1.0.0"/>
@@ -48,7 +48,7 @@
                     <text value="Travel History"/>
                 </valueCodeableConcept>
             </example>
-            <mustSupport value="true"/>
+            <mustSupport value="false"/>
             <isModifier value="false"/>
         </element>
         <element id="Observation.subject">
@@ -68,6 +68,7 @@
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-transportation-details"/>
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-exposure-information"/>
             </type>
+            <mustSupport value="true"/>
         </element>
         <element id="Observation.component">
             <path value="Observation.component"/>
@@ -78,6 +79,8 @@
                 </discriminator>
                 <rules value="open"/>
             </slicing>
+            <min value="1"/>
+            <mustSupport value="false"/>
         </element>
         <element id="Observation.component:travelLocation">
             <path value="Observation.component"/>
@@ -85,8 +88,8 @@
             <short value="Travel location"/>
             <definition value="Location of travel"/>
             <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
+            <max value="*"/>
+            <mustSupport value="false"/>
         </element>
         <element id="Observation.component:travelLocation.extension">
             <path value="Observation.component.extension"/>
