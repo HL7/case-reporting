@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="travel-history-observation"/>
     <meta>
-        <versionId value="6"/>
-        <lastUpdated value="2020-11-18T05:15:41.442+00:00"/>
-        <source value="#MsNqQJByya1um6Yb"/>
+        <versionId value="11"/>
+        <lastUpdated value="2020-11-24T10:23:56.782+00:00"/>
+        <source value="#pp8WpVcZlY7xYwCq"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-observation"/>
     <version value="1.0.0"/>
@@ -66,14 +66,29 @@
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-transportation-details"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-exposure-information"/>
             </type>
         </element>
         <element id="Observation.component">
             <path value="Observation.component"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="code"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+        </element>
+        <element id="Observation.component:travelLocation">
+            <path value="Observation.component"/>
+            <sliceName value="travelLocation"/>
+            <short value="Travel location"/>
+            <definition value="Location of travel"/>
             <min value="1"/>
+            <max value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Observation.component.extension">
+        <element id="Observation.component:travelLocation.extension">
             <path value="Observation.component.extension"/>
             <slicing>
                 <discriminator>
@@ -83,7 +98,7 @@
                 <rules value="open"/>
             </slicing>
         </element>
-        <element id="Observation.component.extension:travelHistoryAddress">
+        <element id="Observation.component:travelLocation.extension:travelHistoryAddress">
             <path value="Observation.component.extension"/>
             <sliceName value="travelHistoryAddress"/>
             <short value="Travel history address"/>
@@ -92,10 +107,10 @@
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-address-extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/address-extension"/>
             </type>
         </element>
-        <element id="Observation.component.code">
+        <element id="Observation.component:travelLocation.code">
             <path value="Observation.component.code"/>
             <patternCodeableConcept>
                 <coding>
@@ -106,13 +121,13 @@
             </patternCodeableConcept>
             <mustSupport value="true"/>
         </element>
-        <element id="Observation.component.value[x]">
+        <element id="Observation.component:travelLocation.value[x]">
             <path value="Observation.component.value[x]"/>
             <type>
                 <code value="CodeableConcept"/>
             </type>
         </element>
-        <element id="Observation.component.value[x].coding">
+        <element id="Observation.component:travelLocation.value[x].coding">
             <path value="Observation.component.value[x].coding"/>
             <example>
                 <label value="for coding"/>
@@ -129,13 +144,42 @@
                 <valueSet value="http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3201"/>
             </binding>
         </element>
-        <element id="Observation.component.value[x].text">
+        <element id="Observation.component:travelLocation.value[x].text">
             <path value="Observation.component.value[x].text"/>
             <example>
                 <label value="for text"/>
                 <valueString value="Spent 8 years in the UK during the BSE outbreak"/>
             </example>
             <mustSupport value="true"/>
+        </element>
+        <element id="Observation.component:travelPurpose">
+            <path value="Observation.component"/>
+            <sliceName value="travelPurpose"/>
+            <short value="Purpose of travel"/>
+            <definition value="Purpose of travel"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.component:travelPurpose.code">
+            <path value="Observation.component.code"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://snomed.info/sct"/>
+                    <code value="280147009"/>
+                </coding>
+            </patternCodeableConcept>
+        </element>
+        <element id="Observation.component:travelPurpose.value[x]">
+            <path value="Observation.component.value[x]"/>
+            <min value="1"/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <mustSupport value="true"/>
+            <binding>
+                <strength value="preferred"/>
+                <description value="Travel Purpose"/>
+                <valueSet value="http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3108"/>
+            </binding>
         </element>
     </differential>
 </StructureDefinition>

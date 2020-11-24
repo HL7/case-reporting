@@ -3,18 +3,18 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-exposure-information"/>
     <meta>
-        <versionId value="9"/>
-        <lastUpdated value="2020-11-18T09:10:18.161+00:00"/>
-        <source value="#TyPNOieuaKumBNUR"/>
+        <versionId value="14"/>
+        <lastUpdated value="2020-11-24T09:41:33.368+00:00"/>
+        <source value="#SKFbhOc5WknRYlW5"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-exposure-information"/>
     <version value="1.0.0"/>
-    <name value="USPublicHealthExposureInformationInformation"/>
-    <title value="US Public Health Exposure Information Information"/>
+    <name value="USPublicHealthExposureInformation"/>
+    <title value="US Public Health Exposure Information"/>
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This profile represents patient exposure information. The type of exposure is contained in Observation.code (environmental, activity, event, location, person, animal, etc.). If the exposure is an entity (person, animal, location) then it is represented in Observation.focus which is a reference to a Patient, RelatedPerson, Location, Group, etc.). (An animal would be represented by a RelatedPerson that contains the [Extension Practitioner Animal Species](https://www.hl7.org/fhir/extension-practitioner-animalspecies.html). Free text information about the exposure can be recorded in Observation.valueString and the date or period of exposure is held in Observation.effective[x].&#xA;&#xA;The following are some exposures that might be captured in this profile:&#xA;* Environmental exposures&#xA;** Living facilities&#xA;** Work facilities&#xA;** School facilities&#xA;&#xA;* Contact exposures&#xA;** Person &#xA;** Animal&#xA;&#xA;* Event Exposures&#xA;** Sporting event&#xA;** Rally&#xA;** Wedding"/>
+    <description value="This profile represents potential patient exposure and contact information. The type of exposure/contact is contained in Observation.code (environmental, activity, event, location, person, animal, etc.). If the exposure/contact is an entity (person, animal, location) then it is represented in Observation.focus which is a reference to a Patient, RelatedPerson, Location, Group, etc.. (An animal would be represented by a RelatedPerson that contains the [Extension Practitioner Animal Species](https://www.hl7.org/fhir/extension-practitioner-animalspecies.html). Free text information about the exposure/contact can be recorded in Observation.valueString and the date or period of exposure is held in Observation.effective[x]. If an address where the exposure/contact took place is known then it can be contained in the address-extension.&#xA;&#xA;The following are some exposures that might be captured in this profile:&#xA;* Environmental exposures&#xA;** Living facilities&#xA;** Work facilities&#xA;** School facilities&#xA;&#xA;* Contact exposures&#xA;** Person &#xA;** Animal&#xA;&#xA;* Event Exposures&#xA;** Sporting event&#xA;** Rally&#xA;** Wedding&#xA;** Activity"/>
     <fhirVersion value="4.0.1"/>
     <kind value="resource"/>
     <abstract value="false"/>
@@ -27,6 +27,15 @@
             <path value="Observation"/>
             <short value="This profile represents patient exposure information."/>
             <definition value="This profile represents patient exposure information."/>
+        </element>
+        <element id="Observation.extension">
+            <path value="Observation.extension"/>
+            <short value="Exposure/contact address"/>
+            <definition value="If an address where the exposure/contact took place is known then it can be contained in the address-extension."/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/address-extension"/>
+            </type>
         </element>
         <element id="Observation.category">
             <path value="Observation.category"/>
@@ -42,6 +51,8 @@
         </element>
         <element id="Observation.code">
             <path value="Observation.code"/>
+            <short value="Type of exposure/contact"/>
+            <definition value="The type of exposure/contact (environmental, activity, event, location, person, animal, etc.)."/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -56,6 +67,8 @@
         </element>
         <element id="Observation.focus">
             <path value="Observation.focus"/>
+            <short value="Contact with an entity (person, animal) or at a location."/>
+            <definition value="Contact with an entity (person, animal) or at a location."/>
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient"/>

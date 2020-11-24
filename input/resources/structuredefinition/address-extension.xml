@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="travel-history-address-extension"/>
+    <id value="address-extension"/>
     <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2020-10-28T06:46:36.878+00:00"/>
-        <source value="#Al1N7Q88191QtlqK"/>
+        <versionId value="1"/>
+        <lastUpdated value="2020-11-24T09:37:25.007+00:00"/>
+        <source value="#B16GoymPTkQa9fkj"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-address-extension"/>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/address-extension"/>
     <version value="1.0.0"/>
-    <name value="Travel_History_Address_Extension"/>
-    <title value="Travel History Address Extension"/>
+    <name value="Address_Extension"/>
+    <title value="Address Extension"/>
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Extension profile represents where the patient traveled to as an address e.g.: country, state, city, street address (if applicable). At the least, address must contain the country. State is required if the country is US. If country is something other than US, the state **MAY** be present but **MAY** be bound to different vocabularies."/>
+    <description value="This Extension profile represents where the patient traveled to or visited as an address e.g.: country, state, city, street address (if applicable). At the least, address must contain the country. State is required if the country is US. If country is something other than US, the state **MAY** be present but **MAY** be bound to different vocabularies."/>
     <fhirVersion value="4.0.1"/>
     <kind value="complex-type"/>
     <abstract value="false"/>
@@ -22,14 +22,19 @@
         <type value="element"/>
         <expression value="Observation.component"/>
     </context>
+    <context>
+        <type value="element"/>
+        <expression value="Observation"/>
+    </context>
     <type value="Extension"/>
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
     <derivation value="constraint"/>
+    
     <differential>
         <element id="Extension">
             <path value="Extension"/>
-            <short value="Travel history address"/>
-            <definition value="Where the patient traveled to as an address e.g.country, city, street address if applicable. At the least, address must contain the country."/>
+            <short value="Address"/>
+            <definition value="Where the patient traveled to or visited as an address e.g. country, city, street address if applicable. At the least, address must contain the country."/>
             <max value="1"/>
         </element>
         <element id="Extension.url">
