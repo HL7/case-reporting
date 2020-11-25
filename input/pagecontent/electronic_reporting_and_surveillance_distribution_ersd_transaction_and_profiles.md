@@ -1,7 +1,5 @@
 [Previous Page - Reportability Response (RR) Transaction and Profiles](reportability_response_rr_transaction_and_profiles.html)
 
-[Previous Page - Reportability Response (RR) Transaction and Profiles](reportability_response_rr_transaction_and_profiles.html)
-
 ### electronic Reporting and Surveillance Distribution (eRSD) Transaction and Profiles
 
 The eRSD transaction includes a constrained FHIR PlanDefinition resource profile, a family of actions, and a [FHIR Subscription service](subscription_service.html). It supports the distribution of reporting guidance and parameters, trigger code value sets, and more complex reporting rules and clinician / reporter support resources. This work seeks to align with developing public health guidelines that cover the same conditions. The PlanDefinition includes guidance for the overall orchestration of electronic case reporting. Each member of the family of actions (Match Trigger, Create eICR, Periodic Update eICR, Close Out eICR, Validate eICR, Route and Send eICR) aligns with what may be different healthcare information systems or modules involved in reporting. The narrative elements of this profile will be used to help structure and guide implementation until EHRs have the ability to automatically consume them.
@@ -68,7 +66,5 @@ The current PlanDefinition uses ECA Rules, we propose using Workflow Definition 
   <li><a href="StructureDefinition-us-ph-valueset-library.html">US Public Health ValueSet Library</a></li>
 	<li><a href="StructureDefinition-us-ph-valueset.html">US Public Health ValueSet</a></li>
 </ul>
-
-[Next Page - Subscription Service](subscription_service.html)
 
 [Next Page - Subscription Service](subscription_service.html)
