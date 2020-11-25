@@ -1,10 +1,13 @@
 == Suppressed Messages ==
 # No suitable code in the value set
 The Coding provided (http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type#reporting) is not in the value set http://hl7.org/fhir/ValueSet/usage-context-type, and a code should come from this value set unless it has no suitable code (the validator cannot judge what is suitable). (error message = Not in value set http://hl7.org/fhir/ValueSet/usage-context-type)
+# NUCC
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/core/ValueSet/us-core-provider-role because the value set or code system is not known to the validator]
 # ICD-10-CM codes not currently being validated
 The code A01 is not valid in the system http://hl7.org/fhir/sid/icd-10-cm
 The code A01.0 is not valid in the system http://hl7.org/fhir/sid/icd-10-cm
 # External value sets/code systems
+ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator
 Code System URI 'urn:oid:2.16.840.1.114222.4.5.315' is unknown so the code cannot be validated
 Code System URI 'urn:oid:2.16.840.1.114222.4.5.274' is unknown so the code cannot be validated
 Code System URI 'urn:oid:2.16.840.1.114222.4.5.232' is unknown so the code cannot be validated
@@ -18,11 +21,12 @@ Code System URI 'urn:oid:1.0.3166.1' is unknown so the code cannot be validated
 [Unable to determine whether the provided codes are in the value set http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.113883.10.20.15.2.5.4 because the value set or code system is not known to the validator]
 [Unable to determine whether the provided codes are in the value set http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.113883.10.20.15.2.5.5 because the value set or code system is not known to the validator]
 [Unable to determine whether the provided codes are in the value set http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.113883.10.20.15.2.5.11 because the value set or code system is not known to the validator]
-# CPT codes can't be checked
-Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated plus another example is demonstrating use of the data-absent-reason extension
+# 1. CPT codes can't be checked 2. One of the examples is demonstrating use of the data-absent-reason extension 
+Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type because the value set or code system is not known to the validator]
+No code provided, and a code should be provided from the value set http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type (http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type)
 # APPROVED by Cross Project Workgroup: Profiles do not derive from one of the base profiles because they do not align with any of the US Core Observations.
-US FHIR Usage rules require that all profiles on Observation derive from one of the base US profiles.
+US FHIR Usage rules require that all profiles on Observation derive from one of the base US profiles
 # APPROVED by Cross Project Workgroup: Profile does not align with US Core Encounter because US Core Encounter does not currently allow PractitionerRole - this is being added for Jan 2021 ballot to US Core and as soon as this functionality is added we will use US Core Encounter
 US FHIR Usage rules require that all profiles on Encounter derive from the core US profile. Comparison with US Core Encounter Profile
 # Examples have optional slices that are not defined in the profile - not matching is expected behaviour
@@ -79,6 +83,7 @@ Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition
 Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition - listed in meta
 Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/postpartum-status - listed in meta
 Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-outcome-observation
+Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation
 Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation - listed in meta
 Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication
 Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation
