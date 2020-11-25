@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="257"/>
-        <lastUpdated value="2020-11-25T02:32:27.569+00:00"/>
-        <source value="#U55XKxXtnETJcvhX"/>
+        <versionId value="261"/>
+        <lastUpdated value="2020-11-25T04:53:18.283+00:00"/>
+        <source value="#4p1oVssCbtUWpjXD"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="3.0.0"/>
@@ -629,7 +629,7 @@
             <name value="FHIR Helpers Library"/>
             <description value="CQL FHIR Helpers Library"/>
             <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-executablelibrary"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-executablelibrary"/>
             <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
@@ -650,7 +650,7 @@
             <name value="library-rctc"/>
             <description value="RCTC Library"/>
             <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-valueset-library"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset-library"/>
             <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
@@ -1135,7 +1135,7 @@
             <name value="Rule Filters"/>
             <description value="An example library with logic for determining whether or not an event or situation is reportable."/>
             <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-executablelibrary"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-executablelibrary"/>
             <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
@@ -1205,7 +1205,7 @@
                 <display value="Travel_History_Observation"/>
             </reference>
             <name value="Travel History Observation"/>
-            <description value="This Observation profile represents the following for eCR:&#xA;&#xA;* the Initial Case Report subject's travel history as a string, an address, or a coded location&#xA;* Observation.effectiveTime contains the date or period of time spent in the location&#xA;* it is possible to have multiple Observation.components, each containing a different location, but there is only a single effectiveTime. This allows for cases where a patient cannot remember exact dates of travel (e.g. I traveled to London, Paris, and Berlin in July and August 2016). However, most uses will involve a single component (location)&#xA;* free text describing the travel history details and location can be entered using the Observation.component.valueCodeableConcept.text element&#xA;* use component.codeableConcept to record a coded location&#xA;* use component.extension to record a specific address&#xA;* where a more granular address than state is known (e.g. city, street) it is appropriate to use the extension to record an address rather than using the coded location."/>
+            <description value="This Observation profile represents a patient's travel history."/>
             <exampleBoolean value="false"/>
             <groupingId value="eicr-profiles"/>
         </resource>
@@ -1215,7 +1215,7 @@
                 <display value="Tribal Affiliation Extension"/>
             </reference>
             <name value="Tribal Affiliation Extension"/>
-            <description value="Affiliated tribe name and whether or not the patient is an enrolled member"/>
+            <description value="This Extension profile represents an affiliated tribe name and whether or not the patient is an enrolled member"/>
             <exampleBoolean value="false"/>
             <groupingId value="extensions"/>
         </resource>
@@ -1361,7 +1361,7 @@
                 <display value="US Public Health Emergency Outbreak Information"/>
             </reference>
             <name value="US Public Health Emergency Outbreak Information"/>
-            <description value="This profile represents information that is required during a public health emergency/outbreak. This information will be recorded using a question/answer pattern with questions specific to the public health emergency/outbreak."/>
+            <description value="This profile represents information that is required during a public health emergency/outbreak."/>
             <exampleBoolean value="false"/>
             <groupingId value="us-public-health-profiles"/>
         </resource>
@@ -1371,7 +1371,7 @@
                 <display value="us-ph-encounter"/>
             </reference>
             <name value="US Public Health Encounter"/>
-            <description value="This Encounter profile represents the encounter related to the eICR event. Contained in the Encounter.participant, is the provider in charge of care (represented by the PractitionerRole.Practitioner) and the provider facility (represented by the PractitionerRole.Organization). The location (facility) in which care was provided when the case was triggered is contained in the encounter.location.&#xA;&#xA;A trigger on an encounter diagnosis is indicated by the eICR Trigger Code Flag Extension in the diagnosis.&#xA;&#xA;Where a trigger occurs outside of an encounter use code=&quot;PHC2237&quot; \| system=&quot;2.16.840.1.114222.4.5.274&quot; (External Encounter) and omit period, participant, location, and serviceProvider. In this case, the responsible provider and facility information is contained in the eICR Composition.author."/>
+            <description value="This Encounter profile represents the encounter related to the event."/>
             <exampleBoolean value="false"/>
             <groupingId value="us-public-health-profiles"/>
         </resource>
@@ -1381,7 +1381,7 @@
                 <display value="US Public Health Exposure Information Information"/>
             </reference>
             <name value="US Public Health Exposure Information Information"/>
-            <description value="This profile represents potential patient exposure and contact information. The type of exposure/contact is contained in Observation.code (environmental, activity, event, location, person, animal, etc.). If the exposure/contact is an entity (person, animal, location) then it is represented in Observation.focus which is a reference to a Patient, RelatedPerson, Location, Group, etc.. (An animal would be represented by a RelatedPerson that contains the [Extension Practitioner Animal Species](https://www.hl7.org/fhir/extension-practitioner-animalspecies.html). Free text information about the exposure/contact can be recorded in Observation.valueString and the date or period of exposure is held in Observation.effective[x]. If an address where the exposure/contact took place is known then it can be contained in the address-extension.&#xA;&#xA;The following are some exposures that might be captured in this profile:&#xA;* Environmental exposures&#xA;** Living facilities&#xA;** Work facilities&#xA;** School facilities&#xA;&#xA;* Contact exposures&#xA;** Person &#xA;** Animal&#xA;&#xA;* Event Exposures&#xA;** Sporting event&#xA;** Rally&#xA;** Wedding&#xA;** Activity"/>
+            <description value="This Observation profile represents potential patient exposure and contact information."/>
             <exampleBoolean value="false"/>
             <groupingId value="us-public-health-profiles"/>
         </resource>
@@ -1391,7 +1391,7 @@
                 <display value="us-ph-location"/>
             </reference>
             <name value="US Public Health Location"/>
-            <description value="This Location profile represents the location/facility in which care was provided when the eICR was triggered."/>
+            <description value="This Location profile represents the location/facility in which care was provided."/>
             <exampleBoolean value="false"/>
             <groupingId value="us-public-health-profiles"/>
         </resource>
@@ -1401,7 +1401,7 @@
                 <display value="us-ph-organization"/>
             </reference>
             <name value="US Public Health Organization"/>
-            <description value="This Organization profile represents the following organizations for electronic case reporting:&#xA;&#xA;* Initial Case Report source provider facility/office name&#xA;* Initial Case Report source facility&#xA;* Reportability Response recipients&#xA;* Reportability Response responsible agency  &#xA;* Reportability Response routing entity&#xA;* Reportability Response rules authoring agency&#xA;&#xA;It is based on the **US Core Organization** profile with a further restriction of *Must Support* on the **type** and **contact** data elements."/>
+            <description value="This Organization profile represents an organization involved in public health."/>
             <exampleBoolean value="false"/>
             <groupingId value="us-public-health-profiles"/>
         </resource>
@@ -1411,7 +1411,7 @@
                 <display value="us-ph-patient"/>
             </reference>
             <name value="US Public Health Patient"/>
-            <description value="This Patient profile represents a US Public Health Patient. It is based on the **US Core Patient** profile with further restrictions to allow masking of some data elements and the addition of the patient-genderIdentity extension."/>
+            <description value="This Patient profile represents a US Public Health Patient."/>
             <exampleBoolean value="false"/>
             <groupingId value="us-public-health-profiles"/>
         </resource>
@@ -1431,7 +1431,7 @@
                 <display value="us-ph-practitionerrole"/>
             </reference>
             <name value="US Public Health Practitioner Role"/>
-            <description value="This PractitionerRole represents the roles and organizations a practitioner involved in eCR is associated with. It is based on the **US Core PractitionerRole** profile with a further restriction of a mandatory **identifier** data element."/>
+            <description value="This PractitionerRole profile represents the roles and organizations a practitioner involved in public health is associated with."/>
             <exampleBoolean value="false"/>
             <groupingId value="us-public-health-profiles"/>
         </resource>
@@ -1441,7 +1441,7 @@
                 <display value="US Public Health Procedure"/>
             </reference>
             <name value="US Public Health Procedure"/>
-            <description value="This profile defines constraints on the US Core Procedure profile for US Public Health use cases."/>
+            <description value="This Procedure profile defines constraints on the US Core Procedure profile for US Public Health use cases."/>
             <exampleBoolean value="false"/>
             <groupingId value="us-public-health-profiles"/>
         </resource>
@@ -1582,7 +1582,7 @@
                 <display value="US Public Health Computable Library"/>
             </reference>
             <name value="US Public Health Computable Library"/>
-            <description value="The computable library profile sets the minimum expectations for a computable CQL library"/>
+            <description value="The computable library profile sets the minimum expectations for a computable CQL library."/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
