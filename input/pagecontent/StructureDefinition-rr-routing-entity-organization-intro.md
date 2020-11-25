@@ -1,0 +1,1 @@
+This entity may just be acting to route the eICR and Reportability Response on their way to a Responsible Agency.  It is based on the [eCR Organization](StructureDefinition-us-ph-organization.html) profile with a further restriction setting the **type** data element to 'Routing Entity'.

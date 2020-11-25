@@ -525,7 +525,7 @@
                 <display value="ersd-plandefinition"/>
             </reference>
             <name value="eRSD PlanDefinition"/>
-            <description value="This PlanDefinition profile defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician.&#xA;&#xA;The profile defines four timing-related parameters for initiating case reports from Electronic Health Records (the standard does not specify the hour value for the delay of the send - public health operations will determine the specific value appropriate for implementation) the standard conveys the parameters to clinical care but it does not require their implementation.&#xA;&#xA;* Delay initial eICR construction (for example 1 hour) - the time after start of the encounter when the trigger events would not immediately cause an eICR to be composed and sent. (This delay is intended to allow adequate data to be recorded in the EHR, but is not so long as to delay reporting in critical circumstances.)  If there is a trigger and the encounter is closed before the specified delay value (for example the encounter is closed in 30 minutes when the specified delay value is 1 hour) the eICR should be created and sent.&#xA;* eICR reportable check period (for example 6 hours) - the time interval on which reportability should be checked after the initial reportability check. If the event is reportable then the eICR should be created and sent, otherwise, if the encounter is still open then check reportable should be scheduled again at the specified interval (for example 6 hours from the time of the current check).&#xA;* eICR periodic update (for example 24 hours) - the time after an initial eICR creation to send new eICRs as updates during long encounters. (These updates should only be produced until the end of the encounter).&#xA;* eICR encounter close-out (for example 24 hours or 0 hours for no delay) - the time after the end of an encounter for a final eICR to be sent when there has been one or more trigger events in the encounter. (The close-out eICR is intended to provide the full data available at the end of an encounter.)"/>
+            <description value="This PlanDefinition profile defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician."/>
             <exampleBoolean value="false"/>
             <groupingId value="ersd-profiles-instances"/>
         </resource>
@@ -846,7 +846,7 @@
                 <display value="Pregnancy_Status_Observation"/>
             </reference>
             <name value="Pregnancy Status Observation"/>
-            <description value="This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range.&#xA;&#xA;This profile includes the determination method, determination date, and recorded date of the pregnancy status.&#xA;&#xA;Use the effectivePeriod to indicate the date range over which the patient was pregnant/possibly pregnant/not pregnant/unknown. To record the date that the pregnancy status was recorded, use the date-recorded-extension and to record the date on which the pregnancy status determination was made, use the date-determined-extension. If the effectivePeriod.end is not present it is assumed that the date range over which the pregnancy status is asserted is from effectivePeriod.start to the date in the date-recorded-extension. For example, if the effectivePeriod.start has been recorded as two months prior to the date contained in the date-recorded-extension, and there is no effectivePeriod.end recorded, no assumptions can be made about the pregnancy status after the date contained in the date-recorded-extension."/>
+            <description value="This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range."/>
             <exampleBoolean value="false"/>
             <groupingId value="eicr-profiles"/>
         </resource>
@@ -887,7 +887,7 @@
                 <display value="RR_Communication"/>
             </reference>
             <name value="RR Communication"/>
-            <description value="This Communication profile represents the Reportability Response that will be created in response to an electronic Initial Case Report Composition. The sharing of the Reportability Response with clinical care will serve several functions, including to: &#xA;&#xA;* Communicate the reportability status, for the responsible PHA(s) of each condition included in the electronic Initial Case Report (eICR)     &#xA;* Identify who (a PHA or an intermediary) prepared the Reportability Response     &#xA;* Indicate whether the eICR has been sent to one or more PHA(s)     &#xA;* Identify which PHA(s) has/have been sent the eICR     &#xA;* Provide contact information for the responsible PHA(s)     &#xA;* Provide suggested or required clinical follow-up activities from the responsible PHA(s), including any additional reporting needs or infection control activities     &#xA;* Provide access to clinical support resources suggested by the responsible PHA(s) for identified reportable conditions     &#xA;* Confirm eICR receipt and processing     &#xA;&#xA;A Reportability Response will also, when requested, be shared with the responsible PHAs (when they have not constructed it) for their internal use, so they understand what has been shared with clinical care and, and to monitor/audit decision support algorithm effectivesness and implementation. When a condition is considered reportable to more than one PHA, the Reportability Response can be helpful in communicating reporting that has been done to other PHAs.     &#xA;&#xA;The Reportability Response Communication is also structured to allow:     &#xA;&#xA;* Notification, alerting, routing and queueing in work or message management systems for healthcare personnel     &#xA;* Dynamic and static URIs for supplemental data collection and the provision of information resources"/>
+            <description value="This Communication profile represents the Reportability Response that will be created in response to an electronic Initial Case Report Composition."/>
             <exampleBoolean value="false"/>
             <groupingId value="reportability-response-profiles"/>
         </resource>
@@ -919,7 +919,7 @@
                 <display value="RR_Determination_of_Reportability_Extension"/>
             </reference>
             <name value="RR Determination of Reportability Extension"/>
-            <description value="This Extension profile represents the determination of reportability. Reportability is &quot;the quality or state of being reportable or not&quot;. Reportability does not equate to the patient having a condition or meeting a case definition (definitively being a case).&#xA;&#xA;For each condition included in the eICR and the relevant public health agency(s), this element indicates the determination of whether the condition is reportable to public health. &#xA;&#xA;The values that can be used for the Determination of Reportability are described below.&#xA;&#xA;A possible condition is:&#xA;&#xA;* Reportable - The information provided meets reporting criteria for an associated PHA.&#xA;&#xA;A possible condition:&#xA;&#xA;* May be Reportable - The information provided may meet reporting criteria if additional information is provided. The Reportability Response will also be able to share the information needed to definitively determine reportability.&#xA;&#xA;A possible condition is:&#xA;&#xA;* Not Reportable - The information provided conclusively does not meet reporting criteria.&#xA;&#xA;Some decision support systems may not be able to fully differentiate between possible conditions that are Not Reportable and those that May be Reportable if additional information is provided. In these circumstances there may only be a reportability determination of:&#xA;&#xA;* No Reporting Rule Met - The information provided does not meet reporting criteria or may meet reporting criteria if additional information is provided.&#xA;&#xA;The determination of No Reporting Rule Met may be provided for a possible condition or for all conditions in the  eICR."/>
+            <description value="This Extension profile represents the determination of reportability."/>
             <exampleBoolean value="false"/>
             <groupingId value="reportability-response-profiles"/>
         </resource>
@@ -949,7 +949,7 @@
                 <display value="RR_Eicr_Processing_Status_Extension"/>
             </reference>
             <name value="RR eICR Processing Status Extension"/>
-            <description value="This Extension profile represents the eICR processing status. If the eICR was not processed or was processed with a warning, the reason will be contained in the eICR Processing Status Reason. If there is any output from a validator, that output will be contained in the eICR Validation Output.&#xA;&#xA;If any of the trigger codes used to generate the eICR are from an outdated version of the RCTC or the codes are marked as inactive in the latest version of the RCTC, these are flagged and and the eICR Processing Status Reason Detail will hold the details of the outdated and expected versions of the RCTC."/>
+            <description value="This Extension profile represents the eICR processing status."/>
             <exampleBoolean value="false"/>
             <groupingId value="reportability-response-profiles"/>
         </resource>
@@ -959,7 +959,7 @@
                 <display value="RR_Eicr_Processing_Status_Observation"/>
             </reference>
             <name value="RR eICR Processing Status Observation"/>
-            <description value="This Observation profile represents the  eICR processing status. If it was not processed or was processed with a warning, the reason and details will be contained in the related eICR Processing Status Reason profile."/>
+            <description value="This Observation profile represents the  eICR processing status."/>
             <exampleBoolean value="false"/>
             <groupingId value="reportability-response-profiles"/>
         </resource>
@@ -969,7 +969,7 @@
                 <display value="RR_Eicr_Processing_Status_Reason_Observation"/>
             </reference>
             <name value="RR eICR Processing Status Reason Observation"/>
-            <description value="This Observation profile represents, if the incoming eICR was not successfully processed for a determination of reportability, the reason it was not processed.  If any of the trigger codes used to generate the eICR are from an outdated version of the RCTC or the codes are marked as inactive in the latest version of the RCTC, these are flagged and component observations will hold the details of the outdated and expected versions of the RCTC."/>
+            <description value="This Observation profile represents, if the incoming eICR was not successfully processed for a determination of reportability, the reason it was not processed."/>
             <exampleBoolean value="false"/>
             <groupingId value="reportability-response-profiles"/>
         </resource>
@@ -1019,7 +1019,7 @@
                 <display value="RR_Relevant_Reportable_Condition_Plandefinition"/>
             </reference>
             <name value="RR Relevant Reportable Condition Plandefinition"/>
-            <description value="This PlanDefinition in the Reportability Response transaction represents reportability information for a condition-jurisdiction pair, based on the PHA in which is located the patient's home, the provider facility or both locations. The Determination of Reportability, Determination of Reportability Reason, and Determination of Reportability Rule are contained in extensions. This profile also contains extensions for the Responsible Agency, the Rules Authoring Agency, and the Routing Entity. The Relevant Reportable Condition is contained in goal.addresses and any External Resources are contained in action (one action may contain multiple External Resources (documentation))."/>
+            <description value="This PlanDefinition in the Reportability Response transaction represents reportability information for a condition-jurisdiction pair, based on the PHA in which is located the patient's home, the provider facility or both locations."/>
             <exampleBoolean value="false"/>
             <groupingId value="reportability-response-profiles"/>
         </resource>
@@ -1040,7 +1040,7 @@
                 <display value="RR_Responsible_Agency_Organization"/>
             </reference>
             <name value="RR Responsible Agency Organization"/>
-            <description value="This Organization profile represents the Responsible Agency which is a PHA to which reporting is legally required. This can be the PHA relevant to the location in which care was provided and/or where the patient lives. It is based on the [eCR Organization](StructureDefinition-us-ph-organization.html) profile with a further restriction setting the **type** data element to 'Responsible Agency'."/>
+            <description value="This Organization profile represents the Responsible Agency which is a PHA to which reporting is legally required."/>
             <exampleBoolean value="false"/>
             <groupingId value="reportability-response-profiles"/>
         </resource>
@@ -1071,7 +1071,7 @@
                 <display value="RR_Routing_Entity_Organization"/>
             </reference>
             <name value="RR Routing Entity Organization"/>
-            <description value="This Organization profile represents the Routing Entity which is a PHA or other organization identified by the PHA (such as an HIE) to which the eICR and/or the Reportability Response will be provided immediately following the creation of the Reportability Response. This entity may just be acting to route the eICR and Reportability Response on their way to a Responsible Agency.  It is based on the [eCR Organization](StructureDefinition-us-ph-organization.html) profile with a further restriction setting the **type** data element to 'Routing Entity'."/>
+            <description value="This Organization profile represents the Routing Entity which is a PHA or other organization identified by the PHA (such as an HIE) to which the eICR and/or the Reportability Response will be provided immediately following the creation of the Reportability Response."/>
             <exampleBoolean value="false"/>
             <groupingId value="reportability-response-profiles"/>
         </resource>
@@ -1102,7 +1102,7 @@
                 <display value="RR_Rules_Authoring_Agency_Organization"/>
             </reference>
             <name value="RR Rules Authoring Agency Organization"/>
-            <description value="This Organization profile represents the Rules Authoring Agency which is the originator of the rules that are being executed in decision support to determine reportability. This may be a state or local PHA. In the majority of cases the Rules Authoring Agency will be the same as the Responsible Agency. Usually, a Local Public Health Agency will inherit rules from its relevant state agency, but a Local agency can adopt, replace or supplement relevant state rules. It is based on the [eCR Organization](StructureDefinition-us-ph-organization.html) profile with a further restriction setting the **type** data element to 'Rules Authoring Agency'."/>
+            <description value="This Organization profile represents the Rules Authoring Agency which is the originator of the rules that are being executed in decision support to determine reportability."/>
             <exampleBoolean value="false"/>
             <groupingId value="reportability-response-profiles"/>
         </resource>
