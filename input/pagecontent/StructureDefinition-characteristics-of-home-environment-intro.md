@@ -1,0 +1,1 @@
+Such characteristics include, but are not limited to, type of residence (trailer, single family home, assisted living), living arrangement (e.g., alone, with parents), and housing status (e.g., evicted, homeless, home owner).

@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-trigger-code-flag-extension"/>
     <meta>
-        <versionId value="6"/>
-        <lastUpdated value="2020-11-13T04:52:12.871+00:00"/>
-        <source value="#2LiKCzZjdCvFYyVF"/>
+        <versionId value="8"/>
+        <lastUpdated value="2020-11-25T01:59:46.175+00:00"/>
+        <source value="#pgUpfohgnc6TB57N"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
     <version value="1.0.0"/>
@@ -14,7 +14,7 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Extension profile represents a flag which, if it is present, indicates that the **target** reference represents a triggering event and caused the eCR to be generated. It contains the trigger code which is the same as the trigger code in the resource and is used to identify which code(s) in a resource that allows multiple trigger codes (e.g. US Core Observation Lab where a trigger code could be contained in either the code (lab test) or the value (lab test result) or in the case of a battery or panel of tests, in the hasMember as another US Core Observation Lab code or value). It also contains the RCTC OID and RCTC version of the value set from which the code was matched. &#xA;&#xA;It is available for use in the following places:&#xA;&#xA;* eICR Encounter&#xA;	* flags a code contained in Condition.code (eICR Condition) which is contained in Encounter.diagnosis (eICR Encounter) - diagnosis&#xA;* Problem Section entry&#xA;	* flags a code contained in Condition.code (eICR Condition) - diagnosis&#xA;* Plan of Treatment Section entry&#xA;	* flags a code contained in ServiceRequest.code (eICR ServiceRequest) - test being requested&#xA;* Results Section entry&#xA;	* flags codes contained in:&#xA;		* Observation.code (US Core Laboratory Result Observation Profile code) - test performed/battery or panel name&#xA;		* Observation.value (US Core Laboratory Result Observation Profile value) - test result&#xA;		* Observation.code referenced in containing Observation.hasMember (US Core Laboratory Result Observation Profile code) - member of panel test performed&#xA;		* Observation.value referenced in containing Observation.hasMember (US Core Laboratory Result Observation Profile value) - member of panel test result&#xA;* Medications Section entry&#xA;	* flags a code contained in MedicationAdministration.medicationCodeableConcept - medication&#xA;* Immunization Section entry&#xA;	* flags a code contained in US Core Immunization (Immunization.vaccineCode) - vaccine&#xA;* Procedures Section entry&#xA;	* flags a code contained in US Core Procedure (Procedure.code) - procedure"/>
+    <description value="This Extension profile represents a flag which, if it is present, indicates that the **target** reference represents a triggering event and caused the eCR to be generated."/>
     <fhirVersion value="4.0.1"/>
     <mapping>
         <identity value="eCR-CDA"/>
@@ -34,6 +34,7 @@
     <type value="Extension"/>
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
     <derivation value="constraint"/>
+    
     <differential>
         <element id="Extension">
             <path value="Extension"/>

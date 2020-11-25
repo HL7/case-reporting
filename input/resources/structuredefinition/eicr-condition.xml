@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-condition"/>
     <meta>
-        <versionId value="6"/>
-        <lastUpdated value="2020-11-13T04:52:12.619+00:00"/>
-        <source value="#j2Ycn6oozThzO6jo"/>
+        <versionId value="9"/>
+        <lastUpdated value="2020-11-25T01:53:03.111+00:00"/>
+        <source value="#Y8PruWo8vW0SFp5I"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition"/>
     <version value="1.0.0"/>
@@ -14,7 +14,7 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Condition profile represents the signs, symptoms, and diagnoses related to an eICR event. It is based on the **US Core Condition** profile with a further restriction of a *Must Support* constraint on the **onset\[x]** data element."/>
+    <description value="This Condition profile represents the signs, symptoms, and diagnoses related to an eICR event."/>
     <fhirVersion value="4.0.1"/>
     <mapping>
         <identity value="eCR-CDA"/>
@@ -26,6 +26,7 @@
     <type value="Condition"/>
     <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"/>
     <derivation value="constraint"/>
+    
     <differential>
         <element id="Condition">
             <path value="Condition"/>
@@ -62,6 +63,12 @@
                 <code value="Extension"/>
                 <profile value="http://hl7.org/fhir/StructureDefinition/condition-assertedDate"/>
             </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Condition.verificationStatus">
+            <path value="Condition.verificationStatus"/>
+            <short value="Verification status of 'entered-in-error' to be used for a mistakenly reported condition."/>
+            <definition value="In the case of a condition being mistakenly entered into the system and later corrected, a verificationStatus of 'entered-in-error' must be set."/>
             <mustSupport value="true"/>
         </element>
         <element id="Condition.code">

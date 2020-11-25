@@ -3,10 +3,10 @@
     xmlns="http://hl7.org/fhir">
     <id value="valueset-iztc-example"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2020-10-12T23:36:27.982+00:00"/>
-        <source value="#6shDEblmgvcT4A0f"/>
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-valueset"/>
+        <versionId value="3"/>
+        <lastUpdated value="2020-11-25T01:42:26.445+00:00"/>
+        <source value="#CJzp5OyGjOD7Kezl"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"/>
     </meta>
     <extension url="http://hl7.org/fhir/StructureDefinition/valueset-steward">
         <valueContactDetail>
@@ -26,7 +26,21 @@
     <name value="Example_Immunizations_Triggers_for_Public_Health_Reporting"/>
     <title value="Example Immunizations Triggers for Public Health Reporting"/>
     <status value="active"/>
+    <experimental value="true"/>
     <description value="This example set of values contains CVX vaccine codes that may represent that the patient may have a potentially reportable condition. These pertain to vaccines administered and prescribed, where the vaccine, coded in CVX, may be indicative of a reportable condition."/>
+    <useContext>
+        <code>
+            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
+            <code value="reporting"/></code>
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
+                <code value="triggering"/>
+                <display value="Triggering"/>
+            </coding>
+            <text value="Triggering"/>
+        </valueCodeableConcept>
+    </useContext>
     <purpose value="Vaccine drug names used in observations documented in a clinical record."/>
     <compose>
         <include>

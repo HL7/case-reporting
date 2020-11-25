@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="ersd-supplemental-valueset-library"/>
+    <id value="us-ph-supplemental-valueset-library"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2020-11-15T23:50:06.647+00:00"/>
-        <source value="#m0pg40xKS124Q5EF"/>
+        <versionId value="1"/>
+        <lastUpdated value="2020-11-25T01:49:52.188+00:00"/>
+        <source value="#MHzwODnFTEmDUVL0"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-supplemental-valueset-library"/>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-valueset-library"/>
     <version value="1.0.0"/>
-    <name value="ERSDSupplementalValuesetLibrary"/>
-    <title value="eRSD Supplemental Valueset Library"/>
+    <name value="USPublicHealthSupplementalValuesetLibrary"/>
+    <title value="US Public Health Supplemental Valueset Library"/>
     <status value="active"/>
     <date value="2020-11-11T00:00:00.000Z"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="Defines the library containing the eRSD supplemental value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses."/>
+    <description value="Defines the library containing the US Public Health supplemental value sets."/>
     <fhirVersion value="4.0.1"/>
     <mapping>
         <identity value="RCTC"/>
@@ -147,26 +147,26 @@
             </slicing>
             <min value="1"/>
         </element>
-        <element id="Library.relatedArtifact:sliceERSDSupplementalValueSet">
+        <element id="Library.relatedArtifact:sliceUSPHSupplementalValueSet">
             <path value="Library.relatedArtifact"/>
-            <sliceName value="sliceERSDSupplementalValueSet"/>
-            <short value="eRSD Supplemental Value Set"/>
-            <definition value="Reference to one of the eRSD Supplemental value sets"/>
+            <sliceName value="sliceUSPHSupplementalValueSet"/>
+            <short value="US Public Health Supplemental Value Set"/>
+            <definition value="Reference to one of the US Public Health Supplemental value sets"/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Library.relatedArtifact:sliceERSDSupplementalValueSet.type">
+        <element id="Library.relatedArtifact:sliceUSPHSupplementalValueSet.type">
             <path value="Library.relatedArtifact.type"/>
             <short value="composed-of"/>
             <definition value="The type of relationship to the related artifact. Fixed to composed-of."/>
             <patternCode value="composed-of"/>
         </element>
-        <element id="Library.relatedArtifact:sliceERSDSupplementalValueSet.resource">
+        <element id="Library.relatedArtifact:sliceUSPHSupplementalValueSet.resource">
             <path value="Library.relatedArtifact.resource"/>
             <min value="1"/>
             <type>
                 <code value="canonical"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-supplemental-valueset"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-valueset"/>
             </type>
             <mustSupport value="true"/>
         </element>

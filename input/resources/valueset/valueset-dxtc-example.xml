@@ -3,10 +3,10 @@
     xmlns="http://hl7.org/fhir">
     <id value="valueset-dxtc-example"/>
     <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2020-10-29T00:06:42.115+00:00"/>
-        <source value="#P8x73tpVq8bE0C86"/>
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-valueset"/>
+        <versionId value="4"/>
+        <lastUpdated value="2020-11-25T01:39:39.968+00:00"/>
+        <source value="#mmYXIDy3zBc7cj2b"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"/>
     </meta>
     <extension url="http://hl7.org/fhir/StructureDefinition/valueset-steward">
         <valueContactDetail>
@@ -27,6 +27,7 @@
     <name value="Example_Diagnosis_Problem_Triggers_for_Public_Health_Reporting"/>
     <title value="Example Diagnosis Problem Triggers for Public Health Reporting"/>
     <status value="draft"/>
+    <experimental value="true"/>
     <date value="2018-08-01"/>
     <publisher value="{site.data.fhir.ig.publisher}"/>
     <contact>
@@ -37,6 +38,20 @@
         </telecom>
     </contact>
     <description value="This example set of values contains diagnoses or problems that represent that the patient may have a potentially reportable condition regardless of the clinical presentation of the condition"/>
+    <useContext>
+        <code>
+            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
+            <code value="reporting"/>
+            <display value="Reporting"/>
+        </code>
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
+                <code value="triggering"/>
+                <display value="Triggering"/>
+            </coding>
+        </valueCodeableConcept>
+    </useContext>
     <copyright value="This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"/>
     <compose>
         <include>

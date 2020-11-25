@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="243"/>
-        <lastUpdated value="2020-11-24T10:48:00.047+00:00"/>
-        <source value="#bfQ9B74QSu1b8bY7"/>
+        <versionId value="255"/>
+        <lastUpdated value="2020-11-25T01:51:32.426+00:00"/>
+        <source value="#Mm2DobifxGbpPAkf"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="3.0.0"/>
@@ -116,7 +116,7 @@
                 <display value="Characteristics of Home Environment"/>
             </reference>
             <name value="Characteristics of Home Environment"/>
-            <description value="This profile represents the patient's home environment including, but not limited to, type of residence (trailer, single family home, assisted living), living arrangement (e.g., alone, with parents), and housing status (e.g., evicted, homeless, home owner)."/>
+            <description value="This profile represents characteristics of the patient's home environment."/>
             <exampleBoolean value="false"/>
             <groupingId value="eicr-profiles"/>
         </resource>
@@ -196,7 +196,7 @@
                 <display value="Ecr_Message_Bundle"/>
             </reference>
             <name value="eCR Message Bundle"/>
-            <description value="This Bundle profile represents an eICR Message Bundle. It contains the eCR MessageHeader and is for use in the eCR messaging paradigm."/>
+            <description value="This Bundle profile represents an eICR Message Bundle."/>
             <exampleBoolean value="false"/>
             <groupingId value="transport-profiles"/>
         </resource>
@@ -217,7 +217,7 @@
                 <display value="eCR MessageHeader"/>
             </reference>
             <name value="eCR Message Header"/>
-            <description value="This MessageHeader profile represents metadata to support the eCR messaging paradigm. It requires data elements destination, sender, source, and focus. The focus of an eCR MessageHeader profile is the eCR Task profile."/>
+            <description value="This MessageHeader profile represents metadata to support the eCR messaging paradigm."/>
             <exampleBoolean value="false"/>
             <groupingId value="transport-profiles"/>
         </resource>
@@ -247,7 +247,7 @@
                 <display value="ecr-task"/>
             </reference>
             <name value="eCR Task"/>
-            <description value="This Task profile represents the state of completion of the eCR activity. It is used in both the messaging and RESTful paradigms. to support the eCR messaging paradigm.  The focus of an eCR Task is either the eICR document Bundle or the RR Communication."/>
+            <description value="This Task profile represents the state of completion of the eCR activity."/>
             <exampleBoolean value="false"/>
             <groupingId value="transport-profiles"/>
         </resource>
@@ -300,7 +300,7 @@
                 <display value="Eicr_Condition"/>
             </reference>
             <name value="eICR Condition"/>
-            <description value="This Condition profile represents the signs, symptoms, and diagnoses related to an eICR event. It is based on the **US Core Condition** profile with a further restriction of a *Must Support* constraint on the **onset\[x]** data element."/>
+            <description value="This Condition profile represents the signs, symptoms, and diagnoses related to an eICR event."/>
             <exampleBoolean value="false"/>
             <groupingId value="eicr-profiles"/>
         </resource>
@@ -386,7 +386,7 @@
                 <display value="Eicr_Initiation_Reason_Extension"/>
             </reference>
             <name value="eICR Initiation Reason Extension"/>
-            <description value="This extension contains an explanation for the manual or alternate initiation of the eICR. If there are multiple distinct reasons for manual or alternate initiation then each reason should be contained in a separate eICR Initiation Reason Extension. &#xA;&#xA;The reason may be entered either as:&#xA;* free text (string) &#xA;* coded value (valueCodeableConcept) (not necessarily initiated by a provider of care but might be &quot;programmed-in&quot; by the EHR implementer for some purpose)"/>
+            <description value="This extension contains an explanation for the manual or alternate initiation of the eICR."/>
             <exampleBoolean value="false"/>
             <groupingId value="eicr-profiles"/>
         </resource>
@@ -396,7 +396,7 @@
                 <display value="eICR Initiation Type Extension"/>
             </reference>
             <name value="eICR Initiation Type Extension"/>
-            <description value="This Extension profile represents that the eICR, was either manually or alternately initiated by the provider. When code is set to PHC1464, it indicates that the eICR was manually initiated by an action of the provider of care because they suspect there may be a reportable condition. When the code is set to PHC2235, it indicates that the eICR was initiated by automated, forced reporting. Unlike eICRs manually initiated by a provider, PHC2235 will be routed only to the public health agency of the jurisdiction of care unless another reportable condition is found. The eICR could also contain RCTC trigger codes."/>
+            <description value="This Extension profile represents that the eICR, was either manually or alternately initiated by the provider."/>
             <exampleBoolean value="false"/>
             <groupingId value="extensions"/>
         </resource>
@@ -438,7 +438,7 @@
                 <display value="Eicr_Trigger_Code_Flag_Extension"/>
             </reference>
             <name value="eICR Trigger Code Flag Extension"/>
-            <description value="This Extension profile represents a flag which, if it is present, indicates that the **target** reference represents a triggering event and caused the eCR to be generated. It contains the trigger code which is the same as the trigger code in the resource and is used to identify which code(s) in a resource that allows multiple trigger codes (e.g. US Core Observation Lab where a trigger code could be contained in either the code (lab test) or the value (lab test result) or in the case of a battery or panel of tests, in the hasMember as another US Core Observation Lab code or value). It also contains the RCTC OID and RCTC version of the value set from which the code was matched. &#xA;&#xA;It is available for use in the following places:&#xA;&#xA;* eICR Encounter&#xA;	* flags a code contained in Condition.code (eICR Condition) which is contained in Encounter.diagnosis (eICR Encounter) - diagnosis&#xA;* Problem Section entry&#xA;	* flags a code contained in Condition.code (eICR Condition) - diagnosis&#xA;* Plan of Treatment Section entry&#xA;	* flags a code contained in ServiceRequest.code (eICR ServiceRequest) - test being requested&#xA;* Results Section entry&#xA;	* flags codes contained in:&#xA;		* Observation.code (US Core Laboratory Result Observation Profile code) - test performed/battery or panel name&#xA;		* Observation.value (US Core Laboratory Result Observation Profile value) - test result&#xA;		* Observation.code referenced in containing Observation.hasMember (US Core Laboratory Result Observation Profile code) - member of panel test performed&#xA;		* Observation.value referenced in containing Observation.hasMember (US Core Laboratory Result Observation Profile value) - member of panel test result&#xA;* Medications Section entry&#xA;	* flags a code contained in MedicationAdministration.medicationCodeableConcept - medication&#xA;* Immunization Section entry&#xA;	* flags a code contained in US Core Immunization (Immunization.vaccineCode) - vaccine&#xA;* Procedures Section entry&#xA;	* flags a code contained in US Core Procedure (Procedure.code) - procedure"/>
+            <description value="This Extension profile represents a flag which, if it is present, indicates that the **target** reference represents a triggering event and caused the eCR to be generated."/>
             <exampleBoolean value="false"/>
             <groupingId value="extensions"/>
         </resource>
@@ -484,26 +484,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ersd-computablelibrary"/>
-                <display value="eRSD Computable Library"/>
-            </reference>
-            <name value="eRSD Computable Library"/>
-            <description value="The computable library profile sets the minimum expectations for a computable CQL library"/>
-            <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles-instances"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/ersd-computablevalueset"/>
-                <display value="eRSD Computable ValueSet"/>
-            </reference>
-            <name value="eRSD Computable ValueSet"/>
-            <description value="Defines a computable value set as one that SHALL have an expression-based definition (i.e. a value set defined intensionally using expressions of the code systems involved) and MAY have an expansion included. The expression-based definition SHALL be represented in only one of three ways; using the compose element, using the expression extension, or using the rules-text extension to provide a step-by-step process for expanding the value set definition"/>
-            <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles-instances"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="CodeSystem/ersd-endpoint-connection-type"/>
                 <display value="eRSD Endpoint Connection Type"/>
             </reference>
@@ -519,26 +499,6 @@
             <name value="eRSD Endpoint Connection Type Codes"/>
             <description value="Set of endpoint connection types specified as being supported by APHL"/>
             <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/ersd-executablelibrary"/>
-                <display value="eRSD Executable Library"/>
-            </reference>
-            <name value="eRSD Executable Library"/>
-            <description value="This profile sets the minimum expectations for an executable CQL library. Specifically, the profile requires that the library contain one of ELM XML or JSON content, the compiled representation of the CQL logic."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles-instances"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/ersd-executablevalueset"/>
-                <display value="eRSD Executable ValueSet"/>
-            </reference>
-            <name value="eRSD Executable ValueSet"/>
-            <description value="Defines an executable value set as one that SHALL have an expansion included, as well as a usage warning indicating the expansion is a point-in-time snapshot and must be maintained over time for production usage."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <resource>
             <reference>
@@ -586,84 +546,6 @@
             </reference>
             <name value="eRSD Supplemental Bundle"/>
             <description value="This Bundle profile represents an eRSD Supplemental Bundle. It contains the eRSD Supplements."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles-instances"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/ersd-supplemental-valueset"/>
-                <display value="eRSD Supplemental Value Set"/>
-            </reference>
-            <name value="eRSD Supplemental ValueSet"/>
-            <description value="This profile describes the eRSD Supplemental value sets."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles-instances"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/ersd-supplemental-valueset-library"/>
-                <display value="ERSDSupplementalValuesetLibrary"/>
-            </reference>
-            <name value="eRSD Supplemental ValueSet Library"/>
-            <description value="Defines the library containing the eRSD supplemental value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles-instances"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/ersd-triggering-valueset"/>
-                <display value="eRSD Triggering Value Set"/>
-            </reference>
-            <name value="eRSD Triggering ValueSet"/>
-            <description value="This profile describes the eRSD Triggering value sets."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles-instances"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/ersd-triggering-valueset-library"/>
-                <display value="ERSDTriggeringValuesetLibrary"/>
-            </reference>
-            <name value="eRSD Triggering ValueSet Library"/>
-            <description value="Defines the library containing the eRSD triggering value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles-instances"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="CodeSystem/ersd-usage-context"/>
-                <display value="eRSD Usage Context Code System"/>
-            </reference>
-            <name value="eRSD Usage Context Code System"/>
-            <description value="This code system contains codes that identify the use context of a valueset."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="CodeSystem/ersd-usage-context-type"/>
-                <display value="eRSD Usage Context Type Code System"/>
-            </reference>
-            <name value="eRSD Usage Context Type Code System"/>
-            <description value="This code system contains codes that identify the use context type of a valueset."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/ersd-valueset"/>
-                <display value="Ersd_ValueSet"/>
-            </reference>
-            <name value="eRSD ValueSet"/>
-            <description value="This profile describes the eRSD value sets."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles-instances"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/ersd-valueset-library"/>
-                <display value="Ersd_Valueset_Library"/>
-            </reference>
-            <name value="eRSD Valueset Library"/>
-            <description value="Defines the library containing the eRSD value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses."/>
             <exampleBoolean value="false"/>
             <groupingId value="ersd-profiles-instances"/>
         </resource>
@@ -926,7 +808,7 @@
                 <display value="Postpartum_Status"/>
             </reference>
             <name value="Postpartum Status"/>
-            <description value="This profile represents the postpartum status of a patient. If the profile is present, the patient is in the postpartum period and further information about the postpartum status is communicated by the code chosen.&#xA;The postpartum period, also known as the puerperium, refers to the time after delivery when maternal physiological changes related to pregnancy return to the nonpregnant state. There is consensus that the postpartum period begins upon delivery of the infant. The end is less well defined but is often considered the six to eight weeks after delivery because the effects of pregnancy on many systems have largely returned to the pre-pregnancy state."/>
+            <description value="This profile represents the postpartum status of a patient."/>
             <exampleBoolean value="false"/>
             <groupingId value="eicr-profiles"/>
         </resource>
@@ -936,7 +818,7 @@
                 <display value="Pregnancy_Outcome_Observation"/>
             </reference>
             <name value="Pregnancy Outcome Observation"/>
-            <description value="This profile represents a result of the pregnancy such as live birth, still birth, miscarriage, etc. The order born in the delivery, live born or fetal death (1st, 2nd, 3rd, 4th, 5th, 6th, 7th, etc.) is contained in Observation.component. All live births and fetal losses are included. If the pregnancy plurality is 1 then this value will also be 1."/>
+            <description value="This profile represents a result of the pregnancy such as live birth, still birth, miscarriage, etc."/>
             <exampleBoolean value="false"/>
             <groupingId value="eicr-profiles"/>
         </resource>
@@ -1313,7 +1195,7 @@
                 <display value="Address Extension"/>
             </reference>
             <name value="Travel History Address Extension"/>
-            <description value="This Extension profile represents where the patient traveled to or visited as an address e.g.: country, state, city, street address (if applicable). At the least, address must contain the country. State is required if the country is US. If country is something other than US, the state **MAY** be present but **MAY** be bound to different vocabularies."/>
+            <description value="This Extension profile represents where the patient traveled to or visited as an address e.g.: country, state, city, street address (if applicable)."/>
             <exampleBoolean value="false"/>
             <groupingId value="extensions"/>
         </resource>
@@ -1648,6 +1530,123 @@
             <description value="This Bundle profile represents an US Public Health Specification Bundle."/>
             <exampleBoolean value="false"/>
             <groupingId value="us-public-health-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-usageWarning"/>
+                <display value="Usage Warning"/>
+            </reference>
+            <name value="Usage Warning"/>
+            <description value="An extra warning about the correct use of the value set."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-supplemental-bundle"/>
+                <display value="US Public Health Supplemental Bundle"/>
+            </reference>
+            <name value="US Public Health Supplemental Bundle"/>
+            <description value="This Bundle profile represents a US Public Health Supplemental Bundle."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/us-ph-usage-context-type"/>
+                <display value="US Public Health Usage Context Type"/>
+            </reference>
+            <name value="US Public Health Usage Context Type"/>
+            <description value="This code system contains codes that identify the use context type of a valueset."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/us-ph-usage-context"/>
+                <display value="US Public Health Usage Context"/>
+            </reference>
+            <name value="US Public Health Usage Context"/>
+            <description value="This code system contains codes that identify the use context of a valueset."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-computablevalueset"/>
+                <display value="US Public Health Computable ValueSet"/>
+            </reference>
+            <name value="US Public Health Computable ValueSet"/>
+            <description value="Defines a computable value set as one that SHALL have an expression-based definition (i.e. a value set defined intensionally using expressions of the code systems involved) and MAY have an expansion included. The expression-based definition SHALL be represented in only one of three ways; using the compose element, using the expression extension, or using the rules-text extension to provide a step-by-step process for expanding the value set definition"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-computablelibrary"/>
+                <display value="US Public Health Computable Library"/>
+            </reference>
+            <name value="US Public Health Computable Library"/>
+            <description value="The computable library profile sets the minimum expectations for a computable CQL library"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-executablelibrary"/>
+                <display value="US Public Health Executable Library"/>
+            </reference>
+            <name value="US Public Health Executable Library"/>
+            <description value="This profile sets the minimum expectations for an executable CQL library. Specifically, the profile requires that the library contain one of ELM XML or JSON content, the compiled representation of the CQL logic."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-executablevalueset"/>
+                <display value="US Public Health Executable ValueSet"/>
+            </reference>
+            <name value="US Public Health Executable ValueSet"/>
+            <description value="Defines an executable value set as one that SHALL have an expansion included, as well as a usage warning indicating the expansion is a point-in-time snapshot and must be maintained over time for production usage."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-triggering-valueset"/>
+                <display value="US Public Health Triggering Value Set"/>
+            </reference>
+            <name value="US Public Health Triggering Value Set"/>
+            <description value="This profile describes the US Public Health Triggering value set."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-triggering-valueset-library"/>
+                <display value="US Public Health Triggering Valueset Library"/>
+            </reference>
+            <name value="US Public Health Triggering Valueset Library"/>
+            <description value="Defines the library containing the US Public Health triggering value sets."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-supplemental-valueset"/>
+                <display value="US Public Health Supplemental Value Set"/>
+            </reference>
+            <name value="US Public Health Supplemental Value Set"/>
+            <description value="This profile describes the US Public Health Supplemental value set."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-supplemental-valueset-library"/>
+                <display value="US Public Health Supplemental Valueset Library"/>
+            </reference>
+            <name value="US Public Health Supplemental Valueset Library"/>
+            <description value="Defines the library containing the US Public Health supplemental value sets."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-valueset-library"/>
+                <display value="US Public Health Valueset Library"/>
+            </reference>
+            <name value="US Public Health Valueset Library"/>
+            <description value="Defines the library containing US Public Health value sets."/>
+            <exampleBoolean value="false"/>
         </resource>
         <page>
             <nameUrl value="index.html"/>

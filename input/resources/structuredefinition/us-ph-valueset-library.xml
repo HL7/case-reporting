@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="ersd-valueset-library"/>
+    <id value="us-ph-valueset-library"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2020-11-15T23:49:54.213+00:00"/>
-        <source value="#4AbINcZ1WPhliCEK"/>
+        <versionId value="1"/>
+        <lastUpdated value="2020-11-25T01:51:05.460+00:00"/>
+        <source value="#xhOK7eN0M4mjev1t"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-valueset-library"/>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset-library"/>
     <version value="1.0.0"/>
-    <name value="Ersd_Valueset_Library"/>
-    <title value="eRSD Valueset Library"/>
+    <name value="USPublicHealthValuesetLibrary"/>
+    <title value="US Public Health Valueset Library"/>
     <status value="active"/>
     <date value="2018-08-19T00:00:00.000Z"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="Defines the library containing the eRSD value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses."/>
+    <description value="Defines the library containing US Public Health value sets."/>
     <fhirVersion value="4.0.1"/>
     <mapping>
         <identity value="RCTC"/>
@@ -147,26 +147,26 @@
             </slicing>
             <min value="1"/>
         </element>
-        <element id="Library.relatedArtifact:sliceERSDValueSet">
+        <element id="Library.relatedArtifact:sliceUSPHValueSet">
             <path value="Library.relatedArtifact"/>
-            <sliceName value="sliceERSDValueSet"/>
-            <short value="eRSD Value Set"/>
-            <definition value="Reference to one of the eRSD value sets"/>
+            <sliceName value="sliceUSPHValueSet"/>
+            <short value="US Public Health Value Set"/>
+            <definition value="Reference to one of the US Public Health value sets"/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Library.relatedArtifact:sliceERSDValueSet.type">
+        <element id="Library.relatedArtifact:sliceUSPHValueSet.type">
             <path value="Library.relatedArtifact.type"/>
             <short value="composed-of"/>
             <definition value="The type of relationship to the related artifact. Fixed to composed-of."/>
             <patternCode value="composed-of"/>
         </element>
-        <element id="Library.relatedArtifact:sliceERSDValueSet.resource">
+        <element id="Library.relatedArtifact:sliceUSPHValueSet.resource">
             <path value="Library.relatedArtifact.resource"/>
             <min value="1"/>
             <type>
                 <code value="canonical"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-valueset"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset"/>
             </type>
             <mustSupport value="true"/>
         </element>

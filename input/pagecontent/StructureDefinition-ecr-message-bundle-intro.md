@@ -1,0 +1,1 @@
+It contains the eCR MessageHeader and is for use in the eCR messaging paradigm.

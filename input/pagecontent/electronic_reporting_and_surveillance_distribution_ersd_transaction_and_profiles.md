@@ -30,19 +30,19 @@ The current PlanDefinition uses ECA Rules, we propose using Workflow Definition 
 #### Profiles
 <ul>
   <li><a href="StructureDefinition-ersd-plandefinition.html">eRSD PlanDefinition</a></li>
-  <li><a href="StructureDefinition-ersd-specification-bundle.html">eRSD Specification Bundle</a></li>
-  <li><a href="StructureDefinition-ersd-supplemental-bundle.html">eRSD Supplemental Bundle</a></li>
-  <li><a href="StructureDefinition-ersd-supplemental-valueset.html">eRSD Supplemental ValueSet</a></li>  
-  <li><a href="StructureDefinition-ersd-supplemental-valueset-library.html">eRSD Supplemental ValueSet Library</a></li>  
-  <li><a href="StructureDefinition-ersd-triggering-valueset.html">eRSD Triggering ValueSet</a></li>
-  <li><a href="StructureDefinition-ersd-triggering-valueset-library.html">eRSD Triggering ValueSet Library</a></li>
-  <li><a href="StructureDefinition-ersd-valueset-library.html">eRSD ValueSet Library</a></li>
-  <li><a href="StructureDefinition-ersd-valueset.html">eRSD ValueSet</a></li>
+  <li><a href="StructureDefinition-us-ph-specification-bundle.html">US Public Health Specification Bundle</a></li>
+  <li><a href="StructureDefinition-us-ph-supplemental-bundle.html">US Public Health Supplemental Bundle</a></li>
+  <li><a href="StructureDefinition-us-ph-supplemental-valueset.html">US Public Health Supplemental ValueSet</a></li>  
+  <li><a href="StructureDefinition-us-ph-supplemental-valueset-library.html">US Public Health Supplemental ValueSet Library</a></li>  
+  <li><a href="StructureDefinition-us-ph-triggering-valueset.html">US Public Health Triggering ValueSet</a></li>
+  <li><a href="StructureDefinition-us-ph-triggering-valueset-library.html">US Public Health Triggering ValueSet Library</a></li>
+  <li><a href="StructureDefinition-us-ph-valueset-library.html">US Public Health ValueSet Library</a></li>
+  <li><a href="StructureDefinition-us-ph-valueset.html">US Public Health ValueSet</a></li>
 </ul>
 
 #### Extensions
 <ul>
-  <li><a href="StructureDefinition-ersd-usageWarning.html">eRSD Usage Warning Extension</a></li>
+  <li><a href="StructureDefinition-us-ph-usageWarning.html">US Public Health Usage Warning Extension</a></li>
 </ul>
 
 *  When applying the eRSD each action may be represented using a Task, but in order to do this there is a need to relate the Tasks in some temporal way.  relativeTo is a complex extension on the StructureDefinition Task to reference the resource type, path to the timing element of that resource, and optional offset duration.  This would allow us to create a task 24 hours after the Encounter begins for example.
@@ -65,8 +65,8 @@ The current PlanDefinition uses ECA Rules, we propose using Workflow Definition 
 </ul>
 
 <ul>
-  <li><a href="StructureDefinition-ersd-valueset-library.html">eRSD ValueSet Library</a></li>
-	<li><a href="StructureDefinition-ersd-valueset.html">eRSD ValueSet</a></li>
+  <li><a href="StructureDefinition-us-ph-valueset-library.html">US Public Health ValueSet Library</a></li>
+	<li><a href="StructureDefinition-us-ph-valueset.html">US Public Health ValueSet</a></li>
 </ul>
 
 [Next Page - Subscription Service](subscription_service.html)

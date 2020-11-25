@@ -3,10 +3,10 @@
     xmlns="http://hl7.org/fhir">
     <id value="valueset-lrtc-example"/>
     <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2020-10-29T00:05:40.693+00:00"/>
-        <source value="#0D69nTghImmSV3BB"/>
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-valueset"/>
+        <versionId value="4"/>
+        <lastUpdated value="2020-11-25T01:42:26.444+00:00"/>
+        <source value="#A3GeA8N2jBeS6cbp"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"/>
     </meta>
     <extension url="http://hl7.org/fhir/StructureDefinition/valueset-steward">
         <valueContactDetail>
@@ -27,6 +27,7 @@
     <name value="Example_Lab_Obs_Test_Name_Triggers_for_Public_Health_Reporting"/>
     <title value="Example Lab Obs Test Name Triggers for Public Health Reporting"/>
     <status value="draft"/>
+    <experimental value="true"/>
     <date value="2018-08-01"/>
     <publisher value="{site.data.fhir.ig.publisher}"/>
     <contact>
@@ -37,6 +38,19 @@
         </telecom>
     </contact>
     <description value="This example set of values contains laboratory observations test names that represent that the patient may have a potentially reportable condition regardless of the clinical presentation of the condition"/>
+    <useContext>
+        <code>
+            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
+            <code value="reporting"/></code>
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
+                <code value="triggering"/>
+                <display value="Triggering"/>
+            </coding>
+            <text value="Triggering"/>
+        </valueCodeableConcept>
+    </useContext>
     <copyright value="This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"/>
     <compose>
         <include>

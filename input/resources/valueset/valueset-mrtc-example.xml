@@ -3,10 +3,10 @@
     xmlns="http://hl7.org/fhir">
     <id value="valueset-mrtc-example"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2020-10-12T23:36:27.982+00:00"/>
-        <source value="#7rbI0Z4M1YDLjKYu"/>
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-valueset"/>
+        <versionId value="3"/>
+        <lastUpdated value="2020-11-25T01:39:40.471+00:00"/>
+        <source value="#OCHou83VCpYYhmrK"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"/>
     </meta>
     <extension url="http://hl7.org/fhir/StructureDefinition/valueset-steward">
         <valueContactDetail>
@@ -26,7 +26,21 @@
     <name value="Example_Medications_Triggers_for_Public_Health_Reporting"/>
     <title value="Example Medications Triggers for Public Health Reporting"/>
     <status value="active"/>
+    <experimental value="true"/>
     <description value="This example set of values contains CVX, RXNORM,and SNOMED medication codes that may represent that the patient may have a potentially reportable condition. These pertain to medications administered and medications prescribed, where the medication, coded in CVX,RXNORM,SNOMED, may be indicative of a reportable condition."/>
+    <useContext>
+        <code>
+            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
+            <code value="reporting"/></code>
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
+                <code value="triggering"/>
+                <display value="Triggering"/>
+            </coding>
+            <text value="Triggering"/>
+        </valueCodeableConcept>
+    </useContext>
     <purpose value="Prescription drugs names used in observations documented in a clinical record."/>
     <compose>
         <include>

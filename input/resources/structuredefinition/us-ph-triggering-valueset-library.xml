@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="ersd-triggering-valueset-library"/>
+    <id value="us-ph-triggering-valueset-library"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2020-11-16T00:11:58.330+00:00"/>
-        <source value="#pP0IH14pawfZjPd2"/>
+        <versionId value="1"/>
+        <lastUpdated value="2020-11-25T01:49:52.153+00:00"/>
+        <source value="#ogeH6zgK2qBhWy8C"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-triggering-valueset-library"/>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset-library"/>
     <version value="1.0.0"/>
-    <name value="ERSDTriggeringValuesetLibrary"/>
-    <title value="eRSD Triggering Valueset Library"/>
+    <name value="USPublicHealthTriggeringValuesetLibrary"/>
+    <title value="US Public Health Triggering Valueset Library"/>
     <status value="active"/>
     <date value="2020-11-11T00:00:00.000Z"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="Defines the library containing the eRSD triggering value sets. These are identified by Public Health and used in EHRs in healthcare as trigger codes to kick off creation of electronic initial case reports and reportability responses."/>
+    <description value="Defines the library containing the US Public Health triggering value sets."/>
     <fhirVersion value="4.0.1"/>
     <mapping>
         <identity value="RCTC"/>
@@ -147,26 +147,26 @@
             </slicing>
             <min value="1"/>
         </element>
-        <element id="Library.relatedArtifact:sliceERSDTriggeringValueSet">
+        <element id="Library.relatedArtifact:sliceUSPHTriggeringValueSet">
             <path value="Library.relatedArtifact"/>
-            <sliceName value="sliceERSDTriggeringValueSet"/>
-            <short value="eRSD Triggering Value Set"/>
-            <definition value="Reference to one of the eRSD Triggering value sets"/>
+            <sliceName value="sliceUSPHTriggeringValueSet"/>
+            <short value="US Public Health Triggering Value Set"/>
+            <definition value="Reference to one of the US Public Health Triggering value sets"/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Library.relatedArtifact:sliceERSDTriggeringValueSet.type">
+        <element id="Library.relatedArtifact:sliceUSPHTriggeringValueSet.type">
             <path value="Library.relatedArtifact.type"/>
             <short value="composed-of"/>
             <definition value="The type of relationship to the related artifact. Fixed to composed-of."/>
             <patternCode value="composed-of"/>
         </element>
-        <element id="Library.relatedArtifact:sliceERSDTriggeringValueSet.resource">
+        <element id="Library.relatedArtifact:sliceUSPHTriggeringValueSet.resource">
             <path value="Library.relatedArtifact.resource"/>
             <min value="1"/>
             <type>
                 <code value="canonical"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-triggering-valueset"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"/>
             </type>
             <mustSupport value="true"/>
         </element>
