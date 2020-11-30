@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="281"/>
-        <lastUpdated value="2020-11-30T10:57:57.351+00:00"/>
-        <source value="#19TnsUA2ThcOCG8s"/>
+        <versionId value="296"/>
+        <lastUpdated value="2020-11-30T23:27:07.050+00:00"/>
+        <source value="#INvYnFtFnOzeUsUO"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="3.0.0"/>
@@ -37,11 +37,6 @@
         <packageId value="hl7.fhir.us.core"/>
         <version value="3.1.1"/>
     </dependsOn>
-    <!--<dependsOn>
-        <uri value="http://hl7.org/fhir/us/odh/ImplementationGuide/hl7.fhir.us.odh"/>
-        <packageId value="hl7.fhir.us.odh"/>
-        <version value="1.0.0"/>
-    </dependsOn>-->
     <dependsOn>
         <uri value="http://fhir.org/packages/us.cdc.phinvads/ImplementationGuide/us.cdc.phinvads"/>
         <packageId value="us.cdc.phinvads"/>
@@ -56,6 +51,11 @@
         <uri value="http://hl7.org/fhir/us/vr-common-library/ImplementationGuide/hl7.fhir.us.vr-common-library"/>
         <packageId value="hl7.fhir.us.vr-common-library"/>
         <version value="current"/>
+    </dependsOn>
+    <dependsOn>
+        <uri value="http://hl7.org/fhir/us/odh/ImplementationGuide/hl7.fhir.us.odh"/>
+        <packageId value="hl7.fhir.us.odh"/>
+        <version value="1.0.0"/>
     </dependsOn>
     <definition>
         <grouping id="us-public-health-profiles">
@@ -1362,7 +1362,7 @@
                 <display value="US Public Health Emergency Outbreak Information"/>
             </reference>
             <name value="US Public Health Emergency Outbreak Information"/>
-            <description value="This template represents information that is required during a public health emergency/outbreak. This information can be highly variable, so a generic structure has been chosen to represent it."/>
+            <description value="This profile represents information that is required during a public health emergency/outbreak. This information can be highly variable, so a generic structure has been chosen to represent it."/>
             <exampleBoolean value="false"/>
             <groupingId value="us-public-health-profiles"/>
         </resource>
@@ -1381,7 +1381,7 @@
                 <reference value="StructureDefinition/us-ph-exposure-contact-information"/>
                 <display value="US Public Health Exposure Contact Information"/>
             </reference>
-            <name value="US Public Health Exposure Information Information"/>
+            <name value="US Public Health Exposure Information"/>
             <description value="This Observation profile represents potential patient exposure and contact information."/>
             <exampleBoolean value="false"/>
             <groupingId value="us-public-health-profiles"/>
@@ -1675,6 +1675,51 @@
             </reference>
             <name value="ValueSet Real D Race Ethnicity"/>
             <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-disability-status-eve-everywoman"/></reference>
+            <name value="Disability Status Example: Eve Everywoman"/>
+            <description value="Example of Disability Status Profile (Eve Everywoman)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/disability-status"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-us-ph-emergency-outbreak-info-eve-everywoman"/></reference>
+            <name value="Emergency Outbreak Information Example: Eve Everywoman"/>
+            <description value="Example of Emergency Outbreak Information profile (Eve Everywoman)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/emergency-outbreak-information"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Device/us-core-device-ecmo"/></reference>
+            <name value="US Core Device Example: ECMO"/>
+            <description value="Example of US Core Device Profile (ECMO)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Procedure/us-ph-procedure-ecmo"/></reference>
+            <name value="US Public Health Procedure Example: ECMO"/>
+            <description value="Example of US Public Health Procedure (ECMO)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-procedure"/>
+            <groupingId value="us-public-health-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-us-ph-transportation-details-eve-everywoman"/></reference>
+            <name value="US Public Health Transportation Example: Eve Everywoman"/>
+            <description value="Example of US Public Health Transportation Example (Eve Everywoman)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-transportation-details"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <page>
             <nameUrl value="index.html"/>

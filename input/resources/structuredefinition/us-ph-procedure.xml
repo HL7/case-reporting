@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-procedure"/>
     <meta>
-        <versionId value="7"/>
-        <lastUpdated value="2020-11-25T22:26:11.865+00:00"/>
-        <source value="#0Nq5OCSX6Fuq1oXh"/>
+        <versionId value="8"/>
+        <lastUpdated value="2020-11-30T22:47:47.633+00:00"/>
+        <source value="#ok1fSdLMk12OuIJD"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-procedure"/>
     <version value="1.0.0"/>
@@ -39,6 +39,14 @@
             <path value="Procedure.focalDevice"/>
             <short value="Device such as a ventilator as the focus of the procedure"/>
             <definition value="A device that is implanted, removed or otherwise manipulated such as a ventilator as a focal portion of the Procedure."/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Procedure.focalDevice.manipulated">
+            <path value="Procedure.focalDevice.manipulated"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device"/>
+            </type>
             <mustSupport value="true"/>
         </element>
     </differential>
