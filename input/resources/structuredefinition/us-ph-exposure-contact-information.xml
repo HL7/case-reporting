@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="us-ph-exposure-information"/>
+    <id value="us-ph-exposure-contact-information"/>
     <meta>
-        <versionId value="17"/>
-        <lastUpdated value="2020-11-25T22:23:40.800+00:00"/>
-        <source value="#uBi1mctirqwE1Mdd"/>
+        <versionId value="7"/>
+        <lastUpdated value="2020-11-30T05:55:04.740+00:00"/>
+        <source value="#zKZEucPzHYXXXsCc"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-exposure-information"/>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-exposure-contact-information"/>
     <version value="1.0.0"/>
-    <name value="USPublicHealthExposureInformation"/>
-    <title value="US Public Health Exposure Information"/>
+    <name value="USPublicHealthExposureContactInformation"/>
+    <title value="US Public Health Exposure Contact Information"/>
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
@@ -47,20 +47,20 @@
         </element>
         <element id="Observation.category">
             <path value="Observation.category"/>
-            <short value="Exposure to potentially harmful entity (event)"/>
+            <short value="Exposure"/>
             <min value="1"/>
             <max value="1"/>
             <patternCodeableConcept>
                 <coding>
-                    <system value="http://snomed.info/sct"/>
-                    <code value="418715001"/>
+                    <system value="http://terminology.hl7.org/CodeSystem/v3-ActClass"/>
+                    <code value="EXPOS"/>
                 </coding>
             </patternCodeableConcept>
         </element>
         <element id="Observation.code">
             <path value="Observation.code"/>
             <short value="Type of exposure/contact"/>
-            <definition value="The type of exposure/contact (environmental, activity, event, location, person, animal, etc.)."/>
+            <definition value="The type of exposure/contact (environmental, activity, event, location, person, animal, etc.). Suggested value sets: &#xA;* https://phinvads.cdc.gov/vads/ViewValueSet.action?id=FA5D6D86-C7B2-EA11-818F-005056ABE2F0&#xA;* https://phinvads.cdc.gov/vads/ViewValueSet.action?id=9BE75E17-176B-DE11-9B52-0015173D1785"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -70,7 +70,7 @@
             <min value="1"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
             </type>
         </element>
         <element id="Observation.focus">
@@ -84,6 +84,7 @@
                 <targetProfile value="http://hl7.org/fhir/StructureDefinition/Group"/>
                 <targetProfile value="http://hl7.org/fhir/StructureDefinition/Location"/>
             </type>
+            <mustSupport value="true"/>
         </element>
         <element id="Observation.effective[x]">
             <path value="Observation.effective[x]"/>
@@ -91,7 +92,6 @@
         </element>
         <element id="Observation.value[x]">
             <path value="Observation.value[x]"/>
-            <min value="1"/>
             <type>
                 <code value="CodeableConcept"/>
             </type>

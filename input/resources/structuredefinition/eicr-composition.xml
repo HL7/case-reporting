@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-composition"/>
     <meta>
-        <versionId value="30"/>
-        <lastUpdated value="2020-11-25T22:11:11.424+00:00"/>
-        <source value="#Dm5WA0OatojUwFmc"/>
+        <versionId value="36"/>
+        <lastUpdated value="2020-11-30T05:20:19.862+00:00"/>
+        <source value="#MvLaiFuavGhzOqVr"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
     <version value="1.0.0"/>
@@ -1270,7 +1270,7 @@
         <element id="Composition.section:sliceSocialHistorySection.entry:sliceDisabilityStatus">
             <path value="Composition.section.entry"/>
             <sliceName value="sliceDisabilityStatus"/>
-            <short value="Disabiltiy Status entry"/>
+            <short value="Disability Status entry"/>
             <definition value="Disability status entry"/>
             <type>
                 <code value="Reference"/>
@@ -1278,14 +1278,14 @@
             </type>
             <mustSupport value="true"/>
         </element>
-        <element id="Composition.section:sliceSocialHistorySection.entry:sliceExposureInformation">
+        <element id="Composition.section:sliceSocialHistorySection.entry:sliceExposureContactInformation">
             <path value="Composition.section.entry"/>
-            <sliceName value="sliceExposureInformation"/>
+            <sliceName value="sliceExposureContactInformation"/>
             <short value="Exposure Information entry"/>
             <definition value="Exposure Information entry"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-exposure-information"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-exposure-contact-information"/>
             </type>
         </element>
         <element id="Composition.section:slicePregnancySection">
@@ -1401,7 +1401,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceReportabilityResponseInformationSection"/>
             <short value="Reportability Response Information Section"/>
-            <definition value="Each Reportability Response Information Section contains information about a Reportability Response that was generated in response to this eICR."/>
+            <definition value="The Reportability Response Information Section contains information from a Reportability Response that was generated in response to this eICR."/>
             <min value="0"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -1409,8 +1409,8 @@
         </element>
         <element id="Composition.section:sliceReportabilityResponseInformationSection.code">
             <path value="Composition.section.code"/>
-            <short value="Reportability Response Information Section code"/>
-            <definition value="Reportability Response Information Section code"/>
+            <short value="Reportability response report Document Public health"/>
+            <definition value="Reportability response report Document Public health"/>
             <min value="1"/>
             <patternCodeableConcept>
                 <coding>
@@ -1454,7 +1454,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceEmergencyOutbreakInformationSection"/>
             <short value="Emergency Outbreak Information Section"/>
-            <definition value="Emergency Outbreak Information Section"/>
+            <definition value="This section represents information that is required during a public health emergency/outbreak."/>
             <min value="0"/>
             <max value="1"/>
             <mustSupport value="true"/>
