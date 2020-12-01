@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="309"/>
-        <lastUpdated value="2020-12-01T03:39:23.271+00:00"/>
-        <source value="#7NeKXGclm7fkUDkL"/>
+        <versionId value="315"/>
+        <lastUpdated value="2020-12-01T04:39:49.149+00:00"/>
+        <source value="#eo21iX0Y3HH8iL5u"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="3.0.0"/>
@@ -100,6 +100,12 @@
         <grouping id="capability-statements">
             <name value="Capability Statements"/>
         </grouping>
+        <grouping id="terminology-codesystems">
+            <name value="Terminology: Code Systems"/>
+        </grouping>
+        <grouping id="terminology-valuesets">
+            <name value="Terminology: Value Sets"/>
+        </grouping>
         <resource>
             <reference>
                 <reference value="Bundle/bundle-rr-collection-communication"/>
@@ -116,7 +122,7 @@
                 <display value="Characteristics of Home Environment"/>
             </reference>
             <name value="Characteristics of Home Environment"/>
-            <description value="This profile represents characteristics of the patient's home environment."/>
+            <description value="This Observation profile represents characteristics of the patient's home environment."/>
             <exampleBoolean value="false"/>
             <groupingId value="eicr-profiles"/>
         </resource>
@@ -139,6 +145,7 @@
             <name value="Code System Task Business Status"/>
             <description value="This code system contains codes that describe the business status of a task."/>
             <exampleBoolean value="false"/>
+            <groupingId value="terminology-codesystems"/>
         </resource>
         <resource>
             <reference>
@@ -229,6 +236,7 @@
             <name value="eCR MessageHeader Event"/>
             <description value="This value set contains codes that identify the event an eCR message represents."/>
             <exampleBoolean value="false"/>
+            <groupingId value="terminology-valuesets"/>
         </resource>
         <resource>
             <reference>
@@ -490,6 +498,7 @@
             <name value="eRSD Endpoint Connection Type"/>
             <description value="This code system contains codes that identify the HL7 FHIR File type."/>
             <exampleBoolean value="false"/>
+            <groupingId value="terminology-codesystems"/>
         </resource>
         <resource>
             <reference>
@@ -499,6 +508,7 @@
             <name value="eRSD Endpoint Connection Type Codes"/>
             <description value="Set of endpoint connection types specified as being supported by APHL"/>
             <exampleBoolean value="false"/>
+            <groupingId value="terminology-valuesets"/>
         </resource>
         <resource>
             <reference>
@@ -508,7 +518,7 @@
             <name value="eRSD Jurisdictions Example"/>
             <description value="This code system describes jurisdictions that require public health reporting."/>
             <exampleBoolean value="false"/>
-            <groupingId value="ersd-examples"/>
+            <groupingId value="terminology-codesystems"/>
         </resource>
         <resource>
             <reference>
@@ -518,6 +528,7 @@
             <name value="eRSD JurisdictionTypes"/>
             <description value="This code system describes the possible types of jurisdictions that require public health reporting."/>
             <exampleBoolean value="false"/>
+            <groupingId value="terminology-codesystems"/>
         </resource>
         <resource>
             <reference>
@@ -557,6 +568,8 @@
             <name value="Example ValueSet: Diagnosis Problem Triggers for Public Health Reporting"/>
             <description value="This example set of values contains diagnoses or problems that represent that the patient may have a potentially reportable condition regardless of the clinical presentation of the condition"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"/>
+            <groupingId value="terminology-valuesets"/>
         </resource>
         <resource>
             <reference>
@@ -566,6 +579,8 @@
             <name value="Example ValueSet: Immunizations Triggers for Public Health Reporting"/>
             <description value="This example set of values contains CVX vaccine codes that may represent that the patient may have a potentially reportable condition. These pertain to vaccines administered and prescribed, where the vaccine, coded in CVX, may be indicative of a reportable condition."/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"/>
+            <groupingId value="terminology-valuesets"/>
         </resource>
         <resource>
             <reference>
@@ -575,6 +590,8 @@
             <name value="Example ValueSet: Lab Observation Test Name Triggers for Public Health Reporting"/>
             <description value="This example set of values contains laboratory observations test names that represent that the patient may have a potentially reportable condition regardless of the clinical presentation of the condition"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"/>
+            <groupingId value="terminology-valuesets"/>
         </resource>
         <resource>
             <reference>
@@ -584,6 +601,8 @@
             <name value="Example ValueSet: Lab Order Test Triggers for Public Health Reporting"/>
             <description value="This example set of values contains laboratory test names for orders that represent that the patient may have a potentially reportable condition regardless of the clinical presentation of the condition"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"/>
+            <groupingId value="terminology-valuesets"/>
         </resource>
         <resource>
             <reference>
@@ -593,6 +612,8 @@
             <name value="Example ValueSet: Medications Triggers for Public Health Reporting"/>
             <description value="This example set of values contains CVX, RXNORM,and SNOMED medication codes that may represent that the patient may have a potentially reportable condition. These pertain to medications administered and medications prescribed, where the medication, coded in CVX,RXNORM,SNOMED, may be indicative of a reportable condition."/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"/>
+            <groupingId value="terminology-valuesets"/>
         </resource>
         <resource>
             <reference>
@@ -602,6 +623,8 @@
             <name value="Example ValueSet: Organism Substance Triggers for Public Health Reporting"/>
             <description value="This example set of values contains organism and substance names that represent that the patient may have a potentially reportable condition regardless of the clinical presentation of the condition"/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"/>
+            <groupingId value="terminology-valuesets"/>
         </resource>
         <resource>
             <reference>
@@ -611,6 +634,7 @@
             <name value="Executable Task Types Code System"/>
             <description value="This code system contains codes that describe the executable task types."/>
             <exampleBoolean value="false"/>
+            <groupingId value="terminology-codesystems"/>
         </resource>
         <resource>
             <reference>
@@ -620,6 +644,7 @@
             <name value="Extended Pregnancy Status Value Set"/>
             <description value="Defines the status of pregnancy. [Extended pregnancy status VSAC link](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1099.24/expansion)"/>
             <exampleBoolean value="false"/>
+            <groupingId value="terminology-valuesets"/>
         </resource>
         <resource>
             <reference>
@@ -681,6 +706,7 @@
             <name value="MessageHeader Event Code System"/>
             <description value="This code system contains codes that identify the event a message represents."/>
             <exampleBoolean value="false"/>
+            <groupingId value="terminology-codesystems"/>
         </resource>
         <resource>
             <reference>
@@ -839,6 +865,7 @@
             <name value="Pregnancy Status"/>
             <description value="This value set contains codes representing pregnancy statuses."/>
             <exampleBoolean value="false"/>
+            <groupingId value="terminology-valuesets"/>
         </resource>
         <resource>
             <reference>
@@ -1474,6 +1501,7 @@
             <name value="Value Set eCR Task BusinessStatus"/>
             <description value="This value set contains codes that describe the eCR task businessStatus."/>
             <exampleBoolean value="false"/>
+            <groupingId value="terminology-valuesets"/>
         </resource>
         <resource>
             <reference>
@@ -1493,6 +1521,7 @@
             <name value="US Public Health TriggerDefinition NamedEvent"/>
             <description value="The US Public Health TriggerDefinition NamedEvent Value Set is a 'starter set' of codes for identifying named events uniquely in TriggerDefinition instances contained within a PlanDefinition."/>
             <exampleBoolean value="false"/>
+            <groupingId value="terminology-valuesets"/>
         </resource>
         <resource>
             <reference>
@@ -1502,6 +1531,7 @@
             <name value="US Public Health TriggerDefinition Named Events"/>
             <description value="The US Public Health TriggerDefinition NamedEvents CodeSystem is a 'starter set' of codes supported for identifying named events to subscribe to in clinical workflows."/>
             <exampleBoolean value="false"/>
+            <groupingId value="terminology-codesystems"/>
         </resource>
         <resource>
             <reference>
@@ -1560,6 +1590,7 @@
             <name value="US Public Health Usage Context Type"/>
             <description value="This code system contains codes that identify the use context type of a valueset."/>
             <exampleBoolean value="false"/>
+            <groupingId value="terminology-codesystems"/>
         </resource>
         <resource>
             <reference>
@@ -1569,6 +1600,7 @@
             <name value="US Public Health Usage Context"/>
             <description value="This code system contains codes that identify the use context of a valueset."/>
             <exampleBoolean value="false"/>
+            <groupingId value="terminology-codesystems"/>
         </resource>
         <resource>
             <reference>
@@ -1668,6 +1700,7 @@
             <name value="CodeSystem REALD Race Ethnicity"/>
             <description value="Code system for the REALD race and ethnicity codes."/>
             <exampleBoolean value="false"/>
+            <groupingId value="terminology-codesystems"/>
         </resource>
         <resource>
             <reference>
@@ -1677,6 +1710,8 @@
             <name value="ValueSet REALD Race Ethnicity"/>
             <description value="Value set for the REALD race and ethnicity codes."/>
             <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset"/>
+            <groupingId value="terminology-valuesets"/>
         </resource>
         <resource>
             <reference>
@@ -1740,6 +1775,17 @@
             <description value="Example of Location resource (City Football Stadium)"/>
             <exampleBoolean value="true"/>
             <groupingId value="eicr-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="PlanDefinition/plandefinition-us-public-health-example"/>
+                <display value="PlanDefinition US Public Health Example"/>
+            </reference>
+            <name value="PlanDefinition US Public Health Example"/>
+            <description value="Example of US Public Health PlanDefinition profile"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-plandefinition"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <page>
             <nameUrl value="index.html"/>
