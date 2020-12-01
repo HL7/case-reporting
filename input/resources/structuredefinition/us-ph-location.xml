@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-location"/>
     <meta>
-        <versionId value="7"/>
-        <lastUpdated value="2020-11-25T22:24:02.922+00:00"/>
-        <source value="#5QjAOE4agwEZGLkm"/>
+        <versionId value="8"/>
+        <lastUpdated value="2020-12-01T01:49:11.919+00:00"/>
+        <source value="#RJj0MIP811788lBu"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-location"/>
     <version value="1.0.0"/>
@@ -55,20 +55,6 @@
                 <comment value="Facility ID Number"/>
             </mapping>
         </element>
-        <element id="Location.name">
-            <path value="Location.name"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="ClincalDocument/componentOf/encompassingEncounter/responsibleParty/representedOrganization/name"/>
-                <comment value="Provider Facility/Office Name"/>
-            </mapping>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="ClincalDocument/componentOf/encompassingEncounter/location/healthCareFacility/serviceProviderOrganization/name"/>
-                <comment value="Facility Name"/>
-            </mapping>
-        </element>
         <element id="Location.type">
             <path value="Location.type"/>
             <short value="Facility Type"/>
@@ -86,15 +72,6 @@
                 <identity value="CDA"/>
                 <map value="ClincalDocument/componentOf/encompassingEncounter/location/healthCareFacility/code"/>
                 <comment value="Facility Type"/>
-            </mapping>
-        </element>
-        <element id="Location.telecom">
-            <path value="Location.telecom"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="ClincalDocument/componentOf/encompassingEncounter/location/healthCareFacility/serviceProviderOrganization/telecom"/>
-                <comment value="Facility Telecom"/>
             </mapping>
         </element>
         <element id="Location.address">
