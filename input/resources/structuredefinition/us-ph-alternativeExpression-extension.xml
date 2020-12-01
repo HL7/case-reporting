@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="us-ph-alternativeExpression-extension"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2020-12-01T17:43:33.307+00:00"/>
+        <source value="#4XXx5lJd7lixj9gW"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternativeExpression"/>
+    <version value="1.0.0"/>
+    <name value="USPublicHealthAlternativeExpressionExtension"/>
+    <title value="US Public Health Alternative Expression Extension"/>
+    <status value="active"/>
+    <description value="This extension represents an US Public Health Alternative Expression"/>
+    <fhirVersion value="4.0.1"/>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <context>
+        <type value="element"/>
+        <expression value="PlanDefinition.action.condition.expression"/>
+    </context>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Extension">
+            <path value="Extension"/>
+            <short value="US PH Alternative Expression"/>
+            <definition value="This extension represents an US Public Health Alternative Expression"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternativeExpression"/>
+        </element>
+        <element id="Extension.valueExpression">
+            <path value="Extension.valueExpression"/>
+            <type>
+                <code value="Expression"/>
+            </type>
+        </element>
+    </differential>
+</StructureDefinition>
