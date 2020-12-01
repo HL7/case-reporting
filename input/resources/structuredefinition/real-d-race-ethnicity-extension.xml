@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="real-d-race-ethnicity-extension"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2020-11-30T08:52:22.344+00:00"/>
-        <source value="#drxkROPs4yDHZISI"/>
+        <versionId value="6"/>
+        <lastUpdated value="2020-12-01T00:56:49.064+00:00"/>
+        <source value="#pVb5CwmkIR86oQ10"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/real-d-race-ethnicity-extension"/>
     <version value="1.0.0"/>
@@ -77,11 +77,15 @@
             <short value="Racial or ethnic identity"/>
             <definition value="Which of the following describes your racial or ethnic identity?"/>
             <min value="0"/>
-            <max value="1"/>
+            <max value="*"/>
             <type>
                 <code value="Extension"/>
             </type>
             <mustSupport value="true"/>
+            <binding>
+                <strength value="required"/>
+                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-reald-race-ethnicity"/>
+            </binding>
             <mapping>
                 <identity value="iso11179"/>
                 <map value="/ClinicalDocument/recordTarget/patientRole/patient/ethnicGroupCode"/>
