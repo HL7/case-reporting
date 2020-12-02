@@ -7,7 +7,8 @@ This guide was produced and developed through a collaborative effort of the Cent
 * Rick Geimer, Chief Innovation Officer, Lantana Consulting Group
 * John W. Loonsk, Johns Hopkins University Center for Population Health IT, consultant to APHL, and Executive Sponsor, Public Health Case Report Project, PH WG
 * Sean McIlvenna, IT Manager and Senior Software Architect, Lantana Consulting Group
-* Bryn Rhodes, Database Consulting Group
+* Bryn Rhodes, Alphora
+* Adam Stevenson, Alphora
 * Wendy L. Wise, Senior Project Manager, Lantana Consulting Group
 
 

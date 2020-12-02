@@ -8,7 +8,7 @@ One of the approaches also uses the Reportable Condition Knowledge Management Sy
 1. information flowing from healthcare to PHAs (via the eICR) and back (via the RR)
 2. information flowing from healthcare to AIMS/RCKMS (via the eICR) and then to PHAs (via the eICR and sometimes the RR) and with a response to healthcare from the AIMS/RCKMS (via the RR)
 
-In some jurisdictions Health Information Exchanges (HIEs) and/or Health Data Networks may also be employed to securely move data between organizations.
+In some jurisdictions Health Information Exchanges (HIEs) and/or Health Networks may also be employed to securely move data between organizations.
 RCKMS and the AIMS platform serve several purposes in approach #2.
 Prominent among these purposes is to implement public health reporting rules that cannot currently be readily distributed to healthcare.
 The rules ensure that public health agencies only get the data they are authorized to receive by state laws.

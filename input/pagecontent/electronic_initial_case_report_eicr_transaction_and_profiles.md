@@ -4,7 +4,11 @@
 
 The eICR transaction involves the transmission of data identified by a Council of State and Territorial Epidemiologists Task Force as being important to a case report. 
 
-eICR documents will usually be automatically initiated by matching EHR data against trigger codes. There are some circumstances, however, where they may be manually initiated by providers of care because they suspect there may be a reportable condition. They also may be alternately initiated by automated, forced reporting by the EHR to meet short term reporting needs. The following matrix illustrates these different types of initiation:
+eICR documents will usually be automatically initiated by matching EHR data against trigger codes. The following figure illustrates automatic initiation by trigger matching:
+
+<table><tr><td><img src="eICR Triggering and Transmission Guidance.JPG" style="width:100%;" /></td></tr></table>
+
+There are some circumstances, however, where they may be manually initiated by providers of care because they suspect there may be a reportable condition. They also may be alternately initiated by automated, forced reporting by the EHR to meet short term reporting needs. The following matrix illustrates these different types of initiation:
 
 <table><tr><td><img src="InitiationTypeTable.jpg" style="width:100%;"/></td></tr></table>
 

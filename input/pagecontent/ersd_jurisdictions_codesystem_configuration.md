@@ -1,7 +1,5 @@
 [Previous Page - eRSD Jurisdictions CodeSystem Query](ersd_jurisdictions_codesystem_query.html)
 
-[Previous Page - eRSD Jurisdictions CodeSystem Query](ersd_jurisdictions_codesystem_query.html)
-
 This document describes the eRSD Jurisdictions CodeSystem and explains how it is built.
 
 ### Overview
@@ -160,8 +158,5 @@ The "state" column becomes the concept property valueCode for `code: "state"`.  
 The "zip_code" column becomes the concept property valueCode for `code: "postalcode"`.  This represents postal codes that report to the specified jurisdiction. If no postal code has been specified, this property will be skipped rather than generating a valueCode that says `(null)`.
 
 This CodeSystem allows the ability to use CQL to match the Patient and Encounter addresses with the appropriate Public Health Agency that requires reporting.  This matching is done by comparing postal codes from the Patient and Encounter addresses with postal codes designated to specific Public Health Agencies.  If a postal code has not been specified for a Public Health Agency, matching is done by State, District, or Territory.
-
-
-[Next Page - Rule Filter Generation](rule_filter_generation.html)
 
 [Next Page - Rule Filter Generation](rule_filter_generation.html)
