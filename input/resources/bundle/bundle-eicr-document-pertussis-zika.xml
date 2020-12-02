@@ -4317,8 +4317,11 @@
     <entry>
         <fullUrl value="Patient/patient-ecr-eve-everywoman"/>
         <resource>
-            <Patient>
+            <Patient xmlns="http://hl7.org/fhir">
                 <id value="patient-ecr-eve-everywoman"/>
+                <meta>
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
+                </meta>
                 <text>
                     <status value="generated"/>
                     <div xmlns="http://www.w3.org/1999/xhtml">
@@ -4612,6 +4615,18 @@
                             <display value="female"/>
                         </coding>
                     </valueCodeableConcept>
+                </extension>
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/tribal-affiliation-extension">
+                    <extension url="TribeName">
+                        <valueCoding>
+                            <system value="http://terminology.hl7.org/CodeSystem/v3-TribalEntityUS"/>
+                            <code value="91"/>
+                            <display value="Fort Mojave Indian Tribe of Arizona, California"/>
+                        </valueCoding>
+                    </extension>
+                    <extension url="EnrolledTribeMember">
+                        <valueBoolean value="true"/>
+                    </extension>
                 </extension>
                 <identifier>
                     <use value="usual"/>
@@ -5943,7 +5958,7 @@
                                         <li>
                                             <ul style="list-style:none; padding-left:0; margin:0 0;">
                                                 <li>
-                                                    <div title="display">Primary Care</div> ( <div title="code">261QP2300X</div> ) </li>
+                                                    <div title="display">Primary Care Clinic/Center</div> ( <div title="code">261QP2300X</div> ) </li>
                                                 <li>
                                                     <div title="system">
                                                         <a href="http://nucc.org/provider-taxonomy">http://nucc.org/provider-taxonomy</a>
@@ -6021,7 +6036,7 @@
                     <coding>
                         <system value="http://nucc.org/provider-taxonomy"/>
                         <code value="261QP2300X"/>
-                        <display value="Primary Care"/>
+                        <display value="Primary Care Clinic/Center"/>
                     </coding>
                 </code>
                 <specialty>
