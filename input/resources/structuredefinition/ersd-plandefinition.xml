@@ -89,7 +89,7 @@
             <short value="Description of the &quot;match-trigger&quot; action."/>
             <definition value="Description of the &quot;create-eicr&quot; action."/>
             <min value="1"/>
-            <fixedString value="This action represents the start of an Encounter upon matching of a trigger code to one of the values in the eRSD value sets."/>
+            <fixedString value="This action represents the start of the reporting workflow in response to the encounter-start event"/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action:encounterStart.textEquivalent">
@@ -97,7 +97,7 @@
             <short value="Text equivalent of the &quot;start&quot; action."/>
             <definition value="Text equivalent of the &quot;start&quot; action."/>
             <min value="1"/>
-            <fixedString value="This action represents the start of an Encounter upon matching of a trigger code to one of the values in the eRSD value sets."/>
+            <fixedString value="Start the reporting workflow in response to an encounter-start event"/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action:encounterStart.trigger">
@@ -198,37 +198,6 @@
         <element id="PlanDefinition.action:encounterStart.trigger.name">
             <path value="PlanDefinition.action.trigger.name"/>
             <fixedString value="encounter-start"/>
-        </element>
-        <element id="PlanDefinition.action:encounterStart.trigger.data">
-            <path value="PlanDefinition.action.trigger.data"/>
-            <short value="A triggering value set."/>
-            <definition value="A triggering value set for the action."/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:encounterStart.trigger.data.type">
-            <path value="PlanDefinition.action.trigger.data.type"/>
-            <short value="The type of trigger data."/>
-            <definition value="The trigger codes that match to the codes in the eRSD value sets."/>
-        </element>
-        <element id="PlanDefinition.action:encounterStart.trigger.data.codeFilter">
-            <path value="PlanDefinition.action.trigger.data.codeFilter"/>
-            <short value="Match based on code."/>
-            <definition value="Make a match (trigger) based on code."/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:encounterStart.trigger.data.codeFilter.valueSet">
-            <path value="PlanDefinition.action.trigger.data.codeFilter.valueSet"/>
-            <short value="eRSD value set containing trigger codes."/>
-            <definition value="One of the eRSD value sets containing trigger codes for use in matching to the data."/>
-            <min value="1"/>
-            <type>
-                <code value="canonical"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"/>
-            </type>
-            <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action:encounterStart.relatedAction">
             <path value="PlanDefinition.action.relatedAction"/>
