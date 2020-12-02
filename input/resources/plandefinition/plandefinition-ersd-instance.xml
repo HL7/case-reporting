@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="plandefinition-ersd-instance"/>
     <meta>
-        <versionId value="15"/>
-        <lastUpdated value="2020-12-02T04:20:33.204+00:00"/>
-        <source value="#nT4Ohk2Y5FQrfej2"/>
+        <versionId value="16"/>
+        <lastUpdated value="2020-12-02T15:38:12.297+00:00"/>
+        <source value="#i5vbRH5J1TVIOq8V"/>
         <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
     </meta>
     <text>
@@ -16,60 +16,73 @@
                 <b>PlanDefinition eRSD Instance</b>
             </p>
             <p>
-                <b>url</b>: 
+                <b>url</b>:
+
                 
                 <a href="PlanDefinition-plandefinition-ersd-instance.html">http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance</a>
             </p>
             <p>
                 <b>version</b>: 3.0.0
+
             
             </p>
             <p>
                 <b>name</b>: PlanDefinition_eRSD_Instance
+
             
             </p>
             <p>
                 <b>title</b>: eRSD PlanDefinition Instance
+
             
             </p>
             <p>
-                <b>type</b>: 
+                <b>type</b>:
+
                 
                 <span title="Codes: {http://terminology.hl7.org/CodeSystem/plan-definition-type workflow-definition}">Workflow
         Definition</span>
             </p>
             <p>
                 <b>status</b>: active
+
             
             </p>
             <p>
                 <b>experimental</b>: true
+
             
             </p>
             <p>
                 <b>date</b>: Jul 31, 2020, 5:32:29 PM
+
             
             </p>
             <p>
                 <b>publisher</b>: HL7 Public Health Work Group (http://www.hl7.org/Special/committees/pher/index.cfm)
+
             
             </p>
             <p>
-                <b>contact</b>: HL7 International - Public Health: 
+                <b>contact</b>: HL7 International - Public Health:
+
                 
                 <a href="http://www.hl7.org/Special/committees/pher">http://www.hl7.org/Special/committees/pher</a>
             </p>
             <p>
                 <b>description</b>: An example ersd PlanDefinition
+
             
             </p>
             <p>
-                <b>jurisdiction</b>: 
+                <b>jurisdiction</b>:
+
                 
                 <span title="Codes: {urn:iso:std:iso:3166 US}">United States of America</span>
             </p>
             <p>
                 <b>effectivePeriod</b>: 2020-12-01 --&gt; (ongoing)
+
             
             </p>
         </div>
@@ -141,8 +154,15 @@
             <condition id="is-encounter-reportable">
                 <kind value="applicability"/>
                 <expression>
-                    <language value="text/cql.identifier"/>
-                    <expression value="Is Reportable"/></expression>
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternativeExpression">
+                        <valueExpression>
+                            <language value="text/cql-identifier"/>
+                            <expression value="Is Reportable"/>
+                            <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
+                        </valueExpression>
+                    </extension>
+                    <language value="text/fhirpath"/>
+                    <expression value="%conditions.exists() or %encounters.exists() or %immunizations.exists() or %procedures.exists() or $procedureOrders.exists() or %labOrders.exists() or %labTests.exists() or %labResults.exists() or %medicationAdministrations.exists() or %medicationOrders.exists() or %medicationDispenses.exists()"/></expression>
             </condition>
             <input id="conditions">
                 <type value="Condition"/>
