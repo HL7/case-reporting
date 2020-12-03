@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="ersd-plandefinition"/>
     <meta>
-        <versionId value="24"/>
-        <lastUpdated value="2020-12-02T21:20:26.967+00:00"/>
-        <source value="#dUMNRkpUn1q7u9Cb"/>
+        <versionId value="27"/>
+        <lastUpdated value="2020-12-03T05:03:05.166+00:00"/>
+        <source value="#HOy0JelIgaZMd4Ip"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
     <version value="1.0.0"/>
@@ -197,6 +197,7 @@
         </element>
         <element id="PlanDefinition.action:encounterStart.trigger.name">
             <path value="PlanDefinition.action.trigger.name"/>
+            <definition value="The name of the event, encounter-start in this case. For any action invoked as a result of this trigger, the triggering encounter is accessible via the context variable `%encounter`"/>
             <fixedString value="encounter-start"/>
         </element>
         <element id="PlanDefinition.action:encounterStart.relatedAction">
@@ -227,14 +228,6 @@
                     <unit value="h"/>
                 </valueDuration>
             </example>
-        </element>
-        <element id="PlanDefinition.action:encounterStart.relatedAction.offsetDuration.value">
-            <path value="PlanDefinition.action.relatedAction.offsetDuration.value"/>
-            <fixedDecimal value="1"/>
-        </element>
-        <element id="PlanDefinition.action:encounterStart.relatedAction.offsetDuration.unit">
-            <path value="PlanDefinition.action.relatedAction.offsetDuration.unit"/>
-            <fixedString value="h"/>
         </element>
         <element id="PlanDefinition.action:checkReportable">
             <path value="PlanDefinition.action"/>
@@ -268,7 +261,7 @@
             <slicing>
                 <discriminator>
                     <type value="value"/>
-                    <path value="condition.kind"/>
+                    <path value="id"/>
                 </discriminator>
                 <rules value="open"/>
             </slicing>
@@ -284,12 +277,14 @@
             </type>
             <mustSupport value="true"/>
         </element>
+        <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.id">
+            <path value="PlanDefinition.action.action.id"/>
+            <min value="1"/>
+            <fixedString value="ckr-is-encounter-reportable"/>
+            <mustSupport value="true"/>
+        </element>
         <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.condition">
             <path value="PlanDefinition.action.action.condition"/>
-        </element>
-        <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.condition.id">
-            <path value="PlanDefinition.action.action.condition.id"/>
-            <fixedString value="is-encounter-reportable"/>
         </element>
         <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.condition.kind">
             <path value="PlanDefinition.action.action.condition.kind"/>
@@ -302,11 +297,19 @@
         </element>
         <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.condition.expression.language">
             <path value="PlanDefinition.action.action.condition.expression.language"/>
-            <fixedCode value="text/cql.identifier"/>
+            <fixedCode value="text/fhirpath"/>
         </element>
-        <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.condition.expression.expression">
-            <path value="PlanDefinition.action.action.condition.expression.expression"/>
-            <fixedString value="Is Reportable"/>
+        <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.input">
+            <path value="PlanDefinition.action.action.input"/>
+            <definition value="Defines input data requirements for the action. Required data is accessible via a context variable named `%[id]` using the `id` of the input data requirement"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.input.id">
+            <path value="PlanDefinition.action.action.input.id"/>
+            <definition value="The id of the input requirement, allowing the data to be referenced via a context variable named `%[id]`"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.relatedAction">
             <path value="PlanDefinition.action.action.relatedAction"/>
@@ -329,12 +332,14 @@
             </type>
             <mustSupport value="true"/>
         </element>
+        <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.id">
+            <path value="PlanDefinition.action.action.id"/>
+            <min value="1"/>
+            <fixedString value="ckr-is-encounter-in-progress"/>
+            <mustSupport value="true"/>
+        </element>
         <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.condition">
             <path value="PlanDefinition.action.action.condition"/>
-        </element>
-        <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.condition.id">
-            <path value="PlanDefinition.action.action.condition.id"/>
-            <fixedString value="is-encounter-in-progress"/>
         </element>
         <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.condition.kind">
             <path value="PlanDefinition.action.action.condition.kind"/>
@@ -347,18 +352,14 @@
         </element>
         <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.condition.expression.language">
             <path value="PlanDefinition.action.action.condition.expression.language"/>
-            <fixedCode value="text/cql.identifier"/>
-        </element>
-        <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.condition.expression.expression">
-            <path value="PlanDefinition.action.action.condition.expression.expression"/>
-            <fixedString value="Is Reportable"/>
+            <fixedCode value="text/fhirpath"/>
         </element>
         <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.relatedAction">
             <path value="PlanDefinition.action.action.relatedAction"/>
         </element>
         <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.relatedAction.actionId">
             <path value="PlanDefinition.action.action.relatedAction.actionId"/>
-            <fixedId value="create-and-report-eicr"/>
+            <fixedId value="check-reportable"/>
         </element>
         <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.relatedAction.relationship">
             <path value="PlanDefinition.action.action.relatedAction.relationship"/>
@@ -390,11 +391,38 @@
             <slicing>
                 <discriminator>
                     <type value="value"/>
-                    <path value="condition.kind"/>
+                    <path value="id"/>
                 </discriminator>
                 <rules value="open"/>
             </slicing>
-            <min value="2"/>
+            <min value="3"/>
+        </element>
+        <element id="PlanDefinition.action:createAndReport.action:reportEicr">
+            <path value="PlanDefinition.action.action"/>
+            <sliceName value="reportEicr"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="BackboneElement"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:createAndReport.action:reportEicr.id">
+            <path value="PlanDefinition.action.action.id"/>
+            <min value="1"/>
+            <fixedString value="car-report-eicr"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:createAndReport.action:reportEicr.relatedAction">
+            <path value="PlanDefinition.action.action.relatedAction"/>
+        </element>
+        <element id="PlanDefinition.action:createAndReport.action:reportEicr.relatedAction.actionId">
+            <path value="PlanDefinition.action.action.relatedAction.actionId"/>
+            <fixedId value="report-eicr"/>
+        </element>
+        <element id="PlanDefinition.action:createAndReport.action:reportEicr.relatedAction.relationship">
+            <path value="PlanDefinition.action.action.relatedAction.relationship"/>
+            <fixedCode value="before-start"/>
         </element>
         <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete">
             <path value="PlanDefinition.action.action"/>
@@ -406,12 +434,14 @@
             </type>
             <mustSupport value="true"/>
         </element>
+        <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.id">
+            <path value="PlanDefinition.action.action.id"/>
+            <min value="1"/>
+            <fixedString value="car-is-encounter-complete"/>
+            <mustSupport value="true"/>
+        </element>
         <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.condition">
             <path value="PlanDefinition.action.action.condition"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.condition.id">
-            <path value="PlanDefinition.action.action.condition.id"/>
-            <fixedString value="is-encounter-complete"/>
         </element>
         <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.condition.kind">
             <path value="PlanDefinition.action.action.condition.kind"/>
@@ -424,11 +454,7 @@
         </element>
         <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.condition.expression.language">
             <path value="PlanDefinition.action.action.condition.expression.language"/>
-            <fixedCode value="text/cql.identifier"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.condition.expression.expression">
-            <path value="PlanDefinition.action.action.condition.expression.expression"/>
-            <fixedString value="Is Encounter Complete"/>
+            <fixedCode value="text/fhirpath"/>
         </element>
         <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.relatedAction">
             <path value="PlanDefinition.action.action.relatedAction"/>
@@ -448,14 +474,13 @@
             <type>
                 <code value="Duration"/>
             </type>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.relatedAction.offsetDuration.value">
-            <path value="PlanDefinition.action.action.relatedAction.offsetDuration.value"/>
-            <fixedDecimal value="24"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.relatedAction.offsetDuration.unit">
-            <path value="PlanDefinition.action.action.relatedAction.offsetDuration.unit"/>
-            <fixedString value="h"/>
+            <example>
+                <label value="Wait 24 hours before next action."/>
+                <valueDuration>
+                    <value value="24"/>
+                    <unit value="h"/>
+                </valueDuration>
+            </example>
         </element>
         <element id="PlanDefinition.action:createAndReport.action:encounterInProgress">
             <path value="PlanDefinition.action.action"/>
@@ -467,12 +492,14 @@
             </type>
             <mustSupport value="true"/>
         </element>
+        <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.id">
+            <path value="PlanDefinition.action.action.id"/>
+            <min value="1"/>
+            <fixedString value="car-is-encounter-in-progress"/>
+            <mustSupport value="true"/>
+        </element>
         <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.condition">
             <path value="PlanDefinition.action.action.condition"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.condition.id">
-            <path value="PlanDefinition.action.action.condition.id"/>
-            <fixedString value="encounter-in-progress"/>
         </element>
         <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.condition.kind">
             <path value="PlanDefinition.action.action.condition.kind"/>
@@ -485,11 +512,7 @@
         </element>
         <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.condition.expression.language">
             <path value="PlanDefinition.action.action.condition.expression.language"/>
-            <fixedCode value="text/cql.identifier"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.condition.expression.expression">
-            <path value="PlanDefinition.action.action.condition.expression.expression"/>
-            <fixedString value="Is Encounter In Progress"/>
+            <fixedCode value="text/fhirpath"/>
         </element>
         <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.relatedAction">
             <path value="PlanDefinition.action.action.relatedAction"/>
@@ -509,14 +532,13 @@
             <type>
                 <code value="Duration"/>
             </type>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.relatedAction.offsetDuration.value">
-            <path value="PlanDefinition.action.action.relatedAction.offsetDuration.value"/>
-            <fixedDecimal value="24"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.relatedAction.offsetDuration.unit">
-            <path value="PlanDefinition.action.action.relatedAction.offsetDuration.unit"/>
-            <fixedString value="h"/>
+            <example>
+                <label value="Wait 24 hours before next action."/>
+                <valueDuration>
+                    <value value="24"/>
+                    <unit value="h"/>
+                </valueDuration>
+            </example>
         </element>
         <element id="PlanDefinition.action:reportEicr">
             <path value="PlanDefinition.action"/>
