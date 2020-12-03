@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="355"/>
-        <lastUpdated value="2020-12-03T00:15:32.114+00:00"/>
-        <source value="#V5SM8hceBNRXTiNa"/>
+        <versionId value="360"/>
+        <lastUpdated value="2020-12-03T01:21:10.620+00:00"/>
+        <source value="#jUgoeTnLtNu14KPf"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="3.0.0"/>
@@ -45,7 +45,7 @@
     <dependsOn>
         <uri value="http://fhir.org/packages/us.nlm.vsac/ImplementationGuide/us.nlm.vsac"/>
         <packageId value="us.nlm.vsac"/>
-        <version value="0.3.0"/>
+        <version value="0.4.0"/>
     </dependsOn>
     <dependsOn>
         <uri value="http://hl7.org/fhir/us/vr-common-library/ImplementationGuide/hl7.fhir.us.vr-common-library"/>
@@ -1789,6 +1789,13 @@
             <exampleBoolean value="true"/>
             <groupingId value="us-public-health-examples"/>
         </resource>
+        <resource>
+            <reference>
+                <reference value="Parameters/expansion-parameters-ecr"/></reference>
+            <name value="expansion-parameters-ecr"/>
+            <description value="References US SNOMED CT version."/>
+            <exampleBoolean value="false"/>
+        </resource>
         <page>
             <nameUrl value="index.html"/>
             <title value="Home Page"/>
@@ -1882,6 +1889,10 @@
         <parameter>
             <code value="apply-jurisdiction"/>
             <value value="false"/>
+        </parameter>
+        <parameter>
+            <code value="path-expansion-params"/>
+            <value value="resources/parameters/expansion-parameters-ecr.xml"/>
         </parameter>
         <parameter>
             <code value="copyrightyear"/>
