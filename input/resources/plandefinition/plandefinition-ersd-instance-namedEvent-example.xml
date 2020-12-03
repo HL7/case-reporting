@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PlanDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="plandefinition-ersd-instance-namedEvent-example"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2020-12-03T04:32:24.651+00:00"/>
+        <source value="#E1JfmhMKN4FXM6gQ"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-namedEvent-example"/>
+    <version value="0.1"/>
+    <name value="PlanDefinition_eRSD_Instance_namedEvent_Example"/>
+    <title value="eRSD PlanDefinition Instance NamedEvent Example"/>
+    <type>
+        <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+            <code value="workflow-definition"/>
+            <display value="Workflow Definition"/>
+        </coding>
+    </type>
+    <status value="active"/>
+    <experimental value="true"/>
+    <date value="2020-12-01T12:32:29.858-05:00"/>
+    <description value="This PlanDefinition is a simplified duplicate of the eRSD PlanDefinition Instance created for the purposes of demonstrating by example the usage of the US Public Health Named Event extension."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
+    <effectivePeriod>
+        <start value="2020-12-01"/>
+    </effectivePeriod>
+    <action id="start">
+        <description value="This action represents the start of the reporting workflow in response to the encounter-start event"/>
+        <textEquivalent value="Start the reporting workflow in response to an encounter-start event"/>
+        <code>
+            <coding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/executabletask-type"/>
+                <code value="start"/>
+            </coding>
+        </code>
+        <trigger id="encounter">
+            <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-namedEventType">
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-triggerdefinition-namedevents"/>
+                        <code value="encounter-start"/>
+                        <display value="Indicates the start of an encounter"/>
+                    </coding>
+                </valueCodeableConcept>
+            </extension>
+            <type value="named-event"/>
+            <name value="encounter-start"/>
+        </trigger>
+    </action>
+</PlanDefinition>

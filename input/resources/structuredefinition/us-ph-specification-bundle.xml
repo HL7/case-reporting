@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-specification-bundle"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2020-11-25T22:26:28.733+00:00"/>
-        <source value="#eICXicQ0hLyftyQz"/>
+        <versionId value="5"/>
+        <lastUpdated value="2020-12-03T04:32:24.664+00:00"/>
+        <source value="#vzN3iLABrABreqD0"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-bundle"/>
     <version value="1.0.0"/>
@@ -29,7 +29,6 @@
     <type value="Bundle"/>
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
     <derivation value="constraint"/>
-    
     <differential>
         <element id="Bundle">
             <path value="Bundle"/>
@@ -71,6 +70,38 @@
             <type>
                 <code value="Resource"/>
                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-plandefinition"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Bundle.entry:sliceUSPHTriggeringValueSetLibrary">
+            <path value="Bundle.entry"/>
+            <sliceName value="sliceUSPHTriggeringValueSetLibrary"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Bundle.entry:sliceUSPHTriggeringValueSetLibrary.resource">
+            <path value="Bundle.entry.resource"/>
+            <min value="1"/>
+            <type>
+                <code value="Resource"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset-library"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Bundle.entry:sliceUSPHTriggeringValueSet">
+            <path value="Bundle.entry"/>
+            <sliceName value="sliceUSPHTriggeringValueSet"/>
+            <min value="1"/>
+            <max value="*"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Bundle.entry:sliceUSPHTriggeringValueSet.resource">
+            <path value="Bundle.entry.resource"/>
+            <min value="1"/>
+            <type>
+                <code value="Resource"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"/>
             </type>
             <mustSupport value="true"/>
         </element>
