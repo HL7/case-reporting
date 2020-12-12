@@ -259,7 +259,7 @@ Similar to these examples, some additional responses may include:
 
 This section describes narrative guidance to deal with eICRs that were successfully processed but had an issue related to content which caused the PHDS system (such as RCKMS) to be unable to make a determination of reportability.
 
-In cases where the patient jurisdiction differs from the provider jurisdiction, a determination may be possible for one jurisdiction but not for the other due to an issue with content contained in the eICR or lack of rules within the PHDS.  If the address cannot be linked a jurisdiction the PHDS may return a response of “jurisdiction not found (JNF)”, which will result in a warning in the RR narrative.  If a jurisdiction exists within the PHDS but no reporting specifications have been published, the RR will return a warning of “reporting specifications not found (RSNF)”.
+In cases where the patient jurisdiction differs from the provider jurisdiction, a determination may be possible for one jurisdiction but not for the other due to an issue with content contained in the eICR or lack of rules within the PHDS.  If the address cannot be linked a jurisdiction the PHDS may return a response of "jurisdiction not found (JNF)", which will result in a warning in the RR narrative.  If a jurisdiction exists within the PHDS but no reporting specifications have been published, the RR will return a warning of "reporting specifications not found (RSNF)".
 
 ### Reportability Response Subject
 
@@ -298,7 +298,7 @@ In cases where the patient jurisdiction differs from the provider jurisdiction, 
 > 
 > "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" was determined not to be reportable for a triggered condition to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization-definitions.html#Organization.name)&gt;".  This may be because it is not on the list of reportable conditions for the relevant Public Health Agency or the information provided at the time of this report does not meet reporting criteria.
  
-> *if multiple Routing Entities are present change text to include each separated by* “and to”:
+> *if multiple Routing Entities are present change text to include each separated by* "and to":
 
 > "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" is reportable to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization-definitions.html#Organization.name)&gt;". The initial case report was sent to "&lt;[routing entity name](StructureDefinition-rr-routing-entity-organization.html#Organization.name)&gt;" and to "&lt;[routing entity name](StructureDefinition-rr-routing-entity-organization.html#Organization.name)&gt;". Additional information may be required for this report.
 
@@ -318,7 +318,7 @@ In cases where the patient jurisdiction differs from the provider jurisdiction, 
 > 
 > "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" was determined not to be reportable for a triggered condition to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization-definitions.html#Organization.name)&gt;".  This may be because it is not on the list of reportable conditions for the relevant Public Health Agency or the information provided at the time of this report does not meet reporting criteria.
 > 
-> *if multiple Routing Entities are present change text to include each separated by* “and to”:
+> *if multiple Routing Entities are present change text to include each separated by* "and to":
 
 > "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" may be reportable to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization-definitions.html#Organization.name)&gt;". The reportability status could not be completely determined because: "&lt;[determination of reportability reason](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.extension:determinationOfReportabilityReason)&gt;". The initial case report was sent to "&lt;[routing entity name](StructureDefinition-rr-routing-entity-organization.html#Organization.name)&gt;" and to "&lt;[routing entity name](StructureDefinition-rr-routing-entity-organization.html#Organization.name)&gt;". 
 
@@ -362,7 +362,7 @@ After displaying determination of reportability information above, then include 
 
 **(Reporting Specification Not Found)**
 
-> Reportability could not be determined for “&lt;jurisdiction displayName&gt;” due to a processing error. Reporting to “&lt;jurisdiction displayName&gt;” may still be required. 
+> Reportability could not be determined for "&lt;jurisdiction displayName&gt;" due to a processing error. Reporting to "&lt;jurisdiction displayName&gt;" may still be required. 
 
 **(Jurisdiction Not Found for Patient Address)**
 
