@@ -508,7 +508,7 @@
             </reference>
             <name value="eRSD Jurisdictions Example"/>
             <description value="This code system describes jurisdictions that require public health reporting."/>
-            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem"/>
             <groupingId value="terminology-codesystems"/>
         </resource>
         <resource>
@@ -1366,6 +1366,16 @@
         </resource>
         <resource>
             <reference>
+                <reference value="StructureDefinition/us-ph-codesystem"/>
+                <display value="US Public Health CodeSystem"/>
+            </reference>
+            <name value="US Public Health CodeSystem"/>
+            <description value="This profile represents US Public Health CodeSystem."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-public-health-profiles"/>
+        </resource>
+        <resource>
+            <reference>
                 <reference value="StructureDefinition/us-ph-emergency-outbreak-information"/>
                 <display value="US Public Health Emergency Outbreak Information"/>
             </reference>
@@ -1512,6 +1522,16 @@
             <name value="FHIR Model Definition"/>
             <description value="Model definition for the FHIR R4 (v4.0.1) Model"/>
             <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-codesystem-propertyBinding"/>
+                <display value="US Public Health CodeSystem Property Binding"/>
+            </reference>
+            <name value="US Public Health CodeSystem Property Binding"/>
+            <description value="Indicates the binding of a CodeSystem's property elements."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-ph-extensions"/>
         </resource>
         <resource>
             <reference>
@@ -1958,6 +1978,14 @@
         <parameter>
             <code value="releaselabel"/>
             <value value="STU 2 Ballot"/>
+        </parameter>
+        <parameter>
+          <code value="path-resource" />
+          <value value="input/codesystem"/>
+        </parameter>
+        <parameter>
+          <code value="path-resource" />
+          <value value="input/valueset"/>
         </parameter>
     </definition>
 </ImplementationGuide>
