@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="pregnancy-status-observation"/>
     <meta>
-        <versionId value="6"/>
-        <lastUpdated value="2020-11-17T06:37:51.166+00:00"/>
-        <source value="#wXu4vXqLOAiYI74h"/>
+        <versionId value="10"/>
+        <lastUpdated value="2020-11-25T22:13:29.562+00:00"/>
+        <source value="#AbH5VUjofS665R1o"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation"/>
     <version value="1.0.0"/>
@@ -14,7 +14,15 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range.&#xA;&#xA;This profile includes the determination method, determination date, and recorded date of the pregnancy status.&#xA;&#xA;Use the effectivePeriod to indicate the date range over which the patient was pregnant/possibly pregnant/not pregnant/unknown. To record the date that the pregnancy status was recorded, use the date-recorded-extension and to record the date on which the pregnancy status determination was made, use the date-determined-extension. If the effectivePeriod.end is not present it is assumed that the date range over which the pregnancy status is asserted is from effectivePeriod.start to the date in the date-recorded-extension. For example, if the effectivePeriod.start has been recorded as two months prior to the date contained in the date-recorded-extension, and there is no effectivePeriod.end recorded, no assumptions can be made about the pregnancy status after the date contained in the date-recorded-extension."/>
+    <description value="This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
     <fhirVersion value="4.0.1"/>
     <mapping>
         <identity value="eCR-CDA"/>
@@ -95,9 +103,9 @@
             <min value="1"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="false"/>
         </element>
         <element id="Observation.effective[x]">
             <path value="Observation.effective[x]"/>

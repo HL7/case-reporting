@@ -22,38 +22,7 @@ It also should be provided to EHR System Administrators to confirm reporting and
 
 The Communication resource was chosen rather than the Composition resource for the top level Reportability Response resource as the use case of the response back to the provider is more suited to Communication in that it is a record of communication that has occurred and simply a conveyance of information from the sender to a receiver. This differs from Composition which is a structure for grouping information for purposes of persistence and attestability.
 
-The following profiles and extensions have been defined for the Reportability Response transactions. The Reportability Response Communication profile is the starting point and all the other profiles are referenced from this profile (see diagram below).
-
-#### Profiles
-<ul>
-  <li><b>Starting point: </b><a href="StructureDefinition-rr-communication.html">Reportability Response Communication</a></li>
-  <li><a href="StructureDefinition-rr-relevant-reportable-condition-plandefinition.html">Relevant Reportable Condition PlanDefinition</a></li>
-  <li><a href="StructureDefinition-rr-rules-authoring-agency-organization.html">Rules Authoring Agency Organization</a></li>
-  <li><a href="StructureDefinition-rr-responsible-agency-organization.html">Responsible Agency Organization</a></li>
-  <li><a href="StructureDefinition-rr-routing-entity-organization.html">Routing Entity Organization</a></li>
-  <li><a href="StructureDefinition-rr-eicr-processing-status-observation.html">eICR Processing Status Observation</a></li>
-  <li><a href="StructureDefinition-rr-eicr-processing-status-reason-observation.html">eICR Processing Status Reason Observation</a></li>
-  <li><a href="StructureDefinition-us-ph-organization.html">eCR Organization</a></li>
-  <li><a href="StructureDefinition-us-ph-encounter.html">eICR Encounter</a></li>
-  <li><a href="StructureDefinition-us-ph-practitionerrole.html">eCR PractitionerRole</a></li>
-  <li><a href="StructureDefinition-us-ph-patient.html">eCR Patient</a></li>
-</ul>
-
-#### Extensions
-<ul>
-  <li><a href="StructureDefinition-rr-location-relevance-extension.html">Location Relevance Extension</a></li>
-  <li><a href="StructureDefinition-eicr-initiation-type-extension.html">eICR Initiation Type Extension</a></li>
-  <li><a href="StructureDefinition-rr-eicr-processing-status-extension.html">eICR Processing Status Extension</a></li>
-  <li><a href="StructureDefinition-rr-determination-of-reportability-extension.html">Extension Determination of Reportability</a></li>
-  <li><a href="StructureDefinition-rr-determination-of-reportability-reason-extension.html">Extension Determination of Reportability Reason</a></li>
-  <li><a href="StructureDefinition-rr-determination-of-reportability-rule-extension.html">Determination of Reportability Rule Extension</a></li>
-  <li><a href="StructureDefinition-rr-external-resource-type-extension.html">External Resource Type Extension</a></li>
-  <li><a href="StructureDefinition-rr-priority-extension.html">External Resource Priority Extension</a></li>
-  <li><a href="StructureDefinition-rr-rules-authoring-agency-organization-extension.html">Rules Authoring Agency Organization Extension</a></li>
-  <li><a href="StructureDefinition-rr-responsible-agency-organization-extension.html">Responsible Agency Organization Extension</a></li>
-  <li><a href="StructureDefinition-rr-routing-entity-organization-extension.html">Routing Entity Organization Extension</a></li>
-  <li><a href="StructureDefinition-rr-eicr-receipt-time-extension.html">eICR Receipt Time Extension</a></li>
-</ul>
+A number of profiles and extensions have been defined for the Reportability Response transactions  - see [Artifact Index](artifacts.html) for a listing of these profiles. The Reportability Response Communication profile is the starting point and all the other profiles are referenced from this profile (see diagram below).
 
 <table><tr><td><img src="FHIR RR Profile Hierarchy.png" /></td></tr></table>
 

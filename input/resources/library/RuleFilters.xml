@@ -3,11 +3,11 @@
     xmlns="http://hl7.org/fhir">
     <id value="RuleFilters"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2020-11-16T02:14:31.513+00:00"/>
-        <source value="#NJVVkq8GFVyzbKl9"/>
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-executablelibrary"/>
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-computablelibrary"/>
+        <versionId value="9"/>
+        <lastUpdated value="2020-12-03T08:50:39.041+00:00"/>
+        <source value="#WKxcOGbH5i8qjC6M"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-executablelibrary"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-computablelibrary"/>
     </meta>
     <text>
         <status value="generated"/>
@@ -324,7 +324,7 @@ define "Negative Chlamydia Test Results":
         and "Address Exists in Jurisdiction Codes"
     )
 
-define "IsReportable":
+define "Is Reportable":
   exists "Indeterminate Chlamydia Test Results"
     or exists "Negative Chlamydia Test Results"
 </code>
@@ -346,7 +346,16 @@ define "IsReportable":
             <code value="logic-library"/>
         </coding>
     </type>
+    <publisher value="{site.data.fhir.ig.publisher}"/>
     <description value="An example logic library for eRSD - Chlamydia example."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
     <relatedArtifact>
         <type value="depends-on"/>
         <display value="FHIR Helpers Library"/>

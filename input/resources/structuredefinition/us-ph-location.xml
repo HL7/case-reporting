@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-location"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2020-11-13T04:52:14.463+00:00"/>
-        <source value="#417QbI9FH6RKng8t"/>
+        <versionId value="8"/>
+        <lastUpdated value="2020-12-01T01:49:11.919+00:00"/>
+        <source value="#RJj0MIP811788lBu"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-location"/>
     <version value="1.0.0"/>
@@ -14,7 +14,15 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Location profile represents the location/facility in which care was provided when the eICR was triggered."/>
+    <description value="This Location profile represents the location/facility in which care was provided."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
     <fhirVersion value="4.0.1"/>
     <mapping>
         <identity value="CDA"/>
@@ -26,6 +34,7 @@
     <type value="Location"/>
     <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-location"/>
     <derivation value="constraint"/>
+    
     <differential>
         <element id="Location">
             <path value="Location"/>
@@ -46,20 +55,6 @@
                 <comment value="Facility ID Number"/>
             </mapping>
         </element>
-        <element id="Location.name">
-            <path value="Location.name"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="ClincalDocument/componentOf/encompassingEncounter/responsibleParty/representedOrganization/name"/>
-                <comment value="Provider Facility/Office Name"/>
-            </mapping>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="ClincalDocument/componentOf/encompassingEncounter/location/healthCareFacility/serviceProviderOrganization/name"/>
-                <comment value="Facility Name"/>
-            </mapping>
-        </element>
         <element id="Location.type">
             <path value="Location.type"/>
             <short value="Facility Type"/>
@@ -77,15 +72,6 @@
                 <identity value="CDA"/>
                 <map value="ClincalDocument/componentOf/encompassingEncounter/location/healthCareFacility/code"/>
                 <comment value="Facility Type"/>
-            </mapping>
-        </element>
-        <element id="Location.telecom">
-            <path value="Location.telecom"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="ClincalDocument/componentOf/encompassingEncounter/location/healthCareFacility/serviceProviderOrganization/telecom"/>
-                <comment value="Facility Telecom"/>
             </mapping>
         </element>
         <element id="Location.address">

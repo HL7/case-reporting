@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="ersd-specification-bundle"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2020-11-12T22:00:47.740+00:00"/>
-        <source value="#XUyr5SCxVlts3Zbj"/>
+        <versionId value="7"/>
+        <lastUpdated value="2020-12-03T20:01:40.982+00:00"/>
+        <source value="#FFWAdAR1gnDEd2Kf"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-specification-bundle"/>
     <version value="1.0.0"/>
@@ -15,11 +15,19 @@
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
     <description value="This Bundle profile represents an eRSD Specification Bundle. It contains the eRSD Specification."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
     <fhirVersion value="4.0.1"/>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Bundle"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+    <baseDefinition value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-bundle"/>
     <derivation value="constraint"/>
     <differential>
         <element id="Bundle">
@@ -49,51 +57,19 @@
             </slicing>
             <mustSupport value="true"/>
         </element>
-        <element id="Bundle.entry:sliceERSDPlanDefinition">
+        <element id="Bundle.entry:slicePlanDefinition">
             <path value="Bundle.entry"/>
-            <sliceName value="sliceERSDPlanDefinition"/>
+            <sliceName value="slicePlanDefinition"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Bundle.entry:sliceERSDPlanDefinition.resource">
+        <element id="Bundle.entry:slicePlanDefinition.resource">
             <path value="Bundle.entry.resource"/>
             <min value="1"/>
             <type>
                 <code value="Resource"/>
                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Bundle.entry:sliceERSDTriggeringValueSetLibrary">
-            <path value="Bundle.entry"/>
-            <sliceName value="sliceERSDTriggeringValueSetLibrary"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Bundle.entry:sliceERSDTriggeringValueSetLibrary.resource">
-            <path value="Bundle.entry.resource"/>
-            <min value="1"/>
-            <type>
-                <code value="Resource"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-triggering-valueset-library"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Bundle.entry:sliceERSDTriggeringValueSet">
-            <path value="Bundle.entry"/>
-            <sliceName value="sliceERSDTriggeringValueSet"/>
-            <min value="1"/>
-            <max value="*"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Bundle.entry:sliceERSDTriggeringValueSet.resource">
-            <path value="Bundle.entry.resource"/>
-            <min value="1"/>
-            <type>
-                <code value="Resource"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-triggering-valueset"/>
             </type>
             <mustSupport value="true"/>
         </element>

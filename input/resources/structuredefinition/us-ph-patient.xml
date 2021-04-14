@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-patient"/>
     <meta>
-        <versionId value="8"/>
-        <lastUpdated value="2020-11-01T01:40:00.917+00:00"/>
-        <source value="#dkPxydS1ST3sp9jE"/>
+        <versionId value="12"/>
+        <lastUpdated value="2020-12-02T23:37:50.793+00:00"/>
+        <source value="#K2H9F2TuS3gjTsPF"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
     <version value="1.0.0"/>
@@ -14,7 +14,15 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Patient profile represents a US Public Health Patient. It is based on the **US Core Patient** profile with further restrictions to allow masking of some data elements and the addition of the patient-genderIdentity extension."/>
+    <description value="This Patient profile represents a US Public Health Patient."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
     <fhirVersion value="4.0.1"/>
     <mapping>
         <identity value="eCR-CDA"/>
@@ -26,6 +34,7 @@
     <type value="Patient"/>
     <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
     <derivation value="constraint"/>
+    
     <differential>
         <element id="Patient">
             <path value="Patient"/>
@@ -33,28 +42,16 @@
             <definition value="This Patient profile represents an eCR Patient. It is based on the **US Core Patient** profile with further restrictions to allow masking of some data elements and the addition of the patient-genderIdentity extension."/>
             <mustSupport value="true"/>
         </element>
-        <element id="Patient.extension:REALDRaceEthnicity">
+        <element id="Patient.extension:birthPlace">
             <path value="Patient.extension"/>
-            <sliceName value="REALDRaceEthnicity"/>
-            <short value="REAL D Race and Ethnicity is required in Oregon"/>
+            <sliceName value="birthPlace"/>
             <min value="0"/>
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/real-d-race-ethnicity-extension"/>
+                <profile value="http://hl7.org/fhir/StructureDefinition/patient-birthPlace"/>
             </type>
-            <isModifier value="false"/>
-        </element>
-        <element id="Patient.extension:TribalAffiliation">
-            <path value="Patient.extension"/>
-            <sliceName value="TribalAffiliation"/>
-            <short value="Tribal affiliation and membership of the patient"/>
-            <min value="0"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/tribal-affiliation-extension"/>
-            </type>
+            <mustSupport value="true"/>
             <isModifier value="false"/>
         </element>
         <element id="Patient.extension:genderIdentity">
@@ -73,6 +70,18 @@
                 <map value="[eICR R2 STU2][RR R1 STU1] Gender Identity/value"/>
                 <comment value="Patient gender identity"/>
             </mapping>
+        </element>
+        <element id="Patient.extension:TribalAffiliation">
+            <path value="Patient.extension"/>
+            <sliceName value="TribalAffiliation"/>
+            <short value="Tribal affiliation and membership of the patient"/>
+            <min value="0"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/tribal-affiliation-extension"/>
+            </type>
+            <isModifier value="false"/>
         </element>
         <element id="Patient.identifier">
             <path value="Patient.identifier"/>

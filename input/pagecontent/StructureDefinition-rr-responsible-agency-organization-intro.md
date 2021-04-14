@@ -1,0 +1,1 @@
+This can be the PHA relevant to the location in which care was provided and/or where the patient lives. It is based on the [eCR Organization](StructureDefinition-us-ph-organization.html) profile with a further restriction setting the **type** data element to 'Responsible Agency'.

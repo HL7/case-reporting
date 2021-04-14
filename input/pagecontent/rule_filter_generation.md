@@ -305,5 +305,4 @@ define "IsReportable":
     or <other condition criteria>...
 ```
 
-
 [Next Page - Relationship to Other Standards](relationship_to_other_standards.html)

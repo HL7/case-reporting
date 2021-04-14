@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-procedure"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2020-11-14T03:26:40.869+00:00"/>
-        <source value="#JPSDA2SwOpSKkkQM"/>
+        <versionId value="8"/>
+        <lastUpdated value="2020-11-30T22:47:47.633+00:00"/>
+        <source value="#ok1fSdLMk12OuIJD"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-procedure"/>
     <version value="1.0.0"/>
@@ -14,13 +14,14 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This profile defines constraints on the US Core Procedure profile for US Public Health use cases."/>
+    <description value="This Procedure profile defines constraints on the US Core Procedure profile for US Public Health use cases."/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
             <code value="US"/>
             <display value="United States of America"/>
         </coding>
+        <text value="United States of America"/>
     </jurisdiction>
     <fhirVersion value="4.0.1"/>
     <kind value="resource"/>
@@ -28,6 +29,7 @@
     <type value="Procedure"/>
     <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"/>
     <derivation value="constraint"/>
+    
     <differential>
         <element id="Procedure">
             <path value="Procedure"/>
@@ -35,6 +37,16 @@
         </element>
         <element id="Procedure.focalDevice">
             <path value="Procedure.focalDevice"/>
+            <short value="Device such as a ventilator as the focus of the procedure"/>
+            <definition value="A device that is implanted, removed or otherwise manipulated such as a ventilator as a focal portion of the Procedure."/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Procedure.focalDevice.manipulated">
+            <path value="Procedure.focalDevice.manipulated"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device"/>
+            </type>
             <mustSupport value="true"/>
         </element>
     </differential>

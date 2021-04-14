@@ -3,10 +3,10 @@
     xmlns="http://hl7.org/fhir">
     <id value="valueset-mrtc-example"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2020-10-12T23:36:27.982+00:00"/>
-        <source value="#7rbI0Z4M1YDLjKYu"/>
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-valueset"/>
+        <versionId value="6"/>
+        <lastUpdated value="2020-12-03T05:57:10.741+00:00"/>
+        <source value="#jZvYkGxPTEYqKf6v"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"/>
     </meta>
     <extension url="http://hl7.org/fhir/StructureDefinition/valueset-steward">
         <valueContactDetail>
@@ -23,10 +23,36 @@
         <system value="urn:ietf:rfc:3986"/>
         <value value="urn:oid:2.16.840.1.113762.1.4.1146.1060"/>
     </identifier>
+    <version value="1.0.0"/>
     <name value="Example_Medications_Triggers_for_Public_Health_Reporting"/>
     <title value="Example Medications Triggers for Public Health Reporting"/>
     <status value="active"/>
+    <experimental value="true"/>
+    <date value="2018-08-01"/>
+    <publisher value="{site.data.fhir.ig.publisher}"/>
     <description value="This example set of values contains CVX, RXNORM,and SNOMED medication codes that may represent that the patient may have a potentially reportable condition. These pertain to medications administered and medications prescribed, where the medication, coded in CVX,RXNORM,SNOMED, may be indicative of a reportable condition."/>
+    <useContext>
+        <code>
+            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
+            <code value="reporting"/>
+            <display value="Reporting"/>
+        </code>
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
+                <code value="triggering"/>
+                <display value="Triggering"/>
+            </coding>
+        </valueCodeableConcept>
+    </useContext>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
     <purpose value="Prescription drugs names used in observations documented in a clinical record."/>
     <compose>
         <include>

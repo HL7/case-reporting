@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-initiation-reason-extension"/>
     <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2020-10-28T06:46:34.906+00:00"/>
-        <source value="#H4rUj4v1M9SXP7OY"/>
+        <versionId value="6"/>
+        <lastUpdated value="2020-11-25T22:11:48.337+00:00"/>
+        <source value="#7evFgnKehtVSyYDa"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-initiation-reason-extension"/>
     <version value="1.0.0"/>
@@ -14,7 +14,15 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This extension contains an explanation for the manual or alternate initiation of the eICR. If there are multiple distinct reasons for manual or alternate initiation then each reason should be contained in a separate eICR Initiation Reason Extension. &#xA;&#xA;The reason may be entered either as:&#xA;* free text (string) &#xA;* coded value (valueCodeableConcept) (not necessarily initiated by a provider of care but might be &quot;programmed-in&quot; by the EHR implementer for some purpose)"/>
+    <description value="This extension contains an explanation for the manual or alternate initiation of the eICR."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
     <fhirVersion value="4.0.1"/>
     <mapping>
         <identity value="eCR-CDA"/>
@@ -30,6 +38,7 @@
     <type value="Extension"/>
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
     <derivation value="constraint"/>
+    
     <differential>
         <element id="Extension">
             <path value="Extension"/>

@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="ersd-supplemental-bundle"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2020-11-12T22:00:47.727+00:00"/>
-        <source value="#RXwDCUtCwiOkxNAk"/>
+        <versionId value="6"/>
+        <lastUpdated value="2020-12-03T19:42:37.911+00:00"/>
+        <source value="#bWXIioslrZawqKJB"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-supplemental-bundle"/>
     <version value="1.0.0"/>
@@ -15,11 +15,19 @@
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
     <description value="This Bundle profile represents an eRSD Supplemental Bundle. It contains the eRSD Supplements."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
     <fhirVersion value="4.0.1"/>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Bundle"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+    <baseDefinition value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-bundle"/>
     <derivation value="constraint"/>
     <differential>
         <element id="Bundle">
@@ -49,51 +57,19 @@
             </slicing>
             <mustSupport value="true"/>
         </element>
-        <element id="Bundle.entry:sliceERSDLibrary">
+        <element id="Bundle.entry:sliceUSPHComputableLibrary">
             <path value="Bundle.entry"/>
-            <sliceName value="sliceERSDPlanDefinition"/>
+            <sliceName value="sliceUSPHComputableLibrary"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Bundle.entry:sliceERSDLibrary.resource">
+        <element id="Bundle.entry:sliceUSPHComputableLibrary.resource">
             <path value="Bundle.entry.resource"/>
             <min value="1"/>
             <type>
                 <code value="Resource"/>
-                <profile value="http://hl7.org/fhir/StructureDefinition/Library"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Bundle.entry:sliceERSDSupplementalValueSetLibrary">
-            <path value="Bundle.entry"/>
-            <sliceName value="sliceERSDSupplementalValueSetLibrary"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Bundle.entry:sliceERSDSupplementalValueSetLibrary.resource">
-            <path value="Bundle.entry.resource"/>
-            <min value="1"/>
-            <type>
-                <code value="Resource"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-supplemental-valueset-library"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Bundle.entry:sliceERSDSupplementalValueSet">
-            <path value="Bundle.entry"/>
-            <sliceName value="sliceERSDSupplementalValueSet"/>
-            <min value="1"/>
-            <max value="*"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Bundle.entry:sliceERSDSupplementalValueSet.resource">
-            <path value="Bundle.entry.resource"/>
-            <min value="1"/>
-            <type>
-                <code value="Resource"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-supplemental-valueset"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-computablelibrary"/>
             </type>
             <mustSupport value="true"/>
         </element>

@@ -1,4 +1,4 @@
-[Previous Page - The Specification](the_specification.html)
+[Previous Page - Notice to Ballot Commenters](notice_to_ballot_commenters.html)
 
 ## Grouped Profiles and Extensions
 

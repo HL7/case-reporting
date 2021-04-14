@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="us-ph-exposure-contact-information"/>
+    <meta>
+        <versionId value="7"/>
+        <lastUpdated value="2020-11-30T05:55:04.740+00:00"/>
+        <source value="#zKZEucPzHYXXXsCc"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-exposure-contact-information"/>
+    <version value="1.0.0"/>
+    <name value="USPublicHealthExposureContactInformation"/>
+    <title value="US Public Health Exposure Contact Information"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This Observation profile represents potential patient exposure and contact information."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Observation"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+    <derivation value="constraint"/>
+    
+    <differential>
+        <element id="Observation">
+            <path value="Observation"/>
+            <short value="This profile represents patient exposure information."/>
+            <definition value="This profile represents patient exposure information."/>
+        </element>
+        <element id="Observation.extension">
+            <path value="Observation.extension"/>
+            <short value="Exposure/contact address"/>
+            <definition value="If an address where the exposure/contact took place is known then it can be contained in the address-extension."/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/address-extension"/>
+            </type>
+        </element>
+        <element id="Observation.category">
+            <path value="Observation.category"/>
+            <short value="Exposure"/>
+            <min value="1"/>
+            <max value="1"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/v3-ActClass"/>
+                    <code value="EXPOS"/>
+                </coding>
+            </patternCodeableConcept>
+        </element>
+        <element id="Observation.code">
+            <path value="Observation.code"/>
+            <short value="Type of exposure/contact"/>
+            <definition value="The type of exposure/contact (environmental, activity, event, location, person, animal, etc.). Suggested value sets: &#xA;* https://phinvads.cdc.gov/vads/ViewValueSet.action?id=FA5D6D86-C7B2-EA11-818F-005056ABE2F0&#xA;* https://phinvads.cdc.gov/vads/ViewValueSet.action?id=9BE75E17-176B-DE11-9B52-0015173D1785"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.subject">
+            <path value="Observation.subject"/>
+            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
+            </type>
+        </element>
+        <element id="Observation.focus">
+            <path value="Observation.focus"/>
+            <short value="Contact with an entity (person, animal) or at a location."/>
+            <definition value="Contact with an entity (person, animal) or at a location."/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Group"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Location"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.effective[x]">
+            <path value="Observation.effective[x]"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.value[x]">
+            <path value="Observation.value[x]"/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <type>
+                <code value="string"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+    </differential>
+</StructureDefinition>

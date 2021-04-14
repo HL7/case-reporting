@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="characteristics-of-home-environment"/>
     <meta>
-        <versionId value="6"/>
-        <lastUpdated value="2020-11-13T04:52:12.737+00:00"/>
-        <source value="#26H4CzSkGKiV2hxI"/>
+        <versionId value="12"/>
+        <lastUpdated value="2020-12-03T09:35:02.902+00:00"/>
+        <source value="#ZVOK98mvf9hEdE1N"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/characteristics-of-home-environment"/>
     <version value="1.0.0"/>
@@ -14,13 +14,14 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This profile represents the patient's home environment including, but not limited to, type of residence (trailer, single family home, assisted living), living arrangement (e.g., alone, with parents), and housing status (e.g., evicted, homeless, home owner)."/>
+    <description value="This Observation profile represents characteristics of the patient's home environment."/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
             <code value="US"/>
             <display value="United States of America"/>
         </coding>
+        <text value="United States of America"/>
     </jurisdiction>
     <fhirVersion value="4.0.1"/>
     <mapping>
@@ -33,6 +34,7 @@
     <type value="Observation"/>
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation"/>
     <derivation value="constraint"/>
+    
     <differential>
         <element id="Observation">
             <path value="Observation"/>
@@ -51,6 +53,14 @@
                 <identity value="eCR-CDA"/>
                 <map value="[eICR R2 STU2] Characteristics of Home Environment/code"/>
             </mapping>
+        </element>
+        <element id="Observation.subject">
+            <path value="Observation.subject"/>
+            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+            </type>
         </element>
         <element id="Observation.value[x]">
             <path value="Observation.value[x]"/>

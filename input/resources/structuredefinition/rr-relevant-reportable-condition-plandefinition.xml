@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-relevant-reportable-condition-plandefinition"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2020-11-13T03:03:58.738+00:00"/>
-        <source value="#jxxANsoUSQUX4Qs2"/>
+        <versionId value="10"/>
+        <lastUpdated value="2020-11-25T22:55:37.148+00:00"/>
+        <source value="#ng7cF6wNsUHJBuEQ"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
     <version value="1.0.0"/>
@@ -14,7 +14,15 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This PlanDefinition in the Reportability Response transaction represents reportability information for a condition-jurisdiction pair, based on the PHA in which is located the patient's home, the provider facility or both locations. The Determination of Reportability, Determination of Reportability Reason, and Determination of Reportability Rule are contained in extensions. This profile also contains extensions for the Responsible Agency, the Rules Authoring Agency, and the Routing Entity. The Relevant Reportable Condition is contained in goal.addresses and any External Resources are contained in action (one action may contain multiple External Resources (documentation))."/>
+    <description value="This PlanDefinition in the Reportability Response transaction represents reportability information for a condition-jurisdiction pair, based on the PHA in which is located the patient's home, the provider facility or both locations."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
     <fhirVersion value="4.0.1"/>
     <mapping>
         <identity value="eCR-CDA"/>
@@ -26,6 +34,7 @@
     <type value="PlanDefinition"/>
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/PlanDefinition"/>
     <derivation value="constraint"/>
+    
     <differential>
         <element id="PlanDefinition">
             <path value="PlanDefinition"/>
@@ -33,16 +42,6 @@
             <definition value="This profile defines the represents reportability information for a condition-jurisdiction pair, based on the PHA in which is located the patient's home, the provider facility, or both locations. The Determination of Reportability, Determination of Reportability Reason, and Determination of Reportability Rule are contained in extensions. This profile also contains extensions for the Responsible Agency, the Rules Authoring Agency, and the Routing Entity.  The Relevant Reportable Condition is contained in goal.addresses and any External Resources are contained in action (one action may contain multiple External Resources (documentation))."/>
             <mustSupport value="true"/>
             <isModifier value="false"/>
-        </element>
-        <element id="PlanDefinition.extension">
-            <path value="PlanDefinition.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
         </element>
         <element id="PlanDefinition.extension:determinationOfReportability">
             <path value="PlanDefinition.extension"/>
@@ -85,16 +84,6 @@
             <mustSupport value="true"/>
             <isModifier value="false"/>
         </element>
-        <element id="PlanDefinition.publisher.extension">
-            <path value="PlanDefinition.publisher.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-        </element>
         <element id="PlanDefinition.publisher.extension:rulesAuthoringAgency">
             <path value="PlanDefinition.publisher.extension"/>
             <sliceName value="rulesAuthoringAgency"/>
@@ -110,22 +99,6 @@
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.jurisdiction.extension">
-            <path value="PlanDefinition.jurisdiction.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-            <min value="1"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[RR R1 STU1] Reportability Information Organizer/code"/>
-                <comment value="Location Relevance"/>
-            </mapping>
         </element>
         <element id="PlanDefinition.jurisdiction.extension:locationRelevance">
             <path value="PlanDefinition.jurisdiction.extension"/>
@@ -239,21 +212,6 @@
             <min value="1"/>
             <mustSupport value="true"/>
             <isModifier value="false"/>
-        </element>
-        <element id="PlanDefinition.action.documentation.extension">
-            <path value="PlanDefinition.action.documentation.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[RR R1 STU1] ../External Resources/code"/>
-                <comment value="External Resource Category"/>
-            </mapping>
         </element>
         <element id="PlanDefinition.action.documentation.extension:externalResourceType">
             <path value="PlanDefinition.action.documentation.extension"/>

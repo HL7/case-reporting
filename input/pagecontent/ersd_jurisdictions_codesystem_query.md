@@ -210,5 +210,4 @@ Jurisdiction Codes Relevant to Addresses = [Tuple {
 ```
 As shown in the [CodeSystem example](#codesystem), Alaska has no specified postal codes.  Therefore, anywhere in Alaska will report only to the Alaska Department of Health and Social Services.
 
-
 [Next Page - ERSD Jurisdictions CodeSystem Configuration](ersd_jurisdictions_codesystem_configuration.html)

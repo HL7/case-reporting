@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-organization"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2020-11-13T04:52:14.494+00:00"/>
-        <source value="#BvMuHssNMYRJW3k6"/>
+        <versionId value="6"/>
+        <lastUpdated value="2020-11-25T22:24:32.879+00:00"/>
+        <source value="#Z2PYD9opGPD4XvYp"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
     <version value="1.0.0"/>
@@ -14,7 +14,15 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Organization profile represents the following organizations for electronic case reporting:&#xA;&#xA;* Initial Case Report source provider facility/office name&#xA;* Initial Case Report source facility&#xA;* Reportability Response recipients&#xA;* Reportability Response responsible agency  &#xA;* Reportability Response routing entity&#xA;* Reportability Response rules authoring agency&#xA;&#xA;It is based on the **US Core Organization** profile with a further restriction of *Must Support* on the **type** and **contact** data elements."/>
+    <description value="This Organization profile represents an organization involved in public health."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
     <fhirVersion value="4.0.1"/>
     <mapping>
         <identity value="CDA"/>
@@ -26,6 +34,7 @@
     <type value="Organization"/>
     <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"/>
     <derivation value="constraint"/>
+    
     <differential>
         <element id="Organization">
             <path value="Organization"/>

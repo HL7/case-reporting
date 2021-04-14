@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-composition"/>
     <meta>
-        <versionId value="25"/>
-        <lastUpdated value="2020-11-15T23:50:14.788+00:00"/>
-        <source value="#mybqPNzDBawkUZv5"/>
+        <versionId value="36"/>
+        <lastUpdated value="2020-11-30T05:20:19.862+00:00"/>
+        <source value="#MvLaiFuavGhzOqVr"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
     <version value="1.0.0"/>
@@ -14,7 +14,15 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Composition profile represents an electronic initial case report (eICR). It describes the content requirements for the eICR including:         &#xA;&#xA;* patient demographics         &#xA;* patient pregnancy status         &#xA;* patient occupation and travel history         &#xA;* provider and facility information         &#xA;* laboratory orders, tests, and results         &#xA;* signs, symptoms, and diagnoses&#xA;* medication and immunization information&#xA;* flags for the existence of reportable condition trigger codes in diagnoses, ordered/resulted laboratory tests, medications, and immunizations&#xA;    * flags contain RCTC OID and RCTC version&#xA;* codes indicating whether the eICR was manually or alternately initiated"/>
+    <description value="This Composition profile represents an electronic initial case report (eICR)."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
     <fhirVersion value="4.0.1"/>
     <mapping>
         <identity value="eCR-CDA"/>
@@ -26,6 +34,7 @@
     <type value="Composition"/>
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Composition"/>
     <derivation value="constraint"/>
+    
     <differential>
         <element id="Composition">
             <path value="Composition"/>
@@ -399,7 +408,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceProblemSection"/>
             <short value="Problem Section"/>
-            <definition value="This section lists and describes all relevant clinical problems at the time the document is generated. At a minimum, all pertinent current and historical problems should be listed. Overall health status may be represented in this section."/>
+            <definition value="This section lists and describes all the patient's current problems on the maintained problem list."/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -1261,7 +1270,7 @@
         <element id="Composition.section:sliceSocialHistorySection.entry:sliceDisabilityStatus">
             <path value="Composition.section.entry"/>
             <sliceName value="sliceDisabilityStatus"/>
-            <short value="Disabiltiy Status entry"/>
+            <short value="Disability Status entry"/>
             <definition value="Disability status entry"/>
             <type>
                 <code value="Reference"/>
@@ -1269,14 +1278,14 @@
             </type>
             <mustSupport value="true"/>
         </element>
-        <element id="Composition.section:sliceSocialHistorySection.entry:sliceExposureInformation">
+        <element id="Composition.section:sliceSocialHistorySection.entry:sliceExposureContactInformation">
             <path value="Composition.section.entry"/>
-            <sliceName value="sliceExposureInformation"/>
+            <sliceName value="sliceExposureContactInformation"/>
             <short value="Exposure Information entry"/>
             <definition value="Exposure Information entry"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-exposure-information"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-exposure-contact-information"/>
             </type>
         </element>
         <element id="Composition.section:slicePregnancySection">
@@ -1364,7 +1373,7 @@
             <definition value="Last Menstrual Period entry"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/last-menstrual-period"/>
+                <targetProfile value="http://hl7.org/fhir/us/vr-common-library/StructureDefinition/Observation-last-menstrual-period"/>
             </type>
             <mapping>
                 <identity value="eCR-CDA"/>
@@ -1392,7 +1401,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceReportabilityResponseInformationSection"/>
             <short value="Reportability Response Information Section"/>
-            <definition value="Each Reportability Response Information Section contains information about a Reportability Response that was generated in response to this eICR."/>
+            <definition value="The Reportability Response Information Section contains information from a Reportability Response that was generated in response to this eICR."/>
             <min value="0"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -1400,8 +1409,8 @@
         </element>
         <element id="Composition.section:sliceReportabilityResponseInformationSection.code">
             <path value="Composition.section.code"/>
-            <short value="Reportability Response Information Section code"/>
-            <definition value="Reportability Response Information Section code"/>
+            <short value="Reportability response report Document Public health"/>
+            <definition value="Reportability response report Document Public health"/>
             <min value="1"/>
             <patternCodeableConcept>
                 <coding>
@@ -1445,7 +1454,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceEmergencyOutbreakInformationSection"/>
             <short value="Emergency Outbreak Information Section"/>
-            <definition value="Emergency Outbreak Information Section"/>
+            <definition value="This section represents information that is required during a public health emergency/outbreak."/>
             <min value="0"/>
             <max value="1"/>
             <mustSupport value="true"/>
