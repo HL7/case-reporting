@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="us-ph-supplemental-valueset"/>
+    <id value="us-ph-codesystem"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2020-11-25T22:27:23.565+00:00"/>
-        <source value="#icV4LfMv3dohScKp"/>
+        <versionId value="1"/>
+        <lastUpdated value="2021-02-19T17:31:48.399+00:00"/>
+        <source value="#ke0C7bhG8itsFjnb"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-valueset"/>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem"/>
     <version value="1.0.0"/>
-    <name value="USPublicHealthSupplementalValueSet"/>
-    <title value="US Public Health Supplemental Value Set"/>
+    <name value="USPublicHealthCodeSystem"/>
+    <title value="US Public Health CodeSystem"/>
     <status value="active"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This profile describes the US Public Health Supplemental value set."/>
+    <description value="This profile describes the US Public Health CodeSystem."/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -23,30 +23,27 @@
         <text value="United States of America"/>
     </jurisdiction>
     <fhirVersion value="4.0.1"/>
-    <mapping>
-        <identity value="RCTC"/>
-        <name value="RCTC Spreadsheet"/>
-    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
-    <type value="ValueSet"/>
-    <baseDefinition value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset"/>
+    <type value="CodeSystem"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/CodeSystem"/>
     <derivation value="constraint"/>
     <differential>
-        <element id="ValueSet">
-            <path value="ValueSet"/>
+        <element id="CodeSystem">
+            <path value="CodeSystem"/>
         </element>
-        <element id="ValueSet.useContext">
-            <path value="ValueSet.useContext"/>
-            <slicing>
-                <discriminator>
-                    <type value="pattern"/>
-                    <path value="code"/>
-                </discriminator>
-                <rules value="closed"/>
-            </slicing>
-            <min value="1"/>
+        <element id="CodeSystem.property">
+            <path value="CodeSystem.property"/>
+        </element>
+        <element id="CodeSystem.property.extension:binding">
+            <path value="CodeSystem.property.extension"/>
+            <sliceName value="binding"/>
+            <min value="0"/>
             <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem-propertyBinding"/>
+            </type>
         </element>
         <element id="ValueSet.useContext:reportingContext">
             <path value="ValueSet.useContext"/>
@@ -76,11 +73,10 @@
             <fixedCodeableConcept>
                 <coding>
                     <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
-                    <code value="supplemental"/>
-                    <display value="Supplemental"/>
+                    <code value="triggering"/>
+                    <display value="Triggering"/>
                 </coding>
             </fixedCodeableConcept>
-            <mustSupport value="true"/>
         </element>
     </differential>
 </StructureDefinition>

@@ -3,9 +3,10 @@
     xmlns="http://hl7.org/fhir">
     <id value="ersd-jurisdictions-example"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2020-11-30T21:32:02.868+00:00"/>
-        <source value="#Z3rchDWrMccyng9g"/>
+        <versionId value="7"/>
+        <lastUpdated value="2021-02-19T17:56:11.851+00:00"/>
+        <source value="#OzeGMApd32ploFNc"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/CodeSystem/ersd-jurisdictions-example"/>
     <version value="0.1.0"/>
@@ -26,14 +27,18 @@
     <caseSensitive value="false"/>
     <content value="complete"/>
     <property>
+        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem-propertyBinding">
+            <valueCanonical value="http://hl7.org/fhir/us/ecr/CodeSystem/ersd-jurisdiction-types"/>
+        </extension>
         <code value="type"/>
-        <uri value="http://hl7.org/fhir/us/ecr/CodeSystem/ersd-jurisdiction-types"/>
         <description value="Type of public health jurisdiction."/>
         <type value="code"/>
     </property>
     <property>
+        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem-propertyBinding">
+            <valueCanonical value="http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state"/>
+        </extension>
         <code value="state"/>
-        <uri value="http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state"/>
         <description value="USPS Two Letter Alphabetic Codes."/>
         <type value="code"/>
     </property>
