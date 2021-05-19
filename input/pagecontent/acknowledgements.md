@@ -1,5 +1,3 @@
-[Previous Page - Relationship to Other Standards](relationship_to_other_standards.html)
-
 This guide was produced and developed through a collaborative effort of the Centers for Disease Control and Prevention (CDC), Council of State and Territorial Epidemiologist (CSTE), the Association of State and Territorial Health Officials (ASTHO), the Association of Public Health Laboratories (APHL), public health surveillance practitioners, EHR vendors, and the HL7 Public Health (PH) Work Group for an electronic initial case report (eICR). A list of data elements for electronic initial case reports was developed by the CSTE Electronic Initial Case Report Task Force in collaboration with the CDC. Pregnancy status data for public health reporting were identified by a task force from the Department of Health and Human Services, Office of the National Coordinator for Health IT (ONC). CDC provided some funding to our partner organizations to support these activities. The project team that participated in the development of this implementation guide is:
 * Laura A. Conn, Director, Health Information Strategy Activity, CSELS, CDC and Member, CSTE eICR Task Force
 * Erin Holt Coyne, Tennessee Department of Health, and Co-chair, HL7 PH Work Group, and Member, CSTE eICR Task Force
@@ -86,5 +84,3 @@ Others who contributed to this, and predecessor, documents include:
 * Danny Wise, AllScripts
 * Mike Yaskanin, Altarum Institute
 * Daniel Zhang, Epic
-
-[Next Page - Downloads](downloads.html)

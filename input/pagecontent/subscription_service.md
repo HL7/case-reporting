@@ -1,5 +1,3 @@
-[Previous Page - Electronic Reporting and Surveillance Distribution (eRSD) Transaction and Profiles](electronic_reporting_and_surveillance_distribution_ersd_transaction_and_profiles.html)
-
 Implementation guide assumes that EHRs or other systems will be able to generate timely notifications to begin the triggering process when resources containing codes in the trigger code value sets appear in the system. Those notifications would go to an associated system or process in clinical care that could begin the initial case reporting process, and would likely access more data from the EHR.
 
 
@@ -31,5 +29,3 @@ One approach for this is using the current FHIR R4 Subscription model, where a u
 `MedicationRequest?code:in=http://hl7.org/fhir/us/ecr/ValueSet/mrtc`
 
 `MedicationStatement?code:in=http://hl7.org/fhir/us/ecr/ValueSet/mrtc`
-
-[Next Page - Transport Options](transport_options.html)

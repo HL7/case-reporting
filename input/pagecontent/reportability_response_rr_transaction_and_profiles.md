@@ -1,5 +1,3 @@
-[Previous Page - Electronic Initial Case Report (eICR) Transaction and Profiles](electronic_initial_case_report_eicr_transaction_and_profiles.html)
-
 ### Reportability Response (RR) Transaction and Profiles
 
 The RR transaction represents a response from public health to healthcare associated with a received eICR.
@@ -25,5 +23,3 @@ The Communication resource was chosen rather than the Composition resource for t
 A number of profiles and extensions have been defined for the Reportability Response transactions  - see [Artifact Index](artifacts.html) for a listing of these profiles. The Reportability Response Communication profile is the starting point and all the other profiles are referenced from this profile (see diagram below).
 
 <table><tr><td><img src="FHIR RR Profile Hierarchy.png" /></td></tr></table>
-
-[Next Page - Electronic Reporting and Surveillance Distribution (eRSD) Transaction and Profiles](electronic_reporting_and_surveillance_distribution_ersd_transaction_and_profiles.html)

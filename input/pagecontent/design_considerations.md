@@ -1,5 +1,3 @@
-[Previous Page - Implementation Guidance](implementation_guidance.html)
-
 #### Overall Design
 
 The Electronic Case Reporting (eCR) standards; the electronic Initial Case Report (eICR) and the Reportability Response (RR), support two broad approaches to eCR.
@@ -30,5 +28,3 @@ FHIR also offers several possibilities for distributing more complex reporting r
 The eRSD includes the ability to distribute rules and associated value sets in a supplemental bundle.  There are several possibilities for how the various elements of eCR may be triggered or initiated. Triggering based on data, workflow, or timed events may be supported though FHIR Subscription in the EHR, though scheduled queries or other approaches. The eRSD transaction can enable these distributions going forward as well as provide details for how critical elements, like report timing. The eRSD transaction is needed to help orchestrate this reporting. To achieve this orchestration, the eRSD resources need to guide the triggering, rule processing, clinical feedback, creation of eICR, routing and sending components of eCR and interactions between them. The eRSD transaction will provide structure to eCR as human consumable guidance and as a machine processable artifact.
 
 As with the CDA Reportability Response, the FHIR version needs to be queueable in healthcare provider/reporter workflows and be attachable to a patient chart when there is a reportable or maybe reportable condition identified. Also, like the CDA Reportability Response, the FHIR version needs to be able to convey trusted Public Health Agency web-links for management and treatment guidance information as well as links for web forms that enable PHA acquisition of case investigation supplemental data that may not be recorded in the typical process of care.
-
-[Next Page - Reportability Response Narrative Guidance](reportability_response_narrative_guidance.html)

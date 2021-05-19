@@ -1,5 +1,3 @@
-[Previous Page - Reportability Response Narrative Guidance](reportability_response_narrative_guidance.html)
-
 This page describes the functional requirements for the eCR workflow
 
 ### Functional Requirements
@@ -67,5 +65,3 @@ And the inclusion of an associated ExampleScenario:
 ### Suspected Reportable Determination Logic
 
 <a href="rule_filter_generation.html">Rule Filter Generation</a>
-
-[Next Page - eRSD Jurisdictions CodeSystem Query](ersd_jurisdictions_codesystem_query.html)

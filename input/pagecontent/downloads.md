@@ -1,5 +1,3 @@
-[Previous Page - Acknowledgements](acknowledgements.html)
-
 **Full Implementation Guide**
 
 The entire implementation guide (including the HTML files, definitions, validation information, etc.) may be downloaded [here](full-ig.zip).

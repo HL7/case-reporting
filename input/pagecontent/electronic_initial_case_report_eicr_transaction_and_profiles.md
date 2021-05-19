@@ -1,5 +1,3 @@
-[Previous Page - Transaction Profiles](transaction_profiles.html)
-
 ### Electronic Initial Case Report (eICR) Transaction and Profiles
 
 The eICR transaction involves the transmission of data identified by a Council of State and Territorial Epidemiologists Task Force as being important to a multi-condition, multi-jurisdiction case report. 
@@ -21,5 +19,3 @@ A number of profiles and extensions have been defined for the eICR transactions 
 Note to balloters: The following table will be updated before publication.
 
 <table><tr><td><img src="FHIR eICR Profile Hierarchy.png" style="width:100%;" /></td></tr></table>
-
-[Next Page - Reportability Response (RR) Transaction and Profiles](reportability_response_rr_transaction_and_profiles.html)

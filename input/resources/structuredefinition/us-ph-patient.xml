@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-patient"/>
     <meta>
-        <versionId value="12"/>
-        <lastUpdated value="2020-12-02T23:37:50.793+00:00"/>
-        <source value="#K2H9F2TuS3gjTsPF"/>
+        <versionId value="14"/>
+        <lastUpdated value="2021-05-19T08:13:06.674+00:00"/>
+        <source value="#PNyzfES0Vwm4pF6X"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
     <version value="1.0.0"/>
@@ -25,9 +25,9 @@
     </jurisdiction>
     <fhirVersion value="4.0.1"/>
     <mapping>
-        <identity value="eCR-CDA"/>
-        <name value="eCR FHIR to CDA Mapping"/>
-        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
+        <identity value="PH-CDA"/>
+        <name value="PH FHIR to CDA Mapping"/>
+        <comment value="This table maps FHIR PH profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
     </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
@@ -37,8 +37,8 @@
     <differential>
         <element id="Patient">
             <path value="Patient"/>
-            <short value="eCR Patient"/>
-            <definition value="This Patient profile represents an eCR Patient. It is based on the **US Core Patient** profile with further restrictions to allow masking of some data elements and the addition of the patient-genderIdentity extension."/>
+            <short value="Public Health Patient"/>
+            <definition value="This Patient profile represents a Public Health Patient. It is based on the **US Core Patient** profile with further restrictions to allow masking of some data elements and the addition of the patient-genderIdentity extension."/>
             <mustSupport value="true"/>
         </element>
         <element id="Patient.extension:birthPlace">
@@ -65,7 +65,7 @@
             <mustSupport value="true"/>
             <isModifier value="false"/>
             <mapping>
-                <identity value="eCR-CDA"/>
+                <identity value="PH-CDA"/>
                 <map value="[eICR R2 STU2][RR R1 STU1] Gender Identity/value"/>
                 <comment value="Patient gender identity"/>
             </mapping>
@@ -87,7 +87,7 @@
             <min value="1"/>
             <mustSupport value="true"/>
             <mapping>
-                <identity value="eCR-CDA"/>
+                <identity value="PH-CDA"/>
                 <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/id"/>
                 <comment value="Patient ID Number"/>
             </mapping>
@@ -130,7 +130,7 @@
             <path value="Patient.name"/>
             <min value="1"/>
             <mapping>
-                <identity value="eCR-CDA"/>
+                <identity value="PH-CDA"/>
                 <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/patient/name"/>
                 <comment value="Patient Name"/>
             </mapping>
@@ -174,7 +174,7 @@
             <min value="1"/>
             <mustSupport value="true"/>
             <mapping>
-                <identity value="eCR-CDA"/>
+                <identity value="PH-CDA"/>
                 <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/telecom"/>
                 <comment value="Patient Telecom"/>
             </mapping>
@@ -217,7 +217,7 @@
             <path value="Patient.gender"/>
             <mustSupport value="true"/>
             <mapping>
-                <identity value="eCR-CDA"/>
+                <identity value="PH-CDA"/>
                 <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/patient/administrativeGenderCode"/>
                 <comment value="Patient Administrative Gender"/>
             </mapping>
@@ -261,7 +261,7 @@
             <min value="1"/>
             <mustSupport value="true"/>
             <mapping>
-                <identity value="eCR-CDA"/>
+                <identity value="PH-CDA"/>
                 <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/patient/birthTime"/>
                 <comment value="Patient Birth Date"/>
             </mapping>
@@ -303,7 +303,7 @@
         <element id="Patient.deceased[x]">
             <path value="Patient.deceased[x]"/>
             <mapping>
-                <identity value="eCR-CDA"/>
+                <identity value="PH-CDA"/>
                 <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/patient/sdtc:deceasedInd"/>
                 <comment value="Death Date"/>
             </mapping>
@@ -314,7 +314,7 @@
             <min value="1"/>
             <mustSupport value="true"/>
             <mapping>
-                <identity value="eCR-CDA"/>
+                <identity value="PH-CDA"/>
                 <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/addr"/>
                 <comment value="Patient Street Address"/>
             </mapping>
@@ -370,7 +370,7 @@
             <path value="Patient.contact.name"/>
             <mustSupport value="true"/>
             <mapping>
-                <identity value="eCR-CDA"/>
+                <identity value="PH-CDA"/>
                 <map value="[eICR R2 STU2][RR R1 STU1] Clinical Document/record target/patientRole/patient/guardian/guardianPerson/name"/>
                 <comment value="Parent/ Guardian Name"/>
             </mapping>
@@ -409,12 +409,12 @@
             <path value="Patient.contact.telecom"/>
             <mustSupport value="true"/>
             <mapping>
-                <identity value="eCR-CDA"/>
+                <identity value="PH-CDA"/>
                 <map value="[eICR R2 STU2][RR R1 STU1] Clinical Document/record target/patientRole/patient/guardian/telecom[tel:]"/>
                 <comment value="Parent/ Guardian Phone"/>
             </mapping>
             <mapping>
-                <identity value="eCR-CDA"/>
+                <identity value="PH-CDA"/>
                 <map value="[eICR R2 STU2][RR R1 STU1] Clinical Document/record target/patientRole/patient/guardian/telecom[mailto:]"/>
                 <comment value="Parent/ Guardian Email"/>
             </mapping>
@@ -453,7 +453,7 @@
             <path value="Patient.contact.address"/>
             <mustSupport value="true"/>
             <mapping>
-                <identity value="eCR-CDA"/>
+                <identity value="PH-CDA"/>
                 <map value="[eICR R2 STU2][RR R1 STU1] Clinical Document/record target/patientRole/patient/guardian/addr"/>
                 <comment value="Parent/Guardian Address"/>
             </mapping>
@@ -496,7 +496,7 @@
             <path value="Patient.communication.language"/>
             <mustSupport value="true"/>
             <mapping>
-                <identity value="eCR-CDA"/>
+                <identity value="PH-CDA"/>
                 <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/patient/languageCommunication/languageCode"/>
                 <comment value="Preferred Language"/>
             </mapping>

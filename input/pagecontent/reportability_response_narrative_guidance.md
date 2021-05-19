@@ -1,5 +1,3 @@
-[Previous Page - Design Considerations](design_considerations.html)
-
 # Introduction
 ## Purpose
 The following is informative guidance on generating the narrative text of a Reportability Response Communication (Reportability Response). Through the Reportability Response, public health seeks to support bidirectional communication with clinical care for reportable conditions. The Reportability Response is designed to have one Reportability Response created for each electronic Initial Case Report (eICR) and to be shared with the clinical care organization that created that eICR. The Reportability Response can also be shared with a Public Health Agency(ies) [PHA(s)] that has relevant reporting requirements (a Responsible Pubic Health Agency) that wants to use it to monitor the reporting process and know what has been conveyed to clinical care organizations and other Public Health Agencies. Sharing the Reportability Response with clinical care will serve several functions, including to:
@@ -912,5 +910,3 @@ The examples below provide example text for *Providers / Reporters* for these ty
 > A determination of reportability for a triffered condition could not be made for "Virgin Islands Department of Health (Test)". This may be becuase it is not on the list of reportable conditions for the relevant Public Health Agency, or the information provided at the time of this report does not meet reporting criteria, or not all data needed to confirm reportability were available.
 > 
 > The facility address in this eICR could not be processed. Additional reporting may be necessary.
-
-[Next Page - eRSD Narrative Guidance](ersd_narrative_guidance.html)
