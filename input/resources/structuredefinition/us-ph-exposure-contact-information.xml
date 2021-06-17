@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-exposure-contact-information"/>
     <meta>
-        <versionId value="7"/>
-        <lastUpdated value="2020-11-30T05:55:04.740+00:00"/>
-        <source value="#zKZEucPzHYXXXsCc"/>
+        <versionId value="10"/>
+        <lastUpdated value="2021-06-09T05:18:37.804+00:00"/>
+        <source value="#77gY9N9VwH7eFbBx"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-exposure-contact-information"/>
     <version value="1.0.0"/>
@@ -58,8 +58,7 @@
         </element>
         <element id="Observation.code">
             <path value="Observation.code"/>
-            <short value="Type of exposure/contact"/>
-            <definition value="The type of exposure/contact (environmental, activity, event, location, person, animal, etc.). Suggested value sets: &#xA;* https://phinvads.cdc.gov/vads/ViewValueSet.action?id=FA5D6D86-C7B2-EA11-818F-005056ABE2F0&#xA;* https://phinvads.cdc.gov/vads/ViewValueSet.action?id=9BE75E17-176B-DE11-9B52-0015173D1785"/>
+            <short value="The type of exposure/contact (environmental, activity, event, location, person, animal, etc.). Suggested value sets:[Exposure Setting (COVID-19)](https://phinvads.cdc.gov/vads/ViewValueSet.action?id=FA5D6D86-C7B2-EA11-818F-005056ABE2F0), [Exposure Location](https://phinvads.cdc.gov/vads/ViewValueSet.action?id=9BE75E17-176B-DE11-9B52-0015173D1785), [Social History Type](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.3.88.12.80.60/expansion)"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -78,10 +77,10 @@
             <definition value="Contact with an entity (person, animal) or at a location."/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
                 <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson"/>
                 <targetProfile value="http://hl7.org/fhir/StructureDefinition/Group"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Location"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-location"/>
             </type>
             <mustSupport value="true"/>
         </element>
@@ -98,6 +97,9 @@
                 <code value="string"/>
             </type>
             <mustSupport value="true"/>
+            <binding>
+                <strength value="example"/>
+            </binding>
         </element>
     </differential>
 </StructureDefinition>
