@@ -4,13 +4,13 @@
     <id value="us-ph-supplemental-valueset"/>
     <meta>
         <versionId value="2"/>
-        <lastUpdated value="2020-11-25T22:27:23.565+00:00"/>
-        <source value="#icV4LfMv3dohScKp"/>
+        <lastUpdated value="2021-06-22T23:48:06.165+00:00"/>
+        <source value="#Nnuq8UlpM08Dgv8m"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-valueset"/>
     <version value="1.0.0"/>
     <name value="USPublicHealthSupplementalValueSet"/>
-    <title value="US Public Health Supplemental Value Set"/>
+    <title value="US Public Health Supplemental ValueSet"/>
     <status value="active"/>
     <publisher value="HL7 Public Health Work Group"/>
     <description value="This profile describes the US Public Health Supplemental value set."/>
@@ -23,10 +23,6 @@
         <text value="United States of America"/>
     </jurisdiction>
     <fhirVersion value="4.0.1"/>
-    <mapping>
-        <identity value="RCTC"/>
-        <name value="RCTC Spreadsheet"/>
-    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="ValueSet"/>
@@ -35,6 +31,7 @@
     <differential>
         <element id="ValueSet">
             <path value="ValueSet"/>
+            <short value="US Public Health Supplemental ValueSet"/>
         </element>
         <element id="ValueSet.useContext">
             <path value="ValueSet.useContext"/>
@@ -58,11 +55,10 @@
             <path value="ValueSet.useContext.code"/>
             <min value="1"/>
             <max value="1"/>
-            <fixedCoding>
+            <patternCoding>
                 <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
                 <code value="reporting"/>
-                <display value="Reporting"/>
-            </fixedCoding>
+            </patternCoding>
         </element>
         <element id="ValueSet.useContext:reportingContext.value[x]">
             <path value="ValueSet.useContext.value[x]"/>
@@ -73,13 +69,12 @@
             <type>
                 <code value="CodeableConcept"/>
             </type>
-            <fixedCodeableConcept>
+            <patternCodeableConcept>
                 <coding>
                     <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
                     <code value="supplemental"/>
-                    <display value="Supplemental"/>
                 </coding>
-            </fixedCodeableConcept>
+            </patternCodeableConcept>
             <mustSupport value="true"/>
         </element>
     </differential>
