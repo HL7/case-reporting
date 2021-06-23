@@ -3,14 +3,14 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-valueset-library"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2020-12-02T20:51:05.428+00:00"/>
-        <source value="#s3yHgEKHkL08ften"/>
+        <versionId value="6"/>
+        <lastUpdated value="2021-06-23T01:02:26.945+00:00"/>
+        <source value="#YsSOVwQZuKBrR2qM"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset-library"/>
     <version value="1.0.0"/>
-    <name value="USPublicHealthValuesetLibrary"/>
-    <title value="US Public Health Valueset Library"/>
+    <name value="USPublicHealthValueSetLibrary"/>
+    <title value="US Public Health ValueSet Library"/>
     <status value="active"/>
     <date value="2018-08-19T00:00:00.000Z"/>
     <publisher value="HL7 Public Health Work Group"/>
@@ -24,19 +24,15 @@
         <text value="United States of America"/>
     </jurisdiction>
     <fhirVersion value="4.0.1"/>
-    <mapping>
-        <identity value="RCTC"/>
-        <name value="RCTC Spreadsheet"/>
-    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Library"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Library"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/shareablelibrary"/>
     <derivation value="constraint"/>
     <differential>
         <element id="Library">
             <path value="Library"/>
-            <mustSupport value="true"/>
+            <short value="US Public Health ValueSet Library"/>
         </element>
         <element id="Library.identifier">
             <path value="Library.identifier"/>
@@ -52,25 +48,14 @@
         </element>
         <element id="Library.identifier.value">
             <path value="Library.identifier.value"/>
-            <short value="The Value Sets RCTC OID"/>
-            <definition value="The Value Sets RCTC OID"/>
             <min value="1"/>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="RCTC"/>
-                <map value="Value Sets tab.RCTC OID"/>
-            </mapping>
         </element>
         <element id="Library.version">
             <path value="Library.version"/>
             <short value="Value Sets Definition Version"/>
-            <definition value="Value Sets Definition Version. Usually a date. "/>
             <min value="1"/>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="RCTC"/>
-                <map value="Value Sets tab.RCTC Definition Version"/>
-            </mapping>
         </element>
         <element id="Library.title">
             <path value="Library.title"/>
@@ -78,31 +63,18 @@
             <definition value="Value Sets Name"/>
             <min value="1"/>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="RCTC"/>
-                <map value="Value Sets tab.Name"/>
-            </mapping>
         </element>
         <element id="Library.type">
             <path value="Library.type"/>
             <short value="asset-collection"/>
-            <definition value="Identifies the type of library. Fixed to Asset-Collection. "/>
+            <definition value="Identifies the type of library. Constrained to a pattern that includes asset-collection."/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+                    <code value="asset-collection"/>
+                </coding>
+            </patternCodeableConcept>
             <mustSupport value="true"/>
-        </element>
-        <element id="Library.type.coding">
-            <path value="Library.type.coding"/>
-            <min value="1"/>
-            <max value="1"/>
-        </element>
-        <element id="Library.type.coding.system">
-            <path value="Library.type.coding.system"/>
-            <min value="1"/>
-            <fixedUri value="http://terminology.hl7.org/CodeSystem/library-type"/>
-        </element>
-        <element id="Library.type.coding.code">
-            <path value="Library.type.coding.code"/>
-            <min value="1"/>
-            <fixedCode value="asset-collection"/>
         </element>
         <element id="Library.description">
             <path value="Library.description"/>
@@ -110,10 +82,6 @@
             <definition value="Value Sets Release Description"/>
             <min value="1"/>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="RCTC"/>
-                <map value="Read Me tab.Release Description"/>
-            </mapping>
         </element>
         <element id="Library.purpose">
             <path value="Library.purpose"/>
@@ -121,10 +89,6 @@
             <definition value="Value Sets Purpose"/>
             <min value="1"/>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="RCTC"/>
-                <map value="Value Sets tab.Purpose"/>
-            </mapping>
         </element>
         <element id="Library.effectivePeriod">
             <path value="Library.effectivePeriod"/>
@@ -137,10 +101,6 @@
             <definition value="Value Sets Effective Start Date"/>
             <min value="1"/>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="RCTC"/>
-                <map value="Value Sets tab.Effective Start Date"/>
-            </mapping>
         </element>
         <element id="Library.relatedArtifact">
             <path value="Library.relatedArtifact"/>
