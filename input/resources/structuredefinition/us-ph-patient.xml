@@ -2,11 +2,6 @@
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-patient"/>
-    <meta>
-        <versionId value="15"/>
-        <lastUpdated value="2021-05-19T20:55:40.153+00:00"/>
-        <source value="#Bg2FUBWkfhHN63b7"/>
-    </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
     <version value="1.0.0"/>
     <name value="USPublicHealthPatient"/>
@@ -14,7 +9,7 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Patient profile represents a US Public Health Patient."/>
+    <description value="This Patient profile represents a US Public Health Patient.&#xA;&#xA;It is based on the **US Core Patient** profile with further restrictions to allow masking of some data elements and the addition of the patient-genderIdentity extension.&#xA;&#xA;For ONC’s USCDI requirements, it adds Must Support constraints to the following:&#xA;&#xA;*     contact detail (e.g. a telephone number or an email address)&#xA;*     a communication language&#xA;*     a race&#xA;*     an ethnicity&#xA;*     a birth sex"/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -24,11 +19,6 @@
         <text value="United States of America"/>
     </jurisdiction>
     <fhirVersion value="4.0.1"/>
-    <mapping>
-        <identity value="PH-CDA"/>
-        <name value="PH FHIR to CDA Mapping"/>
-        <comment value="This table maps FHIR PH profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
-    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Patient"/>
@@ -37,8 +27,22 @@
     <differential>
         <element id="Patient">
             <path value="Patient"/>
-            <short value="Public Health Patient"/>
+            <short value="US Public Health Patient"/>
             <definition value="This Patient profile represents a Public Health Patient. It is based on the **US Core Patient** profile with further restrictions to allow masking of some data elements and the addition of the patient-genderIdentity extension."/>
+        </element>
+        <element id="Patient.extension:race">
+            <path value="Patient.extension"/>
+            <sliceName value="race"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Patient.extension:ethnicity">
+            <path value="Patient.extension"/>
+            <sliceName value="ethnicity"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Patient.extension:birthsex">
+            <path value="Patient.extension"/>
+            <sliceName value="birthsex"/>
             <mustSupport value="true"/>
         </element>
         <element id="Patient.extension:birthPlace">
@@ -53,6 +57,7 @@
             <mustSupport value="true"/>
             <isModifier value="false"/>
         </element>
+        
         <element id="Patient.extension:genderIdentity">
             <path value="Patient.extension"/>
             <sliceName value="genderIdentity"/>
@@ -64,33 +69,24 @@
             </type>
             <mustSupport value="true"/>
             <isModifier value="false"/>
-            <mapping>
-                <identity value="PH-CDA"/>
-                <map value="[eICR R2 STU2][RR R1 STU1] Gender Identity/value"/>
-                <comment value="Patient gender identity"/>
-            </mapping>
         </element>
-        <element id="Patient.extension:TribalAffiliation">
+        <element id="Patient.extension:tribalAffiliation">
             <path value="Patient.extension"/>
-            <sliceName value="TribalAffiliation"/>
+            <sliceName value="tribalAffiliation"/>
             <short value="Tribal affiliation and membership of the patient"/>
             <min value="0"/>
-            <max value="1"/>
+            <max value="*"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/tribal-affiliation-extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-tribal-affiliation-extension"/>
             </type>
+            <mustSupport value="true"/>
             <isModifier value="false"/>
         </element>
         <element id="Patient.identifier">
             <path value="Patient.identifier"/>
             <min value="1"/>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="PH-CDA"/>
-                <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/id"/>
-                <comment value="Patient ID Number"/>
-            </mapping>
         </element>
         <element id="Patient.identifier.extension">
             <path value="Patient.identifier.extension"/>
@@ -129,11 +125,6 @@
         <element id="Patient.name">
             <path value="Patient.name"/>
             <min value="1"/>
-            <mapping>
-                <identity value="PH-CDA"/>
-                <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/patient/name"/>
-                <comment value="Patient Name"/>
-            </mapping>
         </element>
         <element id="Patient.name.extension">
             <path value="Patient.name.extension"/>
@@ -171,56 +162,41 @@
         </element>
         <element id="Patient.telecom">
             <path value="Patient.telecom"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="PH-CDA"/>
-                <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/telecom"/>
-                <comment value="Patient Telecom"/>
-            </mapping>
-        </element>
-        <element id="Patient.telecom.extension">
-            <path value="Patient.telecom.extension"/>
             <slicing>
                 <discriminator>
                     <type value="value"/>
-                    <path value="url"/>
+                    <path value="system"/>
                 </discriminator>
                 <rules value="open"/>
             </slicing>
-        </element>
-        <element id="Patient.telecom.extension:extensionDataAbsentReason">
-            <path value="Patient.telecom.extension"/>
-            <sliceName value="extensionDataAbsentReason"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason"/>
-            </type>
+            <min value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Patient.telecom.extension:extensionDataAbsentReason.url">
-            <path value="Patient.telecom.extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/StructureDefinition/data-absent-reason"/>
+        <element id="Patient.telecom:phone">
+            <path value="Patient.telecom"/>
+            <sliceName value="phone"/>
+            <mustSupport value="true"/>
         </element>
-        <element id="Patient.telecom.extension:extensionDataAbsentReason.value[x]:valueCode">
-            <path value="Patient.telecom.extension.valueCode"/>
-            <sliceName value="valueCode"/>
+        <element id="Patient.telecom:phone.system">
+            <path value="Patient.telecom.system"/>
             <min value="1"/>
-            <type>
-                <code value="code"/>
-            </type>
-            <patternCode value="masked"/>
+            <fixedCode value="phone"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Patient.telecom:email">
+            <path value="Patient.telecom"/>
+            <sliceName value="email"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Patient.telecom:email.system">
+            <path value="Patient.telecom.system"/>
+            <min value="1"/>
+            <fixedCode value="email"/>
             <mustSupport value="true"/>
         </element>
         <element id="Patient.gender">
             <path value="Patient.gender"/>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="PH-CDA"/>
-                <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/patient/administrativeGenderCode"/>
-                <comment value="Patient Administrative Gender"/>
-            </mapping>
         </element>
         <element id="Patient.gender.extension">
             <path value="Patient.gender.extension"/>
@@ -260,11 +236,6 @@
             <path value="Patient.birthDate"/>
             <min value="1"/>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="PH-CDA"/>
-                <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/patient/birthTime"/>
-                <comment value="Patient Birth Date"/>
-            </mapping>
         </element>
         <element id="Patient.birthDate.extension">
             <path value="Patient.birthDate.extension"/>
@@ -302,22 +273,12 @@
         </element>
         <element id="Patient.deceased[x]">
             <path value="Patient.deceased[x]"/>
-            <mapping>
-                <identity value="PH-CDA"/>
-                <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/patient/sdtc:deceasedInd"/>
-                <comment value="Death Date"/>
-            </mapping>
         </element>
         <element id="Patient.address">
             <path value="Patient.address"/>
             <definition value="If the patient is homeless, complete as much address information as possible (city, zip, county, etc.) and use the Characteristics of Home Environment profile in the Social History Section of the eICR Composition to indicate that the patient is homeless."/>
             <min value="1"/>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="PH-CDA"/>
-                <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/addr"/>
-                <comment value="Patient Street Address"/>
-            </mapping>
         </element>
         <element id="Patient.address.extension">
             <path value="Patient.address.extension"/>
@@ -339,11 +300,6 @@
             </type>
             <mustSupport value="true"/>
         </element>
-        <element id="Patient.address.district">
-            <path value="Patient.address.district"/>
-            <short value="County"/>
-            <mustSupport value="true"/>
-        </element>
         <element id="Patient.address.extension:extensionDataAbsentReason.url">
             <path value="Patient.address.extension.url"/>
             <fixedUri value="http://hl7.org/fhir/StructureDefinition/data-absent-reason"/>
@@ -356,6 +312,11 @@
                 <code value="code"/>
             </type>
             <patternCode value="masked"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Patient.address.district">
+            <path value="Patient.address.district"/>
+            <short value="County"/>
             <mustSupport value="true"/>
         </element>
         <element id="Patient.contact">
@@ -374,11 +335,6 @@
         <element id="Patient.contact.name">
             <path value="Patient.contact.name"/>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="PH-CDA"/>
-                <map value="[eICR R2 STU2][RR R1 STU1] Clinical Document/record target/patientRole/patient/guardian/guardianPerson/name"/>
-                <comment value="Parent/ Guardian Name"/>
-            </mapping>
         </element>
         <element id="Patient.contact.name.extension">
             <path value="Patient.contact.name.extension"/>
@@ -413,16 +369,6 @@
         <element id="Patient.contact.telecom">
             <path value="Patient.contact.telecom"/>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="PH-CDA"/>
-                <map value="[eICR R2 STU2][RR R1 STU1] Clinical Document/record target/patientRole/patient/guardian/telecom[tel:]"/>
-                <comment value="Parent/ Guardian Phone"/>
-            </mapping>
-            <mapping>
-                <identity value="PH-CDA"/>
-                <map value="[eICR R2 STU2][RR R1 STU1] Clinical Document/record target/patientRole/patient/guardian/telecom[mailto:]"/>
-                <comment value="Parent/ Guardian Email"/>
-            </mapping>
         </element>
         <element id="Patient.contact.telecom.extension">
             <path value="Patient.contact.telecom.extension"/>
@@ -457,11 +403,6 @@
         <element id="Patient.contact.address">
             <path value="Patient.contact.address"/>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="PH-CDA"/>
-                <map value="[eICR R2 STU2][RR R1 STU1] Clinical Document/record target/patientRole/patient/guardian/addr"/>
-                <comment value="Parent/Guardian Address"/>
-            </mapping>
         </element>
         <element id="Patient.contact.address.extension">
             <path value="Patient.contact.address.extension"/>
@@ -500,11 +441,6 @@
         <element id="Patient.communication.language">
             <path value="Patient.communication.language"/>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="PH-CDA"/>
-                <map value="[eICR R2 STU2][RR R1 STU1] ClinicalDocument/recordTarget/patientRole/patient/languageCommunication/languageCode"/>
-                <comment value="Preferred Language"/>
-            </mapping>
         </element>
         <element id="Patient.communication.language.extension">
             <path value="Patient.communication.language.extension"/>
