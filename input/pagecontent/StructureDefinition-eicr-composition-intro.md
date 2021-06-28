@@ -2,7 +2,8 @@ It describes the content requirements for the eICR including:
 
 * patient demographics         
 * patient pregnancy status         
-* patient occupation and travel history         
+* patient occupation 
+* patient travel history         
 * provider and facility information         
 * laboratory orders, tests, and results         
 * signs, symptoms, and diagnoses

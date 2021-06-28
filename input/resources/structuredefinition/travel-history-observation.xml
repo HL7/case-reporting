@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="travel-history-observation"/>
     <meta>
-        <versionId value="16"/>
-        <lastUpdated value="2020-11-30T05:19:25.601+00:00"/>
-        <source value="#dzhPsiSKcrkIlKiu"/>
+        <versionId value="17"/>
+        <lastUpdated value="2021-06-23T20:26:35.387+00:00"/>
+        <source value="#9ajqSrWEjtevEzwy"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-observation"/>
     <version value="1.0.0"/>
@@ -55,12 +55,13 @@
                     <text value="Travel History"/>
                 </valueCodeableConcept>
             </example>
-            <mustSupport value="false"/>
+            <mustSupport value="true"/>
             <isModifier value="false"/>
         </element>
         <element id="Observation.subject">
             <path value="Observation.subject"/>
             <min value="1"/>
+            <mustSupport value="true"/>
         </element>
         <element id="Observation.effective[x]">
             <path value="Observation.effective[x]"/>
@@ -87,7 +88,7 @@
                 <rules value="open"/>
             </slicing>
             <min value="1"/>
-            <mustSupport value="false"/>
+            <mustSupport value="true"/>
         </element>
         <element id="Observation.component:travelLocation">
             <path value="Observation.component"/>
@@ -96,7 +97,7 @@
             <definition value="Location of travel"/>
             <min value="1"/>
             <max value="*"/>
-            <mustSupport value="false"/>
+            <mustSupport value="true"/>
         </element>
         <element id="Observation.component:travelLocation.extension">
             <path value="Observation.component.extension"/>

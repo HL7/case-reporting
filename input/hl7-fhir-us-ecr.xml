@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="408"/>
-        <lastUpdated value="2021-06-15T03:35:12.312+00:00"/>
-        <source value="#7nhJXDimyfmqMeuX"/>
+        <versionId value="430"/>
+        <lastUpdated value="2021-06-28T05:23:43.022+00:00"/>
+        <source value="#GgqLqLPFzh5wqlpm"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.1.0"/>
@@ -35,7 +35,7 @@
     <dependsOn id="hl7fhiruscore">
         <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
         <packageId value="hl7.fhir.us.core"/>
-        <version value="3.1.1"/>
+        <version value="3.2.0"/>
     </dependsOn>
     <dependsOn id="uscdcphinvads">
         <uri value="http://fhir.org/packages/us.cdc.phinvads/ImplementationGuide/us.cdc.phinvads"/>
@@ -146,26 +146,6 @@
             <description value="This code system contains codes that describe the business status of a task."/>
             <exampleBoolean value="false"/>
             <groupingId value="terminology-codesystems"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/date-determined-extension"/>
-                <display value="Date_Determined_Extension"/>
-            </reference>
-            <name value="Date Determined Extension"/>
-            <description value="The date a status or observation was determined (date of determination)."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="extensions"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/date-recorded-extension"/>
-                <display value="Date_Recorded_Extension"/>
-            </reference>
-            <name value="Date Recorded Extension"/>
-            <description value="The date a status or observation was recorded (recorded date)."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="extensions"/>
         </resource>
         <resource>
             <reference>
@@ -832,22 +812,12 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/pregnancy-outcome-observation"/>
-                <display value="Pregnancy_Outcome_Observation"/>
-            </reference>
-            <name value="Pregnancy Outcome Observation"/>
-            <description value="This profile represents a result of the pregnancy such as live birth, still birth, miscarriage, etc."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="eicr-profiles"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="Observation/observation-pregnancy-outcome-eve-everywoman"/></reference>
-            <name value="Pregnancy Outcome Observation Example: Eve Everywoman"/>
-            <description value="Example of Pregnancy Outcome Observation profile (Eve Everywoman)"/>
+            <name value="US Public Health Pregnancy Outcome Observation Example: Eve Everywoman"/>
+            <description value="Example of US Public Health Pregnancy Outcome Observation profile (Eve Everywoman)"/>
             <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-outcome-observation"/>
-            <groupingId value="eicr-examples"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-outcome-observation"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <resource>
             <reference>
@@ -858,16 +828,6 @@
             <description value="This value set contains codes representing pregnancy statuses."/>
             <exampleBoolean value="false"/>
             <groupingId value="terminology-valuesets"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/pregnancy-status-observation"/>
-                <display value="Pregnancy_Status_Observation"/>
-            </reference>
-            <name value="Pregnancy Status Observation"/>
-            <description value="This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="eicr-profiles"/>
         </resource>
         <resource>
             <reference>
@@ -1447,13 +1407,13 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/us-ph-procedure"/>
-                <display value="US Public Health Procedure"/>
+                <reference value="StructureDefinition/eicr-procedure"/>
+                <display value="eICR Procedure"/>
             </reference>
-            <name value="US Public Health Procedure"/>
-            <description value="This Procedure profile defines constraints on the US Core Procedure profile for US Public Health use cases."/>
+            <name value="eICR Procedure"/>
+            <description value="This Procedure profile defines constraints on the US Core Procedure profile for the eICR use case."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="eicr-profiles"/>
         </resource>
         <resource>
             <reference>
@@ -1684,11 +1644,11 @@
         </resource>
         <resource>
             <reference>
-                <reference value="Device/us-core-device-ecmo"/>
+                <reference value="Device/device-ecmo"/>
                 <display value="DisplayTest"/>
             </reference>
-            <name value="US Core Device Example: ECMO"/>
-            <description value="Example of US Core Device Profile (ECMO)"/>
+            <name value="Device Example: ECMO"/>
+            <description value="Example of Device Profile (ECMO)"/>
             <exampleBoolean value="true"/>
             <groupingId value="eicr-examples"/>
         </resource>
@@ -1858,16 +1818,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/us-ph-codesystem-propertyBinding"/>
-                <display value="US Public Health CodeSystem Property Binding Extension"/>
-            </reference>
-            <name value="US Public Health CodeSystem Property Binding Extension"/>
-            <description value="This extension represents an US Public Health CodeSystem Property Binding"/>
-            <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="StructureDefinition/us-ph-codesystem"/>
                 <display value="US Public Health CodeSystem"/>
             </reference>
@@ -1875,6 +1825,76 @@
             <description value="This profile describes the US Public Health CodeSystem."/>
             <exampleBoolean value="false"/>
             <groupingId value="us-public-health-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-codesystem-property-binding-extension"/>
+                <display value="US Public Health CodeSystem Property Binding Extension"/>
+            </reference>
+            <name value="US Public Health CodeSystem Property Binding Extension"/>
+            <description value="A reference to a CodeSystem or ValueSet that establishes the allowable values for a code system property"/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-ph-extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-composition"/>
+                <display value="US Public Health Composition"/>
+            </reference>
+            <name value="US Public Health Composition"/>
+            <description value="This Composition profile represents a public health composition."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-public-health-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-reporting-bundle"/>
+                <display value="US Public Health Reporting Bundle"/>
+            </reference>
+            <name value="US Public Health Reporting Bundle"/>
+            <description value="Bundle Resource profile for exchanging one of public health messages, knowledge artifacts or content."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-public-health-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-pregnancy-outcome-observation"/>
+                <display value="USPublicHealthPregnancyOutcomeObservation"/>
+            </reference>
+            <name value="USPublicHealthPregnancyOutcomeObservation"/>
+            <description value="This profile represents a result of the pregnancy such as live birth, still birth, miscarriage, etc."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-public-health-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-pregnancy-status-observation"/>
+                <display value="USPublicHealthPregnancyStatusObservation"/>
+            </reference>
+            <name value="USPublicHealthPregnancyStatusObservation"/>
+            <description value="This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-public-health-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-date-determined-extension"/>
+                <display value="USPublicHealthDateDeterminedExtension"/>
+            </reference>
+            <name value="USPublicHealthDateDeterminedExtension"/>
+            <description value="The date a status or observation was determined (date of determination)."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-ph-extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-date-recorded-extension"/>
+                <display value="USPublicHealthDateRecordedExtension"/>
+            </reference>
+            <name value="USPublicHealthDateRecordedExtension"/>
+            <description value="The date a status or observation was recorded (recorded date)."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-ph-extensions"/>
         </resource>
         <page>
             <nameUrl value="index.html"/>

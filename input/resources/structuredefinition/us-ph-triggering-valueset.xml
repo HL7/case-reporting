@@ -3,14 +3,14 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-triggering-valueset"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2020-11-25T22:28:08.514+00:00"/>
-        <source value="#0hu62fWAfXmElnZD"/>
+        <versionId value="3"/>
+        <lastUpdated value="2021-06-23T02:20:34.295+00:00"/>
+        <source value="#l05xqgorFAo4ehsZ"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"/>
     <version value="1.0.0"/>
     <name value="USPublicHealthTriggeringValueSet"/>
-    <title value="US Public Health Triggering Value Set"/>
+    <title value="US Public Health Triggering ValueSet"/>
     <status value="active"/>
     <publisher value="HL7 Public Health Work Group"/>
     <description value="This profile describes the US Public Health Triggering value set."/>
@@ -23,10 +23,6 @@
         <text value="United States of America"/>
     </jurisdiction>
     <fhirVersion value="4.0.1"/>
-    <mapping>
-        <identity value="RCTC"/>
-        <name value="RCTC Spreadsheet"/>
-    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="ValueSet"/>
@@ -35,6 +31,7 @@
     <differential>
         <element id="ValueSet">
             <path value="ValueSet"/>
+            <short value="US Public Health Triggering ValueSet"/>
         </element>
         <element id="ValueSet.useContext">
             <path value="ValueSet.useContext"/>
@@ -58,11 +55,10 @@
             <path value="ValueSet.useContext.code"/>
             <min value="1"/>
             <max value="1"/>
-            <fixedCoding>
+            <patternCoding>
                 <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
                 <code value="reporting"/>
-                <display value="Reporting"/>
-            </fixedCoding>
+            </patternCoding>
         </element>
         <element id="ValueSet.useContext:reportingContext.value[x]">
             <path value="ValueSet.useContext.value[x]"/>
@@ -73,13 +69,12 @@
             <type>
                 <code value="CodeableConcept"/>
             </type>
-            <fixedCodeableConcept>
+            <patternCodeableConcept>
                 <coding>
                     <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
                     <code value="triggering"/>
-                    <display value="Triggering"/>
                 </coding>
-            </fixedCodeableConcept>
+            </patternCodeableConcept>
         </element>
     </differential>
 </StructureDefinition>

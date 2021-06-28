@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="pregnancy-outcome-observation"/>
+    <id value="us-ph-pregnancy-outcome-observation"/>
     <meta>
-        <versionId value="7"/>
-        <lastUpdated value="2020-11-25T22:12:44.405+00:00"/>
-        <source value="#MQk7QAcCncMfGpt1"/>
+        <versionId value="2"/>
+        <lastUpdated value="2021-06-28T04:48:16.114+00:00"/>
+        <source value="#6wChiFyh03utIg3q"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-outcome-observation"/>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-outcome-observation"/>
     <version value="1.0.0"/>
-    <name value="Pregnancy_Outcome_Observation"/>
-    <title value="Pregnancy Outcome Observation"/>
+    <name value="USPublicHealthPregnancyOutcomeObservation"/>
+    <title value="US Public Health Pregnancy Outcome Observation"/>
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
@@ -24,11 +24,6 @@
         <text value="United States of America"/>
     </jurisdiction>
     <fhirVersion value="4.0.1"/>
-    <mapping>
-        <identity value="eCR-CDA"/>
-        <name value="eCR FHIR to CDA Mapping"/>
-        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
-    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Observation"/>
@@ -37,6 +32,7 @@
     <differential>
         <element id="Observation">
             <path value="Observation"/>
+            <short value="US Public Health Pregnancy Outcome Observation"/>
         </element>
         <element id="Observation.code">
             <path value="Observation.code"/>
@@ -48,17 +44,13 @@
                 </coding>
             </patternCodeableConcept>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Pregnancy Outcome/code"/>
-            </mapping>
         </element>
         <element id="Observation.subject">
             <path value="Observation.subject"/>
             <min value="1"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
             </type>
         </element>
         <element id="Observation.focus">
@@ -69,7 +61,7 @@
             <max value="1"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-status-observation"/>
             </type>
             <mustSupport value="true"/>
         </element>
@@ -81,10 +73,6 @@
                 <code value="dateTime"/>
             </type>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Pregnancy Outcome/effectiveTime"/>
-            </mapping>
         </element>
         <element id="Observation.value[x]">
             <path value="Observation.value[x]"/>
@@ -100,10 +88,6 @@
                 <strength value="extensible"/>
                 <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.9.86"/>
             </binding>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Pregnancy Outcome/value"/>
-            </mapping>
         </element>
         <element id="Observation.component">
             <path value="Observation.component"/>
@@ -144,10 +128,6 @@
                 <code value="integer"/>
             </type>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Pregnancy Status Observation/entryRelationship/sequenceNumber(/Pregnancy Outcome Observation)"/>
-            </mapping>
         </element>
     </differential>
 </StructureDefinition>

@@ -48,7 +48,7 @@ The following sections include further details on how narrative text can be cons
 
 Variables that represent coded data found elsewhere in the Reportabilty Response will be enclosed with angle brackets with a link to the relevant element, like this: &lt;[variable](reportability_response_narrative_guidance.html#narrative-construction-guidance)&gt;
 
-## eICR Processed wtih No Warnings or Errors
+## eICR Processed with No Warnings or Errors
 
 ### [Reportability Response Subject](StructureDefinition-rr-communication-definitions.html#Communication.topic)
 (for circumstances where **any** determination of reportability code is **reportable or maybe reportable** - it is recommended to communicate the Reportability Response to Provider/Reporter)
@@ -115,7 +115,7 @@ Variables that represent coded data found elsewhere in the Reportabilty Response
 > 
 > **For the triggered condition:**
 > 
-> "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" was determined not to be reportable for a triggered condition to to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization.html#Organization.name)&gt;". This may be because it is not on the list of reportable conditions for the relevant Public Health Agency or the information provided at the time of this report does not meet reporting criteria. 
+> "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" was determined not to be reportable for a triggered condition to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization.html#Organization.name)&gt;". This may be because it is not on the list of reportable conditions for the relevant Public Health Agency or the information provided at the time of this report does not meet reporting criteria. 
 >
 > *If multiple Routing Entities are preesent change text to include each separated by:* "and to":
 >
@@ -134,7 +134,7 @@ Variables that represent coded data found elsewhere in the Reportabilty Response
 >
 > **For the triggered condition:**
 >
-> No determination of reportability could not be made for "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" for "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization.html#Organization.name)&gt;" based on "&lt;[location relevance](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.jurisdiction.extension:locationRelevance)&gt;". This may be because it is not on the list of reportable conditions for the relevant Public Health Agency, or the information provided at the time of this report does not meet reporting criteria, or not all data needed to confirm reportabilty were available. No determination of reportability could be made for any other conditions in the submitted initial case report.
+> No determination of reportability could be made for "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.goal.addresses)&gt;" for "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization.html#Organization.name)&gt;" based on "&lt;[location relevance](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.jurisdiction.extension:locationRelevance)&gt;". This may be because it is not on the list of reportable conditions for the relevant Public Health Agency, or the information provided at the time of this report does not meet reporting criteria, or not all data needed to confirm reportabilty were available. No determination of reportability could be made for any other conditions in the submitted initial case report.
 > 
 > If the initial triggered condition is no rule met, and there is at least 1 other reportable condition, the following summary text should be inserted:
 >
