@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="432"/>
-        <lastUpdated value="2021-06-28T07:52:22.620+00:00"/>
-        <source value="#z8wYPS71At11HuIR"/>
+        <versionId value="437"/>
+        <lastUpdated value="2021-06-28T08:24:31.549+00:00"/>
+        <source value="#QfAnRupYVZ4SX5QN"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.1.0"/>
@@ -709,10 +709,11 @@
         <resource>
             <reference>
                 <reference value="Observation/observation-postpartum-status-eve-everywoman"/></reference>
-            <name value="Postpartum Status Example: observation-postpartum-status-eve-everywoman"/>
-            <description value="Example of Postpartum Status profile (Eve Everywoman)"/>
-            <exampleBoolean value="true"/>
-            <groupingId value="eicr-examples"/>
+            <name value="US Public Health Postpartum Status Example: observation-postpartum-status-eve-everywoman"/>
+            <description value="Example of US Public Health Postpartum Status profile (Eve Everywoman)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-postpartum-status"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <resource>
             <reference>
@@ -802,32 +803,12 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/postpartum-status"/>
-                <display value="Postpartum_Status"/>
-            </reference>
-            <name value="Postpartum Status"/>
-            <description value="This profile represents the postpartum status of a patient."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="eicr-profiles"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="Observation/observation-pregnancy-outcome-eve-everywoman"/></reference>
             <name value="US Public Health Pregnancy Outcome Observation Example: Eve Everywoman"/>
             <description value="Example of US Public Health Pregnancy Outcome Observation profile (Eve Everywoman)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-outcome-observation"/>
             <groupingId value="us-public-health-examples"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/pregnancy-status"/>
-                <display value="Pregnancy Status"/>
-            </reference>
-            <name value="Pregnancy Status"/>
-            <description value="This value set contains codes representing pregnancy statuses."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="terminology-valuesets"/>
         </resource>
         <resource>
             <reference>
@@ -1792,7 +1773,7 @@
             <description value="This valueset is a simplified duplicate of the eRSD Endpoint Connection Type valueset created for the purposes of demonstraing, by example, the US Public Health Supplemental ValueSet profile."/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-valueset"/>
-            <groupingId value="us-public-health-examples"/>
+            <groupingId value="terminology-valuesets"/>
         </resource>
         <resource>
             <reference>
@@ -1895,6 +1876,26 @@
             <description value="The date a status or observation was recorded (recorded date)."/>
             <exampleBoolean value="false"/>
             <groupingId value="us-ph-extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-postpartum-status"/>
+                <display value="US Public Health Postpartum Status"/>
+            </reference>
+            <name value="US Public Health Postpartum Status"/>
+            <description value="This profile represents the postpartum status of a patient.&#xA;&#xA;If the profile is present, the patient is in the postpartum period and further information about the postpartum status is communicated by the code chosen.&#xA;The postpartum period, also known as the puerperium, refers to the time after delivery when maternal physiological changes related to pregnancy return to the nonpregnant state. There is consensus that the postpartum period begins upon delivery of the infant. The end is less well defined but is often considered the six to eight weeks after delivery because the effects of pregnancy on many systems have largely returned to the pre-pregnancy state."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-public-health-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/us-ph-pregnancy-status"/>
+                <display value="US Public Health Pregnancy Status"/>
+            </reference>
+            <name value="US Public Health Pregnancy Status"/>
+            <description value="This value set contains codes representing pregnancy statuses."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="terminology-valuesets"/>
         </resource>
         <page>
             <nameUrl value="index.html"/>

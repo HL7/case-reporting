@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-codesystem"/>
     <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2021-06-24T15:53:25.639+00:00"/>
-        <source value="#XBej3OVCgS8415OF"/>
+        <versionId value="5"/>
+        <lastUpdated value="2021-06-28T08:22:11.130+00:00"/>
+        <source value="#n34twhRkwKkoe6Bp"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem"/>
     <version value="1.0.0"/>
@@ -29,24 +29,6 @@
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/CodeSystem"/>
     <derivation value="constraint"/>
     <differential>
-        <element id="CodeSystem">
-            <path value="CodeSystem"/>
-        </element>
-        <element id="CodeSystem.property">
-            <path value="CodeSystem.property"/>
-        </element>
-        <element id="CodeSystem.property.extension:binding">
-            <path value="CodeSystem.property.extension"/>
-            <sliceName value="binding"/>
-            <short value="What values are allowed"/>
-            <definition value="A reference to a CodeSystem or ValueSet that establishes the allowable values for a code system property."/>
-            <min value="0"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem-property-binding"/>
-            </type>
-        </element>
         <element id="ValueSet.useContext:reportingContext">
             <path value="ValueSet.useContext"/>
             <sliceName value="reportingContext"/>
@@ -74,11 +56,30 @@
             </type>
             <fixedCodeableConcept>
                 <coding>
-                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
+                    <system value="http://hl7.org/fhir/us/ecr/us-ph-usage-context"/>
                     <code value="triggering"/>
                     <display value="Triggering"/>
                 </coding>
             </fixedCodeableConcept>
+        </element>
+        <element id="CodeSystem">
+            <path value="CodeSystem"/>
+            <short value="US Public Health CodeSystem"/>
+        </element>
+        <element id="CodeSystem.property">
+            <path value="CodeSystem.property"/>
+        </element>
+        <element id="CodeSystem.property.extension:binding">
+            <path value="CodeSystem.property.extension"/>
+            <sliceName value="binding"/>
+            <short value="What values are allowed"/>
+            <definition value="A reference to a CodeSystem or ValueSet that establishes the allowable values for a code system property."/>
+            <min value="0"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem-property-binding-extension"/>
+            </type>
         </element>
     </differential>
 </StructureDefinition>
