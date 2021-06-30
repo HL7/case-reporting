@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="437"/>
-        <lastUpdated value="2021-06-28T08:24:31.549+00:00"/>
-        <source value="#QfAnRupYVZ4SX5QN"/>
+        <versionId value="440"/>
+        <lastUpdated value="2021-06-30T03:10:36.107+00:00"/>
+        <source value="#b3CyvDdmKvBD95Ba"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.1.0"/>
@@ -1161,16 +1161,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/tribal-affiliation-extension"/>
-                <display value="Tribal Affiliation Extension"/>
-            </reference>
-            <name value="Tribal Affiliation Extension"/>
-            <description value="This Extension profile represents an affiliated tribe name and whether or not the patient is an enrolled member"/>
-            <exampleBoolean value="false"/>
-            <groupingId value="extensions"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="Practitioner/practitioner-us-core-henry-seven"/>
                 <display value="Practitioner Seven Henry"/>
             </reference>
@@ -1362,7 +1352,7 @@
                 <display value="us-ph-patient"/>
             </reference>
             <name value="US Public Health Patient"/>
-            <description value="This Patient profile represents a US Public Health Patient."/>
+            <description value="This Patient profile represents a US Public Health Patient.&#xA;&#xA;It is based on the **US Core Patient** profile with further restrictions to allow masking of some data elements and the addition of the patient-genderIdentity extension.&#xA;&#xA;For ONC’s USCDI requirements, it adds Must Support constraints to the following:&#xA;&#xA;*     contact detail (e.g. a telephone number or an email address)&#xA;*     a communication language&#xA;*     a race&#xA;*     an ethnicity&#xA;*     a birth sex"/>
             <exampleBoolean value="false"/>
             <groupingId value="us-public-health-profiles"/>
         </resource>
@@ -1896,6 +1886,16 @@
             <description value="This value set contains codes representing pregnancy statuses."/>
             <exampleBoolean value="false"/>
             <groupingId value="terminology-valuesets"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-tribal-affiliation-extension"/>
+                <display value="US Public Health Tribal Affiliation Extension"/>
+            </reference>
+            <name value="US Public Health Tribal Affiliation Extension"/>
+            <description value="This Extension profile represents an affiliated tribe name and whether or not the patient is an enrolled member"/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-ph-extensions"/>
         </resource>
         <page>
             <nameUrl value="index.html"/>
