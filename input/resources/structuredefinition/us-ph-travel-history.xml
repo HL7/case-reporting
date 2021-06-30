@@ -1,10 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-travel-history"/>
     <meta>
-        <versionId value="6"/>
-        <lastUpdated value="2021-06-30T04:40:39.968+00:00"/>
-        <source value="#B88FXX1DUVJgytUO"/>
+        <versionId value="1"/>
+        <lastUpdated value="2021-06-30T04:51:54.747+00:00"/>
+        <source value="#FAfjfslAXucbE0CG"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-travel-history"/>
     <version value="1.0.0"/>
@@ -13,7 +14,7 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Observation profile represents a patient's travel history.&#xA;&#xA;The following data for a patient can be recorded:&#xA;&#xA;* travel history as a string, an address, or a coded location&#xA;* the date or period of time spent in the location (Observation.effectiveTime)&#xA;    * it is important to accurately capture the most accurate dates possible&#xA;    * the focus should be on date of arrival and date of departure&#xA;    * the concepts of dates as related to travel are especially useful for determining need for Federal Public Health Notifications (FPHNs) and these dates are used to alert foreign ministries of health about their residents who may have been contacts of cases, or if a flight that was outbound from the USA had an infectious traveler on it&#xA;* most uses will involve a single location (Observation.component), however, it is possible to specify multiple locations (but there is only a single effectiveTime)&#xA;    * this allows for cases where a patient cannot remember exact dates of travel (e.g. I traveled to London, Paris, and Berlin in July and August 2016)&#xA;* free text describing the travel history details and location (Observation.component.valueCodeableConcept.text element)&#xA;* use Observation.component.codeableConcept to record a coded location&#xA;* use Observationcomponent.extension to record a specific address&#xA;* where a more granular address than state is known (e.g. city, street) it is appropriate to use the extension to record an address rather than using the coded location"/>
+    <description value="This Observation profile represents a patient's travel history.&#xA;&#xA;The following data for a patient can be recorded:&#xA;&#xA;* travel history as a string, an address, or a coded location&#xA;* the date or period of time spent in the location (Observation.effectiveTime)&#xA;* most uses will involve a single location (Observation.component), however, it is possible to specify multiple locations (but there is only a single effectiveTime)&#xA;    * this allows for cases where a patient cannot remember exact dates of travel (e.g. I traveled to London, Paris, and Berlin in July and August 2016)&#xA;* free text describing the travel history details and location (Observation.component.valueCodeableConcept.text element)&#xA;* use Observation.component.codeableConcept to record a coded location&#xA;* use Observationcomponent.extension to record a specific address&#xA;* where a more granular address than state is known (e.g. city, street) it is appropriate to use the extension to record an address rather than using the coded location"/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -67,7 +68,6 @@
         <element id="Observation.effective[x]">
             <path value="Observation.effective[x]"/>
             <short value="Date or period of time spent in the location"/>
-            <definition value="It is important to accurately capture the most accurate dates possible. The focus should be on date of arrival and date of departure."/>
             <mustSupport value="true"/>
             <isModifier value="false"/>
         </element>
