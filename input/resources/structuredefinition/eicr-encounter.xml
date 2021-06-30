@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="eicr-encounter"/>
+    <meta>
+        <versionId value="4"/>
+        <lastUpdated value="2021-06-30T03:43:24.372+00:00"/>
+        <source value="#RutFQL1hxfCH5Rnl"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
+    <version value="1.0.0"/>
+    <name value="EICREncounter"/>
+    <title value="eICR Encounter"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This Encounter profile represents the encounter related to the event. A trigger on an encounter diagnosis is indicated by the eICR Trigger Code Flag Extension in the diagnosis.&#xA;        &#xA;        Where a trigger occurs outside of an encounter use code=”PHC2237” | system=”2.16.840.1.114222.4.5.274” (External Encounter) and omit period, participant, location, and serviceProvider. In this case, the responsible provider and facility information is contained in the eICR Composition.author."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Encounter"/>
+    <baseDefinition value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Encounter">
+            <path value="Encounter"/>
+            <short value="eICR Encounter"/>
+        </element>
+        <element id="Encounter.diagnosis.extension">
+            <path value="Encounter.diagnosis.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Encounter.diagnosis.extension:sliceEncounterDiagnosisTrigger">
+            <path value="Encounter.diagnosis.extension"/>
+            <sliceName value="sliceEncounterDiagnosisTrigger"/>
+            <short value="Trigger Code Flag"/>
+            <definition value="A flag to indicate that the **target** reference represents a triggering event and caused the report to be generated."/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
+            </type>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="eICR-CDA"/>
+                <map value="[eICR R2 STU2] Initial Case Report Trigger Code Problem Observation"/>
+            </mapping>
+        </element>
+    </differential>
+</StructureDefinition>

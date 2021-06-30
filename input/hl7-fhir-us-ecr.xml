@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="441"/>
-        <lastUpdated value="2021-06-30T03:22:24.026+00:00"/>
-        <source value="#q6EHtr0fFWq2CQ49"/>
+        <versionId value="443"/>
+        <lastUpdated value="2021-06-30T03:43:24.470+00:00"/>
+        <source value="#wsWCiiYI553mnoZw"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.1.0"/>
@@ -1658,7 +1658,7 @@
             <name value="Location Example: City Football Stadium"/>
             <description value="Example of Location resource (City Football Stadium)"/>
             <exampleBoolean value="true"/>
-            <groupingId value="eicr-profiles"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
@@ -1896,6 +1896,15 @@
             <description value="This Extension profile represents an affiliated tribe name and whether or not the patient is an enrolled member"/>
             <exampleBoolean value="false"/>
             <groupingId value="us-ph-extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-encounter"/>
+                <display value="eICR Encounter"/>
+            </reference>
+            <name value="eICR Encounter"/>
+            <description value="This Encounter profile represents the encounter related to the event. A trigger on an encounter diagnosis is indicated by the eICR Trigger Code Flag Extension in the diagnosis.&#xA;        &#xA;        Where a trigger occurs outside of an encounter use code=”PHC2237” | system=”2.16.840.1.114222.4.5.274” (External Encounter) and omit period, participant, location, and serviceProvider. In this case, the responsible provider and facility information is contained in the eICR Composition.author."/>
+            <exampleBoolean value="false"/>
         </resource>
         <page>
             <nameUrl value="index.html"/>
