@@ -152,7 +152,7 @@ define "Negative results of tests for identification of Chlamydia trachomatis in
 To support this generation, we need to identify, for each criteria of each condition, the data category, the associated condition-specific value set, and the criteria expression to be used. From the Chlamydia condition description on the RCKMS site, this rule is represented in the current platform as:
 
 ```drl
-21.	Negative results of tests for identification of Chlamydia trachomatis in a clinical specimen by organism-specific culture method, including identification tests performed on an isolate (i.e., ‘negative’ culture results)
+21. Negative results of tests for identification of Chlamydia trachomatis in a clinical specimen by organism-specific culture method, including identification tests performed on an isolate (i.e., ‘negative’ culture results)
   IF
     Patient has lab result with test name of [VS: Chlamydia trachomatis Infection (Tests for Chlamydia trachomatis by Culture and Identification Method)]
     AND

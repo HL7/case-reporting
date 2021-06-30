@@ -38,7 +38,7 @@ The current PlanDefinition uses ECA Rules, we propose using Workflow Definition 
 
 #### Extensions
 <ul>
-  <li><a href="StructureDefinition-us-ph-usageWarning.html">US Public Health Usage Warning Extension</a></li>
+  <li><a href="StructureDefinition-us-ph-usagewarning-extension.html">US Public Health Usage Warning Extension</a></li>
 </ul>
 
 *  When applying the eRSD each action may be represented using a Task, but in order to do this there is a need to relate the Tasks in some temporal way.  relativeTo is a complex extension on the StructureDefinition Task to reference the resource type, path to the timing element of that resource, and optional offset duration.  This would allow us to create a task 24 hours after the Encounter begins for example.
@@ -62,5 +62,5 @@ The current PlanDefinition uses ECA Rules, we propose using Workflow Definition 
 
 <ul>
   <li><a href="StructureDefinition-us-ph-valueset-library.html">US Public Health ValueSet Library</a></li>
-	<li><a href="StructureDefinition-us-ph-valueset.html">US Public Health ValueSet</a></li>
+ <li><a href="StructureDefinition-us-ph-valueset.html">US Public Health ValueSet</a></li>
 </ul>

@@ -3,12 +3,12 @@
 The following is informative guidance on generating the narrative text of a Reportability Response Communication (Reportability Response). Through the Reportability Response, public health seeks to support bidirectional communication with clinical care for reportable conditions. The Reportability Response is designed to have one Reportability Response created for each electronic Initial Case Report (eICR) and to be shared with the clinical care organization that created that eICR. The Reportability Response can also be shared with a Public Health Agency(ies) [PHA(s)] that has relevant reporting requirements (a Responsible Pubic Health Agency) that wants to use it to monitor the reporting process and know what has been conveyed to clinical care organizations and other Public Health Agencies. Sharing the Reportability Response with clinical care will serve several functions, including to:
 
 - Communicate the reportability status, for the responsible PHA(s), of each condition included in the eICR
--	Identify who (a PHA or an intermediary) prepared the Reportability Response
--	Indicate whether the eICR has been sent to one or more PHA(s) Identify which PHA(s) has/have been sent the eICR
--	Provide contact information for the responsible PHA(s)
--	Provide suggested or required clinical follow-up activities from the responsible PHA(s), including any additional reporting needs or infection control activities
--	Provide access to clinical support resources suggested by the responsible PHA(s) for identified reportable conditions
--	Confirm eICR receipt and processing
+- Identify who (a PHA or an intermediary) prepared the Reportability Response
+- Indicate whether the eICR has been sent to one or more PHA(s) Identify which PHA(s) has/have been sent the eICR
+- Provide contact information for the responsible PHA(s)
+- Provide suggested or required clinical follow-up activities from the responsible PHA(s), including any additional reporting needs or infection control activities
+- Provide access to clinical support resources suggested by the responsible PHA(s) for identified reportable conditions
+- Confirm eICR receipt and processing
 
 A Reportability Response will also, when requested, be shared with the responsible PHAs (when they have not constructed it) for their internal use, so they understand what has been shared with clinical care, and to monitor/audit decision support algorithm effectiveness and implementation. When a condition is considered reportable to more than one PHA, the Reportability Response can be helpful in communicating reporting that has been done to other PHAs as well.
 
@@ -23,15 +23,15 @@ A possible condition is:
 
 A possible condition:
 
--	**May be Reportable** - The information provided may meet reporting criteria if additional information is provided. The Reportability Response will also be able to share the information needed to definitively determine reportability.
+- **May be Reportable** - The information provided may meet reporting criteria if additional information is provided. The Reportability Response will also be able to share the information needed to definitively determine reportability.
 
 A possible condition is:
 
--	**Not Reportable** - The information provided conclusively does not meet reporting criteria.
+- **Not Reportable** - The information provided conclusively does not meet reporting criteria.
 
 Some decision support systems may not be able to fully differentiate between possible conditions that are **Not Reportable** and those that **May be Reportable** if additional information is provided. In these circumstances there may only be a reportabilty determination of:
 
--	**No Reporting Rule Met** - The information provided does not meet reporting criteria or may meet reporting criteria if additional information is provided.
+- **No Reporting Rule Met** - The information provided does not meet reporting criteria or may meet reporting criteria if additional information is provided.
 
 The determination of **No Reporting Rule Met** may be provided for a possible condition or for all conditions in the eICR.
 
@@ -244,13 +244,13 @@ Your organization electronically submitted an initial case report to determine i
 
 Similar to these examples, some additional responses may include:
 
--	Single Condition is *Reportable* to Multiple PHAs
--	Single Condition is *Not Reportable* to Multiple PHAs
--	Multiple Conditions are *Reportable* to a Single PHA
--	Multiple Conditions are *Reportable* to Multiple PHAs
--	Multiple Conditions are *Not Reportable* to a Single PHA
--	Multiple Conditions are *Not Reportable* to Multiple PHAs
--	Combination of Conditions *Reportable* and *Not Reportable* to a Single or Multiple PHA(s)
+- Single Condition is *Reportable* to Multiple PHAs
+- Single Condition is *Not Reportable* to Multiple PHAs
+- Multiple Conditions are *Reportable* to a Single PHA
+- Multiple Conditions are *Reportable* to Multiple PHAs
+- Multiple Conditions are *Not Reportable* to a Single PHA
+- Multiple Conditions are *Not Reportable* to Multiple PHAs
+- Combination of Conditions *Reportable* and *Not Reportable* to a Single or Multiple PHA(s)
 -   Single Condition is *Reportable* to a Single PHA but with Multiple Routing Entities
 
 ## eICR Processed with a Warning
@@ -405,18 +405,18 @@ The examples below provide example text for *Providers / Reporters* for these ty
 9. Manually initiated eICR with no reporting criteria matched for One PHA
 10. Manually initiated eICR with One Reportable Condition for One PHA
 11. One Reportable Condition with Multiple Routing Entities
-12.	Fatal Error – eICR Not Processed
-13.	Decision Support Timeout – eICR Not Processed
-14.	One Juridiction Not Found (warning)
-15.	One Reporting Specifications Not Found (warning)
-16.	One No Rule Met and One Jurisdiction Not Found
-17.	One No Rule Met and One Reporting Specification Not Found
-18.	One Jurisdiction Not Found and One Reporting Specifications Not Found
-19.	One May be reportable Condition and One Jurisdiction Not Found
-20.	One May be reportable Condition and One Reporting Specifications Not Found
-21.	One Reportable Condition and One Jurisdiction Not Found for Patient Address
-22.	One Reportable Condition and One Jurisdiction Not Found for Provider/Facility Address
-23.	One Reportable Condition and One Reporting Specifications Not Found
+12. Fatal Error – eICR Not Processed
+13. Decision Support Timeout – eICR Not Processed
+14. One Juridiction Not Found (warning)
+15. One Reporting Specifications Not Found (warning)
+16. One No Rule Met and One Jurisdiction Not Found
+17. One No Rule Met and One Reporting Specification Not Found
+18. One Jurisdiction Not Found and One Reporting Specifications Not Found
+19. One May be reportable Condition and One Jurisdiction Not Found
+20. One May be reportable Condition and One Reporting Specifications Not Found
+21. One Reportable Condition and One Jurisdiction Not Found for Patient Address
+22. One Reportable Condition and One Jurisdiction Not Found for Provider/Facility Address
+23. One Reportable Condition and One Reporting Specifications Not Found
 
 
 ----------
