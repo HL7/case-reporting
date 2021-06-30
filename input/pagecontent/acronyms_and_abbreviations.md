@@ -1,3 +1,5 @@
+| Acronym/Abbreviation          | Description                                     |
+| -------- | -------- |
 | AIMS          | APHL Informatics Messaging Services                                       |
 | ANSI          | American National Standards Institute                                     |
 | APHL          | Association of Public Health Laboratories                                 |
