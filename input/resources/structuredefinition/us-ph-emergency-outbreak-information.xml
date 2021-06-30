@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-emergency-outbreak-information"/>
     <meta>
-        <versionId value="11"/>
-        <lastUpdated value="2021-06-17T02:56:24.231+00:00"/>
-        <source value="#j0SQnL4wFAgEUOgZ"/>
+        <versionId value="12"/>
+        <lastUpdated value="2021-06-30T04:51:55.579+00:00"/>
+        <source value="#tF3BHLHHQ9jkJ5il"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-emergency-outbreak-information"/>
     <version value="1.0.0"/>
@@ -14,7 +14,7 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This profile represents information that is required during a public health emergency/outbreak. This information can be highly variable, so a generic structure has been chosen to represent it."/>
+    <description value="This profile represents information that is required during a public health emergency/outbreak. This information can be highly variable, so a generic structure has been chosen to represent it.&#xA;&#xA;This information will be recorded using a question/answer pattern with questions specific to the public health emergency/outbreak."/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -32,7 +32,7 @@
     <differential>
         <element id="Observation">
             <path value="Observation"/>
-            <short value="Information that is required during a public health emergency/outbreak."/>
+            <short value="US Public Health Outbreak Information"/>
             <definition value="This profile represents information that is required during a public health emergency/outbreak. This information will be recorded using a question/answer pattern with questions specific to the public health emergency/outbreak."/>
         </element>
         <element id="Observation.code">
@@ -41,9 +41,40 @@
             <max value="1"/>
             <mustSupport value="true"/>
         </element>
+        <element id="Observation.subject">
+            <path value="Observation.subject"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
         <element id="Observation.value[x]">
             <path value="Observation.value[x]"/>
             <min value="1"/>
+            <type>
+                <code value="Quantity"/>
+            </type>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <type>
+                <code value="string"/>
+            </type>
+            <type>
+                <code value="boolean"/>
+            </type>
+            <type>
+                <code value="integer"/>
+            </type>
+            <type>
+                <code value="dateTime"/>
+            </type>
+            <type>
+                <code value="Period"/>
+            </type>
             <mustSupport value="true"/>
         </element>
     </differential>

@@ -1,1 +1,0 @@
-It is based on the **US Core PractitionerRole** profile with a further restriction of a mandatory **identifier** data element.

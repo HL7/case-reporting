@@ -9,7 +9,7 @@ eICR documents will usually be automatically initiated by matching EHR data agai
 There are some circumstances, however, where they may be manually initiated by providers of care because they suspect there may be a reportable condition. They also may be alternately initiated by automated, forced reporting by the EHR to meet short term reporting needs. The following matrix illustrates these different types of initiation:
 
 <table><tr><td><img src="InitiationTypeTable.jpg" style="width:100%;"/></td></tr></table>
-[^1]
+[^1] RCKMS
 
 The eICR also includes pregnancy information, occupational data, therapeutic response to medication, homeless information, a vital signs snapshot, emergency outbreak information, exposure and contact information, disability status, and semi-structured travel history. The eICR is conveyed through an unsolicited push transaction from healthcare to public health (see Transport Options for further details) using a basic RESTful submit and/or FHIR Messaging. The FHIR Messaging bundle can also be transmitted over legacy transport and networks. There may be several different intermediaries involved in the transmission including Health Information Exchanges, Health Information Networks, and the Association of Public Health Laboratories (APHL) AIMS platform.
 

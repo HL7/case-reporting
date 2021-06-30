@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="us-ph-condition"/>
+    <meta>
+        <versionId value="6"/>
+        <lastUpdated value="2021-06-30T04:58:04.139+00:00"/>
+        <source value="#s40nVwYfhG1vj6Hp"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-condition"/>
+    <version value="1.0.0"/>
+    <name value="USPublicHealthCondition"/>
+    <title value="US Public Health Condition"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This Condition profile represents the signs, symptoms, and diagnoses related to a public health event.&#xA;&#xA;It is based on the **US Core Condition** profile with further restriction of a *Must Support* constraint on the **onset\[x]** and verificationStatus data elements.&#xA;&#xA;In the case of a condition being mistakenly entered into the system and later corrected:&#xA;* verificationStatus of 'entered-in-error' must be set"/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Condition"/>
+    <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Condition">
+            <path value="Condition"/>
+            <short value="US Public Health Condition"/>
+        </element>
+        <element id="Condition.extension">
+            <path value="Condition.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+        </element>
+        <element id="Condition.extension:sliceAssertedDate">
+            <path value="Condition.extension"/>
+            <sliceName value="sliceAssertedDate"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/StructureDefinition/condition-assertedDate"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Condition.subject">
+            <path value="Condition.subject"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Condition.onset[x]">
+            <path value="Condition.onset[x]"/>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+        </element>
+    </differential>
+</StructureDefinition>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="us-ph-usagewarning-extension"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2021-06-30T04:51:55.106+00:00"/>
+        <source value="#hsCZJUvO6JY5DnFQ"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-usagewarning-extension"/>
+    <version value="0.2.0"/>
+    <name value="USPublicHealthUsageWarningExtension"/>
+    <title value="US Public Health Usage Warning Extension"/>
+    <status value="draft"/>
+    <experimental value="false"/>
+    <date value="2019-06-06T00:00:00.000Z"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="An extra warning about the correct use of the value set."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <context>
+        <type value="element"/>
+        <expression value="ValueSet"/>
+    </context>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Extension">
+            <path value="Extension"/>
+            <short value="US Public Health Usage Warning Extension"/>
+            <definition value="An extra warning about the correct use of the value set."/>
+            <min value="0"/>
+            <max value="1"/>
+        </element>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <type>
+                <code value="uri"/>
+            </type>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-usagewarning-extension"/>
+        </element>
+        <element id="Extension.value[x]">
+            <path value="Extension.value[x]"/>
+            <type>
+                <code value="string"/>
+            </type>
+        </element>
+    </differential>
+</StructureDefinition>

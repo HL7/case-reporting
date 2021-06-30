@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="us-ph-computable-library"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2021-06-30T04:51:54.046+00:00"/>
+        <source value="#f79i8FeIpdbMiwKV"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-computable-library"/>
+    <version value="0.1.0"/>
+    <name value="USPublicHealthComputableLibrary"/>
+    <title value="US Public Health Computable Library"/>
+    <status value="draft"/>
+    <experimental value="false"/>
+    <date value="2020-10-23T00:00:00.000Z"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="The computable library profile sets the minimum expectations for a computable CQL library."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Library"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/shareablelibrary"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Library">
+            <path value="Library"/>
+            <short value="US Public Health Computable Library"/>
+        </element>
+        <element id="Library.subject[x]">
+            <path value="Library.subject[x]"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact">
+            <path value="Library.relatedArtifact"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact.display">
+            <path value="Library.relatedArtifact.display"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact.url">
+            <path value="Library.relatedArtifact.url"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.parameter">
+            <path value="Library.parameter"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.dataRequirement">
+            <path value="Library.dataRequirement"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.content">
+            <path value="Library.content"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="contentType"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.content:cqlContent">
+            <path value="Library.content"/>
+            <sliceName value="cqlContent"/>
+            <short value="CQL Content"/>
+            <definition value="The CQL content represented as base-64 encoded data."/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="false"/>
+        </element>
+        <element id="Library.content:cqlContent.contentType">
+            <path value="Library.content.contentType"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="code"/>
+            </type>
+            <fixedCode value="text/cql"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.content:cqlContent.data">
+            <path value="Library.content.data"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="false"/>
+        </element>
+    </differential>
+</StructureDefinition>

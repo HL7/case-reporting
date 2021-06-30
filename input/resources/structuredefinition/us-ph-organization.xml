@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-organization"/>
     <meta>
-        <versionId value="8"/>
-        <lastUpdated value="2021-05-19T08:13:06.661+00:00"/>
-        <source value="#stHM0o23QtB8KRSB"/>
+        <versionId value="11"/>
+        <lastUpdated value="2021-06-30T04:51:55.088+00:00"/>
+        <source value="#I5XOvVI4WDd2dKWd"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
     <version value="1.0.0"/>
@@ -14,7 +14,7 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Organization profile represents an organization involved in public health."/>
+    <description value="This Organization profile represents an organization involved in public health. It is based on the **US Core Organization** profile and establishes the core elements, extensions, vocabularies and value sets for representing organizations for public health."/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -24,11 +24,6 @@
         <text value="United States of America"/>
     </jurisdiction>
     <fhirVersion value="4.0.1"/>
-    <mapping>
-        <identity value="CDA"/>
-        <name value="eICR Organization name mapping to CDA"/>
-        <comment value="This table maps eICR and RR Organization profile to CDA"/>
-    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Organization"/>
@@ -37,41 +32,19 @@
     <differential>
         <element id="Organization">
             <path value="Organization"/>
-            <short value="Public Health Organization Profile"/>
+            <short value="US Public Health Organization"/>
             <definition value="The Public Health Reporting Organization profile is based on the **US Core-Organization** profile and establishes the core elements, extensions, vocabularies and value sets for representing organizations for public health:&#xA;&#xA;- Report source provider facility/office name&#xA;- Report source facility&#xA;- Response recipients&#xA;- Response responsible agency  &#xA;- Response routing entity&#xA;- Response rules authoring agency"/>
-            <min value="0"/>
-            <max value="*"/>
-            <base>
-                <path value="us-core-organization"/>
-                <min value="0"/>
-                <max value="*"/>
-            </base>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
         </element>
-        <element id="Organization.type">
-            <path value="Organization.type"/>
+        <element id="Organization.telecom">
+            <path value="Organization.telecom"/>
+            <min value="1"/>
             <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <binding>
-                <strength value="extensible"/>
-                <description value="The type of Organization"/>
-                <valueSet value="http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType"/>
-            </binding>
         </element>
-        <element id="Organization.name">
-            <path value="Organization.name"/>
+        <element id="Organization.address">
+            <path value="Organization.address"/>
+            <min value="1"/>
+            <max value="1"/>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="ClinicalDocument/componentOf/encompassingEncounter/responsibleParty/assignedEntity/representedOrganization/name"/>
-                <comment value="Provider Facility/Office Name"/>
-            </mapping>
-        </element>
-        <element id="Organization.contact">
-            <path value="Organization.contact"/>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
         </element>
     </differential>
 </StructureDefinition>

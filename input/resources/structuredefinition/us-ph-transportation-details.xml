@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-transportation-details"/>
     <meta>
-        <versionId value="14"/>
-        <lastUpdated value="2020-12-01T02:02:44.230+00:00"/>
-        <source value="#WfJ2kbiFgOTTq5px"/>
+        <versionId value="15"/>
+        <lastUpdated value="2021-06-30T04:51:54.874+00:00"/>
+        <source value="#uuKFyRFJVV56jbkY"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-transportation-details"/>
     <version value="1.0.0"/>
@@ -32,6 +32,7 @@
     <differential>
         <element id="Observation">
             <path value="Observation"/>
+            <short value="US Public Health Transportation Details"/>
         </element>
         <element id="Observation.category">
             <path value="Observation.category"/>
@@ -44,6 +45,7 @@
                     <code value="TRNS"/>
                 </coding>
             </patternCodeableConcept>
+            <mustSupport value="true"/>
         </element>
         <element id="Observation.code">
             <path value="Observation.code"/>
@@ -56,6 +58,7 @@
                     <code value="424483007"/>
                 </coding>
             </patternCodeableConcept>
+            <mustSupport value="true"/>
         </element>
         <element id="Observation.effective[x]">
             <path value="Observation.effective[x]"/>
@@ -76,6 +79,7 @@
             <type>
                 <code value="CodeableConcept"/>
             </type>
+            <mustSupport value="true"/>
             <binding>
                 <strength value="required"/>
                 <description value="Transport vehicle type"/>
@@ -86,15 +90,39 @@
             <path value="Observation.component"/>
             <short value="Information about the mode of transportation (ship name, flight number, seat number, etc.)"/>
             <definition value="Information about the mode of transportation (ship name, flight number, seat number, etc.)"/>
+            <mustSupport value="true"/>
         </element>
         <element id="Observation.component.code">
             <path value="Observation.component.code"/>
             <short value="Type of transportation information"/>
             <definition value="Type of transportation information (ship name, flight number, seat number, etc.)"/>
+            <mustSupport value="true"/>
         </element>
         <element id="Observation.component.value[x]">
             <path value="Observation.component.value[x]"/>
             <min value="1"/>
+            <type>
+                <code value="Quantity"/>
+            </type>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <type>
+                <code value="string"/>
+            </type>
+            <type>
+                <code value="integer"/>
+            </type>
+            <type>
+                <code value="time"/>
+            </type>
+            <type>
+                <code value="dateTime"/>
+            </type>
+            <type>
+                <code value="Period"/>
+            </type>
+            <mustSupport value="true"/>
         </element>
     </differential>
 </StructureDefinition>

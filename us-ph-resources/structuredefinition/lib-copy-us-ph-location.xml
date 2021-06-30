@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="us-ph-location"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2021-06-21T07:13:12.406+00:00"/>
+        <source value="#fcmLx8JiadZedIUI"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-location"/>
+    <version value="1.0.0"/>
+    <name value="USPublicHealthLocation"/>
+    <title value="US Public Health Location"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This Location profile represents the location/facility in which care was provided."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Location"/>
+    <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-location"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Location">
+            <path value="Location"/>
+            <short value="eICR Location"/>
+            <definition value="The location/facility in which care was provided when the case was triggered."/>
+        </element>
+        <element id="Location.identifier">
+            <path value="Location.identifier"/>
+            <short value="Facility ID Number"/>
+            <definition value="Facility ID Number. If avalable, the NPI Idenitifier SHALL be provided."/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Location.type">
+            <path value="Location.type"/>
+            <short value="Facility Type"/>
+            <definition value="Facility Type. The binding to the ServiceDeliveryLocationRoleType value set is extensible, so, for concepts that are not represented in this value set, it is possible to use another code from a recognized code system.&#xA;To represent &quot;Correctional Facility&quot; use SNOMED CT code 257656006: Correctional Facility."/>
+            <min value="1"/>
+            <max value="*"/>
+            <mustSupport value="true"/>
+            <binding>
+                <strength value="extensible"/>
+                <description value="A role of a place that further classifies the setting (e.g., accident site, road side, work site, community location) in which services are delivered."/>
+                <valueSet value="http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType"/>
+            </binding>
+        </element>
+        <element id="Location.address">
+            <path value="Location.address"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Location.address.city">
+            <path value="Location.address.city"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Location.address.state">
+            <path value="Location.address.state"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Location.managingOrganization">
+            <path value="Location.managingOrganization"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+    </differential>
+</StructureDefinition>

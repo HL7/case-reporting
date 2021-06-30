@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="us-ph-plandefinition"/>
+    <meta>
+        <versionId value="3"/>
+        <lastUpdated value="2021-06-30T04:34:46.916+00:00"/>
+        <source value="#jnMJgeWaM2BGe1c1"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-plandefinition"/>
+    <version value="1.0.0"/>
+    <name value="USPublicHealthPlanDefinition"/>
+    <title value="US Public Health PlanDefinition"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This profile describes the US Public Health PlanDefinition."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="PlanDefinition"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/shareableplandefinition"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="PlanDefinition">
+            <path value="PlanDefinition"/>
+            <short value="US Public Health PlanDefinition"/>
+            <definition value="Defines a shareable US Public Health PlanDefinition."/>
+        </element>
+        <element id="PlanDefinition.version">
+            <path value="PlanDefinition.version"/>
+            <short value="Business version of the PlanDefinition"/>
+            <definition value="Business version of the PlanDefinition"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.name">
+            <path value="PlanDefinition.name"/>
+            <short value="Name for this PlanDefinition (computer friendly)"/>
+            <definition value="Name for this PlanDefinition (computer friendly)"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.title">
+            <path value="PlanDefinition.title"/>
+            <short value="Title for this PlanDefinition"/>
+            <definition value="Title for this PlanDefinition"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.type">
+            <path value="PlanDefinition.type"/>
+            <short value="Type of this PlanDefinition"/>
+            <definition value="Type of this PlanDefinition"/>
+            <min value="1"/>
+            <fixedCodeableConcept>
+                <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+                    <code value="workflow-definition"/>
+                    <display value="Workflow Definition"/>
+                </coding>
+            </fixedCodeableConcept>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.date">
+            <path value="PlanDefinition.date"/>
+            <short value="Date the PlanDefinition was published"/>
+            <definition value="Date the PlanDefinition was published"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.publisher">
+            <path value="PlanDefinition.publisher"/>
+            <short value="Name of the agency that published this PlanDefinition"/>
+            <definition value="Name of the agency that published this PlanDefinition"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.effectivePeriod">
+            <path value="PlanDefinition.effectivePeriod"/>
+            <short value="When the PlanDefinition is expected to be used"/>
+            <definition value="The period during which the PlanDefinition is expected to be used"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.effectivePeriod.start">
+            <path value="PlanDefinition.effectivePeriod.start"/>
+            <short value="The start of the time period when this PlanDefinition goes in effect"/>
+            <definition value="The start of the time period when this PlanDefinition goes in effect"/>
+            <min value="1"/>
+        </element>
+        <element id="PlanDefinition.library">
+            <path value="PlanDefinition.library"/>
+            <mustSupport value="true"/>
+        </element>
+    </differential>
+</StructureDefinition>

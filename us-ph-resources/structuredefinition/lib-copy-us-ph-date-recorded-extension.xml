@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="us-ph-date-recorded-extension"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2021-06-21T07:20:01.215+00:00"/>
+        <source value="#IwwQGTH9uv0jZQ98"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-date-recorded-extension"/>
+    <version value="1.0.0"/>
+    <name value="USPublicHealthDateRecordedExtension"/>
+    <title value="US Public Health Date Recorded Extension"/>
+    <status value="active"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="The date a status or observation was recorded (recorded date)."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <context>
+        <type value="element"/>
+        <expression value="Observation"/>
+    </context>
+    <context>
+        <type value="element"/>
+        <expression value="Observation.component"/>
+    </context>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Extension">
+            <path value="Extension"/>
+            <short value="US Public Health Date Recorded Extension"/>
+        </element>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-date-recorded-extension"/>
+        </element>
+        <element id="Extension.value[x]">
+            <path value="Extension.value[x]"/>
+            <short value="Recorded date"/>
+            <definition value="Represents the recorded date of a status or observation"/>
+            <min value="1"/>
+            <type>
+                <code value="dateTime"/>
+            </type>
+        </element>
+    </differential>
+</StructureDefinition>

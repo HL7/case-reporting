@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="us-ph-reporting-bundle"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2021-06-21T04:48:03.391+00:00"/>
+        <source value="#nXuircVzoeNLuInW"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-reporting-bundle"/>
+    <version value="0.1.0"/>
+    <name value="USPublicHealthReportingBundle"/>
+    <title value="US Public Health Reporting Bundle"/>
+    <status value="draft"/>
+    <experimental value="false"/>
+    <date value="2019-09-01"/>
+    <publisher value="HL7 International - Public Health Work Group"/>
+    <contact>
+        <telecom>
+            <system value="url"/>
+            <value value="http://hl7.org/Special/committees/pher"/>
+        </telecom>
+    </contact>
+    <description value="Bundle Resource profile for exchanging one of public health messages, knowledge artifacts or content."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+        </coding>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Bundle"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Bundle">
+            <path value="Bundle"/>
+            <short value="US Public Health Reporting Bundle"/>
+            <definition value="Sets expectations for supported capabilities for Bundles used for reporting purposes in public health."/>
+        </element>
+        <element id="Bundle.type">
+            <path value="Bundle.type"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="code"/>
+            </type>
+            <fixedCode value="message"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Bundle.timestamp">
+            <path value="Bundle.timestamp"/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+    </differential>
+</StructureDefinition>

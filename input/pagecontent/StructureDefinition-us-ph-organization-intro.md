@@ -1,1 +1,0 @@
-It is based on the **US Core Organization** profile with a further restriction of *Must Support* on the **type** and **contact** data elements.

@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-practitionerrole"/>
     <meta>
-        <versionId value="6"/>
-        <lastUpdated value="2020-11-25T22:25:57.322+00:00"/>
-        <source value="#7s97g4m6O3RLqfXF"/>
+        <versionId value="8"/>
+        <lastUpdated value="2021-06-30T05:03:50.965+00:00"/>
+        <source value="#Dot1J2bRVNre6QJP"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-practitionerrole"/>
     <version value="1.0.0"/>
@@ -14,7 +14,7 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This PractitionerRole profile represents the roles and organizations a practitioner involved in public health is associated with."/>
+    <description value="This PractitionerRole profile represents the roles and organizations of the practitioner.&#xA;&#xA;It is based on the **US Core PractitionerRole** profile with a further restriction of a mandatory **identifier** data element."/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -30,6 +30,10 @@
     <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole"/>
     <derivation value="constraint"/>
     <differential>
+        <element id="PractitionerRole">
+            <path value="PractitionerRole"/>
+            <short value="US Public Health PracitionerRole"/>
+        </element>
         <element id="PractitionerRole.identifier">
             <path value="PractitionerRole.identifier"/>
             <min value="1"/>

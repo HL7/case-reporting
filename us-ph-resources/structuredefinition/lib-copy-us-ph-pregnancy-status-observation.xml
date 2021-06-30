@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="us-ph-pregnancy-status-observation"/>
+    <meta>
+        <versionId value="7"/>
+        <lastUpdated value="2021-06-30T04:36:32.710+00:00"/>
+        <source value="#mwzRL1DONb492L7m"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-status-observation"/>
+    <version value="1.0.0"/>
+    <name value="USPublicHealthPregnancyStatusObservation"/>
+    <title value="US Public Health Pregnancy Status Observation"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range.&#xA;&#xA;This profile includes the determination method, determination date, and recorded date of the pregnancy status.&#xA;&#xA;Use the effectivePeriod to indicate the date range over which the patient was pregnant/possibly pregnant/not pregnant/unknown. To record the date that the pregnancy status was recorded, use the date-recorded-extension and to record the date on which the pregnancy status determination was made, use the date-determined-extension. If the effectivePeriod.end is not present it is assumed that the date range over which the pregnancy status is asserted is from effectivePeriod.start to the date in the date-recorded-extension. For example, if the effectivePeriod.start has been recorded as two months prior to the date contained in the date-recorded-extension, and there is no effectivePeriod.end recorded, no assumptions can be made about the pregnancy status after the date contained in the date-recorded-extension."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Observation"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Observation">
+            <path value="Observation"/>
+            <short value="US Public Health Pregnancy Status Observation"/>
+        </element>
+        <element id="Observation.extension">
+            <path value="Observation.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.extension:extensionPregnancyStatusRecordedDate">
+            <path value="Observation.extension"/>
+            <sliceName value="extensionPregnancyStatusRecordedDate"/>
+            <short value="Pregnancy Status Recorded Date"/>
+            <definition value="The date the pregnancy status was recorded."/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-date-recorded-extension"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.extension:extensionPregnancyStatusDeterminationDate">
+            <path value="Observation.extension"/>
+            <sliceName value="extensionPregnancyStatusDeterminationDate"/>
+            <short value="Pregnancy Status Determination Date"/>
+            <definition value="The date the pregnancy status was determined."/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-date-determined-extension"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.code">
+            <path value="Observation.code"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://loinc.org"/>
+                    <code value="82810-3"/>
+                </coding>
+            </patternCodeableConcept>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.subject">
+            <path value="Observation.subject"/>
+            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.effective[x]">
+            <path value="Observation.effective[x]"/>
+            <short value="Pregnancy status date range"/>
+            <definition value="Use the effectiveTime to indicate the date range over which the patient was pregnant/possibly pregnant/not pregnant/unknown."/>
+            <type>
+                <code value="Period"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.value[x]">
+            <path value="Observation.value[x]"/>
+            <short value="Pregnancy Status"/>
+            <definition value="Represents the pregnancy status - whether the patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range."/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <mustSupport value="true"/>
+            <binding>
+                <strength value="extensible"/>
+                <description value="Defines the status of pregnancy."/>
+                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-pregnancy-status"/>
+            </binding>
+        </element>
+        <element id="Observation.method">
+            <path value="Observation.method"/>
+            <short value="Pregnancy status determination method"/>
+            <definition value="Represents the method of determination of pregnancy status."/>
+            <mustSupport value="true"/>
+            <binding>
+                <strength value="extensible"/>
+                <description value="The method of determination of the pregnancy status."/>
+                <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.9.80"/>
+            </binding>
+        </element>
+        <element id="Observation.component">
+            <path value="Observation.component"/>
+            <slicing>
+                <discriminator>
+                    <type value="type"/>
+                    <path value="value"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.component:sliceEstimatedGestationalAgeOfPregnancy">
+            <path value="Observation.component"/>
+            <sliceName value="sliceEstimatedGestationalAgeOfPregnancy"/>
+            <short value="Estimated Gestational Age of Pregnancy"/>
+            <definition value="Represents the estimated gestational age of the pregnancy (in contrast to the gestational age at birth), beginning from the time of fertilization. The gestational age determination method is contained in code and the gestational age determination date is contained in the Determination Date Extension. Although gestational age is typically recorded in weeks plus days (e.g., 10 weeks and 3 days), the data type does not allow for mixed units. The gestational age must be represented in days. For example, 10 weeks and 3 days would be represented with 73 days."/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.component:sliceEstimatedGestationalAgeOfPregnancy.extension">
+            <path value="Observation.component.extension"/>
+            <short value="Estimated gestational age of pregnancy determination date."/>
+            <definition value="Represents the date on which the estimated gestational age of pregnancy was determined."/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-date-determined-extension"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.component:sliceEstimatedGestationalAgeOfPregnancy.code">
+            <path value="Observation.component.code"/>
+            <short value="Estimated Gestational Age code"/>
+            <definition value="Describes that this component contains the estimated gestational age and (if known) method of that estimation."/>
+            <comment value="If method of determination is known, it is included in the code chosen, if the method of determination is not known, use code 11884-4 - Gestational age Estimated."/>
+            <mustSupport value="true"/>
+            <binding>
+                <strength value="extensible"/>
+                <description value="This value set contains codes to describe that the component in which they are used represents the estimated gestational age. If the method of determination by which the gestational age was estimated is known it is included in the code."/>
+                <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.9.82"/>
+            </binding>
+        </element>
+        <element id="Observation.component:sliceEstimatedGestationalAgeOfPregnancy.value[x]">
+            <path value="Observation.component.value[x]"/>
+            <short value="Estimated gestational age (days)"/>
+            <definition value="Represents the estimated gestational age of the pregnancy (in contrast to the gestational age at birth), beginning from the time of fertilization."/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="Quantity"/>
+            </type>
+            <patternQuantity>
+                <unit value="d"/>
+            </patternQuantity>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.component:sliceEstimatedDateOfDelivery">
+            <path value="Observation.component"/>
+            <sliceName value="sliceEstimatedDateOfDelivery"/>
+            <short value="Estimated Date of Delivery (EDD)"/>
+            <definition value="Represents the anticipated date when a woman will give birth. Set the code element to the appropriate value to allow recording of the estimated delivery date (EDD) determination method. The EDD determination date is contained in the Determination Date Extension.&#xA;If method of determination is known, it is included in the code chosen, if the method of determination is not known, use code 11778-8 - Delivery Date estimated (no method specified)."/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.component:sliceEstimatedDateOfDelivery.extension">
+            <path value="Observation.component.extension"/>
+            <short value="Estimated date of delivery (EDD) determination date."/>
+            <definition value="Represents the date on which the estimated date of delivery (EDD) was determined."/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-date-determined-extension"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.component:sliceEstimatedDateOfDelivery.code">
+            <path value="Observation.component.code"/>
+            <short value="Estimated Date of Delivery code"/>
+            <definition value="Describes that this component contains the estimated date of delivery and (if known) method of that estimation."/>
+            <comment value="If method of determination is known, it is included in the code chosen, if the method of determination is not known, use code 11778-8 - Delivery Date estimated (no method specified)."/>
+            <mustSupport value="true"/>
+            <binding>
+                <strength value="extensible"/>
+                <description value="This value set contains codes to describe that the component in which they are used represents the estimated date of delivery. If the method of determination by which the date was estimated is known it is included in the code."/>
+                <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.9.81"/>
+            </binding>
+        </element>
+        <element id="Observation.component:sliceEstimatedDateOfDelivery.value[x]">
+            <path value="Observation.component.value[x]"/>
+            <short value="Estimated delivery date (EDD)"/>
+            <definition value="Represents the anticipated date when a woman will give birth, the estimated date of delivery (EDD)."/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="dateTime"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+    </differential>
+</StructureDefinition>

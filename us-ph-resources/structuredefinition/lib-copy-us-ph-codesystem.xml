@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="us-ph-codesystem"/>
+    <meta>
+        <versionId value="5"/>
+        <lastUpdated value="2021-06-24T15:51:41.944+00:00"/>
+        <source value="#6ekt4wliQNTqrC5h"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem"/>
+    <version value="1.0.0"/>
+    <name value="USPublicHealthCodeSystem"/>
+    <title value="US Public Health CodeSystem"/>
+    <status value="active"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This profile describes the US Public Health CodeSystem."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="CodeSystem"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/CodeSystem"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="ValueSet.useContext:reportingContext">
+            <path value="ValueSet.useContext"/>
+            <sliceName value="reportingContext"/>
+            <min value="1"/>
+            <max value="1"/>
+        </element>
+        <element id="ValueSet.useContext:reportingContext.code">
+            <path value="ValueSet.useContext.code"/>
+            <min value="1"/>
+            <max value="1"/>
+            <fixedCoding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
+                <code value="reporting"/>
+                <display value="Reporting"/>
+            </fixedCoding>
+        </element>
+        <element id="ValueSet.useContext:reportingContext.value[x]">
+            <path value="ValueSet.useContext.value[x]"/>
+            <short value="value set useContext"/>
+            <definition value="The US Public Health use context of the value set."/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <fixedCodeableConcept>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/us-ph-usage-context"/>
+                    <code value="triggering"/>
+                    <display value="Triggering"/>
+                </coding>
+            </fixedCodeableConcept>
+        </element>
+        <element id="CodeSystem">
+            <path value="CodeSystem"/>
+            <short value="US Public Health CodeSystem"/>
+        </element>
+        <element id="CodeSystem.property">
+            <path value="CodeSystem.property"/>
+        </element>
+        <element id="CodeSystem.property.extension:binding">
+            <path value="CodeSystem.property.extension"/>
+            <sliceName value="binding"/>
+            <short value="What values are allowed"/>
+            <definition value="A reference to a CodeSystem or ValueSet that establishes the allowable values for a code system property."/>
+            <min value="0"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem-property-binding-extension"/>
+            </type>
+        </element>
+    </differential>
+</StructureDefinition>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="us-ph-supplemental-valueset-library"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2021-06-23T01:04:50.575+00:00"/>
+        <source value="#B5URa735RBTGxn67"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-valueset-library"/>
+    <version value="1.0.0"/>
+    <name value="USPublicHealthSupplementalValuesetLibrary"/>
+    <title value="US Public Health Supplemental Valueset Library"/>
+    <status value="active"/>
+    <date value="2020-11-11T00:00:00.000Z"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="Defines the library containing the US Public Health supplemental value sets."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <mapping>
+        <identity value="RCTC"/>
+        <name value="RCTC Spreadsheet"/>
+    </mapping>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Library"/>
+    <baseDefinition value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset-library"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Library">
+            <path value="Library"/>
+            <short value="US Public Health Supplemental ValueSet Library"/>
+        </element>
+        <element id="Library.identifier">
+            <path value="Library.identifier"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.identifier.system">
+            <path value="Library.identifier.system"/>
+            <short value="The namespace for Object Identifiers"/>
+            <definition value="Fixed to the namespace: urn:ietf:rfc:3986 for OIDs"/>
+            <min value="1"/>
+            <patternUri value="urn:ietf:rfc:3986"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.identifier.value">
+            <path value="Library.identifier.value"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.version">
+            <path value="Library.version"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.title">
+            <path value="Library.title"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.type">
+            <path value="Library.type"/>
+            <short value="asset-collection"/>
+            <definition value="Identifies the type of library. Constrained to a pattern that includes asset-collection."/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+                    <code value="asset-collection"/>
+                </coding>
+            </patternCodeableConcept>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.description">
+            <path value="Library.description"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.purpose">
+            <path value="Library.purpose"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.effectivePeriod">
+            <path value="Library.effectivePeriod"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.effectivePeriod.start">
+            <path value="Library.effectivePeriod.start"/>
+            <short value="Value Sets Effective Start Date"/>
+            <definition value="Value Sets Effective Start Date"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact">
+            <path value="Library.relatedArtifact"/>
+            <slicing>
+                <discriminator>
+                    <type value="profile"/>
+                    <path value="resource.resolve()"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <min value="1"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceUSPHSupplementalValueSet">
+            <path value="Library.relatedArtifact"/>
+            <sliceName value="sliceUSPHSupplementalValueSet"/>
+            <short value="US Public Health Supplemental Value Set"/>
+            <definition value="Reference to one of the US Public Health Supplemental value sets"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceUSPHSupplementalValueSet.type">
+            <path value="Library.relatedArtifact.type"/>
+            <short value="composed-of"/>
+            <definition value="The type of relationship to the related artifact. Fixed to composed-of."/>
+            <patternCode value="composed-of"/>
+        </element>
+        <element id="Library.relatedArtifact:sliceUSPHSupplementalValueSet.resource">
+            <path value="Library.relatedArtifact.resource"/>
+            <min value="1"/>
+            <type>
+                <code value="canonical"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-valueset"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+    </differential>
+</StructureDefinition>

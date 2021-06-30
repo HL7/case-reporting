@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-location"/>
     <meta>
-        <versionId value="8"/>
-        <lastUpdated value="2020-12-01T01:49:11.919+00:00"/>
-        <source value="#RJj0MIP811788lBu"/>
+        <versionId value="9"/>
+        <lastUpdated value="2021-06-30T04:51:53.886+00:00"/>
+        <source value="#OO1QG00ZHJ19eu5Y"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-location"/>
     <version value="1.0.0"/>
@@ -24,11 +24,6 @@
         <text value="United States of America"/>
     </jurisdiction>
     <fhirVersion value="4.0.1"/>
-    <mapping>
-        <identity value="CDA"/>
-        <name value="eICR Location profile CDA mapping"/>
-        <comment value="This table maps eICR Location profile to CDA"/>
-    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Location"/>
@@ -39,20 +34,12 @@
             <path value="Location"/>
             <short value="eICR Location"/>
             <definition value="The location/facility in which care was provided when the case was triggered."/>
-            <mustSupport value="false"/>
-            <isModifier value="false"/>
         </element>
         <element id="Location.identifier">
             <path value="Location.identifier"/>
             <short value="Facility ID Number"/>
             <definition value="Facility ID Number. If avalable, the NPI Idenitifier SHALL be provided."/>
             <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="ClincalDocument/componentOf/encompassingEncounter/location/healthCareFacility/id"/>
-                <comment value="Facility ID Number"/>
-            </mapping>
         </element>
         <element id="Location.type">
             <path value="Location.type"/>
@@ -61,26 +48,15 @@
             <min value="1"/>
             <max value="*"/>
             <mustSupport value="true"/>
-            <isModifier value="false"/>
             <binding>
                 <strength value="extensible"/>
                 <description value="A role of a place that further classifies the setting (e.g., accident site, road side, work site, community location) in which services are delivered."/>
                 <valueSet value="http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType"/>
             </binding>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="ClincalDocument/componentOf/encompassingEncounter/location/healthCareFacility/code"/>
-                <comment value="Facility Type"/>
-            </mapping>
         </element>
         <element id="Location.address">
             <path value="Location.address"/>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="CDA"/>
-                <map value="ClincalDocument/componentOf/encompassingEncounter/location/healthCareFacility/location/addr"/>
-                <comment value="Facility Address"/>
-            </mapping>
         </element>
         <element id="Location.address.city">
             <path value="Location.address.city"/>

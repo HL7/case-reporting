@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="us-ph-survey-practitioner-group"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2021-06-21T04:46:45.537+00:00"/>
+        <source value="#JJXMOlpCukQNPBC0"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-survey-practitioner-group"/>
+    <version value="0.1.0"/>
+    <name value="USPublicHealthSurveyPractitionerGroup"/>
+    <title value="US Public Health Survey Practitioner Group"/>
+    <status value="draft"/>
+    <experimental value="false"/>
+    <date value="2019-09-01"/>
+    <publisher value="HL7 International - Public Health Work Group"/>
+    <contact>
+        <telecom>
+            <system value="url"/>
+            <value value="http://hl7.org/Special/committees/pher"/>
+        </telecom>
+    </contact>
+    <description value="Group Resource profile for specifying survey participant groups, research groups."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+        </coding>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Group"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Group"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Group">
+            <path value="Group"/>
+            <short value="US Public Health Survey Practitioner Group"/>
+            <definition value="Sets expectations for supported capabilities for Groups containing a list of practitioners who are to be surveyed by public health agencies."/>
+        </element>
+        <element id="Group.meta.lastUpdated">
+            <path value="Group.meta.lastUpdated"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.active">
+            <path value="Group.active"/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.type">
+            <path value="Group.type"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="code"/>
+            </type>
+            <fixedCode value="person"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.actual">
+            <path value="Group.actual"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="boolean"/>
+            </type>
+            <fixedBoolean value="true"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.name">
+            <path value="Group.name"/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.managingEntity">
+            <path value="Group.managingEntity"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.member">
+            <path value="Group.member"/>
+            <min value="0"/>
+            <max value="*"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.member.entity">
+            <path value="Group.member.entity"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.member.period">
+            <path value="Group.member.period"/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Group.member.inactive">
+            <path value="Group.member.inactive"/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+    </differential>
+</StructureDefinition>

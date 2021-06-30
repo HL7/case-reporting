@@ -3,14 +3,14 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-valueset"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2020-12-02T19:52:50.563+00:00"/>
-        <source value="#8aN5oHNgntQPPJN8"/>
+        <versionId value="5"/>
+        <lastUpdated value="2021-06-30T04:51:54.194+00:00"/>
+        <source value="#8KZqMr8cyrTc06l9"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset"/>
     <version value="1.0.0"/>
     <name value="USPublicHealthValueSet"/>
-    <title value="US Public Health Value Set"/>
+    <title value="US Public Health ValueSet"/>
     <status value="active"/>
     <publisher value="HL7 Public Health Work Group"/>
     <description value="This profile describes US Public Health value sets."/>
@@ -23,10 +23,6 @@
         <text value="United States of America"/>
     </jurisdiction>
     <fhirVersion value="4.0.1"/>
-    <mapping>
-        <identity value="RCTC"/>
-        <name value="RCTC Spreadsheet"/>
-    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="ValueSet"/>
@@ -35,6 +31,7 @@
     <differential>
         <element id="ValueSet">
             <path value="ValueSet"/>
+            <short value="US Public Health ValueSet"/>
         </element>
         <element id="ValueSet.extension">
             <path value="ValueSet.extension"/>
@@ -59,10 +56,6 @@
                 <profile value="http://hl7.org/fhir/StructureDefinition/valueset-steward"/>
             </type>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="RCTC"/>
-                <map value="Individual value set tab.Steward"/>
-            </mapping>
         </element>
         <element id="ValueSet.extension:extensionValueSetAuthor">
             <path value="ValueSet.extension"/>
@@ -76,10 +69,6 @@
                 <profile value="http://hl7.org/fhir/StructureDefinition/valueset-author"/>
             </type>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="RCTC"/>
-                <map value="Individual value set tab.Author"/>
-            </mapping>
         </element>
         <element id="ValueSet.identifier">
             <path value="ValueSet.identifier"/>
@@ -87,10 +76,6 @@
             <definition value="The identifier of the value set."/>
             <min value="0"/>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="RCTC"/>
-                <map value="Individual value set tab.OID"/>
-            </mapping>
         </element>
         <element id="ValueSet.name">
             <path value="ValueSet.name"/>
@@ -105,10 +90,6 @@
             <definition value="The title of the value set."/>
             <min value="1"/>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="RCTC"/>
-                <map value="Individual value set tab.name"/>
-            </mapping>
         </element>
         <element id="ValueSet.status">
             <path value="ValueSet.status"/>
@@ -116,10 +97,6 @@
             <definition value="The value set definition version."/>
             <min value="1"/>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="RCTC"/>
-                <map value="Individual value set tab.Definition Version"/>
-            </mapping>
         </element>
         <element id="ValueSet.description">
             <path value="ValueSet.description"/>
@@ -127,10 +104,6 @@
             <definition value="The value set definition (depending on source, could be a concatenation of the value set fields Clinical Focus, Data Element Scope, Inclusion Criteria, Exclusion Criteria, and Note)."/>
             <min value="1"/>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="RCTC"/>
-                <map value="Individual value set tab.Clinical Focus + Data Element Scope + Inclusion Criteria + Exclusion Criteria + Note"/>
-            </mapping>
         </element>
     </differential>
 </StructureDefinition>

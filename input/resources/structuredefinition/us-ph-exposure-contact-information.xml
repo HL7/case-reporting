@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-exposure-contact-information"/>
     <meta>
-        <versionId value="10"/>
-        <lastUpdated value="2021-06-09T05:18:37.804+00:00"/>
-        <source value="#77gY9N9VwH7eFbBx"/>
+        <versionId value="11"/>
+        <lastUpdated value="2021-06-30T04:51:53.768+00:00"/>
+        <source value="#WZKH57tDoGfEm9Eh"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-exposure-contact-information"/>
     <version value="1.0.0"/>
@@ -14,7 +14,7 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Observation profile represents potential patient exposure and contact information."/>
+    <description value="This Observation profile represents potential patient exposure and contact information.&#xA;&#xA;The type of exposure/contact is contained in Observation.code (environmental, activity, event, location, person, animal, etc.). If the exposure/contact is an entity (person, animal, location) then it is represented in Observation.focus which is a reference to a Patient, RelatedPerson, Location, Group, etc.. (An animal would be represented by a RelatedPerson that contains the Extension Practitioner Animal Species. Free text information about the exposure/contact can be recorded in Observation.valueString and the date or period of exposure is held in Observation.effective[x]. If an address where the exposure/contact took place is known then it can be contained in the address-extension.&#xA;&#xA;The following are some exposures that might be captured in this profile:&#xA;&#xA;* Environmental exposures&#xA;    * Living facilities&#xA;    * Work facilities&#xA;    * School facilities&#xA;* Contact exposures&#xA;    * Person&#xA;    * Animal&#xA;* Event Exposures&#xA;    * Sporting event&#xA;    * Rally&#xA;    * Wedding&#xA;    * Activity"/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -32,7 +32,7 @@
     <differential>
         <element id="Observation">
             <path value="Observation"/>
-            <short value="This profile represents patient exposure information."/>
+            <short value="US Public Health Exposure Contact Information"/>
             <definition value="This profile represents patient exposure information."/>
         </element>
         <element id="Observation.extension">
@@ -41,8 +41,9 @@
             <definition value="If an address where the exposure/contact took place is known then it can be contained in the address-extension."/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/address-extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-address-extension"/>
             </type>
+            <mustSupport value="true"/>
         </element>
         <element id="Observation.category">
             <path value="Observation.category"/>
@@ -55,6 +56,7 @@
                     <code value="EXPOS"/>
                 </coding>
             </patternCodeableConcept>
+            <mustSupport value="true"/>
         </element>
         <element id="Observation.code">
             <path value="Observation.code"/>
@@ -68,8 +70,9 @@
             <min value="1"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
             </type>
+            <mustSupport value="true"/>
         </element>
         <element id="Observation.focus">
             <path value="Observation.focus"/>

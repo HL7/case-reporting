@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="us-ph-tribal-affiliation-extension"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2021-06-21T07:20:01.217+00:00"/>
+        <source value="#K875HQepepKGN4se"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-tribal-affiliation-extension"/>
+    <version value="1.0.0"/>
+    <name value="USPublicHealthTribalAffiliationExtension"/>
+    <title value="US Public Health Tribal Affiliation Extension"/>
+    <status value="active"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This Extension profile represents an affiliated tribe name and whether or not the patient is an enrolled member"/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
+    <purpose value="Tribal affiliation of the patient"/>
+    <fhirVersion value="4.0.1"/>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <context>
+        <type value="element"/>
+        <expression value="Patient"/>
+    </context>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Extension">
+            <path value="Extension"/>
+            <short value="Tribal Affiliation Extension"/>
+            <definition value="Affiliated tribe name and whether or not the patient is an enrolled member"/>
+            <min value="0"/>
+            <max value="*"/>
+        </element>
+        <element id="Extension.extension:TribeName">
+            <path value="Extension.extension"/>
+            <sliceName value="TribeName"/>
+            <short value="Affiliated tribe name"/>
+            <definition value="Affiliated tribe name"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Extension.extension:TribeName.url">
+            <path value="Extension.extension.url"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="uri"/>
+            </type>
+            <fixedUri value="TribeName"/>
+        </element>
+        <element id="Extension.extension:TribeName.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="Coding"/>
+            </type>
+            <binding>
+                <strength value="required"/>
+                <valueSet value="http://terminology.hl7.org/ValueSet/v3-TribalEntityUS"/>
+            </binding>
+        </element>
+        <element id="Extension.extension:EnrolledTribeMember">
+            <path value="Extension.extension"/>
+            <sliceName value="EnrolledTribeMember"/>
+            <short value="Enrolled tribe member"/>
+            <definition value="Enrolled tribe member"/>
+            <min value="0"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Extension.extension:EnrolledTribeMember.url">
+            <path value="Extension.extension.url"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="uri"/>
+            </type>
+            <fixedUri value="EnrolledTribeMember"/>
+        </element>
+        <element id="Extension.extension:EnrolledTribeMember.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="boolean"/>
+            </type>
+        </element>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <min value="1"/>
+            <max value="1"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-tribal-affiliation-extension"/>
+        </element>
+        <element id="Extension.value[x]">
+            <path value="Extension.value[x]"/>
+            <min value="0"/>
+            <max value="0"/>
+        </element>
+    </differential>
+</StructureDefinition>

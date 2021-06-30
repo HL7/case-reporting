@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-pregnancy-status-observation"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2021-06-28T04:48:16.115+00:00"/>
-        <source value="#qHWGiKQ2Bs2pbn82"/>
+        <versionId value="3"/>
+        <lastUpdated value="2021-06-30T04:51:53.778+00:00"/>
+        <source value="#TGPaYHboG6tBw9tG"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-status-observation"/>
     <version value="1.0.0"/>
@@ -14,7 +14,7 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range."/>
+    <description value="This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range.&#xA;&#xA;This profile includes the determination method, determination date, and recorded date of the pregnancy status.&#xA;&#xA;Use the effectivePeriod to indicate the date range over which the patient was pregnant/possibly pregnant/not pregnant/unknown. To record the date that the pregnancy status was recorded, use the date-recorded-extension and to record the date on which the pregnancy status determination was made, use the date-determined-extension. If the effectivePeriod.end is not present it is assumed that the date range over which the pregnancy status is asserted is from effectivePeriod.start to the date in the date-recorded-extension. For example, if the effectivePeriod.start has been recorded as two months prior to the date contained in the date-recorded-extension, and there is no effectivePeriod.end recorded, no assumptions can be made about the pregnancy status after the date contained in the date-recorded-extension."/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -43,6 +43,7 @@
                 </discriminator>
                 <rules value="open"/>
             </slicing>
+            <mustSupport value="true"/>
         </element>
         <element id="Observation.extension:extensionPregnancyStatusRecordedDate">
             <path value="Observation.extension"/>
@@ -83,9 +84,9 @@
             <min value="1"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
             </type>
-            <mustSupport value="false"/>
+            <mustSupport value="true"/>
         </element>
         <element id="Observation.effective[x]">
             <path value="Observation.effective[x]"/>
@@ -130,6 +131,7 @@
                 </discriminator>
                 <rules value="open"/>
             </slicing>
+            <mustSupport value="true"/>
         </element>
         <element id="Observation.component:sliceEstimatedGestationalAgeOfPregnancy">
             <path value="Observation.component"/>
