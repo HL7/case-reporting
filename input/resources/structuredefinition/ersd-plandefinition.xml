@@ -106,6 +106,14 @@
             <definition value="When the &quot;start&quot; action should be triggered."/>
             <min value="1"/>
             <mustSupport value="true"/>
+             <constraint>
+                 <key value="epd-1"/>
+                 <severity value="error"/>
+                 <human value="The code value of the namedEventType SHALL be the same as the name element"/>
+                 <expression value="extension('http://hl7.org/fhir/us/StructureDefinition/us-ph-named-type-extension').exists() and extension('http://hl7.org/fhir/us/StructureDefinition/us-ph-named-type-extension').value = name"/>
+                 <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;name&quot;)])"/>
+                 <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+             </constraint>
         </element>
         <element id="PlanDefinition.action:encounterStart.trigger.extension">
             <path value="PlanDefinition.action.trigger.extension"/>

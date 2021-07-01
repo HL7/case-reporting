@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="476"/>
-        <lastUpdated value="2021-07-01T07:06:23.058+00:00"/>
-        <source value="#QM6vnuMhVDnM2d1X"/>
+        <versionId value="475"/>
+        <lastUpdated value="2021-07-01T03:25:30.926+00:00"/>
+        <source value="#APC6cYWmCodvmR8T"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.1.0"/>
@@ -1399,6 +1399,46 @@
         </resource>
         <resource>
             <reference>
+                <reference value="StructureDefinition/us-ph-computable-valueset"/>
+                <display value="US Public Health Computable ValueSet"/>
+            </reference>
+            <name value="US Public Health Computable ValueSet"/>
+            <description value="Defines a computable value set as one that SHALL have an expression-based definition (i.e. a value set defined intensionally using expressions of the code systems involved) and MAY have an expansion included. The expression-based definition SHALL be represented in only one of three ways; using the compose element, using the expression extension, or using the rules-text extension to provide a step-by-step process for expanding the value set definition"/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-public-health-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-computable-library"/>
+                <display value="US Public Health Computable Library"/>
+            </reference>
+            <name value="US Public Health Computable Library"/>
+            <description value="The computable library profile sets the minimum expectations for a computable CQL library."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-public-health-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-executable-library"/>
+                <display value="US Public Health Executable Library"/>
+            </reference>
+            <name value="US Public Health Executable Library"/>
+            <description value="This profile sets the minimum expectations for an executable CQL library. Specifically, the profile requires that the library contain one of ELM XML or JSON content, the compiled representation of the CQL logic."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-public-health-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-executable-valueset"/>
+                <display value="US Public Health Executable ValueSet"/>
+            </reference>
+            <name value="US Public Health Executable ValueSet"/>
+            <description value="Defines an executable value set as one that SHALL have an expansion included, as well as a usage warning indicating the expansion is a point-in-time snapshot and must be maintained over time for production usage."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-public-health-profiles"/>
+        </resource>
+        <resource>
+            <reference>
                 <reference value="StructureDefinition/us-ph-triggering-valueset"/>
                 <display value="US Public Health Triggering Value Set"/>
             </reference>
@@ -1761,16 +1801,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/us-ph-computable-library"/>
-                <display value="US Public Health Computable Library"/>
-            </reference>
-            <name value="US Public Health Computable Library"/>
-            <description value="The computable library profile sets the minimum expectations for a computable CQL library."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="StructureDefinition/us-ph-named-eventtype-extension"/>
                 <display value="US Public Health Named Event Type Extension"/>
             </reference>
@@ -1778,16 +1808,6 @@
             <description value="Indicates the types of named events to subscribe to from the EHR."/>
             <exampleBoolean value="false"/>
             <groupingId value="us-ph-extensions"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/us-ph-computable-valueset"/>
-                <display value="US Public Health Computable ValueSet"/>
-            </reference>
-            <name value="US Public Health Computable ValueSet"/>
-            <description value="Defines a computable value set as one that SHALL have an expression-based definition (i.e. a value set defined intensionally using expressions of the code systems involved) and MAY have an expansion included. The expression-based definition SHALL be represented in only one of three ways; using the compose element, using the expression extension, or using the rules-text extension to provide a step-by-step process for expanding the value set definition"/>
-            <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
         </resource>
         <resource>
             <reference>
@@ -1851,16 +1871,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/us-ph-executable-library"/>
-                <display value="US Public Health Executable Library"/>
-            </reference>
-            <name value="US Public Health Executable Library"/>
-            <description value="This profile sets the minimum expectations for an executable CQL library. Specifically, the profile requires that the library contain one of ELM XML or JSON content, the compiled representation of the CQL logic."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="StructureDefinition/us-ph-travel-history"/>
                 <display value="US Public Health Travel History"/>
             </reference>
@@ -1906,16 +1916,6 @@
             </reference>
             <name value="US Public Health Document Bundle"/>
             <description value="This Bundle profile represents a Public Health Document Bundle. It contains a US Public Health Composition."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/us-ph-executable-valueset"/>
-                <display value="US Public Health Executable ValueSet"/>
-            </reference>
-            <name value="US Public Health Executable ValueSet"/>
-            <description value="Defines an executable value set as one that SHALL have an expansion included, as well as a usage warning indicating the expansion is a point-in-time snapshot and must be maintained over time for production usage."/>
             <exampleBoolean value="false"/>
             <groupingId value="us-public-health-profiles"/>
         </resource>
@@ -2058,8 +2058,8 @@
                     <generation value="markdown"/>
                 </page>
                 <page>
-                    <nameUrl value="ersd_jurisdictions_codesystem_configuration.html"/>
-                    <title value="eRSD Jurisdictions CodeSystem Configuration"/>
+                    <nameUrl value="ersd_jurisdictions_codesystem_description.html"/>
+                    <title value="eRSD Jurisdictions CodeSystem Description"/>
                     <generation value="markdown"/>
                 </page>
                 <page>

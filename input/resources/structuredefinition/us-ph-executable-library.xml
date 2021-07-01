@@ -37,18 +37,52 @@
         </element>
         <element id="Library.relatedArtifact">
             <path value="Library.relatedArtifact"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="type"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <min value="0"/>
+            <max value="*"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Library.relatedArtifact.display">
+        <element id="Library.relatedArtifact:dependency">
+            <path value="Library.relatedArtifact"/>
+            <sliceName value="dependency"/>
+            <min value="0"/>
+            <max value="*"/>
+            <mustSupport value="false"/>
+        </element>
+        <element id="Library.relatedArtifact:dependency.type">
+            <path value="Library.relatedArtifact.type"/>
+            <short value="Required dependency"/>
+            <definition value="A required dependency of the measure, an included Library (other than the primary library), or a referenced CodeSystem or ValueSet."/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="code"/>
+            </type>
+            <fixedCode value="depends-on"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Library.relatedArtifact:dependency.display">
             <path value="Library.relatedArtifact.display"/>
-            <min value="1"/>
+            <min value="0"/>
             <max value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Library.relatedArtifact.url">
-            <path value="Library.relatedArtifact.url"/>
+        <element id="Library.relatedArtifact:dependency.resource">
+            <path value="Library.relatedArtifact.resource"/>
             <min value="1"/>
             <max value="1"/>
+            <type>
+                <code value="canonical"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/shareablelibrary"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+            </type>
             <mustSupport value="true"/>
         </element>
         <element id="Library.parameter">
