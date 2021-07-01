@@ -49,16 +49,19 @@
             </slicing>
             <mustSupport value="true"/>
         </element>
-        <element id="Bundle.entry:slicePublicHealthComposition/sliceEICRComposition">
+        <element id="Bundle.entry:sliceUSPublicHealthComposition">
             <path value="Bundle.entry"/>
-            <sliceName value="slicePublicHealthComposition/sliceEICRComposition"/>
+            <sliceName value="slicePublicHealthComposition"/>
+            <min value="1"/>
+            <max value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Bundle.entry:slicePublicHealthComposition/sliceEICRComposition.resource">
+        <element id="Bundle.entry:sliceUSPublicHealthComposition.resource">
             <path value="Bundle.entry.resource"/>
+            <min value="1"/>
             <type>
                 <code value="Resource"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
             </type>
             <mustSupport value="true"/>
         </element>
