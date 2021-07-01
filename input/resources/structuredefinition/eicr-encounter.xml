@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-encounter"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2021-06-30T03:49:26.837+00:00"/>
-        <source value="#QkePfP2yFYcYxDSA"/>
+        <versionId value="7"/>
+        <lastUpdated value="2021-07-01T02:45:19.307+00:00"/>
+        <source value="#v1c9he5vyhYPwlOt"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
     <version value="1.0.0"/>
@@ -14,7 +14,7 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Encounter profile represents the encounter related to the event.&#xA;&#xA;A trigger on an encounter diagnosis is indicated by the eICR Trigger Code Flag Extension in the diagnosis.&#xA;&#xA;Where a trigger occurs outside of an encounter set Encounter.class to &quot;PHC2237” | system=”2.16.840.1.114222.4.5.274” (External Encounter) and omit period, participant, location, and serviceProvider. In this case, the responsible provider and facility information is contained in the eICR Composition.author."/>
+    <description value="This Encounter profile represents the encounter related to the event. It is based on and further constrains the US Public Health Encounter profile.&#xA;&#xA;A trigger on an encounter diagnosis is indicated by the eICR Trigger Code Flag Extension in the diagnosis.&#xA;&#xA;Where a trigger occurs outside of an encounter set Encounter.class to &quot;PHC2237” | system=”2.16.840.1.114222.4.5.274” (External Encounter) and omit period, participant, location, and serviceProvider. In this case, the responsible provider and facility information is contained in the eICR Composition.author."/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -33,6 +33,13 @@
         <element id="Encounter">
             <path value="Encounter"/>
             <short value="eICR Encounter"/>
+        </element>
+        <element id="Encounter.identifier">
+            <path value="Encounter.identifier"/>
+            <max value="1"/>
+        </element>
+        <element id="Encounter.diagnosis">
+            <path value="Encounter.diagnosis"/>
         </element>
         <element id="Encounter.diagnosis.extension">
             <path value="Encounter.diagnosis.extension"/>
