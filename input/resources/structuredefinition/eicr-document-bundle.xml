@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-document-bundle"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2021-06-30T07:22:53.849+00:00"/>
-        <source value="#WUV2SWqz3ej775gd"/>
+        <versionId value="8"/>
+        <lastUpdated value="2021-07-01T03:11:27.945+00:00"/>
+        <source value="#tdJ8PxNKtSKCiaqV"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
     <version value="1.0.0"/>
@@ -32,28 +32,11 @@
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Bundle"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+    <baseDefinition value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-document-bundle"/>
     <derivation value="constraint"/>
     <differential>
         <element id="Bundle">
             <path value="Bundle"/>
-        </element>
-        <element id="Bundle.id">
-            <path value="Bundle.id"/>
-            <short value="eICR Document Bundle id"/>
-            <definition value="eICR Document Bundle id. This is equivalent to ClinicalDocument.id in CDA. The identifier of the contained Composition is equivalent to ClinicalDocument.setID in CDA and Composition.sliceExtensionVersionNumber is equivalent to ClinicalDocument.versionNumber in CDA."/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] ClinicalDocument.id"/>
-            </mapping>
-        </element>
-        <element id="Bundle.type">
-            <path value="Bundle.type"/>
-            <fixedCode value="document"/>
-            <mustSupport value="true"/>
         </element>
         <element id="Bundle.entry">
             <path value="Bundle.entry"/>
@@ -66,19 +49,16 @@
             </slicing>
             <mustSupport value="true"/>
         </element>
-        <element id="Bundle.entry:sliceEICRComposition">
+        <element id="Bundle.entry:slicePublicHealthComposition/sliceEICRComposition">
             <path value="Bundle.entry"/>
-            <sliceName value="sliceEICRComposition"/>
-            <min value="1"/>
-            <max value="1"/>
+            <sliceName value="slicePublicHealthComposition/sliceEICRComposition"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Bundle.entry:sliceEICRComposition.resource">
+        <element id="Bundle.entry:slicePublicHealthComposition/sliceEICRComposition.resource">
             <path value="Bundle.entry.resource"/>
-            <min value="1"/>
             <type>
                 <code value="Resource"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
             </type>
             <mustSupport value="true"/>
         </element>
