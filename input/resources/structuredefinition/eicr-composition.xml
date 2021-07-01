@@ -262,53 +262,6 @@
                 <comment value="History of Present Illness"/>
             </mapping>
         </element>
-        <element id="Composition.section:sliceReviewOfSystemsSection">
-            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
-                <valueString value="Section"/>
-            </extension>
-            <path value="Composition.section"/>
-            <sliceName value="sliceReviewOfSystemsSection"/>
-            <short value="Review of Systems Section"/>
-            <definition value="The Review of Systems Section contains a relevant collection of symptoms and functions systematically gathered by a clinician. It includes symptoms the patient is currently experiencing, some of which were not elicited during the history of present illness, as well as a potentially large number of pertinent negatives, for example, symptoms that the patient denied experiencing."/>
-            <min value="0"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Review of Systems Section"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceReviewOfSystemsSection.code">
-            <path value="Composition.section.code"/>
-            <short value="Review of Systems code"/>
-            <definition value="Review of Systems code"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://loinc.org"/>
-                    <code value="10187-3"/>
-                </coding>
-            </patternCodeableConcept>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Review of Systems Section/code"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:sliceReviewOfSystemsSection.text">
-            <path value="Composition.section.text"/>
-            <short value="Review of Systems narrative"/>
-            <definition value="Review of Systems narrative"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Review of Systems Section/text"/>
-                <comment value="Review of Systems"/>
-            </mapping>
-        </element>
         <element id="Composition.section:sliceProblemSection">
             <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
                 <valueString value="Section"/>
@@ -408,75 +361,6 @@
                 <map value="[eICR R2 STU2] Initial Case Report Trigger Code Problem Observation"/>
                 <comment value="Diagnosis Trigger"/>
             </mapping>
-        </element>
-        <element id="Composition.section:slicePastMedicalHistorySection">
-            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
-                <valueString value="Section"/>
-            </extension>
-            <path value="Composition.section"/>
-            <sliceName value="slicePastMedicalHistorySection"/>
-            <short value="Past Medical History Section"/>
-            <definition value="This section contains a record of the patient’s past complaints, problems, and diagnoses. It contains data from the patient’s past up to the patient’s current complaint or reason for seeking medical care."/>
-            <min value="0"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Past Medical History Section (V3)"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:slicePastMedicalHistorySection.code">
-            <path value="Composition.section.code"/>
-            <short value="Past Medical History Section code"/>
-            <definition value="Past Medical History Section code"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://loinc.org"/>
-                    <code value="11348-0"/>
-                </coding>
-            </patternCodeableConcept>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Past Medical History Section (V3)/code"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:slicePastMedicalHistorySection.text">
-            <path value="Composition.section.text"/>
-            <short value="Past Medical History Section narrative"/>
-            <definition value="Past Medical History Section narrative"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Past Medical History Section (V3)/text"/>
-            </mapping>
-        </element>
-        <element id="Composition.section:slicePastMedicalHistorySection.entry">
-            <path value="Composition.section.entry"/>
-            <slicing>
-                <discriminator>
-                    <type value="profile"/>
-                    <path value="resolve()"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Composition.section:slicePastMedicalHistorySection.entry:sliceUSCoreCondition">
-            <path value="Composition.section.entry"/>
-            <sliceName value="sliceUSCoreCondition"/>
-            <short value="US Core Condition entry"/>
-            <definition value="US Core Condition"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
         </element>
         <element id="Composition.section:sliceMedicationsAdministeredSection">
             <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
@@ -1468,59 +1352,6 @@
                 <map value="[eICR R2 STU2] Postpartum Status"/>
             </mapping>
         </element>
-        <element id="Composition.section:sliceReportabilityResponseInformationSection">
-            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
-                <valueString value="Section"/>
-            </extension>
-            <path value="Composition.section"/>
-            <sliceName value="sliceReportabilityResponseInformationSection"/>
-            <short value="Reportability Response Information Section (for post-processing only)"/>
-            <definition value="The Reportability Response Information Section contains information from a Reportability Response that was generated in response to this eICR.&#xA;&#xA;This section is to be used for the Public Health agency to receive the eICR with the RR included (after the RR has been created). This is need to help the PHA ingest the information. As part of the PHA's process they will put parts of the RR (the Reportability Response Information Section) into the eICR. This is useful for working with the surveillance vendors. All this work will be done within the internal data integration processes of the PHA. It is a placeholder so it can be used in the future. A number of surveillance systems need to include specific data that is not available until the eICR and RR are available inside of the receiving organization (PHA). This is important to ensure that they have a consistent, documented way of including the data."/>
-            <min value="0"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-        </element>
-        <element id="Composition.section:sliceReportabilityResponseInformationSection.code">
-            <path value="Composition.section.code"/>
-            <short value="Reportability response report Document Public health"/>
-            <definition value="Reportability response report Document Public health"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://loinc.org"/>
-                    <code value="88085-6"/>
-                </coding>
-            </patternCodeableConcept>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-        </element>
-        <element id="Composition.section:sliceReportabilityResponseInformationSection.text">
-            <path value="Composition.section.text"/>
-            <short value="Reportability Response Information Section narrative"/>
-            <definition value="Reportability Response Information Section narrative"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Composition.section:sliceReportabilityResponseInformationSection.entry">
-            <path value="Composition.section.entry"/>
-            <slicing>
-                <discriminator>
-                    <type value="profile"/>
-                    <path value="resolve()"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-        </element>
-        <element id="Composition.section:sliceReportabilityResponseInformationSection.entry:sliceReportabilityResponsePlanDefinition">
-            <path value="Composition.section.entry"/>
-            <sliceName value="sliceReportabilityResponsePlanDefinition"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
         <element id="Composition.section:sliceEmergencyOutbreakInformationSection">
             <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
                 <valueString value="Section"/>
@@ -1574,5 +1405,175 @@
             </type>
             <mustSupport value="true"/>
         </element>
+        <element id="Composition.section:slicePastMedicalHistorySection">
+            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+                <valueString value="Section"/>
+            </extension>
+            <path value="Composition.section"/>
+            <sliceName value="slicePastMedicalHistorySection"/>
+            <short value="Past Medical History Section"/>
+            <definition value="This section contains a record of the patient’s past complaints, problems, and diagnoses. It contains data from the patient’s past up to the patient’s current complaint or reason for seeking medical care."/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Past Medical History Section (V3)"/>
+            </mapping>
+        </element>
+        <element id="Composition.section:slicePastMedicalHistorySection.code">
+            <path value="Composition.section.code"/>
+            <short value="Past Medical History Section code"/>
+            <definition value="Past Medical History Section code"/>
+            <min value="1"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://loinc.org"/>
+                    <code value="11348-0"/>
+                </coding>
+            </patternCodeableConcept>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Past Medical History Section (V3)/code"/>
+            </mapping>
+        </element>
+        <element id="Composition.section:slicePastMedicalHistorySection.text">
+            <path value="Composition.section.text"/>
+            <short value="Past Medical History Section narrative"/>
+            <definition value="Past Medical History Section narrative"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Past Medical History Section (V3)/text"/>
+            </mapping>
+        </element>
+        <element id="Composition.section:slicePastMedicalHistorySection.entry">
+            <path value="Composition.section.entry"/>
+            <slicing>
+                <discriminator>
+                    <type value="profile"/>
+                    <path value="resolve()"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Composition.section:slicePastMedicalHistorySection.entry:sliceUSCoreCondition">
+            <path value="Composition.section.entry"/>
+            <sliceName value="sliceUSCoreCondition"/>
+            <short value="US Core Condition entry"/>
+            <definition value="US Core Condition"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"/>
+            </type>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Composition.section:sliceReviewOfSystemsSection">
+            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+                <valueString value="Section"/>
+            </extension>
+            <path value="Composition.section"/>
+            <sliceName value="sliceReviewOfSystemsSection"/>
+            <short value="Review of Systems Section"/>
+            <definition value="The Review of Systems Section contains a relevant collection of symptoms and functions systematically gathered by a clinician. It includes symptoms the patient is currently experiencing, some of which were not elicited during the history of present illness, as well as a potentially large number of pertinent negatives, for example, symptoms that the patient denied experiencing."/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Review of Systems Section"/>
+            </mapping>
+        </element>
+        <element id="Composition.section:sliceReviewOfSystemsSection.code">
+            <path value="Composition.section.code"/>
+            <short value="Review of Systems code"/>
+            <definition value="Review of Systems code"/>
+            <min value="1"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://loinc.org"/>
+                    <code value="10187-3"/>
+                </coding>
+            </patternCodeableConcept>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Review of Systems Section/code"/>
+            </mapping>
+        </element>
+        <element id="Composition.section:sliceReviewOfSystemsSection.text">
+            <path value="Composition.section.text"/>
+            <short value="Review of Systems narrative"/>
+            <definition value="Review of Systems narrative"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Review of Systems Section/text"/>
+                <comment value="Review of Systems"/>
+            </mapping>
+        </element>
+        <element id="Composition.section:sliceReportabilityResponseInformationSection">
+            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+                <valueString value="Section"/>
+            </extension>
+            <path value="Composition.section"/>
+            <sliceName value="sliceReportabilityResponseInformationSection"/>
+            <short value="Reportability Response Information Section (for post-processing only)"/>
+            <definition value="The Reportability Response Information Section contains information from a Reportability Response that was generated in response to this eICR.&#xA;&#xA;This section is to be used for the Public Health agency to receive the eICR with the RR included (after the RR has been created). This is need to help the PHA ingest the information. As part of the PHA's process they will put parts of the RR (the Reportability Response Information Section) into the eICR. This is useful for working with the surveillance vendors. All this work will be done within the internal data integration processes of the PHA. It is a placeholder so it can be used in the future. A number of surveillance systems need to include specific data that is not available until the eICR and RR are available inside of the receiving organization (PHA). This is important to ensure that they have a consistent, documented way of including the data."/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Composition.section:sliceReportabilityResponseInformationSection.code">
+            <path value="Composition.section.code"/>
+            <short value="Reportability response report Document Public health"/>
+            <definition value="Reportability response report Document Public health"/>
+            <min value="1"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://loinc.org"/>
+                    <code value="88085-6"/>
+                </coding>
+            </patternCodeableConcept>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Composition.section:sliceReportabilityResponseInformationSection.text">
+            <path value="Composition.section.text"/>
+            <short value="Reportability Response Information Section narrative"/>
+            <definition value="Reportability Response Information Section narrative"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Composition.section:sliceReportabilityResponseInformationSection.entry">
+            <path value="Composition.section.entry"/>
+            <slicing>
+                <discriminator>
+                    <type value="profile"/>
+                    <path value="resolve()"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+        </element>
+        <element id="Composition.section:sliceReportabilityResponseInformationSection.entry:sliceReportabilityResponsePlanDefinition">
+            <path value="Composition.section.entry"/>
+            <sliceName value="sliceReportabilityResponsePlanDefinition"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        
     </differential>
 </StructureDefinition>
