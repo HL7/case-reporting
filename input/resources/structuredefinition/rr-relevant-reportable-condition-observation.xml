@@ -2,11 +2,6 @@
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
     <id value="rr-relevant-reportable-condition-observation"/>
-    <meta>
-        <versionId value="8"/>
-        <lastUpdated value="2021-07-14T21:42:06.726+00:00"/>
-        <source value="#Bwc3MyiSrK65wsrd"/>
-    </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation"/>
     <version value="1.0.0"/>
     <name value="RRRelevantReportableConditionObservation"/>
@@ -40,12 +35,36 @@
         </element>
         <element id="Observation.code">
             <path value="Observation.code"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://snomed.info/sct"/>
-                    <code value="64572001"/>
-                </coding>
-            </patternCodeableConcept>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.code.coding">
+            <path value="Observation.code.coding"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="code"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.code.coding:codeSNOMED">
+            <path value="Observation.code.coding"/>
+            <sliceName value="codeSNOMED"/>
+            <patternCoding>
+                <system value="http://snomed.info/sct"/>
+                <code value="64572001"/>
+            </patternCoding>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.code.coding:codeLOINC">
+            <path value="Observation.code.coding"/>
+            <sliceName value="codeLOINC"/>
+            <patternCoding>
+                <system value="http://loinc.org"/>
+                <code value="75323-6"/>
+            </patternCoding>
+            <mustSupport value="true"/>
         </element>
         <element id="Observation.value[x]">
             <path value="Observation.value[x]"/>
