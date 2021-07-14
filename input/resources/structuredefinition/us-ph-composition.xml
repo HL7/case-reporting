@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-composition"/>
     <meta>
-        <versionId value="1"/>
-        <lastUpdated value="2021-06-28T04:03:10.754+00:00"/>
-        <source value="#wz57WKOSBXTn9Uv3"/>
+        <versionId value="4"/>
+        <lastUpdated value="2021-06-21T04:47:30.916+00:00"/>
+        <source value="#fHlCelefygBc1irK"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-composition"/>
     <version value="1.0.0"/>
@@ -55,6 +55,18 @@
             <type>
                 <code value="Extension"/>
                 <profile value="http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Composition.extension:sliceExtensionInformationRecipient">
+            <path value="Composition.extension"/>
+            <sliceName value="sliceExtensionInformationRecipient"/>
+            <short value="Information Recipient"/>
+            <min value="0"/>
+            <max value="*"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-information-recipient-extension"/>
             </type>
             <mustSupport value="true"/>
         </element>
