@@ -168,9 +168,42 @@
                 <rules value="open" />
             </slicing>
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection">
+        <element id="Composition.section:sliceRRSubjectSection">
             <path value="Composition.section" />
-            <sliceName value="sliceElectronicInitialCaseReportSection" />
+            <sliceName value="sliceRRSubjectSection" />
+            <short value="Reportability Response Subject Section" />
+            <definition value="This section contains the subject (short description) of the Reportability Response CDA document. This information can be used in a work queue or an email subject and gives a concise description of the determination of reportability. This section is present in the Reportability Response CDA document if the eICR document was processed and is not present if the eICR document was not processed. The narrative in this section is displayed first in the Reportability Response Document and consists of paragraphs containing the 'Subject:' heading and the subject text." />
+            <min value="0" />
+            <max value="1" />
+            <mustSupport value="true" />
+            <isModifier value="false" />
+        </element>
+        <element id="Composition.section:sliceRRSubjectSection.code">
+            <path value="Composition.section.code" />
+            <short value="Reportable condition response information and summary Document" />
+            <min value="1" />
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://loinc.org" />
+                    <code value="88084-9" />
+                </coding>
+            </patternCodeableConcept>
+            <mustSupport value="true" />
+            <isModifier value="false" />
+        </element>
+        <element id="Composition.section:sliceRRSubjectSection.text">
+            <path value="Composition.section.text" />
+            <short value="Electronic Initial Case Report Section narrative" />
+            <min value="1" />
+            <example>
+                <label value="General"/>
+                <valueString value="Public Health Reporting Document: one or more conditions are reportable, or may be reportable to public health."/>
+            </example>
+            <mustSupport value="true" />
+        </element>
+        <element id="Composition.section:sliceEICRSection">
+            <path value="Composition.section" />
+            <sliceName value="sliceEICRSection" />
             <short value="Electronic Initial Case Report Section" />
             <definition value="This section contains information about the eICR CDA document to which this document is a response." />
             <min value="1" />
@@ -178,7 +211,7 @@
             <mustSupport value="true" />
             <isModifier value="false" />
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.extension">
+        <element id="Composition.section:sliceEICRSection.extension">
             <path value="Composition.section.extension" />
             <slicing>
                 <discriminator>
@@ -188,7 +221,7 @@
                 <rules value="open" />
             </slicing>
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.extension:extensionEICRProcessingStatus">
+        <element id="Composition.section:sliceEICRSection.extension:extensionEICRProcessingStatus">
             <path value="Composition.section.extension" />
             <sliceName value="extensionEICRProcessingStatus" />
             <short value="eICR Processing Status" />
@@ -201,7 +234,7 @@
             </type>
             <mustSupport value="true" />
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.extension:extensionAlternatelyManuallyInitiatedEICR">
+        <element id="Composition.section:sliceEICRSection.extension:extensionAlternatelyManuallyInitiatedEICR">
             <path value="Composition.section.extension" />
             <sliceName value="extensionAlternatelyManuallyInitiatedEICR" />
             <short value="Alternately or Manually Initiated eICR" />
@@ -220,7 +253,7 @@
                 <comment value="No mapping for Alternately Initiation eICR in the current version of CDA RR" />
             </mapping>
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.extension:extensionEICRReceiptTime">
+        <element id="Composition.section:sliceEICRSection.extension:extensionEICRReceiptTime">
             <path value="Composition.section.extension" />
             <sliceName value="extensionEICRReceiptTime" />
             <short value="Date and time of eICR receipt" />
@@ -237,7 +270,7 @@
                 <map value="[RR R1 STU1] Received eICR Information/eICR External Document Reference/effectiveTime" />
             </mapping>
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.code">
+        <element id="Composition.section:sliceEICRSection.code">
             <path value="Composition.section.code" />
             <short value="Initial case report processing information Document" />
             <min value="1" />
@@ -250,13 +283,13 @@
             <mustSupport value="true" />
             <isModifier value="false" />
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.text">
+        <element id="Composition.section:sliceEICRSection.text">
             <path value="Composition.section.text" />
             <short value="Electronic Initial Case Report Section narrative" />
             <min value="1" />
             <mustSupport value="true" />
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.entry">
+        <element id="Composition.section:sliceEICRSection.entry">
             <path value="Composition.section.entry" />
             <slicing>
                 <discriminator>
@@ -267,7 +300,7 @@
             </slicing>
             <mustSupport value="true" />
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.entry:sliceEICRDocument">
+        <element id="Composition.section:sliceEICRSection.entry:sliceEICRDocument">
             <path value="Composition.section.entry" />
             <sliceName value="sliceEICRDocument" />
             <short value="Reference to eICR Document Bundle or eICR CDA document" />
@@ -275,7 +308,7 @@
                 value="Reference to eICR Document Bundle or eICR CDA document. Use identifier for eICR Document Bundle identifier 2. Use display for eICR file name (or other identifying string): recommended primarily for dealing with eICR error cases. In the case where an eICR document is unreadable for some reason, it is possible that the only identifying information is the eICR filename (or other identifying string)." />
             <mustSupport value="true" />
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.entry:sliceEICRDocument.type">
+        <element id="Composition.section:sliceEICRSection.entry:sliceEICRDocument.type">
             <path value="Composition.section.entry.type" />
             <min value="0" />
             <type>
@@ -285,15 +318,49 @@
             </type>
             <mustSupport value="true" />
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.entry:sliceEICRDocument.identifier">
+        <element id="Composition.section:sliceEICRSection.entry:sliceEICRDocument.identifier">
             <path value="Composition.section.entry.identifier" />
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.entry:sliceEICRDocument.display">
+        <element id="Composition.section:sliceEICRSection.entry:sliceEICRDocument.display">
             <path value="Composition.section.entry.display" />
             <short value="Filename of eICR" />
             <definition
                 value="The filename is recommended primarily for dealing with eICR error cases. In the case where an eICR document is unreadable for some reason, it is likely that the setId and versionNumber would be unavailable, and it is possible that the only identifying information is the eICR document filename." />
             <mustSupport value="true" />
         </element>
+        <element id="Composition.section:sliceRRSummarySection">
+            <path value="Composition.section" />
+            <sliceName value="sliceRRSummarySection" />
+            <short value="Reportability Response Subject Section" />
+            <definition value="This section contains the subject (short description) of the Reportability Response CDA document. This information can be used in a work queue or an email subject and gives a concise description of the determination of reportability. This section is present in the Reportability Response CDA document if the eICR document was processed and is not present if the eICR document was not processed. The narrative in this section is displayed first in the Reportability Response Document and consists of paragraphs containing the 'Subject:' heading and the subject text." />
+            <min value="0" />
+            <max value="1" />
+            <mustSupport value="true" />
+            <isModifier value="false" />
+        </element>
+        <element id="Composition.section:sliceRRSummarySection.code">
+            <path value="Composition.section.code" />
+            <short value="Reportable condition response information and summary Document" />
+            <min value="1" />
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://loinc.org" />
+                    <code value="88084-9" />
+                </coding>
+            </patternCodeableConcept>
+            <mustSupport value="true" />
+            <isModifier value="false" />
+        </element>
+        <element id="Composition.section:sliceRRSummarySection.text">
+            <path value="Composition.section.text" />
+            <short value="Electronic Initial Case Report Section narrative" />
+            <min value="1" />
+            <example>
+                <label value="General"/>
+                <valueString value="Public Health Reporting Document: one or more conditions are reportable, or may be reportable to public health."/>
+            </example>
+            <mustSupport value="true" />
+        </element>
+        
     </differential>
 </StructureDefinition>
