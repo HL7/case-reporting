@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="us-ph-supplemental-valueset-library"/>
-    <meta>
-        <versionId value="6"/>
-        <lastUpdated value="2021-07-07T01:48:59.042+00:00"/>
-        <source value="#UqdgRrCaUK8RJdi7"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-valueset-library"/>
+    <id value="ersd-supplemental-library"/>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-supplemental-library"/>
     <version value="1.0.0"/>
-    <name value="USPublicHealthSupplementalValueSetLibrary"/>
-    <title value="US Public Health Supplemental ValueSet Library"/>
+    <name value="ERSDSupplementalLibrary"/>
+    <title value="eRSD Supplemental Library"/>
     <status value="active"/>
-    <date value="2020-11-11T00:00:00.000Z"/>
+    <date value="2021-07-13T00:00:00.000Z"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="Defines the library containing the US Public Health supplemental value sets."/>
+    <description value="Defines the asset-collection library containing the eRSD supplemental assets."/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -27,12 +22,24 @@
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Library"/>
-    <baseDefinition value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset-library"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/shareablelibrary"/>
     <derivation value="constraint"/>
     <differential>
         <element id="Library">
             <path value="Library"/>
-            <short value="US Public Health Supplemental ValueSet Library"/>
+            <short value="eRSD Supplemental Library"/>
+        </element>
+        <element id="Library.type">
+            <path value="Library.type"/>
+            <short value="asset-collection"/>
+            <definition value="Constrains the Library's Type to asset-collection."/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+                    <code value="asset-collection"/>
+                </coding>
+            </patternCodeableConcept>
+            <mustSupport value="true"/>
         </element>
         <element id="Library.relatedArtifact">
             <path value="Library.relatedArtifact"/>
@@ -43,28 +50,28 @@
                 </discriminator>
                 <rules value="open"/>
             </slicing>
+            <mustSupport value="true"/>
             <min value="1"/>
         </element>
-        <element id="Library.relatedArtifact:sliceUSPHSupplementalValueSet">
-            <path value="Library.relatedArtifact"/>
-            <sliceName value="sliceUSPHSupplementalValueSet"/>
-            <short value="US Public Health Supplemental Value Set"/>
-            <definition value="Reference to one of the US Public Health Supplemental value sets"/>
+        <element id="Library.relatedArtifact:sliceJurisdictionsCodeSystem">
+            <path value="Bundle.entry"/>
+            <sliceName value="sliceJurisdictionsCodeSystem"/>
             <min value="1"/>
+            <max value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Library.relatedArtifact:sliceUSPHSupplementalValueSet.type">
+        <element id="Library.relatedArtifact:slicePlanDefinition.type">
             <path value="Library.relatedArtifact.type"/>
             <short value="composed-of"/>
             <definition value="The type of relationship to the related artifact. Fixed to composed-of."/>
             <patternCode value="composed-of"/>
         </element>
-        <element id="Library.relatedArtifact:sliceUSPHSupplementalValueSet.resource">
-            <path value="Library.relatedArtifact.resource"/>
+        <element id="Library.relatedArtifact:sliceJurisdictionsCodeSystem.resource">
+            <path value="Bundle.entry.resource"/>
             <min value="1"/>
             <type>
-                <code value="canonical"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-valueset"/>
+                <code value="Resource"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem"/>
             </type>
             <mustSupport value="true"/>
         </element>
