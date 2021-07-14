@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="483"/>
-        <lastUpdated value="2021-07-14T00:22:22.794+00:00"/>
-        <source value="#trtVXpg9QC1NUwrw"/>
+        <versionId value="488"/>
+        <lastUpdated value="2021-07-14T04:28:47.176+00:00"/>
+        <source value="#ufCjMJQsrmARaXR5"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.1.0"/>
@@ -58,9 +58,6 @@
         <version value="current"/>
     </dependsOn>
     <definition>
-        <grouping id="us-public-health-profiles">
-            <name value="US Public Health Profiles"/>
-        </grouping>
         <grouping id="eicr-profiles">
             <name value="eICR Profiles"/>
         </grouping>
@@ -70,6 +67,9 @@
         <grouping id="ersd-profiles-instances">
             <name value="eRSD Profiles/Instances"/>
         </grouping>
+        <grouping id="us-public-health-profiles">
+            <name value="US Public Health Profiles"/>
+        </grouping>
         <grouping id="transport-profiles">
             <name value="Transport Profiles"/>
         </grouping>
@@ -78,9 +78,6 @@
         </grouping>
         <grouping id="extensions">
             <name value="Extensions"/>
-        </grouping>
-        <grouping id="us-public-health-examples">
-            <name value="US Public Health Examples"/>
         </grouping>
         <grouping id="eicr-examples">
             <name value="eICR Examples"/>
@@ -96,6 +93,9 @@
         </grouping>
         <grouping id="transport-examples">
             <name value="Transport Examples"/>
+        </grouping>
+        <grouping id="us-public-health-examples">
+            <name value="US Public Health Examples"/>
         </grouping>
         <grouping id="capability-statements">
             <name value="Capability Statements"/>
@@ -2019,6 +2019,26 @@
             <description value="Supports the definition of expansion parameters for the ValueSet."/>
             <exampleBoolean value="false"/>
             <groupingId value="us-ph-extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-information-recipient-extension"/>
+                <display value="US Public Health Information Recipient Extension"/>
+            </reference>
+            <name value="US Public Health Information Recipient Extension"/>
+            <description value="This extension represents a US Public Health Information Recipient"/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-ph-extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-composition"/>
+                <display value="Reportability Response Composition"/>
+            </reference>
+            <name value="Reportability Response Composition"/>
+            <description value="This Composition profile represents the Reportability Response that will be created in response to an electronic Initial Case Report Composition."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="reportability-response-profiles"/>
         </resource>
         <page>
             <nameUrl value="index.html"/>

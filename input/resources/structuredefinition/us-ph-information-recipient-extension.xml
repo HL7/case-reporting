@@ -1,52 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<StructureDefinition xmlns="http://hl7.org/fhir">
-    <id value="us-ph-information-recipient-extension" />
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-information-recipient-extension" />
-    <version value="1.0.0" />
-    <name value="USPublicHealthInformationRecipientExtension" />
-    <title value="US Public Health Information Recipient Extension" />
-    <status value="active" />
-    <experimental value="false" />
-    <publisher value="HL7 International - Public Health Work Group" />
-    <description value="This extension represents a US Public Health Information Recipient" />
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="us-ph-information-recipient-extension"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2021-07-14T04:10:07.084+00:00"/>
+        <source value="#kFUR2Z4YbEedy1VZ"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-information-recipient-extension"/>
+    <version value="1.0.0"/>
+    <name value="USPublicHealthInformationRecipientExtension"/>
+    <title value="US Public Health Information Recipient Extension"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 International - Public Health Work Group"/>
+    <description value="This extension represents a US Public Health Information Recipient"/>
     <jurisdiction>
         <coding>
-            <system value="urn:iso:std:iso:3166" />
-            <code value="US" />
-            <display value="United States of America" />
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
         </coding>
-        <text value="United States of America" />
+        <text value="United States of America"/>
     </jurisdiction>
-    <fhirVersion value="4.0.1" />
-    <kind value="complex-type" />
-    <abstract value="false" />
+    <fhirVersion value="4.0.1"/>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
     <context>
         <type value="element"/>
         <expression value="Composition"/>
     </context>
-    <type value="Extension" />
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
-    <derivation value="constraint" />
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
     <differential>
         <element id="Extension">
-            <path value="Extension" />
+            <path value="Extension"/>
         </element>
         <element id="Extension.url">
-            <path value="Extension.url" />
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-information-recipient-extension" />
+            <path value="Extension.url"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-information-recipient-extension"/>
         </element>
         <element id="Extension.valueReference:valueReference">
-            <path value="Extension.valueReference" />
-            <sliceName value="valueReference" />
-            <min value="1" />
+            <path value="Extension.valueReference"/>
+            <sliceName value="valueReference"/>
+            <min value="1"/>
             <type>
-                <code value="Reference" />
-                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-practitionerrole" />
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization" />
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-practitionerrole"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
             </type>
-            <mustSupport value="true" />
+            <mustSupport value="true"/>
         </element>
     </differential>
 </StructureDefinition>

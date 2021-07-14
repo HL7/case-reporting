@@ -2,6 +2,11 @@
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
     <id value="rr-composition"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2021-07-14T04:28:27.131+00:00"/>
+        <source value="#ChzltraTysHzaPhp"/>
+    </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition"/>
     <version value="1.0.0"/>
     <name value="RRComposition"/>
@@ -195,14 +200,14 @@
             <isModifier value="false"/>
         </element>
         <element id="Composition.section:sliceElectronicInitialCaseReportSection.extension">
-        <path value="Composition.section.extension"/>
-        <slicing>
-            <discriminator>
-                <type value="value"/>
-                <path value="url"/>
-            </discriminator>
-            <rules value="open"/>
-        </slicing>
+            <path value="Composition.section.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
         </element>
         <element id="Composition.section:sliceElectronicInitialCaseReportSection.extension:extensionEICRProcessingStatus">
             <path value="Composition.section.extension"/>
@@ -296,6 +301,5 @@
             </type>
             <mustSupport value="true"/>
         </element>
-        
     </differential>
 </StructureDefinition>
