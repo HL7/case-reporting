@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-pregnancy-status-observation"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2021-06-30T07:53:12.797+00:00"/>
-        <source value="#UtDOzCpEEX8ZrAu7"/>
+        <versionId value="6"/>
+        <lastUpdated value="2021-07-14T00:05:03.846+00:00"/>
+        <source value="#ARGOMBGtPv0gwSNH"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-status-observation"/>
     <version value="1.0.0"/>
@@ -107,7 +107,7 @@
             <mustSupport value="true"/>
             <binding>
                 <strength value="extensible"/>
-                <description value="Defines the status of pregnancy."/>
+                <description value="Pregnancy Status"/>
                 <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-pregnancy-status"/>
             </binding>
         </element>
@@ -118,7 +118,7 @@
             <mustSupport value="true"/>
             <binding>
                 <strength value="extensible"/>
-                <description value="The method of determination of the pregnancy status."/>
+                <description value="Pregnancy Status Determination Method"/>
                 <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.9.80"/>
             </binding>
         </element>
@@ -153,13 +153,13 @@
         </element>
         <element id="Observation.component:sliceEstimatedGestationalAgeOfPregnancy.code">
             <path value="Observation.component.code"/>
-            <short value="Estimated Gestational Age code"/>
+            <short value="Estimated Gestational Age"/>
             <definition value="Describes that this component contains the estimated gestational age and (if known) method of that estimation."/>
             <comment value="If method of determination is known, it is included in the code chosen, if the method of determination is not known, use code 11884-4 - Gestational age Estimated."/>
             <mustSupport value="true"/>
             <binding>
                 <strength value="extensible"/>
-                <description value="This value set contains codes to describe that the component in which they are used represents the estimated gestational age. If the method of determination by which the gestational age was estimated is known it is included in the code."/>
+                <description value="Estimated Gestational Age Code Including Method"/>
                 <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.9.82"/>
             </binding>
         </element>
@@ -198,12 +198,11 @@
         <element id="Observation.component:sliceEstimatedDateOfDelivery.code">
             <path value="Observation.component.code"/>
             <short value="Estimated Date of Delivery code"/>
-            <definition value="Describes that this component contains the estimated date of delivery and (if known) method of that estimation."/>
-            <comment value="If method of determination is known, it is included in the code chosen, if the method of determination is not known, use code 11778-8 - Delivery Date estimated (no method specified)."/>
+            <definition value="Describes that this component contains the estimated date of delivery and (if known) method of that estimation. The value set contains codes to describe that the component in which they are used represents the estimated date of delivery. If the method of determination by which the date was estimated is known it is included in the code."/>
             <mustSupport value="true"/>
             <binding>
                 <strength value="extensible"/>
-                <description value="This value set contains codes to describe that the component in which they are used represents the estimated date of delivery. If the method of determination by which the date was estimated is known it is included in the code."/>
+                <description value="Estimated Date of Delivery Including Method"/>
                 <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.9.81"/>
             </binding>
         </element>
