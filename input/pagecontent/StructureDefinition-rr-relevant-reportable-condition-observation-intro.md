@@ -1,0 +1,2 @@
+Set dataAbsentReason='not-applicable' when the eICR is manually initiated or no reportable condition has been identified (e.g. when there is no rule met).
+Use valueCodeableConcept.text if there is no available condition code.

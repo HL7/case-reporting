@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="rr-relevant-reportable-condition-observation"/>
+    <meta>
+        <versionId value="8"/>
+        <lastUpdated value="2021-07-14T21:42:06.726+00:00"/>
+        <source value="#Bwc3MyiSrK65wsrd"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation"/>
+    <version value="1.0.0"/>
+    <name value="RRRelevantReportableConditionObservation"/>
+    <title value="RR Relevant Reportable Condition Observation"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This profile represents a relevant reportable condition. It contains one (if both the patient's home and the provider location have the same responsible agency) or more (if the patient's home and provider location have different responsible agencies) RR Reportability Information Observations. It may also contain external resources specific to the condition."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Observation"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Observation">
+            <path value="Observation"/>
+            <short value="RR Relevant Reportable Condition Observation"/>
+        </element>
+        <element id="Observation.status">
+            <path value="Observation.status"/>
+            <fixedCode value="final"/>
+        </element>
+        <element id="Observation.code">
+            <path value="Observation.code"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://snomed.info/sct"/>
+                    <code value="64572001"/>
+                </coding>
+                <coding>
+                    <system value="http://loinc.org"/>
+                    <code value="75323-6"/>
+                </coding>
+            </patternCodeableConcept>
+        </element>
+        <element id="Observation.value[x]">
+            <path value="Observation.value[x]"/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.value[x].coding">
+            <path value="Observation.value[x].coding"/>
+            <short value="The condition code shall be selected from SNOMED CT"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.value[x].text">
+            <path value="Observation.value[x].text"/>
+            <short value="Use text if there is no available condition code"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.value[x].coding.system">
+            <path value="Observation.value[x].coding.system"/>
+            <fixedUri value="http://snomed.info/sct"/>
+        </element>
+        <element id="Observation.dataAbsentReason">
+            <path value="Observation.dataAbsentReason"/>
+            <short value="Use 'not-applicable' when eICR manually initiated or no reportable condition identified"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.hasMember">
+            <path value="Observation.hasMember"/>
+            <slicing>
+                <rules value="open"/>
+            </slicing>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.hasMember:sliceRRInformationObservation">
+            <path value="Observation.hasMember"/>
+            <sliceName value="sliceRRInformationObservation"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.hasMember:sliceExternalResource">
+            <path value="Observation.hasMember"/>
+            <sliceName value="sliceExternalResource"/>
+            <mustSupport value="true"/>
+        </element>
+    </differential>
+</StructureDefinition>
