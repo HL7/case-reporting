@@ -76,7 +76,7 @@ As of the most recent release of the eRSD specification, condition-specific valu
       "text": "Chlamydia"
     }
   }
-],
+]
 ```
 
 NOTE: In addition to the condition, we will need to know the category in order to be able to accurately determine which resource template to use to construct the rule expression.
