@@ -53,6 +53,18 @@
                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-information-recipient-extension"/>
             </type>
         </element>
+        <element id="Composition.type">
+            <path value="Composition.type"/>
+            <short value="Public Health Reportability Response Document"/>
+            <definition value="The type of this Composition is a Public Health Reportability Response Document"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://loinc.org"/>
+                    <code value="88085-6"/>
+                </coding>
+            </patternCodeableConcept>
+            <mustSupport value="true"/>
+        </element>
         <element id="Composition.subject">
             <path value="Composition.subject"/>
             <short value="Patient"/>
@@ -85,18 +97,6 @@
                 <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-practitionerrole"/>
             </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Composition.type">
-            <path value="Composition.type"/>
-            <short value="Public Health Reportability Response Document"/>
-            <definition value="The type of this Composition is a Public Health Reportability Response Document"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://loinc.org"/>
-                    <code value="88085-6"/>
-                </coding>
-            </patternCodeableConcept>
             <mustSupport value="true"/>
         </element>
         <element id="Composition.relatesTo">
