@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-relevant-reportable-condition-observation"/>
     <meta>
-        <versionId value="10"/>
-        <lastUpdated value="2021-07-14T22:52:35.321+00:00"/>
-        <source value="#ioDWXKIp7XdfmXT3"/>
+        <versionId value="14"/>
+        <lastUpdated value="2021-07-19T07:19:02.238+00:00"/>
+        <source value="#ygDLFdea1mYHonNh"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation"/>
     <version value="1.0.0"/>
@@ -109,15 +109,26 @@
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Observation.hasMember:sliceRRInformationObservation">
+        <element id="Observation.hasMember:sliceRerportabilityInformationObservation">
             <path value="Observation.hasMember"/>
-            <sliceName value="sliceRRInformationObservation"/>
+            <sliceName value="sliceRerportabilityInformationObservation"/>
+            <short value="Reportability information based on the PHA in which is located the patient's home, the provider facility, or both locations"/>
             <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation"/>
+            </type>
             <mustSupport value="true"/>
         </element>
         <element id="Observation.hasMember:sliceExternalResource">
             <path value="Observation.hasMember"/>
             <sliceName value="sliceExternalResource"/>
+            <short value="External resources pertaining to the condition"/>
+            <definition value="External resources such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources."/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-documentreference"/>
+            </type>
             <mustSupport value="true"/>
         </element>
     </differential>

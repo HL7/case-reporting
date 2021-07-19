@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-composition"/>
     <meta>
-        <versionId value="11"/>
-        <lastUpdated value="2021-07-14T22:36:38.857+00:00"/>
-        <source value="#CxnXha1QvBfnbJdq"/>
+        <versionId value="27"/>
+        <lastUpdated value="2021-07-19T07:14:01.270+00:00"/>
+        <source value="#hBXZEfvN4fcY7pwp"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition"/>
     <version value="1.0.0"/>
@@ -53,21 +53,39 @@
                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-information-recipient-extension"/>
             </type>
         </element>
-        <element id="Composition.extension:reportabilityResponsePriority">
-            <path value="Composition.extension"/>
-            <sliceName value="reportabilityResponsePriority"/>
-            <short value="Reportability Response Priority"/>
-            <definition value="Represents a priority for the reportability response Composition overall. It has been calculated from the highest priority of any included External Resources or the highest priority of included Conditions based on a separate, jurisdictionally developed priority list.&#xD;&#xA;This 'Composition'-level priority should be used for EHR workflow including notification, alerting, routing and queueing."/>
-            <max value="1"/>
+        <element id="Composition.subject">
+            <path value="Composition.subject"/>
+            <short value="Patient"/>
+            <min value="1"/>
             <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-priority-extension"/>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
             </type>
             <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[RR R1 STU1] Reportability Response Priority/value"/>
-            </mapping>
+        </element>
+        <element id="Composition.encounter">
+            <path value="Composition.encounter"/>
+            <short value="eICR Encounter"/>
+            <definition value="The encounter during which the eICR was triggered."/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Composition.author">
+            <path value="Composition.author"/>
+            <short value="Author"/>
+            <definition value="For the Reportability Response Composition, this will most likely be the software that is generating the response, though this will not always the be case."/>
+            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-practitionerrole"/>
+            </type>
+            <mustSupport value="true"/>
         </element>
         <element id="Composition.type">
             <path value="Composition.type"/>
@@ -80,15 +98,6 @@
                 </coding>
             </patternCodeableConcept>
             <mustSupport value="true"/>
-        </element>
-        <element id="Composition.encounter">
-            <path value="Composition.encounter"/>
-            <short value="eICR Encounter"/>
-        </element>
-        <element id="Composition.author">
-            <path value="Composition.author"/>
-            <short value="Author of the RR Composition"/>
-            <definition value="For the Reportability Response Composition, this will most likely be the software that is generating the response, though this will not always the be case."/>
         </element>
         <element id="Composition.relatesTo">
             <path value="Composition.relatesTo"/>
@@ -148,17 +157,51 @@
                 <rules value="open"/>
             </slicing>
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection">
+        <element id="Composition.section:sliceRRSubjectSection">
             <path value="Composition.section"/>
-            <sliceName value="sliceElectronicInitialCaseReportSection"/>
+            <sliceName value="sliceRRSubjectSection"/>
+            <short value="Reportability Response Subject Section"/>
+            <definition value="This section contains the subject (short description) of the Reportability Response Document. This information can be used in a work queue or an email subject and gives a concise description of the determination of reportability. This section is present in the Reportability Response Document if the eICR Document was processed and is not present if the eICR Document was not processed. The narrative in this section is displayed first in the Reportability Response Document and consists of paragraphs containing the 'Subject:' heading and the subject text."/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Composition.section:sliceRRSubjectSection.code">
+            <path value="Composition.section.code"/>
+            <short value="Reportable condition response information and summary Document"/>
+            <min value="1"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://loinc.org"/>
+                    <code value="88084-9"/>
+                </coding>
+            </patternCodeableConcept>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Composition.section:sliceRRSubjectSection.text">
+            <path value="Composition.section.text"/>
+            <short value="Reportability Response Subject Section"/>
+            <definition value="Contains the subject (short description) of the Reportability Response Document. This information can be used in a work queue or an email subject and gives a concise description of the determination of reportability."/>
+            <min value="1"/>
+            <example>
+                <label value="General"/>
+                <valueString value="Public Health Reporting Document: one or more conditions are reportable, or may be reportable to public health."/>
+            </example>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Composition.section:sliceEICRSection">
+            <path value="Composition.section"/>
+            <sliceName value="sliceEICRSection"/>
             <short value="Electronic Initial Case Report Section"/>
-            <definition value="This section contains information about the eICR CDA document to which this document is a response."/>
+            <definition value="This section contains information about the eICR Document to which this document is a response."/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
             <isModifier value="false"/>
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.extension">
+        <element id="Composition.section:sliceEICRSection.extension">
             <path value="Composition.section.extension"/>
             <slicing>
                 <discriminator>
@@ -168,7 +211,7 @@
                 <rules value="open"/>
             </slicing>
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.extension:extensionEICRProcessingStatus">
+        <element id="Composition.section:sliceEICRSection.extension:extensionEICRProcessingStatus">
             <path value="Composition.section.extension"/>
             <sliceName value="extensionEICRProcessingStatus"/>
             <short value="eICR Processing Status"/>
@@ -181,11 +224,11 @@
             </type>
             <mustSupport value="true"/>
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.extension:extensionAlternatelyManuallyInitiatedEICR">
+        <element id="Composition.section:sliceEICRSection.extension:extensionAlternatelyManuallyInitiatedEICR">
             <path value="Composition.section.extension"/>
             <sliceName value="extensionAlternatelyManuallyInitiatedEICR"/>
             <short value="Alternately or Manually Initiated eICR"/>
-            <definition value="The presence of this extension indicates whether or not the eICR CDA document for which this Reportability Response is a response, was either alternately or manually initiated. The eICR could also contain RCTC trigger codes (automatic trigger code initiation)."/>
+            <definition value="The presence of this extension indicates whether or not the eICR Document for which this Reportability Response is a response, was either alternately or manually initiated. The eICR could also contain trigger codes (automatic trigger code initiation)."/>
             <min value="0"/>
             <max value="1"/>
             <type>
@@ -199,7 +242,7 @@
                 <comment value="No mapping for Alternately Initiation eICR in the current version of CDA RR"/>
             </mapping>
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.extension:extensionEICRReceiptTime">
+        <element id="Composition.section:sliceEICRSection.extension:extensionEICRReceiptTime">
             <path value="Composition.section.extension"/>
             <sliceName value="extensionEICRReceiptTime"/>
             <short value="Date and time of eICR receipt"/>
@@ -216,7 +259,7 @@
                 <map value="[RR R1 STU1] Received eICR Information/eICR External Document Reference/effectiveTime"/>
             </mapping>
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.code">
+        <element id="Composition.section:sliceEICRSection.code">
             <path value="Composition.section.code"/>
             <short value="Initial case report processing information Document"/>
             <min value="1"/>
@@ -229,13 +272,13 @@
             <mustSupport value="true"/>
             <isModifier value="false"/>
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.text">
+        <element id="Composition.section:sliceEICRSection.text">
             <path value="Composition.section.text"/>
             <short value="Electronic Initial Case Report Section narrative"/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.entry">
+        <element id="Composition.section:sliceEICRSection.entry">
             <path value="Composition.section.entry"/>
             <slicing>
                 <discriminator>
@@ -246,7 +289,7 @@
             </slicing>
             <mustSupport value="true"/>
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.entry:sliceEICRDocument">
+        <element id="Composition.section:sliceEICRSection.entry:sliceEICRDocument">
             <path value="Composition.section.entry"/>
             <sliceName value="sliceEICRDocument"/>
             <short value="Reference to eICR Document Bundle or eICR CDA document"/>
@@ -254,17 +297,106 @@
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/DocumentReference"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"/>
             </type>
             <mustSupport value="true"/>
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.entry:sliceEICRDocument.identifier">
+        <element id="Composition.section:sliceEICRSection.entry:sliceEICRDocument.identifier">
             <path value="Composition.section.entry.identifier"/>
+            <short value="eICR Document Bundle identifier"/>
         </element>
-        <element id="Composition.section:sliceElectronicInitialCaseReportSection.entry:sliceEICRDocument.display">
+        <element id="Composition.section:sliceEICRSection.entry:sliceEICRDocument.display">
             <path value="Composition.section.entry.display"/>
             <short value="Filename of eICR"/>
             <definition value="The filename is recommended primarily for dealing with eICR error cases. In the case where an eICR document is unreadable for some reason, it is likely that the setId and versionNumber would be unavailable, and it is possible that the only identifying information is the eICR document filename."/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Composition.section:sliceRRSummarySection">
+            <path value="Composition.section"/>
+            <sliceName value="sliceRRSummarySection"/>
+            <short value="Reportability Response Summary Section"/>
+            <definition value="This section contains the Reportability Response Summary profile and the Reportability Response Priority profile.&#xA;&#xA;This section is present in the Reportability Response Document if the eICR Document was processed and is not present if the eICR Document was not processed.&#xA;&#xA;The narrative in this section is displayed last in the Reportability Response Document and consists of the following elements in the following order (see example included in IG):&#xA;&#xA;* Paragraphs containing the &quot;Summary:&quot; heading and the summary text&#xA;* A list containing external resources from the following categories (code specified in External Resources/code), in the order specified below:&#xA;    * Outbreak- or Cluster-related&#xA;    * Additional reporting needs&#xA;    * Additional detection and/or laboratory testing needs&#xA;    * Treatment and/or prevention&#xA;    * PHA contact information&#xA;* A list containing external resources from the category (code specified in External Resources/code):&#xA;    * Additional resources"/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Composition.section:sliceRRSummarySection.extension">
+            <path value="Composition.section.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+        </element>
+        <element id="Composition.section:sliceRRSummarySection.extension:extensionRRPriority">
+            <path value="Composition.section.extension"/>
+            <sliceName value="extensionRRPriority"/>
+            <short value="RR Priority"/>
+            <definition value="Represents a priority for the reportability response overall. It has been calculated from the highest priority of any included External Resources or the highest priority of included Conditions based on a separate, jurisdictionally developed priority list. This priority should be used for EHR workflow including notification, alerting, routing and queueing."/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-priority-extension"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Composition.section:sliceRRSummarySection.code">
+            <path value="Composition.section.code"/>
+            <short value="Document summary"/>
+            <min value="1"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://loinc.org"/>
+                    <code value="55112-7"/>
+                </coding>
+            </patternCodeableConcept>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Composition.section:sliceRRSummarySection.text">
+            <path value="Composition.section.text"/>
+            <short value="RR Summary Section narrative"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Composition.section:sliceRRSummarySection.entry">
+            <path value="Composition.section.entry"/>
+            <slicing>
+                <discriminator>
+                    <type value="profile"/>
+                    <path value="resolve()"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Composition.section:sliceRRSummarySection.entry:sliceRRSummary">
+            <path value="Composition.section.entry"/>
+            <sliceName value="sliceRRSummary"/>
+            <short value="RR Summary"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-summary"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Composition.section:sliceRRSummarySection.entry:sliceRRCondition">
+            <path value="Composition.section.entry"/>
+            <sliceName value="sliceRRCondition"/>
+            <short value="Relevent Reportable Condition"/>
+            <definition value="Contains one (if both the patient's home and the provider location have the same responsible agency) or more (if the patient's home and provider location have different responsible agencies) Reportability Information Observations. It may also contain external resources specific to the condition."/>
+            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation"/>
+            </type>
             <mustSupport value="true"/>
         </element>
     </differential>
