@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-relevant-reportable-condition-observation"/>
     <meta>
-        <versionId value="14"/>
-        <lastUpdated value="2021-07-19T07:19:02.238+00:00"/>
-        <source value="#ygDLFdea1mYHonNh"/>
+        <versionId value="17"/>
+        <lastUpdated value="2021-07-19T07:47:39.835+00:00"/>
+        <source value="#IM2nfI9iCGaR7whC"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation"/>
     <version value="1.0.0"/>
@@ -33,6 +33,26 @@
         <element id="Observation">
             <path value="Observation"/>
             <short value="RR Relevant Reportable Condition Observation"/>
+        </element>
+        <element id="Observation.extension">
+            <path value="Observation.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+        </element>
+        <element id="Observation.extension:externalResourceExtension">
+            <path value="Observation.extension"/>
+            <sliceName value="externalResourceExtension"/>
+            <short value="External resources pertaining to the condition"/>
+            <definition value="External resources such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources."/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension"/>
+            </type>
         </element>
         <element id="Observation.status">
             <path value="Observation.status"/>
@@ -117,17 +137,6 @@
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Observation.hasMember:sliceExternalResource">
-            <path value="Observation.hasMember"/>
-            <sliceName value="sliceExternalResource"/>
-            <short value="External resources pertaining to the condition"/>
-            <definition value="External resources such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources."/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-documentreference"/>
             </type>
             <mustSupport value="true"/>
         </element>
