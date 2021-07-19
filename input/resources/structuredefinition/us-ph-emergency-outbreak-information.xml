@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-emergency-outbreak-information"/>
     <meta>
-        <versionId value="12"/>
-        <lastUpdated value="2021-06-30T04:51:55.579+00:00"/>
-        <source value="#tF3BHLHHQ9jkJ5il"/>
+        <versionId value="15"/>
+        <lastUpdated value="2021-07-15T01:29:22.548+00:00"/>
+        <source value="#zgurUE4q5KesikeT"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-emergency-outbreak-information"/>
     <version value="1.0.0"/>
@@ -34,6 +34,11 @@
             <path value="Observation"/>
             <short value="US Public Health Outbreak Information"/>
             <definition value="This profile represents information that is required during a public health emergency/outbreak. This information will be recorded using a question/answer pattern with questions specific to the public health emergency/outbreak."/>
+        </element>
+        <element id="Observation.identifier">
+            <path value="Observation.identifier"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
         </element>
         <element id="Observation.code">
             <path value="Observation.code"/>
@@ -74,6 +79,14 @@
             </type>
             <type>
                 <code value="Period"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.hasMember">
+            <path value="Observation.hasMember"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-emergency-outbreak-information"/>
             </type>
             <mustSupport value="true"/>
         </element>
