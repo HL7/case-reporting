@@ -40,9 +40,7 @@ The audience for this document is developers and managers of Public Health Decis
 
 # Narrative Construction Guidance
 
-The following sections provide example templates and text for use in the generation of the narrative containined in
-[Communication.text](StructureDefinition-rr-communication-definitions.html#Communication.text)
-[Reportability Response Subject Section text](StructureDefinition-rr-composition-definitions.html#Composition.section:sliceRRSubjectSection.text), [Reportability Response Summary Section text](StructureDefinition-rr-composition-definitions.html#Composition.section:sliceRRSummarySection.text), and [Electronic Case Report Section text](StructureDefinition-rr-composition-definitions.html#Composition.section:sliceEICRSection.text). Most of the specifics of Reportabilty Response data and structure are found in the normative profiles of this implementation guide.
+The following sections provide example templates and text for use in the generation of the narrative containined in [Reportability Response Subject Section text](StructureDefinition-rr-composition-definitions.html#Composition.section:sliceRRSubjectSection.text), [Reportability Response Summary Section text](StructureDefinition-rr-composition-definitions.html#Composition.section:sliceRRSummarySection.text), and [Electronic Initial Case Report Section text](StructureDefinition-rr-composition-definitions.html#Composition.section:sliceEICRSection.text). Most of the specifics of Reportabilty Response data and structure are found in the normative profiles of this implementation guide.
 
 Normative guidance in the profiles includes data specification, order, and some aspects of structure and visualization.
 
@@ -81,7 +79,7 @@ Variables that represent coded data found elsewhere in the Reportabilty Response
 > The initial report was manually initiated by a provider. It was sent to: "&lt;[routing entity name](StructureDefinition-rr-routing-entity-organization.html#Organization.name)&gt;", "&lt;[routing entity name](StructureDefinition-rr-routing-entity-organization.html#Organization.name)&gt;".
 
 
-> *(include and repeat for each* [Relevant Reportable Condition Observation](StructureDefinition-rr-relevant-reportable-condition-observation.html) contained in the RR Communication). Each determiniation should be its own paragraph in the narrative.
+> *(include and repeat for each* [Relevant Reportable Condition Observation](StructureDefinition-rr-relevant-reportable-condition-observation.html) contained in the RR Composition). Each determiniation should be its own paragraph in the narrative.
 
 **(Reportable)**
 
@@ -274,7 +272,7 @@ In cases where the patient jurisdiction differs from the provider jurisdiction, 
 *(Always present)*
 
 > eICR Information:
-> An initial report for a possible reportable condition was received on "&lt;[eICR Receipt Time](StructureDefinition-rr-communication-definitions.html#Communication.payload:sliceEICRInformation.extension:extensionEICRReceiptTime)&gt;" with the file name "&lt;[eICR Document ID](StructureDefinition-eicr-document-bundle-definitions.html#Bundle.id)&gt;". The eICR was processed with a warning of: "&lt;[eICR Processing Status Reason](StructureDefinition-rr-eicr-processing-status-reason-observation-definitions.html#Observation)&gt;".
+> An initial report for a possible reportable condition was received on "&lt;[eICR Receipt Time](StructureDefinition-rr-composition-definitions.html#Composition.section:sliceEICRSection.extension:extensionEICRReceiptTime)&gt;" with the file name "&lt;[eICR Document ID](StructureDefinition-eicr-document-bundle-definitions.html#Bundle.id)&gt;". The eICR was processed with a warning of: "&lt;[eICR Processing Status Reason](StructureDefinition-rr-eicr-processing-status-reason-observation-definitions.html#Observation)&gt;".
 
 ### Reportability Response Summary
 
@@ -386,9 +384,11 @@ After displaying determination of reportability information above, then include 
 
 ## eICR Not Processed
 
-In the case where an eICR Composition was not processed (**eICR Processing Status**=eICR was not processed - error), the normative constraints in the Reportability Response Communication profile state that there must be narrative text populated from [Communication\[rr-communication\].payload\[sliceEICRInformation\]](StructureDefinition-rr-communication-definitions.html#Communication.payload:sliceEICRInformation) that contains the reason the file was not processed. Given the potential reasons (see codes from the [eICR Processing Status (eCR) Value Set (PHIN VADS)](http://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.8) value set) for an eICR Composition not to be processed, the following example may be used in the the corresponding Reportability Response [Communication.text](StructureDefinition-rr-communication-definitions.html#Communication.text):
+In the case where an eICR Composition was not processed (**eICR Processing Status**=eICR was not processed - error), the normative constraints in the Reportability Response Composition profile state that there must be narrative text populated from [Composition\[rr-composition\].section\[sliceEICRInformation\]](StructureDefinition-rr-composition-definitions.html#Composition.section:sliceEICRSection) that contains the reason the file was not processed.
 
-> An initial report for a possible reportable condition was received on "&lt;[date and time of eICR receipt](StructureDefinition-rr-communication-definitions.html#Communication.payload:sliceEICRInformation.extension:extensionEICRReceiptTime)&gt;" with the file name "&lt;[filename of eICR](StructureDefinition-rr-communication-definitions.html#Communication.payload:sliceEICRInformation.contentReference)&gt;" but it was not processed. "&lt;[eICR Processing Status Reason](StructureDefinition-rr-eicr-processing-status-reason-observation-definitions.html#Observation)&gt;"
+Given the potential reasons (see codes from the [eICR Processing Status (eCR) Value Set (PHIN VADS)](http://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.8) value set) for an eICR Composition not to be processed, the following example may be used in the the corresponding Reportability Response [Electronic Initial Case Report Section text](StructureDefinition-rr-composition-definitions.html#Composition.section:sliceEICRSection.text):
+
+> An initial report for a possible reportable condition was received on "&lt;[date and time of eICR receipt](StructureDefinition-rr-composition-definitions.html#Composition.section:sliceEICRSection.extension:extensionEICRReceiptTime)&gt;" with the file name "&lt;[filename of eICR](StructureDefinition-rr-communication-definitions.html#Communication.payload:sliceEICRInformation.contentReference)&gt;" but it was not processed. "&lt;[eICR Processing Status Reason](StructureDefinition-rr-eicr-processing-status-reason-observation-definitions.html#Observation)&gt;"
 
 If additional information about the specific error is available (e.g., file validator output, server logs), it can be found in [eICR Validation output](StructureDefinition-rr-eicr-processing-status-extension-definitions.html#Extension.extension:eICRValidationOutput.value[x]).
 

@@ -10,11 +10,11 @@ The following profiles have been defined for the FHIR Messaging Option:
 <ul>
   <li><a href="StructureDefinition-ecr-message-bundle.html">eCR Message Bundle</a></li>
   <li><a href="StructureDefinition-ecr-messageheader.html">eCR MessageHeader</a></li>
-  <li><a href="StructureDefinition-ecr-task.html">eCR Task</a></li>
 </ul>
 
-The first resource in the <a href="StructureDefinition-ecr-message-bundle.html">eCR Message Bundle</a> is the <a href="StructureDefinition-ecr-messageheader.html">eCR MessageHeader</a> and the focus of the <a href="StructureDefinition-ecr-messageheader.html">eCR MessageHeader</a> is the <a href="StructureDefinition-ecr-task.html">eCR Task</a>. The focus of the <a href="StructureDefinition-ecr-task.html">eCR Task</a> is either the <a href="StructureDefinition-eicr-document-bundle.html">eICR Document Bundle</a> or the <a href="StructureDefinition-rr-communication.html">RR Communication</a>.
+The first resource in the <a href="StructureDefinition-ecr-message-bundle.html">eCR Message Bundle</a> is the <a href="StructureDefinition-ecr-messageheader.html">eCR MessageHeader</a> and the focus of the <a href="StructureDefinition-ecr-messageheader.html">eCR MessageHeader</a> is the <a href="StructureDefinition-ecr-document-bundle.html">eCR Document Bundle</a>.
 
+The <a href="StructureDefinition-ecr-document-bundle.html">eCR Document Bundle</a> contains either the <a href="StructureDefinition-eicr-composition.html">eICR Composition</a> or the <a href="StructureDefinition-rr-composition.html">RR Composition</a>.
 
 ### Basic REST Option
 
@@ -24,7 +24,7 @@ The following profiles have been defined for the RESTful Submit Option:
 
 #### Profiles
 <ul>
-  <li><a href="StructureDefinition-ecr-task.html">eCR Task</a></li>
+  <li><a href="StructureDefinition-ecr-document-bundle.html">eCR Document Bundle</a></li>
 </ul>
 
-The focus of the <a href="StructureDefinition-ecr-task.html">eCR Task</a> is either the <a href="StructureDefinition-eicr-document-bundle.html">eICR Document Bundle</a> or the <a href="StructureDefinition-rr-communication.html">RR Communication</a>.
+The <a href="StructureDefinition-ecr-document-bundle.html">eCR Document Bundle</a> contains either the <a href="StructureDefinition-eicr-composition.html">eICR Composition</a> or the <a href="StructureDefinition-rr-composition.html">RR Composition</a>.

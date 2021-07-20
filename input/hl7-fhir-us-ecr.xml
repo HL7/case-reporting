@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="517"/>
-        <lastUpdated value="2021-07-19T23:57:54.105+00:00"/>
-        <source value="#1SITRbTxcWLzCgrI"/>
+        <versionId value="521"/>
+        <lastUpdated value="2021-07-20T00:32:31.624+00:00"/>
+        <source value="#fXPlL7FMHtVfwTai"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.1.0"/>
@@ -119,16 +119,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="CodeSystem/codesystem-task-businessStatus"/>
-                <display value="Code System Task Business Status"/>
-            </reference>
-            <name value="Code System Task Business Status"/>
-            <description value="This code system contains codes that describe the business status of a task."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="terminology-codesystems"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="Device/device-ecmo"/>
                 <display value="DisplayTest"/>
             </reference>
@@ -220,27 +210,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ecr-task"/>
-                <display value="ecr-task"/>
-            </reference>
-            <name value="eCR Task"/>
-            <description value="This Task profile represents the state of completion of the eCR activity."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="transport-profiles"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Task/task-ecr-ehr-requested-eicr"/>
-                <display value="task-ecr-ehr-requested-eicr"/>
-            </reference>
-            <name value="eCR Task Example: task-ecr-ehr-requested-eicr"/>
-            <description value="Example of eCR Task profile"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-task"/>
-            <groupingId value="transport-examples"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="StructureDefinition/eicr-composition"/>
                 <display value="Eicr_Composition"/>
             </reference>
@@ -328,11 +297,11 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/eicr-document-bundle"/>
-                <display value="Eicr_Document_Bundle"/>
+                <reference value="StructureDefinition/ecr-document-bundle"/>
+                <display value="eCR Document Bundle"/>
             </reference>
             <name value="eICR Document Bundle"/>
-            <description value="This Bundle profile represents an eICR Document Bundle. It contains the eICR Composition."/>
+            <description value="This Bundle profile represents an eCR Document Bundle. It contains either the eICR Composition or the RR Composition."/>
             <exampleBoolean value="false"/>
             <groupingId value="eicr-profiles"/>
         </resource>
@@ -1947,16 +1916,6 @@
             <description value="This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range.&#xA;&#xA;The subject of this profile is the mother.&#xA;&#xA;This profile includes the determination method, determination date, and recorded date of the pregnancy status.&#xA;&#xA;Use the effectivePeriod to indicate the date range over which the patient was pregnant/possibly pregnant/not pregnant/unknown. To record the date that the pregnancy status was recorded, use the date-recorded-extension and to record the date on which the pregnancy status determination was made, use the date-determined-extension. If the effectivePeriod.end is not present it is assumed that the date range over which the pregnancy status is asserted is from effectivePeriod.start to the date in the date-recorded-extension. For example, if the effectivePeriod.start has been recorded as two months prior to the date contained in the date-recorded-extension, and there is no effectivePeriod.end recorded, no assumptions can be made about the pregnancy status after the date contained in the date-recorded-extension."/>
             <exampleBoolean value="false"/>
             <groupingId value="us-public-health-profiles"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/valueset-ecr-task-businessstatus"/>
-                <display value="Value Set eCR Task BusinessStatus"/>
-            </reference>
-            <name value="Value Set eCR Task BusinessStatus"/>
-            <description value="This value set contains codes that describe the eCR task businessStatus."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="terminology-valuesets"/>
         </resource>
         <resource>
             <reference>
