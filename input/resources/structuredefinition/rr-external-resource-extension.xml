@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-external-resource-extension"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2021-07-19T07:48:37.819+00:00"/>
-        <source value="#jrq4FMrGO8vV2bGv"/>
+        <versionId value="4"/>
+        <lastUpdated value="2021-07-19T23:46:58.084+00:00"/>
+        <source value="#zhJEyBcFwE1BZniQ"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension"/>
     <version value="1.0.0"/>
@@ -14,7 +14,7 @@
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Extension profile represents an external resource (DocumentReference) pertaining to the condition such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources. "/>
+    <description value="This Extension profile represents an external resource (DocumentReference) pertaining to the condition such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources."/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -46,6 +46,10 @@
             <path value="Extension.value[x]"/>
             <short value="DocumentReference for an external resource"/>
             <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-documentreference"/>
+            </type>
         </element>
     </differential>
 </StructureDefinition>

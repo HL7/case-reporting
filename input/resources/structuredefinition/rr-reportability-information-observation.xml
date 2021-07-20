@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-reportability-information-observation"/>
     <meta>
-        <versionId value="15"/>
-        <lastUpdated value="2021-07-19T08:01:22.600+00:00"/>
-        <source value="#5h2DDlrX9cYCxVmz"/>
+        <versionId value="19"/>
+        <lastUpdated value="2021-07-19T23:51:30.542+00:00"/>
+        <source value="#04SqR7QnBRo5RNFG"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation"/>
     <version value="1.0.0"/>
@@ -41,21 +41,15 @@
             <mustSupport value="true"/>
             <isModifier value="false"/>
         </element>
-        <element id="Observation.extension:locationRelevance">
+        <element id="Observation.extension">
             <path value="Observation.extension"/>
-            <sliceName value="locationRelevance"/>
-            <min value="1"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-location-relevance-extension"/>
-            </type>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="eCR-CDA"/>
-                <map value="[RR R1 STU1] Reportability Information Organizer/code"/>
-                <comment value="Location Relevance"/>
-            </mapping>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
         </element>
         <element id="Observation.extension:determinationOfReportability">
             <path value="Observation.extension"/>
@@ -86,9 +80,21 @@
             </type>
             <mustSupport value="true"/>
         </element>
+        <element id="Observation.extension:externalResourceExtension">
+            <path value="Observation.extension"/>
+            <sliceName value="externalResourceExtension"/>
+            <short value="External resources pertaining to the condition"/>
+            <definition value="External resources such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources."/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
         <element id="Observation.status">
             <path value="Observation.status"/>
             <fixedCode value="final"/>
+            <mustSupport value="true"/>
         </element>
         <element id="Observation.code">
             <path value="Observation.code"/>
