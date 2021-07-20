@@ -1,6 +1,6 @@
 # Introduction
 ## Purpose
-The following is informative guidance on generating the narrative text of a Reportability Response Communication (Reportability Response). Through the Reportability Response, public health seeks to support bidirectional communication with clinical care for reportable conditions. The Reportability Response is designed to have one Reportability Response created for each electronic Initial Case Report (eICR) and to be shared with the clinical care organization that created that eICR. The Reportability Response can also be shared with a Public Health Agency(ies) [PHA(s)] that has relevant reporting requirements (a Responsible Pubic Health Agency) that wants to use it to monitor the reporting process and know what has been conveyed to clinical care organizations and other Public Health Agencies. Sharing the Reportability Response with clinical care will serve several functions, including to:
+The following is informative guidance on generating the narrative text of a Reportability Response Composition (Reportability Response). Through the Reportability Response, public health seeks to support bidirectional communication with clinical care for reportable conditions. The Reportability Response is designed to have one Reportability Response created for each electronic Initial Case Report (eICR) and to be shared with the clinical care organization that created that eICR. The Reportability Response can also be shared with a Public Health Agency(ies) [PHA(s)] that has relevant reporting requirements (a Responsible Pubic Health Agency) that wants to use it to monitor the reporting process and know what has been conveyed to clinical care organizations and other Public Health Agencies. Sharing the Reportability Response with clinical care will serve several functions, including to:
 
 - Communicate the reportability status, for the responsible PHA(s), of each condition included in the eICR
 - Identify who (a PHA or an intermediary) prepared the Reportability Response
@@ -165,7 +165,7 @@ Variables that represent coded data found elsewhere in the Reportabilty Response
 
 (repeat for each external resource template, based on External Resource Category order)
 
-> &lt;[External resource description](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.action.documentation.display)&gt; (&lt;[External resource link](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.action.documentation.url)&gt; - &lt;[External resource priority](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.action.documentation.extension:externalResourcePriority)&gt;)
+> &lt;[External resource description](StructureDefinition-rr-documentreference-definitions.html#DocumentReference.description)&gt; (&lt;[External resource link](StructureDefinition-rr-documentreference-definitions.html#DocumentReference.content.attachment.url)&gt; - &lt;[External resource priority](StructureDefinition-rr-documentreference-definitions.html#DocumentReference.extension:priority)&gt;)
 
 
 ### Common Combinations for Response in the Reportability Response 
@@ -379,7 +379,7 @@ After displaying determination of reportability information above, then include 
 
 *(repeat for each external resource template, based on External Resource Category order)*
 
-> &lt;[External resource description](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.action.documentation.display)&gt; (&lt;[External resource link](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.action.documentation.url)&gt; - &lt;[External resource priority](StructureDefinition-rr-relevant-reportable-condition-plandefinition-definitions.html#PlanDefinition.action.documentation.extension:externalResourcePriority)&gt;)
+> &lt;[External resource description](StructureDefinition-rr-documentreference-definitions.html#DocumentReference.description)&gt; (&lt;[External resource link](StructureDefinition-rr-documentreference-definitions.html#DocumentReference.content.attachment.url)&gt; - &lt;[External resource priority](StructureDefinition-rr-documentreference-definitions.html#DocumentReference.extension:priority)&gt;)
 
 
 ## eICR Not Processed
@@ -388,7 +388,7 @@ In the case where an eICR Composition was not processed (**eICR Processing Statu
 
 Given the potential reasons (see codes from the [eICR Processing Status (eCR) Value Set (PHIN VADS)](http://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.8) value set) for an eICR Composition not to be processed, the following example may be used in the the corresponding Reportability Response [Electronic Initial Case Report Section text](StructureDefinition-rr-composition-definitions.html#Composition.section:sliceEICRSection.text):
 
-> An initial report for a possible reportable condition was received on "&lt;[date and time of eICR receipt](StructureDefinition-rr-composition-definitions.html#Composition.section:sliceEICRSection.extension:extensionEICRReceiptTime)&gt;" with the file name "&lt;[filename of eICR](StructureDefinition-rr-communication-definitions.html#Communication.payload:sliceEICRInformation.contentReference)&gt;" but it was not processed. "&lt;[eICR Processing Status Reason](StructureDefinition-rr-eicr-processing-status-reason-observation-definitions.html#Observation)&gt;"
+> An initial report for a possible reportable condition was received on "&lt;[date and time of eICR receipt](StructureDefinition-rr-composition-definitions.html#Composition.section:sliceEICRSection.extension:extensionEICRReceiptTime)&gt;" with the file name "&lt;[filename of eICR](StructureDefinition-rr-composition-definitions.html#Composition.section:sliceEICRSection.entry:sliceEICRDocument.display)&gt;" but it was not processed. "&lt;[eICR Processing Status Reason](StructureDefinition-rr-eicr-processing-status-reason-observation-definitions.html#Observation)&gt;"
 
 If additional information about the specific error is available (e.g., file validator output, server logs), it can be found in [eICR Validation output](StructureDefinition-rr-eicr-processing-status-extension-definitions.html#Extension.extension:eICRValidationOutput.value[x]).
 
