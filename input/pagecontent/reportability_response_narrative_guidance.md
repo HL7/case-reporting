@@ -272,7 +272,7 @@ In cases where the patient jurisdiction differs from the provider jurisdiction, 
 *(Always present)*
 
 > eICR Information:
-> An initial report for a possible reportable condition was received on "&lt;[eICR Receipt Time](StructureDefinition-rr-composition-definitions.html#Composition.section:sliceEICRSection.extension:extensionEICRReceiptTime)&gt;" with the file name "&lt;[eICR Document ID](StructureDefinition-eicr-document-bundle-definitions.html#Bundle.id)&gt;". The eICR was processed with a warning of: "&lt;[eICR Processing Status Reason](StructureDefinition-rr-eicr-processing-status-reason-observation-definitions.html#Observation)&gt;".
+> An initial report for a possible reportable condition was received on "&lt;[eICR Receipt Time](StructureDefinition-rr-composition-definitions.html#Composition.section:sliceEICRSection.extension:extensionEICRReceiptTime)&gt;" with the file name "&lt;[eICR Document ID](StructureDefinition-ecr-document-bundle-definitions.html#Bundle.id)&gt;". The eICR was processed with a warning of: "&lt;[eICR Processing Status Reason](StructureDefinition-rr-eicr-processing-status-reason-observation-definitions.html#Observation)&gt;".
 
 ### Reportability Response Summary
 
