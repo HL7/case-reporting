@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="537"/>
-        <lastUpdated value="2021-07-21T06:15:21.832+00:00"/>
-        <source value="#nZgRfxmd9rhBlsIW"/>
+        <versionId value="539"/>
+        <lastUpdated value="2021-07-21T06:24:16.430+00:00"/>
+        <source value="#3wc8Awykp75nOB3s"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.1.0"/>
@@ -63,6 +63,9 @@
         </grouping>
         <grouping id="reportability-response-profiles">
             <name value="Reportability Response Profiles"/>
+        </grouping>
+        <grouping id="ecr-profiles">
+            <name value="eCR Profiles"/>
         </grouping>
         <grouping id="ersd-profiles-instances">
             <name value="eRSD Profiles/Instances"/>
@@ -167,7 +170,7 @@
             <name value="eCR DocumentReference"/>
             <description value="This profile represents external resources such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources."/>
             <exampleBoolean value="false"/>
-            <groupingId value="reportability-response-profiles"/>
+            <groupingId value="ecr-profiles"/>
         </resource>
         <resource>
             <reference>
@@ -313,10 +316,10 @@
                 <reference value="StructureDefinition/ecr-document-bundle"/>
                 <display value="eCR Document Bundle"/>
             </reference>
-            <name value="eICR Document Bundle"/>
-            <description value="This Bundle profile represents an eCR Document Bundle. It contains either the eICR Composition or the RR Composition."/>
+            <name value="eCR Document Bundle"/>
+            <description value="This Bundle profile represents an eCR Document Bundle. It contains either an eICR Composition or an RR Composition."/>
             <exampleBoolean value="false"/>
-            <groupingId value="eicr-profiles"/>
+            <groupingId value="ecr-profiles"/>
         </resource>
         <resource>
             <reference>
