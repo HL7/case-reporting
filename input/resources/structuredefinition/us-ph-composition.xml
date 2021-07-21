@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-composition"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2021-07-20T06:39:56.208+00:00"/>
-        <source value="#7p9B8JSc5U7iTgLF"/>
+        <versionId value="7"/>
+        <lastUpdated value="2021-07-21T04:51:27.541+00:00"/>
+        <source value="#gdKeLmb1xC60vBL0"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-composition"/>
     <version value="1.0.0"/>
@@ -137,7 +137,10 @@
         </element>
         <element id="Composition.custodian">
             <path value="Composition.custodian"/>
-            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
+            </type>
             <mustSupport value="true"/>
         </element>
     </differential>

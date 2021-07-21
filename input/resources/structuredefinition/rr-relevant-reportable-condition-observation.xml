@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-relevant-reportable-condition-observation"/>
     <meta>
-        <versionId value="18"/>
-        <lastUpdated value="2021-07-19T08:31:28.936+00:00"/>
-        <source value="#5e3uNkuB3vllv6cr"/>
+        <versionId value="20"/>
+        <lastUpdated value="2021-07-21T05:19:29.047+00:00"/>
+        <source value="#BNYlUtLCljWQCXdT"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation"/>
     <version value="1.0.0"/>
@@ -76,19 +76,20 @@
         <element id="Observation.code.coding:codeSNOMED">
             <path value="Observation.code.coding"/>
             <sliceName value="codeSNOMED"/>
-            <patternCoding>
+            <short value="Condition"/>
+            <fixedCoding>
                 <system value="http://snomed.info/sct"/>
                 <code value="64572001"/>
-            </patternCoding>
+            </fixedCoding>
             <mustSupport value="true"/>
         </element>
         <element id="Observation.code.coding:codeLOINC">
             <path value="Observation.code.coding"/>
             <sliceName value="codeLOINC"/>
-            <patternCoding>
+            <fixedCoding>
                 <system value="http://loinc.org"/>
                 <code value="75323-6"/>
-            </patternCoding>
+            </fixedCoding>
             <mustSupport value="true"/>
         </element>
         <element id="Observation.value[x]">
@@ -129,9 +130,9 @@
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Observation.hasMember:sliceRerportabilityInformationObservation">
+        <element id="Observation.hasMember:sliceReportabilityInformationObservation">
             <path value="Observation.hasMember"/>
-            <sliceName value="sliceRerportabilityInformationObservation"/>
+            <sliceName value="sliceReportabilityInformationObservation"/>
             <short value="Reportability information based on the PHA in which is located the patient's home, the provider facility, or both locations"/>
             <min value="1"/>
             <type>

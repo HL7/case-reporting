@@ -3,18 +3,21 @@
     xmlns="http://hl7.org/fhir">
     <id value="observation-rr-relevant-reportable-condition-observation"/>
     <meta>
-        <versionId value="1"/>
-        <lastUpdated value="2021-07-21T03:10:13.946+00:00"/>
-        <source value="#VAKy5I9g0TtGgj8y"/>
+        <versionId value="2"/>
+        <lastUpdated value="2021-07-21T05:22:32.058+00:00"/>
+        <source value="#oysCvLf2h2bkpm9w"/>
         <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation"/>
     </meta>
     <text>
         <status value="generated"/>
         <div
             xmlns="http://www.w3.org/1999/xhtml"> The RR Relevant Reportable Condition Observation does not contain narrative text. The information from this resource is parsed and contained in 
+            
             <a href="StructureDefinition-rr-composition-definitions.html#Composition.section:sliceRRSummarySection.text">Composition[rr-composition].section:sliceRRSummarySection.text</a> according to the guidlines set
             out here: 
+            
             <a href="reportability_response_narrative_guidance.html">Reportability Response Narrative Guidance</a>. 
+        
         </div>
     </text>
     <status value="final"/>
@@ -22,13 +25,12 @@
         <coding>
             <system value="http://snomed.info/sct"/>
             <code value="64572001"/>
-            <display value="Disease (disorder)"/>
         </coding>
         <coding>
             <system value="http://loinc.org"/>
             <code value="75323-6"/>
-            <display value="Condition"/>
         </coding>
+        <text value="Condition"/>
     </code>
     <valueCodeableConcept>
         <coding>
@@ -37,4 +39,7 @@
             <display value="Zika virus disease (disorder)"/>
         </coding>
     </valueCodeableConcept>
+    <hasMember>
+        <reference value="Observation/observation-rr-reportability-information-observation"/>
+    </hasMember>
 </Observation>
