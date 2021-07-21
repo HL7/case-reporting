@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composition
+    xmlns="http://hl7.org/fhir">
+    <id value="composition-rr-one-cond-one-pha"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2021-07-21T03:08:46.536+00:00"/>
+        <source value="#eHlfCXGv2CY5DKpk"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition"/>
+    </meta>
+    <extension url="http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber">
+        <valueString value="1"/>
+    </extension>
+    <identifier>
+        <system value="http://acme.org/identifiers"/>
+        <value value="RR12347"/>
+    </identifier>
+    <status value="final"/>
+    <type>
+        <coding>
+            <system value="http://loinc.org"/>
+            <code value="88085-6"/>
+            <display value="Reportability response report Document Public health"/>
+        </coding>
+    </type>
+    <subject>
+        <reference value="Patient/patient-ecr-eve-everywoman"/>
+        <display value="Eve Everywoman"/>
+    </subject>
+    <encounter>
+        <reference value="Encounter/encounter-eicr-eve-everywoman-outpatient"/>
+        <display value="Ambulatory Office Visit"/>
+    </encounter>
+    <date value="2018-07-19T04:09:06Z"/>
+    <author>
+        <reference value="Organization/organization-ecr-health-authority-west"/>
+        <display value="Health Authority West, 7777 Health Authority Drive, Ann Arbor MI, 99999"/>
+    </author>
+    <title value="Reportability Response - One Condition/One PHA example"/>
+    <custodian>
+        <reference value="Organization/organization-ecr-health-authority-west"/>
+        <display value="Health Authority West, 7777 Health Authority Drive, Ann Arbor MI, 99999"/>
+    </custodian>
+    <section>
+        <title value="Reportability Response Subject Section"/>
+        <code>
+            <coding>
+                <system value="http://loinc.org"/>
+                <code value="88084-9"/>
+                <display value="Reportable condition response information and summary Document"/>
+            </coding>
+        </code>
+        <text>
+            <status value="generated"/>
+            <div
+                xmlns="http://www.w3.org/1999/xhtml">
+                <p>Public Health Reporting Communication: one or more conditions are reportable, or may be reportable to public health</p>
+            </div>
+        </text>
+    </section>
+    <section>
+        <extension id="eicr-processing-status" url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-extension">
+            <extension url="eICRProcessingStatus">
+                <valueReference>
+                    <reference value="Observation/observation-rr-eicr-processing-status"/>
+                    <display value="eICR was processed - with a warning"/>
+                </valueReference>
+            </extension>
+            <extension url="eICRValidationOutput">
+                <valueAttachment>
+                    <contentType value="text/html"/>
+                    <data value="PGh0bWwgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiPg0KICAgICAgICAgIDxoZWFkPg0KICAgICAgICAgICAgPHRpdGxlPiBSZXN1bHRzIDwvdGl0bGU+DQogICAgICAgICAgICA8c3R5bGUgdHlwZT0idGV4dC9jc3MiPiA8L3N0eWxlPg0KICAgICAgICAgIDwvaGVhZD4NCiAgICAgICAgICA8Ym9keT4NCiAgICAgICAgICAgIDx0YWJsZT4NCiAgICAgICAgICAgICAgPHRoZWFkPg0KICAgICAgICAgICAgICAgIDx0cj4NCiAgICAgICAgICAgICAgICAgIDx0aD5TZXZlcml0eTwvdGg+DQogICAgICAgICAgICAgICAgICA8dGg+RGVzY3JpcHRpb248L3RoPg0KICAgICAgICAgICAgICAgICAgPHRoPkZpbGU8L3RoPg0KICAgICAgICAgICAgICAgICAgPHRoPkxvY2F0aW9uPC90aD4NCiAgICAgICAgICAgICAgICA8L3RyPg0KICAgICAgICAgICAgICA8L3RoZWFkPg0KICAgICAgICAgICAgICA8dGJvZHk+DQogICAgICAgICAgICAgICAgPHRyPg0KICAgICAgICAgICAgICAgICAgPHRkPmVycm9yPC90ZD4NCiAgICAgICAgICAgICAgICAgIDx0ZD5TSE9VTEQgY29udGFpbiB6ZXJvIG9yIG9uZSBbMC4uMV0gc2V0SWQgKENPTkY6MTA5OC0zMjc1MikuPC90ZD4NCiAgICAgICAgICAgICAgICAgIDx0ZD5DREFSMl9JR19QSENSX1IyX1JSX0QxXzIwMTdPQ1RfU0FNUExFLnhtbDwvdGQ+DQogICAgICAgICAgICAgICAgICA8dGQ+DQogICAgICAgICAgICAgICAgICAgIDxwPlN0YXJ0IGxpbmUgNDE1OjcwPC9wPg0KICAgICAgICAgICAgICAgICAgPC90ZD4NCiAgICAgICAgICAgICAgICA8L3RyPg0KICAgICAgICAgICAgICAgIDx0cj4NCiAgICAgICAgICAgICAgICAgIDx0ZD5lcnJvcjwvdGQ+DQogICAgICAgICAgICAgICAgICA8dGQ+U0hPVUxEIGNvbnRhaW4gemVybyBvciBvbmUgWzAuLjFdIHZlcnNpb25OdW1iZXIgKENPTkY6MTA5OC0zMjc1MykuPC90ZD4NCiAgICAgICAgICAgICAgICAgIDx0ZD5DREFSMl9JR19QSENSX1IyX1JSX0QxXzIwMTdPQ1RfU0FNUExFLnhtbDwvdGQ+DQogICAgICAgICAgICAgICAgICA8dGQ+DQogICAgICAgICAgICAgICAgICAgIDxwPlN0YXJ0IGxpbmUgNDE1OjcwPC9wPg0KICAgICAgICAgICAgICAgICAgPC90ZD4NCiAgICAgICAgICAgICAgICA8L3RyPg0KICAgICAgICAgICAgICA8L3Rib2R5Pg0KICAgICAgICAgICAgPC90YWJsZT4NCiAgICAgICAgICA8L2JvZHk+DQogICAgICAgIDwvaHRtbD4="/>
+                </valueAttachment>
+            </extension>
+        </extension>
+        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-receipt-time-extension">
+            <valueDateTime value="2018-07-18T04:09:06Z"/>
+        </extension>
+        <title value="Electronic Initial Case Report Section"/>
+        <code>
+            <coding>
+                <system value="http://loinc.org"/>
+                <code value="88082-3"/>
+                <display value="Initial case report processing information Document"/>
+            </coding>
+        </code>
+    </section>
+    <section>
+        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-priority-extension">
+            <valueCodeableConcept>
+                <coding>
+                    <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
+                    <code value="RRVS17"/>
+                    <display value="Immediate action required"/>
+                </coding>
+            </valueCodeableConcept>
+        </extension>
+        <title value="Reportability Response Summary Section"/>
+        <code>
+            <coding>
+                <system value="http://loinc.org"/>
+                <code value="55112-7"/>
+                <display value="Document summary"/>
+            </coding>
+        </code>
+        <entry>
+            <reference value="Observation/observation-rr-summary"/>
+            <display value="Reportability Response Summary"/>
+        </entry>
+        <entry>
+            <reference value="Observation/observation-rr-relevant-reportable-condition-observation"/>
+            <display value="Relevant reportable condition: Zika"/>
+        </entry>
+    </section>
+</Composition>
