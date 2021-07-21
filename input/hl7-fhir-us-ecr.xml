@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="532"/>
-        <lastUpdated value="2021-07-21T03:13:00.909+00:00"/>
-        <source value="#zYufQRmRv1pYcvBF"/>
+        <versionId value="537"/>
+        <lastUpdated value="2021-07-21T06:15:21.832+00:00"/>
+        <source value="#nZgRfxmd9rhBlsIW"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.1.0"/>
@@ -67,8 +67,11 @@
         <grouping id="ersd-profiles-instances">
             <name value="eRSD Profiles/Instances"/>
         </grouping>
-        <grouping id="us-public-health-profiles">
-            <name value="US Public Health Profiles"/>
+        <grouping id="us-ph-content">
+            <name value="US Public Health Content Profiles"/>
+        </grouping>
+        <grouping id="us-ph-architecture">
+            <name value="US Public Health Architecture Profiles"/>
         </grouping>
         <grouping id="transport-profiles">
             <name value="Transport Profiles"/>
@@ -155,6 +158,16 @@
             <description value="Example of Device resource (YMCA software)"/>
             <exampleBoolean value="true"/>
             <groupingId value="transport-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-documentreference"/>
+                <display value="eCR DocumentReference"/>
+            </reference>
+            <name value="eCR DocumentReference"/>
+            <description value="This profile represents external resources such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="reportability-response-profiles"/>
         </resource>
         <resource>
             <reference>
@@ -751,6 +764,15 @@
         </resource>
         <resource>
             <reference>
+                <reference value="Observation/observation-rr-summary"/></reference>
+            <name value="Observation RR Summary example"/>
+            <description value="Example of RR Summary profile."/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-summary"/>
+            <groupingId value="reportability-response-examples"/>
+        </resource>
+        <resource>
+            <reference>
                 <reference value="Observation/observation-odh-past-or-present-job-eve-everywoman"/>
                 <display value="observation-odh-past-or-present-job-eve-everywoman"/>
             </reference>
@@ -790,6 +812,24 @@
         </resource>
         <resource>
             <reference>
+                <reference value="Composition/composition-rr-one-cond-one-pha"/>
+                <display value="Reportability Response - One Condition/One PHA example"/>
+            </reference>
+            <name value="Reportability Response - One Condition/One PHA example"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Composition/composition-rr-single-single-html-validation-output"/>
+                <display value="Reportability Response - One Condition/One PHA with eICR Validation Output example"/>
+            </reference>
+            <name value="Reportability Response - One Condition/One PHA with eICR Validation Output example"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition"/>
+        </resource>
+        <resource>
+            <reference>
                 <reference value="StructureDefinition/rr-composition"/>
                 <display value="Reportability Response Composition"/>
             </reference>
@@ -797,6 +837,33 @@
             <description value="This Composition profile represents the Reportability Response that is created in response to an electronic Initial Case Report Composition."/>
             <exampleBoolean value="false"/>
             <groupingId value="reportability-response-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="DocumentReference/documentreference-zika-follow-up-pdf"/></reference>
+            <name value="RR DocumentReference example"/>
+            <description value="Example of RR DocumentReference profile"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-documentreference"/>
+            <groupingId value="reportability-response-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="DocumentReference/documentreference-zika-info-pdf"/></reference>
+            <name value="RR DocumentReference example"/>
+            <description value="Example of RR DocumentReference profile"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-documentreference"/>
+            <groupingId value="reportability-response-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="DocumentReference/documentreference-add-reporting-needs-pdf"/></reference>
+            <name value="RR DocumentReference example"/>
+            <description value="Example of RR DocumentReference profile"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-documentreference"/>
+            <groupingId value="reportability-response-examples"/>
         </resource>
         <resource>
             <reference>
@@ -862,6 +929,16 @@
         </resource>
         <resource>
             <reference>
+                <reference value="StructureDefinition/rr-external-resource-extension"/>
+                <display value="RR External Resource Extension"/>
+            </reference>
+            <name value="RR External Resource Extension"/>
+            <description value="This Extension profile represents an external resource (DocumentReference) pertaining to the condition such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="extensions"/>
+        </resource>
+        <resource>
+            <reference>
                 <reference value="StructureDefinition/rr-location-relevance-extension"/>
                 <display value="RR_Location_Relevance_Extension"/>
             </reference>
@@ -889,6 +966,34 @@
             <description value="This profile represents a relevant reportable condition. It contains one (if both the patient's home and the provider location have the same responsible agency) or more (if the patient's home and provider location have different responsible agencies) RR Reportability Information Observations. It may also contain external resources specific to the condition."/>
             <exampleBoolean value="false"/>
             <groupingId value="reportability-response-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-rr-relevant-reportable-condition-observation"/></reference>
+            <name value="RR Relevant Reportable Condition Observation Example"/>
+            <description value="Example of RR Relevant Reportable Condition Observation profile"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation"/>
+            <groupingId value="reportability-response-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-reportability-information-observation"/>
+                <display value="RR Reportability Information Observation"/>
+            </reference>
+            <name value="RR Reportability Information Observation"/>
+            <description value="This profile represents reportability information based on the PHA in which is located the patient's home, the provider facility, or both locations.&#xA;&#xA;It contains the Responsible Agency, the Rules Authoring Agency, and the Routing Entity.&#xA;&#xA;Also contained in this profile are the Determination of Reportability, Reporting Timeframe, and External Resources."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="reportability-response-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-rr-reportability-information-observation"/></reference>
+            <name value="RR Reportability Information Observation Example"/>
+            <description value="Example of RR Reportability Information Observation profile"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation"/>
+            <groupingId value="reportability-response-examples"/>
         </resource>
         <resource>
             <reference>
@@ -1079,6 +1184,14 @@
         </resource>
         <resource>
             <reference>
+                <reference value="Observation/observation-blood-pressure-eve-everywoman"/></reference>
+            <name value="US Core Vital Sign Observation example"/>
+            <description value="An example of the US Core Vital Sign Observation profile."/>
+            <exampleBoolean value="true"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
                 <reference value="Encounter/encounter-eicr-eve-everywoman-completed-inpatient"/>
                 <display value="encounter-eicr-eve-everywoman-completed-inpatient"/>
             </reference>
@@ -1223,7 +1336,7 @@
             <name value="US Public Health Alternative Expression Extension"/>
             <description value="This extension represents an US Public Health Alternative Expression"/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <resource>
             <reference>
@@ -1233,7 +1346,7 @@
             <name value="US Public Health Characteristics of Home Environment"/>
             <description value="This Observation profile represents characteristics of the patient's home environment.&#xA;&#xA;Such characteristics include, but are not limited to, type of residence (trailer, single family home, assisted living), living arrangement (e.g., alone, with parents), and housing status (e.g., evicted, homeless, home owner). Congregate living situations would be represented in this profile - such shared housing includes a broad range of settings, such as apartments, condominiums, student or faculty housing, national and state park staff housing, transitional housing, and domestic violence and abuse shelters."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-content"/>
         </resource>
         <resource>
             <reference>
@@ -1243,7 +1356,7 @@
             <name value="US Public Health CodeSystem"/>
             <description value="This profile describes the US Public Health CodeSystem."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <resource>
             <reference>
@@ -1263,7 +1376,7 @@
             <name value="US Public Health Composition"/>
             <description value="This Composition profile represents a public health composition."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <resource>
             <reference>
@@ -1273,7 +1386,7 @@
             <name value="US Public Health Computable Library"/>
             <description value="The computable library profile sets the minimum expectations for a computable CQL library."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <resource>
             <reference>
@@ -1283,7 +1396,7 @@
             <name value="US Public Health Computable ValueSet"/>
             <description value="Defines a computable value set as one that SHALL have an expression-based definition (i.e. a value set defined intensionally using expressions of the code systems involved) and MAY have an expansion included. The expression-based definition SHALL be represented in only one of three ways; using the compose element, using the expression extension, or using the rules-text extension to provide a step-by-step process for expanding the value set definition"/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <resource>
             <reference>
@@ -1293,7 +1406,7 @@
             <name value="US Public Health Condition"/>
             <description value="This Condition profile represents the signs, symptoms, and diagnoses related to a public health event.&#xA;&#xA;It is based on the **US Core Condition** profile with further restriction of a *Must Support* constraint on the **onset\[x]** and verificationStatus data elements.&#xA;&#xA;In the case of a condition being mistakenly entered into the system and later corrected:&#xA;* verificationStatus of 'entered-in-error' must be set"/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-content"/>
         </resource>
         <resource>
             <reference>
@@ -1303,7 +1416,7 @@
             <name value="US Public Health Content Bundle"/>
             <description value="Bundle Resource profile for exchanging public health messages, knowledge artifacts or content."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <resource>
             <reference>
@@ -1312,6 +1425,26 @@
             </reference>
             <name value="US Public Health Data Encrypted Extension"/>
             <description value="Indicates whether the data in the content bundle is encrypted or not."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-ph-extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-date-determined-extension"/>
+                <display value="USPublicHealthDateDeterminedExtension"/>
+            </reference>
+            <name value="US Public Health Date Determined Extension"/>
+            <description value="The date a status or observation was determined (date of determination)."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-ph-extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-date-recorded-extension"/>
+                <display value="USPublicHealthDateRecordedExtension"/>
+            </reference>
+            <name value="US Public Health Date Recorded Extension"/>
+            <description value="The date a status or observation was recorded (recorded date)."/>
             <exampleBoolean value="false"/>
             <groupingId value="us-ph-extensions"/>
         </resource>
@@ -1353,7 +1486,7 @@
             <name value="US Public Health Disability Status"/>
             <description value="This profile represents the Disability Element defined here: https://aspe.hhs.gov/basic-report/hhs-implementation-guidance-data-collection-standards-race-ethnicity-sex-primary-language-and-disability-status.&#xA;&#xA;The six item set of questions used on ACS and other major surveys to gauge disability is the data standard for survey questions on disability. Note the age thresholds for survey participants for the different disability questions.&#xA;&#xA;#### Data Standard for Disability Status&#xA;&#xA;1.     Are you deaf or do you have serious difficulty hearing?&#xA;2.     Are you blind or do you have serious difficulty seeing, even when wearing glasses?&#xA;3.     Because of a physical, mental, or emotional condition, do you have serious difficulty concentrating, remembering, or making decisions? (5 years old or older)&#xA;4.     Do you have serious difficulty walking or climbing stairs? (5 years old or older)&#xA;5.     Do you have difficulty dressing or bathing? (5 years old or older)&#xA;6.     Because of a physical, mental, or emotional condition, do you have difficulty doing errands alone such as visiting a doctor’s office or shopping? (15 years old or older)"/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-content"/>
         </resource>
         <resource>
             <reference>
@@ -1363,7 +1496,7 @@
             <name value="US Public Health Document Bundle"/>
             <description value="This Bundle profile represents a Public Health Document Bundle. It contains a US Public Health Composition."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <resource>
             <reference>
@@ -1373,7 +1506,7 @@
             <name value="US Public Health Emergency Outbreak Information"/>
             <description value="This profile represents information that is required during a public health emergency/outbreak. This information can be highly variable, so a generic structure has been chosen to represent it.&#xA;&#xA;This information will be recorded using a question/answer pattern with questions specific to the public health emergency/outbreak."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-content"/>
         </resource>
         <resource>
             <reference>
@@ -1392,7 +1525,7 @@
             <name value="US Public Health Encounter"/>
             <description value="This Encounter profile represents the encounter related to the event. It is based on the US Core Encounter."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-content"/>
         </resource>
         <resource>
             <reference>
@@ -1402,7 +1535,7 @@
             <name value="US Public Health Endpoint"/>
             <description value="This is the Endpoint Resource profile for the IG used to specify receivers addresses"/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-content"/>
         </resource>
         <resource>
             <reference>
@@ -1412,7 +1545,7 @@
             <name value="US Public Health Executable Library"/>
             <description value="This profile sets the minimum expectations for an executable CQL library. Specifically, the profile requires that the library contain one of ELM XML or JSON content, the compiled representation of the CQL logic."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <resource>
             <reference>
@@ -1422,7 +1555,7 @@
             <name value="US Public Health Executable ValueSet"/>
             <description value="Defines an executable value set as one that SHALL have an expansion included, as well as a usage warning indicating the expansion is a point-in-time snapshot and must be maintained over time for production usage."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <resource>
             <reference>
@@ -1442,7 +1575,7 @@
             <name value="US Public Health Exposure Contact Information"/>
             <description value="This Observation profile represents potential patient exposure and contact information.&#xA;&#xA;The type of exposure/contact is contained in Observation.code (environmental, activity, event, location, person, animal, etc.). If the exposure/contact is an entity (person, animal, location) then it is represented in Observation.focus which is a reference to a Patient, RelatedPerson, Location, Group, etc.. (An animal would be represented by a RelatedPerson that contains the Extension Practitioner Animal Species. Free text information about the exposure/contact can be recorded in Observation.valueString and the date or period of exposure is held in Observation.effective[x]. If an address where the exposure/contact took place is known then it can be contained in the address-extension.&#xA;&#xA;The following are some exposures that might be captured in this profile:&#xA;&#xA;* Environmental exposures&#xA;    * Living facilities&#xA;    * Work facilities&#xA;    * School facilities&#xA;* Contact exposures&#xA;    * Person&#xA;    * Animal&#xA;* Event Exposures&#xA;    * Sporting event&#xA;    * Rally&#xA;    * Wedding&#xA;    * Activity"/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-content"/>
         </resource>
         <resource>
             <reference>
@@ -1451,7 +1584,7 @@
             <description value="Example of US Public Health Exposure Contact Information (Football Game)"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-exposure-contact-information"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <resource>
             <reference>
@@ -1481,7 +1614,7 @@
             <name value="US Public Health Location"/>
             <description value="This Location profile represents the location/facility in which care was provided."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-content"/>
         </resource>
         <resource>
             <reference>
@@ -1531,7 +1664,7 @@
             <name value="US Public Health MessageHeader"/>
             <description value="This is the MessageHeader Resource profile for the IG."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <resource>
             <reference>
@@ -1551,7 +1684,7 @@
             <name value="US Public Health Organization"/>
             <description value="This Organization profile represents an organization involved in public health. It is based on the **US Core Organization** profile and establishes the core elements, extensions, vocabularies and value sets for representing organizations for public health."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-content"/>
         </resource>
         <resource>
             <reference>
@@ -1561,7 +1694,7 @@
             <name value="US Public Health Patient"/>
             <description value="This Patient profile represents a US Public Health Patient.&#xA;&#xA;It is based on the **US Core Patient** profile with further restrictions to allow masking of some data elements and the addition of the patient-genderIdentity extension.&#xA;&#xA;For ONC’s USCDI requirements, it adds Must Support constraints to the following:&#xA;&#xA;* contact detail (e.g. a telephone number or an email address)&#xA;* a communication language&#xA;* a race&#xA;* an ethnicity&#xA;* a birth sex"/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-content"/>
         </resource>
         <resource>
             <reference>
@@ -1571,7 +1704,7 @@
             <name value="US Public Health PlanDefinition"/>
             <description value="This profile describes the US Public Health PlanDefinition."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <resource>
             <reference>
@@ -1581,7 +1714,7 @@
             <name value="US Public Health Postpartum Status"/>
             <description value="This profile represents the postpartum status of a patient.&#xA;&#xA;If the profile is present, the patient is in the postpartum period and further information about the postpartum status is communicated by the code chosen.&#xA;&#xA;The postpartum period, also known as the puerperium, refers to the time after delivery when maternal physiological changes related to pregnancy return to the nonpregnant state. There is consensus that the postpartum period begins upon delivery of the infant. The end is less well defined but is often considered the six to eight weeks after delivery because the effects of pregnancy on many systems have largely returned to the pre-pregnancy state."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-content"/>
         </resource>
         <resource>
             <reference>
@@ -1600,7 +1733,17 @@
             <name value="US Public Health Practitioner Role"/>
             <description value="This PractitionerRole profile represents the roles and organizations of the practitioner.&#xA;&#xA;It is based on the **US Core PractitionerRole** profile with a further restriction of a mandatory **identifier** data element."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-content"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-pregnancy-outcome-observation"/>
+                <display value="USPublicHealthPregnancyOutcomeObservation"/>
+            </reference>
+            <name value="US Public Health Pregnancy Outcome Observation"/>
+            <description value="This profile represents a result of the pregnancy such as live birth, still birth, miscarriage, etc.&#xA;&#xA;The subject of this profile is the mother. The focus of this profile is the related Pregnancy Status Observation. &#xA;&#xA;The order born in the delivery, live born or fetal death (1st, 2nd, 3rd, 4th, 5th, 6th, 7th, etc.) is contained in Observation.component. All live births and fetal losses are included. If the pregnancy plurality is 1 then this value will also be 1.&#xA;&#xA;There will be one Pregnancy Outcome Observation for each fetus delivered live or dead at any time in the pregnancy, regardless of gestational age or if the fetuses were delivered at different dates in the pregnancy. All live births and fetal losses are included. The order born in the delivery, live born or fetal death is contained in Observation.component."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-ph-content"/>
         </resource>
         <resource>
             <reference>
@@ -1623,6 +1766,16 @@
         </resource>
         <resource>
             <reference>
+                <reference value="StructureDefinition/us-ph-pregnancy-status-observation"/>
+                <display value="USPublicHealthPregnancyStatusObservation"/>
+            </reference>
+            <name value="US Public Health Pregnancy Status Observation"/>
+            <description value="This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range.&#xA;&#xA;The subject of this profile is the mother.&#xA;&#xA;This profile includes the determination method, determination date, and recorded date of the pregnancy status.&#xA;&#xA;Use the effectivePeriod to indicate the date range over which the patient was pregnant/possibly pregnant/not pregnant/unknown. To record the date that the pregnancy status was recorded, use the date-recorded-extension and to record the date on which the pregnancy status determination was made, use the date-determined-extension. If the effectivePeriod.end is not present it is assumed that the date range over which the pregnancy status is asserted is from effectivePeriod.start to the date in the date-recorded-extension. For example, if the effectivePeriod.start has been recorded as two months prior to the date contained in the date-recorded-extension, and there is no effectivePeriod.end recorded, no assumptions can be made about the pregnancy status after the date contained in the date-recorded-extension."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-ph-content"/>
+        </resource>
+        <resource>
+            <reference>
                 <reference value="Observation/observation-pregnancy-status-eve-everywoman"/>
                 <display value="observation-pregnancy-status-eve-everywoman"/>
             </reference>
@@ -1640,7 +1793,7 @@
             <name value="US Public Health Reporting Bundle"/>
             <description value="Bundle Resource profile for exchanging one of public health messages, knowledge artifacts or content."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <resource>
             <reference>
@@ -1650,7 +1803,7 @@
             <name value="US Public Health Specification Bundle"/>
             <description value="This Bundle profile represents a US Public Health Specification Bundle."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <resource>
             <reference>
@@ -1671,7 +1824,7 @@
             <name value="US Public Health Supplemental Bundle"/>
             <description value="This Bundle profile represents a US Public Health Supplemental Bundle."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <resource>
             <reference>
@@ -1692,7 +1845,7 @@
             <name value="US Public Health Supplemental Value Set"/>
             <description value="This profile describes the US Public Health Supplemental value set."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <resource>
             <reference>
@@ -1713,7 +1866,7 @@
             <name value="US Public Health Supplemental Valueset Library"/>
             <description value="Defines the library containing the US Public Health supplemental value sets."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <resource>
             <reference>
@@ -1734,7 +1887,7 @@
             <name value="US Public Health Transportation Details"/>
             <description value="This Observation profile represents transportation details such as the type of transport (plane, train, ship, etc.) along with any associated information (e.g. name of cruise ship, flight number, airport, seat number, cabin number, etc.)."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-content"/>
         </resource>
         <resource>
             <reference>
@@ -1753,7 +1906,7 @@
             <name value="US Public Health Travel History"/>
             <description value="This Observation profile represents a patient's travel history.&#xA;&#xA;The following data for a patient can be recorded:&#xA;&#xA;* travel history as a string, an address, or a coded location&#xA;* the date or period of time spent in the location (Observation.effectiveTime)&#xA;    * it is important to accurately capture the most accurate dates possible&#xA;    * the focus should be on date of arrival and date of departure&#xA;    * the concepts of dates as related to travel are especially useful for determining need for Federal Public Health Notifications (FPHNs) and these dates are used to alert foreign ministries of health about their residents who may have been contacts of cases, or if a flight that was outbound from the USA had an infectious traveler on it&#xA;* most uses will involve a single location (Observation.component), however, it is possible to specify multiple locations (but there is only a single effectiveTime)&#xA;    * this allows for cases where a patient cannot remember exact dates of travel (e.g. I traveled to London, Paris, and Berlin in July and August 2016)&#xA;* free text describing the travel history details and location (Observation.component.valueCodeableConcept.text element)&#xA;* use Observation.component.codeableConcept to record a coded location&#xA;* use Observationcomponent.extension to record a specific address&#xA;* where a more granular address than state is known (e.g. city, street) it is appropriate to use the extension to record an address rather than using the coded location"/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-content"/>
         </resource>
         <resource>
             <reference>
@@ -1793,7 +1946,7 @@
             <name value="US Public Health Triggering Value Set"/>
             <description value="This profile describes the US Public Health Triggering value set."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <resource>
             <reference>
@@ -1803,7 +1956,7 @@
             <name value="US Public Health Triggering Valueset Library"/>
             <description value="Defines the library containing the US Public Health triggering value sets."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <resource>
             <reference>
@@ -1843,7 +1996,7 @@
             <name value="US Public Health Value Set"/>
             <description value="This profile describes the US Public Health value sets."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <resource>
             <reference>
@@ -1853,7 +2006,7 @@
             <name value="US Public Health Valueset Library"/>
             <description value="Defines the library containing US Public Health value sets."/>
             <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <resource>
             <reference>
@@ -1876,156 +2029,6 @@
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset-library"/>
             <groupingId value="us-public-health-examples"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/us-ph-date-determined-extension"/>
-                <display value="USPublicHealthDateDeterminedExtension"/>
-            </reference>
-            <name value="US Public Health Date Determined Extension"/>
-            <description value="The date a status or observation was determined (date of determination)."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="us-ph-extensions"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/us-ph-date-recorded-extension"/>
-                <display value="USPublicHealthDateRecordedExtension"/>
-            </reference>
-            <name value="US Public Health Date Recorded Extension"/>
-            <description value="The date a status or observation was recorded (recorded date)."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="us-ph-extensions"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/us-ph-pregnancy-outcome-observation"/>
-                <display value="USPublicHealthPregnancyOutcomeObservation"/>
-            </reference>
-            <name value="US Public Health Pregnancy Outcome Observation"/>
-            <description value="This profile represents a result of the pregnancy such as live birth, still birth, miscarriage, etc.&#xA;&#xA;The subject of this profile is the mother. The focus of this profile is the related Pregnancy Status Observation. &#xA;&#xA;The order born in the delivery, live born or fetal death (1st, 2nd, 3rd, 4th, 5th, 6th, 7th, etc.) is contained in Observation.component. All live births and fetal losses are included. If the pregnancy plurality is 1 then this value will also be 1.&#xA;&#xA;There will be one Pregnancy Outcome Observation for each fetus delivered live or dead at any time in the pregnancy, regardless of gestational age or if the fetuses were delivered at different dates in the pregnancy. All live births and fetal losses are included. The order born in the delivery, live born or fetal death is contained in Observation.component."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/us-ph-pregnancy-status-observation"/>
-                <display value="USPublicHealthPregnancyStatusObservation"/>
-            </reference>
-            <name value="US Public Health Pregnancy Status Observation"/>
-            <description value="This profile represents current and/or prior pregnancy statuses and their date ranges, enabling investigators to determine if a patient was pregnant, possibly pregnant, not pregnant or whether the pregnancy status was unknown during a particular date range.&#xA;&#xA;The subject of this profile is the mother.&#xA;&#xA;This profile includes the determination method, determination date, and recorded date of the pregnancy status.&#xA;&#xA;Use the effectivePeriod to indicate the date range over which the patient was pregnant/possibly pregnant/not pregnant/unknown. To record the date that the pregnancy status was recorded, use the date-recorded-extension and to record the date on which the pregnancy status determination was made, use the date-determined-extension. If the effectivePeriod.end is not present it is assumed that the date range over which the pregnancy status is asserted is from effectivePeriod.start to the date in the date-recorded-extension. For example, if the effectivePeriod.start has been recorded as two months prior to the date contained in the date-recorded-extension, and there is no effectivePeriod.end recorded, no assumptions can be made about the pregnancy status after the date contained in the date-recorded-extension."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-profiles"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-reportability-information-observation"/>
-                <display value="RR Reportability Information Observation"/>
-            </reference>
-            <name value="RR Reportability Information Observation"/>
-            <description value="This profile represents reportability information based on the PHA in which is located the patient's home, the provider facility, or both locations.&#xA;&#xA;It contains the Responsible Agency, the Rules Authoring Agency, and the Routing Entity.&#xA;&#xA;Also contained in this profile are the Determination of Reportability, Reporting Timeframe, and External Resources."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="reportability-response-profiles"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-documentreference"/>
-                <display value="eCR DocumentReference"/>
-            </reference>
-            <name value="eCR DocumentReference"/>
-            <description value="This profile represents external resources such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="reportability-response-profiles"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-external-resource-extension"/>
-                <display value="RR External Resource Extension"/>
-            </reference>
-            <name value="RR External Resource Extension"/>
-            <description value="This Extension profile represents an external resource (DocumentReference) pertaining to the condition such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="extensions"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/observation-blood-pressure-eve-everywoman"/></reference>
-            <name value="US Core Vital Sign Observation example"/>
-            <description value="An example of the US Core Vital Sign Observation profile."/>
-            <exampleBoolean value="true"/>
-            <groupingId value="eicr-examples"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/observation-rr-summary"/></reference>
-            <name value="Observation RR Summary example"/>
-            <description value="Example of RR Summary profile."/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-summary"/>
-            <groupingId value="reportability-response-examples"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Composition/composition-rr-one-cond-one-pha"/>
-                <display value="Reportability Response - One Condition/One PHA example"/>
-            </reference>
-            <name value="Reportability Response - One Condition/One PHA example"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Composition/composition-rr-single-single-html-validation-output"/>
-                <display value="Reportability Response - One Condition/One PHA with eICR Validation Output example"/>
-            </reference>
-            <name value="Reportability Response - One Condition/One PHA with eICR Validation Output example"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="DocumentReference/documentreference-zika-follow-up-pdf"/></reference>
-            <name value="RR DocumentReference example"/>
-            <description value="Example of RR DocumentReference profile"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-documentreference"/>
-            <groupingId value="reportability-response-examples"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="DocumentReference/documentreference-zika-info-pdf"/></reference>
-            <name value="RR DocumentReference example"/>
-            <description value="Example of RR DocumentReference profile"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-documentreference"/>
-            <groupingId value="reportability-response-examples"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="DocumentReference/documentreference-add-reporting-needs-pdf"/></reference>
-            <name value="RR DocumentReference example"/>
-            <description value="Example of RR DocumentReference profile"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-documentreference"/>
-            <groupingId value="reportability-response-examples"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/observation-rr-relevant-reportable-condition-observation"/></reference>
-            <name value="RR Relevant Reportable Condition Observation Example"/>
-            <description value="Example of RR Relevant Reportable Condition Observation profile"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation"/>
-            <groupingId value="reportability-response-examples"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/observation-rr-reportability-information-observation"/></reference>
-            <name value="RR Reportability Information Observation Example"/>
-            <description value="Example of RR Reportability Information Observation profile"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation"/>
-            <groupingId value="reportability-response-examples"/>
         </resource>
         <page>
             <nameUrl value="index.html"/>
