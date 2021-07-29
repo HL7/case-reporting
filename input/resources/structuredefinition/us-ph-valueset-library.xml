@@ -34,6 +34,46 @@
             <path value="Library"/>
             <short value="US Public Health ValueSet Library"/>
         </element>
+        <element id="Library.extension">
+          <path value="Library.extension"/>
+          <slicing>
+            <discriminator>
+              <type value="value"/>
+              <path value="url"/>
+            </discriminator>
+            <ordered value="false"/>
+            <rules value="open"/>
+          </slicing>
+          <base>
+            <path value="DomainResource.extension"/>
+            <min value="0"/>
+            <max value="*"/>
+          </base>
+          <type>
+            <code value="Extension"/>
+          </type>
+          <isModifier value="false"/>
+          <isSummary value="false"/>
+        </element>
+        <element id="Library.extension:expansionParameters">
+          <path value="Library.extension"/>
+          <sliceName value="expansionParameters"/>
+          <short value="Expansion Parameters for the ValueSet."/>
+          <definition value="Supports the definition of expansion parameters for the ValueSet."/>
+          <min value="0"/>
+          <max value="1"/>
+          <base>
+            <path value="DomainResource.extension"/>
+            <min value="0"/>
+            <max value="*"/>
+          </base>
+          <type>
+            <code value="Extension"/>
+            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-expansion-parameters-extension"/>
+          </type>
+          <mustSupport value="true"/>
+          <isModifier value="false"/>
+        </element>
         <element id="Library.identifier">
             <path value="Library.identifier"/>
             <mustSupport value="true"/>
