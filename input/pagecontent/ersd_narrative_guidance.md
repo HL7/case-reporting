@@ -22,8 +22,8 @@ NOTE: The offsets (1 h, 6h, and 24h, are parameters to the specification)
   *     suspected-reportable-close-delay: 24 h
 
 *     start
-        trigger: encounter-start
-        action: check-reportable in 1 hour
+        - trigger: encounter-start
+        - action: check-reportable in 1 hour
 
 
 *     check-reportable
@@ -31,13 +31,14 @@ NOTE: The offsets (1 h, 6h, and 24h, are parameters to the specification)
         - if encounter-inprogress, check-reportable in 6 hours
 
 
-*     create-and-report-eicr report-eicr
+*     create-and-report-eicr
+        - report-eicr
         - if encounter-complete, report-eicr in 24 hours
         - if encounter-inprogress, create-and-report-eicr in 24 hours
 
 
 *     report-eicr
-        create-eicr, validate-eicr, route-and-send-eicr
+        - create-eicr, validate-eicr, route-and-send-eicr
 
 And the inclusion of an associated ExampleScenario:
 
