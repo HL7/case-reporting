@@ -40,6 +40,7 @@
             </extension>
             <path value="Observation.status"/>
             <fixedCode value="final"/>
+            <mustSupport value="true"/>
         </element>
         <element id="Observation.code">
             <path value="Observation.code"/>
@@ -50,12 +51,21 @@
                     <display value="Immunization status - Reported"/>
                 </coding>
             </patternCodeableConcept>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.effective[x]">
+            <path value="Observation.effective[x]"/>
+            <type>
+                <code value="dateTime"/>
+            </type>
+            <mustSupport value="true"/>
         </element>
         <element id="Observation.value[x]">
             <path value="Observation.value[x]"/>
             <short value="Patient assertion (true or false) as to whether they have a digital health certificate or credentials"/>
+            <min value="1"/>
             <type>
-                <code value="Boolean"/>
+                <code value="boolean"/>
             </type>
         </element>
     </differential>
