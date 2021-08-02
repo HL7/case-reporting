@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="us-ph-receiver-address-extension"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2021-08-02T07:11:52.895+00:00"/>
+        <source value="#j3OZx3uPdw3slrcu"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-receiver-address-extension"/>
+    <version value="0.1.0"/>
+    <name value="USPublicHealthReceiverAddressExtension"/>
+    <title value="US Public Health Receiver Address Extension"/>
+    <status value="draft"/>
+    <experimental value="false"/>
+    <date value="2019-09-01"/>
+    <publisher value="HL7 International - Public Health Work Group"/>
+    <contact>
+        <telecom>
+            <system value="url"/>
+            <value value="http://hl7.org/Special/committees/pher"/>
+        </telecom>
+    </contact>
+    <description value="Indicates the endpoint address where the report has to be sent."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+        </coding>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <context>
+        <type value="element"/>
+        <expression value="PlanDefinition"/>
+    </context>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Extension">
+            <path value="Extension"/>
+            <short value="Indicates the address where the report has to be sent."/>
+            <definition value="Indicates the address where the report has to be sent."/>
+            <min value="0"/>
+            <max value="1"/>
+        </element>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <type>
+                <code value="uri"/>
+            </type>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-receiver-address-extension"/>
+        </element>
+        <element id="Extension.value[x]">
+            <path value="Extension.value[x]"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Endpoint"/>
+            </type>
+        </element>
+    </differential>
+</StructureDefinition>

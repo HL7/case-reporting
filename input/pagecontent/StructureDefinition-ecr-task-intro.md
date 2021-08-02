@@ -1,1 +1,0 @@
-It is used in both the messaging and RESTful paradigms. to support the eCR messaging paradigm.  The focus of an eCR Task is either the eICR document Bundle or the RR Communication.
