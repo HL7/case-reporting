@@ -81,7 +81,7 @@
         <element id="PlanDefinition.action:encounterStart.id">
             <path value="PlanDefinition.action.id"/>
             <min value="1"/>
-            <fixedString value="start"/>
+            <fixedString value="start-workflow"/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action:encounterStart.description">
@@ -90,6 +90,20 @@
             <definition value="Description of the &quot;create-eicr&quot; action."/>
             <min value="1"/>
             <fixedString value="This action represents the start of the reporting workflow in response to the encounter-start event"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:encounterStart.code">
+            <path value="PlanDefinition.action.code"/>
+            <short value="Code for the &quot;start&quot; action."/>
+            <definition value="The US-PH-PlanDefinition-Action code for the &quot;start&quot; action."/>
+            <min value="1"/>
+            <max value="1"/>
+            <patternCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                <code value="initiate-reporting-workflow"/>
+              </coding>
+            </patternCodeableConcept>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action:encounterStart.textEquivalent">
@@ -109,7 +123,7 @@
                 <key value="epd-1"/>
                 <severity value="error"/>
                 <human value="The code value of the namedEventType SHALL be the same as the name element"/>
-                <expression value="extension('http://hl7.org/fhir/us/StructureDefinition/us-ph-named-type-extension').exists() and extension('http://hl7.org/fhir/us/StructureDefinition/us-ph-named-type-extension').value = name"/>
+                <expression value="extension('http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension').exists() and extension('http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension').value = name"/>
                 <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;name&quot;)])"/>
                 <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
             </constraint>
@@ -257,11 +271,12 @@
         </element>
         <element id="PlanDefinition.action:checkReportable.code">
             <path value="PlanDefinition.action.code"/>
-            <code>
-                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/executabletask-type"/>
-                <code value="check-reportable"/>
-                <display value="Check reportable"/>
-            </code>
+            <patternCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                <code value="execute-reporting-workflow"/>
+              </coding>
+            </patternCodeableConcept>
             <min value="1"/>
         </element>
         <element id="PlanDefinition.action:checkReportable.action">
@@ -290,6 +305,16 @@
             <min value="1"/>
             <fixedString value="ckr-is-encounter-reportable"/>
             <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.code">
+            <path value="PlanDefinition.action.action.code"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="check-trigger-codes"/>
+                </coding>
+            </patternCodeableConcept>
+            <min value="1"/>
         </element>
         <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.condition">
             <path value="PlanDefinition.action.action.condition"/>
@@ -346,6 +371,16 @@
             <fixedString value="ckr-is-encounter-in-progress"/>
             <mustSupport value="true"/>
         </element>
+        <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.code">
+            <path value="PlanDefinition.action.action.code"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="evaluate-condition"/>
+                </coding>
+            </patternCodeableConcept>
+            <min value="1"/>
+        </element>
         <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.condition">
             <path value="PlanDefinition.action.action.condition"/>
         </element>
@@ -387,11 +422,10 @@
         </element>
         <element id="PlanDefinition.action:createAndReport.code">
             <path value="PlanDefinition.action.code"/>
-            <code>
-                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/executabletask-type"/>
-                <code value="create-and-report-eicr"/>
-                <display value="Create And Report eICR"/>
-            </code>
+            <patternCodeableConcept>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                <code value="execute-reporting-workflow"/>
+            </patternCodeableConcept>
             <min value="1"/>
         </element>
         <element id="PlanDefinition.action:createAndReport.action">
@@ -421,6 +455,14 @@
             <fixedString value="car-report-eicr"/>
             <mustSupport value="true"/>
         </element>
+        <element id="PlanDefinition.action:createAndReport.action:reportEicr.code">
+            <path value="PlanDefinition.action.action.code"/>
+            <patternCodeableConcept>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                <code value="execute-reporting-workflow"/>
+            </patternCodeableConcept>
+            <min value="1"/>
+        </element>
         <element id="PlanDefinition.action:createAndReport.action:reportEicr.relatedAction">
             <path value="PlanDefinition.action.action.relatedAction"/>
         </element>
@@ -447,6 +489,16 @@
             <min value="1"/>
             <fixedString value="car-is-encounter-complete"/>
             <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.code">
+            <path value="PlanDefinition.action.action.code"/>
+            <patternCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                <code value="evaluate-condition"/>
+              </coding>
+            </patternCodeableConcept>
+            <min value="1"/>
         </element>
         <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.condition">
             <path value="PlanDefinition.action.action.condition"/>
@@ -506,6 +558,16 @@
             <fixedString value="car-is-encounter-in-progress"/>
             <mustSupport value="true"/>
         </element>
+        <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.code">
+            <path value="PlanDefinition.action.action.code"/>
+            <patternCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                <code value="evaluate-condition"/>
+              </coding>
+            </patternCodeableConcept>
+            <min value="1"/>
+        </element>
         <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.condition">
             <path value="PlanDefinition.action.action.condition"/>
         </element>
@@ -564,6 +626,16 @@
             <path value="PlanDefinition.action.description"/>
             <fixedString value="This action represents the reporting of the eICR."/>
         </element>
+        <element id="PlanDefinition.action:reportEicr.code">
+            <path value="PlanDefinition.action.code"/>
+            <patternCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                <code value="execute-reporting-workflow"/>
+              </coding>
+            </patternCodeableConcept>
+            <min value="1"/>
+        </element>
         <element id="PlanDefinition.action:reportEicr.action">
             <path value="PlanDefinition.action.action"/>
             <slicing>
@@ -595,11 +667,12 @@
         </element>
         <element id="PlanDefinition.action:reportEicr.action:createEicr.code">
             <path value="PlanDefinition.action.action.code"/>
-            <code>
-                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/executabletask-type"/>
-                <code value="create-eicr"/>
-                <display value="Create eICR"/>
-            </code>
+            <patternCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                <code value="create-report"/>
+              </coding>
+            </patternCodeableConcept>
         </element>
         <element id="PlanDefinition.action:reportEicr.action:validateEicr">
             <path value="PlanDefinition.action.action"/>
@@ -619,11 +692,12 @@
         </element>
         <element id="PlanDefinition.action:reportEicr.action:validateEicr.code">
             <path value="PlanDefinition.action.action.code"/>
-            <code>
-                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/executabletask-type"/>
-                <code value="validate-eicr"/>
-                <display value="Validate eICR"/>
-            </code>
+            <patternCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                <code value="validate-report"/>
+              </coding>
+            </patternCodeableConcept>
         </element>
         <element id="PlanDefinition.action:reportEicr.action:routeAndSendEicr">
             <path value="PlanDefinition.action.action"/>
@@ -655,11 +729,12 @@
         </element>
         <element id="PlanDefinition.action:reportEicr.action:routeAndSendEicr.code">
             <path value="PlanDefinition.action.action.code"/>
-            <code>
-                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/executabletask-type"/>
-                <code value="route-and-send-eicr"/>
-                <display value="Route and send eICR"/>
-            </code>
+            <patternCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                <code value="submit-report"/>
+              </coding>
+            </patternCodeableConcept>
         </element>
     </differential>
 </StructureDefinition>
