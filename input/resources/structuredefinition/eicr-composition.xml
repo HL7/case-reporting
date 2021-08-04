@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-composition"/>
     <meta>
-        <versionId value="56"/>
-        <lastUpdated value="2021-07-01T07:39:56.902+00:00"/>
-        <source value="#RTsDP2vzMKqczzpX"/>
+        <versionId value="63"/>
+        <lastUpdated value="2021-08-02T06:13:43.688+00:00"/>
+        <source value="#87Xsb9I1SnActbhx"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
     <version value="1.0.0"/>
@@ -107,6 +107,10 @@
                 <map value="[eICR R2 STU2] ClinicalDocument/code"/>
             </mapping>
         </element>
+        <element id="Composition.custodian">
+            <path value="Composition.custodian"/>
+            <min value="1"/>
+        </element>
         <element id="Composition.relatesTo">
             <path value="Composition.relatesTo"/>
             <slicing>
@@ -168,51 +172,98 @@
                 <rules value="open"/>
             </slicing>
         </element>
-        <element id="Composition.section:sliceChiefComplaintAndReasonForVisitSection">
+        <element id="Composition.section:sliceReasonForVisitSection">
             <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
                 <valueString value="Section"/>
             </extension>
             <path value="Composition.section"/>
-            <sliceName value="sliceChiefComplaintAndReasonForVisitSection"/>
-            <short value="Chief Complaint and Reason for Visit Section"/>
-            <definition value="This section records the patient's chief complaint (the patient’s own description) and/or the reason for the patient's visit (the provider’s description of the reason for visit)."/>
+            <sliceName value="sliceReasonForVisitSection"/>
+            <short value="Reason for Visit Section"/>
+            <definition value="This section records the reason for the patient's visit (the provider’s description of the reason for visit)."/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
             <isModifier value="false"/>
             <mapping>
                 <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Chief Complaint and Reason for Visit Section"/>
+                <map value="[eICR R2 STU2] Reason for Visit Section"/>
             </mapping>
         </element>
-        <element id="Composition.section:sliceChiefComplaintAndReasonForVisitSection.code">
+        <element id="Composition.section:sliceReasonForVisitSection.code">
             <path value="Composition.section.code"/>
-            <short value="Chief Complaint and Reason for Visit code"/>
-            <definition value="Chief Complaint and Reason for Visit code"/>
+            <short value="Reason for Visit code"/>
+            <definition value="Reason for Visit code"/>
             <min value="1"/>
             <patternCodeableConcept>
                 <coding>
                     <system value="http://loinc.org"/>
-                    <code value="46239-0"/>
+                    <code value="29299-5"/>
                 </coding>
             </patternCodeableConcept>
             <mustSupport value="true"/>
             <isModifier value="false"/>
             <mapping>
                 <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Chief Complaint and Reason for Visit Section/code"/>
+                <map value="[eICR R2 STU2] Reason for Visit Section/code"/>
             </mapping>
         </element>
-        <element id="Composition.section:sliceChiefComplaintAndReasonForVisitSection.text">
+        <element id="Composition.section:sliceReasonForVisitSection.text">
             <path value="Composition.section.text"/>
-            <short value="Chief Complaint and Reason for Visit narrative"/>
-            <definition value="Chief Complaint and Reason for Visit narrative"/>
+            <short value="Reason for Visit narrative"/>
+            <definition value="Reason for Visit narrative"/>
             <min value="1"/>
             <mustSupport value="true"/>
             <mapping>
                 <identity value="eCR-CDA"/>
-                <map value="[eICR R2 STU2] Chief Complaint and Reason for Visit Section/text"/>
-                <comment value="Chief Complaint and Reason for Visit"/>
+                <map value="[eICR R2 STU2] Reason for Visit Section/text"/>
+                <comment value="Reason for Visit"/>
+            </mapping>
+        </element>
+        <element id="Composition.section:sliceChiefComplaintSection">
+            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+                <valueString value="Section"/>
+            </extension>
+            <path value="Composition.section"/>
+            <sliceName value="sliceChiefComplaintSection"/>
+            <short value="Chief Complaint Section"/>
+            <definition value="This section records the patient's chief complaint (the patient’s own description)."/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Chief Complaint Section"/>
+            </mapping>
+        </element>
+        <element id="Composition.section:sliceChiefComplaintSection.code">
+            <path value="Composition.section.code"/>
+            <short value="Chief Complaint code"/>
+            <definition value="Chief Complaint code"/>
+            <min value="1"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://loinc.org"/>
+                    <code value="10154-3"/>
+                </coding>
+            </patternCodeableConcept>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Chief Complaint Section/code"/>
+            </mapping>
+        </element>
+        <element id="Composition.section:sliceChiefComplaintSection.text">
+            <path value="Composition.section.text"/>
+            <short value="Chief Complaint narrative"/>
+            <definition value="Chief Complaint narrative"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="eCR-CDA"/>
+                <map value="[eICR R2 STU2] Chief Complaint Section/text"/>
+                <comment value="Chief Complaint"/>
             </mapping>
         </element>
         <element id="Composition.section:sliceHistoryOfPresentIllnessSection">
@@ -941,6 +992,15 @@
                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
             </type>
         </element>
+        <element id="Composition.section:sliceImmunizationsSection.entry:sliceDHCPatientAssertion">
+            <path value="Composition.section.entry"/>
+            <sliceName value="sliceDHCPatientAssertion"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-dhc-patient-assertion-observation"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
         <element id="Composition.section:sliceProceduresSection">
             <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
                 <valueString value="Section"/>
@@ -1102,7 +1162,7 @@
             <sliceName value="sliceVitalSigns"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/vitalsigns"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs"/>
             </type>
             <mustSupport value="true"/>
             <isModifier value="false"/>
@@ -1528,7 +1588,7 @@
             <path value="Composition.section"/>
             <sliceName value="sliceReportabilityResponseInformationSection"/>
             <short value="Reportability Response Information Section (for post-processing only)"/>
-            <definition value="The Reportability Response Information Section contains information from a Reportability Response that was generated in response to this eICR.&#xA;&#xA;This section is to be used for the Public Health agency to receive the eICR with the RR included (after the RR has been created). This is need to help the PHA ingest the information. As part of the PHA's process they will put parts of the RR (the Reportability Response Information Section) into the eICR. This is useful for working with the surveillance vendors. All this work will be done within the internal data integration processes of the PHA. It is a placeholder so it can be used in the future. A number of surveillance systems need to include specific data that is not available until the eICR and RR are available inside of the receiving organization (PHA). This is important to ensure that they have a consistent, documented way of including the data."/>
+            <definition value="The Reportability Response Information Section contains information from a Reportability Response that was generated in response to this eICR.&#xA;&#xA;This section is to be used for the Public Health agency to receive the eICR with the RR included (after the RR has been created). This is needed to help the PHA ingest the information. As part of the PHA's process they will put parts of the RR into the eICR. This is useful for working with the surveillance vendors. All this work will be done within the internal data integration processes of the PHA. It is a placeholder so it can be used in the future. A number of surveillance systems need to include specific data that is not available until the eICR and RR are available inside of the receiving organization (PHA). This is important to ensure that they have a consistent, documented way of including the data."/>
             <min value="0"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -1570,7 +1630,7 @@
             <sliceName value="sliceReportabilityResponsePlanDefinition"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation"/>
             </type>
             <mustSupport value="true"/>
         </element>

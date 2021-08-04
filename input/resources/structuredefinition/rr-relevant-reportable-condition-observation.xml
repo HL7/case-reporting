@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="rr-relevant-reportable-condition-observation"/>
+    <meta>
+        <versionId value="20"/>
+        <lastUpdated value="2021-07-21T05:19:29.047+00:00"/>
+        <source value="#BNYlUtLCljWQCXdT"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation"/>
+    <version value="1.0.0"/>
+    <name value="RRRelevantReportableConditionObservation"/>
+    <title value="RR Relevant Reportable Condition Observation"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Public Health Work Group"/>
+    <description value="This profile represents a relevant reportable condition. It contains one (if both the patient's home and the provider location have the same responsible agency) or more (if the patient's home and provider location have different responsible agencies) RR Reportability Information Observations. It may also contain external resources specific to the condition."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Observation"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Observation">
+            <path value="Observation"/>
+            <short value="RR Relevant Reportable Condition Observation"/>
+        </element>
+        <element id="Observation.extension">
+            <path value="Observation.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+        </element>
+        <element id="Observation.extension:externalResourceExtension">
+            <path value="Observation.extension"/>
+            <sliceName value="externalResourceExtension"/>
+            <short value="External resources pertaining to the condition"/>
+            <definition value="External resources such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources."/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension"/>
+            </type>
+        </element>
+        <element id="Observation.status">
+            <path value="Observation.status"/>
+            <fixedCode value="final"/>
+        </element>
+        <element id="Observation.code">
+            <path value="Observation.code"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.code.coding">
+            <path value="Observation.code.coding"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="code"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.code.coding:codeSNOMED">
+            <path value="Observation.code.coding"/>
+            <sliceName value="codeSNOMED"/>
+            <short value="Condition"/>
+            <fixedCoding>
+                <system value="http://snomed.info/sct"/>
+                <code value="64572001"/>
+            </fixedCoding>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.code.coding:codeLOINC">
+            <path value="Observation.code.coding"/>
+            <sliceName value="codeLOINC"/>
+            <fixedCoding>
+                <system value="http://loinc.org"/>
+                <code value="75323-6"/>
+            </fixedCoding>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.value[x]">
+            <path value="Observation.value[x]"/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.value[x].coding">
+            <path value="Observation.value[x].coding"/>
+            <short value="The condition code shall be selected from SNOMED CT"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.value[x].coding.system">
+            <path value="Observation.value[x].coding.system"/>
+            <fixedUri value="http://snomed.info/sct"/>
+        </element>
+        <element id="Observation.value[x].text">
+            <path value="Observation.value[x].text"/>
+            <short value="Use text if there is no available condition code"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.dataAbsentReason">
+            <path value="Observation.dataAbsentReason"/>
+            <short value="Use 'not-applicable' when eICR manually initiated or no reportable condition identified"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.hasMember">
+            <path value="Observation.hasMember"/>
+            <slicing>
+                <discriminator>
+                    <type value="profile"/>
+                    <path value="resolve()"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.hasMember:sliceReportabilityInformationObservation">
+            <path value="Observation.hasMember"/>
+            <sliceName value="sliceReportabilityInformationObservation"/>
+            <short value="Reportability information based on the PHA in which is located the patient's home, the provider facility, or both locations"/>
+            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+    </differential>
+</StructureDefinition>

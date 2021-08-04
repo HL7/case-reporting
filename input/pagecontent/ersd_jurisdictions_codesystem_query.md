@@ -167,7 +167,7 @@ define "Jurisdiction Codes Relevant to Addresses":
 
 ### Determining Relevant Jurisdictions
 
-If a Patient or Encounter takes place in a specified postal code, reporting goes to the jurisdiction specified.  In some cases, a State Public Health Agency also requires reporting.  In such a case, relevant postal codes are also specified for the State Public Health Agency.  If no postal codes are specified for the State Public Health Agency, that agency will only receive reports for addresses within the State that are not already specified for a local jurisdiction.  If a postal code is not specified anywhere, the reporting goes to the State Public Health Agency.
+If a Patient lives in, or the Encounter takes place in a specified postal code, reporting goes to the jurisdiction specified.  In some cases, a State Public Health Agency also requires reporting.  In such a case, relevant postal codes are also specified for the State Public Health Agency.  If no postal codes are specified for the State Public Health Agency, that agency will only receive reports for addresses within the State that are not already specified for a local jurisdiction.  If a postal code is not specified anywhere, the reporting goes to the State Public Health Agency.
 
 For example, if the Patient and Encounter addresses were in Chula Vista, CA  91912, the CQL result would be:
 
@@ -196,7 +196,6 @@ Jurisdiction Codes Relevant to Addresses = [Tuple {
 ```
 This only reports to Los Angeles County because, as shown in the [CodeSystem example](#codesystem), the postal code 90002 is specified for Los Angeles County and not specified for the State of California.
 
-
 If the Patient and Encounter addresses were in Juneau, AK  99850, the CQL result would be:
 
 ```
@@ -207,3 +206,23 @@ Jurisdiction Codes Relevant to Addresses = [Tuple {
 }]
 ```
 As shown in the [CodeSystem example](#codesystem), Alaska has no specified postal codes.  Therefore, anywhere in Alaska will report only to the Alaska Department of Health and Social Services.
+
+It may be the case that the Encounter takes place in a postal code different from that of the patient's address. If the patient's address was in Chula Vista, CA 91912, and the Encounter took place in Los Angeles, CA 90002, the CQL result would be:
+
+```
+Jurisdiction Codes Relevant to Addresses = [Tuple {
+    jurisdictionCode -> CA
+    stateCode -> [CA]
+    definition -> California Department of Public Health
+}, Tuple {
+    jurisdictionCode -> SDC
+    stateCode -> [CA]
+    definition -> San Diego County Public Health Services
+}, Tuple {
+    jurisdictionCode -> LAC
+    stateCode -> [CA]
+    definition -> Los Angeles County Department of Public Health
+}]
+```
+
+As shown, the jurisdictions relevant to the Patient and Encounter addresses are San Diego County Public Health Services, Los Angeles County Department of Public Health, and California Department of Health.  This is because the postal code 91912 has been specified for both of these the California Department of Public Health and San Diego County Public Health Services jurisdictions and the 90002 postal code has been specified for the Los Angeles County Department of Public Health jurisdiction, as shown in the [CodeSystem example](#codesystem) .

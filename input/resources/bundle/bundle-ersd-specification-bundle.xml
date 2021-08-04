@@ -1,0 +1,1226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle
+    xmlns="http://hl7.org/fhir">
+    <id value="bundle-ersd-specification-bundle"/>
+    <meta>
+        <versionId value="5"/>
+        <lastUpdated value="2021-06-30T07:40:49.085+00:00"/>
+        <source value="#xas7OF0tYBOe11AS"/>
+    </meta>
+    <type value="collection"/>
+    <entry>
+        <fullUrl value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance"/>
+        <resource>
+          <PlanDefinition xmlns="http://hl7.org/fhir">
+              <id value="plandefinition-ersd-instance"/>
+              <meta>
+                  <versionId value="1"/>
+                  <lastUpdated value="2021-07-30T21:27:46.417+00:00"/>
+                  <source value="#xy1QMAnLi7NhlL41"/>
+              </meta>
+              <text>
+                  <status value="generated"/>
+                  <div xmlns="http://www.w3.org/1999/xhtml">
+                      <p>
+                          <b>PlanDefinition eRSD Instance</b>
+                      </p>
+                      <p>
+                          <b>url</b>:
+                          <a href="PlanDefinition-plandefinition-ersd-instance.html">http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance</a>
+                      </p>
+                      <p>
+                          <b>version</b>: 3.0.0
+                      </p>
+                      <p>
+                          <b>name</b>: PlanDefinition_eRSD_Instance
+                      </p>
+                      <p>
+                          <b>title</b>: eRSD PlanDefinition Instance
+                      </p>
+                      <p>
+                          <b>type</b>:
+                          <span title="Codes: {http://terminology.hl7.org/CodeSystem/plan-definition-type workflow-definition}">Workflow
+                            Definition</span>
+                      </p>
+                      <p>
+                          <b>status</b>: active
+                      </p>
+                      <p>
+                          <b>experimental</b>: true
+                      </p>
+                      <p>
+                          <b>date</b>: Jul 31, 2020, 5:32:29 PM
+                      </p>
+                      <p>
+                          <b>publisher</b>: HL7 Public Health Work Group (http://www.hl7.org/Special/committees/pher/index.cfm)
+                      </p>
+                      <p>
+                          <b>contact</b>: HL7 International - Public Health:
+                          <a href="http://www.hl7.org/Special/committees/pher">http://www.hl7.org/Special/committees/pher</a>
+                      </p>
+                      <p>
+                          <b>description</b>: An example ersd PlanDefinition
+                      </p>
+                      <p>
+                          <b>jurisdiction</b>:
+                          <span title="Codes: {urn:iso:std:iso:3166 US}">United States of America</span>
+                      </p>
+                      <p>
+                          <b>effectivePeriod</b>: 2020-12-01 --&gt; (ongoing)
+                      </p>
+                  </div>
+              </text>
+              <url value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance"/>
+              <version value="0.1"/>
+              <name value="PlanDefinition_eRSD_Instance"/>
+              <title value="eRSD PlanDefinition Instance"/>
+              <type>
+                  <coding>
+                      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+                      <code value="workflow-definition"/>
+                      <display value="Workflow Definition"/>
+                  </coding>
+              </type>
+              <status value="active"/>
+              <experimental value="true"/>
+              <date value="2020-07-31T12:32:29.858-05:00"/>
+              <publisher value="HL7 Public Health Work Group"/>
+              <description value="An example ersd PlanDefinition"/>
+              <jurisdiction>
+                  <coding>
+                      <system value="urn:iso:std:iso:3166"/>
+                      <code value="US"/>
+                      <display value="United States of America"/>
+                  </coding>
+                  <text value="United States of America"/>
+              </jurisdiction>
+              <effectivePeriod>
+                  <start value="2020-12-01"/>
+              </effectivePeriod>
+              <relatedArtifact>
+                  <type value="depends-on"/>
+                  <label value="RCTC Value Set Library of Trigger Codes"/>
+                  <resource value="http://hl7.org/fhir/us/ecr/Library/library-rctc"/>
+              </relatedArtifact>
+              <action id="start-workflow">
+                  <description value="This action represents the start of the reporting workflow in response to the encounter-start event"/>
+                  <textEquivalent value="Start the reporting workflow in response to an encounter-start event"/>
+                  <code>
+                      <coding>
+                          <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                          <code value="initiate-reporting-workflow"/>
+                          <display value="Evaluate candidate patient&#39;s data against trigger codes to determine reportability"/>
+                      </coding>
+                  </code>
+                  <trigger id="encounter-start">
+                      <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension">
+                          <valueCodeableConcept>
+                              <coding>
+                                  <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-triggerdefinition-namedevents"/>
+                                  <code value="encounter-start"/>
+                                  <display value="Indicates the start of an encounter"/>
+                              </coding>
+                          </valueCodeableConcept>
+                      </extension>
+                      <type value="named-event"/>
+                      <name value="encounter-start"/>
+                  </trigger>
+                  <relatedAction>
+                      <actionId value="check-reportable"/>
+                      <relationship value="before-start"/>
+                      <offsetDuration>
+                          <value value="60"/>
+                          <system value="http://unitsofmeasure.org"/>
+                          <code value="s"/>
+                      </offsetDuration>
+                  </relatedAction>
+              </action>
+              <action id="check-reportable">
+                  <description value="This action represents the check for suspected reportability of the eICR."/>
+                  <textEquivalent value="Check Reportability and setup jobs for future reportability checks."/>
+                  <code>
+                      <coding>
+                          <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                          <code value="execute-reporting-workflow"/>
+                      </coding>
+                  </code>
+                  <action id="ckr-is-encounter-reportable">
+                      <description value="This action represents the check for reportability to create the patients eICR."/>
+                      <textEquivalent value="Check Trigger Codes based on RCTC Value sets."/>
+                      <code>
+                          <coding>
+                              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                              <code value="check-trigger-codes"/>
+                          </coding>
+                      </code>
+                      <condition>
+                          <kind value="applicability"/>
+                          <expression>
+                              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternativeExpression">
+                                  <valueExpression>
+                                      <language value="text/cql-identifier"/>
+                                      <expression value="Is Reportable"/>
+                                      <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
+                                  </valueExpression>
+                              </extension>
+                              <language value="text/fhirpath"/>
+                              <expression value="%conditions.exists() or %encounters.exists() or %immunizations.exists() or %procedures.exists() or $procedureOrders.exists() or %labOrders.exists() or %labTests.exists() or %labResults.exists() or %medicationAdministrations.exists() or %medicationOrders.exists() or %medicationDispenses.exists()"/></expression>
+                      </condition>
+                      <input id="conditions">
+                          <type value="Condition"/>
+                          <codeFilter>
+                              <path value="code"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/dxtc"/>
+                          </codeFilter>
+                      </input>
+                      <input id="encounters">
+                          <type value="Encounter"/>
+                          <codeFilter>
+                              <path value="reasonCode"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/dxtc"/>
+                          </codeFilter>
+                      </input>
+                      <input id="immunizations">
+                          <type value="Immunization"/>
+                          <codeFilter>
+                              <path value="vaccineCode"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/mrtc"/>
+                          </codeFilter>
+                      </input>
+                      <input id="labOrders">
+                          <type value="ServiceRequest"/>
+                          <codeFilter>
+                              <path value="code"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/lotc"/>
+                          </codeFilter>
+                      </input>
+                      <input id="labTests">
+                          <type value="Observation"/>
+                          <codeFilter>
+                              <path value="code"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/lotc"/>
+                          </codeFilter>
+                      </input>
+                      <input id="procedureOrders">
+                          <type value="ServiceRequest"/>
+                          <codeFilter>
+                              <path value="code"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/pctc"/>
+                          </codeFilter>
+                      </input>
+                      <input id="procedures">
+                          <type value="Procedure"/>
+                          <codeFilter>
+                              <path value="code"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/pctc"/>
+                          </codeFilter>
+                      </input>
+                      <input id="medicationOrders">
+                          <type value="MedicationRequest"/>
+                          <codeFilter>
+                              <path value="medication"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/mrtc"/>
+                          </codeFilter>
+                      </input>
+                      <input id="medicationDispenses">
+                          <type value="MedicationDispense"/>
+                          <codeFilter>
+                              <path value="medication"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/mrtc"/>
+                          </codeFilter>
+                      </input>
+                      <input id="medicationAdministrations">
+                          <type value="MedicationAdministration"/>
+                          <codeFilter>
+                              <path value="medication"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/mrtc"/>
+                          </codeFilter>
+                      </input>
+                      <input id="labResults">
+                          <type value="Observation"/>
+                          <codeFilter>
+                              <path value="value"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/ostc"/>
+                          </codeFilter>
+                      </input>
+                      <relatedAction>
+                          <actionId value="create-and-report-eicr"/>
+                          <relationship value="before-start"/>
+                      </relatedAction>
+                  </action>
+                  <action id="ckr-is-encounter-in-progress">
+                      <code>
+                          <coding>
+                              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                              <code value="evaluate-condition"/>
+                          </coding>
+                      </code>
+                      <condition>
+                          <kind value="applicability"/>
+                          <expression>
+                              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternativeExpression">
+                                  <valueExpression>
+                                      <language value="text/cql-identifier"/>
+                                      <expression value="Is Encounter In Progress"/>
+                                      <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
+                                  </valueExpression>
+                              </extension>
+                              <language value="text/fhirpath"/>
+                              <expression value="%encounter.status = 'in-progress'"/></expression>
+                      </condition>
+                      <relatedAction>
+                          <actionId value="check-reportable"/>
+                          <relationship value="before-start"/>
+                          <offsetDuration>
+                              <value value="300"/>
+                              <system value="http://unitsofmeasure.org"/>
+                              <code value="s"/>
+                          </offsetDuration>
+                      </relatedAction>
+                  </action>
+              </action>
+              <action id="create-and-report-eicr">
+                  <description value="This action represents the creation and reporting of the eICR."/>
+                  <textEquivalent value="Create and Report eICR set of actions"/>
+                  <code>
+                      <coding>
+                          <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                          <code value="execute-reporting-workflow"/>
+                      </coding>
+                  </code>
+                  <action id="car-report-eicr">
+                      <description value="This action invokes the creation and submission of the eICR report."/>
+                      <textEquivalent value="Invoke creation and submission of eICR"/>
+                      <code>
+                          <coding>
+                              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                              <code value="execute-reporting-workflow"/>
+                          </coding>
+                      </code>
+                      <relatedAction>
+                          <actionId value="report-eicr"/>
+                          <relationship value="before-start"/>
+                      </relatedAction>
+                  </action>
+                  <action id="car-is-encounter-in-progress">
+                      <code>
+                          <coding>
+                              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                              <code value="evaluate-condition"/>
+                          </coding>
+                      </code>
+                      <condition>
+                          <kind value="applicability"/>
+                          <expression>
+                              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternativeExpression">
+                                  <valueExpression>
+                                      <language value="text/cql-identifier"/>
+                                      <expression value="Is Encounter In Progress"/>
+                                      <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
+                                  </valueExpression>
+                              </extension>
+                              <language value="text/fhirpath"/>
+                              <expression value="%encounter.status = 'in-progress'"/></expression>
+                      </condition>
+                      <relatedAction>
+                          <actionId value="create-and-report-eicr"/>
+                          <relationship value="before-start"/>
+                          <offsetDuration>
+                              <value value="600"/>
+                              <system value="http://unitsofmeasure.org"/>
+                              <code value="s"/>
+                          </offsetDuration>
+                      </relatedAction>
+                  </action>
+                  <action id="car-is-encounter-finished">
+                      <code>
+                          <coding>
+                              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                              <code value="evaluate-condition"/>
+                          </coding>
+                      </code>
+                      <condition>
+                          <kind value="applicability"/>
+                          <expression>
+                              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternativeExpression">
+                                  <valueExpression>
+                                      <language value="text/cql-identifier"/>
+                                      <expression value="Is Encounter Finished"/>
+                                      <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
+                                  </valueExpression>
+                              </extension>
+                              <language value="text/fhirpath"/>
+                              <expression value="%encounter.status = 'finished'"/></expression>
+                      </condition>
+                      <relatedAction>
+                          <actionId value="report-eicr"/>
+                          <relationship value="before-start"/>
+                          <offsetDuration>
+                              <value value="600"/>
+                              <system value="http://unitsofmeasure.org"/>
+                              <code value="s"/>
+                          </offsetDuration>
+                      </relatedAction>
+                  </action>
+              </action>
+              <action id="report-eicr">
+                  <description value="This action represents the creation, validation and submission of the eICR."/>
+                  <textEquivalent value="Create, Validate and Report eICR set of actions"/>
+                  <code>
+                      <coding>
+                          <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                          <code value="execute-reporting-workflow"/>
+                      </coding>
+                  </code>
+                  <action id="create-eicr">
+                      <description value="This action invokes the creation of the eICR report."/>
+                      <textEquivalent value="Create eICR"/>
+                      <code>
+                          <coding>
+                              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                              <code value="create-report"/>
+                          </coding>
+                      </code>
+                      <input id="patient">
+                          <type value="Patient"/>
+                          <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
+                      </input>
+                      <input id="condition">
+                          <type value="Condition"/>
+                          <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"/>
+                      </input>
+                      <input id="encounter">
+                          <type value="Encounter"/>
+                          <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"/>
+                      </input>
+                      <input id="mr">
+                          <type value="MedicationRequest"/>
+                          <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"/>
+                      </input>
+                      <input id="immz">
+                          <type value="Immunization"/>
+                          <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization"/>
+                      </input>
+                      <input id="proc">
+                          <type value="Procedure"/>
+                          <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"/>
+                      </input>
+                      <input id="obs">
+                          <type value="Observation"/>
+                          <profile value="http://hl7.org/fhir/StructureDefinition/vitalsigns"/>
+                      </input>
+                      <input id="svcr">
+                          <type value="ServiceRequest"/>
+                          <profile value="http://hl7.org/fhir/StructureDefinition/servicerequest"/>
+                      </input>
+                      <output id="eicr-report">
+                          <type value="Bundle"/>
+                          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+                      </output>
+                      <relatedAction>
+                          <actionId value="validate-eicr"/>
+                          <relationship value="before-start"/>
+                      </relatedAction>
+                  </action>
+              </action>
+              <action id="validate-eicr">
+                  <description value="This action represents the validation of the eICR."/>
+                  <textEquivalent value="Validate eICR"/>
+                  <code>
+                      <coding>
+                          <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                          <code value="validate-report"/>
+                      </coding>
+                  </code>
+                  <input id="eicr-report">
+                      <type value="Bundle"/>
+                      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+                  </input>
+                  <output id="validated-eicr-report">
+                      <type value="Bundle"/>
+                      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+                  </output>
+                  <relatedAction>
+                      <actionId value="submit-eicr"/>
+                      <relationship value="before-start"/>
+                  </relatedAction>
+              </action>
+              <action id="submit-eicr">
+                  <description value="This action represents the validation of the eICR."/>
+                  <textEquivalent value="Submit eICR"/>
+                  <code>
+                      <coding>
+                          <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                          <code value="submit-report"/>
+                      </coding>
+                  </code>
+                  <input id="validated-eicr-report">
+                      <type value="Bundle"/>
+                      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+                  </input>
+                  <output id="eicr-report-submitted">
+                      <type value="Bundle"/>
+                      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+                  </output>
+              </action>
+          </PlanDefinition>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://hl7.org/fhir/us/ecr/Library/library-rctc"/>
+        <resource>
+            <Library>
+                <id value="library-rctc"/>
+                <text>
+                    <status value="generated"/>
+                    <div
+                        xmlns="http://www.w3.org/1999/xhtml">
+                        <table
+                            xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                            <tr>
+                                <td style="font-weight: bold">id: </td>
+                                <td>
+                                    <div title="id">library-rctc</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">meta: </td>
+                                <td>
+                                    <ul style="list-style:none; padding-left:0; margin:0 0;">
+                                        <li>
+                                            <div title="versionId">8</div>
+                                        </li>
+                                        <li>
+                                            <div title="lastUpdated">2019-10-03T02:12:47.000-04:00</div>
+                                        </li>
+                                        <li>
+                                            <div title="profile">http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset-library</div>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">url: </td>
+                                <td>
+                                    <div title="url">http://hl7.org/fhir/us/ecr/Library/library-rctc</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">identifier: </td>
+                                <td>
+                                    <ul style="list-style:none; padding-left:0; margin:0 0;">
+                                        <li>
+                                            <div title="system">urn:ietf:rfc:3986</div>
+                                        </li>
+                                        <li>
+                                            <div title="value">urn:oid:2.16.840.1.114222.4.11.7508</div>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">version: </td>
+                                <td>
+                                    <div title="version">2019-06-17</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">name: </td>
+                                <td>
+                                    <div title="name">Reportable_Condition_Trigger_Codes</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">title: </td>
+                                <td>
+                                    <div title="title">Reportable Condition Trigger Codes (RCTC)</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">status: </td>
+                                <td>
+                                    <div title="status">active</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">type: </td>
+                                <td>
+                                    <ul style="list-style:none; padding-left:0; margin:0 0;">
+                                        <li> (
+                                            <div title="code">asset-collection</div> )
+                                        </li>
+                                        <li>
+                                            <div title="system">
+                                                <a href="http://terminology.hl7.org/CodeSystem/library-type">http://terminology.hl7.org/CodeSystem/library-type</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">description: </td>
+                                <td>
+                                    <div title="description"> This release includes code updates for the existing conditions and adds codes for Parkinson’s disease and 13 enteric conditions. Medication codes
+                                                    have also been added to this version. </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">effectivePeriod: </td>
+                                <td>
+                                    <div title="start">2019-11-01</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">relatedArtifact: </td>
+                                <td>
+                                    <ul style="list-style:none; padding-left:0; margin:0 0;">
+                                        <li>
+                                            <div title="type">composed-of</div>
+                                        </li>
+                                        <li>
+                                            <div title="resource">http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example</div>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">relatedArtifact: </td>
+                                <td>
+                                    <ul style="list-style:none; padding-left:0; margin:0 0;">
+                                        <li>
+                                            <div title="type">composed-of</div>
+                                        </li>
+                                        <li>
+                                            <div title="resource">http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example</div>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">relatedArtifact: </td>
+                                <td>
+                                    <ul style="list-style:none; padding-left:0; margin:0 0;">
+                                        <li>
+                                            <div title="type">composed-of</div>
+                                        </li>
+                                        <li>
+                                            <div title="resource">http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example</div>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">relatedArtifact: </td>
+                                <td>
+                                    <ul style="list-style:none; padding-left:0; margin:0 0;">
+                                        <li>
+                                            <div title="type">composed-of</div>
+                                        </li>
+                                        <li>
+                                            <div title="resource">http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example</div>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">relatedArtifact: </td>
+                                <td>
+                                    <ul style="list-style:none; padding-left:0; margin:0 0;">
+                                        <li>
+                                            <div title="type">composed-of</div>
+                                        </li>
+                                        <li>
+                                            <div title="resource">http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example</div>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">relatedArtifact: </td>
+                                <td>
+                                    <ul style="list-style:none; padding-left:0; margin:0 0;">
+                                        <li>
+                                            <div title="type">composed-of</div>
+                                        </li>
+                                        <li>
+                                            <div title="resource">http://hl7.org/fhir/us/ecr/ValueSet/valueset-iztc-example</div>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </text>
+                <url value="http://hl7.org/fhir/us/ecr/Library/library-rctc"/>
+                <identifier>
+                    <system value="urn:ietf:rfc:3986"/>
+                    <value value="urn:oid:2.16.840.1.114222.4.11.7508"/>
+                </identifier>
+                <version value="2019-06-17"/>
+                <name value="Reportable_Condition_Trigger_Codes"/>
+                <title value="Reportable Condition Trigger Codes (RCTC)"/>
+                <status value="active"/>
+                <type>
+                    <coding>
+                        <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+                        <code value="asset-collection"/>
+                    </coding>
+                </type>
+                <description value="This release includes code updates for the existing conditions and adds codes for Parkinson’s disease and 13 enteric conditions. Medication codes have also been added to this version."/>
+                <purpose value="Triggers for initiating decision support for electronic case reports"/>
+                <effectivePeriod>
+                    <start value="2019-11-01"/>
+                </effectivePeriod>
+                <relatedArtifact>
+                    <type value="composed-of"/>
+                    <resource value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"/>
+                </relatedArtifact>
+                <relatedArtifact>
+                    <type value="composed-of"/>
+                    <resource value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"/>
+                </relatedArtifact>
+                <relatedArtifact>
+                    <type value="composed-of"/>
+                    <resource value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"/>
+                </relatedArtifact>
+                <relatedArtifact>
+                    <type value="composed-of"/>
+                    <resource value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example"/>
+                </relatedArtifact>
+                <relatedArtifact>
+                    <type value="composed-of"/>
+                    <resource value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
+                </relatedArtifact>
+                <relatedArtifact>
+                    <type value="composed-of"/>
+                    <resource value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-iztc-example"/>
+                </relatedArtifact>
+            </Library>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"/>
+        <resource>
+            <ValueSet>
+                <id value="valueset-dxtc-example"/>
+                <extension url="http://hl7.org/fhir/StructureDefinition/valueset-steward">
+                    <valueContactDetail>
+                        <name value="CSTE Steward"/>
+                    </valueContactDetail>
+                </extension>
+                <extension url="http://hl7.org/fhir/StructureDefinition/valueset-author">
+                    <valueContactDetail>
+                        <name value="CSTE Author"/>
+                    </valueContactDetail>
+                </extension>
+                <url value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"/>
+                <identifier>
+                    <system value="urn:ietf:rfc:3986"/>
+                    <value value="urn:oid:2.16.840.1.113762.1.4.1146.627"/>
+                </identifier>
+                <version value="1.0.0"/>
+                <name value="Example_Diagnosis_Problem_Triggers_for_Public_Health_Reporting"/>
+                <title value="Example Diagnosis Problem Triggers for Public Health Reporting"/>
+                <status value="draft"/>
+                <experimental value="true"/>
+                <date value="2018-08-01"/>
+                <publisher value="{site.data.fhir.ig.publisher}"/>
+                <contact>
+                    <name value="HL7 Public Health and Emergency Response WorkGroup"/>
+                    <telecom>
+                        <system value="url"/>
+                        <value value="http://www.hl7.org/Special/committees/pher/index.cfm"/>
+                    </telecom>
+                </contact>
+                <description value="This example set of values contains diagnoses or problems that represent that the patient may have a potentially reportable condition regardless of the clinical presentation of the condition"/>
+                <useContext>
+                    <code>
+                        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
+                        <code value="reporting"/>
+                        <display value="Reporting"/>
+                    </code>
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
+                            <code value="triggering"/>
+                            <display value="Triggering"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </useContext>
+                <jurisdiction>
+                    <coding>
+                        <system value="urn:iso:std:iso:3166"/>
+                        <code value="US"/>
+                        <display value="United States of America"/>
+                    </coding>
+                    <text value="United States of America"/>
+                </jurisdiction>
+                <copyright value="This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"/>
+                <compose>
+                    <include>
+                        <system value="http://hl7.org/fhir/sid/icd-10-cm"/>
+                        <concept>
+                            <code value="A01"/>
+                            <display value="Typhoid and paratyphoid fevers"/>
+                        </concept>
+                        <concept>
+                            <code value="A01.0"/>
+                            <display value="Typhoid fever"/>
+                        </concept>
+                    </include>
+                    <include>
+                        <system value="http://snomed.info/sct"/>
+                        <concept>
+                            <code value="10750051000119105"/>
+                            <display value="Chlamydia trachomatis infection in mother complicating childbirth (disorder)"/>
+                        </concept>
+                        <concept>
+                            <code value="10754031000119105"/>
+                            <display value="Gonorrhea in mother complicating childbirth (disorder)"/>
+                        </concept>
+                        <concept>
+                            <code value="1084791000119106"/>
+                            <display value="Cardiac disorder due to typhoid fever (disorder)"/>
+                        </concept>
+                        <concept>
+                            <code value="1086991000119103"/>
+                            <display value="Gonococcal abscess of brain (disorder)"/>
+                        </concept>
+                        <concept>
+                            <code value="1087051000119109"/>
+                            <display value="Gonococcal osteomyelitis (disorder)"/>
+                        </concept>
+                        <concept>
+                            <code value="1087061000119106"/>
+                            <display value="Gonococcal pneumonia (disorder)"/>
+                        </concept>
+                        <concept>
+                            <code value="1092371000119103"/>
+                            <display value="Salmonella pyelonephritis (disorder)"/>
+                        </concept>
+                    </include>
+                </compose>
+            </ValueSet>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"/>
+        <resource>
+            <ValueSet>
+                <id value="valueset-ostc-example"/>
+                <extension url="http://hl7.org/fhir/StructureDefinition/valueset-steward">
+                    <valueContactDetail>
+                        <name value="CSTE Steward"/>
+                    </valueContactDetail>
+                </extension>
+                <extension url="http://hl7.org/fhir/StructureDefinition/valueset-author">
+                    <valueContactDetail>
+                        <name value="CSTE Author"/>
+                    </valueContactDetail>
+                </extension>
+                <url value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"/>
+                <identifier>
+                    <system value="urn:ietf:rfc:3986"/>
+                    <value value="urn:oid:2.16.840.1.113762.1.4.1146.1059"/>
+                </identifier>
+                <version value="1.0.0"/>
+                <name value="Example_Organism_Substance_Triggers_for_Public_Health_Reporting"/>
+                <title value="Example Organism Substance Triggers for Public Health Reporting"/>
+                <status value="draft"/>
+                <experimental value="true"/>
+                <date value="2018-08-01"/>
+                <publisher value="{site.data.fhir.ig.publisher}"/>
+                <contact>
+                    <name value="HL7 Public Health and Emergency Response WorkGroup"/>
+                    <telecom>
+                        <system value="url"/>
+                        <value value="http://www.hl7.org/Special/committees/pher/index.cfm"/>
+                    </telecom>
+                </contact>
+                <description value="This example set of values contains organism and substance names that represent that the patient may have a potentially reportable condition regardless of the clinical presentation of the condition"/>
+                <useContext>
+                    <code>
+                        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
+                        <code value="reporting"/>
+                        <display value="Reporting"/>
+                    </code>
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
+                            <code value="triggering"/>
+                            <display value="Triggering"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </useContext>
+                <jurisdiction>
+                    <coding>
+                        <system value="urn:iso:std:iso:3166"/>
+                        <code value="US"/>
+                        <display value="United States of America"/>
+                    </coding>
+                    <text value="United States of America"/>
+                </jurisdiction>
+                <copyright value="This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"/>
+                <compose>
+                    <include>
+                        <system value="http://snomed.info/sct"/>
+                        <concept>
+                            <code value="1009003"/>
+                            <display value="Salmonella Oakland (organism)"/>
+                        </concept>
+                        <concept>
+                            <code value="10096007"/>
+                            <display value="Salmonella Leoben (organism)"/>
+                        </concept>
+                        <concept>
+                            <code value="10112007"/>
+                            <display value="Salmonella Alamo (organism)"/>
+                        </concept>
+                        <concept>
+                            <code value="10183008"/>
+                            <display value="Salmonella Pensacola (organism)"/>
+                        </concept>
+                        <concept>
+                            <code value="10248003"/>
+                            <display value="Salmonella Travis (organism)"/>
+                        </concept>
+                    </include>
+                </compose>
+            </ValueSet>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"/>
+        <resource>
+            <ValueSet>
+                <id value="valueset-lotc-example"/>
+                <extension url="http://hl7.org/fhir/StructureDefinition/valueset-steward">
+                    <valueContactDetail>
+                        <name value="CSTE Steward"/>
+                    </valueContactDetail>
+                </extension>
+                <extension url="http://hl7.org/fhir/StructureDefinition/valueset-author">
+                    <valueContactDetail>
+                        <name value="CSTE Author"/>
+                    </valueContactDetail>
+                </extension>
+                <url value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"/>
+                <identifier>
+                    <system value="urn:ietf:rfc:3986"/>
+                    <value value="urn:oid:2.16.840.1.113762.1.4.1146.1056"/>
+                </identifier>
+                <version value="1.0.0"/>
+                <name value="Example_Lab_Order_Test_Triggers_for_Public_Health_Reporting"/>
+                <title value="Example Lab Order Test Triggers for Public Health Reporting"/>
+                <status value="draft"/>
+                <experimental value="true"/>
+                <date value="2018-08-01"/>
+                <publisher value="{site.data.fhir.ig.publisher}"/>
+                <contact>
+                    <name value="HL7 Public Health and Emergency Response WorkGroup"/>
+                    <telecom>
+                        <system value="url"/>
+                        <value value="http://www.hl7.org/Special/committees/pher/index.cfm"/>
+                    </telecom>
+                </contact>
+                <description value="This example set of values contains laboratory test names for orders that represent that the patient may have a potentially reportable condition regardless of the clinical presentation of the condition"/>
+                <useContext>
+                    <code>
+                        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
+                        <code value="reporting"/>
+                        <display value="Reporting"/>
+                    </code>
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
+                            <code value="triggering"/>
+                            <display value="Triggering"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </useContext>
+                <jurisdiction>
+                    <coding>
+                        <system value="urn:iso:std:iso:3166"/>
+                        <code value="US"/>
+                        <display value="United States of America"/>
+                    </coding>
+                    <text value="United States of America"/>
+                </jurisdiction>
+                <copyright value="This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"/>
+                <compose>
+                    <include>
+                        <system value="http://loinc.org"/>
+                        <concept>
+                            <code value="11585-7"/>
+                            <display value="Bordetella pertussis Ab [Units/volume] in Serum"/>
+                        </concept>
+                        <concept>
+                            <code value="16474-9"/>
+                            <display value="Bordetella pertussis Ab [Units/volume] in Serum by Complement fixation"/>
+                        </concept>
+                        <concept>
+                            <code value="20992-4"/>
+                            <display value="Bordetella pertussis Ab [Presence] in Unspecified specimen"/>
+                        </concept>
+                        <concept>
+                            <code value="22116-8"/>
+                            <display value="Bordetella pertussis Ab [Titer] in Serum"/>
+                        </concept>
+                        <concept>
+                            <code value="22117-6"/>
+                            <display value="Bordetella pertussis Ab [Titer] in Unspecified specimen"/>
+                        </concept>
+                    </include>
+                </compose>
+            </ValueSet>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example"/>
+        <resource>
+            <ValueSet>
+                <id value="valueset-lrtc-example"/>
+                <extension url="http://hl7.org/fhir/StructureDefinition/valueset-steward">
+                    <valueContactDetail>
+                        <name value="CSTE Steward"/>
+                    </valueContactDetail>
+                </extension>
+                <extension url="http://hl7.org/fhir/StructureDefinition/valueset-author">
+                    <valueContactDetail>
+                        <name value="CSTE Author"/>
+                    </valueContactDetail>
+                </extension>
+                <url value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example"/>
+                <identifier>
+                    <system value="urn:ietf:rfc:3986"/>
+                    <value value="urn:oid:2.16.840.1.113762.1.4.1146.1057"/>
+                </identifier>
+                <version value="1.0.0"/>
+                <name value="Example_Lab_Obs_Test_Name_Triggers_for_Public_Health_Reporting"/>
+                <title value="Example Lab Obs Test Name Triggers for Public Health Reporting"/>
+                <status value="draft"/>
+                <experimental value="true"/>
+                <date value="2018-08-01"/>
+                <publisher value="{site.data.fhir.ig.publisher}"/>
+                <contact>
+                    <name value="HL7 Public Health and Emergency Response WorkGroup"/>
+                    <telecom>
+                        <system value="url"/>
+                        <value value="http://www.hl7.org/Special/committees/pher/index.cfm"/>
+                    </telecom>
+                </contact>
+                <description value="This example set of values contains laboratory observations test names that represent that the patient may have a potentially reportable condition regardless of the clinical presentation of the condition"/>
+                <useContext>
+                    <code>
+                        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
+                        <code value="reporting"/>
+                        <display value="Reporting"/>
+                    </code>
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
+                            <code value="triggering"/>
+                            <display value="Triggering"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </useContext>
+                <jurisdiction>
+                    <coding>
+                        <system value="urn:iso:std:iso:3166"/>
+                        <code value="US"/>
+                        <display value="United States of America"/>
+                    </coding>
+                    <text value="United States of America"/>
+                </jurisdiction>
+                <copyright value="This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"/>
+                <compose>
+                    <include>
+                        <system value="http://loinc.org"/>
+                        <concept>
+                            <code value="11585-7"/>
+                            <display value="Bordetella pertussis Ab [Units/volume] in Serum"/>
+                        </concept>
+                        <concept>
+                            <code value="14127-5"/>
+                            <display value="Neisseria gonorrhoeae [Presence] in Anal by Organism specific culture"/>
+                        </concept>
+                        <concept>
+                            <code value="14461-8"/>
+                            <display value="Chlamydia trachomatis [Presence] in Blood by Organism specific culture"/>
+                        </concept>
+                        <concept>
+                            <code value="14462-6"/>
+                            <display value="Chlamydia trachomatis [Presence] in Cerebral spinal fluid by Organism specific culture"/>
+                        </concept>
+                        <concept>
+                            <code value="14463-4"/>
+                            <display value="Chlamydia trachomatis [Presence] in Cervix by Organism specific culture"/>
+                        </concept>
+                    </include>
+                </compose>
+            </ValueSet>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
+        <resource>
+            <ValueSet>
+                <id value="valueset-mrtc-example"/>
+                <extension url="http://hl7.org/fhir/StructureDefinition/valueset-steward">
+                    <valueContactDetail>
+                        <name value="CSTE Steward"/>
+                    </valueContactDetail>
+                </extension>
+                <extension url="http://hl7.org/fhir/StructureDefinition/valueset-author">
+                    <valueContactDetail>
+                        <name value="CSTE Author"/>
+                    </valueContactDetail>
+                </extension>
+                <url value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
+                <identifier>
+                    <system value="urn:ietf:rfc:3986"/>
+                    <value value="urn:oid:2.16.840.1.113762.1.4.1146.1060"/>
+                </identifier>
+                <version value="1.0.0"/>
+                <name value="Example_Medications_Triggers_for_Public_Health_Reporting"/>
+                <title value="Example Medications Triggers for Public Health Reporting"/>
+                <status value="active"/>
+                <experimental value="true"/>
+                <date value="2018-08-01"/>
+                <publisher value="{site.data.fhir.ig.publisher}"/>
+                <description value="This example set of values contains CVX, RXNORM,and SNOMED medication codes that may represent that the patient may have a potentially reportable condition. These pertain to medications administered and medications prescribed, where the medication, coded in CVX,RXNORM,SNOMED, may be indicative of a reportable condition."/>
+                <useContext>
+                    <code>
+                        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
+                        <code value="reporting"/>
+                        <display value="Reporting"/>
+                    </code>
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
+                            <code value="triggering"/>
+                            <display value="Triggering"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </useContext>
+                <jurisdiction>
+                    <coding>
+                        <system value="urn:iso:std:iso:3166"/>
+                        <code value="US"/>
+                        <display value="United States of America"/>
+                    </coding>
+                    <text value="United States of America"/>
+                </jurisdiction>
+                <purpose value="Prescription drugs names used in observations documented in a clinical record."/>
+                <compose>
+                    <include>
+                        <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+                        <concept>
+                            <code value="809002"/>
+                            <display value="Carbidopa 10 MG / Levodopa 100 MG Disintegrating Oral Tablet [Parcopa]"/>
+                        </concept>
+                        <concept>
+                            <code value="476515"/>
+                            <display value="Carbidopa 25 MG / Levodopa 250 MG Disintegrating Oral Tablet"/>
+                        </concept>
+                        <concept>
+                            <code value="308988"/>
+                            <display value="Carbidopa 25 MG / Levodopa 100 MG Extended Release Oral Tablet"/>
+                        </concept>
+                        <concept>
+                            <code value="724606"/>
+                            <display value="Carbidopa 10 MG / Levodopa 100 MG Oral Tablet [Sinemet]"/>
+                        </concept>
+                        <concept>
+                            <code value="1600914"/>
+                            <display value="8 HR Carbidopa 48.75 MG / Levodopa 195 MG Extended Release Oral Capsule"/>
+                        </concept>
+                        <concept>
+                            <code value="476399"/>
+                            <display value="Carbidopa 25 MG / Levodopa 100 MG Disintegrating Oral Tablet"/>
+                        </concept>
+                    </include>
+                </compose>
+            </ValueSet>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-iztc-example"/>
+        <resource>
+            <ValueSet>
+                <id value="valueset-iztc-example"/>
+                <extension url="http://hl7.org/fhir/StructureDefinition/valueset-steward">
+                    <valueContactDetail>
+                        <name value="CSTE Steward"/>
+                    </valueContactDetail>
+                </extension>
+                <extension url="http://hl7.org/fhir/StructureDefinition/valueset-author">
+                    <valueContactDetail>
+                        <name value="CSTE Author"/>
+                    </valueContactDetail>
+                </extension>
+                <url value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-iztc-example"/>
+                <identifier>
+                    <system value="urn:ietf:rfc:3986"/>
+                    <value value="urn:oid:2.16.840.1.113762.1.4.1146.999999999"/>
+                </identifier>
+                <version value="1.0.0"/>
+                <name value="Example_Immunizations_Triggers_for_Public_Health_Reporting"/>
+                <title value="Example Immunizations Triggers for Public Health Reporting"/>
+                <status value="active"/>
+                <experimental value="true"/>
+                <date value="2018-08-01"/>
+                <publisher value="{site.data.fhir.ig.publisher}"/>
+                <description value="This example set of values contains CVX vaccine codes that may represent that the patient may have a potentially reportable condition. These pertain to vaccines administered and prescribed, where the vaccine, coded in CVX, may be indicative of a reportable condition."/>
+                <useContext>
+                    <code>
+                        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
+                        <code value="reporting"/>
+                        <display value="Reporting"/>
+                    </code>
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
+                            <code value="triggering"/>
+                            <display value="Triggering"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </useContext>
+                <jurisdiction>
+                    <coding>
+                        <system value="urn:iso:std:iso:3166"/>
+                        <code value="US"/>
+                        <display value="United States of America"/>
+                    </coding>
+                    <text value="United States of America"/>
+                </jurisdiction>
+                <purpose value="Vaccine drug names used in observations documented in a clinical record."/>
+                <compose>
+                    <include>
+                        <system value="http://hl7.org/fhir/sid/cvx"/>
+                        <concept>
+                            <code value="01"/>
+                            <display value="diphtheria, tetanus toxoids and pertussis vaccine"/>
+                        </concept>
+                        <concept>
+                            <code value="02"/>
+                            <display value="trivalent poliovirus vaccine, live, oral"/>
+                        </concept>
+                        <concept>
+                            <code value="03"/>
+                            <display value="measles, mumps and rubella virus vaccine"/>
+                        </concept>
+                        <concept>
+                            <code value="04"/>
+                            <display value="measles and rubella virus vaccine"/>
+                        </concept>
+                        <concept>
+                            <code value="05"/>
+                            <display value="measles virus vaccine"/>
+                        </concept>
+                    </include>
+                </compose>
+            </ValueSet>
+        </resource>
+    </entry>
+</Bundle>

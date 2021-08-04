@@ -16,27 +16,29 @@ A diagram of this workflow is shown below.
 The eRSD PlanDefinition profile defines the following actions:
 
 NOTE: The offsets (1 h, 6h, and 24h, are parameters to the specification)
-
-*     initial-creation-delay: 1 h
-*     reportable-check-period: 6 h
-*     suspected-reportable-update-period: 24 h
-*     suspected-reportable-close-delay: 24 h
+  *     initial-creation-delay: 1 h
+  *     reportable-check-period: 6 h
+  *     suspected-reportable-update-period: 24 h
+  *     suspected-reportable-close-delay: 24 h
 
 *     start
-        trigger: encounter-start
-        action: check-reportable in 1 hour
+        - trigger: encounter-start
+        - action: check-reportable in 1 hour
+
 
 *     check-reportable
-        if isSuspectedReportable, create-and-report-eicr
-        if encounter-inprogress, check-reportable in 6 hours
+        - if isSuspectedReportable, create-and-report-eicr
+        - if encounter-inprogress, check-reportable in 6 hours
+
 
 *     create-and-report-eicr
-        report-eicr
-        if encounter-complete, report-eicr in 24 hours
-        if encounter-inprogress, create-and-report-eicr in 24 hours
+        - report-eicr
+        - if encounter-complete, report-eicr in 24 hours
+        - if encounter-inprogress, create-and-report-eicr in 24 hours
+
 
 *     report-eicr
-        create-eicr, validate-eicr, route-and-send-eicr
+        - create-eicr, validate-eicr, route-and-send-eicr
 
 And the inclusion of an associated ExampleScenario:
 

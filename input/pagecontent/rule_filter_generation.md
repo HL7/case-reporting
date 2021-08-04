@@ -76,7 +76,7 @@ As of the most recent release of the eRSD specification, condition-specific valu
       "text": "Chlamydia"
     }
   }
-],
+]
 ```
 
 NOTE: In addition to the condition, we will need to know the category in order to be able to accurately determine which resource template to use to construct the rule expression.
@@ -116,9 +116,6 @@ define "<<Condition Name>> Laboratory Test Results":
   [Observation: <<Condition Valueset>>] O
     where O.status in { 'preliminary', 'final', 'amended', 'corrected' }
 ```
-
-TODO: Need to identify the set of data patterns for each type of data category
-This will involve walking through a representative sample of rules content and identifying the patterns of access for each of the data categories.
 
 |DataTemplateId | Description |
 | Active Diagnosis | Problem list items that are clinically active |
@@ -221,13 +218,12 @@ Jurisdiction determination is a complex process, but a suitable determination al
 
 To support local determination of jurisdiction, we need, for each jurisdiction, a unique identifier, a description, whether the jurisdiction is a state or local jurisdiction, and what the state and configured zipcodes are for that jurisdiction:
 
-TODO: Define this codesystem (jurisdiction-types)
-Jurisdiction Type:
-BURROUGH
-CITY
-COUNTY
-DISTRICT
-PARISH
+The [Jurisdiction Types](CodeSystem-ersd-jurisdiction-types.html) CodeSystem defines the following jurisdiction types:
+BURROUGH,
+CITY,
+COUNTY,
+DISTRICT,
+PARISH,
 STATE
 
 State/Territory is covered by the STATE code and any non-state code is considered "local" for the purposes of matching, and matching at the local level is always done by zipcode/postalcode.
@@ -263,13 +259,6 @@ Example 3: An event occurring in Boise ID, 83701
 Example 4: An event occurring in Idaho Falls ID, 83403
 * { ID }
 
-TODO: Create a profile of code system for inclusion in the ersd spec to describe how the jurisdiction code system works
-TODO: Include documentation of the ersd code system and the configuration capabilities it enables described above
-TODO: Include documentation of the GetJurisdictions algorithm to go from an Address to a set of applicable jurisdictions
-TODO: Create tooling to generate the ersd-jurisdiction CodeSystem using the csv file as input
-NOTE: CSV may have lowercase jurisdiction codes, convert those to uppercase for inclusion in the code system
-NOTE: CSV will have uppercase state names for the value of the State column, convert those to US Core State Code value set codes for inclusion in the code system
-
 ### Jurisdiction Configuration
 
 Once we know the set of rules, and the set of configurations of those rules for each jurisdiction, and the rules for determining which jurisdictions are applicable for patient and encounter data, then we can apply that information to construct a complete CQL expression of the site-specific reportability decision criteria. For example:
@@ -302,3 +291,6 @@ define "IsReportable":
     or <other Chlamydia condition criteria>...
     or <other condition criteria>...
 ```
+### Example
+
+See the [eRSD PlanDefinition Example](PlanDefinition-plandefinition-ersd-instance.html) for an example implementation

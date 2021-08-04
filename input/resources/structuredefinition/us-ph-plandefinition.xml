@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-plandefinition"/>
     <meta>
-        <versionId value="10"/>
-        <lastUpdated value="2021-06-30T04:51:53.941+00:00"/>
-        <source value="#XELZx2KMPBn98jsN"/>
+        <versionId value="12"/>
+        <lastUpdated value="2021-08-02T07:09:31.240+00:00"/>
+        <source value="#T4VUbVp1v1KelaxN"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-plandefinition"/>
     <version value="1.0.0"/>
@@ -34,6 +34,17 @@
             <path value="PlanDefinition"/>
             <short value="US Public Health PlanDefinition"/>
             <definition value="Defines a shareable US Public Health PlanDefinition."/>
+        </element>
+        <element id="PlanDefinition.extension:receiverAddress">
+            <path value="PlanDefinition.extension"/>
+            <sliceName value="receiverAddress"/>
+            <min value="0"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-receiver-address-extension"/>
+            </type>
+            <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.version">
             <path value="PlanDefinition.version"/>
@@ -70,10 +81,14 @@
             </fixedCodeableConcept>
             <mustSupport value="true"/>
         </element>
+        <element id="PlanDefinition.subject[x]">
+            <path value="PlanDefinition.subject[x]"/>
+            <mustSupport value="true"/>
+        </element>
         <element id="PlanDefinition.date">
             <path value="PlanDefinition.date"/>
-            <short value="Date the PlanDefinition was published"/>
-            <definition value="Date the PlanDefinition was published"/>
+            <short value="Date the PlanDefinition was last changed"/>
+            <definition value="Date the PlanDefinition was last changed"/>
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
@@ -85,18 +100,149 @@
         </element>
         <element id="PlanDefinition.effectivePeriod">
             <path value="PlanDefinition.effectivePeriod"/>
-            <short value="When the PlanDefinition is expected to be used"/>
-            <definition value="The period during which the PlanDefinition is expected to be used"/>
+            <short value="When the PlanDefinition is valid"/>
+            <definition value="The period during which the PlanDefinition is valid"/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.effectivePeriod.start">
             <path value="PlanDefinition.effectivePeriod.start"/>
-            <short value="The start of the time period when this PlanDefinition goes in effect"/>
-            <definition value="The start of the time period when this PlanDefinition goes in effect"/>
+            <short value="The start of the time period when this PlanDefinition goes into effect"/>
+            <definition value="The start of the time period when this PlanDefinition goes into effect"/>
             <min value="1"/>
         </element>
         <element id="PlanDefinition.library">
             <path value="PlanDefinition.library"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action">
+            <path value="PlanDefinition.action"/>
+            <short value="All constraints on action are intended to apply to any nested constraints."/>
+            <min value="0"/>
+            <max value="*"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action.description">
+            <path value="PlanDefinition.action.description"/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action.code">
+            <path value="PlanDefinition.action.code"/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+            <binding>
+                <strength value="extensible"/>
+                <description value="The set of actions that can be used to create plan definition"/>
+                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-plandefinition-action"/>
+            </binding>
+        </element>
+        <element id="PlanDefinition.action.trigger">
+            <path value="PlanDefinition.action.trigger"/>
+            <min value="0"/>
+            <max value="*"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action.trigger.extension:namedEventType">
+            <path value="PlanDefinition.action.trigger.extension"/>
+            <sliceName value="namedEventType"/>
+            <min value="0"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension"/>
+            </type>
+            <mustSupport value="true"/>
+            <binding>
+                <strength value="extensible"/>
+                <description value="The set of named events that can be used for subscriptions"/>
+                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-triggerdefinition-namedevent"/>
+            </binding>
+        </element>
+        <element id="PlanDefinition.action.trigger.type">
+            <path value="PlanDefinition.action.trigger.type"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="code"/>
+            </type>
+            <fixedCode value="named-event"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action.condition">
+            <path value="PlanDefinition.action.condition"/>
+            <min value="0"/>
+            <max value="*"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action.condition.kind">
+            <path value="PlanDefinition.action.condition.kind"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action.condition.expression">
+            <path value="PlanDefinition.action.condition.expression"/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action.input">
+            <path value="PlanDefinition.action.input"/>
+            <min value="0"/>
+            <max value="*"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action.input.type">
+            <path value="PlanDefinition.action.input.type"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action.output">
+            <path value="PlanDefinition.action.output"/>
+            <min value="0"/>
+            <max value="*"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action.output.type">
+            <path value="PlanDefinition.action.output.type"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action.relatedAction">
+            <path value="PlanDefinition.action.relatedAction"/>
+            <min value="0"/>
+            <max value="*"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action.relatedAction.actionId">
+            <path value="PlanDefinition.action.relatedAction.actionId"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action.relatedAction.relationship">
+            <path value="PlanDefinition.action.relatedAction.relationship"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action.relatedAction.offsetDuration">
+            <path value="PlanDefinition.action.relatedAction.offsetDuration"/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action.timing[x]">
+            <path value="PlanDefinition.action.timing[x]"/>
+            <min value="0"/>
+            <max value="1"/>
+            <type>
+                <code value="Duration"/>
+            </type>
             <mustSupport value="true"/>
         </element>
     </differential>

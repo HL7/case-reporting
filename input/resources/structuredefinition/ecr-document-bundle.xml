@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="eicr-document-bundle"/>
+    <id value="ecr-document-bundle"/>
     <meta>
-        <versionId value="13"/>
-        <lastUpdated value="2021-07-01T04:51:51.602+00:00"/>
-        <source value="#rK5iJjbZgfldpIMG"/>
+        <versionId value="4"/>
+        <lastUpdated value="2021-07-21T06:27:02.978+00:00"/>
+        <source value="#Ok1KhJqfWc9jiUCG"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-document-bundle"/>
     <version value="1.0.0"/>
-    <name value="Eicr_Document_Bundle"/>
-    <title value="eICR Document Bundle"/>
+    <name value="ECRDocumentBundle"/>
+    <title value="eCR Document Bundle"/>
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Bundle profile represents an eICR Document Bundle. It contains the eICR Composition."/>
+    <description value="This Bundle profile represents an eCR Document Bundle. It contains either an eICR Composition or an RR Composition."/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -62,6 +62,7 @@
             <type>
                 <code value="Resource"/>
                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition"/>
             </type>
             <mustSupport value="true"/>
         </element>
