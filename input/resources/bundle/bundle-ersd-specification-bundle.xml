@@ -109,7 +109,7 @@
                       <coding>
                           <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
                           <code value="initiate-reporting-workflow"/>
-                          <display value="Evaluate candidate patient&#39;s data against trigger codes to determine reportability"/>
+                          <display value="Initiate a reporting workflow"/>
                       </coding>
                   </code>
                   <trigger id="encounter-start">
@@ -156,7 +156,7 @@
                       <condition>
                           <kind value="applicability"/>
                           <expression>
-                              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternativeExpression">
+                              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
                                   <valueExpression>
                                       <language value="text/cql-identifier"/>
                                       <expression value="Is Reportable"/>
@@ -170,77 +170,77 @@
                           <type value="Condition"/>
                           <codeFilter>
                               <path value="code"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/dxtc"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"/>
                           </codeFilter>
                       </input>
                       <input id="encounters">
                           <type value="Encounter"/>
                           <codeFilter>
                               <path value="reasonCode"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/dxtc"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"/>
                           </codeFilter>
                       </input>
                       <input id="immunizations">
                           <type value="Immunization"/>
                           <codeFilter>
                               <path value="vaccineCode"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/mrtc"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
                           </codeFilter>
                       </input>
                       <input id="labOrders">
                           <type value="ServiceRequest"/>
                           <codeFilter>
                               <path value="code"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/lotc"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"/>
                           </codeFilter>
                       </input>
                       <input id="labTests">
                           <type value="Observation"/>
                           <codeFilter>
                               <path value="code"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/lotc"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"/>
                           </codeFilter>
                       </input>
                       <input id="procedureOrders">
                           <type value="ServiceRequest"/>
                           <codeFilter>
                               <path value="code"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/pctc"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example"/>
                           </codeFilter>
                       </input>
                       <input id="procedures">
                           <type value="Procedure"/>
                           <codeFilter>
                               <path value="code"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/pctc"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example"/>
                           </codeFilter>
                       </input>
                       <input id="medicationOrders">
                           <type value="MedicationRequest"/>
                           <codeFilter>
                               <path value="medication"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/mrtc"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
                           </codeFilter>
                       </input>
                       <input id="medicationDispenses">
                           <type value="MedicationDispense"/>
                           <codeFilter>
                               <path value="medication"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/mrtc"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
                           </codeFilter>
                       </input>
                       <input id="medicationAdministrations">
                           <type value="MedicationAdministration"/>
                           <codeFilter>
                               <path value="medication"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/mrtc"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
                           </codeFilter>
                       </input>
                       <input id="labResults">
                           <type value="Observation"/>
                           <codeFilter>
                               <path value="value"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/ostc"/>
+                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"/>
                           </codeFilter>
                       </input>
                       <relatedAction>
@@ -258,7 +258,7 @@
                       <condition>
                           <kind value="applicability"/>
                           <expression>
-                              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternativeExpression">
+                              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
                                   <valueExpression>
                                       <language value="text/cql-identifier"/>
                                       <expression value="Is Encounter In Progress"/>
@@ -312,7 +312,7 @@
                       <condition>
                           <kind value="applicability"/>
                           <expression>
-                              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternativeExpression">
+                              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
                                   <valueExpression>
                                       <language value="text/cql-identifier"/>
                                       <expression value="Is Encounter In Progress"/>
@@ -342,7 +342,7 @@
                       <condition>
                           <kind value="applicability"/>
                           <expression>
-                              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternativeExpression">
+                              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
                                   <valueExpression>
                                       <language value="text/cql-identifier"/>
                                       <expression value="Is Encounter Finished"/>
@@ -411,7 +411,7 @@
                       </input>
                       <input id="svcr">
                           <type value="ServiceRequest"/>
-                          <profile value="http://hl7.org/fhir/StructureDefinition/servicerequest"/>
+                          <profile value="http://hl7.org/fhir/StructureDefinition/ServiceRequest"/>
                       </input>
                       <output id="eicr-report">
                           <type value="Bundle"/>

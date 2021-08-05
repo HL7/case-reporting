@@ -54,24 +54,26 @@
             <min value="1"/>
         </element>
         <element id="Library.relatedArtifact:sliceJurisdictionsCodeSystem">
-            <path value="Bundle.entry"/>
+            <path value="Library.relatedArtifact"/>
             <sliceName value="sliceJurisdictionsCodeSystem"/>
+            <short value="Jurisdiction CodeSystem"/>
+            <definition value="Jurisdictions CodeSystem"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Library.relatedArtifact:slicePlanDefinition.type">
+        <element id="Library.relatedArtifact:sliceJurisdictionsCodeSystem.type">
             <path value="Library.relatedArtifact.type"/>
             <short value="composed-of"/>
             <definition value="The type of relationship to the related artifact. Fixed to composed-of."/>
             <patternCode value="composed-of"/>
         </element>
         <element id="Library.relatedArtifact:sliceJurisdictionsCodeSystem.resource">
-            <path value="Bundle.entry.resource"/>
+            <path value="Library.relatedArtifact.resource"/>
             <min value="1"/>
             <type>
-                <code value="Resource"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem"/>
+                <code value="canonical"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem"/>
             </type>
             <mustSupport value="true"/>
         </element>

@@ -103,6 +103,14 @@
             <fixedString value="This action represents the start of the reporting workflow in response to the encounter-start event"/>
             <mustSupport value="true"/>
         </element>
+        <element id="PlanDefinition.action:encounterStart.textEquivalent">
+            <path value="PlanDefinition.action.textEquivalent"/>
+            <short value="Text equivalent of the &quot;start&quot; action."/>
+            <definition value="Text equivalent of the &quot;start&quot; action."/>
+            <min value="1"/>
+            <fixedString value="Start the reporting workflow in response to an encounter-start event"/>
+            <mustSupport value="true"/>
+        </element>
         <element id="PlanDefinition.action:encounterStart.code">
             <path value="PlanDefinition.action.code"/>
             <short value="Code for the &quot;start&quot; action."/>
@@ -115,14 +123,6 @@
                 <code value="initiate-reporting-workflow"/>
               </coding>
             </patternCodeableConcept>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:encounterStart.textEquivalent">
-            <path value="PlanDefinition.action.textEquivalent"/>
-            <short value="Text equivalent of the &quot;start&quot; action."/>
-            <definition value="Text equivalent of the &quot;start&quot; action."/>
-            <min value="1"/>
-            <fixedString value="Start the reporting workflow in response to an encounter-start event"/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action:encounterStart.trigger">
@@ -434,8 +434,10 @@
         <element id="PlanDefinition.action:createAndReport.code">
             <path value="PlanDefinition.action.code"/>
             <patternCodeableConcept>
+              <coding>
                 <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
                 <code value="execute-reporting-workflow"/>
+              </coding>
             </patternCodeableConcept>
             <min value="1"/>
         </element>
@@ -469,8 +471,10 @@
         <element id="PlanDefinition.action:createAndReport.action:reportEicr.code">
             <path value="PlanDefinition.action.action.code"/>
             <patternCodeableConcept>
+              <coding>
                 <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
                 <code value="execute-reporting-workflow"/>
+              </coding>
             </patternCodeableConcept>
             <min value="1"/>
         </element>
