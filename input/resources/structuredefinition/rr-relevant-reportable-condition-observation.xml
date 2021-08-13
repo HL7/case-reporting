@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="rr-relevant-reportable-condition-observation"/>
     <meta>
-        <versionId value="20"/>
-        <lastUpdated value="2021-07-21T05:19:29.047+00:00"/>
-        <source value="#BNYlUtLCljWQCXdT"/>
+        <versionId value="21"/>
+        <lastUpdated value="2021-08-13T04:21:34.347+00:00"/>
+        <source value="#EJJTkb2tfIiYqJYd"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation"/>
     <version value="1.0.0"/>
@@ -77,19 +77,35 @@
             <path value="Observation.code.coding"/>
             <sliceName value="codeSNOMED"/>
             <short value="Condition"/>
-            <fixedCoding>
-                <system value="http://snomed.info/sct"/>
-                <code value="64572001"/>
-            </fixedCoding>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.code.coding:codeSNOMED.system">
+            <path value="Observation.code.coding.system"/>
+            <min value="1"/>
+            <fixedUri value="http://snomed.info/sct"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.code.coding:codeSNOMED.code">
+            <path value="Observation.code.coding.code"/>
+            <min value="1"/>
+            <fixedCode value="64572001"/>
             <mustSupport value="true"/>
         </element>
         <element id="Observation.code.coding:codeLOINC">
             <path value="Observation.code.coding"/>
             <sliceName value="codeLOINC"/>
-            <fixedCoding>
-                <system value="http://loinc.org"/>
-                <code value="75323-6"/>
-            </fixedCoding>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.code.coding:codeLOINC.system">
+            <path value="Observation.code.coding.system"/>
+            <min value="1"/>
+            <fixedUri value="http://loinc.org"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Observation.code.coding:codeLOINC.code">
+            <path value="Observation.code.coding.code"/>
+            <min value="1"/>
+            <fixedCode value="75323-6"/>
             <mustSupport value="true"/>
         </element>
         <element id="Observation.value[x]">

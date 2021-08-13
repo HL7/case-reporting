@@ -3,161 +3,10 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-plandefinition-actions"/>
     <meta>
-        <versionId value="1"/>
-        <lastUpdated value="2021-08-04T15:52:33.196+00:00"/>
-        <source value="#XjvgSuuOdusBQNUh"/>
+        <versionId value="2"/>
+        <lastUpdated value="2021-08-13T04:50:49.806+00:00"/>
+        <source value="#awJouuxGqRh7nPXm"/>
     </meta>
-    <text>
-        <status value="generated"/>
-        <div
-            xmlns="http://www.w3.org/1999/xhtml">
-            <p>This code system http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions defines the following codes:</p>
-            <table class="codes">
-                <tr>
-                    <td>
-                        <b>Lvl</b>
-                    </td>
-                    <td style="white-space:nowrap">
-                        <b>Code</b>
-                    </td>
-                    <td>
-                        <b>Display</b>
-                    </td>
-                    <td>
-                        <b>Definition</b>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td style="white-space:nowrap">initiate-reporting-workflow
-                        <a name="us-ph-plandefinition-actions-initiate-reporting-workflow"/>
-                    </td>
-                    <td>Initiate a reporting workflow</td>
-                    <td>Request the initiation of a reporting workflow for a patient for a specific context (e.g., encounter).</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td style="white-space:nowrap">execute-reporting-workflow
-                        <a name="us-ph-plandefinition-actions-execute-reporting-workflow"/>
-                    </td>
-                    <td>Execute a series of actions to accomplish reporting</td>
-                    <td>This is top level action that uses other defined actions to accomplish reporting for a specific context (e.g., encounter).</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td style="white-space:nowrap">  check-trigger-codes
-                        <a name="us-ph-plandefinition-actions-check-trigger-codes"/>
-                    </td>
-                    <td>Evaluate candidate patient's data against trigger codes to determine reportability</td>
-                    <td>Evaluate candidate patient's data against trigger codes to determine reportability.</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td style="white-space:nowrap">  check-participant-registration
-                        <a name="us-ph-plandefinition-actions-check-participant-registration"/>
-                    </td>
-                    <td>Evaluate participants in encounter for reportability</td>
-                    <td>Evaluate encounter participants such as patient, practitioner, organization on whether they have been selected for reportability.</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td style="white-space:nowrap">  create-report
-                        <a name="us-ph-plandefinition-actions-create-report"/>
-                    </td>
-                    <td>Create a Report containing Patient's data for patients who passed the check-reportability test</td>
-                    <td>Create a Report containing Patient's data for patients who passed the check-reportability test.</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td style="white-space:nowrap">  validate-report
-                        <a name="us-ph-plandefinition-actions-validate-report"/>
-                    </td>
-                    <td>Validate Report against specified profiles and terminologies.</td>
-                    <td>Validate Report against specified profiles and terminologies.</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td style="white-space:nowrap">  submit-report
-                        <a name="us-ph-plandefinition-actions-submit-report"/>
-                    </td>
-                    <td>Submit the report to specified endpoint</td>
-                    <td>Submit the report to specified endpoint.</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td style="white-space:nowrap">  deidentify-report
-                        <a name="us-ph-plandefinition-actions-deidentify-report"/>
-                    </td>
-                    <td>Deidentify the report before submitting the report</td>
-                    <td>Deidentify the report before submitting the report.</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td style="white-space:nowrap">  anonymize-report
-                        <a name="us-ph-plandefinition-actions-anonymize-report"/>
-                    </td>
-                    <td>Anonymize the report before submitting the report</td>
-                    <td>Anonymize the report before submitting the report.</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td style="white-space:nowrap">  pseudonymize-report
-                        <a name="us-ph-plandefinition-actions-pseudonymize-report"/>
-                    </td>
-                    <td>Pseudonymize the report before submitting the report</td>
-                    <td>Pseudonymize the report before submitting the report.</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td style="white-space:nowrap">  encrypt-report
-                        <a name="us-ph-plandefinition-actions-encrypt-report"/>
-                    </td>
-                    <td>Encrypt the report before submitting the report</td>
-                    <td>Encrypt the report before submitting the report.</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td style="white-space:nowrap">  complete-reporting
-                        <a name="us-ph-plandefinition-actions-complete-reporting"/>
-                    </td>
-                    <td>Complete reporting for the patient</td>
-                    <td>Complete the reporting for the patient, after which no further reports will be sent for a specific context (e.g., Encounter).</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td style="white-space:nowrap">  extract-research-data
-                        <a name="us-ph-plandefinition-actions-extract-research-data"/>
-                    </td>
-                    <td>Extract data from an EHR for one or more patients.</td>
-                    <td>Extract data from an EHR for one or more patients for research purposes.</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td style="white-space:nowrap">  execute-research-query
-                        <a name="us-ph-plandefinition-actions-execute-research-query"/>
-                    </td>
-                    <td>Execute a research query on the data mart.</td>
-                    <td>Execute a research query on the data mart based on the PlanDefinition and create a result to be submitted.</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td style="white-space:nowrap">terminate-reporting-workflow
-                        <a name="us-ph-plandefinition-actions-terminate-reporting-workflow"/>
-                    </td>
-                    <td>Terminate a reporting workflow</td>
-                    <td>Request the initiation of terminating a reporting workflow.</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td style="white-space:nowrap">  cancel-report
-                        <a name="us-ph-plandefinition-actions-cancel-report"/>
-                    </td>
-                    <td>Cancel an already submitted report</td>
-                    <td>Cancel an already submitted report.</td>
-                </tr>
-            </table>
-        </div>
-    </text>
     <url value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
     <version value="0.1.0"/>
     <name value="USPublicHealthPlanDefinitionActions"/>
@@ -195,6 +44,11 @@
             <code value="check-trigger-codes"/>
             <display value="Evaluate candidate patient's data against trigger codes to determine reportability"/>
             <definition value="Evaluate candidate patient's data against trigger codes to determine reportability."/>
+        </concept>
+        <concept>
+            <code value="evaluate-condition"/>
+            <display value="Evaluate condition to determine reportability"/>
+            <definition value="Evaluate condition to determine reportability."/>
         </concept>
         <concept>
             <code value="check-participant-registration"/>
