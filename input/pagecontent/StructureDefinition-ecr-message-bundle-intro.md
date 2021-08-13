@@ -1,1 +1,0 @@
-This profile is based on the US Public Health Reporting Bundle, contains the eCR MessageHeader, and is for use in the eCR messaging paradigm.

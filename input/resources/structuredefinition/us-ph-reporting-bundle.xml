@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-reporting-bundle"/>
     <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2021-06-30T04:51:55.256+00:00"/>
-        <source value="#1JVTTA7gNcROy1d0"/>
+        <versionId value="4"/>
+        <lastUpdated value="2021-08-13T05:37:51.923+00:00"/>
+        <source value="#QMgbiVR8JUygE7Ue"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-reporting-bundle"/>
     <version value="0.1.0"/>
@@ -55,6 +55,31 @@
             <min value="0"/>
             <max value="1"/>
             <mustSupport value="true"/>
+        </element>
+        <element id="Bundle.entry">
+            <path value="Bundle.entry"/>
+            <slicing>
+                <discriminator>
+                    <type value="profile"/>
+                    <path value="$this.resource"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Bundle.entry:sliceMessageHeader">
+            <path value="Bundle.entry"/>
+            <sliceName value="sliceMessageHeader"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Bundle.entry:sliceMessageHeader.resource">
+            <path value="Bundle.entry.resource"/>
+            <type>
+                <code value="Resource"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-messageheader"/>
+            </type>
         </element>
     </differential>
 </StructureDefinition>
