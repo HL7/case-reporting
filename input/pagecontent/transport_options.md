@@ -8,11 +8,11 @@ The following profiles have been defined for the FHIR Messaging Option:
 
 #### Profiles
 <ul>
-  <li><a href="StructureDefinition-us-ph-message-bundle.html">US Public Health Message Bundle</a></li>
+  <li><a href="StructureDefinition-us-ph-reporting-bundle.html">US Public Health Reporting Bundle</a></li>
   <li><a href="StructureDefinition-ecr-messageheader.html">eCR MessageHeader</a></li>
 </ul>
 
-The first resource in the <a href="StructureDefinition-us-ph-message-bundle.html">US Public Health Message Bundle</a> is the <a href="StructureDefinition-ecr-messageheader.html">eCR MessageHeader</a> and the focus of the <a href="StructureDefinition-ecr-messageheader.html">eCR MessageHeader</a> is the <a href="StructureDefinition-ecr-document-bundle.html">eCR Document Bundle</a>.
+The first resource in the <a href="StructureDefinition-us-ph-reporting-bundle.html">US Public Health Reporting Bundle</a> is the <a href="StructureDefinition-ecr-messageheader.html">eCR MessageHeader</a> and the focus of the <a href="StructureDefinition-ecr-messageheader.html">eCR MessageHeader</a> is the <a href="StructureDefinition-ecr-document-bundle.html">eCR Document Bundle</a>.
 
 The <a href="StructureDefinition-ecr-document-bundle.html">eCR Document Bundle</a> contains either the <a href="StructureDefinition-eicr-composition.html">eICR Composition</a> or the <a href="StructureDefinition-rr-composition.html">RR Composition</a>.
 
