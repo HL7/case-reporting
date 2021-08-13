@@ -26,8 +26,8 @@ The current PlanDefinition uses ECA Rules, we propose using Workflow Definition 
 #### Profiles
 <ul>
   <li><a href="StructureDefinition-ersd-plandefinition.html">eRSD PlanDefinition</a></li>
-  <li><a href="StructureDefinition-ersd-specification-library.html">eRSD Specification Library</a></li>
-  <li><a href="StructureDefinition-ersd-supplemental-library.html">eRSD Supplemental Library</a></li>
+  <li><a href="StructureDefinition-us-ph-specification-bundle.html">US Public Health Specification Bundle</a></li>
+  <li><a href="StructureDefinition-us-ph-supplemental-bundle.html">US Public Health Supplemental Bundle</a></li>
   <li><a href="StructureDefinition-us-ph-supplemental-valueset.html">US Public Health Supplemental ValueSet</a></li>  
   <li><a href="StructureDefinition-us-ph-supplemental-valueset-library.html">US Public Health Supplemental ValueSet Library</a></li>  
   <li><a href="StructureDefinition-us-ph-triggering-valueset.html">US Public Health Triggering ValueSet</a></li>
@@ -58,6 +58,9 @@ The current PlanDefinition uses ECA Rules, we propose using Workflow Definition 
 ### Additional Links
 <ul>
   <li><a href="StructureDefinition-ersd-plandefinition.html">eRSD PlanDefinition</a></li>
+</ul>
+
+<ul>
   <li><a href="StructureDefinition-us-ph-valueset-library.html">US Public Health ValueSet Library</a></li>
-  <li><a href="StructureDefinition-us-ph-valueset.html">US Public Health ValueSet</a></li>
+ <li><a href="StructureDefinition-us-ph-valueset.html">US Public Health ValueSet</a></li>
 </ul>

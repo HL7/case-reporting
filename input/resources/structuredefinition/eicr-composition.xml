@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="eicr-composition"/>
     <meta>
-        <versionId value="63"/>
-        <lastUpdated value="2021-08-02T06:13:43.688+00:00"/>
-        <source value="#87Xsb9I1SnActbhx"/>
+        <versionId value="65"/>
+        <lastUpdated value="2021-08-10T22:58:12.074+00:00"/>
+        <source value="#zcN3Ska059rpmXJj"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
     <version value="1.0.0"/>
@@ -992,12 +992,12 @@
                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"/>
             </type>
         </element>
-        <element id="Composition.section:sliceImmunizationsSection.entry:sliceDHCPatientAssertion">
+        <element id="Composition.section:sliceImmunizationsSection.entry:sliceVaccineCredentialsPatientAssertion">
             <path value="Composition.section.entry"/>
-            <sliceName value="sliceDHCPatientAssertion"/>
+            <sliceName value="sliceVaccineCredentialsPatientAssertion"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-dhc-patient-assertion-observation"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-vaccine-credential-patient-assertion"/>
             </type>
             <mustSupport value="true"/>
         </element>
@@ -1248,6 +1248,7 @@
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/odh/StructureDefinition/odh-PastOrPresentJob"/>
             </type>
+            <mustSupport value="true"/>
             <mapping>
                 <identity value="eCR-CDA"/>
                 <map value="[eICR R2 STU2] Past or Present Occupation Observation"/>
@@ -1263,6 +1264,7 @@
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/odh/StructureDefinition/odh-UsualWork"/>
             </type>
+            <mustSupport value="true"/>
             <mapping>
                 <identity value="eCR-CDA"/>
                 <map value="[eICR R2 STU2] Usual Occupation Observation"/>
@@ -1305,6 +1307,27 @@
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-exposure-contact-information"/>
             </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Composition.section:sliceSocialHistorySection.entry:sliceCountryOfResidence">
+            <path value="Composition.section.entry"/>
+            <sliceName value="sliceCountryOfResidence"/>
+            <short value="Country of residence entry"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-country-of-residence"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Composition.section:sliceSocialHistorySection.entry:sliceCountryOfCitizenship">
+            <path value="Composition.section.entry"/>
+            <sliceName value="sliceCountryOfCitizenship"/>
+            <short value="Country of citizenship entry - "/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-country-of-citizenship"/>
+            </type>
+            <mustSupport value="true"/>
         </element>
         <element id="Composition.section:slicePregnancySection">
             <path value="Composition.section"/>

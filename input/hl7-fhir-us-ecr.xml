@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="561"/>
-        <lastUpdated value="2021-08-05T02:05:58.779+00:00"/>
-        <source value="#iyx6lI34Dri9lT3A"/>
+        <versionId value="567"/>
+        <lastUpdated value="2021-08-10T22:42:14.048+00:00"/>
+        <source value="#evDcZJQ4sU3NJqLs"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.1.0"/>
@@ -627,13 +627,13 @@
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-computable-valueset"/>
             <groupingId value="terminology-valuesets"/>
         </resource>
-        <!--<resource>
+        <resource>
             <reference>
                 <reference value="Parameters/expansion-parameters-ecr"/></reference>
             <name value="expansion-parameters-ecr"/>
             <description value="References US SNOMED CT version."/>
             <exampleBoolean value="false"/>
-        </resource>-->
+        </resource>
         <resource>
             <reference>
                 <reference value="ValueSet/2.16.840.1.113762.1.4.1099.24"/>
@@ -1971,11 +1971,11 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/eicr-dhc-patient-assertion-observation"/>
-                <display value="eICR Digital Health Certificate Patient Assertion Observation"/>
+                <reference value="StructureDefinition/eicr-vaccine-credential-patient-assertion"/>
+                <display value="eICR Vaccine Credential Patient Assertion"/>
             </reference>
             <name value="eICR Digital Health Certificate Patient Assertion Observation"/>
-            <description value="This Observation profile represents whether or not the patient has asserted that they have a digital health certificate or credentials."/>
+            <description value="This Observation profile represents whether or not the patient has asserted that they have verifiable vaccine credentials."/>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
@@ -2022,6 +2022,24 @@
             </reference>
             <name value="eRSD Supplemental Library"/>
             <description value="Defines the asset-collection library containing the eRSD supplemental assets."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-country-of-residence"/>
+                <display value="eICR Country of Residence"/>
+            </reference>
+            <name value="eICR Country of Residence Observation"/>
+            <description value="This Observation profile represents the patient's country of residence."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-country-of-citizenship"/>
+                <display value="eICR Country of Citizenship"/>
+            </reference>
+            <name value="eICR Country of Citizenship Observation"/>
+            <description value="This Observation profile represents a patient's country of citizenship."/>
             <exampleBoolean value="false"/>
         </resource>
         <page>
@@ -2101,6 +2119,11 @@
             <page>
                 <nameUrl value="relationship_to_other_standards.html"/>
                 <title value="Relationship to Other Standards"/>
+                <generation value="markdown"/>
+            </page>
+            <page>
+                <nameUrl value="terminology.html"/>
+                <title value="Terminology"/>
                 <generation value="markdown"/>
             </page>
             <page>

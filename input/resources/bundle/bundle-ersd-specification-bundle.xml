@@ -3,467 +3,476 @@
     xmlns="http://hl7.org/fhir">
     <id value="bundle-ersd-specification-bundle"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2021-06-30T07:40:49.085+00:00"/>
-        <source value="#xas7OF0tYBOe11AS"/>
+        <versionId value="8"/>
+        <lastUpdated value="2021-08-05T02:28:39.714+00:00"/>
+        <source value="#ByXmP48lk2s7CYM3"/>
     </meta>
     <type value="collection"/>
     <entry>
         <fullUrl value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance"/>
         <resource>
-          <PlanDefinition xmlns="http://hl7.org/fhir">
-              <id value="plandefinition-ersd-instance"/>
-              <meta>
-                  <versionId value="1"/>
-                  <lastUpdated value="2021-07-30T21:27:46.417+00:00"/>
-                  <source value="#xy1QMAnLi7NhlL41"/>
-              </meta>
-              <text>
-                  <status value="generated"/>
-                  <div xmlns="http://www.w3.org/1999/xhtml">
-                      <p>
-                          <b>PlanDefinition eRSD Instance</b>
-                      </p>
-                      <p>
-                          <b>url</b>:
-                          <a href="PlanDefinition-plandefinition-ersd-instance.html">http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance</a>
-                      </p>
-                      <p>
-                          <b>version</b>: 3.0.0
-                      </p>
-                      <p>
-                          <b>name</b>: PlanDefinition_eRSD_Instance
-                      </p>
-                      <p>
-                          <b>title</b>: eRSD PlanDefinition Instance
-                      </p>
-                      <p>
-                          <b>type</b>:
-                          <span title="Codes: {http://terminology.hl7.org/CodeSystem/plan-definition-type workflow-definition}">Workflow
+            <PlanDefinition>
+                <id value="plandefinition-ersd-instance"/>
+                <text>
+                    <status value="generated"/>
+                    <div
+                        xmlns="http://www.w3.org/1999/xhtml">
+                        <p>
+                            <b>PlanDefinition eRSD Instance</b>
+                        </p>
+                        <p>
+                            <b>url</b>:
+                          
+                            <a href="PlanDefinition-plandefinition-ersd-instance.html">http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance</a>
+                        </p>
+                        <p>
+                            <b>version</b>: 3.0.0
+                      
+                        </p>
+                        <p>
+                            <b>name</b>: PlanDefinition_eRSD_Instance
+                      
+                        </p>
+                        <p>
+                            <b>title</b>: eRSD PlanDefinition Instance
+                      
+                        </p>
+                        <p>
+                            <b>type</b>:
+                          
+                            <span title="Codes: {http://terminology.hl7.org/CodeSystem/plan-definition-type workflow-definition}">Workflow
                             Definition</span>
-                      </p>
-                      <p>
-                          <b>status</b>: active
-                      </p>
-                      <p>
-                          <b>experimental</b>: true
-                      </p>
-                      <p>
-                          <b>date</b>: Jul 31, 2020, 5:32:29 PM
-                      </p>
-                      <p>
-                          <b>publisher</b>: HL7 Public Health Work Group (http://www.hl7.org/Special/committees/pher/index.cfm)
-                      </p>
-                      <p>
-                          <b>contact</b>: HL7 International - Public Health:
-                          <a href="http://www.hl7.org/Special/committees/pher">http://www.hl7.org/Special/committees/pher</a>
-                      </p>
-                      <p>
-                          <b>description</b>: An example ersd PlanDefinition
-                      </p>
-                      <p>
-                          <b>jurisdiction</b>:
-                          <span title="Codes: {urn:iso:std:iso:3166 US}">United States of America</span>
-                      </p>
-                      <p>
-                          <b>effectivePeriod</b>: 2020-12-01 --&gt; (ongoing)
-                      </p>
-                  </div>
-              </text>
-              <url value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance"/>
-              <version value="0.1"/>
-              <name value="PlanDefinition_eRSD_Instance"/>
-              <title value="eRSD PlanDefinition Instance"/>
-              <type>
-                  <coding>
-                      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
-                      <code value="workflow-definition"/>
-                      <display value="Workflow Definition"/>
-                  </coding>
-              </type>
-              <status value="active"/>
-              <experimental value="true"/>
-              <date value="2020-07-31T12:32:29.858-05:00"/>
-              <publisher value="HL7 Public Health Work Group"/>
-              <description value="An example ersd PlanDefinition"/>
-              <jurisdiction>
-                  <coding>
-                      <system value="urn:iso:std:iso:3166"/>
-                      <code value="US"/>
-                      <display value="United States of America"/>
-                  </coding>
-                  <text value="United States of America"/>
-              </jurisdiction>
-              <effectivePeriod>
-                  <start value="2020-12-01"/>
-              </effectivePeriod>
-              <relatedArtifact>
-                  <type value="depends-on"/>
-                  <label value="RCTC Value Set Library of Trigger Codes"/>
-                  <resource value="http://hl7.org/fhir/us/ecr/Library/library-rctc"/>
-              </relatedArtifact>
-              <action id="start-workflow">
-                  <description value="This action represents the start of the reporting workflow in response to the encounter-start event"/>
-                  <textEquivalent value="Start the reporting workflow in response to an encounter-start event"/>
-                  <code>
-                      <coding>
-                          <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                          <code value="initiate-reporting-workflow"/>
-                          <display value="Initiate a reporting workflow"/>
-                      </coding>
-                  </code>
-                  <trigger id="encounter-start">
-                      <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension">
-                          <valueCodeableConcept>
-                              <coding>
-                                  <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-triggerdefinition-namedevents"/>
-                                  <code value="encounter-start"/>
-                                  <display value="Indicates the start of an encounter"/>
-                              </coding>
-                          </valueCodeableConcept>
-                      </extension>
-                      <type value="named-event"/>
-                      <name value="encounter-start"/>
-                  </trigger>
-                  <relatedAction>
-                      <actionId value="check-reportable"/>
-                      <relationship value="before-start"/>
-                      <offsetDuration>
-                          <value value="60"/>
-                          <system value="http://unitsofmeasure.org"/>
-                          <code value="s"/>
-                      </offsetDuration>
-                  </relatedAction>
-              </action>
-              <action id="check-reportable">
-                  <description value="This action represents the check for suspected reportability of the eICR."/>
-                  <textEquivalent value="Check Reportability and setup jobs for future reportability checks."/>
-                  <code>
-                      <coding>
-                          <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                          <code value="execute-reporting-workflow"/>
-                      </coding>
-                  </code>
-                  <action id="ckr-is-encounter-reportable">
-                      <description value="This action represents the check for reportability to create the patients eICR."/>
-                      <textEquivalent value="Check Trigger Codes based on RCTC Value sets."/>
-                      <code>
-                          <coding>
-                              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                              <code value="check-trigger-codes"/>
-                          </coding>
-                      </code>
-                      <condition>
-                          <kind value="applicability"/>
-                          <expression>
-                              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
-                                  <valueExpression>
-                                      <language value="text/cql-identifier"/>
-                                      <expression value="Is Reportable"/>
-                                      <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
-                                  </valueExpression>
-                              </extension>
-                              <language value="text/fhirpath"/>
-                              <expression value="%conditions.exists() or %encounters.exists() or %immunizations.exists() or %procedures.exists() or $procedureOrders.exists() or %labOrders.exists() or %labTests.exists() or %labResults.exists() or %medicationAdministrations.exists() or %medicationOrders.exists() or %medicationDispenses.exists()"/></expression>
-                      </condition>
-                      <input id="conditions">
-                          <type value="Condition"/>
-                          <codeFilter>
-                              <path value="code"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"/>
-                          </codeFilter>
-                      </input>
-                      <input id="encounters">
-                          <type value="Encounter"/>
-                          <codeFilter>
-                              <path value="reasonCode"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"/>
-                          </codeFilter>
-                      </input>
-                      <input id="immunizations">
-                          <type value="Immunization"/>
-                          <codeFilter>
-                              <path value="vaccineCode"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
-                          </codeFilter>
-                      </input>
-                      <input id="labOrders">
-                          <type value="ServiceRequest"/>
-                          <codeFilter>
-                              <path value="code"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"/>
-                          </codeFilter>
-                      </input>
-                      <input id="labTests">
-                          <type value="Observation"/>
-                          <codeFilter>
-                              <path value="code"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"/>
-                          </codeFilter>
-                      </input>
-                      <input id="procedureOrders">
-                          <type value="ServiceRequest"/>
-                          <codeFilter>
-                              <path value="code"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example"/>
-                          </codeFilter>
-                      </input>
-                      <input id="procedures">
-                          <type value="Procedure"/>
-                          <codeFilter>
-                              <path value="code"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example"/>
-                          </codeFilter>
-                      </input>
-                      <input id="medicationOrders">
-                          <type value="MedicationRequest"/>
-                          <codeFilter>
-                              <path value="medication"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
-                          </codeFilter>
-                      </input>
-                      <input id="medicationDispenses">
-                          <type value="MedicationDispense"/>
-                          <codeFilter>
-                              <path value="medication"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
-                          </codeFilter>
-                      </input>
-                      <input id="medicationAdministrations">
-                          <type value="MedicationAdministration"/>
-                          <codeFilter>
-                              <path value="medication"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
-                          </codeFilter>
-                      </input>
-                      <input id="labResults">
-                          <type value="Observation"/>
-                          <codeFilter>
-                              <path value="value"/>
-                              <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"/>
-                          </codeFilter>
-                      </input>
-                      <relatedAction>
-                          <actionId value="create-and-report-eicr"/>
-                          <relationship value="before-start"/>
-                      </relatedAction>
-                  </action>
-                  <action id="ckr-is-encounter-in-progress">
-                      <code>
-                          <coding>
-                              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                              <code value="evaluate-condition"/>
-                          </coding>
-                      </code>
-                      <condition>
-                          <kind value="applicability"/>
-                          <expression>
-                              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
-                                  <valueExpression>
-                                      <language value="text/cql-identifier"/>
-                                      <expression value="Is Encounter In Progress"/>
-                                      <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
-                                  </valueExpression>
-                              </extension>
-                              <language value="text/fhirpath"/>
-                              <expression value="%encounter.status = 'in-progress'"/></expression>
-                      </condition>
-                      <relatedAction>
-                          <actionId value="check-reportable"/>
-                          <relationship value="before-start"/>
-                          <offsetDuration>
-                              <value value="300"/>
-                              <system value="http://unitsofmeasure.org"/>
-                              <code value="s"/>
-                          </offsetDuration>
-                      </relatedAction>
-                  </action>
-              </action>
-              <action id="create-and-report-eicr">
-                  <description value="This action represents the creation and reporting of the eICR."/>
-                  <textEquivalent value="Create and Report eICR set of actions"/>
-                  <code>
-                      <coding>
-                          <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                          <code value="execute-reporting-workflow"/>
-                      </coding>
-                  </code>
-                  <action id="car-report-eicr">
-                      <description value="This action invokes the creation and submission of the eICR report."/>
-                      <textEquivalent value="Invoke creation and submission of eICR"/>
-                      <code>
-                          <coding>
-                              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                              <code value="execute-reporting-workflow"/>
-                          </coding>
-                      </code>
-                      <relatedAction>
-                          <actionId value="report-eicr"/>
-                          <relationship value="before-start"/>
-                      </relatedAction>
-                  </action>
-                  <action id="car-is-encounter-in-progress">
-                      <code>
-                          <coding>
-                              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                              <code value="evaluate-condition"/>
-                          </coding>
-                      </code>
-                      <condition>
-                          <kind value="applicability"/>
-                          <expression>
-                              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
-                                  <valueExpression>
-                                      <language value="text/cql-identifier"/>
-                                      <expression value="Is Encounter In Progress"/>
-                                      <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
-                                  </valueExpression>
-                              </extension>
-                              <language value="text/fhirpath"/>
-                              <expression value="%encounter.status = 'in-progress'"/></expression>
-                      </condition>
-                      <relatedAction>
-                          <actionId value="create-and-report-eicr"/>
-                          <relationship value="before-start"/>
-                          <offsetDuration>
-                              <value value="600"/>
-                              <system value="http://unitsofmeasure.org"/>
-                              <code value="s"/>
-                          </offsetDuration>
-                      </relatedAction>
-                  </action>
-                  <action id="car-is-encounter-finished">
-                      <code>
-                          <coding>
-                              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                              <code value="evaluate-condition"/>
-                          </coding>
-                      </code>
-                      <condition>
-                          <kind value="applicability"/>
-                          <expression>
-                              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
-                                  <valueExpression>
-                                      <language value="text/cql-identifier"/>
-                                      <expression value="Is Encounter Finished"/>
-                                      <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
-                                  </valueExpression>
-                              </extension>
-                              <language value="text/fhirpath"/>
-                              <expression value="%encounter.status = 'finished'"/></expression>
-                      </condition>
-                      <relatedAction>
-                          <actionId value="report-eicr"/>
-                          <relationship value="before-start"/>
-                          <offsetDuration>
-                              <value value="600"/>
-                              <system value="http://unitsofmeasure.org"/>
-                              <code value="s"/>
-                          </offsetDuration>
-                      </relatedAction>
-                  </action>
-              </action>
-              <action id="report-eicr">
-                  <description value="This action represents the creation, validation and submission of the eICR."/>
-                  <textEquivalent value="Create, Validate and Report eICR set of actions"/>
-                  <code>
-                      <coding>
-                          <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                          <code value="execute-reporting-workflow"/>
-                      </coding>
-                  </code>
-                  <action id="create-eicr">
-                      <description value="This action invokes the creation of the eICR report."/>
-                      <textEquivalent value="Create eICR"/>
-                      <code>
-                          <coding>
-                              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                              <code value="create-report"/>
-                          </coding>
-                      </code>
-                      <input id="patient">
-                          <type value="Patient"/>
-                          <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
-                      </input>
-                      <input id="condition">
-                          <type value="Condition"/>
-                          <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"/>
-                      </input>
-                      <input id="encounter">
-                          <type value="Encounter"/>
-                          <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"/>
-                      </input>
-                      <input id="mr">
-                          <type value="MedicationRequest"/>
-                          <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"/>
-                      </input>
-                      <input id="immz">
-                          <type value="Immunization"/>
-                          <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization"/>
-                      </input>
-                      <input id="proc">
-                          <type value="Procedure"/>
-                          <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"/>
-                      </input>
-                      <input id="obs">
-                          <type value="Observation"/>
-                          <profile value="http://hl7.org/fhir/StructureDefinition/vitalsigns"/>
-                      </input>
-                      <input id="svcr">
-                          <type value="ServiceRequest"/>
-                          <profile value="http://hl7.org/fhir/StructureDefinition/ServiceRequest"/>
-                      </input>
-                      <output id="eicr-report-output">
-                          <type value="Bundle"/>
-                          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
-                      </output>
-                      <relatedAction>
-                          <actionId value="validate-eicr"/>
-                          <relationship value="before-start"/>
-                      </relatedAction>
-                  </action>
-              </action>
-              <action id="validate-eicr">
-                  <description value="This action represents the validation of the eICR."/>
-                  <textEquivalent value="Validate eICR"/>
-                  <code>
-                      <coding>
-                          <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                          <code value="validate-report"/>
-                      </coding>
-                  </code>
-                  <input id="eicr-report-input">
-                      <type value="Bundle"/>
-                      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
-                  </input>
-                  <output id="validated-eicr-report-output">
-                      <type value="Bundle"/>
-                      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
-                  </output>
-                  <relatedAction>
-                      <actionId value="submit-eicr"/>
-                      <relationship value="before-start"/>
-                  </relatedAction>
-              </action>
-              <action id="submit-eicr">
-                  <description value="This action represents the validation of the eICR."/>
-                  <textEquivalent value="Submit eICR"/>
-                  <code>
-                      <coding>
-                          <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                          <code value="submit-report"/>
-                      </coding>
-                  </code>
-                  <input id="validated-eicr-report-input">
-                      <type value="Bundle"/>
-                      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
-                  </input>
-                  <output id="eicr-report-submitted">
-                      <type value="Bundle"/>
-                      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
-                  </output>
-              </action>
-          </PlanDefinition>
+                        </p>
+                        <p>
+                            <b>status</b>: active
+                      
+                        </p>
+                        <p>
+                            <b>experimental</b>: true
+                      
+                        </p>
+                        <p>
+                            <b>date</b>: Jul 31, 2020, 5:32:29 PM
+                      
+                        </p>
+                        <p>
+                            <b>publisher</b>: HL7 Public Health Work Group (http://www.hl7.org/Special/committees/pher/index.cfm)
+                      
+                        </p>
+                        <p>
+                            <b>contact</b>: HL7 International - Public Health:
+                          
+                            <a href="http://www.hl7.org/Special/committees/pher">http://www.hl7.org/Special/committees/pher</a>
+                        </p>
+                        <p>
+                            <b>description</b>: An example ersd PlanDefinition
+                      
+                        </p>
+                        <p>
+                            <b>jurisdiction</b>:
+                          
+                            <span title="Codes: {urn:iso:std:iso:3166 US}">United States of America</span>
+                        </p>
+                        <p>
+                            <b>effectivePeriod</b>: 2020-12-01 --&gt; (ongoing)
+                      
+                        </p>
+                    </div>
+                </text>
+                <url value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance"/>
+                <version value="0.1"/>
+                <name value="PlanDefinition_eRSD_Instance"/>
+                <title value="eRSD PlanDefinition Instance"/>
+                <type>
+                    <coding>
+                        <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+                        <code value="workflow-definition"/>
+                        <display value="Workflow Definition"/>
+                    </coding>
+                </type>
+                <status value="active"/>
+                <experimental value="true"/>
+                <date value="2020-07-31T12:32:29.858-05:00"/>
+                <publisher value="HL7 Public Health Work Group"/>
+                <description value="An example ersd PlanDefinition"/>
+                <jurisdiction>
+                    <coding>
+                        <system value="urn:iso:std:iso:3166"/>
+                        <code value="US"/>
+                        <display value="United States of America"/>
+                    </coding>
+                    <text value="United States of America"/>
+                </jurisdiction>
+                <effectivePeriod>
+                    <start value="2020-12-01"/>
+                </effectivePeriod>
+                <relatedArtifact>
+                    <type value="depends-on"/>
+                    <label value="RCTC Value Set Library of Trigger Codes"/>
+                    <resource value="http://hl7.org/fhir/us/ecr/Library/library-rctc"/>
+                </relatedArtifact>
+                <action id="start-workflow">
+                    <description value="This action represents the start of the reporting workflow in response to the encounter-start event"/>
+                    <textEquivalent value="Start the reporting workflow in response to an encounter-start event"/>
+                    <code>
+                        <coding>
+                            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                            <code value="initiate-reporting-workflow"/>
+                            <display value="Initiate a reporting workflow"/>
+                        </coding>
+                    </code>
+                    <trigger id="encounter-start">
+                        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension">
+                            <valueCodeableConcept>
+                                <coding>
+                                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-triggerdefinition-namedevents"/>
+                                    <code value="encounter-start"/>
+                                    <display value="Indicates the start of an encounter"/>
+                                </coding>
+                            </valueCodeableConcept>
+                        </extension>
+                        <type value="named-event"/>
+                        <name value="encounter-start"/>
+                    </trigger>
+                    <relatedAction>
+                        <actionId value="check-reportable"/>
+                        <relationship value="before-start"/>
+                        <offsetDuration>
+                            <value value="60"/>
+                            <system value="http://unitsofmeasure.org"/>
+                            <code value="s"/>
+                        </offsetDuration>
+                    </relatedAction>
+                </action>
+                <action id="check-reportable">
+                    <description value="This action represents the check for suspected reportability of the eICR."/>
+                    <textEquivalent value="Check Reportability and setup jobs for future reportability checks."/>
+                    <code>
+                        <coding>
+                            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                            <code value="execute-reporting-workflow"/>
+                        </coding>
+                    </code>
+                    <action id="ckr-is-encounter-reportable">
+                        <description value="This action represents the check for reportability to create the patients eICR."/>
+                        <textEquivalent value="Check Trigger Codes based on RCTC Value sets."/>
+                        <code>
+                            <coding>
+                                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                                <code value="check-trigger-codes"/>
+                            </coding>
+                        </code>
+                        <condition>
+                            <kind value="applicability"/>
+                            <expression>
+                                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
+                                    <valueExpression>
+                                        <language value="text/cql-identifier"/>
+                                        <expression value="Is Reportable"/>
+                                        <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
+                                    </valueExpression>
+                                </extension>
+                                <language value="text/fhirpath"/>
+                                <expression value="%conditions.exists() or %encounters.exists() or %immunizations.exists() or %procedures.exists() or $procedureOrders.exists() or %labOrders.exists() or %labTests.exists() or %labResults.exists() or %medicationAdministrations.exists() or %medicationOrders.exists() or %medicationDispenses.exists()"/></expression>
+                        </condition>
+                        <input id="conditions">
+                            <type value="Condition"/>
+                            <codeFilter>
+                                <path value="code"/>
+                                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"/>
+                            </codeFilter>
+                        </input>
+                        <input id="encounters">
+                            <type value="Encounter"/>
+                            <codeFilter>
+                                <path value="reasonCode"/>
+                                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"/>
+                            </codeFilter>
+                        </input>
+                        <input id="immunizations">
+                            <type value="Immunization"/>
+                            <codeFilter>
+                                <path value="vaccineCode"/>
+                                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
+                            </codeFilter>
+                        </input>
+                        <input id="labOrders">
+                            <type value="ServiceRequest"/>
+                            <codeFilter>
+                                <path value="code"/>
+                                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"/>
+                            </codeFilter>
+                        </input>
+                        <input id="labTests">
+                            <type value="Observation"/>
+                            <codeFilter>
+                                <path value="code"/>
+                                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"/>
+                            </codeFilter>
+                        </input>
+                        <input id="procedureOrders">
+                            <type value="ServiceRequest"/>
+                            <codeFilter>
+                                <path value="code"/>
+                                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example"/>
+                            </codeFilter>
+                        </input>
+                        <input id="procedures">
+                            <type value="Procedure"/>
+                            <codeFilter>
+                                <path value="code"/>
+                                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example"/>
+                            </codeFilter>
+                        </input>
+                        <input id="medicationOrders">
+                            <type value="MedicationRequest"/>
+                            <codeFilter>
+                                <path value="medication"/>
+                                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
+                            </codeFilter>
+                        </input>
+                        <input id="medicationDispenses">
+                            <type value="MedicationDispense"/>
+                            <codeFilter>
+                                <path value="medication"/>
+                                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
+                            </codeFilter>
+                        </input>
+                        <input id="medicationAdministrations">
+                            <type value="MedicationAdministration"/>
+                            <codeFilter>
+                                <path value="medication"/>
+                                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
+                            </codeFilter>
+                        </input>
+                        <input id="labResults">
+                            <type value="Observation"/>
+                            <codeFilter>
+                                <path value="value"/>
+                                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"/>
+                            </codeFilter>
+                        </input>
+                        <relatedAction>
+                            <actionId value="create-and-report-eicr"/>
+                            <relationship value="before-start"/>
+                        </relatedAction>
+                    </action>
+                    <action id="ckr-is-encounter-in-progress">
+                        <code>
+                            <coding>
+                                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                                <code value="evaluate-condition"/>
+                            </coding>
+                        </code>
+                        <condition>
+                            <kind value="applicability"/>
+                            <expression>
+                                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
+                                    <valueExpression>
+                                        <language value="text/cql-identifier"/>
+                                        <expression value="Is Encounter In Progress"/>
+                                        <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
+                                    </valueExpression>
+                                </extension>
+                                <language value="text/fhirpath"/>
+                                <expression value="%encounter.status = 'in-progress'"/></expression>
+                        </condition>
+                        <relatedAction>
+                            <actionId value="check-reportable"/>
+                            <relationship value="before-start"/>
+                            <offsetDuration>
+                                <value value="300"/>
+                                <system value="http://unitsofmeasure.org"/>
+                                <code value="s"/>
+                            </offsetDuration>
+                        </relatedAction>
+                    </action>
+                </action>
+                <action id="create-and-report-eicr">
+                    <description value="This action represents the creation and reporting of the eICR."/>
+                    <textEquivalent value="Create and Report eICR set of actions"/>
+                    <code>
+                        <coding>
+                            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                            <code value="execute-reporting-workflow"/>
+                        </coding>
+                    </code>
+                    <action id="car-report-eicr">
+                        <description value="This action invokes the creation and submission of the eICR report."/>
+                        <textEquivalent value="Invoke creation and submission of eICR"/>
+                        <code>
+                            <coding>
+                                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                                <code value="execute-reporting-workflow"/>
+                            </coding>
+                        </code>
+                        <relatedAction>
+                            <actionId value="report-eicr"/>
+                            <relationship value="before-start"/>
+                        </relatedAction>
+                    </action>
+                    <action id="car-is-encounter-in-progress">
+                        <code>
+                            <coding>
+                                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                                <code value="evaluate-condition"/>
+                            </coding>
+                        </code>
+                        <condition>
+                            <kind value="applicability"/>
+                            <expression>
+                                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
+                                    <valueExpression>
+                                        <language value="text/cql-identifier"/>
+                                        <expression value="Is Encounter In Progress"/>
+                                        <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
+                                    </valueExpression>
+                                </extension>
+                                <language value="text/fhirpath"/>
+                                <expression value="%encounter.status = 'in-progress'"/></expression>
+                        </condition>
+                        <relatedAction>
+                            <actionId value="create-and-report-eicr"/>
+                            <relationship value="before-start"/>
+                            <offsetDuration>
+                                <value value="600"/>
+                                <system value="http://unitsofmeasure.org"/>
+                                <code value="s"/>
+                            </offsetDuration>
+                        </relatedAction>
+                    </action>
+                    <action id="car-is-encounter-finished">
+                        <code>
+                            <coding>
+                                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                                <code value="evaluate-condition"/>
+                            </coding>
+                        </code>
+                        <condition>
+                            <kind value="applicability"/>
+                            <expression>
+                                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
+                                    <valueExpression>
+                                        <language value="text/cql-identifier"/>
+                                        <expression value="Is Encounter Finished"/>
+                                        <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
+                                    </valueExpression>
+                                </extension>
+                                <language value="text/fhirpath"/>
+                                <expression value="%encounter.status = 'finished'"/></expression>
+                        </condition>
+                        <relatedAction>
+                            <actionId value="report-eicr"/>
+                            <relationship value="before-start"/>
+                            <offsetDuration>
+                                <value value="600"/>
+                                <system value="http://unitsofmeasure.org"/>
+                                <code value="s"/>
+                            </offsetDuration>
+                        </relatedAction>
+                    </action>
+                </action>
+                <action id="report-eicr">
+                    <description value="This action represents the creation, validation and submission of the eICR."/>
+                    <textEquivalent value="Create, Validate and Report eICR set of actions"/>
+                    <code>
+                        <coding>
+                            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                            <code value="execute-reporting-workflow"/>
+                        </coding>
+                    </code>
+                    <action id="create-eicr">
+                        <description value="This action invokes the creation of the eICR report."/>
+                        <textEquivalent value="Create eICR"/>
+                        <code>
+                            <coding>
+                                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                                <code value="create-report"/>
+                            </coding>
+                        </code>
+                        <input id="patient">
+                            <type value="Patient"/>
+                            <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
+                        </input>
+                        <input id="condition">
+                            <type value="Condition"/>
+                            <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"/>
+                        </input>
+                        <input id="encounter">
+                            <type value="Encounter"/>
+                            <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"/>
+                        </input>
+                        <input id="mr">
+                            <type value="MedicationRequest"/>
+                            <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"/>
+                        </input>
+                        <input id="immz">
+                            <type value="Immunization"/>
+                            <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization"/>
+                        </input>
+                        <input id="proc">
+                            <type value="Procedure"/>
+                            <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"/>
+                        </input>
+                        <input id="obs">
+                            <type value="Observation"/>
+                            <profile value="http://hl7.org/fhir/StructureDefinition/vitalsigns"/>
+                        </input>
+                        <input id="svcr">
+                            <type value="ServiceRequest"/>
+                            <profile value="http://hl7.org/fhir/StructureDefinition/ServiceRequest"/>
+                        </input>
+                        <output id="eicr-report-output">
+                            <type value="Bundle"/>
+                            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+                        </output>
+                        <relatedAction>
+                            <actionId value="validate-eicr"/>
+                            <relationship value="before-start"/>
+                        </relatedAction>
+                    </action>
+                </action>
+                <action id="validate-eicr">
+                    <description value="This action represents the validation of the eICR."/>
+                    <textEquivalent value="Validate eICR"/>
+                    <code>
+                        <coding>
+                            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                            <code value="validate-report"/>
+                        </coding>
+                    </code>
+                    <input id="eicr-report-input">
+                        <type value="Bundle"/>
+                        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+                    </input>
+                    <output id="validated-eicr-report-output">
+                        <type value="Bundle"/>
+                        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+                    </output>
+                    <relatedAction>
+                        <actionId value="submit-eicr"/>
+                        <relationship value="before-start"/>
+                    </relatedAction>
+                </action>
+                <action id="submit-eicr">
+                    <description value="This action represents the validation of the eICR."/>
+                    <textEquivalent value="Submit eICR"/>
+                    <code>
+                        <coding>
+                            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                            <code value="submit-report"/>
+                        </coding>
+                    </code>
+                    <input id="validated-eicr-report-input">
+                        <type value="Bundle"/>
+                        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+                    </input>
+                    <output id="eicr-report-submitted">
+                        <type value="Bundle"/>
+                        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+                    </output>
+                </action>
+            </PlanDefinition>
         </resource>
     </entry>
     <entry>
@@ -547,7 +556,9 @@
                                 <td>
                                     <ul style="list-style:none; padding-left:0; margin:0 0;">
                                         <li> (
+                                            
                                             <div title="code">asset-collection</div> )
+                                        
                                         </li>
                                         <li>
                                             <div title="system">
