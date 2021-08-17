@@ -58,9 +58,6 @@ The current PlanDefinition uses ECA Rules, we propose using Workflow Definition 
 ### Additional Links
 <ul>
   <li><a href="StructureDefinition-ersd-plandefinition.html">eRSD PlanDefinition</a></li>
-</ul>
-
-<ul>
   <li><a href="StructureDefinition-us-ph-valueset-library.html">US Public Health ValueSet Library</a></li>
  <li><a href="StructureDefinition-us-ph-valueset.html">US Public Health ValueSet</a></li>
 </ul>

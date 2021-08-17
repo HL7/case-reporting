@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-valueset"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2021-06-30T04:51:54.194+00:00"/>
-        <source value="#8KZqMr8cyrTc06l9"/>
+        <versionId value="6"/>
+        <lastUpdated value="2021-08-17T06:03:30.744+00:00"/>
+        <source value="#tzppB8RTxALCYlNn"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset"/>
     <version value="1.0.0"/>
@@ -44,19 +44,6 @@
             </slicing>
             <min value="1"/>
         </element>
-        <element id="ValueSet.extension:extensionValueSetSteward">
-            <path value="ValueSet.extension"/>
-            <sliceName value="extensionValueSetSteward"/>
-            <short value="Value set steward"/>
-            <definition value="The entity that is responsible for the content of the Value Set Definition. This is a textual description of the organizational entity responsible for the content and maintenance."/>
-            <min value="1"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/StructureDefinition/valueset-steward"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
         <element id="ValueSet.extension:extensionValueSetAuthor">
             <path value="ValueSet.extension"/>
             <sliceName value="extensionValueSetAuthor"/>
@@ -72,7 +59,7 @@
         </element>
         <element id="ValueSet.identifier">
             <path value="ValueSet.identifier"/>
-            <short value="Value set identifier"/>
+            <short value="Value set identifier used by public health (e.g. RCTC OID)"/>
             <definition value="The identifier of the value set."/>
             <min value="0"/>
             <mustSupport value="true"/>
@@ -96,6 +83,11 @@
             <short value="Value set definition version"/>
             <definition value="The value set definition version."/>
             <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="ValueSet.publisher">
+            <path value="ValueSet.publisher"/>
+            <short value="The entity that is responsible for the content of the Value Set Definition"/>
             <mustSupport value="true"/>
         </element>
         <element id="ValueSet.description">
