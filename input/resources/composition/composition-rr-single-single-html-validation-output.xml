@@ -11,7 +11,9 @@
         <valueString value="1" />
     </extension>
     <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-information-recipient-extension">
-        <valueReference value="PractitionerRole/practitionerrole-henry-seven" />
+        <valueReference>
+            <reference value="PractitionerRole/practitionerrole-henry-seven" />
+        </valueReference>
     </extension>
     <identifier>
         <system value="http://acme.org/identifiers" />
@@ -60,7 +62,7 @@
         </text>
     </section>
     <section>
-        <extension id="eicr-processing-status" url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-extension">
+        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-extension">
             <extension url="eICRProcessingStatus">
                 <valueReference>
                     <reference value="Observation/observation-rr-eicr-processing-status" />
