@@ -26,8 +26,8 @@ The current PlanDefinition uses ECA Rules, we propose using Workflow Definition 
 #### Profiles
 <ul>
   <li><a href="StructureDefinition-ersd-plandefinition.html">eRSD PlanDefinition</a></li>
-  <li><a href="StructureDefinition-us-ph-specification-bundle.html">US Public Health Specification Bundle</a></li>
-  <li><a href="StructureDefinition-us-ph-supplemental-bundle.html">US Public Health Supplemental Bundle</a></li>
+  <li><a href="StructureDefinition-us-ph-specification-library.html">US Public Health Specification Library</a></li>
+  <li><a href="StructureDefinition-us-ph-supplemental-library.html">US Public Health Supplemental Library</a></li>
   <li><a href="StructureDefinition-us-ph-supplemental-valueset.html">US Public Health Supplemental ValueSet</a></li>  
   <li><a href="StructureDefinition-us-ph-supplemental-valueset-library.html">US Public Health Supplemental ValueSet Library</a></li>  
   <li><a href="StructureDefinition-us-ph-triggering-valueset.html">US Public Health Triggering ValueSet</a></li>
