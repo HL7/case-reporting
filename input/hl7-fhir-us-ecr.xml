@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="580"/>
-        <lastUpdated value="2021-08-13T06:26:12.794+00:00"/>
-        <source value="#ZF1okNGGNPXJlLC9"/>
+        <versionId value="584"/>
+        <lastUpdated value="2021-08-17T04:53:54.068+00:00"/>
+        <source value="#TwYjruSQJ48uHc3r"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.1.0"/>
@@ -776,9 +776,11 @@
                 <reference value="Composition/composition-rr-one-cond-one-pha"/>
                 <display value="Reportability Response - One Condition/One PHA example"/>
             </reference>
-            <name value="Reportability Response - One Condition/One PHA example"/>
+            <name value="Reportability Response Composition - One Condition/One PHA example"/>
+            <description value="Example of Reportability Response Composition - One Condition/One PHA"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition"/>
+            <groupingId value="reportability-response-examples"/>
         </resource>
         <resource>
             <reference>
@@ -786,8 +788,10 @@
                 <display value="Reportability Response - One Condition/One PHA with eICR Validation Output example"/>
             </reference>
             <name value="Reportability Response - One Condition/One PHA with eICR Validation Output example"/>
+            <description value="Example of Reportability Response Composition - One Condition/One PHA with eICR Validation Output"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition"/>
+            <groupingId value="reportability-response-examples"/>
         </resource>
         <resource>
             <reference>
@@ -1534,7 +1538,7 @@
                 <display value="US Public Health Exposure Contact Information"/>
             </reference>
             <name value="US Public Health Exposure Contact Information"/>
-            <description value="This Observation profile represents potential patient exposure and contact information.&#xA;&#xA;The type of exposure/contact is contained in Observation.code (environmental, activity, event, location, person, animal, etc.). If the exposure/contact is an entity (person, animal, location) then it is represented in Observation.focus which is a reference to a Patient, RelatedPerson, Location, Group, etc.. (An animal would be represented by a RelatedPerson that contains the Extension Practitioner Animal Species. Free text information about the exposure/contact can be recorded in Observation.valueString and the date or period of exposure is held in Observation.effective[x]. If an address where the exposure/contact took place is known then it can be contained in the address-extension.&#xA;&#xA;The following are some exposures that might be captured in this profile:&#xA;&#xA;* Environmental exposures&#xA;    * Living facilities&#xA;    * Work facilities&#xA;    * School facilities&#xA;* Contact exposures&#xA;    * Person&#xA;    * Animal&#xA;* Event Exposures&#xA;    * Sporting event&#xA;    * Rally&#xA;    * Wedding&#xA;    * Activity"/>
+            <description value="This Observation profile represents potential patient exposure and contact information and should be used to record information about the patient's exposure to an agent (exposure source) or to record information about those that the patient could have exposed to an agent (exposure target). Recording of this information could assist/support in contact tracing or other control measures."/>
             <exampleBoolean value="false"/>
             <groupingId value="us-ph-content"/>
         </resource>
@@ -2053,6 +2057,26 @@
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-country-of-residence"/>
             <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-specification-library"/>
+                <display value="US Public Health Specification Library"/>
+            </reference>
+            <name value="US Public Health Specification Library"/>
+            <description value="Defines the asset-collection library containing the US Public Health specification assets."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-ph-architecture"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-supplemental-library"/>
+                <display value="US Public Health Supplemental Library"/>
+            </reference>
+            <name value="US Public Health Supplemental Library"/>
+            <description value="Defines the asset-collection library containing the US Public Health supplemental assets."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-ph-architecture"/>
         </resource>
         <page>
             <nameUrl value="index.html"/>
