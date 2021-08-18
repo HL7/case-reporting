@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-exposure-contact-information"/>
     <meta>
-        <versionId value="21"/>
-        <lastUpdated value="2021-08-16T21:24:04.257+00:00"/>
-        <source value="#MPm9inbD8GyOXAg6"/>
+        <versionId value="25"/>
+        <lastUpdated value="2021-08-18T22:32:19.286+00:00"/>
+        <source value="#Ry1S8vIGWsUW8hQs"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-exposure-contact-information"/>
     <version value="1.0.0"/>
@@ -105,23 +105,22 @@
         </element>
         <element id="Observation.component">
             <path value="Observation.component"/>
-            <short value="Agent of concern in the exposure"/>
+            <short value="Possible agent of concern in the exposure"/>
             <mustSupport value="true"/>
         </element>
         <element id="Observation.component.code">
             <path value="Observation.component.code"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://terminology.hl7.org/CodeSystem/v3-EntityClass"/>
-                    <code value="ENT"/>
-                </coding>
-                <text value="Entity"/>
-            </patternCodeableConcept>
+            <short value="If the type of entity is unknown use top-level code ENT"/>
             <mustSupport value="true"/>
+            <binding>
+                <strength value="extensible"/>
+                <description value="EntityClass"/>
+                <valueSet value="http://terminology.hl7.org/ValueSet/v3-EntityClass"/>
+            </binding>
         </element>
         <element id="Observation.component.value[x]">
             <path value="Observation.component.value[x]"/>
-            <short value="Agent of concern in the exposure"/>
+            <short value="Possible agent of concern in the exposure"/>
             <min value="1"/>
             <type>
                 <code value="CodeableConcept"/>

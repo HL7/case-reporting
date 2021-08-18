@@ -4,7 +4,7 @@ The type of exposure/contact is contained in Observation.code (environmental, ac
 
 Free text information about the exposure/contact can be recorded in Observation.valueString and the date or period of exposure is held in Observation.effective[x]. If an address where the exposure/contact took place is known then it can be contained in the address-extension.
 
-The agent of concern in the exposure is recorded in Observation.component.
+The possible agent of concern in the exposure is recorded in Observation.component.
 
 The following are some exposures that might be captured in this profile:
 
