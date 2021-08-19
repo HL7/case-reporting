@@ -36,9 +36,6 @@ No code provided, and a code should be provided from the value set http://hl7.or
 # APPROVED by HL7 Cross Group Projects WG: Profiles do not derive from one of the base US profiles because they do not align with any of the US Core Observations (https://confluence.hl7.org/pages/viewpage.action?pageId=97453270)
 US FHIR Usage rules require that all profiles on Observation derive from one of the base US profiles
 
-# APPROVED by Cross Project Workgroup: Profile does not align with US Core Encounter because US Core Encounter does not currently allow PractitionerRole - this is being added for Jan 2021 ballot to US Core and as soon as this functionality is added we will use US Core Encounter (https://confluence.hl7.org/pages/viewpage.action?pageId=97453270)
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter').baseDefinition: US FHIR Usage rules require that all profiles on Encounter derive from the core US profile
-
 # Examples have optional slices that are not defined in the profile - not matching is expected behaviour
 INFORMATION: Bundle/bundle-ecr-message-zika: Bundle.entry[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-reporting-bundle
 INFORMATION: Bundle/bundle-ecr-message-zika: Bundle.entry[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-reporting-bundle
@@ -49,100 +46,6 @@ ValueSet https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222
 ValueSet https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.7187 not found by validator
 
 # Validation against profile information messages
-INFORMATION: Bundle/bundle-us-ph-supplemental-bundle-example: Bundle: Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-bundle
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Bundle
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Communication
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Composition
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Condition
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Device
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Device
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Encounter
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Endpoint
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Immunization
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Library
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Location
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/MedicationAdministration
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/MessageHeader
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Observation
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Organization
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/PlanDefinition
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Practitioner
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/PractitionerRole
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/ServiceRequest
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Subscription
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Task
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
-Validate resource against profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/characteristics-of-home-environment
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-message-bundle
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-task
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-condition - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-servicerequest
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/postpartum-status - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-outcome-observation
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/pregnancy-status-observation - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/rr-communication
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-plandefinition - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/travel-history-observation
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-computable-library - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-executable-library - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-location
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-practitionerrole
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-procedure
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset-library - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/odh/StructureDefinition/odh-PastOrPresentJob - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/odh/StructureDefinition/odh-UsualWork - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/vr-common-library/StructureDefinition/Observation-last-menstrual-period - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/disability-status
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-emergency-outbreak-information
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-transportation-details
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-exposure-contact-information
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-plandefinition
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-plandefinition - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-bundle - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset-library - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-executable-valueset - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-computable-valueset - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-specification-bundle
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset-library
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-supplemental-bundle
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-computable-library
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-valueset-library
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-valueset-library - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-valueset
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-valueset - listed in meta
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-bundle
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset-library
-Validate resource against profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Parameters
 
 # This extension is demonstrated inside the patient example patient-ecr-eve-everywoman
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ecr/StructureDefinition/tribal-affiliation-extension'): The Implementation Guide contains no examples for this extension
