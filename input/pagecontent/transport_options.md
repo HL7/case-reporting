@@ -12,9 +12,9 @@ The following profiles have been defined for the FHIR Messaging Option:
   <li><a href="StructureDefinition-ecr-messageheader.html">eCR MessageHeader</a> (further constrains <a href="StructureDefinition-us-ph-messageheader.html">US Public Health MessageHeader</a>)</li>
 </ul>
 
-The first resource in the <a href="StructureDefinition-us-ph-reporting-bundle.html">US Public Health Reporting Bundle</a> is the <a href="StructureDefinition-us-ph-messageheader.html">US Public Health MessageHeader</a>, which in the eCR case is the <a href="StructureDefinition-ecr-messageheader.html">eCR MessageHeader</a>. The focus of the <a href="StructureDefinition-ecr-messageheader.html">eCR MessageHeader</a> is the <a href="StructureDefinition-ecr-document-bundle.html">eCR Document Bundle</a>.
+The first resource in the <a href="StructureDefinition-us-ph-reporting-bundle.html">US Public Health Reporting Bundle</a> is the <a href="StructureDefinition-us-ph-messageheader.html">US Public Health MessageHeader</a>, which in the eCR case is the <a href="StructureDefinition-ecr-messageheader.html">eCR MessageHeader</a>. The focus of the <a href="StructureDefinition-ecr-messageheader.html">eCR MessageHeader</a> is either the <a href="StructureDefinition-eicr-document-bundle.html">eICR Document Bundle</a> or  <a href="StructureDefinition-rr-document-bundle.html">RR Document Bundle</a>.
 
-The <a href="StructureDefinition-ecr-document-bundle.html">eCR Document Bundle</a> contains either the <a href="StructureDefinition-eicr-composition.html">eICR Composition</a> or the <a href="StructureDefinition-rr-composition.html">RR Composition</a>.
+The <a href="StructureDefinition-eicr-document-bundle.html">eICR Document Bundle</a> contains the <a href="StructureDefinition-eicr-composition.html">eICR Composition</a> and the <a href="StructureDefinition-rr-document-bundle.html">RR Document Bundle</a> contains the <a href="StructureDefinition-rr-composition.html">RR Composition</a>.
 
 ### Basic REST Option
 
@@ -24,7 +24,8 @@ The following profiles have been defined for the RESTful Submit Option:
 
 #### Profiles
 <ul>
-  <li><a href="StructureDefinition-ecr-document-bundle.html">eCR Document Bundle</a></li>
+  <li><a href="StructureDefinition-eicr-document-bundle.html">eICR Document Bundle</a></li>
+	<li><a href="StructureDefinition-rr-document-bundle.html">RR Document Bundle</a></li>
 </ul>
 
-The <a href="StructureDefinition-ecr-document-bundle.html">eCR Document Bundle</a> contains either the <a href="StructureDefinition-eicr-composition.html">eICR Composition</a> or the <a href="StructureDefinition-rr-composition.html">RR Composition</a>.
+The <a href="StructureDefinition-eicr-document-bundle.html">eICR Document Bundle</a> contains the <a href="StructureDefinition-eicr-composition.html">eICR Composition</a> and the <a href="StructureDefinition-rr-document-bundle.html">RR Document Bundle</a> contains the <a href="StructureDefinition-rr-composition.html">RR Composition</a>.

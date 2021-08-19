@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="ecr-document-bundle"/>
+    <id value="rr-document-bundle"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2021-08-17T08:39:11.165+00:00"/>
-        <source value="#Rk247oiGj7OceOi1"/>
+        <versionId value="2"/>
+        <lastUpdated value="2021-08-19T08:00:12.480+00:00"/>
+        <source value="#S64CS02380rJB3oa"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-document-bundle"/>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-document-bundle"/>
     <version value="1.0.0"/>
-    <name value="ECRDocumentBundle"/>
-    <title value="eCR Document Bundle"/>
+    <name value="RRDocumentBundle"/>
+    <title value="RR Document Bundle"/>
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Bundle profile represents an eCR Document Bundle. It contains either an eICR Composition or an RR Composition."/>
+    <description value="This Bundle profile represents an RR Document Bundle. It contains either an RR Composition."/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -24,11 +24,6 @@
         <text value="United States of America"/>
     </jurisdiction>
     <fhirVersion value="4.0.1"/>
-    <mapping>
-        <identity value="eCR-CDA"/>
-        <name value="eCR FHIR to CDA Mapping"/>
-        <comment value="This table maps FHIR eCR profile elements to eICR/RR CDA template elements located in the CDA eICR IG (R2 STU2) and CDA RR IG (R2 STU1)."/>
-    </mapping>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Bundle"/>
@@ -58,11 +53,10 @@
         </element>
         <element id="Bundle.entry:sliceUSPublicHealthComposition.resource">
             <path value="Bundle.entry.resource"/>
-            <short value="eICR Composition or RR Composition"/>
+            <short value="RR Composition"/>
             <min value="1"/>
             <type>
                 <code value="Resource"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition"/>
             </type>
             <mustSupport value="true"/>
