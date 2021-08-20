@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="622"/>
-        <lastUpdated value="2021-08-20T00:39:35.364+00:00"/>
-        <source value="#pHtLRet7smzyJrPB"/>
+        <versionId value="633"/>
+        <lastUpdated value="2021-08-20T01:36:03.979+00:00"/>
+        <source value="#hBm1hrTQu3DDkkwf"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.1.0"/>
@@ -133,6 +133,24 @@
         </resource>
         <resource>
             <reference>
+                <reference value="Observation/observation-country-of-nationality-eve-everywoman"/></reference>
+            <name value="Country of Nationality Observation Example: Eve Everywoman"/>
+            <description value="Example of Country of Nationality Observation"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-country-of-nationality"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-country-of-residence-eve-everywoman"/></reference>
+            <name value="Country of Residence Observation Example: Eve Everywoman"/>
+            <description value="Example of Country of Residence Observation"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-country-of-residence"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
                 <reference value="Device/device-ecmo"/>
                 <display value="DisplayTest"/>
             </reference>
@@ -169,27 +187,6 @@
             <description value="Example of Device resource (YMCA software)"/>
             <exampleBoolean value="true"/>
             <groupingId value="transport-examples"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-documentreference"/>
-                <display value="eCR DocumentReference"/>
-            </reference>
-            <name value="eCR DocumentReference"/>
-            <description value="This profile represents external resources such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="ecr-profiles"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Bundle/bundle-ecr-message-zika"/>
-                <display value="bundle-ecr-message-zika"/>
-            </reference>
-            <name value="US Public Health Reporting Bundle Example: bundle-ecr-message-zika"/>
-            <description value="Example of eCR Message Bundle profile (Eve Everywoman, Zika)"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-reporting-bundle"/>
-            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
@@ -311,6 +308,36 @@
         </resource>
         <resource>
             <reference>
+                <reference value="StructureDefinition/eicr-country-of-nationality"/>
+                <display value="eICR Country of Nationality"/>
+            </reference>
+            <name value="eICR Country of Nationality Observation"/>
+            <description value="This Observation profile represents the patient's country of nationality."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="eicr-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-country-of-residence"/>
+                <display value="eICR Country of Residence"/>
+            </reference>
+            <name value="eICR Country of Residence Observation"/>
+            <description value="This Observation profile represents the patient's country of residence."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="eicr-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-document-bundle"/>
+                <display value="eICR Document Bundle"/>
+            </reference>
+            <name value="eICR Document Bundle"/>
+            <description value="This Bundle profile represents an eCR Document Bundle. It contains an eICR Composition."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="ecr-profiles"/>
+        </resource>
+        <resource>
+            <reference>
                 <reference value="Bundle/bundle-eicr-document-zika"/>
                 <display value="bundle-eicr-document-zika"/>
             </reference>
@@ -326,7 +353,7 @@
                 <display value="eICR Encounter"/>
             </reference>
             <name value="eICR Encounter"/>
-            <description value="This Encounter profile represents the encounter related to the event. It is based on and further constrains the US Public Health Encounter profile.&#xA;&#xA;A trigger on an encounter diagnosis is indicated by the eICR Trigger Code Flag Extension in the diagnosis.&#xA;&#xA;Where a trigger occurs outside of an encounter set Encounter.class to &quot;PHC2237” | system=”2.16.840.1.114222.4.5.274” (External Encounter) and omit period, participant, location, and serviceProvider. In this case, the responsible provider and facility information is contained in the eICR Composition.author."/>
+            <description value="This Encounter profile represents the encounter related to the event."/>
             <exampleBoolean value="false"/>
             <groupingId value="eicr-profiles"/>
         </resource>
@@ -400,6 +427,25 @@
             <description value="This Extension profile represents a flag which, if it is present, indicates that the **target** reference represents a triggering event and caused the eCR to be generated."/>
             <exampleBoolean value="false"/>
             <groupingId value="extensions"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-vaccine-credential-patient-assertion"/>
+                <display value="eICR Vaccine Credential Patient Assertion"/>
+            </reference>
+            <name value="eICR Vaccine Credential Patient Assertion Observation"/>
+            <description value="This Observation profile represents whether or not the patient has asserted that they have verifiable vaccine credentials."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="eicr-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-vaccine-credential-assertion-eve-everywoman"/></reference>
+            <name value="eICR Vaccine Credential Patient Assertion Observation Example: Eve Everywoman"/>
+            <description value="Example of eICR Vaccine Credential Patient Assertion Observation"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-vaccine-credential-patient-assertion"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <resource>
             <reference>
@@ -517,6 +563,27 @@
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-library"/>
             <groupingId value="ersd-profiles-instances"/>
+        </resource>
+        <resource>
+            <reference>  
+                <reference value="StructureDefinition/ersd-supplemental-library"/>
+                <display value="eRSD Supplemental Library"/>
+            </reference>
+            <name value="eRSD Supplemental Library"/>
+            <description value="Defines the asset-collection library containing the eRSD supplemental assets."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="ersd-profiles-instances"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Library/library-ersd-supplemental-library-example"/>
+                <display value="eRSD Supplemental Library Example"/>
+            </reference>
+            <name value="eRSD Supplemental Library Example"/>
+            <description value="Description of library"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-supplemental-library"/>
+            <groupingId value="ersd-examples"/>
         </resource>
         <resource>
             <reference>
@@ -652,6 +719,16 @@
         </resource>
         <resource>
             <reference>
+                <reference value="OperationDefinition/operationdefinition-library-package"/>
+                <display value="Library Packaging"/>
+            </reference>
+            <name value="Library Packaging"/>
+            <description value="Packages the contents referenced by an asset-collection library such as a quality program release or version manifest."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="ersd-packaging"/>
+        </resource>
+        <resource>
+            <reference>
                 <reference value="Library/library-rctc-example"/>
                 <display value="library-rctc-example"/>
             </reference>
@@ -741,17 +818,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="Composition/composition-rr-one-cond-one-pha"/>
-                <display value="Reportability Response - One Condition/One PHA example"/>
-            </reference>
-            <name value="Reportability Response Composition - One Condition/One PHA example"/>
-            <description value="Example of Reportability Response Composition - One Condition/One PHA"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition"/>
-            <groupingId value="reportability-response-examples"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="Composition/composition-rr-single-single-html-validation-output"/>
                 <display value="Reportability Response - One Condition/One PHA with eICR Validation Output example"/>
             </reference>
@@ -763,11 +829,51 @@
         </resource>
         <resource>
             <reference>
+                <reference value="Composition/composition-rr-one-cond-one-pha"/>
+                <display value="Reportability Response - One Condition/One PHA example"/>
+            </reference>
+            <name value="Reportability Response Composition - One Condition/One PHA example"/>
+            <description value="Example of Reportability Response Composition - One Condition/One PHA"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition"/>
+            <groupingId value="reportability-response-examples"/>
+        </resource>
+        <resource>
+            <reference>
                 <reference value="StructureDefinition/rr-composition"/>
                 <display value="Reportability Response Composition"/>
             </reference>
             <name value="RR Composition"/>
             <description value="This Composition profile represents the Reportability Response that is created in response to an electronic Initial Case Report Composition."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="reportability-response-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-document-bundle"/>
+                <display value="RR Document Bundle"/>
+            </reference>
+            <name value="RR Document Bundle"/>
+            <description value="This Bundle profile represents an RR Document Bundle. It contains either an RR Composition."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="reportability-response-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/bundle-rr-document-one-cond-one-pha"/></reference>
+            <name value="RR Document Bundle Example: One Condition, One PHA"/>
+            <description value="Example RR Document Bundle: One Condition, One PHA"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-document-bundle"/>
+            <groupingId value="reportability-response-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-documentreference"/>
+                <display value="eCR DocumentReference"/>
+            </reference>
+            <name value="RR DocumentReference"/>
+            <description value="This profile represents external resources such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources."/>
             <exampleBoolean value="false"/>
             <groupingId value="reportability-response-profiles"/>
         </resource>
@@ -886,7 +992,7 @@
                 <display value="RR Relevant Reportable Condition Observation"/>
             </reference>
             <name value="RR Relevant Reportable Condition Observation"/>
-            <description value="This profile represents a relevant reportable condition. It contains one (if both the patient's home and the provider location have the same responsible agency) or more (if the patient's home and provider location have different responsible agencies) RR Reportability Information Observations. It may also contain external resources specific to the condition."/>
+            <description value="This profile represents a relevant reportable condition."/>
             <exampleBoolean value="false"/>
             <groupingId value="reportability-response-profiles"/>
         </resource>
@@ -905,7 +1011,7 @@
                 <display value="RR Reportability Information Observation"/>
             </reference>
             <name value="RR Reportability Information Observation"/>
-            <description value="This profile represents reportability information based on the PHA in which is located the patient's home, the provider facility, or both locations.&#xA;&#xA;It contains the Responsible Agency, the Rules Authoring Agency, and the Routing Entity.&#xA;&#xA;Also contained in this profile are the Determination of Reportability, Reporting Timeframe, and External Resources."/>
+            <description value="This profile represents reportability information based on the PHA in which is located the patient's home, the provider facility, or both locations."/>
             <exampleBoolean value="false"/>
             <groupingId value="reportability-response-profiles"/>
         </resource>
@@ -1631,6 +1737,24 @@
         </resource>
         <resource>
             <reference>
+                <reference value="ValueSet/us-ph-plandefinition-action"/>
+                <display value="US Public Health PlanDefinition Action"/>
+            </reference>
+            <name value="US Public Health PlanDefinition Action"/>
+            <description value="The US Public Health PlanDefinition Action Value Set is a 'starter set' of codes for uniquely identifying actions in PlanDefinition instances."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/us-ph-plandefinition-actions"/>
+                <display value="US Public Health PlanDefinition Action Codes"/>
+            </reference>
+            <name value="US Public Health PlanDefinition Action Codes"/>
+            <description value="The US Public Health PlanDefinition Actions CodeSystem is a 'starter set' of codes supported for identifying actions in PlanDefinition."/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
                 <reference value="StructureDefinition/us-ph-postpartum-status"/>
                 <display value="US Public Health Postpartum Status"/>
             </reference>
@@ -1710,6 +1834,16 @@
         </resource>
         <resource>
             <reference>
+                <reference value="StructureDefinition/us-ph-receiver-address-extension"/>
+                <display value="US Public Health Receiver Address Extension"/>
+            </reference>
+            <name value="US Public Health Receiver Address Extension"/>
+            <description value="Indicates the endpoint address where the report has to be sent."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-ph-extensions"/>
+        </resource>
+        <resource>
+            <reference>
                 <reference value="StructureDefinition/us-ph-reporting-bundle"/>
                 <display value="US Public Health Reporting Bundle"/>
             </reference>
@@ -1717,6 +1851,59 @@
             <description value="Bundle Resource profile for exchanging one of public health messages, knowledge artifacts or content."/>
             <exampleBoolean value="false"/>
             <groupingId value="us-ph-architecture"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/bundle-ecr-message-zika"/>
+                <display value="bundle-ecr-message-zika"/>
+            </reference>
+            <name value="US Public Health Reporting Bundle Example: bundle-ecr-message-zika"/>
+            <description value="Example of eCR Message Bundle profile (Eve Everywoman, Zika)"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-reporting-bundle"/>
+            <groupingId value="eicr-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-specification-library"/>
+                <display value="US Public Health Specification Library"/>
+            </reference>
+            <name value="US Public Health Specification Library"/>
+            <description value="Defines the asset-collection library containing the US Public Health specification assets."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-ph-architecture"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Library/library-us-ph-specification-library-example"/>
+                <display value="US Public Health Specification Library Example"/>
+            </reference>
+            <name value="US Public Health Specification Library Example"/>
+            <description value="Example of the US Public Health Specification Library"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-library"/>
+            <groupingId value="us-public-health-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-supplemental-library"/>
+                <display value="US Public Health Supplemental Library"/>
+            </reference>
+            <name value="US Public Health Supplemental Library"/>
+            <description value="Defines the asset-collection library containing the US Public Health supplemental assets."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="us-ph-architecture"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Library/library-us-ph-supplemental-library-example"/>
+                <display value="US Public Health Supplemental Library Example"/>
+            </reference>
+            <name value="US Public Health Supplemental Library Example"/>
+            <description value="Example of the US Public Health Supplemental Library"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-library"/>
+            <groupingId value="us-public-health-examples"/>
         </resource>
         <resource>
             <reference>
@@ -1910,184 +2097,6 @@
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset-library"/>
             <groupingId value="us-public-health-examples"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/eicr-vaccine-credential-patient-assertion"/>
-                <display value="eICR Vaccine Credential Patient Assertion"/>
-            </reference>
-            <name value="eICR Vaccine Credential Patient Assertion Observation"/>
-            <description value="This Observation profile represents whether or not the patient has asserted that they have verifiable vaccine credentials."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="eicr-profiles"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/us-ph-receiver-address-extension"/>
-                <display value="US Public Health Receiver Address Extension"/>
-            </reference>
-            <name value="US Public Health Receiver Address Extension"/>
-            <description value="Indicates the endpoint address where the report has to be sent."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="us-ph-extensions"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="ValueSet/us-ph-plandefinition-action"/>
-                <display value="US Public Health PlanDefinition Action"/>
-            </reference>
-            <name value="US Public Health PlanDefinition Action"/>
-            <description value="The US Public Health PlanDefinition Action Value Set is a 'starter set' of codes for uniquely identifying actions in PlanDefinition instances."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="CodeSystem/us-ph-plandefinition-actions"/>
-                <display value="US Public Health PlanDefinition Action Codes"/>
-            </reference>
-            <name value="US Public Health PlanDefinition Action Codes"/>
-            <description value="The US Public Health PlanDefinition Actions CodeSystem is a 'starter set' of codes supported for identifying actions in PlanDefinition."/>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/ersd-supplemental-library"/>
-                <display value="eRSD Supplemental Library"/>
-            </reference>
-            <name value="eRSD Supplemental Library"/>
-            <description value="Defines the asset-collection library containing the eRSD supplemental assets."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="ersd-profiles-instances"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/eicr-country-of-residence"/>
-                <display value="eICR Country of Residence"/>
-            </reference>
-            <name value="eICR Country of Residence Observation"/>
-            <description value="This Observation profile represents the patient's country of residence."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="eicr-profiles"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/eicr-country-of-nationality"/>
-                <display value="eICR Country of Nationality"/>
-            </reference>
-            <name value="eICR Country of Nationality Observation"/>
-            <description value="This Observation profile represents a patient's country of nationality."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="eicr-profiles"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/observation-vaccine-credential-assertion-eve-everywoman"/></reference>
-            <name value="eICR Vaccine Credential Patient Assertion Observation Example: Eve Everywoman"/>
-            <description value="Example of eICR Vaccine Credential Patient Assertion Observation"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-vaccine-credential-patient-assertion"/>
-            <groupingId value="eicr-examples"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/observation-country-of-residence-eve-everywoman"/></reference>
-            <name value="Country of Residence Observation Example: Eve Everywoman"/>
-            <description value="Example of Country of Residence Observation"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-country-of-residence"/>
-            <groupingId value="eicr-examples"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/us-ph-specification-library"/>
-                <display value="US Public Health Specification Library"/>
-            </reference>
-            <name value="US Public Health Specification Library"/>
-            <description value="Defines the asset-collection library containing the US Public Health specification assets."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="us-ph-architecture"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/us-ph-supplemental-library"/>
-                <display value="US Public Health Supplemental Library"/>
-            </reference>
-            <name value="US Public Health Supplemental Library"/>
-            <description value="Defines the asset-collection library containing the US Public Health supplemental assets."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="us-ph-architecture"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Library/library-us-ph-supplemental-library-example"/>
-                <display value="US Public Health Supplemental Library Example"/>
-            </reference>
-            <name value="US Public Health Supplemental Library Example"/>
-            <description value="Example of the US Public Health Supplemental Library"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-library"/>
-            <groupingId value="us-public-health-examples"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Library/library-us-ph-specification-library-example"/>
-                <display value="US Public Health Specification Library Example"/>
-            </reference>
-            <name value="US Public Health Specification Library Example"/>
-            <description value="Example of the US Public Health Specification Library"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-library"/>
-            <groupingId value="us-public-health-examples"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="OperationDefinition/operationdefinition-library-package"/>
-                <display value="Library Packaging"/>
-            </reference>
-            <name value="Library Packaging"/>
-            <description value="Packages the contents referenced by an asset-collection library such as a quality program release or version manifest."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="ersd-packaging"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Library/library-ersd-supplemental-library-example"/>
-                <display value="eRSD Supplemental Library Example"/>
-            </reference>
-            <name value="eRSD Supplemental Library Example"/>
-            <description value="Description of library"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-supplemental-library"/>
-            <groupingId value="ersd-examples"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-document-bundle"/>
-                <display value="RR Document Bundle"/>
-            </reference>
-            <name value="RR Document Bundle"/>
-            <description value="This Bundle profile represents an RR Document Bundle. It contains either an RR Composition."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="reportability-response-profiles"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/eicr-document-bundle"/>
-                <display value="eICR Document Bundle"/>
-            </reference>
-            <name value="eICR Document Bundle"/>
-            <description value="This Bundle profile represents an eCR Document Bundle. It contains an eICR Composition."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="ecr-profiles"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/observation-country-of-nationality-eve-everywoman"/></reference>
-            <name value="Country of Nationality Observation Example: Eve Everywoman"/>
-            <description value="Example of Country of Nationality Observation"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-country-of-nationality"/>
-            <groupingId value="eicr-examples"/>
         </resource>
         <page>
             <nameUrl value="index.html"/>
