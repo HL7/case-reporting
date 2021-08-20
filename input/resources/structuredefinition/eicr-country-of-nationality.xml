@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="eicr-country-of-citizenship"/>
+    <id value="eicr-country-of-nationality"/>
     <meta>
         <versionId value="1"/>
-        <lastUpdated value="2021-08-10T22:42:06.218+00:00"/>
-        <source value="#oR0mPutjkzLVKncg"/>
+        <lastUpdated value="2021-08-19T21:25:59.676+00:00"/>
+        <source value="#8jzBx6jmOPGY5Qw3"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-country-of-citizenship"/>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-country-of-nationality"/>
     <version value="1.0.0"/>
-    <name value="EICRCountryOfCitizenship"/>
-    <title value="eICR Country of Citizenship"/>
+    <name value="EICRCountryOfNationality"/>
+    <title value="eICR Country of Nationality"/>
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Observation profile represents a patient's country of citizenship."/>
+    <description value="This Observation profile represents a patient's country of nationality."/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -32,7 +32,7 @@
     <differential>
         <element id="Observation">
             <path value="Observation"/>
-            <short value="eICR Country of Citizenship Observation"/>
+            <short value="eICR Country of Nationality"/>
         </element>
         <element id="Observation.status">
             <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint">
@@ -44,11 +44,11 @@
         </element>
         <element id="Observation.code">
             <path value="Observation.code"/>
+            <short value="Ethnicity / related nationality data (observable entity)"/>
             <patternCodeableConcept>
                 <coding>
-                    <system value="http://loinc.org"/>
-                    <code value="66476-3"/>
-                    <display value="Country of citizenship"/>
+                    <system value="http://snomed.info/sct"/>
+                    <code value="186034007"/>
                 </coding>
             </patternCodeableConcept>
             <mustSupport value="true"/>
@@ -62,7 +62,7 @@
         </element>
         <element id="Observation.value[x]">
             <path value="Observation.value[x]"/>
-            <short value="Patient's country of citizenship"/>
+            <short value="Patient's country of nationaltiy"/>
             <min value="1"/>
             <type>
                 <code value="CodeableConcept"/>

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="us-ph-document-bundle"/>
+    <id value="eicr-document-bundle"/>
     <meta>
-        <versionId value="8"/>
-        <lastUpdated value="2021-08-19T07:34:35.150+00:00"/>
-        <source value="#XbgimqKbTa8HKOFQ"/>
+        <versionId value="16"/>
+        <lastUpdated value="2021-08-19T08:00:12.480+00:00"/>
+        <source value="#Kb7ivDHOTJnK7r37"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-document-bundle"/>
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
     <version value="1.0.0"/>
-    <name value="USPublicHealthDocumentBundle"/>
-    <title value="US Public Health Document Bundle"/>
+    <name value="EICRDocumentBundle"/>
+    <title value="eICR Document Bundle"/>
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Bundle profile represents a Public Health Document Bundle. It contains a US Public Health Composition."/>
+    <description value="This Bundle profile represents an eCR Document Bundle. It contains an eICR Composition."/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -27,25 +27,11 @@
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Bundle"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+    <baseDefinition value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-document-bundle"/>
     <derivation value="constraint"/>
     <differential>
         <element id="Bundle">
             <path value="Bundle"/>
-            <short value="US Public Health Document Bundle"/>
-        </element>
-        <element id="Bundle.id">
-            <path value="Bundle.id"/>
-            <short value="Document Bundle id"/>
-            <definition value="Document Bundle id. This is equivalent to ClinicalDocument.id in CDA. The identifier of the contained Composition is equivalent to ClinicalDocument.setID in CDA and Composition.sliceExtensionVersionNumber is equivalent to ClinicalDocument.versionNumber in CDA."/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Bundle.type">
-            <path value="Bundle.type"/>
-            <fixedCode value="document"/>
-            <mustSupport value="true"/>
         </element>
         <element id="Bundle.entry">
             <path value="Bundle.entry"/>
@@ -67,11 +53,11 @@
         </element>
         <element id="Bundle.entry:sliceUSPublicHealthComposition.resource">
             <path value="Bundle.entry.resource"/>
-            <short value="US Public Health Composition"/>
+            <short value="eICR Composition"/>
             <min value="1"/>
             <type>
                 <code value="Resource"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-composition"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
             </type>
             <mustSupport value="true"/>
         </element>

@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="598"/>
-        <lastUpdated value="2021-08-19T01:46:26.362+00:00"/>
-        <source value="#NhLW1Sf3RdRRVxTc"/>
+        <versionId value="622"/>
+        <lastUpdated value="2021-08-20T00:39:35.364+00:00"/>
+        <source value="#pHtLRet7smzyJrPB"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.1.0"/>
@@ -55,6 +55,11 @@
     <dependsOn id="hl7fhirusodh">
         <uri value="http://hl7.org/fhir/us/odh/ImplementationGuide/hl7.fhir.us.odh"/>
         <packageId value="hl7.fhir.us.odh"/>
+        <version value="1.1.0"/>
+    </dependsOn>
+    <dependsOn id="hl7fhiruvbulkdata">
+        <uri value="http://hl7.org/fhir/uv/bulkdata/ImplementationGuide/hl7.fhir.uv.bulkdata"/>
+        <packageId value="hl7.fhir.uv.bulkdata"/>
         <version value="1.1.0"/>
     </dependsOn>
     <definition>
@@ -306,23 +311,13 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ecr-document-bundle"/>
-                <display value="eCR Document Bundle"/>
-            </reference>
-            <name value="eCR Document Bundle"/>
-            <description value="This Bundle profile represents an eCR Document Bundle. It contains either an eICR Composition or an RR Composition."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="ecr-profiles"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="Bundle/bundle-eicr-document-zika"/>
                 <display value="bundle-eicr-document-zika"/>
             </reference>
             <name value="eICR Document Bundle Example: bundle-eicr-document-zika"/>
             <description value="Example of eICR Document Bundle profile (Eve Everywoman, Zika)"/>
             <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-document-bundle"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
             <groupingId value="eicr-examples"/>
         </resource>
         <resource>
@@ -745,16 +740,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/relates-to-extension"/>
-                <display value="Relates To Extension"/>
-            </reference>
-            <name value="Relates To Extension"/>
-            <description value="This Extension profile represents relationships with other structures that already exist"/>
-            <exampleBoolean value="false"/>
-            <groupingId value="extensions"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="Composition/composition-rr-one-cond-one-pha"/>
                 <display value="Reportability Response - One Condition/One PHA example"/>
             </reference>
@@ -881,16 +866,6 @@
             </reference>
             <name value="RR External Resource Extension"/>
             <description value="This Extension profile represents an external resource (DocumentReference) pertaining to the condition such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="extensions"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-location-relevance-extension"/>
-                <display value="RR_Location_Relevance_Extension"/>
-            </reference>
-            <name value="RR Location Relevance Extension"/>
-            <description value="This Extension profile represents a code indicating whether the responsible PHA is relevant because of the patient's home address, the provider facility address, or both."/>
             <exampleBoolean value="false"/>
             <groupingId value="extensions"/>
         </resource>
@@ -1744,16 +1719,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="Bundle/bundle-us-ph-supplemental-bundle-example"/>
-                <display value="US Public Health Supplemental Bundle Example"/>
-            </reference>
-            <name value="US Public Health Supplemental Bundle Example"/>
-            <description value="An example of the US Public Health Supplemental Bundle profile."/>
-            <exampleBoolean value="false"/>
-            <groupingId value="us-public-health-examples"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="StructureDefinition/us-ph-supplemental-valueset"/>
                 <display value="US Public Health Supplemental Value Set"/>
             </reference>
@@ -2005,11 +1970,11 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/eicr-country-of-citizenship"/>
-                <display value="eICR Country of Citizenship"/>
+                <reference value="StructureDefinition/eicr-country-of-nationality"/>
+                <display value="eICR Country of Nationality"/>
             </reference>
-            <name value="eICR Country of Citizenship Observation"/>
-            <description value="This Observation profile represents a patient's country of citizenship."/>
+            <name value="eICR Country of Nationality Observation"/>
+            <description value="This Observation profile represents a patient's country of nationality."/>
             <exampleBoolean value="false"/>
             <groupingId value="eicr-profiles"/>
         </resource>
@@ -2020,15 +1985,6 @@
             <description value="Example of eICR Vaccine Credential Patient Assertion Observation"/>
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-vaccine-credential-patient-assertion"/>
-            <groupingId value="eicr-examples"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/observation-country-of-citizenship-eve-everywoman"/></reference>
-            <name value="Country of Citizenship Observation Example: Eve Everywoman"/>
-            <description value="Example of Country of Citizenship Observation"/>
-            <exampleBoolean value="false"/>
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-country-of-citizenship"/>
             <groupingId value="eicr-examples"/>
         </resource>
         <resource>
@@ -2102,6 +2058,35 @@
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-supplemental-library"/>
             <groupingId value="ersd-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-document-bundle"/>
+                <display value="RR Document Bundle"/>
+            </reference>
+            <name value="RR Document Bundle"/>
+            <description value="This Bundle profile represents an RR Document Bundle. It contains either an RR Composition."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="reportability-response-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-document-bundle"/>
+                <display value="eICR Document Bundle"/>
+            </reference>
+            <name value="eICR Document Bundle"/>
+            <description value="This Bundle profile represents an eCR Document Bundle. It contains an eICR Composition."/>
+            <exampleBoolean value="false"/>
+            <groupingId value="ecr-profiles"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/observation-country-of-nationality-eve-everywoman"/></reference>
+            <name value="Country of Nationality Observation Example: Eve Everywoman"/>
+            <description value="Example of Country of Nationality Observation"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-country-of-nationality"/>
+            <groupingId value="eicr-examples"/>
         </resource>
         <page>
             <nameUrl value="index.html"/>
