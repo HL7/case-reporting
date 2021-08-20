@@ -131,7 +131,7 @@ This level uses a [FHIRPath](http://hl7.org/fhirpath) to test for existence of d
 
 The eRSD specification is delivered as an _asset collection library_ (a Library resource with a type of `asset-collection`) conforming to the [US Public Health Specification Library](StructureDefinition-us-ph-specification-library.html) profile.
 
-The eRSD Specification library is composed of the eRSD Plan Definition and the RCTC Library, a Value Set library that conforms to the [US Public Health Triggering Value Set Library](StructureDefinition-us-ph-triggering-value-set-library.html) profile:
+The eRSD Specification library is composed of the eRSD Plan Definition and the RCTC Library, a Value Set library that conforms to the [US Public Health Triggering Value Set Library](StructureDefinition-us-ph-triggering-valueset-library.html) profile:
 
 <pre><code>&lt;relatedArtifact&gt;
   &lt;type value=&quot;composed-of&quot;/&gt;

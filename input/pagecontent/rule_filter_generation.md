@@ -293,4 +293,4 @@ define "IsReportable":
 ```
 ### Example
 
-See the [eRSD PlanDefinition Example](PlanDefinition-plandefinition-ersd-instance.html) for an example implementation
+See the [eRSD PlanDefinition Example](PlanDefinition-plandefinition-ersd-instance-example.html) for an example implementation
