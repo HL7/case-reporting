@@ -14,3 +14,5 @@ This profile describes the content requirements for the eICR including:
 * flags for the existence of reportable condition trigger codes in diagnoses, ordered/resulted laboratory tests, medications, immunizations, and procedures
     * flags contain RCTC OID and RCTC version
     * codes indicating whether the eICR was manually or alternately initiated
+
+In the case where a trigger code was previously entered in error and has now been corrected, set verificationStatus or status (depending on profile type) of the profile to 'entered-in-error' and set the [eICR Initiation Type extension](StructureDefinition-eicr-initiation-type-extension.html) to PHC1464.

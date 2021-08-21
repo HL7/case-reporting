@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="us-ph-exposure-contact-information"/>
     <meta>
-        <versionId value="26"/>
-        <lastUpdated value="2021-08-19T01:16:08.409+00:00"/>
-        <source value="#PrPDiLzEq7VjkBEx"/>
+        <versionId value="29"/>
+        <lastUpdated value="2021-08-21T01:12:22.318+00:00"/>
+        <source value="#MxjBNHcveexYovQj"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-exposure-contact-information"/>
     <version value="1.0.0"/>
@@ -110,13 +110,15 @@
         </element>
         <element id="Observation.component.code">
             <path value="Observation.component.code"/>
-            <short value="If the type of entity is unknown use top-level code ENT"/>
+            <short value="ExposureAgent"/>
+            <definition value=" The physical (including energy), chemical or biological substance that is participating in the exposure. For example in communicable diseases, the disease causing pathogen."/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+                    <code value="EXPAGNT"/>
+                </coding>
+            </patternCodeableConcept>
             <mustSupport value="true"/>
-            <binding>
-                <strength value="extensible"/>
-                <description value="EntityClass"/>
-                <valueSet value="http://terminology.hl7.org/ValueSet/v3-EntityClass"/>
-            </binding>
         </element>
         <element id="Observation.component.value[x]">
             <path value="Observation.component.value[x]"/>
