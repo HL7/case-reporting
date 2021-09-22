@@ -204,7 +204,8 @@
                         </valueExpression>
                     </extension>
                     <language value="text/fhirpath"/>
-                    <expression value="%encounter.status = 'in-progress'"/></expression>
+                    <expression value="%encounter.status = 'in-progress'"/>
+                </expression>
             </condition>
             <relatedAction>
                 <actionId value="check-reportable"/>
@@ -240,6 +241,37 @@
                 <relationship value="before-start"/>
             </relatedAction>
         </action>
+        <action id="car-is-encounter-complete">
+            <code>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="evaluate-condition"/>
+                </coding>
+            </code>
+            <condition>
+                <kind value="applicability"/>
+                <expression>
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
+                        <valueExpression>
+                            <language value="text/cql-identifier"/>
+                            <expression value="Is Encounter Finished"/>
+                            <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
+                        </valueExpression>
+                    </extension>
+                    <language value="text/fhirpath"/>
+                    <expression value="%encounter.status = 'finished'"/>
+                </expression>
+            </condition>
+            <relatedAction>
+                <actionId value="report-eicr"/>
+                <relationship value="before-start"/>
+                <offsetDuration>
+                    <value value="600"/>
+                    <system value="http://unitsofmeasure.org"/>
+                    <code value="s"/>
+                </offsetDuration>
+            </relatedAction>
+        </action>
         <action id="car-is-encounter-in-progress">
             <code>
                 <coding>
@@ -258,40 +290,11 @@
                         </valueExpression>
                     </extension>
                     <language value="text/fhirpath"/>
-                    <expression value="%encounter.status = 'in-progress'"/></expression>
+                    <expression value="%encounter.status = 'in-progress'"/>
+                </expression>
             </condition>
             <relatedAction>
                 <actionId value="create-and-report-eicr"/>
-                <relationship value="before-start"/>
-                <offsetDuration>
-                    <value value="600"/>
-                    <system value="http://unitsofmeasure.org"/>
-                    <code value="s"/>
-                </offsetDuration>
-            </relatedAction>
-        </action>
-        <action id="car-is-encounter-finished">
-            <code>
-                <coding>
-                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                    <code value="evaluate-condition"/>
-                </coding>
-            </code>
-            <condition>
-                <kind value="applicability"/>
-                <expression>
-                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
-                        <valueExpression>
-                            <language value="text/cql-identifier"/>
-                            <expression value="Is Encounter Finished"/>
-                            <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
-                        </valueExpression>
-                    </extension>
-                    <language value="text/fhirpath"/>
-                    <expression value="%encounter.status = 'finished'"/></expression>
-            </condition>
-            <relatedAction>
-                <actionId value="report-eicr"/>
                 <relationship value="before-start"/>
                 <offsetDuration>
                     <value value="600"/>
@@ -311,7 +314,7 @@
             </coding>
         </code>
         <action id="create-eicr">
-            <description value="This action invokes the creation of the eICR report."/>
+            <description value="This action represents the creation of the eICR."/>
             <textEquivalent value="Create eICR"/>
             <code>
                 <coding>
@@ -360,45 +363,45 @@
                 <relationship value="before-start"/>
             </relatedAction>
         </action>
-    </action>
-    <action id="validate-eicr">
-        <description value="This action represents the validation of the eICR."/>
-        <textEquivalent value="Validate eICR"/>
-        <code>
-            <coding>
-                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                <code value="validate-report"/>
-            </coding>
-        </code>
-        <input id="eicr-report-input">
-            <type value="Bundle"/>
-            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
-        </input>
-        <output id="validated-eicr-report-output">
-            <type value="Bundle"/>
-            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
-        </output>
-        <relatedAction>
-            <actionId value="submit-eicr"/>
-            <relationship value="before-start"/>
-        </relatedAction>
-    </action>
-    <action id="submit-eicr">
-        <description value="This action represents the validation of the eICR."/>
-        <textEquivalent value="Submit eICR"/>
-        <code>
-            <coding>
-                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                <code value="submit-report"/>
-            </coding>
-        </code>
-        <input id="validated-eicr-report-input">
-            <type value="Bundle"/>
-            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
-        </input>
-        <output id="eicr-report-submitted">
-            <type value="Bundle"/>
-            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
-        </output>
+        <action id="validate-eicr">
+            <description value="This action represents the validation of the eICR."/>
+            <textEquivalent value="Validate eICR"/>
+            <code>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="validate-report"/>
+                </coding>
+            </code>
+            <input id="eicr-report-input">
+                <type value="Bundle"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+            </input>
+            <output id="validated-eicr-report-output">
+                <type value="Bundle"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+            </output>
+            <relatedAction>
+                <actionId value="submit-eicr"/>
+                <relationship value="before-start"/>
+            </relatedAction>
+        </action>
+        <action id="route-and-send-eicr">
+            <description value="This action represents the routing and sending of the eICR."/>
+            <textEquivalent value="Route and send eICR"/>
+            <code>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="submit-report"/>
+                </coding>
+            </code>
+            <input id="validated-eicr-report-input">
+                <type value="Bundle"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+            </input>
+            <output id="eicr-report-submitted">
+                <type value="Bundle"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+            </output>
+        </action>
     </action>
 </PlanDefinition>
