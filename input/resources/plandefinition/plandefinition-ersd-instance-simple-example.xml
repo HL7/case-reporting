@@ -3,6 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="plandefinition-ersd-instance-simple-example"/>
     <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2021-09-28T16:14:25.227+00:00"/>
+        <source value="#yPxVYZp7g64LdC87"/>
         <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-simple-example"/>
@@ -76,8 +79,7 @@
                 <kind value="applicability"/>
                 <expression>
                     <language value="text/fhirpath"/>
-                    <expression value="%conditions.exists() or %encounters.exists() or %immunizations.exists() or %procedures.exists() or $procedureOrders.exists() or %labOrders.exists() or %labTests.exists() or %labResults.exists() or %medicationAdministrations.exists() or %medicationOrders.exists() or %medicationDispenses.exists()"/>
-                </expression>
+                    <expression value="%conditions.exists() or %encounters.exists() or %immunizations.exists() or %procedures.exists() or $procedureOrders.exists() or %labOrders.exists() or %labTests.exists() or %labResults.exists() or %medicationAdministrations.exists() or %medicationOrders.exists() or %medicationDispenses.exists()"/></expression>
             </condition>
             <input id="conditions">
                 <type value="Condition"/>
@@ -172,8 +174,7 @@
                 <kind value="applicability"/>
                 <expression>
                     <language value="text/fhirpath"/>
-                    <expression value="%encounter.status = 'in-progress'"/>
-                </expression>
+                    <expression value="%encounter.status = 'in-progress'"/></expression>
             </condition>
             <relatedAction>
                 <actionId value="check-reportable"/>
@@ -220,8 +221,7 @@
                 <kind value="applicability"/>
                 <expression>
                     <language value="text/fhirpath"/>
-                    <expression value="%encounter.status = 'finished'"/>
-                </expression>
+                    <expression value="%encounter.status = 'finished'"/></expression>
             </condition>
             <relatedAction>
                 <actionId value="report-eicr"/>
@@ -244,8 +244,7 @@
                 <kind value="applicability"/>
                 <expression>
                     <language value="text/fhirpath"/>
-                    <expression value="%encounter.status = 'in-progress'"/>
-                </expression>
+                    <expression value="%encounter.status = 'in-progress'"/></expression>
             </condition>
             <relatedAction>
                 <actionId value="create-and-report-eicr"/>
