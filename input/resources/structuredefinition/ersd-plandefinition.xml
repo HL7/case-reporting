@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="ersd-plandefinition"/>
     <meta>
-        <versionId value="32"/>
-        <lastUpdated value="2021-08-05T02:05:58.410+00:00"/>
-        <source value="#A3UhCXYxJHeNiE8t"/>
+        <versionId value="34"/>
+        <lastUpdated value="2021-09-22T03:42:52.889+00:00"/>
+        <source value="#KN14KkOy11dmf59D"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
     <version value="1.0.0"/>
@@ -134,7 +134,7 @@
                 <key value="epd-1"/>
                 <severity value="error"/>
                 <human value="The code value of the namedEventType SHALL be the same as the name element"/>
-                <expression value="extension('http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension').exists() and extension('http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension').value = name"/>
+                <expression value="extension('http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension').value.coding.code.supersetOf(name)"/>
                 <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;name&quot;)])"/>
                 <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
             </constraint>
@@ -639,7 +639,7 @@
         </element>
         <element id="PlanDefinition.action:reportEicr.description">
             <path value="PlanDefinition.action.description"/>
-            <fixedString value="This action represents the reporting of the eICR."/>
+            <fixedString value="This action represents the creation, validation and submission of the eICR."/>
         </element>
         <element id="PlanDefinition.action:reportEicr.code">
             <path value="PlanDefinition.action.code"/>

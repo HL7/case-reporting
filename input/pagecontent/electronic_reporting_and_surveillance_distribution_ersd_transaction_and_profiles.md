@@ -144,6 +144,7 @@ The eRSD Specification library is composed of the eRSD Plan Definition and the R
 
 * [eRSD Specification Library Example](Library-library-ersd-specification-library-example.html)
 * [eRSD PlanDefinition Instance Example](PlanDefinition-plandefinition-ersd-instance-example.html)
+* [eRSD PlanDefinition Instance Simple Example](PlanDefinition-plandefinition-ersd-instance-simple-example.html)
 * [RCTC ValueSet Library Example](Library-library-rctc-example.html)
 
 Triggering value sets and metadata can be used for EHR implementations whether they are FHIR-based or not.

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PlanDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="plandefinition-ersd-instance-example"/>
+    <id value="plandefinition-ersd-instance-simple-example"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2021-09-22T02:50:51.661+00:00"/>
-        <source value="#Hlpuo6hJlWTqActz"/>
+        <versionId value="1"/>
+        <lastUpdated value="2021-09-28T16:14:25.227+00:00"/>
+        <source value="#yPxVYZp7g64LdC87"/>
         <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"/>
+    <url value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-simple-example"/>
     <version value="0.1"/>
-    <name value="PlanDefinition_eRSD_Instance_Example"/>
-    <title value="eRSD PlanDefinition Instance Example"/>
+    <name value="PlanDefinition_eRSD_Instance_Simple_Example"/>
+    <title value="eRSD PlanDefinition Instance Simple Example"/>
     <type>
         <coding>
             <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
@@ -24,22 +24,6 @@
     <date value="2020-07-31T12:32:29.858-05:00"/>
     <publisher value="HL7 Public Health Work Group"/>
     <description value="An example ersd PlanDefinition"/>
-    <jurisdiction>
-        <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="US"/>
-            <display value="United States of America"/>
-        </coding>
-        <text value="United States of America"/>
-    </jurisdiction>
-    <effectivePeriod>
-        <start value="2020-12-01"/>
-    </effectivePeriod>
-    <relatedArtifact>
-        <type value="depends-on"/>
-        <label value="RCTC Value Set Library of Trigger Codes"/>
-        <resource value="http://hl7.org/fhir/us/ecr/Library/library-rctc-example"/>
-    </relatedArtifact>
     <action id="start-workflow">
         <description value="This action represents the start of the reporting workflow in response to the encounter-start event"/>
         <textEquivalent value="Start the reporting workflow in response to an encounter-start event"/>
@@ -94,13 +78,6 @@
             <condition>
                 <kind value="applicability"/>
                 <expression>
-                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
-                        <valueExpression>
-                            <language value="text/cql-identifier"/>
-                            <expression value="Is Reportable"/>
-                            <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
-                        </valueExpression>
-                    </extension>
                     <language value="text/fhirpath"/>
                     <expression value="%conditions.exists() or %encounters.exists() or %immunizations.exists() or %procedures.exists() or $procedureOrders.exists() or %labOrders.exists() or %labTests.exists() or %labResults.exists() or %medicationAdministrations.exists() or %medicationOrders.exists() or %medicationDispenses.exists()"/></expression>
             </condition>
@@ -196,13 +173,6 @@
             <condition>
                 <kind value="applicability"/>
                 <expression>
-                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
-                        <valueExpression>
-                            <language value="text/cql-identifier"/>
-                            <expression value="Is Encounter In Progress"/>
-                            <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
-                        </valueExpression>
-                    </extension>
                     <language value="text/fhirpath"/>
                     <expression value="%encounter.status = 'in-progress'"/></expression>
             </condition>
@@ -250,13 +220,6 @@
             <condition>
                 <kind value="applicability"/>
                 <expression>
-                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
-                        <valueExpression>
-                            <language value="text/cql-identifier"/>
-                            <expression value="Is Encounter Finished"/>
-                            <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
-                        </valueExpression>
-                    </extension>
                     <language value="text/fhirpath"/>
                     <expression value="%encounter.status = 'finished'"/></expression>
             </condition>
@@ -280,13 +243,6 @@
             <condition>
                 <kind value="applicability"/>
                 <expression>
-                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
-                        <valueExpression>
-                            <language value="text/cql-identifier"/>
-                            <expression value="Is Encounter In Progress"/>
-                            <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
-                        </valueExpression>
-                    </extension>
                     <language value="text/fhirpath"/>
                     <expression value="%encounter.status = 'in-progress'"/></expression>
             </condition>

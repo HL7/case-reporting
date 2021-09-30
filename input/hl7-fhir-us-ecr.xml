@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="651"/>
-        <lastUpdated value="2021-08-24T23:58:18.054+00:00"/>
-        <source value="#R938TYWfmaRfopqM"/>
+        <versionId value="657"/>
+        <lastUpdated value="2021-09-28T16:18:25.054+00:00"/>
+        <source value="#q6G1XCHBq7vVgupx"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.1.0"/>
@@ -33,6 +33,12 @@
     <packageId value="hl7.fhir.us.ecr"/>
     <fhirVersion value="4.0.1"/>
     <dependsOn id="hl7fhiruscore">
+        <extension url="https://trifolia-fhir.lantanagroup.com/r4/StructureDefinition/extension-ig-depends-on-location">
+            <valueString value="http://hl7.org/fhir/us/core"/>
+        </extension>
+        <extension url="https://trifolia-fhir.lantanagroup.com/r4/StructureDefinition/extension-ig-depends-on-name">
+            <valueString value="USCoreR4"/>
+        </extension>
         <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
         <packageId value="hl7.fhir.us.core"/>
         <version value="4.0.0"/>
@@ -324,7 +330,7 @@
                 <display value="eICR Country of Residence"/>
             </reference>
             <name value="eICR Country of Residence Observation"/>
-            <description value="This Observation profile represents the patient's country of residence."/>
+            <description value="This Observation profile represents the patient's country of usual residence."/>
             <exampleBoolean value="false"/>
             <groupingId value="eicr-profiles"/>
         </resource>
@@ -2096,6 +2102,17 @@
             <exampleBoolean value="false"/>
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-library"/>
             <groupingId value="ersd-examples"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="PlanDefinition/plandefinition-ersd-instance-simple-example"/>
+                <display value="eRSD PlanDefinition Instance Simple Example"/>
+            </reference>
+            <name value="eRSD PlanDefinition Instance Simple Example"/>
+            <description value="An example ersd PlanDefinition"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
+            <groupingId value="ersd-profiles-instances"/>
         </resource>
         <page>
             <nameUrl value="index.html"/>
