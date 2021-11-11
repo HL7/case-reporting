@@ -20,8 +20,6 @@ A Reportability Response will always be returned to the sending healthcare organ
 
 A number of profiles and extensions have been defined for the eICR transactions - see [Artifact Index](artifacts.html) for a listing of these profiles. The eICR Composition profile (which is contained in a eICR Document Bundle) is the starting point for the transaction and all the other profiles are referenced from that profile (see diagram below for the main profile relationships).
 
-Note to balloters: The following table will be updated before publication.
-
 <table><tr><td><img src="FHIR eICR Profile Hierarchy.png" style="width:100%;" /></td></tr></table>
 
 [^1]: RCKMS: [Reportable Conditions Knowledge Management System (RCKMS)](https://www.rckms.org/)
