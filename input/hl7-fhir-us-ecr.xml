@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="hl7-fhir-us-ecr"/>
     <meta>
-        <versionId value="657"/>
-        <lastUpdated value="2021-09-28T16:18:25.054+00:00"/>
-        <source value="#q6G1XCHBq7vVgupx"/>
+        <versionId value="662"/>
+        <lastUpdated value="2021-11-17T04:39:41.872+00:00"/>
+        <source value="#uczvDomv2oyOD2vL"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
     <version value="1.1.0"/>
@@ -33,6 +33,12 @@
     <packageId value="hl7.fhir.us.ecr"/>
     <fhirVersion value="4.0.1"/>
     <dependsOn id="hl7fhiruscore">
+        <extension url="https://trifolia-fhir.lantanagroup.com/r4/StructureDefinition/extension-ig-depends-on-location">
+            <valueString value="http://hl7.org/fhir/us/core"/>
+        </extension>
+        <extension url="https://trifolia-fhir.lantanagroup.com/r4/StructureDefinition/extension-ig-depends-on-name">
+            <valueString value="USCoreR4"/>
+        </extension>
         <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
         <packageId value="hl7.fhir.us.core"/>
         <version value="4.0.0"/>
@@ -2108,6 +2114,15 @@
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
             <groupingId value="ersd-profiles-instances"/>
         </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/us-ph-fhirquerypattern-extension"/>
+                <display value="US Public Health FHIR Query Pattern Extension"/>
+            </reference>
+            <name value="US Public Health FHIR Query Pattern Extension"/>
+            <description value="Supports communicating the FHIR query for a given data requirement. The query is server-specific, and will need to be created as informed by a CapabilityStatement. The $data-requirements operation should be extended to be able to provide an Endpoint or CapabilityStatement to provide this information. If no endpoint or capability statement is provided, the capability statement of the server performing the operation is used. This is not a resolveable URL, and that it will contain 1) No base canonical (so it's a relative query), and 2) Parameters using tokens that are denoted using double-braces and the context parameters are dependent solely on the subjectType, according to the following: Patient: context.patientId, Practitioner: context.practitionerId, Organization: context.organizationId, Location: context.locationId, Device: context.deviceId"/>
+            <exampleBoolean value="false"/>
+        </resource>
         <page>
             <nameUrl value="index.html"/>
             <title value="Home Page"/>
@@ -2169,6 +2184,11 @@
                 <page>
                     <nameUrl value="ersd_jurisdictions_codesystem_description.html"/>
                     <title value="eRSD Jurisdictions CodeSystem Description"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="ersd_plandefinition_datarequirement_fhir_query.html"/>
+                    <title value="eRSD PlanDefinition DataRequirement FHIR Queries"/>
                     <generation value="markdown"/>
                 </page>
                 <page>

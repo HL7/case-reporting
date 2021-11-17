@@ -69,29 +69,23 @@ To support a broad variety of use cases, the PlanDefinition resource provides a 
 1. All timings are expressed using the "offsetDuration" element of the relatedAction, simplifying timing representation throughout.
 1. All repetition is expressed through recursive related actions, rather than trying to express the periodicity using a timing structure.
 
-The eRSD PlanDefinition uses these structures to introduce two different "loops", one for the reportability check, and one for the creation and submission of reports for a suspected reportable event:
+The eRSD PlanDefinition uses these structures to introduce a "loop" for the creation and submission of reports for a suspected reportable event:
 
-* start
+* start-workflow
     - trigger: encounter-start
     - action: check-reportable in 1 hour
 
 * check-reportable
-    - if isSuspectedReportable, create-and-report-eicr
-    - if encounter-inprogress, check-reportable in 6 hours
-
-* create-and-report-eicr
-    - report-eicr
-    - if encounter-complete, report-eicr in 24 hours
-    - if encounter-inprogress, create-and-report-eicr in 24 hours
+    - if is-encounter-reportable, report-eicr
+    - if check-update-eicr, report-eicr
+    - if is-encounter-in-progress, check-reportable in 6 hours
 
 * report-eicr
     - create-eicr, validate-eicr, route-and-send-eicr
 
-The `start` action is initiated by an `encounter-start` event, and specifies that `check-reportable` should be called in 1 hour.
+The `start-workflow` action is initiated by an `encounter-start` event, and specifies that `check-reportable` should be called in 1 hour.
 
-The `check-reportable` action checks for suspected reportability, and if true, calls the `create-and-report-eicr` action. If the encounter is still in progress, `check-reportable` is called again with a delay of 6 hours.
-
-The `create-and-report-eicr` action calls the `report-eicr` action. If the encounter is complete, it then calls the `report-eicr` action again with a delay of 24 hours. If the encounter is still in progress, it calls the `create-and-report-eicr` action (itself) again in 24 hours.
+The `check-reportable` action checks for suspected reportability, and if true, calls the `report-eicr` action. If an eICR has not been sent for over 24 hours, then `report-eicr` is called. If the encounter is still in progress, `check-reportable` is called again with a delay of 6 hours and this continues until more than 72 hours have elapsed since the encounter end.
 
 The `report-eicr` action calls all three of `create-eicr`, `validate-eicr`, and `route-and-send-eicr`.
 
@@ -103,11 +97,10 @@ The `route-and-send-eicr` action involves the transmission of the eICR to either
 
 ##### Parameters
 
-The offsets (1 h, 6h, and 24h, are parameters to the specification)
+The offsets (1 h, 6h, and 72h, are parameters to the specification)
 * initial-creation-delay: 1 h
 * reportable-check-period: 6 h
-* suspected-reportable-update-period: 24 h
-* suspected-reportable-close-delay: 24 h
+* suspected-reportable-close-delay: 72 h
 
 ##### Suspected Reportability Criteria
 
