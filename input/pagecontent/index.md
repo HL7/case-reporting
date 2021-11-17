@@ -10,14 +10,6 @@ For more supporting information, use cases, and other background context and mat
 
 For Clinical Safety Information please refer to the [FHIR Implementer’s Safety Checklist](http://hl7.org/fhir/safety.html).
 
-<div style="background-color: #ffffcc; border-left: 6px solid #ffeb3b;">
-  <p><b>Known Issue:</b></p>
-  <p>The following issue is related to a publication tooling issue. A technical correction is planned once the tooling issue has been addressed.</p>
-  <ul>
-    <li><a href="https://jira.hl7.org/browse/FHIR-30477" rel="external" target="_blank">FHIR-30477</a>: Resolution errors for FHIRHelpers and FHIR-ModelInfo.</li>
-  </ul>
-</div>
-
 # Stakeholders
 * Regulatory Agencies
 * Standards Development Organizations
@@ -43,5 +35,3 @@ For Clinical Safety Information please refer to the [FHIR Implementer’s Safety
 </tr>
 </tbody>
 </table>
-
-

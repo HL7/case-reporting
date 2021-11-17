@@ -3,6 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="valueset-chlamydia-example"/>
     <meta>
+        <versionId value="6"/>
+        <lastUpdated value="2020-11-25T23:10:42.051+00:00"/>
+        <source value="#f1ilk1zBBG4DSxHC"/>
         <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"/>
     </meta>
     <extension url="http://hl7.org/fhir/StructureDefinition/valueset-steward">
@@ -21,13 +24,20 @@
         <value value="urn:oid:2.16.840.1.113762.1.4.1146.1057"/>
     </identifier>
     <version value="1.0.0"/>
-    <name value="Example_Chlamydia_Triggers_for_Public_Health_Reporting"/>
-    <title value="Example Chlamydia Triggers for Public Health Reporting"/>
+    <name value="Example_Chlamydia_Lab_Obs_Test_Name_Triggers_for_Public_Health_Reporting"/>
+    <title value="Example Chlamydia Lab Obs Test Name Triggers for Public Health Reporting"/>
     <status value="draft"/>
     <experimental value="true"/>
-    <date value="2021-11-16"/>
-    <publisher value="Association of Public Health Laboratories (APHL)"/>
-    <description value="This example set of values contains laboratory observations test names that represent that the patient may have a potentially reportable condition - chlamydia."/>
+    <date value="2018-08-01"/>
+    <publisher value="{site.data.fhir.ig.publisher}"/>
+    <contact>
+        <name value="HL7 Public Health and Emergency Response WorkGroup"/>
+        <telecom>
+            <system value="url"/>
+            <value value="http://www.hl7.org/Special/committees/pher/index.cfm"/>
+        </telecom>
+    </contact>
+    <description value="This example set of values contains laboratory observations test names that represent that the patient may have the potentially reportable condition of Chlamydia regardless of the clinical presentation of the condition"/>
     <useContext>
         <code>
             <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
@@ -41,6 +51,20 @@
                 <display value="Triggering"/>
             </coding>
         </valueCodeableConcept>
+    </useContext>
+    <useContext>
+      <code>
+        <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+        <code value="focus"/>
+        <display value="Clinical Focus"/>
+      </code>
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="240589008"/>
+          <display value="Chlamydia trachomatis infection"/>
+        </coding>
+      </valueCodeableConcept>
     </useContext>
     <jurisdiction>
         <coding>
