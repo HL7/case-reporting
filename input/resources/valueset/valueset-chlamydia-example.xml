@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet
+    xmlns="http://hl7.org/fhir">
+    <id value="valueset-chlamydia-example"/>
+    <meta>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"/>
+    </meta>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-steward">
+        <valueContactDetail>
+            <name value="CSTE Steward"/>
+        </valueContactDetail>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-author">
+        <valueContactDetail>
+            <name value="CSTE Author"/>
+        </valueContactDetail>
+    </extension>
+    <url value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-example"/>
+    <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:2.16.840.1.113762.1.4.1146.1057"/>
+    </identifier>
+    <version value="1.0.0"/>
+    <name value="Example_Chlamydia_Triggers_for_Public_Health_Reporting"/>
+    <title value="Example Chlamydia Triggers for Public Health Reporting"/>
+    <status value="draft"/>
+    <experimental value="true"/>
+    <date value="2021-11-16"/>
+    <publisher value="Association of Public Health Laboratories (APHL)"/>
+    <description value="This example set of values contains laboratory observations test names that represent that the patient may have a potentially reportable condition - chlamydia."/>
+    <useContext>
+        <code>
+            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
+            <code value="reporting"/>
+            <display value="Reporting"/>
+        </code>
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
+                <code value="triggering"/>
+                <display value="Triggering"/>
+            </coding>
+        </valueCodeableConcept>
+    </useContext>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
+    <compose>
+        <include>
+            <system value="http://loinc.org"/>
+            <concept>
+                <code value="14461-8"/>
+                <display value="Chlamydia trachomatis [Presence] in Blood by Organism specific culture"/>
+            </concept>
+            <concept>
+                <code value="14462-6"/>
+                <display value="Chlamydia trachomatis [Presence] in Cerebral spinal fluid by Organism specific culture"/>
+            </concept>
+            <concept>
+                <code value="14463-4"/>
+                <display value="Chlamydia trachomatis [Presence] in Cervix by Organism specific culture"/>
+            </concept>
+        </include>
+    </compose>
+</ValueSet>
