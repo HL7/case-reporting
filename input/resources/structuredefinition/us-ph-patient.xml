@@ -94,37 +94,17 @@
         </element>
         <element id="Patient.identifier.extension">
             <path value="Patient.identifier.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-        </element>
-        <element id="Patient.identifier.extension:extensionDataAbsentReason">
-            <path value="Patient.identifier.extension"/>
-            <sliceName value="extensionDataAbsentReason"/>
-            <max value="1"/>
             <type>
                 <code value="Extension"/>
                 <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason"/>
             </type>
-            <mustSupport value="true"/>
         </element>
-        <element id="Patient.identifier.extension:extensionDataAbsentReason.url">
-            <path value="Patient.identifier.extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/StructureDefinition/data-absent-reason"/>
-        </element>
-        <element id="Patient.identifier.extension:extensionDataAbsentReason.value[x]:valueCode">
-            <path value="Patient.identifier.extension.valueCode"/>
-            <sliceName value="valueCode"/>
-            <min value="1"/>
+        <element id="Patient.identifier.extension.value[x]">
+            <path value="Patient.identifier.extension.value[x]"/>
             <type>
                 <code value="code"/>
             </type>
-            <patternCode value="masked"/>
-            <mustSupport value="true"/>
+            <fixedCode value="masked"/>
         </element>
         <element id="Patient.name">
             <path value="Patient.name"/>
