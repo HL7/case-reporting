@@ -94,13 +94,15 @@
         </element>
         <element id="Patient.identifier.extension:dataAbsentReason">
             <path value="Patient.identifier.extension"/>
+            <sliceName value="dataAbsentReason"/>
+            <max value="1"/>
             <type>
                 <code value="Extension"/>
                 <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason"/>
             </type>
         </element>
-        <element id="Patient.identifier.extension.value[x]">
-            <path value="Patient.identifier.extension.value[x]"/>
+        <element id="Patient.identifier.extension:dataAbsentReason.value[x]">
+            <path value="Patient.identifier.extension:dataAbsentReason.value[x]"/>
             <type>
                 <code value="code"/>
             </type>
@@ -109,16 +111,6 @@
         <element id="Patient.name">
             <path value="Patient.name"/>
             <min value="1"/>
-        </element>
-        <element id="Patient.name.extension">
-            <path value="Patient.name.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
         </element>
         <element id="Patient.name.extension:extensionDataAbsentReason">
             <path value="Patient.name.extension"/>
