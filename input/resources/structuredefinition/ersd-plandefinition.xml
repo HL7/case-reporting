@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="ersd-plandefinition"/>
     <meta>
-        <versionId value="34"/>
-        <lastUpdated value="2021-09-22T03:42:52.889+00:00"/>
-        <source value="#KN14KkOy11dmf59D"/>
+        <versionId value="35"/>
+        <lastUpdated value="2021-11-17T04:21:04.742+00:00"/>
+        <source value="#QldGNssihwOAV7Nt"/>
     </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
     <version value="1.0.0"/>
@@ -66,7 +66,7 @@
                 <ordered value="true"/>
                 <rules value="open"/>
             </slicing>
-            <min value="4"/>
+            <min value="3"/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action.code">
@@ -79,6 +79,38 @@
                 <description value="The set of actions that can be used to create plan definition"/>
                 <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-plandefinition-action"/>
             </binding>
+        </element>
+        <element id="PlanDefinition.action.input">
+            <path value="PlanDefinition.action.input"/>
+        </element>
+        <element id="PlanDefinition.action.input.extension">
+            <path value="PlanDefinition.action.input.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <definition value="Defines extensions for the action."/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action.input.extension:fhirquerypattern">
+            <path value="PlanDefinition.action.input.extension"/>
+            <sliceName value="us-ph-fhirquerypattern-extension"/>
+            <min value="0"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action.input.extension:fhirquerypattern.url">
+            <path value="PlanDefinition.action.input.extension.url"/>
+            <min value="1"/>
+            <max value="1"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"/>
+            <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action:encounterStart">
             <path value="PlanDefinition.action"/>
@@ -314,7 +346,7 @@
         <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.id">
             <path value="PlanDefinition.action.action.id"/>
             <min value="1"/>
-            <fixedString value="ckr-is-encounter-reportable"/>
+            <fixedString value="is-encounter-reportable"/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.code">
@@ -360,9 +392,62 @@
         </element>
         <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.relatedAction.actionId">
             <path value="PlanDefinition.action.action.relatedAction.actionId"/>
-            <fixedId value="create-and-report-eicr"/>
+            <fixedId value="report-eicr"/>
         </element>
         <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.relatedAction.relationship">
+            <path value="PlanDefinition.action.action.relatedAction.relationship"/>
+            <fixedCode value="before-start"/>
+        </element>
+        <element id="PlanDefinition.action:checkReportable.action:checkUpdateEicr">
+            <path value="PlanDefinition.action.action"/>
+            <sliceName value="checkUpdateEicr"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="BackboneElement"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:checkReportable.action:checkUpdateEicr.id">
+            <path value="PlanDefinition.action.action.id"/>
+            <min value="1"/>
+            <fixedString value="check-update-eicr"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:checkReportable.action:checkUpdateEicr.code">
+            <path value="PlanDefinition.action.action.code"/>
+            <min value="1"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="evaluate-condition"/>
+                </coding>
+            </patternCodeableConcept>
+        </element>
+        <element id="PlanDefinition.action:checkReportable.action:checkUpdateEicr.condition">
+            <path value="PlanDefinition.action.action.condition"/>
+        </element>
+        <element id="PlanDefinition.action:checkReportable.action:checkUpdateEicr.condition.kind">
+            <path value="PlanDefinition.action.action.condition.kind"/>
+            <fixedCode value="applicability"/>
+        </element>
+        <element id="PlanDefinition.action:checkReportable.action:checkUpdateEicr.condition.expression">
+            <path value="PlanDefinition.action.action.condition.expression"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:checkReportable.action:checkUpdateEicr.condition.expression.language">
+            <path value="PlanDefinition.action.action.condition.expression.language"/>
+            <fixedCode value="text/fhirpath"/>
+        </element>
+        <element id="PlanDefinition.action:checkReportable.action:checkUpdateEicr.relatedAction">
+            <path value="PlanDefinition.action.action.relatedAction"/>
+        </element>
+        <element id="PlanDefinition.action:checkReportable.action:checkUpdateEicr.relatedAction.actionId">
+            <path value="PlanDefinition.action.action.relatedAction.actionId"/>
+            <fixedId value="report-eicr"/>
+        </element>
+        <element id="PlanDefinition.action:checkReportable.action:checkUpdateEicr.relatedAction.relationship">
             <path value="PlanDefinition.action.action.relatedAction.relationship"/>
             <fixedCode value="before-start"/>
         </element>
@@ -379,7 +464,7 @@
         <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.id">
             <path value="PlanDefinition.action.action.id"/>
             <min value="1"/>
-            <fixedString value="ckr-is-encounter-in-progress"/>
+            <fixedString value="is-encounter-in-progress"/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.code">
@@ -419,130 +504,7 @@
             <path value="PlanDefinition.action.action.relatedAction.relationship"/>
             <fixedCode value="before-start"/>
         </element>
-        <element id="PlanDefinition.action:createAndReport">
-            <path value="PlanDefinition.action"/>
-            <sliceName value="createAndReport"/>
-            <min value="1"/>
-            <max value="1"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.id">
-            <path value="PlanDefinition.action.id"/>
-            <min value="1"/>
-            <fixedString value="create-and-report-eicr"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.code">
-            <path value="PlanDefinition.action.code"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                    <code value="execute-reporting-workflow"/>
-                </coding>
-            </patternCodeableConcept>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action">
-            <path value="PlanDefinition.action.action"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="id"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-            <min value="3"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:reportEicr">
-            <path value="PlanDefinition.action.action"/>
-            <sliceName value="reportEicr"/>
-            <min value="1"/>
-            <max value="1"/>
-            <type>
-                <code value="BackboneElement"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:reportEicr.id">
-            <path value="PlanDefinition.action.action.id"/>
-            <min value="1"/>
-            <fixedString value="car-report-eicr"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:reportEicr.code">
-            <path value="PlanDefinition.action.action.code"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                    <code value="execute-reporting-workflow"/>
-                </coding>
-            </patternCodeableConcept>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:reportEicr.relatedAction">
-            <path value="PlanDefinition.action.action.relatedAction"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:reportEicr.relatedAction.actionId">
-            <path value="PlanDefinition.action.action.relatedAction.actionId"/>
-            <fixedId value="report-eicr"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:reportEicr.relatedAction.relationship">
-            <path value="PlanDefinition.action.action.relatedAction.relationship"/>
-            <fixedCode value="before-start"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete">
-            <path value="PlanDefinition.action.action"/>
-            <sliceName value="isEncounterComplete"/>
-            <min value="1"/>
-            <max value="1"/>
-            <type>
-                <code value="BackboneElement"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.id">
-            <path value="PlanDefinition.action.action.id"/>
-            <min value="1"/>
-            <fixedString value="car-is-encounter-complete"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.code">
-            <path value="PlanDefinition.action.action.code"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                    <code value="evaluate-condition"/>
-                </coding>
-            </patternCodeableConcept>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.condition">
-            <path value="PlanDefinition.action.action.condition"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.condition.kind">
-            <path value="PlanDefinition.action.action.condition.kind"/>
-            <fixedCode value="applicability"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.condition.expression">
-            <path value="PlanDefinition.action.action.condition.expression"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.condition.expression.language">
-            <path value="PlanDefinition.action.action.condition.expression.language"/>
-            <fixedCode value="text/fhirpath"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.relatedAction">
-            <path value="PlanDefinition.action.action.relatedAction"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.relatedAction.actionId">
-            <path value="PlanDefinition.action.action.relatedAction.actionId"/>
-            <fixedId value="report-eicr"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.relatedAction.relationship">
-            <path value="PlanDefinition.action.action.relatedAction.relationship"/>
-            <fixedCode value="before-start"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:isEncounterComplete.relatedAction.offsetDuration">
+        <element id="PlanDefinition.action:checkReportable.action:encounterInProgress.relatedAction.offsetDuration">
             <path value="PlanDefinition.action.action.relatedAction.offsetDuration"/>
             <min value="0"/>
             <max value="1"/>
@@ -550,77 +512,9 @@
                 <code value="Duration"/>
             </type>
             <example>
-                <label value="Wait 24 hours before next action."/>
+                <label value="Wait 6 hours before next action."/>
                 <valueDuration>
-                    <value value="24"/>
-                    <unit value="h"/>
-                </valueDuration>
-            </example>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:encounterInProgress">
-            <path value="PlanDefinition.action.action"/>
-            <sliceName value="encounterInProgress"/>
-            <min value="1"/>
-            <max value="1"/>
-            <type>
-                <code value="BackboneElement"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.id">
-            <path value="PlanDefinition.action.action.id"/>
-            <min value="1"/>
-            <fixedString value="car-is-encounter-in-progress"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.code">
-            <path value="PlanDefinition.action.action.code"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                    <code value="evaluate-condition"/>
-                </coding>
-            </patternCodeableConcept>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.condition">
-            <path value="PlanDefinition.action.action.condition"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.condition.kind">
-            <path value="PlanDefinition.action.action.condition.kind"/>
-            <fixedCode value="applicability"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.condition.expression">
-            <path value="PlanDefinition.action.action.condition.expression"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.condition.expression.language">
-            <path value="PlanDefinition.action.action.condition.expression.language"/>
-            <fixedCode value="text/fhirpath"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.relatedAction">
-            <path value="PlanDefinition.action.action.relatedAction"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.relatedAction.actionId">
-            <path value="PlanDefinition.action.action.relatedAction.actionId"/>
-            <fixedId value="create-and-report-eicr"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.relatedAction.relationship">
-            <path value="PlanDefinition.action.action.relatedAction.relationship"/>
-            <fixedCode value="before-start"/>
-        </element>
-        <element id="PlanDefinition.action:createAndReport.action:encounterInProgress.relatedAction.offsetDuration">
-            <path value="PlanDefinition.action.action.relatedAction.offsetDuration"/>
-            <min value="0"/>
-            <max value="1"/>
-            <type>
-                <code value="Duration"/>
-            </type>
-            <example>
-                <label value="Wait 24 hours before next action."/>
-                <valueDuration>
-                    <value value="24"/>
+                    <value value="6"/>
                     <unit value="h"/>
                 </valueDuration>
             </example>
