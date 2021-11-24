@@ -143,4 +143,34 @@
         <display value="Indicates change in patient demographics"/>
         <definition value="Indicates that the Patient demographic attributes such as Date of Birth, Race, Ethnicity, Deceased date, Address, Telecom, Names have changed. Demographic change events would be triggered by monitoring the Patient resource."/>
     </concept>
+    <concept>
+	    <code value="received-public-health-report"/>
+	    <display value="Indicates receipt of a public health report"/>
+	    <definition value="Indicates that a public health report was submitted and received by a specific system. This event could trigger downstream processing and hence is designated as a named event."/>
+  	</concept>
+  	<concept>
+  	    <code value="received-public-health-response"/>
+  	    <display value="Indicates receipt of a public health response for a submitted public health report"/>
+  	    <definition value="Indicates that a public health response was received by a specific system for an already submitted public health report. This event could trigger downstream processing and hence is designated as a named event."/>
+  	</concept>
+  	<concept>
+  	    <code value="manual-notification"/>
+  	    <display value="A Practitioner or their representatives notify the application about change in patient data"/>
+  	    <definition value="In some cases where automated notifications are not supported, a practitioner or their representative can initiate the public health report processing by notifying the application about change in a patient's data."/>
+  	</concept>
+  	<concept>
+  	    <code value="timer-event"/>
+  	    <display value="A Timer is setup to kick off processing."/>
+  	    <definition value="Indicates a timer based approach to start processing."/>
+  	    <concept>
+              <code value="periodic-timer"/>
+              <display value="Setup Periodic Timer"/>
+              <definition value="Indicates that processing must be performed periodically based on a specified duration."/>
+          </concept>
+          <concept>
+              <code value="absolute-timer"/>
+              <display value="Setup Absolute Timer"/>
+              <definition value="Indicates that processing must be performed at a specific time."/>
+          </concept>
+  	</concept>
 </CodeSystem>
