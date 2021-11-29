@@ -3954,4 +3954,72 @@
             </Practitioner>
         </resource>
     </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/Observation/observation-rr-eicr-processing-status"/>
+            <Observation
+                xmlns="http://hl7.org/fhir">
+                <id value="observation-rr-eicr-processing-status"/>
+                <meta>
+                    <versionId value="7"/>
+                    <lastUpdated value="2021-08-17T07:59:00.920+00:00"/>
+                    <source value="#qebn2OtR7MyyUBlm"/>
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation"/>
+                </meta>
+                <status value="final"/>
+                <code>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
+                        <code value="RRVS20"/>
+                        <display value="eICR was processed - with a warning"/>
+                    </coding>
+                </code>
+                <hasMember>
+                    <reference value="Observation/observation-rr-eicr-processing-status-reason"/>
+                </hasMember>
+            </Observation>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/Observation/observation-rr-eicr-processing-status-reason"/>
+        <Observation
+            xmlns="http://hl7.org/fhir">
+            <id value="observation-rr-eicr-processing-status-reason"/>
+            <meta>
+                <versionId value="6"/>
+                <lastUpdated value="2021-08-17T07:59:00.881+00:00"/>
+                <source value="#vuZ3NTkJzu5MXnbK"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation"/>
+            </meta>
+            <status value="final"/>
+            <code>
+                <coding>
+                    <system value="urn:oid:2.16.840.1.114222.4.5.232"/>
+                    <code value="RR6"/>
+                    <display value="eICR Processing Status Reason"/>
+                </coding>
+            </code>
+            <valueCodeableConcept>
+                <coding>
+                    <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
+                    <code value="RRVS30"/>
+                    <display value="eICR was processed with the warning of: inactive RCTC code"/>
+                </coding>
+            </valueCodeableConcept>
+            <component>
+                <code>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
+                        <code value="RRVS32"/>
+                        <display value="Inactive RCTC code detail"/>
+                    </coding>
+                </code>
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://snomed.info/sct"/>
+                        <code value="69092001"/>
+                        <display value="Leptospirosis icterohemorrhagica (disorder)"/>
+                    </coding>
+                </valueCodeableConcept>
+            </component>
+        </Observation>
+    </entry>
 </Bundle>
