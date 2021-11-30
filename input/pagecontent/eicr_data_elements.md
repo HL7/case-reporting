@@ -1,7 +1,7 @@
-The Council of State and Territorial Epidemiologists (CSTE) has reviewed and deemed appropriate the content of the electronic initial case report (eICRs) standards for a multi-condition, multi-jurisdiction electronic case report, and stipulated the following (CSTE letter of November 1st, 2021):  
+<p>The Council of State and Territorial Epidemiologists (CSTE) has reviewed and deemed appropriate the content of the electronic initial case report (eICRs) standards for a multi-condition, multi-jurisdiction electronic case report, and stipulated the following (CSTE letter of November 1st, 2021):</p>  
 
-> Public Health Agencies (PHAs) are authorized to receive the data specified in the electronic initial case report (eICR) as a multi-condition, multi-jurisdiction electronic case report. When these data are available, they should be used to populate eICRs transmitted from electronic health records (EHRs). 
-> There may be additional data, also needed by public health, that may be requested by public health agencies subsequent to the receipt of an eICR that are necessary for public health investigation that should also be shared in accordance with state and local laws and regulations. Public health agencies are authorized by such laws and regulations to investigate and receive data for cases of reportable disease, whether suspected or confirmed.
+<blockquote><i>Public Health Agencies (PHAs) are authorized to receive the data specified in the electronic initial case report (eICR) as a multi-condition, multi-jurisdiction electronic case report. When these data are available, they should be used to populate eICRs transmitted from electronic health records (EHRs). 
+There may be additional data, also needed by public health, that may be requested by public health agencies subsequent to the receipt of an eICR that are necessary for public health investigation that should also be shared in accordance with state and local laws and regulations. Public health agencies are authorized by such laws and regulations to investigate and receive data for cases of reportable disease, whether suspected or confirmed.</i></blockquote>
 
 <table width="100%">
 <style>
