@@ -9,7 +9,6 @@ codesystem "UsageContext": 'http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-co
 codesystem "JurisdictionsList": 'http://hl7.org/fhir/us/ecr/CodeSystem/ersd-jurisdictions-example'
 
 // Overall triggering value sets, groupings of all condition-specific value sets, grouped by representation in the information model
-valueset "Immunization Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-iztc-example'
 valueset "Diagnosis Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example'
 valueset "Medication Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example'
 valueset "Laboratory Order Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example'

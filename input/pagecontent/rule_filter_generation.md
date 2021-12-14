@@ -12,7 +12,6 @@ Condition-specific criteria are expressed in terms of data elements and characte
 
 ```cql
 valueset "Example Diagnosis/Problem Triggers": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example'
-valueset "Example Immunizations Triggers": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-iztc-example'
 valueset "Example Lab Order Test Name Triggers": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example'
 valueset "Example Lab Observation Test Name Triggers": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example'
 valueset "Example Medications Triggers": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example'
@@ -38,7 +37,7 @@ define "Diagnosis/Problem Data":
     union "Encounter Diagnosis/Problem Data"
 
 define "Immunizations Data":      
-  [Immunization: vaccineCode in "Example Immunizations Triggers"] IZ
+  [Immunization: vaccineCode in "Example Medications Triggers"] IZ
     where IZ.status = 'completed'
 
 define "Lab Order Test Name Data":
