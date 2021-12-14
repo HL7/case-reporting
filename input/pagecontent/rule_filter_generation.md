@@ -16,6 +16,7 @@ valueset "Example Lab Order Test Name Triggers": 'http://hl7.org/fhir/us/ecr/Val
 valueset "Example Lab Observation Test Name Triggers": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example'
 valueset "Example Medications Triggers": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example'
 valueset "Example Organism Substance Triggers": "http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"
+valueset "Example Suspected Disorder Triggers": "http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example"
 ```
 
 ### Reportable Condition Trigger Representation within FHIR
@@ -56,6 +57,19 @@ define "Medications Data":
 define "Organism Substance Data":  
   [Observation: code in "Example Organism Substance Triggers"] OS
     where OS.status in { 'registered', 'preliminary', 'final', 'amended' }
+
+define "Condition Suspected Disorder Data":
+  [Condition: code in "Example Suspected Disorder Triggers"] SD
+    where SD.clinicalStatus in { 'active', 'recurrence', 'relapse' }
+      and SD.verificationStatus in { 'unconfirmed', 'provisional', 'differential', 'confirmed' }
+
+define "Encounter Suspected Disorder Data":
+  [Encounter: reasonCode in "Example Suspected Disorder  Triggers"] SD
+    where SD.status in { 'arrived', 'triaged', 'in-progress', 'onleave', 'finished' }
+
+define "Suspected Disorder Data":
+  "Condition Suspected Disorder Data"
+    union "Encounter Suspected Disorder Data"
 ```
 
 NOTE: The status checks in the above are not necessarily appropriate, it may be that the initial triggering should ignore status entirely, leaving a status check to the more detailed condition-specific criteria. More on this in the data category patterns discussion below.

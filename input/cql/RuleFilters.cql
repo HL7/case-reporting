@@ -15,6 +15,7 @@ valueset "Laboratory Order Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/
 valueset "Laboratory Result Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example'
 valueset "Organism Substance Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example'
 valueset "Procedure Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example'
+valueset "Suspected Disorder Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example'
 
 // Condition-specific triggering codes, these would be listed for each condition
 valueset "Chlamydia Laboratory Result Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-example'

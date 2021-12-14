@@ -29,3 +29,11 @@ One approach for this is using the current FHIR R4 Subscription model, where a u
 `MedicationRequest?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example`
 
 `MedicationStatement?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example`
+
+**Immunization**
+
+`Immunization?vaccineCode:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example`
+
+**Suspected_Disorder**
+
+`Condition?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example`
