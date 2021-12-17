@@ -1,70 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Observation
-    xmlns="http://hl7.org/fhir">
-    <id value="observation-rr-reportability-information-observation"/>
+<Observation xmlns="http://hl7.org/fhir">
+    <id value="observation-rr-reportability-information-observation" />
     <meta>
-        <versionId value="1"/>
-        <lastUpdated value="2021-07-21T03:10:13.946+00:00"/>
-        <source value="#l0j1zEVQ0pIebyt5"/>
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation"/>
+        <versionId value="1" />
+        <lastUpdated value="2021-07-21T03:10:13.946+00:00" />
+        <source value="#l0j1zEVQ0pIebyt5" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation" />
     </meta>
     <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-determination-of-reportability-extension">
         <valueCodeableConcept>
             <coding>
-                <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
-                <code value="RRVS1"/>
-                <display value="Reportable"/>
+                <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+                <code value="RRVS1" />
+                <display value="Reportable" />
             </coding>
         </valueCodeableConcept>
     </extension>
     <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-determination-of-reportability-reason-extension">
-        <valueString value="Condition is reportable"/>
+        <valueString value="Condition is reportable" />
     </extension>
     <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-determination-of-reportability-rule-extension">
-        <valueString value="Description of rule used in reportability determination"/>
+        <valueString value="Description of rule used in reportability determination" />
     </extension>
     <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension">
-        <valueReference value="DocumentReference/documentreference-add-reporting-needs-pdf"/>
+        <valueReference>
+            <reference value="DocumentReference/documentreference-add-reporting-needs-pdf" />
+        </valueReference>
     </extension>
     <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension">
-        <valueReference value="DocumentReference/documentreference-add-reporting-needs-pdf"/>
+        <valueReference>
+            <reference value="DocumentReference/documentreference-add-reporting-needs-pdf" />
+        </valueReference>
     </extension>
     <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension">
-        <valueReference value="DocumentReference/documentreference-zika-follow-up-pdf"/>
+        <valueReference>
+            <reference value="DocumentReference/documentreference-zika-follow-up-pdf" />
+        </valueReference>
     </extension>
-    <status value="final"/>
+    <status value="final" />
     <code>
         <coding>
-            <system value="urn:oid:2.16.840.1.114222.4.5.274"/>
-            <code value="RRVS5"/>
-            <display value="Patient home address"/>
+            <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+            <code value="RRVS5" />
+            <display value="Patient home address" />
         </coding>
     </code>
     <performer>
-        <reference value="Organization/organization-rr-rules-authoring-agency-haw"/>
-        <display value="Health Authority West Rules Authoring Agency"/>
+        <reference value="Organization/organization-rr-rules-authoring-agency-haw" />
+        <display value="Health Authority West Rules Authoring Agency" />
     </performer>
     <performer>
-        <reference value="Organization/organization-rr-routing-entity-haw"/>
-        <display value="Health Authority West Routing Entity"/>
+        <reference value="Organization/organization-rr-routing-entity-haw" />
+        <display value="Health Authority West Routing Entity" />
     </performer>
     <performer>
-        <reference value="Organization/organization-rr-responsible-agency-haw"/>
-        <display value="Health Authority West Routing Entity"/>
+        <reference value="Organization/organization-rr-responsible-agency-haw" />
+        <display value="Health Authority West Routing Entity" />
     </performer>
     <component>
         <code>
             <coding>
-                <system value="urn:oid:2.16.840.1.114222.4.5.232"/>
-                <code value="RR4"/>
-                <display value="Timeframe to report (urgency)"/>
+                <system value="urn:oid:2.16.840.1.114222.4.5.232" />
+                <code value="RR4" />
+                <display value="Timeframe to report (urgency)" />
             </coding>
         </code>
         <valueQuantity>
-            <value value="24"/>
-            <unit value="H"/>
-            <system value="http://unitsofmeasure.org"/>
-            <code value="H"/>
+            <value value="24" />
+            <unit value="H" />
+            <system value="http://unitsofmeasure.org" />
+            <code value="H" />
         </valueQuantity>
     </component>
 </Observation>
