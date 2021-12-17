@@ -3558,6 +3558,21 @@
                 <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-determination-of-reportability-rule-extension">
                     <valueString value="Description of rule used in reportability determination" />
                 </extension>
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension">
+                    <valueReference>
+                        <reference value="DocumentReference/documentreference-add-reporting-needs-pdf" />
+                    </valueReference>
+                </extension>
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension">
+                    <valueReference>
+                        <reference value="DocumentReference/documentreference-add-reporting-needs-pdf" />
+                    </valueReference>
+                </extension>
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension">
+                    <valueReference>
+                        <reference value="DocumentReference/documentreference-zika-follow-up-pdf" />
+                    </valueReference>
+                </extension>
                 <status value="final" />
                 <code>
                     <coding>
@@ -4022,6 +4037,159 @@
                     </valueCodeableConcept>
                 </component>
             </Observation>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/DocumentReference/documentreference-add-reporting-needs-pdf" />
+        <resource>
+            <DocumentReference xmlns="http://hl7.org/fhir">
+                <id value="documentreference-add-reporting-needs-pdf" />
+                <meta>
+                    <versionId value="2" />
+                    <lastUpdated value="2021-08-13T03:54:37.580+00:00" />
+                    <source value="#CKG4Ip9hcAYHwI5b" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-documentreference" />
+                </meta>
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-priority-extension">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+                            <code value="RRVS16" />
+                            <display value="Action requested" />
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                <status value="current" />
+                <type>
+                    <coding>
+                        <system value="http://loinc.org" />
+                        <code value="83910-0" />
+                        <display value="Public health Note" />
+                    </coding>
+                    <text value="Public health information" />
+                </type>
+                <category>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+                        <code value="RRVS8" />
+                        <display value="Additional reporting needs" />
+                    </coding>
+                    <text value="Additional reporting needs" />
+                </category>
+                <subject>
+                    <reference value="Patient/patient-ecr-eve-everywoman" />
+                    <display value="Eve Everywoman" />
+                </subject>
+                <description value="Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here." />
+                <content>
+                    <attachment>
+                        <contentType value="application/pdf" />
+                        <url value="http://statedepartmentofhealth.gov/epi/disease/zika/Supplemental_data_form.pdf" />
+                    </attachment>
+                </content>
+            </DocumentReference>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/DocumentReference/documentreference-zika-follow-up-pdf" />
+        <resource>
+            <DocumentReference xmlns="http://hl7.org/fhir">
+                <id value="documentreference-zika-follow-up-pdf" />
+                <meta>
+                    <versionId value="2" />
+                    <lastUpdated value="2021-08-13T03:55:05.964+00:00" />
+                    <source value="#5WqiIqtDkKw6T6kp" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-documentreference" />
+                </meta>
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-priority-extension">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+                            <code value="RRVS18" />
+                            <display value="Immediate action requested" />
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                <status value="current" />
+                <type>
+                    <coding>
+                        <system value="http://loinc.org" />
+                        <code value="83910-0" />
+                        <display value="Public health Note" />
+                    </coding>
+                    <text value="Public health information" />
+                </type>
+                <category>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+                        <code value="RRVS10" />
+                        <display value="Treatment and/or prevention" />
+                    </coding>
+                    <text value="Treatment and/or prevention" />
+                </category>
+                <subject>
+                    <reference value="Patient/patient-ecr-eve-everywoman" />
+                    <display value="Eve Everywoman" />
+                </subject>
+                <description value="Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy." />
+                <content>
+                    <attachment>
+                        <contentType value="application/pdf" />
+                        <url value="http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf" />
+                    </attachment>
+                </content>
+            </DocumentReference>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/DocumentReference/documentreference-zika-info-pdf" />
+        <resource>
+            <DocumentReference xmlns="http://hl7.org/fhir">
+                <id value="documentreference-zika-info-pdf" />
+                <meta>
+                    <versionId value="2" />
+                    <lastUpdated value="2021-08-13T03:55:05.964+00:00" />
+                    <source value="#UHFGpbMvvCjqEqnT" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-documentreference" />
+                </meta>
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-priority-extension">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+                            <code value="RRVS17" />
+                            <display value="Immediate action required" />
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                <status value="current" />
+                <type>
+                    <coding>
+                        <system value="http://loinc.org" />
+                        <code value="83910-0" />
+                        <display value="Public health Note" />
+                    </coding>
+                    <text value="Public health information" />
+                </type>
+                <category>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+                        <code value="RRVS13" />
+                        <display value="Outbreak- or Cluster Related" />
+                    </coding>
+                    <text value="Outbreak- or Cluster Related" />
+                </category>
+                <subject>
+                    <reference value="Patient/patient-ecr-eve-everywoman" />
+                    <display value="Eve Everywoman" />
+                </subject>
+                <description value="Local mosquito-borne Zika virus creation was reported in your area. Increased watchfulness for symptoms of Zika virus in your patients is warranted." />
+                <content>
+                    <attachment>
+                        <contentType value="application/pdf" />
+                        <url value="http://statedepartmentofhealth.gov/epi/disease/zika/outbreakinfo.pdf" />
+                    </attachment>
+                </content>
+            </DocumentReference>
         </resource>
     </entry>
 </Bundle>
