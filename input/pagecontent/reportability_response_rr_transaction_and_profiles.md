@@ -18,6 +18,6 @@ Once received by healthcare, the RR information is intended to support Providers
 
 It also should be provided to EHR System Administrators to confirm reporting and convey error and warning messages.
 
-A number of profiles and extensions have been defined for the Reportability Response transactions  - see [Artifact Index](artifacts.html) for a listing of these profiles. The Reportability Response Communication profile is the starting point and all the other profiles are referenced from this profile (see diagram below).
+A number of profiles and extensions have been defined for the Reportability Response transactions  - see [Artifact Index](artifacts.html) for a listing of these profiles. The Reportability Response Composition profile is the starting point and all the other profiles are referenced from this profile (see diagram below).
 
 <table><tr><td><img src="FHIR RR Profile Hierarchy.png" /></td></tr></table>
