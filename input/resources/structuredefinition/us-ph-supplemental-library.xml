@@ -46,6 +46,49 @@
             </patternCodeableConcept>
             <mustSupport value="true"/>
         </element>
+        <element id="Library.useContext">
+            <path value="Library.useContext"/>
+            <slicing>
+                <discriminator>
+                    <type value="pattern"/>
+                    <path value="code"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <min value="1"/>
+            <max value="*"/>
+        </element>
+        <element id="Library.useContext:reportingContext">
+            <path value="Library.useContext"/>
+            <sliceName value="reportingContext"/>
+            <min value="1"/>
+            <max value="1"/>
+        </element>
+        <element id="Library.useContext:reportingContext.code">
+            <path value="Library.useContext.code"/>
+            <min value="1"/>
+            <max value="1"/>
+            <patternCoding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
+                <code value="reporting"/>
+            </patternCoding>
+        </element>
+        <element id="Library.useContext:reportingContext.value[x]">
+            <path value="Library.useContext.value[x]"/>
+            <short value="Library useContext"/>
+            <definition value="The US Public Health use context of the Library."/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
+                    <code value="supplemental"/>
+                </coding>
+            </patternCodeableConcept>
+        </element>
         <element id="Library.relatedArtifact">
             <path value="Library.relatedArtifact"/>
             <slicing>
