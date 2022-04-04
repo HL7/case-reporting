@@ -281,7 +281,10 @@
                     <code value="validate-report"/>
                 </coding>
             </code>
-            <input id="eicr-report-input">
+            <input id="eicr-report">
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
+                  <valueString value="eicr-report-output"/>
+                </extension>
                 <type value="Bundle"/>
                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
             </input>
@@ -304,6 +307,9 @@
                 </coding>
             </code>
             <input id="validated-eicr-report-input">
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
+                  <valueString value="validated-eicr-report-output"/>
+                </extension>
                 <type value="Bundle"/>
                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
             </input>

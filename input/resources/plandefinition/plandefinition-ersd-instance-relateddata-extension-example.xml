@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PlanDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="plandefinition-ersd-instance-example"/>
+    <id value="plandefinition-ersd-instance-relateddata-extension-example"/>
     <meta>
-        <versionId value="6"/>
-        <lastUpdated value="2021-11-17T04:21:04.738+00:00"/>
-        <source value="#DYpZHR1G1x5B4mFC"/>
+        <versionId value="2"/>
+        <lastUpdated value="2021-11-17T04:21:04.742+00:00"/>
+        <source value="#RGrNVmUZUqLjGmiG"/>
         <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"/>
+    <url value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-relateddata-extension-example"/>
     <version value="0.1"/>
-    <name value="PlanDefinition_eRSD_Instance_Example"/>
-    <title value="eRSD PlanDefinition Instance Example"/>
+    <name value="PlanDefinition_eRSD_Instance_Simple_Example"/>
+    <title value="eRSD PlanDefinition Instance Simple Example"/>
     <type>
         <coding>
             <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
@@ -32,14 +32,6 @@
         </coding>
         <text value="United States of America"/>
     </jurisdiction>
-    <effectivePeriod>
-        <start value="2020-12-01"/>
-    </effectivePeriod>
-    <relatedArtifact>
-        <type value="depends-on"/>
-        <label value="RCTC Value Set Library of Trigger Codes"/>
-        <resource value="http://hl7.org/fhir/us/ecr/Library/library-rctc-example"/>
-    </relatedArtifact>
     <action id="start-workflow">
         <description value="This action represents the start of the reporting workflow in response to the encounter-start event"/>
         <textEquivalent value="Start the reporting workflow in response to an encounter-start event"/>
@@ -94,20 +86,10 @@
             <condition>
                 <kind value="applicability"/>
                 <expression>
-                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
-                        <valueExpression>
-                            <language value="text/cql-identifier"/>
-                            <expression value="Is Reportable"/>
-                            <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
-                        </valueExpression>
-                    </extension>
                     <language value="text/fhirpath"/>
                     <expression value="%conditions.exists() or %encounters.exists() or %immunizations.exists() or %procedures.exists() or %procedureOrders.exists() or %labOrders.exists() or %labTests.exists() or %labResults.exists() or %medicationAdministrations.exists() or %medicationOrders.exists() or %medicationDispenses.exists()"/></expression>
             </condition>
             <input id="conditions">
-                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                    <valueString value="Condition?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example&amp;patient=Patient/{{context.patientId}}"/>
-                </extension>
                 <type value="Condition"/>
                 <codeFilter>
                     <path value="code"/>
@@ -115,9 +97,6 @@
                 </codeFilter>
             </input>
             <input id="encounters">
-                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                    <valueString value="Encounter?reason-code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example&amp;patient=Patient/{{context.patientId}}"/>
-                </extension>
                 <type value="Encounter"/>
                 <codeFilter>
                     <path value="reasonCode"/>
@@ -125,9 +104,6 @@
                 </codeFilter>
             </input>
             <input id="immunizations">
-                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                    <valueString value="Immunization?vaccine-code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example&amp;patient=Patient/{{context.patientId}}"/>
-                </extension>
                 <type value="Immunization"/>
                 <codeFilter>
                     <path value="vaccineCode"/>
@@ -135,9 +111,6 @@
                 </codeFilter>
             </input>
             <input id="labOrders">
-                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                    <valueString value="ServiceRequest?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example&amp;patient=Patient/{{context.patientId}}"/>
-                </extension>
                 <type value="ServiceRequest"/>
                 <codeFilter>
                     <path value="code"/>
@@ -145,9 +118,6 @@
                 </codeFilter>
             </input>
             <input id="labTests">
-                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                    <valueString value="Observation?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example&amp;patient=Patient/{{context.patientId}}"/>
-                </extension>
                 <type value="Observation"/>
                 <codeFilter>
                     <path value="code"/>
@@ -155,9 +125,6 @@
                 </codeFilter>
             </input>
             <input id="procedureOrders">
-                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                    <valueString value="ServiceRequest?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example&amp;patient=Patient/{{context.patientId}}"/>
-                </extension>
                 <type value="ServiceRequest"/>
                 <codeFilter>
                     <path value="code"/>
@@ -165,9 +132,6 @@
                 </codeFilter>
             </input>
             <input id="procedures">
-                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                    <valueString value="Procedure?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example&amp;patient=Patient/{{context.patientId}}"/>
-                </extension>
                 <type value="Procedure"/>
                 <codeFilter>
                     <path value="code"/>
@@ -175,9 +139,6 @@
                 </codeFilter>
             </input>
             <input id="medicationOrders">
-                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                    <valueString value="MedicationRequest?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example&amp;patient=Patient/{{context.patientId}}"/>
-                </extension>
                 <type value="MedicationRequest"/>
                 <codeFilter>
                     <path value="medication"/>
@@ -185,9 +146,6 @@
                 </codeFilter>
             </input>
             <input id="medicationDispenses">
-                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                    <valueString value="MedicationDispense?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example&amp;patient=Patient/{{context.patientId}}"/>
-                </extension>
                 <type value="MedicationDispense"/>
                 <codeFilter>
                     <path value="medication"/>
@@ -195,9 +153,6 @@
                 </codeFilter>
             </input>
             <input id="medicationAdministrations">
-                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                    <valueString value="MedicationAdministration?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example&amp;patient=Patient/{{context.patientId}}"/>
-                </extension>
                 <type value="MedicationAdministration"/>
                 <codeFilter>
                     <path value="medication"/>
@@ -205,9 +160,6 @@
                 </codeFilter>
             </input>
             <input id="labResults">
-                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                    <valueString value="Observation?value-concept:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example&amp;patient=Patient/{{context.patientId}}"/>
-                </extension>
                 <type value="Observation"/>
                 <codeFilter>
                     <path value="value"/>
@@ -229,13 +181,6 @@
             <condition>
                 <kind value="applicability"/>
                 <expression>
-                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
-                        <valueExpression>
-                            <language value="text/cql-identifier"/>
-                            <expression value="Most recent eICR sent over 24 hours ago?"/>
-                            <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
-                        </valueExpression>
-                    </extension>
                     <language value="text/fhirpath"/>
                     <expression value="Composition.where(code = 'http://loinc.org#55751-2').last().date &lt; now() - 24 hours"/></expression>
             </condition>
@@ -254,13 +199,6 @@
             <condition>
                 <kind value="applicability"/>
                 <expression>
-                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
-                        <valueExpression>
-                            <language value="text/cql-identifier"/>
-                            <expression value="Is Encounter In Progress or 72h or less after end of encounter?"/>
-                            <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
-                        </valueExpression>
-                    </extension>
                     <language value="text/fhirpath"/>
                     <expression value="%encounter.where(status = 'in-progress' and period.end &lt;= now() - 72 hours)"/></expression>
             </condition>
