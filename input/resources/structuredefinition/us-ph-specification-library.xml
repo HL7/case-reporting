@@ -55,7 +55,7 @@
                 </discriminator>
                 <rules value="open"/>
             </slicing>
-            <min value="1"/>
+            <min value="2"/>
             <max value="*"/>
         </element>
         <element id="Library.useContext:reportingContext">
@@ -86,6 +86,37 @@
                 <coding>
                     <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
                     <code value="triggering"/>
+                </coding>
+            </patternCodeableConcept>
+        </element>
+        <element id="Library.useContext:specificationTypeContext">
+            <path value="Library.useContext"/>
+            <sliceName value="specificationTypeContext"/>
+            <min value="1"/>
+            <max value="1"/>
+        </element>
+        <element id="Library.useContext:specificationTypeContext.code">
+            <path value="Library.useContext.code"/>
+            <min value="1"/>
+            <max value="1"/>
+            <patternCoding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
+                <code value="specification-type"/>
+            </patternCoding>
+        </element>
+        <element id="Library.useContext:specificationTypeContext.value[x]">
+            <path value="Library.useContext.value[x]"/>
+            <short value="Library useContext"/>
+            <definition value="The US Public Health use context of the Library."/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
+                    <code value="program"/>
                 </coding>
             </patternCodeableConcept>
         </element>
