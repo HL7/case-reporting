@@ -110,5 +110,47 @@
             <min value="1"/>
             <mustSupport value="true"/>
         </element>
+        <element id="ValueSet.useContext">
+            <path value="ValueSet.useContext"/>
+            <slicing>
+                <discriminator>
+                    <type value="pattern"/>
+                    <path value="code"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <min value="1"/>
+            <max value="*"/>
+        </element>
+        <element id="ValueSet.useContext:priorityContext">
+            <path value="ValueSet.useContext"/>
+            <sliceName value="priorityContext"/>
+            <min value="1"/>
+            <max value="1"/>
+        </element>
+        <element id="ValueSet.useContext:priorityContext.code">
+            <path value="ValueSet.useContext.code"/>
+            <min value="1"/>
+            <max value="1"/>
+            <patternCoding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
+                <code value="priority"/>
+            </patternCoding>
+        </element>
+        <element id="ValueSet.useContext:priorityContext.value[x]">
+            <path value="ValueSet.useContext.value[x]"/>
+            <short value="Release priority of the ValueSet"/>
+            <definition value="The US Public Health release priority of the value set."/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <binding>
+                <strength value="required"/>
+                <description value="US PH ValueSet Release Priority Codes."/>
+                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"/>
+            </binding>
+        </element>
     </differential>
 </StructureDefinition>
