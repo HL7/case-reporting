@@ -152,5 +152,31 @@
                 <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"/>
             </binding>
         </element>
+        <element id="ValueSet.useContext:focusConditionContext">
+            <path value="ValueSet.useContext"/>
+            <sliceName value="focusConditionContext"/>
+            <definition value="The clinical condition that is the focus of the codes in this value set."/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="ValueSet.useContext:focusConditionContext.code">
+            <path value="ValueSet.useContext.code"/>
+            <patternCoding>
+                <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+                <code value="focus"/>
+            </patternCoding>
+        </element>
+        <element id="ValueSet.useContext:focusConditionContext.value[x]">
+            <path value="ValueSet.useContext.value[x]"/>
+            <short value="Clinical condition that is the focus of the codes in this value set"/>
+            <definition value="The clinical condition that is the focus of the codes in this value set."/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <binding>
+                <strength value="example"/>
+                <description value="Condition/Problem/Diagnosis Codes."/>
+                <valueSet value="http://hl7.org/fhir/ValueSet/condition-code"/>
+            </binding>
+        </element>
     </differential>
 </StructureDefinition>

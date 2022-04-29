@@ -47,7 +47,7 @@ Events are represented with the `trigger` element, using the `named-event` trigg
 
 Triggering criteria are specified by a combination of the `input` data elements, and the Reportable Condition Triggering Codes (RCTC) Value Set Library. Note carefully that the RCTC Value Sets included in this IG are examples to illustrate the structure and typical content of the Value Sets.
 
-Each Value Set corresponds to a different type of information that may contain events that are triggers for potentially reportable events. The categories of information are mapped to FHIR resources using the `input` element. For example, the reportable conditions value set is mapped to the `Condition` resource:
+The triggering value sets will include any number of focus useContext slices to indicate which conditions the triggering codes are associated with. Each Value Set corresponds to a different type of information that may contain events that are triggers for potentially reportable events. The categories of information are mapped to FHIR resources using the `input` element. For example, the reportable conditions value set is mapped to the `Condition` resource:
 
 <pre><code>&lt;input id=&quot;conditions&quot;&gt;
   &lt;type value=&quot;Condition&quot;/&gt;
