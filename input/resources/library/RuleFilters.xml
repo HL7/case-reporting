@@ -307,9 +307,9 @@ define &quot;Is Encounter In Progress or 72h or less after end of encounter?&quo
 define &quot;eICR Compositions&quot;:
   [Composition : &quot;eICRComposition&quot;]
 
-define &quot;Most recent eICR sent over 24 hours ago?&quot;:
+define &quot;Most recent eICR sent over 72 hours ago?&quot;:
   First(&quot;eICR Compositions&quot; eICRs
-    where eICRs.date 24 hours or more before Now()
+    where eICRs.date 72 hours or more before Now()
     sort by date desc)
 </code>
                         </pre>
@@ -576,7 +576,7 @@ define &quot;Most recent eICR sent over 24 hours ago?&quot;:
       <type value="boolean"/>
    </parameter>
    <parameter>
-      <name value="Most recent eICR sent over 24 hours ago?"/>
+      <name value="Most recent eICR sent over 72 hours ago?"/>
       <use value="out"/>
       <min value="0"/>
       <max value="1"/>

@@ -6,7 +6,7 @@ The eRSD transaction includes a constrained FHIR PlanDefinition resource profile
 
 The following diagram illustrates the general process for electronic Case Reporting as triggered from a patient encounter, highlighting each of the components involved in describing the process:
 
-<img style="width:100%" src="eicr-triggering-and-transmission-guidance-components.jpg"/>
+<img style="width:100%" src="eicr-triggering-and-transmission-guidance-components.png"/>
 
 The components involved in representing the reporting process are:
 
@@ -18,7 +18,7 @@ The components involved in representing the reporting process are:
 
 These components are represented using different elements of the PlanDefinition resource, as generally outlined in the following:
 
-<img style="width:100%" src="ersd-plandefinition-structure.jpg"/>
+<img style="width:100%" src="ersd-plandefinition-structure.png"/>
 
 Events are represented with the `trigger` element; Triggering Criteria are represented using the `input` data criteria; Parameters are represented using `offset` in `relatedAction` elements; Process steps are represented using the `action` element and the relationships between them are represented with the `relatedAction` element; and finally, Suspected Reportability Criteria are represented with the `condition` element.
 
@@ -73,19 +73,19 @@ The eRSD PlanDefinition uses these structures to introduce a "loop" for the crea
 
 * start-workflow
     - trigger: encounter-start
-    - action: check-reportable in 1 hour
+    - action: check-reportable in "A" hours
 
 * check-reportable
     - if is-encounter-reportable, report-eicr
     - if check-update-eicr, report-eicr
-    - if is-encounter-in-progress, check-reportable in 6 hours
+    - if is-encounter-in-progress, check-reportable in "B" hours
 
 * report-eicr
     - create-eicr, validate-eicr, route-and-send-eicr
 
-The `start-workflow` action is initiated by an `encounter-start` event, and specifies that `check-reportable` should be called in 1 hour.
+The `start-workflow` action is initiated by an `encounter-start` event, and specifies that `check-reportable` should be called in "A" hours.
 
-The `check-reportable` action checks for suspected reportability, and if true, calls the `report-eicr` action. If an eICR has not been sent for over 24 hours, then `report-eicr` is called. If the encounter is still in progress, `check-reportable` is called again with a delay of 6 hours and this continues until more than 72 hours have elapsed since the encounter end.
+The `check-reportable` action checks for suspected reportability, and if true, calls the `report-eicr` action. If an eICR has not been sent for over "C" hours, then `report-eicr` is called. If the encounter is still in progress, `check-reportable` is called again with a delay of "B" hours and this continues until more than "D" hours have elapsed since the encounter end.
 
 The `report-eicr` action calls all three of `create-eicr`, `validate-eicr`, and `route-and-send-eicr`.
 
@@ -96,11 +96,25 @@ The `validate-eicr` action involves validating the created eICR conforms with al
 The `route-and-send-eicr` action involves the transmission of the eICR to either the APHL AIMS Platform, a Public Health Agency (PHA), or a Health information Exchange or Health Data Network on the way to a PHA.
 
 ##### Parameters
+Because of variability in accumulation of data at the start of a patient encounter, the EHR implementer should implement a time-based delay in generating and sending the first encounter eICR to allow time for required data to be captured within the patient chart. This will ensure the eICR is better populated before sending and will reduce the number of case reports that are sent for a single patient encounter.
 
-The offsets (1 h, 6h, and 72h, are parameters to the specification)
-* initial-creation-delay: 1 h
-* reportable-check-period: 6 h
-* suspected-reportable-close-delay: 72 h
+Full triggering timing can be described using the suggested parameters below from the eRSD:
+
+**Parameter A** – The time from the start of the patient encounter to when the first eICR is constructed and sent. This eICR should include multiple triggers if they are identified.
+
+- Example - <u>1 hour</u> after the encounter begins, EHR data matches a code in the eRSD diagnosis data trigger code set and other EHR data matches a code in the eRSD lab result trigger code set. Both of these trigger codes should be recorded in the appropriate eICR trigger code template and the eICR should be transmitted out.
+
+**Parameter B** - The time period from a previous trigger code check to subsequent checking for new trigger code matches in a longer encounter. New trigger code matches do not include matches on an eRSD trigger code that have already been used to generate an eICR for that encounter.
+
+- Example - <u>12 hours</u> after there was a trigger code match, the EHR data is checked against the eRSD trigger code sets again. If a new match is found (not a match against the same eRSD trigger code as had been already matched in that encounter) then a new eICR is generated that includes all of the new trigger codes that have been matched.
+
+**Parameter C** - The time period from the send of previous eICRs to the send of an updated eICR during a longer encounter.
+
+-- Example - <u>72 hours</u> after a previous eICR was sent, there have been no new trigger code matches, but a new eICR is created and transmitted because there had been a match in the encounter previously and there is a need for public health to receive updated data about the patient.
+
+**Parameter D** – The time period after the encounter ends through which trigger code checks and eICR updates should still occur.
+
+- Example - For <u>72 hours</u> after the encounter ends, trigger code checks and / or updated eICR transmissions should still occur.
 
 ##### Suspected Reportability Criteria
 

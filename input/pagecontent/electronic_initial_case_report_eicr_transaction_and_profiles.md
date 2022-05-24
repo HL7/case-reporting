@@ -6,8 +6,8 @@ eICR documents will usually be automatically initiated by matching EHR data agai
 
 The following figure illustrates automatic initiation by trigger matching:
 
-*Figure 1: eICR Triggering and Transmission Guidance*
-<table><tr><td><img src="eICR Triggering and Transmission Guidance.JPG" style="width:100%;" caption="Figure 1: eICR Triggering and Transmission Guidance" /></td></tr></table>
+*Figure 1: eICR Triggering and Transmission Timing*
+<table><tr><td><img src="eICR Triggering and Transmission Timing.png" style="width:100%;" caption="Figure 1: eICR Triggering and Transmission Timing" /></td></tr></table>
 
 There are some circumstances, however, where they may be manually initiated by providers of care because they suspect there may be a reportable condition. They also may be alternately initiated by automated, forced reporting by the EHR to meet short term reporting needs. The following matrix illustrates these different types of initiation:
 
