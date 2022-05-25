@@ -37,5 +37,5 @@
 * [Residence and Accommodation Type](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.49)/expansion/Latest
 * [Therapeutic Response to Medication](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.10.20.15.2.5.12)/expansion/Latest
 * [Transport Vehicle Type](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1099.50)/expansion/Latest
-* [Travel Purpose](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.3108)
+* [Travel Purpose](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.8064)
 * [Yes No Unknown (YNU)](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.888)
