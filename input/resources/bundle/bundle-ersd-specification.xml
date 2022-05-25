@@ -33,6 +33,18 @@
         <useContext>
           <code>
             <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"></system>
+            <code value="reporting"></code>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
+              <code value="triggering"></code>
+            </coding>
+          </valueCodeableConcept>
+        </useContext>
+        <useContext>
+          <code>
+            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"></system>
             <code value="specification-type"></code>
           </code>
           <valueCodeableConcept>
@@ -44,7 +56,7 @@
         </useContext>
         <relatedArtifact>
           <type value="composed-of"></type>
-          <resource value="http://hl7.org/fhir/us/ecr/PlanDefinition/us-ecr-specfication"></resource>
+          <resource value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"></resource>
         </relatedArtifact>
         <relatedArtifact>
           <type value="composed-of"></type>
@@ -54,687 +66,390 @@
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/us/ecr/PlanDefinition/us-ecr-specfication"></fullUrl>
+    <fullUrl value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"></fullUrl>
     <resource>
       <PlanDefinition xmlns="http://hl7.org/fhir">
-        <id value="plandefinition-us-ecr-specification"></id>
+        <id value="plandefinition-ersd-instance-example"/>
         <meta>
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"></profile>
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-plandefinition"></profile>
+            <versionId value="6"/>
+            <lastUpdated value="2021-11-17T04:21:04.738+00:00"/>
+            <source value="#DYpZHR1G1x5B4mFC"/>
+            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
         </meta>
-        <text>
-          <status value="generated"></status>
-          <div xmlns="http://www.w3.org/1999/xhtml">
-            <p>
-              <b>Generated Narrative</b>
-            </p>
-            <div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%">
-              <p style="margin-bottom: 0px">Resource "plandefinition-ersd-instance-example" Version "6" Updated "2021-11-17T04:21:04.738Z"
-              </p>
-              <p style="margin-bottom: 0px">Information Source: #DYpZHR1G1x5B4mFC!</p>
-              <p style="margin-bottom: 0px">Profile:
-                <a href="StructureDefinition-ersd-plandefinition.html">eRSD PlanDefinition</a>
-              </p>
-            </div>
-            <p>
-              <b>url</b>:
-              <code>http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example</code>
-            </p>
-            <p>
-              <b>version</b>: 2.0.0</p>
-            <p>
-              <b>name</b>: PlanDefinition_eRSD_Instance_Example</p>
-            <p>
-              <b>title</b>: eRSD PlanDefinition Instance Example</p>
-            <p>
-              <b>type</b>: Workflow Definition
-              <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki">
-                (<a href="http://terminology.hl7.org/3.0.0/CodeSystem-plan-definition-type.html">PlanDefinitionType</a>#workflow-definition)</span>
-            </p>
-            <p>
-              <b>status</b>: active</p>
-            <p>
-              <b>experimental</b>: true</p>
-            <p>
-              <b>date</b>: 2020-07-31T12:32:29.858-05:00</p>
-            <p>
-              <b>publisher</b>: HL7 Public Health Work Group (http://www.hl7.org/Special/committees/pher/index.cfm)</p>
-            <p>
-              <b>contact</b>: HL7 International - Public Health:
-              <a href="http://www.hl7.org/Special/committees/pher">http://www.hl7.org/Special/committees/pher</a>
-            </p>
-            <p>
-              <b>description</b>: An example ersd PlanDefinition</p>
-            <p>
-              <b>jurisdiction</b>: United States of America
-              <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki">
-                (unknown#US)</span>
-            </p>
-            <p>
-              <b>effectivePeriod</b>: 2020-12-01 --&gt; (ongoing)</p>
-            <blockquote>
-              <p>
-                <b>action</b>
-              </p>
-              <p>
-                <b>description</b>: This action represents the start of the reporting workflow in response to the encounter-start event</p>
-              <p>
-                <b>textEquivalent</b>: Start the reporting workflow in response to an encounter-start event</p>
-              <p>
-                <b>code</b>: Initiate a reporting workflow
-                <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki">
-                  (<a href="CodeSystem-us-ph-plandefinition-actions.html">US Public Health PlanDefinition Action Codes</a>#initiate-reporting-workflow)</span>
-              </p>
-              <h3>RelatedActions</h3>
-              <table class="grid">
-                <tr>
-                  <td>-</td>
-                  <td>
-                    <b>ActionId</b>
-                  </td>
-                  <td>
-                    <b>Relationship</b>
-                  </td>
-                  <td>
-                    <b>Offset[x]</b>
-                  </td>
-                </tr>
-                <tr>
-                  <td>*</td>
-                  <td>check-reportable</td>
-                  <td>before-start</td>
-                  <td>60 s<span style="background: LightGoldenRodYellow">
-                      (Details: UCUM code s = 's')</span>
-                  </td>
-                </tr>
-              </table>
-            </blockquote>
-            <blockquote>
-              <p>
-                <b>action</b>
-              </p>
-              <p>
-                <b>description</b>: This action represents the check for suspected reportability of the eICR.</p>
-              <p>
-                <b>textEquivalent</b>: Check Reportability and setup jobs for future reportability checks.</p>
-              <p>
-                <b>code</b>: Execute a series of actions to accomplish reporting
-                <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki">
-                  (<a href="CodeSystem-us-ph-plandefinition-actions.html">US Public Health PlanDefinition Action Codes</a>#execute-reporting-workflow)</span>
-              </p>
-              <blockquote>
-                <p>
-                  <b>action</b>
-                </p>
-                <p>
-                  <b>description</b>: This action represents the check for reportability to create the patients eICR.</p>
-                <p>
-                  <b>textEquivalent</b>: Check Trigger Codes based on RCTC Value sets.</p>
-                <p>
-                  <b>code</b>: Evaluate candidate patient's data against trigger codes to determine reportability
-                  <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki">
-                    (<a href="CodeSystem-us-ph-plandefinition-actions.html">US Public Health PlanDefinition Action Codes</a>#check-trigger-codes)</span>
-                </p>
-              </blockquote>
-              <blockquote>
-                <p>
-                  <b>action</b>
-                </p>
-                <p>
-                  <b>code</b>: Evaluate condition to determine reportability
-                  <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki">
-                    (<a href="CodeSystem-us-ph-plandefinition-actions.html">US Public Health PlanDefinition Action Codes</a>#evaluate-condition)</span>
-                </p>
-              </blockquote>
-              <blockquote>
-                <p>
-                  <b>action</b>
-                </p>
-                <p>
-                  <b>code</b>: Evaluate condition to determine reportability
-                  <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki">
-                    (<a href="CodeSystem-us-ph-plandefinition-actions.html">US Public Health PlanDefinition Action Codes</a>#evaluate-condition)</span>
-                </p>
-              </blockquote>
-            </blockquote>
-            <blockquote>
-              <p>
-                <b>action</b>
-              </p>
-              <p>
-                <b>description</b>: This action represents the creation, validation and submission of the eICR.</p>
-              <p>
-                <b>textEquivalent</b>: Create, Validate and Report eICR set of actions</p>
-              <p>
-                <b>code</b>: Execute a series of actions to accomplish reporting
-                <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki">
-                  (<a href="CodeSystem-us-ph-plandefinition-actions.html">US Public Health PlanDefinition Action Codes</a>#execute-reporting-workflow)</span>
-              </p>
-              <blockquote>
-                <p>
-                  <b>action</b>
-                </p>
-                <p>
-                  <b>description</b>: This action represents the creation of the eICR.</p>
-                <p>
-                  <b>textEquivalent</b>: Create eICR</p>
-                <p>
-                  <b>code</b>: Create a Report containing Patient's data for patients who passed the check-reportability test
-                  <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki">
-                    (<a href="CodeSystem-us-ph-plandefinition-actions.html">US Public Health PlanDefinition Action Codes</a>#create-report)</span>
-                </p>
-              </blockquote>
-              <blockquote>
-                <p>
-                  <b>action</b>
-                </p>
-                <p>
-                  <b>description</b>: This action represents the validation of the eICR.</p>
-                <p>
-                  <b>textEquivalent</b>: Validate eICR</p>
-                <p>
-                  <b>code</b>: Validate Report against specified profiles and terminologies.
-                  <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki">
-                    (<a href="CodeSystem-us-ph-plandefinition-actions.html">US Public Health PlanDefinition Action Codes</a>#validate-report)</span>
-                </p>
-              </blockquote>
-              <blockquote>
-                <p>
-                  <b>action</b>
-                </p>
-                <p>
-                  <b>description</b>: This action represents the routing and sending of the eICR.</p>
-                <p>
-                  <b>textEquivalent</b>: Route and send eICR</p>
-                <p>
-                  <b>code</b>: Submit the report to specified endpoint
-                  <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki">
-                    (<a href="CodeSystem-us-ph-plandefinition-actions.html">US Public Health PlanDefinition Action Codes</a>#submit-report)</span>
-                </p>
-              </blockquote>
-            </blockquote>
-          </div>
-        </text>
-        <url value="http://hl7.org/fhir/us/ecr/PlanDefinition/us-ecr-specfication"></url>
-        <version value="0.1"></version>
-        <name value="US_eCR_Specification"></name>
-        <title value="US eCR Specification"></title>
+        <url value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"/>
+        <version value="0.1"/>
+        <name value="PlanDefinition_eRSD_Instance_Example"/>
+        <title value="eRSD PlanDefinition Instance Example"/>
         <type>
-          <coding>
-            <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"></system>
-            <code value="workflow-definition"></code>
-            <display value="Workflow Definition"></display>
-          </coding>
+            <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+                <code value="workflow-definition"/>
+                <display value="Workflow Definition"/>
+            </coding>
         </type>
-        <status value="active"></status>
-        <experimental value="true"></experimental>
-        <date value="2022-01-13T16:10:30.556-05:00"></date>
-        <publisher value="eCR"></publisher>
-        <contact>
-          <name value="HL7 International - Public Health"></name>
-          <telecom>
-            <system value="url"></system>
-            <value value="http://www.hl7.org/Special/committees/pher"></value>
-          </telecom>
-        </contact>
-        <description value="An example ersd PlanDefinition"></description>
+        <status value="active"/>
+        <experimental value="true"/>
+        <date value="2020-07-31T12:32:29.858-05:00"/>
+        <publisher value="HL7 Public Health Work Group"/>
+        <description value="An example ersd PlanDefinition"/>
         <jurisdiction>
-          <coding>
-            <system value="urn:iso:std:iso:3166"></system>
-            <code value="US"></code>
-            <display value="United States of America"></display>
-          </coding>
-          <text value="United States of America"></text>
+            <coding>
+                <system value="urn:iso:std:iso:3166"/>
+                <code value="US"/>
+                <display value="United States of America"/>
+            </coding>
+            <text value="United States of America"/>
         </jurisdiction>
         <effectivePeriod>
-          <start value="2022-01-12"></start>
+            <start value="2020-12-01"/>
         </effectivePeriod>
         <relatedArtifact>
-          <type value="depends-on"></type>
-          <label value="RCTC Value Set Library of Trigger Codes"></label>
-          <resource value="http://hl7.org/fhir/us/ecr/Library/rctc"></resource>
+            <type value="depends-on"/>
+            <label value="RCTC Value Set Library of Trigger Codes"/>
+            <resource value="http://hl7.org/fhir/us/ecr/Library/library-rctc-example"/>
         </relatedArtifact>
         <action id="start-workflow">
-          <description value="This action represents the start of the reporting workflow in response to the encounter-start event"></description>
-          <textEquivalent value="Start the reporting workflow in response to an encounter-start event"></textEquivalent>
-          <code>
-            <coding>
-              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"></system>
-              <code value="initiate-reporting-workflow"></code>
-              <display value="Initiate a reporting workflow"></display>
-            </coding>
-          </code>
-          <trigger id="encounter-start">
-            <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension">
-              <valueCodeableConcept>
+            <description value="This action represents the start of the reporting workflow in response to the encounter-start event"/>
+            <textEquivalent value="Start the reporting workflow in response to an encounter-start event"/>
+            <code>
                 <coding>
-                  <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-triggerdefinition-namedevents"></system>
-                  <code value="encounter-start"></code>
-                  <display value="Indicates the start of an encounter"></display>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="initiate-reporting-workflow"/>
+                    <display value="Initiate a reporting workflow"/>
                 </coding>
-              </valueCodeableConcept>
-            </extension>
-            <type value="named-event"></type>
-            <name value="encounter-start"></name>
-          </trigger>
-          <input id="patient">
-            <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-              <valueString value="Patient/{{context.patientId}}"></valueString>
-            </extension>
-            <type value="Patient"></type>
-          </input>
-          <input id="encounter">
-            <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-              <valueString value="Encounter/{{context.encounterId}}"></valueString>
-            </extension>
-            <type value="Encounter"></type>
-          </input>
-          <relatedAction>
-            <actionId value="check-reportable"></actionId>
-            <relationship value="before-start"></relationship>
-            <offsetDuration>
-              <value value="1"></value>
-              <system value="http://unitsofmeasure.org"></system>
-              <code value="h"></code>
-            </offsetDuration>
-          </relatedAction>
+            </code>
+            <trigger id="encounter-start">
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-triggerdefinition-namedevents"/>
+                            <code value="encounter-start"/>
+                            <display value="Indicates the start of an encounter"/>
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                <type value="named-event"/>
+                <name value="encounter-start"/>
+            </trigger>
+            <relatedAction>
+                <actionId value="check-reportable"/>
+                <relationship value="before-start"/>
+                <offsetDuration>
+                    <value value="60"/>
+                    <system value="http://unitsofmeasure.org"/>
+                    <code value="s"/>
+                </offsetDuration>
+            </relatedAction>
         </action>
         <action id="check-reportable">
-          <description value="This action represents the check for suspected reportability of the eICR."></description>
-          <textEquivalent value="Check Reportability and setup jobs for future reportability checks."></textEquivalent>
-          <code>
-            <coding>
-              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"></system>
-              <code value="execute-reporting-workflow"></code>
-            </coding>
-          </code>
-          <action id="is-encounter-reportable">
-            <description value="This action represents the check for reportability to create the patients eICR."></description>
-            <textEquivalent value="Check Trigger Codes based on RCTC Value sets."></textEquivalent>
+            <description value="This action represents the check for suspected reportability of the eICR."/>
+            <textEquivalent value="Check Reportability and setup jobs for future reportability checks."/>
             <code>
-              <coding>
-                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"></system>
-                <code value="check-trigger-codes"></code>
-              </coding>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="execute-reporting-workflow"/>
+                </coding>
             </code>
-            <condition>
-              <kind value="applicability"></kind>
-              <expression>
-                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
-                  <valueExpression>
-                    <language value="text/cql-identifier"></language>
-                    <expression value="Is Reportable"></expression>
-                    <reference value="http://hl7.org/fhir/us/ecr/Library/RuleFilters|1.0.0"></reference>
-                  </valueExpression>
-                </extension>
-                <language value="text/fhirpath"></language>
-                <expression
-                  value="%conditions.exists() or %encounters.exists() or %immunizations.exists() or %procedures.exists() or %procedureOrders.exists() or %labOrders.exists() or %labTests.exists() or %labResults.exists() or %medicationAdministrations.exists() or %medicationOrders.exists() or %medicationDispenses.exists()"></expression>
-              </expression>
-            </condition>
-            <input id="conditions">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                <valueString value="Condition?patient=Patient/{{context.patientId}}"></valueString>
-              </extension>
-              <type value="Condition"></type>
-              <codeFilter>
-                <path value="code"></path>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/dxtc"></valueSet>
-              </codeFilter>
-            </input>
-            <input id="encounters">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
-                <valueString value="encounter"></valueString>
-              </extension>
-              <type value="Encounter"></type>
-              <codeFilter>
-                <path value="reasonCode"></path>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/dxtc"></valueSet>
-              </codeFilter>
-            </input>
-            <input id="immunizations">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                <valueString value="Immunization?patient=Patient/{{context.patientId}}"></valueString>
-              </extension>
-              <type value="Immunization"></type>
-              <codeFilter>
-                <path value="vaccineCode"></path>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/mrtc"></valueSet>
-              </codeFilter>
-            </input>
-            <input id="labOrders">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                <valueString value="ServiceRequest?patient=Patient/{{context.patientId}}"></valueString>
-              </extension>
-              <type value="ServiceRequest"></type>
-              <codeFilter>
-                <path value="code"></path>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/lotc"></valueSet>
-              </codeFilter>
-            </input>
-            <input id="labTests">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                <valueString value="Observation?patient=Patient/{{context.patientId}}"></valueString>
-              </extension>
-              <type value="Observation"></type>
-              <codeFilter>
-                <path value="code"></path>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/lotc"></valueSet>
-              </codeFilter>
-            </input>
-            <input id="diagnosticOrders">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                <valueString value="DiagnosticReport?patient=Patient/{{context.patientId}}"></valueString>
-              </extension>
-              <type value="DiagnosticReport"></type>
-              <codeFilter>
-                <path value="code"></path>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/lotc"></valueSet>
-              </codeFilter>
-            </input>
-            <input id="procedureOrders">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                <valueString value="ServiceRequest?patient=Patient/{{context.patientId}}"></valueString>
-              </extension>
-              <type value="ServiceRequest"></type>
-              <codeFilter>
-                <path value="code"></path>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/pctc"></valueSet>
-              </codeFilter>
-            </input>
-            <input id="procedures">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                <valueString value="Procedure?patient=Patient/{{context.patientId}}"></valueString>
-              </extension>
-              <type value="Procedure"></type>
-              <codeFilter>
-                <path value="code"></path>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/pctc"></valueSet>
-              </codeFilter>
-            </input>
-            <input id="medicationOrders">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                <valueString value="MedicationRequest?patient=Patient/{{context.patientId}}"></valueString>
-              </extension>
-              <type value="MedicationRequest"></type>
-              <codeFilter>
-                <path value="medicationCodeableConcept"></path>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/mrtc"></valueSet>
-              </codeFilter>
-              <codeFilter>
-                <path value="medicationReference.code"></path>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/mrtc"></valueSet>
-              </codeFilter>
-            </input>
-            <input id="medicationAdministrations">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                <valueString value="MedicationAdministration?patient=Patient/{{context.patientId}}"></valueString>
-              </extension>
-              <type value="MedicationAdministration"></type>
-              <codeFilter>
-                <path value="medicationCodeableConcept"></path>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/mrtc"></valueSet>
-              </codeFilter>
-              <codeFilter>
-                <path value="medicationReference.code"></path>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/mrtc"></valueSet>
-              </codeFilter>
-            </input>
-            <input id="medicationDispenses">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
-                <valueString value="MedicationDispense?patient=Patient/{{context.patientId}}"></valueString>
-              </extension>
-              <type value="MedicationDispense"></type>
-              <codeFilter>
-                <path value="medicationCodeableConcept"></path>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/mrtc"></valueSet>
-              </codeFilter>
-              <codeFilter>
-                <path value="medicationReference.code"></path>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/mrtc"></valueSet>
-              </codeFilter>
-            </input>
-            <input id="labResults">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
-                <valueString value="labTests"></valueString>
-              </extension>
-              <type value="Observation"></type>
-              <codeFilter>
-                <path value="valueCodeableConcept"></path>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/ostc"></valueSet>
-              </codeFilter>
-            </input>
-            <input id="diagnosticResults">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
-                <valueString value="diagnosticOrders"></valueString>
-              </extension>
-              <type value="DiagnosticReport"></type>
-              <codeFilter>
-                <path value="result.valueCodeableConcept"></path>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/ostc"></valueSet>
-              </codeFilter>
-            </input>
-            <relatedAction>
-              <actionId value="report-eicr"></actionId>
-              <relationship value="before-start"></relationship>
-            </relatedAction>
-          </action>
-          <action id="check-update-eicr">
-            <code>
-              <coding>
-                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"></system>
-                <code value="evaluate-condition"></code>
-              </coding>
-            </code>
-            <condition>
-              <kind value="applicability"></kind>
-              <expression>
-                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
-                  <valueExpression>
-                    <language value="text/cql-identifier"></language>
-                    <expression value="Most recent eICR sent over 72 hours ago?"></expression>
-                    <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"></reference>
-                  </valueExpression>
-                </extension>
-                <language value="text/fhirpath"></language>
-                <expression value="%last-eicr.last().composition.date &lt; now() - 72 hours or last-eicr-submitted-date &lt; now() - 72 hours"></expression>
-              </expression>
-            </condition>
-            <input id="last-eicr">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
-                <valueString value="eicr-report"></valueString>
-              </extension>
-              <type value="Bundle"></type>
-              <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"></profile>
-            </input>
-            <relatedAction>
-              <actionId value="report-eicr"></actionId>
-              <relationship value="before-start"></relationship>
-            </relatedAction>
-          </action>
-          <action id="is-encounter-in-progress">
-            <code>
-              <coding>
-                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"></system>
-                <code value="evaluate-condition"></code>
-              </coding>
-            </code>
-            <condition>
-              <kind value="applicability"></kind>
-              <expression>
-                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
-                  <valueExpression>
-                    <language value="text/cql-identifier"></language>
-                    <expression value="Is Encounter In Progress or 72h or less after end of encounter?"></expression>
-                    <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"></reference>
-                  </valueExpression>
-                </extension>
-                <language value="text/fhirpath"></language>
-                <expression value="%inprogress-encounter.where(status = 'in-progress' and period.end &lt;= now() - 72 hours)"></expression>
-              </expression>
-            </condition>
-            <input id="inprogress-encounter">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
-                <valueString value="encounter"></valueString>
-              </extension>
-              <type value="Encounter"></type>
-            </input>
-            <relatedAction>
-              <actionId value="check-reportable"></actionId>
-              <relationship value="before-start"></relationship>
-              <offsetDuration>
-                <value value="12"></value>
-                <system value="http://unitsofmeasure.org"></system>
-                <code value="h"></code>
-              </offsetDuration>
-            </relatedAction>
-          </action>
+            <action id="is-encounter-reportable">
+                <description value="This action represents the check for reportability to create the patients eICR."/>
+                <textEquivalent value="Check Trigger Codes based on RCTC Value sets."/>
+                <code>
+                    <coding>
+                        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                        <code value="check-trigger-codes"/>
+                    </coding>
+                </code>
+                <condition>
+                    <kind value="applicability"/>
+                    <expression>
+                        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
+                            <valueExpression>
+                                <language value="text/cql-identifier"/>
+                                <expression value="Is Reportable"/>
+                                <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
+                            </valueExpression>
+                        </extension>
+                        <language value="text/fhirpath"/>
+                        <expression value="%conditions.exists() or %encounters.exists() or %immunizations.exists() or %procedures.exists() or %procedureOrders.exists() or %labOrders.exists() or %labTests.exists() or %labResults.exists() or %medicationAdministrations.exists() or %medicationOrders.exists() or %medicationDispenses.exists()"/></expression>
+                </condition>
+                <input id="conditions">
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
+                        <valueString value="Condition?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example&amp;patient=Patient/{{context.patientId}}"/>
+                    </extension>
+                    <type value="Condition"/>
+                    <codeFilter>
+                        <path value="code"/>
+                        <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"/>
+                    </codeFilter>
+                </input>
+                <input id="encounters">
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
+                        <valueString value="Encounter?reason-code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example&amp;patient=Patient/{{context.patientId}}"/>
+                    </extension>
+                    <type value="Encounter"/>
+                    <codeFilter>
+                        <path value="reasonCode"/>
+                        <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"/>
+                    </codeFilter>
+                </input>
+                <input id="immunizations">
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
+                        <valueString value="Immunization?vaccine-code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example&amp;patient=Patient/{{context.patientId}}"/>
+                    </extension>
+                    <type value="Immunization"/>
+                    <codeFilter>
+                        <path value="vaccineCode"/>
+                        <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
+                    </codeFilter>
+                </input>
+                <input id="labOrders">
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
+                        <valueString value="ServiceRequest?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example&amp;patient=Patient/{{context.patientId}}"/>
+                    </extension>
+                    <type value="ServiceRequest"/>
+                    <codeFilter>
+                        <path value="code"/>
+                        <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"/>
+                    </codeFilter>
+                </input>
+                <input id="labTests">
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
+                        <valueString value="Observation?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example&amp;patient=Patient/{{context.patientId}}"/>
+                    </extension>
+                    <type value="Observation"/>
+                    <codeFilter>
+                        <path value="code"/>
+                        <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"/>
+                    </codeFilter>
+                </input>
+                <input id="procedureOrders">
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
+                        <valueString value="ServiceRequest?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example&amp;patient=Patient/{{context.patientId}}"/>
+                    </extension>
+                    <type value="ServiceRequest"/>
+                    <codeFilter>
+                        <path value="code"/>
+                        <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example"/>
+                    </codeFilter>
+                </input>
+                <input id="procedures">
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
+                        <valueString value="Procedure?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example&amp;patient=Patient/{{context.patientId}}"/>
+                    </extension>
+                    <type value="Procedure"/>
+                    <codeFilter>
+                        <path value="code"/>
+                        <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example"/>
+                    </codeFilter>
+                </input>
+                <input id="medicationOrders">
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
+                        <valueString value="MedicationRequest?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example&amp;patient=Patient/{{context.patientId}}"/>
+                    </extension>
+                    <type value="MedicationRequest"/>
+                    <codeFilter>
+                        <path value="medication"/>
+                        <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
+                    </codeFilter>
+                </input>
+                <input id="medicationDispenses">
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
+                        <valueString value="MedicationDispense?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example&amp;patient=Patient/{{context.patientId}}"/>
+                    </extension>
+                    <type value="MedicationDispense"/>
+                    <codeFilter>
+                        <path value="medication"/>
+                        <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
+                    </codeFilter>
+                </input>
+                <input id="medicationAdministrations">
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
+                        <valueString value="MedicationAdministration?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example&amp;patient=Patient/{{context.patientId}}"/>
+                    </extension>
+                    <type value="MedicationAdministration"/>
+                    <codeFilter>
+                        <path value="medication"/>
+                        <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
+                    </codeFilter>
+                </input>
+                <input id="labResults">
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
+                        <valueString value="Observation?value-concept:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example&amp;patient=Patient/{{context.patientId}}"/>
+                    </extension>
+                    <type value="Observation"/>
+                    <codeFilter>
+                        <path value="value"/>
+                        <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"/>
+                    </codeFilter>
+                </input>
+                <relatedAction>
+                    <actionId value="report-eicr"/>
+                    <relationship value="before-start"/>
+                </relatedAction>
+            </action>
+            <action id="check-update-eicr">
+                <code>
+                    <coding>
+                        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                        <code value="evaluate-condition"/>
+                    </coding>
+                </code>
+                <condition>
+                    <kind value="applicability"/>
+                    <expression>
+                        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
+                            <valueExpression>
+                                <language value="text/cql-identifier"/>
+                                <expression value="Most recent eICR sent over 72 hours ago?"/>
+                                <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
+                            </valueExpression>
+                        </extension>
+                        <language value="text/fhirpath"/>
+                        <expression value="Composition.where(code = 'http://loinc.org#55751-2').last().date &lt; now() - 24 hours"/></expression>
+                </condition>
+                <relatedAction>
+                    <actionId value="report-eicr"/>
+                    <relationship value="before-start"/>
+                </relatedAction>
+            </action>
+            <action id="is-encounter-in-progress">
+                <code>
+                    <coding>
+                        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                        <code value="evaluate-condition"/>
+                    </coding>
+                </code>
+                <condition>
+                    <kind value="applicability"/>
+                    <expression>
+                        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
+                            <valueExpression>
+                                <language value="text/cql-identifier"/>
+                                <expression value="Is Encounter In Progress or 72h or less after end of encounter?"/>
+                                <reference value="http://aphl.org/fhir/ecr/Library/RuleFilters|1.0.0"/>
+                            </valueExpression>
+                        </extension>
+                        <language value="text/fhirpath"/>
+                        <expression value="%encounter.where(status = 'in-progress' and period.end &lt;= now() - 72 hours)"/></expression>
+                </condition>
+                <relatedAction>
+                    <actionId value="check-reportable"/>
+                    <relationship value="before-start"/>
+                    <offsetDuration>
+                        <value value="6"/>
+                        <system value="http://unitsofmeasure.org"/>
+                        <code value="h"/>
+                    </offsetDuration>
+                </relatedAction>
+            </action>
         </action>
         <action id="report-eicr">
-          <description value="This action represents the creation, validation and submission of the eICR."></description>
-          <textEquivalent value="Create, Validate and Report eICR set of actions"></textEquivalent>
-          <code>
-            <coding>
-              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"></system>
-              <code value="execute-reporting-workflow"></code>
-            </coding>
-          </code>
-          <action id="create-eicr">
-            <description value="This action represents the creation of the eICR."></description>
-            <textEquivalent value="Create eICR"></textEquivalent>
+            <description value="This action represents the creation, validation and submission of the eICR."/>
+            <textEquivalent value="Create, Validate and Report eICR set of actions"/>
             <code>
-              <coding>
-                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"></system>
-                <code value="create-report"></code>
-              </coding>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="execute-reporting-workflow"/>
+                </coding>
             </code>
-            <input id="patient-data">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
-                <valueString value="patient"></valueString>
-              </extension>
-              <type value="Patient"></type>
-              <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"></profile>
-            </input>
-            <input id="condition-data">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
-                <valueString value="conditions"></valueString>
-              </extension>
-              <type value="Condition"></type>
-              <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"></profile>
-            </input>
-            <input id="encounter-data">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
-                <valueString value="encounters"></valueString>
-              </extension>
-              <type value="Encounter"></type>
-              <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"></profile>
-            </input>
-            <input id="mr-data">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
-                <valueString value="medicationOrders"></valueString>
-              </extension>
-              <type value="MedicationRequest"></type>
-              <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"></profile>
-            </input>
-            <input id="immz-data">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
-                <valueString value="immunizations"></valueString>
-              </extension>
-              <type value="Immunization"></type>
-              <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization"></profile>
-            </input>
-            <input id="proc-data">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
-                <valueString value="procedures"></valueString>
-              </extension>
-              <type value="Procedure"></type>
-              <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"></profile>
-            </input>
-            <input id="labResult-data">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
-                <valueString value="labResults"></valueString>
-              </extension>
-              <type value="Observation"></type>
-              <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"></profile>
-            </input>
-            <input id="labOrder-data">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
-                <valueString value="labOrders"></valueString>
-              </extension>
-              <type value="ServiceRequest"></type>
-              <profile value="http://hl7.org/fhir/StructureDefinition/ServiceRequest"></profile>
-            </input>
-            <input id="diagnosticResult-data">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
-                <valueString value="diagnosticResults"></valueString>
-              </extension>
-              <type value="DiagnosticReport"></type>
-              <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab"></profile>
-            </input>
-            <input id="diagnosticOrder-data">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
-                <valueString value="diagnosticOrders"></valueString>
-              </extension>
-              <type value="DiagnosticReport"></type>
-              <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab"></profile>
-            </input>
-            <output id="eicr-report">
-              <type value="Bundle"></type>
-              <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"></profile>
-            </output>
-            <relatedAction>
-              <actionId value="validate-eicr"></actionId>
-              <relationship value="before-start"></relationship>
-            </relatedAction>
-          </action>
-          <action id="validate-eicr">
-            <description value="This action represents the validation of the eICR."></description>
-            <textEquivalent value="Validate eICR"></textEquivalent>
-            <code>
-              <coding>
-                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"></system>
-                <code value="validate-report"></code>
-              </coding>
-            </code>
-            <input id="generated-eicr-report">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
-                <valueString value="eicr-report"></valueString>
-              </extension>
-              <type value="Bundle"></type>
-              <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"></profile>
-            </input>
-            <output id="valid-eicr-report">
-              <type value="Bundle"></type>
-              <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"></profile>
-            </output>
-            <relatedAction>
-              <actionId value="route-and-send-eicr"></actionId>
-              <relationship value="before-start"></relationship>
-            </relatedAction>
-          </action>
-          <action id="route-and-send-eicr">
-            <description value="This action represents the routing and sending of the eICR."></description>
-            <textEquivalent value="Route and send eICR"></textEquivalent>
-            <code>
-              <coding>
-                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"></system>
-                <code value="submit-report"></code>
-              </coding>
-            </code>
-            <input id="validated-eicr-report">
-              <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
-                <valueString value="valid-eicr-report"></valueString>
-              </extension>
-              <type value="Bundle"></type>
-              <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"></profile>
-            </input>
-            <output id="submitted-eicr-report">
-              <type value="Bundle"></type>
-              <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"></profile>
-            </output>
-          </action>
+            <action id="create-eicr">
+                <description value="This action represents the creation of the eICR."/>
+                <textEquivalent value="Create eICR"/>
+                <code>
+                    <coding>
+                        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                        <code value="create-report"/>
+                    </coding>
+                </code>
+                <input id="patient">
+                    <type value="Patient"/>
+                    <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
+                </input>
+                <input id="condition">
+                    <type value="Condition"/>
+                    <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"/>
+                </input>
+                <input id="encounter">
+                    <type value="Encounter"/>
+                    <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"/>
+                </input>
+                <input id="mr">
+                    <type value="MedicationRequest"/>
+                    <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"/>
+                </input>
+                <input id="immz">
+                    <type value="Immunization"/>
+                    <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization"/>
+                </input>
+                <input id="proc">
+                    <type value="Procedure"/>
+                    <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"/>
+                </input>
+                <input id="obs">
+                    <type value="Observation"/>
+                    <profile value="http://hl7.org/fhir/StructureDefinition/vitalsigns"/>
+                </input>
+                <input id="svcr">
+                    <type value="ServiceRequest"/>
+                    <profile value="http://hl7.org/fhir/StructureDefinition/ServiceRequest"/>
+                </input>
+                <output id="eicr-report-output">
+                    <type value="Bundle"/>
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+                </output>
+                <relatedAction>
+                    <actionId value="validate-eicr"/>
+                    <relationship value="before-start"/>
+                </relatedAction>
+            </action>
+            <action id="validate-eicr">
+                <description value="This action represents the validation of the eICR."/>
+                <textEquivalent value="Validate eICR"/>
+                <code>
+                    <coding>
+                        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                        <code value="validate-report"/>
+                    </coding>
+                </code>
+                <input id="eicr-report">
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
+                      <valueString value="eicr-report-output"/>
+                    </extension>
+                    <type value="Bundle"/>
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+                </input>
+                <output id="validated-eicr-report-output">
+                    <type value="Bundle"/>
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+                </output>
+                <relatedAction>
+                    <actionId value="route-and-send-eicr"/>
+                    <relationship value="before-start"/>
+                </relatedAction>
+            </action>
+            <action id="route-and-send-eicr">
+                <description value="This action represents the routing and sending of the eICR."/>
+                <textEquivalent value="Route and send eICR"/>
+                <code>
+                    <coding>
+                        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                        <code value="submit-report"/>
+                    </coding>
+                </code>
+                <input id="validated-eicr-report-input">
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension">
+                      <valueString value="validated-eicr-report-output"/>
+                    </extension>
+                    <type value="Bundle"/>
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+                </input>
+                <output id="eicr-report-submitted">
+                    <type value="Bundle"/>
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
+                </output>
+            </action>
         </action>
-      </PlanDefinition>
+    </PlanDefinition>
     </resource>
   </entry>
   <entry>
@@ -748,7 +463,7 @@
         <url value="http://hl7.org/fhir/us/ecr/Library/rctc"></url>
         <identifier>
           <system value="urn:ietf:rfc:3986"></system>
-          <value value="2.16.840.1.114222.4.11.7508"></value>
+          <value value="urn:oid:2.16.840.1.114222.4.11.7508"></value>
         </identifier>
         <version value="2022-03-29"></version>
         <name value="Reportable_Condition_Trigger_Codes"></name>
@@ -764,6 +479,30 @@
         <publisher value="eCR"></publisher>
         <description
           value="Release Description: This release includes code updates for the existing 108 conditions and adds codes for 24 new conditions: Alpha-gal Syndrome Amebiasis Animal Bite Injury Arsenic Exposure and Toxicity Botulism, Infant Cadmium Exposure and Toxicity Carbapenem-resistant Enterobacteriaceae (CRE) Chagas Disease Clostridioides difficile (C. diff) infection Cryptococcosis Drug Overdose and Poisoning, Non-opioid Glanders Vaccine Adverse Event Influenza-like Illness (ILI) Kawasaki Disease Meningitis Mercury Exposure and Toxicity Nipah Virus Infection Norovirus Infections Staphylococcus aureus Infection Streptococcal disease, invasive Typhus Fever Vaccinia Disease or Adverse Event Vancomycin-resistant Enterococci (VRE) Infection"></description>
+        <useContext>
+          <code>
+            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"></system>
+            <code value="reporting"></code>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
+              <code value="triggering"></code>
+            </coding>
+          </valueCodeableConcept>
+        </useContext>
+        <useContext>
+          <code>
+            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"></system>
+            <code value="specification-type"></code>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
+              <code value="value-set-library"></code>
+            </coding>
+          </valueCodeableConcept>
+        </useContext>
         <purpose value="Triggers for initiating decision support for electronic case reports"></purpose>
         <effectivePeriod>
           <start value="2022-03-29"></start>
@@ -832,7 +571,7 @@
             <code value="program"></code>
           </code>
           <valueReference>
-            <reference value="PlanDefinition/plandefinition-ersd-skeleton"></reference>
+            <reference value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"></reference>
           </valueReference>
         </useContext>
         <useContext>
@@ -854,7 +593,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -863,9 +602,17 @@
         <compose>
           <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1506"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1505"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1508"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1507"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.6"></valueSet>
           </include>
         </compose>
@@ -1232,7 +979,7 @@
             <code value="program"></code>
           </code>
           <valueReference>
-            <reference value="PlanDefinition/plandefinition-ersd-skeleton"></reference>
+            <reference value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"></reference>
           </valueReference>
         </useContext>
         <useContext>
@@ -1254,7 +1001,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -1263,9 +1010,17 @@
         <compose>
           <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.480"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.481"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.761"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1223"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.762"></valueSet>
           </include>
         </compose>
@@ -1442,7 +1197,7 @@
             <code value="program"></code>
           </code>
           <valueReference>
-            <reference value="PlanDefinition/plandefinition-ersd-skeleton"></reference>
+            <reference value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"></reference>
           </valueReference>
         </useContext>
         <useContext>
@@ -1464,7 +1219,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -1473,9 +1228,17 @@
         <compose>
           <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1182"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1181"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.480"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1184"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.481"></valueSet>
           </include>
         </compose>
@@ -2232,7 +1995,7 @@
             <code value="program"></code>
           </code>
           <valueReference>
-            <reference value="PlanDefinition/plandefinition-ersd-skeleton"></reference>
+            <reference value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"></reference>
           </valueReference>
         </useContext>
         <useContext>
@@ -2254,7 +2017,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -2263,9 +2026,17 @@
         <compose>
           <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1601"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1600"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1603"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1602"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1082"></valueSet>
           </include>
         </compose>
@@ -2502,7 +2273,7 @@
             <code value="program"></code>
           </code>
           <valueReference>
-            <reference value="PlanDefinition/plandefinition-ersd-skeleton"></reference>
+            <reference value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"></reference>
           </valueReference>
         </useContext>
         <useContext>
@@ -2524,7 +2295,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -2533,9 +2304,17 @@
         <compose>
           <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.528"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.408"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.409"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1469"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1468"></valueSet>
           </include>
         </compose>
@@ -2992,7 +2771,7 @@
             <code value="program"></code>
           </code>
           <valueReference>
-            <reference value="PlanDefinition/plandefinition-ersd-skeleton"></reference>
+            <reference value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"></reference>
           </valueReference>
         </useContext>
         <useContext>
@@ -3014,7 +2793,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -3023,9 +2802,17 @@
         <compose>
           <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1439"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1436"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1435"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1446"></valueSet>
+          </include>
+          <include>
             <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1438"></valueSet>
           </include>
         </compose>
@@ -3127,7 +2914,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -3224,7 +3011,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -3393,7 +3180,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -3553,7 +3340,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -3812,7 +3599,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -4098,7 +3885,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -4231,7 +4018,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -4418,7 +4205,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -4515,7 +4302,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -4612,7 +4399,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -4727,7 +4514,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -4941,7 +4728,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -5263,7 +5050,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -6080,7 +5867,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -6249,7 +6036,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -6526,7 +6313,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -6623,7 +6410,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -6720,7 +6507,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -6817,7 +6604,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -7035,7 +6822,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -7303,7 +7090,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -7652,7 +7439,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -7857,7 +7644,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -7963,7 +7750,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -8060,7 +7847,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -8148,7 +7935,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -8236,7 +8023,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
@@ -8324,7 +8111,7 @@
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-priority"></system>
+              <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"></system>
               <code value="routine"></code>
             </coding>
           </valueCodeableConcept>
