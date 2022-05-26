@@ -26,6 +26,34 @@
     </type>
     <publisher value="{site.data.fhir.ig.publisher}"/>
     <description value="Description of library"/>
+    <useContext>
+        <code>
+            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
+            <code value="reporting"/>
+            <display value="Reporting"/>
+        </code>
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
+                <code value="triggering"/>
+                <display value="Triggering"/>
+            </coding>
+        </valueCodeableConcept>
+    </useContext>
+    <useContext>
+        <code>
+            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
+            <code value="specification-type"/>
+            <display value="Specification Type"/>
+        </code>
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
+                <code value="program"/>
+                <display value="Program"/>
+            </coding>
+        </valueCodeableConcept>
+    </useContext>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -44,10 +72,6 @@
     </relatedArtifact>
     <relatedArtifact>
         <type value="composed-of"/>
-        <resource value="http://hl7.org/fhir/us/ecr/Library/library-us-ph-valueset-library-example"/>
-    </relatedArtifact>
-    <relatedArtifact>
-        <type value="composed-of"/>
-        <resource value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"/>
+        <resource value="http://hl7.org/fhir/us/ecr/Library/library-rctc-example"/>                         
     </relatedArtifact>
 </Library>

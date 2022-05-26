@@ -185,7 +185,7 @@ define "Is Encounter In Progress or 72h or less after end of encounter?":
 define "eICR Compositions":
   [Composition : "eICRComposition"]
 
-define "Most recent eICR sent over 24 hours ago?":
+define "Most recent eICR sent over 72 hours ago?":
   First("eICR Compositions" eICRs
-    where eICRs.date 24 hours or more before Now()
+    where eICRs.date 72 hours or more before Now()
     sort by date desc)

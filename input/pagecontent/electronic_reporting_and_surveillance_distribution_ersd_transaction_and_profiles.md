@@ -2,11 +2,49 @@
 
 The eRSD transaction includes a constrained FHIR PlanDefinition resource profile, a family of actions, and a [FHIR Subscription service](subscription_service.html). It supports the distribution of reporting guidance and parameters, trigger code value sets, and more complex reporting rules and clinician / reporter support resources. This work seeks to align with developing public health guidelines that cover the same conditions. The PlanDefinition includes guidance for the overall orchestration of electronic case reporting. Each member of the family of actions defined in the [US Public Health PlanDefinition Action Codes](CodeSystem-us-ph-plandefinition-actions.html) code system aligns with what may be different healthcare information systems or modules involved in reporting. The narrative elements of this profile will be used to help structure and guide implementation until EHRs have the ability to automatically consume them.
 
+The distribution of case reporting specifications involves two systems, the Implementing System (typically an Electronic Health Record (EHR), but could also be Health Information Exchanges (HIE), laboratories, registries, or other clinical and healthcare related systems) and the Specification Repository, a repository that manages reporting specifications and the versions of those specifications over time:
+
+<img style="width:100%" src="ersd-transaction-system-overview.png"/>
+
+Conceptually, there are three transactions involved in the distribution of eRSD specifications:
+
+1. Notification - The Specification Repository notifies Implementation System(s) that there is a new version of a reporting specification available
+2. Request - The Implementation System requests a specific version of a reporting specification
+3. Response - The Specification Repository responds to a request, providing the package containing a specific version of a reporting specification.
+
+Notification may be accomplished in multiple ways, from a simple email or text notification, to a formal notification as described by the FHIR Subscription Service.
+
+Similarly, the Request and Response transactions may be implemented in multiple ways, including FTP or HTTP file download, as well as API access to a FHIR server acting as a repository.
+
+At this time, this implementation guide is only prescriptive about the payload of the Response transaction, as defined by the following sections. We seek implementer feedback on the usefulness of more formal specification of these transactions.
+
+#### eRSD Specifications
+
+The eRSD specification is structured into two groups to facilitate two different levels of implementation of suspected reportability criteria:
+
+1. Triggering - Suspected reportability criteria only involve data elements and associated triggering value sets
+2. Supplemental - Suspected reportability criteria are extended to include additional rules processing
+
+The contents of each of these specifications at a high level are:
+
+* Specification Library [us-ph-specification-library](StructureDefinition-us-ph-specification-library.html)
+    * PlanDefinition - Defines the reporting workflow [us-ph-plandefinition](StructureDefinition-us-ph-plandefinition.html)
+    * Triggering Value Set Library - List of triggering value sets [us-ph-triggering-valueset-library](StructureDefinition-us-ph-triggering-valueset-library.html)
+        * Triggering Value Sets [us-ph-triggering-valueset](StructureDefinition-us-ph-triggering-valueset.html)
+
+* Supplemental Library [ersd-supplemental-library](StructureDefinition-ersd-supplemental-library.html)
+    * Computable Library - Library containing the rules logic [us-ph-computable-library](StructureDefinition-us-ph-computable-library.html)
+    * Supplemental Value Set Library - List of additional value sets required for evaluation of rules logic [us-ph-supplemental-valueset-library](StructureDefinition-us-ph-supplemental-valueset-library.html)
+        * Supplemental Value Sets - Value sets referenced by rules logic [us-ph-supplemental-valueset](StructureDefinition-us-ph-supplemental-valueset.html)
+    * Jurisidictions - List of jurisdications and their configurations [us-ph-codesystem](StructureDefinition-us-ph-codesystem.html)
+
+Subsequent sections describe each of these specification components in more detail.
+
 #### eRSD Representation Approach
 
 The following diagram illustrates the general process for electronic Case Reporting as triggered from a patient encounter, highlighting each of the components involved in describing the process:
 
-<img style="width:100%" src="eicr-triggering-and-transmission-guidance-components.jpg"/>
+<img style="width:100%" src="eicr-triggering-and-transmission-guidance-components.png"/>
 
 The components involved in representing the reporting process are:
 
@@ -18,7 +56,7 @@ The components involved in representing the reporting process are:
 
 These components are represented using different elements of the PlanDefinition resource, as generally outlined in the following:
 
-<img style="width:100%" src="ersd-plandefinition-structure.jpg"/>
+<img style="width:100%" src="ersd-plandefinition-structure.png"/>
 
 Events are represented with the `trigger` element; Triggering Criteria are represented using the `input` data criteria; Parameters are represented using `offset` in `relatedAction` elements; Process steps are represented using the `action` element and the relationships between them are represented with the `relatedAction` element; and finally, Suspected Reportability Criteria are represented with the `condition` element.
 
@@ -47,7 +85,7 @@ Events are represented with the `trigger` element, using the `named-event` trigg
 
 Triggering criteria are specified by a combination of the `input` data elements, and the Reportable Condition Triggering Codes (RCTC) Value Set Library. Note carefully that the RCTC Value Sets included in this IG are examples to illustrate the structure and typical content of the Value Sets.
 
-Each Value Set corresponds to a different type of information that may contain events that are triggers for potentially reportable events. The categories of information are mapped to FHIR resources using the `input` element. For example, the reportable conditions value set is mapped to the `Condition` resource:
+The triggering value sets will include any number of focus useContext slices to indicate which conditions the triggering codes are associated with. Each Value Set corresponds to a different type of information that may contain events that are triggers for potentially reportable events. The categories of information are mapped to FHIR resources using the `input` element. For example, the reportable conditions value set is mapped to the `Condition` resource:
 
 <pre><code>&lt;input id=&quot;conditions&quot;&gt;
   &lt;type value=&quot;Condition&quot;/&gt;
@@ -73,19 +111,19 @@ The eRSD PlanDefinition uses these structures to introduce a "loop" for the crea
 
 * start-workflow
     - trigger: encounter-start
-    - action: check-reportable in 1 hour
+    - action: check-reportable in "A" hours
 
 * check-reportable
     - if is-encounter-reportable, report-eicr
     - if check-update-eicr, report-eicr
-    - if is-encounter-in-progress, check-reportable in 6 hours
+    - if is-encounter-in-progress, check-reportable in "B" hours
 
 * report-eicr
     - create-eicr, validate-eicr, route-and-send-eicr
 
-The `start-workflow` action is initiated by an `encounter-start` event, and specifies that `check-reportable` should be called in 1 hour.
+The `start-workflow` action is initiated by an `encounter-start` event, and specifies that `check-reportable` should be called in "A" hours.
 
-The `check-reportable` action checks for suspected reportability, and if true, calls the `report-eicr` action. If an eICR has not been sent for over 24 hours, then `report-eicr` is called. If the encounter is still in progress, `check-reportable` is called again with a delay of 6 hours and this continues until more than 72 hours have elapsed since the encounter end.
+The `check-reportable` action checks for suspected reportability, and if true, calls the `report-eicr` action. If an eICR has not been sent for over "C" hours, then `report-eicr` is called. If the encounter is still in progress, `check-reportable` is called again with a delay of "B" hours and this continues until more than "D" hours have elapsed since the encounter end.
 
 The `report-eicr` action calls all three of `create-eicr`, `validate-eicr`, and `route-and-send-eicr`.
 
@@ -96,11 +134,25 @@ The `validate-eicr` action involves validating the created eICR conforms with al
 The `route-and-send-eicr` action involves the transmission of the eICR to either the APHL AIMS Platform, a Public Health Agency (PHA), or a Health information Exchange or Health Data Network on the way to a PHA.
 
 ##### Parameters
+Because of variability in accumulation of data at the start of a patient encounter, the EHR implementer should implement a time-based delay in generating and sending the first encounter eICR to allow time for required data to be captured within the patient chart. This will ensure the eICR is better populated before sending and will reduce the number of case reports that are sent for a single patient encounter.
 
-The offsets (1 h, 6h, and 72h, are parameters to the specification)
-* initial-creation-delay: 1 h
-* reportable-check-period: 6 h
-* suspected-reportable-close-delay: 72 h
+Full triggering timing can be described using the suggested parameters below from the eRSD:
+
+**Parameter A** – The time from the start of the patient encounter to when the first eICR is constructed and sent. This eICR should include multiple triggers if they are identified.
+
+- Example - <u>1 hour</u> after the encounter begins, EHR data matches a code in the eRSD diagnosis data trigger code set and other EHR data matches a code in the eRSD lab result trigger code set. Both of these trigger codes should be recorded in the appropriate eICR trigger code template and the eICR should be transmitted out.
+
+**Parameter B** - The time period from a previous trigger code check to subsequent checking for new trigger code matches in a longer encounter. New trigger code matches do not include matches on an eRSD trigger code that have already been used to generate an eICR for that encounter.
+
+- Example - <u>12 hours</u> after there was a trigger code match, the EHR data is checked against the eRSD trigger code sets again. If a new match is found (not a match against the same eRSD trigger code as had been already matched in that encounter) then a new eICR is generated that includes all of the new trigger codes that have been matched.
+
+**Parameter C** - The time period from the send of previous eICRs to the send of an updated eICR during a longer encounter.
+
+-- Example - <u>72 hours</u> after a previous eICR was sent, there have been no new trigger code matches, but a new eICR is created and transmitted because there had been a match in the encounter previously and there is a need for public health to receive updated data about the patient.
+
+**Parameter D** – The time period after the encounter ends through which trigger code checks and eICR updates should still occur.
+
+- Example - For <u>72 hours</u> after the encounter ends, trigger code checks and / or updated eICR transmissions should still occur.
 
 ##### Suspected Reportability Criteria
 
@@ -189,6 +241,15 @@ The eRSD Supplemental Library is composed of the RuleFilters library and the Sup
 * [RuleFilters Library](Library-RuleFilters.html)
 * [Supplemental Value Set Library Example](Library-library-us-ph-supplemental-valueset-library-example.html)
 * [Jurisdictions CodeSystem Example](CodeSystem-ersd-jurisdictions-example.html)
+
+#### Packaging and Distribution
+
+As noted in the overview section above, this implementation is not prescriptive about the absolute mechanisms for distribution, only about the contents of the specification in the form of Library, PlanDefinition, CodeSystem, and ValueSet resources conforming to the required profiles. The complete specification may be distributed via files (e.g. a zip of the specification as a FHIR bundle), via API (e.g. as a Bundle resource directly, or as the result of a packaging operation), or via subscription.
+
+When packaging as a Bundle, the expectation is that the Bundle would include the Library as the first entry, followed by all the component resources as entries, and finally all the referenced ValueSet resources. If the specification is too large for one Bundle, the specification may be split into multiple Bundles. The following examples illustrate complete bundles of both the Specification and Supplemental distributions:
+
+* [Specification (i.e. Triggering) Bundle](Bundle-bundle-ersd-specification.html)
+* [Supplemental (i.e. Rules Logic) Bundle](Bundle-bundle-ersd-supplemental.html)
 
 The [FHIR Subscription service](subscription_service.html) (also see Subscription examples on the <a href="artifacts.html">Artifacts Index page</a>) supports public health needs for the routine and emergent distribution of the eRSD. The Subscription does not require FHIR implementation on the receiving (EHR) end of the transaction, but can provide XML or JSON formats via RESTful query or proactive notification channels.
 

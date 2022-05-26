@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ValueSet
-    xmlns="http://hl7.org/fhir">
+<ValueSet xmlns="http://hl7.org/fhir">
     <id value="valueset-lotc-example"/>
     <meta>
         <versionId value="6"/>
@@ -38,6 +37,20 @@
         </telecom>
     </contact>
     <description value="This example set of values contains laboratory test names for orders that represent that the patient may have a potentially reportable condition regardless of the clinical presentation of the condition"/>
+    <useContext>
+        <code>
+            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
+            <code value="priority"/>
+            <display value="Priority"/>
+        </code>
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
+                <code value="routine"/>
+                <display value="Routine"/>
+            </coding>
+        </valueCodeableConcept>
+    </useContext>
     <useContext>
         <code>
             <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
