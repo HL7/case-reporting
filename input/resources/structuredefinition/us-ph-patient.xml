@@ -50,6 +50,35 @@
       <sliceName value="birthsex" />
       <mustSupport value="true" />
     </element>
+    <element id="Patient.extension:genderIdentity">
+      <path value="Patient.extension" />
+      <sliceName value="genderIdentity" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity" />
+<!--        <profile value="http://hl7.org/fhir/StructureDefinition/patient-genderIdentity" />-->
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Patient.extension:genderIdentity">
+      <path value="Patient.extension"/>
+      <sliceName value="genderIdentity"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity"/>
+      </type>
+      <mustSupport value="false"/>
+      <mapping>
+        <identity value="argonaut-dq-dstu2"/>
+        <map value="Patient.extension"/>
+      </mapping>
+    </element>
+    
     <element id="Patient.extension:birthPlace">
       <path value="Patient.extension" />
       <sliceName value="birthPlace" />
@@ -58,19 +87,6 @@
       <type>
         <code value="Extension" />
         <profile value="http://hl7.org/fhir/StructureDefinition/patient-birthPlace" />
-      </type>
-      <mustSupport value="true" />
-      <isModifier value="false" />
-    </element>
-    <element id="Patient.extension:genderIdentity">
-      <path value="Patient.extension" />
-      <sliceName value="genderIdentity" />
-      <min value="0" />
-      <max value="*" />
-      <type>
-        <code value="Extension" />
-<!--        <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity" />-->
-        <profile value="http://hl7.org/fhir/StructureDefinition/patient-genderIdentity" />
       </type>
       <mustSupport value="true" />
       <isModifier value="false" />
