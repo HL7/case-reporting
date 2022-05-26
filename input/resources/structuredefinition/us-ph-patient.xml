@@ -1,379 +1,382 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition
-    xmlns="http://hl7.org/fhir">
-    <id value="us-ph-patient"/>
-    <meta>
-        <versionId value="17"/>
-        <lastUpdated value="2021-06-30T21:51:33.295+00:00"/>
-        <source value="#c9GkOuiFmwdT15eD"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
-    <version value="1.0.0"/>
-    <name value="USPublicHealthPatient"/>
-    <title value="US Public Health Patient"/>
-    <status value="active"/>
-    <experimental value="false"/>
-    <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Patient profile represents a US Public Health Patient.&#xA;&#xA;It is based on the **US Core Patient** profile with further restrictions to allow masking of some data elements and the addition of the patient-genderIdentity extension.&#xA;&#xA;For ONC’s USCDI requirements, it adds Must Support constraints to the following:&#xA;&#xA;* contact detail (e.g. a telephone number or an email address)&#xA;* a communication language&#xA;* a race&#xA;* an ethnicity&#xA;* a birth sex"/>
-    <jurisdiction>
-        <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="US"/>
-            <display value="United States of America"/>
-        </coding>
-        <text value="United States of America"/>
-    </jurisdiction>
-    <fhirVersion value="4.0.1"/>
-    <kind value="resource"/>
-    <abstract value="false"/>
-    <type value="Patient"/>
-    <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
-    <derivation value="constraint"/>
-    <differential>
-        <element id="Patient">
-            <path value="Patient"/>
-            <short value="US Public Health Patient"/>
-            <definition value="This Patient profile represents a Public Health Patient. It is based on the **US Core Patient** profile with further restrictions to allow masking of some data elements and the addition of the patient-genderIdentity extension."/>
-        </element>
-        <element id="Patient.extension:race">
-            <path value="Patient.extension"/>
-            <sliceName value="race"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.extension:ethnicity">
-            <path value="Patient.extension"/>
-            <sliceName value="ethnicity"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.extension:birthsex">
-            <path value="Patient.extension"/>
-            <sliceName value="birthsex"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.extension:birthPlace">
-            <path value="Patient.extension"/>
-            <sliceName value="birthPlace"/>
-            <min value="0"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/StructureDefinition/patient-birthPlace"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-        </element>
-        <element id="Patient.extension:genderIdentity">
-            <path value="Patient.extension"/>
-            <sliceName value="genderIdentity"/>
-            <min value="0"/>
-            <max value="*"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/StructureDefinition/patient-genderIdentity"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-        </element>
-        <element id="Patient.extension:tribalAffiliation">
-            <path value="Patient.extension"/>
-            <sliceName value="tribalAffiliation"/>
-            <short value="Tribal affiliation and membership of the patient"/>
-            <min value="0"/>
-            <max value="*"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-tribal-affiliation-extension"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-        </element>
-        <element id="Patient.identifier">
-            <path value="Patient.identifier"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.identifier.extension:dataAbsentReason">
-            <path value="Patient.identifier.extension"/>
-            <sliceName value="dataAbsentReason"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason"/>
-            </type>
-        </element>
-        <element id="Patient.identifier.extension:dataAbsentReason.value[x]">
-            <path value="Patient.identifier.extension.value[x]"/>
-            <min value="1"/>
-            <type>
-                <code value="code"/>
-            </type>
-            <fixedCode value="masked"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.name">
-            <path value="Patient.name"/>
-            <min value="1"/>
-        </element>
-        <element id="Patient.name.extension:dataAbsentReason">
-            <path value="Patient.name.extension"/>
-            <sliceName value="dataAbsentReason"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.name.extension:dataAbsentReason.value[x]">
-            <path value="Patient.name.extension.value[x]"/>
-            <min value="1"/>
-            <type>
-                <code value="code"/>
-            </type>
-            <fixedCode value="masked"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.telecom">
-            <path value="Patient.telecom"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="system"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-            <min value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.telecom.extension:dataAbsentReason">
-            <path value="Patient.telecom.extension"/>
-            <sliceName value="dataAbsentReason"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.telecom.extension:dataAbsentReason.value[x]">
-            <path value="Patient.telecom.extension.value[x]"/>
-            <min value="1"/>
-            <type>
-                <code value="code"/>
-            </type>
-            <fixedCode value="masked"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.telecom:phone">
-            <path value="Patient.telecom"/>
-            <sliceName value="phone"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.telecom:phone.system">
-            <path value="Patient.telecom.system"/>
-            <min value="1"/>
-            <fixedCode value="phone"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.telecom:email">
-            <path value="Patient.telecom"/>
-            <sliceName value="email"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.telecom:email.system">
-            <path value="Patient.telecom.system"/>
-            <min value="1"/>
-            <fixedCode value="email"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.gender">
-            <path value="Patient.gender"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.gender.extension:dataAbsentReason">
-            <path value="Patient.gender.extension"/>
-            <sliceName value="dataAbsentReason"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.gender.extension:dataAbsentReason.value[x]">
-            <path value="Patient.gender.extension.value[x]"/>
-            <min value="1"/>
-            <type>
-                <code value="code"/>
-            </type>
-            <fixedCode value="masked"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.birthDate">
-            <path value="Patient.birthDate"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.birthDate.extension:dataAbsentReason">
-            <path value="Patient.birthDate.extension"/>
-            <sliceName value="dataAbsentReason"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.birthDate.extension:dataAbsentReason.value[x]">
-            <path value="Patient.birthDate.extension.value[x]"/>
-            <min value="1"/>
-            <type>
-                <code value="code"/>
-            </type>
-            <fixedCode value="masked"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.deceased[x]">
-            <path value="Patient.deceased[x]"/>
-        </element>
-        <element id="Patient.address">
-            <path value="Patient.address"/>
-            <definition value="If the patient is homeless, complete as much address information as possible (city, zip, county, etc.) and use the Characteristics of Home Environment profile in the Social History Section of the eICR Composition to indicate that the patient is homeless."/>
-            <min value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.address.extension:dataAbsentReason">
-            <path value="Patient.address.extension"/>
-            <sliceName value="dataAbsentReason"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.address.extension:dataAbsentReason.value[x]">
-            <path value="Patient.address.extension.value[x]"/>
-            <min value="1"/>
-            <type>
-                <code value="code"/>
-            </type>
-            <fixedCode value="masked"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.address.district">
-            <path value="Patient.address.district"/>
-            <short value="County"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.contact">
-            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
-                <valueString value="Contact"/>
-            </extension>
-            <path value="Patient.contact"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.contact.relationship">
-            <path value="Patient.contact.relationship"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.contact.name">
-            <path value="Patient.contact.name"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.contact.name.extension:dataAbsentReason">
-            <path value="Patient.contact.name.extension"/>
-            <sliceName value="dataAbsentReason"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.contact.name.extension:dataAbsentReason.value[x]">
-            <path value="Patient.contact.name.extension.value[x]"/>
-            <min value="1"/>
-            <type>
-                <code value="code"/>
-            </type>
-            <fixedCode value="masked"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.contact.telecom">
-            <path value="Patient.contact.telecom"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.contact.telecom.extension:dataAbsentReason">
-            <path value="Patient.contact.telecom.extension"/>
-            <sliceName value="dataAbsentReason"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.contact.telecom.extension:dataAbsentReason.value[x]">
-            <path value="Patient.contact.telecom.extension.value[x]"/>
-            <min value="1"/>
-            <type>
-                <code value="code"/>
-            </type>
-            <fixedCode value="masked"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.contact.address">
-            <path value="Patient.contact.address"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.contact.address.extension:dataAbsentReason">
-            <path value="Patient.contact.address.extension"/>
-            <sliceName value="dataAbsentReason"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.contact.address.extension:dataAbsentReason.value[x]">
-            <path value="Patient.contact.address.extension.value[x]"/>
-            <min value="1"/>
-            <type>
-                <code value="code"/>
-            </type>
-            <fixedCode value="masked"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.communication">
-            <path value="Patient.communication"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.communication.language">
-            <path value="Patient.communication.language"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.communication.language.extension:dataAbsentReason">
-            <path value="Patient.communication.language.extension"/>
-            <sliceName value="dataAbsentReason"/>
-            <max value="1"/>
-            <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Patient.communication.language.extension:dataAbsentReason.value[x]">
-            <path value="Patient.communication.language.extension.value[x]"/>
-            <min value="1"/>
-            <type>
-                <code value="code"/>
-            </type>
-            <fixedCode value="masked"/>
-            <mustSupport value="true"/>
-        </element>
-    </differential>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="us-ph-patient" />
+  <meta>
+    <versionId value="17" />
+    <lastUpdated value="2021-06-30T21:51:33.295+00:00" />
+    <source value="#c9GkOuiFmwdT15eD" />
+  </meta>
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient" />
+  <version value="1.0.0" />
+  <name value="USPublicHealthPatient" />
+  <title value="US Public Health Patient" />
+  <status value="active" />
+  <experimental value="false" />
+  <publisher value="HL7 Public Health Work Group" />
+  <description
+    value="This Patient profile represents a US Public Health Patient.&#xA;&#xA;It is based on the **US Core Patient** profile with further restrictions to allow masking of some data elements and the addition of the patient-genderIdentity extension.&#xA;&#xA;For ONC’s USCDI requirements, it adds Must Support constraints to the following:&#xA;&#xA;* contact detail (e.g. a telephone number or an email address)&#xA;* a communication language&#xA;* a race&#xA;* an ethnicity&#xA;* a birth sex" />
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166" />
+      <code value="US" />
+      <display value="United States of America" />
+    </coding>
+    <text value="United States of America" />
+  </jurisdiction>
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Patient" />
+  <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Patient">
+      <path value="Patient" />
+      <short value="US Public Health Patient" />
+      <definition
+        value="This Patient profile represents a Public Health Patient. It is based on the **US Core Patient** profile with further restrictions to allow masking of some data elements and the addition of the patient-genderIdentity extension." />
+    </element>
+    <element id="Patient.extension:race">
+      <path value="Patient.extension" />
+      <sliceName value="race" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.extension:ethnicity">
+      <path value="Patient.extension" />
+      <sliceName value="ethnicity" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.extension:birthsex">
+      <path value="Patient.extension" />
+      <sliceName value="birthsex" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.extension:birthPlace">
+      <path value="Patient.extension" />
+      <sliceName value="birthPlace" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/patient-birthPlace" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Patient.extension:genderIdentity">
+      <path value="Patient.extension" />
+      <sliceName value="genderIdentity" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity" />
+<!--        <profile value="http://hl7.org/fhir/StructureDefinition/patient-genderIdentity" />-->
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Patient.extension:tribalAffiliation">
+      <path value="Patient.extension" />
+      <sliceName value="tribalAffiliation" />
+      <short value="Tribal affiliation and membership of the patient" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-tribal-affiliation-extension" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Patient.identifier">
+      <path value="Patient.identifier" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier.extension:dataAbsentReason">
+      <path value="Patient.identifier.extension" />
+      <sliceName value="dataAbsentReason" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason" />
+      </type>
+    </element>
+    <element id="Patient.identifier.extension:dataAbsentReason.value[x]">
+      <path value="Patient.identifier.extension.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="code" />
+      </type>
+      <fixedCode value="masked" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name">
+      <path value="Patient.name" />
+      <min value="1" />
+    </element>
+    <element id="Patient.name.extension:dataAbsentReason">
+      <path value="Patient.name.extension" />
+      <sliceName value="dataAbsentReason" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name.extension:dataAbsentReason.value[x]">
+      <path value="Patient.name.extension.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="code" />
+      </type>
+      <fixedCode value="masked" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.telecom">
+      <path value="Patient.telecom" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.telecom.extension:dataAbsentReason">
+      <path value="Patient.telecom.extension" />
+      <sliceName value="dataAbsentReason" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.telecom.extension:dataAbsentReason.value[x]">
+      <path value="Patient.telecom.extension.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="code" />
+      </type>
+      <fixedCode value="masked" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.telecom:phone">
+      <path value="Patient.telecom" />
+      <sliceName value="phone" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.telecom:phone.system">
+      <path value="Patient.telecom.system" />
+      <min value="1" />
+      <fixedCode value="phone" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.telecom:email">
+      <path value="Patient.telecom" />
+      <sliceName value="email" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.telecom:email.system">
+      <path value="Patient.telecom.system" />
+      <min value="1" />
+      <fixedCode value="email" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.gender">
+      <path value="Patient.gender" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.gender.extension:dataAbsentReason">
+      <path value="Patient.gender.extension" />
+      <sliceName value="dataAbsentReason" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.gender.extension:dataAbsentReason.value[x]">
+      <path value="Patient.gender.extension.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="code" />
+      </type>
+      <fixedCode value="masked" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.birthDate">
+      <path value="Patient.birthDate" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.birthDate.extension:dataAbsentReason">
+      <path value="Patient.birthDate.extension" />
+      <sliceName value="dataAbsentReason" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.birthDate.extension:dataAbsentReason.value[x]">
+      <path value="Patient.birthDate.extension.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="code" />
+      </type>
+      <fixedCode value="masked" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.deceased[x]">
+      <path value="Patient.deceased[x]" />
+    </element>
+    <element id="Patient.address">
+      <path value="Patient.address" />
+      <definition
+        value="If the patient is homeless, complete as much address information as possible (city, zip, county, etc.) and use the Characteristics of Home Environment profile in the Social History Section of the eICR Composition to indicate that the patient is homeless." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address.extension:dataAbsentReason">
+      <path value="Patient.address.extension" />
+      <sliceName value="dataAbsentReason" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address.extension:dataAbsentReason.value[x]">
+      <path value="Patient.address.extension.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="code" />
+      </type>
+      <fixedCode value="masked" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address.district">
+      <path value="Patient.address.district" />
+      <short value="County" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Contact" />
+      </extension>
+      <path value="Patient.contact" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact.relationship">
+      <path value="Patient.contact.relationship" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact.name">
+      <path value="Patient.contact.name" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact.name.extension:dataAbsentReason">
+      <path value="Patient.contact.name.extension" />
+      <sliceName value="dataAbsentReason" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact.name.extension:dataAbsentReason.value[x]">
+      <path value="Patient.contact.name.extension.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="code" />
+      </type>
+      <fixedCode value="masked" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact.telecom">
+      <path value="Patient.contact.telecom" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact.telecom.extension:dataAbsentReason">
+      <path value="Patient.contact.telecom.extension" />
+      <sliceName value="dataAbsentReason" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact.telecom.extension:dataAbsentReason.value[x]">
+      <path value="Patient.contact.telecom.extension.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="code" />
+      </type>
+      <fixedCode value="masked" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact.address">
+      <path value="Patient.contact.address" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact.address.extension:dataAbsentReason">
+      <path value="Patient.contact.address.extension" />
+      <sliceName value="dataAbsentReason" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact.address.extension:dataAbsentReason.value[x]">
+      <path value="Patient.contact.address.extension.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="code" />
+      </type>
+      <fixedCode value="masked" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.communication">
+      <path value="Patient.communication" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.communication.language">
+      <path value="Patient.communication.language" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.communication.language.extension:dataAbsentReason">
+      <path value="Patient.communication.language.extension" />
+      <sliceName value="dataAbsentReason" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.communication.language.extension:dataAbsentReason.value[x]">
+      <path value="Patient.communication.language.extension.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="code" />
+      </type>
+      <fixedCode value="masked" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
 </StructureDefinition>
