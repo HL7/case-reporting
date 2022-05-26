@@ -7,7 +7,8 @@
   <status value="active" />
   <date value="2022-05-24" />
   <publisher value="HL7 Public Health Work Group" />
-  <description value="This extension provides concepts to describe the gender a person identifies as. A person's 'gender identity' may change and using genderIdentityPeriod.valuePeriod.start and genderIdentityPeriod.valuePeriod.end defines the time during which the person had identified as specified." />
+  <description
+    value="An individual's personal sense of being a man, woman, boy, girl, nonbinary, or something else. This represents an individual’s identity, ascertained by asking them what that identity is. This is a copy of the draft FHIR individual-genderIdentity extension (http://hl7.org/fhir/StructureDefinition/individual-genderIdentity)." />
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166" />
@@ -40,67 +41,104 @@
   <differential>
     <element id="Extension">
       <path value="Extension" />
-      <short value="The person's gender identity" />
-      <definition value="The gender the person identifies with." />
+      <short value="The individual's gender identity" />
+      <definition value="An individual's personal sense of being a man, woman, boy, girl, nonbinary, or something else." />
+      <comment value="This represents an individual’s identity, ascertained by asking them what that identity is." />
       <min value="0" />
-      <max value="*" />
     </element>
-    <element id="Extension.extension:genderIdentityCode">
+    <element id="Extension.extension:value">
       <path value="Extension.extension" />
-      <sliceName value="genderIdentityCode" />
+      <sliceName value="value" />
+      <short value="The individual's gender identity" />
+      <definition value="An individual's personal sense of being a man, woman, boy, girl, nonbinary, or something else. " />
+      <comment value="This represents an individual’s identity, ascertained by asking them what that identity is." />
       <min value="1" />
       <max value="1" />
       <type>
         <code value="Extension" />
       </type>
-      <mustSupport value="true" />
     </element>
-    <element id="Extension.extension:genderIdentityCode.url">
+    <element id="Extension.extension:value.extension">
+      <path value="Extension.extension.extension" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:value.url">
       <path value="Extension.extension.url" />
-      <min value="1" />
-      <max value="1" />
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="genderIdentityCode" />
+      <fixedUri value="value" />
     </element>
-    <element id="Extension.extension:genderIdentityCode.value[x]">
+    <element id="Extension.extension:value.value[x]">
       <path value="Extension.extension.value[x]" />
       <min value="1" />
-      <max value="1" />
       <type>
         <code value="CodeableConcept" />
       </type>
       <binding>
-        <strength value="extensible" />
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="GenderIdentity" />
+        </extension>
+        <strength value="preferred" />
         <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1021.32" />
       </binding>
     </element>
-    <element id="Extension.extension:genderIdentityPeriod">
+    <element id="Extension.extension:period">
       <path value="Extension.extension" />
-      <sliceName value="genderIdentityPeriod" />
+      <sliceName value="period" />
+      <short value="The time period during which the gender identity applies to the individual" />
+      <definition value="The time period during which the gender identity applies to the individual" />
       <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
       </type>
-      <mustSupport value="true" />
     </element>
-    <element id="Extension.extension:genderIdentityPeriod.url">
+    <element id="Extension.extension:period.extension">
+      <path value="Extension.extension.extension" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:period.url">
       <path value="Extension.extension.url" />
-      <min value="1" />
-      <max value="1" />
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="genderIdentityPeriod" />
+      <fixedUri value="period" />
     </element>
-    <element id="Extension.extension:genderIdentityPeriod.value[x]">
+    <element id="Extension.extension:period.value[x]">
       <path value="Extension.extension.value[x]" />
       <min value="1" />
-      <max value="1" />
       <type>
         <code value="Period" />
+      </type>
+    </element>
+    <element id="Extension.extension:comment">
+      <path value="Extension.extension" />
+      <sliceName value="comment" />
+      <short value="Text to further explain the use of the specified gender identity" />
+      <definition value="Text to further explain the use of the specified gender identity" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+      </type>
+    </element>
+    <element id="Extension.extension:comment.extension">
+      <path value="Extension.extension.extension" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:comment.url">
+      <path value="Extension.extension.url" />
+      <type>
+        <code value="uri" />
+      </type>
+      <fixedUri value="comment" />
+    </element>
+    <element id="Extension.extension:comment.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="string" />
       </type>
     </element>
     <element id="Extension.url">
@@ -109,6 +147,7 @@
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
+      <min value="0" />
       <max value="0" />
     </element>
   </differential>
