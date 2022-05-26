@@ -1,0 +1,115 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="us-ph-genderidentity-extension" />
+  <url value="http://hl7.org/fhir/us/core/StructureDefinition/us-ph-genderidentity-extension" />
+  <version value="0.1.0" />
+  <name value="USPublicHealthGenderIdentityExtension" />
+  <title value="US Public Health Gender Identity Extension" />
+  <status value="active" />
+  <date value="2022-05-24" />
+  <publisher value="HL7 Public Health Work Group" />
+  <description value="This extension provides concepts to describe the gender a person identifies as. A person's 'gender identity' may change and using genderIdentityPeriod.valuePeriod.start and genderIdentityPeriod.valuePeriod.end defines the time during which the person had identified as specified." />
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166" />
+      <code value="US" />
+    </coding>
+  </jurisdiction>
+  <copyright value="Used by permission of HL7 International, all rights reserved Creative Commons License" />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Patient" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="RelatedPerson" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="Person" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="Practitioner" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="The person's gender identity" />
+      <definition value="The gender the person identifies with." />
+      <min value="0" />
+      <max value="*" />
+    </element>
+    <element id="Extension.extension:genderIdentityCode">
+      <path value="Extension.extension" />
+      <sliceName value="genderIdentityCode" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Extension.extension:genderIdentityCode.url">
+      <path value="Extension.extension.url" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="uri" />
+      </type>
+      <fixedUri value="genderIdentityCode" />
+    </element>
+    <element id="Extension.extension:genderIdentityCode.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="extensible" />
+        <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1021.32" />
+      </binding>
+    </element>
+    <element id="Extension.extension:genderIdentityPeriod">
+      <path value="Extension.extension" />
+      <sliceName value="genderIdentityPeriod" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Extension.extension:genderIdentityPeriod.url">
+      <path value="Extension.extension.url" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="uri" />
+      </type>
+      <fixedUri value="genderIdentityPeriod" />
+    </element>
+    <element id="Extension.extension:genderIdentityPeriod.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Period" />
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>
