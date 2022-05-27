@@ -2,7 +2,7 @@ This document describes the eRSD Jurisdictions CodeSystem.
 
 ### Overview
 
-RCKMS provides jurisdiction information in the form of a FHIR CodeSystem resource that is available for download via web service API.
+Jurisdiction information is provided in the form of a FHIR CodeSystem resource that is available for download via web service API.
 
 ### CodeSystem
 
