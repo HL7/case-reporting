@@ -27,7 +27,7 @@ A possible condition:
 
 A possible condition is:
 
-- **Not Reportable** - The information provided conclusively does not meet reporting criteria.
+- **Not Reportable** - The information provided conclusively does not meet reporting criteria for a triggered condition.
 
 Some decision support systems may not be able to fully differentiate between possible conditions that are **Not Reportable** and those that **May be Reportable** if additional information is provided. In these circumstances there may only be a reportabilty determination of:
 
@@ -267,6 +267,7 @@ In cases where the patient jurisdiction differs from the provider jurisdiction, 
 
 *(for circumstances where determination of reportability **could not be made due to failure to process jurisdictional information** (Reporting Specifications Not Found [RSNF] or Jurisdiction Not Found [JNF]) without having a condition included that was found reportable, may be reportable, or no rule met – it is recommended to communicate the Reportability Response to Provider /Reporter)*
 > Public Health Reporting Communication: Reportability for submitted report could not be determined.
+
 ### Reportability Response eICR Information
 
 *(Always present)*
