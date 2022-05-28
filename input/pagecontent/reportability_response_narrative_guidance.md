@@ -36,7 +36,7 @@ Some decision support systems may not be able to fully differentiate between pos
 The determination of **No Reporting Rule Met** may be provided for a possible condition or for all conditions in the eICR.
 
 ## Audience
-The audience for this document is developers and managers of public health shared services platform infrastructure  and public health surveillance systems that receive and process eICRs and then generate and share Reportability Responses.
+The audience for this document is developers and managers of public health shared services platform infrastructure, Public Health Decision Support (PHDS), and public health surveillance systems that receive and process eICRs and then generate and share Reportability Responses.
 
 # Narrative Construction Guidance
 
@@ -251,13 +251,13 @@ Similar to these examples, some additional responses may include:
 - Multiple Conditions are *Not Reportable* to a Single PHA
 - Multiple Conditions are *Not Reportable* to Multiple PHAs
 - Combination of Conditions *Reportable* and *Not Reportable* to a Single or Multiple PHA(s)
--   Single Condition is *Reportable* to a Single PHA but with Multiple Routing Entities
+- Single Condition is *Reportable* to a Single PHA but with Multiple Routing Entities
 
 ## eICR Processed with a Warning
 
-This section describes narrative guidance to deal with eICRs that were successfully processed but had an issue related to content which caused the PHDS system (such as RCKMS) to be unable to make a determination of reportability.
+This section describes narrative guidance to deal with eICRs that were successfully processed but had an issue related to content which caused the PHDS system to be unable to make a determination of reportability.
 
-In cases where the patient jurisdiction differs from the provider jurisdiction, a determination may be possible for one jurisdiction but not for the other due to an issue with content contained in the eICR or lack of rules within the PHDS.  If the address cannot be linked a jurisdiction the PHDS may return a response of "jurisdiction not found (JNF)", which will result in a warning in the RR narrative.  If a jurisdiction exists within the PHDS but no reporting specifications have been published, the RR will return a warning of "reporting specifications not found (RSNF)".
+In cases where the patient jurisdiction differs from the provider jurisdiction, a determination may be possible for one jurisdiction but not for the other due to an issue with content contained in the eICR or lack of rules within the PHDS. If the address cannot be linked a jurisdiction the PHDS may return a response of "jurisdiction not found (JNF)", which will result in a warning in the RR narrative. If a jurisdiction exists within the PHDS but no reporting specifications have been published, the RR will return a warning of "reporting specifications not found (RSNF)".
 
 ### Reportability Response Subject
 
@@ -280,7 +280,7 @@ In cases where the patient jurisdiction differs from the provider jurisdiction, 
 **(Always present)**
 >Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient. 
 >
->*(include and repeat for each eICR* &lt;[determination of reportability code](StructureDefinition-rr-reportability-information-observation-definitions.html#Observation.extension:determinationOfReportability)&gt; *for any jurisdiction rules that were successfully processed.* Each determination should be it’s own paragraph in the narrative.)
+>*(include and repeat for each eICR* &lt;[determination of reportability code](StructureDefinition-rr-reportability-information-observation-definitions.html#Observation.extension:determinationOfReportability)&gt; *for any jurisdiction rules that were successfully processed.* Each determination should be its own paragraph in the narrative.)
 
 **(Reportable)**
 > If at least 1 condition is reportable, whether it is the condition that initially triggered or not, the following summary text should be inserted:
@@ -295,7 +295,7 @@ In cases where the patient jurisdiction differs from the provider jurisdiction, 
 
 > *For the not reportable triggered condition:*
 > 
-> "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-observation-definitions.html#Observation.value[x])&gt;" was determined not to be reportable for a triggered condition to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization-definitions.html#Organization.name)&gt;".  This may be because it is not on the list of reportable conditions for the relevant Public Health Agency or the information provided at the time of this report does not meet reporting criteria.
+> "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-observation-definitions.html#Observation.value[x])&gt;" was determined not to be reportable for a triggered condition to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization-definitions.html#Organization.name)&gt;". This may be because it is not on the list of reportable conditions for the relevant Public Health Agency or the information provided at the time of this report does not meet reporting criteria.
  
 > *if multiple Routing Entities are present change text to include each separated by* "and to":
 
@@ -315,7 +315,7 @@ In cases where the patient jurisdiction differs from the provider jurisdiction, 
 
 > *For the triggered condition:*
 > 
-> "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-observation-definitions.html#Observation.value[x])&gt;" was determined not to be reportable for a triggered condition to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization-definitions.html#Organization.name)&gt;".  This may be because it is not on the list of reportable conditions for the relevant Public Health Agency or the information provided at the time of this report does not meet reporting criteria.
+> "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-observation-definitions.html#Observation.value[x])&gt;" was determined not to be reportable for a triggered condition to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization-definitions.html#Organization.name)&gt;". This may be because it is not on the list of reportable conditions for the relevant Public Health Agency or the information provided at the time of this report does not meet reporting criteria.
 > 
 > *if multiple Routing Entities are present change text to include each separated by* "and to":
 
@@ -326,14 +326,14 @@ In cases where the patient jurisdiction differs from the provider jurisdiction, 
 
 If the initial triggered condition is not reportable, and there is no other condition determined to be reportable or may be reportable, the following summary text should be inserted:
 
-> "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-observation-definitions.html#Observation.value[x])&gt;" was determined not to be reportable to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization-definitions.html#Organization.name)&gt;".  This may be because it is not on the list of reportable conditions for the relevant Public Health Agency or the information provided at the time of this report does not meet reporting criteria. No determination of reportability could be made for any other conditions in the submitted initial case report.
+> "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-observation-definitions.html#Observation.value[x])&gt;" was determined not to be reportable to "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization-definitions.html#Organization.name)&gt;". This may be because it is not on the list of reportable conditions for the relevant Public Health Agency or the information provided at the time of this report does not meet reporting criteria. No determination of reportability could be made for any other conditions in the submitted initial case report.
 
 **(No rule met)**
 
 If the initial triggered condition is no rule met, and there is no other condition determined to be reportable or may be reportable, the following summary text should be inserted:
 For the triggered condition:
 
-> No determination of reportability could be made for "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-observation-definitions.html#Observation.value[x])&gt;" for "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization-definitions.html#Organization.name)&gt;" based on "&lt;[location relevance](StructureDefinition-rr-reportability-information-observation-definitions.html#Observation.code)&gt;".   This may be because it is not on the list of reportable conditions for the relevant Public Health Agency, or the information provided at the time of this report does not meet reporting criteria, or not all data needed to confirm reportabilty were available. No determination of reportability could be made for any other conditions in the submitted initial case report.
+> No determination of reportability could be made for "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-observation-definitions.html#Observation.value[x])&gt;" for "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization-definitions.html#Organization.name)&gt;" based on "&lt;[location relevance](StructureDefinition-rr-reportability-information-observation-definitions.html#Observation.code)&gt;". This may be because it is not on the list of reportable conditions for the relevant Public Health Agency, or the information provided at the time of this report does not meet reporting criteria, or not all data needed to confirm reportabilty were available. No determination of reportability could be made for any other conditions in the submitted initial case report.
 
 If the initial triggered condition is no rule met, and there is at least 1 other reportable condition, the following summary text should be inserted:
 
@@ -343,7 +343,7 @@ If the initial triggered condition is no rule met, and there is at least 1 other
 
 > For the triggered condition:
 > 
-> No determination of reportability could be made for "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-observation-definitions.html#Observation.value[x])&gt;" for "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization-definitions.html#Organization.name)&gt;" based on "&lt;[location relevance](StructureDefinition-rr-reportability-information-observation-definitions.html#Observation.code)&gt;".   This may be because it is not on the list of reportable conditions for the relevant Public Health Agency, or the information provided at the time of this report does not meet reporting criteria, or not all data needed to confirm reportabilty were available.
+> No determination of reportability could be made for "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-observation-definitions.html#Observation.value[x])&gt;" for "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization-definitions.html#Organization.name)&gt;" based on "&lt;[location relevance](StructureDefinition-rr-reportability-information-observation-definitions.html#Observation.code)&gt;". This may be because it is not on the list of reportable conditions for the relevant Public Health Agency, or the information provided at the time of this report does not meet reporting criteria, or not all data needed to confirm reportabilty were available.
 
 If the initial triggered condition is no rule met, and there is at least 1 other may be reportable condition, the following summary text should be inserted:
 
@@ -353,9 +353,9 @@ If the initial triggered condition is no rule met, and there is at least 1 other
 
 > For the triggered condition:
 > 
-> No determination of reportability could be made for "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-observation-definitions.html#Observation.value[x])&gt;" for "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization-definitions.html#Organization.name)&gt;" based on "&lt;[location relevance](StructureDefinition-rr-reportability-information-observation-definitions.html#Observation.code)&gt;".   This may be because it is not on the list of reportable conditions for the relevant Public Health Agency, or the information provided at the time of this report does not meet reporting criteria, or not all data needed to confirm reportabilty were available.
+> No determination of reportability could be made for "&lt;[Relevant reportable condition name](StructureDefinition-rr-relevant-reportable-condition-observation-definitions.html#Observation.value[x])&gt;" for "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization-definitions.html#Organization.name)&gt;" based on "&lt;[location relevance](StructureDefinition-rr-reportability-information-observation-definitions.html#Observation.code)&gt;". This may be because it is not on the list of reportable conditions for the relevant Public Health Agency, or the information provided at the time of this report does not meet reporting criteria, or not all data needed to confirm reportabilty were available.
 
-Note: While the identification of a Responsible Agency is an important part of information that the Reportability Response will provide to clinical care, some decision support systems may not be able to initially identify one.  In that circumstance, sentences that identify "for" or "to" "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization-definitions.html#Organization.name)&gt;" should be ended with a period before that text. (e.g., A determination of reportability for a triggered condition could not be made.)
+Note: While the identification of a Responsible Agency is an important part of information that the Reportability Response will provide to clinical care, some decision support systems may not be able to initially identify one. In that circumstance, sentences that identify "for" or "to" "&lt;[responsible agency name](StructureDefinition-rr-responsible-agency-organization-definitions.html#Organization.name)&gt;" should be ended with a period before that text. (e.g., A determination of reportability for a triggered condition could not be made.)
 
 After displaying determination of reportability information above, then include relevant information about the jurisdictional error which explains why the eICR could not fully be processed.
 
@@ -691,7 +691,7 @@ The examples below provide example text for *Providers / Reporters* for these ty
 >
 > Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient.
 > "Zika virus" is reportable to "State A Department of Health". The initial case report was sent to "State A Department of Health". Additional information may be required for this report. "Chlamydia" was determined not reportable to "State A Department of Health". This may be because it is not on the list of reportable conditions for the relevant Public Health Agency or the information provided at the time of this report does not meet reporting criteria.
->  "Zika virus" is reportable to "State B Department of Health". The initial case report was sent to "State B Department of Health". Additional information may be required for this report. "Chlamydia" is reportable to "State B Department of Health". The initial case report was sent to "State B Department of Health". Additional information may be required for this report.
+> "Zika virus" is reportable to "State B Department of Health". The initial case report was sent to "State B Department of Health". Additional information may be required for this report. "Chlamydia" is reportable to "State B Department of Health". The initial case report was sent to "State B Department of Health". Additional information may be required for this report.
 >
 > **"Zika virus" for "State A Department of Health".**
 >
