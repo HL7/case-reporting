@@ -690,12 +690,12 @@
                 <tr>
                   <td style="font-weight: bold">entry</td>
                   <td>
-                    <a href="Observation-observation-us-core-results-eve-everywoman-lymphocytes.html">Lymphocytes [#/​volume] in Blood by Automated count - Interpretation: High</a>
+                    <a href="Observation-observation-us-ph-lab-result-eve-everywoman-lymphocytes.html">Lymphocytes [#/​volume] in Blood by Automated count - Interpretation: High</a>
                     <table>
                       <tr>
                         <td style="font-weight: bold">id</td>
                         <td>
-                          <div title="id">observation-us-core-results-eve-everywoman-lymphocytes</div>
+                          <div title="id">observation-us-ph-lab-result-eve-everywoman-lymphocytes</div>
                         </td>
                       </tr>
                       <tr>
@@ -717,7 +717,7 @@
                             <tr>
                               <td style="font-weight: bold">profile</td>
                               <td>
-                                <div title="profile">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab</div>
+                                <div title="profile">http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-lab-result-observation</div>
                               </td>
                             </tr>
                           </table>
@@ -889,7 +889,7 @@
             </div>
           </text>
           <entry>
-            <reference value="Observation/observation-us-core-results-eve-everywoman-lymphocytes" />
+            <reference value="Observation/observation-us-ph-lab-result-eve-everywoman-lymphocytes" />
             <display value="Lymphocytes [#/​volume] in Blood by Automated count - Interpretation: High" />
           </entry>
         </section>
@@ -2868,59 +2868,57 @@
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://example.org/fhir/Observation/observation-us-core-results-eve-everywoman-lymphocytes" />
+    <fullUrl value="http://example.org/fhir/Observation/observation-us-ph-lab-result-eve-everywoman-lymphocytes" />
     <resource>
-      <Observation>
-        <id value="observation-us-core-results-eve-everywoman-lymphocytes" />
+      <Observation
+        xmlns="http://hl7.org/fhir">
+        <id value="observation-us-ph-lab-result-eve-everywoman-lymphocytes"/>
         <meta>
-          <versionId value="4" />
-          <lastUpdated value="2021-07-19T00:27:15.332+00:00" />
-          <source value="#JUoT9ShFi539tEiO" />
-          <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab" />
+          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-lab-result-observation"/>
         </meta>
-        <status value="final" />
+        <status value="final"/>
         <category>
           <coding>
-            <system value="http://terminology.hl7.org/CodeSystem/observation-category" />
-            <code value="laboratory" />
-            <display value="Laboratory" />
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
+            <display value="Laboratory"/>
           </coding>
-          <text value="Laboratory" />
+          <text value="Laboratory"/>
         </category>
         <code>
           <coding>
-            <system value="http://loinc.org" />
-            <code value="731-0" />
-            <display value="Lymphocytes [#/volume] in Blood by Automated count" />
+            <system value="http://loinc.org"/>
+            <code value="731-0"/>
+            <display value="Lymphocytes [#/volume] in Blood by Automated count"/>
           </coding>
         </code>
         <subject>
-          <reference value="Patient/patient-ecr-eve-everywoman" />
-          <display value="Eve Everywoman" />
+          <reference value="Patient/patient-ecr-eve-everywoman"/>
+          <display value="Eve Everywoman"/>
         </subject>
-        <effectiveDateTime value="2018-03-07" />
+        <effectiveDateTime value="2018-03-07"/>
         <valueQuantity>
-          <value value="5.2" />
-          <system value="http://unitsofmeasure.org" />
-          <code value="10*3/uL" />
+          <value value="5.2"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="10*3/uL"/>
         </valueQuantity>
         <interpretation>
           <coding>
-            <system value="http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation" />
-            <code value="H" />
-            <display value="High" />
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"/>
+            <code value="H"/>
+            <display value="High"/>
           </coding>
         </interpretation>
         <referenceRange>
           <low>
-            <value value="1" />
-            <system value="http://unitsofmeasure.org" />
-            <code value="10*3/uL" />
+            <value value="1"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="10*3/uL"/>
           </low>
           <high>
-            <value value="4.8" />
-            <system value="http://unitsofmeasure.org" />
-            <code value="10*3/uL" />
+            <value value="4.8"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="10*3/uL"/>
           </high>
         </referenceRange>
       </Observation>
