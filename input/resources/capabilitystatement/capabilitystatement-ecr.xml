@@ -1,354 +1,531 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CapabilityStatement
-    xmlns="http://hl7.org/fhir">
-    <id value="capabilitystatement-ecr"/>
-    <meta>
-        <versionId value="24"/>
-        <lastUpdated value="2021-08-19T08:19:25.892+00:00"/>
-        <source value="#h1bh34W3gXLCh42G"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/CapabilityStatement/capabilitystatement-ecr"/>
-    <version value="1.0.0"/>
-    <name value="CapabilityStatement_eCR"/>
-    <title value="Capability Statement eCR"/>
-    <status value="active"/>
-    <experimental value="false"/>
-    <date value="2019-06-25"/>
-    <publisher value="HL7 Public Health Work Group"/>
-    <description value="This resource defines the expected capabilities for both client and server participating in eCR exchange"/>
-    <jurisdiction>
-        <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="US"/>
-            <display value="United States of America"/>
-        </coding>
-        <text value="United States of America"/>
-    </jurisdiction>
-    <kind value="requirements"/>
-    <fhirVersion value="4.0.1"/>
-    <format value="application/xml"/>
-    <format value="application/json"/>
-    <implementationGuide value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"/>
-    <rest>
-        <mode value="server"/>
-        <resource>
-            <type value="Composition"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition"/>
-            <interaction>
-                <code value="create"/>
-            </interaction>
-            <interaction>
-                <code value="read"/>
-            </interaction>
-            <interaction>
-                <code value="update"/>
-            </interaction>
-            <interaction>
-                <code value="delete"/>
-            </interaction>
-        </resource>
-        <resource>
-            <type value="Organization"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization"/>
-            <interaction>
-                <code value="create"/>
-            </interaction>
-            <interaction>
-                <code value="read"/>
-            </interaction>
-            <interaction>
-                <code value="update"/>
-            </interaction>
-            <interaction>
-                <code value="delete"/>
-            </interaction>
-        </resource>
-        <resource>
-            <type value="Encounter"/>
-            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter"/>
-            <interaction>
-                <code value="create"/>
-            </interaction>
-            <interaction>
-                <code value="read"/>
-            </interaction>
-            <interaction>
-                <code value="update"/>
-            </interaction>
-            <interaction>
-                <code value="delete"/>
-            </interaction>
-        </resource>
-        <resource>
-            <type value="Location"/>
-            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-location"/>
-            <interaction>
-                <code value="create"/>
-            </interaction>
-            <interaction>
-                <code value="read"/>
-            </interaction>
-            <interaction>
-                <code value="update"/>
-            </interaction>
-            <interaction>
-                <code value="delete"/>
-            </interaction>
-        </resource>
-        <resource>
-            <type value="Observation"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-travel-history"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-outcome-observation"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-status-observation"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-postpartum-status"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-summary"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation"/>
-            <interaction>
-                <code value="create"/>
-            </interaction>
-            <interaction>
-                <code value="read"/>
-            </interaction>
-            <interaction>
-                <code value="update"/>
-            </interaction>
-            <interaction>
-                <code value="delete"/>
-            </interaction>
-        </resource>
-        <resource>
-            <type value="Patient"/>
-            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
-            <interaction>
-                <code value="create"/>
-            </interaction>
-            <interaction>
-                <code value="read"/>
-            </interaction>
-            <interaction>
-                <code value="update"/>
-            </interaction>
-            <interaction>
-                <code value="delete"/>
-            </interaction>
-        </resource>
-        <resource>
-            <type value="PractitionerRole"/>
-            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-practitionerrole"/>
-            <interaction>
-                <code value="create"/>
-            </interaction>
-            <interaction>
-                <code value="read"/>
-            </interaction>
-            <interaction>
-                <code value="update"/>
-            </interaction>
-            <interaction>
-                <code value="delete"/>
-            </interaction>
-        </resource>
-        <resource>
-            <type value="ServiceRequest"/>
-            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-servicerequest"/>
-            <interaction>
-                <code value="create"/>
-            </interaction>
-            <interaction>
-                <code value="read"/>
-            </interaction>
-            <interaction>
-                <code value="update"/>
-            </interaction>
-            <interaction>
-                <code value="delete"/>
-            </interaction>
-        </resource>
-        <resource>
-            <type value="Bundle"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-document-bundle"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-reporting-bundle"/>
-        </resource>
-        <resource>
-            <type value="MessageHeader"/>
-            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader"/>
-        </resource>
-        <resource>
-            <type value="Practitioner"/>
-            <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
-            <interaction>
-                <code value="create"/>
-            </interaction>
-            <interaction>
-                <code value="read"/>
-            </interaction>
-            <interaction>
-                <code value="update"/>
-            </interaction>
-            <interaction>
-                <code value="delete"/>
-            </interaction>
-        </resource>
-    </rest>
-    <rest>
-        <mode value="client"/>
-        <resource>
-            <type value="Composition"/>
-            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition"/>
-            <interaction>
-                <code value="create"/>
-            </interaction>
-            <interaction>
-                <code value="read"/>
-            </interaction>
-            <interaction>
-                <code value="update"/>
-            </interaction>
-            <interaction>
-                <code value="delete"/>
-            </interaction>
-        </resource>
-        <resource>
-            <type value="Organization"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization"/>
-            <interaction>
-                <code value="create"/>
-            </interaction>
-            <interaction>
-                <code value="read"/>
-            </interaction>
-            <interaction>
-                <code value="update"/>
-            </interaction>
-            <interaction>
-                <code value="delete"/>
-            </interaction>
-        </resource>
-        <resource>
-            <type value="Encounter"/>
-            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter"/>
-            <interaction>
-                <code value="create"/>
-            </interaction>
-            <interaction>
-                <code value="read"/>
-            </interaction>
-            <interaction>
-                <code value="update"/>
-            </interaction>
-            <interaction>
-                <code value="delete"/>
-            </interaction>
-        </resource>
-        <resource>
-            <type value="Location"/>
-            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-location"/>
-            <interaction>
-                <code value="create"/>
-            </interaction>
-            <interaction>
-                <code value="read"/>
-            </interaction>
-            <interaction>
-                <code value="update"/>
-            </interaction>
-            <interaction>
-                <code value="delete"/>
-            </interaction>
-        </resource>
-        <resource>
-            <type value="Observation"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-travel-history"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-outcome-observation"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-status-observation"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-postpartum-status"/>
-            <interaction>
-                <code value="create"/>
-            </interaction>
-            <interaction>
-                <code value="read"/>
-            </interaction>
-            <interaction>
-                <code value="update"/>
-            </interaction>
-            <interaction>
-                <code value="delete"/>
-            </interaction>
-        </resource>
-        <resource>
-            <type value="Patient"/>
-            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
-            <interaction>
-                <code value="create"/>
-            </interaction>
-            <interaction>
-                <code value="read"/>
-            </interaction>
-            <interaction>
-                <code value="update"/>
-            </interaction>
-            <interaction>
-                <code value="delete"/>
-            </interaction>
-        </resource>
-        <resource>
-            <type value="PractitionerRole"/>
-            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-practitionerrole"/>
-            <interaction>
-                <code value="create"/>
-            </interaction>
-            <interaction>
-                <code value="read"/>
-            </interaction>
-            <interaction>
-                <code value="update"/>
-            </interaction>
-            <interaction>
-                <code value="delete"/>
-            </interaction>
-        </resource>
-        <resource>
-            <type value="ServiceRequest"/>
-            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-servicerequest"/>
-        </resource>
-        <resource>
-            <type value="Bundle"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-document-bundle"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-reporting-bundle"/>
-        </resource>
-        <resource>
-            <type value="MessageHeader"/>
-            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader"/>
-        </resource>
-        <resource>
-            <type value="Practitioner"/>
-            <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
-            <interaction>
-                <code value="create"/>
-            </interaction>
-            <interaction>
-                <code value="read"/>
-            </interaction>
-            <interaction>
-                <code value="update"/>
-            </interaction>
-            <interaction>
-                <code value="delete"/>
-            </interaction>
-        </resource>
-    </rest>
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="capabilitystatement-ecr" />
+  <meta>
+    <versionId value="25" />
+    <lastUpdated value="2022-05-26T07:59:59.506+00:00" />
+    <source value="#8m6MHz0ifNqV0d34" />
+    <security>
+      <system value="https://trifolia-fhir.lantanagroup.com/security" />
+      <code value="user^s7DIn2HM^write" />
+    </security>
+    <security>
+      <system value="https://trifolia-fhir.lantanagroup.com/security" />
+      <code value="group^1702^write" />
+    </security>
+    <security>
+      <system value="https://trifolia-fhir.lantanagroup.com/security" />
+      <code value="everyone^write" />
+    </security>
+    <security>
+      <system value="https://trifolia-fhir.lantanagroup.com/security" />
+      <code value="everyone^read" />
+    </security>
+    <security>
+      <system value="https://trifolia-fhir.lantanagroup.com/security" />
+      <code value="group^1702^read" />
+    </security>
+    <security>
+      <system value="https://trifolia-fhir.lantanagroup.com/security" />
+      <code value="user^s7DIn2HM^read" />
+    </security>
+  </meta>
+  <url value="http://hl7.org/fhir/us/ecr/CapabilityStatement/capabilitystatement-ecr" />
+  <version value="1.0.0" />
+  <name value="CapabilityStatement_eCR" />
+  <title value="Capability Statement eCR" />
+  <status value="active" />
+  <experimental value="false" />
+  <date value="2019-06-25" />
+  <publisher value="HL7 Public Health Work Group" />
+  <description value="This resource defines the expected capabilities for both client and server participating in eCR exchange." />
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166" />
+      <code value="US" />
+      <display value="United States of America" />
+    </coding>
+    <text value="United States of America" />
+  </jurisdiction>
+  <kind value="requirements" />
+  <fhirVersion value="4.0.1" />
+  <format value="application/xml" />
+  <format value="application/json" />
+  <implementationGuide value="http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr" />
+  <rest>
+    <mode value="server" />
+    <documentation value="This section describes the expected capabilities for the server participating in eCR exchange." />
+    <resource>
+      <type value="Composition" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of Composition instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific Composition instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of Composition instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of Composition instances" />
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Organization" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of Organization instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific Organization instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of Organization instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of Organization instances" />
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Encounter" />
+      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of Encounter instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific Encounter instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of Encounter instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of Encounter instances" />
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Location" />
+      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-location" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of Location instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific Location instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of Location instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of Location instances" />
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Observation" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-travel-history" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-outcome-observation" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-status-observation" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-postpartum-status" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-summary" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of Observation instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific Observation instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of Observation instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of Observation instances" />
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Patient" />
+      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of Patient instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific Patient instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of Patient instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of Patient instances" />
+      </interaction>
+    </resource>
+    <resource>
+      <type value="PractitionerRole" />
+      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-practitionerrole" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of PractitionerRole instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific PractitionerRole instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of PractitionerRole instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of PractitionerRole instances" />
+      </interaction>
+    </resource>
+    <resource>
+      <type value="ServiceRequest" />
+      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-servicerequest" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of ServiceRequest instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific ServiceRequest instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of ServiceRequest instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of ServiceRequest instances" />
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Bundle" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-document-bundle" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-reporting-bundle" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of Bundle instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific Bundle instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of Bundle instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of Bundle instances" />
+      </interaction>
+    </resource>
+    <resource>
+      <type value="MessageHeader" />
+      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of MessageHeader instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific MessageHeader instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of MessageHeader instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of MessageHeader instances" />
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Practitioner" />
+      <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of Practitioner instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific Practitioner instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of Practitioner instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of Practitioner instances" />
+      </interaction>
+    </resource>
+  </rest>
+  <rest>
+    <mode value="client" />
+    <documentation value="This section describes the expected capabilities for the client participating in eCR exchange." />
+    <resource>
+      <type value="Composition" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of Composition instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific Composition instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of Composition instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of Composition instances" />
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Organization" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of Organization instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific Organization instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of Organization instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of Organization instances" />
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Encounter" />
+      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of Encounter instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific Encounter instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of Encounter instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of Encounter instances" />
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Location" />
+      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-location" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of Location instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific Location instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of Location instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of Location instances" />
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Observation" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-travel-history" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-outcome-observation" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-status-observation" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-postpartum-status" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-summary" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of Observation instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific Observation instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of Observation instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of Observation instances" />
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Patient" />
+      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of Patient instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific Patient instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of Patient instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of Patient instances" />
+      </interaction>
+    </resource>
+    <resource>
+      <type value="PractitionerRole" />
+      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-practitionerrole" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of PractitionerRole instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific PractitionerRole instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of PractitionerRole instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of PractitionerRole instances" />
+      </interaction>
+    </resource>
+    <resource>
+      <type value="ServiceRequest" />
+      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-servicerequest" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of ServiceRequest instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific ServiceRequest instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of ServiceRequest instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of ServiceRequest instances" />
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Bundle" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-document-bundle" />
+      <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-reporting-bundle" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of Bundle instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific Bundle instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of Bundle instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of Bundle instances" />
+      </interaction>
+    </resource>
+    <resource>
+      <type value="MessageHeader" />
+      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of MessageHeader instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific MessageHeader instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of MessageHeader instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of MessageHeader instances" />
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Practitioner" />
+      <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
+      <interaction>
+        <code value="create" />
+        <documentation value="Allows creation of Practitioner instances" />
+      </interaction>
+      <interaction>
+        <code value="read" />
+        <documentation value="Allows retrieval of a specific Practitioner instance" />
+      </interaction>
+      <interaction>
+        <code value="update" />
+        <documentation value="Allows update of Practitioner instances" />
+      </interaction>
+      <interaction>
+        <code value="delete" />
+        <documentation value="Allows deletion of Practitioner instances" />
+      </interaction>
+    </resource>
+  </rest>
 </CapabilityStatement>
