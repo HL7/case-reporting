@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Observation
     xmlns="http://hl7.org/fhir">
-    <id value="observation-us-core-results-eve-everywoman-pertussis"/>
+  <id value="observation-us-ph-lab-result-eve-everywoman-lymphocytes"/>
     <meta>
-        <versionId value="6"/>
-        <lastUpdated value="2021-08-17T07:59:01.447+00:00"/>
-        <source value="#xUhLGEaO7Of7NEfn"/>
-        <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"/>
+      <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-lab-result-observation"/>
     </meta>
     <status value="final"/>
     <category>
@@ -20,20 +17,19 @@
     <code>
         <coding>
             <system value="http://loinc.org"/>
-            <code value="11585-7"/>
-            <display value="Bordetella pertussis Ab [Units/volume] in Serum"/>
+            <code value="731-0"/>
+            <display value="Lymphocytes [#/volume] in Blood by Automated count"/>
         </coding>
-        <text value="Bordetella pertussis Ab [Units/volume] in Serum"/>
     </code>
     <subject>
         <reference value="Patient/patient-ecr-eve-everywoman"/>
         <display value="Eve Everywoman"/>
     </subject>
-    <effectiveDateTime value="2016-11-07"/>
+    <effectiveDateTime value="2018-03-07"/>
     <valueQuantity>
-        <value value="100"/>
+        <value value="5.2"/>
         <system value="http://unitsofmeasure.org"/>
-        <code value="[iU]/mL"/>
+        <code value="10*3/uL"/>
     </valueQuantity>
     <interpretation>
         <coding>
@@ -43,10 +39,15 @@
         </coding>
     </interpretation>
     <referenceRange>
-        <high>
-            <value value="45"/>
+        <low>
+            <value value="1"/>
             <system value="http://unitsofmeasure.org"/>
-            <code value="[iU]/mL"/>
+            <code value="10*3/uL"/>
+        </low>
+        <high>
+            <value value="4.8"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="10*3/uL"/>
         </high>
     </referenceRange>
 </Observation>
