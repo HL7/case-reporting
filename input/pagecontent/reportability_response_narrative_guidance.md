@@ -36,7 +36,7 @@ Some decision support systems may not be able to fully differentiate between pos
 The determination of **No Reporting Rule Met** may be provided for a possible condition or for all conditions in the eICR.
 
 ## Audience
-The audience for this document is developers and managers of Public Health Decision Support (PHDS) systems such as the Reportable Condition Knowledge Management System (RCKMS) and public health surveillance systems that receive and process eICRs and then generate and share Reportability Responses.
+The audience for this document is developers and managers of public health shared services platform infrastructure  and public health surveillance systems that receive and process eICRs and then generate and share Reportability Responses.
 
 # Narrative Construction Guidance
 
