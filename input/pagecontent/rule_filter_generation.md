@@ -11,12 +11,12 @@ The general structure of the reportability decision is organized by condition. F
 Condition-specific criteria are expressed in terms of data elements and characterized using standard terminologies. These condition-specific criteria terminologies are collected into value sets in the following six categories:
 
 ```cql
-valueset "Example Diagnosis/Problem Triggers": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example'
-valueset "Example Lab Order Test Name Triggers": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example'
-valueset "Example Lab Observation Test Name Triggers": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example'
-valueset "Example Medications Triggers": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example'
-valueset "Example Organism Substance Triggers": "http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"
-valueset "Example Suspected Disorder Triggers": "http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example"
+valueset "Example Diagnosis/Problem Triggers": 'http://example.org/fhir/ValueSet/valueset-dxtc-example'
+valueset "Example Lab Order Test Name Triggers": 'http://example.org/fhir/ValueSet/valueset-lotc-example'
+valueset "Example Lab Observation Test Name Triggers": 'http://example.org/fhir/ValueSet/valueset-lrtc-example'
+valueset "Example Medications Triggers": 'http://example.org/fhir/ValueSet/valueset-mrtc-example'
+valueset "Example Organism Substance Triggers": "http://example.org/fhir/ValueSet/valueset-ostc-example"
+valueset "Example Suspected Disorder Triggers": "http://example.org/fhir/ValueSet/valueset-sdtc-example"
 ```
 
 ### Reportable Condition Trigger Representation within FHIR

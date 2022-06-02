@@ -6,15 +6,15 @@ One approach for this is using the current FHIR R4 Subscription model, where a u
 ## Topics:
 **Diagnosis_Problem**
 
-`Condition?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example`
+`Condition?code:in=http://example.org/fhir/ValueSet/valueset-dxtc-example`
 
 **Organism_Substance**
 
-`Condition?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example`
+`Condition?code:in=http://example.org/fhir/ValueSet/valueset-ostc-example`
 
 **Lab Order Test**
 
-`ServiceRequest?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example`
+`ServiceRequest?code:in=http://example.org/fhir/ValueSet/valueset-lotc-example`
 
 **Lab Obs Test Name**
 
@@ -22,18 +22,18 @@ One approach for this is using the current FHIR R4 Subscription model, where a u
 
 **Medications**
 
-`MedicationAdministration?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example`
+`MedicationAdministration?code:in=http://example.org/fhir/ValueSet/valueset-mrtc-example`
 
-`MedicationDispense?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example`
+`MedicationDispense?code:in=http://example.org/fhir/ValueSet/valueset-mrtc-example`
 
-`MedicationRequest?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example`
+`MedicationRequest?code:in=http://example.org/fhir/ValueSet/valueset-mrtc-example`
 
-`MedicationStatement?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example`
+`MedicationStatement?code:in=http://example.org/fhir/ValueSet/valueset-mrtc-example`
 
 **Immunization**
 
-`Immunization?vaccineCode:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example`
+`Immunization?vaccineCode:in=http://example.org/fhir/ValueSet/valueset-mrtc-example`
 
 **Suspected_Disorder**
 
-`Condition?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example`
+`Condition?code:in=http://example.org/fhir/ValueSet/valueset-sdtc-example`
