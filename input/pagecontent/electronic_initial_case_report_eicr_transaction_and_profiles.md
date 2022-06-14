@@ -8,7 +8,6 @@ The following figure illustrates automatic initiation by trigger matching:
 
 *Figure 1: eICR Triggering and Transmission Timing*
 <table><tr><td><img src="eICR Triggering and Transmission Guidance.JPG" style="width:100%;" caption="Figure 1: eICR Triggering and Transmission Timing" /></td></tr></table>
-
 There are some circumstances, however, where they may be manually initiated by providers of care because they suspect there may be a reportable condition. They also may be alternately initiated by automated, forced reporting by the EHR to meet short term reporting needs. The following matrix illustrates these different types of initiation:
 
 <table><tr><td><img src="InitiationTypeTable.jpg" style="width:100%;"/></td></tr></table>
