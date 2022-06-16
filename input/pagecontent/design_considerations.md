@@ -11,7 +11,7 @@ In some jurisdictions, HIEs and/or Health Information Networks may also be emplo
 
 Prominent among these purposes is to implement public health reporting rules that cannot currently be readily distributed to healthcare. The rules ensure that public health agencies only get the data they are authorized to receive by state laws.
 
-Without more complex reporting rules that are distributable to, and executable in, healthcare most PHAs will not use approach #1. Hence, these approaches are principally represented by either "Remote Rules" or "Local Rules" in the following diagram. 
+Without more complex reporting rules that are distributable to, and executable in, healthcare most PHAs will not use approach #1. Hence, these approaches are principally represented by either "Remote Rules" or "Local Rules" in the following diagram.
 
 <table><tr><td><img src="ReportingDesignPattern.jpg" alt="Reporting Design Pattern" class="figure-img-portrait img-responsive img-rounded center-block" /></td></tr></table>
 
@@ -19,7 +19,7 @@ Without more complex reporting rules that are distributable to, and executable i
 
 #### Using the eRSD
 
-FHIR enables several capabilities for eCR. Because reportable events occur in healthcare without PHA knowledge and because PHAs do not have the authority to receive these data until they are deemed reportable, eCR utilizes an unsolicited push transaction, FHIR messaging, and flexibility in multi-network transport to report data to state and local agencies. There is also a transaction for "electronic Reporting & Surveillance Distribution (eRSD)." The eRSD includes Reportable Condition Trigger Code (RCTC) trigger code value sets and other reporting guidance from public health to healthcare to support reporting from EHRs. This eRSD transaction is supported by FHIR subscription and polling services, but EHR users do not need to use FHIR to access it.
+FHIR enables several capabilities for eCR. Because reportable events occur in healthcare without PHA knowledge and because PHAs do not have the authority to receive these data until they are deemed reportable, eCR utilizes an unsolicited push transaction, FHIR messaging, and flexibility in multi-network transport to report data to state and local agencies. There is also a transaction for "electronic Reporting & Surveillance Distribution (eRSD)." The eRSD includes Reportable Condition Trigger Code (RCTC) trigger code value sets and other reporting guidance from public health to healthcare to support reporting from EHRs.
 
 The eRSD transaction needs to be able to help orchestrate this reporting which may span a broad spectrum from trigger codes in an EHR all the way to a healthcare-based API connected rules engine that is external to the EHR but operating inside of healthcare or at a healthcare Business Associate. To achieve this orchestration the eRSD resource needs to guide the Triggering, Rule Processing, Clinical Feedback, Creation of eICR, Routing and Sending components of eCR and interactions between them. For some time, much of the eRSD transaction will provide structure to eCR as human consumable guidance. The most immediately machine processable components are the included trigger code value sets.
 
