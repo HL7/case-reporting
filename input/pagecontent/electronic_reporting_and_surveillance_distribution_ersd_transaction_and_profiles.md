@@ -14,7 +14,7 @@ Conceptually, there are three transactions involved in the distribution of eRSD 
 
 Notification may be accomplished in multiple ways, from a simple email or text notification, to a formal notification as described by the FHIR Subscription Service.
 
-Similarly, the Request and Response transactions may be implemented in multiple ways, including FTP or HTTP file download, as well as API access to a FHIR server acting as a repository.
+Similarly, the Request and Response transactions may be implemented in multiple ways, including HTTP file download, as well as API access to a FHIR server acting as a repository.
 
 At this time, this implementation guide is only prescriptive about the payload of the Response transaction, as defined by the following sections. We seek implementer feedback on the usefulness of more formal specification of these transactions.
 
@@ -244,7 +244,7 @@ The eRSD Supplemental Library is composed of the RuleFilters library and the Sup
 
 #### Packaging and Distribution
 
-As noted in the overview section above, this implementation is not prescriptive about the absolute mechanisms for distribution, only about the contents of the specification in the form of Library, PlanDefinition, CodeSystem, and ValueSet resources conforming to the required profiles. The complete specification may be distributed via files (e.g. a zip of the specification as a FHIR bundle), via API (e.g. as a Bundle resource directly, or as the result of a packaging operation), or via subscription.
+As noted in the overview section above, this implementation is not prescriptive about the absolute mechanisms for distribution, only about the contents of the specification in the form of Library, PlanDefinition, CodeSystem, and ValueSet resources conforming to the required profiles. The complete specification may be distributed via files (e.g. a zip of the specification as a FHIR bundle), via API (e.g. as a Bundle resource directly, or as the result of a packaging operation), or via notification.
 
 When packaging as a Bundle, the expectation is that the Bundle would include the Library as the first entry, followed by all the component resources as entries, and finally all the referenced ValueSet resources. If the specification is too large for one Bundle, the specification may be split into multiple Bundles. The following examples illustrate complete bundles of both the Specification and Supplemental distributions:
 
