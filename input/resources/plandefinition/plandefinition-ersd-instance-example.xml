@@ -63,7 +63,7 @@
             <name value="encounter-start"/>
         </trigger>
         <relatedAction>
-            <actionId value="check-reportable"/>
+            <actionId value="check-suspected-disorder"/>
             <relationship value="before-start"/>
             <offsetDuration>
                 <value value="60"/>
@@ -71,6 +71,153 @@
                 <code value="s"/>
             </offsetDuration>
         </relatedAction>
+    </action>
+    <action id="check-suspected-disorder">
+        <description value="This action represents the start of the check suspected disorder reporting workflow in response to the encounter-start event."/>
+        <textEquivalent value="Check Reportability and setup jobs for future reportability checks."/>
+        <code>
+            <coding>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                <code value="execute-reporting-workflow"/>
+            </coding>
+        </code>
+        <action id="is-encounter-suspected-disorder">
+            <description value="This action represents the check for suspected disorder reportability to create the patients eICR."/>
+            <textEquivalent value="Check Trigger Codes based on Suspected Reportable Value set."/>
+            <code>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="check-trigger-codes"/>
+                </coding>
+            </code>
+            <condition>
+                <kind value="applicability"/>
+                <expression>
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
+                        <valueExpression>
+                            <language value="text/cql-identifier"/>
+                            <expression value="Is Suspected Disorder"/>
+                            <reference value="http://example.org/fhir/Library/RuleFilters|1.0.0"/>
+                        </valueExpression>
+                    </extension>
+                    <language value="text/fhirpath"/>
+                    <expression value="%conditions.exists() or %encounters.exists() or %labOrders.exists() or %labTests.exists() or %labResults.exists() or %medicationAdministrations.exists() or %medicationOrders.exists() or %medicationDispenses.exists()"/></expression>
+            </condition>
+            <input id="conditions">
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
+                    <valueString value="Condition?code:in=http://example.org/fhir/ValueSet/valueset-sdtc-example&amp;patient=Patient/{{context.patientId}}"/>
+                </extension>
+                <type value="Condition"/>
+                <codeFilter>
+                    <path value="code"/>
+                    <valueSet value="http://example.org/fhir/ValueSet/valueset-sdtc-example"/>
+                </codeFilter>
+            </input>
+            <input id="encounters">
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
+                    <valueString value="Encounter?reason-code:in=http://example.org/fhir/ValueSet/valueset-sdtc-example&amp;patient=Patient/{{context.patientId}}"/>
+                </extension>
+                <type value="Encounter"/>
+                <codeFilter>
+                    <path value="reasonCode"/>
+                    <valueSet value="http://example.org/fhir/ValueSet/valueset-sdtc-example"/>
+                </codeFilter>
+            </input>
+            <input id="labOrders">
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
+                    <valueString value="ServiceRequest?code:in=http://example.org/fhir/ValueSet/valueset-sdtc-example&amp;patient=Patient/{{context.patientId}}"/>
+                </extension>
+                <type value="ServiceRequest"/>
+                <codeFilter>
+                    <path value="code"/>
+                    <valueSet value="http://example.org/fhir/ValueSet/valueset-sdtc-example"/>
+                </codeFilter>
+            </input>
+            <input id="labTests">
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
+                    <valueString value="Observation?code:in=http://example.org/fhir/ValueSet/valueset-sdtc-example&amp;patient=Patient/{{context.patientId}}"/>
+                </extension>
+                <type value="Observation"/>
+                <codeFilter>
+                    <path value="code"/>
+                    <valueSet value="http://example.org/fhir/ValueSet/valueset-sdtc-example"/>
+                </codeFilter>
+            </input>
+            <input id="medicationOrders">
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
+                    <valueString value="MedicationRequest?code:in=http://example.org/fhir/ValueSet/valueset-sdtc-example&amp;patient=Patient/{{context.patientId}}"/>
+                </extension>
+                <type value="MedicationRequest"/>
+                <codeFilter>
+                    <path value="medication"/>
+                    <valueSet value="http://example.org/fhir/ValueSet/valueset-sdtc-example"/>
+                </codeFilter>
+            </input>
+            <input id="medicationDispenses">
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
+                    <valueString value="MedicationDispense?code:in=http://example.org/fhir/ValueSet/valueset-sdtc-example&amp;patient=Patient/{{context.patientId}}"/>
+                </extension>
+                <type value="MedicationDispense"/>
+                <codeFilter>
+                    <path value="medication"/>
+                    <valueSet value="http://example.org/fhir/ValueSet/valueset-sdtc-example"/>
+                </codeFilter>
+            </input>
+            <input id="medicationAdministrations">
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
+                    <valueString value="MedicationAdministration?code:in=http://example.org/fhir/ValueSet/valueset-sdtc-example&amp;patient=Patient/{{context.patientId}}"/>
+                </extension>
+                <type value="MedicationAdministration"/>
+                <codeFilter>
+                    <path value="medication"/>
+                    <valueSet value="http://example.org/fhir/ValueSet/valueset-sdtc-example"/>
+                </codeFilter>
+            </input>
+            <input id="labResults">
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
+                    <valueString value="Observation?value-concept:in=http://example.org/fhir/ValueSet/valueset-sdtc-example&amp;patient=Patient/{{context.patientId}}"/>
+                </extension>
+                <type value="Observation"/>
+                <codeFilter>
+                    <path value="value"/>
+                    <valueSet value="http://example.org/fhir/ValueSet/valueset-sdtc-example"/>
+                </codeFilter>
+            </input>
+            <relatedAction>
+                <actionId value="report-eicr"/>
+                <relationship value="before-start"/>
+            </relatedAction>
+        </action>
+        <action id="continue-check-reportable">
+            <code>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="evaluate-condition"/>
+                </coding>
+            </code>
+            <condition>
+                <kind value="applicability"/>
+                <expression>
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
+                        <valueExpression>
+                            <language value="text/cql-identifier"/>
+                            <expression value="Is Encounter In Progress or 72h or less after end of encounter?"/>
+                            <reference value="http://example.org/fhir/Library/RuleFilters|1.0.0"/>
+                        </valueExpression>
+                    </extension>
+                    <language value="text/fhirpath"/>
+                    <expression value="%encounter.where(status = 'in-progress' and period.end &lt;= now() - 72 hours)"/></expression>
+            </condition>
+            <relatedAction>
+                <actionId value="check-reportable"/>
+                <relationship value="before-start"/>
+                <offsetDuration>
+                    <value value="6"/>
+                    <system value="http://unitsofmeasure.org"/>
+                    <code value="h"/>
+                </offsetDuration>
+            </relatedAction>
+        </action>
     </action>
     <action id="check-reportable">
         <description value="This action represents the check for suspected reportability of the eICR."/>
@@ -328,10 +475,10 @@
                 <type value="Bundle"/>
                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
             </output>
-            <relatedAction>
+            <!-- <relatedAction>
                 <actionId value="validate-eicr"/>
                 <relationship value="before-start"/>
-            </relatedAction>
+            </relatedAction> -->
         </action>
         <action id="validate-eicr">
             <description value="This action represents the validation of the eICR."/>
@@ -353,10 +500,10 @@
                 <type value="Bundle"/>
                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
             </output>
-            <relatedAction>
+            <!-- <relatedAction>
                 <actionId value="route-and-send-eicr"/>
                 <relationship value="before-start"/>
-            </relatedAction>
+            </relatedAction> -->
         </action>
         <action id="route-and-send-eicr">
             <description value="This action represents the routing and sending of the eICR."/>

@@ -189,3 +189,26 @@ define "Most recent eICR sent over 72 hours ago?":
   First("eICR Compositions" eICRs
     where eICRs.date 72 hours or more before Now()
     sort by date desc)
+
+// Suspected Disorders Checking
+define "Suspected Disorder Test Results":
+  [Observation] O
+    where O.status in { 'registered', 'preliminary', 'final', 'amended', 'corrected' }
+      and O.value as CodeableConcept in "Suspected Disorder Trigger Codes"
+
+/* %conditions.exists() or %encounters.exists() or %labOrders.exists() or %labTests.exists() or %labResults.exists()
+or %medicationAdministrations.exists() or %medicationOrders.exists() or %medicationDispenses.exists() */
+define "Suspected Disorders":
+  [Condition: "Suspected Disorder Trigger Codes"]
+    union ("Triggering Encounters" e where e.reasonCode in "Suspected Disorder Trigger Codes")
+    union [ServiceRequest: "Suspected Disorder Trigger Codes"]
+    union [Observation: "Suspected Disorder Trigger Codes"]
+    union [MedicationRequest: "Suspected Disorder Trigger Codes"]
+    union [MedicationDispense: "Suspected Disorder Trigger Codes"]
+    union [MedicationAdministration: "Suspected Disorder Trigger Codes"]
+    union "Suspected Disorder Test Results"
+
+define "Is Suspected Disorder":
+  exists (
+    "Suspected Disorders"
+  )

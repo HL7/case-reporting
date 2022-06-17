@@ -274,7 +274,7 @@
         </element>
         <element id="PlanDefinition.action:encounterStart.relatedAction.actionId">
             <path value="PlanDefinition.action.relatedAction.actionId"/>
-            <fixedId value="check-reportable"/>
+            <fixedId value="check-suspected-disorder"/>
         </element>
         <element id="PlanDefinition.action:encounterStart.relatedAction.relationship">
             <path value="PlanDefinition.action.relatedAction.relationship"/>
@@ -295,6 +295,173 @@
                 </valueDuration>
             </example>
         </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder">
+            <path value="PlanDefinition.action"/>
+            <sliceName value="checkSuspectedDisorder"/>
+            <short value="Check suspected disorder"/>
+            <definition value="Defines the &quot;check-suspected-disorder&quot; action"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.id">
+            <path value="PlanDefinition.action.id"/>
+            <min value="1"/>
+            <fixedString value="check-suspected-disorder"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.description">
+            <path value="PlanDefinition.action.description"/>
+            <short value="Description of the check for suspected disorders action."/>
+            <definition value="Description of the check for suspected disorders action."/>
+            <min value="1"/>
+            <fixedString value="This action represents the start of the check suspected disorder reporting workflow in response to the encounter-start event"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.code">
+            <path value="PlanDefinition.action.code"/>
+            <short value="Code for the &quot;check-suspected-disorder&quot; action."/>
+            <definition value="The US-PH-PlanDefinition-Action code for the &quot;check-suspected-disorder&quot; action."/>
+            <min value="1"/>
+            <max value="1"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="initiate-reporting-workflow"/>
+                </coding>
+            </patternCodeableConcept>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action">
+            <path value="PlanDefinition.action.action"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="id"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <min value="2"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:isEncounterSuspectedDisorder">
+            <path value="PlanDefinition.action.action"/>
+            <sliceName value="isEncounterSuspectedDisorder"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="BackboneElement"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:isEncounterSuspectedDisorder.id">
+            <path value="PlanDefinition.action.action.id"/>
+            <min value="1"/>
+            <fixedString value="is-encounter-suspected-disorder"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:isEncounterSuspectedDisorder.code">
+            <path value="PlanDefinition.action.action.code"/>
+            <min value="1"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="check-trigger-codes"/>
+                </coding>
+            </patternCodeableConcept>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:isEncounterSuspectedDisorder.condition">
+            <path value="PlanDefinition.action.action.condition"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:isEncounterSuspectedDisorder.condition.kind">
+            <path value="PlanDefinition.action.action.condition.kind"/>
+            <fixedCode value="applicability"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:isEncounterSuspectedDisorder.condition.expression">
+            <path value="PlanDefinition.action.action.condition.expression"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:isEncounterSuspectedDisorder.condition.expression.language">
+            <path value="PlanDefinition.action.action.condition.expression.language"/>
+            <fixedCode value="text/fhirpath"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:isEncounterSuspectedDisorder.input">
+            <path value="PlanDefinition.action.action.input"/>
+            <definition value="Defines input data requirements for the action. Required data is accessible via a context variable named `%[id]` using the `id` of the input data requirement"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:isEncounterSuspectedDisorder.input.id">
+            <path value="PlanDefinition.action.action.input.id"/>
+            <definition value="The id of the input requirement, allowing the data to be referenced via a context variable named `%[id]`"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:isEncounterSuspectedDisorder.relatedAction">
+            <path value="PlanDefinition.action.action.relatedAction"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:isEncounterSuspectedDisorder.relatedAction.actionId">
+            <path value="PlanDefinition.action.action.relatedAction.actionId"/>
+            <fixedId value="report-eicr"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:isEncounterSuspectedDisorder.relatedAction.relationship">
+            <path value="PlanDefinition.action.action.relatedAction.relationship"/>
+            <fixedCode value="before-start"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:continueCheckReportable">
+            <path value="PlanDefinition.action.action"/>
+            <sliceName value="continueCheckReportable"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="BackboneElement"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:continueCheckReportable.id">
+            <path value="PlanDefinition.action.action.id"/>
+            <min value="1"/>
+            <fixedString value="continue-check-reportable"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:continueCheckReportable.code">
+            <path value="PlanDefinition.action.action.code"/>
+            <min value="1"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="check-trigger-codes"/>
+                </coding>
+            </patternCodeableConcept>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:continueCheckReportable.condition">
+            <path value="PlanDefinition.action.action.condition"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:continueCheckReportable.condition.kind">
+            <path value="PlanDefinition.action.action.condition.kind"/>
+            <fixedCode value="applicability"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:continueCheckReportable.condition.expression">
+            <path value="PlanDefinition.action.action.condition.expression"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:continueCheckReportable.condition.expression.language">
+            <path value="PlanDefinition.action.action.condition.expression.language"/>
+            <fixedCode value="text/fhirpath"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:continueCheckReportable.relatedAction">
+            <path value="PlanDefinition.action.action.relatedAction"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:continueCheckReportable.relatedAction.actionId">
+            <path value="PlanDefinition.action.action.relatedAction.actionId"/>
+            <fixedId value="check-reportable"/>
+        </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:continueCheckReportable.relatedAction.relationship">
+            <path value="PlanDefinition.action.action.relatedAction.relationship"/>
+            <fixedCode value="before-start"/>
+        </element>
+
         <element id="PlanDefinition.action:checkReportable">
             <path value="PlanDefinition.action"/>
             <sliceName value="checkReportable"/>
@@ -332,7 +499,7 @@
                 </discriminator>
                 <rules value="open"/>
             </slicing>
-            <min value="2"/>
+            <min value="3"/>
         </element>
         <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable">
             <path value="PlanDefinition.action.action"/>
