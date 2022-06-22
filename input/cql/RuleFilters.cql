@@ -27,6 +27,7 @@ valueset "Negative or Undetected Lab Result Value": 'http://cts.nlm.nih.gov/fhir
 code "eICRComposition": '55751-2' from "LOINC"
 
 parameter "Triggering Encounter" Encounter
+parameter "normalReportingDuration" Duration
 
 context Patient
 
@@ -145,11 +146,15 @@ define "Reportable Triggering Codes":
     union flatten ("Negative Chlamydia Test Results" O return O.code.coding)
     // ... reportable triggering codes for other conditions
 
-define "Is Reportable":
+define "Is Encounter Within Normal Reporting Duration?":
+  "Current Encounter Duration"("Encounter In Context") <= "normalReportingDuration"
+
+define "Is Encounter Reportable and Within Normal Reporting Duration?":
   exists (
     "Reportable Triggering Codes"
       except "Existing Reportable Triggering Codes"
-    )
+  )
+    and "Is Encounter Within Normal Reporting Duration?"
 
 define "Existing Reportable Triggering Codes":
   flatten (
@@ -160,25 +165,29 @@ define "Existing Reportable Triggering Codes":
             return (singleton from (E.extension SE where SE.url = 'triggerCode')).value as Coding
   )
 
+  define function "Current Encounter Duration"(encounter Encounter):
+    duration in days between encounter.period.start and Coalesce(encounter.period.end.value, Now())
+
+  define "Encounter In Context":
+    "Triggering Encounter" TE
+      return
+        if TE is not null then TE
+        else (singleton from "Triggering Encounters")
+
+define "Is Encounter Longer Than Normal Reporting Duration?":
+  "Current Encounter Duration"("Encounter In Context") > "normalReportingDuration"
+
 define "Is Encounter In Progress":
-  not IsNull (
-    "Triggering Encounter" E
-      where E.status ~ 'in-progress'
-  ) or exists (
-      "Triggering Encounters" E
-        where E.status ~ 'in-progress'
-    )
+  "Encounter In Context".status ~ 'in-progress'
 
 define "Is Encounter Complete":
-  not IsNull (
-    "Triggering Encounter" E
-      where E.status ~ 'finished'
-  ) or exists (
-      "Triggering Encounters" E
-        where E.status ~ 'finished'
-    )
-define "Is Encounter In Progress or 72h or less after end of encounter?":
-  "Is Encounter In Progress"
+  "Encounter In Context".status ~ 'finished'
+
+define "Is Encounter In Progress and Longer Than Normal Reporting Duration or 72h or less after end of encounter?":
+  (
+    "Is Encounter In Progress"
+      and "Is Encounter Longer Than Normal Reporting Duration?"
+  )
     or (not IsNull("Triggering Encounter") and "Triggering Encounter".period.end 72 hours or less before Now())
     or (exists ("Triggering Encounters") and singleton from "Triggering Encounters".period.end 72 hours or less before Now())
 
@@ -190,25 +199,17 @@ define "Most recent eICR sent over 72 hours ago?":
     where eICRs.date 72 hours or more before Now()
     sort by date desc)
 
-// Suspected Disorders Checking
 define "Suspected Disorder Test Results":
   [Observation] O
     where O.status in { 'registered', 'preliminary', 'final', 'amended', 'corrected' }
       and O.value as CodeableConcept in "Suspected Disorder Trigger Codes"
 
-/* %conditions.exists() or %encounters.exists() or %labOrders.exists() or %labTests.exists() or %labResults.exists()
-or %medicationAdministrations.exists() or %medicationOrders.exists() or %medicationDispenses.exists() */
 define "Suspected Disorders":
   [Condition: "Suspected Disorder Trigger Codes"]
-    union ("Triggering Encounters" e where e.reasonCode in "Suspected Disorder Trigger Codes")
-    union [ServiceRequest: "Suspected Disorder Trigger Codes"]
-    union [Observation: "Suspected Disorder Trigger Codes"]
     union [MedicationRequest: "Suspected Disorder Trigger Codes"]
-    union [MedicationDispense: "Suspected Disorder Trigger Codes"]
-    union [MedicationAdministration: "Suspected Disorder Trigger Codes"]
     union "Suspected Disorder Test Results"
 
-define "Is Suspected Disorder":
+define "Is Suspected Disorder?":
   exists (
     "Suspected Disorders"
   )

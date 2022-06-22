@@ -55,7 +55,7 @@
             <short value="eRSD - electronic Reporting and Surveillance Distribution"/>
             <definition value="Defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician."/>
             <mustSupport value="true"/>
-        </element>
+        </element>              
         <element id="PlanDefinition.action">
             <path value="PlanDefinition.action"/>
             <slicing>
@@ -66,7 +66,7 @@
                 <ordered value="true"/>
                 <rules value="open"/>
             </slicing>
-            <min value="3"/>
+            <min value="5"/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action.code">
@@ -106,6 +106,11 @@
             </type>
             <mustSupport value="true"/>
         </element>
+        <element id="PlanDefinition.action.relatedAction.offsetDuration">
+            <path value="PlanDefinition.action.relatedAction.offsetDuration" />
+            <definition value="The duration quantity may include a comparator, indicating how the offset should be applied. For example, &lt;= 1 hour, meaning that the offset should be no more than 1 hour. This allows systems flexibility in scheduling the actions to isolate reporting activities to off hours." />
+            <mustSupport value="true" />
+        </element>
         <!-- <element id="PlanDefinition.action.input.extension:fhirquerypattern.url">
             <path value="PlanDefinition.action.input.extension.url"/>
             <min value="1"/>
@@ -113,11 +118,12 @@
             <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"/>
             <mustSupport value="true"/>
         </element> -->
+
         <element id="PlanDefinition.action:encounterStart">
             <path value="PlanDefinition.action"/>
             <sliceName value="encounterStart"/>
             <short value="Encounter start code"/>
-            <definition value="Defines the &quot;startr&quot; action"/>
+            <definition value="Defines the &quot;start&quot; action"/>
             <min value="1"/>
             <max value="1"/>
             <mustSupport value="true"/>
@@ -130,10 +136,10 @@
         </element>
         <element id="PlanDefinition.action:encounterStart.description">
             <path value="PlanDefinition.action.description"/>
-            <short value="Description of the &quot;match-trigger&quot; action."/>
-            <definition value="Description of the &quot;create-eicr&quot; action."/>
+            <short value="Description of the &quot;start&quot; action."/>
+            <definition value="Description of the &quot;start&quot; action."/>
             <min value="1"/>
-            <fixedString value="This action represents the start of the reporting workflow in response to the encounter-start event"/>
+            <fixedString value="This action represents the start of the reporting workflow in response to the encounter-start event."/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action:encounterStart.textEquivalent">
@@ -295,6 +301,7 @@
                 </valueDuration>
             </example>
         </element>
+
         <element id="PlanDefinition.action:checkSuspectedDisorder">
             <path value="PlanDefinition.action"/>
             <sliceName value="checkSuspectedDisorder"/>
@@ -315,7 +322,7 @@
             <short value="Description of the check for suspected disorders action."/>
             <definition value="Description of the check for suspected disorders action."/>
             <min value="1"/>
-            <fixedString value="This action represents the start of the check suspected disorder reporting workflow in response to the encounter-start event"/>
+            <fixedString value="This action represents the start of the check suspected disorder reporting workflow in response to the encounter-start event."/>
             <mustSupport value="true"/>
         </element>
         <element id="PlanDefinition.action:checkSuspectedDisorder.code">
@@ -327,7 +334,7 @@
             <patternCodeableConcept>
                 <coding>
                     <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                    <code value="initiate-reporting-workflow"/>
+                    <code value="execute-reporting-workflow"/>
                 </coding>
             </patternCodeableConcept>
             <mustSupport value="true"/>
@@ -343,6 +350,7 @@
             </slicing>
             <min value="2"/>
         </element>
+
         <element id="PlanDefinition.action:checkSuspectedDisorder.action:isEncounterSuspectedDisorder">
             <path value="PlanDefinition.action.action"/>
             <sliceName value="isEncounterSuspectedDisorder"/>
@@ -402,12 +410,13 @@
         </element>
         <element id="PlanDefinition.action:checkSuspectedDisorder.action:isEncounterSuspectedDisorder.relatedAction.actionId">
             <path value="PlanDefinition.action.action.relatedAction.actionId"/>
-            <fixedId value="report-eicr"/>
+            <fixedId value="create-eicr"/>
         </element>
         <element id="PlanDefinition.action:checkSuspectedDisorder.action:isEncounterSuspectedDisorder.relatedAction.relationship">
             <path value="PlanDefinition.action.action.relatedAction.relationship"/>
             <fixedCode value="before-start"/>
         </element>
+
         <element id="PlanDefinition.action:checkSuspectedDisorder.action:continueCheckReportable">
             <path value="PlanDefinition.action.action"/>
             <sliceName value="continueCheckReportable"/>
@@ -430,7 +439,7 @@
             <patternCodeableConcept>
                 <coding>
                     <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                    <code value="check-trigger-codes"/>
+                    <code value="evaluate-condition"/>
                 </coding>
             </patternCodeableConcept>
         </element>
@@ -461,10 +470,27 @@
             <path value="PlanDefinition.action.action.relatedAction.relationship"/>
             <fixedCode value="before-start"/>
         </element>
+        <element id="PlanDefinition.action:checkSuspectedDisorder.action:continueCheckReportable.relatedAction.offsetDuration">
+            <path value="PlanDefinition.action.action.relatedAction.offsetDuration"/>
+            <min value="0"/>
+            <max value="1"/>
+            <type>
+                <code value="Duration"/>
+            </type>
+            <example>
+                <label value="Wait 6 hours before next action."/>
+                <valueDuration>
+                    <value value="6"/>
+                    <unit value="h"/>
+                </valueDuration>
+            </example>
+        </element>
 
         <element id="PlanDefinition.action:checkReportable">
             <path value="PlanDefinition.action"/>
             <sliceName value="checkReportable"/>
+            <short value="Check the encounter for reportability"/>
+            <definition value="Defines the checking of the encounter for reportability."/>
             <min value="1"/>
             <max value="1"/>
         </element>
@@ -501,6 +527,7 @@
             </slicing>
             <min value="3"/>
         </element>
+
         <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable">
             <path value="PlanDefinition.action.action"/>
             <sliceName value="isEncounterReportable"/>
@@ -560,12 +587,13 @@
         </element>
         <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.relatedAction.actionId">
             <path value="PlanDefinition.action.action.relatedAction.actionId"/>
-            <fixedId value="report-eicr"/>
+            <fixedId value="create-eicr"/>
         </element>
         <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable.relatedAction.relationship">
             <path value="PlanDefinition.action.action.relatedAction.relationship"/>
             <fixedCode value="before-start"/>
         </element>
+
         <element id="PlanDefinition.action:checkReportable.action:checkUpdateEicr">
             <path value="PlanDefinition.action.action"/>
             <sliceName value="checkUpdateEicr"/>
@@ -613,12 +641,13 @@
         </element>
         <element id="PlanDefinition.action:checkReportable.action:checkUpdateEicr.relatedAction.actionId">
             <path value="PlanDefinition.action.action.relatedAction.actionId"/>
-            <fixedId value="report-eicr"/>
+            <fixedId value="create-eicr"/>
         </element>
-        <element id="PlanDefinition.action:checkReportable.action:checkUpdateEicr.relatedAction.relationship">
+          <element id="PlanDefinition.action:checkReportable.action:checkUpdateEicr.relatedAction.relationship">
             <path value="PlanDefinition.action.action.relatedAction.relationship"/>
             <fixedCode value="before-start"/>
         </element>
+
         <element id="PlanDefinition.action:checkReportable.action:encounterInProgress">
             <path value="PlanDefinition.action.action"/>
             <sliceName value="encounterInProgress"/>
@@ -687,63 +716,27 @@
                 </valueDuration>
             </example>
         </element>
-        <element id="PlanDefinition.action:reportEicr">
+
+        <element id="PlanDefinition.action:createEicr">
             <path value="PlanDefinition.action"/>
-            <sliceName value="reportEicr"/>
-            <min value="1"/>
-            <max value="1"/>
-        </element>
-        <element id="PlanDefinition.action:reportEicr.id">
-            <path value="PlanDefinition.action.id"/>
-            <min value="1"/>
-            <fixedString value="report-eicr"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:reportEicr.description">
-            <path value="PlanDefinition.action.description"/>
-            <fixedString value="This action represents the creation, validation and submission of the eICR."/>
-        </element>
-        <element id="PlanDefinition.action:reportEicr.code">
-            <path value="PlanDefinition.action.code"/>
-            <min value="1"/>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
-                    <code value="execute-reporting-workflow"/>
-                </coding>
-            </patternCodeableConcept>
-        </element>
-        <element id="PlanDefinition.action:reportEicr.action">
-            <path value="PlanDefinition.action.action"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="id"/>
-                </discriminator>
-                <ordered value="true"/>
-                <rules value="open"/>
-            </slicing>
-            <min value="3"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="PlanDefinition.action:reportEicr.action:createEicr">
-            <path value="PlanDefinition.action.action"/>
             <sliceName value="createEicr"/>
+            <short value="Create the eICR"/>
+            <definition value="Defines the &quot;create-eicr&quot; action"/>
             <min value="1"/>
             <max value="1"/>
         </element>
-        <element id="PlanDefinition.action:reportEicr.action:createEicr.id">
-            <path value="PlanDefinition.action.action.id"/>
+        <element id="PlanDefinition.action:createEicr.id">
+            <path value="PlanDefinition.action.id"/>
             <min value="1"/>
             <fixedString value="create-eicr"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:reportEicr.action:createEicr.description">
-            <path value="PlanDefinition.action.action.description"/>
-            <fixedString value="This action represents the creation of the eICR."/>
+        <element id="PlanDefinition.action:createEicr.description">
+            <path value="PlanDefinition.action.description"/>
+            <fixedString value="This action represents the creation of the eICR. It subsequently calls validate."/>
         </element>
-        <element id="PlanDefinition.action:reportEicr.action:createEicr.code">
-            <path value="PlanDefinition.action.action.code"/>
+        <element id="PlanDefinition.action:createEicr.code">
+            <path value="PlanDefinition.action.code"/>
             <patternCodeableConcept>
                 <coding>
                     <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
@@ -751,24 +744,41 @@
                 </coding>
             </patternCodeableConcept>
         </element>
-        <element id="PlanDefinition.action:reportEicr.action:validateEicr">
-            <path value="PlanDefinition.action.action"/>
+        <element id="PlanDefinition.action:createEicr.relatedAction">
+            <path value="PlanDefinition.action.relatedAction"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:createEicr.relatedAction.actionId">
+            <path value="PlanDefinition.action.relatedAction.actionId"/>
+            <fixedId value="validate-eicr"/>
+        </element>
+        <element id="PlanDefinition.action:createEicr.relatedAction.relationship">
+            <path value="PlanDefinition.action.relatedAction.relationship"/>
+            <fixedCode value="before-start"/>
+        </element>
+
+        <element id="PlanDefinition.action:validateEicr">
+            <path value="PlanDefinition.action"/>
             <sliceName value="validateEicr"/>
+            <short value="Validate the eICR"/>
+            <definition value="Defines the &quot;validate-eicr&quot; action"/>
             <min value="1"/>
             <max value="1"/>
         </element>
-        <element id="PlanDefinition.action:reportEicr.action:validateEicr.id">
-            <path value="PlanDefinition.action.action.id"/>
+        <element id="PlanDefinition.action:validateEicr.id">
+            <path value="PlanDefinition.action.id"/>
             <min value="1"/>
             <fixedString value="validate-eicr"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:reportEicr.action:validateEicr.description">
-            <path value="PlanDefinition.action.action.description"/>
-            <fixedString value="This action represents the validation of the eICR."/>
+        <element id="PlanDefinition.action:validateEicr.description">
+            <path value="PlanDefinition.action.description"/>
+            <fixedString value="This action represents the validation of the eICR. It subsequently calls route-and-send."/>
         </element>
-        <element id="PlanDefinition.action:reportEicr.action:validateEicr.code">
-            <path value="PlanDefinition.action.action.code"/>
+        <element id="PlanDefinition.action:validateEicr.code">
+            <path value="PlanDefinition.action.code"/>
             <patternCodeableConcept>
                 <coding>
                     <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
@@ -776,42 +786,241 @@
                 </coding>
             </patternCodeableConcept>
         </element>
-        <element id="PlanDefinition.action:reportEicr.action:routeAndSendEicr">
-            <path value="PlanDefinition.action.action"/>
+        <element id="PlanDefinition.action:createEicr.relatedAction">
+            <path value="PlanDefinition.action.relatedAction"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:createEicr.relatedAction.actionId">
+            <path value="PlanDefinition.action.relatedAction.actionId"/>
+            <fixedId value="route-and-send-eicr"/>
+        </element>
+        <element id="PlanDefinition.action:createEicr.relatedAction.relationship">
+            <path value="PlanDefinition.action.relatedAction.relationship"/>
+            <fixedCode value="before-start"/>
+        </element>
+
+        <element id="PlanDefinition.action:routeAndSendEicr">
+            <path value="PlanDefinition.action"/>
             <sliceName value="routeAndSendEicr"/>
             <short value="Route and send eICR"/>
             <definition value="Defines the routing and sending of the eICR."/>
             <min value="1"/>
             <max value="1"/>
         </element>
-        <element id="PlanDefinition.action:reportEicr.action:routeAndSendEicr.id">
-            <path value="PlanDefinition.action.action.id"/>
+        <element id="PlanDefinition.action:routeAndSendEicr.id">
+            <path value="PlanDefinition.action.id"/>
             <min value="1"/>
             <fixedString value="route-and-send-eicr"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:reportEicr.action:routeAndSendEicr.description">
-            <path value="PlanDefinition.action.action.description"/>
+        <element id="PlanDefinition.action:routeAndSendEicr.description">
+            <path value="PlanDefinition.action.description"/>
             <short value="Description of the route and send action."/>
             <definition value="Description of the route and send action."/>
             <min value="1"/>
             <fixedString value="This action represents the routing and sending of the eICR."/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:reportEicr.action:routeAndSendEicr.textEquivalent">
-            <path value="PlanDefinition.action.action.textEquivalent"/>
+        <element id="PlanDefinition.action:routeAndSendEicr.textEquivalent">
+            <path value="PlanDefinition.action.textEquivalent"/>
             <min value="1"/>
             <fixedString value="Route and send eICR"/>
             <mustSupport value="true"/>
         </element>
-        <element id="PlanDefinition.action:reportEicr.action:routeAndSendEicr.code">
-            <path value="PlanDefinition.action.action.code"/>
+        <element id="PlanDefinition.action:routeAndSendEicr.code">
+            <path value="PlanDefinition.action.code"/>
             <patternCodeableConcept>
                 <coding>
                     <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
                     <code value="submit-report"/>
                 </coding>
             </patternCodeableConcept>
+        </element>
+
+        <element id="PlanDefinition.action:encounterModified">
+            <path value="PlanDefinition.action"/>
+            <sliceName value="encounterModified"/>
+            <short value="Encounter modified code"/>
+            <definition value="Defines the &quot;encounter-modified&quot; action"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:encounterModified.id">
+            <path value="PlanDefinition.action.id"/>
+            <min value="1"/>
+            <fixedString value="encounter-modified"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:encounterModified.description">
+            <path value="PlanDefinition.action.description"/>
+            <short value="Description of the &quot;encounter-modified&quot; action."/>
+            <definition value="Description of the &quot;encounter-modified&quot; action."/>
+            <min value="1"/>
+            <fixedString value="This action represents the start of the reporting workflow in response to the encounter-modified event"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:encounterModified.textEquivalent">
+            <path value="PlanDefinition.action.textEquivalent"/>
+            <short value="Text equivalent of the &quot;encounter-modified&quot; action."/>
+            <definition value="Text equivalent of the &quot;encounter-modified&quot; action."/>
+            <min value="1"/>
+            <fixedString value="Start the reporting workflow in response to an encounter-modified event"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:encounterModified.code">
+            <path value="PlanDefinition.action.code"/>
+            <short value="Code for the &quot;encounter-modified&quot; action."/>
+            <definition value="The US-PH-PlanDefinition-Action code for the &quot;encounter-modified&quot; action."/>
+            <min value="1"/>
+            <max value="1"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-plandefinition-actions"/>
+                    <code value="initiate-reporting-workflow"/>
+                </coding>
+            </patternCodeableConcept>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:encounterModified.trigger">
+            <path value="PlanDefinition.action.trigger"/>
+            <short value="When the &quot;encounter-modified&quot; action should be triggered."/>
+            <definition value="When the &quot;encounter-modified&quot; action should be triggered."/>
+            <min value="1"/>
+            <constraint>
+                <key value="epd-1"/>
+                <severity value="error"/>
+                <human value="The code value of the namedEventType SHALL be the same as the name element"/>
+                <expression value="extension('http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension').value.coding.code.supersetOf(name)"/>
+                <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;name&quot;)])"/>
+                <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+            </constraint>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:encounterModified.trigger.extension">
+            <path value="PlanDefinition.action.trigger.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <description value="Extensions are always sliced by (at least) url"/>
+                <rules value="open"/>
+            </slicing>
+            <short value="Additional content defined by implementations"/>
+            <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+            <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+            <alias value="extensions"/>
+            <alias value="user content"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <constraint>
+                <key value="ele-1"/>
+                <severity value="error"/>
+                <human value="All FHIR elements must have a @value or children"/>
+                <expression value="hasValue() or (children().count() &gt; id.count())"/>
+                <xpath value="@value|f:*|h:div"/>
+                <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+            </constraint>
+            <constraint>
+                <key value="ext-1"/>
+                <severity value="error"/>
+                <human value="Must have either extensions or value[x], not both"/>
+                <expression value="extension.exists() != value.exists()"/>
+                <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+                <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+            </constraint>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="PlanDefinition.action:encounterModified.trigger.extension:namedEventType">
+            <path value="PlanDefinition.action.trigger.extension"/>
+            <sliceName value="namedEventType"/>
+            <short value="Indicates the types of named events to subscribe to from the HER."/>
+            <definition value="Indicates the types of named events to subscribe to from the HER."/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension"/>
+            </type>
+            <constraint>
+                <key value="ele-1"/>
+                <severity value="error"/>
+                <human value="All FHIR elements must have a @value or children"/>
+                <expression value="hasValue() or (children().count() &gt; id.count())"/>
+                <xpath value="@value|f:*|h:div"/>
+                <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+            </constraint>
+            <constraint>
+                <key value="ext-1"/>
+                <severity value="error"/>
+                <human value="Must have either extensions or value[x], not both"/>
+                <expression value="extension.exists() != value.exists()"/>
+                <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+                <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+            </constraint>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+        </element>
+        <element id="PlanDefinition.action:encounterModified.trigger.type">
+            <path value="PlanDefinition.action.trigger.type"/>
+            <fixedCode value="named-event"/>
+        </element>
+        <element id="PlanDefinition.action:encounterModified.trigger.name">
+            <path value="PlanDefinition.action.trigger.name"/>
+            <definition value="The name of the event, encounter-start in this case. For any action invoked as a result of this trigger, the triggering encounter is accessible via the context variable `%encounter`"/>
+            <fixedString value="encounter-modified"/>
+        </element>
+        <element id="PlanDefinition.action:encounterModified.condition">
+            <path value="PlanDefinition.action.condition"/>
+        </element>
+        <element id="PlanDefinition.action:encounterModified.action.condition.kind">
+            <path value="PlanDefinition.action.condition.kind"/>
+            <fixedCode value="applicability"/>
+        </element>
+        <element id="PlanDefinition.action:encounterModified.action.condition.expression">
+            <path value="PlanDefinition.action.condition.expression"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:encounterModified.action.condition.expression.language">
+            <path value="PlanDefinition.action.condition.expression.language"/>
+            <fixedCode value="text/fhirpath"/>
+        </element>
+        <element id="PlanDefinition.action:encounterModified.relatedAction">
+            <path value="PlanDefinition.action.relatedAction"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="PlanDefinition.action:encounterModified.relatedAction.actionId">
+            <path value="PlanDefinition.action.relatedAction.actionId"/>
+            <fixedId value="create-eicr"/>
+        </element>
+        <element id="PlanDefinition.action:encounterModified.relatedAction.relationship">
+            <path value="PlanDefinition.action.relatedAction.relationship"/>
+            <fixedCode value="before-start"/>
         </element>
     </differential>
 </StructureDefinition>
