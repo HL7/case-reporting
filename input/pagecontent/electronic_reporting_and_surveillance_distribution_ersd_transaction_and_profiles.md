@@ -1,6 +1,6 @@
 ### electronic Reporting and Surveillance Distribution (eRSD) Transaction and Profiles
 
-The eRSD transaction includes a constrained FHIR PlanDefinition resource profile, a family of actions, and a [FHIR Subscription service](subscription_service.html). It supports the distribution of reporting guidance and parameters, trigger code value sets, and more complex reporting rules and clinician / reporter support resources. This work seeks to align with developing public health guidelines that cover the same conditions. The PlanDefinition includes guidance for the overall orchestration of electronic case reporting. Each member of the family of actions defined in the [US Public Health PlanDefinition Action Codes](CodeSystem-us-ph-plandefinition-actions.html) code system aligns with what may be different healthcare information systems or modules involved in reporting. The narrative elements of this profile will be used to help structure and guide implementation until EHRs have the ability to automatically consume them.
+The eRSD transaction includes a constrained FHIR PlanDefinition resource profile and a family of actions. It supports the distribution of reporting guidance and parameters, trigger code value sets, and more complex reporting rules and clinician / reporter support resources. This work seeks to align with developing public health guidelines that cover the same conditions. The PlanDefinition includes guidance for the overall orchestration of electronic case reporting. Each member of the family of actions defined in the [US Public Health PlanDefinition Action Codes](CodeSystem-us-ph-plandefinition-actions.html) code system aligns with what may be different healthcare information systems or modules involved in reporting. The narrative elements of this profile will be used to help structure and guide implementation until EHRs have the ability to automatically consume them.
 
 The distribution of case reporting specifications involves two systems, the Implementing System (typically an Electronic Health Record (EHR)) and the Specification Repository, a repository that manages reporting specifications and the versions of those specifications over time:
 
@@ -12,9 +12,9 @@ Conceptually, there are three transactions involved in the distribution of eRSD 
 2. Request - The Implementation System requests a specific version of a reporting specification
 3. Response - The Specification Repository responds to a request, providing the package containing a specific version of a reporting specification.
 
-Notification may be accomplished in multiple ways, from a simple email or text notification, to a formal notification as described by the FHIR Subscription Service.
+Notification may be accomplished in multiple ways such as simple email or text notifications.
 
-Similarly, the Request and Response transactions may be implemented in multiple ways, including FTP or HTTP file download, as well as API access to a FHIR server acting as a repository.
+Similarly, the Request and Response transactions may be implemented in multiple ways, including HTTP file download, as well as API access to a FHIR server acting as a repository.
 
 At this time, this implementation guide is only prescriptive about the payload of the Response transaction, as defined by the following sections. We seek implementer feedback on the usefulness of more formal specification of these transactions.
 
@@ -244,14 +244,12 @@ The eRSD Supplemental Library is composed of the RuleFilters library and the Sup
 
 #### Packaging and Distribution
 
-As noted in the overview section above, this implementation is not prescriptive about the absolute mechanisms for distribution, only about the contents of the specification in the form of Library, PlanDefinition, CodeSystem, and ValueSet resources conforming to the required profiles. The complete specification may be distributed via files (e.g. a zip of the specification as a FHIR bundle), via API (e.g. as a Bundle resource directly, or as the result of a packaging operation), or via subscription.
+As noted in the overview section above, this implementation is not prescriptive about the absolute mechanisms for distribution, only about the contents of the specification in the form of Library, PlanDefinition, CodeSystem, and ValueSet resources conforming to the required profiles. The complete specification may be distributed via files (e.g. a zip of the specification as a FHIR bundle), via API (e.g. as a Bundle resource directly, or as the result of a packaging operation), or via notification.
 
 When packaging as a Bundle, the expectation is that the Bundle would include the Library as the first entry, followed by all the component resources as entries, and finally all the referenced ValueSet resources. If the specification is too large for one Bundle, the specification may be split into multiple Bundles. The following examples illustrate complete bundles of both the Specification and Supplemental distributions:
 
 * [Specification (i.e. Triggering) Bundle](Bundle-bundle-ersd-specification-example.html)
 * [Supplemental (i.e. Rules Logic) Bundle](Bundle-bundle-ersd-supplemental-example.html)
-
-The [FHIR Subscription service](subscription_service.html) (also see Subscription examples on the <a href="artifacts.html">Artifacts Index page</a>) supports public health needs for the routine and emergent distribution of the eRSD. The Subscription does not require FHIR implementation on the receiving (EHR) end of the transaction, but can provide XML or JSON formats via RESTful query or proactive notification channels.
 
 #### Profiles
 <ul>
