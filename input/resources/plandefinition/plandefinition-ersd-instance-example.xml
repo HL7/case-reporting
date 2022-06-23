@@ -497,6 +497,19 @@
             <type value="named-event"/>
             <name value="encounter-modified"/>
         </trigger>
+        <condition>
+            <kind value="applicability"/>
+            <expression>
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension">
+                    <valueExpression>
+                        <language value="text/cql-identifier"/>
+                        <expression value="Is Encounter Longer Than Normal Reporting Duration?"/>
+                        <reference value="http://example.org/fhir/Library/RuleFilters|1.0.0"/>
+                    </valueExpression>
+                </extension>
+                <language value="text/fhirpath"/>
+                <expression value="%encounter.where(period.start + %normalReportingDuration &lt; now())"/></expression>
+        </condition>
         <relatedAction>
             <actionId value="create-eicr"/>
             <relationship value="before-start"/>
