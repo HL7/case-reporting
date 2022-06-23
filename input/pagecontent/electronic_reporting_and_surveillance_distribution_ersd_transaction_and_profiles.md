@@ -2,7 +2,7 @@
 
 The eRSD transaction includes a constrained FHIR PlanDefinition resource profile, a family of actions, and a [FHIR Subscription service](subscription_service.html). It supports the distribution of reporting guidance and parameters, trigger code value sets, and more complex reporting rules and clinician / reporter support resources. This work seeks to align with developing public health guidelines that cover the same conditions. The PlanDefinition includes guidance for the overall orchestration of electronic case reporting. Each member of the family of actions defined in the [US Public Health PlanDefinition Action Codes](CodeSystem-us-ph-plandefinition-actions.html) code system aligns with what may be different healthcare information systems or modules involved in reporting. The narrative elements of this profile will be used to help structure and guide implementation until EHRs have the ability to automatically consume them.
 
-The distribution of case reporting specifications involves two systems, the Implementing System (typically an Electronic Health Record (EHR), but could also be Health Information Exchanges (HIE), laboratories, registries, or other clinical and healthcare related systems) and the Specification Repository, a repository that manages reporting specifications and the versions of those specifications over time:
+The distribution of case reporting specifications involves two systems, the Implementing System (typically an Electronic Health Record (EHR)) and the Specification Repository, a repository that manages reporting specifications and the versions of those specifications over time:
 
 <img style="width:100%" src="ersd-transaction-system-overview.png"/>
 
