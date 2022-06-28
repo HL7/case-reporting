@@ -85,7 +85,7 @@ Events are represented with the `trigger` element, using the `named-event` trigg
 
 Triggering criteria are specified by a combination of the `input` data elements, and the Reportable Condition Triggering Codes (RCTC) Value Set Library. Note carefully that the RCTC Value Sets included in this IG are examples to illustrate the structure and typical content of the Value Sets.
 
-The triggering value sets will include any number of focus useContext slices to indicate which conditions the triggering codes are associated with. Each Value Set corresponds to a different type of information that may contain events that are triggers for potentially reportable events. The categories of information are mapped to FHIR resources using the `input` element. For example, the reportable conditions value set is mapped to the `Condition` resource:
+The triggering value sets will include any number of focus useContext slices to indicate which conditions the triggering codes are associated with. Each value set corresponds to a different type of information that may contain events that are triggers for potentially reportable events. The categories of information are mapped to FHIR resources using the `input` element. For example, the reportable conditions value set is mapped to the `Condition` resource:
 
 <pre><code>&lt;input id=&quot;conditions&quot;&gt;
   &lt;type value=&quot;Condition&quot;/&gt;
@@ -111,27 +111,40 @@ The eRSD PlanDefinition uses these structures to introduce a "loop" for the crea
 
 * start-workflow
     - trigger: encounter-start
-    - action: check-reportable in "A" hours
+    - action: check-suspected-disorder in "A" hours
+
+* check-suspected-disorder
+    - if is-encounter-suspected-disorder, create-eicr
+    - if continue-check-reportable, check-reportable in "B" hours
 
 * check-reportable
-    - if is-encounter-reportable, report-eicr
-    - if check-update-eicr, report-eicr
+    - if is-encounter-reportable, create-eicr
+    - if check-update-eicr, create-eicr
     - if is-encounter-in-progress, check-reportable in "B" hours
 
-* report-eicr
-    - create-eicr, validate-eicr, route-and-send-eicr
+* create-eicr
+    - action: validate-eicr
+
+* validate-eicr
+    - route-and-send-eicr
+
+* encounter-modified
+    - trigger: encounter-modified
+    - create-eicr
 
 The `start-workflow` action is initiated by an `encounter-start` event, and specifies that `check-reportable` should be called in "A" hours.
 
-The `check-reportable` action checks for suspected reportability, and if true, calls the `report-eicr` action. If an eICR has not been sent for over "C" hours, then `report-eicr` is called. If the encounter is still in progress, `check-reportable` is called again with a delay of "B" hours and this continues until more than "D" hours have elapsed since the encounter end.
+The `check-suspected-disorder` action checks the encounter against a suspected disorders value set, and if a match is found, calls the `create-eicr` action immediately. If the encounter is in progress and still within the normal reporting duration ("E"), or less than "D" hours have elapsed since the encounter end, `check-reportable` is called.
 
-The `report-eicr` action calls all three of `create-eicr`, `validate-eicr`, and `route-and-send-eicr`.
+The `check-reportable` action checks for suspected reportability and whether or not the encounter is within the normal reporting duration ("E"), and if true, calls the `create-eicr` action. If an eICR has not been sent for over "C" hours, then `create-eicr` is called. If the encounter is still in progress, `check-reportable` is called again with a delay of "B" hours and this continues until more than "D" hours have elapsed since the encounter end.
 
-The `create-eicr` action involves the marshaling of FHIR resources needed to create the eICR profile included in this standard.
+The `create-eicr` action involves the marshaling of FHIR resources needed to create the eICR profile included in this standard. It calls the `validate-eicr` action.
 
-The `validate-eicr` action involves validating the created eICR conforms with all appropriate profiles and validation rules.
+The `validate-eicr` action involves validating the created eICR conforms with all appropriate profiles and validation rules. It calls the `route-and-send-eicr` action.
 
 The `route-and-send-eicr` action involves the transmission of the eICR to either a third party platform, a Public Health Agency (PHA), or a Health information Exchange or Health Data Network on the way to a PHA.
+
+The `encounter-modified` action is initiated by an 'encounter-modified' event, and specifies that if the encounter has extended beyond the normal reporting duration ("E") `create-eicr` should be called.
 
 ##### Parameters
 Because of variability in accumulation of data at the start of a patient encounter, the EHR implementer should implement a time-based delay in generating and sending the first encounter eICR to allow time for required data to be captured within the patient chart. This will ensure the eICR is better populated before sending and will reduce the number of case reports that are sent for a single patient encounter.
@@ -153,6 +166,8 @@ Full triggering timing can be described using the suggested parameters below fro
 **Parameter D** – The time period after the encounter ends through which trigger code checks and eICR updates should still occur.
 
 - Example - For <u>72 hours</u> after the encounter ends, trigger code checks and / or updated eICR transmissions should still occur.
+
+**Parameter E** - The normal reporting duration for the encounter. While an encounter is in progress and within the the normal reporting duration reportability will continue to be checked. Once the encounter has extended beyond the normal reporting duration, it will only be reported on in response to an 'encounter-modified' trigger.
 
 ##### Suspected Reportability Criteria
 
