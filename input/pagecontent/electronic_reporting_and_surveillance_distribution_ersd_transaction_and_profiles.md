@@ -161,7 +161,7 @@ Full triggering timing can be described using the suggested parameters below fro
 
 **Parameter C** - The time period from the send of previous eICRs to the send of an updated eICR during a longer encounter.
 
--- Example - <u>72 hours</u> after a previous eICR was sent, there have been no new trigger code matches, but a new eICR is created and transmitted because there had been a match in the encounter previously and there is a need for public health to receive updated data about the patient.
+- Example - <u>72 hours</u> after a previous eICR was sent, there have been no new trigger code matches, but a new eICR is created and transmitted because there had been a match in the encounter previously and there is a need for public health to receive updated data about the patient.
 
 **Parameter D** – The time period after the encounter ends through which trigger code checks and eICR updates should still occur.
 
