@@ -27,7 +27,7 @@ valueset "Negative or Undetected Lab Result Value": 'http://cts.nlm.nih.gov/fhir
 code "eICRComposition": '55751-2' from "LOINC"
 
 parameter "Triggering Encounter" Encounter
-parameter "normalReportingDuration" default 2 weeks
+parameter "normalReportingDuration" default 14 days
 
 context Patient
 
@@ -165,14 +165,19 @@ define "Existing Reportable Triggering Codes":
             return (singleton from (E.extension SE where SE.url = 'triggerCode')).value as Coding
   )
 
-  define function "Current Encounter Duration"(encounter Encounter):
-    duration in days between encounter.period.start and Coalesce(encounter.period.end.value, Now())
+define function "Current Encounter Duration"(encounter Encounter):
+  Quantity {
+    value: decimal {
+      value: duration in days between encounter.period.start and Coalesce(encounter.period.end.value, Now())
+    },
+    unit: string { value: 'days' }
+  }
 
-  define "Encounter In Context":
-    "Triggering Encounter" TE
-      return
-        if TE is not null then TE
-        else (singleton from "Triggering Encounters")
+define "Encounter In Context":
+  "Triggering Encounter" TE
+    return
+      if TE is not null then TE
+      else (singleton from "Triggering Encounters")
 
 define "Is Encounter Longer Than Normal Reporting Duration?":
   "Current Encounter Duration"("Encounter In Context") > "normalReportingDuration"
