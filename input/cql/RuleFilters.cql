@@ -27,7 +27,7 @@ valueset "Negative or Undetected Lab Result Value": 'http://cts.nlm.nih.gov/fhir
 code "eICRComposition": '55751-2' from "LOINC"
 
 parameter "Triggering Encounter" Encounter
-parameter "normalReportingDuration" Duration
+parameter "normalReportingDuration" default 2 weeks
 
 context Patient
 
