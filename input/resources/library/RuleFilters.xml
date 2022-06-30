@@ -269,7 +269,7 @@ define "Reportable Triggering Codes":
     // ... reportable triggering codes for other conditions
 
 define "Is Encounter Within Normal Reporting Duration?":
-  "Current Encounter Duration"("Encounter In Context") <= "normalReportingDuration"
+  "Current Encounter Duration"("Encounter In Context") &lt;= "normalReportingDuration"
 
 define "Is Encounter Reportable and Within Normal Reporting Duration?":
   exists (
@@ -302,7 +302,7 @@ define "Encounter In Context":
       else (singleton from "Triggering Encounters")
 
 define "Is Encounter Longer Than Normal Reporting Duration?":
-  "Current Encounter Duration"("Encounter In Context") > "normalReportingDuration"
+  "Current Encounter Duration"("Encounter In Context") &gt; "normalReportingDuration"
 
 define "Is Encounter In Progress":
   "Encounter In Context".status ~ 'in-progress'
