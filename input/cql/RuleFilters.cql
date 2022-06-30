@@ -84,10 +84,10 @@ define "Patient Address Postal Code is in Jurisdiction Codes":
       such that PA.postalCode in J.postalCode
 
 define "Patient Address State is in Jurisdiction Codes":
-  "Jurisdictions" J
-    with "Patient Address" PA
-      such that PA.state in J.stateCode
-        and 'STATE' in J.jurisdictionType
+"Jurisdictions" J
+  with "Patient Address" PA
+    such that (PA.state.value in J.stateCode
+      and 'STATE' in J.jurisdictionType)
 
 define "Address Exists in Jurisdiction Codes":
   exists (
