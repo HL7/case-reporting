@@ -174,10 +174,9 @@ define function "Current Encounter Duration"(encounter Encounter):
   }
 
 define "Encounter In Context":
-  "Triggering Encounter" TE
-    return
-      if TE is not null then TE
-      else (singleton from "Triggering Encounters")
+  if "Triggering Encounter" is not null
+    then "Triggering Encounter"
+      else singleton from "Triggering Encounters"
 
 define "Is Encounter Longer Than Normal Reporting Duration?":
   "Current Encounter Duration"("Encounter In Context") > "normalReportingDuration"
@@ -200,9 +199,13 @@ define "eICR Compositions":
   [Composition : "eICRComposition"]
 
 define "Most recent eICR sent over 72 hours ago?":
-  First("eICR Compositions" eICRs
-    where eICRs.date 72 hours or more before Now()
-    sort by date desc)
+  "Most recent eICR".date 72 hours or more before Now()
+
+define "Most recent eICR":
+  First (
+    "eICR Compositions" eICRs
+      sort by date desc
+  )
 
 define "Suspected Disorder Test Results":
   [Observation] O
