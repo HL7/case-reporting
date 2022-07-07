@@ -98,5 +98,16 @@ ERROR: Bundle/bundle-ersd-specification-example: Bundle.entry[1].resource: The m
 ERROR: PlanDefinition/plandefinition-ersd-instance-example: PlanDefinition: The modifier extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [[PlanDefinition])
 ERROR: PlanDefinition/plandefinition-ersd-instance-simple-example: PlanDefinition: The modifier extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [[PlanDefinition])
 
+# The following slicing validation errors seems to be in err - the artifacts look to be valid and it seems the slicing should be satisfied. The issue has been raised in the following chat.fhir.org 'IG Creation' stream topic: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/Slicing.20Validation.20Errors/near/288852585
+ERROR: Library/library-ersd-specification-library-example: Library: Library.relatedArtifact:slicePlanDefinition: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-library)
+ERROR: Library/library-ersd-specification-library-example: Library: Library.relatedArtifact:sliceTriggeringValueSetLibrary: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-library)
+ERROR: Library/library-ersd-supplemental-library-example: Library: Library.relatedArtifact:sliceComputableLibrary: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-supplemental-library)
+ERROR: Library/library-ersd-supplemental-library-example: Library: Library.relatedArtifact:sliceSupplementalValueSetLibrary: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-supplemental-library)
+ERROR: Library/library-ersd-supplemental-library-example: Library: Library.relatedArtifact:sliceJurisdictionsCodeSystem: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-supplemental-library)
+ERROR: Library/library-us-ph-specification-library-example: Library: Library.relatedArtifact:slicePlanDefinition: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-library)
+ERROR: Library/library-us-ph-specification-library-example: Library: Library.relatedArtifact:sliceTriggeringValueSetLibrary: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-library)
+ERROR: Library/library-us-ph-supplemental-library-example: Library: Library.relatedArtifact:sliceComputableLibrary: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-library)
+ERROR: Library/library-us-ph-supplemental-library-example: Library: Library.relatedArtifact:sliceSupplementalValueSetLibrary: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-library)
+
 # Suppress informational messages
 The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
