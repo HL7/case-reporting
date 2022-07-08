@@ -199,7 +199,9 @@ define "eICR Compositions":
   [Composition : "eICRComposition"]
 
 define "Most recent eICR sent over 72 hours ago?":
-  "Most recent eICR".date 72 hours or more before Now()
+  if "Most recent eICR" is not null
+    then "Most recent eICR".date 72 hours or more before Now()
+    else false
 
 define "Most recent eICR":
   First (
