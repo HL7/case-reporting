@@ -14,7 +14,7 @@
   <experimental value="false" />
   <publisher value="HL7 Public Health Work Group" />
   <description
-    value="This PractitionerRole profile represents the roles and organizations of the practitioner.&#xA;&#xA;It is based on the **US Core PractitionerRole** profile with a further restriction of mandatory **identifier** and **telecom** data elements and US Public Health Location and US Public Health Organization references." />
+    value="This PractitionerRole profile represents the roles and organizations of the practitioner.&#xA;&#xA;It is based on the **US Core PractitionerRole** profile with a further restriction of mandatory **practitioner*, **identifier** and **telecom** data elements and US Public Health Location and US Public Health Organization references." />
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166" />
@@ -40,9 +40,12 @@
       <max value="1"/>
       <mustSupport value="true"/>
     </element>
+    <element id="PractitionerRole.practitioner">
+      <path value="PractitionerRole.practitioner"/>
+      <min value="1"/>
+    </element>
     <element id="PractitionerRole.organization">
       <path value="PractitionerRole.organization"/>
-      <min value="0"/>
       <type>
         <code value="Reference"/>
         <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
