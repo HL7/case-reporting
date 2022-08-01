@@ -11,7 +11,7 @@
       <expression value="14"/>
     </valueExpression>
   </extension>
-  <url value="http://example.org/fhir/PlanDefinition/plandefinition-ersd-instance-example"/>
+  <url value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"/>
   <version value="0.1"/>
   <name value="PlanDefinition_eRSD_Instance_Example"/>
   <title value="eRSD PlanDefinition Instance Example"/>
@@ -41,7 +41,7 @@
   <relatedArtifact>
     <type value="depends-on"/>
     <label value="RCTC Value Set Library of Trigger Codes"/>
-    <resource value="http://example.org/fhir/Library/library-rctc-example"/>
+    <resource value="http://hl7.org/fhir/us/ecr/Library/library-rctc-example"/>
   </relatedArtifact>
   <action id="start-workflow">
     <description value="This action represents the start of the reporting workflow in response to the encounter-start event."/>
@@ -113,7 +113,7 @@
             <valueExpression>
               <language value="text/cql-identifier"/>
               <expression value="Is Suspected Disorder?"/>
-              <reference value="http://example.org/fhir/Library/RuleFilters|1.0.0"/>
+              <reference value="http://hl7.org/fhir/us/ecr/Library/RuleFilters|1.0.0"/>
             </valueExpression>
           </extension>
           <language value="text/fhirpath"/>
@@ -126,7 +126,7 @@
         <type value="Condition"/>
         <codeFilter>
           <path value="code"/>
-          <valueSet value="http://example.org/fhir/ValueSet/valueset-sdtc-example"/>
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example"/>
         </codeFilter>
       </input>
       <input id="modifiedLabResults">
@@ -136,7 +136,7 @@
         <type value="Observation"/>
         <codeFilter>
           <path value="value"/>
-          <valueSet value="http://example.org/fhir/ValueSet/valueset-sdtc-example"/>
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example"/>
         </codeFilter>
       </input>
       <input id="modifiedMedicationOrders">
@@ -146,7 +146,7 @@
         <type value="MedicationRequest"/>
         <codeFilter>
           <path value="medication"/>
-          <valueSet value="http://example.org/fhir/ValueSet/valueset-sdtc-example"/>
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example"/>
         </codeFilter>
       </input>
       <relatedAction>
@@ -168,7 +168,7 @@
             <valueExpression>
               <language value="text/cql-identifier"/>
               <expression value="Is Encounter In Progress and Within Normal Reporting Duration or 72h or less after end of encounter?"/>
-              <reference value="http://example.org/fhir/Library/RuleFilters|1.0.0"/>
+              <reference value="http://hl7.org/fhir/us/ecr/Library/RuleFilters|1.0.0"/>
             </valueExpression>
           </extension>
           <language value="text/fhirpath"/>
@@ -210,7 +210,7 @@
             <valueExpression>
               <language value="text/cql-identifier"/>
               <expression value="Is Encounter Reportable and Within Normal Reporting Duration?"/>
-              <reference value="http://example.org/fhir/Library/RuleFilters|1.0.0"/>
+              <reference value="http://hl7.org/fhir/us/ecr/Library/RuleFilters|1.0.0"/>
             </valueExpression>
           </extension>
           <language value="text/fhirpath"/>
@@ -224,7 +224,7 @@
         <type value="Condition"/>
         <codeFilter>
           <path value="code"/>
-          <valueSet value="http://example.org/fhir/ValueSet/valueset-dxtc-example"/>
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"/>
         </codeFilter>
       </input>
       <input id="encounters">
@@ -234,7 +234,7 @@
         <type value="Encounter"/>
         <codeFilter>
           <path value="reasonCode"/>
-          <valueSet value="http://example.org/fhir/ValueSet/valueset-dxtc-example"/>
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"/>
         </codeFilter>
       </input>
       <input id="immunizations">
@@ -244,7 +244,7 @@
         <type value="Immunization"/>
         <codeFilter>
           <path value="vaccineCode"/>
-          <valueSet value="http://example.org/fhir/ValueSet/valueset-mrtc-example"/>
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
         </codeFilter>
       </input>
       <input id="labOrders">
@@ -254,7 +254,7 @@
         <type value="ServiceRequest"/>
         <codeFilter>
           <path value="code"/>
-          <valueSet value="http://example.org/fhir/ValueSet/valueset-lotc-example"/>
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"/>
         </codeFilter>
       </input>
       <input id="labTests">
@@ -264,7 +264,7 @@
         <type value="Observation"/>
         <codeFilter>
           <path value="code"/>
-          <valueSet value="http://example.org/fhir/ValueSet/valueset-lotc-example"/>
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"/>
         </codeFilter>
       </input>
       <input id="diagnosticOrders">
@@ -274,7 +274,7 @@
         <type value="DiagnosticReport"/>
         <codeFilter>
           <path value="code"/>
-          <valueSet value="http://example.org/fhir/ValueSet/valueset-lotc-example"/>
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"/>
         </codeFilter>
       </input>
       <input id="procedureOrders">
@@ -284,7 +284,7 @@
         <type value="ServiceRequest"/>
         <codeFilter>
           <path value="code"/>
-          <valueSet value="http://example.org/fhir/ValueSet/valueset-pctc-example"/>
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example"/>
         </codeFilter>
       </input>
       <input id="procedures">
@@ -294,7 +294,7 @@
         <type value="Procedure"/>
         <codeFilter>
           <path value="code"/>
-          <valueSet value="http://example.org/fhir/ValueSet/valueset-pctc-example"/>
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example"/>
         </codeFilter>
       </input>
       <input id="medicationOrders">
@@ -304,7 +304,7 @@
         <type value="MedicationRequest"/>
         <codeFilter>
           <path value="medication"/>
-          <valueSet value="http://example.org/fhir/ValueSet/valueset-mrtc-example"/>
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
         </codeFilter>
       </input>
       <input id="medicationDispenses">
@@ -314,7 +314,7 @@
         <type value="MedicationDispense"/>
         <codeFilter>
           <path value="medication"/>
-          <valueSet value="http://example.org/fhir/ValueSet/valueset-mrtc-example"/>
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
         </codeFilter>
       </input>
       <input id="medicationAdministrations">
@@ -324,7 +324,7 @@
         <type value="MedicationAdministration"/>
         <codeFilter>
           <path value="medication"/>
-          <valueSet value="http://example.org/fhir/ValueSet/valueset-mrtc-example"/>
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"/>
         </codeFilter>
       </input>
       <input id="labResults">
@@ -334,7 +334,7 @@
         <type value="Observation"/>
         <codeFilter>
           <path value="value"/>
-          <valueSet value="http://example.org/fhir/ValueSet/valueset-ostc-example"/>
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"/>
         </codeFilter>
       </input>
       <input id="diagnosticResults">
@@ -344,7 +344,7 @@
         <type value="DiagnosticReport"/>
         <codeFilter>
           <path value="code"/>
-          <valueSet value="http://example.org/fhir/ValueSet/valueset-ostc-example"/>
+          <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"/>
         </codeFilter>
       </input>
       <relatedAction>
@@ -366,7 +366,7 @@
             <valueExpression>
               <language value="text/cql-identifier"/>
               <expression value="Most recent eICR sent over 72 hours ago?"/>
-              <reference value="http://example.org/fhir/Library/RuleFilters|1.0.0"/>
+              <reference value="http://hl7.org/fhir/us/ecr/Library/RuleFilters|1.0.0"/>
             </valueExpression>
           </extension>
           <language value="text/fhirpath"/>
@@ -399,7 +399,7 @@
             <valueExpression>
               <language value="text/cql-identifier"/>
               <expression value="Is Encounter In Progress and Within Normal Reporting Duration or 72h or less after end of encounter?"/>
-              <reference value="http://example.org/fhir/Library/RuleFilters|1.0.0"/>
+              <reference value="http://hl7.org/fhir/us/ecr/Library/RuleFilters|1.0.0"/>
             </valueExpression>
           </extension>
           <language value="text/fhirpath"/>
@@ -586,7 +586,7 @@
           <valueExpression>
             <language value="text/cql-identifier"/>
             <expression value="Is Encounter Longer Than Normal Reporting Duration?"/>
-            <reference value="http://example.org/fhir/Library/RuleFilters|1.0.0"/>
+            <reference value="http://hl7.org/fhir/us/ecr/Library/RuleFilters|1.0.0"/>
           </valueExpression>
         </extension>
         <language value="text/fhirpath"/>

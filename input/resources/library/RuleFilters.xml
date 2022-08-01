@@ -128,19 +128,19 @@ include FHIRHelpers version '4.0.1'
 
 codesystem "LOINC": 'http://loinc.org'
 codesystem "UsageContext": 'http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type'
-codesystem "JurisdictionsList": 'http://example.org/fhir/CodeSystem/ersd-jurisdictions-example'
+codesystem "JurisdictionsList": 'http://hl7.org/fhir/us/ecr/CodeSystem/ersd-jurisdictions-example'
 
 // Overall triggering value sets, groupings of all condition-specific value sets, grouped by representation in the information model
-valueset "Diagnosis Trigger Codes": 'http://example.org/fhir/ValueSet/valueset-dxtc-example'
-valueset "Medication Trigger Codes": 'http://example.org/fhir/ValueSet/valueset-mrtc-example'
-valueset "Laboratory Order Trigger Codes": 'http://example.org/fhir/ValueSet/valueset-lotc-example'
-valueset "Laboratory Result Trigger Codes": 'http://example.org/fhir/ValueSet/valueset-lrtc-example'
-valueset "Organism Substance Trigger Codes": 'http://example.org/fhir/ValueSet/valueset-ostc-example'
-valueset "Procedure Trigger Codes": 'http://example.org/fhir/ValueSet/valueset-pctc-example'
-valueset "Suspected Disorder Trigger Codes": 'http://example.org/fhir/ValueSet/valueset-sdtc-example'
+valueset "Diagnosis Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example'
+valueset "Medication Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example'
+valueset "Laboratory Order Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example'
+valueset "Laboratory Result Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example'
+valueset "Organism Substance Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example'
+valueset "Procedure Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example'
+valueset "Suspected Disorder Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example'
 
 // Condition-specific triggering codes, these would be listed for each condition
-valueset "Chlamydia Laboratory Result Trigger Codes": 'http://example.org/fhir/ValueSet/valueset-chlamydia-example'
+valueset "Chlamydia Laboratory Result Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-example'
 
 // Supplemental (or operational) value sets used in suspected reportability determination logic
 valueset "Indeterminate or Equivocal Lab Result Value": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1035'
@@ -350,7 +350,7 @@ define "Is Suspected Disorder?":
          </table>
       </div>
    </text>
-   <url value="http://example.org/fhir/Library/RuleFilters"></url>
+   <url value="http://hl7.org/fhir/us/ecr/Library/RuleFilters"></url>
    <version value="1.0.0"></version>
    <name value="RuleFilters"></name>
    <title value="Rule Filters"></title>
@@ -395,47 +395,47 @@ define "Is Suspected Disorder?":
    <relatedArtifact>
       <type value="depends-on"></type>
       <display value="Code system JurisdictionsList"></display>
-      <resource value="http://example.org/fhir/CodeSystem/ersd-jurisdictions-example"></resource>
+      <resource value="http://hl7.org/fhir/us/ecr/CodeSystem/ersd-jurisdictions-example"></resource>
    </relatedArtifact>
    <relatedArtifact>
       <type value="depends-on"></type>
       <display value="Value set Diagnosis Trigger Codes"></display>
-      <resource value="http://example.org/fhir/ValueSet/valueset-dxtc-example"></resource>
+      <resource value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"></resource>
    </relatedArtifact>
    <relatedArtifact>
       <type value="depends-on"></type>
       <display value="Value set Medication Trigger Codes"></display>
-      <resource value="http://example.org/fhir/ValueSet/valueset-mrtc-example"></resource>
+      <resource value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"></resource>
    </relatedArtifact>
    <relatedArtifact>
       <type value="depends-on"></type>
       <display value="Value set Laboratory Order Trigger Codes"></display>
-      <resource value="http://example.org/fhir/ValueSet/valueset-lotc-example"></resource>
+      <resource value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"></resource>
    </relatedArtifact>
    <relatedArtifact>
       <type value="depends-on"></type>
       <display value="Value set Laboratory Result Trigger Codes"></display>
-      <resource value="http://example.org/fhir/ValueSet/valueset-lrtc-example"></resource>
+      <resource value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example"></resource>
    </relatedArtifact>
    <relatedArtifact>
       <type value="depends-on"></type>
       <display value="Value set Organism Substance Trigger Codes"></display>
-      <resource value="http://example.org/fhir/ValueSet/valueset-ostc-example"></resource>
+      <resource value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"></resource>
    </relatedArtifact>
    <relatedArtifact>
       <type value="depends-on"></type>
       <display value="Value set Procedure Trigger Codes"></display>
-      <resource value="http://example.org/fhir/ValueSet/valueset-pctc-example"></resource>
+      <resource value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example"></resource>
    </relatedArtifact>
    <relatedArtifact>
       <type value="depends-on"></type>
       <display value="Value set Suspected Disorder Trigger Codes"></display>
-      <resource value="http://example.org/fhir/ValueSet/valueset-sdtc-example"></resource>
+      <resource value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example"></resource>
    </relatedArtifact>
    <relatedArtifact>
       <type value="depends-on"></type>
       <display value="Value set Chlamydia Laboratory Result Trigger Codes"></display>
-      <resource value="http://example.org/fhir/ValueSet/valueset-chlamydia-example"></resource>
+      <resource value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-example"></resource>
    </relatedArtifact>
    <relatedArtifact>
       <type value="depends-on"></type>
@@ -751,7 +751,7 @@ define "Is Suspected Disorder?":
       <mustSupport value="status"></mustSupport>
       <codeFilter>
          <path value="code"></path>
-         <valueSet value="http://example.org/fhir/ValueSet/valueset-chlamydia-example"></valueSet>
+         <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-example"></valueSet>
       </codeFilter>
    </dataRequirement>
    <dataRequirement>
@@ -808,7 +808,7 @@ define "Is Suspected Disorder?":
       <mustSupport value="code"></mustSupport>
       <codeFilter>
          <path value="code"></path>
-         <valueSet value="http://example.org/fhir/ValueSet/valueset-sdtc-example"></valueSet>
+         <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example"></valueSet>
       </codeFilter>
    </dataRequirement>
    <dataRequirement>
@@ -817,7 +817,7 @@ define "Is Suspected Disorder?":
       <mustSupport value="medication"></mustSupport>
       <codeFilter>
          <path value="medication"></path>
-         <valueSet value="http://example.org/fhir/ValueSet/valueset-sdtc-example"></valueSet>
+         <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example"></valueSet>
       </codeFilter>
    </dataRequirement>
    <dataRequirement>
@@ -874,7 +874,7 @@ define "Is Suspected Disorder?":
       <mustSupport value="status"></mustSupport>
       <codeFilter>
          <path value="code"></path>
-         <valueSet value="http://example.org/fhir/ValueSet/valueset-chlamydia-example"></valueSet>
+         <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-example"></valueSet>
       </codeFilter>
    </dataRequirement>
    <dataRequirement>
@@ -920,7 +920,7 @@ define "Is Suspected Disorder?":
       <mustSupport value="status"></mustSupport>
       <codeFilter>
          <path value="code"></path>
-         <valueSet value="http://example.org/fhir/ValueSet/valueset-chlamydia-example"></valueSet>
+         <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-example"></valueSet>
       </codeFilter>
    </dataRequirement>
    <content>

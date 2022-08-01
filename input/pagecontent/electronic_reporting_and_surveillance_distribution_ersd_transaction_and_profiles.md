@@ -91,7 +91,7 @@ The triggering value sets will include any number of focus useContext slices to 
   &lt;type value=&quot;Condition&quot;/&gt;
   &lt;codeFilter&gt;
     &lt;path value=&quot;code&quot;/&gt;
-    &lt;valueSet value=&quot;http://example.org/fhir/ValueSet/valueset-dxtc-example&quot;/&gt;
+    &lt;valueSet value=&quot;http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example&quot;/&gt;
   &lt;/codeFilter&gt;
 &lt;/input&gt;</code></pre>
 
@@ -197,11 +197,11 @@ The eRSD Specification library is composed of the eRSD Plan Definition and the R
 
 <pre><code>&lt;relatedArtifact&gt;
   &lt;type value=&quot;composed-of&quot;/&gt;
-  &lt;resource value=&quot;http://example.org/fhir/PlanDefinition/plandefinition-us-public-health-example&quot;/&gt;
+  &lt;resource value=&quot;http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-us-public-health-example&quot;/&gt;
 &lt;/relatedArtifact&gt;
 &lt;relatedArtifact&gt;
   &lt;type value=&quot;composed-of&quot;/&gt;
-  &lt;resource value=&quot;http://example.org/fhir/Library/library-rctc-example&quot;/&gt;
+  &lt;resource value=&quot;http://hl7.org/fhir/us/ecr/Library/library-rctc-example&quot;/&gt;
 &lt;/relatedArtifact&gt;</code></pre>
 
 * [eRSD Specification Library Example](Library-library-ersd-specification-library-example.html)
@@ -227,7 +227,7 @@ The suspected reportability criteria are also represented with the `condition` e
   &lt;valueExpression&gt;
     &lt;language value=&quot;text/cql-identifier&quot;/&gt;
     &lt;expression value=&quot;Is Reportable&quot;/&gt;
-    &lt;reference value=&quot;http://example.org/fhir/Library/RuleFilters|1.0.0&quot;/&gt;
+    &lt;reference value=&quot;http://hl7.org/fhir/us/ecr/Library/RuleFilters|1.0.0&quot;/&gt;
   &lt;/valueExpression&gt;
 &lt;/extension&gt;</code></pre>
 
@@ -243,15 +243,15 @@ The eRSD Supplemental Library is composed of the RuleFilters library and the Sup
 
 <pre><code>&lt;relatedArtifact&gt;
   &lt;type value=&quot;composed-of&quot;/&gt;
-  &lt;resource value=&quot;http://example.org/fhir/Library/RuleFilters&quot;/&gt;
+  &lt;resource value=&quot;http://hl7.org/fhir/us/ecr/Library/RuleFilters&quot;/&gt;
 &lt;/relatedArtifact&gt;
 &lt;relatedArtifact&gt;
   &lt;type value=&quot;composed-of&quot;/&gt;
-  &lt;resource value=&quot;http://example.org/fhir/Library/library-us-ph-supplemental-valueset-library-example&quot;/&gt;
+  &lt;resource value=&quot;http://hl7.org/fhir/us/ecr/Library/library-us-ph-supplemental-valueset-library-example&quot;/&gt;
 &lt;/relatedArtifact&gt;
 &lt;relatedArtifact&gt;
   &lt;type value=&quot;composed-of&quot;/&gt;
-  &lt;resource value=&quot;http://example.org/fhir/CodeSystem/ersd-jurisdictions-example&quot;/&gt;
+  &lt;resource value=&quot;http://hl7.org/fhir/us/ecr/CodeSystem/ersd-jurisdictions-example&quot;/&gt;
 &lt;/relatedArtifact&gt;</code></pre>
 
 * [eRSD Supplemental Library Example](Library-library-ersd-supplemental-library-example.html)

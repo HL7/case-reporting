@@ -6,19 +6,19 @@ include FHIRHelpers version '4.0.1'
 
 codesystem "LOINC": 'http://loinc.org'
 codesystem "UsageContext": 'http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type'
-codesystem "JurisdictionsList": 'http://example.org/fhir/CodeSystem/ersd-jurisdictions-example'
+codesystem "JurisdictionsList": 'http://hl7.org/fhir/us/ecr/CodeSystem/ersd-jurisdictions-example'
 
 // Overall triggering value sets, groupings of all condition-specific value sets, grouped by representation in the information model
-valueset "Diagnosis Trigger Codes": 'http://example.org/fhir/ValueSet/valueset-dxtc-example'
-valueset "Medication Trigger Codes": 'http://example.org/fhir/ValueSet/valueset-mrtc-example'
-valueset "Laboratory Order Trigger Codes": 'http://example.org/fhir/ValueSet/valueset-lotc-example'
-valueset "Laboratory Result Trigger Codes": 'http://example.org/fhir/ValueSet/valueset-lrtc-example'
-valueset "Organism Substance Trigger Codes": 'http://example.org/fhir/ValueSet/valueset-ostc-example'
-valueset "Procedure Trigger Codes": 'http://example.org/fhir/ValueSet/valueset-pctc-example'
-valueset "Suspected Disorder Trigger Codes": 'http://example.org/fhir/ValueSet/valueset-sdtc-example'
+valueset "Diagnosis Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example'
+valueset "Medication Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example'
+valueset "Laboratory Order Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example'
+valueset "Laboratory Result Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example'
+valueset "Organism Substance Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example'
+valueset "Procedure Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example'
+valueset "Suspected Disorder Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example'
 
 // Condition-specific triggering codes, these would be listed for each condition
-valueset "Chlamydia Laboratory Result Trigger Codes": 'http://example.org/fhir/ValueSet/valueset-chlamydia-example'
+valueset "Chlamydia Laboratory Result Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-example'
 
 // Supplemental (or operational) value sets used in suspected reportability determination logic
 valueset "Indeterminate or Equivocal Lab Result Value": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1035'
