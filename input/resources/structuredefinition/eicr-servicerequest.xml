@@ -1,84 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition
-    xmlns="http://hl7.org/fhir">
-    <id value="eicr-servicerequest"/>
-    <meta>
-        <versionId value="8"/>
-        <lastUpdated value="2021-07-14T01:00:21.130+00:00"/>
-        <source value="#T8kgnBem0HEewl6c"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-servicerequest"/>
-    <version value="1.0.0"/>
-    <name value="Eicr_ServiceRequest"/>
-    <title value="eICR ServiceRequest"/>
-    <status value="active"/>
-    <experimental value="false"/>
-    <publisher value="HL7 Public Health Work Group"/>
-    <description value="This ServiceRequest profile represents eICR laboratory orders and other diagnostics for the eICR event."/>
-    <jurisdiction>
-        <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="US"/>
-            <display value="United States of America"/>
-        </coding>
-        <text value="United States of America"/>
-    </jurisdiction>
-    <fhirVersion value="4.0.1"/>
-    <kind value="resource"/>
-    <abstract value="false"/>
-    <type value="ServiceRequest"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/ServiceRequest"/>
-    <derivation value="constraint"/>
-    <differential>
-        <element id="ServiceRequest">
-            <path value="ServiceRequest"/>
-            <short value="eICR ServiceRequest"/>
-            <definition value="Ordered tests for the patient during the encounter."/>
-            <base>
-                <path value="ServiceRequest"/>
-                <min value="0"/>
-                <max value="*"/>
-            </base>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-        </element>
-        <element id="ServiceRequest.identifier">
-            <path value="ServiceRequest.identifier"/>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-        </element>
-        <element id="ServiceRequest.code">
-            <path value="ServiceRequest.code"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <binding>
-                <strength value="extensible"/>
-                <description value="LOINC Diagnostic Report Codes"/>
-                <valueSet value="http://hl7.org/fhir/ValueSet/report-codes"/>
-            </binding>
-        </element>
-        <element id="ServiceRequest.subject">
-            <path value="ServiceRequest.subject"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
-            </type>
-        </element>
-        <element id="ServiceRequest.occurrence[x]">
-            <path value="ServiceRequest.occurrence[x]"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="ServiceRequest.authoredOn">
-            <path value="ServiceRequest.authoredOn"/>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-        </element>
-        <element id="ServiceRequest.requester">
-            <path value="ServiceRequest.requester"/>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-        </element>
-    </differential>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="eicr-servicerequest" />
+  <meta>
+    <versionId value="8" />
+    <lastUpdated value="2021-07-14T01:00:21.130+00:00" />
+    <source value="#T8kgnBem0HEewl6c" />
+  </meta>
+  <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-servicerequest" />
+  <version value="1.0.0" />
+  <name value="Eicr_ServiceRequest" />
+  <title value="eICR ServiceRequest" />
+  <status value="active" />
+  <experimental value="false" />
+  <publisher value="HL7 Public Health Work Group" />
+  <description value="This ServiceRequest profile represents eICR laboratory orders and other diagnostics for the eICR event." />
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166" />
+      <code value="US" />
+      <display value="United States of America" />
+    </coding>
+    <text value="United States of America" />
+  </jurisdiction>
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="ServiceRequest" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/ServiceRequest" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="ServiceRequest">
+      <path value="ServiceRequest" />
+      <short value="eICR ServiceRequest" />
+      <definition value="Ordered tests for the patient during the encounter." />
+      <base>
+        <path value="ServiceRequest" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="ServiceRequest.identifier">
+      <path value="ServiceRequest.identifier" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="ServiceRequest.code">
+      <path value="ServiceRequest.code" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+      <binding>
+        <strength value="extensible" />
+        <description value="LOINC Diagnostic Report Codes" />
+        <valueSet value="http://hl7.org/fhir/ValueSet/report-codes" />
+      </binding>
+    </element>
+    <element id="ServiceRequest.subject">
+      <path value="ServiceRequest.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+      </type>
+    </element>
+    <element id="ServiceRequest.occurrence[x]">
+      <path value="ServiceRequest.occurrence[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.authoredOn">
+      <path value="ServiceRequest.authoredOn" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="ServiceRequest.requester">
+      <path value="ServiceRequest.requester" />
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+  </differential>
 </StructureDefinition>
