@@ -80,16 +80,17 @@
             <path value="Encounter.participant.period"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Encounter.participant:sliceResponsibleProvider.individual">
-            <path value="Encounter.participant.individual"/>
-            <short value="Responsible Provider"/>
-            <definition value="The provider in charge of care and the facility in which care was provided during the encounter"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-practitionerrole"/>
-            </type>
-            <mustSupport value="true"/>
-        </element>
+      <element id="Encounter.participant:sliceResponsibleProvider.individual">
+        <path value="Encounter.participant.individual"/>
+        <short value="Responsible Provider"/>
+        <definition value="The provider in charge of care and the facility in which care was provided during the encounter"/>
+        <min value="1"/>
+        <type>
+          <code value="Reference"/>
+          <targetProfile value="http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-practitionerrole"/>
+        </type>
+        <mustSupport value="true"/>
+      </element>
         <element id="Encounter.diagnosis">
             <path value="Encounter.diagnosis"/>
             <short value="Encounter diagnosis"/>
