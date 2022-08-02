@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet
+    xmlns="http://hl7.org/fhir">
+    <id value="us-ph-valueset-example"/>
+    <meta>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset"/>
+    </meta>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-steward">
+        <valueContactDetail>
+            <name value="Example Steward"/>
+        </valueContactDetail>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-author">
+        <valueContactDetail>
+            <name value="Example Author"/>
+        </valueContactDetail>
+    </extension>
+    <url value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-valueset-chlamydia-example"/>
+    <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:2.16.840.1.113762.1.4.1146.1057"/>
+    </identifier>
+    <version value="1.0.0"/>
+    <name value="USPublicHealthValueSetExample"/>
+    <title value="US Public Health ValueSet Example"/>
+    <status value="draft"/>
+    <experimental value="true"/>
+    <date value="2022-05-01"/>
+    <publisher value="{site.data.fhir.ig.publisher}"/>
+    <description value="This example set of values contains laboratory observation test names that represent Chlamydia tests"/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
+    <copyright value="This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"/>
+    <compose>
+        <include>
+            <system value="http://loinc.org"/>
+            <concept>
+                <code value="14461-8"/>
+                <display value="Chlamydia trachomatis [Presence] in Blood by Organism specific culture"/>
+            </concept>
+            <concept>
+                <code value="14462-6"/>
+                <display value="Chlamydia trachomatis [Presence] in Cerebral spinal fluid by Organism specific culture"/>
+            </concept>
+            <concept>
+                <code value="14463-4"/>
+                <display value="Chlamydia trachomatis [Presence] in Cervix by Organism specific culture"/>
+            </concept>
+        </include>
+    </compose>
+</ValueSet>
