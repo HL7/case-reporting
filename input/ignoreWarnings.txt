@@ -15,8 +15,6 @@ Code System URI 'http://terminology.hl7.org/CodeSystem/PHOccupationCDCCensus2010
 Code System URI 'http://terminology.hl7.org/CodeSystem/PHIndustryCDCCensus2010' is unknown so the code cannot be validated
 Code System URI 'urn:oid:2.16.840.1.114222.4.5.315' is unknown so the code cannot be validated
 Code System URI 'urn:oid:2.16.840.1.114222.4.5.314' is unknown so the code cannot be validated
-ValueSet http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1099.49 not found by validator
-ValueSet http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1099.50 not found by validator
 ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator
 [Unable to determine whether the provided codes are in the value set http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.113883.10.20.15.2.5.5 because the value set or a code system it depends on is not known to the validator, Code System URI 'urn:oid:2.16.840.1.114222.4.5.274' is unknown so the code cannot be validated]
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type because the value set or a code system it depends on is not known to the validator, Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated]
@@ -27,12 +25,9 @@ ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator
 [Unable to determine whether the provided codes are in the value set http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.113883.10.20.15.2.5.10 because the value set or a code system it depends on is not known to the validator, Code System URI 'urn:oid:2.16.840.1.114222.4.5.274' is unknown so the code cannot be validated]
 [Unable to determine whether the provided codes are in the value set http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.113883.10.20.15.2.5.7 because the value set or a code system it depends on is not known to the validator, Code System URI 'urn:oid:2.16.840.1.114222.4.5.274' is unknown so the code cannot be validated]
 [Unable to determine whether the provided codes are in the value set http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.113883.10.20.15.2.5.8 because the value set or a code system it depends on is not known to the validator, Code System URI 'urn:oid:2.16.840.1.114222.4.5.274' is unknown so the code cannot be validated]
-The valueSet reference http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1099.49 on element Observation.code could not be resolved
-The valueSet reference http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1099.50 on element Observation.value[x] could not be resolved
 
 # 1. CPT codes can't be checked 2. One of the examples is demonstrating use of the data-absent-reason extension
 Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
-No code provided, and a code should be provided from the value set http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type (http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type)
 
 # APPROVED by HL7 Cross Group Projects WG: Profiles do not derive from one of the base US profiles because they do not align with any of the US Core Observations (Minutes: https://confluence.hl7.org/pages/viewpage.action?pageId=97453270)
 US FHIR Usage rules require that all profiles on Observation derive from one of the base US profiles
@@ -51,20 +46,13 @@ This element does not match any known slice defined in the profile http://hl7.or
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization
-This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-executable-library
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-computable-library
-This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-supplemental-library
-This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-library
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition
-This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-library
 
 # Demonstration of data-absent-reason extension
 No code provided, and a code should be provided from the value set 'US Core Encounter Type' (http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type)
-
-# This extension is demonstrated inside the examples: rr-relevant-reportable-condition-observation and rr-reportability-information-observation
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension'): The Implementation Guide contains no examples for this extension
 
 # The html in this text is escaped
 The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
@@ -92,22 +80,11 @@ WARNING: Bundle/bundle-ersd-specification-example: Bundle.entry[36].resource.ofT
 WARNING: Bundle/bundle-ersd-supplemental-example: Bundle.entry[12].resource.ofType(ValueSet).compose[0].include[0]: Unknown System/Version specified, so Concepts and Filters can''t be checked
 WARNING: Bundle/bundle-ersd-supplemental-example: Bundle.entry[13].resource.ofType(ValueSet).compose[0].include[0]: Unknown System/Version specified, so Concepts and Filters can''t be checked
 
-# The following Jira ticket has been submitted to extend this extension to allow use on PlanDefinition: https://jira.hl7.org/browse/FHIR-37646
+# ERROR JUSTIFICATION: The following Jira ticket has been submitted and APPROVED to extend this extension to allow use on PlanDefinition: https://jira.hl7.org/browse/FHIR-37646
 ERROR: Bundle/bundle-ersd-specification-example: Bundle.entry[1].resource.ofType(PlanDefinition): The modifier extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [[Bundle.entry.resource.ofType(PlanDefinition), BackboneElement.resource, PlanDefinition])
 ERROR: Bundle/bundle-ersd-specification-example: Bundle.entry[1].resource: The modifier extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [[Bundle.entry.resource, PlanDefinition])
 ERROR: PlanDefinition/plandefinition-ersd-instance-example: PlanDefinition: The modifier extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [[PlanDefinition])
 ERROR: PlanDefinition/plandefinition-ersd-instance-simple-example: PlanDefinition: The modifier extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [[PlanDefinition])
-
-# The following slicing validation errors seems to be in err - the artifacts look to be valid and it seems the slicing should be satisfied. The issue has been raised in the following chat.fhir.org 'IG Creation' stream topic: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/Slicing.20Validation.20Errors/near/288852585
-ERROR: Library/library-ersd-specification-library-example: Library: Library.relatedArtifact:slicePlanDefinition: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-library)
-ERROR: Library/library-ersd-specification-library-example: Library: Library.relatedArtifact:sliceTriggeringValueSetLibrary: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-library)
-ERROR: Library/library-ersd-supplemental-library-example: Library: Library.relatedArtifact:sliceComputableLibrary: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-supplemental-library)
-ERROR: Library/library-ersd-supplemental-library-example: Library: Library.relatedArtifact:sliceSupplementalValueSetLibrary: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-supplemental-library)
-ERROR: Library/library-ersd-supplemental-library-example: Library: Library.relatedArtifact:sliceJurisdictionsCodeSystem: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-supplemental-library)
-ERROR: Library/library-us-ph-specification-library-example: Library: Library.relatedArtifact:slicePlanDefinition: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-library)
-ERROR: Library/library-us-ph-specification-library-example: Library: Library.relatedArtifact:sliceTriggeringValueSetLibrary: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-library)
-ERROR: Library/library-us-ph-supplemental-library-example: Library: Library.relatedArtifact:sliceComputableLibrary: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-library)
-ERROR: Library/library-us-ph-supplemental-library-example: Library: Library.relatedArtifact:sliceSupplementalValueSetLibrary: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-library)
 
 # Suppress informational messages
 The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
