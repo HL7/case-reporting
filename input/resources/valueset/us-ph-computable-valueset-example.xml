@@ -17,12 +17,34 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/valueset-rules-text">
     <valueMarkdown value="Include codes from [codesystem-example.html](http://example.org/fhir/CodeSystem/example) where acme-plasma  =  true" />
   </extension>
-  <url value="http://hl7.org/fhir/us/ecr/fhir/ValueSet/us-ph-computable-valueset-example" />
+  <url value="http://example.org/fhir/ValueSet/us-ph-computable-valueset-example" />
   <name value="USPublicHealthComputableValueSetExample" />
   <title value="US Public Health Computable ValueSet Example" />
   <status value="draft" />
   <experimental value="true" />
-  <date value="2022-07-01" />
+  <date value="2022-05-01" />
   <publisher value="{site.data.fhir.ig.publisher}" />
   <description value="ACME Codes for Cholesterol: Plasma only" />
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+    <text value="United States of America"/>
+  </jurisdiction>
+  <useContext>
+    <code>
+      <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type" />
+      <code value="priority" />
+      <display value="Priority" />
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context" />
+        <code value="routine" />
+        <display value="Routine" />
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
 </ValueSet>
