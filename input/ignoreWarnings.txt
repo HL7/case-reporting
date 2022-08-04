@@ -1,4 +1,12 @@
 == Suppressed Messages ==
+# ERROR JUSTIFICATION: The following Jira ticket has been submitted and APPROVED to extend this extension to allow use on PlanDefinition: https://jira.hl7.org/browse/FHIR-37646
+ERROR: Bundle/bundle-ersd-specification-example: Bundle.entry[1].resource.ofType(PlanDefinition): The modifier extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [[Bundle.entry.resource.ofType(PlanDefinition), BackboneElement.resource, PlanDefinition])
+ERROR: Bundle/bundle-ersd-specification-example: Bundle.entry[1].resource: The modifier extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [[Bundle.entry.resource, PlanDefinition])
+ERROR: PlanDefinition/plandefinition-ersd-instance-example: PlanDefinition: The modifier extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [[PlanDefinition])
+ERROR: PlanDefinition/plandefinition-ersd-instance-simple-example: PlanDefinition: The modifier extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [[PlanDefinition])
+ERROR: Library.relatedArtifact:slicePlanDefinition: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-library)
+Details for http://example.org/fhir/PlanDefinition/plandefinition-ersd-instance-example matching against Profile http://hl7.org/fhir/StructureDefinition/PlanDefinition
+
 # These US Public Health profiles have been further constrained by other profiles in this IG and have not been instantiated in this IG (future plans are to move these PH generic profiles out to a Public Health Library)
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-messageheader'): The Implementation Guide contains no explicitly linked examples for this profile
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-composition'): The Implementation Guide contains no examples for this profile
@@ -50,6 +58,7 @@ This element does not match any known slice defined in the profile http://hl7.or
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-computable-library
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-library
 
 # Demonstration of data-absent-reason extension
 No code provided, and a code should be provided from the value set 'US Core Encounter Type' (http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type)
@@ -79,12 +88,6 @@ WARNING: Bundle/bundle-ersd-specification-example: Bundle.entry[35].resource.ofT
 WARNING: Bundle/bundle-ersd-specification-example: Bundle.entry[36].resource.ofType(ValueSet).compose[0].include[0]: Unknown System/Version specified, so Concepts and Filters can''t be checked
 WARNING: Bundle/bundle-ersd-supplemental-example: Bundle.entry[12].resource.ofType(ValueSet).compose[0].include[0]: Unknown System/Version specified, so Concepts and Filters can''t be checked
 WARNING: Bundle/bundle-ersd-supplemental-example: Bundle.entry[13].resource.ofType(ValueSet).compose[0].include[0]: Unknown System/Version specified, so Concepts and Filters can''t be checked
-
-# ERROR JUSTIFICATION: The following Jira ticket has been submitted and APPROVED to extend this extension to allow use on PlanDefinition: https://jira.hl7.org/browse/FHIR-37646
-ERROR: Bundle/bundle-ersd-specification-example: Bundle.entry[1].resource.ofType(PlanDefinition): The modifier extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [[Bundle.entry.resource.ofType(PlanDefinition), BackboneElement.resource, PlanDefinition])
-ERROR: Bundle/bundle-ersd-specification-example: Bundle.entry[1].resource: The modifier extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [[Bundle.entry.resource, PlanDefinition])
-ERROR: PlanDefinition/plandefinition-ersd-instance-example: PlanDefinition: The modifier extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [[PlanDefinition])
-ERROR: PlanDefinition/plandefinition-ersd-instance-simple-example: PlanDefinition: The modifier extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [[PlanDefinition])
 
 # Suppress informational messages
 The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
