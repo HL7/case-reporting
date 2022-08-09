@@ -395,15 +395,15 @@
           define "Is Encounter Longer Than Normal Reporting Duration?":
             "Current Encounter Duration"("Encounter In Context") &gt; "normalReportingDuration"
 
-          define "Is Encounter In Progress?":
+          define "Is Encounter In Progress":
             "Encounter In Context".status ~ 'in-progress'
 
-          define "Is Encounter Complete?":
+          define "Is Encounter Complete":
             "Encounter In Context".status ~ 'finished'
 
           define "Is Encounter In Progress and Within Normal Reporting Duration or 72h or less after end of encounter?":
             (
-              "Is Encounter In Progress?"
+              "Is Encounter In Progress"
                 and "Is Encounter Within Normal Reporting Duration?"
             )
               or (not IsNull("Triggering Encounter") and "Triggering Encounter".period.end 72 hours or less before Now())
@@ -734,14 +734,14 @@
               <type value="boolean"></type>
            </parameter>
            <parameter>
-              <name value="Is Encounter In Progress?"></name>
+              <name value="Is Encounter In Progress"></name>
               <use value="out"></use>
               <min value="0"></min>
               <max value="1"></max>
               <type value="boolean"></type>
            </parameter>
            <parameter>
-              <name value="Is Encounter Complete?"></name>
+              <name value="Is Encounter Complete"></name>
               <use value="out"></use>
               <min value="0"></min>
               <max value="1"></max>
