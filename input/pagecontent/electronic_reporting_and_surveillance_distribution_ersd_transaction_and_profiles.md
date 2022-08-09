@@ -95,6 +95,8 @@ The triggering value sets will include any number of focus useContext slices to 
   &lt;/codeFilter&gt;
 &lt;/input&gt;</code></pre>
 
+> Note to implementers: The logic used throughout the reporting workflow definition assumes the data provided as input is valid. For example, an Encounter with a status of in-progress is assumed to have a period element with a start date specified. Implementations may account for differences in the way the clinical system represents encounter information by adjusting the data using context in the reporting application to meet these assumptions.
+
 ##### Process
 
 Process is represented using the `action` elements of the PlanDefinition. A PlanDefinition can have any number of `action` elements, and each action may have any number of child `action` elements, allowing a hierarchy of actions to be constructed. In addition, the `relatedAction` element of each action allows dependencies between actions to be expressed. For example, action A starts 5 minutes before action B.
@@ -146,6 +148,8 @@ The `route-and-send-eicr` action involves the transmission of the eICR to either
 
 The `encounter-modified` action is initiated by an 'encounter-modified' event, and specifies that if the encounter has extended beyond the normal reporting duration ("E") `create-eicr` should be called.
 
+> Note to implementers: The workflow described here provides a minimally complete representation of the required reporting events. However, implementations may wish to extend this functionality to support implementation-level tracking details such as workflow status. For example, the addition of an 'is-encounter-completed' action that can be used to explicitly track when an encounter completes, rather than the implicit completion represented here. 
+
 ##### Parameters
 Because of variability in accumulation of data at the start of a patient encounter, the EHR implementer should implement a time-based delay in generating and sending the first encounter eICR to allow time for required data to be captured within the patient chart. This will ensure the eICR is better populated before sending and will reduce the number of case reports that are sent for a single patient encounter.
 
@@ -170,6 +174,8 @@ Full triggering timing can be described using the suggested parameters below fro
 **Parameter E** - The normal reporting duration for the encounter. While an encounter is in progress and within the the normal reporting duration reportability will continue to be checked. Once the encounter has extended beyond the normal reporting duration, it will only be reported on in response to an 'encounter-modified' trigger.
 
 - Example - For <u>2 weeks</u> after the encounter begins and while it is still in progress, continue to check for suspected reportability. Otherwise, once the encounter has extended beyond <u>2 weeks</u>, check for reportability and report only if the encounter has been modified.
+
+> Note to implementers: The offset durations specified in related actions here are _relative_ durations, in that they contain a comparator to indicate that the action should be completed _at most X_. This allows implementations to support scheduling these actions during non-peak times to minimize load on the clinical system.
 
 ##### Suspected Reportability Criteria
 
