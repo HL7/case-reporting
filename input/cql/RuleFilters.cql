@@ -183,15 +183,15 @@ define "Encounter In Context":
 define "Is Encounter Longer Than Normal Reporting Duration?":
   "Current Encounter Duration"("Encounter In Context") > "normalReportingDuration"
 
-define "Is Encounter In Progress":
+define "Is Encounter In Progress?":
   "Encounter In Context".status ~ 'in-progress'
 
-define "Is Encounter Complete":
+define "Is Encounter Complete?":
   "Encounter In Context".status ~ 'finished'
 
 define "Is Encounter In Progress and Within Normal Reporting Duration or 72h or less after end of encounter?":
   (
-    "Is Encounter In Progress"
+    "Is Encounter In Progress?"
       and "Is Encounter Within Normal Reporting Duration?"
   )
     or (not IsNull("Triggering Encounter") and "Triggering Encounter".period.end 72 hours or less before Now())
