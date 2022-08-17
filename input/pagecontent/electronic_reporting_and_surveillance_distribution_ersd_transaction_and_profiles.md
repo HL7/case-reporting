@@ -148,7 +148,7 @@ The `route-and-send-eicr` action involves the transmission of the eICR to either
 
 The `encounter-modified` action is initiated by an 'encounter-modified' event, and specifies that if the encounter has extended beyond the normal reporting duration ("E") `create-eicr` should be called.
 
-> Note to implementers: The workflow described here provides a minimally complete representation of the required reporting events. However, implementations may wish to extend this functionality to support implementation-level tracking details such as workflow status. For example, the addition of an 'is-encounter-completed' action that can be used to explicitly track when an encounter completes, rather than the implicit completion represented here. 
+> Note to implementers: The workflow described here provides a minimally complete representation of the required reporting events. However, implementations may wish to extend this functionality to support implementation-level tracking details such as workflow status. For example, the addition of an 'is-encounter-completed' action that can be used to explicitly track when an encounter completes, rather than the implicit completion represented here.
 
 ##### Parameters
 Because of variability in accumulation of data at the start of a patient encounter, the EHR implementer should implement a time-based delay in generating and sending the first encounter eICR to allow time for required data to be captured within the patient chart. This will ensure the eICR is better populated before sending and will reduce the number of case reports that are sent for a single patient encounter.
@@ -233,7 +233,7 @@ The suspected reportability criteria are also represented with the `condition` e
   &lt;valueExpression&gt;
     &lt;language value=&quot;text/cql-identifier&quot;/&gt;
     &lt;expression value=&quot;Is Reportable&quot;/&gt;
-    &lt;reference value=&quot;http://hl7.org/fhir/us/ecr/Library/RuleFilters|1.0.0&quot;/&gt;
+    &lt;reference value=&quot;http://hl7.org/fhir/us/ecr/Library/RuleFilters|2.1.0&quot;/&gt;
   &lt;/valueExpression&gt;
 &lt;/extension&gt;</code></pre>
 
