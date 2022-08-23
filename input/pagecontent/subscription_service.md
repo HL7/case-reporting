@@ -37,5 +37,5 @@ One approach for this is using the current FHIR R4 Subscription model, where a u
 **Suspected_Disorder**
 
 `Condition?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example`
-`Observation?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdltc-example`
-`MedicationRequest?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdmtc-example`
+`MedicationRequest?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example`
+`Observation?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example`
