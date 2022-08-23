@@ -212,11 +212,11 @@ define "Most recent eICR":
 define "Suspected Disorder Test Results":
   [Observation] O
     where O.status in { 'registered', 'preliminary', 'final', 'amended', 'corrected' }
-      and O.value as CodeableConcept in "Suspected Disorder Trigger Codes"
+      and O.value as CodeableConcept in "Laboratory Order Trigger Codes"
 
 define "Suspected Disorders":
   [Condition: "Suspected Disorder Trigger Codes"]
-    union [MedicationRequest: "Suspected Disorder Trigger Codes"]
+    union [MedicationRequest: "Medication Trigger Codes"]
     union "Suspected Disorder Test Results"
 
 define "Is Suspected Disorder?":
