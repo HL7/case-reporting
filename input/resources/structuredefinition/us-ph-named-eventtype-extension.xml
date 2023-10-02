@@ -1,64 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition
-    xmlns="http://hl7.org/fhir">
-    <id value="us-ph-named-eventtype-extension"/>
-    <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2021-07-14T00:05:03.585+00:00"/>
-        <source value="#RdV8bksEl3t7dBn7"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension"/>
-    <version value="0.1.0"/>
-    <name value="USPublicHealthNamedEventTypeExtension"/>
-    <title value="US Public Health Named Event Type Extension"/>
-    <status value="active"/>
-    <experimental value="false"/>
-    <date value="2019-09-01T00:00:00.000Z"/>
-    <publisher value="HL7 International - Public Health Work Group"/>
-    <description value="Indicates the types of named events to subscribe to from the EHR."/>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="us-ph-named-eventtype-extension" />
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension" />
+    <version value="0.1.0" />
+    <name value="USPublicHealthNamedEventTypeExtension" />
+    <title value="US Public Health Named Event Type Extension" />
+    <status value="active" />
+    <experimental value="false" />
+    <date value="2019-09-01T00:00:00.000Z" />
+    <publisher value="HL7 International - Public Health Work Group" />
+    <description value="Indicates the types of named events to subscribe to from the EHR." />
     <jurisdiction>
         <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="US"/>
-            <display value="United States of America"/>
+            <system value="urn:iso:std:iso:3166" />
+            <code value="US" />
+            <display value="United States of America" />
         </coding>
-        <text value="United States of America"/>
+        <text value="United States of America" />
     </jurisdiction>
-    <fhirVersion value="4.0.1"/>
-    <kind value="complex-type"/>
-    <abstract value="false"/>
+    <fhirVersion value="4.0.1" />
+    <kind value="complex-type" />
+    <abstract value="false" />
     <context>
-        <type value="element"/>
-        <expression value="PlanDefinition.action.trigger"/>
+        <type value="element" />
+        <expression value="PlanDefinition.action.trigger" />
     </context>
-    <type value="Extension"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-    <derivation value="constraint"/>
+    <type value="Extension" />
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+    <derivation value="constraint" />
     <differential>
         <element id="Extension">
-            <path value="Extension"/>
-            <short value="US Public Health Named Event Type Extension"/>
-            <definition value="Indicates the types of named events to subscribe to from the EHR."/>
-            <min value="1"/>
-            <max value="1"/>
+            <path value="Extension" />
+            <short value="US Public Health Named Event Type Extension" />
+            <definition value="Indicates the types of named events to subscribe to from the EHR." />
+            <min value="1" />
+            <max value="1" />
         </element>
         <element id="Extension.url">
-            <path value="Extension.url"/>
+            <path value="Extension.url" />
             <type>
-                <code value="uri"/>
+                <code value="uri" />
             </type>
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension" />
         </element>
         <element id="Extension.value[x]">
-            <path value="Extension.value[x]"/>
-            <short value="The set of named events that can be used for subscriptions"/>
+            <path value="Extension.value[x]" />
+            <short value="The set of named events that can be used for subscriptions" />
             <type>
-                <code value="CodeableConcept"/>
+                <code value="CodeableConcept" />
             </type>
             <binding>
-                <strength value="extensible"/>
-                <description value="US Public Health TriggerDefinition NamedEvents"/>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-triggerdefinition-namedevent"/>
+                <strength value="extensible" />
+                <description value="US Public Health TriggerDefinition NamedEvents" />
+                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-triggerdefinition-namedevent" />
             </binding>
         </element>
     </differential>

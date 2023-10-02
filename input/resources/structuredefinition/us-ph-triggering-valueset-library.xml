@@ -1,146 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition
-    xmlns="http://hl7.org/fhir">
-    <id value="us-ph-triggering-valueset-library"/>
-    <meta>
-        <versionId value="8"/>
-        <lastUpdated value="2021-08-20T06:13:12.413+00:00"/>
-        <source value="#uQmhpk5ZcYmF99Vs"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset-library"/>
-    <version value="1.0.0"/>
-    <name value="USPublicHealthTriggeringValueSetLibrary"/>
-    <title value="US Public Health Triggering ValueSet Library"/>
-    <status value="active"/>
-    <date value="2020-11-11T00:00:00.000Z"/>
-    <publisher value="HL7 Public Health Work Group"/>
-    <description value="Defines the library containing the US Public Health triggering value sets."/>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="us-ph-triggering-valueset-library" />
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset-library" />
+    <version value="1.0.0" />
+    <name value="USPublicHealthTriggeringValueSetLibrary" />
+    <title value="US Public Health Triggering ValueSet Library" />
+    <status value="active" />
+    <date value="2020-11-11T00:00:00.000Z" />
+    <publisher value="HL7 Public Health Work Group" />
+    <description value="Defines the library containing the US Public Health triggering value sets." />
     <jurisdiction>
         <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="US"/>
-            <display value="United States of America"/>
+            <system value="urn:iso:std:iso:3166" />
+            <code value="US" />
+            <display value="United States of America" />
         </coding>
-        <text value="United States of America"/>
+        <text value="United States of America" />
     </jurisdiction>
-    <fhirVersion value="4.0.1"/>
-    <kind value="resource"/>
-    <abstract value="false"/>
-    <type value="Library"/>
-    <baseDefinition value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset-library"/>
-    <derivation value="constraint"/>
+    <fhirVersion value="4.0.1" />
+    <kind value="resource" />
+    <abstract value="false" />
+    <type value="Library" />
+    <baseDefinition value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset-library" />
+    <derivation value="constraint" />
     <differential>
         <element id="Library">
-            <path value="Library"/>
-            <short value="US Public Health Triggering ValueSet Library"/>
+            <path value="Library" />
+            <short value="US Public Health Triggering ValueSet Library" />
         </element>
         <element id="Library.useContext">
-            <path value="Library.useContext"/>
+            <path value="Library.useContext" />
             <slicing>
                 <discriminator>
-                    <type value="pattern"/>
-                    <path value="code"/>
+                    <type value="pattern" />
+                    <path value="code" />
                 </discriminator>
-                <rules value="open"/>
+                <rules value="open" />
             </slicing>
-            <min value="2"/>
-            <max value="*"/>
+            <min value="2" />
+            <max value="*" />
         </element>
         <element id="Library.useContext:reportingContext">
-            <path value="Library.useContext"/>
-            <sliceName value="reportingContext"/>
-            <min value="1"/>
-            <max value="1"/>
+            <path value="Library.useContext" />
+            <sliceName value="reportingContext" />
+            <min value="1" />
+            <max value="1" />
         </element>
         <element id="Library.useContext:reportingContext.code">
-            <path value="Library.useContext.code"/>
-            <min value="1"/>
-            <max value="1"/>
+            <path value="Library.useContext.code" />
+            <min value="1" />
+            <max value="1" />
             <patternCoding>
-                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
-                <code value="reporting"/>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type" />
+                <code value="reporting" />
             </patternCoding>
         </element>
         <element id="Library.useContext:reportingContext.value[x]">
-            <path value="Library.useContext.value[x]"/>
-            <short value="Library useContext"/>
-            <definition value="The US Public Health use context of the Library."/>
-            <min value="1"/>
-            <max value="1"/>
+            <path value="Library.useContext.value[x]" />
+            <short value="Library useContext" />
+            <definition value="The US Public Health use context of the Library." />
+            <min value="1" />
+            <max value="1" />
             <type>
-                <code value="CodeableConcept"/>
+                <code value="CodeableConcept" />
             </type>
             <patternCodeableConcept>
                 <coding>
-                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
-                    <code value="triggering"/>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context" />
+                    <code value="triggering" />
                 </coding>
             </patternCodeableConcept>
         </element>
         <element id="Library.useContext:specificationTypeContext">
-            <path value="Library.useContext"/>
-            <sliceName value="specificationTypeContext"/>
-            <min value="1"/>
-            <max value="1"/>
+            <path value="Library.useContext" />
+            <sliceName value="specificationTypeContext" />
+            <min value="1" />
+            <max value="1" />
         </element>
         <element id="Library.useContext:specificationTypeContext.code">
-            <path value="Library.useContext.code"/>
-            <min value="1"/>
-            <max value="1"/>
+            <path value="Library.useContext.code" />
+            <min value="1" />
+            <max value="1" />
             <patternCoding>
-                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type"/>
-                <code value="specification-type"/>
+                <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type" />
+                <code value="specification-type" />
             </patternCoding>
         </element>
         <element id="Library.useContext:specificationTypeContext.value[x]">
-            <path value="Library.useContext.value[x]"/>
-            <short value="Library useContext"/>
-            <definition value="The US Public Health use context of the Library."/>
-            <min value="1"/>
-            <max value="1"/>
+            <path value="Library.useContext.value[x]" />
+            <short value="Library useContext" />
+            <definition value="The US Public Health use context of the Library." />
+            <min value="1" />
+            <max value="1" />
             <type>
-                <code value="CodeableConcept"/>
+                <code value="CodeableConcept" />
             </type>
             <patternCodeableConcept>
                 <coding>
-                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context"/>
-                    <code value="value-set-library"/>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context" />
+                    <code value="value-set-library" />
                 </coding>
             </patternCodeableConcept>
         </element>
         <element id="Library.relatedArtifact">
-            <path value="Library.relatedArtifact"/>
+            <path value="Library.relatedArtifact" />
             <slicing>
                 <discriminator>
-                    <type value="value"/>
-                    <path value="type"/>
+                    <type value="value" />
+                    <path value="type" />
                 </discriminator>
-                <rules value="open"/>
+                <rules value="open" />
             </slicing>
-            <min value="1"/>
+            <min value="1" />
         </element>
         <element id="Library.relatedArtifact:sliceUSPHValueSet">
-            <path value="Library.relatedArtifact"/>
-            <sliceName value="sliceUSPHValueSet"/>
-            <short value="US Public Health Triggering Value Set"/>
-            <definition value="Reference to one of the US Public Health Triggering value sets"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
+            <path value="Library.relatedArtifact" />
+            <sliceName value="sliceUSPHValueSet" />
+            <short value="US Public Health Triggering Value Set" />
+            <definition value="Reference to one of the US Public Health Triggering value sets" />
+            <min value="1" />
+            <mustSupport value="true" />
         </element>
         <element id="Library.relatedArtifact:sliceUSPHValueSet.type">
-            <path value="Library.relatedArtifact.type"/>
-            <short value="composed-of"/>
-            <definition value="The type of relationship to the related artifact. Fixed to composed-of."/>
-            <patternCode value="composed-of"/>
+            <path value="Library.relatedArtifact.type" />
+            <short value="composed-of" />
+            <definition value="The type of relationship to the related artifact. Fixed to composed-of." />
+            <patternCode value="composed-of" />
         </element>
         <element id="Library.relatedArtifact:sliceUSPHValueSet.resource">
-            <path value="Library.relatedArtifact.resource"/>
-            <min value="1"/>
+            <path value="Library.relatedArtifact.resource" />
+            <min value="1" />
             <type>
-                <code value="canonical"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"/>
+                <code value="canonical" />
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset" />
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
     </differential>
 </StructureDefinition>

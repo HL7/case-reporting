@@ -1,106 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition
-    xmlns="http://hl7.org/fhir">
-    <id value="us-ph-address-extension"/>
-    <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2021-07-14T00:05:03.490+00:00"/>
-        <source value="#vMn9ovH1UW0YILUL"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-address-extension"/>
-    <version value="1.0.0"/>
-    <name value="USPublicHealthAddressExtension"/>
-    <title value="US Public Health Address Extension"/>
-    <status value="active"/>
-    <experimental value="false"/>
-    <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Extension profile represents where the patient traveled to or visited as an address e.g.: country, state, city, street address (if applicable).&#xA;&#xA;At the least, address must contain the country. State is required if the country is US. If country is something other than US, the state **MAY** be present but **MAY** be bound to different vocabularies."/>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="us-ph-address-extension" />
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-address-extension" />
+    <version value="1.0.0" />
+    <name value="USPublicHealthAddressExtension" />
+    <title value="US Public Health Address Extension" />
+    <status value="active" />
+    <experimental value="false" />
+    <publisher value="HL7 Public Health Work Group" />
+    <description value="This Extension profile represents where the patient traveled to or visited as an address e.g.: country, state, city, street address (if applicable).&#xA;&#xA;At the least, address must contain the country. State is required if the country is US. If country is something other than US, the state **MAY** be present but **MAY** be bound to different vocabularies." />
     <jurisdiction>
         <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="US"/>
-            <display value="United States of America"/>
+            <system value="urn:iso:std:iso:3166" />
+            <code value="US" />
+            <display value="United States of America" />
         </coding>
-        <text value="United States of America"/>
+        <text value="United States of America" />
     </jurisdiction>
-    <fhirVersion value="4.0.1"/>
-    <kind value="complex-type"/>
-    <abstract value="false"/>
+    <fhirVersion value="4.0.1" />
+    <kind value="complex-type" />
+    <abstract value="false" />
     <context>
-        <type value="element"/>
-        <expression value="Observation.component"/>
+        <type value="element" />
+        <expression value="Observation.component" />
     </context>
     <context>
-        <type value="element"/>
-        <expression value="Observation"/>
+        <type value="element" />
+        <expression value="Observation" />
     </context>
-    <type value="Extension"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-    <derivation value="constraint"/>
+    <type value="Extension" />
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+    <derivation value="constraint" />
     <differential>
         <element id="Extension">
-            <path value="Extension"/>
-            <short value="US Public Health Address Extension"/>
-            <definition value="Where the patient traveled to or visited as an address e.g. country, city, street address if applicable. At least, address must contain the country."/>
-            <max value="1"/>
+            <path value="Extension" />
+            <short value="US Public Health Address Extension" />
+            <definition value="Where the patient traveled to or visited as an address e.g. country, city, street address if applicable. At least, address must contain the country." />
+            <max value="1" />
         </element>
         <element id="Extension.url">
-            <path value="Extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-address-extension"/>
+            <path value="Extension.url" />
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-address-extension" />
         </element>
         <element id="Extension.value[x]">
-            <path value="Extension.value[x]"/>
+            <path value="Extension.value[x]" />
             <type>
-                <code value="Address"/>
+                <code value="Address" />
             </type>
             <example>
-                <label value="for Address"/>
+                <label value="for Address" />
                 <valueAddress>
-                    <text value="Nadi FIJI"/>
-                    <city value="Nadi"/>
-                    <country value="FIJI"/>
+                    <text value="Nadi FIJI" />
+                    <city value="Nadi" />
+                    <country value="FIJI" />
                 </valueAddress>
             </example>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
         <element id="Extension.value[x].use">
-            <path value="Extension.value[x].use"/>
-            <mustSupport value="true"/>
+            <path value="Extension.value[x].use" />
+            <mustSupport value="true" />
         </element>
         <element id="Extension.value[x].type">
-            <path value="Extension.value[x].type"/>
-            <mustSupport value="true"/>
+            <path value="Extension.value[x].type" />
+            <mustSupport value="true" />
         </element>
         <element id="Extension.value[x].line">
-            <path value="Extension.value[x].line"/>
-            <mustSupport value="true"/>
+            <path value="Extension.value[x].line" />
+            <mustSupport value="true" />
         </element>
         <element id="Extension.value[x].city">
-            <path value="Extension.value[x].city"/>
-            <mustSupport value="true"/>
+            <path value="Extension.value[x].city" />
+            <mustSupport value="true" />
         </element>
         <element id="Extension.value[x].district">
-            <path value="Extension.value[x].district"/>
-            <mustSupport value="true"/>
+            <path value="Extension.value[x].district" />
+            <mustSupport value="true" />
         </element>
         <element id="Extension.value[x].state">
-            <path value="Extension.value[x].state"/>
-            <mustSupport value="true"/>
+            <path value="Extension.value[x].state" />
+            <mustSupport value="true" />
             <binding>
-                <strength value="preferred"/>
-                <description value="USPS Two Letter Alphabetic Codes"/>
-                <valueSet value="http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state"/>
+                <strength value="preferred" />
+                <description value="USPS Two Letter Alphabetic Codes" />
+                <valueSet value="http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state" />
             </binding>
         </element>
         <element id="Extension.value[x].postalCode">
-            <path value="Extension.value[x].postalCode"/>
-            <mustSupport value="true"/>
+            <path value="Extension.value[x].postalCode" />
+            <mustSupport value="true" />
         </element>
         <element id="Extension.value[x].country">
-            <path value="Extension.value[x].country"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
+            <path value="Extension.value[x].country" />
+            <min value="1" />
+            <max value="1" />
+            <mustSupport value="true" />
         </element>
     </differential>
 </StructureDefinition>

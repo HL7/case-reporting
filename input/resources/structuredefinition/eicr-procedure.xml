@@ -1,52 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition
-    xmlns="http://hl7.org/fhir">
-    <id value="eicr-procedure"/>
-    <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2021-06-28T08:05:04.304+00:00"/>
-        <source value="#0vgJ6yMmvSoWetsL"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-procedure"/>
-    <version value="1.0.0"/>
-    <name value="EICRProcedure"/>
-    <title value="eICR Procedure"/>
-    <status value="active"/>
-    <experimental value="false"/>
-    <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Procedure profile defines constraints on the US Core Procedure profile for the eICR use case."/>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="eicr-procedure" />
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-procedure" />
+    <version value="1.0.0" />
+    <name value="EICRProcedure" />
+    <title value="eICR Procedure" />
+    <status value="active" />
+    <experimental value="false" />
+    <publisher value="HL7 Public Health Work Group" />
+    <description value="This Procedure profile defines constraints on the US Core Procedure profile for the eICR use case." />
     <jurisdiction>
         <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="US"/>
-            <display value="United States of America"/>
+            <system value="urn:iso:std:iso:3166" />
+            <code value="US" />
+            <display value="United States of America" />
         </coding>
-        <text value="United States of America"/>
+        <text value="United States of America" />
     </jurisdiction>
-    <fhirVersion value="4.0.1"/>
-    <kind value="resource"/>
-    <abstract value="false"/>
-    <type value="Procedure"/>
-    <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"/>
-    <derivation value="constraint"/>
+    <fhirVersion value="4.0.1" />
+    <kind value="resource" />
+    <abstract value="false" />
+    <type value="Procedure" />
+    <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure" />
+    <derivation value="constraint" />
     <differential>
         <element id="Procedure">
-            <path value="Procedure"/>
-            <short value="Defines constraints on the US Core Procedure profile for US Public Health use cases."/>
+            <path value="Procedure" />
+            <short value="Defines constraints on the US Core Procedure profile for US Public Health use cases." />
         </element>
         <element id="Procedure.focalDevice">
-            <path value="Procedure.focalDevice"/>
-            <short value="Device such as a ventilator as the focus of the procedure"/>
-            <definition value="A device that is implanted, removed or otherwise manipulated such as a ventilator as a focal portion of the Procedure."/>
-            <mustSupport value="true"/>
+            <path value="Procedure.focalDevice" />
+            <short value="Device such as a ventilator as the focus of the procedure" />
+            <definition value="A device that is implanted, removed or otherwise manipulated such as a ventilator as a focal portion of the Procedure." />
+            <mustSupport value="true" />
         </element>
         <element id="Procedure.focalDevice.manipulated">
-            <path value="Procedure.focalDevice.manipulated"/>
+            <path value="Procedure.focalDevice.manipulated" />
             <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device"/>
+                <code value="Reference" />
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
     </differential>
 </StructureDefinition>

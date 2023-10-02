@@ -1,86 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition
-    xmlns="http://hl7.org/fhir">
-    <id value="ersd-supplemental-library"/>
-    <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2021-08-18T04:36:24.408+00:00"/>
-        <source value="#M2r2uQxokmYta8kZ"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-supplemental-library"/>
-    <version value="1.0.0"/>
-    <name value="ERSDSupplementalLibrary"/>
-    <title value="eRSD Supplemental Library"/>
-    <status value="active"/>
-    <date value="2021-07-13T00:00:00.000Z"/>
-    <publisher value="HL7 Public Health Work Group"/>
-    <description value="Defines the asset-collection library containing the eRSD supplemental assets."/>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="ersd-supplemental-library" />
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-supplemental-library" />
+    <version value="1.0.0" />
+    <name value="ERSDSupplementalLibrary" />
+    <title value="eRSD Supplemental Library" />
+    <status value="active" />
+    <date value="2021-07-13T00:00:00.000Z" />
+    <publisher value="HL7 Public Health Work Group" />
+    <description value="Defines the asset-collection library containing the eRSD supplemental assets." />
     <jurisdiction>
         <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="US"/>
-            <display value="United States of America"/>
+            <system value="urn:iso:std:iso:3166" />
+            <code value="US" />
+            <display value="United States of America" />
         </coding>
-        <text value="United States of America"/>
+        <text value="United States of America" />
     </jurisdiction>
-    <fhirVersion value="4.0.1"/>
-    <kind value="resource"/>
-    <abstract value="false"/>
-    <type value="Library"/>
-    <baseDefinition value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-library"/>
-    <derivation value="constraint"/>
+    <fhirVersion value="4.0.1" />
+    <kind value="resource" />
+    <abstract value="false" />
+    <type value="Library" />
+    <baseDefinition value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-library" />
+    <derivation value="constraint" />
     <differential>
         <element id="Library">
-            <path value="Library"/>
-            <short value="eRSD Supplemental Library"/>
+            <path value="Library" />
+            <short value="eRSD Supplemental Library" />
         </element>
         <element id="Library.type">
-            <path value="Library.type"/>
-            <short value="asset-collection"/>
-            <definition value="Constrains the Library's Type to asset-collection."/>
+            <path value="Library.type" />
+            <short value="asset-collection" />
+            <definition value="Constrains the Library's Type to asset-collection." />
             <patternCodeableConcept>
                 <coding>
-                    <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
-                    <code value="asset-collection"/>
+                    <system value="http://terminology.hl7.org/CodeSystem/library-type" />
+                    <code value="asset-collection" />
                 </coding>
             </patternCodeableConcept>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
         <element id="Library.relatedArtifact">
-            <path value="Library.relatedArtifact"/>
+            <path value="Library.relatedArtifact" />
             <slicing>
                 <discriminator>
-                    <type value="profile"/>
-                    <path value="resource.resolve()"/>
+                    <type value="profile" />
+                    <path value="resource.resolve()" />
                 </discriminator>
-                <rules value="open"/>
+                <rules value="open" />
             </slicing>
-            <min value="3"/>
-            <mustSupport value="true"/>
+            <min value="3" />
+            <mustSupport value="true" />
         </element>
         <element id="Library.relatedArtifact:sliceJurisdictionsCodeSystem">
-            <path value="Library.relatedArtifact"/>
-            <sliceName value="sliceJurisdictionsCodeSystem"/>
-            <short value="Jurisdiction CodeSystem"/>
-            <definition value="Jurisdictions CodeSystem"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
+            <path value="Library.relatedArtifact" />
+            <sliceName value="sliceJurisdictionsCodeSystem" />
+            <short value="Jurisdiction CodeSystem" />
+            <definition value="Jurisdictions CodeSystem" />
+            <min value="1" />
+            <max value="1" />
+            <mustSupport value="true" />
         </element>
         <element id="Library.relatedArtifact:sliceJurisdictionsCodeSystem.type">
-            <path value="Library.relatedArtifact.type"/>
-            <short value="composed-of"/>
-            <definition value="The type of relationship to the related artifact. Fixed to composed-of."/>
-            <patternCode value="composed-of"/>
+            <path value="Library.relatedArtifact.type" />
+            <short value="composed-of" />
+            <definition value="The type of relationship to the related artifact. Fixed to composed-of." />
+            <patternCode value="composed-of" />
         </element>
         <element id="Library.relatedArtifact:sliceJurisdictionsCodeSystem.resource">
-            <path value="Library.relatedArtifact.resource"/>
-            <min value="1"/>
+            <path value="Library.relatedArtifact.resource" />
+            <min value="1" />
             <type>
-                <code value="canonical"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem"/>
+                <code value="canonical" />
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem" />
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
     </differential>
 </StructureDefinition>

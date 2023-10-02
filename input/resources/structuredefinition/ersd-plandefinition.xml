@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
     <id value="ersd-plandefinition" />
-    <meta>
-        <versionId value="35" />
-        <lastUpdated value="2021-11-17T04:21:04.742+00:00" />
-        <source value="#QldGNssihwOAV7Nt" />
-    </meta>
     <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition" />
     <version value="1.0.0" />
     <name value="ERSDPlanDefinition" />
@@ -53,8 +48,7 @@
         <element id="PlanDefinition">
             <path value="PlanDefinition" />
             <short value="eRSD - electronic Reporting and Surveillance Distribution" />
-            <definition
-                value="Defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician." />
+            <definition value="Defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician." />
             <mustSupport value="true" />
         </element>
         <element id="PlanDefinition.extension">
@@ -139,11 +133,9 @@
         </element>
         <element id="PlanDefinition.action.relatedAction.offsetDuration">
             <path value="PlanDefinition.action.relatedAction.offsetDuration" />
-            <definition
-                value="The duration quantity may include a comparator, indicating how the offset should be applied. For example, &lt;= 1 hour, meaning that the offset should be no more than 1 hour. This allows systems flexibility in scheduling the actions to isolate reporting activities to off hours." />
+            <definition value="The duration quantity may include a comparator, indicating how the offset should be applied. For example, &lt;= 1 hour, meaning that the offset should be no more than 1 hour. This allows systems flexibility in scheduling the actions to isolate reporting activities to off hours." />
             <mustSupport value="true" />
         </element>
-        
         <element id="PlanDefinition.action:encounterStart">
             <path value="PlanDefinition.action" />
             <sliceName value="encounterStart" />
@@ -217,8 +209,7 @@
             <short value="Additional content defined by implementations" />
             <definition
                 value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." />
-            <comment
-                value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+            <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
             <alias value="extensions" />
             <alias value="user content" />
             <min value="0" />
@@ -296,8 +287,7 @@
         </element>
         <element id="PlanDefinition.action:encounterStart.trigger.name">
             <path value="PlanDefinition.action.trigger.name" />
-            <definition
-                value="The name of the event, encounter-start in this case. For any action invoked as a result of this trigger, the triggering encounter is accessible via the context variable `%encounter`" />
+            <definition value="The name of the event, encounter-start in this case. For any action invoked as a result of this trigger, the triggering encounter is accessible via the context variable `%encounter`" />
             <fixedString value="encounter-start" />
         </element>
         <element id="PlanDefinition.action:encounterStart.relatedAction">
@@ -329,7 +319,6 @@
                 </valueDuration>
             </example>
         </element>
-
         <element id="PlanDefinition.action:checkSuspectedDisorder">
             <path value="PlanDefinition.action" />
             <sliceName value="checkSuspectedDisorder" />
@@ -378,7 +367,6 @@
             </slicing>
             <min value="2" />
         </element>
-
         <element id="PlanDefinition.action:checkSuspectedDisorder.action:isEncounterSuspectedDisorder">
             <path value="PlanDefinition.action.action" />
             <sliceName value="isEncounterSuspectedDisorder" />
@@ -444,7 +432,6 @@
             <path value="PlanDefinition.action.action.relatedAction.relationship" />
             <fixedCode value="before-start" />
         </element>
-
         <element id="PlanDefinition.action:checkSuspectedDisorder.action:continueCheckReportable">
             <path value="PlanDefinition.action.action" />
             <sliceName value="continueCheckReportable" />
@@ -513,7 +500,6 @@
                 </valueDuration>
             </example>
         </element>
-
         <element id="PlanDefinition.action:checkReportable">
             <path value="PlanDefinition.action" />
             <sliceName value="checkReportable" />
@@ -555,7 +541,6 @@
             </slicing>
             <min value="3" />
         </element>
-
         <element id="PlanDefinition.action:checkReportable.action:isEncounterReportable">
             <path value="PlanDefinition.action.action" />
             <sliceName value="isEncounterReportable" />
@@ -621,7 +606,6 @@
             <path value="PlanDefinition.action.action.relatedAction.relationship" />
             <fixedCode value="before-start" />
         </element>
-
         <element id="PlanDefinition.action:checkReportable.action:checkUpdateEicr">
             <path value="PlanDefinition.action.action" />
             <sliceName value="checkUpdateEicr" />
@@ -675,7 +659,6 @@
             <path value="PlanDefinition.action.action.relatedAction.relationship" />
             <fixedCode value="before-start" />
         </element>
-
         <element id="PlanDefinition.action:checkReportable.action:encounterInProgress">
             <path value="PlanDefinition.action.action" />
             <sliceName value="encounterInProgress" />
@@ -744,7 +727,6 @@
                 </valueDuration>
             </example>
         </element>
-
         <element id="PlanDefinition.action:createEicr">
             <path value="PlanDefinition.action" />
             <sliceName value="createEicr" />
@@ -786,7 +768,6 @@
             <path value="PlanDefinition.action.relatedAction.relationship" />
             <fixedCode value="before-start" />
         </element>
-
         <element id="PlanDefinition.action:validateEicr">
             <path value="PlanDefinition.action" />
             <sliceName value="validateEicr" />
@@ -828,7 +809,6 @@
             <path value="PlanDefinition.action.relatedAction.relationship" />
             <fixedCode value="before-start" />
         </element>
-
         <element id="PlanDefinition.action:routeAndSendEicr">
             <path value="PlanDefinition.action" />
             <sliceName value="routeAndSendEicr" />
@@ -866,7 +846,6 @@
                 </coding>
             </patternCodeableConcept>
         </element>
-
         <element id="PlanDefinition.action:encounterModified">
             <path value="PlanDefinition.action" />
             <sliceName value="encounterModified" />
@@ -940,8 +919,7 @@
             <short value="Additional content defined by implementations" />
             <definition
                 value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." />
-            <comment
-                value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+            <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
             <alias value="extensions" />
             <alias value="user content" />
             <min value="0" />
@@ -1019,8 +997,7 @@
         </element>
         <element id="PlanDefinition.action:encounterModified.trigger.name">
             <path value="PlanDefinition.action.trigger.name" />
-            <definition
-                value="The name of the event, encounter-start in this case. For any action invoked as a result of this trigger, the triggering encounter is accessible via the context variable `%encounter`" />
+            <definition value="The name of the event, encounter-start in this case. For any action invoked as a result of this trigger, the triggering encounter is accessible via the context variable `%encounter`" />
             <fixedString value="encounter-modified" />
         </element>
         <element id="PlanDefinition.action:encounterModified.condition">

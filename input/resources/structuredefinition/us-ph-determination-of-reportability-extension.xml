@@ -1,62 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition
-    xmlns="http://hl7.org/fhir">
-    <id value="us-ph-determination-of-reportability-extension"/>
-    <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2021-07-21T05:03:31.182+00:00"/>
-        <source value="#3x13CUpLmon8COKM"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-determination-of-reportability-extension"/>
-    <version value="1.0.0"/>
-    <name value="USPublicHealthDeterminationOfReportabilityExtension"/>
-    <title value="US Public Health Determination of Reportability Extension"/>
-    <status value="active"/>
-    <experimental value="false"/>
-    <publisher value="HL7 Public Health Work Group"/>
-    <description value="This Extension profile represents the determination of reportability.&#xA;&#xA;Reportability is &quot;the quality or state of being reportable or not&quot;. Reportability does not equate to the patient having a condition or meeting a case definition (definitively being a case).&#xA;&#xA;For each condition included in the report and the relevant public health agency(s), this element indicates the determination of whether the condition is reportable to public health. &#xA;&#xA;The values that can be used for the Determination of Reportability are described below.&#xA;&#xA;A possible condition is:&#xA;&#xA;* Reportable - The information provided meets reporting criteria for an associated PHA.&#xA;&#xA;A possible condition:&#xA;&#xA;* May be Reportable - The information provided may meet reporting criteria if additional information is provided. The Reportability Response will also be able to share the information needed to definitively determine reportability.&#xA;&#xA;A possible condition is:&#xA;&#xA;* Not Reportable - The information provided conclusively does not meet reporting criteria.&#xA;&#xA;Some decision support systems may not be able to fully differentiate between possible conditions that are Not Reportable and those that May be Reportable if additional information is provided. In these circumstances there may only be a reportability determination of:&#xA;&#xA;* No Reporting Rule Met - The information provided does not meet reporting criteria or may meet reporting criteria if additional information is provided.&#xA;&#xA;The determination of No Reporting Rule Met may be provided for a possible condition or for all conditions in the report."/>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="us-ph-determination-of-reportability-extension" />
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-determination-of-reportability-extension" />
+    <version value="1.0.0" />
+    <name value="USPublicHealthDeterminationOfReportabilityExtension" />
+    <title value="US Public Health Determination of Reportability Extension" />
+    <status value="active" />
+    <experimental value="false" />
+    <publisher value="HL7 Public Health Work Group" />
+    <description
+        value="This Extension profile represents the determination of reportability.&#xA;&#xA;Reportability is &quot;the quality or state of being reportable or not&quot;. Reportability does not equate to the patient having a condition or meeting a case definition (definitively being a case).&#xA;&#xA;For each condition included in the report and the relevant public health agency(s), this element indicates the determination of whether the condition is reportable to public health. &#xA;&#xA;The values that can be used for the Determination of Reportability are described below.&#xA;&#xA;A possible condition is:&#xA;&#xA;* Reportable - The information provided meets reporting criteria for an associated PHA.&#xA;&#xA;A possible condition:&#xA;&#xA;* May be Reportable - The information provided may meet reporting criteria if additional information is provided. The Reportability Response will also be able to share the information needed to definitively determine reportability.&#xA;&#xA;A possible condition is:&#xA;&#xA;* Not Reportable - The information provided conclusively does not meet reporting criteria.&#xA;&#xA;Some decision support systems may not be able to fully differentiate between possible conditions that are Not Reportable and those that May be Reportable if additional information is provided. In these circumstances there may only be a reportability determination of:&#xA;&#xA;* No Reporting Rule Met - The information provided does not meet reporting criteria or may meet reporting criteria if additional information is provided.&#xA;&#xA;The determination of No Reporting Rule Met may be provided for a possible condition or for all conditions in the report." />
     <jurisdiction>
         <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="US"/>
-            <display value="United States of America"/>
+            <system value="urn:iso:std:iso:3166" />
+            <code value="US" />
+            <display value="United States of America" />
         </coding>
-        <text value="United States of America"/>
+        <text value="United States of America" />
     </jurisdiction>
-    <fhirVersion value="4.0.1"/>
-    <kind value="complex-type"/>
-    <abstract value="false"/>
+    <fhirVersion value="4.0.1" />
+    <kind value="complex-type" />
+    <abstract value="false" />
     <context>
-        <type value="element"/>
-        <expression value="Observation"/>
+        <type value="element" />
+        <expression value="Observation" />
     </context>
-    <type value="Extension"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-    <derivation value="constraint"/>
+    <type value="Extension" />
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+    <derivation value="constraint" />
     <differential>
         <element id="Extension">
-            <path value="Extension"/>
-            <short value="US Public Health Determination of Reportability Extension"/>
-            <definition value="This extension represents the determination of reportability. Reportability is &quot;the quality or state of being reportable or not&quot;. Reportability does not equate to the patient having a condition or meeting a case definition (definitively being 'a case').&#xA;&#xA;For each condition included in the eICR and the relevant public health agency(s), this element indicates the determination of whether the condition is reportable to public health. &#xA;&#xA;The values that can be used for the Determination of Reportability are described below.&#xA;&#xA;A possible condition is:&#xA;&#xA;- Reportable - The information provided meets reporting criteria for an associated PHA.&#xA;&#xA;A possible condition:&#xA;&#xA;- May be Reportable - The information provided may meet reporting criteria if additional information is provided. The Reportability Response will also be able to share the information needed to definitively determine reportability.&#xA;&#xA;A possible condition is:&#xA;&#xA;- Not Reportable - The information provided conclusively does not meet reporting criteria.&#xA;&#xA;Some decision support systems may not be able to fully differentiate between possible conditions that are Not Reportable and those that May be Reportable if additional information is provided. In these circumstances there may only be a reportability determination of:&#xA;&#xA;- No Reporting Rule Met - The information provided does not meet reporting criteria or may meet reporting criteria if additional information is provided.&#xA;&#xA;The determination of No Reporting Rule Met may be provided for a possible condition or for all conditions in the  eICR."/>
-            <min value="1"/>
-            <max value="1"/>
+            <path value="Extension" />
+            <short value="US Public Health Determination of Reportability Extension" />
+            <definition
+                value="This extension represents the determination of reportability. Reportability is &quot;the quality or state of being reportable or not&quot;. Reportability does not equate to the patient having a condition or meeting a case definition (definitively being 'a case').&#xA;&#xA;For each condition included in the eICR and the relevant public health agency(s), this element indicates the determination of whether the condition is reportable to public health. &#xA;&#xA;The values that can be used for the Determination of Reportability are described below.&#xA;&#xA;A possible condition is:&#xA;&#xA;- Reportable - The information provided meets reporting criteria for an associated PHA.&#xA;&#xA;A possible condition:&#xA;&#xA;- May be Reportable - The information provided may meet reporting criteria if additional information is provided. The Reportability Response will also be able to share the information needed to definitively determine reportability.&#xA;&#xA;A possible condition is:&#xA;&#xA;- Not Reportable - The information provided conclusively does not meet reporting criteria.&#xA;&#xA;Some decision support systems may not be able to fully differentiate between possible conditions that are Not Reportable and those that May be Reportable if additional information is provided. In these circumstances there may only be a reportability determination of:&#xA;&#xA;- No Reporting Rule Met - The information provided does not meet reporting criteria or may meet reporting criteria if additional information is provided.&#xA;&#xA;The determination of No Reporting Rule Met may be provided for a possible condition or for all conditions in the  eICR." />
+            <min value="1" />
+            <max value="1" />
         </element>
         <element id="Extension.url">
-            <path value="Extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-determination-of-reportability-extension"/>
+            <path value="Extension.url" />
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-determination-of-reportability-extension" />
         </element>
         <element id="Extension.value[x]:valueCodeableConcept">
-            <path value="Extension.value[x]"/>
-            <sliceName value="valueCodeableConcept"/>
-            <short value="Value representing whether a condition is reportable or not."/>
-            <min value="1"/>
+            <path value="Extension.value[x]" />
+            <sliceName value="valueCodeableConcept" />
+            <short value="Value representing whether a condition is reportable or not." />
+            <min value="1" />
             <type>
-                <code value="CodeableConcept"/>
+                <code value="CodeableConcept" />
             </type>
             <binding>
-                <strength value="extensible"/>
-                <description value="Determination of Reportability"/>
-                <valueSet value="http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.113883.10.20.15.2.5.3"/>
+                <strength value="extensible" />
+                <description value="Determination of Reportability" />
+                <valueSet value="http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.113883.10.20.15.2.5.3" />
             </binding>
         </element>
     </differential>

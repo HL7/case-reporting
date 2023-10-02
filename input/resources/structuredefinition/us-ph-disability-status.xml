@@ -1,67 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition
-    xmlns="http://hl7.org/fhir">
-    <id value="us-ph-disability-status"/>
-    <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2021-07-14T00:05:03.489+00:00"/>
-        <source value="#VT0tDdoUasXwlAbv"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-disability-status"/>
-    <version value="1.0.0"/>
-    <name value="USPublicHealthDisabilityStatus"/>
-    <title value="US Public Health Disability Status"/>
-    <status value="active"/>
-    <experimental value="false"/>
-    <publisher value="HL7 Public Health Work Group"/>
-    <description value="This profile represents the Disability Element defined here: https://aspe.hhs.gov/basic-report/hhs-implementation-guidance-data-collection-standards-race-ethnicity-sex-primary-language-and-disability-status.&#xA;&#xA;The six item set of questions used on ACS and other major surveys to gauge disability is the data standard for survey questions on disability. Note the age thresholds for survey participants for the different disability questions.&#xA;&#xA;#### Data Standard for Disability Status&#xA;&#xA;1.     Are you deaf or do you have serious difficulty hearing?&#xA;2.     Are you blind or do you have serious difficulty seeing, even when wearing glasses?&#xA;3.     Because of a physical, mental, or emotional condition, do you have serious difficulty concentrating, remembering, or making decisions? (5 years old or older)&#xA;4.     Do you have serious difficulty walking or climbing stairs? (5 years old or older)&#xA;5.     Do you have difficulty dressing or bathing? (5 years old or older)&#xA;6.     Because of a physical, mental, or emotional condition, do you have difficulty doing errands alone such as visiting a doctor’s office or shopping? (15 years old or older)"/>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="us-ph-disability-status" />
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-disability-status" />
+    <version value="1.0.0" />
+    <name value="USPublicHealthDisabilityStatus" />
+    <title value="US Public Health Disability Status" />
+    <status value="active" />
+    <experimental value="false" />
+    <publisher value="HL7 Public Health Work Group" />
+    <description
+        value="This profile represents the Disability Element defined here: https://aspe.hhs.gov/basic-report/hhs-implementation-guidance-data-collection-standards-race-ethnicity-sex-primary-language-and-disability-status.&#xA;&#xA;The six item set of questions used on ACS and other major surveys to gauge disability is the data standard for survey questions on disability. Note the age thresholds for survey participants for the different disability questions.&#xA;&#xA;#### Data Standard for Disability Status&#xA;&#xA;1.     Are you deaf or do you have serious difficulty hearing?&#xA;2.     Are you blind or do you have serious difficulty seeing, even when wearing glasses?&#xA;3.     Because of a physical, mental, or emotional condition, do you have serious difficulty concentrating, remembering, or making decisions? (5 years old or older)&#xA;4.     Do you have serious difficulty walking or climbing stairs? (5 years old or older)&#xA;5.     Do you have difficulty dressing or bathing? (5 years old or older)&#xA;6.     Because of a physical, mental, or emotional condition, do you have difficulty doing errands alone such as visiting a doctor’s office or shopping? (15 years old or older)" />
     <jurisdiction>
         <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="US"/>
-            <display value="United States of America"/>
+            <system value="urn:iso:std:iso:3166" />
+            <code value="US" />
+            <display value="United States of America" />
         </coding>
-        <text value="United States of America"/>
+        <text value="United States of America" />
     </jurisdiction>
-    <fhirVersion value="4.0.1"/>
-    <kind value="resource"/>
-    <abstract value="false"/>
-    <type value="Observation"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation"/>
-    <derivation value="constraint"/>
+    <fhirVersion value="4.0.1" />
+    <kind value="resource" />
+    <abstract value="false" />
+    <type value="Observation" />
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation" />
+    <derivation value="constraint" />
     <differential>
         <element id="Observation">
-            <path value="Observation"/>
-            <short value="US Public Health Disability Status"/>
+            <path value="Observation" />
+            <short value="US Public Health Disability Status" />
         </element>
         <element id="Observation.code">
-            <path value="Observation.code"/>
-            <short value="Disability status"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
+            <path value="Observation.code" />
+            <short value="Disability status" />
+            <min value="1" />
+            <max value="1" />
+            <mustSupport value="true" />
             <binding>
-                <strength value="required"/>
-                <description value="Disability Status"/>
-                <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1099.49"/>
+                <strength value="required" />
+                <description value="Disability Status" />
+                <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1099.49" />
             </binding>
         </element>
         <element id="Observation.subject">
-            <path value="Observation.subject"/>
-            <min value="1"/>
+            <path value="Observation.subject" />
+            <min value="1" />
             <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
+                <code value="Reference" />
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient" />
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
         <element id="Observation.value[x]">
-            <path value="Observation.value[x]"/>
-            <min value="1"/>
+            <path value="Observation.value[x]" />
+            <min value="1" />
             <type>
-                <code value="boolean"/>
+                <code value="boolean" />
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
     </differential>
 </StructureDefinition>

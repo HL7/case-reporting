@@ -1,54 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition
-    xmlns="http://hl7.org/fhir">
-    <id value="us-ph-codesystem"/>
-    <meta>
-        <versionId value="8"/>
-        <lastUpdated value="2021-06-30T23:50:55.316+00:00"/>
-        <source value="#SH0oUTnGUbsLUhuL"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem"/>
-    <version value="1.0.0"/>
-    <name value="USPublicHealthCodeSystem"/>
-    <title value="US Public Health CodeSystem"/>
-    <status value="active"/>
-    <publisher value="HL7 Public Health Work Group"/>
-    <description value="This profile describes the US Public Health CodeSystem."/>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="us-ph-codesystem" />
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem" />
+    <version value="1.0.0" />
+    <name value="USPublicHealthCodeSystem" />
+    <title value="US Public Health CodeSystem" />
+    <status value="active" />
+    <publisher value="HL7 Public Health Work Group" />
+    <description value="This profile describes the US Public Health CodeSystem." />
     <jurisdiction>
         <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="US"/>
-            <display value="United States of America"/>
+            <system value="urn:iso:std:iso:3166" />
+            <code value="US" />
+            <display value="United States of America" />
         </coding>
-        <text value="United States of America"/>
+        <text value="United States of America" />
     </jurisdiction>
-    <fhirVersion value="4.0.1"/>
-    <kind value="resource"/>
-    <abstract value="false"/>
-    <type value="CodeSystem"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/CodeSystem"/>
-    <derivation value="constraint"/>
+    <fhirVersion value="4.0.1" />
+    <kind value="resource" />
+    <abstract value="false" />
+    <type value="CodeSystem" />
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/CodeSystem" />
+    <derivation value="constraint" />
     <differential>
         <element id="CodeSystem">
-            <path value="CodeSystem"/>
-            <short value="US Public Health CodeSystem"/>
+            <path value="CodeSystem" />
+            <short value="US Public Health CodeSystem" />
         </element>
         <element id="CodeSystem.property">
-            <path value="CodeSystem.property"/>
-            <mustSupport value="true"/>
+            <path value="CodeSystem.property" />
+            <mustSupport value="true" />
         </element>
         <element id="CodeSystem.property.extension:binding">
-            <path value="CodeSystem.property.extension"/>
-            <sliceName value="binding"/>
-            <short value="What values are allowed"/>
-            <definition value="A reference to a CodeSystem or ValueSet that establishes the allowable values for a code system property."/>
-            <min value="0"/>
-            <max value="1"/>
+            <path value="CodeSystem.property.extension" />
+            <sliceName value="binding" />
+            <short value="What values are allowed" />
+            <definition value="A reference to a CodeSystem or ValueSet that establishes the allowable values for a code system property." />
+            <min value="0" />
+            <max value="1" />
             <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem-property-binding-extension"/>
+                <code value="Extension" />
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem-property-binding-extension" />
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
     </differential>
 </StructureDefinition>

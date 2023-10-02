@@ -1,58 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition
-    xmlns="http://hl7.org/fhir">
-    <id value="us-ph-fhirquerypattern-extension"/>
-    <meta>
-        <versionId value="1"/>
-        <lastUpdated value="2021-11-17T04:21:04.772+00:00"/>
-        <source value="#Headmg6LqF2safeP"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"/>
-    <version value="0.2.0"/>
-    <name value="USPublicHealthFHIRQueryPatternExtension"/>
-    <title value="US Public Health FHIR Query Pattern Extension"/>
-    <status value="active"/>
-    <experimental value="false"/>
-    <date value="2021-11-08T00:00:00.000Z"/>
-    <publisher value="HL7 Public Health Work Group"/>
-    <description value="Supports communicating the FHIR query for a given data requirement. The query is server-specific, and will need to be created as informed by a CapabilityStatement. The $data-requirements operation should be extended to be able to provide an Endpoint or CapabilityStatement to provide this information. If no endpoint or capability statement is provided, the capability statement of the server performing the operation is used. This is not a resolveable URL, and that it will contain 1) No base canonical (so it's a relative query), and 2) Parameters using tokens that are denoted using double-braces and the context parameters are dependent solely on the subjectType, according to the following: Patient: context.patientId, Practitioner: context.practitionerId, Organization: context.organizationId, Location: context.locationId, Device: context.deviceId"/>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="us-ph-fhirquerypattern-extension" />
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension" />
+    <version value="0.2.0" />
+    <name value="USPublicHealthFHIRQueryPatternExtension" />
+    <title value="US Public Health FHIR Query Pattern Extension" />
+    <status value="active" />
+    <experimental value="false" />
+    <date value="2021-11-08T00:00:00.000Z" />
+    <publisher value="HL7 Public Health Work Group" />
+    <description
+        value="Supports communicating the FHIR query for a given data requirement. The query is server-specific, and will need to be created as informed by a CapabilityStatement. The $data-requirements operation should be extended to be able to provide an Endpoint or CapabilityStatement to provide this information. If no endpoint or capability statement is provided, the capability statement of the server performing the operation is used. This is not a resolveable URL, and that it will contain 1) No base canonical (so it's a relative query), and 2) Parameters using tokens that are denoted using double-braces and the context parameters are dependent solely on the subjectType, according to the following: Patient: context.patientId, Practitioner: context.practitionerId, Organization: context.organizationId, Location: context.locationId, Device: context.deviceId" />
     <jurisdiction>
         <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="US"/>
-            <display value="United States of America"/>
+            <system value="urn:iso:std:iso:3166" />
+            <code value="US" />
+            <display value="United States of America" />
         </coding>
-        <text value="United States of America"/>
+        <text value="United States of America" />
     </jurisdiction>
-    <fhirVersion value="4.0.1"/>
-    <kind value="complex-type"/>
-    <abstract value="false"/>
+    <fhirVersion value="4.0.1" />
+    <kind value="complex-type" />
+    <abstract value="false" />
     <context>
-        <type value="fhirpath"/>
-        <expression value="PlanDefinition.repeat(action).input"/>
+        <type value="fhirpath" />
+        <expression value="PlanDefinition.repeat(action).input" />
     </context>
-    <type value="Extension"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-    <derivation value="constraint"/>
+    <type value="Extension" />
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+    <derivation value="constraint" />
     <differential>
         <element id="Extension">
-            <path value="Extension"/>
-            <short value="US Public Health FHIR Query Pattern Extension"/>
-            <definition value="What FHIR query pattern?"/>
-            <min value="0"/>
-            <max value="*"/>
+            <path value="Extension" />
+            <short value="US Public Health FHIR Query Pattern Extension" />
+            <definition value="What FHIR query pattern?" />
+            <min value="0" />
+            <max value="*" />
         </element>
         <element id="Extension.url">
-            <path value="Extension.url"/>
+            <path value="Extension.url" />
             <type>
-                <code value="uri"/>
+                <code value="uri" />
             </type>
-            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"/>
+            <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension" />
         </element>
         <element id="Extension.value[x]">
-            <path value="Extension.value[x]"/>
+            <path value="Extension.value[x]" />
             <type>
-                <code value="string"/>
+                <code value="string" />
             </type>
         </element>
     </differential>

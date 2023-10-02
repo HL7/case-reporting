@@ -1,180 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition
-    xmlns="http://hl7.org/fhir">
-    <id value="us-ph-valueset-library"/>
-    <meta>
-        <versionId value="8"/>
-        <lastUpdated value="2021-08-20T06:13:12.414+00:00"/>
-        <source value="#LYPB4IBq6EecqBzk"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset-library"/>
-    <version value="1.0.0"/>
-    <name value="USPublicHealthValueSetLibrary"/>
-    <title value="US Public Health ValueSet Library"/>
-    <status value="active"/>
-    <date value="2018-08-19T00:00:00.000Z"/>
-    <publisher value="HL7 Public Health Work Group"/>
-    <description value="Defines the library containing US Public Health value sets."/>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="us-ph-valueset-library" />
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset-library" />
+    <version value="1.0.0" />
+    <name value="USPublicHealthValueSetLibrary" />
+    <title value="US Public Health ValueSet Library" />
+    <status value="active" />
+    <date value="2018-08-19T00:00:00.000Z" />
+    <publisher value="HL7 Public Health Work Group" />
+    <description value="Defines the library containing US Public Health value sets." />
     <jurisdiction>
         <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="US"/>
-            <display value="United States of America"/>
+            <system value="urn:iso:std:iso:3166" />
+            <code value="US" />
+            <display value="United States of America" />
         </coding>
-        <text value="United States of America"/>
+        <text value="United States of America" />
     </jurisdiction>
-    <fhirVersion value="4.0.1"/>
-    <kind value="resource"/>
-    <abstract value="false"/>
-    <type value="Library"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/shareablelibrary"/>
-    <derivation value="constraint"/>
+    <fhirVersion value="4.0.1" />
+    <kind value="resource" />
+    <abstract value="false" />
+    <type value="Library" />
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/shareablelibrary" />
+    <derivation value="constraint" />
     <differential>
         <element id="Library">
-            <path value="Library"/>
-            <short value="US Public Health ValueSet Library"/>
+            <path value="Library" />
+            <short value="US Public Health ValueSet Library" />
         </element>
         <element id="Library.extension">
-            <path value="Library.extension"/>
+            <path value="Library.extension" />
             <slicing>
                 <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
+                    <type value="value" />
+                    <path value="url" />
                 </discriminator>
-                <ordered value="false"/>
-                <rules value="open"/>
+                <ordered value="false" />
+                <rules value="open" />
             </slicing>
             <base>
-                <path value="DomainResource.extension"/>
-                <min value="0"/>
-                <max value="*"/>
+                <path value="DomainResource.extension" />
+                <min value="0" />
+                <max value="*" />
             </base>
             <type>
-                <code value="Extension"/>
+                <code value="Extension" />
             </type>
-            <isModifier value="false"/>
-            <isSummary value="false"/>
+            <isModifier value="false" />
+            <isSummary value="false" />
         </element>
         <element id="Library.extension:expansionParameters">
-            <path value="Library.extension"/>
-            <sliceName value="expansionParameters"/>
-            <short value="Expansion Parameters for the ValueSet."/>
-            <definition value="Supports the definition of expansion parameters for the ValueSet."/>
-            <min value="0"/>
-            <max value="1"/>
+            <path value="Library.extension" />
+            <sliceName value="expansionParameters" />
+            <short value="Expansion Parameters for the ValueSet." />
+            <definition value="Supports the definition of expansion parameters for the ValueSet." />
+            <min value="0" />
+            <max value="1" />
             <base>
-                <path value="DomainResource.extension"/>
-                <min value="0"/>
-                <max value="*"/>
+                <path value="DomainResource.extension" />
+                <min value="0" />
+                <max value="*" />
             </base>
             <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-expansion-parameters-extension"/>
+                <code value="Extension" />
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-expansion-parameters-extension" />
             </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
+            <mustSupport value="true" />
+            <isModifier value="false" />
         </element>
         <element id="Library.identifier">
-            <path value="Library.identifier"/>
-            <mustSupport value="true"/>
+            <path value="Library.identifier" />
+            <mustSupport value="true" />
         </element>
         <element id="Library.identifier.system">
-            <path value="Library.identifier.system"/>
-            <short value="The namespace for Object Identifiers"/>
-            <definition value="Fixed to the namespace: urn:ietf:rfc:3986 for OIDs"/>
-            <min value="1"/>
-            <patternUri value="urn:ietf:rfc:3986"/>
-            <mustSupport value="true"/>
+            <path value="Library.identifier.system" />
+            <short value="The namespace for Object Identifiers" />
+            <definition value="Fixed to the namespace: urn:ietf:rfc:3986 for OIDs" />
+            <min value="1" />
+            <patternUri value="urn:ietf:rfc:3986" />
+            <mustSupport value="true" />
         </element>
         <element id="Library.identifier.value">
-            <path value="Library.identifier.value"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
+            <path value="Library.identifier.value" />
+            <min value="1" />
+            <mustSupport value="true" />
         </element>
         <element id="Library.version">
-            <path value="Library.version"/>
-            <short value="Value Sets Definition Version"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
+            <path value="Library.version" />
+            <short value="Value Sets Definition Version" />
+            <min value="1" />
+            <mustSupport value="true" />
         </element>
         <element id="Library.title">
-            <path value="Library.title"/>
-            <short value="Value Sets Name"/>
-            <definition value="Value Sets Name"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
+            <path value="Library.title" />
+            <short value="Value Sets Name" />
+            <definition value="Value Sets Name" />
+            <min value="1" />
+            <mustSupport value="true" />
         </element>
         <element id="Library.type">
-            <path value="Library.type"/>
-            <short value="asset-collection"/>
-            <definition value="Identifies the type of library. Constrained to a pattern that includes asset-collection."/>
+            <path value="Library.type" />
+            <short value="asset-collection" />
+            <definition value="Identifies the type of library. Constrained to a pattern that includes asset-collection." />
             <patternCodeableConcept>
                 <coding>
-                    <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
-                    <code value="asset-collection"/>
+                    <system value="http://terminology.hl7.org/CodeSystem/library-type" />
+                    <code value="asset-collection" />
                 </coding>
             </patternCodeableConcept>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
         <element id="Library.description">
-            <path value="Library.description"/>
-            <short value="Value Sets Release Description"/>
-            <definition value="Value Sets Release Description"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
+            <path value="Library.description" />
+            <short value="Value Sets Release Description" />
+            <definition value="Value Sets Release Description" />
+            <min value="1" />
+            <mustSupport value="true" />
         </element>
         <element id="Library.purpose">
-            <path value="Library.purpose"/>
-            <short value="Value Sets Purpose"/>
-            <definition value="Value Sets Purpose"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
+            <path value="Library.purpose" />
+            <short value="Value Sets Purpose" />
+            <definition value="Value Sets Purpose" />
+            <min value="1" />
+            <mustSupport value="true" />
         </element>
         <element id="Library.effectivePeriod">
-            <path value="Library.effectivePeriod"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
+            <path value="Library.effectivePeriod" />
+            <min value="1" />
+            <mustSupport value="true" />
         </element>
         <element id="Library.effectivePeriod.start">
-            <path value="Library.effectivePeriod.start"/>
-            <short value="Value Sets Effective Start Date"/>
-            <definition value="Value Sets Effective Start Date"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
+            <path value="Library.effectivePeriod.start" />
+            <short value="Value Sets Effective Start Date" />
+            <definition value="Value Sets Effective Start Date" />
+            <min value="1" />
+            <mustSupport value="true" />
         </element>
         <element id="Library.relatedArtifact">
-            <path value="Library.relatedArtifact"/>
+            <path value="Library.relatedArtifact" />
             <slicing>
                 <discriminator>
-                    <type value="value"/>
-                    <path value="type"/>
+                    <type value="value" />
+                    <path value="type" />
                 </discriminator>
-                <rules value="open"/>
+                <rules value="open" />
             </slicing>
-            <min value="1"/>
+            <min value="1" />
         </element>
         <element id="Library.relatedArtifact:sliceUSPHValueSet">
-            <path value="Library.relatedArtifact"/>
-            <sliceName value="sliceUSPHValueSet"/>
-            <short value="US Public Health Value Set"/>
-            <definition value="Reference to one of the US Public Health value sets"/>
-            <min value="1"/>
-            <mustSupport value="true"/>
+            <path value="Library.relatedArtifact" />
+            <sliceName value="sliceUSPHValueSet" />
+            <short value="US Public Health Value Set" />
+            <definition value="Reference to one of the US Public Health value sets" />
+            <min value="1" />
+            <mustSupport value="true" />
         </element>
         <element id="Library.relatedArtifact:sliceUSPHValueSet.type">
-            <path value="Library.relatedArtifact.type"/>
-            <short value="composed-of"/>
-            <definition value="The type of relationship to the related artifact. Fixed to composed-of."/>
-            <patternCode value="composed-of"/>
+            <path value="Library.relatedArtifact.type" />
+            <short value="composed-of" />
+            <definition value="The type of relationship to the related artifact. Fixed to composed-of." />
+            <patternCode value="composed-of" />
         </element>
         <element id="Library.relatedArtifact:sliceUSPHValueSet.resource">
-            <path value="Library.relatedArtifact.resource"/>
-            <min value="1"/>
+            <path value="Library.relatedArtifact.resource" />
+            <min value="1" />
             <type>
-                <code value="canonical"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset"/>
+                <code value="canonical" />
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset" />
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
     </differential>
 </StructureDefinition>

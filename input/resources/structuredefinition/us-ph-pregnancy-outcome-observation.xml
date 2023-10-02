@@ -1,135 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition
-    xmlns="http://hl7.org/fhir">
-    <id value="us-ph-pregnancy-outcome-observation"/>
-    <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2021-07-14T00:05:03.919+00:00"/>
-        <source value="#XRdiEHS3JZnavhBB"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-outcome-observation"/>
-    <version value="1.0.0"/>
-    <name value="USPublicHealthPregnancyOutcomeObservation"/>
-    <title value="US Public Health Pregnancy Outcome Observation"/>
-    <status value="active"/>
-    <experimental value="false"/>
-    <publisher value="HL7 Public Health Work Group"/>
-    <description value="This profile represents a result of the pregnancy such as live birth, still birth, miscarriage, etc.&#xA;&#xA;The subject of this profile is the mother. The focus of this profile is the related Pregnancy Status Observation. &#xA;&#xA;The order born in the delivery, live born or fetal death (1st, 2nd, 3rd, 4th, 5th, 6th, 7th, etc.) is contained in Observation.component. All live births and fetal losses are included. If the pregnancy plurality is 1 then this value will also be 1.&#xA;&#xA;There will be one Pregnancy Outcome Observation for each fetus delivered live or dead at any time in the pregnancy, regardless of gestational age or if the fetuses were delivered at different dates in the pregnancy. All live births and fetal losses are included. The order born in the delivery, live born or fetal death is contained in Observation.component."/>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="us-ph-pregnancy-outcome-observation" />
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-outcome-observation" />
+    <version value="1.0.0" />
+    <name value="USPublicHealthPregnancyOutcomeObservation" />
+    <title value="US Public Health Pregnancy Outcome Observation" />
+    <status value="active" />
+    <experimental value="false" />
+    <publisher value="HL7 Public Health Work Group" />
+    <description
+        value="This profile represents a result of the pregnancy such as live birth, still birth, miscarriage, etc.&#xA;&#xA;The subject of this profile is the mother. The focus of this profile is the related Pregnancy Status Observation. &#xA;&#xA;The order born in the delivery, live born or fetal death (1st, 2nd, 3rd, 4th, 5th, 6th, 7th, etc.) is contained in Observation.component. All live births and fetal losses are included. If the pregnancy plurality is 1 then this value will also be 1.&#xA;&#xA;There will be one Pregnancy Outcome Observation for each fetus delivered live or dead at any time in the pregnancy, regardless of gestational age or if the fetuses were delivered at different dates in the pregnancy. All live births and fetal losses are included. The order born in the delivery, live born or fetal death is contained in Observation.component." />
     <jurisdiction>
         <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="US"/>
-            <display value="United States of America"/>
+            <system value="urn:iso:std:iso:3166" />
+            <code value="US" />
+            <display value="United States of America" />
         </coding>
-        <text value="United States of America"/>
+        <text value="United States of America" />
     </jurisdiction>
-    <fhirVersion value="4.0.1"/>
-    <kind value="resource"/>
-    <abstract value="false"/>
-    <type value="Observation"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation"/>
-    <derivation value="constraint"/>
+    <fhirVersion value="4.0.1" />
+    <kind value="resource" />
+    <abstract value="false" />
+    <type value="Observation" />
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation" />
+    <derivation value="constraint" />
     <differential>
         <element id="Observation">
-            <path value="Observation"/>
-            <short value="US Public Health Pregnancy Outcome Observation"/>
+            <path value="Observation" />
+            <short value="US Public Health Pregnancy Outcome Observation" />
         </element>
         <element id="Observation.code">
-            <path value="Observation.code"/>
+            <path value="Observation.code" />
             <patternCodeableConcept>
                 <coding>
-                    <system value="http://loinc.org"/>
-                    <code value="63893-2"/>
-                    <display value="Outcome of pregnancy"/>
+                    <system value="http://loinc.org" />
+                    <code value="63893-2" />
+                    <display value="Outcome of pregnancy" />
                 </coding>
             </patternCodeableConcept>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
         <element id="Observation.subject">
-            <path value="Observation.subject"/>
-            <min value="1"/>
+            <path value="Observation.subject" />
+            <min value="1" />
             <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"/>
+                <code value="Reference" />
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient" />
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
         <element id="Observation.focus">
-            <path value="Observation.focus"/>
-            <short value="The related Pregnancy Status Observation"/>
-            <definition value="The focus is the related Pregnancy Status Observation."/>
-            <min value="1"/>
-            <max value="1"/>
+            <path value="Observation.focus" />
+            <short value="The related Pregnancy Status Observation" />
+            <definition value="The focus is the related Pregnancy Status Observation." />
+            <min value="1" />
+            <max value="1" />
             <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-status-observation"/>
+                <code value="Reference" />
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-status-observation" />
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
         <element id="Observation.effective[x]">
-            <path value="Observation.effective[x]"/>
-            <short value="Pregnancy outcome date."/>
-            <definition value="Date on which the pregnancy outcome occurred (for a live birth this is the delivery date)."/>
+            <path value="Observation.effective[x]" />
+            <short value="Pregnancy outcome date." />
+            <definition value="Date on which the pregnancy outcome occurred (for a live birth this is the delivery date)." />
             <type>
-                <code value="dateTime"/>
+                <code value="dateTime" />
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
         <element id="Observation.value[x]">
-            <path value="Observation.value[x]"/>
-            <short value="Pregnancy outcome"/>
-            <min value="1"/>
-            <max value="1"/>
+            <path value="Observation.value[x]" />
+            <short value="Pregnancy outcome" />
+            <min value="1" />
+            <max value="1" />
             <type>
-                <code value="CodeableConcept"/>
+                <code value="CodeableConcept" />
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
             <binding>
-                <strength value="extensible"/>
-                <description value="Pregnancy Outcome"/>
-                <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.9.86"/>
+                <strength value="extensible" />
+                <description value="Pregnancy Outcome" />
+                <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.9.86" />
             </binding>
         </element>
         <element id="Observation.component">
-            <path value="Observation.component"/>
+            <path value="Observation.component" />
             <slicing>
                 <discriminator>
-                    <type value="value"/>
-                    <path value="code"/>
+                    <type value="value" />
+                    <path value="code" />
                 </discriminator>
-                <rules value="open"/>
+                <rules value="open" />
             </slicing>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
         <element id="Observation.component:sliceBirthOrder">
-            <path value="Observation.component"/>
-            <sliceName value="sliceBirthOrder"/>
-            <short value="Birth order"/>
-            <definition value="Represents the order born in the delivery, live born or fetal death (1st, 2nd, 3rd, 4th, 5th, 6th, 7th, etc.). All live births and fetal losses are included. If the pregnancy plurality is 1 then this value will also be 1."/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
+            <path value="Observation.component" />
+            <sliceName value="sliceBirthOrder" />
+            <short value="Birth order" />
+            <definition value="Represents the order born in the delivery, live born or fetal death (1st, 2nd, 3rd, 4th, 5th, 6th, 7th, etc.). All live births and fetal losses are included. If the pregnancy plurality is 1 then this value will also be 1." />
+            <min value="1" />
+            <max value="1" />
+            <mustSupport value="true" />
         </element>
         <element id="Observation.component:sliceBirthOrder.code">
-            <path value="Observation.component.code"/>
+            <path value="Observation.component.code" />
             <patternCodeableConcept>
                 <coding>
-                    <system value="http://loinc.org"/>
-                    <code value="73771-8"/>
-                    <display value="Birth order"/>
+                    <system value="http://loinc.org" />
+                    <code value="73771-8" />
+                    <display value="Birth order" />
                 </coding>
             </patternCodeableConcept>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
         <element id="Observation.component:sliceBirthOrder.value[x]">
-            <path value="Observation.component.value[x]"/>
-            <short value="Birth order value (1, 2, 3, 4, etc.)"/>
-            <min value="1"/>
-            <max value="1"/>
+            <path value="Observation.component.value[x]" />
+            <short value="Birth order value (1, 2, 3, 4, etc.)" />
+            <min value="1" />
+            <max value="1" />
             <type>
-                <code value="integer"/>
+                <code value="integer" />
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
     </differential>
 </StructureDefinition>

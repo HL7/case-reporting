@@ -1,155 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition
-    xmlns="http://hl7.org/fhir">
-    <id value="us-ph-messageheader"/>
-    <meta>
-        <versionId value="9"/>
-        <lastUpdated value="2021-07-14T00:05:03.592+00:00"/>
-        <source value="#iLhkb8OQCUS4sXEE"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-messageheader"/>
-    <version value="0.1.0"/>
-    <name value="USPublicHealthMessageHeader"/>
-    <title value="US Public Health MessageHeader"/>
-    <status value="active"/>
-    <experimental value="false"/>
-    <date value="2019-09-01"/>
-    <publisher value="HL7 International - Public Health Work Group"/>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="us-ph-messageheader" />
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-messageheader" />
+    <version value="0.1.0" />
+    <name value="USPublicHealthMessageHeader" />
+    <title value="US Public Health MessageHeader" />
+    <status value="active" />
+    <experimental value="false" />
+    <date value="2019-09-01" />
+    <publisher value="HL7 International - Public Health Work Group" />
     <contact>
         <telecom>
-            <system value="url"/>
-            <value value="http://hl7.org/Special/committees/pher"/>
+            <system value="url" />
+            <value value="http://hl7.org/Special/committees/pher" />
         </telecom>
     </contact>
-    <description value="This is the MessageHeader Resource profile for the IG."/>
+    <description value="This is the MessageHeader Resource profile for the IG." />
     <jurisdiction>
         <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="US"/>
+            <system value="urn:iso:std:iso:3166" />
+            <code value="US" />
         </coding>
     </jurisdiction>
-    <fhirVersion value="4.0.1"/>
-    <kind value="resource"/>
-    <abstract value="false"/>
-    <type value="MessageHeader"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/MessageHeader"/>
-    <derivation value="constraint"/>
+    <fhirVersion value="4.0.1" />
+    <kind value="resource" />
+    <abstract value="false" />
+    <type value="MessageHeader" />
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/MessageHeader" />
+    <derivation value="constraint" />
     <differential>
         <element id="MessageHeader">
-            <path value="MessageHeader"/>
-            <short value="US Public Health MessageHeader"/>
-            <definition value="Sets expectations for supported capabilities for MessageHeader resource for public health."/>
-            <mustSupport value="false"/>
+            <path value="MessageHeader" />
+            <short value="US Public Health MessageHeader" />
+            <definition value="Sets expectations for supported capabilities for MessageHeader resource for public health." />
+            <mustSupport value="false" />
         </element>
         <element id="MessageHeader.extension:dataEncrypted">
-            <path value="MessageHeader.extension"/>
-            <sliceName value="dataEncrypted"/>
-            <min value="0"/>
-            <max value="1"/>
+            <path value="MessageHeader.extension" />
+            <sliceName value="dataEncrypted" />
+            <min value="0" />
+            <max value="1" />
             <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-data-encrypted-extension"/>
+                <code value="Extension" />
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-data-encrypted-extension" />
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
         <element id="MessageHeader.extension:messageProcessingCategory">
-            <path value="MessageHeader.extension"/>
-            <sliceName value="messageProcessingCategory"/>
-            <min value="1"/>
-            <max value="1"/>
+            <path value="MessageHeader.extension" />
+            <sliceName value="messageProcessingCategory" />
+            <min value="1" />
+            <max value="1" />
             <type>
-                <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-message-processing-category-extension"/>
+                <code value="Extension" />
+                <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-message-processing-category-extension" />
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
         <element id="MessageHeader.event[x]">
-            <path value="MessageHeader.event[x]"/>
-            <short value="Types of messages being sent between systems"/>
-            <min value="1"/>
-            <max value="1"/>
+            <path value="MessageHeader.event[x]" />
+            <short value="Types of messages being sent between systems" />
+            <min value="1" />
+            <max value="1" />
             <type>
-                <code value="Coding"/>
+                <code value="Coding" />
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
             <binding>
-                <strength value="extensible"/>
-                <description value="US Public Health Message Types ValueSet"/>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-message-types-valueset"/>
+                <strength value="extensible" />
+                <description value="US Public Health Message Types ValueSet" />
+                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-message-types-valueset" />
             </binding>
         </element>
         <element id="MessageHeader.destination">
-            <path value="MessageHeader.destination"/>
-            <min value="1"/>
-            <max value="*"/>
-            <mustSupport value="true"/>
+            <path value="MessageHeader.destination" />
+            <min value="1" />
+            <max value="*" />
+            <mustSupport value="true" />
         </element>
         <element id="MessageHeader.destination.endpoint">
-            <path value="MessageHeader.destination.endpoint"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
+            <path value="MessageHeader.destination.endpoint" />
+            <min value="1" />
+            <max value="1" />
+            <mustSupport value="true" />
         </element>
         <element id="MessageHeader.sender">
-            <path value="MessageHeader.sender"/>
-            <min value="1"/>
-            <max value="1"/>
+            <path value="MessageHeader.sender" />
+            <min value="1" />
+            <max value="1" />
             <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"/>
+                <code value="Reference" />
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization" />
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
         <element id="MessageHeader.source">
-            <path value="MessageHeader.source"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
+            <path value="MessageHeader.source" />
+            <min value="1" />
+            <max value="1" />
+            <mustSupport value="true" />
         </element>
         <element id="MessageHeader.source.endpoint">
-            <path value="MessageHeader.source.endpoint"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
+            <path value="MessageHeader.source.endpoint" />
+            <min value="1" />
+            <max value="1" />
+            <mustSupport value="true" />
         </element>
         <element id="MessageHeader.reason">
-            <path value="MessageHeader.reason"/>
-            <short value="The named event that gave rise to the message"/>
-            <min value="1"/>
-            <max value="1"/>
+            <path value="MessageHeader.reason" />
+            <short value="The named event that gave rise to the message" />
+            <min value="1" />
+            <max value="1" />
             <type>
-                <code value="CodeableConcept"/>
+                <code value="CodeableConcept" />
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
             <binding>
-                <strength value="extensible"/>
-                <description value="US Public Health TriggerDefinition NamedEvents"/>
-                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-triggerdefinition-namedevent"/>
+                <strength value="extensible" />
+                <description value="US Public Health TriggerDefinition NamedEvents" />
+                <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/us-ph-triggerdefinition-namedevent" />
             </binding>
         </element>
         <element id="MessageHeader.response">
-            <path value="MessageHeader.response"/>
-            <min value="0"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
+            <path value="MessageHeader.response" />
+            <min value="0" />
+            <max value="1" />
+            <mustSupport value="true" />
         </element>
         <element id="MessageHeader.response.identifier">
-            <path value="MessageHeader.response.identifier"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
+            <path value="MessageHeader.response.identifier" />
+            <min value="1" />
+            <max value="1" />
+            <mustSupport value="true" />
         </element>
         <element id="MessageHeader.response.code">
-            <path value="MessageHeader.response.code"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
+            <path value="MessageHeader.response.code" />
+            <min value="1" />
+            <max value="1" />
+            <mustSupport value="true" />
         </element>
         <element id="MessageHeader.response.details">
-            <path value="MessageHeader.response.details"/>
-            <min value="0"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
+            <path value="MessageHeader.response.details" />
+            <min value="0" />
+            <max value="1" />
+            <mustSupport value="true" />
         </element>
     </differential>
 </StructureDefinition>

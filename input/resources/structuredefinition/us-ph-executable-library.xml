@@ -1,154 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition
-    xmlns="http://hl7.org/fhir">
-    <id value="us-ph-executable-library"/>
-    <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2021-07-01T18:36:31.660+00:00"/>
-        <source value="#oMC5gSspSraLLuZP"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-executable-library"/>
-    <version value="0.1.0"/>
-    <name value="USPublicHealthExecutableLibrary"/>
-    <title value="US Public Health Executable Library"/>
-    <status value="active"/>
-    <experimental value="false"/>
-    <date value="2021-10-23T00:00:00.000Z"/>
-    <publisher value="HL7 Public Health Work Group"/>
-    <description value="This profile sets the minimum expectations for an executable CQL library. Specifically, the profile requires that the library contain one of ELM XML or JSON content, the compiled representation of the CQL logic."/>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="us-ph-executable-library" />
+    <url value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-executable-library" />
+    <version value="0.1.0" />
+    <name value="USPublicHealthExecutableLibrary" />
+    <title value="US Public Health Executable Library" />
+    <status value="active" />
+    <experimental value="false" />
+    <date value="2021-10-23T00:00:00.000Z" />
+    <publisher value="HL7 Public Health Work Group" />
+    <description value="This profile sets the minimum expectations for an executable CQL library. Specifically, the profile requires that the library contain one of ELM XML or JSON content, the compiled representation of the CQL logic." />
     <jurisdiction>
         <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="US"/>
-            <display value="United States of America"/>
+            <system value="urn:iso:std:iso:3166" />
+            <code value="US" />
+            <display value="United States of America" />
         </coding>
-        <text value="United States of America"/>
+        <text value="United States of America" />
     </jurisdiction>
-    <fhirVersion value="4.0.1"/>
-    <kind value="resource"/>
-    <abstract value="false"/>
-    <type value="Library"/>
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/shareablelibrary"/>
-    <derivation value="constraint"/>
+    <fhirVersion value="4.0.1" />
+    <kind value="resource" />
+    <abstract value="false" />
+    <type value="Library" />
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/shareablelibrary" />
+    <derivation value="constraint" />
     <differential>
         <element id="Library">
-            <path value="Library"/>
-            <short value="US Public Health Executable Library"/>
+            <path value="Library" />
+            <short value="US Public Health Executable Library" />
         </element>
         <element id="Library.relatedArtifact">
-            <path value="Library.relatedArtifact"/>
+            <path value="Library.relatedArtifact" />
             <slicing>
                 <discriminator>
-                    <type value="value"/>
-                    <path value="type"/>
+                    <type value="value" />
+                    <path value="type" />
                 </discriminator>
-                <rules value="open"/>
+                <rules value="open" />
             </slicing>
-            <min value="0"/>
-            <max value="*"/>
-            <mustSupport value="true"/>
+            <min value="0" />
+            <max value="*" />
+            <mustSupport value="true" />
         </element>
         <element id="Library.relatedArtifact:dependency">
-            <path value="Library.relatedArtifact"/>
-            <sliceName value="dependency"/>
-            <min value="0"/>
-            <max value="*"/>
-            <mustSupport value="false"/>
+            <path value="Library.relatedArtifact" />
+            <sliceName value="dependency" />
+            <min value="0" />
+            <max value="*" />
+            <mustSupport value="false" />
         </element>
         <element id="Library.relatedArtifact:dependency.type">
-            <path value="Library.relatedArtifact.type"/>
-            <short value="Required dependency"/>
-            <definition value="A required dependency of the measure, an included Library (other than the primary library), or a referenced CodeSystem or ValueSet."/>
-            <min value="1"/>
-            <max value="1"/>
+            <path value="Library.relatedArtifact.type" />
+            <short value="Required dependency" />
+            <definition value="A required dependency of the measure, an included Library (other than the primary library), or a referenced CodeSystem or ValueSet." />
+            <min value="1" />
+            <max value="1" />
             <type>
-                <code value="code"/>
+                <code value="code" />
             </type>
-            <fixedCode value="depends-on"/>
-            <mustSupport value="true"/>
+            <fixedCode value="depends-on" />
+            <mustSupport value="true" />
         </element>
         <element id="Library.relatedArtifact:dependency.display">
-            <path value="Library.relatedArtifact.display"/>
-            <min value="0"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
+            <path value="Library.relatedArtifact.display" />
+            <min value="0" />
+            <max value="1" />
+            <mustSupport value="true" />
         </element>
         <element id="Library.relatedArtifact:dependency.resource">
-            <path value="Library.relatedArtifact.resource"/>
-            <min value="1"/>
-            <max value="1"/>
+            <path value="Library.relatedArtifact.resource" />
+            <min value="1" />
+            <max value="1" />
             <type>
-                <code value="canonical"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/shareablelibrary"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+                <code value="canonical" />
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem" />
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/shareablelibrary" />
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset" />
             </type>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
         <element id="Library.parameter">
-            <path value="Library.parameter"/>
-            <mustSupport value="true"/>
+            <path value="Library.parameter" />
+            <mustSupport value="true" />
         </element>
         <element id="Library.dataRequirement">
-            <path value="Library.dataRequirement"/>
-            <mustSupport value="true"/>
+            <path value="Library.dataRequirement" />
+            <mustSupport value="true" />
         </element>
         <element id="Library.content">
-            <path value="Library.content"/>
+            <path value="Library.content" />
             <slicing>
                 <discriminator>
-                    <type value="value"/>
-                    <path value="contentType"/>
+                    <type value="value" />
+                    <path value="contentType" />
                 </discriminator>
-                <rules value="open"/>
+                <rules value="open" />
             </slicing>
-            <mustSupport value="true"/>
+            <mustSupport value="true" />
         </element>
         <element id="Library.content:elmXmlContent">
-            <path value="Library.content"/>
-            <sliceName value="elmXmlContent"/>
-            <short value="ELM XML Content"/>
-            <definition value="The ELM XML translation of the CQL content represented as  base-64 encoded data."/>
-            <mustSupport value="false"/>
+            <path value="Library.content" />
+            <sliceName value="elmXmlContent" />
+            <short value="ELM XML Content" />
+            <definition value="The ELM XML translation of the CQL content represented as  base-64 encoded data." />
+            <mustSupport value="false" />
         </element>
         <element id="Library.content:elmXmlContent.contentType">
-            <path value="Library.content.contentType"/>
-            <min value="0"/>
-            <max value="1"/>
+            <path value="Library.content.contentType" />
+            <min value="0" />
+            <max value="1" />
             <type>
-                <code value="code"/>
+                <code value="code" />
             </type>
-            <fixedCode value="application/elm+xml"/>
-            <mustSupport value="true"/>
+            <fixedCode value="application/elm+xml" />
+            <mustSupport value="true" />
         </element>
         <element id="Library.content:elmXmlContent.data">
-            <path value="Library.content.data"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="false"/>
+            <path value="Library.content.data" />
+            <min value="1" />
+            <max value="1" />
+            <mustSupport value="false" />
         </element>
         <element id="Library.content:elmJsonContent">
-            <path value="Library.content"/>
-            <sliceName value="elmJsonContent"/>
-            <short value="ELM JSON Content"/>
-            <definition value="The ELM JSON translation of the CQL content represented as base-64 encoded data."/>
-            <mustSupport value="false"/>
+            <path value="Library.content" />
+            <sliceName value="elmJsonContent" />
+            <short value="ELM JSON Content" />
+            <definition value="The ELM JSON translation of the CQL content represented as base-64 encoded data." />
+            <mustSupport value="false" />
         </element>
         <element id="Library.content:elmJsonContent.contentType">
-            <path value="Library.content.contentType"/>
-            <min value="0"/>
-            <max value="1"/>
+            <path value="Library.content.contentType" />
+            <min value="0" />
+            <max value="1" />
             <type>
-                <code value="code"/>
+                <code value="code" />
             </type>
-            <fixedCode value="application/elm+json"/>
-            <mustSupport value="true"/>
+            <fixedCode value="application/elm+json" />
+            <mustSupport value="true" />
         </element>
         <element id="Library.content:elmJsonContent.data">
-            <path value="Library.content.data"/>
-            <min value="1"/>
-            <max value="1"/>
-            <mustSupport value="false"/>
+            <path value="Library.content.data" />
+            <min value="1" />
+            <max value="1" />
+            <mustSupport value="false" />
         </element>
     </differential>
 </StructureDefinition>
