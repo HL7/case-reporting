@@ -190,7 +190,7 @@
                 <key value="epd-1" />
                 <severity value="error" />
                 <human value="The code value of the namedEventType SHALL be the same as the name element" />
-                <expression value="extension('http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension').value.coding.code.supersetOf(name)" />
+<!--                <expression value="extension('http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension').value.coding.code.supersetOf(name)" />-->
                 <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;name&quot;)])" />
             </constraint>
             <mustSupport value="true" />
@@ -867,9 +867,8 @@
                 <key value="epd-1" />
                 <severity value="error" />
                 <human value="The code value of the namedEventType SHALL be the same as the name element" />
-                <expression value="extension('http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension').value.coding.code.supersetOf(name)" />
+<!--                <expression value="extension('http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension').value.coding.code.supersetOf(name)" />-->
                 <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;name&quot;)])" />
-                <source value="http://hl7.org/fhir/StructureDefinition/Extension" />
             </constraint>
             <mustSupport value="true" />
         </element>
@@ -909,8 +908,8 @@
         <element id="PlanDefinition.action:encounterModified.trigger.extension:namedEventType">
             <path value="PlanDefinition.action.trigger.extension" />
             <sliceName value="namedEventType" />
-            <short value="Indicates the types of named events to subscribe to from the HER." />
-            <definition value="Indicates the types of named events to subscribe to from the HER." />
+            <short value="Indicates the types of named events to subscribe to from the EHR." />
+            <definition value="Indicates the types of named events to subscribe to from the EHR." />
             <min value="0" />
             <max value="1" />
             <base>
