@@ -63,8 +63,8 @@ This element does not match any known slice defined in the profile http://hl7.or
 # Demonstration of data-absent-reason extension
 No code provided, and a code should be provided from the value set 'US Core Encounter Type' (http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type)
 
-# The html in this text is escaped
-The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+# The html in this text is escaped and is desired behavior
+The markdown contains content that appears to be an embedded HTML tag starting at '<h'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour
 
 # From ODH QA for same issue: The slice is defined by value sets from PHINVADS. Since the validator is not able to access those values, it is not able to distinguish the slices even though they are correctly instantiated.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/odh/StructureDefinition/odh-PastOrPresentJob
@@ -75,5 +75,5 @@ This element does not match any known slice defined in the profile http://hl7.or
 # The value sets causing these warnings are a pretty key part of demonstrating that aspect.
 Unknown System/Version specified, so Concepts and Filters can''t be checked
 
-# Suppress informational messages
-The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+# Inactive code is used in the example value set for ServiceRequest.category: https://build.fhir.org/valueset-servicerequest-category.html
+The code '103693007' is valid but is not active
