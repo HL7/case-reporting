@@ -1,11 +1,11 @@
 == Suppressed Messages ==
 # ERROR JUSTIFICATION: The following Jira ticket has been submitted and APPROVED to extend this extension to allow use on PlanDefinition: https://jira.hl7.org/browse/FHIR-37646
-ERROR: Bundle/bundle-ersd-specification-example: Bundle.entry[1].resource.ofType(PlanDefinition): The modifier extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [[Bundle.entry.resource.ofType(PlanDefinition), BackboneElement.resource, PlanDefinition])
-ERROR: Bundle/bundle-ersd-specification-example: Bundle.entry[1].resource: The modifier extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [[Bundle.entry.resource, PlanDefinition])
-ERROR: PlanDefinition/plandefinition-ersd-instance-example: PlanDefinition: The modifier extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [[PlanDefinition])
-ERROR: PlanDefinition/plandefinition-ersd-instance-simple-example: PlanDefinition: The modifier extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [[PlanDefinition])
-Library.relatedArtifact:slicePlanDefinition: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-library|2.1.1)
-Details for http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example matching against profile http://hl7.org/fhir/StructureDefinition/PlanDefinition|4.0.1
+ERROR: Bundle/bundle-ersd-specification-example: Bundle.entry[0].resource/*Library/SpecificationLibrary*/: Library.relatedArtifact:slicePlanDefinition: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-library|2.1.1)
+ERROR: Bundle/bundle-ersd-specification-example: Bundle.entry[1].resource/*PlanDefinition/plandefinition-ersd-instance-example*/: The extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [Bundle.entry.resource/*PlanDefinition/plandefinition-ersd-instance-example*/, PlanDefinition])
+ERROR: Bundle/bundle-ersd-specification-example: Bundle.entry[1].resource: The extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [Bundle.entry.resource, PlanDefinition])
+ERROR: Library/library-ersd-specification-library-example: Library: Library.relatedArtifact:slicePlanDefinition: minimum required = 1, but only found 0 (from http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-library|2.1.1)
+ERROR: PlanDefinition/plandefinition-ersd-instance-example: PlanDefinition: The extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [PlanDefinition])
+ERROR: PlanDefinition/plandefinition-ersd-instance-simple-example: PlanDefinition: The extension http://hl7.org/fhir/StructureDefinition/variable is not allowed to be used at this point (allowed = e:Questionnaire, e:Questionnaire.item, e:Questionnaire.item.item; this element is [PlanDefinition])
 
 # These US Public Health profiles have been further constrained by other profiles in this IG and have not been instantiated in this IG (future plans are to move these PH generic profiles out to a Public Health Library)
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-messageheader'): The Implementation Guide contains no explicitly linked examples for this profile
@@ -35,7 +35,6 @@ US FHIR Usage rules require that all profiles on Condition derive from one of th
 
 # Examples have optional slices that are not defined in the profile - not matching is expected behaviour
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle|2.1.1
-This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-composition|2.1.1
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-reporting-bundle|2.1.1
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/rr-document-bundle|2.1.1
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization|2.1.1
@@ -90,3 +89,5 @@ Best Practice Recommendation: In general, all observations should have an effect
 Rule dom-6: 'A resource should have narrative for robust management' Failed (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 Rule con-3: 'Condition.clinicalStatus SHALL be present if verificationStatus is not entered-in-error and category is problem-list-item' Failed (defined in http://hl7.org/fhir/StructureDefinition/Condition) (Best Practice Recommendation)
 
+# Repeating element in snapshot
+The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
