@@ -21,6 +21,8 @@ Code System URI 'urn:oid:2.16.840.1.114222.4.5.232' is unknown so the code canno
 Code System URI 'http://terminology.hl7.org/CodeSystem/PHOccupationalDataForHealthODH' is unknown so the code cannot be validated
 Code System URI 'http://terminology.hl7.org/CodeSystem/PHOccupationCDCCensus2010' is unknown so the code cannot be validated
 Code System URI 'http://terminology.hl7.org/CodeSystem/PHIndustryCDCCensus2010' is unknown so the code cannot be validated
+The definition for the Code System with URI 'http://terminology.hl7.org/CodeSystem/PHOccupationCDCCensus2010' doesnt provide any codes so the code cannot be validated
+The definition for the Code System with URI 'http://terminology.hl7.org/CodeSystem/PHOccupationalDataForHealthODH' doesnt provide any codes so the code cannot be validated
 Code System URI 'urn:oid:2.16.840.1.114222.4.5.315' is unknown so the code cannot be validated
 Code System URI 'urn:oid:2.16.840.1.114222.4.5.314' is unknown so the code cannot be validated
 ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator
@@ -33,6 +35,8 @@ ValueSet http://www.rfc-editor.org/bcp/bcp13.txt not found by validator
 [Unable to determine whether the provided codes are in the value set http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.113883.10.20.15.2.5.10 because the value set or a code system it depends on is not known to the validator, Code System URI 'urn:oid:2.16.840.1.114222.4.5.274' is unknown so the code cannot be validated]
 [Unable to determine whether the provided codes are in the value set http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.113883.10.20.15.2.5.7 because the value set or a code system it depends on is not known to the validator, Code System URI 'urn:oid:2.16.840.1.114222.4.5.274' is unknown so the code cannot be validated]
 [Unable to determine whether the provided codes are in the value set http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.113883.10.20.15.2.5.8 because the value set or a code system it depends on is not known to the validator, Code System URI 'urn:oid:2.16.840.1.114222.4.5.274' is unknown so the code cannot be validated]
+The definition for the Code System with URI 'http://terminology.hl7.org/CodeSystem/umls' doesnt provide any codes so the code cannot be validated
+
 
 # 1. CPT codes can't be checked 2. One of the examples is demonstrating use of the data-absent-reason extension
 Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
@@ -59,12 +63,19 @@ This element does not match any known slice defined in the profile http://hl7.or
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset|2.1.1
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition|2.1.1
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-specification-library|2.1.1
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-valueset-library|2.1.1
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset-library|2.1.1
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition|2.1.1
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/odh/StructureDefinition/odh-PastOrPresentJob|1.1.0
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/odh/StructureDefinition/odh-UsualWork|1.1.0
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-plandefinition|2.1.1
 
 # Demonstration of data-absent-reason extension
 No code provided, and a code should be provided from the value set 'US Core Encounter Type' (http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type|4.0.0)
 
 # The html in this text is escaped and is desired behavior
 The markdown contains content that appears to be an embedded HTML tag starting at '<h'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour
+The markdown contains content that appears to be an embedded HTML tag starting at '# '. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour
 
 # From ODH QA for same issue: The slice is defined by value sets from PHINVADS. Since the validator is not able to access those values, it is not able to distinguish the slices even though they are correctly instantiated.
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/odh/StructureDefinition/odh-PastOrPresentJob
@@ -80,3 +91,15 @@ The code '103693007' is valid but is not active
 
 # Inactive code is used in this value set
 The code '76981000119106' is valid but is not active
+
+# Reference to draft ok
+Reference to draft item http://terminology.hl7.org/CodeSystem/condition-category|0.5.0
+Reference to draft item http://terminology.hl7.org/CodeSystem/v3-ObservationValue|2.1.0
+
+# New best practice warnings - added after IG published - will address in next update/ballot
+Best Practice Recommendation: In general, all observations should have a performer
+Best Practice Recommendation: In general, all observations should have a subject
+Best Practice Recommendation: In general, all observations should have an effective[x] ()
+Rule dom-6: 'A resource should have narrative for robust management' Failed (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+Rule con-3: 'Condition.clinicalStatus SHALL be present if verificationStatus is not entered-in-error and category is problem-list-item' Failed (defined in http://hl7.org/fhir/StructureDefinition/Condition) (Best Practice Recommendation)
+
