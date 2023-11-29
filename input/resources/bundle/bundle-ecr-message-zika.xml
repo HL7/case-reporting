@@ -12,51 +12,51 @@
     <entry>
         <fullUrl value="http://example.org/fhir/MessageHeader/messageheader-ecr-requested-eicr" />
         <resource>
-            <MessageHeader  xmlns="http://hl7.org/fhir">
-                <id value="messageheader-ecr-requested-eicr"/>
+            <MessageHeader xmlns="http://hl7.org/fhir">
+                <id value="messageheader-ecr-requested-eicr" />
                 <meta>
-                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader"/>
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader" />
                 </meta>
                 <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-data-encrypted-extension">
-                    <valueBoolean value="false"/>
+                    <valueBoolean value="false" />
                 </extension>
                 <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-message-processing-category-extension">
-                    <valueCode value="consequence"/>
+                    <valueCode value="consequence" />
                 </extension>
                 <eventCoding>
-                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-message-types-codesystem"/>
-                    <code value="eicr-case-report-message"/>
-                    <display value="Indicates a message containing electronic case report healthcare data sent from clinical care."/>
+                    <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-message-types-codesystem" />
+                    <code value="eicr-case-report-message" />
+                    <display value="Indicates a message containing electronic case report healthcare data sent from clinical care." />
                 </eventCoding>
                 <destination>
-                    <name value="YMCA Acme Message Gateway"/>
+                    <name value="YMCA Acme Message Gateway" />
                     <target>
-                        <reference value="Device/device-ecr-software-ymca"/>
+                        <reference value="Device/device-ecr-software-ymca" />
                     </target>
-                    <endpoint value="http://example.org/ymca/fhir"/>
+                    <endpoint value="http://example.org/ymca/fhir" />
                 </destination>
                 <sender>
-                    <reference value="Organization/organization-ecr-salem-medical-center"/>
+                    <reference value="Organization/organization-ecr-salem-medical-center" />
                 </sender>
                 <source>
-                    <name value="Acme Central Patient Registry"/>
-                    <software value="FooBar Patient Manager"/>
-                    <version value="3.1.45.AABB"/>
+                    <name value="Acme Central Patient Registry" />
+                    <software value="FooBar Patient Manager" />
+                    <version value="3.1.45.AABB" />
                     <contact>
-                        <system value="phone"/>
-                        <value value="+1 (555) 123 4567"/>
+                        <system value="phone" />
+                        <value value="+1 (555) 123 4567" />
                     </contact>
-                    <endpoint value="http://example.org/salem-medical-center/fhir"/>
+                    <endpoint value="http://example.org/salem-medical-center/fhir" />
                 </source>
                 <reason>
                     <coding>
-                        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-triggerdefinition-namedevents"/>
-                        <code value="encounter-close"/>
-                        <display value="Indicates the close of an encounter"/>
+                        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-triggerdefinition-namedevents" />
+                        <code value="encounter-close" />
+                        <display value="Indicates the close of an encounter" />
                     </coding>
                 </reason>
                 <focus>
-                    <reference value="Bundle/bundle-eicr-document-zika"/>
+                    <reference value="Bundle/bundle-eicr-document-zika" />
                 </focus>
             </MessageHeader>
         </resource>
@@ -1133,9 +1133,9 @@
                                         </extension>
                                         <extension url="triggerCode">
                                             <valueCoding>
-                                                <system value="http://snomed.info/sct" />
-                                                <code value="3928002" />
-                                                <display value="Zika virus disease (disorder)" />
+                                                <system value="http://loinc.org" />
+                                                <code value="80825-3" />
+                                                <display value="Zika virus envelope E gene [Presence] in Serum by NAA with probe detection" />
                                             </valueCoding>
                                         </extension>
                                     </extension>
@@ -2949,12 +2949,9 @@
                 <entry>
                     <fullUrl value="http://example.org/fhir/Observation/observation-us-ph-lab-result-eve-everywoman-lymphocytes" />
                     <resource>
-                        <Observation>
+                        <Observation xmlns="http://hl7.org/fhir">
                             <id value="observation-us-ph-lab-result-eve-everywoman-lymphocytes" />
                             <meta>
-                                <versionId value="4" />
-                                <lastUpdated value="2021-07-19T00:27:15.332+00:00" />
-                                <source value="#JUoT9ShFi539tEiO" />
                                 <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-lab-result-observation" />
                             </meta>
                             <status value="final" />
@@ -3228,6 +3225,80 @@
                                 <country value="US" />
                             </address>
                         </Practitioner>
+                    </resource>
+                </entry>
+                <entry>
+                    <fullUrl value="http://example.org/fhir/Device/device-ecmo" />
+                    <resource>
+                        <Device xmlns="http://hl7.org/fhir">
+                            <id value="device-ecmo" />
+                            <meta>
+                                <versionId value="3" />
+                                <lastUpdated value="2021-06-30T07:22:44.658+00:00" />
+                                <source value="#WUV2SWqz3ej775gd" />
+                            </meta>
+                            <text>
+                                <status value="generated" />
+                                <div xmlns="http://www.w3.org/1999/xhtml">
+                                    <p>
+                                        <b>Manually Created Narrative</b>
+                                    </p>
+                                    <h3>UDI</h3>
+                                    <p>
+                                        <b>Device Identifier</b>: 99863313444317 </p>
+                                    <p>
+                                        <b>CarrierHRF</b>: (01)99863313444316(17)220101(10)M320(21)AC222 </p>
+                                    <p>
+                                        <b>EntryType</b>: rfid </p>
+                                    <p>
+                                        <b>Name</b>: ACME Extracorporeal membrane oxygenator </p>
+                                    <p>
+                                        <b>Type</b>: udi-label-name </p>
+                                    <p>
+                                        <b>status</b>: active </p>
+                                    <p>
+                                        <b>manufacturer</b>: ACME Biomedical </p>
+                                    <p>
+                                        <b>expirationDate</b>: 2024-01-01 </p>
+                                    <p>
+                                        <b>lotNumber</b>: M321 </p>
+                                    <p>
+                                        <b>serialNumber</b>: AC222 </p>
+                                    <p>
+                                        <b>modelNumber</b>: 4.0 </p>
+                                    <p>
+                                        <b>patient</b>: <a href="Patient-patient-ecr-eve-everywoman.html">Eve Everywoman. Generated Summary: Medical Record Number: 1032702 (USUAL); active; Eve L Everywoman ; Phone: 1-(404)555-1212, eve.everywoman@example.com; gender: female; birthDate: 1974-11-24</a>
+                                    </p>
+                                </div>
+                            </text>
+                            <udiCarrier>
+                                <deviceIdentifier value="99863313444316" />
+                                <carrierHRF value="(01)99863313444316(17)220101(10)M320(21)AC222" />
+                                <entryType value="rfid" />
+                            </udiCarrier>
+                            <status value="active" />
+                            <manufacturer value="ACME Biomedical" />
+                            <expirationDate value="2022-01-01" />
+                            <lotNumber value="M320" />
+                            <serialNumber value="AC222" />
+                            <deviceName>
+                                <name value="ACME Extracorporeal membrane oxygenator" />
+                                <type value="udi-label-name" />
+                            </deviceName>
+                            <modelNumber value="4.0" />
+                            <type>
+                                <coding>
+                                    <system value="http://snomed.info/sct" />
+                                    <code value="469244005" />
+                                    <display value="Extracorporeal membrane oxygenator (physical object)" />
+                                </coding>
+                                <text value="Extracorporeal membrane oxygenator (physical object)" />
+                            </type>
+                            <patient>
+                                <reference value="Patient/patient-ecr-eve-everywoman" />
+                                <display value="Eve Everywoman" />
+                            </patient>
+                        </Device>
                     </resource>
                 </entry>
             </Bundle>
