@@ -26,13 +26,13 @@ Code System URI 'urn:oid:2.16.840.1.114222.4.5.314' could not be found so the co
 The definition for the Code System with URI 'http://terminology.hl7.org/CodeSystem/umls' doesnt provide any codes so the code cannot be validated
 
 # APPROVED by HL7 Cross Group Projects WG: Profiles do not derive from one of the base US profiles because they do not align with any of the US Core Observations (Minutes: https://confluence.hl7.org/pages/viewpage.action?pageId=97453270)
-US FHIR Usage rules require that all profiles on Observation derive from one of the base US profiles
+US FHIR Usage rules require that all profiles on Observation derive from one of the base US profiles. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
 # There is no US Core Service request profile in the version of US Core this IG is dependent on (4.0.0)
-US FHIR Usage rules require that all profiles on ServiceRequest derive from the core US profile
+US FHIR Usage rules require that all profiles on ServiceRequest derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
 # This profile derives from the US Core Condition in the version of US Core this IG is dependent on (4.0.0)
-US FHIR Usage rules require that all profiles on Condition derive from one of the base US profiles
+US FHIR Usage rules require that all profiles on Condition derive from one of the base US profiles. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
 # Examples have optional slices that are not defined in the profile - not matching is expected behaviour
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle|2.1.1
@@ -121,6 +121,7 @@ Can't find 'http://statedepartmentofhealth.gov/epi/disease/zika/Supplemental_dat
 Can't find 'http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf' in the bundle (Bundle.entry[20].resource.content[0].attachment.url)
 Can't find 'http://statedepartmentofhealth.gov/epi/disease/zika/outbreakinfo.pdf' in the bundle (Bundle.entry[21].resource.content[0].attachment.url)
 Can't find 'urn:hl7ii:2.16.840.1.113883.19.5.99999.19:1' in the bundle (Bundle.entry[5].resource.content[0].attachment.url)
+Can't find 'http://acme.com/ymca/software/' in the bundle (Bundle.entry[2].resource.url)
 
 # There will never be more than one item in the parameter value
 epd-1: Parameter 1 is inherently a collection, and so the expression 'supersetOf' may fail, create an error, or return false if there is more than one item in the parameter value (supersetOf(extension('http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension').value.coding.code))
@@ -151,4 +152,3 @@ Can't find 'Practitioner/practitioner-us-core-henry-seven' in the bundle (Bundle
 Can't find 'Condition/condition-eicr-eve-everywoman-zika' in the bundle (Bundle.entry[1].resource.entry[6].resource.diagnosis[0].condition)
 Can't find 'Location/location-ecr-salem-medical-center' in the bundle (Bundle.entry[1].resource.entry[6].resource.location[0].location)
 Can't find 'Location/location-ecr-city-football-stadium' in the bundle (Bundle.entry[1].resource.entry[16].resource.focus[0])
-Can't find 'http://acme.com/ymca/software/' in the bundle (Bundle.entry[2].resource.url)
