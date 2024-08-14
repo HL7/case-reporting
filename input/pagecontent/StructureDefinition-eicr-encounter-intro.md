@@ -7,6 +7,10 @@ Where a trigger occurs outside of an encounter set Encounter.class to "PHC2237â€
 
 | Data Element  | Note  |
 |---|---|
+| Encounter.location\[Location] | Facility: The facility in which care was provided when the case was triggered | 
+| Encounter.location\[Location].identifier | Facility Id: Identification code for the facility in which care was provided when the case was triggered | 
+| Encounter.location\[Location].type | Facility Type: The type of facility in which care was provided when the case was triggered |
+| Encounter.location\[Location].address | Facility Address: The physical location of the facility in which care was provided when the case was triggered |
 | Encounter.serviceProvider\[Organization]  | Healthcare Organization: The umbrella organization under which the facility where care was provided operates  |
 | Encounter.servicieProvider\[Organization].identifier  | Healthcare Organization Id: Identification code for the umbrella organization under which the facility where care was provided operates  |
 | Encounter.servicieProvider\[Organization].name  | Healthcare Organization Contact Name: The contact name for the for the umbrella organization under which the facility where care was provided operates  |
