@@ -1,11 +1,12 @@
 ### IG Defined Value Sets
 
-* [MessageHeader Event](http://hl7.org/fhir/us/ecr/ValueSet/valueset-ecr-messageheader-event|{{ site.data.fhir.igVer }} )
-* [Pregnancy Status](http://hl7.org/fhir/us/ecr/ValueSet/us-ph-pregnancy-status)|{{ site.data.fhir.igVer }} 
-* [The set of actions that can be used to create plan definition](http://hl7.org/fhir/us/ecr/ValueSet/us-ph-plandefinition-action)|{{ site.data.fhir.igVer }} 
-* [The set of named events that can be used for subscriptions](http://hl7.org/fhir/us/ecr/ValueSet/us-ph-triggerdefinition-namedevent)|{{ site.data.fhir.igVer }} 
-* [US Public Health Message Types ValueSet](http://hl7.org/fhir/us/ecr/ValueSet/us-ph-message-types-valueset)|{{ site.data.fhir.igVer }} 
-* [US Public Health TriggerDefinition NamedEvents](http://hl7.org/fhir/us/ecr/ValueSet/us-ph-triggerdefinition-namedevent)|{{ site.data.fhir.igVer }} 
+* [MessageHeader Event](ValueSet-us-ph-pregnancy-status.html)
+* <a href='http://hl7.org/fhir/us/ecr/ValueSet/valueset-ecr-messageheader-event|{{ site.data.fhir.igVer }}'>MessageHeader Event</a>
+* [Pregnancy Status](http://hl7.org/fhir/us/ecr/ValueSet/us-ph-pregnancy-status|{{ site.data.fhir.igVer }}) 
+* [The set of actions that can be used to create plan definition](http://hl7.org/fhir/us/ecr/ValueSet/us-ph-plandefinition-action|{{ site.data.fhir.igVer }}) 
+* [The set of named events that can be used for subscriptions](http://hl7.org/fhir/us/ecr/ValueSet/us-ph-triggerdefinition-namedevent|{{ site.data.fhir.igVer }}) 
+* [US Public Health Message Types ValueSet](http://hl7.org/fhir/us/ecr/ValueSet/us-ph-message-types-valueset|{{ site.data.fhir.igVer }}) 
+* [US Public Health TriggerDefinition NamedEvents](http://hl7.org/fhir/us/ecr/ValueSet/us-ph-triggerdefinition-namedevent|{{ site.data.fhir.igVer }}) 
 
 ### HL7 Defined Value Sets
 
@@ -19,23 +20,23 @@
 ### External Value Sets
 
 * [Determination of Reportability](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.3)
-* [Disability Status](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1099.49)/expansion/Latest
-* [Estimated Date of Delivery Including Method](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.81)/expansion/Latest
-* [Estimated Gestational Age Code Including Method](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.82)/expansion/Latest
+* [Disability Status](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1099.49/expansion/Latest)
+* [Estimated Date of Delivery Including Method](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.81/expansion/Latest)
+* [Estimated Gestational Age Code Including Method](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.82/expansion/Latest)
 * [External Resource Type](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.4)
 * [Geographical Location History](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.3201)
 * [Initiation Types](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.11)
 * [Location Relevance](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.6)
 * [Location Relevance](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.6)
-* [Postpartum Status](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.87)/expansion/Latest
-* [Pregnancy Outcome](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.86)/expansion/Latest
-* [Pregnancy Status Determination Method](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.80)/expansion/Latest
+* [Postpartum Status](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.87/expansion/Latest)
+* [Pregnancy Outcome](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.86/expansion/Latest)
+* [Pregnancy Status Determination Method](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.80/expansion/Latest)
 * [Processing Status Reason Detail Type](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.10)
 * [Processing Status Reason](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.7)
 * [Processing Status](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.8)
 * [Reportability Priority](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.113883.10.20.15.2.5.5)
-* [Residence and Accommodation Type](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.49)/expansion/Latest
-* [Therapeutic Response to Medication](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.10.20.15.2.5.12)/expansion/Latest
-* [Transport Vehicle Type](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1099.50)/expansion/Latest
+* [Residence and Accommodation Type](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.11.20.9.49/expansion/Latest)
+* [Therapeutic Response to Medication](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113883.10.20.15.2.5.12/expansion/Latest)
+* [Transport Vehicle Type](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1099.50/expansion/Latest)
 * [Travel Purpose](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.8064)
 * [Yes No Unknown (YNU)](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.888)
