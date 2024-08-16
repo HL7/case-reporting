@@ -1,12 +1,11 @@
 ### IG Defined Value Sets
 
 * [MessageHeader Event](ValueSet-us-ph-pregnancy-status.html)
-* <a href='http://hl7.org/fhir/us/ecr/ValueSet/valueset-ecr-messageheader-event|{{ site.data.fhir.igVer }}'>MessageHeader Event</a>
-* [Pregnancy Status](http://hl7.org/fhir/us/ecr/ValueSet/us-ph-pregnancy-status|{{ site.data.fhir.igVer }}) 
-* [The set of actions that can be used to create plan definition](http://hl7.org/fhir/us/ecr/ValueSet/us-ph-plandefinition-action|{{ site.data.fhir.igVer }}) 
-* [The set of named events that can be used for subscriptions](http://hl7.org/fhir/us/ecr/ValueSet/us-ph-triggerdefinition-namedevent|{{ site.data.fhir.igVer }}) 
-* [US Public Health Message Types ValueSet](http://hl7.org/fhir/us/ecr/ValueSet/us-ph-message-types-valueset|{{ site.data.fhir.igVer }}) 
-* [US Public Health TriggerDefinition NamedEvents](http://hl7.org/fhir/us/ecr/ValueSet/us-ph-triggerdefinition-namedevent|{{ site.data.fhir.igVer }}) 
+* [Pregnancy Status](ValueSet-us-ph-pregnancy-status.html) 
+* [The set of actions that can be used to create plan definition](ValueSet-us-ph-plandefinition-action.html) 
+* [The set of named events that can be used for subscriptions](ValueSet-us-ph-triggerdefinition-namedevent.html) 
+* [US Public Health Message Types ValueSet](ValueSet-us-ph-message-types-valueset.html) 
+* [US Public Health TriggerDefinition NamedEvents](ValueSet-us-ph-triggerdefinition-namedevent.html) 
 
 ### HL7 Defined Value Sets
 
