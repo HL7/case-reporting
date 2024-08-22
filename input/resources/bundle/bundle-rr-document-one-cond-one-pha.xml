@@ -1,1247 +1,1250 @@
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="bundle-rr-document-one-cond-one-pha" />
-  <meta>
-    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-document-bundle" />
-  </meta>
-  <identifier>
-    <system value="urn:ietf:rfc:3986" />
-    <value value="urn:uuid:2be4b4e4-6df1-4cb2-a947-c70fa0eda34d" />
-  </identifier>
-  <type value="document" />
-  <timestamp value="2021-08-02T22:13:23Z" />
-  <entry>
-    <fullUrl value="http://example.org/fhir/Composition/composition-rr-one-cond-one-pha" />
-    <resource>
-      <Composition>
-        <id value="composition-rr-one-cond-one-pha" />
-        <meta>
-          <versionId value="6" />
-          <lastUpdated value="2021-08-17T03:37:27.060+00:00" />
-          <source value="#0LoQfHsenVG69d13" />
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition" />
-        </meta>
-        <extension url="http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber">
-          <valueString value="1" />
-        </extension>
-        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-information-recipient-extension">
-          <valueReference>
-            <reference value="PractitionerRole/practitionerrole-henry-seven" />
-          </valueReference>
-        </extension>
-        <identifier>
-          <system value="http://acme.org/identifiers" />
-          <value value="RR12347" />
-        </identifier>
-        <status value="final" />
-        <type>
-          <coding>
-            <system value="http://loinc.org" />
-            <code value="88085-6" />
-            <display value="Reportability response report Document Public health" />
-          </coding>
-        </type>
-        <subject>
-          <reference value="Patient/patient-ecr-eve-everywoman" />
-          <display value="Eve Everywoman" />
-        </subject>
-        <encounter>
-          <reference value="Encounter/encounter-eicr-eve-everywoman-outpatient" />
-          <display value="Ambulatory Office Visit" />
-        </encounter>
-        <date value="2018-07-19T04:09:06Z" />
-        <author>
-          <reference value="Organization/organization-ecr-health-authority-west" />
-          <display value="Health Authority West, 7777 Health Authority Drive, Ann Arbor MI, 99999" />
-        </author>
-        <title value="Reportability Response - One Condition/One PHA example" />
-        <custodian>
-          <reference value="Organization/organization-ecr-health-authority-west" />
-          <display value="Health Authority West, 7777 Health Authority Drive, Ann Arbor MI, 99999" />
-        </custodian>
-        <section>
-          <title value="Reportability Response Subject Section" />
-          <code>
-            <coding>
-              <system value="http://loinc.org" />
-              <code value="88084-9" />
-              <display value="Reportable condition response information and summary Document" />
-            </coding>
-          </code>
-          <text>
-            <status value="generated" />
-            <div xmlns="http://www.w3.org/1999/xhtml">
-              <p>Public Health Reporting Communication: one or more conditions are reportable, or may be reportable to public health</p>
-            </div>
-          </text>
-        </section>
-        <section>
-          <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-extension">
-            <extension url="eICRProcessingStatus">
-              <valueReference>
-                <reference value="Observation/observation-rr-eicr-processing-status" />
-                <display value="eICR was processed - with a warning" />
-              </valueReference>
-            </extension>
-            <extension url="eICRValidationOutput">
-              <valueAttachment>
-                <contentType value="text/html" />
-                <data
-                  value="PGh0bWwgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiPg0KICAgICAgICAgIDxoZWFkPg0KICAgICAgICAgICAgPHRpdGxlPiBSZXN1bHRzIDwvdGl0bGU+DQogICAgICAgICAgICA8c3R5bGUgdHlwZT0idGV4dC9jc3MiPiA8L3N0eWxlPg0KICAgICAgICAgIDwvaGVhZD4NCiAgICAgICAgICA8Ym9keT4NCiAgICAgICAgICAgIDx0YWJsZT4NCiAgICAgICAgICAgICAgPHRoZWFkPg0KICAgICAgICAgICAgICAgIDx0cj4NCiAgICAgICAgICAgICAgICAgIDx0aD5TZXZlcml0eTwvdGg+DQogICAgICAgICAgICAgICAgICA8dGg+RGVzY3JpcHRpb248L3RoPg0KICAgICAgICAgICAgICAgICAgPHRoPkZpbGU8L3RoPg0KICAgICAgICAgICAgICAgICAgPHRoPkxvY2F0aW9uPC90aD4NCiAgICAgICAgICAgICAgICA8L3RyPg0KICAgICAgICAgICAgICA8L3RoZWFkPg0KICAgICAgICAgICAgICA8dGJvZHk+DQogICAgICAgICAgICAgICAgPHRyPg0KICAgICAgICAgICAgICAgICAgPHRkPmVycm9yPC90ZD4NCiAgICAgICAgICAgICAgICAgIDx0ZD5TSE9VTEQgY29udGFpbiB6ZXJvIG9yIG9uZSBbMC4uMV0gc2V0SWQgKENPTkY6MTA5OC0zMjc1MikuPC90ZD4NCiAgICAgICAgICAgICAgICAgIDx0ZD5DREFSMl9JR19QSENSX1IyX1JSX0QxXzIwMTdPQ1RfU0FNUExFLnhtbDwvdGQ+DQogICAgICAgICAgICAgICAgICA8dGQ+DQogICAgICAgICAgICAgICAgICAgIDxwPlN0YXJ0IGxpbmUgNDE1OjcwPC9wPg0KICAgICAgICAgICAgICAgICAgPC90ZD4NCiAgICAgICAgICAgICAgICA8L3RyPg0KICAgICAgICAgICAgICAgIDx0cj4NCiAgICAgICAgICAgICAgICAgIDx0ZD5lcnJvcjwvdGQ+DQogICAgICAgICAgICAgICAgICA8dGQ+U0hPVUxEIGNvbnRhaW4gemVybyBvciBvbmUgWzAuLjFdIHZlcnNpb25OdW1iZXIgKENPTkY6MTA5OC0zMjc1MykuPC90ZD4NCiAgICAgICAgICAgICAgICAgIDx0ZD5DREFSMl9JR19QSENSX1IyX1JSX0QxXzIwMTdPQ1RfU0FNUExFLnhtbDwvdGQ+DQogICAgICAgICAgICAgICAgICA8dGQ+DQogICAgICAgICAgICAgICAgICAgIDxwPlN0YXJ0IGxpbmUgNDE1OjcwPC9wPg0KICAgICAgICAgICAgICAgICAgPC90ZD4NCiAgICAgICAgICAgICAgICA8L3RyPg0KICAgICAgICAgICAgICA8L3Rib2R5Pg0KICAgICAgICAgICAgPC90YWJsZT4NCiAgICAgICAgICA8L2JvZHk+DQogICAgICAgIDwvaHRtbD4="
+    <id value="bundle-rr-document-one-cond-one-pha" />
+    <meta>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-document-bundle" />
+    </meta>
+    <identifier>
+        <system value="urn:ietf:rfc:3986" />
+        <value value="urn:uuid:2be4b4e4-6df1-4cb2-a947-c70fa0eda34d" />
+    </identifier>
+    <type value="document" />
+    <timestamp value="2021-08-02T22:13:23Z" />
+    <entry>
+        <fullUrl value="http://example.org/fhir/Composition/composition-rr-one-cond-one-pha" />
+        <resource>
+            <Composition>
+                <id value="composition-rr-one-cond-one-pha" />
+                <meta>
+                    <versionId value="6" />
+                    <lastUpdated value="2021-08-17T03:37:27.060+00:00" />
+                    <source value="#0LoQfHsenVG69d13" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition" />
+                </meta>
+                <extension url="http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber">
+                    <valueString value="1" />
+                </extension>
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-information-recipient-extension">
+                    <valueReference>
+                        <reference value="PractitionerRole/practitionerrole-henry-seven" />
+                    </valueReference>
+                </extension>
+                <identifier>
+                    <system value="http://acme.org/identifiers" />
+                    <value value="RR12347" />
+                </identifier>
+                <status value="final" />
+                <type>
+                    <coding>
+                        <system value="http://loinc.org" />
+                        <code value="88085-6" />
+                        <display value="Reportability response report Document Public health" />
+                    </coding>
+                </type>
+                <subject>
+                    <reference value="Patient/patient-ecr-eve-everywoman" />
+                    <display value="Eve Everywoman" />
+                </subject>
+                <encounter>
+                    <reference value="Encounter/encounter-eicr-eve-everywoman-outpatient" />
+                    <display value="Ambulatory Office Visit" />
+                </encounter>
+                <date value="2018-07-19T04:09:06Z" />
+                <author>
+                    <reference value="Organization/organization-ecr-health-authority-west" />
+                    <display value="Health Authority West, 7777 Health Authority Drive, Ann Arbor MI, 99999" />
+                </author>
+                <title value="Reportability Response - One Condition/One PHA example" />
+                <custodian>
+                    <reference value="Organization/organization-ecr-health-authority-west" />
+                    <display value="Health Authority West, 7777 Health Authority Drive, Ann Arbor MI, 99999" />
+                </custodian>
+                <section>
+                    <title value="Reportability Response Subject Section" />
+                    <code>
+                        <coding>
+                            <system value="http://loinc.org" />
+                            <code value="88084-9" />
+                            <display value="Reportable condition response information and summary Document" />
+                        </coding>
+                    </code>
+                    <text>
+                        <status value="generated" />
+                        <div xmlns="http://www.w3.org/1999/xhtml">
+                            <p>Public Health Reporting Communication: one or more conditions are reportable, or may be reportable to public health</p>
+                        </div>
+                    </text>
+                </section>
+                <section>
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-extension">
+                        <extension url="eICRProcessingStatus">
+                            <valueReference>
+                                <reference value="Observation/observation-rr-eicr-processing-status" />
+                                <display value="eICR was processed - with a warning" />
+                            </valueReference>
+                        </extension>
+                        <extension url="eICRValidationOutput">
+                            <valueAttachment>
+                                <contentType value="text/html" />
+                                <data
+                                    value="PGh0bWwgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiPg0KICAgICAgICAgIDxoZWFkPg0KICAgICAgICAgICAgPHRpdGxlPiBSZXN1bHRzIDwvdGl0bGU+DQogICAgICAgICAgICA8c3R5bGUgdHlwZT0idGV4dC9jc3MiPiA8L3N0eWxlPg0KICAgICAgICAgIDwvaGVhZD4NCiAgICAgICAgICA8Ym9keT4NCiAgICAgICAgICAgIDx0YWJsZT4NCiAgICAgICAgICAgICAgPHRoZWFkPg0KICAgICAgICAgICAgICAgIDx0cj4NCiAgICAgICAgICAgICAgICAgIDx0aD5TZXZlcml0eTwvdGg+DQogICAgICAgICAgICAgICAgICA8dGg+RGVzY3JpcHRpb248L3RoPg0KICAgICAgICAgICAgICAgICAgPHRoPkZpbGU8L3RoPg0KICAgICAgICAgICAgICAgICAgPHRoPkxvY2F0aW9uPC90aD4NCiAgICAgICAgICAgICAgICA8L3RyPg0KICAgICAgICAgICAgICA8L3RoZWFkPg0KICAgICAgICAgICAgICA8dGJvZHk+DQogICAgICAgICAgICAgICAgPHRyPg0KICAgICAgICAgICAgICAgICAgPHRkPmVycm9yPC90ZD4NCiAgICAgICAgICAgICAgICAgIDx0ZD5TSE9VTEQgY29udGFpbiB6ZXJvIG9yIG9uZSBbMC4uMV0gc2V0SWQgKENPTkY6MTA5OC0zMjc1MikuPC90ZD4NCiAgICAgICAgICAgICAgICAgIDx0ZD5DREFSMl9JR19QSENSX1IyX1JSX0QxXzIwMTdPQ1RfU0FNUExFLnhtbDwvdGQ+DQogICAgICAgICAgICAgICAgICA8dGQ+DQogICAgICAgICAgICAgICAgICAgIDxwPlN0YXJ0IGxpbmUgNDE1OjcwPC9wPg0KICAgICAgICAgICAgICAgICAgPC90ZD4NCiAgICAgICAgICAgICAgICA8L3RyPg0KICAgICAgICAgICAgICAgIDx0cj4NCiAgICAgICAgICAgICAgICAgIDx0ZD5lcnJvcjwvdGQ+DQogICAgICAgICAgICAgICAgICA8dGQ+U0hPVUxEIGNvbnRhaW4gemVybyBvciBvbmUgWzAuLjFdIHZlcnNpb25OdW1iZXIgKENPTkY6MTA5OC0zMjc1MykuPC90ZD4NCiAgICAgICAgICAgICAgICAgIDx0ZD5DREFSMl9JR19QSENSX1IyX1JSX0QxXzIwMTdPQ1RfU0FNUExFLnhtbDwvdGQ+DQogICAgICAgICAgICAgICAgICA8dGQ+DQogICAgICAgICAgICAgICAgICAgIDxwPlN0YXJ0IGxpbmUgNDE1OjcwPC9wPg0KICAgICAgICAgICAgICAgICAgPC90ZD4NCiAgICAgICAgICAgICAgICA8L3RyPg0KICAgICAgICAgICAgICA8L3Rib2R5Pg0KICAgICAgICAgICAgPC90YWJsZT4NCiAgICAgICAgICA8L2JvZHk+DQogICAgICAgIDwvaHRtbD4="
+                                 />
+                            </valueAttachment>
+                        </extension>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-receipt-time-extension">
+                        <valueDateTime value="2018-07-18T04:09:06Z" />
+                    </extension>
+                    <title value="Electronic Initial Case Report Section" />
+                    <code>
+                        <coding>
+                            <system value="http://loinc.org" />
+                            <code value="88082-3" />
+                            <display value="Initial case report processing information Document" />
+                        </coding>
+                    </code>
+                    <entry>
+                        <reference value="DocumentReference/documentreference-eicr-example" />
+                        <identifier>
+                            <system value="urn:ietf:rfc:3986" />
+                            <value value="urn:uuid:db734647-fc99-424c-a864-7e3cda82e703" />
+                        </identifier>
+                        <display value="eICR_Document.xml" />
+                    </entry>
+                </section>
+                <section>
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-priority-extension">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+                                <code value="RRVS17" />
+                                <display value="Immediate action required" />
+                            </coding>
+                        </valueCodeableConcept>
+                    </extension>
+                    <title value="Reportability Response Summary Section" />
+                    <code>
+                        <coding>
+                            <system value="http://loinc.org" />
+                            <code value="55112-7" />
+                            <display value="Document summary" />
+                        </coding>
+                    </code>
+                    <text>
+                        <status value="generated" />
+                        <div xmlns="http://www.w3.org/1999/xhtml">
+                            <p>
+                                <b>Summary:</b>
+                            </p>
+                            <p>Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient. &quot;Zika virus disease (disorder)&quot; is
+                                reportable to &quot;State Department of Health&quot;. An initial case report was sent to &quot;State Department of Health&quot;. Additional information may be required for this
+                                report. <br />
+                                <br />
+                            </p>
+                            <p>
+                                <b>&quot;Zika virus disease (disorder)&quot; for &quot;State Department of Health&quot;</b>
+                            </p>
+                            <p>Reporting is required within &quot;24 hours&quot;. Reporting to this Public Health Agency is based on &quot;both patient home address and provider facility address&quot;. </p>
+                            <ul>
+                                <li>
+                                    <p>Local mosquito-borne Zika virus transmission was reported in your area. Increased watchfulness for symptoms of Zika virus in your patients is warranted. (Immediate action
+                                        requested)</p>
+                                </li>
+                                <li>
+                                    <p>Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here. (
+                                            <a href="http://statedepartmentofhealth.gov/epi/disease/zika/Supplemental_data_form.pdf">Link</a> - Immediate action required) </p>
+                                </li>
+                                <li>
+                                    <p>Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy. ( <a
+                                            href="http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf">Link</a> - Immediate action requested) </p>
+                                </li>
+                                <li>
+                                    <p>Further Laboratory testing for Zika may be needed. Guidance for additional testing and specimen collection ( <a
+                                            href="http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf">Link</a> - Action requested) </p>
+                                </li>
+                                <li>
+                                    <p>Forms for submitting further Zika laboratory testing ( <a href="http://statedepartmentofhealth.gov/epi/diseases/zika/zika_test_request_form_UPHL.xlsx">Link</a> -
+                                        Information only) </p>
+                                </li>
+                                <li>
+                                    <p>Treatment guidance ( <a href="http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf">Link</a> - Information only) </p>
+                                </li>
+                                <li>
+                                    <p>If you have additional questions regarding Zika or reporting, contact information for the State Department of Health is available here. ( <a
+                                            href="http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf">Link</a> - Information Only) </p>
+                                </li>
+                            </ul>
+                            <p>Additional Resources (Information only):</p>
+                            <ul>
+                                <li>
+                                    <p>Control and prevention information for providers ( <a href="http://statedepartmentofhealth.gov/epi/diseases/zika/plan.pdf">Link</a>) </p>
+                                </li>
+                                <li>
+                                    <p>Detailed condition references ( <a href="http://statedepartmentofhealth.gov/epi/diseases/zika/plan.pdf">Link</a>) </p>
+                                </li>
+                                <li>
+                                    <p>Prevalence in State ( <a href="http://statedepartmentofhealth.gov/epi/diseases/zika/plan.pdf">Link</a>) </p>
+                                </li>
+                                <li>
+                                    <p>CDC webpage ( <a href="https://www.cdc.gov/zika/index.html">Link</a>) </p>
+                                </li>
+                                <li>
+                                    <p>Patient information factsheet ( <a href="http://statedepartmentofhealth.gov/epi/diseases/zika/factsheet.pdf">Link</a>) </p>
+                                </li>
+                                <li>
+                                    <p>State Resident information ( <a href="http://statedepartmentofhealth.gov/epi/diseases/zika/ZikaVirus_QA_StateDOH.pdf">Link</a>) </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </text>
+                    <entry>
+                        <reference value="Observation/observation-rr-summary" />
+                        <display value="Reportability Response Summary" />
+                    </entry>
+                    <entry>
+                        <reference value="Observation/observation-rr-relevant-reportable-condition-observation" />
+                        <display value="Relevant reportable condition: Zika" />
+                    </entry>
+                </section>
+            </Composition>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/Observation/observation-rr-relevant-reportable-condition-observation" />
+        <resource>
+            <Observation>
+                <id value="observation-rr-relevant-reportable-condition-observation" />
+                <meta>
+                    <versionId value="4" />
+                    <lastUpdated value="2021-08-17T07:59:01.040+00:00" />
+                    <source value="#rU2tzvaNrwcg0mRI" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation" />
+                </meta>
+                <text>
+                    <status value="generated" />
+                    <div xmlns="http://www.w3.org/1999/xhtml"> The RR Relevant Reportable Condition Observation does not contain narrative text. The information from this resource is parsed and contained in <a
+                            href="StructureDefinition-rr-composition-definitions.html#Composition.section:sliceRRSummarySection.text">Composition[rr-composition].section:sliceRRSummarySection.text</a> according
+                        to the guidlines set out here: <a href="reportability_response_narrative_guidance.html">Reportability Response Narrative Guidance</a>. </div>
+                </text>
+                <status value="final" />
+                <code>
+                    <coding>
+                        <system value="http://snomed.info/sct" />
+                        <code value="64572001" />
+                    </coding>
+                    <coding>
+                        <system value="http://loinc.org" />
+                        <code value="75323-6" />
+                    </coding>
+                    <text value="Condition" />
+                </code>
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="http://snomed.info/sct" />
+                        <code value="3928002" />
+                        <display value="Zika virus disease (disorder)" />
+                    </coding>
+                </valueCodeableConcept>
+                <hasMember>
+                    <reference value="Observation/observation-rr-reportability-information-observation" />
+                </hasMember>
+            </Observation>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/Encounter/encounter-eicr-eve-everywoman-outpatient" />
+        <resource>
+            <Encounter>
+                <id value="encounter-eicr-eve-everywoman-outpatient" />
+                <meta>
+                    <versionId value="5" />
+                    <lastUpdated value="2021-07-19T03:02:05.806+00:00" />
+                    <source value="#Q5dlT8eND2UI2D6e" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter" />
+                </meta>
+                <identifier>
+                    <system value="http://hospital.smarthealthit.org" />
+                    <value value="9937012" />
+                </identifier>
+                <status value="finished" />
+                <class>
+                    <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
+                    <code value="AMB" />
+                    <display value="ambulatory" />
+                </class>
+                <type>
+                    <coding>
+                        <system value="http://www.ama-assn.org/go/cpt" />
+                        <code value="99202" />
+                    </coding>
+                    <text value="Office Visit" />
+                </type>
+                <subject>
+                    <reference value="Patient/patient-ecr-eve-everywoman" />
+                    <display value="Eve Everywoman" />
+                </subject>
+                <participant>
+                    <type>
+                        <coding>
+                            <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType" />
+                            <code value="ATND" />
+                            <display value="attender" />
+                        </coding>
+                    </type>
+                    <individual>
+                        <reference value="PractitionerRole/practitionerrole-henry-seven" />
+                        <display value="Henry Seven, MD" />
+                    </individual>
+                </participant>
+                <period>
+                    <start value="2018-04-01T10:00:00-05:00" />
+                    <end value="2018-04-02T10:15:00-05:00" />
+                </period>
+                <diagnosis>
+                    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension">
+                        <extension url="triggerCodeValueSet">
+                            <valueOid value="urn:oid:2.16.840.1.114222.4.11.7508" />
+                        </extension>
+                        <extension url="triggerCodeValueSetVersion">
+                            <valueString value="12/12/2018" />
+                        </extension>
+                        <extension url="triggerCode">
+                            <valueCoding>
+                                <system value="http://snomed.info/sct" />
+                                <code value="3928002" />
+                                <display value="Zika virus disease (disorder)" />
+                            </valueCoding>
+                        </extension>
+                    </extension>
+                    <condition>
+                        <reference value="Condition/condition-eicr-eve-everywoman-zika" />
+                    </condition>
+                </diagnosis>
+                <diagnosis>
+                    <condition>
+                        <reference value="Condition/condition-eicr-eve-everywoman-common-cold" />
+                    </condition>
+                </diagnosis>
+                <location>
+                    <location>
+                        <reference value="Location/location-ecr-salem-medical-center" />
+                        <display value="Clinic Bldg A, Salem Medical Center, 4646 Brown Rd, Salem, MA 02368" />
+                    </location>
+                </location>
+                <serviceProvider>
+                    <reference value="Organization/organization-ecr-salem-medical-center" />
+                    <display value="Salem Medical Center, 22222 Health Authority Drive, Ann Arbor MI, 99999" />
+                </serviceProvider>
+            </Encounter>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/Organization/organization-ecr-health-authority-west" />
+        <resource>
+            <Organization>
+                <id value="organization-ecr-health-authority-west" />
+                <meta>
+                    <versionId value="4" />
+                    <lastUpdated value="2021-06-30T04:13:19.348+00:00" />
+                    <source value="#dsstmHfZujY31Hwz" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization" />
+                </meta>
+                <identifier>
+                    <system value="http://hl7.org.fhir/sid/us-npi" />
+                    <value value="1144221847" />
+                </identifier>
+                <active value="true" />
+                <name value="Health Authority West" />
+                <telecom>
+                    <system value="phone" />
+                    <value value="+1-555-555-3555" />
+                </telecom>
+                <telecom>
+                    <system value="email" />
+                    <value value="mail@healthauthoritywest.gov" />
+                </telecom>
+                <address>
+                    <line value="7777 Health Authority Drive" />
+                    <city value="Ann Arbor" />
+                    <state value="MI" />
+                    <postalCode value="99999" />
+                </address>
+            </Organization>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/Observation/observation-rr-summary" />
+        <resource>
+            <Observation>
+                <id value="observation-rr-summary" />
+                <meta>
+                    <versionId value="1" />
+                    <lastUpdated value="2021-07-21T00:15:44.375+00:00" />
+                    <source value="#DQk7sbYvOfzjYqZ6" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-summary" />
+                </meta>
+                <status value="final" />
+                <code>
+                    <coding>
+                        <system value="http://snomed.info/sct" />
+                        <code value="304561000" />
+                        <display value="Informing health care professional (procedure)" />
+                    </coding>
+                </code>
+                <valueString
+                    value="Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient. 'Zika virus disease (disorder)' is reportable to 'State Department of Health'. An initial case report was sent to 'State Department of Health'. Additional information may be required for this report."
                  />
-              </valueAttachment>
-            </extension>
-          </extension>
-          <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-receipt-time-extension">
-            <valueDateTime value="2018-07-18T04:09:06Z" />
-          </extension>
-          <title value="Electronic Initial Case Report Section" />
-          <code>
-            <coding>
-              <system value="http://loinc.org" />
-              <code value="88082-3" />
-              <display value="Initial case report processing information Document" />
-            </coding>
-          </code>
-          <entry>
-            <reference value="DocumentReference/documentreference-eicr-example" />
-            <identifier>
-              <system value="urn:ietf:rfc:3986" />
-              <value value="urn:uuid:db734647-fc99-424c-a864-7e3cda82e703" />
-            </identifier>
-            <display value="eICR_Document.xml" />
-          </entry>
-        </section>
-        <section>
-          <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-priority-extension">
-            <valueCodeableConcept>
-              <coding>
-                <system value="urn:oid:2.16.840.1.114222.4.5.274" />
-                <code value="RRVS17" />
-                <display value="Immediate action required" />
-              </coding>
-            </valueCodeableConcept>
-          </extension>
-          <title value="Reportability Response Summary Section" />
-          <code>
-            <coding>
-              <system value="http://loinc.org" />
-              <code value="55112-7" />
-              <display value="Document summary" />
-            </coding>
-          </code>
-          <text>
-            <status value="generated" />
-            <div xmlns="http://www.w3.org/1999/xhtml">
-              <p>
-                <b>Summary:</b>
-              </p>
-              <p>Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient. &quot;Zika virus disease (disorder)&quot; is reportable to &quot;State Department of Health&quot;.
-                An initial case report was sent to &quot;State Department of Health&quot;. Additional information may be required for this report. <br />
-                <br />
-              </p>
-              <p>
-                <b>&quot;Zika virus disease (disorder)&quot; for &quot;State Department of Health&quot;</b>
-              </p>
-              <p>Reporting is required within &quot;24 hours&quot;. Reporting to this Public Health Agency is based on &quot;both patient home address and provider facility address&quot;. </p>
-              <ul>
-                <li>
-                  <p>Local mosquito-borne Zika virus transmission was reported in your area. Increased watchfulness for symptoms of Zika virus in your patients is warranted. (Immediate action requested)</p>
-                </li>
-                <li>
-                  <p>Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here. ( <a
-                      href="http://statedepartmentofhealth.gov/epi/disease/zika/Supplemental_data_form.pdf">Link</a> - Immediate action required) </p>
-                </li>
-                <li>
-                  <p>Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy. ( <a href="http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf">Link</a>
-                    - Immediate action requested) </p>
-                </li>
-                <li>
-                  <p>Further Laboratory testing for Zika may be needed. Guidance for additional testing and specimen collection ( <a href="http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf">Link</a> - Action
-                    requested) </p>
-                </li>
-                <li>
-                  <p>Forms for submitting further Zika laboratory testing ( <a href="http://statedepartmentofhealth.gov/epi/diseases/zika/zika_test_request_form_UPHL.xlsx">Link</a> - Information only) </p>
-                </li>
-                <li>
-                  <p>Treatment guidance ( <a href="http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf">Link</a> - Information only) </p>
-                </li>
-                <li>
-                  <p>If you have additional questions regarding Zika or reporting, contact information for the State Department of Health is available here. ( <a
-                      href="http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf">Link</a> - Information Only) </p>
-                </li>
-              </ul>
-              <p>Additional Resources (Information only):</p>
-              <ul>
-                <li>
-                  <p>Control and prevention information for providers ( <a href="http://statedepartmentofhealth.gov/epi/diseases/zika/plan.pdf">Link</a>) </p>
-                </li>
-                <li>
-                  <p>Detailed condition references ( <a href="http://statedepartmentofhealth.gov/epi/diseases/zika/plan.pdf">Link</a>) </p>
-                </li>
-                <li>
-                  <p>Prevalence in State ( <a href="http://statedepartmentofhealth.gov/epi/diseases/zika/plan.pdf">Link</a>) </p>
-                </li>
-                <li>
-                  <p>CDC webpage ( <a href="https://www.cdc.gov/zika/index.html">Link</a>) </p>
-                </li>
-                <li>
-                  <p>Patient information factsheet ( <a href="http://statedepartmentofhealth.gov/epi/diseases/zika/factsheet.pdf">Link</a>) </p>
-                </li>
-                <li>
-                  <p>State Resident information ( <a href="http://statedepartmentofhealth.gov/epi/diseases/zika/ZikaVirus_QA_StateDOH.pdf">Link</a>) </p>
-                </li>
-              </ul>
-            </div>
-          </text>
-          <entry>
-            <reference value="Observation/observation-rr-summary" />
-            <display value="Reportability Response Summary" />
-          </entry>
-          <entry>
-            <reference value="Observation/observation-rr-relevant-reportable-condition-observation" />
-            <display value="Relevant reportable condition: Zika" />
-          </entry>
-        </section>
-      </Composition>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/Observation/observation-rr-relevant-reportable-condition-observation" />
-    <resource>
-      <Observation>
-        <id value="observation-rr-relevant-reportable-condition-observation" />
-        <meta>
-          <versionId value="4" />
-          <lastUpdated value="2021-08-17T07:59:01.040+00:00" />
-          <source value="#rU2tzvaNrwcg0mRI" />
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation" />
-        </meta>
-        <text>
-          <status value="generated" />
-          <div xmlns="http://www.w3.org/1999/xhtml"> The RR Relevant Reportable Condition Observation does not contain narrative text. The information from this resource is parsed and contained in <a
-              href="StructureDefinition-rr-composition-definitions.html#Composition.section:sliceRRSummarySection.text">Composition[rr-composition].section:sliceRRSummarySection.text</a> according to the guidlines set out here: <a
-              href="reportability_response_narrative_guidance.html">Reportability Response Narrative Guidance</a>. </div>
-        </text>
-        <status value="final" />
-        <code>
-          <coding>
-            <system value="http://snomed.info/sct" />
-            <code value="64572001" />
-          </coding>
-          <coding>
-            <system value="http://loinc.org" />
-            <code value="75323-6" />
-          </coding>
-          <text value="Condition" />
-        </code>
-        <valueCodeableConcept>
-          <coding>
-            <system value="http://snomed.info/sct" />
-            <code value="3928002" />
-            <display value="Zika virus disease (disorder)" />
-          </coding>
-        </valueCodeableConcept>
-        <hasMember>
-          <reference value="Observation/observation-rr-reportability-information-observation" />
-        </hasMember>
-      </Observation>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/Encounter/encounter-eicr-eve-everywoman-outpatient" />
-    <resource>
-      <Encounter>
-        <id value="encounter-eicr-eve-everywoman-outpatient" />
-        <meta>
-          <versionId value="5" />
-          <lastUpdated value="2021-07-19T03:02:05.806+00:00" />
-          <source value="#Q5dlT8eND2UI2D6e" />
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter" />
-        </meta>
-        <identifier>
-          <system value="http://hospital.smarthealthit.org" />
-          <value value="9937012" />
-        </identifier>
-        <status value="finished" />
-        <class>
-          <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
-          <code value="AMB" />
-          <display value="ambulatory" />
-        </class>
-        <type>
-          <coding>
-            <system value="http://www.ama-assn.org/go/cpt" />
-            <code value="99202" />
-          </coding>
-          <text value="Office Visit" />
-        </type>
-        <subject>
-          <reference value="Patient/patient-ecr-eve-everywoman" />
-          <display value="Eve Everywoman" />
-        </subject>
-        <participant>
-          <type>
-            <coding>
-              <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType" />
-              <code value="ATND" />
-              <display value="attender" />
-            </coding>
-          </type>
-          <individual>
-            <reference value="PractitionerRole/practitionerrole-henry-seven" />
-            <display value="Henry Seven, MD" />
-          </individual>
-        </participant>
-        <period>
-          <start value="2018-04-01T10:00:00-05:00" />
-          <end value="2018-04-02T10:15:00-05:00" />
-        </period>
-        <diagnosis>
-          <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension">
-            <extension url="triggerCodeValueSet">
-              <valueOid value="urn:oid:2.16.840.1.114222.4.11.7508" />
-            </extension>
-            <extension url="triggerCodeValueSetVersion">
-              <valueString value="12/12/2018" />
-            </extension>
-            <extension url="triggerCode">
-              <valueCoding>
-                <system value="http://snomed.info/sct" />
-                <code value="3928002" />
-                <display value="Zika virus disease (disorder)" />
-              </valueCoding>
-            </extension>
-          </extension>
-          <condition>
-            <reference value="Condition/condition-eicr-eve-everywoman-zika" />
-          </condition>
-        </diagnosis>
-        <diagnosis>
-          <condition>
-            <reference value="Condition/condition-eicr-eve-everywoman-common-cold" />
-          </condition>
-        </diagnosis>
-        <location>
-          <location>
-            <reference value="Location/location-ecr-salem-medical-center" />
-            <display value="Clinic Bldg A, Salem Medical Center, 4646 Brown Rd, Salem, MA 02368" />
-          </location>
-        </location>
-        <serviceProvider>
-          <reference value="Organization/organization-ecr-salem-medical-center" />
-          <display value="Salem Medical Center, 22222 Health Authority Drive, Ann Arbor MI, 99999" />
-        </serviceProvider>
-      </Encounter>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/Organization/organization-ecr-health-authority-west" />
-    <resource>
-      <Organization>
-        <id value="organization-ecr-health-authority-west" />
-        <meta>
-          <versionId value="4" />
-          <lastUpdated value="2021-06-30T04:13:19.348+00:00" />
-          <source value="#dsstmHfZujY31Hwz" />
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization" />
-        </meta>
-        <identifier>
-          <system value="http://hl7.org.fhir/sid/us-npi" />
-          <value value="1144221847" />
-        </identifier>
-        <active value="true" />
-        <name value="Health Authority West" />
-        <telecom>
-          <system value="phone" />
-          <value value="+1-555-555-3555" />
-        </telecom>
-        <telecom>
-          <system value="email" />
-          <value value="mail@healthauthoritywest.gov" />
-        </telecom>
-        <address>
-          <line value="7777 Health Authority Drive" />
-          <city value="Ann Arbor" />
-          <state value="MI" />
-          <postalCode value="99999" />
-        </address>
-      </Organization>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/Observation/observation-rr-summary" />
-    <resource>
-      <Observation>
-        <id value="observation-rr-summary" />
-        <meta>
-          <versionId value="1" />
-          <lastUpdated value="2021-07-21T00:15:44.375+00:00" />
-          <source value="#DQk7sbYvOfzjYqZ6" />
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-summary" />
-        </meta>
-        <status value="final" />
-        <code>
-          <coding>
-            <system value="http://snomed.info/sct" />
-            <code value="304561000" />
-            <display value="Informing health care professional (procedure)" />
-          </coding>
-        </code>
-        <valueString
-          value="Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient. 'Zika virus disease (disorder)' is reportable to 'State Department of Health'. An initial case report was sent to 'State Department of Health'. Additional information may be required for this report."
-         />
-      </Observation>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/DocumentReference/documentreference-eicr-example" />
-    <resource>
-      <DocumentReference>
-        <id value="documentreference-eicr-example"/>
-        <meta>
-          <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference" />
-          <!--CDA templateId: urn:hl7ii:2.16.840.1.113883.10.20.15.2.3.10:2017-04-01-->
-        </meta>
-        <masterIdentifier>
-          <system value="urn:ietf:rfc:3986" />
-          <value value="urn:uuid:db734647-fc99-424c-a864-7e3cda82e703" />
-        </masterIdentifier>
-        <identifier>
-          <system value="urn:oid:2.16.840.1.113883.19.5.99999.19" />
-          <value value="sTT988#1" />
-        </identifier>
-        <status value="current" />
-        <type>
-          <coding>
-            <system value="http://loinc.org" />
-            <code value="55751-2" />
-            <display value="Public health Case report" />
-          </coding>
-        </type>
-        <category>
-          <coding>
-            <system value="http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category" />
-            <code value="clinical-note" />
-            <display value="Clinical Note" />
-          </coding>
-          <text value="Clinical Note" />
-        </category>
-        <subject>
-          <reference value="Patient/patient-ecr-eve-everywoman" />
-        </subject>
-        <content>
-          <attachment>
-            <contentType value="text/plain" />
-            <url value="urn:hl7ii:2.16.840.1.113883.19.5.99999.19:1" />
-          </attachment>
-        </content>
-      </DocumentReference>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/Patient/patient-ecr-eve-everywoman" />
-    <resource>
-      <Patient>
-        <id value="patient-ecr-eve-everywoman" />
-        <meta>
-          <versionId value="10" />
-          <lastUpdated value="2021-08-17T08:00:32.356+00:00" />
-          <source value="#zjFlzHDvZIYVyMAB" />
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient" />
-        </meta>
-        <text>
-          <status value="generated" />
-          <div xmlns="http://www.w3.org/1999/xhtml">
-            <div class="hapiHeaderText">Eve L <b>EVERYWOMAN </b>
-            </div>
-            <table class="hapiPropertyTable">
-              <tbody>
-                <tr>
-                  <td>Identifier</td>
-                  <td>1032702</td>
-                </tr>
-                <tr>
-                  <td>Address</td>
-                  <td>
-                    <span>5101 Peachtree St NE </span>
-                    <br />
-                    <span>Atlanta </span>
-                    <span>GA </span>
-                    <span>US </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Date of birth</td>
-                  <td>
-                    <span>24 November 1974</span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </text>
-        <extension url="http://hl7.org/fhir/us/core/StructureDefinition/us-core-race">
-          <extension url="ombCategory">
-            <valueCoding>
-              <system value="urn:oid:2.16.840.1.113883.6.238" />
-              <code value="2106-3" />
-              <display value="White" />
-            </valueCoding>
-          </extension>
-          <extension url="text">
-            <valueString value="White" />
-          </extension>
-        </extension>
-        <extension url="http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity">
-          <extension url="ombCategory">
-            <valueCoding>
-              <system value="urn:oid:2.16.840.1.113883.6.238" />
-              <code value="2186-5" />
-              <display value="Not Hispanic or Latino" />
-            </valueCoding>
-          </extension>
-          <extension url="text">
-            <valueString value="Not Hispanic or Latino" />
-          </extension>
-        </extension>
-        <extension url="http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex">
-          <valueCode value="F" />
-        </extension>
-        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-genderidentity-extension">
-          <extension url="value">
-            <valueCodeableConcept>
-              <coding>
-                <system value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor" />
-                <code value="ASKU" />
-                <display value="asked but unknown" />
-              </coding>
-              <text value="asked but unknown" />
-            </valueCodeableConcept>
-          </extension>
-        </extension>
-        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-tribal-affiliation-extension">
-          <extension url="TribeName">
-            <valueCoding>
-              <system value="http://terminology.hl7.org/CodeSystem/v3-TribalEntityUS" />
-              <code value="91" />
-                <display value="Fort Mojave Indian Tribe of Arizona, California &amp; Nevada" />
-            </valueCoding>
-          </extension>
-          <extension url="EnrolledTribeMember">
-            <valueBoolean value="true" />
-          </extension>
-        </extension>
-        <identifier>
-          <use value="usual" />
-          <type>
-            <coding>
-              <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
-              <code value="MR" />
-              <display value="Medical Record Number" />
-            </coding>
-          </type>
-          <system value="http://hospital.smarthealthit.org" />
-          <value value="1032702" />
-        </identifier>
-        <active value="true" />
-        <name>
-          <family value="Everywoman" />
-          <given value="Eve" />
-          <given value="L" />
-        </name>
-        <telecom>
-          <system value="phone" />
-          <value value="1-(404)555-1212" />
-          <use value="home" />
-        </telecom>
-        <telecom>
-          <system value="email" />
-          <value value="eve.everywoman@example.com" />
-        </telecom>
-        <gender value="female" />
-        <birthDate value="1974-11-24" />
-        <deceasedBoolean value="false"/>
-        <address>
-          <line value="5101 Peachtree St NE" />
-          <city value="Atlanta" />
-          <state value="GA" />
-          <postalCode value="30302" />
-          <country value="US" />
-        </address>
-        <communication>
-          <language>
-            <coding>
-              <system value="urn:ietf:bcp:47" />
-              <code value="en" />
-              <display value="English" />
-            </coding>
-          </language>
-        </communication>
-      </Patient>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/Observation/observation-rr-reportability-information-observation" />
-    <resource>
-      <Observation>
-        <id value="observation-rr-reportability-information-observation" />
-        <meta>
-          <versionId value="1" />
-          <lastUpdated value="2021-07-21T03:10:13.946+00:00" />
-          <source value="#l0j1zEVQ0pIebyt5" />
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation" />
-        </meta>
-        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-determination-of-reportability-extension">
-          <valueCodeableConcept>
-            <coding>
-              <system value="urn:oid:2.16.840.1.114222.4.5.274" />
-              <code value="RRVS1" />
-              <display value="Reportable" />
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-determination-of-reportability-reason-extension">
-          <valueString value="Condition is reportable" />
-        </extension>
-        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-determination-of-reportability-rule-extension">
-          <valueString value="Description of rule used in reportability determination" />
-        </extension>
-        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension">
-          <valueReference>
-            <reference value="DocumentReference/documentreference-zika-info-pdf" />
-          </valueReference>
-        </extension>
-        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension">
-          <valueReference>
-            <reference value="DocumentReference/documentreference-add-reporting-needs-pdf" />
-          </valueReference>
-        </extension>
-        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension">
-          <valueReference>
-            <reference value="DocumentReference/documentreference-zika-follow-up-pdf" />
-          </valueReference>
-        </extension>
-        <status value="final" />
-        <code>
-          <coding>
-            <system value="urn:oid:2.16.840.1.114222.4.5.274" />
-            <code value="RRVS5" />
-            <display value="Patient home address" />
-          </coding>
-        </code>
-        <performer>
-          <reference value="Organization/organization-rr-rules-authoring-agency-haw" />
-          <display value="Health Authority West Rules Authoring Agency" />
-        </performer>
-        <performer>
-          <reference value="Organization/organization-rr-routing-entity-haw" />
-          <display value="Health Authority West Routing Entity" />
-        </performer>
-        <performer>
-          <reference value="Organization/organization-rr-responsible-agency-haw" />
-          <display value="Health Authority West Routing Entity" />
-        </performer>
-        <component>
-          <code>
-            <coding>
-              <system value="urn:oid:2.16.840.1.114222.4.5.232" />
-              <code value="RR4" />
-              <display value="Timeframe to report (urgency)" />
-            </coding>
-          </code>
-          <valueQuantity>
-            <value value="24" />
-            <unit value="H" />
-            <system value="http://unitsofmeasure.org" />
-            <code value="H" />
-          </valueQuantity>
-        </component>
-      </Observation>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/PractitionerRole/practitionerrole-henry-seven" />
-    <resource>
-      <PractitionerRole>
-        <id value="practitionerrole-henry-seven" />
-        <meta>
-          <versionId value="11" />
-          <lastUpdated value="2021-08-17T08:00:32.355+00:00" />
-          <source value="#KJ942UxvfdYWoHCF" />
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-practitionerrole" />
-        </meta>
-        <identifier>
-          <system value="http://hl7.org/fhir/sid/us-npi" />
-          <value value="9941339108" />
-        </identifier>
-        <practitioner>
-          <reference value="Practitioner/practitioner-us-core-henry-seven" />
-          <display value="Henry Seven, MD" />
-        </practitioner>
-        <organization>
-          <reference value="Organization/organization-ecr-salem-medical-center" />
-          <display value="Salem Medical Center" />
-        </organization>
-        <code>
-          <coding>
-            <system value="http://nucc.org/provider-taxonomy" />
-            <code value="261QP2300X" />
-            <display value="Primary Care Clinic/Center" />
-          </coding>
-        </code>
-        <specialty>
-          <coding>
-            <system value="http://snomed.info/sct" />
-            <code value="419772000" />
-            <display value="Family practice" />
-          </coding>
-        </specialty>
-        <location>
-          <reference value="Location/location-ecr-salem-medical-center" />
-          <display value="Salem Medical Center" />
-        </location>
-        <telecom>
-          <system value="email" />
-          <value value="henry.seven@example.com" />
-        </telecom>
-      </PractitionerRole>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/Condition/condition-eicr-eve-everywoman-common-cold" />
-    <resource>
-      <Condition>
-        <id value="condition-eicr-eve-everywoman-common-cold" />
-        <meta>
-          <versionId value="6" />
-          <lastUpdated value="2021-07-15T01:54:14.831+00:00" />
-          <source value="#4g0ZpTNqldHFYLzr" />
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-condition" />
-        </meta>
-        <category>
-          <coding>
-            <system value="http://terminology.hl7.org/CodeSystem/condition-category" />
-            <code value="problem-list-item" />
-            <display value="Problem List Item" />
-          </coding>
-        </category>
-        <code>
-          <coding>
-            <system value="http://snomed.info/sct" />
-            <code value="82272006" />
-            <display value="Common cold (disorder)" />
-          </coding>
-        </code>
-        <subject>
-          <reference value="Patient/patient-ecr-eve-everywoman" />
-          <display value="Eve Everywoman" />
-        </subject>
-        <onsetDateTime value="2017-09-23" />
-        <asserter>
-          <reference value="Practitioner/practitioner-us-core-henry-seven" />
-          <display value="Henry Seven, MD" />
-        </asserter>
-      </Condition>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/Location/location-ecr-salem-medical-center" />
-    <resource>
-      <Location>
-        <id value="location-ecr-salem-medical-center" />
-        <meta>
-          <versionId value="6" />
-          <lastUpdated value="2021-08-17T07:53:02.099+00:00" />
-          <source value="#VI2Nm5Ps5HqZ5HXV" />
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-location" />
-        </meta>
-        <identifier>
-          <system value="http://hl7.org.fhir/sid/us-npi" />
-          <value value="1144221995" />
-        </identifier>
-        <status value="active" />
-        <name value="Clinic Bldg A, Salem Medical Center" />
-        <type>
-          <coding>
-            <system value="http://terminology.hl7.org/CodeSystem/v3-RoleCode" />
-            <code value="HOSP" />
-            <display value="Hospital" />
-          </coding>
-        </type>
-        <telecom>
-          <system value="phone" />
-          <value value="(+1) (555)555-3001" />
-        </telecom>
-        <telecom>
-          <system value="fax" />
-          <value value="(+1) (555)555-3002" />
-        </telecom>
-        <telecom>
-          <system value="email" />
-          <value value="mail@smc.org" />
-        </telecom>
-        <address>
-          <line value="Clinic Bldg A" />
-          <line value="4444 Healthcare Drive" />
-          <city value="Ann Arbor" />
-          <state value="MI" />
-          <postalCode value="99999" />
-        </address>
-        <managingOrganization>
-          <reference value="Organization/organization-ecr-salem-medical-center" />
-        </managingOrganization>
-      </Location>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/Organization/organization-ecr-salem-medical-center" />
-    <resource>
-      <Organization>
-        <id value="organization-ecr-salem-medical-center" />
-        <meta>
-          <versionId value="5" />
-          <lastUpdated value="2021-06-30T04:13:19.345+00:00" />
-          <source value="#xa4yJZjn68xVavoM" />
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization" />
-        </meta>
-        <identifier>
-          <system value="http://hl7.org.fhir/sid/us-npi" />
-          <value value="55555555" />
-        </identifier>
-        <active value="true" />
-        <name value="Salem Medical Center" />
-        <telecom>
-          <system value="phone" />
-          <value value="+1-555-555-1111" />
-        </telecom>
-        <telecom>
-          <system value="email" />
-          <value value="mail@salemmedicalcenter.com" />
-        </telecom>
-        <address>
-          <line value="22222 Health Authority Drive" />
-          <city value="Ann Arbor" />
-          <state value="MI" />
-          <postalCode value="99999" />
-        </address>
-      </Organization>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/Condition/condition-eicr-eve-everywoman-zika" />
-    <resource>
-      <Condition>
-        <id value="condition-eicr-eve-everywoman-zika" />
-        <meta>
-          <versionId value="5" />
-          <lastUpdated value="2021-07-15T01:54:14.835+00:00" />
-          <source value="#rM2Pw6getjoE2UTV" />
-        </meta>
-        <category>
-          <coding>
-            <system value="http://terminology.hl7.org/CodeSystem/condition-category" />
-            <code value="encounter-diagnosis" />
-            <display value="Encounter Diagnosis" />
-          </coding>
-        </category>
-        <code>
-          <coding>
-            <system value="http://snomed.info/sct" />
-            <code value="3928002" />
-            <display value="Zika virus disease (disorder)" />
-          </coding>
-        </code>
-        <subject>
-          <reference value="Patient/patient-ecr-eve-everywoman" />
-          <display value="Eve Everywoman" />
-        </subject>
-        <onsetDateTime value="2017-08-23" />
-        <asserter>
-          <reference value="Practitioner/practitioner-us-core-henry-seven" />
-          <display value="Henry Seven, MD" />
-        </asserter>
-      </Condition>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/Organization/organization-rr-routing-entity-haw" />
-    <resource>
-      <Organization>
-        <id value="organization-rr-routing-entity-haw" />
-        <meta>
-          <versionId value="4" />
-          <lastUpdated value="2021-06-30T04:13:19.350+00:00" />
-          <source value="#JxDnX4nN1kOgPTNr" />
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization" />
-        </meta>
-        <identifier>
-          <system value="http://hl7.org.fhir/sid/us-npi" />
-          <value value="43214321" />
-        </identifier>
-        <active value="true" />
-        <type>
-          <coding>
-            <system value="urn:oid:2.16.840.1.114222.4.5.232" />
-            <code value="RR7" />
-            <display value="Routing Entity" />
-          </coding>
-        </type>
-        <name value="Health Authority West Routing Entity" />
-        <telecom>
-          <system value="phone" />
-          <value value="+1-555-555-3555" />
-        </telecom>
-        <telecom>
-          <system value="email" />
-          <value value="mail@healthauthoritywest.gov" />
-        </telecom>
-        <address>
-          <line value="7777 Health Authority Drive" />
-          <city value="Ann Arbor" />
-          <state value="MI" />
-          <postalCode value="99999" />
-        </address>
-      </Organization>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/Organization/organization-rr-rules-authoring-agency-haw" />
-    <resource>
-      <Organization>
-        <id value="organization-rr-rules-authoring-agency-haw" />
-        <meta>
-          <versionId value="4" />
-          <lastUpdated value="2021-06-30T04:13:19.346+00:00" />
-          <source value="#neVuDy4iafHVl44v" />
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization" />
-        </meta>
-        <identifier>
-          <system value="http://hl7.org.fhir/sid/us-npi" />
-          <value value="12341234" />
-        </identifier>
-        <active value="true" />
-        <type>
-          <coding>
-            <system value="urn:oid:2.16.840.1.114222.4.5.232" />
-            <code value="RR12" />
-            <display value="Rules Authoring Agency" />
-          </coding>
-        </type>
-        <name value="Health Authority West Rules Authoring Agency" />
-        <telecom>
-          <system value="phone" />
-          <value value="+1-555-555-3555" />
-        </telecom>
-        <telecom>
-          <system value="email" />
-          <value value="mail@healthauthoritywest.gov" />
-        </telecom>
-        <address>
-          <line value="7777 Health Authority Drive" />
-          <city value="Ann Arbor" />
-          <state value="MI" />
-          <postalCode value="99999" />
-        </address>
-      </Organization>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/Organization/organization-rr-responsible-agency-haw" />
-    <resource>
-      <Organization>
-        <id value="organization-rr-responsible-agency-haw" />
-        <meta>
-          <versionId value="4" />
-          <lastUpdated value="2021-06-30T04:13:19.348+00:00" />
-          <source value="#3U6KQ9Vvv8lROlRV" />
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization" />
-        </meta>
-        <identifier>
-          <system value="http://hl7.org.fhir/sid/us-npi" />
-          <value value="99996666" />
-        </identifier>
-        <active value="true" />
-        <type>
-          <coding>
-            <system value="urn:oid:2.16.840.1.114222.4.5.232" />
-            <code value="RR8" />
-            <display value="Responsible Agency" />
-          </coding>
-        </type>
-        <name value="Health Authority West Responsible Agency" />
-        <telecom>
-          <system value="phone" />
-          <value value="+1-555-555-3555" />
-        </telecom>
-        <telecom>
-          <system value="email" />
-          <value value="mail@healthauthoritywest.gov" />
-        </telecom>
-        <address>
-          <line value="7777 Health Authority Drive" />
-          <city value="Ann Arbor" />
-          <state value="MI" />
-          <postalCode value="99999" />
-        </address>
-      </Organization>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/Practitioner/practitioner-us-core-henry-seven" />
-    <resource>
-      <Practitioner>
-        <id value="practitioner-us-core-henry-seven" />
-        <meta>
-          <versionId value="5" />
-          <lastUpdated value="2021-08-17T08:00:32.356+00:00" />
-          <source value="#2MfA6kIjmOmtAlIb" />
-          <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
-        </meta>
-        <identifier>
-          <system value="http://hl7.org/fhir/sid/us-npi" />
-          <value value="9941339108" />
-        </identifier>
-        <name>
-          <family value="Henry" />
-          <given value="Seven" />
-          <suffix value="M.D." />
-        </name>
-        <telecom>
-          <system value="email" />
-          <value value="henry.seven@example.com" />
-        </telecom>
-        <address>
-          <line value="BMass Doctors" />
-          <line value="2100 North Ave" />
-          <city value="Burlington" />
-          <state value="MA" />
-          <postalCode value="02368" />
-          <country value="US" />
-        </address>
-      </Practitioner>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/Observation/observation-rr-eicr-processing-status" />
-    <resource>
-      <Observation xmlns="http://hl7.org/fhir">
-        <id value="observation-rr-eicr-processing-status" />
-        <meta>
-          <versionId value="7" />
-          <lastUpdated value="2021-08-17T07:59:00.920+00:00" />
-          <source value="#qebn2OtR7MyyUBlm" />
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation" />
-        </meta>
-        <status value="final" />
-        <code>
-          <coding>
-            <system value="urn:oid:2.16.840.1.114222.4.5.274" />
-            <code value="RRVS20" />
-            <display value="eICR was processed - with a warning" />
-          </coding>
-        </code>
-        <hasMember>
-          <reference value="Observation/observation-rr-eicr-processing-status-reason" />
-        </hasMember>
-      </Observation>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/Observation/observation-rr-eicr-processing-status-reason" />
-    <resource>
-      <Observation xmlns="http://hl7.org/fhir">
-        <id value="observation-rr-eicr-processing-status-reason" />
-        <meta>
-          <versionId value="6" />
-          <lastUpdated value="2021-08-17T07:59:00.881+00:00" />
-          <source value="#vuZ3NTkJzu5MXnbK" />
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation" />
-        </meta>
-        <status value="final" />
-        <code>
-          <coding>
-            <system value="urn:oid:2.16.840.1.114222.4.5.232" />
-            <code value="RR6" />
-            <display value="eICR Processing Status Reason" />
-          </coding>
-        </code>
-        <valueCodeableConcept>
-          <coding>
-            <system value="urn:oid:2.16.840.1.114222.4.5.274" />
-            <code value="RRVS30" />
-            <display value="eICR was processed with the warning of: inactive RCTC code" />
-          </coding>
-        </valueCodeableConcept>
-        <component>
-          <code>
-            <coding>
-              <system value="urn:oid:2.16.840.1.114222.4.5.274" />
-              <code value="RRVS32" />
-              <display value="Inactive RCTC code detail" />
-            </coding>
-          </code>
-          <valueCodeableConcept>
-            <coding>
-              <system value="http://snomed.info/sct" />
-              <code value="69092001" />
-              <display value="Leptospirosis icterohemorrhagica (disorder)" />
-            </coding>
-          </valueCodeableConcept>
-        </component>
-      </Observation>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/DocumentReference/documentreference-add-reporting-needs-pdf" />
-    <resource>
-      <DocumentReference xmlns="http://hl7.org/fhir">
-        <id value="documentreference-add-reporting-needs-pdf" />
-        <meta>
-          <versionId value="2" />
-          <lastUpdated value="2021-08-13T03:54:37.580+00:00" />
-          <source value="#CKG4Ip9hcAYHwI5b" />
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-documentreference" />
-        </meta>
-        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-priority-extension">
-          <valueCodeableConcept>
-            <coding>
-              <system value="urn:oid:2.16.840.1.114222.4.5.274" />
-              <code value="RRVS16" />
-              <display value="Action requested" />
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <status value="current" />
-        <type>
-          <coding>
-            <system value="http://loinc.org" />
-            <code value="83910-0" />
-            <display value="Public health Note" />
-          </coding>
-          <text value="Public health information" />
-        </type>
-        <category>
-          <coding>
-            <system value="urn:oid:2.16.840.1.114222.4.5.274" />
-            <code value="RRVS8" />
-            <display value="Additional reporting needs" />
-          </coding>
-          <text value="Additional reporting needs" />
-        </category>
-        <subject>
-          <reference value="Patient/patient-ecr-eve-everywoman" />
-          <display value="Eve Everywoman" />
-        </subject>
-        <description value="Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here." />
-        <content>
-          <attachment>
-            <contentType value="application/pdf" />
-            <url value="http://statedepartmentofhealth.gov/epi/disease/zika/Supplemental_data_form.pdf" />
-          </attachment>
-        </content>
-      </DocumentReference>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/DocumentReference/documentreference-zika-follow-up-pdf" />
-    <resource>
-      <DocumentReference xmlns="http://hl7.org/fhir">
-        <id value="documentreference-zika-follow-up-pdf" />
-        <meta>
-          <versionId value="2" />
-          <lastUpdated value="2021-08-13T03:55:05.964+00:00" />
-          <source value="#5WqiIqtDkKw6T6kp" />
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-documentreference" />
-        </meta>
-        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-priority-extension">
-          <valueCodeableConcept>
-            <coding>
-              <system value="urn:oid:2.16.840.1.114222.4.5.274" />
-              <code value="RRVS18" />
-              <display value="Immediate action requested" />
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <status value="current" />
-        <type>
-          <coding>
-            <system value="http://loinc.org" />
-            <code value="83910-0" />
-            <display value="Public health Note" />
-          </coding>
-          <text value="Public health information" />
-        </type>
-        <category>
-          <coding>
-            <system value="urn:oid:2.16.840.1.114222.4.5.274" />
-            <code value="RRVS10" />
-            <display value="Treatment and/or prevention" />
-          </coding>
-          <text value="Treatment and/or prevention" />
-        </category>
-        <subject>
-          <reference value="Patient/patient-ecr-eve-everywoman" />
-          <display value="Eve Everywoman" />
-        </subject>
-        <description value="Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy." />
-        <content>
-          <attachment>
-            <contentType value="application/pdf" />
-            <url value="http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf" />
-          </attachment>
-        </content>
-      </DocumentReference>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/DocumentReference/documentreference-zika-info-pdf" />
-    <resource>
-      <DocumentReference xmlns="http://hl7.org/fhir">
-        <id value="documentreference-zika-info-pdf" />
-        <meta>
-          <versionId value="2" />
-          <lastUpdated value="2021-08-13T03:55:05.964+00:00" />
-          <source value="#UHFGpbMvvCjqEqnT" />
-          <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-documentreference" />
-        </meta>
-        <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-priority-extension">
-          <valueCodeableConcept>
-            <coding>
-              <system value="urn:oid:2.16.840.1.114222.4.5.274" />
-              <code value="RRVS17" />
-              <display value="Immediate action required" />
-            </coding>
-          </valueCodeableConcept>
-        </extension>
-        <status value="current" />
-        <type>
-          <coding>
-            <system value="http://loinc.org" />
-            <code value="83910-0" />
-            <display value="Public health Note" />
-          </coding>
-          <text value="Public health information" />
-        </type>
-        <category>
-          <coding>
-            <system value="urn:oid:2.16.840.1.114222.4.5.274" />
-            <code value="RRVS13" />
-            <display value="Outbreak- or Cluster Related" />
-          </coding>
-          <text value="Outbreak- or Cluster Related" />
-        </category>
-        <subject>
-          <reference value="Patient/patient-ecr-eve-everywoman" />
-          <display value="Eve Everywoman" />
-        </subject>
-        <description value="Local mosquito-borne Zika virus creation was reported in your area. Increased watchfulness for symptoms of Zika virus in your patients is warranted." />
-        <content>
-          <attachment>
-            <contentType value="application/pdf" />
-            <url value="http://statedepartmentofhealth.gov/epi/disease/zika/outbreakinfo.pdf" />
-          </attachment>
-        </content>
-      </DocumentReference>
-    </resource>
-  </entry>
+            </Observation>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/DocumentReference/documentreference-eicr-example" />
+        <resource>
+            <DocumentReference>
+                <id value="documentreference-eicr-example" />
+                <meta>
+                    <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference" />
+                    <!--CDA templateId: urn:hl7ii:2.16.840.1.113883.10.20.15.2.3.10:2017-04-01-->
+                </meta>
+                <masterIdentifier>
+                    <system value="urn:ietf:rfc:3986" />
+                    <value value="urn:uuid:db734647-fc99-424c-a864-7e3cda82e703" />
+                </masterIdentifier>
+                <identifier>
+                    <system value="urn:oid:2.16.840.1.113883.19.5.99999.19" />
+                    <value value="sTT988#1" />
+                </identifier>
+                <status value="current" />
+                <type>
+                    <coding>
+                        <system value="http://loinc.org" />
+                        <code value="55751-2" />
+                        <display value="Public health Case report" />
+                    </coding>
+                </type>
+                <category>
+                    <coding>
+                        <system value="http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category" />
+                        <code value="clinical-note" />
+                        <display value="Clinical Note" />
+                    </coding>
+                    <text value="Clinical Note" />
+                </category>
+                <subject>
+                    <reference value="Patient/patient-ecr-eve-everywoman" />
+                </subject>
+                <content>
+                    <attachment>
+                        <contentType value="text/plain" />
+                        <url value="urn:hl7ii:2.16.840.1.113883.19.5.99999.19:1" />
+                    </attachment>
+                </content>
+            </DocumentReference>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/Patient/patient-ecr-eve-everywoman" />
+        <resource>
+            <Patient>
+                <id value="patient-ecr-eve-everywoman" />
+                <meta>
+                    <versionId value="10" />
+                    <lastUpdated value="2021-08-17T08:00:32.356+00:00" />
+                    <source value="#zjFlzHDvZIYVyMAB" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient" />
+                </meta>
+                <text>
+                    <status value="generated" />
+                    <div xmlns="http://www.w3.org/1999/xhtml">
+                        <div class="hapiHeaderText">Eve L <b>EVERYWOMAN </b>
+                        </div>
+                        <table class="hapiPropertyTable">
+                            <tbody>
+                                <tr>
+                                    <td>Identifier</td>
+                                    <td>1032702</td>
+                                </tr>
+                                <tr>
+                                    <td>Address</td>
+                                    <td>
+                                        <span>5101 Peachtree St NE </span>
+                                        <br />
+                                        <span>Atlanta </span>
+                                        <span>GA </span>
+                                        <span>US </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Date of birth</td>
+                                    <td>
+                                        <span>24 November 1974</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </text>
+                <extension url="http://hl7.org/fhir/us/core/StructureDefinition/us-core-race">
+                    <extension url="ombCategory">
+                        <valueCoding>
+                            <system value="urn:oid:2.16.840.1.113883.6.238" />
+                            <code value="2106-3" />
+                            <display value="White" />
+                        </valueCoding>
+                    </extension>
+                    <extension url="text">
+                        <valueString value="White" />
+                    </extension>
+                </extension>
+                <extension url="http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity">
+                    <extension url="ombCategory">
+                        <valueCoding>
+                            <system value="urn:oid:2.16.840.1.113883.6.238" />
+                            <code value="2186-5" />
+                            <display value="Not Hispanic or Latino" />
+                        </valueCoding>
+                    </extension>
+                    <extension url="text">
+                        <valueString value="Not Hispanic or Latino" />
+                    </extension>
+                </extension>
+                <extension url="http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex">
+                    <valueCode value="F" />
+                </extension>
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-genderidentity-extension">
+                    <extension url="value">
+                        <valueCodeableConcept>
+                            <coding>
+                                <system value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor" />
+                                <code value="ASKU" />
+                                <display value="asked but unknown" />
+                            </coding>
+                            <text value="asked but unknown" />
+                        </valueCodeableConcept>
+                    </extension>
+                </extension>
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-tribal-affiliation-extension">
+                    <extension url="TribeName">
+                        <valueCoding>
+                            <system value="http://terminology.hl7.org/CodeSystem/v3-TribalEntityUS" />
+                            <code value="91" />
+                            <display value="Fort Mojave Indian Tribe of Arizona, California &amp; Nevada" />
+                        </valueCoding>
+                    </extension>
+                    <extension url="EnrolledTribeMember">
+                        <valueBoolean value="true" />
+                    </extension>
+                </extension>
+                <identifier>
+                    <use value="usual" />
+                    <type>
+                        <coding>
+                            <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+                            <code value="MR" />
+                            <display value="Medical Record Number" />
+                        </coding>
+                    </type>
+                    <system value="http://hospital.smarthealthit.org" />
+                    <value value="1032702" />
+                </identifier>
+                <active value="true" />
+                <name>
+                    <family value="Everywoman" />
+                    <given value="Eve" />
+                    <given value="L" />
+                </name>
+                <telecom>
+                    <system value="phone" />
+                    <value value="1-(404)555-1212" />
+                    <use value="home" />
+                </telecom>
+                <telecom>
+                    <system value="email" />
+                    <value value="eve.everywoman@example.com" />
+                </telecom>
+                <gender value="female" />
+                <birthDate value="1974-11-24" />
+                <deceasedBoolean value="false" />
+                <address>
+                    <line value="5101 Peachtree St NE" />
+                    <city value="Atlanta" />
+                    <state value="GA" />
+                    <postalCode value="30302" />
+                    <country value="US" />
+                </address>
+                <communication>
+                    <language>
+                        <coding>
+                            <system value="urn:ietf:bcp:47" />
+                            <code value="en" />
+                            <display value="English" />
+                        </coding>
+                    </language>
+                </communication>
+            </Patient>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/Observation/observation-rr-reportability-information-observation" />
+        <resource>
+            <Observation>
+                <id value="observation-rr-reportability-information-observation" />
+                <meta>
+                    <versionId value="1" />
+                    <lastUpdated value="2021-07-21T03:10:13.946+00:00" />
+                    <source value="#l0j1zEVQ0pIebyt5" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation" />
+                </meta>
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-determination-of-reportability-extension">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+                            <code value="RRVS1" />
+                            <display value="Reportable" />
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-determination-of-reportability-reason-extension">
+                    <valueString value="Condition is reportable" />
+                </extension>
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-determination-of-reportability-rule-extension">
+                    <valueString value="Description of rule used in reportability determination" />
+                </extension>
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension">
+                    <valueReference>
+                        <reference value="DocumentReference/documentreference-zika-info-pdf" />
+                    </valueReference>
+                </extension>
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension">
+                    <valueReference>
+                        <reference value="DocumentReference/documentreference-add-reporting-needs-pdf" />
+                    </valueReference>
+                </extension>
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension">
+                    <valueReference>
+                        <reference value="DocumentReference/documentreference-zika-follow-up-pdf" />
+                    </valueReference>
+                </extension>
+                <status value="final" />
+                <code>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+                        <code value="RRVS5" />
+                        <display value="Patient home address" />
+                    </coding>
+                </code>
+                <performer>
+                    <reference value="Organization/organization-rr-rules-authoring-agency-haw" />
+                    <display value="Health Authority West Rules Authoring Agency" />
+                </performer>
+                <performer>
+                    <reference value="Organization/organization-rr-routing-entity-haw" />
+                    <display value="Health Authority West Routing Entity" />
+                </performer>
+                <performer>
+                    <reference value="Organization/organization-rr-responsible-agency-haw" />
+                    <display value="Health Authority West Routing Entity" />
+                </performer>
+                <component>
+                    <code>
+                        <coding>
+                            <system value="urn:oid:2.16.840.1.114222.4.5.232" />
+                            <code value="RR4" />
+                            <display value="Timeframe to report (urgency)" />
+                        </coding>
+                    </code>
+                    <valueQuantity>
+                        <value value="24" />
+                        <unit value="H" />
+                        <system value="http://unitsofmeasure.org" />
+                        <code value="H" />
+                    </valueQuantity>
+                </component>
+            </Observation>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/PractitionerRole/practitionerrole-henry-seven" />
+        <resource>
+            <PractitionerRole>
+                <id value="practitionerrole-henry-seven" />
+                <meta>
+                    <versionId value="11" />
+                    <lastUpdated value="2021-08-17T08:00:32.355+00:00" />
+                    <source value="#KJ942UxvfdYWoHCF" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-practitionerrole" />
+                </meta>
+                <identifier>
+                    <system value="http://hl7.org/fhir/sid/us-npi" />
+                    <value value="9941339108" />
+                </identifier>
+                <practitioner>
+                    <reference value="Practitioner/practitioner-us-core-henry-seven" />
+                    <display value="Henry Seven, MD" />
+                </practitioner>
+                <organization>
+                    <reference value="Organization/organization-ecr-salem-medical-center" />
+                    <display value="Salem Medical Center" />
+                </organization>
+                <code>
+                    <coding>
+                        <system value="http://nucc.org/provider-taxonomy" />
+                        <code value="261QP2300X" />
+                        <display value="Primary Care Clinic/Center" />
+                    </coding>
+                </code>
+                <specialty>
+                    <coding>
+                        <system value="http://snomed.info/sct" />
+                        <code value="419772000" />
+                        <display value="Family practice" />
+                    </coding>
+                </specialty>
+                <location>
+                    <reference value="Location/location-ecr-salem-medical-center" />
+                    <display value="Salem Medical Center" />
+                </location>
+                <telecom>
+                    <system value="email" />
+                    <value value="henry.seven@example.com" />
+                </telecom>
+            </PractitionerRole>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/Condition/condition-eicr-eve-everywoman-common-cold" />
+        <resource>
+            <Condition>
+                <id value="condition-eicr-eve-everywoman-common-cold" />
+                <meta>
+                    <versionId value="6" />
+                    <lastUpdated value="2021-07-15T01:54:14.831+00:00" />
+                    <source value="#4g0ZpTNqldHFYLzr" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-condition" />
+                </meta>
+                <category>
+                    <coding>
+                        <system value="http://terminology.hl7.org/CodeSystem/condition-category" />
+                        <code value="problem-list-item" />
+                        <display value="Problem List Item" />
+                    </coding>
+                </category>
+                <code>
+                    <coding>
+                        <system value="http://snomed.info/sct" />
+                        <code value="82272006" />
+                        <display value="Common cold (disorder)" />
+                    </coding>
+                </code>
+                <subject>
+                    <reference value="Patient/patient-ecr-eve-everywoman" />
+                    <display value="Eve Everywoman" />
+                </subject>
+                <onsetDateTime value="2017-09-23" />
+                <asserter>
+                    <reference value="Practitioner/practitioner-us-core-henry-seven" />
+                    <display value="Henry Seven, MD" />
+                </asserter>
+            </Condition>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/Location/location-ecr-salem-medical-center" />
+        <resource>
+            <Location>
+                <id value="location-ecr-salem-medical-center" />
+                <meta>
+                    <versionId value="6" />
+                    <lastUpdated value="2021-08-17T07:53:02.099+00:00" />
+                    <source value="#VI2Nm5Ps5HqZ5HXV" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-location" />
+                </meta>
+                <identifier>
+                    <system value="http://hl7.org.fhir/sid/us-npi" />
+                    <value value="1144221995" />
+                </identifier>
+                <status value="active" />
+                <name value="Clinic Bldg A, Salem Medical Center" />
+                <type>
+                    <coding>
+                        <system value="http://terminology.hl7.org/CodeSystem/v3-RoleCode" />
+                        <code value="HOSP" />
+                        <display value="Hospital" />
+                    </coding>
+                </type>
+                <telecom>
+                    <system value="phone" />
+                    <value value="(+1) (555)555-3001" />
+                </telecom>
+                <telecom>
+                    <system value="fax" />
+                    <value value="(+1) (555)555-3002" />
+                </telecom>
+                <telecom>
+                    <system value="email" />
+                    <value value="mail@smc.org" />
+                </telecom>
+                <address>
+                    <line value="Clinic Bldg A" />
+                    <line value="4444 Healthcare Drive" />
+                    <city value="Ann Arbor" />
+                    <state value="MI" />
+                    <postalCode value="99999" />
+                </address>
+                <managingOrganization>
+                    <reference value="Organization/organization-ecr-salem-medical-center" />
+                </managingOrganization>
+            </Location>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/Organization/organization-ecr-salem-medical-center" />
+        <resource>
+            <Organization>
+                <id value="organization-ecr-salem-medical-center" />
+                <meta>
+                    <versionId value="5" />
+                    <lastUpdated value="2021-06-30T04:13:19.345+00:00" />
+                    <source value="#xa4yJZjn68xVavoM" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization" />
+                </meta>
+                <identifier>
+                    <system value="http://hl7.org.fhir/sid/us-npi" />
+                    <value value="55555555" />
+                </identifier>
+                <active value="true" />
+                <name value="Salem Medical Center" />
+                <telecom>
+                    <system value="phone" />
+                    <value value="+1-555-555-1111" />
+                </telecom>
+                <telecom>
+                    <system value="email" />
+                    <value value="mail@salemmedicalcenter.com" />
+                </telecom>
+                <address>
+                    <line value="22222 Health Authority Drive" />
+                    <city value="Ann Arbor" />
+                    <state value="MI" />
+                    <postalCode value="99999" />
+                </address>
+            </Organization>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/Condition/condition-eicr-eve-everywoman-zika" />
+        <resource>
+            <Condition>
+                <id value="condition-eicr-eve-everywoman-zika" />
+                <meta>
+                    <versionId value="5" />
+                    <lastUpdated value="2021-07-15T01:54:14.835+00:00" />
+                    <source value="#rM2Pw6getjoE2UTV" />
+                </meta>
+                <category>
+                    <coding>
+                        <system value="http://terminology.hl7.org/CodeSystem/condition-category" />
+                        <code value="encounter-diagnosis" />
+                        <display value="Encounter Diagnosis" />
+                    </coding>
+                </category>
+                <code>
+                    <coding>
+                        <system value="http://snomed.info/sct" />
+                        <code value="3928002" />
+                        <display value="Zika virus disease (disorder)" />
+                    </coding>
+                </code>
+                <subject>
+                    <reference value="Patient/patient-ecr-eve-everywoman" />
+                    <display value="Eve Everywoman" />
+                </subject>
+                <onsetDateTime value="2017-08-23" />
+                <asserter>
+                    <reference value="Practitioner/practitioner-us-core-henry-seven" />
+                    <display value="Henry Seven, MD" />
+                </asserter>
+            </Condition>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/Organization/organization-rr-routing-entity-haw" />
+        <resource>
+            <Organization>
+                <id value="organization-rr-routing-entity-haw" />
+                <meta>
+                    <versionId value="4" />
+                    <lastUpdated value="2021-06-30T04:13:19.350+00:00" />
+                    <source value="#JxDnX4nN1kOgPTNr" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization" />
+                </meta>
+                <identifier>
+                    <system value="http://hl7.org.fhir/sid/us-npi" />
+                    <value value="43214321" />
+                </identifier>
+                <active value="true" />
+                <type>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.232" />
+                        <code value="RR7" />
+                        <display value="Routing Entity" />
+                    </coding>
+                </type>
+                <name value="Health Authority West Routing Entity" />
+                <telecom>
+                    <system value="phone" />
+                    <value value="+1-555-555-3555" />
+                </telecom>
+                <telecom>
+                    <system value="email" />
+                    <value value="mail@healthauthoritywest.gov" />
+                </telecom>
+                <address>
+                    <line value="7777 Health Authority Drive" />
+                    <city value="Ann Arbor" />
+                    <state value="MI" />
+                    <postalCode value="99999" />
+                </address>
+            </Organization>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/Organization/organization-rr-rules-authoring-agency-haw" />
+        <resource>
+            <Organization>
+                <id value="organization-rr-rules-authoring-agency-haw" />
+                <meta>
+                    <versionId value="4" />
+                    <lastUpdated value="2021-06-30T04:13:19.346+00:00" />
+                    <source value="#neVuDy4iafHVl44v" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization" />
+                </meta>
+                <identifier>
+                    <system value="http://hl7.org.fhir/sid/us-npi" />
+                    <value value="12341234" />
+                </identifier>
+                <active value="true" />
+                <type>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.232" />
+                        <code value="RR12" />
+                        <display value="Rules Authoring Agency" />
+                    </coding>
+                </type>
+                <name value="Health Authority West Rules Authoring Agency" />
+                <telecom>
+                    <system value="phone" />
+                    <value value="+1-555-555-3555" />
+                </telecom>
+                <telecom>
+                    <system value="email" />
+                    <value value="mail@healthauthoritywest.gov" />
+                </telecom>
+                <address>
+                    <line value="7777 Health Authority Drive" />
+                    <city value="Ann Arbor" />
+                    <state value="MI" />
+                    <postalCode value="99999" />
+                </address>
+            </Organization>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/Organization/organization-rr-responsible-agency-haw" />
+        <resource>
+            <Organization>
+                <id value="organization-rr-responsible-agency-haw" />
+                <meta>
+                    <versionId value="4" />
+                    <lastUpdated value="2021-06-30T04:13:19.348+00:00" />
+                    <source value="#3U6KQ9Vvv8lROlRV" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization" />
+                </meta>
+                <identifier>
+                    <system value="http://hl7.org.fhir/sid/us-npi" />
+                    <value value="99996666" />
+                </identifier>
+                <active value="true" />
+                <type>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.232" />
+                        <code value="RR8" />
+                        <display value="Responsible Agency" />
+                    </coding>
+                </type>
+                <name value="Health Authority West Responsible Agency" />
+                <telecom>
+                    <system value="phone" />
+                    <value value="+1-555-555-3555" />
+                </telecom>
+                <telecom>
+                    <system value="email" />
+                    <value value="mail@healthauthoritywest.gov" />
+                </telecom>
+                <address>
+                    <line value="7777 Health Authority Drive" />
+                    <city value="Ann Arbor" />
+                    <state value="MI" />
+                    <postalCode value="99999" />
+                </address>
+            </Organization>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/Practitioner/practitioner-us-core-henry-seven" />
+        <resource>
+            <Practitioner>
+                <id value="practitioner-us-core-henry-seven" />
+                <meta>
+                    <versionId value="5" />
+                    <lastUpdated value="2021-08-17T08:00:32.356+00:00" />
+                    <source value="#2MfA6kIjmOmtAlIb" />
+                    <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
+                </meta>
+                <identifier>
+                    <system value="http://hl7.org/fhir/sid/us-npi" />
+                    <value value="9941339108" />
+                </identifier>
+                <name>
+                    <family value="Henry" />
+                    <given value="Seven" />
+                    <suffix value="M.D." />
+                </name>
+                <telecom>
+                    <system value="email" />
+                    <value value="henry.seven@example.com" />
+                </telecom>
+                <address>
+                    <line value="BMass Doctors" />
+                    <line value="2100 North Ave" />
+                    <city value="Burlington" />
+                    <state value="MA" />
+                    <postalCode value="02368" />
+                    <country value="US" />
+                </address>
+            </Practitioner>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/Observation/observation-rr-eicr-processing-status" />
+        <resource>
+            <Observation xmlns="http://hl7.org/fhir">
+                <id value="observation-rr-eicr-processing-status" />
+                <meta>
+                    <versionId value="7" />
+                    <lastUpdated value="2021-08-17T07:59:00.920+00:00" />
+                    <source value="#qebn2OtR7MyyUBlm" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation" />
+                </meta>
+                <status value="final" />
+                <code>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+                        <code value="RRVS20" />
+                        <display value="eICR was processed - with a warning" />
+                    </coding>
+                </code>
+                <hasMember>
+                    <reference value="Observation/observation-rr-eicr-processing-status-reason" />
+                </hasMember>
+            </Observation>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/Observation/observation-rr-eicr-processing-status-reason" />
+        <resource>
+            <Observation xmlns="http://hl7.org/fhir">
+                <id value="observation-rr-eicr-processing-status-reason" />
+                <meta>
+                    <versionId value="6" />
+                    <lastUpdated value="2021-08-17T07:59:00.881+00:00" />
+                    <source value="#vuZ3NTkJzu5MXnbK" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation" />
+                </meta>
+                <status value="final" />
+                <code>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.232" />
+                        <code value="RR6" />
+                        <display value="eICR Processing Status Reason" />
+                    </coding>
+                </code>
+                <valueCodeableConcept>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+                        <code value="RRVS30" />
+                        <display value="eICR was processed with the warning of: inactive RCTC code" />
+                    </coding>
+                </valueCodeableConcept>
+                <component>
+                    <code>
+                        <coding>
+                            <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+                            <code value="RRVS32" />
+                            <display value="Inactive RCTC code detail" />
+                        </coding>
+                    </code>
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="http://snomed.info/sct" />
+                            <code value="69092001" />
+                            <display value="Leptospirosis icterohemorrhagica (disorder)" />
+                        </coding>
+                    </valueCodeableConcept>
+                </component>
+            </Observation>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/DocumentReference/documentreference-add-reporting-needs-pdf" />
+        <resource>
+            <DocumentReference xmlns="http://hl7.org/fhir">
+                <id value="documentreference-add-reporting-needs-pdf" />
+                <meta>
+                    <versionId value="2" />
+                    <lastUpdated value="2021-08-13T03:54:37.580+00:00" />
+                    <source value="#CKG4Ip9hcAYHwI5b" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-documentreference" />
+                </meta>
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-priority-extension">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+                            <code value="RRVS16" />
+                            <display value="Action requested" />
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                <status value="current" />
+                <type>
+                    <coding>
+                        <system value="http://loinc.org" />
+                        <code value="83910-0" />
+                        <display value="Public health Note" />
+                    </coding>
+                    <text value="Public health information" />
+                </type>
+                <category>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+                        <code value="RRVS8" />
+                        <display value="Additional reporting needs" />
+                    </coding>
+                    <text value="Additional reporting needs" />
+                </category>
+                <subject>
+                    <reference value="Patient/patient-ecr-eve-everywoman" />
+                    <display value="Eve Everywoman" />
+                </subject>
+                <description value="Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here." />
+                <content>
+                    <attachment>
+                        <contentType value="application/pdf" />
+                        <url value="http://statedepartmentofhealth.gov/epi/disease/zika/Supplemental_data_form.pdf" />
+                    </attachment>
+                </content>
+            </DocumentReference>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/DocumentReference/documentreference-zika-follow-up-pdf" />
+        <resource>
+            <DocumentReference xmlns="http://hl7.org/fhir">
+                <id value="documentreference-zika-follow-up-pdf" />
+                <meta>
+                    <versionId value="2" />
+                    <lastUpdated value="2021-08-13T03:55:05.964+00:00" />
+                    <source value="#5WqiIqtDkKw6T6kp" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-documentreference" />
+                </meta>
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-priority-extension">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+                            <code value="RRVS18" />
+                            <display value="Immediate action requested" />
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                <status value="current" />
+                <type>
+                    <coding>
+                        <system value="http://loinc.org" />
+                        <code value="83910-0" />
+                        <display value="Public health Note" />
+                    </coding>
+                    <text value="Public health information" />
+                </type>
+                <category>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+                        <code value="RRVS10" />
+                        <display value="Treatment and/or prevention" />
+                    </coding>
+                    <text value="Treatment and/or prevention" />
+                </category>
+                <subject>
+                    <reference value="Patient/patient-ecr-eve-everywoman" />
+                    <display value="Eve Everywoman" />
+                </subject>
+                <description value="Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy." />
+                <content>
+                    <attachment>
+                        <contentType value="application/pdf" />
+                        <url value="http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf" />
+                    </attachment>
+                </content>
+            </DocumentReference>
+        </resource>
+    </entry>
+    <entry>
+        <fullUrl value="http://example.org/fhir/DocumentReference/documentreference-zika-info-pdf" />
+        <resource>
+            <DocumentReference xmlns="http://hl7.org/fhir">
+                <id value="documentreference-zika-info-pdf" />
+                <meta>
+                    <versionId value="2" />
+                    <lastUpdated value="2021-08-13T03:55:05.964+00:00" />
+                    <source value="#UHFGpbMvvCjqEqnT" />
+                    <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-documentreference" />
+                </meta>
+                <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-priority-extension">
+                    <valueCodeableConcept>
+                        <coding>
+                            <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+                            <code value="RRVS17" />
+                            <display value="Immediate action required" />
+                        </coding>
+                    </valueCodeableConcept>
+                </extension>
+                <status value="current" />
+                <type>
+                    <coding>
+                        <system value="http://loinc.org" />
+                        <code value="83910-0" />
+                        <display value="Public health Note" />
+                    </coding>
+                    <text value="Public health information" />
+                </type>
+                <category>
+                    <coding>
+                        <system value="urn:oid:2.16.840.1.114222.4.5.274" />
+                        <code value="RRVS13" />
+                        <display value="Outbreak- or Cluster Related" />
+                    </coding>
+                    <text value="Outbreak- or Cluster Related" />
+                </category>
+                <subject>
+                    <reference value="Patient/patient-ecr-eve-everywoman" />
+                    <display value="Eve Everywoman" />
+                </subject>
+                <description value="Local mosquito-borne Zika virus creation was reported in your area. Increased watchfulness for symptoms of Zika virus in your patients is warranted." />
+                <content>
+                    <attachment>
+                        <contentType value="application/pdf" />
+                        <url value="http://statedepartmentofhealth.gov/epi/disease/zika/outbreakinfo.pdf" />
+                    </attachment>
+                </content>
+            </DocumentReference>
+        </resource>
+    </entry>
 </Bundle>

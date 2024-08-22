@@ -1,10 +1,5 @@
 <Bundle xmlns="http://hl7.org/fhir">
     <id value="bundle-ersd-specification-example" />
-    <meta>
-        <versionId value="1" />
-        <lastUpdated value="2022-04-15T18:26:27.000+00:00" />
-        <source value="#8zRKOv2AelmrnTVL" />
-    </meta>
     <type value="collection" />
     <timestamp value="2022-04-05T10:06:42.482-04:00" />
     <entry>
@@ -242,7 +237,9 @@
                                     </valueExpression>
                                 </extension>
                                 <language value="text/fhirpath" />
-                                <expression value="%encounter.where((status = 'in-progress' and period.start + 1 day * %normalReportingDuration &gt;= now()) or (status = 'finished' and period.end + 72 hours &gt;= now())).select(true)" />
+                                <expression
+                                    value="%encounter.where((status = 'in-progress' and period.start + 1 day * %normalReportingDuration &gt;= now()) or (status = 'finished' and period.end + 72 hours &gt;= now())).select(true)"
+                                 />
                             </expression>
                         </condition>
                         <relatedAction>
@@ -477,7 +474,9 @@
                                     </valueExpression>
                                 </extension>
                                 <language value="text/fhirpath" />
-                                <expression value="%inprogressencounter.where(status = 'in-progress' and period.start + 1 day * %normalReportingDuration &gt;= now() or (status = 'finished' and period.end + 72 hours &gt;= now())).exists()" />
+                                <expression
+                                    value="%inprogressencounter.where(status = 'in-progress' and period.start + 1 day * %normalReportingDuration &gt;= now() or (status = 'finished' and period.end + 72 hours &gt;= now())).exists()"
+                                 />
                             </expression>
                         </condition>
                         <input id="inprogressencounter">
@@ -733,7 +732,8 @@
                     </coding>
                 </type>
                 <publisher value="{site.data.fhir.ig.publisher}" />
-                <description value="This release includes code updates for the existing conditions and adds codes for Parkinson’s disease and 13 enteric conditions. Medication codes have also been added to this version." />
+                <description
+                    value="This release includes code updates for the existing conditions and adds codes for Parkinson’s disease and 13 enteric conditions. Medication codes have also been added to this version." />
                 <useContext>
                     <code>
                         <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type" />

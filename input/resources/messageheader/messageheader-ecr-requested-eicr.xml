@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MessageHeader  xmlns="http://hl7.org/fhir">
-    <id value="messageheader-ecr-requested-eicr"/>
+<MessageHeader xmlns="http://hl7.org/fhir">
+    <id value="messageheader-ecr-requested-eicr" />
     <meta>
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader" />
     </meta>
     <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-data-encrypted-extension">
-        <valueBoolean value="false"/>
+        <valueBoolean value="false" />
     </extension>
     <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-message-processing-category-extension">
-        <valueCode value="consequence"/>
+        <valueCode value="consequence" />
     </extension>
     <eventCoding>
-        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-message-types-codesystem"/>
-        <code value="eicr-case-report-message"/>
-        <display value="Indicates a message containing electronic case report healthcare data sent from clinical care."/>
+        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-message-types-codesystem" />
+        <code value="eicr-case-report-message" />
+        <display value="Indicates a message containing electronic case report healthcare data sent from clinical care." />
     </eventCoding>
     <destination>
-        <name value="YMCA Acme Message Gateway"/>
+        <name value="YMCA Acme Message Gateway" />
         <target>
-            <reference value="Device/device-ecr-software-ymca"/>
+            <reference value="Device/device-ecr-software-ymca" />
         </target>
-        <endpoint value="http://example.org/ymca/fhir"/>
+        <endpoint value="http://example.org/ymca/fhir" />
     </destination>
     <sender>
-        <reference value="Organization/organization-ecr-salem-medical-center"/>
+        <reference value="Organization/organization-ecr-salem-medical-center" />
     </sender>
     <source>
-        <name value="Acme Central Patient Registry"/>
-        <software value="FooBar Patient Manager"/>
-        <version value="3.1.45.AABB"/>
+        <name value="Acme Central Patient Registry" />
+        <software value="FooBar Patient Manager" />
+        <version value="3.1.45.AABB" />
         <contact>
-            <system value="phone"/>
-            <value value="+1 (555) 123 4567"/>
+            <system value="phone" />
+            <value value="+1 (555) 123 4567" />
         </contact>
-        <endpoint value="http://example.org/salem-medical-center/fhir"/>
+        <endpoint value="http://example.org/salem-medical-center/fhir" />
     </source>
     <reason>
         <coding>
-            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-triggerdefinition-namedevents"/>
-            <code value="encounter-close"/>
-            <display value="Indicates the close of an encounter"/>
+            <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-triggerdefinition-namedevents" />
+            <code value="encounter-close" />
+            <display value="Indicates the close of an encounter" />
         </coding>
     </reason>
     <focus>
-        <reference value="Bundle/bundle-eicr-document-zika"/>
+        <reference value="Bundle/bundle-eicr-document-zika" />
     </focus>
 </MessageHeader>

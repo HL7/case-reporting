@@ -1,78 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CapabilityStatement
-    xmlns="http://hl7.org/fhir">
-    <id value="capabilitystatement-ersd-client"/>
-    <meta>
-        <versionId value="13"/>
-        <lastUpdated value="2021-08-19T08:19:41.534+00:00"/>
-        <source value="#udNCEai5UlqF43SD"/>
-    </meta>
-    <url value="http://hl7.org/fhir/us/ecr/CapabilityStatement/capabilitystatement-ersd-client"/>
-    <version value="1.0.0"/>
-    <name value="CapabilityStatement_eRSD_Client"/>
-    <title value="Capability Statement eRSD Client"/>
-    <status value="draft"/>
-    <experimental value="false"/>
-    <date value="2019-08-23"/>
-    <publisher value="HL7 Public Health Work Group"/>
-    <description value="This section describes the expected capabilities of a client consuming eRSD resources including the Reportable Conditions Trigger Codes (RCTC).&#xA;&#xA;#### Conformance requirements for an eRSD Client&#xA;&#xA;The eRSD Client **SHALL**:&#xA;&#xA;- Support fetching the eRSD Bundle using the supported RESTful interactions.&#xA;- Support processing PlanDefinition and ValueSet resources that are included in the Bundle.&#xA;&#xA;The eRSD Client **MAY**:&#xA;&#xA;- Support fetching and reading a Person resource.&#xA;- Support fetching and reading Subscription resources associated with a Person."/>
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+    <id value="capabilitystatement-ersd-client" />
+    <url value="http://hl7.org/fhir/us/ecr/CapabilityStatement/capabilitystatement-ersd-client" />
+    <version value="1.0.0" />
+    <name value="CapabilityStatement_eRSD_Client" />
+    <title value="Capability Statement eRSD Client" />
+    <status value="draft" />
+    <experimental value="false" />
+    <date value="2019-08-23" />
+    <publisher value="HL7 Public Health Work Group" />
+    <description
+        value="This section describes the expected capabilities of a client consuming eRSD resources including the Reportable Conditions Trigger Codes (RCTC).&#xA;&#xA;#### Conformance requirements for an eRSD Client&#xA;&#xA;The eRSD Client **SHALL**:&#xA;&#xA;- Support fetching the eRSD Bundle using the supported RESTful interactions.&#xA;- Support processing PlanDefinition and ValueSet resources that are included in the Bundle.&#xA;&#xA;The eRSD Client **MAY**:&#xA;&#xA;- Support fetching and reading a Person resource.&#xA;- Support fetching and reading Subscription resources associated with a Person." />
     <jurisdiction>
         <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="US"/>
-            <display value="United States of America"/>
+            <system value="urn:iso:std:iso:3166" />
+            <code value="US" />
+            <display value="United States of America" />
         </coding>
-        <text value="United States of America"/>
+        <text value="United States of America" />
     </jurisdiction>
-    <kind value="requirements"/>
-    <fhirVersion value="4.0.1"/>
-    <format value="application/xml"/>
-    <format value="application/json"/>
+    <kind value="requirements" />
+    <fhirVersion value="4.0.1" />
+    <format value="application/xml" />
+    <format value="application/json" />
     <rest>
-        <mode value="client"/>
+        <mode value="client" />
         <resource>
-            <type value="Bundle"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-document-bundle"/>
-            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-reporting-bundle"/>
-            <documentation value="The Bundle represents the artifacts that are to be distributed to subscribers. The Bundle contains the information necessary for implementers to update their systems. The Bundle typically includes PlanDefinition and ValueSet resources. The Bundle may also contain a message from the administrator that indicates the severity of the update."/>
+            <type value="Bundle" />
+            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle" />
+            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-document-bundle" />
+            <supportedProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-reporting-bundle" />
+            <documentation
+                value="The Bundle represents the artifacts that are to be distributed to subscribers. The Bundle contains the information necessary for implementers to update their systems. The Bundle typically includes PlanDefinition and ValueSet resources. The Bundle may also contain a message from the administrator that indicates the severity of the update." />
             <interaction>
-                <code value="read"/>
+                <code value="read" />
             </interaction>
         </resource>
         <resource>
-            <type value="ValueSet"/>
-            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset"/>
+            <type value="ValueSet" />
+            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset" />
             <interaction>
-                <code value="read"/>
+                <code value="read" />
             </interaction>
         </resource>
         <resource>
-            <type value="PlanDefinition"/>
-            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"/>
+            <type value="PlanDefinition" />
+            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition" />
             <interaction>
-                <code value="read"/>
+                <code value="read" />
             </interaction>
         </resource>
         <resource>
-            <type value="Person"/>
-            <documentation value="The Person resource is used by the eRSD server to associate one or more Subscriptions to an individual. The Person contains references to the Subscriptions associated with the Person."/>
+            <type value="Person" />
+            <documentation
+                value="The Person resource is used by the eRSD server to associate one or more Subscriptions to an individual. The Person contains references to the Subscriptions associated with the Person." />
             <interaction>
-                <code value="read"/>
+                <code value="read" />
             </interaction>
         </resource>
         <resource>
-            <type value="Subscription"/>
-            <documentation value="A Subscription is used to notify a Person using the specified channel (email, rest-hook or email-based SMS) that a Bundle has been updated on the FHIR Server."/>
+            <type value="Subscription" />
+            <documentation value="A Subscription is used to notify a Person using the specified channel (email, rest-hook or email-based SMS) that a Bundle has been updated on the FHIR Server." />
             <interaction>
-                <code value="read"/>
+                <code value="read" />
             </interaction>
         </resource>
         <resource>
-            <type value="Library"/>
-            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset-library"/>
+            <type value="Library" />
+            <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset-library" />
             <interaction>
-                <code value="read"/>
+                <code value="read" />
             </interaction>
         </resource>
     </rest>

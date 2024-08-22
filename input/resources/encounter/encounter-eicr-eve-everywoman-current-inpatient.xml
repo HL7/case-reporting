@@ -1,83 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Encounter
-    xmlns="http://hl7.org/fhir">
-    <id value="encounter-eicr-eve-everywoman-current-inpatient"/>
+<Encounter xmlns="http://hl7.org/fhir">
+    <id value="encounter-eicr-eve-everywoman-current-inpatient" />
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2021-07-19T03:02:05.805+00:00"/>
-        <source value="#V2t9BJOtCzLIIoAT"/>
-        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter"/>
+        <profile value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-encounter" />
     </meta>
     <identifier>
-        <system value="http://hospital.smarthealthit.org"/>
-        <value value="9937012"/>
+        <system value="http://hospital.smarthealthit.org" />
+        <value value="9937012" />
     </identifier>
-    <status value="in-progress"/>
+    <status value="in-progress" />
     <class>
-        <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
-        <code value="IMP"/>
-        <display value="inpatient encounter"/>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
+        <code value="IMP" />
+        <display value="inpatient encounter" />
     </class>
     <type>
         <coding>
-            <system value="http://www.ama-assn.org/go/cpt"/>
-            <code value="99234"/>
+            <system value="http://www.ama-assn.org/go/cpt" />
+            <code value="99234" />
         </coding>
-        <text value="Under Observation or Inpatient Care Services (Including Admission and Discharge Services)"/>
+        <text value="Under Observation or Inpatient Care Services (Including Admission and Discharge Services)" />
     </type>
     <subject>
-        <reference value="Patient/patient-ecr-eve-everywoman"/>
-        <display value="Eve Everywoman"/>
+        <reference value="Patient/patient-ecr-eve-everywoman" />
+        <display value="Eve Everywoman" />
     </subject>
     <participant>
         <type>
             <coding>
-                <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
-                <code value="ATND"/>
-                <display value="attender"/>
+                <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType" />
+                <code value="ATND" />
+                <display value="attender" />
             </coding>
         </type>
         <individual>
-            <reference value="PractitionerRole/practitionerrole-henry-seven"/>
-            <display value="Henry Seven, MD"/>
+            <reference value="PractitionerRole/practitionerrole-henry-seven" />
+            <display value="Henry Seven, MD" />
         </individual>
     </participant>
     <period>
-        <start value="2018-04-01T10:00:00-05:00"/>
+        <start value="2018-04-01T10:00:00-05:00" />
     </period>
     <diagnosis>
         <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension">
             <extension url="triggerCodeValueSet">
-                <valueOid value="urn:oid:2.16.840.1.114222.4.11.7508"/>
+                <valueOid value="urn:oid:2.16.840.1.114222.4.11.7508" />
             </extension>
             <extension url="triggerCodeValueSetVersion">
-                <valueString value="12/12/2018"/>
+                <valueString value="12/12/2018" />
             </extension>
             <extension url="triggerCode">
                 <valueCoding>
-                    <system value="http://snomed.info/sct"/>
-                    <code value="3928002"/>
-                    <display value="Zika virus disease (disorder)"/>
+                    <system value="http://snomed.info/sct" />
+                    <code value="3928002" />
+                    <display value="Zika virus disease (disorder)" />
                 </valueCoding>
             </extension>
         </extension>
         <condition>
-            <reference value="Condition/condition-eicr-eve-everywoman-zika"/>
+            <reference value="Condition/condition-eicr-eve-everywoman-zika" />
         </condition>
     </diagnosis>
     <diagnosis>
         <condition>
-            <reference value="Condition/condition-eicr-eve-everywoman-common-cold"/>
+            <reference value="Condition/condition-eicr-eve-everywoman-common-cold" />
         </condition>
     </diagnosis>
     <location>
         <location>
-            <reference value="Location/location-ecr-salem-medical-center"/>
-            <display value="Clinic Bldg A, Salem Medical Center, 4646 Brown Rd, Salem, MA 02368"/>
+            <reference value="Location/location-ecr-salem-medical-center" />
+            <display value="Clinic Bldg A, Salem Medical Center, 4646 Brown Rd, Salem, MA 02368" />
         </location>
     </location>
     <serviceProvider>
-        <reference value="Organization/organization-ecr-salem-medical-center"/>
-        <display value="Salem Medical Center, 22222 Health Authority Drive, Ann Arbor MI, 99999"/>
+        <reference value="Organization/organization-ecr-salem-medical-center" />
+        <display value="Salem Medical Center, 22222 Health Authority Drive, Ann Arbor MI, 99999" />
     </serviceProvider>
 </Encounter>
