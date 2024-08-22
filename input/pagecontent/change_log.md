@@ -4,6 +4,8 @@
 |JIRA Ticket|Ticket Description|
 |---------|----------|
 | [FHIR-46585](https://jira.hl7.org/browse/FHIR-46585) | Update mapping/description type guidance |
+| [FHIR-46686](https://jira.hl7.org/browse/FHIR-46686) | Correct misapplied jira: [FHIR-37429](https://jira.hl7.org/browse/FHIR-37429) |
+| [FHIR-46687](https://jira.hl7.org/browse/FHIR-46587) | eICR Composition required sections - relax required (1..x) entry |
 
 
 ### Changes in First Techincal Correction - STU 2.1.1 (2.1.1)
