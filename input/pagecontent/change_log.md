@@ -1,4 +1,4 @@
-### Changes in Second Techincal Correction - STU 2.1.2 (2.1.2)
+### Second Techincal Correction - STU 2.1.2 (2.1.2)
 
 
 |JIRA Ticket|Ticket Description|
@@ -8,7 +8,7 @@
 | [FHIR-46687](https://jira.hl7.org/browse/FHIR-46587) | eICR Composition required sections - relax required (1..x) entry |
 
 
-### Changes in First Techincal Correction - STU 2.1.1 (2.1.1)
+### First Techincal Correction - STU 2.1.1 (2.1.1)
 
 
 |JIRA Ticket|Ticket Description|
@@ -16,7 +16,7 @@
 | [FHIR-41711](https://jira.hl7.org/browse/FHIR-41711) | Remove SMART on FHIR Backend Services Authorization section from "The Specification" page |
 
 
-### Changes in Unballoted STU Update - STU 2.1 (2.1)
+### Unballoted STU Update - STU 2.1 (2.1)
 
 
 |JIRA Ticket|Ticket Description|
