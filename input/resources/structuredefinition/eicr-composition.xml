@@ -385,7 +385,7 @@
                 </discriminator>
                 <rules value="open" />
             </slicing>
-            <min value="1" />
+            <!--<min value="1" />-->
             <mustSupport value="true" />
         </element>
         <element id="Composition.section:sliceProblemSection.entry:sliceEICRCondition">
@@ -393,7 +393,7 @@
             <sliceName value="sliceEICRCondition" />
             <short value="eICR Condition entry" />
             <definition value="The eICR Trigger Code Flag (extension) is present for an eICR Condition (diagnosis), based on a trigger code match of the diagnosis (condition.code) to the eRSD PlanDefinition Diagnosis Trigger." />
-            <min value="1" />
+            <!--<min value="1" />-->
             <type>
                 <code value="Reference" />
                 <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-condition" />
@@ -753,18 +753,18 @@
                 </discriminator>
                 <rules value="open" />
             </slicing>
-            <min value="1" />
+            <!--<min value="1" />-->
             <mustSupport value="true" />
         </element>
-        <element id="Composition.section:sliceResultsSection.entry:sliceUSCoreObservationResults">
+        <element id="Composition.section:sliceResultsSection.entry:sliceUSPHLabResultObservation">
             <path value="Composition.section.entry" />
-            <sliceName value="sliceUSCoreObservationResults" />
+            <sliceName value="sliceUSPHLabResultObservation" />
             <definition value="The eICR Trigger Code Flag (extension) is present for a laboratory result, based on a trigger code match of either the lab test (observation.code) to the eRSD PlanDefinition Lab Obs Test Name Trigger or the lab test result (observation.value) to the eRSD PlanDefinition Organism Substance Trigger." />
             <type>
                 <code value="Reference" />
-                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab" />
+                <targetProfile value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-lab-result-observation" />
             </type>
-            <min value="1" />
+            <!--<min value="1" />-->
             <mustSupport value="true" />
             <isModifier value="false" />
             <mapping>
@@ -772,7 +772,7 @@
                 <map value="[eICR R2 STU3.1] Result Observation (V3) + Initial Case Report Trigger Code Result Observation (V2)" />
             </mapping>
         </element>
-        <element id="Composition.section:sliceResultsSection.entry:sliceUSCoreObservationResults.extension">
+        <element id="Composition.section:sliceResultsSection.entry:sliceUSPHLabResultObservation.extension">
             <path value="Composition.section.entry.extension" />
             <slicing>
                 <discriminator>
@@ -783,9 +783,9 @@
             </slicing>
             <mustSupport value="true" />
         </element>
-        <element id="Composition.section:sliceResultsSection.entry:sliceUSCoreObservationResults.extension:sliceTriggerUSCoreObservationResults">
+        <element id="Composition.section:sliceResultsSection.entry:sliceUSCoreObservationResults.extension:sliceTriggerUSPHLabResultObservation">
             <path value="Composition.section.entry.extension" />
-            <sliceName value="sliceTriggerUSCoreObservationResults" />
+            <sliceName value="sliceTriggerUSPHLabResultObservation" />
             <short value="eICR Trigger Code Flag" />
             <definition value="A flag to indicate that the **target** reference represents one or more (lab result observations can contain hasMember) triggering events and caused the eCR to be generated." />
             <max value="*" />
