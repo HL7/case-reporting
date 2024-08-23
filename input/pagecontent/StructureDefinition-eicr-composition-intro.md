@@ -19,16 +19,48 @@ In the case where a trigger code was previously entered in error and has now bee
 
 Where a trigger occurs outside of an encounter and Encounter.class is set to “PHC2237”, system=”2.16.840.1.114222.4.5.274” (External Encounter) the responsible provider and facility information is contained in the eICR Composition.author. See table:
 
-| Data Element  | Note  |
-|---|---|
-| Composition.author\[PractitionerRole] | \[External encounter case] Provider: Provider responsible for the patient's care when the case was triggered.  |
-| Composition.author\[PractitionerRole].identifier | \[External encounter case] Provider Id: Identifier of the provider responsible for the patient's care when the case was triggered  |
-| Composition.author\[PractitionerRole].practitioner\[Practitioner].identifier | \[External encounter case] Provider Address: Address of the provider responsibe for the patient's care when the case was triggered.  |
-| Composition.author\[PractitionerRole].telecom | \[External encounter case] Provider Telecom: A telecom address (phone, email, fax, etc.) for the provider responsibe for the patient's care when the case was triggered.  |
-| Composition.author\[PractitionerRole].practitioner\[Practitioner].name | \[External encounter case] Provider Name: Name of the provider responsibe for the patient's care when the case was triggered  |
-| Composition.author\[PractitionerRole].organization\[Organization] | \[External encounter case] Facility: The facility in which care was provided when the case was triggered  |
-| Composition.author\[PractitionerRole].organization\[Organization].identifier | \[External encounter case] Facility Id: Identification code for the facility in which care was provided when the case was triggered  |
-| Composition.author\[PractitionerRole].organization\[Organization].address | \[External encounter case] Facility Address: The physical location of the facility in which care was provided when the case was triggered  |
+<table style="width:100%" border="1">
+    <thead>
+        <tr>
+            <th style="width:auto">Data Element</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Composition.author[PractitionerRole]</td>
+            <td>[External encounter case] Provider: Provider responsible for the patient&#39;s care when the case was triggered.</td>
+        </tr>
+        <tr>
+            <td>Composition.author[PractitionerRole].identifier</td>
+            <td>[External encounter case] Provider Id: Identifier of the provider responsible for the patient&#39;s care when the case was triggered</td>
+        </tr>
+        <tr>
+            <td>Composition.author[PractitionerRole].practitioner[Practitioner].identifier</td>
+            <td>[External encounter case] Provider Address: Address of the provider responsibe for the patient&#39;s care when the case was triggered.</td>
+        </tr>
+        <tr>
+            <td>Composition.author[PractitionerRole].telecom</td>
+            <td>[External encounter case] Provider Telecom: A telecom address (phone, email, fax, etc.) for the provider responsibe for the patient&#39;s care when the case was triggered.</td>
+        </tr>
+        <tr>
+            <td>Composition.author[PractitionerRole].practitioner[Practitioner].name</td>
+            <td>[External encounter case] Provider Name: Name of the provider responsibe for the patient&#39;s care when the case was triggered</td>
+        </tr>
+        <tr>
+            <td>Composition.author[PractitionerRole].organization[Organization]</td>
+            <td>[External encounter case] Facility: The facility in which care was provided when the case was triggered</td>
+        </tr>
+        <tr>
+            <td>Composition.author[PractitionerRole].organization[Organization].identifier</td>
+            <td>[External encounter case] Facility Id: Identification code for the facility in which care was provided when the case was triggered</td>
+        </tr>
+        <tr>
+            <td>Composition.author[PractitionerRole].organization[Organization].address</td>
+            <td>[External encounter case] Facility Address: The physical location of the facility in which care was provided when the case was triggered</td>
+        </tr>
+    </tbody>
+</table>
 
 
 
