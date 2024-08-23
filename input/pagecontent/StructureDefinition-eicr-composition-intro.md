@@ -28,6 +28,10 @@ Where a trigger occurs outside of an encounter and Encounter.class is set to “
     </thead>
     <tbody>
         <tr>
+            <td>Composition.author</td>
+            <td>In a public health case report, the author may be the provider, software, or a person in the role of a public health reporter, such as an infection control professional (ICP), a medical assistant, an office administrator, or another staff person who assists a provider with public health reporting.</td>
+        </tr>
+        <tr>
             <td>Composition.author[PractitionerRole]</td>
             <td>[External encounter case] Provider: Provider responsible for the patient&#39;s care when the case was triggered.</td>
         </tr>
