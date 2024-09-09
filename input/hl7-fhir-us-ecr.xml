@@ -239,6 +239,7 @@
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/ecr-messageheader" />
             <groupingId value="transport-examples" />
         </resource>
+        <!-- Start eICR Profiles -->
         <resource>
             <reference>
                 <reference value="StructureDefinition/eicr-composition" />
@@ -249,6 +250,200 @@
             <exampleBoolean value="false" />
             <groupingId value="eicr-profiles" />
         </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-document-bundle" />
+                <display value="eICR Document Bundle" />
+            </reference>
+            <name value="eICR Document Bundle" />
+            <description value="This Bundle profile represents an eCR Document Bundle. It contains an eICR Composition." />
+            <exampleBoolean value="false" />
+            <groupingId value="eicr-profiles" />
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-encounter" />
+                <display value="eICR Encounter" />
+            </reference>
+            <name value="eICR Encounter" />
+            <description value="This Encounter profile represents the encounter related to the event." />
+            <exampleBoolean value="false" />
+            <groupingId value="eicr-profiles" />
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-procedure" />
+                <display value="eICR Procedure" />
+            </reference>
+            <name value="eICR Procedure" />
+            <description value="This Procedure profile defines constraints on the US Core Procedure profile for the eICR use case." />
+            <exampleBoolean value="false" />
+            <groupingId value="eicr-profiles" />
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-servicerequest" />
+                <display value="eicr-servicerequest" />
+            </reference>
+            <name value="eICR ServiceRequest" />
+            <description value="This ServiceRequest profile represents eICR laboratory orders and other diagnostics for the eICR event." />
+            <exampleBoolean value="false" />
+            <groupingId value="eicr-profiles" />
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-country-of-nationality" />
+                <display value="eICR Country of Nationality" />
+            </reference>
+            <name value="eICR Country of Nationality Observation" />
+            <description value="This Observation profile represents the patient's country of nationality." />
+            <exampleBoolean value="false" />
+            <groupingId value="eicr-profiles" />
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-country-of-residence" />
+                <display value="eICR Country of Residence" />
+            </reference>
+            <name value="eICR Country of Residence Observation" />
+            <description value="This Observation profile represents the patient's country of usual residence." />
+            <exampleBoolean value="false" />
+            <groupingId value="eicr-profiles" />
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/eicr-vaccine-credential-patient-assertion" />
+                <display value="eICR Vaccine Credential Patient Assertion" />
+            </reference>
+            <name value="eICR Vaccine Credential Patient Assertion Observation" />
+            <description value="This Observation profile represents whether or not the patient has asserted that they have verifiable vaccine credentials." />
+            <exampleBoolean value="false" />
+            <groupingId value="eicr-profiles" />
+        </resource>
+        <!-- End eICR Profiles -->
+        <!-- Start Reportability Response Profiles -->
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-composition" />
+                <display value="Reportability Response Composition" />
+            </reference>
+            <name value="RR Composition" />
+            <description value="This Composition profile represents the Reportability Response that is created in response to an electronic Initial Case Report Composition." />
+            <exampleBoolean value="false" />
+            <groupingId value="reportability-response-profiles" />
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-document-bundle" />
+                <display value="RR Document Bundle" />
+            </reference>
+            <name value="RR Document Bundle" />
+            <description value="This Bundle profile represents an RR Document Bundle. It contains either an RR Composition." />
+            <exampleBoolean value="false" />
+            <groupingId value="reportability-response-profiles" />
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-relevant-reportable-condition-observation" />
+                <display value="RR Relevant Reportable Condition Observation" />
+            </reference>
+            <name value="RR Relevant Reportable Condition Observation" />
+            <description value="This profile represents a relevant reportable condition." />
+            <exampleBoolean value="false" />
+            <groupingId value="reportability-response-profiles" />
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-documentreference" />
+                <display value="eCR DocumentReference" />
+            </reference>
+            <name value="RR DocumentReference" />
+            <description value="This profile represents external resources such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources." />
+            <exampleBoolean value="false" />
+            <groupingId value="reportability-response-profiles" />
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-eicr-processing-status-extension" />
+                <display value="RR_Eicr_Processing_Status_Extension" />
+            </reference>
+            <name value="RR eICR Processing Status Extension" />
+            <description value="This Extension profile represents the eICR processing status." />
+            <exampleBoolean value="false" />
+            <groupingId value="reportability-response-profiles" />
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-eicr-processing-status-observation" />
+                <display value="RR_Eicr_Processing_Status_Observation" />
+            </reference>
+            <name value="RR eICR Processing Status Observation" />
+            <description value="This Observation profile represents the  eICR processing status." />
+            <exampleBoolean value="false" />
+            <groupingId value="reportability-response-profiles" />
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-eicr-processing-status-reason-observation" />
+                <display value="RR_Eicr_Processing_Status_Reason_Observation" />
+            </reference>
+            <name value="RR eICR Processing Status Reason Observation" />
+            <description value="This Observation profile represents, if the incoming eICR was not successfully processed for a determination of reportability, the reason it was not processed." />
+            <exampleBoolean value="false" />
+            <groupingId value="reportability-response-profiles" />
+        </resource>
+        
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-reportability-information-observation" />
+                <display value="RR Reportability Information Observation" />
+            </reference>
+            <name value="RR Reportability Information Observation" />
+            <description value="This profile represents reportability information based on the PHA in which is located the patient's home, the provider facility, or both locations." />
+            <exampleBoolean value="false" />
+            <groupingId value="reportability-response-profiles" />
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-responsible-agency-organization" />
+                <display value="RR_Responsible_Agency_Organization" />
+            </reference>
+            <name value="RR Responsible Agency Organization" />
+            <description value="This Organization profile represents the Responsible Agency which is a PHA to which reporting is legally required." />
+            <exampleBoolean value="false" />
+            <groupingId value="reportability-response-profiles" />
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-routing-entity-organization" />
+                <display value="RR_Routing_Entity_Organization" />
+            </reference>
+            <name value="RR Routing Entity Organization" />
+            <description value="This Organization profile represents the Routing Entity which is a PHA or other organization identified by the PHA (such as an HIE) to which the eICR and/or the Reportability Response will be provided immediately following the creation of the Reportability Response." />
+            <exampleBoolean value="false" />
+            <groupingId value="reportability-response-profiles" />
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-rules-authoring-agency-organization" />
+                <display value="RR_Rules_Authoring_Agency_Organization" />
+            </reference>
+            <name value="RR Rules Authoring Agency Organization" />
+            <description value="This Organization profile represents the Rules Authoring Agency which is the originator of the rules that are being executed in decision support to determine reportability." />
+            <exampleBoolean value="false" />
+            <groupingId value="reportability-response-profiles" />
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/rr-summary" />
+                <display value="Reportability Response Summary" />
+            </reference>
+            <name value="RR Summary" />
+            <description value="This profile contains a detailed textual description of the reportable condition(s), including actions the provider needs to take, any supplemental information that may be required, and where the initial case report was sent." />
+            <exampleBoolean value="false" />
+            <groupingId value="reportability-response-profiles" />
+        </resource>
+        <!-- End Reportability Response Profiles -->
         <resource>
             <reference>
                 <reference value="Composition/composition-eicr-pertussis-zika" />
@@ -326,36 +521,8 @@
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-condition" />
             <groupingId value="eicr-examples" />
         </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/eicr-country-of-nationality" />
-                <display value="eICR Country of Nationality" />
-            </reference>
-            <name value="eICR Country of Nationality Observation" />
-            <description value="This Observation profile represents the patient's country of nationality." />
-            <exampleBoolean value="false" />
-            <groupingId value="eicr-profiles" />
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/eicr-country-of-residence" />
-                <display value="eICR Country of Residence" />
-            </reference>
-            <name value="eICR Country of Residence Observation" />
-            <description value="This Observation profile represents the patient's country of usual residence." />
-            <exampleBoolean value="false" />
-            <groupingId value="eicr-profiles" />
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/eicr-document-bundle" />
-                <display value="eICR Document Bundle" />
-            </reference>
-            <name value="eICR Document Bundle" />
-            <description value="This Bundle profile represents an eCR Document Bundle. It contains an eICR Composition." />
-            <exampleBoolean value="false" />
-            <groupingId value="eicr-profiles" />
-        </resource>
+        
+        
         <resource>
             <reference>
                 <reference value="Bundle/bundle-eicr-document-zika" />
@@ -367,16 +534,7 @@
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle" />
             <groupingId value="eicr-examples" />
         </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/eicr-encounter" />
-                <display value="eICR Encounter" />
-            </reference>
-            <name value="eICR Encounter" />
-            <description value="This Encounter profile represents the encounter related to the event." />
-            <exampleBoolean value="false" />
-            <groupingId value="eicr-profiles" />
-        </resource>
+        
         <resource>
             <reference>
                 <reference value="StructureDefinition/eicr-initiation-type-extension" />
@@ -387,16 +545,7 @@
             <exampleBoolean value="false" />
             <groupingId value="extensions" />
         </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/eicr-procedure" />
-                <display value="eICR Procedure" />
-            </reference>
-            <name value="eICR Procedure" />
-            <description value="This Procedure profile defines constraints on the US Core Procedure profile for the eICR use case." />
-            <exampleBoolean value="false" />
-            <groupingId value="eicr-profiles" />
-        </resource>
+        
         <resource>
             <reference>
                 <reference value="Procedure/us-ph-procedure-ecmo" />
@@ -407,16 +556,7 @@
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-procedure" />
             <groupingId value="eicr-examples" />
         </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/eicr-servicerequest" />
-                <display value="eicr-servicerequest" />
-            </reference>
-            <name value="eICR ServiceRequest" />
-            <description value="This ServiceRequest profile represents eICR laboratory orders and other diagnostics for the eICR event." />
-            <exampleBoolean value="false" />
-            <groupingId value="eicr-profiles" />
-        </resource>
+       
         <resource>
             <reference>
                 <reference value="ServiceRequest/servicerequest-eicr-zika" />
@@ -449,16 +589,7 @@
             <exampleBoolean value="false" />
             <groupingId value="extensions" />
         </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/eicr-vaccine-credential-patient-assertion" />
-                <display value="eICR Vaccine Credential Patient Assertion" />
-            </reference>
-            <name value="eICR Vaccine Credential Patient Assertion Observation" />
-            <description value="This Observation profile represents whether or not the patient has asserted that they have verifiable vaccine credentials." />
-            <exampleBoolean value="false" />
-            <groupingId value="eicr-profiles" />
-        </resource>
+        
         <resource>
             <reference>
                 <reference value="Observation/observation-vaccine-credential-assertion-eve-everywoman" />
@@ -832,26 +963,7 @@
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition" />
             <groupingId value="reportability-response-examples" />
         </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-composition" />
-                <display value="Reportability Response Composition" />
-            </reference>
-            <name value="RR Composition" />
-            <description value="This Composition profile represents the Reportability Response that is created in response to an electronic Initial Case Report Composition." />
-            <exampleBoolean value="false" />
-            <groupingId value="reportability-response-profiles" />
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-document-bundle" />
-                <display value="RR Document Bundle" />
-            </reference>
-            <name value="RR Document Bundle" />
-            <description value="This Bundle profile represents an RR Document Bundle. It contains either an RR Composition." />
-            <exampleBoolean value="false" />
-            <groupingId value="reportability-response-profiles" />
-        </resource>
+        
         <resource>
             <reference>
                 <reference value="Bundle/bundle-rr-document-one-cond-one-pha" />
@@ -862,16 +974,7 @@
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-document-bundle" />
             <groupingId value="reportability-response-examples" />
         </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-documentreference" />
-                <display value="eCR DocumentReference" />
-            </reference>
-            <name value="RR DocumentReference" />
-            <description value="This profile represents external resources such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources." />
-            <exampleBoolean value="false" />
-            <groupingId value="reportability-response-profiles" />
-        </resource>
+        
         <resource>
             <reference>
                 <reference value="DocumentReference/documentreference-zika-follow-up-pdf" />
@@ -913,26 +1016,7 @@
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation" />
             <groupingId value="reportability-response-examples" />
         </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-eicr-processing-status-extension" />
-                <display value="RR_Eicr_Processing_Status_Extension" />
-            </reference>
-            <name value="RR eICR Processing Status Extension" />
-            <description value="This Extension profile represents the eICR processing status." />
-            <exampleBoolean value="false" />
-            <groupingId value="reportability-response-profiles" />
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-eicr-processing-status-observation" />
-                <display value="RR_Eicr_Processing_Status_Observation" />
-            </reference>
-            <name value="RR eICR Processing Status Observation" />
-            <description value="This Observation profile represents the  eICR processing status." />
-            <exampleBoolean value="false" />
-            <groupingId value="reportability-response-profiles" />
-        </resource>
+        
         <resource>
             <reference>
                 <reference value="Observation/observation-rr-eicr-processing-status-reason" />
@@ -944,16 +1028,7 @@
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation" />
             <groupingId value="reportability-response-examples" />
         </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-eicr-processing-status-reason-observation" />
-                <display value="RR_Eicr_Processing_Status_Reason_Observation" />
-            </reference>
-            <name value="RR eICR Processing Status Reason Observation" />
-            <description value="This Observation profile represents, if the incoming eICR was not successfully processed for a determination of reportability, the reason it was not processed." />
-            <exampleBoolean value="false" />
-            <groupingId value="reportability-response-profiles" />
-        </resource>
+        
         <resource>
             <reference>
                 <reference value="StructureDefinition/rr-eicr-receipt-time-extension" />
@@ -984,16 +1059,7 @@
             <exampleBoolean value="false" />
             <groupingId value="extensions" />
         </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-relevant-reportable-condition-observation" />
-                <display value="RR Relevant Reportable Condition Observation" />
-            </reference>
-            <name value="RR Relevant Reportable Condition Observation" />
-            <description value="This profile represents a relevant reportable condition." />
-            <exampleBoolean value="false" />
-            <groupingId value="reportability-response-profiles" />
-        </resource>
+        
         <resource>
             <reference>
                 <reference value="Observation/observation-rr-relevant-reportable-condition-observation" />
@@ -1004,36 +1070,8 @@
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation" />
             <groupingId value="reportability-response-examples" />
         </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-reportability-information-observation" />
-                <display value="RR Reportability Information Observation" />
-            </reference>
-            <name value="RR Reportability Information Observation" />
-            <description value="This profile represents reportability information based on the PHA in which is located the patient's home, the provider facility, or both locations." />
-            <exampleBoolean value="false" />
-            <groupingId value="reportability-response-profiles" />
-        </resource>
-        <resource>
-            <reference>
-                <reference value="Observation/observation-rr-reportability-information-observation" />
-            </reference>
-            <name value="RR Reportability Information Observation Example" />
-            <description value="Example of RR Reportability Information Observation profile" />
-            <exampleBoolean value="false" />
-            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation" />
-            <groupingId value="reportability-response-examples" />
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-responsible-agency-organization" />
-                <display value="RR_Responsible_Agency_Organization" />
-            </reference>
-            <name value="RR Responsible Agency Organization" />
-            <description value="This Organization profile represents the Responsible Agency which is a PHA to which reporting is legally required." />
-            <exampleBoolean value="false" />
-            <groupingId value="reportability-response-profiles" />
-        </resource>
+        
+        
         <resource>
             <reference>
                 <reference value="Organization/organization-rr-responsible-agency-haw" />
@@ -1047,14 +1085,15 @@
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/rr-routing-entity-organization" />
-                <display value="RR_Routing_Entity_Organization" />
+                <reference value="Observation/observation-rr-reportability-information-observation" />
             </reference>
-            <name value="RR Routing Entity Organization" />
-            <description value="This Organization profile represents the Routing Entity which is a PHA or other organization identified by the PHA (such as an HIE) to which the eICR and/or the Reportability Response will be provided immediately following the creation of the Reportability Response." />
+            <name value="RR Reportability Information Observation Example" />
+            <description value="Example of RR Reportability Information Observation profile" />
             <exampleBoolean value="false" />
-            <groupingId value="reportability-response-profiles" />
+            <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation" />
+            <groupingId value="reportability-response-examples" />
         </resource>
+        
         <resource>
             <reference>
                 <reference value="Organization/organization-rr-routing-entity-haw" />
@@ -1066,16 +1105,7 @@
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization" />
             <groupingId value="reportability-response-examples" />
         </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-rules-authoring-agency-organization" />
-                <display value="RR_Rules_Authoring_Agency_Organization" />
-            </reference>
-            <name value="RR Rules Authoring Agency Organization" />
-            <description value="This Organization profile represents the Rules Authoring Agency which is the originator of the rules that are being executed in decision support to determine reportability." />
-            <exampleBoolean value="false" />
-            <groupingId value="reportability-response-profiles" />
-        </resource>
+        
         <resource>
             <reference>
                 <reference value="Organization/organization-rr-rules-authoring-agency-haw" />
@@ -1087,16 +1117,7 @@
             <exampleCanonical value="http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization" />
             <groupingId value="reportability-response-examples" />
         </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/rr-summary" />
-                <display value="Reportability Response Summary" />
-            </reference>
-            <name value="RR Summary" />
-            <description value="This profile contains a detailed textual description of the reportable condition(s), including actions the provider needs to take, any supplemental information that may be required, and where the initial case report was sent." />
-            <exampleBoolean value="false" />
-            <groupingId value="reportability-response-profiles" />
-        </resource>
+        
         <resource>
             <reference>
                 <reference value="Library/RuleFilters" />
