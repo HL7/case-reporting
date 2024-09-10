@@ -129,18 +129,18 @@ table, th, td {
 <p>The geographical location or mailing address of the provider's office or facility. Address must include street address, office or suite number (if applicable), city or town, state, and zip code</p>
 </td>
 <td width="36%">
-<p>Need provider's contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
+<p>Need contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
 </td>
 </tr>
 <tr>
 <td width="27%">
-<p>Facility ID Number</p>
+<p>Facility Id</p>
 </td>
 <td width="36%">
-<p>Identification code for the facility (e.g., Facility NPI)</p>
+<p>Identification code for the facility in which care was provided when the case was triggered (e.g., Facility NPI)</p>
 </td>
 <td width="36%">
-<p>Need provider's contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
+<p>Need contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
 </td>
 </tr>
 <tr>
@@ -151,7 +151,7 @@ table, th, td {
 <p>The facility's name</p>
 </td>
 <td width="36%">
-<p>Need provider's contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
+<p>Need contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
 </td>
 </tr>
 <tr>
@@ -159,7 +159,7 @@ table, th, td {
 <p>Facility Type</p>
 </td>
 <td width="36%">
-<p>The type of facility where patient received or is receiving healthcare for the reportable condition (e.g., hospital, ambulatory, urgent care, etc.)</p>
+<p>The type of facility in which care was provided when the case was triggered.</p>
 </td>
 <td width="36%">
 <p>Used to determine the type of care setting in which patient is receiving care for the reportable condition</p>
@@ -167,35 +167,47 @@ table, th, td {
 </tr>
 <tr>
 <td width="27%">
-<p>Facility Phone</p>
+<p>Healthcare Organization Id</p>
 </td>
 <td width="36%">
-<p>The facility's phone number with area code</p>
+<p> Identification code for the umbrella organization under which the facility where care was provided operates</p>
 </td>
 <td width="36%">
-<p>Need provider's contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
+<p>Need contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
 </td>
 </tr>
 <tr>
 <td width="27%">
-<p>Facility Fax</p>
+<p>Healthcare Organization Name</p>
 </td>
 <td width="36%">
-<p>The facility's fax number with area code</p>
+<p>The contact name for the for the umbrella organization under which the facility where care was provided operates</p>
 </td>
 <td width="36%">
-<p>Need provider's contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
+<p>Need contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
+</td>
+</tr>
+<tr>
+<tr>
+<td width="27%">
+<p>Healthcare Organization Telecom</p>
+</td>
+<td width="36%">
+<p>A contact telecom address (phone, email, fax, etc.) for the umbrella organization under which the facility where care was provided operates</p>
+</td>
+<td width="36%">
+<p>Need contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
 </td>
 </tr>
 <tr>
 <td width="27%">
-<p>Facility Address</p>
+<p>Healthcare Organization Address</p>
 </td>
 <td width="36%">
-<p>The mailing address for the facility where patient received or is receiving healthcare for the reportable condition. Must include street address, city/town, county, state, and zip code</p>
+<p>The contact address for the umbrella organization under which the facility where care was provided operates</p>
 </td>
 <td width="36%">
-<p>Need provider's contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
+<p>Need contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
 </td>
 </tr>
 <tr>
