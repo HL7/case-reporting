@@ -41,15 +41,15 @@ Where a trigger occurs outside of an encounter and Encounter.class is set to “
         </tr>
         <tr>
             <td>Composition.author[PractitionerRole].practitioner[Practitioner].identifier</td>
-            <td>[External encounter case] Provider Address: Address of the provider responsibe for the patient&#39;s care when the case was triggered.</td>
+            <td>[External encounter case] Provider Address: Address of the provider responsible for the patient&#39;s care when the case was triggered.</td>
         </tr>
         <tr>
             <td>Composition.author[PractitionerRole].telecom</td>
-            <td>[External encounter case] Provider Telecom: A telecom address (phone, email, fax, etc.) for the provider responsibe for the patient&#39;s care when the case was triggered.</td>
+            <td>[External encounter case] Provider Telecom: A telecom address (phone, email, fax, etc.) for the provider responsible for the patient&#39;s care when the case was triggered.</td>
         </tr>
         <tr>
             <td>Composition.author[PractitionerRole].practitioner[Practitioner].name</td>
-            <td>[External encounter case] Provider Name: Name of the provider responsibe for the patient&#39;s care when the case was triggered</td>
+            <td>[External encounter case] Provider Name: Name of the provider responsible for the patient&#39;s care when the case was triggered</td>
         </tr>
         <tr>
             <td>Composition.author[PractitionerRole].organization[Organization]</td>
