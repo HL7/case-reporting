@@ -34,15 +34,19 @@ Where a trigger occurs outside of an encounter set Encounter.class to "PHC2237â€
         </tr>
         <tr>
             <td>Encounter.participant:sliceResponsibleProvider.individual[PractitionerRole].organization[Organization]</td>
-            <td>Provider Facility/Office: The office or facility of the provider responsible for the patient&#39;s care when the case was triggered (not necessarily where care was provided to the patient)</td>
+            <td>Provider Facility/Office: The office or facility of the provider responsible for the patient&#39;s care when the case was triggered (where care was provided to the patient)</td>
         </tr>
         <tr>
             <td>Encounter.participant:sliceResponsibleProvider.individual[PractitionerRole].organization[Organization].name</td>
-            <td>Provider Facility/Office Name: The name of the office or facility of the provider responsible for the patient&#39;s care when the case was triggered (not necessarily where care was provided to the patient)</td>
+            <td>Provider Facility/Office Name: The name of the office or facility of the provider responsible for the patient&#39;s care when the case was triggered (where care was provided to the patient)</td>
         </tr>
         <tr>
             <td>Encounter.participant:sliceResponsibleProvider.individual[PractitionerRole].organization[Organization].address</td>
-            <td>Provider Facility/Office Address: The address of the office or facility of the provider responsible for the patient&#39;s care when the case was triggered (not necessarily where care was provided to the patient)</td>
+            <td>Provider Facility/Office Address: The address of the office or facility of the provider responsible for the patient&#39;s care when the case was triggered (where care was provided to the patient)</td>
+        </tr>
+        <tr>
+            <td>Encounter.participant:sliceResponsibleProvider.individual[PractitionerRole].organization[Organization].telecom</td>
+            <td>Provider Facility/Office Address: The telecom of the office or facility of the provider responsible for the patient&#39;s care when the case was triggered (where care was provided to the patient)</td>
         </tr>
         <tr>
             <td>Encounter.location[Location]</td>

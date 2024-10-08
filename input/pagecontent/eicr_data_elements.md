@@ -60,7 +60,7 @@ table, th, td {
 <p>Provider ID</p>
 </td>
 <td width="36%">
-<p>Identification code for the care provider (e.g., National Provider Identifier (NPI))</p>
+<p>Identifier of the provider responsible for the patient's care when the case was triggered(e.g., National Provider Identifier (NPI))</p>
 </td>
 <td width="36%">
 <p>Need provider's contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
@@ -71,7 +71,7 @@ table, th, td {
 <p>Provider Name</p>
 </td>
 <td width="36%">
-<p>The first and last name of the healthcare provider</p>
+<p>Name of the provider responsible for the patient's care when the case was triggered</p>
 </td>
 <td width="36%">
 <p>Need provider's contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
@@ -82,7 +82,7 @@ table, th, td {
 <p>Provider Phone</p>
 </td>
 <td width="36%">
-<p>The provider's phone number with area code</p>
+<p>A phone number for the provider responsible for the patient's care when the case was triggered</p>
 </td>
 <td width="36%">
 <p>Need provider's contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
@@ -112,10 +112,10 @@ table, th, td {
 </tr>
 <tr>
 <td width="27%">
-<p>Provider Facility/Office Name</p>
+<p>Provider Address</p>
 </td>
 <td width="36%">
-<p>The provider facility's full name, not necessarily where care was provided to patient</p>
+<p>The provider’s geographical location or mailing address.</p>
 </td>
 <td width="36%">
 <p>Need provider's contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
@@ -123,13 +123,34 @@ table, th, td {
 </tr>
 <tr>
 <td width="27%">
-<p>Provider Address</p>
+<p>Provider Facility/Office Name</p>
 </td>
 <td width="36%">
-<p>The geographical location or mailing address of the provider's office or facility. Address must include street address, office or suite number (if applicable), city or town, state, and zip code</p>
+<p>The name of the office or facility of the provider responsible for the patient's care when the case was triggered (where care was provided to the patient).</p>
 </td>
 <td width="36%">
-<p>Need contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
+<p>Need provider's contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
+</td>
+</tr>
+<tr>
+<td width="27%">
+<p>Provider Facility/Office Address</p>
+</td>
+<td width="36%">
+<p>The address of the office or facility of the provider responsible for the patient's care when the case was triggered (where care was provided to the patient).</p>
+</td>
+<td width="36%">
+<p>Need provider's contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
+</td>
+</tr>
+<td width="27%">
+<p>Provider Facility/Office Telecom</p>
+</td>
+<td width="36%">
+<p>The telecom of the office or facility of the provider responsible for the patient's care when the case was triggered (where care was provided to the patient).</p>
+</td>
+<td width="36%">
+<p>Need provider's contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
 </td>
 </tr>
 <tr>
@@ -145,10 +166,21 @@ table, th, td {
 </tr>
 <tr>
 <td width="27%">
+<p>Facility Address</p>
+</td>
+<td width="36%">
+<p>The physical location of the facility in which care was provided when the case was triggered</p>
+</td>
+<td width="36%">
+<p>Need contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
+</td>
+</tr>
+<tr>
+<td width="27%">
 <p>Facility Name</p>
 </td>
 <td width="36%">
-<p>The facility's name</p>
+<p>The name of the facility in which care was provided when the case was triggered</p>
 </td>
 <td width="36%">
 <p>Need contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
@@ -167,17 +199,6 @@ table, th, td {
 </tr>
 <tr>
 <td width="27%">
-<p>Healthcare Organization Id</p>
-</td>
-<td width="36%">
-<p> Identification code for the umbrella organization under which the facility where care was provided operates</p>
-</td>
-<td width="36%">
-<p>Need contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
-</td>
-</tr>
-<tr>
-<td width="27%">
 <p>Healthcare Organization Name</p>
 </td>
 <td width="36%">
@@ -188,9 +209,20 @@ table, th, td {
 </td>
 </tr>
 <tr>
+<td width="27%">
+<p>Healthcare Organization Id</p>
+</td>
+<td width="36%">
+<p>Identification code for the umbrella organization under which the facility where care was provided operates</p>
+</td>
+<td width="36%">
+<p>Need contact information in order to follow up appropriately for reportable event to ensure appropriate treatment, identify contact exposures, etc.</p>
+</td>
+</tr>
+<tr>
 <tr>
 <td width="27%">
-<p>Healthcare Organization Telecom</p>
+<p>Healthcare Organization Contact Telecom</p>
 </td>
 <td width="36%">
 <p>A contact telecom address (phone, email, fax, etc.) for the umbrella organization under which the facility where care was provided operates</p>
@@ -201,7 +233,7 @@ table, th, td {
 </tr>
 <tr>
 <td width="27%">
-<p>Healthcare Organization Address</p>
+<p>Healthcare Organization Contact Address</p>
 </td>
 <td width="36%">
 <p>The contact address for the umbrella organization under which the facility where care was provided operates</p>
