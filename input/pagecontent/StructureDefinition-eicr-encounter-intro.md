@@ -53,6 +53,10 @@ Where a trigger occurs outside of an encounter set Encounter.class to "PHC2237â€
             <td>Facility: The facility in which care was provided when the case was triggered</td>
         </tr>
         <tr>
+            <td>Encounter.location[Location].name</td>
+            <td>Facility Name: The name of the facility in which care was provided when the case was triggered</td>
+        </tr>
+        <tr>
             <td>Encounter.location[Location].identifier</td>
             <td>Facility Id: Identification code for the facility in which care was provided when the case was triggered</td>
         </tr>
