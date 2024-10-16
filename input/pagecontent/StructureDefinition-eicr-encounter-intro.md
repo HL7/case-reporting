@@ -69,19 +69,19 @@ Where a trigger occurs outside of an encounter set Encounter.class to "PHC2237â€
             <td>Healthcare Organization: The umbrella organization under which the facility where care was provided operates</td>
         </tr>
         <tr>
-            <td>Encounter.servicieProvider[Organization].identifier</td>
+            <td>Encounter.serviceProvider[Organization].identifier</td>
             <td>Healthcare Organization Id: Identification code for the umbrella organization under which the facility where care was provided operates</td>
         </tr>
         <tr>
-            <td>Encounter.servicieProvider[Organization].name</td>
+            <td>Encounter.serviceProvider[Organization].name</td>
             <td>Healthcare Organization Contact Name: The contact name for the for the umbrella organization under which the facility where care was provided operates</td>
         </tr>
         <tr>
-            <td>Encounter.servicieProvider[Organization].telecom</td>
+            <td>Encounter.serviceProvider[Organization].telecom</td>
             <td>Healthcare Organization Contact Telecom: A contact telecom address (phone, email, fax, etc.) for the umbrella organization under which the facility where care was provided operates</td>
         </tr>
         <tr>
-            <td>Encounter.servicieProvider[Organization].address</td>
+            <td>Encounter.serviceProvider[Organization].address</td>
             <td>Healthcare Organization Contact Address: The contact address for the umbrella organization under which the facility where care was provided operates</td>
         </tr>
     </tbody>
