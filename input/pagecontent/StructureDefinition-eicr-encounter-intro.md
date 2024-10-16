@@ -49,23 +49,23 @@ Where a trigger occurs outside of an encounter set Encounter.class to "PHC2237â€
             <td>Provider Facility/Office Address: The telecom of the office or facility of the provider responsible for the patient&#39;s care when the case was triggered (where care was provided to the patient)</td>
         </tr>
         <tr>
-            <td>Encounter.location[Location]</td>
+            <td>Encounter.location.location[Location]</td>
             <td>Facility: The facility in which care was provided when the case was triggered</td>
         </tr>
         <tr>
-            <td>Encounter.location[Location].name</td>
+            <td>Encounter.location.location[Location].name</td>
             <td>Facility Name: The name of the facility in which care was provided when the case was triggered</td>
         </tr>
         <tr>
-            <td>Encounter.location[Location].identifier</td>
+            <td>Encounter.location.location[Location].identifier</td>
             <td>Facility Id: Identification code for the facility in which care was provided when the case was triggered</td>
         </tr>
         <tr>
-            <td>Encounter.location[Location].type</td>
+            <td>Encounter.location.location[Location].type</td>
             <td>Facility Type: The type of facility in which care was provided when the case was triggered</td>
         </tr>
         <tr>
-            <td>Encounter.location[Location].address</td>
+            <td>Encounter.location.location[Location].address</td>
             <td>Facility Address: The physical location of the facility in which care was provided when the case was triggered</td>
         </tr>
         <tr>
