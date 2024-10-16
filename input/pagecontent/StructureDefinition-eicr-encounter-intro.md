@@ -29,7 +29,7 @@ Where a trigger occurs outside of an encounter set Encounter.class to "PHC2237â€
             <td>Provider Telecom: A telecom address (phone, email, fax, etc.) for the provider responsible for the patient&#39;s care when the case was triggered</td>
         </tr>
         <tr>
-            <td>Encounter.participant:sliceResponsibleProvider.individual[PractitionerRole].practitioner[Practitioner].identifier</td>
+            <td>Encounter.participant:sliceResponsibleProvider.individual[PractitionerRole].practitioner[Practitioner].name</td>
             <td>Provider Name: Name of the provider responsible for the patient&#39;s care when the case was triggered</td>
         </tr>
         <tr>
