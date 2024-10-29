@@ -1,14 +1,4 @@
 == Suppressed Messages ==
-# These errors and warnings are due to the fact that the CDC Local Code System (2.16.840.1.114222.4.5.274: https://terminology.hl7.org/NamingSystem-CDCLocal.html) doesn't have it's content in THO (it is only defined in THO). There is a required binding to a value set that is composed of codes from this code system. Because the codes cannot be verified, this throws an error that cascades causing more errors and warnings with slicing etc. See Zulip threads: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/unknown.20codesystem.20definition.20error.20on.20required.20binding, https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/PHINVADs.20code.20error
-Slice 'Bundle.entry:slicePublicHealthComposition': a matching slice is required, but not found (from http://hl7.org/fhir/us/ecr/StructureDefinition/rr-document-bundle|2.1.2). Note that other slices are allowed in addition to this required slice
-This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition|2.1.2 (this may not be a problem, but you should check that it's not intended to match a slice)
-Slice 'Composition.section:sliceRRSummarySection.entry:sliceRRCondition': a matching slice is required, but not found (from http://hl7.org/fhir/us/ecr/StructureDefinition/rr-composition|2.1.2). Note that other slices are allowed in addition to this required slice
-Details for Observation/observation-rr-reportability-information-observation matching against profile http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
-This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation|2.1.2 (this may not be a problem, but you should check that it's not intended to match a slice)
-Slice 'Observation.hasMember:sliceReportabilityInformationObservation': a matching slice is required, but not found (from http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation|2.1.2). Note that other slices are allowed in addition to this required slice
-Details for Observation/observation-rr-reportability-information-observation matching against profile http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
-A definition for CodeSystem 'urn:oid:2.16.840.1.114222.4.5.274' could not be found, so the code cannot be validated (error because this is a required binding)
-
 # Extension is deprecated but we are using R4 and the R5 Composition element that should be used instead is not available to us
 The extension http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber|5.1.0 is deprecated
 
