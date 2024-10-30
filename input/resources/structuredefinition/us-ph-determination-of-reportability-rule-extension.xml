@@ -37,12 +37,22 @@
             <path value="Extension.url" />
             <fixedUri value="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-determination-of-reportability-rule-extension" />
         </element>
-        <element id="Extension.value[x]:valueString">
+        <!--<element id="Extension.value[x]:valueString">
             <path value="Extension.value[x]" />
             <sliceName value="valueString" />
             <min value="1" />
             <type>
                 <code value="string" />
+            </type>
+        </element>-->
+        <element id="Extension.value[x]">
+            <path value="Extension.value[x]" />
+            <min value="1" />
+            <type>
+                <code value="string" />
+            </type>
+            <type>
+                <code value="CodeableConcept" />
             </type>
         </element>
     </differential>
