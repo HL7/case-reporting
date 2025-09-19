@@ -1,0 +1,31 @@
+Instance: encounter-eicr-eve-everywoman-completed-inpatient
+InstanceOf: EICREncounter
+Title: "US PH Encounter Example: encounter-eicr-eve-everywoman-completed-inpatient"
+Description: "Example of US Public Health Encounter profile (Eve Everywoman: completed inpatient)"
+Usage: #example
+* identifier.system = "http://hospital.smarthealthit.org"
+* identifier.value = "9937012"
+* status = #finished
+* class = $v3-ActCode#IMP "inpatient encounter"
+* type = $cpt#99234
+* type.text = "Under Observation or Inpatient Care Services (Including Admission and Discharge Services)"
+* subject.reference = "Patient/patient-ecr-eve-everywoman"
+* subject.display = "Eve Everywoman"
+* participant.type = $v3-ParticipationType#ATND "attender"
+* participant.individual.reference = "PractitionerRole/practitionerrole-henry-seven"
+* participant.individual.display = "Henry Seven, MD"
+* period.start = "2018-04-01"
+* period.end = "2018-04-12"
+* diagnosis[0].extension.extension[0].url = "triggerCodeValueSet"
+* diagnosis[=].extension.extension[=].valueOid = "urn:oid:2.16.840.1.114222.4.11.7508"
+* diagnosis[=].extension.extension[+].url = "triggerCodeValueSetVersion"
+* diagnosis[=].extension.extension[=].valueString = "12/12/2018"
+* diagnosis[=].extension.extension[+].url = "triggerCode"
+* diagnosis[=].extension.extension[=].valueCoding = $sct#3928002 "Zika virus disease (disorder)"
+* diagnosis[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-trigger-code-flag-extension"
+* diagnosis[=].condition.reference = "Condition/condition-eicr-eve-everywoman-zika"
+* diagnosis[+].condition.reference = "Condition/condition-eicr-eve-everywoman-common-cold"
+* location.location.reference = "Location/location-ecr-salem-medical-center"
+* location.location.display = "Clinic Bldg A, Salem Medical Center, 4646 Brown Rd, Salem, MA 02368"
+* serviceProvider.reference = "Organization/organization-ecr-salem-medical-center"
+* serviceProvider.display = "Salem Medical Center, 22222 Health Authority Drive, Ann Arbor MI, 99999"

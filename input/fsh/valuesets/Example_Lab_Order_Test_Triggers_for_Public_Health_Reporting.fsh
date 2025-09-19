@@ -1,0 +1,28 @@
+ValueSet: Example_Lab_Order_Test_Triggers_for_Public_Health_Reporting
+Id: valueset-lotc-example
+Title: "Example Lab Order Test Triggers for Public Health Reporting"
+Description: "This example set of values contains laboratory test names for orders that represent that the patient may have a potentially reportable condition regardless of the clinical presentation of the condition"
+* ^meta.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"
+* ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/valueset-steward"
+* ^extension[=].valueContactDetail.name = "CSTE Steward"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-author"
+* ^extension[=].valueContactDetail.name = "CSTE Author"
+* ^identifier.system = "urn:ietf:rfc:3986"
+* ^identifier.value = "urn:oid:2.16.840.1.113762.1.4.1146.1056"
+* ^version = "1.0.0"
+* ^status = #draft
+* ^experimental = true
+* ^date = "2018-08-01"
+* ^publisher = "{site.data.fhir.ig.publisher}"
+* ^useContext[0].code = $USPublicHealthUsageContextType#reporting "Reporting"
+* ^useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#triggering "Triggering"
+* ^useContext[+].code = $USPublicHealthUsageContextType#priority "Priority"
+* ^useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#routine "Routine"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
+* ^jurisdiction.text = "United States of America"
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
+* LOINC#11585-7 "Bordetella pertussis Ab [Units/volume] in Serum"
+* LOINC#16474-9 "Bordetella pertussis Ab [Units/volume] in Serum by Complement fixation"
+* LOINC#20992-4 "Bordetella pertussis Ab [Presence] in Unspecified specimen"
+* LOINC#22116-8 "Bordetella pertussis Ab [Titer] in Serum"
+* LOINC#22117-6 "Bordetella pertussis Ab [Titer] in Unspecified specimen"

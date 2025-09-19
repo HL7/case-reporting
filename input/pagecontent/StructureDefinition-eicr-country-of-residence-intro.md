@@ -1,1 +1,0 @@
-This profile should be used when the patient has recent travel history.

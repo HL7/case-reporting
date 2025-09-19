@@ -1,1 +1,0 @@
-This profile requires data elements destination, sender, source, and focus. The focus of an eCR MessageHeader profile is either an eICR Document Bundle or an RR Document Bundle.

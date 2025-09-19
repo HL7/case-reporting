@@ -1,0 +1,28 @@
+ValueSet: Example_Organism_Substance_Triggers_for_Public_Health_Reporting
+Id: valueset-ostc-example
+Title: "Example Organism Substance Triggers for Public Health Reporting"
+Description: "This example set of values contains organism and substance names that represent that the patient may have a potentially reportable condition regardless of the clinical presentation of the condition"
+* ^meta.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"
+* ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/valueset-steward"
+* ^extension[=].valueContactDetail.name = "CSTE Steward"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-author"
+* ^extension[=].valueContactDetail.name = "CSTE Author"
+* ^identifier.system = "urn:ietf:rfc:3986"
+* ^identifier.value = "urn:oid:2.16.840.1.113762.1.4.1146.1059"
+* ^version = "1.0.0"
+* ^status = #draft
+* ^experimental = true
+* ^date = "2018-08-01"
+* ^publisher = "{site.data.fhir.ig.publisher}"
+* ^useContext[0].code = $USPublicHealthUsageContextType#reporting "Reporting"
+* ^useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#triggering "Triggering"
+* ^useContext[+].code = $USPublicHealthUsageContextType#priority "Priority"
+* ^useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#routine "Routine"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
+* ^jurisdiction.text = "United States of America"
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
+* SNOMED_CT#1009003 "Salmonella Oakland (organism)"
+* SNOMED_CT#10096007 "Salmonella Leoben (organism)"
+* SNOMED_CT#10112007 "Salmonella Alamo (organism)"
+* SNOMED_CT#10183008 "Salmonella Pensacola (organism)"
+* SNOMED_CT#10248003 "Salmonella Travis (organism)"
