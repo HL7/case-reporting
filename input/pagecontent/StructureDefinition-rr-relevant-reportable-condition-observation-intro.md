@@ -1,0 +1,3 @@
+This profile contains one (if both the patient's home and the provider location have the same responsible agency) or more (if the patient's home and provider location have different responsible agencies) RR Reportability Information Observations. It may also contain external resources specific to the condition.
+
+Set dataAbsentReason='not-applicable' when the eICR is manually initiated or no reportable condition has been identified (e.g. when there is no rule met). Use valueCodeableConcept.text if there is no available condition code.
