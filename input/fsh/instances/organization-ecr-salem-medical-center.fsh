@@ -6,6 +6,7 @@ Usage: #example
 * identifier.system = "http://hl7.org.fhir/sid/us-npi"
 * identifier.value = "55555555"
 * active = true
+* type = $v3-RoleCode#OF "Outpatient facility"
 * name = "Salem Medical Center"
 * telecom[0].system = #phone
 * telecom[=].value = "+1-555-555-1111"

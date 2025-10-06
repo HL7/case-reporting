@@ -9,8 +9,8 @@ Usage: #example
 * entry[0].fullUrl = "http://example.org/fhir/MessageHeader/messageheader-ecr-requested-eicr"
 * entry[=].resource = messageheader-ecr-requested-eicr
 * entry[+].fullUrl = "http://example.org/fhir/Bundle/bundle-eicr-document-zika"
-* entry[=].resource = Inline-Instance-for-bundle-ecr-message-zika-2
+* entry[=].resource = bundle-eicr-document-zika
 * entry[+].fullUrl = "http://example.org/fhir/Device/device-ecr-software-ymca"
 * entry[=].resource = device-ecr-software-ymca
 * entry[+].fullUrl = "http://example.org/fhir/Organization/organization-ecr-salem-medical-center"
-* entry[=].resource = Inline-Instance-for-bundle-ecr-message-zika-4
+* entry[=].resource = organization-ecr-salem-medical-center

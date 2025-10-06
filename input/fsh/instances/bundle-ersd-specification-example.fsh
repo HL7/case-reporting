@@ -8,9 +8,9 @@ Usage: #definition
 * entry[0].fullUrl = "http://hl7.org/fhir/us/ecr/Library/SpecificationLibrary"
 * entry[=].resource = SpecificationLibrary
 * entry[+].fullUrl = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"
-* entry[=].resource = Inline-Instance-for-bundle-ersd-specification-example-1
+* entry[=].resource = plandefinition-ersd-instance-example
 * entry[+].fullUrl = "http://hl7.org/fhir/us/ecr/Library/library-rctc-example"
-* entry[=].resource = Inline-Instance-for-bundle-ersd-specification-example-2
+* entry[=].resource = library-rctc-example
 * entry[+].fullUrl = "http://hl7.org/fhir/us/ecr/ValueSet/dxtc"
 * entry[=].resource = dxtc
 * entry[+].fullUrl = "http://hl7.org/fhir/us/ecr/ValueSet/lotc"

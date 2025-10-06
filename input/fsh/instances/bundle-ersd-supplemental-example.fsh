@@ -7,9 +7,9 @@ Usage: #definition
 * entry[0].fullUrl = "http://hl7.org/fhir/us/ecr/Library/library-ersd-supplemental-library-example"
 * entry[=].resource = library-ersd-supplemental-library-example
 * entry[+].fullUrl = "http://hl7.org/fhir/us/ecr/Library/RuleFilters"
-* entry[=].resource = Inline-Instance-for-bundle-ersd-supplemental-example-2
+* entry[=].resource = RuleFilters
 * entry[+].fullUrl = "http://hl7.org/fhir/us/ecr/Library/library-us-ph-supplemental-valueset-library-example"
-* entry[=].resource = Inline-Instance-for-bundle-ersd-supplemental-example-3
+* entry[=].resource = library-us-ph-supplemental-valueset-library-example
 * entry[+].fullUrl = "http://hl7.org/fhir/us/ecr/CodeSystem/ersd-jurisdictions-example"
 * entry[=].resource = ersd-jurisdictions-example
 * entry[+].fullUrl = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"
