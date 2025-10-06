@@ -23,8 +23,8 @@ Usage: #inline
 * useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#supplemental "Supplemental"
 * useContext[+].code = $USPublicHealthUsageContextType#priority "Priority"
 * useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#routine "Routine"
-* jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-* jurisdiction.text = "United States of America"
+* jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
+* jurisdiction.text = "United States of America (the)"
 * purpose = "Prescription drugs names used in observations documented in a clinical record."
 * compose.include.system = "http://www.nlm.nih.gov/research/umls/rxnorm"
 * compose.include.concept[0].code = #809002

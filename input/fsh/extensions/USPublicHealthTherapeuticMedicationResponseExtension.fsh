@@ -7,8 +7,8 @@ Context: MedicationAdministration
 * ^experimental = false
 * ^date = "2021-08-01T00:00:00.000Z"
 * ^publisher = "HL7 Public Health Work Group"
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-* ^jurisdiction.text = "United States of America"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
+* ^jurisdiction.text = "United States of America (the)"
 * url 1..1
 * value[x] only CodeableConcept
 * value[x] from TherapeuticResponseToMedication (extensible)

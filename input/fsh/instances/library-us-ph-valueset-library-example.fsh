@@ -14,8 +14,8 @@ Usage: #example
 * type = $library-type#asset-collection
 * publisher = "{site.data.fhir.ig.publisher}"
 * description = "Description of library"
-* jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-* jurisdiction.text = "United States of America"
+* jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
+* jurisdiction.text = "United States of America (the)"
 * purpose = "Purpose of library"
 * effectivePeriod.start = "2020-11-01"
 * relatedArtifact.type = #composed-of

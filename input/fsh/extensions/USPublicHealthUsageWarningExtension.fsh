@@ -7,8 +7,8 @@ Context: ValueSet
 * ^experimental = false
 * ^date = "2019-06-06T00:00:00.000Z"
 * ^publisher = "HL7 Public Health Work Group"
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-* ^jurisdiction.text = "United States of America"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
+* ^jurisdiction.text = "United States of America (the)"
 * . 0..1
 * . ^short = "US Public Health Usage Warning Extension"
 * . ^definition = "An extra warning about the correct use of the value set."

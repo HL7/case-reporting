@@ -18,8 +18,8 @@ Usage: #example
 * useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#triggering "Triggering"
 * useContext[+].code = $USPublicHealthUsageContextType#specification-type "Specification Type"
 * useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#value-set-library "ValueSet Library"
-* jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-* jurisdiction.text = "United States of America"
+* jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
+* jurisdiction.text = "United States of America (the)"
 * purpose = "Triggers for initiating decision support for electronic case reports"
 * effectivePeriod.start = "2019-11-01"
 * relatedArtifact[0].type = #composed-of

@@ -6,8 +6,8 @@ Context: Composition.section.entry, Encounter.diagnosis
 * ^version = "1.0.0"
 * ^experimental = false
 * ^publisher = "HL7 Public Health Work Group"
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-* ^jurisdiction.text = "United States of America"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
+* ^jurisdiction.text = "United States of America (the)"
 * . ..*
 * . ^short = "eICR Trigger Code Flag"
 * . ^definition = "Definition: A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated. It is used in the eICR profile in the following places:\r\r\n- Composition[eICR Composition].section[Problem Section].entry\r- Composition[eICR Composition].section[Results Section].entry\r\n- Composition[eICR Composition].section[Plan of Treatment Section].entry\r- Encounter[eICR Encounter].diagnosis"

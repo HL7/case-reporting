@@ -20,8 +20,8 @@ Usage: #inline
 * useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#supplemental "Supplemental"
 * useContext[+].code = $USPublicHealthUsageContextType#specification-type "Specification Type"
 * useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#value-set-library "ValueSet Library"
-* jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-* jurisdiction.text = "United States of America"
+* jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
+* jurisdiction.text = "United States of America (the)"
 * purpose = "Purpose of library"
 * effectivePeriod.start = "2020-11-01"
 * relatedArtifact[0].type = #composed-of

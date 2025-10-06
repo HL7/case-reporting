@@ -7,8 +7,8 @@ Context: PlanDefinition.action.input, PlanDefinition.action.action.input, PlanDe
 * ^experimental = false
 * ^date = "2022-03-30T00:00:00.000Z"
 * ^publisher = "HL7 International - Public Health Work Group"
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-* ^jurisdiction.text = "United States of America"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
+* ^jurisdiction.text = "United States of America (the)"
 * . ..1
 * . ^short = "US Public Health Related Data Extension"
 * . ^definition = "Points to an existing input or output element that provides data to this input or results as output for the action."

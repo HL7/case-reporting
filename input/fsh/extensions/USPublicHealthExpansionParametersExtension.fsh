@@ -7,8 +7,8 @@ Context: Library
 * ^experimental = false
 * ^date = "2021-07-02T00:00:00.000Z"
 * ^publisher = "HL7 International - Public Health Work Group"
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-* ^jurisdiction.text = "United States of America"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
+* ^jurisdiction.text = "United States of America (the)"
 * . 0..1
 * . ^short = "US Public Health Expansion Parameters Extension"
 * . ^definition = "Supports the definition of expansion parameters for the ValueSet."

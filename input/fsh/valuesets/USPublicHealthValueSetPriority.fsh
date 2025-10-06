@@ -6,7 +6,7 @@ Description: "This value set contains codes representing release priority for Va
 * ^status = #active
 * ^experimental = false
 * ^date = "2018-08-01T00:00:00+10:00"
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-* ^jurisdiction.text = "United States of America"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
+* ^jurisdiction.text = "United States of America (the)"
 * $USPublicHealthUsageContext#emergent "Emergent"
 * $USPublicHealthUsageContext#routine "Routine"

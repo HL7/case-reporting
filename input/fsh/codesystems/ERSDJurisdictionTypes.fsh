@@ -5,8 +5,8 @@ Description: "This code system describes the possible types of jurisdictions tha
 * ^version = "0.1.0"
 * ^status = #active
 * ^experimental = false
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-* ^jurisdiction.text = "United States of America"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
+* ^jurisdiction.text = "United States of America (the)"
 * ^caseSensitive = false
 * ^content = #complete
 * #state "State" "A state-level public health agency/jurisdiction"

@@ -5,8 +5,8 @@ Description: "This Extension profile represents an affiliated tribe name and whe
 Context: Patient
 * ^version = "1.0.0"
 * ^publisher = "HL7 Public Health Work Group"
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-* ^jurisdiction.text = "United States of America"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
+* ^jurisdiction.text = "United States of America (the)"
 * ^purpose = "Tribal affiliation of the patient"
 * . 0..*
 * . ^short = "Tribal Affiliation Extension"

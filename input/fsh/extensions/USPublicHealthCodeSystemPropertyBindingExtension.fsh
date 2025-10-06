@@ -6,8 +6,8 @@ Context: CodeSystem.property
 * ^version = "1.0.0"
 * ^experimental = false
 * ^publisher = "HL7 International - Public Health Work Group"
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-* ^jurisdiction.text = "United States of America"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
+* ^jurisdiction.text = "United States of America (the)"
 * . ^short = "US Public Health CodeSystem Property Binding Extension"
 * . ^definition = "This extension represents an US Public Health CodeSystem Property Binding"
 * value[x] 1..

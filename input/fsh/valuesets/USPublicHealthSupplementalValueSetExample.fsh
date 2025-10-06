@@ -16,8 +16,8 @@ Description: "This valueset is a simplified duplicate of the eRSD Endpoint Conne
 * ^useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#supplemental "Supplemental"
 * ^useContext[+].code = $USPublicHealthUsageContextType#priority "Priority"
 * ^useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#routine "Routine"
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-* ^jurisdiction.text = "United States of America"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
+* ^jurisdiction.text = "United States of America (the)"
 * ^purpose = "Define the set of supported endpoint connection types."
 * include codes from system EndpointConnectionType
 * include codes from system Ersd_CodeSystem_Endpoint_Connection_Type

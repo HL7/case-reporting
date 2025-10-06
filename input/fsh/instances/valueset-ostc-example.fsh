@@ -26,8 +26,8 @@ Usage: #inline
 * useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#routine "Routine"
 * useContext[+].code = $USPublicHealthUsageContextType#reporting "Reporting"
 * useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#supplemental "Supplemental"
-* jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-* jurisdiction.text = "United States of America"
+* jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
+* jurisdiction.text = "United States of America (the)"
 * copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * compose.include.system = "http://snomed.info/sct"
 * compose.include.concept[0].code = #1009003

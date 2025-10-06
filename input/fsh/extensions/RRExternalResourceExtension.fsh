@@ -6,8 +6,8 @@ Context: Observation
 * ^version = "1.0.0"
 * ^experimental = false
 * ^publisher = "HL7 Public Health Work Group"
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-* ^jurisdiction.text = "United States of America"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
+* ^jurisdiction.text = "United States of America (the)"
 * . ^short = "External Resource"
 * value[x] 1..
 * value[x] only Reference(RRDocumentReference)

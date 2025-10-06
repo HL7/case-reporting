@@ -17,8 +17,8 @@ Usage: #example
 * date = "2020-07-31T12:32:29.858-05:00"
 * publisher = "HL7 Public Health Work Group"
 * description = "An example ersd PlanDefinition"
-* jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-* jurisdiction.text = "United States of America"
+* jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
+* jurisdiction.text = "United States of America (the)"
 * effectivePeriod.start = "2020-12-01"
 * relatedArtifact.type = #depends-on
 * relatedArtifact.label = "RCTC Value Set Library of Trigger Codes"

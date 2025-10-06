@@ -12,8 +12,8 @@ Usage: #inline
 * experimental = true
 * publisher = "HL7 Public Health Work Group"
 * description = "This code system describes jurisdictions that require public health reporting."
-* jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-* jurisdiction.text = "United States of America"
+* jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
+* jurisdiction.text = "United States of America (the)"
 * caseSensitive = false
 * content = #complete
 * property[0].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem-property-binding-extension"

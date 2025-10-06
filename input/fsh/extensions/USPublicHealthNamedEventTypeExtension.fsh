@@ -7,8 +7,8 @@ Context: PlanDefinition.action.trigger
 * ^experimental = false
 * ^date = "2019-09-01T00:00:00.000Z"
 * ^publisher = "HL7 International - Public Health Work Group"
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-* ^jurisdiction.text = "United States of America"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
+* ^jurisdiction.text = "United States of America (the)"
 * . 1..1
 * . ^short = "US Public Health Named Event Type Extension"
 * . ^definition = "Indicates the types of named events to subscribe to from the EHR."
