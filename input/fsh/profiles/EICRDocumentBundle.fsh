@@ -10,6 +10,6 @@ Description: "This Bundle profile represents an eCR Document Bundle. It contains
 // * entry contains
 //     sliceUSPublicHealthComposition 1..1 MS
 // * entry[sliceUSPublicHealthComposition] 1..1 MS
-* entry[sliceUSPublicHealthComposition].resource 1.. MS
-* entry[sliceUSPublicHealthComposition].resource only EICRComposition
-* entry[sliceUSPublicHealthComposition].resource ^short = "eICR Composition"
+* entry[USPublicHealthComposition].resource 1.. MS
+* entry[USPublicHealthComposition].resource only EICRComposition
+* entry[USPublicHealthComposition].resource ^short = "eICR Composition"
