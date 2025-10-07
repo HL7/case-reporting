@@ -2,7 +2,7 @@ ValueSet: USPublicHealthComputableValueSetExample
 Id: us-ph-computable-valueset-example
 Title: "US Public Health Computable ValueSet Example"
 Description: "ACME Codes for Cholesterol: Plasma only"
-* ^meta.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-computable-valueset"
+* ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-computable-valueset"
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/valueset-steward"
 * ^extension[=].valueContactDetail.name = "Example Steward"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-author"

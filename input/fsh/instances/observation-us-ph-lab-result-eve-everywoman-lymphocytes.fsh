@@ -4,8 +4,8 @@ Title: "US Public Health Lab Result Observation Example: observation-us-ph-lab-r
 Description: "Example of US Public Health Lab Result profile (Eve Everywoman, lymphocytes)"
 Usage: #example
 * status = #final
-* category = $observation-category#laboratory "Laboratory"
-* category.text = "Laboratory"
+* category[us-core] = $observation-category#laboratory "Laboratory"
+* category[us-core].text = "Laboratory"
 * code = $loinc#731-0 "Lymphocytes [#/volume] in Blood by Automated count"
 * subject.reference = "Patient/patient-ecr-eve-everywoman"
 * subject.display = "Eve Everywoman"

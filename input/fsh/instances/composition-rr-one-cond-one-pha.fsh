@@ -5,7 +5,7 @@ Description: "Example of Reportability Response Composition - One Condition/One 
 Usage: #example
 * extension[0].url = "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber"
 * extension[=].valueString = "1"
-* extension[+].url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-information-recipient-extension"
+* extension[+].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-information-recipient-extension"
 * extension[=].valueReference.reference = "PractitionerRole/practitionerrole-henry-seven"
 * identifier.system = "http://acme.org/identifiers"
 * identifier.value = "RR12347"

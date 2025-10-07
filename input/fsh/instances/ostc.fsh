@@ -17,10 +17,10 @@ Usage: #inline
 * description = "Purpose: Clinical Focus - This set of values contains organism and substance names received in a laboratory results report, that may represent that the patient has a potentially reportable condition. These pertain to resulted laboratory reports, where the test method is a non-specific test (e.g., general cultures not specific to a condition) and the result value, coded in SNOMED, includes the organism or substance name. Purpose: Data Element Scope - Nominal laboratory result values documented in a clinical record. Purpose: Inclusion Criteria - See individual value sets. Purpose: Exclusion Criteria - See individual value sets. Note - Includes codes from selected value sets used in the Reportable Condition Knowledge Management System (RCKMS) reporting logic. RCKMS value sets in VSAC are for informational use only. When implementing trigger codes for electronic case reporting, use the Reportable Condition Trigger Codes (RCTC) file."
 * useContext[0].code = $usage-context-type#program
 * useContext[=].valueReference.reference = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"
-* useContext[+].code = $USPublicHealthUsageContextType#reporting
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#triggering
-* useContext[+].code = $USPublicHealthUsageContextType#priority
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#routine
+* useContext[reportingContext].code = $USPublicHealthUsageContextType#reporting
+* useContext[reportingContext].valueCodeableConcept = $USPublicHealthUsageContext#triggering
+* useContext[priorityContext].code = $USPublicHealthUsageContextType#priority
+* useContext[priorityContext].valueCodeableConcept = $USPublicHealthUsageContext#routine
 * purpose = "Nominal laboratory result values documented in a clinical record."
 * compose.include[0].valueSet = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.528"
 * compose.include[+].valueSet = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.408"

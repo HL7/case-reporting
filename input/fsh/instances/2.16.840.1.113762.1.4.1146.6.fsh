@@ -15,13 +15,13 @@ Usage: #inline
 * experimental = true
 * publisher = "eCR"
 * description = "Diphtheria (Disorders) (SNOMED)"
-* useContext[0].code = $usage-context-type#focus
+* useContext[focusConditionContext].code = $usage-context-type#focus
 * useContext[=].valueCodeableConcept = $sct#276197005
 * useContext[=].valueCodeableConcept.text = "Infection caused by Corynebacterium diphtheriae (disorder)"
-* useContext[+].code = $USPublicHealthUsageContextType#reporting
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#triggering
-* useContext[+].code = $USPublicHealthUsageContextType#priority
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#routine
+* useContext[reportingContext].code = $USPublicHealthUsageContextType#reporting
+* useContext[reportingContext].valueCodeableConcept = $USPublicHealthUsageContext#triggering
+* useContext[priorityContext].code = $USPublicHealthUsageContextType#priority
+* useContext[priorityContext].valueCodeableConcept = $USPublicHealthUsageContext#routine
 * compose.include.system = "http://snomed.info/sct"
 * compose.include.version = "Provisional_2022-01-10"
 * compose.include.concept[0].code = #1086051000119107

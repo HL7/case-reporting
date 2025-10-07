@@ -15,13 +15,13 @@ Usage: #inline
 * experimental = true
 * publisher = "eCR"
 * description = "Mumps (Test Panels for mumps virus Nucleic Acid)"
-* useContext[0].code = $usage-context-type#focus
+* useContext[focusConditionContext].code = $usage-context-type#focus
 * useContext[=].valueCodeableConcept = $sct#36989005
 * useContext[=].valueCodeableConcept.text = "Mumps (disorder)"
-* useContext[+].code = $USPublicHealthUsageContextType#reporting
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#triggering
-* useContext[+].code = $USPublicHealthUsageContextType#priority
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#routine
+* useContext[reportingContext].code = $USPublicHealthUsageContextType#reporting
+* useContext[reportingContext].valueCodeableConcept = $USPublicHealthUsageContext#triggering
+* useContext[priorityContext].code = $USPublicHealthUsageContextType#priority
+* useContext[priorityContext].valueCodeableConcept = $USPublicHealthUsageContext#routine
 * compose.include.system = "http://loinc.org"
 * compose.include.version = "Provisional_2021-12-30"
 * compose.include.concept[0].code = #85808-4

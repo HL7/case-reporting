@@ -13,10 +13,10 @@ Usage: #inline
 * experimental = true
 * publisher = "Council of State and Territorial Epidemiologists Steward"
 * description = "missing description"
-* useContext[0].code = $USPublicHealthUsageContextType#reporting
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#supplemental
-* useContext[+].code = $USPublicHealthUsageContextType#priority
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#routine
+* useContext[reportingContext].code = $USPublicHealthUsageContextType#reporting
+* useContext[reportingContext].valueCodeableConcept = $USPublicHealthUsageContext#supplemental
+* useContext[priorityContext].code = $USPublicHealthUsageContextType#priority
+* useContext[priorityContext].valueCodeableConcept = $USPublicHealthUsageContext#routine
 * compose.include.system = "http://snomed.info/sct"
 * compose.include.concept[0].code = #131194007
 * compose.include.concept[=].display = "Non-Reactive (qualifier value)"

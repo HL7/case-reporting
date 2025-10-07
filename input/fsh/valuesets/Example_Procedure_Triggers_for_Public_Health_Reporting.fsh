@@ -2,7 +2,7 @@ ValueSet: Example_Procedure_Triggers_for_Public_Health_Reporting
 Id: valueset-pctc-example
 Title: "Example Procedure Triggers for Public Health Reporting"
 Description: "This example set of values contains procedure names for orders that represent that the patient may have a received a procedure or that a procedure has been requested."
-* ^meta.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"
+* ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-triggering-valueset"
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/valueset-steward"
 * ^extension[=].valueContactDetail.name = "CSTE Steward"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-author"

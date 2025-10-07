@@ -4,7 +4,7 @@ Title: "US Public Health ValueSet Library Expansion Parameters Example"
 Description: "An example of the US Public Health ValueSet Library"
 Usage: #example
 * contained = expansion-parameters-ecr
-* extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-expansion-parameters-extension"
+* extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-expansion-parameters-extension"
 * extension.valueReference.reference = "#expansion-parameters-ecr"
 * url = "http://hl7.org/fhir/us/ecr/Library/library-us-ph-valueset-library-expansion-parameters-example"
 * identifier.system = "urn:ietf:rfc:3986"

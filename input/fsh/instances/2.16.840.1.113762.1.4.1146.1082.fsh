@@ -15,13 +15,13 @@ Usage: #inline
 * experimental = true
 * publisher = "eCR"
 * description = "Anthrax Vaccine (RXNORM)"
-* useContext[0].code = $usage-context-type#focus
+* useContext[focusConditionContext].code = $usage-context-type#focus
 * useContext[=].valueCodeableConcept = $sct#409498004
 * useContext[=].valueCodeableConcept.text = "Anthrax (disorder)"
-* useContext[+].code = $USPublicHealthUsageContextType#reporting
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#triggering
-* useContext[+].code = $USPublicHealthUsageContextType#priority
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#routine
+* useContext[reportingContext].code = $USPublicHealthUsageContextType#reporting
+* useContext[reportingContext].valueCodeableConcept = $USPublicHealthUsageContext#triggering
+* useContext[priorityContext].code = $USPublicHealthUsageContextType#priority
+* useContext[priorityContext].valueCodeableConcept = $USPublicHealthUsageContext#routine
 * compose.include.system = "http://www.nlm.nih.gov/research/umls/rxnorm"
 * compose.include.version = "2022-01"
 * compose.include.concept[0].code = #832679

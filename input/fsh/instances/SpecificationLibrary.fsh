@@ -11,10 +11,10 @@ Usage: #inline
 * type = $library-type#asset-collection
 * publisher = "eCR"
 * description = "Defines the asset-collection library containing the US Public Health specification assets."
-* useContext[0].code = $USPublicHealthUsageContextType#reporting
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#triggering
-* useContext[+].code = $USPublicHealthUsageContextType#specification-type
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#program
+* useContext[reportingContext].code = $USPublicHealthUsageContextType#reporting
+* useContext[reportingContext].valueCodeableConcept = $USPublicHealthUsageContext#triggering
+* useContext[specificationTypeContext].code = $USPublicHealthUsageContextType#specification-type
+* useContext[specificationTypeContext].valueCodeableConcept = $USPublicHealthUsageContext#program
 * relatedArtifact[planDefinition].type = #composed-of
 * relatedArtifact[planDefinition].resource = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"
 * relatedArtifact[triggeringValueSetLibrary].type = #composed-of

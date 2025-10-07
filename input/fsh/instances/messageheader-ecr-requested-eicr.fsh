@@ -3,9 +3,9 @@ InstanceOf: Ecr_MessageHeader
 Title: "eCR MessageHeader Example: Requested eICR"
 Description: "Example of eCR MessageHeader profile (Requested eICR)"
 Usage: #example
-* extension[0].url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-data-encrypted-extension"
+* extension[0].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-data-encrypted-extension"
 * extension[=].valueBoolean = false
-* extension[+].url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-message-processing-category-extension"
+* extension[+].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-message-processing-category-extension"
 * extension[=].valueCode = #consequence
 * eventCoding = USPublicHealthMessageTypesCodeSystem#eicr-case-report-message "Indicates a message containing electronic case report healthcare data sent from clinical care."
 * destination.name = "YMCA Acme Message Gateway"

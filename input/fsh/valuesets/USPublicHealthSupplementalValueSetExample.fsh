@@ -2,7 +2,7 @@ ValueSet: USPublicHealthSupplementalValueSetExample
 Id: valueset-us-ph-supplemental-valueset-example
 Title: "US Public Health Supplemental Valueset Example"
 Description: "This valueset is a simplified duplicate of the eRSD Endpoint Connection Type valueset created for the purposes of demonstraing, by example, the US Public Health Supplemental ValueSet profile."
-* ^meta.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-supplemental-valueset"
+* ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-supplemental-valueset"
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/valueset-steward"
 * ^extension[=].valueContactDetail.name = "CSTE Steward"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-author"

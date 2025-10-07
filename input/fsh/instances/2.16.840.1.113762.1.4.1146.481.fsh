@@ -15,13 +15,13 @@ Usage: #inline
 * experimental = true
 * publisher = "eCR"
 * description = "Anthrax (Tests for Bacillis anthracis Antibody)"
-* useContext[0].code = $usage-context-type#focus
+* useContext[focusConditionContext].code = $usage-context-type#focus
 * useContext[=].valueCodeableConcept = $sct#409498004
 * useContext[=].valueCodeableConcept.text = "Anthrax (disorder)"
-* useContext[+].code = $USPublicHealthUsageContextType#reporting
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#triggering
-* useContext[+].code = $USPublicHealthUsageContextType#priority
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#routine
+* useContext[reportingContext].code = $USPublicHealthUsageContextType#reporting
+* useContext[reportingContext].valueCodeableConcept = $USPublicHealthUsageContext#triggering
+* useContext[priorityContext].code = $USPublicHealthUsageContextType#priority
+* useContext[priorityContext].valueCodeableConcept = $USPublicHealthUsageContext#routine
 * compose.include.system = "http://loinc.org"
 * compose.include.version = "Provisional_2021-12-30"
 * compose.include.concept[0].code = #22860-1

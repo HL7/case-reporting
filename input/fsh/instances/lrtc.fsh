@@ -17,10 +17,10 @@ Usage: #inline
 * description = "Purpose: Clinical Focus - This set of values contains laboratory observation test names that may represent that the patient may have a potentially reportable condition. These pertain to resulted laboratory reports, where the lab test name, coded in LOINC, is specific to a reportable condition. Purpose: Data Element Scope - Laboratory test names used in observations documented in a clinical record. Purpose: Inclusion Criteria - See individual value sets. Purpose: Exclusion Criteria - See individual value sets. Note - Includes codes from selected value sets used in the Reportable Condition Knowledge Management System (RCKMS) reporting logic. RCKMS value sets in VSAC are for informational use only. When implementing trigger codes for electronic case reporting, use the Reportable Condition Trigger Codes (RCTC) file."
 * useContext[0].code = $usage-context-type#program
 * useContext[=].valueReference.reference = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"
-* useContext[+].code = $USPublicHealthUsageContextType#reporting
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#triggering
-* useContext[+].code = $USPublicHealthUsageContextType#priority
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#routine
+* useContext[reportingContext].code = $USPublicHealthUsageContextType#reporting
+* useContext[reportingContext].valueCodeableConcept = $USPublicHealthUsageContext#triggering
+* useContext[priorityContext].code = $USPublicHealthUsageContextType#priority
+* useContext[priorityContext].valueCodeableConcept = $USPublicHealthUsageContext#routine
 * purpose = "Laboratory test names used in observations documented in a clinical record."
 * compose.include[0].valueSet = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1182"
 * compose.include[+].valueSet = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1181"

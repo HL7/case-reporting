@@ -16,12 +16,12 @@ Usage: #inline
 * jurisdiction.text = "United States of America (the)"
 * caseSensitive = false
 * content = #complete
-* property[0].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem-property-binding-extension"
+* property[0].extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-codesystem-property-binding-extension"
 * property[=].extension.valueCanonical = "http://hl7.org/fhir/us/ecr/CodeSystem/ersd-jurisdiction-types"
 * property[=].code = #type
 * property[=].description = "Type of public health jurisdiction."
 * property[=].type = #code
-* property[+].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem-property-binding-extension"
+* property[+].extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-codesystem-property-binding-extension"
 * property[=].extension.valueCanonical = "http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state"
 * property[=].code = #state
 * property[=].description = "USPS Two Letter Alphabetic Codes."

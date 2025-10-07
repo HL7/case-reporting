@@ -33,7 +33,7 @@ Usage: #definition
 * rest[=].resource[=].interaction[+].code = #delete
 * rest[=].resource[=].interaction[=].documentation = "Allows deletion of Composition instances"
 * rest[=].resource[+].type = #Organization
-* rest[=].resource[=].supportedProfile[0] = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"
+* rest[=].resource[=].supportedProfile[0] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-organization"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization"
@@ -46,7 +46,7 @@ Usage: #definition
 * rest[=].resource[=].interaction[+].code = #delete
 * rest[=].resource[=].interaction[=].documentation = "Allows deletion of Organization instances"
 * rest[=].resource[+].type = #Encounter
-* rest[=].resource[=].profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter"
+* rest[=].resource[=].profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-encounter"
 * rest[=].resource[=].interaction[0].code = #create
 * rest[=].resource[=].interaction[=].documentation = "Allows creation of Encounter instances"
 * rest[=].resource[=].interaction[+].code = #read
@@ -56,7 +56,7 @@ Usage: #definition
 * rest[=].resource[=].interaction[+].code = #delete
 * rest[=].resource[=].interaction[=].documentation = "Allows deletion of Encounter instances"
 * rest[=].resource[+].type = #Location
-* rest[=].resource[=].profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-location"
+* rest[=].resource[=].profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-location"
 * rest[=].resource[=].interaction[0].code = #create
 * rest[=].resource[=].interaction[=].documentation = "Allows creation of Location instances"
 * rest[=].resource[=].interaction[+].code = #read
@@ -66,12 +66,12 @@ Usage: #definition
 * rest[=].resource[=].interaction[+].code = #delete
 * rest[=].resource[=].interaction[=].documentation = "Allows deletion of Location instances"
 * rest[=].resource[+].type = #Observation
-* rest[=].resource[=].supportedProfile[0] = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-travel-history"
+* rest[=].resource[=].supportedProfile[0] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-travel-history"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation"
-* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-outcome-observation"
-* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-status-observation"
-* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-postpartum-status"
+* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-pregnancy-outcome-observation"
+* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-pregnancy-status-observation"
+* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-postpartum-status"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-summary"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation"
@@ -84,7 +84,7 @@ Usage: #definition
 * rest[=].resource[=].interaction[+].code = #delete
 * rest[=].resource[=].interaction[=].documentation = "Allows deletion of Observation instances"
 * rest[=].resource[+].type = #Patient
-* rest[=].resource[=].profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"
+* rest[=].resource[=].profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-patient"
 * rest[=].resource[=].interaction[0].code = #create
 * rest[=].resource[=].interaction[=].documentation = "Allows creation of Patient instances"
 * rest[=].resource[=].interaction[+].code = #read
@@ -94,7 +94,7 @@ Usage: #definition
 * rest[=].resource[=].interaction[+].code = #delete
 * rest[=].resource[=].interaction[=].documentation = "Allows deletion of Patient instances"
 * rest[=].resource[+].type = #PractitionerRole
-* rest[=].resource[=].profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-practitionerrole"
+* rest[=].resource[=].profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-practitionerrole"
 * rest[=].resource[=].interaction[0].code = #create
 * rest[=].resource[=].interaction[=].documentation = "Allows creation of PractitionerRole instances"
 * rest[=].resource[=].interaction[+].code = #read
@@ -116,7 +116,7 @@ Usage: #definition
 * rest[=].resource[+].type = #Bundle
 * rest[=].resource[=].supportedProfile[0] = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-document-bundle"
-* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-reporting-bundle"
+* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-reporting-bundle"
 * rest[=].resource[=].interaction[0].code = #create
 * rest[=].resource[=].interaction[=].documentation = "Allows creation of Bundle instances"
 * rest[=].resource[=].interaction[+].code = #read
@@ -159,7 +159,7 @@ Usage: #definition
 * rest[=].resource[=].interaction[+].code = #delete
 * rest[=].resource[=].interaction[=].documentation = "Allows deletion of Composition instances"
 * rest[=].resource[+].type = #Organization
-* rest[=].resource[=].supportedProfile[0] = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-organization"
+* rest[=].resource[=].supportedProfile[0] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-organization"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-responsible-agency-organization"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-rules-authoring-agency-organization"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-routing-entity-organization"
@@ -172,7 +172,7 @@ Usage: #definition
 * rest[=].resource[=].interaction[+].code = #delete
 * rest[=].resource[=].interaction[=].documentation = "Allows deletion of Organization instances"
 * rest[=].resource[+].type = #Encounter
-* rest[=].resource[=].profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-encounter"
+* rest[=].resource[=].profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-encounter"
 * rest[=].resource[=].interaction[0].code = #create
 * rest[=].resource[=].interaction[=].documentation = "Allows creation of Encounter instances"
 * rest[=].resource[=].interaction[+].code = #read
@@ -182,7 +182,7 @@ Usage: #definition
 * rest[=].resource[=].interaction[+].code = #delete
 * rest[=].resource[=].interaction[=].documentation = "Allows deletion of Encounter instances"
 * rest[=].resource[+].type = #Location
-* rest[=].resource[=].profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-location"
+* rest[=].resource[=].profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-location"
 * rest[=].resource[=].interaction[0].code = #create
 * rest[=].resource[=].interaction[=].documentation = "Allows creation of Location instances"
 * rest[=].resource[=].interaction[+].code = #read
@@ -192,12 +192,12 @@ Usage: #definition
 * rest[=].resource[=].interaction[+].code = #delete
 * rest[=].resource[=].interaction[=].documentation = "Allows deletion of Location instances"
 * rest[=].resource[+].type = #Observation
-* rest[=].resource[=].supportedProfile[0] = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-travel-history"
+* rest[=].resource[=].supportedProfile[0] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-travel-history"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-reason-observation"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation"
-* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-outcome-observation"
-* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-pregnancy-status-observation"
-* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-postpartum-status"
+* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-pregnancy-outcome-observation"
+* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-pregnancy-status-observation"
+* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-postpartum-status"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-summary"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation"
@@ -210,7 +210,7 @@ Usage: #definition
 * rest[=].resource[=].interaction[+].code = #delete
 * rest[=].resource[=].interaction[=].documentation = "Allows deletion of Observation instances"
 * rest[=].resource[+].type = #Patient
-* rest[=].resource[=].profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-patient"
+* rest[=].resource[=].profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-patient"
 * rest[=].resource[=].interaction[0].code = #create
 * rest[=].resource[=].interaction[=].documentation = "Allows creation of Patient instances"
 * rest[=].resource[=].interaction[+].code = #read
@@ -220,7 +220,7 @@ Usage: #definition
 * rest[=].resource[=].interaction[+].code = #delete
 * rest[=].resource[=].interaction[=].documentation = "Allows deletion of Patient instances"
 * rest[=].resource[+].type = #PractitionerRole
-* rest[=].resource[=].profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-practitionerrole"
+* rest[=].resource[=].profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-practitionerrole"
 * rest[=].resource[=].interaction[0].code = #create
 * rest[=].resource[=].interaction[=].documentation = "Allows creation of PractitionerRole instances"
 * rest[=].resource[=].interaction[+].code = #read
@@ -242,7 +242,7 @@ Usage: #definition
 * rest[=].resource[+].type = #Bundle
 * rest[=].resource[=].supportedProfile[0] = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-document-bundle"
-* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-reporting-bundle"
+* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-reporting-bundle"
 * rest[=].resource[=].interaction[0].code = #create
 * rest[=].resource[=].interaction[=].documentation = "Allows creation of Bundle instances"
 * rest[=].resource[=].interaction[+].code = #read

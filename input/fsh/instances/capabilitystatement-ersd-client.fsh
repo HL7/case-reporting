@@ -34,11 +34,11 @@ Usage: #definition
 * rest.resource[0].type = #Bundle
 * rest.resource[=].supportedProfile[0] = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
 * rest.resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-document-bundle"
-* rest.resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-reporting-bundle"
+* rest.resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-reporting-bundle"
 * rest.resource[=].documentation = "The Bundle represents the artifacts that are to be distributed to subscribers. The Bundle contains the information necessary for implementers to update their systems. The Bundle typically includes PlanDefinition and ValueSet resources. The Bundle may also contain a message from the administrator that indicates the severity of the update."
 * rest.resource[=].interaction.code = #read
 * rest.resource[+].type = #ValueSet
-* rest.resource[=].profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset"
+* rest.resource[=].profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-valueset"
 * rest.resource[=].interaction.code = #read
 * rest.resource[+].type = #PlanDefinition
 * rest.resource[=].profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition"
@@ -50,5 +50,5 @@ Usage: #definition
 * rest.resource[=].documentation = "A Subscription is used to notify a Person using the specified channel (email, rest-hook or email-based SMS) that a Bundle has been updated on the FHIR Server."
 * rest.resource[=].interaction.code = #read
 * rest.resource[+].type = #Library
-* rest.resource[=].profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset-library"
+* rest.resource[=].profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-valueset-library"
 * rest.resource[=].interaction.code = #read

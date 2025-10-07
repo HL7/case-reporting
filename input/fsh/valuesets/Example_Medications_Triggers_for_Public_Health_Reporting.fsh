@@ -2,7 +2,7 @@ ValueSet: Example_Medications_Triggers_for_Public_Health_Reporting
 Id: valueset-mrtc-example
 Title: "Example Medications Triggers for Public Health Reporting"
 Description: "This example set of values contains CVX, RXNORM,and SNOMED medication codes that may represent that the patient may have a potentially reportable condition. These pertain to medications administered and medications prescribed, where the medication, coded in CVX,RXNORM,SNOMED, may be indicative of a reportable condition."
-* ^meta.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"
+* ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-triggering-valueset"
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/valueset-steward"
 * ^extension[=].valueContactDetail.name = "CSTE Steward"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-author"

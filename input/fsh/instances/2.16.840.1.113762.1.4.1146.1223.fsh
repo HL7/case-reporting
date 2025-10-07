@@ -15,13 +15,13 @@ Usage: #inline
 * experimental = true
 * publisher = "eCR"
 * description = "COVID_19 (Tests for SARS_CoV_2 by Culture and Identification Method)"
-* useContext[0].code = $usage-context-type#focus
-* useContext[=].valueCodeableConcept = $sct#840539006
+* useContext[focusConditionContext].code = $usage-context-type#focus
+* useContext[focusConditionContext].valueCodeableConcept = $sct#840539006
 * useContext[=].valueCodeableConcept.text = "Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)"
-* useContext[+].code = $USPublicHealthUsageContextType#reporting
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#triggering
-* useContext[+].code = $USPublicHealthUsageContextType#priority
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#routine
+* useContext[reportingContext].code = $USPublicHealthUsageContextType#reporting
+* useContext[reportingContext].valueCodeableConcept = $USPublicHealthUsageContext#triggering
+* useContext[priorityContext].code = $USPublicHealthUsageContextType#priority
+* useContext[priorityContext].valueCodeableConcept = $USPublicHealthUsageContext#routine
 * compose.include.system = "http://loinc.org"
 * compose.include.version = "Provisional_2021-12-30"
 * compose.include.concept[0].code = #94763-0

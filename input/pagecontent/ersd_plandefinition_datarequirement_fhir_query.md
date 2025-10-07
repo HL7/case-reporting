@@ -8,7 +8,7 @@ This document describes support for both default and site or program-specific da
 Below is an example of a PlanDefinition action's input property with a default FHIR Query pattern specified in the "us-ph-fhirquerypattern-extension" extension:
 ```xml
 <input id="conditions">
-    <extension url="http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension">
+    <extension url="http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-fhirquerypattern-extension">
         <valueString value="Condition?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example&patient=Patient/{{context.patientId}}" />
     </extension>
     <type value="Condition"/>

@@ -2,7 +2,7 @@ CodeSystem: ERSDJurisdictionsExample
 Id: ersd-jurisdictions-example
 Title: "eRSD Jurisdictions Example"
 Description: "This code system describes jurisdictions that require public health reporting."
-* ^meta.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem"
+* ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-codesystem"
 * ^version = "0.1.0"
 * ^status = #active
 * ^experimental = true
@@ -11,12 +11,12 @@ Description: "This code system describes jurisdictions that require public healt
 * ^jurisdiction.text = "United States of America (the)"
 * ^caseSensitive = false
 * ^content = #complete
-* ^property[0].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem-property-binding-extension"
+* ^property[0].extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-codesystem-property-binding-extension"
 * ^property[=].extension.valueCanonical = "http://hl7.org/fhir/us/ecr/CodeSystem/ersd-jurisdiction-types"
 * ^property[=].code = #type
 * ^property[=].description = "Type of public health jurisdiction."
 * ^property[=].type = #code
-* ^property[+].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-codesystem-property-binding-extension"
+* ^property[+].extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-codesystem-property-binding-extension"
 * ^property[=].extension.valueCanonical = "http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state"
 * ^property[=].code = #state
 * ^property[=].description = "USPS Two Letter Alphabetic Codes."

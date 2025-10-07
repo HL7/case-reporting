@@ -2,7 +2,7 @@ ValueSet: USPublicHealthValueSetChlamydiaExample
 Id: us-ph-valueset-example
 Title: "US Public Health ValueSet Chlamydia Example"
 Description: "This example set of values contains laboratory observations test names that represent Chlamydia tests"
-* ^meta.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-valueset"
+* ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-valueset"
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/valueset-steward"
 * ^extension[=].valueContactDetail.name = "Example Steward"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-author"

@@ -67,7 +67,7 @@ Each of these are discussed in more detail in the following sections.
 Events are represented with the `trigger` element, using the `named-event` trigger type and bound to the [US Public Health TriggerDefinition Named Event](ValueSet-us-ph-triggerdefinition-namedevent.html) value set. In addition, since the `name` element of the trigger definition is a `uri`, the eRSD profile uses the [US Public Health Named Event Type Extension](StructureDefinition-us-ph-named-eventtype-extension.html) to provide complete binding information for the value set, as illustrated in the eRSDPlanDefinition example:
 
 <pre><code>&lt;trigger id=&quot;encounter-start&quot;&gt;
-  &lt;extension url=&quot;http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension&quot;&gt;
+  &lt;extension url=&quot;http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-named-eventtype-extension&quot;&gt;
     &lt;valueCodeableConcept&gt;
       &lt;coding&gt;
         &lt;system value=&quot;http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-triggerdefinition-namedevents&quot;/&gt;
@@ -229,7 +229,7 @@ The supplemental level of integration enables sites to participate in the suspec
 
 The suspected reportability criteria are also represented with the `condition` element, but using the [US Public Health Alternative Expression](StructureDefinition-us-ph-alternative-expression-extension.html) to provide the CQL expression for suspected reportability:
 
-<pre><code>&lt;extension url=&quot;http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-alternative-expression-extension&quot;&gt;
+<pre><code>&lt;extension url=&quot;http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-alternative-expression-extension&quot;&gt;
   &lt;valueExpression&gt;
     &lt;language value=&quot;text/cql-identifier&quot;/&gt;
     &lt;expression value=&quot;Is Reportable&quot;/&gt;

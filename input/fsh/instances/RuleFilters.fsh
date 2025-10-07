@@ -3,8 +3,8 @@ InstanceOf: Library
 Title: "Rule Filters Example Library"
 Description: "An example library with logic for determining whether or not an event or situation is reportable."
 Usage: #example
-* meta.profile[0] = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-executable-library"
-* meta.profile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-computable-library"
+* meta.profile[0] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-executable-library"
+* meta.profile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-computable-library"
 * url = "http://hl7.org/fhir/us/ecr/Library/RuleFilters"
 * version = "2.1.0"
 * name = "RuleFilters"

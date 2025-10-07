@@ -2,7 +2,7 @@ ValueSet: Example_Lab_Order_Test_Triggers_for_Public_Health_Reporting
 Id: valueset-lotc-example
 Title: "Example Lab Order Test Triggers for Public Health Reporting"
 Description: "This example set of values contains laboratory test names for orders that represent that the patient may have a potentially reportable condition regardless of the clinical presentation of the condition"
-* ^meta.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-triggering-valueset"
+* ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-triggering-valueset"
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/valueset-steward"
 * ^extension[=].valueContactDetail.name = "CSTE Steward"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-author"

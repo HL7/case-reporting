@@ -3,7 +3,7 @@ InstanceOf: USPublicHealthPlanDefinition
 Title: "US Public Health PlanDefinition Example"
 Description: "Example of US Public Health PlanDefinition profile"
 Usage: #example
-* extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-receiver-address-extension"
+* extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-receiver-address-extension"
 * extension.valueReference.reference = "Endpoint/endpoint-ecr-ymca"
 * url = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-us-public-health-example"
 * version = "2.1.0"

@@ -15,13 +15,13 @@ Usage: #inline
 * experimental = true
 * publisher = "eCR"
 * description = "Acanthamoeba Disease [Keratitis] (Disorders) (ICD10CM)"
-* useContext[0].code = $usage-context-type#focus
-* useContext[=].valueCodeableConcept = $sct#49649001
+* useContext[focusConditionContext].code = $usage-context-type#focus
+* useContext[focusConditionContext].valueCodeableConcept = $sct#49649001
 * useContext[=].valueCodeableConcept.text = "Infection caused by Acanthamoeba (disorder)"
-* useContext[+].code = $USPublicHealthUsageContextType#reporting
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#triggering
-* useContext[+].code = $USPublicHealthUsageContextType#priority
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#routine
+* useContext[reportingContext].code = $USPublicHealthUsageContextType#reporting
+* useContext[reportingContext].valueCodeableConcept = $USPublicHealthUsageContext#triggering
+* useContext[priorityContext].code = $USPublicHealthUsageContextType#priority
+* useContext[priorityContext].valueCodeableConcept = $USPublicHealthUsageContext#routine
 * compose.include.system = "http://hl7.org/fhir/sid/icd-10-cm"
 * compose.include.version = "Provisional_2022-01-12"
 * compose.include.concept[0].code = #B60.12

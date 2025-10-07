@@ -15,13 +15,13 @@ Usage: #inline
 * experimental = true
 * publisher = "eCR"
 * description = "Hepatitis C Virus Infection (Organism or Substance in Lab Results)"
-* useContext[0].code = $usage-context-type#focus
+* useContext[focusConditionContext].code = $usage-context-type#focus
 * useContext[=].valueCodeableConcept = $sct#50711007
 * useContext[=].valueCodeableConcept.text = "Viral hepatitis type C (disorder)"
-* useContext[+].code = $USPublicHealthUsageContextType#reporting
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#triggering
-* useContext[+].code = $USPublicHealthUsageContextType#priority
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#routine
+* useContext[reportingContext].code = $USPublicHealthUsageContextType#reporting
+* useContext[reportingContext].valueCodeableConcept = $USPublicHealthUsageContext#triggering
+* useContext[priorityContext].code = $USPublicHealthUsageContextType#priority
+* useContext[priorityContext].valueCodeableConcept = $USPublicHealthUsageContext#routine
 * compose.include.system = "http://snomed.info/sct"
 * compose.include.version = "Provisional_2022-01-10"
 * compose.include.concept[0].code = #121022006

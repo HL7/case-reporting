@@ -15,13 +15,13 @@ Usage: #inline
 * experimental = true
 * publisher = "eCR"
 * description = "HIV Infection (ARV Attachment Inhibitors) (RXNORM)"
-* useContext[0].code = $usage-context-type#focus
-* useContext[=].valueCodeableConcept = $sct#76981000119106
+* useContext[focusConditionContext].code = $usage-context-type#focus
+* useContext[focusConditionContext].valueCodeableConcept = $sct#76981000119106
 * useContext[=].valueCodeableConcept.text = "Human immunodeficiency virus (HIV) infection category B1 (disorder)"
-* useContext[+].code = $USPublicHealthUsageContextType#reporting
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#triggering
-* useContext[+].code = $USPublicHealthUsageContextType#priority
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#routine
+* useContext[reportingContext].code = $USPublicHealthUsageContextType#reporting
+* useContext[reportingContext].valueCodeableConcept = $USPublicHealthUsageContext#triggering
+* useContext[priorityContext].code = $USPublicHealthUsageContextType#priority
+* useContext[priorityContext].valueCodeableConcept = $USPublicHealthUsageContext#routine
 * compose.include.system = "http://www.nlm.nih.gov/research/umls/rxnorm"
 * compose.include.version = "2022-01"
 * compose.include.concept[0].code = #2380549
