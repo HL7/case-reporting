@@ -11,7 +11,7 @@ Usage: #example
 * code = $loinc#82810-3 "Pregnancy status"
 * subject.reference = "Patient/patient-ecr-eve-everywoman"
 * subject.display = "Eve Everywoman"
-* effectivePeriod.start = "2017-08-26"
+* effectiveDateTime = "2017-08-26"
 * valueCodeableConcept = $sct#77386006 "Pregnancy (finding)"
 * method = $sct#16310003 "Ultrasonography (procedure)"
 * component[0].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-date-determined-extension"

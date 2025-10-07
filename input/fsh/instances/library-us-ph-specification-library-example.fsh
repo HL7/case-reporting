@@ -14,15 +14,15 @@ Usage: #example
 * type = $library-type#asset-collection
 * publisher = "{site.data.fhir.ig.publisher}"
 * description = "Description of library"
-* useContext[0].code = $USPublicHealthUsageContextType#reporting "Reporting"
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#triggering "Triggering"
-* useContext[+].code = $USPublicHealthUsageContextType#specification-type "Specification Type"
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#program "Program"
+* useContext[reportingContext].code = $USPublicHealthUsageContextType#reporting "Reporting"
+* useContext[reportingContext].valueCodeableConcept = $USPublicHealthUsageContext#triggering "Triggering"
+* useContext[specificationTypeContext].code = $USPublicHealthUsageContextType#specification-type "Specification Type"
+* useContext[specificationTypeContext].valueCodeableConcept = $USPublicHealthUsageContext#program "Program"
 * jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
 * jurisdiction.text = "United States of America (the)"
 * purpose = "Purpose of library"
 * effectivePeriod.start = "2020-11-01"
-* relatedArtifact[0].type = #composed-of
-* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-us-public-health-example"
-* relatedArtifact[+].type = #composed-of
-* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/Library/library-rctc-example"
+* relatedArtifact[planDefinition].type = #composed-of
+* relatedArtifact[planDefinition].resource = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-us-public-health-example"
+* relatedArtifact[triggeringValueSetLibrary].type = #composed-of
+* relatedArtifact[triggeringValueSetLibrary].resource = "http://hl7.org/fhir/us/ecr/Library/library-rctc-example"

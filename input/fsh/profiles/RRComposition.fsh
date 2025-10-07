@@ -4,15 +4,14 @@ Id: rr-composition
 Title: "RR Composition"
 Description: "This Composition profile represents the Reportability Response that is created in response to an electronic Initial Case Report Composition."
 
-
-
-
 * . MS
 * . ^short = "Reportability Response Composition"
 * . ^definition = "This Composition profile represents the Reportability Response that will be created in response to an electronic Initial Case Report Composition."
 * . ^isModifier = false
-* extension[sliceExtensionInformationRecipient] 1..
-* extension[sliceExtensionInformationRecipient] only USPublicHealthInformationRecipientExtension
+* extension contains 
+    USPublicHealthInformationRecipientExtension named sliceExtensionInformationRecipient 1..* MS
+// * extension[sliceExtensionInformationRecipient] 1..
+// * extension[sliceExtensionInformationRecipient] only USPublicHealthInformationRecipientExtension
 * extension[sliceExtensionInformationRecipient] ^short = "Reportability Response recipient(s)"
 * extension[sliceExtensionInformationRecipient] ^definition = "Reporting may be identified for multiple PHAs by the PHA system (or its intermediary) (because the patient's residence and the provider location are in separate jurisdictions) including other identified organization (such as an HIE) to which the eICR (if deemed reportable) and/or the Reportability Response will be routed."
 * type = $loinc#88085-6
@@ -35,14 +34,17 @@ Description: "This Composition profile represents the Reportability Response tha
 * relatesTo ^slicing.discriminator.type = #value
 * relatesTo ^slicing.discriminator.path = "code"
 * relatesTo ^slicing.rules = #open
-* relatesTo[sliceTransformed] 0..1
+* relatesTo contains
+    sliceTransformed 0..1 MS and
+    sliceReplaced 0..1 MS
+// * relatesTo[sliceTransformed] 0..1
 * relatesTo[sliceTransformed] ^short = "Document or Composition that this Composition is transformed from"
 * relatesTo[sliceTransformed] ^definition = "Document of Composition that this Composition is transformed from"
 * relatesTo[sliceTransformed].code = #transforms (exactly)
 * relatesTo[sliceTransformed].target[x] only Identifier
 * relatesTo[sliceTransformed].target[x] ^short = "Identifier of the Document or Composition transformed"
 * relatesTo[sliceTransformed].target[x] ^definition = "Identifier of the Document or Composition transformed"
-* relatesTo[sliceReplaced] 0..1
+// * relatesTo[sliceReplaced] 0..1
 * relatesTo[sliceReplaced] ^short = "Document or Composition that this Composition replaces"
 * relatesTo[sliceReplaced] ^definition = "Document or Composition that this Composition replaces"
 * relatesTo[sliceReplaced].code = #replaces (exactly)

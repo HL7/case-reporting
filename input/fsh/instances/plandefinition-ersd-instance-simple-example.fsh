@@ -19,287 +19,287 @@ Usage: #example
 * description = "An example ersd PlanDefinition"
 * jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
 * jurisdiction.text = "United States of America (the)"
-* action[0].id = "start-workflow"
-* action[=].description = "This action represents the start of the reporting workflow in response to the encounter-start event."
-* action[=].textEquivalent = "Start the reporting workflow in response to an encounter-start event"
-* action[=].code = USPublicHealthPlanDefinitionActions#initiate-reporting-workflow "Initiate a reporting workflow"
-* action[=].trigger.id = "encounter-start"
-* action[=].trigger.extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension"
-* action[=].trigger.extension.valueCodeableConcept = USPublicHealthTriggerDefinitionNamedEvents#encounter-start "Indicates the start of an encounter"
-* action[=].trigger.type = #named-event
-* action[=].trigger.name = "encounter-start"
-* action[=].input[0].id = "patient"
-* action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
-* action[=].input[=].extension.valueString = "Patient/{{context.patientId}}"
-* action[=].input[=].type = #Patient
-* action[=].input[+].id = "encounter"
-* action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
-* action[=].input[=].extension.valueString = "Encounter/{{context.encounterId}}"
-* action[=].input[=].type = #Encounter
-* action[=].relatedAction.actionId = "check-suspected-disorder"
-* action[=].relatedAction.relationship = #before-start
-* action[=].relatedAction.offsetDuration = 1 'h'
-* action[+].id = "check-suspected-disorder"
-* action[=].description = "This action represents the start of the check suspected disorder reporting workflow in response to the encounter-start event."
-* action[=].textEquivalent = "Check suspected disorders for immediate reportability and setup jobs for future reportability checks."
-* action[=].code = USPublicHealthPlanDefinitionActions#execute-reporting-workflow
-* action[=].action[0].id = "is-encounter-suspected-disorder"
-* action[=].action[=].description = "This action represents the check for suspected disorder reportability to create the patients eICR."
-* action[=].action[=].textEquivalent = "Check Trigger Codes based on Suspected Reportable Value set."
-* action[=].action[=].code = USPublicHealthPlanDefinitionActions#check-trigger-codes
-* action[=].action[=].condition.kind = #applicability
-* action[=].action[=].condition.expression.language = #text/fhirpath
-* action[=].action[=].condition.expression.expression = "%modifiedConditions.exists() or %modifiedLabResults.exists() or %modifiedMedicationOrders.exists()"
-* action[=].action[=].input[0].id = "modifiedConditions"
-* action[=].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
-* action[=].action[=].input[=].extension.valueString = "Condition?patient=Patient/{{context.patientId}}"
-* action[=].action[=].input[=].type = #Condition
-* action[=].action[=].input[=].codeFilter.path = "code"
-* action[=].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example"
-* action[=].action[=].input[+].id = "modifiedLabResults"
-* action[=].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
-* action[=].action[=].input[=].extension.valueString = "Observation?patient=Patient/{{context.patientId}}"
-* action[=].action[=].input[=].type = #Observation
-* action[=].action[=].input[=].codeFilter.path = "value"
-* action[=].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"
-* action[=].action[=].input[+].id = "modifiedMedicationOrders"
-* action[=].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
-* action[=].action[=].input[=].extension.valueString = "MedicationRequest?patient=Patient/{{context.patientId}}"
-* action[=].action[=].input[=].type = #MedicationRequest
-* action[=].action[=].input[=].codeFilter.path = "medication"
-* action[=].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"
-* action[=].action[=].relatedAction.actionId = "create-eicr"
-* action[=].action[=].relatedAction.relationship = #before-start
-* action[=].action[+].id = "continue-check-reportable"
-* action[=].action[=].code = USPublicHealthPlanDefinitionActions#evaluate-condition
-* action[=].action[=].condition.kind = #applicability
-* action[=].action[=].condition.expression.language = #text/fhirpath
-* action[=].action[=].condition.expression.expression = "%encounter.where((status = 'in-progress' and period.start + %normalReportingDuration < now()) or status = 'finished' and period.end <= now() - 72 hours)"
-* action[=].action[=].relatedAction.actionId = "check-reportable"
-* action[=].action[=].relatedAction.relationship = #before-start
-* action[=].action[=].relatedAction.offsetDuration.comparator = #<=
-* action[=].action[=].relatedAction.offsetDuration = 6 'h'
-* action[+].id = "check-reportable"
-* action[=].description = "This action represents the check for suspected reportability of the eICR."
-* action[=].textEquivalent = "Check Reportability and setup jobs for future reportability checks."
-* action[=].code = USPublicHealthPlanDefinitionActions#execute-reporting-workflow
-* action[=].action[0].id = "is-encounter-reportable"
-* action[=].action[=].description = "This action represents the check for reportability to create the patients eICR."
-* action[=].action[=].textEquivalent = "Check Trigger Codes based on RCTC Value sets."
-* action[=].action[=].code = USPublicHealthPlanDefinitionActions#check-trigger-codes
-* action[=].action[=].condition.kind = #applicability
-* action[=].action[=].condition.expression.language = #text/fhirpath
-* action[=].action[=].condition.expression.expression = "%encounter.where(period.start + %normalReportingDuration >= now()) and (%conditions.exists() or %encounters.exists() or %immunizations.exists() or %procedures.exists() or %procedureOrders.exists() or %labOrders.exists() or %labTests.exists() or %labResults.exists() or %medicationAdministrations.exists() or %medicationOrders.exists() or %medicationDispenses.exists())"
-* action[=].action[=].input[0].id = "conditions"
-* action[=].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
-* action[=].action[=].input[=].extension.valueString = "Condition?patient=Patient/{{context.patientId}}"
-* action[=].action[=].input[=].type = #Condition
-* action[=].action[=].input[=].codeFilter.path = "code"
-* action[=].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"
-* action[=].action[=].input[+].id = "encounters"
-* action[=].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
-* action[=].action[=].input[=].extension.valueString = "encounter"
-* action[=].action[=].input[=].type = #Encounter
-* action[=].action[=].input[=].codeFilter.path = "reasonCode"
-* action[=].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"
-* action[=].action[=].input[+].id = "immunizations"
-* action[=].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
-* action[=].action[=].input[=].extension.valueString = "Immunization?patient=Patient/{{context.patientId}}"
-* action[=].action[=].input[=].type = #Immunization
-* action[=].action[=].input[=].codeFilter.path = "vaccineCode"
-* action[=].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"
-* action[=].action[=].input[+].id = "labOrders"
-* action[=].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
-* action[=].action[=].input[=].extension.valueString = "ServiceRequest?patient=Patient/{{context.patientId}}"
-* action[=].action[=].input[=].type = #ServiceRequest
-* action[=].action[=].input[=].codeFilter.path = "code"
-* action[=].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"
-* action[=].action[=].input[+].id = "labTests"
-* action[=].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
-* action[=].action[=].input[=].extension.valueString = "Observation?patient=Patient/{{context.patientId}}"
-* action[=].action[=].input[=].type = #Observation
-* action[=].action[=].input[=].codeFilter.path = "code"
-* action[=].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"
-* action[=].action[=].input[+].id = "diagnosticOrders"
-* action[=].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
-* action[=].action[=].input[=].extension.valueString = "DiagnosticReport?patient=Patient/{{context.patientId}}"
-* action[=].action[=].input[=].type = #DiagnosticReport
-* action[=].action[=].input[=].codeFilter.path = "code"
-* action[=].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"
-* action[=].action[=].input[+].id = "procedureOrders"
-* action[=].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
-* action[=].action[=].input[=].extension.valueString = "ServiceRequest?patient=Patient/{{context.patientId}}"
-* action[=].action[=].input[=].type = #ServiceRequest
-* action[=].action[=].input[=].codeFilter.path = "code"
-* action[=].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example"
-* action[=].action[=].input[+].id = "procedures"
-* action[=].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
-* action[=].action[=].input[=].extension.valueString = "Procedure?patient=Patient/{{context.patientId}}"
-* action[=].action[=].input[=].type = #Procedure
-* action[=].action[=].input[=].codeFilter.path = "code"
-* action[=].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example"
-* action[=].action[=].input[+].id = "medicationOrders"
-* action[=].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
-* action[=].action[=].input[=].extension.valueString = "MedicationRequest?patient=Patient/{{context.patientId}}"
-* action[=].action[=].input[=].type = #MedicationRequest
-* action[=].action[=].input[=].codeFilter.path = "medication"
-* action[=].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"
-* action[=].action[=].input[+].id = "medicationDispenses"
-* action[=].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
-* action[=].action[=].input[=].extension.valueString = "MedicationDispense?patient=Patient/{{context.patientId}}"
-* action[=].action[=].input[=].type = #MedicationDispense
-* action[=].action[=].input[=].codeFilter.path = "medication"
-* action[=].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"
-* action[=].action[=].input[+].id = "medicationAdministrations"
-* action[=].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
-* action[=].action[=].input[=].extension.valueString = "MedicationAdministration?patient=Patient/{{context.patientId}}"
-* action[=].action[=].input[=].type = #MedicationAdministration
-* action[=].action[=].input[=].codeFilter.path = "medication"
-* action[=].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"
-* action[=].action[=].input[+].id = "labResults"
-* action[=].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
-* action[=].action[=].input[=].extension.valueString = "labTests"
-* action[=].action[=].input[=].type = #Observation
-* action[=].action[=].input[=].codeFilter.path = "value"
-* action[=].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"
-* action[=].action[=].input[+].id = "diagnosticResults"
-* action[=].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
-* action[=].action[=].input[=].extension.valueString = "diagnosticOrders"
-* action[=].action[=].input[=].type = #DiagnosticReport
-* action[=].action[=].input[=].codeFilter.path = "code"
-* action[=].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"
-* action[=].action[=].relatedAction.actionId = "create-eicr"
-* action[=].action[=].relatedAction.relationship = #before-start
-* action[=].action[+].id = "check-update-eicr"
-* action[=].action[=].code = USPublicHealthPlanDefinitionActions#evaluate-condition
-* action[=].action[=].condition.kind = #applicability
-* action[=].action[=].condition.expression.language = #text/fhirpath
-* action[=].action[=].condition.expression.expression = "%last-eicr.last().entry.first().resource.date < now() - 72 hours"
-* action[=].action[=].input.id = "last-eicr"
-* action[=].action[=].input.extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
-* action[=].action[=].input.extension.valueString = "eicr-report"
-* action[=].action[=].input.type = #Bundle
-* action[=].action[=].input.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
-* action[=].action[=].relatedAction.actionId = "create-eicr"
-* action[=].action[=].relatedAction.relationship = #before-start
-* action[=].action[+].id = "is-encounter-in-progress"
-* action[=].action[=].code = USPublicHealthPlanDefinitionActions#evaluate-condition
-* action[=].action[=].condition.kind = #applicability
-* action[=].action[=].condition.expression.language = #text/fhirpath
-* action[=].action[=].condition.expression.expression = "%`inprogress-encounter`.where(status = 'in-progress' and period.start + %normalReportingDuration >= now() and period.end <= now() - 72 hours)"
-* action[=].action[=].input.id = "inprogress-encounter"
-* action[=].action[=].input.extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
-* action[=].action[=].input.extension.valueString = "encounter"
-* action[=].action[=].input.type = #Encounter
-* action[=].action[=].relatedAction.actionId = "check-reportable"
-* action[=].action[=].relatedAction.relationship = #before-start
-* action[=].action[=].relatedAction.offsetDuration.comparator = #<=
-* action[=].action[=].relatedAction.offsetDuration = 6 'h'
-* action[=].action[+].id = "is-encounter-completed"
-* action[=].action[=].code = USPublicHealthPlanDefinitionActions#complete-reporting
-* action[=].action[=].condition.kind = #applicability
-* action[=].action[=].condition.expression.language = #text/fhirpath
-* action[=].action[=].condition.expression.expression = "%completedEncounter.exists(status = 'finished')"
-* action[=].action[=].input.id = "completedEncounter"
-* action[=].action[=].input.extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
-* action[=].action[=].input.extension.valueString = "encounter"
-* action[=].action[=].input.type = #Encounter
-* action[+].id = "create-eicr"
-* action[=].description = "This action represents the creation of the eICR. It subsequently calls validate."
-* action[=].textEquivalent = "Create eICR"
-* action[=].code = USPublicHealthPlanDefinitionActions#create-report
-* action[=].input[0].id = "patient-data"
-* action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
-* action[=].input[=].extension.valueString = "patient"
-* action[=].input[=].type = #Patient
-* action[=].input[=].profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
-* action[=].input[+].id = "condition-data"
-* action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
-* action[=].input[=].extension.valueString = "conditions"
-* action[=].input[=].type = #Condition
-* action[=].input[=].profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
-* action[=].input[+].id = "encounter-data"
-* action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
-* action[=].input[=].extension.valueString = "encounters"
-* action[=].input[=].type = #Encounter
-* action[=].input[=].profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
-* action[=].input[+].id = "mr-data"
-* action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
-* action[=].input[=].extension.valueString = "medicationOrders"
-* action[=].input[=].type = #MedicationRequest
-* action[=].input[=].profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
-* action[=].input[+].id = "immz-data"
-* action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
-* action[=].input[=].extension.valueString = "immunizations"
-* action[=].input[=].type = #Immunization
-* action[=].input[=].profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization"
-* action[=].input[+].id = "proc-data"
-* action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
-* action[=].input[=].extension.valueString = "procedures"
-* action[=].input[=].type = #Procedure
-* action[=].input[=].profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
-* action[=].input[+].id = "labResult-data"
-* action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
-* action[=].input[=].extension.valueString = "labResults"
-* action[=].input[=].type = #Observation
-* action[=].input[=].profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
-* action[=].input[+].id = "labOrder-data"
-* action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
-* action[=].input[=].extension.valueString = "labOrders"
-* action[=].input[=].type = #ServiceRequest
-* action[=].input[=].profile = "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
-* action[=].input[+].id = "diagnosticResult-data"
-* action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
-* action[=].input[=].extension.valueString = "diagnosticResults"
-* action[=].input[=].type = #DiagnosticReport
-* action[=].input[=].profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab"
-* action[=].input[+].id = "diagnosticOrder-data"
-* action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
-* action[=].input[=].extension.valueString = "diagnosticOrders"
-* action[=].input[=].type = #DiagnosticReport
-* action[=].input[=].profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab"
-* action[=].output.id = "eicr-report"
-* action[=].output.type = #Bundle
-* action[=].output.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
-* action[=].relatedAction.actionId = "validate-eicr"
-* action[=].relatedAction.relationship = #before-start
-* action[+].id = "validate-eicr"
-* action[=].description = "This action represents the validation of the eICR. It subsequently calls route-and-send."
-* action[=].textEquivalent = "Validate eICR"
-* action[=].code = USPublicHealthPlanDefinitionActions#validate-report
-* action[=].input.id = "generated-eicr-report"
-* action[=].input.extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
-* action[=].input.extension.valueString = "eicr-report"
-* action[=].input.type = #Bundle
-* action[=].input.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
-* action[=].output.id = "valid-eicr-report"
-* action[=].output.type = #Bundle
-* action[=].output.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
-* action[=].relatedAction.actionId = "route-and-send-eicr"
-* action[=].relatedAction.relationship = #before-start
-* action[+].id = "route-and-send-eicr"
-* action[=].description = "This action represents the routing and sending of the eICR."
-* action[=].textEquivalent = "Route and send eICR"
-* action[=].code = USPublicHealthPlanDefinitionActions#submit-report
-* action[=].input.id = "validated-eicr-report"
-* action[=].input.extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
-* action[=].input.extension.valueString = "valid-eicr-report"
-* action[=].input.type = #Bundle
-* action[=].input.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
-* action[=].output.id = "submitted-eicr-report"
-* action[=].output.type = #Bundle
-* action[=].output.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
-* action[+].id = "encounter-modified"
-* action[=].description = "This action represents the start of the reporting workflow in response to the encounter-modified event"
-* action[=].textEquivalent = "Start the reporting workflow in response to an encounter-modified event"
-* action[=].code = USPublicHealthPlanDefinitionActions#initiate-reporting-workflow "Initiate a reporting workflow"
-* action[=].trigger.id = "encounter-modified-trigger"
-* action[=].trigger.extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension"
-* action[=].trigger.extension.valueCodeableConcept = USPublicHealthTriggerDefinitionNamedEvents#encounter-modified "Indicates modifications to data elements of an encounter"
-* action[=].trigger.type = #named-event
-* action[=].trigger.name = "encounter-modified"
-* action[=].condition.kind = #applicability
-* action[=].condition.expression.language = #text/fhirpath
-* action[=].condition.expression.expression = "%encounter.where(period.start + %normalReportingDuration < now())"
-* action[=].relatedAction.actionId = "create-eicr"
-* action[=].relatedAction.relationship = #before-start
+* action[encounterStart].id = "start-workflow"
+* action[encounterStart].description = "This action represents the start of the reporting workflow in response to the encounter-start event."
+* action[encounterStart].textEquivalent = "Start the reporting workflow in response to an encounter-start event"
+* action[encounterStart].code = USPublicHealthPlanDefinitionActions#initiate-reporting-workflow "Initiate a reporting workflow"
+* action[encounterStart].trigger.id = "encounter-start"
+* action[encounterStart].trigger.extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension"
+* action[encounterStart].trigger.extension.valueCodeableConcept = USPublicHealthTriggerDefinitionNamedEvents#encounter-start "Indicates the start of an encounter"
+* action[encounterStart].trigger.type = #named-event
+* action[encounterStart].trigger.name = "encounter-start"
+* action[encounterStart].input[0].id = "patient"
+* action[encounterStart].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
+* action[encounterStart].input[=].extension.valueString = "Patient/{{context.patientId}}"
+* action[encounterStart].input[=].type = #Patient
+* action[encounterStart].input[+].id = "encounter"
+* action[encounterStart].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
+* action[encounterStart].input[=].extension.valueString = "Encounter/{{context.encounterId}}"
+* action[encounterStart].input[=].type = #Encounter
+* action[encounterStart].relatedAction.actionId = "check-suspected-disorder"
+* action[encounterStart].relatedAction.relationship = #before-start
+* action[encounterStart].relatedAction.offsetDuration = 1 'h'
+* action[checkSuspectedDisorder].id = "check-suspected-disorder"
+* action[checkSuspectedDisorder].description = "This action represents the start of the check suspected disorder reporting workflow in response to the encounter-start event."
+* action[checkSuspectedDisorder].textEquivalent = "Check suspected disorders for immediate reportability and setup jobs for future reportability checks."
+* action[checkSuspectedDisorder].code = USPublicHealthPlanDefinitionActions#execute-reporting-workflow
+* action[checkSuspectedDisorder].action[0].id = "is-encounter-suspected-disorder"
+* action[checkSuspectedDisorder].action[=].description = "This action represents the check for suspected disorder reportability to create the patients eICR."
+* action[checkSuspectedDisorder].action[=].textEquivalent = "Check Trigger Codes based on Suspected Reportable Value set."
+* action[checkSuspectedDisorder].action[=].code = USPublicHealthPlanDefinitionActions#check-trigger-codes
+* action[checkSuspectedDisorder].action[=].condition.kind = #applicability
+* action[checkSuspectedDisorder].action[=].condition.expression.language = #text/fhirpath
+* action[checkSuspectedDisorder].action[=].condition.expression.expression = "%modifiedConditions.exists() or %modifiedLabResults.exists() or %modifiedMedicationOrders.exists()"
+* action[checkSuspectedDisorder].action[=].input[0].id = "modifiedConditions"
+* action[checkSuspectedDisorder].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
+* action[checkSuspectedDisorder].action[=].input[=].extension.valueString = "Condition?patient=Patient/{{context.patientId}}"
+* action[checkSuspectedDisorder].action[=].input[=].type = #Condition
+* action[checkSuspectedDisorder].action[=].input[=].codeFilter.path = "code"
+* action[checkSuspectedDisorder].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example"
+* action[checkSuspectedDisorder].action[=].input[+].id = "modifiedLabResults"
+* action[checkSuspectedDisorder].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
+* action[checkSuspectedDisorder].action[=].input[=].extension.valueString = "Observation?patient=Patient/{{context.patientId}}"
+* action[checkSuspectedDisorder].action[=].input[=].type = #Observation
+* action[checkSuspectedDisorder].action[=].input[=].codeFilter.path = "value"
+* action[checkSuspectedDisorder].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"
+* action[checkSuspectedDisorder].action[=].input[+].id = "modifiedMedicationOrders"
+* action[checkSuspectedDisorder].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
+* action[checkSuspectedDisorder].action[=].input[=].extension.valueString = "MedicationRequest?patient=Patient/{{context.patientId}}"
+* action[checkSuspectedDisorder].action[=].input[=].type = #MedicationRequest
+* action[checkSuspectedDisorder].action[=].input[=].codeFilter.path = "medication"
+* action[checkSuspectedDisorder].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"
+* action[checkSuspectedDisorder].action[=].relatedAction.actionId = "create-eicr"
+* action[checkSuspectedDisorder].action[=].relatedAction.relationship = #before-start
+* action[checkSuspectedDisorder].action[+].id = "continue-check-reportable"
+* action[checkSuspectedDisorder].action[=].code = USPublicHealthPlanDefinitionActions#evaluate-condition
+* action[checkSuspectedDisorder].action[=].condition.kind = #applicability
+* action[checkSuspectedDisorder].action[=].condition.expression.language = #text/fhirpath
+* action[checkSuspectedDisorder].action[=].condition.expression.expression = "%encounter.where((status = 'in-progress' and period.start + %normalReportingDuration < now()) or status = 'finished' and period.end <= now() - 72 hours)"
+* action[checkSuspectedDisorder].action[=].relatedAction.actionId = "check-reportable"
+* action[checkSuspectedDisorder].action[=].relatedAction.relationship = #before-start
+* action[checkSuspectedDisorder].action[=].relatedAction.offsetDuration.comparator = #<=
+* action[checkSuspectedDisorder].action[=].relatedAction.offsetDuration = 6 'h'
+* action[checkReportable].id = "check-reportable"
+* action[checkReportable].description = "This action represents the check for suspected reportability of the eICR."
+* action[checkReportable].textEquivalent = "Check Reportability and setup jobs for future reportability checks."
+* action[checkReportable].code = USPublicHealthPlanDefinitionActions#execute-reporting-workflow
+* action[checkReportable].action[0].id = "is-encounter-reportable"
+* action[checkReportable].action[=].description = "This action represents the check for reportability to create the patients eICR."
+* action[checkReportable].action[=].textEquivalent = "Check Trigger Codes based on RCTC Value sets."
+* action[checkReportable].action[=].code = USPublicHealthPlanDefinitionActions#check-trigger-codes
+* action[checkReportable].action[=].condition.kind = #applicability
+* action[checkReportable].action[=].condition.expression.language = #text/fhirpath
+* action[checkReportable].action[=].condition.expression.expression = "%encounter.where(period.start + %normalReportingDuration >= now()) and (%conditions.exists() or %encounters.exists() or %immunizations.exists() or %procedures.exists() or %procedureOrders.exists() or %labOrders.exists() or %labTests.exists() or %labResults.exists() or %medicationAdministrations.exists() or %medicationOrders.exists() or %medicationDispenses.exists())"
+* action[checkReportable].action[=].input[0].id = "conditions"
+* action[checkReportable].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
+* action[checkReportable].action[=].input[=].extension.valueString = "Condition?patient=Patient/{{context.patientId}}"
+* action[checkReportable].action[=].input[=].type = #Condition
+* action[checkReportable].action[=].input[=].codeFilter.path = "code"
+* action[checkReportable].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"
+* action[checkReportable].action[=].input[+].id = "encounters"
+* action[checkReportable].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
+* action[checkReportable].action[=].input[=].extension.valueString = "encounter"
+* action[checkReportable].action[=].input[=].type = #Encounter
+* action[checkReportable].action[=].input[=].codeFilter.path = "reasonCode"
+* action[checkReportable].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"
+* action[checkReportable].action[=].input[+].id = "immunizations"
+* action[checkReportable].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
+* action[checkReportable].action[=].input[=].extension.valueString = "Immunization?patient=Patient/{{context.patientId}}"
+* action[checkReportable].action[=].input[=].type = #Immunization
+* action[checkReportable].action[=].input[=].codeFilter.path = "vaccineCode"
+* action[checkReportable].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"
+* action[checkReportable].action[=].input[+].id = "labOrders"
+* action[checkReportable].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
+* action[checkReportable].action[=].input[=].extension.valueString = "ServiceRequest?patient=Patient/{{context.patientId}}"
+* action[checkReportable].action[=].input[=].type = #ServiceRequest
+* action[checkReportable].action[=].input[=].codeFilter.path = "code"
+* action[checkReportable].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"
+* action[checkReportable].action[=].input[+].id = "labTests"
+* action[checkReportable].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
+* action[checkReportable].action[=].input[=].extension.valueString = "Observation?patient=Patient/{{context.patientId}}"
+* action[checkReportable].action[=].input[=].type = #Observation
+* action[checkReportable].action[=].input[=].codeFilter.path = "code"
+* action[checkReportable].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"
+* action[checkReportable].action[=].input[+].id = "diagnosticOrders"
+* action[checkReportable].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
+* action[checkReportable].action[=].input[=].extension.valueString = "DiagnosticReport?patient=Patient/{{context.patientId}}"
+* action[checkReportable].action[=].input[=].type = #DiagnosticReport
+* action[checkReportable].action[=].input[=].codeFilter.path = "code"
+* action[checkReportable].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"
+* action[checkReportable].action[=].input[+].id = "procedureOrders"
+* action[checkReportable].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
+* action[checkReportable].action[=].input[=].extension.valueString = "ServiceRequest?patient=Patient/{{context.patientId}}"
+* action[checkReportable].action[=].input[=].type = #ServiceRequest
+* action[checkReportable].action[=].input[=].codeFilter.path = "code"
+* action[checkReportable].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example"
+* action[checkReportable].action[=].input[+].id = "procedures"
+* action[checkReportable].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
+* action[checkReportable].action[=].input[=].extension.valueString = "Procedure?patient=Patient/{{context.patientId}}"
+* action[checkReportable].action[=].input[=].type = #Procedure
+* action[checkReportable].action[=].input[=].codeFilter.path = "code"
+* action[checkReportable].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example"
+* action[checkReportable].action[=].input[+].id = "medicationOrders"
+* action[checkReportable].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
+* action[checkReportable].action[=].input[=].extension.valueString = "MedicationRequest?patient=Patient/{{context.patientId}}"
+* action[checkReportable].action[=].input[=].type = #MedicationRequest
+* action[checkReportable].action[=].input[=].codeFilter.path = "medication"
+* action[checkReportable].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"
+* action[checkReportable].action[=].input[+].id = "medicationDispenses"
+* action[checkReportable].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
+* action[checkReportable].action[=].input[=].extension.valueString = "MedicationDispense?patient=Patient/{{context.patientId}}"
+* action[checkReportable].action[=].input[=].type = #MedicationDispense
+* action[checkReportable].action[=].input[=].codeFilter.path = "medication"
+* action[checkReportable].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"
+* action[checkReportable].action[=].input[+].id = "medicationAdministrations"
+* action[checkReportable].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension"
+* action[checkReportable].action[=].input[=].extension.valueString = "MedicationAdministration?patient=Patient/{{context.patientId}}"
+* action[checkReportable].action[=].input[=].type = #MedicationAdministration
+* action[checkReportable].action[=].input[=].codeFilter.path = "medication"
+* action[checkReportable].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"
+* action[checkReportable].action[=].input[+].id = "labResults"
+* action[checkReportable].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
+* action[checkReportable].action[=].input[=].extension.valueString = "labTests"
+* action[checkReportable].action[=].input[=].type = #Observation
+* action[checkReportable].action[=].input[=].codeFilter.path = "value"
+* action[checkReportable].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"
+* action[checkReportable].action[=].input[+].id = "diagnosticResults"
+* action[checkReportable].action[=].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
+* action[checkReportable].action[=].input[=].extension.valueString = "diagnosticOrders"
+* action[checkReportable].action[=].input[=].type = #DiagnosticReport
+* action[checkReportable].action[=].input[=].codeFilter.path = "code"
+* action[checkReportable].action[=].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"
+* action[checkReportable].action[=].relatedAction.actionId = "create-eicr"
+* action[checkReportable].action[=].relatedAction.relationship = #before-start
+* action[checkReportable].action[+].id = "check-update-eicr"
+* action[checkReportable].action[=].code = USPublicHealthPlanDefinitionActions#evaluate-condition
+* action[checkReportable].action[=].condition.kind = #applicability
+* action[checkReportable].action[=].condition.expression.language = #text/fhirpath
+* action[checkReportable].action[=].condition.expression.expression = "%last-eicr.last().entry.first().resource.date < now() - 72 hours"
+* action[checkReportable].action[=].input.id = "last-eicr"
+* action[checkReportable].action[=].input.extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
+* action[checkReportable].action[=].input.extension.valueString = "eicr-report"
+* action[checkReportable].action[=].input.type = #Bundle
+* action[checkReportable].action[=].input.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
+* action[checkReportable].action[=].relatedAction.actionId = "create-eicr"
+* action[checkReportable].action[=].relatedAction.relationship = #before-start
+* action[checkReportable].action[+].id = "is-encounter-in-progress"
+* action[checkReportable].action[=].code = USPublicHealthPlanDefinitionActions#evaluate-condition
+* action[checkReportable].action[=].condition.kind = #applicability
+* action[checkReportable].action[=].condition.expression.language = #text/fhirpath
+* action[checkReportable].action[=].condition.expression.expression = "%`inprogress-encounter`.where(status = 'in-progress' and period.start + %normalReportingDuration >= now() and period.end <= now() - 72 hours)"
+* action[checkReportable].action[=].input.id = "inprogress-encounter"
+* action[checkReportable].action[=].input.extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
+* action[checkReportable].action[=].input.extension.valueString = "encounter"
+* action[checkReportable].action[=].input.type = #Encounter
+* action[checkReportable].action[=].relatedAction.actionId = "check-reportable"
+* action[checkReportable].action[=].relatedAction.relationship = #before-start
+* action[checkReportable].action[=].relatedAction.offsetDuration.comparator = #<=
+* action[checkReportable].action[=].relatedAction.offsetDuration = 6 'h'
+* action[checkReportable].action[+].id = "is-encounter-completed"
+* action[checkReportable].action[=].code = USPublicHealthPlanDefinitionActions#complete-reporting
+* action[checkReportable].action[=].condition.kind = #applicability
+* action[checkReportable].action[=].condition.expression.language = #text/fhirpath
+* action[checkReportable].action[=].condition.expression.expression = "%completedEncounter.exists(status = 'finished')"
+* action[checkReportable].action[=].input.id = "completedEncounter"
+* action[checkReportable].action[=].input.extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
+* action[checkReportable].action[=].input.extension.valueString = "encounter"
+* action[checkReportable].action[=].input.type = #Encounter
+* action[createEicr].id = "create-eicr"
+* action[createEicr].description = "This action represents the creation of the eICR. It subsequently calls validate."
+* action[createEicr].textEquivalent = "Create eICR"
+* action[createEicr].code = USPublicHealthPlanDefinitionActions#create-report
+* action[createEicr].input[0].id = "patient-data"
+* action[createEicr].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
+* action[createEicr].input[=].extension.valueString = "patient"
+* action[createEicr].input[=].type = #Patient
+* action[createEicr].input[=].profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+* action[createEicr].input[+].id = "condition-data"
+* action[createEicr].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
+* action[createEicr].input[=].extension.valueString = "conditions"
+* action[createEicr].input[=].type = #Condition
+* action[createEicr].input[=].profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+* action[createEicr].input[+].id = "encounter-data"
+* action[createEicr].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
+* action[createEicr].input[=].extension.valueString = "encounters"
+* action[createEicr].input[=].type = #Encounter
+* action[createEicr].input[=].profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+* action[createEicr].input[+].id = "mr-data"
+* action[createEicr].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
+* action[createEicr].input[=].extension.valueString = "medicationOrders"
+* action[createEicr].input[=].type = #MedicationRequest
+* action[createEicr].input[=].profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+* action[createEicr].input[+].id = "immz-data"
+* action[createEicr].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
+* action[createEicr].input[=].extension.valueString = "immunizations"
+* action[createEicr].input[=].type = #Immunization
+* action[createEicr].input[=].profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization"
+* action[createEicr].input[+].id = "proc-data"
+* action[createEicr].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
+* action[createEicr].input[=].extension.valueString = "procedures"
+* action[createEicr].input[=].type = #Procedure
+* action[createEicr].input[=].profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
+* action[createEicr].input[+].id = "labResult-data"
+* action[createEicr].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
+* action[createEicr].input[=].extension.valueString = "labResults"
+* action[createEicr].input[=].type = #Observation
+* action[createEicr].input[=].profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+* action[createEicr].input[+].id = "labOrder-data"
+* action[createEicr].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
+* action[createEicr].input[=].extension.valueString = "labOrders"
+* action[createEicr].input[=].type = #ServiceRequest
+* action[createEicr].input[=].profile = "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
+* action[createEicr].input[+].id = "diagnosticResult-data"
+* action[createEicr].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
+* action[createEicr].input[=].extension.valueString = "diagnosticResults"
+* action[createEicr].input[=].type = #DiagnosticReport
+* action[createEicr].input[=].profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab"
+* action[createEicr].input[+].id = "diagnosticOrder-data"
+* action[createEicr].input[=].extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
+* action[createEicr].input[=].extension.valueString = "diagnosticOrders"
+* action[createEicr].input[=].type = #DiagnosticReport
+* action[createEicr].input[=].profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab"
+* action[createEicr].output.id = "eicr-report"
+* action[createEicr].output.type = #Bundle
+* action[createEicr].output.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
+* action[createEicr].relatedAction.actionId = "validate-eicr"
+* action[createEicr].relatedAction.relationship = #before-start
+* action[validateEicr].id = "validate-eicr"
+* action[validateEicr].description = "This action represents the validation of the eICR. It subsequently calls route-and-send."
+* action[validateEicr].textEquivalent = "Validate eICR"
+* action[validateEicr].code = USPublicHealthPlanDefinitionActions#validate-report
+* action[validateEicr].input.id = "generated-eicr-report"
+* action[validateEicr].input.extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
+* action[validateEicr].input.extension.valueString = "eicr-report"
+* action[validateEicr].input.type = #Bundle
+* action[validateEicr].input.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
+* action[validateEicr].output.id = "valid-eicr-report"
+* action[validateEicr].output.type = #Bundle
+* action[validateEicr].output.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
+* action[validateEicr].relatedAction.actionId = "route-and-send-eicr"
+* action[validateEicr].relatedAction.relationship = #before-start
+* action[routeAndSendEicr].id = "route-and-send-eicr"
+* action[routeAndSendEicr].description = "This action represents the routing and sending of the eICR."
+* action[routeAndSendEicr].textEquivalent = "Route and send eICR"
+* action[routeAndSendEicr].code = USPublicHealthPlanDefinitionActions#submit-report
+* action[routeAndSendEicr].input.id = "validated-eicr-report"
+* action[routeAndSendEicr].input.extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension"
+* action[routeAndSendEicr].input.extension.valueString = "valid-eicr-report"
+* action[routeAndSendEicr].input.type = #Bundle
+* action[routeAndSendEicr].input.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
+* action[routeAndSendEicr].output.id = "submitted-eicr-report"
+* action[routeAndSendEicr].output.type = #Bundle
+* action[routeAndSendEicr].output.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
+* action[encounterModified].id = "encounter-modified"
+* action[encounterModified].description = "This action represents the start of the reporting workflow in response to the encounter-modified event"
+* action[encounterModified].textEquivalent = "Start the reporting workflow in response to an encounter-modified event"
+* action[encounterModified].code = USPublicHealthPlanDefinitionActions#initiate-reporting-workflow "Initiate a reporting workflow"
+* action[encounterModified].trigger.id = "encounter-modified-trigger"
+* action[encounterModified].trigger.extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-named-eventtype-extension"
+* action[encounterModified].trigger.extension.valueCodeableConcept = USPublicHealthTriggerDefinitionNamedEvents#encounter-modified "Indicates modifications to data elements of an encounter"
+* action[encounterModified].trigger.type = #named-event
+* action[encounterModified].trigger.name = "encounter-modified"
+* action[encounterModified].condition.kind = #applicability
+* action[encounterModified].condition.expression.language = #text/fhirpath
+* action[encounterModified].condition.expression.expression = "%encounter.where(period.start + %normalReportingDuration < now())"
+* action[encounterModified].relatedAction.actionId = "create-eicr"
+* action[encounterModified].relatedAction.relationship = #before-start

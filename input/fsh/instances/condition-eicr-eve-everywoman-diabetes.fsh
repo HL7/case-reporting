@@ -1,5 +1,5 @@
 Instance: condition-eicr-eve-everywoman-diabetes
-InstanceOf: USPublicHealthCondition
+InstanceOf: USPublicHealthConditionProblemsHealthConcerns
 Title: "eICR Condition example: Eve Everywoman - diabetes"
 Description: "Example of eICR Condition profile (Eve Everywoman: diabetes)"
 Usage: #example

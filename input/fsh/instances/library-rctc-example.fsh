@@ -22,15 +22,15 @@ Usage: #example
 * jurisdiction.text = "United States of America (the)"
 * purpose = "Triggers for initiating decision support for electronic case reports"
 * effectivePeriod.start = "2019-11-01"
-* relatedArtifact[0].type = #composed-of
-* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"
-* relatedArtifact[+].type = #composed-of
-* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"
-* relatedArtifact[+].type = #composed-of
-* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"
-* relatedArtifact[+].type = #composed-of
-* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example"
-* relatedArtifact[+].type = #composed-of
-* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"
-* relatedArtifact[+].type = #composed-of
-* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example"
+* relatedArtifact[USPHValueSet].type = #composed-of
+* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"
+* relatedArtifact[USPHValueSet].type = #composed-of
+* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"
+* relatedArtifact[USPHValueSet].type = #composed-of
+* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"
+* relatedArtifact[USPHValueSet].type = #composed-of
+* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example"
+* relatedArtifact[USPHValueSet].type = #composed-of
+* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"
+* relatedArtifact[USPHValueSet].type = #composed-of
+* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example"

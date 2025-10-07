@@ -1,5 +1,5 @@
 Instance: condition-eicr-eve-everywoman-common-cold
-InstanceOf: USPublicHealthCondition
+InstanceOf: USPublicHealthConditionProblemsHealthConcerns
 Title: "eICR Condition example: Eve Everywoman- common cold"
 Description: "Example of eICR Condition profile (Eve Everywoman: common cold)"
 Usage: #example

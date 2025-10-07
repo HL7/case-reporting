@@ -33,14 +33,17 @@ Description: "This Composition profile represents an electronic initial case rep
 * relatesTo ^slicing.discriminator.type = #value
 * relatesTo ^slicing.discriminator.path = "code"
 * relatesTo ^slicing.rules = #open
-* relatesTo[sliceTransformed] 0..1 MS
+* relatesTo contains
+    sliceTransformed 0..1 MS and
+    sliceReplaced 0..1 MS
+// * relatesTo[sliceTransformed] 0..1 MS
 * relatesTo[sliceTransformed] ^short = "Document or Composition that this Composition is transformed from"
 * relatesTo[sliceTransformed] ^definition = "Document of Composition that this Composition is transformed from"
 * relatesTo[sliceTransformed].code = #transforms (exactly)
 * relatesTo[sliceTransformed].target[x] only Identifier
 * relatesTo[sliceTransformed].target[x] ^short = "Identifier of the Document or Composition transformed"
 * relatesTo[sliceTransformed].target[x] ^definition = "Identifier of the Document or Composition transformed"
-* relatesTo[sliceReplaced] 0..1 MS
+// * relatesTo[sliceReplaced] 0..1 MS
 * relatesTo[sliceReplaced] ^short = "Document or Composition that this Composition replaces"
 * relatesTo[sliceReplaced] ^definition = "Document or Composition that this Composition replaces"
 * relatesTo[sliceReplaced].code = #replaces (exactly)
@@ -119,7 +122,7 @@ Description: "This Composition profile represents an electronic initial case rep
 * section[sliceProblemSection].entry ^slicing.rules = #open
 * section[sliceProblemSection].entry contains
     sliceEICRCondition 0..* MS
-* section[sliceProblemSection].entry[sliceEICRCondition] only Reference(USPublicHealthCondition)
+* section[sliceProblemSection].entry[sliceEICRCondition] only Reference(USPublicHealthConditionProblemsHealthConcerns)
 * section[sliceProblemSection].entry[sliceEICRCondition] ^sliceName = "sliceEICRCondition"
 * section[sliceProblemSection].entry[sliceEICRCondition] ^short = "eICR Condition entry"
 * section[sliceProblemSection].entry[sliceEICRCondition] ^definition = "The eICR Trigger Code Flag (extension) is present for an eICR Condition (diagnosis), based on a trigger code match of the diagnosis (condition.code) to the eRSD PlanDefinition Diagnosis Trigger."
@@ -232,7 +235,7 @@ Description: "This Composition profile represents an electronic initial case rep
 * section[sliceResultsSection].entry contains
     sliceUSPHLabResultObservation 0..* MS and
     sliceUSCoreObservationResults 0..* MS
-* section[sliceResultsSection].entry[sliceUSPHLabResultObservation] only Reference(USPublicHealthLaboratoryResultObservationProfile)
+* section[sliceResultsSection].entry[sliceUSPHLabResultObservation] only Reference(USPublicHealthLaboratoryResultObservation)
 * section[sliceResultsSection].entry[sliceUSPHLabResultObservation] ^sliceName = "sliceUSPHLabResultObservation"
 * section[sliceResultsSection].entry[sliceUSPHLabResultObservation] ^definition = "The eICR Trigger Code Flag (extension) is present for a laboratory result, based on a trigger code match of either the lab test (observation.code) to the eRSD PlanDefinition Lab Obs Test Name Trigger or the lab test result (observation.value) to the eRSD PlanDefinition Organism Substance Trigger."
 * section[sliceResultsSection].entry[sliceUSPHLabResultObservation] ^mustSupport = true
@@ -474,7 +477,7 @@ Description: "This Composition profile represents an electronic initial case rep
 * section[slicePregnancySection].entry[sliceLastMenstrualPeriod] ^short = "Last Menstrual Period entry"
 * section[slicePregnancySection].entry[sliceLastMenstrualPeriod] ^definition = "Last Menstrual Period entry"
 * section[slicePregnancySection].entry[sliceLastMenstrualPeriod] ^mustSupport = true
-* section[slicePregnancySection].entry[slicePostpartumStatus] only Reference(USPublicHealthPostpartumStatus)
+* section[slicePregnancySection].entry[slicePostpartumStatus] only Reference(USPublicHealthIsPostpartum)
 * section[slicePregnancySection].entry[slicePostpartumStatus] ^sliceName = "slicePostpartumStatus"
 * section[slicePregnancySection].entry[slicePostpartumStatus] ^short = "Postpartum Status entry"
 * section[slicePregnancySection].entry[slicePostpartumStatus] ^definition = "Postpartum Status entry"
@@ -516,7 +519,7 @@ Description: "This Composition profile represents an electronic initial case rep
 * section[slicePastMedicalHistorySection].entry ^slicing.rules = #open
 * section[slicePastMedicalHistorySection].entry contains
     sliceUSCoreCondition 0..* MS
-* section[slicePastMedicalHistorySection].entry[sliceUSCoreCondition] only Reference(USCoreCondition)
+* section[slicePastMedicalHistorySection].entry[sliceUSCoreCondition] only Reference(USPublicHealthConditionProblemsHealthConcerns)
 * section[slicePastMedicalHistorySection].entry[sliceUSCoreCondition] ^sliceName = "sliceUSCoreCondition"
 * section[slicePastMedicalHistorySection].entry[sliceUSCoreCondition] ^short = "US Core Condition entry"
 * section[slicePastMedicalHistorySection].entry[sliceUSCoreCondition] ^definition = "US Core Condition"

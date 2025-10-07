@@ -1,5 +1,5 @@
 Instance: condition-eicr-eve-everywoman-pertussis
-InstanceOf: USPublicHealthCondition
+InstanceOf: USPublicHealthConditionProblemsHealthConcerns
 Title: "eICR Condition example: Eve Everywoman - pertussis"
 Description: "Example of eICR Condition profile (Eve Everywoman: pertussis)"
 Usage: #example

@@ -1,5 +1,5 @@
 Instance: observation-us-ph-lab-result-eve-everywoman-pertussis
-InstanceOf: USPublicHealthLaboratoryResultObservationProfile
+InstanceOf: USPublicHealthLaboratoryResultObservation
 Title: "US Core Results Example: observation-us-ph-lab-result-eve-everywoman-pertussis"
 Description: "Example of US Public Health Lab Result profile (Eve Everywoman: Pertussis)"
 Usage: #example

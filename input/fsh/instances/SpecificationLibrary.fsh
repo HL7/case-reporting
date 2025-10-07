@@ -15,7 +15,7 @@ Usage: #inline
 * useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#triggering
 * useContext[+].code = $USPublicHealthUsageContextType#specification-type
 * useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#program
-* relatedArtifact[0].type = #composed-of
-* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"
-* relatedArtifact[+].type = #composed-of
-* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/Library/library-rctc-example"
+* relatedArtifact[planDefinition].type = #composed-of
+* relatedArtifact[planDefinition].resource = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"
+* relatedArtifact[triggeringValueSetLibrary].type = #composed-of
+* relatedArtifact[triggeringValueSetLibrary].resource = "http://hl7.org/fhir/us/ecr/Library/library-rctc-example"

@@ -42,5 +42,5 @@ Alias: $v3-ServiceDeliveryLocationRoleType = http://terminology.hl7.org/ValueSet
 Alias: $condition-code = http://hl7.org/fhir/ValueSet/condition-code
 Alias: $2.16.840.1.113762.1.4.1021.32 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1021.32
 Alias: $v3-TribalEntityUS_1 = http://terminology.hl7.org/ValueSet/v3-TribalEntityUS
-Alias: $USPublicHealthUsageContextType = http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context-type
-Alias: $USPublicHealthUsageContext = http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-context
+Alias: $USPublicHealthUsageContextType = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type
+Alias: $USPublicHealthUsageContext = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context

@@ -3,7 +3,7 @@ InstanceOf: USPublicHealthMedicationAdministration
 Title: "MedicationAdministration Example: Eve Everywoman, naloxone response"
 Description: "Example of MedicationAdministration resource with Therapeutic Medication Response extension (Eve Everywoman: naloxone response)"
 Usage: #example
-* extension.url = "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-therapeutic-medication-response-extension"
+* extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-therapeutic-medication-response-extension"
 * extension.valueCodeableConcept = $sct#268910001 "Patient's condition improved (finding)"
 * status = #completed
 * medicationCodeableConcept = $rxnorm#1659929 "1 ML naloxone hydrochloride 0.4 MG/ML Injection"

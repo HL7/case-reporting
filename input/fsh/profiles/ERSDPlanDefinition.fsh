@@ -4,9 +4,6 @@ Id: ersd-plandefinition
 Title: "eRSD PlanDefinition"
 Description: "This PlanDefinition profile defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician. The rules for determining reportability described by an eRSD specification involve the use of triggering codes to determine potentially reportable events, and optionally locally evaluated rules for determining suspected reportable events. The final determination of reportability is made by the Public Health Agency or Agencies appropriate for the event, and may be performed by a combination of decisions occurring at various points during the processing of an eICR, as explained in the Reportability Response profile."
 
-
-
-
 * . MS
 * . ^short = "eRSD - electronic Reporting and Surveillance Distribution"
 * . ^definition = "Defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician."
@@ -36,10 +33,10 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action contains
     encounterStart 1..1 MS and
     checkSuspectedDisorder 1..1 MS and
-    checkReportable 1..1 and
-    createEicr 1..1 and
-    validateEicr 1..1 and
-    routeAndSendEicr 1..1 and
+    checkReportable 1..1 MS and
+    createEicr 1..1 MS and
+    validateEicr 1..1 MS and
+    routeAndSendEicr 1..1 MS and
     encounterModified 1..1 MS
 * action[encounterStart] ^short = "Encounter start code"
 * action[encounterStart] ^definition = "Defines the \"start\" action"
@@ -77,8 +74,10 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[encounterStart].trigger.extension ^base.max = "*"
 * action[encounterStart].trigger.extension ^isModifier = false
 * action[encounterStart].trigger.extension ^isSummary = false
-* action[encounterStart].trigger.extension[namedEventType] 0..1 MS
-* action[encounterStart].trigger.extension[namedEventType] only USPublicHealthNamedEventTypeExtension
+// * action[encounterStart].trigger.extension contains 
+    // USPublicHealthNamedEventTypeExtension named namedEventType 0..1 MS
+// * action[encounterStart].trigger.extension[namedEventType] 0..1 MS
+// * action[encounterStart].trigger.extension[namedEventType] only USPublicHealthNamedEventTypeExtension
 * action[encounterStart].trigger.extension[namedEventType] ^short = "Indicates the types of named events to subscribe to from the EHR."
 * action[encounterStart].trigger.extension[namedEventType] ^definition = "Indicates the types of named events to subscribe to from the EHR."
 * action[encounterStart].trigger.extension[namedEventType] ^base.path = "Element.extension"
@@ -267,8 +266,9 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[encounterModified].trigger.extension ^base.max = "*"
 * action[encounterModified].trigger.extension ^isModifier = false
 * action[encounterModified].trigger.extension ^isSummary = false
-* action[encounterModified].trigger.extension[namedEventType] 0..1 MS
-* action[encounterModified].trigger.extension[namedEventType] only USPublicHealthNamedEventTypeExtension
+// * action[encounterModified].trigger.extension contains USPublicHealthNamedEventTypeExtension named namedEventType 0..1 MS
+// * action[encounterModified].trigger.extension[namedEventType] 0..1 MS
+// * action[encounterModified].trigger.extension[namedEventType] only USPublicHealthNamedEventTypeExtension
 * action[encounterModified].trigger.extension[namedEventType] ^short = "Indicates the types of named events to subscribe to from the EHR."
 * action[encounterModified].trigger.extension[namedEventType] ^definition = "Indicates the types of named events to subscribe to from the EHR."
 * action[encounterModified].trigger.extension[namedEventType] ^base.path = "Element.extension"

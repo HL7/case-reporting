@@ -1,5 +1,5 @@
 Instance: observation-us-ph-lab-result-eve-everywoman-lymphocytes
-InstanceOf: USPublicHealthLaboratoryResultObservationProfile
+InstanceOf: USPublicHealthLaboratoryResultObservation
 Title: "US Public Health Lab Result Observation Example: observation-us-ph-lab-result-eve-everywoman-lymphocytes"
 Description: "Example of US Public Health Lab Result profile (Eve Everywoman, lymphocytes)"
 Usage: #example

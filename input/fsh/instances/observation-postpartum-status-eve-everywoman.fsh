@@ -1,5 +1,5 @@
 Instance: observation-postpartum-status-eve-everywoman
-InstanceOf: USPublicHealthPostpartumStatus
+InstanceOf: USPublicHealthIsPostpartum
 Title: "US Public Health Postpartum Status Example: observation-postpartum-status-eve-everywoman"
 Description: "Example of US Public Health Postpartum Status profile (Eve Everywoman)"
 Usage: #example

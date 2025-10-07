@@ -7,7 +7,9 @@ Description: "This Bundle profile represents an eCR Document Bundle. It contains
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
-* entry[sliceUSPublicHealthComposition] 1..1 MS
+* entry contains
+    sliceUSPublicHealthComposition 1..1 MS
+// * entry[sliceUSPublicHealthComposition] 1..1 MS
 * entry[sliceUSPublicHealthComposition].resource 1.. MS
 * entry[sliceUSPublicHealthComposition].resource only EICRComposition
 * entry[sliceUSPublicHealthComposition].resource ^short = "eICR Composition"

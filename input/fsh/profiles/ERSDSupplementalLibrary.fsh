@@ -3,9 +3,6 @@ Parent: USPublicHealthSupplementalLibrary
 Id: ersd-supplemental-library
 Title: "eRSD Supplemental Library"
 Description: "Defines the asset-collection library containing the eRSD supplemental assets."
-* ^date = "2021-07-13T00:00:00.000Z"
-
-
 
 * . ^short = "eRSD Supplemental Library"
 * relatedArtifact MS
