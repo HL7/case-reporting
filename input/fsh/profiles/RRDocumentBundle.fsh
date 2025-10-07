@@ -2,7 +2,7 @@ Profile: RRDocumentBundle
 Parent: USPublicHealthDocumentBundle
 Id: rr-document-bundle
 Title: "RR Document Bundle"
-Description: "This Bundle profile represents an RR Document Bundle. It contains either an RR Composition."
+Description: "This Bundle profile represents an RR Document Bundle. It contains an RR Composition."
 
 // * entry MS
 // * entry ^slicing.discriminator.type = #profile
