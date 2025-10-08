@@ -27,16 +27,16 @@ The eRSD specification is structured into two groups to facilitate two different
 
 The contents of each of these specifications at a high level are:
 
-* Specification Library [us-ph-specification-library](StructureDefinition-us-ph-specification-library.html)
-    * PlanDefinition - Defines the reporting workflow [us-ph-plandefinition](StructureDefinition-us-ph-plandefinition.html)
-    * Triggering Value Set Library - List of triggering value sets [us-ph-triggering-valueset-library](StructureDefinition-us-ph-triggering-valueset-library.html)
-        * Triggering Value Sets [us-ph-triggering-valueset](StructureDefinition-us-ph-triggering-valueset.html)
+* Specification Library [us-ph-specification-library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-specification-library.html)
+    * PlanDefinition - Defines the reporting workflow [us-ph-plandefinition]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-plandefinition.html)
+    * Triggering Value Set Library - List of triggering value sets [us-ph-triggering-valueset-library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-triggering-valueset-library.html)
+        * Triggering Value Sets [us-ph-triggering-valueset]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-triggering-valueset.html)
 
 * Supplemental Library [ersd-supplemental-library](StructureDefinition-ersd-supplemental-library.html)
-    * Computable Library - Library containing the rules logic [us-ph-computable-library](StructureDefinition-us-ph-computable-library.html)
-    * Supplemental Value Set Library - List of additional value sets required for evaluation of rules logic [us-ph-supplemental-valueset-library](StructureDefinition-us-ph-supplemental-valueset-library.html)
-        * Supplemental Value Sets - Value sets referenced by rules logic [us-ph-supplemental-valueset](StructureDefinition-us-ph-supplemental-valueset.html)
-    * Jurisidictions - List of jurisdications and their configurations [us-ph-codesystem](StructureDefinition-us-ph-codesystem.html)
+    * Computable Library - Library containing the rules logic [us-ph-computable-library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-computable-library.html)
+    * Supplemental Value Set Library - List of additional value sets required for evaluation of rules logic [us-ph-supplemental-valueset-library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-valueset-library.html)
+        * Supplemental Value Sets - Value sets referenced by rules logic [us-ph-supplemental-valueset]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-valueset.html)
+    * Jurisidictions - List of jurisdications and their configurations [us-ph-codesystem]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-codesystem.html)
 
 Subsequent sections describe each of these specification components in more detail.
 
@@ -64,7 +64,7 @@ Each of these are discussed in more detail in the following sections.
 
 ##### Events
 
-Events are represented with the `trigger` element, using the `named-event` trigger type and bound to the [US Public Health TriggerDefinition Named Event](ValueSet-us-ph-triggerdefinition-namedevent.html) value set. In addition, since the `name` element of the trigger definition is a `uri`, the eRSD profile uses the [US Public Health Named Event Type Extension](StructureDefinition-us-ph-named-eventtype-extension.html) to provide complete binding information for the value set, as illustrated in the eRSDPlanDefinition example:
+Events are represented with the `trigger` element, using the `named-event` trigger type and bound to the [US Public Health TriggerDefinition Named Event](ValueSet-us-ph-triggerdefinition-namedevent.html) value set. In addition, since the `name` element of the trigger definition is a `uri`, the eRSD profile uses the [US Public Health Named Event Type Extension]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-named-eventtype-extension.html) to provide complete binding information for the value set, as illustrated in the eRSDPlanDefinition example:
 
 <pre><code>&lt;trigger id=&quot;encounter-start&quot;&gt;
   &lt;extension url=&quot;http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-named-eventtype-extension&quot;&gt;
@@ -197,9 +197,9 @@ The triggering level is represented using the `condition` element of the `check-
 
 This level uses a [FHIRPath](http://hl7.org/fhirpath) to test for existence of data in any of the `input` categories. Each `input` element is accessed by an _environment variable_ using the `%` syntax in FHIRPath.
 
-The eRSD specification is delivered as an _asset collection library_ (a Library resource with a type of `asset-collection`) conforming to the [US Public Health Specification Library](StructureDefinition-us-ph-specification-library.html) profile.
+The eRSD specification is delivered as an _asset collection library_ (a Library resource with a type of `asset-collection`) conforming to the [US Public Health Specification Library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-specification-library.html) profile.
 
-The eRSD Specification library is composed of the eRSD Plan Definition and the RCTC Library, a Value Set library that conforms to the [US Public Health Triggering Value Set Library](StructureDefinition-us-ph-triggering-valueset-library.html) profile:
+The eRSD Specification library is composed of the eRSD Plan Definition and the RCTC Library, a Value Set library that conforms to the [US Public Health Triggering Value Set Library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-triggering-valueset-library.html) profile:
 
 <pre><code>&lt;relatedArtifact&gt;
   &lt;type value=&quot;composed-of&quot;/&gt;
@@ -217,9 +217,9 @@ The eRSD Specification library is composed of the eRSD Plan Definition and the R
 
 Triggering value sets and metadata can be used for EHR implementations whether they are FHIR-based or not.
 
-The [ComputableValueSet](StructureDefinition-us-ph-computable-valueset.html) profile describes the requirements for computable representation of value set membership criteria, ensuring that value sets using this profile selectively support only one technique for defining the content of expansions.
+The [ComputableValueSet]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-computable-valueset.html) profile describes the requirements for computable representation of value set membership criteria, ensuring that value sets using this profile selectively support only one technique for defining the content of expansions.
 
-The [ExecutableValueSet](StructureDefinition-us-ph-executable-valueset.html) profile provides support for including a persisted point-in-time expansion that SHALL conform to the chosen compositional style for the value set. The included point-in-time expansion can then be used by FHIR implementations that do not have a FHIR terminology service capable of evaluating the value set in real-time with an $expand operation. It also provides all the concepts needed in the expansion so that a complete code system resource is not required.
+The [ExecutableValueSet]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-executable-valueset.html) profile provides support for including a persisted point-in-time expansion that SHALL conform to the chosen compositional style for the value set. The included point-in-time expansion can then be used by FHIR implementations that do not have a FHIR terminology service capable of evaluating the value set in real-time with an $expand operation. It also provides all the concepts needed in the expansion so that a complete code system resource is not required.
 
 The ValueSets in the RCTC Library are distributed conforming to both these profiles, enabling systems to make use of expansions, or recalculate expansions based on the computable value set definition if necessary.
 
@@ -227,7 +227,7 @@ The ValueSets in the RCTC Library are distributed conforming to both these profi
 
 The supplemental level of integration enables sites to participate in the suspected reportability determination by considering additional elements of the event data such as status, lab values, and jurisdiction configuration.
 
-The suspected reportability criteria are also represented with the `condition` element, but using the [US Public Health Alternative Expression](StructureDefinition-us-ph-alternative-expression-extension.html) to provide the CQL expression for suspected reportability:
+The suspected reportability criteria are also represented with the `condition` element, but using the [US Public Health Alternative Expression]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-alternative-expression-extension.html) to provide the CQL expression for suspected reportability:
 
 <pre><code>&lt;extension url=&quot;http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-alternative-expression-extension&quot;&gt;
   &lt;valueExpression&gt;
