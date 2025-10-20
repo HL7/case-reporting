@@ -11,7 +11,7 @@ Description: "This example code system describes jurisdictions that require publ
 * ^content = #complete
 
 * ^property[0].extension.url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
-* ^property[=].extension.valueCanonical = "http://example.org/fhir/CodeSystem/us-ph-codesystem-jurisdiction-types-example"
+* ^property[=].extension.valueCanonical = "http://example.org/fhir/CodeSystem/ersd-jurisdiction-types-example"
 * ^property[=].code = #type
 * ^property[=].uri = "http://example.org/fhir/CodeSystem/us-ph-codesystem-properties-example#type"
 * ^property[=].description = "Type of public health jurisdiction."
@@ -31,7 +31,7 @@ Description: "This example code system describes jurisdictions that require publ
 
 * #AK "ALASKA" "Alaska Department of Health and Social Services"
 * #AK ^property[0].code = #type
-* #AK ^property[=].valueCoding = us-ph-codesystem-jurisdiction-types-example#pha-state
+* #AK ^property[=].valueCoding = $system-jurisdiction-types#pha-state
 * #AK ^property[+].code = #state
 * #AK ^property[=].valueCoding = $system-usps#AK
 * #AL "ALABAMA" "Alabama Department of Public Health"

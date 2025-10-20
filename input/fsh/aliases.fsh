@@ -45,4 +45,4 @@ Alias: $v3-TribalEntityUS_1 = http://terminology.hl7.org/ValueSet/v3-TribalEntit
 Alias: $USPublicHealthUsageContextType = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type
 Alias: $USPublicHealthUsageContext = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context
 Alias: $system-usps = https://www.usps.com/
-Alias: $system-jurisdiction-types = http://example.org/fhir/CodeSystem/us-ph-codesystem-jurisdiction-types-example
+Alias: $system-jurisdiction-types = http://example.org/fhir/CodeSystem/ersd-jurisdiction-types-example

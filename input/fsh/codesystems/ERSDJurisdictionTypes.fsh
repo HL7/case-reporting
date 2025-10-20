@@ -1,17 +1,18 @@
-CodeSystem: ERSDJurisdictionTypes
-Id: ersd-jurisdiction-types
-Title: "eRSD JurisdictionTypes"
-Description: "This code system describes the possible types of jurisdictions that require public health reporting."
-* ^version = "0.1.0"
-* ^status = #active
+CodeSystem: ERSDJurisdictionTypesExample
+Id: ersd-jurisdiction-types-example
+Title: "eRSD Jurisdiction Types Example"
+Description: "This example code system describes the possible types of jurisdictions that require public health reporting."
+* ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-codesystem"
+* ^url = "http://example.org/fhir/CodeSystem/ersd-jurisdiction-types-example"
+
 * ^experimental = false
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
-* ^jurisdiction.text = "United States of America (the)"
-* ^caseSensitive = false
+
+* ^caseSensitive = true
 * ^content = #complete
-* #state "State" "A state-level public health agency/jurisdiction"
-* #county "County" "A county-level public health agency/jurisdiction"
-* #city "City" "A city-level public health agency/jurisdiction"
-* #district "District" "A district-level public health agency/jurisdiction"
-* #borough "Borough" "A borough-level public health agency/jurisdiction"
-* #parish "Parish" "A parish/neighborhood-level public health agency/jurisdiction"
+
+* #pha-state "PHA State" "A state-level public health agency/jurisdiction"
+* #pha-county "PHA County" "A county-level public health agency/jurisdiction"
+* #pha-city "PHA City" "A city-level public health agency/jurisdiction"
+* #pha-district "PHA District" "A district-level public health agency/jurisdiction"
+* #pha-borough "PHA Borough" "A borough-level public health agency/jurisdiction"
+* #pha-parish "PHA Parish" "A parish/neighborhood-level public health agency/jurisdiction"
