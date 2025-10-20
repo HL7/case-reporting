@@ -1,4 +1,4 @@
-Profile: RR_Eicr_Processing_Status_Observation
+Profile: RREicrProcessingStatusObservation
 Parent: Observation
 Id: rr-eicr-processing-status-observation
 Title: "eICR Processing Status Observation"

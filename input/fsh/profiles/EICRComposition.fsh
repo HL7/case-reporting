@@ -266,7 +266,7 @@ Description: "This Composition profile represents an electronic initial case rep
 * section[slicePlanOfTreatmentSection].entry contains
     sliceEICRServiceRequest 0..* MS and
     sliceUSCoreMedicationRequest 0..* MS
-* section[slicePlanOfTreatmentSection].entry[sliceEICRServiceRequest] only Reference(Eicr_ServiceRequest)
+* section[slicePlanOfTreatmentSection].entry[sliceEICRServiceRequest] only Reference(EICRServiceRequest)
 * section[slicePlanOfTreatmentSection].entry[sliceEICRServiceRequest] ^sliceName = "sliceEICRServiceRequest"
 * section[slicePlanOfTreatmentSection].entry[sliceEICRServiceRequest] ^short = "eICR Service Request entry"
 * section[slicePlanOfTreatmentSection].entry[sliceEICRServiceRequest] ^definition = "The eICR Trigger Code Flag (extension) is present for a laboratory test order, based on a trigger code match of the lab test (observation.code) to the eRSD PlanDefinition Lab Obs Test Name Trigger or the lab test result (observation.value) to the eRSD PlanDefinition Organism Substance Trigger."

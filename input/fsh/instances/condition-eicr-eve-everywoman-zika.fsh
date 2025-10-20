@@ -1,5 +1,5 @@
 Instance: condition-eicr-eve-everywoman-zika
-InstanceOf: USPublicHealthConditionProblemsHealthConcerns
+InstanceOf: USPublicHealthConditionEncounterDiagnosis
 Title: "eICR Condition example: Eve Everywoman - zika"
 Description: "Example of eICR Condition profile (Eve Everywoman: zika)"
 Usage: #example

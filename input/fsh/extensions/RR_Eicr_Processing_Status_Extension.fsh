@@ -18,7 +18,7 @@ Context: Composition.section
     eICRProcessingStatus 1..1 and
     eICRValidationOutput 0..*
 * extension[eICRProcessingStatus].value[x] 1..
-* extension[eICRProcessingStatus].value[x] only Reference(RR_Eicr_Processing_Status_Observation)
+* extension[eICRProcessingStatus].value[x] only Reference(RREicrProcessingStatusObservation)
 * extension[eICRValidationOutput] ^definition = "Contains eICR validation output - this could be the actual output from a validator, or a link to a validation output file"
 * extension[eICRValidationOutput].value[x] 1..
 * extension[eICRValidationOutput].value[x] only markdown or string or Attachment

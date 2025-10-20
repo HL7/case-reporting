@@ -3,15 +3,15 @@ InstanceOf: USPublicHealthPregnancyStatusObservation
 Title: "US Public Health Pregnancy Status Observation Example: Eve Everywoman"
 Description: "Example of US Public Health Pregnancy Status Observation profile (Eve Everywoman)"
 Usage: #example
-* extension[0].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-date-recorded-extension"
-* extension[=].valueDateTime = "2017-10-01"
 * extension[+].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-date-determined-extension"
 * extension[=].valueDateTime = "2017-10-01"
 * status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code = $loinc#82810-3 "Pregnancy status"
-* subject.reference = "Patient/patient-ecr-eve-everywoman"
+* subject.reference = "Patient/us-ph-patient-eve-everywoman"
 * subject.display = "Eve Everywoman"
 * effectiveDateTime = "2017-08-26"
+* performer.reference = "PractitionerRole/us-ph-practitionerrole-henry-seven"
 * valueCodeableConcept = $sct#77386006 "Pregnancy (finding)"
 * method = $sct#16310003 "Ultrasonography (procedure)"
 * component[0].extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-date-determined-extension"

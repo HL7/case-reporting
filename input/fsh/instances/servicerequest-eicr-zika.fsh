@@ -1,5 +1,5 @@
 Instance: servicerequest-eicr-zika
-InstanceOf: Eicr_ServiceRequest
+InstanceOf: EICRServiceRequest
 Title: "eICR ServiceRequest Example"
 Description: "Example of eICR ServiceRequest profile"
 Usage: #example

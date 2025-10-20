@@ -1,5 +1,5 @@
 Instance: messageheader-ecr-requested-eicr
-InstanceOf: Ecr_MessageHeader
+InstanceOf: ECRMessageHeader
 Title: "eCR MessageHeader Example: Requested eICR"
 Description: "Example of eCR MessageHeader profile (Requested eICR)"
 Usage: #example

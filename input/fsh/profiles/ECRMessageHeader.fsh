@@ -1,4 +1,4 @@
-Profile: Ecr_MessageHeader
+Profile: ECRMessageHeader
 Parent: USPublicHealthMessageHeader
 Id: ecr-messageheader
 Title: "eCR MessageHeader"

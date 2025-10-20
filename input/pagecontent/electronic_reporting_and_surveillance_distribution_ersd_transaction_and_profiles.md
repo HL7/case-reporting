@@ -277,17 +277,17 @@ When packaging as a Bundle, the expectation is that the Bundle would include the
 #### Profiles
 <ul>
   <li><a href="StructureDefinition-ersd-plandefinition.html">eRSD PlanDefinition</a></li>
-  <li><a href="StructureDefinition-us-ph-specification-library.html">US Public Health Specification Library</a></li>
-  <li><a href="StructureDefinition-us-ph-supplemental-library.html">US Public Health Supplemental Library</a></li>
-  <li><a href="StructureDefinition-us-ph-supplemental-valueset.html">US Public Health Supplemental ValueSet</a></li>  
-  <li><a href="StructureDefinition-us-ph-supplemental-valueset-library.html">US Public Health Supplemental ValueSet Library</a></li>  
-  <li><a href="StructureDefinition-us-ph-triggering-valueset.html">US Public Health Triggering ValueSet</a></li>
-  <li><a href="StructureDefinition-us-ph-triggering-valueset-library.html">US Public Health Triggering ValueSet Library</a></li>
-  <li><a href="StructureDefinition-us-ph-valueset-library.html">US Public Health ValueSet Library</a></li>
-  <li><a href="StructureDefinition-us-ph-valueset.html">US Public Health ValueSet</a></li>
+  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-specification-library.html">US Public Health Specification Library</a></li>
+  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-library.html">US Public Health Supplemental Library</a></li>
+  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-valueset.html">US Public Health Supplemental ValueSet</a></li>  
+  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-valueset-library.html">US Public Health Supplemental ValueSet Library</a></li>  
+  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-triggering-valueset.html">US Public Health Triggering ValueSet</a></li>
+  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-triggering-valueset-library.html">US Public Health Triggering ValueSet Library</a></li>
+  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-valueset-library.html">US Public Health ValueSet Library</a></li>
+  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-valueset.html">US Public Health ValueSet</a></li>
 </ul>
 
 #### Extensions
 <ul>
-  <li><a href="StructureDefinition-us-ph-usagewarning-extension.html">US Public Health Usage Warning Extension</a></li>
+  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-usagewarning-extension.html">US Public Health Usage Warning Extension</a></li>
 </ul>

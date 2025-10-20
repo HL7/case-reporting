@@ -1,5 +1,5 @@
 Instance: servicerequest-eicr-eve-everywoman-zika
-InstanceOf: Eicr_ServiceRequest
+InstanceOf: EICRServiceRequest
 Title: "eICR ServiceRequest Example: Eve Everywoman - Zika"
 Description: "Example of eICR ServiceRequest profile (Eve Everywoman - zika"
 Usage: #example

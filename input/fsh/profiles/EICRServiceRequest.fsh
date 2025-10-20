@@ -1,4 +1,4 @@
-Profile: Eicr_ServiceRequest
+Profile: EICRServiceRequest
 Parent: ServiceRequest
 Id: eicr-servicerequest
 Title: "eICR ServiceRequest"
