@@ -4,6 +4,7 @@ Id: eicr-country-of-nationality
 Title: "eICR Country of Nationality"
 Description: "This Observation profile represents the patient's country of nationality."
 * . ^short = "eICR Country of Nationality"
+
 * status = #final (exactly)
 * status MS
 * status ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint"

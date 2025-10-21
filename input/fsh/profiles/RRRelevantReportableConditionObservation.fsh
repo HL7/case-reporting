@@ -3,12 +3,8 @@ Parent: Observation
 Id: rr-relevant-reportable-condition-observation
 Title: "RR Relevant Reportable Condition Observation"
 Description: "This profile represents a relevant reportable condition."
-
-
-
-
-
 * . ^short = "RR Relevant Reportable Condition Observation"
+
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open

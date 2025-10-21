@@ -1,16 +1,11 @@
-Profile: RR_Eicr_Processing_Status_Reason_Observation
+Profile: RREicrProcessingStatusReasonObservation
 Parent: Observation
 Id: rr-eicr-processing-status-reason-observation
 Title: "eICR Processing Status Reason Observation"
 Description: "This Observation profile represents, if the incoming eICR was not successfully processed for a determination of reportability, the reason it was not processed."
-
-
-
-
-
-* . MS
 * . ^short = "eICR Processing Status Reason"
 * . ^definition = "If the incoming eICR was not successfully processed for a determination of reportability, contains the reason it was not processed.  If any of the trigger codes used to generate the eICR are from an outdated version of the RCTC or the codes are marked as inactive in the latest version fo the RCTC, these are flagged and compoent observations will hold the details of the outdated and expected versions of the RCTC."
+
 * status = #final (exactly)
 * status ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint"
 * status ^extension.valueString = "default: final"

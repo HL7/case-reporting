@@ -3,14 +3,9 @@ Parent: Observation
 Id: rr-reportability-information-observation
 Title: "RR Reportability Information Observation"
 Description: "This profile represents reportability information based on the PHA in which is located the patient's home, the provider facility, or both locations."
-
-
-
-
-* . MS
 * . ^short = "Reportability Information Observation"
 * . ^definition = "This profile defines the reportability information for a condition-jurisdiction pair, based on the PHA in which is located the patient's home, the provider facility, or both locations. The Determination of Reportability, Determination of Reportability Reason, and Determination of Reportability Rule are contained in extensions. This profile also contains extensions for the Responsible Agency, the Rules Authoring Agency, and the Routing Entity.  The Relevant Reportable Condition is contained in goal.addresses and any External Resources are contained in action (one action may contain multiple External Resources (documentation))."
-* . ^isModifier = false
+
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
@@ -35,9 +30,9 @@ Description: "This profile represents reportability information based on the PHA
     rulesAuthoringAgency 1..* MS and
     routingEntity 1..* MS and
     responsibleAgency 0..* MS
-* performer[rulesAuthoringAgency] only Reference(RR_Rules_Authoring_Agency_Organization)
-* performer[routingEntity] only Reference(RR_Routing_Entity_Organization)
-* performer[responsibleAgency] only Reference(RR_Responsible_Agency_Organization)
+* performer[rulesAuthoringAgency] only Reference(RRRulesAuthoringAgencyOrganization)
+* performer[routingEntity] only Reference(RRRoutingEntityOrganization)
+* performer[responsibleAgency] only Reference(RRResponsibleAgencyOrganization)
 * component 1.. MS
 * component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"

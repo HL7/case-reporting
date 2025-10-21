@@ -4,6 +4,7 @@ Id: eicr-country-of-residence
 Title: "eICR Country of Residence"
 Description: "This Observation profile represents the patient's country of usual residence."
 * . ^short = "eICR Country of Residence"
+
 * status = #final (exactly)
 * status MS
 * status ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint"

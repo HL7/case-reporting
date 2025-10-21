@@ -5,8 +5,8 @@ Title: "Electronic Initial Case Report Composition"
 Description: "This Composition profile represents an electronic initial case report (eICR). It is based on and further constrains the US Public Health Composition."
 * . MS
 * . ^short = "eICR Composition Profile"
-* . ^definition = "The Electronic Case Reporting Composition profile establishes the core elements, extensions, vocabularies and value sets for representing an electronic initial case report (eICR). It describes the content requirements for the initial Case Report including:         \n\n- Patient demographics         \n- Patient pregnancy status         \n- Patient occupation and travel history         \n- Provider and Facility information         \n- Laboratory orders tests and results         \n- Signs and Symptoms and Diagnosis         \n- Medication and Immunization History         \n- Flags for the existence of reportable condition trigger codes in diagnoses and ordered/resulted laboratory tests."
-* . ^isModifier = false
+* . ^definition = "This Composition profile represents an electronic initial case report (eICR). It is based on and further constrains the US Public Health Composition."
+
 * extension MS
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"

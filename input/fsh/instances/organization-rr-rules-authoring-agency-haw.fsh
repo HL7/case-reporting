@@ -1,5 +1,5 @@
 Instance: organization-rr-rules-authoring-agency-haw
-InstanceOf: RR_Rules_Authoring_Agency_Organization
+InstanceOf: RRRulesAuthoringAgencyOrganization
 Title: "RR Rules Authoring Agency Organization Example: Health Authority West Rules Authoring Agency"
 Description: "Example of RR Rules Authoring Agency profile (Health Authority West Rules Authoring Agency)"
 Usage: #example

@@ -1,5 +1,5 @@
 Instance: observation-rr-eicr-processing-status-reason
-InstanceOf: RR_Eicr_Processing_Status_Reason_Observation
+InstanceOf: RREicrProcessingStatusReasonObservation
 Title: "RR eICR Processing Status Reason Example: observation-rr-eicr-processing-status-reason"
 Description: "Example of RR eICR Processing Status Reason Observation profile"
 Usage: #example

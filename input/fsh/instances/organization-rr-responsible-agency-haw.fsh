@@ -1,5 +1,5 @@
 Instance: organization-rr-responsible-agency-haw
-InstanceOf: RR_Responsible_Agency_Organization
+InstanceOf: RRResponsibleAgencyOrganization
 Title: "RR Responsible Agency Organization Example: Health Authority West Responsible Agency"
 Description: "Example of RR Responsible Agency Organization profile (Health Authority West Responsible Agency)"
 Usage: #example

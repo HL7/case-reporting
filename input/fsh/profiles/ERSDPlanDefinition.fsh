@@ -3,10 +3,9 @@ Parent: USPublicHealthPlanDefinition
 Id: ersd-plandefinition
 Title: "eRSD PlanDefinition"
 Description: "This PlanDefinition profile defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician. The rules for determining reportability described by an eRSD specification involve the use of triggering codes to determine potentially reportable events, and optionally locally evaluated rules for determining suspected reportable events. The final determination of reportability is made by the Public Health Agency or Agencies appropriate for the event, and may be performed by a combination of decisions occurring at various points during the processing of an eICR, as explained in the Reportability Response profile."
-
-* . MS
 * . ^short = "eRSD - electronic Reporting and Surveillance Distribution"
 * . ^definition = "Defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician."
+
 * extension MS
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"

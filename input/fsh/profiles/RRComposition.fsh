@@ -3,11 +3,9 @@ Parent: USPublicHealthComposition
 Id: rr-composition
 Title: "RR Composition"
 Description: "This Composition profile represents the Reportability Response that is created in response to an electronic Initial Case Report Composition."
-
-* . MS
 * . ^short = "Reportability Response Composition"
 * . ^definition = "This Composition profile represents the Reportability Response that will be created in response to an electronic Initial Case Report Composition."
-* . ^isModifier = false
+
 // * extension contains 
 //     USPublicHealthInformationRecipientExtension named extensionInformationRecipient 1..* MS
 * extension[extensionInformationRecipient] 1..

@@ -6,10 +6,7 @@ Description: "This ServiceRequest profile represents eICR laboratory orders and 
 * . MS
 * . ^short = "eICR ServiceRequest"
 * . ^definition = "Ordered tests for the patient during the encounter."
-* . ^base.path = "ServiceRequest"
-* . ^base.min = 0
-* . ^base.max = "*"
-* . ^isModifier = false
+
 * identifier 1.. MS
 * identifier ^isModifier = false
 * code 1..1 MS

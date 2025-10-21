@@ -1,5 +1,5 @@
 Instance: organization-rr-routing-entity-haw
-InstanceOf: RR_Routing_Entity_Organization
+InstanceOf: RRRoutingEntityOrganization
 Title: "RR Routing Entity Organization Example: Health Authority West Routing Entity"
 Description: "Example of RR Routing Entity Organization Example profile (Health Authority West Routing Entity)"
 Usage: #example
