@@ -3,7 +3,7 @@ InstanceOf: USPublicHealthConditionProblemsHealthConcerns
 Title: "eICR Condition example: Eve Everywoman- common cold"
 Description: "Example of eICR Condition profile (Eve Everywoman: common cold)"
 Usage: #example
-* category.code.display = "Problem List Item"
+* category.coding.display = "Problem List Item"
 * code = $sct#82272006 "Common cold (disorder)"
 * subject.reference = "Patient/patient-ecr-eve-everywoman"
 * subject.display = "Eve Everywoman"
