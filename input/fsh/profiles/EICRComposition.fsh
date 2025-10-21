@@ -7,7 +7,7 @@ Description: "This Composition profile represents an electronic initial case rep
 * . ^short = "eICR Composition Profile"
 * . ^definition = "This Composition profile represents an electronic initial case report (eICR). It is based on and further constrains the US Public Health Composition."
 
-* extension MS
+* extension 2.. MS
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
