@@ -1,4 +1,4 @@
-Extension: RR_Priority_Extension
+Extension: RRPriorityExtension
 Id: rr-priority-extension
 Title: "Reportability Response Priority Extension"
 Description: "This Extension profile represents the priority given to the whole composition or one or more external resources."

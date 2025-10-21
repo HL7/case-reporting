@@ -8,7 +8,7 @@ Description: "This profile represents external resources such as a text guidance
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
-* extension contains RR_Priority_Extension named priority 1..* MS
+* extension contains RRPriorityExtension named priority 1..* MS
 * category 1..* MS
 * category from RRVS_ExternalResourceType_eCR (extensible)
 * category ^short = "External Resource Type"

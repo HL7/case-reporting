@@ -12,7 +12,7 @@ Description: "This Composition profile represents an electronic initial case rep
 // * extension ^slicing.discriminator.path = "url"
 // * extension ^slicing.rules = #open
 * extension contains
-    Eicr_Initiation_Type_Extension named extensionEICRInitiationType 0..1 MS and
+    EICRInitiationTypeExtension named extensionEICRInitiationType 0..1 MS and
     USPublicHealthInitiationReasonExtension named extensionEICRInitiationReason 0..* MS
 * extension[extensionEICRInitiationType] ^short = "Initial Case Report Initiation Type"
 * extension[extensionEICRInitiationType] ^definition = "When set to \"PHC1464: Manually Initiated eICR\", indicates that this document is manually initiated. When set to \"PHC2235: Alternately Initiated eICR\", indicates that this eICR document was initiated by automated process and is intended to force reporting to the responsible Public Health Agency (PHA) for the jurisdiction of care. Unlike eICRs manually initiated by a provider, which are force reported to all relevant jurisdictions, PHC2235 will be sent to, and only to, the PHA of the jurisdiction of care. If a reportable condition is found by public health decision support then the alternately initiated eICR may also be reported to the jurisdiction of residence PHA."
@@ -132,7 +132,7 @@ Description: "This Composition profile represents an electronic initial case rep
 * section[sliceProblemSection].entry[sliceEICRCondition].extension ^slicing.discriminator.type = #value
 * section[sliceProblemSection].entry[sliceEICRCondition].extension ^slicing.discriminator.path = "url"
 * section[sliceProblemSection].entry[sliceEICRCondition].extension ^slicing.rules = #open
-* section[sliceProblemSection].entry[sliceEICRCondition].extension contains Eicr_Trigger_Code_Flag_Extension named sliceTriggerCondition 0..1 MS
+* section[sliceProblemSection].entry[sliceEICRCondition].extension contains EICRTriggerCodeFlagExtension named sliceTriggerCondition 0..1 MS
 * section[sliceProblemSection].entry[sliceEICRCondition].extension[sliceTriggerCondition] ^short = "eICR Trigger Code Flag"
 * section[sliceProblemSection].entry[sliceEICRCondition].extension[sliceTriggerCondition] ^definition = "A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated."
 * section[sliceMedicationsAdministeredSection] ^short = "Medications Administered Section"
@@ -162,7 +162,7 @@ Description: "This Composition profile represents an electronic initial case rep
 * section[sliceMedicationsAdministeredSection].entry[sliceMedicationAdministration].extension ^slicing.discriminator.type = #value
 * section[sliceMedicationsAdministeredSection].entry[sliceMedicationAdministration].extension ^slicing.discriminator.path = "url"
 * section[sliceMedicationsAdministeredSection].entry[sliceMedicationAdministration].extension ^slicing.rules = #open
-* section[sliceMedicationsAdministeredSection].entry[sliceMedicationAdministration].extension contains Eicr_Trigger_Code_Flag_Extension named sliceTriggerMedicationAdministered 0..1 MS
+* section[sliceMedicationsAdministeredSection].entry[sliceMedicationAdministration].extension contains EICRTriggerCodeFlagExtension named sliceTriggerMedicationAdministered 0..1 MS
 * section[sliceMedicationsAdministeredSection].entry[sliceMedicationAdministration].extension[sliceTriggerMedicationAdministered] ^short = "eICR Trigger Code Flag"
 * section[sliceMedicationsAdministeredSection].entry[sliceMedicationAdministration].extension[sliceTriggerMedicationAdministered] ^definition = "A flag to indicate that the **target** reference represents a triggering event and caused the eICR to be generated."
 * section[sliceAdmissionMedicationsSection] ^short = "Admission Medications Section"
@@ -214,7 +214,7 @@ Description: "This Composition profile represents an electronic initial case rep
 * section[sliceMedicationsSection].entry[sliceMedicationAdministration].extension ^slicing.discriminator.type = #value
 * section[sliceMedicationsSection].entry[sliceMedicationAdministration].extension ^slicing.discriminator.path = "url"
 * section[sliceMedicationsSection].entry[sliceMedicationAdministration].extension ^slicing.rules = #open
-* section[sliceMedicationsSection].entry[sliceMedicationAdministration].extension contains Eicr_Trigger_Code_Flag_Extension named sliceTriggerMedicationAdministered 0..1 MS
+* section[sliceMedicationsSection].entry[sliceMedicationAdministration].extension contains EICRTriggerCodeFlagExtension named sliceTriggerMedicationAdministered 0..1 MS
 * section[sliceMedicationsSection].entry[sliceMedicationAdministration].extension[sliceTriggerMedicationAdministered] ^short = "eICR Trigger Code Flag"
 * section[sliceMedicationsSection].entry[sliceMedicationAdministration].extension[sliceTriggerMedicationAdministered] ^definition = "A flag to indicate that the **target** reference represents a triggering event and caused the eICR to be generated."
 * section[sliceResultsSection] ^short = "Results Section"
@@ -245,7 +245,7 @@ Description: "This Composition profile represents an electronic initial case rep
 * section[sliceResultsSection].entry[sliceUSPHLabResultObservation].extension ^slicing.discriminator.path = "url"
 * section[sliceResultsSection].entry[sliceUSPHLabResultObservation].extension ^slicing.rules = #open
 * section[sliceResultsSection].entry[sliceUSPHLabResultObservation].extension contains 
-    Eicr_Trigger_Code_Flag_Extension named sliceTriggerUSPHLabResultObservation 0..* MS
+    EICRTriggerCodeFlagExtension named sliceTriggerUSPHLabResultObservation 0..* MS
 * section[sliceResultsSection].entry[sliceUSPHLabResultObservation].extension[sliceTriggerUSPHLabResultObservation] ^short = "eICR Trigger Code Flag"
 * section[sliceResultsSection].entry[sliceUSPHLabResultObservation].extension[sliceTriggerUSPHLabResultObservation] ^definition = "A flag to indicate that the **target** reference represents one or more (lab result observations can contain hasMember) triggering events and caused the eCR to be generated."
 * section[slicePlanOfTreatmentSection] ^short = "Plan of Treatment Section"
@@ -276,7 +276,7 @@ Description: "This Composition profile represents an electronic initial case rep
 * section[slicePlanOfTreatmentSection].entry[sliceEICRServiceRequest].extension ^slicing.discriminator.type = #value
 * section[slicePlanOfTreatmentSection].entry[sliceEICRServiceRequest].extension ^slicing.discriminator.path = "url"
 * section[slicePlanOfTreatmentSection].entry[sliceEICRServiceRequest].extension ^slicing.rules = #open
-* section[slicePlanOfTreatmentSection].entry[sliceEICRServiceRequest].extension contains Eicr_Trigger_Code_Flag_Extension named sliceTriggerEICRServiceRequest 0..1 MS
+* section[slicePlanOfTreatmentSection].entry[sliceEICRServiceRequest].extension contains EICRTriggerCodeFlagExtension named sliceTriggerEICRServiceRequest 0..1 MS
 * section[slicePlanOfTreatmentSection].entry[sliceEICRServiceRequest].extension[sliceTriggerEICRServiceRequest] ^short = "eICR Trigger Code Flag"
 * section[slicePlanOfTreatmentSection].entry[sliceEICRServiceRequest].extension[sliceTriggerEICRServiceRequest] ^definition = "A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated."
 * section[slicePlanOfTreatmentSection].entry[sliceUSCoreMedicationRequest] only Reference(USCoreMedicationRequestProfile)
@@ -289,7 +289,7 @@ Description: "This Composition profile represents an electronic initial case rep
 * section[slicePlanOfTreatmentSection].entry[sliceUSCoreMedicationRequest].extension ^slicing.discriminator.type = #value
 * section[slicePlanOfTreatmentSection].entry[sliceUSCoreMedicationRequest].extension ^slicing.discriminator.path = "url"
 * section[slicePlanOfTreatmentSection].entry[sliceUSCoreMedicationRequest].extension ^slicing.rules = #open
-* section[slicePlanOfTreatmentSection].entry[sliceUSCoreMedicationRequest].extension contains Eicr_Trigger_Code_Flag_Extension named sliceTriggerUSCoreMedicationRequest 0..1 MS
+* section[slicePlanOfTreatmentSection].entry[sliceUSCoreMedicationRequest].extension contains EICRTriggerCodeFlagExtension named sliceTriggerUSCoreMedicationRequest 0..1 MS
 * section[slicePlanOfTreatmentSection].entry[sliceUSCoreMedicationRequest].extension[sliceTriggerUSCoreMedicationRequest] ^short = "eICR Trigger Code Flag"
 * section[slicePlanOfTreatmentSection].entry[sliceUSCoreMedicationRequest].extension[sliceTriggerUSCoreMedicationRequest] ^definition = "A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated."
 * section[sliceImmunizationsSection] ^short = "Immunizations Section"
@@ -320,7 +320,7 @@ Description: "This Composition profile represents an electronic initial case rep
 * section[sliceImmunizationsSection].entry[sliceUSCoreImmunization].extension ^slicing.discriminator.type = #value
 * section[sliceImmunizationsSection].entry[sliceUSCoreImmunization].extension ^slicing.discriminator.path = "url"
 * section[sliceImmunizationsSection].entry[sliceUSCoreImmunization].extension ^slicing.rules = #open
-* section[sliceImmunizationsSection].entry[sliceUSCoreImmunization].extension contains Eicr_Trigger_Code_Flag_Extension named sliceTriggerImmunization 0..1 MS
+* section[sliceImmunizationsSection].entry[sliceUSCoreImmunization].extension contains EICRTriggerCodeFlagExtension named sliceTriggerImmunization 0..1 MS
 * section[sliceImmunizationsSection].entry[sliceUSCoreImmunization].extension[sliceTriggerImmunization] ^short = "eICR Trigger Code Flag"
 * section[sliceImmunizationsSection].entry[sliceUSCoreImmunization].extension[sliceTriggerImmunization] ^definition = "A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated."
 * section[sliceImmunizationsSection].entry[sliceVaccineCredentialsPatientAssertion] only Reference(EICRVaccineCredentialPatientAssertion)
@@ -353,7 +353,7 @@ Description: "This Composition profile represents an electronic initial case rep
 * section[sliceProceduresSection].entry[sliceEICRProcedure].extension ^slicing.discriminator.type = #value
 * section[sliceProceduresSection].entry[sliceEICRProcedure].extension ^slicing.discriminator.path = "url"
 * section[sliceProceduresSection].entry[sliceEICRProcedure].extension ^slicing.rules = #open
-* section[sliceProceduresSection].entry[sliceEICRProcedure].extension contains Eicr_Trigger_Code_Flag_Extension named sliceTriggerProcedure 0..1 MS
+* section[sliceProceduresSection].entry[sliceEICRProcedure].extension contains EICRTriggerCodeFlagExtension named sliceTriggerProcedure 0..1 MS
 * section[sliceProceduresSection].entry[sliceEICRProcedure].extension[sliceTriggerProcedure] ^short = "eICR Trigger Code Flag"
 * section[sliceProceduresSection].entry[sliceEICRProcedure].extension[sliceTriggerProcedure] ^definition = "A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated."
 * section[sliceVitalSignsSection] ^short = "Vital Signs Section"

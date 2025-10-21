@@ -73,9 +73,9 @@ Description: "This Composition profile represents the Reportability Response tha
 * section[sliceEICRSection].extension ^slicing.discriminator.path = "url"
 * section[sliceEICRSection].extension ^slicing.rules = #open
 * section[sliceEICRSection].extension contains
-    RR_Eicr_Processing_Status_Extension named extensionEICRProcessingStatus 1..1 MS and
-    Eicr_Initiation_Type_Extension named extensionAlternatelyManuallyInitiatedEICR 0..1 MS and
-    RR_Eicr_Receipt_Time_Extension named extensionEICRReceiptTime 0..1 MS
+    RREicrProcessingStatusExtension named extensionEICRProcessingStatus 1..1 MS and
+    EICRInitiationTypeExtension named extensionAlternatelyManuallyInitiatedEICR 0..1 MS and
+    RREicrReceiptTimeExtension named extensionEICRReceiptTime 0..1 MS
 * section[sliceEICRSection].extension[extensionEICRProcessingStatus] ^short = "eICR Processing Status"
 * section[sliceEICRSection].extension[extensionEICRProcessingStatus] ^definition = "This extension constains processing status information about the eICR."
 * section[sliceEICRSection].extension[extensionAlternatelyManuallyInitiatedEICR] ^short = "Alternately or Manually Initiated eICR"
@@ -109,7 +109,7 @@ Description: "This Composition profile represents the Reportability Response tha
 * section[sliceRRSummarySection].extension ^slicing.discriminator.path = "url"
 * section[sliceRRSummarySection].extension ^slicing.rules = #open
 * section[sliceRRSummarySection].extension contains 
-    RR_Priority_Extension named extensionRRPriority 1..1 MS
+    RRPriorityExtension named extensionRRPriority 1..1 MS
 * section[sliceRRSummarySection].extension[extensionRRPriority] ^short = "RR Priority"
 * section[sliceRRSummarySection].extension[extensionRRPriority] ^definition = "Represents a priority for the reportability response overall. It has been calculated from the highest priority of any included External Resources or the highest priority of included Conditions based on a separate, jurisdictionally developed priority list. This priority should be used for EHR workflow including notification, alerting, routing and queueing."
 * section[sliceRRSummarySection].code 1.. MS

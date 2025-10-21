@@ -1,4 +1,4 @@
-Extension: RR_Eicr_Processing_Status_Extension
+Extension: RREicrProcessingStatusExtension
 Id: rr-eicr-processing-status-extension
 Title: "eICR Processing Status Extension"
 Description: "This Extension profile represents the eICR processing status."

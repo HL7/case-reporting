@@ -13,6 +13,6 @@ Description: "This Encounter profile represents the encounter related to the eve
 * diagnosis.extension ^slicing.discriminator.type = #value
 * diagnosis.extension ^slicing.discriminator.path = "url"
 * diagnosis.extension ^slicing.rules = #open
-* diagnosis.extension contains Eicr_Trigger_Code_Flag_Extension named sliceEncounterDiagnosisTrigger 0..1 MS
+* diagnosis.extension contains EICRTriggerCodeFlagExtension named sliceEncounterDiagnosisTrigger 0..1 MS
 * diagnosis.extension[sliceEncounterDiagnosisTrigger] ^short = "Trigger Code Flag"
 * diagnosis.extension[sliceEncounterDiagnosisTrigger] ^definition = "A flag to indicate that the **target** reference represents a triggering event and caused the report to be generated."

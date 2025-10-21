@@ -1,4 +1,4 @@
-Extension: Eicr_Trigger_Code_Flag_Extension
+Extension: EICRTriggerCodeFlagExtension
 Id: eicr-trigger-code-flag-extension
 Title: "eICR Trigger Code Flag Extension"
 Description: "This Extension profile represents a flag which, if it is present, indicates that the **target** reference represents a triggering event and caused the eCR to be generated."

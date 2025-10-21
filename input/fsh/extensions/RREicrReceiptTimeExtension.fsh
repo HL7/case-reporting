@@ -1,4 +1,4 @@
-Extension: RR_Eicr_Receipt_Time_Extension
+Extension: RREicrReceiptTimeExtension
 Id: rr-eicr-receipt-time-extension
 Title: "eICR Receipt Time Extension"
 Description: "This Extension profile represents the date and time of eICR receipt"

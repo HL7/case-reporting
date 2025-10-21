@@ -1,4 +1,4 @@
-Extension: Eicr_Initiation_Type_Extension
+Extension: EICRInitiationTypeExtension
 Id: eicr-initiation-type-extension
 Title: "eICR Initiation Type Extension"
 Description: "This Extension profile represents that the eICR, was either manually or alternately initiated by the provider."
