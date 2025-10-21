@@ -33,22 +33,22 @@ Description: "This Composition profile represents an electronic initial case rep
 * relatesTo ^slicing.discriminator.type = #value
 * relatesTo ^slicing.discriminator.path = "code"
 * relatesTo ^slicing.rules = #open
-* relatesTo contains
-    sliceTransformed 0..1 MS and
-    sliceReplaced 0..1 MS
-// * relatesTo[sliceTransformed] 0..1 MS
-* relatesTo[sliceTransformed] ^short = "Document or Composition that this Composition is transformed from"
-* relatesTo[sliceTransformed] ^definition = "Document of Composition that this Composition is transformed from"
-* relatesTo[sliceTransformed].code = #transforms (exactly)
-* relatesTo[sliceTransformed].target[x] only Identifier
-* relatesTo[sliceTransformed].target[x] ^short = "Identifier of the Document or Composition transformed"
-* relatesTo[sliceTransformed].target[x] ^definition = "Identifier of the Document or Composition transformed"
-// * relatesTo[sliceReplaced] 0..1 MS
-* relatesTo[sliceReplaced] ^short = "Document or Composition that this Composition replaces"
-* relatesTo[sliceReplaced] ^definition = "Document or Composition that this Composition replaces"
-* relatesTo[sliceReplaced].code = #replaces (exactly)
-* relatesTo[sliceReplaced].target[x] ^short = "Identifier/Reference to the Document or Composition transformed"
-* relatesTo[sliceReplaced].target[x] ^definition = "Identifier/Reference to the Document or Composition transformed"
+// * relatesTo contains
+//     sliceTransformed 0..1 MS and
+//     sliceReplaced 0..1 MS
+// // * relatesTo[sliceTransformed] 0..1 MS
+// * relatesTo[sliceTransformed] ^short = "Document or Composition that this Composition is transformed from"
+// * relatesTo[sliceTransformed] ^definition = "Document of Composition that this Composition is transformed from"
+// * relatesTo[sliceTransformed].code = #transforms (exactly)
+// * relatesTo[sliceTransformed].target[x] only Identifier
+// * relatesTo[sliceTransformed].target[x] ^short = "Identifier of the Document or Composition transformed"
+// * relatesTo[sliceTransformed].target[x] ^definition = "Identifier of the Document or Composition transformed"
+// // * relatesTo[sliceReplaced] 0..1 MS
+// * relatesTo[sliceReplaced] ^short = "Document or Composition that this Composition replaces"
+// * relatesTo[sliceReplaced] ^definition = "Document or Composition that this Composition replaces"
+// * relatesTo[sliceReplaced].code = #replaces (exactly)
+// * relatesTo[sliceReplaced].target[x] ^short = "Identifier/Reference to the Document or Composition transformed"
+// * relatesTo[sliceReplaced].target[x] ^definition = "Identifier/Reference to the Document or Composition transformed"
 * section MS
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"

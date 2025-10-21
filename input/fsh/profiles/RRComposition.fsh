@@ -8,12 +8,12 @@ Description: "This Composition profile represents the Reportability Response tha
 * . ^short = "Reportability Response Composition"
 * . ^definition = "This Composition profile represents the Reportability Response that will be created in response to an electronic Initial Case Report Composition."
 * . ^isModifier = false
-* extension contains 
-    USPublicHealthInformationRecipientExtension named sliceExtensionInformationRecipient 1..* MS
+// * extension contains 
+//     USPublicHealthInformationRecipientExtension named sliceExtensionInformationRecipient 1..* MS
 // * extension[sliceExtensionInformationRecipient] 1..
 // * extension[sliceExtensionInformationRecipient] only USPublicHealthInformationRecipientExtension
-* extension[sliceExtensionInformationRecipient] ^short = "Reportability Response recipient(s)"
-* extension[sliceExtensionInformationRecipient] ^definition = "Reporting may be identified for multiple PHAs by the PHA system (or its intermediary) (because the patient's residence and the provider location are in separate jurisdictions) including other identified organization (such as an HIE) to which the eICR (if deemed reportable) and/or the Reportability Response will be routed."
+* extension[extensionInformationRecipient] ^short = "Reportability Response recipient(s)"
+* extension[extensionInformationRecipient] ^definition = "Reporting may be identified for multiple PHAs by the PHA system (or its intermediary) (because the patient's residence and the provider location are in separate jurisdictions) including other identified organization (such as an HIE) to which the eICR (if deemed reportable) and/or the Reportability Response will be routed."
 * type = $loinc#88085-6
 * type MS
 * type ^short = "Public Health Reportability Response Document"
