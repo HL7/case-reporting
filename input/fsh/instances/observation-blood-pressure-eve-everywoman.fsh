@@ -11,7 +11,7 @@ Usage: #example
 * subject = Reference(Patient/patient-ecr-eve-everywoman) "Eve Everywoman"
 * encounter.display = "GP Visit"
 * effectiveDateTime = "2020-07-02"
-* performer = Reference(Organization/organization-rr-rules-authoring-agency-haw) "Health Authority West Rules Authoring Agency"
+* performer.reference = "PractitionerRole/practitionerrole-henry-seven"
 * component[systolic].code = $loinc#8480-6 "Systolic blood pressure"
 * component[systolic].code.text = "Systolic blood pressure"
 * component[systolic].valueQuantity = 109 'mm[Hg]' "mmHg"
