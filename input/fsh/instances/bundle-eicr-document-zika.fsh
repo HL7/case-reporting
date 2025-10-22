@@ -48,9 +48,9 @@ Usage: #example
 * entry[+].fullUrl = "http://example.org/fhir/Observation/observation-us-ph-lab-result-eve-everywoman-lymphocytes"
 * entry[=].resource = observation-us-ph-lab-result-eve-everywoman-lymphocytes
 * entry[+].fullUrl = "http://example.org/fhir/Organization/organization-ecr-acme-laboratory"
-* entry[=].resource = observation-odh-usual-work-eve-everywoman
-* entry[+].fullUrl = "http://example.org/fhir/Observation/observation-odh-usual-work-eve-everywoman"
 * entry[=].resource = organization-ecr-acme-laboratory
+* entry[+].fullUrl = "http://example.org/fhir/Observation/observation-odh-usual-work-eve-everywoman"
+* entry[=].resource = observation-odh-usual-work-eve-everywoman
 * entry[+].fullUrl = "http://example.org/fhir/Location/location-ecr-salem-medical-center"
 * entry[=].resource = location-ecr-salem-medical-center
 * entry[+].fullUrl = "http://example.org/fhir/Location/location-ecr-city-football-stadium"
