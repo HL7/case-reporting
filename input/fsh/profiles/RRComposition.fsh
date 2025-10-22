@@ -16,22 +16,16 @@ Description: "This Composition profile represents the Reportability Response tha
 * type MS
 * type ^short = "Public Health Reportability Response Document"
 * type ^definition = "The type of this Composition is a Public Health Reportability Response Document"
-* subject 1.. MS
 * subject only Reference(USPublicHealthPatient)
-* subject ^short = "Patient"
 * encounter only Reference(EICREncounter)
-* encounter MS
 * encounter ^short = "eICR Encounter"
 * encounter ^definition = "The encounter during which the eICR was triggered."
-* author 1.. MS
-* author only Reference(Device or USPublicHealthOrganization or USCorePractitionerProfile or USPublicHealthPractitionerRole)
-* author ^short = "Author"
-* author ^definition = "For the Reportability Response Composition, this will most likely be the software that is generating the response, though this will not always the be case."
+* author ^short = "The author(s) of the document. For the Reportability Response Composition, this will most likely be the software that is generating the response, though this will not always the be case."
 * custodian 1..
-* relatesTo MS
-* relatesTo ^slicing.discriminator.type = #value
-* relatesTo ^slicing.discriminator.path = "code"
-* relatesTo ^slicing.rules = #open
+// * relatesTo MS
+// * relatesTo ^slicing.discriminator.type = #value
+// * relatesTo ^slicing.discriminator.path = "code"
+// * relatesTo ^slicing.rules = #open
 // * relatesTo contains
 //     sliceTransformed 0..1 MS and
 //     replaced 0..1 MS

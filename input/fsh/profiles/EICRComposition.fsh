@@ -22,17 +22,16 @@ Description: "This Composition profile represents an electronic initial case rep
 * type MS
 * type ^short = "Public Health Case Report"
 * type ^definition = "The type of this Composition is a Public Health Case Report"
-* encounter 1.. MS
+* subject only Reference(USPublicHealthPatient)
 * encounter only Reference(EICREncounter)
-* encounter ^short = "Encounter related to the public health event"
-* encounter ^definition = "This Encounter profile represents the encounter related to the public health event."
-* encounter ^isModifier = false
+* encounter ^short = "eICR Encounter"
+* encounter ^definition = "The encounter during which the eICR was triggered."
 * author ^short = "The author(s) of the document. Where a trigger occurs outside of an encounter the author will be a US Public Health PractitionerRole and represent the Provider and Facility for reporting purposes."
-* custodian 1.. MS
-* relatesTo MS
-* relatesTo ^slicing.discriminator.type = #value
-* relatesTo ^slicing.discriminator.path = "code"
-* relatesTo ^slicing.rules = #open
+* custodian 1..
+// * relatesTo MS
+// * relatesTo ^slicing.discriminator.type = #value
+// * relatesTo ^slicing.discriminator.path = "code"
+// * relatesTo ^slicing.rules = #open
 // * relatesTo contains
 //     sliceTransformed 0..1 MS and
 //     sliceReplaced 0..1 MS
