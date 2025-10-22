@@ -13,7 +13,7 @@ Description: "This ServiceRequest profile represents eICR laboratory orders and 
 * code from LOINCDiagnosticReportCodes (extensible)
 * code ^isModifier = false
 * code ^binding.description = "LOINC Diagnostic Report Codes"
-* subject only Reference(Patient)
+* subject only Reference(USPublicHealthPatient)
 * occurrence[x] MS
 * authoredOn MS
 * authoredOn ^isModifier = false
