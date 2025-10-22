@@ -28,8 +28,8 @@ Usage: #inline
 * useContext[focusConditionContext].valueCodeableConcept = $sct#240589008 "Chlamydia trachomatis infection"
 * useContext[priorityContext].code = $USPublicHealthUsageContextType#priority "Priority"
 * useContext[priorityContext].valueCodeableConcept = $USPublicHealthUsageContext#routine "Routine"
-* jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
-* jurisdiction.text = "United States of America (the)"
+* jurisdiction = urn:iso:std:iso:3166#US "United States of America"
+* jurisdiction.text = "United States of America"
 * copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
 * compose.include.system = "http://loinc.org"
 * compose.include.concept[0].code = #14461-8

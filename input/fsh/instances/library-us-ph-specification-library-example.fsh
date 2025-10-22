@@ -18,8 +18,8 @@ Usage: #example
 * useContext[reportingContext].valueCodeableConcept = $USPublicHealthUsageContext#triggering "Triggering"
 * useContext[specificationTypeContext].code = $USPublicHealthUsageContextType#specification-type "Specification Type"
 * useContext[specificationTypeContext].valueCodeableConcept = $USPublicHealthUsageContext#program "Program"
-* jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
-* jurisdiction.text = "United States of America (the)"
+* jurisdiction = urn:iso:std:iso:3166#US "United States of America"
+* jurisdiction.text = "United States of America"
 * purpose = "Purpose of library"
 * effectivePeriod.start = "2020-11-01"
 * relatedArtifact[planDefinition].type = #composed-of

@@ -8,8 +8,8 @@ Description: "The US Public Health TriggerDefinition NamedEvents CodeSystem is a
 * ^experimental = false
 * ^date = "2020-09-06"
 * ^publisher = "HL7 International - Public Health Work Group"
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
-* ^jurisdiction.text = "United States of America (the)"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
+* ^jurisdiction.text = "United States of America"
 * ^caseSensitive = true
 * ^valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/us-ph-triggerdefinition-namedevent"
 * ^hierarchyMeaning = #is-a

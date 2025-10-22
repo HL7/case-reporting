@@ -14,8 +14,8 @@ Usage: #example
 * type = $library-type#logic-library
 * publisher = "{site.data.fhir.ig.publisher}"
 * description = "An example logic library for eRSD - Chlamydia example."
-* jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
-* jurisdiction.text = "United States of America (the)"
+* jurisdiction = urn:iso:std:iso:3166#US "United States of America"
+* jurisdiction.text = "United States of America"
 * relatedArtifact[0].type = #depends-on
 * relatedArtifact[=].display = "FHIR model information"
 * relatedArtifact[=].resource = "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"

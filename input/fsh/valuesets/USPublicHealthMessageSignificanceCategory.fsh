@@ -20,7 +20,7 @@ Description: "The impact of the content of a message."
 * ^contact.telecom[=].value = "http://hl7.org/fhir"
 * ^contact.telecom[+].system = #email
 * ^contact.telecom[=].value = "fhir@lists.hl7.org"
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
-* ^jurisdiction.text = "United States of America (the)"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
+* ^jurisdiction.text = "United States of America"
 * ^immutable = true
 * include codes from system MessageSignificanceCategory

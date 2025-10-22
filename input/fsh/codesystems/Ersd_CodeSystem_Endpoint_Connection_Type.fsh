@@ -6,8 +6,8 @@ Description: "This code system contains codes that identify the HL7 FHIR File ty
 * ^experimental = false
 * ^date = "2020-08-06T06:51:05+00:00"
 * ^publisher = "HL7 Public Health Work Group"
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
-* ^jurisdiction.text = "United States of America (the)"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
+* ^jurisdiction.text = "United States of America"
 * ^caseSensitive = true
 * ^content = #complete
 * #hl7-fhir-files "HL7 FHIR Files" "HL7 FHIR Files."

@@ -24,8 +24,8 @@ Usage: #definition
 * date = "2019-08-23"
 * publisher = "HL7 Public Health Work Group"
 * description = "This section describes the expected capabilities of a client consuming eRSD resources including the Reportable Conditions Trigger Codes (RCTC).\n\n#### Conformance requirements for an eRSD Client\n\nThe eRSD Client **SHALL**:\n\n- Support fetching the eRSD Bundle using the supported RESTful interactions.\n- Support processing PlanDefinition and ValueSet resources that are included in the Bundle.\n\nThe eRSD Client **MAY**:\n\n- Support fetching and reading a Person resource.\n- Support fetching and reading Subscription resources associated with a Person."
-* jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
-* jurisdiction.text = "United States of America (the)"
+* jurisdiction = urn:iso:std:iso:3166#US "United States of America"
+* jurisdiction.text = "United States of America"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #application/xml

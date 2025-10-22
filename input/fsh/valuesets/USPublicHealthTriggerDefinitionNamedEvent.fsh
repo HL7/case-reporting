@@ -9,6 +9,6 @@ Description: "The US Public Health TriggerDefinition NamedEvent Value Set is a '
 * ^publisher = "HL7 International - Public Health Work Group"
 * ^contact.telecom.system = #url
 * ^contact.telecom.value = "http://hl7.org/Special/committees/ph"
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
-* ^jurisdiction.text = "United States of America (the)"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
+* ^jurisdiction.text = "United States of America"
 * include codes from system USPublicHealthTriggerDefinitionNamedEvents

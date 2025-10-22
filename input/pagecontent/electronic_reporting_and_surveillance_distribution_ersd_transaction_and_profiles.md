@@ -229,7 +229,7 @@ The supplemental level of integration enables sites to participate in the suspec
 
 The suspected reportability criteria are also represented with the `condition` element, but using the [US Public Health Alternative Expression]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-alternative-expression-extension.html) to provide the CQL expression for suspected reportability:
 
-<pre><code>&lt;extension url=&quot;http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-alternative-expression-extension&quot;&gt;
+<pre><code>&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/cqf-alternativeExpression&quot;&gt;
   &lt;valueExpression&gt;
     &lt;language value=&quot;text/cql-identifier&quot;/&gt;
     &lt;expression value=&quot;Is Reportable&quot;/&gt;

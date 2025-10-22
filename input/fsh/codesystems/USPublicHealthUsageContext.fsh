@@ -8,8 +8,8 @@ Description: "This code system contains codes that identify the use context of a
 * ^experimental = false
 * ^date = "2020-10-26"
 * ^publisher = "HL7 Public Health Work Group"
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
-* ^jurisdiction.text = "United States of America (the)"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
+* ^jurisdiction.text = "United States of America"
 * ^caseSensitive = true
 * ^content = #complete
 * #emergent "Emergent" "The artifact is an emergent reporting specification program release."

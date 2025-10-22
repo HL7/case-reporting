@@ -6,8 +6,8 @@ Description: "This code system contains codes that identify the event a message 
 * ^status = #active
 * ^experimental = false
 * ^publisher = "HL7 Public Health Work Group"
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
-* ^jurisdiction.text = "United States of America (the)"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
+* ^jurisdiction.text = "United States of America"
 * ^caseSensitive = true
 * ^content = #complete
 * #process-eicr "Process eICR" "Process the eICR that is the focus of the eCR Task referenced by the eCR MessageHeader. See the Electronic Initial Case Report (eICR) Transaction and Profiles page in the eCR IG for further details."

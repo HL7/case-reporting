@@ -17,8 +17,8 @@ Usage: #example
 * date = "2020-07-31T12:32:29.858-05:00"
 * publisher = "HL7 Public Health Work Group"
 * description = "An example ersd PlanDefinition"
-* jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
-* jurisdiction.text = "United States of America (the)"
+* jurisdiction = urn:iso:std:iso:3166#US "United States of America"
+* jurisdiction.text = "United States of America"
 * effectivePeriod.start = "2020-12-01"
 * relatedArtifact.type = #depends-on
 * relatedArtifact.label = "RCTC Value Set Library of Trigger Codes"
@@ -52,7 +52,7 @@ Usage: #example
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].textEquivalent = "Check Trigger Codes based on Suspected Reportable Value set."
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].code = USPublicHealthPlanDefinitionActions#check-trigger-codes
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition.kind = #applicability
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition.expression.extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-alternative-expression-extension"
+* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition.expression.extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-alternativeExpression"
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition.expression.extension.valueExpression.language = #text/cql-identifier
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition.expression.extension.valueExpression.expression = "Is Suspected Disorder?"
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition.expression.extension.valueExpression.reference = "http://hl7.org/fhir/us/ecr/Library/RuleFilters|2.1.0"
@@ -81,7 +81,7 @@ Usage: #example
 * action[checkSuspectedDisorder].action[continueCheckReportable].id = "continue-check-reportable"
 * action[checkSuspectedDisorder].action[continueCheckReportable].code = USPublicHealthPlanDefinitionActions#evaluate-condition
 * action[checkSuspectedDisorder].action[continueCheckReportable].condition.kind = #applicability
-* action[checkSuspectedDisorder].action[continueCheckReportable].condition.expression.extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-alternative-expression-extension"
+* action[checkSuspectedDisorder].action[continueCheckReportable].condition.expression.extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-alternativeExpression"
 * action[checkSuspectedDisorder].action[continueCheckReportable].condition.expression.extension.valueExpression.language = #text/cql-identifier
 * action[checkSuspectedDisorder].action[continueCheckReportable].condition.expression.extension.valueExpression.expression = "Is Encounter In Progress and Within Normal Reporting Duration or 72h or less after end of encounter?"
 * action[checkSuspectedDisorder].action[continueCheckReportable].condition.expression.extension.valueExpression.reference = "http://hl7.org/fhir/us/ecr/Library/RuleFilters|2.1.0"
@@ -100,7 +100,7 @@ Usage: #example
 * action[checkReportable].action[isEncounterReportable].textEquivalent = "Check Trigger Codes based on RCTC Value sets."
 * action[checkReportable].action[isEncounterReportable].code = USPublicHealthPlanDefinitionActions#check-trigger-codes
 * action[checkReportable].action[isEncounterReportable].condition.kind = #applicability
-* action[checkReportable].action[isEncounterReportable].condition.expression.extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-alternative-expression-extension"
+* action[checkReportable].action[isEncounterReportable].condition.expression.extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-alternativeExpression"
 * action[checkReportable].action[isEncounterReportable].condition.expression.extension.valueExpression.language = #text/cql-identifier
 * action[checkReportable].action[isEncounterReportable].condition.expression.extension.valueExpression.expression = "Is Encounter Reportable and Within Normal Reporting Duration?"
 * action[checkReportable].action[isEncounterReportable].condition.expression.extension.valueExpression.reference = "http://hl7.org/fhir/us/ecr/Library/RuleFilters|2.1.0"
@@ -189,7 +189,7 @@ Usage: #example
 * action[checkReportable].action[checkUpdateEicr].id = "check-update-eicr"
 * action[checkReportable].action[checkUpdateEicr].code = USPublicHealthPlanDefinitionActions#evaluate-condition
 * action[checkReportable].action[checkUpdateEicr].condition.kind = #applicability
-* action[checkReportable].action[checkUpdateEicr].condition.expression.extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-alternative-expression-extension"
+* action[checkReportable].action[checkUpdateEicr].condition.expression.extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-alternativeExpression"
 * action[checkReportable].action[checkUpdateEicr].condition.expression.extension.valueExpression.language = #text/cql-identifier
 * action[checkReportable].action[checkUpdateEicr].condition.expression.extension.valueExpression.expression = "Most recent eICR sent over 72 hours ago?"
 * action[checkReportable].action[checkUpdateEicr].condition.expression.extension.valueExpression.reference = "http://hl7.org/fhir/us/ecr/Library/RuleFilters|2.1.0"
@@ -205,7 +205,7 @@ Usage: #example
 * action[checkReportable].action[encounterInProgress].id = "is-encounter-in-progress"
 * action[checkReportable].action[encounterInProgress].code = USPublicHealthPlanDefinitionActions#evaluate-condition
 * action[checkReportable].action[encounterInProgress].condition.kind = #applicability
-* action[checkReportable].action[encounterInProgress].condition.expression.extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-alternative-expression-extension"
+* action[checkReportable].action[encounterInProgress].condition.expression.extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-alternativeExpression"
 * action[checkReportable].action[encounterInProgress].condition.expression.extension.valueExpression.language = #text/cql-identifier
 * action[checkReportable].action[encounterInProgress].condition.expression.extension.valueExpression.expression = "Is Encounter In Progress and Within Normal Reporting Duration or 72h or less after end of encounter?"
 * action[checkReportable].action[encounterInProgress].condition.expression.extension.valueExpression.reference = "http://hl7.org/fhir/us/ecr/Library/RuleFilters|2.1.0"
@@ -222,7 +222,7 @@ Usage: #example
 * action[checkReportable].action[+].id = "is-encounter-completed"
 * action[checkReportable].action[=].code = USPublicHealthPlanDefinitionActions#complete-reporting
 * action[checkReportable].action[=].condition.kind = #applicability
-* action[checkReportable].action[=].condition.expression.extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-alternative-expression-extension"
+* action[checkReportable].action[=].condition.expression.extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-alternativeExpression"
 * action[checkReportable].action[=].condition.expression.extension.valueExpression.language = #text/cql-identifier
 * action[checkReportable].action[=].condition.expression.extension.valueExpression.expression = "Is Encounter Complete"
 * action[checkReportable].action[=].condition.expression.extension.valueExpression.reference = "http://aphl.org/fhir/ecr/Library/RuleFilters|2.1.0"
@@ -327,7 +327,7 @@ Usage: #example
 * action[encounterModified].trigger.type = #named-event
 * action[encounterModified].trigger.name = "encounter-modified"
 * action[encounterModified].condition.kind = #applicability
-* action[encounterModified].condition.expression.extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-alternative-expression-extension"
+* action[encounterModified].condition.expression.extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-alternativeExpression"
 * action[encounterModified].condition.expression.extension.valueExpression.language = #text/cql-identifier
 * action[encounterModified].condition.expression.extension.valueExpression.expression = "Is Encounter Longer Than Normal Reporting Duration?"
 * action[encounterModified].condition.expression.extension.valueExpression.reference = "http://hl7.org/fhir/us/ecr/Library/RuleFilters|2.1.0"

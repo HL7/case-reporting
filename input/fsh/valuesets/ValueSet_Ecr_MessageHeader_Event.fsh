@@ -5,8 +5,8 @@ Description: "This value set contains codes that identify the event an eCR messa
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America (the)"
-* ^jurisdiction.text = "United States of America (the)"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
+* ^jurisdiction.text = "United States of America"
 * ^compose.inactive = false
 * CodeSystem_MessageHeader_event#process-eicr "Process eICR"
 * CodeSystem_MessageHeader_event#process-rr "Process Reportability Response"
