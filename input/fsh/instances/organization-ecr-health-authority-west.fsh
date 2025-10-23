@@ -3,7 +3,7 @@ InstanceOf: USPublicHealthOrganization
 Title: "US PH Organization Example: Health Authority West"
 Description: "Example of US Public Health Organization profile (Health Authority West)"
 Usage: #example
-* identifier.system = "http://hl7.org.fhir/sid/us-npi"
+* identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * identifier.value = "1144221847"
 * active = true
 * name = "Health Authority West"

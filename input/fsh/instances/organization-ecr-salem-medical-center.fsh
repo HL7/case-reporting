@@ -3,7 +3,7 @@ InstanceOf: USPublicHealthOrganization
 Title: "US PH Organization Example: Salem Medical Center"
 Description: "Example of US Public Health Organization profile (Salem Medical Center)"
 Usage: #example
-* identifier.system = "http://hl7.org.fhir/sid/us-npi"
+* identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * identifier.value = "55555555"
 * active = true
 * type = $v3-RoleCode#OF "Outpatient facility"
