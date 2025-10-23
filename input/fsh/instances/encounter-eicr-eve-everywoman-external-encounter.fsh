@@ -3,7 +3,7 @@ InstanceOf: USPublicHealthEncounter
 Title: "US PH Encounter Example: encounter-eicr-eve-everywoman-external-encounter"
 Description: "Example of US Public Health Encounter profile (Eve Everywoman, external encounter)"
 Usage: #example
-* identifier.system = "http://hospital.smarthealthit.org"
+* identifier.system = "http://example.org/hospital.smarthealthit.org"
 * identifier.value = "9937012"
 * status = #finished
 * class = urn:oid:2.16.840.1.114222.4.5.274#PHC2237 "External Encounter"

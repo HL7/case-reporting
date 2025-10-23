@@ -3,7 +3,7 @@ InstanceOf: EICREncounter
 Title: "US PH Encounter Example: encounter-eicr-eve-everywoman-current-inpatient"
 Description: "Example of US Public Health Encounter profile (Eve Everywoman: current inpatient)"
 Usage: #example
-* identifier.system = "http://hospital.smarthealthit.org"
+* identifier.system = "http://example.org/hospital.smarthealthit.org"
 * identifier.value = "9937012"
 * status = #in-progress
 * class = $v3-ActCode#IMP "inpatient encounter"

@@ -3,8 +3,9 @@ InstanceOf: Library
 Title: "Rule Filters Example Library"
 Description: "An example library with logic for determining whether or not an event or situation is reportable."
 Usage: #example
-* meta.profile[0] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-executable-library"
-* meta.profile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-computable-library"
+* meta.profile[0] = "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-json-library"
+* meta.profile[+] = "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-xml-library"
+* meta.profile[+] = "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library"
 * url = "http://hl7.org/fhir/us/ecr/Library/RuleFilters"
 * version = "2.1.0"
 * name = "RuleFilters"
@@ -18,7 +19,7 @@ Usage: #example
 * jurisdiction.text = "United States of America"
 * relatedArtifact[0].type = #depends-on
 * relatedArtifact[=].display = "FHIR model information"
-* relatedArtifact[=].resource = "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+* relatedArtifact[=].resource = "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-modelinfo"
 * relatedArtifact[+].type = #depends-on
 * relatedArtifact[=].display = "Library FHIRHelpers"
 * relatedArtifact[=].resource = "http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"
