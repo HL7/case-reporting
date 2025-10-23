@@ -4,7 +4,7 @@ Title: "US PH Organization Example: Acme Labs"
 Description: "Example of US Public Health Organization profile (Acme Labs)"
 Usage: #example
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* identifier.value = "1144221999"
+* identifier.value = "1144221847"
 * active = true
 * type = $v3-RoleCode#OUTLAB "outpatient laboratory"
 * name = "Acme_Labs"

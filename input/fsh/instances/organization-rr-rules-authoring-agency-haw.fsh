@@ -4,7 +4,7 @@ Title: "RR Rules Authoring Agency Organization Example: Health Authority West Ru
 Description: "Example of RR Rules Authoring Agency profile (Health Authority West Rules Authoring Agency)"
 Usage: #example
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* identifier.value = "12341234"
+* identifier.value = "1144221847"
 * active = true
 * type = urn:oid:2.16.840.1.114222.4.5.232#RR12 "Rules Authoring Agency"
 * name = "Health Authority West Rules Authoring Agency"
