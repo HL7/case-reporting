@@ -1,14 +1,14 @@
-Instance: RuleFilters
+Instance: library-executable-rule-filters
 InstanceOf: Library
-Title: "Rule Filters Example Library"
+Title: "ExecutableRule Filters Example Library"
 Description: "An example library with logic for determining whether or not an event or situation is reportable."
 Usage: #example
 * meta.profile[0] = "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-json-library"
 * meta.profile[+] = "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-xml-library"
 * meta.profile[+] = "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library"
-* url = "http://hl7.org/fhir/us/ecr/Library/RuleFilters"
+* url = "http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters"
 * version = "2.1.0"
-* name = "RuleFilters"
+* name = "library-executable-rule-filters"
 * title = "Rule Filters"
 * status = #active
 * experimental = true

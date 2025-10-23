@@ -18,4 +18,4 @@ Usage: #example
 * jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 * jurisdiction.text = "United States of America"
 * effectivePeriod.start = "2020-12-01"
-* library = "http://hl7.org/fhir/us/ecr/Library/RuleFilters|2.1.0"
+* library = "http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters|2.1.0"

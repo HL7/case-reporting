@@ -1,4 +1,4 @@
-library RuleFilters version '2.1.0'
+library library-executable-rule-filters version '2.1.0'
 
 using FHIR version '4.0.1'
 

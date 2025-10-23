@@ -9,7 +9,7 @@ Usage: #example
 * timestamp = "2021-08-02T22:13:23Z"
 * entry[0].fullUrl = "http://example.org/fhir/Composition/composition-rr-one-cond-one-pha"
 * entry[=].resource = composition-rr-one-cond-one-pha
-* entry[0].fullUrl = "http://example.org/fhir/Bundle/bundle-eicr-document-zika"
+* entry[+].fullUrl = "http://example.org/fhir/Bundle/bundle-eicr-document-zika"
 * entry[=].resource = bundle-eicr-document-zika
 * entry[+].fullUrl = "http://example.org/fhir/Observation/observation-rr-relevant-reportable-condition-observation"
 * entry[=].resource = observation-rr-relevant-reportable-condition-observation

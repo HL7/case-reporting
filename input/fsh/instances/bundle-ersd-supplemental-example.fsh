@@ -6,8 +6,8 @@ Usage: #definition
 * type = #collection
 * entry[0].fullUrl = "http://hl7.org/fhir/us/ecr/Library/library-ersd-supplemental-library-example"
 * entry[=].resource = library-ersd-supplemental-library-example
-* entry[+].fullUrl = "http://hl7.org/fhir/us/ecr/Library/RuleFilters"
-* entry[=].resource = RuleFilters
+* entry[+].fullUrl = "http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters"
+* entry[=].resource = library-executable-rule-filters
 * entry[+].fullUrl = "http://hl7.org/fhir/us/ecr/Library/library-us-ph-supplemental-valueset-library-example"
 * entry[=].resource = library-us-ph-supplemental-valueset-library-example
 * entry[+].fullUrl = "http://hl7.org/fhir/us/ecr/CodeSystem/ersd-jurisdictions-example"

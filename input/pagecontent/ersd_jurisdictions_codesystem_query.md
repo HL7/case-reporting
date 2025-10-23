@@ -8,7 +8,7 @@ This document provides instructions for how to use the eRSD Jurisdictions CodeSy
 
 The following tools are needed to perform this operation:
 * Atom (download available at [https://atom.io/](https://atom.io/))
-* [RuleFilter CQL](Library-RuleFilters.html)
+* [RuleFilter CQL](Library-library-executable-rule-filters.html)
 * CQL plugin for Atom (instructions in CQL Query section below)
 
 ### CodeSystem
@@ -109,7 +109,7 @@ Each jurisdiction has a set of properties connected with it that specify what ty
 
 ### CQL Query
 
-[RuleFilter Library](Library-RuleFilters.html) This file contains CQL code that uses the test cases in the `/input/tests/RuleFilters-1.0.0` folder.  The `CodeSystem-ersd-jurisdictions.json` file will need to be copied and pasted to the `/input/tests/RuleFilters-1.0.0/Reportable/CodeSystem` folder in order for the test cases to work.
+[RuleFilter Library](Library-library-executable-rule-filters.html) This file contains CQL code that uses the test cases in the `/input/tests/library-executable-rule-filters-1.0.0` folder.  The `CodeSystem-ersd-jurisdictions.json` file will need to be copied and pasted to the `/input/tests/library-executable-rule-filters-1.0.0/Reportable/CodeSystem` folder in order for the test cases to work.
 
 The CQL code is setup to match Chlamydia test results with relevant jurisdictions.  CQL must be run in Atom using the CQL plugin.  To install the plugin, open Atom and click "File" then "Settings".  A Settings tab will open up.  Navigate to "Install" and search for "cql".  Find the package named "language-cql" authored by cqframework and click "Install".
 
