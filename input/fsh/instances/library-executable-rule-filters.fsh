@@ -22,7 +22,7 @@ Usage: #example
 * relatedArtifact[=].resource = "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-modelinfo"
 * relatedArtifact[+].type = #depends-on
 * relatedArtifact[=].display = "Library FHIRHelpers"
-* relatedArtifact[=].resource = "http://fhir.org/guides/cqf/common/Library/FHIRHelpers|4.0.1"
+* relatedArtifact[=].resource = "http://hl7.org/fhir/uv/cql/Library/FHIRHelpers"
 * relatedArtifact[+].type = #depends-on
 * relatedArtifact[=].display = "Code system LOINC"
 * relatedArtifact[=].resource = "http://loinc.org"
