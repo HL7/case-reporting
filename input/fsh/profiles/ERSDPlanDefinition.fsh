@@ -12,14 +12,14 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * extension ^slicing.rules = #open
 * extension ^definition = "Defines variables for the PlanDefinition."
 * extension contains Variable named variable 0..* MS
-* action 5.. MS
+* action 7.. MS
 * action ^slicing.discriminator.type = #value
 * action ^slicing.discriminator.path = "id"
 * action ^slicing.ordered = true
 * action ^slicing.rules = #open
-* action.code 0..1 MS
-* action.code from USPublicHealthPlanDefinitionAction (extensible)
-* action.code ^binding.description = "The set of actions that can be used to create plan definition"
+// * action.code 0..1 MS
+// * action.code from USPublicHealthPlanDefinitionAction (extensible)
+// * action.code ^binding.description = "The set of actions that can be used to create plan definition"
 * action.input.extension MS
 * action.input.extension ^slicing.discriminator.type = #value
 * action.input.extension ^slicing.discriminator.path = "url"
