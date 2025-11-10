@@ -94,8 +94,8 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[encounterStart].relatedAction.offsetDuration only Duration
 * action[encounterStart].relatedAction.offsetDuration ^example.label = "Wait 1 hour before next action."
 * action[encounterStart].relatedAction.offsetDuration ^example.valueDuration.value = 1
-
 * action[encounterStart].relatedAction.offsetDuration ^example.valueDuration.unit = "h"
+
 * action[checkSuspectedDisorder] ^short = "Check suspected disorder"
 * action[checkSuspectedDisorder] ^definition = "Defines the \"check-suspected-disorder\" action"
 * action[checkSuspectedDisorder].id 1.. MS
@@ -118,15 +118,16 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 //* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder] only BackboneElement
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].id 1.. MS
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].id = "is-encounter-suspected-disorder" (exactly)
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].code 1..
+* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].code 1.. MS
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].code = USPublicHealthPlanDefinitionActions#check-trigger-codes
+* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition 0..* MS
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition.kind = #applicability (exactly)
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition.expression 1.. MS
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition.expression.language = #text/fhirpath (exactly)
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input MS
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input ^definition = "Defines input data requirements for the action. Required data is accessible via a context variable named `%[id]` using the `id` of the input data requirement"
+* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input 0..* MS
+* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input ^definition = "Defines input data requirements for the action. Required data is accessible via a context variable named '%[id]' using the 'id' of the input data requirement"
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input.id 1..1 MS
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input.id ^definition = "The id of the input requirement, allowing the data to be referenced via a context variable named `%[id]`"
+* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input.id ^definition = "The id of the input requirement, allowing the data to be referenced via a context variable named '%[id]'"
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].relatedAction.actionId = "create-eicr" (exactly)
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].relatedAction.relationship = #before-start (exactly)
 //* action[checkSuspectedDisorder].action[continueCheckReportable] only BackboneElement

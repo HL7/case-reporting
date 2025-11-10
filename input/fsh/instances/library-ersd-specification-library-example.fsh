@@ -1,7 +1,5 @@
 Instance: library-ersd-specification-library-example
 InstanceOf: USPublicHealthSpecificationLibrary
-Title: "eRSD Specification Library Example"
-Description: "Description of library"
 Usage: #example
 * url = "http://hl7.org/fhir/us/ecr/Library/library-ersd-specification-library-example"
 * identifier.system = "urn:ietf:rfc:3986"
