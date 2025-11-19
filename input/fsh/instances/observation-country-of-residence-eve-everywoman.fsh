@@ -8,4 +8,5 @@ Usage: #example
 * subject.reference = "Patient/patient-ecr-eve-everywoman"
 * subject.display = "Eve Everywoman"
 * effectiveDateTime = "2020-11-10T22:33:22Z"
+* performer.reference = "PractitionerRole/practitionerrole-henry-seven"
 * valueCodeableConcept = urn:iso:std:iso:3166#GB "United Kingdom of Great Britain and Northern Ireland"

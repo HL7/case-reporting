@@ -1,7 +1,7 @@
 Instance: library-us-ph-supplemental-valueset-library-example
 InstanceOf: USPublicHealthSupplementalValuesetLibrary
-Title: "US Public Health Supplemental ValueSet Library Example"
-Description: "An example of the US Public Health Supplemental ValueSet Library"
+Title: "Library - US Public Health Supplemental ValueSet Library"
+Description: "Example of a US Public Health Supplemental ValueSet Library containing supplemental ValueSets for public health reporting."
 Usage: #example
 * url = "http://hl7.org/fhir/us/ecr/Library/library-us-ph-supplemental-valueset-library-example"
 * identifier.system = "urn:ietf:rfc:3986"
@@ -13,14 +13,14 @@ Usage: #example
 * experimental = true
 * type = $library-type#asset-collection
 * publisher = "{site.data.fhir.ig.publisher}"
-* description = "Description of library"
-* useContext[0].code = $USPublicHealthUsageContextType#reporting "Reporting"
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#supplemental "Supplemental"
-* useContext[+].code = $USPublicHealthUsageContextType#specification-type "Specification Type"
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#value-set-library "ValueSet Library"
+* description = "Example of a US Public Health Supplemental ValueSet Library containing supplemental ValueSets for public health reporting."
+* useContext[0].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#reporting "Reporting"
+* useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#supplemental "Supplemental"
+* useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#specification-type "Specification Type"
+* useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#value-set-library "ValueSet Library"
 * jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 * jurisdiction.text = "United States of America"
 * purpose = "Purpose of library"
 * effectivePeriod.start = "2020-11-01"
 * relatedArtifact[USPHValueSet].type = #composed-of
-* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-us-ph-supplemental-valueset-example"
+* relatedArtifact[USPHValueSet].resource = "http://example.org/fhir/ValueSet/us-ph-supplemental-valueset-diagnosis-problem-triggers-example"

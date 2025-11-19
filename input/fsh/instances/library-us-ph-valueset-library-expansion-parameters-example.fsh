@@ -1,7 +1,7 @@
 Instance: library-us-ph-valueset-library-expansion-parameters-example
 InstanceOf: USPublicHealthValueSetLibrary
-Title: "US Public Health ValueSet Library Expansion Parameters Example"
-Description: "An example of the US Public Health ValueSet Library"
+Title: "Library - US Public Health ValueSet Library with Expansion Parameters"
+Description: "Example of a US Public Health ValueSet Library that demonstrates the use of expansion parameters for ValueSet expansion."
 Usage: #example
 * contained = expansion-parameters-ecr
 * extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-expansionParameters"
@@ -16,10 +16,10 @@ Usage: #example
 * experimental = true
 * type = $library-type#asset-collection
 * publisher = "{site.data.fhir.ig.publisher}"
-* description = "Description of library"
+* description = "Example of a US Public Health ValueSet Library that demonstrates the use of expansion parameters for ValueSet expansion."
 * jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 * jurisdiction.text = "United States of America"
 * purpose = "Purpose of library"
 * effectivePeriod.start = "2020-11-01"
 * relatedArtifact[USPHValueSet].type = #composed-of
-* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"
+* relatedArtifact[USPHValueSet].resource = "http://example.org/fhir/ValueSet/valueset-us-ph-example"

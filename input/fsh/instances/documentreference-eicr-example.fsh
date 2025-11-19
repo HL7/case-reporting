@@ -1,5 +1,5 @@
 Instance: documentreference-eicr-example
-InstanceOf: USCoreDocumentReferenceProfile
+InstanceOf: $USCoreDocumentReferenceProfile
 Usage: #inline
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:uuid:db734647-fc99-424c-a864-7e3cda82e703"
@@ -7,7 +7,7 @@ Usage: #inline
 * identifier.value = "sTT988#1"
 * status = #current
 * type = $loinc#55751-2 "Public health Case report"
-* category = $us-core-documentreference-category#clinical-note "Clinical Note"
+* category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note "Clinical Note"
 * category.text = "Clinical Note"
 * subject = Reference(Patient/patient-ecr-eve-everywoman)
 * content.attachment.contentType = #text/plain

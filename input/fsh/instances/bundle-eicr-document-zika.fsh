@@ -1,7 +1,7 @@
 Instance: bundle-eicr-document-zika
 InstanceOf: EICRDocumentBundle
-Title: "eICR Document Bundle Example: bundle-eicr-document-zika"
-Description: "Example of eICR Document Bundle profile (Eve Everywoman, Zika)"
+Title: "Bundle - eICR Document for Zika Case"
+Description: "Example of an eICR Document Bundle containing a complete electronic initial case report for a Zika virus infection case involving patient Eve Everywoman."
 Usage: #example
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:2be4b4e4-6df1-4cb2-a947-c70fa0eda54b"

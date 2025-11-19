@@ -309,7 +309,7 @@ Description: "This Composition profile represents an electronic initial case rep
 * section[sliceImmunizationsSection].entry contains
     sliceUSCoreImmunization 0..* MS and
     sliceVaccineCredentialsPatientAssertion 0..* MS
-* section[sliceImmunizationsSection].entry[sliceUSCoreImmunization] only Reference(USCoreImmunizationProfile)
+* section[sliceImmunizationsSection].entry[sliceUSCoreImmunization] only Reference($USCoreImmunizationProfile)
 * section[sliceImmunizationsSection].entry[sliceUSCoreImmunization] ^sliceName = "sliceUSCoreImmunization"
 * section[sliceImmunizationsSection].entry[sliceUSCoreImmunization] ^short = "Immunization entry"
 * section[sliceImmunizationsSection].entry[sliceUSCoreImmunization] ^definition = "The eICR Trigger Code Flag (extension) is present for an Immunization, based on a trigger code match of the vaccine (Immunization.vaccineCode) to the eRSD PlanDefinition Immunizations Trigger."
@@ -441,7 +441,7 @@ Description: "This Composition profile represents an electronic initial case rep
 * section[sliceSocialHistorySection].entry[sliceCountryOfResidence] ^sliceName = "sliceCountryOfResidence"
 * section[sliceSocialHistorySection].entry[sliceCountryOfResidence] ^short = "Country of residence entry"
 * section[sliceSocialHistorySection].entry[sliceCountryOfResidence] ^mustSupport = true
-* section[sliceSocialHistorySection].entry[sliceCountryOfNationality] only Reference(EICRCountryOfNationality)
+* section[sliceSocialHistorySection].entry[sliceCountryOfNationality] only Reference(USPublicHealthCountryOfNationality)
 * section[sliceSocialHistorySection].entry[sliceCountryOfNationality] ^sliceName = "sliceCountryOfNationality"
 * section[sliceSocialHistorySection].entry[sliceCountryOfNationality] ^short = "Country of nationality entry"
 * section[sliceSocialHistorySection].entry[sliceCountryOfNationality] ^mustSupport = true

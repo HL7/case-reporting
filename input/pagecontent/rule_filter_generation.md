@@ -11,12 +11,12 @@ The general structure of the reportability decision is organized by condition. F
 Condition-specific criteria are expressed in terms of data elements and characterized using standard terminologies. These condition-specific criteria terminologies are collected into value sets in the following six categories:
 
 ```cql
-valueset "Example Diagnosis/Problem Triggers": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example'
-valueset "Example Lab Order Test Name Triggers": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example'
-valueset "Example Lab Observation Test Name Triggers": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example'
-valueset "Example Medications Triggers": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example'
-valueset "Example Organism Substance Triggers": "http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"
-valueset "Example Suspected Disorder Triggers": "http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example"
+valueset "Example Diagnosis/Problem Triggers": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example'
+valueset "Example Lab Order Test Name Triggers": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lab-order-test-triggers-example'
+valueset "Example Lab Observation Test Name Triggers": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lab-obs-test-name-triggers-example'
+valueset "Example Medications Triggers": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example'
+valueset "Example Organism Substance Triggers": "http://hl7.org/fhir/us/ecr/ValueSet/valueset-organism-substance-triggers-example"
+valueset "Example Suspected Disorder Triggers": "http://hl7.org/fhir/us/ecr/ValueSet/valueset-suspected-disorder-triggers-example"
 ```
 
 ### Reportable Condition Trigger Representation within FHIR

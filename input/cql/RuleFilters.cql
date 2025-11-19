@@ -9,13 +9,13 @@ codesystem "UsageContext": 'http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-co
 codesystem "JurisdictionsList": 'http://hl7.org/fhir/us/ecr/CodeSystem/ersd-jurisdictions-example'
 
 // Overall triggering value sets, groupings of all condition-specific value sets, grouped by representation in the information model
-valueset "Diagnosis Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example'
-valueset "Medication Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example'
-valueset "Laboratory Order Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example'
-valueset "Laboratory Result Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example'
-valueset "Organism Substance Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example'
-valueset "Procedure Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-pctc-example'
-valueset "Suspected Disorder Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example'
+valueset "Diagnosis Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example'
+valueset "Medication Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example'
+valueset "Laboratory Order Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lab-order-test-triggers-example'
+valueset "Laboratory Result Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lab-obs-test-name-triggers-example'
+valueset "Organism Substance Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-organism-substance-triggers-example'
+valueset "Procedure Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-procedure-triggers-example'
+valueset "Suspected Disorder Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-suspected-disorder-triggers-example'
 
 // Condition-specific triggering codes, these would be listed for each condition
 valueset "Chlamydia Laboratory Result Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-example'

@@ -1,10 +1,10 @@
 Instance: observation-blood-pressure-eve-everywoman
-InstanceOf: USCoreBloodPressureProfile
-Title: "US Core Vital Sign Observation example"
-Description: "An example of the US Core Vital Sign Observation profile."
+InstanceOf: $USCoreBloodPressureProfile
+Title: "Observation - Blood Pressure for Eve Everywoman"
+Description: "Example of a US Core Vital Signs observation documenting blood pressure measurements (systolic 109 mmHg, diastolic 44 mmHg) for patient Eve Everywoman."
 Usage: #example
 * status = #final
-* category[VSCat] = $observation-category#vital-signs "Vital Signs"
+* category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs "Vital Signs"
 * category[VSCat].text = "Vital Signs"
 * code = $loinc#85354-9 "Blood pressure panel with all children optional"
 * code.text = "Blood pressure systolic and diastolic"

@@ -1,7 +1,7 @@
 Instance: practitionerrole-henry-seven
 InstanceOf: USPublicHealthPractitionerRole
-Title: "US PH PractitionerRole Example: Henry Seven"
-Description: "Example of US Public Health PractitionerRole profile (Henry Seven)"
+Title: "PractitionerRole - Henry Seven"
+Description: "Example of a US Public Health PractitionerRole for Dr. Henry Seven, a family practice physician at Salem Medical Center."
 Usage: #example
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * identifier.value = "9941339108"

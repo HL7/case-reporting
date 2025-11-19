@@ -1,7 +1,7 @@
 Instance: library-us-ph-specification-library-example
 InstanceOf: USPublicHealthSpecificationLibrary
-Title: "US Public Health Specification Library Example"
-Description: "Example of the US Public Health Specification Library"
+Title: "Library - US Public Health Specification Library"
+Description: "Example of a US Public Health Specification Library containing PlanDefinition and ValueSet Library for public health reporting specifications."
 Usage: #example
 * url = "http://hl7.org/fhir/us/ecr/Library/library-us-ph-specification-library-example"
 * identifier.system = "urn:ietf:rfc:3986"
@@ -13,11 +13,11 @@ Usage: #example
 * experimental = true
 * type = $library-type#asset-collection
 * publisher = "{site.data.fhir.ig.publisher}"
-* description = "Description of library"
-* useContext[reportingContext].code = $USPublicHealthUsageContextType#reporting "Reporting"
-* useContext[reportingContext].valueCodeableConcept = $USPublicHealthUsageContext#triggering "Triggering"
-* useContext[specificationTypeContext].code = $USPublicHealthUsageContextType#specification-type "Specification Type"
-* useContext[specificationTypeContext].valueCodeableConcept = $USPublicHealthUsageContext#program "Program"
+* description = "Example of a US Public Health Specification Library containing PlanDefinition and ValueSet Library for public health reporting specifications."
+* useContext[reportingContext].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#reporting "Reporting"
+* useContext[reportingContext].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#triggering "Triggering"
+* useContext[specificationTypeContext].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#specification-type "Specification Type"
+* useContext[specificationTypeContext].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#program "Program"
 * jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 * jurisdiction.text = "United States of America"
 * purpose = "Purpose of library"

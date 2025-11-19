@@ -1,7 +1,7 @@
 Instance: practitioner-us-core-henry-seven
-InstanceOf: USCorePractitionerProfile
-Title: "US Core Practitioner Example: Henry Seven"
-Description: "Example of US Core Practitioner (Henry Seven)"
+InstanceOf: $USCorePractitionerProfile
+Title: "Practitioner - Dr. Henry Seven"
+Description: "Example of a US Core Practitioner representing Dr. Henry Seven, M.D., a physician at Salem Medical Center."
 Usage: #example
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * identifier.value = "9941339100"

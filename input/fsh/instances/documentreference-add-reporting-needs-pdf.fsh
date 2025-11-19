@@ -14,4 +14,4 @@ Usage: #example
 * subject.display = "Eve Everywoman"
 * description = "Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here."
 * content.attachment.contentType = #application/pdf
-* content.attachment.url = "http://statedepartmentofhealth.gov/epi/disease/zika/Supplemental_data_form.pdf"
+* content.attachment.url = "http://example.org/epi/disease/zika/Supplemental_data_form.pdf"

@@ -1,7 +1,7 @@
 Instance: library-ersd-supplemental-library-example
 InstanceOf: ERSDSupplementalLibrary
-Title: "eRSD Supplemental Library Example"
-Description: "Description of library"
+Title: "Library - eRSD Supplemental Library"
+Description: "Example of an eRSD Supplemental Library containing executable rule filters, supplemental ValueSet Library, and jurisdictions CodeSystem for electronic case reporting."
 Usage: #example
 * url = "http://hl7.org/fhir/us/ecr/Library/library-ersd-supplemental-library-example"
 * identifier.system = "urn:ietf:rfc:3986"
@@ -13,11 +13,11 @@ Usage: #example
 * experimental = true
 * type = $library-type#asset-collection
 * publisher = "{site.data.fhir.ig.publisher}"
-* description = "Description of library"
-* useContext[reportingContext].code = $USPublicHealthUsageContextType#reporting "Reporting"
-* useContext[reportingContext].valueCodeableConcept = $USPublicHealthUsageContext#supplemental "Supplemental"
-* useContext[specificationTypeContext].code = $USPublicHealthUsageContextType#specification-type "Specification Type"
-* useContext[specificationTypeContext].valueCodeableConcept = $USPublicHealthUsageContext#program "Program"
+* description = "Example of an eRSD Supplemental Library containing executable rule filters, supplemental ValueSet Library, and jurisdictions CodeSystem for electronic case reporting."
+* useContext[reportingContext].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#reporting "Reporting"
+* useContext[reportingContext].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#supplemental "Supplemental"
+* useContext[specificationTypeContext].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#specification-type "Specification Type"
+* useContext[specificationTypeContext].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#program "Program"
 * jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 * jurisdiction.text = "United States of America"
 * purpose = "Purpose of library"
@@ -27,4 +27,4 @@ Usage: #example
 * relatedArtifact[supplementalValueSetLibrary].type = #composed-of
 * relatedArtifact[supplementalValueSetLibrary].resource = "http://hl7.org/fhir/us/ecr/Library/library-us-ph-supplemental-valueset-library-example"
 * relatedArtifact[sliceJurisdictionsCodeSystem].type = #composed-of
-* relatedArtifact[sliceJurisdictionsCodeSystem].resource = "http://hl7.org/fhir/us/ecr/CodeSystem/ersd-jurisdictions-example"
+* relatedArtifact[sliceJurisdictionsCodeSystem].resource = "http://hl7.org/fhir/us/ecr/CodeSystem/codesystem-ersd-jurisdictions-example"

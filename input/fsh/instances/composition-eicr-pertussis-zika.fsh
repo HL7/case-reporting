@@ -1,7 +1,7 @@
 Instance: composition-eicr-pertussis-zika
 InstanceOf: EICRComposition
-Title: "eICR Composition Example: Initial Public Health Case Report - Eve Everywoman, Pertussis and Zika"
-Description: "Example of eICR Composition profile (Eve Everywoman, Pertussis and Zika)"
+Title: "Composition - eICR for Pertussis and Zika Case"
+Description: "Example of an eICR Composition representing an initial public health case report for patient Eve Everywoman with both pertussis and Zika virus disease diagnoses."
 Usage: #example
 * extension.url = "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber"
 * extension.valueString = "1"

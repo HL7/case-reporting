@@ -1,9 +1,9 @@
 Instance: condition-eicr-eve-everywoman-pertussis
 InstanceOf: USPublicHealthConditionProblemsHealthConcerns
-Title: "eICR Condition example: Eve Everywoman - pertussis"
-Description: "Example of eICR Condition profile (Eve Everywoman: pertussis)"
+Title: "Condition - Pertussis for Eve Everywoman"
+Description: "Example of a US Public Health Condition documenting a pertussis diagnosis for patient Eve Everywoman."
 Usage: #example
-* category[us-core] = $condition-category#problem-list-item
+* category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
 * code = $sct#27836007 "Pertussis (disorder)"
 * subject.reference = "Patient/patient-ecr-eve-everywoman"
 * subject.display = "Eve Everywoman"

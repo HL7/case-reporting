@@ -1,9 +1,9 @@
 Instance: condition-eicr-eve-everywoman-zika
 InstanceOf: USPublicHealthConditionEncounterDiagnosis
-Title: "eICR Condition example: Eve Everywoman - zika"
-Description: "Example of eICR Condition profile (Eve Everywoman: zika)"
+Title: "Condition - Zika Virus Disease for Eve Everywoman"
+Description: "Example of a US Public Health Condition documenting a Zika virus disease encounter diagnosis for patient Eve Everywoman."
 Usage: #example
-* category[us-core] = $condition-category#encounter-diagnosis
+* category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis
 * code = $sct#3928002 "Zika virus disease (disorder)"
 * subject.reference = "Patient/patient-ecr-eve-everywoman"
 * subject.display = "Eve Everywoman"

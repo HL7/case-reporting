@@ -25,7 +25,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action.input.extension ^slicing.discriminator.path = "url"
 * action.input.extension ^slicing.rules = #open
 * action.input.extension ^definition = "Defines extensions for the action."
-* action.input.extension contains USPublicHealthFHIRQueryPatternExtension named fhirquerypattern 0..1 MS
+* action.input.extension contains http://hl7.org/fhir/StructureDefinition/cqf-fhirQueryPattern named fhirquerypattern 0..1 MS
 * action.input.extension[fhirquerypattern].url 1..1 MS
 * action.relatedAction.offsetDuration MS
 * action.relatedAction.offsetDuration ^definition = "The duration quantity may include a comparator, indicating how the offset should be applied. For example, <= 1 hour, meaning that the offset should be no more than 1 hour. This allows systems flexibility in scheduling the actions to isolate reporting activities to off hours."
@@ -50,7 +50,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[encounterStart].textEquivalent ^short = "Text equivalent of the \"start\" action."
 * action[encounterStart].textEquivalent ^definition = "Text equivalent of the \"start\" action."
 * action[encounterStart].code 1..1 MS
-* action[encounterStart].code = USPublicHealthPlanDefinitionActions#initiate-reporting-workflow
+* action[encounterStart].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#initiate-reporting-workflow
 * action[encounterStart].code ^short = "Code for the \"start\" action."
 * action[encounterStart].code ^definition = "The US-PH-PlanDefinition-Action code for the \"start\" action."
 * action[encounterStart].trigger 1.. MS
@@ -105,7 +105,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[checkSuspectedDisorder].description ^short = "Description of the check for suspected disorders action."
 * action[checkSuspectedDisorder].description ^definition = "Description of the check for suspected disorders action."
 * action[checkSuspectedDisorder].code 1..1 MS
-* action[checkSuspectedDisorder].code = USPublicHealthPlanDefinitionActions#execute-reporting-workflow
+* action[checkSuspectedDisorder].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#execute-reporting-workflow
 * action[checkSuspectedDisorder].code ^short = "Code for the \"check-suspected-disorder\" action."
 * action[checkSuspectedDisorder].code ^definition = "The US-PH-PlanDefinition-Action code for the \"check-suspected-disorder\" action."
 * action[checkSuspectedDisorder].action 2..
@@ -119,7 +119,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].id 1.. MS
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].id = "is-encounter-suspected-disorder" (exactly)
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].code 1.. MS
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].code = USPublicHealthPlanDefinitionActions#check-trigger-codes
+* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#check-trigger-codes
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition 0..* MS
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition.kind = #applicability (exactly)
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition.expression 1.. MS
@@ -134,7 +134,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[checkSuspectedDisorder].action[continueCheckReportable].id 1.. MS
 * action[checkSuspectedDisorder].action[continueCheckReportable].id = "continue-check-reportable" (exactly)
 * action[checkSuspectedDisorder].action[continueCheckReportable].code 1..
-* action[checkSuspectedDisorder].action[continueCheckReportable].code = USPublicHealthPlanDefinitionActions#evaluate-condition
+* action[checkSuspectedDisorder].action[continueCheckReportable].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#evaluate-condition
 * action[checkSuspectedDisorder].action[continueCheckReportable].condition.kind = #applicability (exactly)
 * action[checkSuspectedDisorder].action[continueCheckReportable].condition.expression 1.. MS
 * action[checkSuspectedDisorder].action[continueCheckReportable].condition.expression.language = #text/fhirpath (exactly)
@@ -153,20 +153,21 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[checkReportable].description ^short = "Description of the Periodic Update of eICR action."
 * action[checkReportable].description ^definition = "Description of the Periodic Update of eICR action within the eICR action."
 * action[checkReportable].code 1..
-* action[checkReportable].code = USPublicHealthPlanDefinitionActions#execute-reporting-workflow
-* action[checkReportable].action 3..
+* action[checkReportable].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#execute-reporting-workflow
+* action[checkReportable].action 4..
 * action[checkReportable].action ^slicing.discriminator.type = #value
 * action[checkReportable].action ^slicing.discriminator.path = "id"
 * action[checkReportable].action ^slicing.rules = #open
 * action[checkReportable].action contains
     isEncounterReportable 1..1 MS and
     checkUpdateEicr 1..1 MS and
-    encounterInProgress 1..1 MS
+    encounterInProgress 1..1 MS and
+    encounterComplete 1..1 MS
 //* action[checkReportable].action[isEncounterReportable] only BackboneElement
 * action[checkReportable].action[isEncounterReportable].id 1.. MS
 * action[checkReportable].action[isEncounterReportable].id = "is-encounter-reportable" (exactly)
 * action[checkReportable].action[isEncounterReportable].code 1..
-* action[checkReportable].action[isEncounterReportable].code = USPublicHealthPlanDefinitionActions#check-trigger-codes
+* action[checkReportable].action[isEncounterReportable].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#check-trigger-codes
 * action[checkReportable].action[isEncounterReportable].condition.kind = #applicability (exactly)
 * action[checkReportable].action[isEncounterReportable].condition.expression 1.. MS
 * action[checkReportable].action[isEncounterReportable].condition.expression.language = #text/fhirpath (exactly)
@@ -180,7 +181,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[checkReportable].action[checkUpdateEicr].id 1.. MS
 * action[checkReportable].action[checkUpdateEicr].id = "check-update-eicr" (exactly)
 * action[checkReportable].action[checkUpdateEicr].code 1..
-* action[checkReportable].action[checkUpdateEicr].code = USPublicHealthPlanDefinitionActions#evaluate-condition
+* action[checkReportable].action[checkUpdateEicr].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#evaluate-condition
 * action[checkReportable].action[checkUpdateEicr].condition.kind = #applicability (exactly)
 * action[checkReportable].action[checkUpdateEicr].condition.expression 1.. MS
 * action[checkReportable].action[checkUpdateEicr].condition.expression.language = #text/fhirpath (exactly)
@@ -190,7 +191,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[checkReportable].action[encounterInProgress].id 1.. MS
 * action[checkReportable].action[encounterInProgress].id = "is-encounter-in-progress" (exactly)
 * action[checkReportable].action[encounterInProgress].code 1..
-* action[checkReportable].action[encounterInProgress].code = USPublicHealthPlanDefinitionActions#evaluate-condition
+* action[checkReportable].action[encounterInProgress].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#evaluate-condition
 * action[checkReportable].action[encounterInProgress].condition.kind = #applicability (exactly)
 * action[checkReportable].action[encounterInProgress].condition.expression 1.. MS
 * action[checkReportable].action[encounterInProgress].condition.expression.language = #text/fhirpath (exactly)
@@ -201,12 +202,22 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[checkReportable].action[encounterInProgress].relatedAction.offsetDuration ^example.label = "Wait 6 hours before next action."
 * action[checkReportable].action[encounterInProgress].relatedAction.offsetDuration ^example.valueDuration.value = 6
 * action[checkReportable].action[encounterInProgress].relatedAction.offsetDuration ^example.valueDuration.unit = "h"
+
+// 2025-11-16 added encounterComplete
+* action[checkReportable].action[encounterComplete].id 1.. MS
+* action[checkReportable].action[encounterComplete].id = "is-encounter-completed" (exactly)
+* action[checkReportable].action[encounterComplete].code 1..
+* action[checkReportable].action[encounterComplete].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#complete-reporting
+* action[checkReportable].action[encounterComplete].condition.kind = #applicability (exactly)
+* action[checkReportable].action[encounterComplete].condition.expression 1.. MS
+* action[checkReportable].action[encounterComplete].condition.expression.language = #text/fhirpath (exactly)
+
 * action[createEicr] ^short = "Create the eICR"
 * action[createEicr] ^definition = "Defines the \"create-eicr\" action"
 * action[createEicr].id 1.. MS
 * action[createEicr].id = "create-eicr" (exactly)
 * action[createEicr].description = "This action represents the creation of the eICR. It subsequently calls validate." (exactly)
-* action[createEicr].code = USPublicHealthPlanDefinitionActions#create-report
+* action[createEicr].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#create-report
 * action[createEicr].relatedAction 1..1 MS
 * action[createEicr].relatedAction.actionId = "validate-eicr" (exactly)
 * action[createEicr].relatedAction.relationship = #before-start (exactly)
@@ -215,7 +226,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[validateEicr].id 1.. MS
 * action[validateEicr].id = "validate-eicr" (exactly)
 * action[validateEicr].description = "This action represents the validation of the eICR. It subsequently calls route-and-send." (exactly)
-* action[validateEicr].code = USPublicHealthPlanDefinitionActions#validate-report
+* action[validateEicr].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#validate-report
 * action[validateEicr].relatedAction 1..1 MS
 * action[validateEicr].relatedAction.actionId = "route-and-send-eicr" (exactly)
 * action[validateEicr].relatedAction.relationship = #before-start (exactly)
@@ -229,7 +240,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[routeAndSendEicr].description ^definition = "Description of the route and send action."
 * action[routeAndSendEicr].textEquivalent 1.. MS
 * action[routeAndSendEicr].textEquivalent = "Route and send eICR" (exactly)
-* action[routeAndSendEicr].code = USPublicHealthPlanDefinitionActions#submit-report
+* action[routeAndSendEicr].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#submit-report
 * action[encounterModified] ^short = "Encounter modified code"
 * action[encounterModified] ^definition = "Defines the \"encounter-modified\" action"
 * action[encounterModified].id 1.. MS
@@ -243,7 +254,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[encounterModified].textEquivalent ^short = "Text equivalent of the \"encounter-modified\" action."
 * action[encounterModified].textEquivalent ^definition = "Text equivalent of the \"encounter-modified\" action."
 * action[encounterModified].code 1..1 MS
-* action[encounterModified].code = USPublicHealthPlanDefinitionActions#initiate-reporting-workflow
+* action[encounterModified].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#initiate-reporting-workflow
 * action[encounterModified].code ^short = "Code for the \"encounter-modified\" action."
 * action[encounterModified].code ^definition = "The US-PH-PlanDefinition-Action code for the \"encounter-modified\" action."
 * action[encounterModified].trigger 1.. MS

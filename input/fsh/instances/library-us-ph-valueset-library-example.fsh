@@ -1,7 +1,7 @@
 Instance: library-us-ph-valueset-library-example
 InstanceOf: USPublicHealthValueSetLibrary
-Title: "US Public Health ValueSet Library Example"
-Description: "Example of US Public Health ValueSet Library profile"
+Title: "Library - US Public Health ValueSet Library"
+Description: "Example of a US Public Health ValueSet Library containing a collection of ValueSets used for public health reporting."
 Usage: #example
 * url = "http://hl7.org/fhir/us/ecr/Library/library-us-ph-valueset-library-example"
 * identifier.system = "urn:ietf:rfc:3986"
@@ -13,10 +13,10 @@ Usage: #example
 * experimental = true
 * type = $library-type#asset-collection
 * publisher = "{site.data.fhir.ig.publisher}"
-* description = "Description of library"
+* description = "Example of a US Public Health ValueSet Library containing a collection of ValueSets used for public health reporting."
 * jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 * jurisdiction.text = "United States of America"
 * purpose = "Purpose of library"
 * effectivePeriod.start = "2020-11-01"
 * relatedArtifact[USPHValueSet].type = #composed-of
-* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"
+* relatedArtifact[USPHValueSet].resource = "http://example.org/fhir/ValueSet/valueset-us-ph-example"

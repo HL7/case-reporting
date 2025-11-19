@@ -1,7 +1,7 @@
 Instance: composition-eicr-zika-manual-initiation
 InstanceOf: EICRComposition
-Title: "eICR Composition Example: Initial Public Health Case Report - Eve Everywoman, Zika, Manual Initiation"
-Description: "Example of eICR Composition profile (Eve Everywoman, Zika, Manual Initiation)"
+Title: "Composition - Manually Initiated eICR for Zika Case"
+Description: "Example of an eICR Composition representing a manually initiated electronic initial case report for patient Eve Everywoman with suspected Zika virus infection."
 Usage: #example
 * extension[0].url = "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber"
 * extension[=].valueString = "1"

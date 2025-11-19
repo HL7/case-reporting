@@ -1,7 +1,7 @@
 Instance: immunization-ecr-pneumo
-InstanceOf: USCoreImmunizationProfile
-Title: "Immunization Example: immunization-ecr-pneumo"
-Description: "Example of US Core Immunization profile"
+InstanceOf: $USCoreImmunizationProfile
+Title: "Immunization - Pneumococcal Vaccine for Eve Everywoman"
+Description: "Example of a US Core Immunization documenting the administration of pneumococcal polysaccharide PPV23 vaccine to patient Eve Everywoman."
 Usage: #example
 * status = #completed
 * vaccineCode = $cvx#33 "pneumococcal polysaccharide PPV23"

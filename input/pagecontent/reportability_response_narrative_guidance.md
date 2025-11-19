@@ -198,29 +198,29 @@ Reporting is required within "&lt;[reporting timeframe](StructureDefinition-rr-r
 >
 > Local mosquito-borne Zika virus transmission was reported in your area. Increased watchfulness for symptoms of Zika virus in your patients is warranted. (Immediate action requested)
 >
-> Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here. ([Link](http://statedepartmentofhealth.gov/link) - Immediate action required)
+> Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here. ([Link](http://example.org/link) - Immediate action required)
 >
-> Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy. ([Link](http://statedepartmentofhealth.gov/link) - Immediate action requested)
+> Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy. ([Link](http://example.org/link) - Immediate action requested)
 >
-> Further Laboratory testing for Zika may be needed. Guidance for additional testing and specimen collection ([Link](http://statedepartmentofhealth.gov/link) - Action requested)
+> Further Laboratory testing for Zika may be needed. Guidance for additional testing and specimen collection ([Link](http://example.org/link) - Action requested)
 >
-> Forms for submitting further Zika laboratory testing ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Forms for submitting further Zika laboratory testing ([Link](http://example.org/link) - Information only)
 >
-> Treatment guidance ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Treatment guidance ([Link](http://example.org/link) - Information only)
 >
-> If you have additional questions regarding Zika or reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> If you have additional questions regarding Zika or reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://example.org/link) - Information only)
 >
 > **Additional resources**
 >
-> Control and prevention information for providers ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Control and prevention information for providers ([Link](http://example.org/link) - Information only)
 >
-> Detailed condition references ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Detailed condition references ([Link](http://example.org/link) - Information only)
 >
-> Prevalence in State ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Prevalence in State ([Link](http://example.org/link) - Information only)
 >
-> CDC webpage ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> CDC webpage ([Link](http://example.org/link) - Information only)
 >
-> Patient information factsheet ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Patient information factsheet ([Link](http://example.org/link) - Information only)
 
 #### A Single Condition is *Not* Reportable to a Single PHA
 
@@ -440,7 +440,7 @@ The examples below provide example text for *Providers / Reporters* for these ty
 >
 > Reporting is required within "24 hours". Reporting to this Public Health Agency is based on "both patient home address and provider facility address".
 >
-> If you have additional questions regarding Zika or reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> If you have additional questions regarding Zika or reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://example.org/link) - Information only)
 
 
 ----------
@@ -462,29 +462,29 @@ The examples below provide example text for *Providers / Reporters* for these ty
 >
 > Local mosquito-borne Zika virus transmission was reported in your area. Increased watchfulness for symptoms of Zika virus in your patients is warranted. (Immediate action requested)
 >
-> Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here. ([Link](http://statedepartmentofhealth.gov/link) - Immediate action required)
+> Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here. ([Link](http://example.org/link) - Immediate action required)
 >
-> Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy. ([Link](http://statedepartmentofhealth.gov/link) - Immediate action requested)
+> Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy. ([Link](http://example.org/link) - Immediate action requested)
 >
-> Further Laboratory testing for Zika may be needed. Guidance for additional testing and specimen collection ([Link](http://statedepartmentofhealth.gov/link) - Action requested)
+> Further Laboratory testing for Zika may be needed. Guidance for additional testing and specimen collection ([Link](http://example.org/link) - Action requested)
 >
-> Forms for submitting further Zika laboratory testing ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Forms for submitting further Zika laboratory testing ([Link](http://example.org/link) - Information only)
 >
-> Treatment guidance ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Treatment guidance ([Link](http://example.org/link) - Information only)
 >
-> If you have additional questions regarding Zika or reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> If you have additional questions regarding Zika or reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://example.org/link) - Information only)
 >
 > **Additional resources**
 >
-> Control and prevention information for providers ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Control and prevention information for providers ([Link](http://example.org/link) - Information only)
 >
-> Detailed condition references ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Detailed condition references ([Link](http://example.org/link) - Information only)
 >
-> Prevalence in State ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Prevalence in State ([Link](http://example.org/link) - Information only)
 >
-> CDC webpage ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> CDC webpage ([Link](http://example.org/link) - Information only)
 >
-> Patient information factsheet ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Patient information factsheet ([Link](http://example.org/link) - Information only)
 
 
 ----------
@@ -514,7 +514,7 @@ The examples below provide example text for *Providers / Reporters* for these ty
 > Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient.
 > "Zika virus" was determined not reportable to "State Department of Health". This may be because it is not on the list of reportable conditions for the relevant Public Health Agency or the information provided at the time of this report does not meet reporting criteria.
 >
-> If you have additional questions regarding Zika or reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> If you have additional questions regarding Zika or reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://example.org/link) - Information only)
 
 
 ----------
@@ -535,23 +535,23 @@ The examples below provide example text for *Providers / Reporters* for these ty
 > Reporting is required within "24 hours". Reporting to this Public Health Agency is based on "both patient home address and provider facility address".
 > Local mosquito-borne Zika virus transmission was reported in your area. Increased watchfulness for symptoms of Zika virus in your patients is warranted. (Immediate action requested)
 >
-> Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here. ([Link](http://statedepartmentofhealth.gov/link) - Immediate action required)
+> Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here. ([Link](http://example.org/link) - Immediate action required)
 >
-> Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy. ([Link](http://statedepartmentofhealth.gov/link) - Immediate action requested)
+> Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy. ([Link](http://example.org/link) - Immediate action requested)
 >
-> Further Laboratory testing for Zika may be needed. Guidance for additional testing and specimen collection ([Link](http://statedepartmentofhealth.gov/link) - Action requested)
+> Further Laboratory testing for Zika may be needed. Guidance for additional testing and specimen collection ([Link](http://example.org/link) - Action requested)
 >
-> Forms for submitting further Zika laboratory testing ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Forms for submitting further Zika laboratory testing ([Link](http://example.org/link) - Information only)
 >
-> Treatment guidance ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Treatment guidance ([Link](http://example.org/link) - Information only)
 >
-> If you have additional questions regarding Zika or reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> If you have additional questions regarding Zika or reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://example.org/link) - Information only)
 >
 > **Additional resources**
 >
-> Prevalence in State ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Prevalence in State ([Link](http://example.org/link) - Information only)
 >
-> CDC webpage ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> CDC webpage ([Link](http://example.org/link) - Information only)
 
 
 ----------
@@ -588,95 +588,95 @@ The examples below provide example text for *Providers / Reporters* for these ty
 >
 > Local mosquito-borne Zika virus transmission was reported in your area. Increased watchfulness for symptoms of Zika virus in your patients is warranted. (Immediate action requested)
 >
-> Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here. ([Link](http://statedepartmentofhealth.gov/link) - Immediate action required)
+> Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here. ([Link](http://example.org/link) - Immediate action required)
 >
-> Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy. ([Link](http://statedepartmentofhealth.gov/link) - Immediate action requested)
+> Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy. ([Link](http://example.org/link) - Immediate action requested)
 >
-> Further Laboratory testing for Zika may be needed. Guidance for additional testing and specimen collection ([Link](http://statedepartmentofhealth.gov/link) - Action requested)
+> Further Laboratory testing for Zika may be needed. Guidance for additional testing and specimen collection ([Link](http://example.org/link) - Action requested)
 >
-> Forms for submitting further Zika laboratory testing ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Forms for submitting further Zika laboratory testing ([Link](http://example.org/link) - Information only)
 >
-> Treatment guidance ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Treatment guidance ([Link](http://example.org/link) - Information only)
 >
-> If you have additional questions regarding Zika or reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> If you have additional questions regarding Zika or reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://example.org/link) - Information only)
 >
 > **Additional Resources**
 >
-> Control and prevention information for providers ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Control and prevention information for providers ([Link](http://example.org/link) - Information only)
 >
-> Detailed condition references ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Detailed condition references ([Link](http://example.org/link) - Information only)
 >
-> Prevalence in State ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Prevalence in State ([Link](http://example.org/link) - Information only)
 >
-> CDC webpage ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> CDC webpage ([Link](http://example.org/link) - Information only)
 >
-> Patient information factsheet ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Patient information factsheet ([Link](http://example.org/link) - Information only)
 >
 > **"Chlamydia" for "State A Department of Health"**
 >
 > Reporting is required within "3 days". Reporting to this Public Health Agency is based on "patient home address".
 >
-> Additional information for the required reporting of Chlamydia must be submitted to State A Department of Health immediately. This additional information can be submitted here. ([Link](http://statedepartmentofhealth.gov/link) - Immediate action required)
+> Additional information for the required reporting of Chlamydia must be submitted to State A Department of Health immediately. This additional information can be submitted here. ([Link](http://example.org/link) - Immediate action required)
 >
-> State A Chlamydia Disease Plan ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> State A Chlamydia Disease Plan ([Link](http://example.org/link) - For information)
 >
-> Treatment guidelines ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> Treatment guidelines ([Link](http://example.org/link) - For information)
 >
-> State A Disease Testing Information ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> State A Disease Testing Information ([Link](http://example.org/link) - For information)
 >
-> If you have additional questions regarding reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> If you have additional questions regarding reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://example.org/link) - For information)
 >
 > **Additional Resources**
 >
-> STD Disease Statistics in State A ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> STD Disease Statistics in State A ([Link](http://example.org/link) - For information)
 >
-> CDC webpage ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> CDC webpage ([Link](http://example.org/link) - For information)
 >
-> Patient information factsheet ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> Patient information factsheet ([Link](http://example.org/link) - For information)
 >
 > **"Zika virus" for "State B Department of Health"**
 >
 > Reporting is required within "immediately by phone". Reporting to this Public Health Agency is based on "provider facility address".
 >
-> State B has declared a Public Health Emergency for Zika Virus. Additional information is available here. ([Link](http://statedepartmentofhealth.gov/link) - Immediate action required)
+> State B has declared a Public Health Emergency for Zika Virus. Additional information is available here. ([Link](http://example.org/link) - Immediate action required)
 >
-> Additional information for the required reporting of Zika must be submitted to State B Department of Health immediately. This additional information can be submitted here. ([Link](http://statedepartmentofhealth.gov/link) - Immediate action required)
+> Additional information for the required reporting of Zika must be submitted to State B Department of Health immediately. This additional information can be submitted here. ([Link](http://example.org/link) - Immediate action required)
 >
-> State B recommends that symptomatic pregnant women with possible Zika exposure should be tested for Zika virus infection. ([Link](http://statedepartmentofhealth.gov/link) - Immediate action requested)
+> State B recommends that symptomatic pregnant women with possible Zika exposure should be tested for Zika virus infection. ([Link](http://example.org/link) - Immediate action requested)
 >
-> Zika Virus Diagnostic Specimen Collection, Packaging and Shipping Guidance for Laboratories and County Health Departments ([Link](http://statedepartmentofhealth.gov/link) - Action requested)
+> Zika Virus Diagnostic Specimen Collection, Packaging and Shipping Guidance for Laboratories and County Health Departments ([Link](http://example.org/link) - Action requested)
 >
-> Zika Virus Testing Frequently Asked Questions ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> Zika Virus Testing Frequently Asked Questions ([Link](http://example.org/link) - For information)
 >
-> Providers may use this form to assess patients for possible Zika Virus ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> Providers may use this form to assess patients for possible Zika Virus ([Link](http://example.org/link) - For information)
 >
-> If you have additional questions regarding Zika or reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> If you have additional questions regarding Zika or reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://example.org/link) - For information)
 >
 > **Additional Resources**
 >
 > State B Zika Virus Information Hotline: 1-800-999-9999 (For information)
 >
-> Control and prevention information for providers ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> Control and prevention information for providers ([Link](http://example.org/link) - For information)
 >
-> CDC webpage ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> CDC webpage ([Link](http://example.org/link) - For information)
 >
 > **"Chlamydia" for "State B Department of Health"**
 >
 > Reporting is required within "one business day". Reporting to this Public Health Agency is based on "provider facility address".
 >
-> Additional information for the required reporting of Chlamydia must be submitted to State B Department of Health immediately. This additional information can be submitted here. ([Link](http://statedepartmentofhealth.gov/link) - Immediate action required)
+> Additional information for the required reporting of Chlamydia must be submitted to State B Department of Health immediately. This additional information can be submitted here. ([Link](http://example.org/link) - Immediate action required)
 >
-> Chlamydia treatment brochure ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> Chlamydia treatment brochure ([Link](http://example.org/link) - For information)
 >
 > The State B Department of Health is here to serve you. Contact us with any questions you may have regarding reporting and treatment of Sexually Transmitted Diseases, by phone 888-123-1234, or email STD.Feedback@StateBhealth.gov. (For information)
 >
 > **Additional Resources**
 >
-> Fact sheet for patients with Chlamydia ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> Fact sheet for patients with Chlamydia ([Link](http://example.org/link) - For information)
 >
-> State B Administrative Code ABC-123 is the mandate that empowers the Department of Health to record communicable diseases and dictates when and how diseases are to be reported to the Department by both practitioners and laboratories. ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> State B Administrative Code ABC-123 is the mandate that empowers the Department of Health to record communicable diseases and dictates when and how diseases are to be reported to the Department by both practitioners and laboratories. ([Link](http://example.org/link) - For information)
 >
-> CDC webpage for Chlamydia ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> CDC webpage for Chlamydia ([Link](http://example.org/link) - For information)
 
 
 ----------
@@ -699,73 +699,73 @@ The examples below provide example text for *Providers / Reporters* for these ty
 >
 > Local mosquito-borne Zika virus transmission was reported in your area. Increased watchfulness for symptoms of Zika virus in your patients is warranted. (Immediate action requested)
 >
-> Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here. ([Link](http://statedepartmentofhealth.gov/link) - Immediate action required)
+> Additional information for the required reporting of Zika must be submitted to State Department of Health immediately. This additional information can be submitted here. ([Link](http://example.org/link) - Immediate action required)
 >
-> Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy. ([Link](http://statedepartmentofhealth.gov/link) - Immediate action requested)
+> Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy. ([Link](http://example.org/link) - Immediate action requested)
 >
-> Further Laboratory testing for Zika may be needed. Guidance for additional testing and specimen collection ([Link](http://statedepartmentofhealth.gov/link) - Action requested)
+> Further Laboratory testing for Zika may be needed. Guidance for additional testing and specimen collection ([Link](http://example.org/link) - Action requested)
 >
-> Forms for submitting further Zika laboratory testing ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Forms for submitting further Zika laboratory testing ([Link](http://example.org/link) - Information only)
 >
-> Treatment guidance ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Treatment guidance ([Link](http://example.org/link) - Information only)
 >
-> If you have additional questions regarding Zika or reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> If you have additional questions regarding Zika or reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://example.org/link) - Information only)
 >
 > **Additional Resources**
 >
-> Control and prevention information for providers ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Control and prevention information for providers ([Link](http://example.org/link) - Information only)
 >
-> Detailed condition references ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Detailed condition references ([Link](http://example.org/link) - Information only)
 >
-> Prevalence in State ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Prevalence in State ([Link](http://example.org/link) - Information only)
 >
-> CDC webpage ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> CDC webpage ([Link](http://example.org/link) - Information only)
 >
-> Patient information factsheet ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> Patient information factsheet ([Link](http://example.org/link) - Information only)
 >
 > **"Zika virus" for "State B Department of Health"**
 >
 > Reporting is required within "immediately by phone". Reporting to this Public Health Agency is based on "provider facility address".
 >
-> State B has declared a Public Health Emergency for Zika Virus. Additional information is available here. ([Link](http://statedepartmentofhealth.gov/link) - Immediate action required)
+> State B has declared a Public Health Emergency for Zika Virus. Additional information is available here. ([Link](http://example.org/link) - Immediate action required)
 >
-> Additional information for the required reporting of Zika must be submitted to State B Department of Health immediately. This additional information can be submitted here. ([Link](http://statedepartmentofhealth.gov/link) - Immediate action required)
+> Additional information for the required reporting of Zika must be submitted to State B Department of Health immediately. This additional information can be submitted here. ([Link](http://example.org/link) - Immediate action required)
 >
-> State B recommends that symptomatic pregnant women with possible Zika exposure should be tested for Zika virus infection. ([Link](http://statedepartmentofhealth.gov/link) - Immediate action requested)
+> State B recommends that symptomatic pregnant women with possible Zika exposure should be tested for Zika virus infection. ([Link](http://example.org/link) - Immediate action requested)
 >
-> Zika Virus Diagnostic Specimen Collection, Packaging and Shipping Guidance for Laboratories and County Health Departments ([Link](http://statedepartmentofhealth.gov/link) - Action requested)
+> Zika Virus Diagnostic Specimen Collection, Packaging and Shipping Guidance for Laboratories and County Health Departments ([Link](http://example.org/link) - Action requested)
 >
-> Zika Virus Testing Frequently Asked Questions ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> Zika Virus Testing Frequently Asked Questions ([Link](http://example.org/link) - For information)
 >
-> Providers may use this form to assess patients for possible Zika Virus ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> Providers may use this form to assess patients for possible Zika Virus ([Link](http://example.org/link) - For information)
 >
-> If you have additional questions regarding Zika or reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> If you have additional questions regarding Zika or reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://example.org/link) - For information)
 >
 > **Additional Resources**
 >
 > State B Zika Virus Information Hotline: 1-800-999-9999 (For information)
 >
-> Control and prevention information for providers ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> Control and prevention information for providers ([Link](http://example.org/link) - For information)
 >
-> CDC webpage ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> CDC webpage ([Link](http://example.org/link) - For information)
 >
 > **"Chlamydia" for "State B Department of Health"**
 >
 > Reporting is required within "one business day". Reporting to this Public Health Agency is based on "provider facility address".
 >
-> Additional information for the required reporting of Chlamydia must be submitted to State B Department of Health immediately. This additional information can be submitted here. ([Link](http://statedepartmentofhealth.gov/link) - Immediate action required)
+> Additional information for the required reporting of Chlamydia must be submitted to State B Department of Health immediately. This additional information can be submitted here. ([Link](http://example.org/link) - Immediate action required)
 >
-> Chlamydia treatment brochure ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> Chlamydia treatment brochure ([Link](http://example.org/link) - For information)
 >
 > The State B Department of Health is here to serve you. Contact us with any questions you may have regarding reporting and treatment of Sexually Transmitted Diseases, by phone 888-123-1234, or email STD.Feedback@StateBhealth.gov. (For information)
 >
 > **Additional Resources**
 >
-> Fact sheet for patients with Chlamydia ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> Fact sheet for patients with Chlamydia ([Link](http://example.org/link) - For information)
 >
-> State B Administrative Code ABC-123 is the mandate that empowers the Department of Health to record communicable diseases and dictates when and how diseases are to be reported to the Department by both practitioners and laboratories. ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> State B Administrative Code ABC-123 is the mandate that empowers the Department of Health to record communicable diseases and dictates when and how diseases are to be reported to the Department by both practitioners and laboratories. ([Link](http://example.org/link) - For information)
 >
-> CDC webpage for Chlamydia ([Link](http://statedepartmentofhealth.gov/link) - For information)
+> CDC webpage for Chlamydia ([Link](http://example.org/link) - For information)
 
 
 ----------
@@ -800,7 +800,7 @@ The examples below provide example text for *Providers / Reporters* for these ty
 >
 > Reporting is required within "24 hours". Reporting to this Public Health Agency is based on "both patient home address and provider facility address".
 >
-> If you have additional questions regarding Zika or reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://statedepartmentofhealth.gov/link) - Information only)
+> If you have additional questions regarding Zika or reporting, the State Department of Health can be reached at 800 555-5555 or here. ([Link](http://example.org/link) - Information only)
 
 
 ----------

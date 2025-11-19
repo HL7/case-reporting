@@ -1,9 +1,9 @@
 Instance: servicerequest-eicr-eve-everywoman-zika
 InstanceOf: EICRServiceRequest
-Title: "eICR ServiceRequest Example: Eve Everywoman - Zika"
-Description: "Example of eICR ServiceRequest profile (Eve Everywoman - zika"
+Title: "ServiceRequest - Zika Virus Test for Eve Everywoman (Legacy)"
+Description: "Example of an eICR ServiceRequest for Zika virus testing for patient Eve Everywoman. Note: This is a legacy example; see servicerequest-eicr-zika for the current version."
 Usage: #example
-* identifier.system = "http://lab.smarthealthit.org"
+* identifier.system = "http://example.org/lab.smarthealthit.org"
 * identifier.value = "061ef612-344f-4e7b-81a8-1059ae7bbe19"
 * status = #completed
 * intent = #order

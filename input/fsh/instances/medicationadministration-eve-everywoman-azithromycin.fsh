@@ -1,7 +1,7 @@
 Instance: medicationadministration-eve-everywoman-azithromycin
 InstanceOf: USPublicHealthMedicationAdministration
-Title: "MedicationAdministration Example: Eve Everywoman, azithromycin"
-Description: "Example of MedicationAdministration resource (Eve Everywoman, azithromycin)"
+Title: "MedicationAdministration - Azithromycin for Eve Everywoman"
+Description: "Example of a US Public Health MedicationAdministration documenting the administration of Azithromycin 500 MG oral tablets to patient Eve Everywoman."
 Usage: #example
 * status = #completed
 * medicationCodeableConcept = $rxnorm#248656 "Azithromycin 500 MG Oral Tablet"

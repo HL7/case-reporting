@@ -1,7 +1,7 @@
 Instance: observation-rr-summary
 InstanceOf: RRSummary
-Title: "Observation RR Summary example"
-Description: "Example of RR Summary profile."
+Title: "Observation - RR Summary"
+Description: "Example of a Reportability Response (RR) Summary observation providing summary information about electronic case reporting submission and reportability determination for Zika virus disease."
 Usage: #example
 * status = #final
 * code = $sct#304561000 "Informing health care professional (procedure)"

@@ -1,7 +1,7 @@
 Instance: location-ecr-city-football-stadium
-InstanceOf: USCoreLocation
-Title: "Location Example: City Football Stadium"
-Description: "Example of Location resource (City Football Stadium)"
+InstanceOf: $USCoreLocationProfile
+Title: "Location - City Football Stadium"
+Description: "Example of a US Core Location representing a sports stadium where potential disease exposure may have occurred."
 Usage: #example
 * status = #active
 * name = "City Football Stadium"

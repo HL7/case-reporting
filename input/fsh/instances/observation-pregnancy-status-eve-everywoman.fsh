@@ -1,7 +1,7 @@
 Instance: observation-pregnancy-status-eve-everywoman
 InstanceOf: USPublicHealthPregnancyStatusObservation
-Title: "US Public Health Pregnancy Status Observation Example: Eve Everywoman"
-Description: "Example of US Public Health Pregnancy Status Observation profile (Eve Everywoman)"
+Title: "Observation - Pregnancy Status for Eve Everywoman"
+Description: "Example of a US Public Health Pregnancy Status observation documenting pregnancy status with gestational age and estimated delivery date for patient Eve Everywoman."
 Usage: #example
 * extension[+].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-date-determined-extension"
 * extension[=].valueDateTime = "2017-10-01"

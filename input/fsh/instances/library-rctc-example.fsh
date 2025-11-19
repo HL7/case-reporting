@@ -1,7 +1,7 @@
 Instance: library-rctc-example
 InstanceOf: USPublicHealthTriggeringValueSetLibrary
-Title: "Reportable Condition Trigger Codes (RCTC) Example Library"
-Description: "This release includes code updates for the existing conditions and adds codes for Parkinson’s disease and 13 enteric conditions. Medication codes have also been added to this version."
+Title: "Library - Reportable Condition Trigger Codes (RCTC)"
+Description: "Example of a US Public Health Triggering ValueSet Library containing Reportable Condition Trigger Codes (RCTC) for initiating decision support for electronic case reports. This release includes code updates for existing conditions, adds codes for Parkinson's disease and 13 enteric conditions, and includes medication codes."
 Usage: #example
 * url = "http://hl7.org/fhir/us/ecr/Library/library-rctc-example"
 * identifier.system = "urn:ietf:rfc:3986"
@@ -14,23 +14,23 @@ Usage: #example
 * type = $library-type#asset-collection
 * publisher = "{site.data.fhir.ig.publisher}"
 * description = "This release includes code updates for the existing conditions and adds codes for Parkinson’s disease and 13 enteric conditions. Medication codes have also been added to this version."
-* useContext[0].code = $USPublicHealthUsageContextType#reporting "Reporting"
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#triggering "Triggering"
-* useContext[+].code = $USPublicHealthUsageContextType#specification-type "Specification Type"
-* useContext[=].valueCodeableConcept = $USPublicHealthUsageContext#value-set-library "ValueSet Library"
+* useContext[0].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#reporting "Reporting"
+* useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#triggering "Triggering"
+* useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#specification-type "Specification Type"
+* useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#value-set-library "ValueSet Library"
 * jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 * jurisdiction.text = "United States of America"
 * purpose = "Triggers for initiating decision support for electronic case reports"
 * effectivePeriod.start = "2019-11-01"
 * relatedArtifact[USPHValueSet].type = #composed-of
-* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"
+* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example"
 * relatedArtifact[USPHValueSet].type = #composed-of
-* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-ostc-example"
+* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-organism-substance-triggers-example"
 * relatedArtifact[USPHValueSet].type = #composed-of
-* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lotc-example"
+* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lab-order-test-triggers-example"
 * relatedArtifact[USPHValueSet].type = #composed-of
-* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example"
+* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lab-obs-test-name-triggers-example"
 * relatedArtifact[USPHValueSet].type = #composed-of
-* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"
+* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example"
 * relatedArtifact[USPHValueSet].type = #composed-of
-* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example"
+* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-suspected-disorder-triggers-example"

@@ -1,7 +1,7 @@
 Instance: location-ecr-salem-medical-center
 InstanceOf: USPublicHealthLocation
-Title: "US PH Location Example: Clinic Bldg A, Salem Medical Center"
-Description: "Example of US Public Health profile (Salem Medical Center)"
+Title: "Location - Salem Medical Center Clinic Building A"
+Description: "Example of a US Public Health Location representing Clinic Building A at Salem Medical Center in Ann Arbor, Michigan."
 Usage: #example
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * identifier.value = "1144221995"

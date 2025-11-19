@@ -1,3 +1,39 @@
+### STU 3 - Ballot (3.0.0)
+
+
+#### Changes
+
+<table border="1">
+    <thead>
+       <tr style="background-color:#DCDCDC">
+            <th style="text-align: center; vertical-align: middle;">Artifact</th>
+            <th style="text-align: center; vertical-align: middle;">Change Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Whole IG</td>
+            <td>Update dependency on US Core to <a href="https://hl7.org/fhir/us/core/STU6.1/index.html">US Core 6.1.0</a></td>
+        </tr>
+        <tr>
+            <td>Whole IG</td>
+            <td>Move the US Public Health Profile Library profiles out of this IG. Align with, depend on, and update references and examples to the analogous profiles in the latest version of the US Public Health Profiles Library <a href="https://build.fhir.org/ig/HL7/fhir-us-ph-library/en/index.html">US Public Health Profiles Library 2.0.0</a> Note: The ballot version depends on a snapshot of the USPHPL, this will be updated to the published version before publication of this IG.</td>
+        </tr>
+        <tr>
+            <td>Whole IG</td>
+            <td>Update to the latest version of the Occupational Data for Health FHIR IG <a href="https://hl7.org/fhir/us/odh/">HL7 FHIR Profile: Occupational Data for Health (ODH), Release 1, STU 1.3 (Standard for Trial Use)</a></td>
+        </tr>
+        <tr>
+            <td>Procedure Triggers</td>
+            <td>Remove Procedure Trigger profiles</a></td>
+        </tr>
+    </tbody>
+</table>
+
+|JIRA Ticket|Ticket Description|
+|---------|----------|
+| [FHIR-38836](https://jira.hl7.org/browse/FHIR-38836) | Updated example id and url values in eRSD Specification Bundle example |
+
 ### Second Techincal Correction - STU 2.1.2 (2.1.2)
 
 

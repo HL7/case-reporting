@@ -1,13 +1,13 @@
 Instance: messageheader-ecr-requested-eicr
 InstanceOf: ECRMessageHeader
-Title: "eCR MessageHeader Example: Requested eICR"
-Description: "Example of eCR MessageHeader profile (Requested eICR)"
+Title: "MessageHeader - Requested eICR"
+Description: "Example of an eCR MessageHeader for a requested electronic initial case report indicating the source EHR software and destination public health agency."
 Usage: #example
 * extension[0].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-data-encrypted-extension"
 * extension[=].valueBoolean = false
 * extension[+].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-message-processing-category-extension"
 * extension[=].valueCode = #consequence
-* eventCoding = USPublicHealthMessageTypesCodeSystem#eicr-case-report-message "Indicates a message containing electronic case report healthcare data sent from clinical care."
+* eventCoding = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-message-types#eicr-case-report-message "Indicates a message containing electronic case report healthcare data sent from clinical care."
 * destination.name = "YMCA Acme Message Gateway"
 * destination.target.reference = "Device/device-ecr-software-ymca"
 * destination.endpoint = "http://example.org/ymca/fhir"
@@ -18,5 +18,5 @@ Usage: #example
 * source.contact.system = #phone
 * source.contact.value = "+1 (555) 123 4567"
 * source.endpoint = "http://example.org/salem-medical-center/fhir"
-* reason = USPublicHealthTriggerDefinitionNamedEvents#encounter-close "Indicates the close of an encounter"
+* reason = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-triggerdefinition-namedevents#encounter-close "Indicates the close of an encounter"
 * focus.reference = "Bundle/bundle-eicr-document-zika"

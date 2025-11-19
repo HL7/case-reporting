@@ -1,7 +1,7 @@
 Instance: device-ecmo
 InstanceOf: Device
-Title: "Device Example: ECMO"
-Description: "Example of Device Profile (ECMO)"
+Title: "Device - ACME Extracorporeal Membrane Oxygenator"
+Description: "Example of a Device instance representing an ACME extracorporeal membrane oxygenator (ECMO) device used for patient Eve Everywoman."
 Usage: #example
 * udiCarrier.deviceIdentifier = "99863313444316"
 * udiCarrier.carrierHRF = "(01)99863313444316(17)220101(10)M320(21)AC222"

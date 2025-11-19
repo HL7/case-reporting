@@ -7,4 +7,5 @@ Usage: #example
 * code = $loinc#74165-2 "History of employment status NIOSH"
 * subject = Reference(Patient/patient-ecr-eve-everywoman) "Eve Everywoman"
 * effectivePeriod.start = "2015-04-24"
-* valueCodeableConcept = $v3-ObservationValue#Employed "Employed"
+* performer.reference = "PractitionerRole/practitionerrole-henry-seven"
+* valueCodeableConcept = http://terminology.hl7.org/CodeSystem/v3-ObservationValue#Employed "Employed"

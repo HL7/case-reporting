@@ -1,12 +1,12 @@
 Instance: encounter-eicr-eve-everywoman-completed-inpatient
 InstanceOf: EICREncounter
-Title: "US PH Encounter Example: encounter-eicr-eve-everywoman-completed-inpatient"
-Description: "Example of US Public Health Encounter profile (Eve Everywoman: completed inpatient)"
+Title: "Encounter - Completed Inpatient Visit for Eve Everywoman"
+Description: "Example of an eICR Encounter representing a completed inpatient encounter for patient Eve Everywoman with Zika virus disease diagnosis."
 Usage: #example
 * identifier.system = "http://example.org/hospital.smarthealthit.org"
 * identifier.value = "9937012"
 * status = #finished
-* class = $v3-ActCode#IMP "inpatient encounter"
+* class = http://terminology.hl7.org/CodeSystem/v3-ActCode#IMP "inpatient encounter"
 * type = $cpt#99234
 * type.text = "Under Observation or Inpatient Care Services (Including Admission and Discharge Services)"
 * subject.reference = "Patient/patient-ecr-eve-everywoman"

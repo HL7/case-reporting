@@ -1,7 +1,7 @@
 Instance: us-ph-procedure-ecmo
 InstanceOf: EICRProcedure
-Title: "eICR Procedure Example: ECMO"
-Description: "Example of eICR Procedure (ECMO)"
+Title: "Procedure - Extracorporeal Membrane Oxygenation (ECMO)"
+Description: "Example of an eICR Procedure instance representing an extracorporeal membrane oxygenation (ECMO) procedure performed on patient Eve Everywoman."
 Usage: #example
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:b2a737f2-2fdb-49c1-b097-dac173d07afd"

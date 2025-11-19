@@ -3,7 +3,7 @@ InstanceOf: DocumentReference
 Usage: #example
 * status = #current
 * type = $loinc#88085-6 "Reportability response report Document Public health"
-* category = $us-core-documentreference-category#clinical-note "Clinical Note"
+* category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note "Clinical Note"
 * category.text = "Additional reporting needs"
 * subject = Reference(Patient/patient-ecr-eve-everywoman) "Eve Everywoman"
 * date = "2021-08-02T22:13:23Z"

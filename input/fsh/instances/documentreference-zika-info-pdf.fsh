@@ -14,4 +14,4 @@ Usage: #example
 * subject.display = "Eve Everywoman"
 * description = "Local mosquito-borne Zika virus creation was reported in your area. Increased watchfulness for symptoms of Zika virus in your patients is warranted."
 * content.attachment.contentType = #application/pdf
-* content.attachment.url = "http://statedepartmentofhealth.gov/epi/disease/zika/outbreakinfo.pdf"
+* content.attachment.url = "http://example.org/epi/disease/zika/outbreakinfo.pdf"

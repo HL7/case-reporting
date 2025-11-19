@@ -1,7 +1,7 @@
 Instance: observation-rr-relevant-reportable-condition-observation
 InstanceOf: RRRelevantReportableConditionObservation
-Title: "RR Relevant Reportable Condition Observation Example"
-Description: "Example of RR Relevant Reportable Condition Observation profile"
+Title: "Observation - RR Relevant Reportable Condition"
+Description: "Example of a Reportability Response (RR) Relevant Reportable Condition observation identifying Zika virus disease as a reportable condition for patient Eve Everywoman."
 Usage: #example
 * status = #final
 * code.coding[0] = $sct#64572001

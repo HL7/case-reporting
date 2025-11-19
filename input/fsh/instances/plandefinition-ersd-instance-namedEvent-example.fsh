@@ -19,9 +19,9 @@ Usage: #example
 * action.id = "start-workflow"
 * action.description = "This action represents the start of the reporting workflow in response to the encounter-start event"
 * action.textEquivalent = "Start the reporting workflow in response to an encounter-start event"
-* action.code = USPublicHealthPlanDefinitionActions#initiate-reporting-workflow "Initiate a reporting workflow"
+* action.code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#initiate-reporting-workflow "Initiate a reporting workflow"
 * action.trigger.id = "encounter-start"
 * action.trigger.extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-named-eventtype-extension"
-* action.trigger.extension.valueCodeableConcept = USPublicHealthTriggerDefinitionNamedEvents#encounter-start "Indicates the start of an encounter"
+* action.trigger.extension.valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-triggerdefinition-namedevents#encounter-start "Indicates the start of an encounter"
 * action.trigger.type = #named-event
 * action.trigger.name = "encounter-start"

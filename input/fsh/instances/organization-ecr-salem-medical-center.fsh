@@ -1,7 +1,7 @@
 Instance: organization-ecr-salem-medical-center
 InstanceOf: USPublicHealthOrganization
-Title: "US PH Organization Example: Salem Medical Center"
-Description: "Example of US Public Health Organization profile (Salem Medical Center)"
+Title: "Organization - Salem Medical Center"
+Description: "Example of a US Public Health Organization representing Salem Medical Center, an outpatient facility in Ann Arbor, Michigan."
 Usage: #example
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * identifier.value = "1144221847"

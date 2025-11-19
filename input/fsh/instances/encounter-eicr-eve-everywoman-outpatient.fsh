@@ -1,12 +1,12 @@
 Instance: encounter-eicr-eve-everywoman-outpatient
 InstanceOf: EICREncounter
-Title: "US PH Encounter Example: encounter-eicr-eve-everywoman-outpatient"
-Description: "Example of US Public Health Encounter profile (Eve Everywoman: outpatient)"
+Title: "Encounter - Outpatient Visit for Eve Everywoman"
+Description: "Example of an eICR Encounter representing an ambulatory outpatient office visit for patient Eve Everywoman with Zika virus disease diagnosis."
 Usage: #example
 * identifier.system = "http://example.org/hospital.smarthealthit.org"
 * identifier.value = "9937012"
 * status = #finished
-* class = $v3-ActCode#AMB "ambulatory"
+* class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "ambulatory"
 * type = $cpt#99202
 * type.text = "Office Visit"
 * subject.reference = "Patient/patient-ecr-eve-everywoman"

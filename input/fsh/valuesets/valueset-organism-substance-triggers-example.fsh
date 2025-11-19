@@ -1,0 +1,28 @@
+ValueSet: ValueSetOrganismSubstanceTriggersExample
+Id: valueset-organism-substance-triggers-example
+Title: "Example Organism Substance Triggers for Public Health Reporting"
+Description: "This example set of values contains organism and substance names that represent that the patient may have a potentially reportable condition regardless of the clinical presentation of the condition"
+* ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-triggering-valueset"
+* ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/valueset-steward"
+* ^extension[=].valueContactDetail.name = "CSTE Steward"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-author"
+* ^extension[=].valueContactDetail.name = "CSTE Author"
+* ^identifier.system = "urn:ietf:rfc:3986"
+* ^identifier.value = "urn:oid:2.16.840.1.113762.1.4.1146.1059.1"
+* ^version = "1.0.0"
+* ^status = #draft
+* ^experimental = true
+* ^date = "2018-08-01"
+* ^publisher = "{site.data.fhir.ig.publisher}"
+* ^useContext[0].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#reporting "Reporting"
+* ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#triggering "Triggering"
+* ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#priority "Priority"
+* ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#routine "Routine"
+* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
+* ^jurisdiction.text = "United States of America"
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
+* $sct#1009003 "Salmonella Oakland (organism)"
+* $sct#10096007 "Salmonella Leoben (organism)"
+* $sct#10112007 "Salmonella Alamo (organism)"
+* $sct#10183008 "Salmonella Pensacola (organism)"
+* $sct#10248003 "Salmonella Travis (organism)"

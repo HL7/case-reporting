@@ -14,4 +14,4 @@ Usage: #example
 * subject.display = "Eve Everywoman"
 * description = "Zika has particular risks for pregnant women. Follow-up guidance for pregnant women and couples who are planning pregnancy."
 * content.attachment.contentType = #application/pdf
-* content.attachment.url = "http://statedepartmentofhealth.gov/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf"
+* content.attachment.url = "http://example.org/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf"

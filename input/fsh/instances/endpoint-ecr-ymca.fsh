@@ -1,7 +1,7 @@
 Instance: endpoint-ecr-ymca
 InstanceOf: USPublicHealthEndpoint
-Title: "Endpoint Example: endpoint-ecr-ymca"
-Description: "Example of Endpoint resource (YMCA endpoint)"
+Title: "Endpoint - YMCA Center"
+Description: "Example of a US Public Health Endpoint for the YMCA Center to receive Reportability Response messages via HL7 FHIR REST."
 Usage: #example
 * status = #active
 * connectionType = $endpoint-connection-type#hl7-fhir-rest

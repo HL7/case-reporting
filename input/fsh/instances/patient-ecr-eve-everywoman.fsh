@@ -1,7 +1,7 @@
 Instance: patient-ecr-eve-everywoman
 InstanceOf: USPublicHealthPatient
-Title: "US PH Patient Example: Eve Everywoman"
-Description: "Example of US Public Health Patient profile (Eve Everywoman)"
+Title: "Patient - Eve Everywoman"
+Description: "Example of a US Public Health Patient representing Eve Everywoman, the primary patient in electronic case reporting examples."
 Usage: #example
 * extension[race].extension[ombCategory].url = "ombCategory"
 * extension[race].extension[ombCategory].valueCoding = urn:oid:2.16.840.1.113883.6.238#2106-3 "White"
@@ -16,7 +16,7 @@ Usage: #example
 * extension[birthsex].url = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex"
 * extension[birthsex].valueCode = #F
 * extension[tribalAffiliation].extension[tribalAffiliation].url = "tribalAffiliation"
-* extension[tribalAffiliation].extension[tribalAffiliation].valueCodeableConcept = $v3-TribalEntityUS#91 "Fort Mojave Indian Tribe of Arizona, California & Nevada"
+* extension[tribalAffiliation].extension[tribalAffiliation].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/v3-TribalEntityUS#91 "Fort Mojave Indian Tribe of Arizona, California & Nevada"
 * extension[tribalAffiliation].extension[isEnrolled].url = "isEnrolled"
 * extension[tribalAffiliation].extension[isEnrolled].valueBoolean = true
 * extension[tribalAffiliation].url = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-tribal-affiliation"
