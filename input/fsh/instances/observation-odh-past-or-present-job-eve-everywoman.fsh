@@ -7,7 +7,7 @@ Usage: #example
 * code = $loinc#11341-5 "History of Occupation"
 * subject = Reference(Patient/patient-ecr-eve-everywoman) "Eve Everywoman"
 * effectivePeriod.start = "2015-04-24"
-* performer.reference = "PractitionerRole/practitionerrole-henry-seven"
+* performer.reference = "Practitioner/practitioner-us-core-henry-seven"
 * valueCodeableConcept = $PHOccupationCDCCensus2010#3600 "Nursing, psychiatric, and home health aides"
 * component[0].code = $loinc#86188-0 "History of Occupation industry"
 * component[=].valueCodeableConcept = $PHIndustryCDCCensus2010#8270 "Nursing care facilities"

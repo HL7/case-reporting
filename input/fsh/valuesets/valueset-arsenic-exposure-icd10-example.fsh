@@ -16,7 +16,7 @@ Description: "Arsenic Exposure and Toxicity (Disorders) (ICD10CM)"
 * ^publisher = "eCR"
 * ^useContext[0].code = http://terminology.hl7.org/CodeSystem/usage-context-type#focus
 * ^useContext[=].valueCodeableConcept = $sct#767146004
-* ^useContext[=].valueCodeableConcept.text = "Toxic effect of arsenic and its compounds (disorder)"
+* ^useContext[=].valueCodeableConcept.text = "Toxic effect of arsenic and/or arsenic compound (disorder)"
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#reporting
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#triggering
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#priority

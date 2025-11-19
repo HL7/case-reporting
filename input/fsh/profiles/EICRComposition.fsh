@@ -345,16 +345,15 @@ Description: "This Composition profile represents an electronic initial case rep
 * section[sliceProceduresSection].entry[sliceEICRProcedure] only Reference(EICRProcedure)
 * section[sliceProceduresSection].entry[sliceEICRProcedure] ^sliceName = "sliceEICRProcedure"
 * section[sliceProceduresSection].entry[sliceEICRProcedure] ^short = "EICR Procedure entry"
-* section[sliceProceduresSection].entry[sliceEICRProcedure] ^definition = "The eICR Trigger Code Flag (extension) is present for a procedure, based on a trigger code match of the procedure (procedure.code) to the eRSD PlanDefinition Procedure Trigger."
+// * section[sliceProceduresSection].entry[sliceEICRProcedure] ^definition = "The eICR Trigger Code Flag (extension) is present for a procedure, based on a trigger code match of the procedure (procedure.code) to the eRSD PlanDefinition Procedure Trigger."
 * section[sliceProceduresSection].entry[sliceEICRProcedure] ^mustSupport = true
-* section[sliceProceduresSection].entry[sliceEICRProcedure] ^isModifier = false
-* section[sliceProceduresSection].entry[sliceEICRProcedure].extension MS
-* section[sliceProceduresSection].entry[sliceEICRProcedure].extension ^slicing.discriminator.type = #value
-* section[sliceProceduresSection].entry[sliceEICRProcedure].extension ^slicing.discriminator.path = "url"
-* section[sliceProceduresSection].entry[sliceEICRProcedure].extension ^slicing.rules = #open
-* section[sliceProceduresSection].entry[sliceEICRProcedure].extension contains EICRTriggerCodeFlagExtension named sliceTriggerProcedure 0..1 MS
-* section[sliceProceduresSection].entry[sliceEICRProcedure].extension[sliceTriggerProcedure] ^short = "eICR Trigger Code Flag"
-* section[sliceProceduresSection].entry[sliceEICRProcedure].extension[sliceTriggerProcedure] ^definition = "A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated."
+// * section[sliceProceduresSection].entry[sliceEICRProcedure].extension MS
+// * section[sliceProceduresSection].entry[sliceEICRProcedure].extension ^slicing.discriminator.type = #value
+// * section[sliceProceduresSection].entry[sliceEICRProcedure].extension ^slicing.discriminator.path = "url"
+// * section[sliceProceduresSection].entry[sliceEICRProcedure].extension ^slicing.rules = #open
+// * section[sliceProceduresSection].entry[sliceEICRProcedure].extension contains EICRTriggerCodeFlagExtension named sliceTriggerProcedure 0..1 MS
+// * section[sliceProceduresSection].entry[sliceEICRProcedure].extension[sliceTriggerProcedure] ^short = "eICR Trigger Code Flag"
+// * section[sliceProceduresSection].entry[sliceEICRProcedure].extension[sliceTriggerProcedure] ^definition = "A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated."
 * section[sliceVitalSignsSection] ^short = "Vital Signs Section"
 * section[sliceVitalSignsSection] ^definition = "The Vital Signs Section contains relevant vital signs for the eICR. The section should include notable vital signs such as the most recent, maximum and/or minimum, baseline, or relevant trends. Vital signs are represented in the same way as other results, but are aggregated into their own section to follow clinical conventions."
 * section[sliceVitalSignsSection] ^isModifier = false

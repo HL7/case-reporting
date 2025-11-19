@@ -11,7 +11,7 @@ This profile describes the content requirements for the eICR including:
 * laboratory orders, tests, and results
 * signs, symptoms, and diagnoses
 * medication and immunization information
-* flags for the existence of reportable condition trigger codes in diagnoses, ordered/resulted laboratory tests, medications, immunizations, and procedures
+* flags for the existence of reportable condition trigger codes in diagnoses, ordered/resulted laboratory tests, medications, and immunizations
     * flags contain RCTC OID and RCTC version
     * codes indicating whether the eICR was manually or alternately initiated
 
@@ -65,11 +65,3 @@ Where a trigger occurs outside of an encounter and Encounter.class is set to “
         </tr>
     </tbody>
 </table>
-
-
-
-
-
-
-
-

@@ -1,9 +1,9 @@
-Instance: SpecificationLibrary
+Instance: library-specification
 InstanceOf: USPublicHealthSpecificationLibrary
 Usage: #inline
-* url = "http://hl7.org/fhir/us/ecr/Library/SpecificationLibrary"
+* url = "http://hl7.org/fhir/us/ecr/Library/library-specification"
 * version = "1.0.0"
-* name = "SpecificationLibrary"
+* name = "LibrarySpecification"
 * title = "Specification Library"
 * status = #active
 * experimental = true

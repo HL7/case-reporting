@@ -23,6 +23,6 @@ Description: "This example set of values contains laboratory test names for orde
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
 * $loinc#11585-7 "Bordetella pertussis Ab [Units/volume] in Serum"
 * $loinc#16474-9 "Bordetella pertussis Ab [Units/volume] in Serum by Complement fixation"
-* $loinc#20992-4 "Bordetella pertussis Ab [Presence] in Unspecified specimen"
+* $loinc#20992-4 "Bordetella pertussis Ab [Presence] in Specimen"
 * $loinc#22116-8 "Bordetella pertussis Ab [Titer] in Serum"
-* $loinc#22117-6 "Bordetella pertussis Ab [Titer] in Unspecified specimen"
+* $loinc#22117-6 "Bordetella pertussis Ab [Titer] in Specimen"

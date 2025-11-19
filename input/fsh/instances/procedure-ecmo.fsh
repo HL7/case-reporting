@@ -1,4 +1,4 @@
-Instance: us-ph-procedure-ecmo
+Instance: procedure-ecmo
 InstanceOf: EICRProcedure
 Title: "Procedure - Extracorporeal Membrane Oxygenation (ECMO)"
 Description: "Example of an eICR Procedure instance representing an extracorporeal membrane oxygenation (ECMO) procedure performed on patient Eve Everywoman."

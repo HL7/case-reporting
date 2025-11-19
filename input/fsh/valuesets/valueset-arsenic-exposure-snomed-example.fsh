@@ -16,7 +16,7 @@ Description: "Arsenic Exposure and Toxicity (Disorders) (SNOMED)"
 * ^publisher = "eCR"
 * ^useContext[0].code = http://terminology.hl7.org/CodeSystem/usage-context-type#focus
 * ^useContext[=].valueCodeableConcept = $sct#767146004
-* ^useContext[=].valueCodeableConcept.text = "Toxic effect of arsenic and its compounds (disorder)"
+* ^useContext[=].valueCodeableConcept.text = "Toxic effect of arsenic and/or arsenic compound (disorder)"
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#reporting
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#triggering
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#priority
@@ -33,13 +33,13 @@ Description: "Arsenic Exposure and Toxicity (Disorders) (SNOMED)"
 * $sct#403740003 "Skin disease caused by arsenic (disorder)"
 * $sct#403741004 "Arsenical keratosis (disorder)"
 * $sct#403743001 "Arsenic-induced skin pigmentation (disorder)"
-* $sct#403744007 "Arsenic-induced \"rain-drop\" hypomelanosis (disorder)"
+* $sct#403744007 "Hypomelanosis due to chronic arsenic poisoning"
 * $sct#403745008 "Skin sign from acute arsenic toxicity (finding)"
 * $sct#418685002 "Poisoning caused by arsenic or its compounds of undetermined intent (disorder)"
 * $sct#62210001 "Inorganic arsenic poisoning (disorder)"
 * $sct#72501006 "Anemia caused by arsenic hydride (disorder)"
-* $sct#767146004 "Toxic effect of arsenic and its compounds (disorder)"
-* $sct#871783000 "Adverse reaction to arsenic and arsenic compound (disorder)"
+* $sct#767146004 "Toxic effect of arsenic and/or arsenic compound (disorder)"
+* $sct#871783000 "Adverse reaction to arsenic and/or arsenic compound"
 * $sct#89738003 "Organic arsenic poisoning (disorder)"
 * $sct#403742006 "Malignant neoplasm of skin caused by arsenic (disorder)"
 

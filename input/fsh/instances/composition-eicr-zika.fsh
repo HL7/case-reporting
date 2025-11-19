@@ -84,8 +84,8 @@ Usage: #example
 * section[sliceProceduresSection].title = "Procedures Section"
 * section[sliceProceduresSection].code = $loinc#47519-4 "History of Procedures Document"
 * section[sliceProceduresSection].text.status = #generated
-* section[sliceProceduresSection].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><tr><td style=\"font-weight: bold\">title</td><td><div title=\"title\">Procedures Section</div></td></tr><tr><td style=\"font-weight: bold\">code</td><td><ul style=\"list-style:none; padding-left:0; margin:0 0;\"><li><ul style=\"list-style:none; padding-left:0; margin:0 0;\"><li><div title=\"display\">History of Procedures Document</div> ( <div title=\"code\">47519-4</div> ) </li><li><div title=\"system\"><a href=\"http://loinc.org\">http://loinc.org</a></div></li></ul></li></ul></td></tr><tr><td style=\"font-weight: bold\">entry</td><td><a href=\"Procedure-us-ph-procedure-ecmo.html\">Extracorporeal membrane oxygenation (procedure)</a></td></tr></table></div>"
-* section[sliceProceduresSection].entry.reference = "Procedure/us-ph-procedure-ecmo"
+* section[sliceProceduresSection].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><tr><td style=\"font-weight: bold\">title</td><td><div title=\"title\">Procedures Section</div></td></tr><tr><td style=\"font-weight: bold\">code</td><td><ul style=\"list-style:none; padding-left:0; margin:0 0;\"><li><ul style=\"list-style:none; padding-left:0; margin:0 0;\"><li><div title=\"display\">History of Procedures Document</div> ( <div title=\"code\">47519-4</div> ) </li><li><div title=\"system\"><a href=\"http://loinc.org\">http://loinc.org</a></div></li></ul></li></ul></td></tr><tr><td style=\"font-weight: bold\">entry</td><td><a href=\"Procedure-procedure-ecmo.html\">Extracorporeal membrane oxygenation (procedure)</a></td></tr></table></div>"
+* section[sliceProceduresSection].entry.reference = "Procedure/procedure-ecmo"
 * section[sliceProceduresSection].entry.display = "Extracorporeal membrane oxygenation (procedure)"
 * section[sliceVitalSignsSection].title = "Vital Signs Section"
 * section[sliceVitalSignsSection].code = $loinc#8716-3 "Vital signs note"

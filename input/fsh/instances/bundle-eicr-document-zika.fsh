@@ -11,8 +11,8 @@ Usage: #example
 * entry[=].resource = composition-eicr-zika
 * entry[+].fullUrl = "http://example.org/fhir/MedicationAdministration/medicationadministration-eve-everywoman-azithromycin"
 * entry[=].resource = medicationadministration-eve-everywoman-azithromycin
-* entry[+].fullUrl = "http://example.org/fhir/Procedure/us-ph-procedure-ecmo"
-* entry[=].resource = us-ph-procedure-ecmo
+* entry[+].fullUrl = "http://example.org/fhir/Procedure/procedure-ecmo"
+* entry[=].resource = procedure-ecmo
 * entry[+].fullUrl = "http://example.org/fhir/MedicationAdministration/medicationadministration-eve-everywoman-naloxone-response"
 * entry[=].resource = medicationadministration-eve-everywoman-naloxone-response
 * entry[+].fullUrl = "http://example.org/fhir/ServiceRequest/servicerequest-eicr-zika"

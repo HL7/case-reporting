@@ -8,7 +8,7 @@ Usage: #example
 * subject = Reference(Patient/patient-ecr-eve-everywoman) "Eve Everywoman"
 * effectivePeriod.start = "2015-01-01"
 * effectivePeriod.end = "2018-03-07"
-* performer.reference = "PractitionerRole/practitionerrole-henry-seven"
+* performer.reference = "Practitioner/practitioner-us-core-henry-seven"
 * valueCodeableConcept = urn:oid:2.16.840.1.114222.4.5.314#0136 "Human Resources Managers"
 * component[odh-UsualIndustry].code = $loinc#21844-6 "History of Usual industry"
 * component[odh-UsualIndustry].valueCodeableConcept = urn:oid:2.16.840.1.114222.4.5.315#8190 "Hospitals"
