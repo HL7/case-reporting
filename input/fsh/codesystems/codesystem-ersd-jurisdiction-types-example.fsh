@@ -10,9 +10,9 @@ Description: "This example code system describes the possible types of jurisdict
 * ^caseSensitive = true
 * ^content = #complete
 
-* #pha-state "PHA State" "A state-level public health agency/jurisdiction"
-* #pha-county "PHA County" "A county-level public health agency/jurisdiction"
-* #pha-city "PHA City" "A city-level public health agency/jurisdiction"
-* #pha-district "PHA District" "A district-level public health agency/jurisdiction"
-* #pha-borough "PHA Borough" "A borough-level public health agency/jurisdiction"
-* #pha-parish "PHA Parish" "A parish/neighborhood-level public health agency/jurisdiction"
+* #STATE "PHA State" "A state-level public health agency/jurisdiction"
+* #COUNTY "PHA County" "A county-level public health agency/jurisdiction"
+* #CITY "PHA City" "A city-level public health agency/jurisdiction"
+* #DISTRICT "PHA District" "A district-level public health agency/jurisdiction"
+* #BOROUGH "PHA Borough" "A borough-level public health agency/jurisdiction"
+* #PARISH "PHA Parish" "A parish/neighborhood-level public health agency/jurisdiction"

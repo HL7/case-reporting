@@ -31,32 +31,32 @@ Description: "This example code system describes jurisdictions that require publ
 
 * #AK "ALASKA" "Alaska Department of Health and Social Services"
 * #AK ^property[0].code = #type
-* #AK ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #AK ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #AK ^property[+].code = #state
 * #AK ^property[=].valueCoding = $system-usps#AK
 * #AL "ALABAMA" "Alabama Department of Public Health"
 * #AL ^property[0].code = #type
-* #AL ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #AL ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #AL ^property[+].code = #state
 * #AL ^property[=].valueCoding = $system-usps#AL
 * #AR "ARKANSAS" "Arkansas Department of Health"
 * #AR ^property[0].code = #type
-* #AR ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #AR ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #AR ^property[+].code = #state
 * #AR ^property[=].valueCoding = $system-usps#AR
 * #AS "AMERICAN_SAMOA" "American Samoa"
 * #AS ^property[0].code = #type
-* #AS ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #AS ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #AS ^property[+].code = #state
 * #AS ^property[=].valueCoding = $system-usps#AS
 * #AZ "ARIZONA" "Arizona Department of Health Services"
 * #AZ ^property[0].code = #type
-* #AZ ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #AZ ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #AZ ^property[+].code = #state
 * #AZ ^property[=].valueCoding = $system-usps#AZ
 * #CA "CALIFORNIA" "California Department of Public Health"
 * #CA ^property[0].code = #type
-* #CA ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #CA ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #CA ^property[+].code = #state
 * #CA ^property[=].valueCoding = $system-usps#CA
 * #CA ^property[+].code = #postalcode
@@ -521,55 +521,55 @@ Description: "This example code system describes jurisdictions that require publ
 * #CA ^property[=].valueString = #92199
 * #CHI "ILLINOIS" "Chicago Department of Public Health"
 * #CHI ^property[0].code = #type
-* #CHI ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-city
+* #CHI ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#CITY
 * #CHI ^property[+].code = #state
 * #CHI ^property[=].valueCoding = $system-usps#IL
 * #CHI ^property[+].code = #postalcode
 * #CHI ^property[=].valueString = #60007
 * #CHR "VIRGIN_ISLANDS" "Christiansted (Test)"
 * #CHR ^property[0].code = #type
-* #CHR ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-city
+* #CHR ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#CITY
 * #CHR ^property[+].code = #state
 * #CHR ^property[=].valueCoding = $system-usps#VI
 * #CHR ^property[+].code = #postalcode
 * #CHR ^property[=].valueString = #00820
 * #CO "COLORADO" "Colorado Department of Public Health and Environment"
 * #CO ^property[0].code = #type
-* #CO ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #CO ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #CO ^property[+].code = #state
 * #CO ^property[=].valueCoding = $system-usps#CO
 * #CT "CONNECTICUT" "Connecticut Department of Public Health"
 * #CT ^property[0].code = #type
-* #CT ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #CT ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #CT ^property[+].code = #state
 * #CT ^property[=].valueCoding = $system-usps#CT
 * #DC "DISTRICT_OF_COLUMBIA" "District of Columbia Department of Health"
 * #DC ^property[0].code = #type
-* #DC ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #DC ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #DC ^property[+].code = #state
 * #DC ^property[=].valueCoding = $system-usps#DC
 * #DC ^property[+].code = #postalcode
 * #DC ^property[=].valueString = #20002
 * #DE "DELAWARE" "Delaware Health and Social Services"
 * #DE ^property[0].code = #type
-* #DE ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #DE ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #DE ^property[+].code = #state
 * #DE ^property[=].valueCoding = $system-usps#DE
 * #DED "GUAM" "Dededo"
 * #DED ^property[0].code = #type
-* #DED ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-county
+* #DED ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#COUNTY
 * #DED ^property[+].code = #state
 * #DED ^property[=].valueCoding = $system-usps#GU
 * #DED ^property[+].code = #postalcode
 * #DED ^property[=].valueString = #96912
 * #FL "FLORIDA" "Florida Department of Health"
 * #FL ^property[0].code = #type
-* #FL ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #FL ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #FL ^property[+].code = #state
 * #FL ^property[=].valueCoding = $system-usps#FL
 * #GA "GEORGIA" "Georgia Department of Public Health"
 * #GA ^property[0].code = #type
-* #GA ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #GA ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #GA ^property[+].code = #state
 * #GA ^property[=].valueCoding = $system-usps#GA
 * #GA ^property[+].code = #postalcode
@@ -578,17 +578,17 @@ Description: "This example code system describes jurisdictions that require publ
 * #GA ^property[=].valueString = #30066
 * #GU "GUAM" "Guam Department of Public Health and Social Services"
 * #GU ^property[0].code = #type
-* #GU ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #GU ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #GU ^property[+].code = #state
 * #GU ^property[=].valueCoding = $system-usps#GU
 * #HI "HAWAII" "Hawaii Department of Health"
 * #HI ^property[0].code = #type
-* #HI ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #HI ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #HI ^property[+].code = #state
 * #HI ^property[=].valueCoding = $system-usps#HI
 * #HT "TEXAS" "Houston Health Department"
 * #HT ^property[0].code = #type
-* #HT ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-city
+* #HT ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#CITY
 * #HT ^property[+].code = #state
 * #HT ^property[=].valueCoding = $system-usps#TX
 * #HT ^property[+].code = #postalcode
@@ -1081,42 +1081,42 @@ Description: "This example code system describes jurisdictions that require publ
 * #HT ^property[=].valueString = #77598
 * #IA "IOWA" "Iowa Department of Public Health"
 * #IA ^property[0].code = #type
-* #IA ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #IA ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #IA ^property[+].code = #state
 * #IA ^property[=].valueCoding = $system-usps#IA
 * #ID "IDAHO" "Idaho Department of Health and Welfare"
 * #ID ^property[0].code = #type
-* #ID ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #ID ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #ID ^property[+].code = #state
 * #ID ^property[=].valueCoding = $system-usps#ID
 * #IL "ILLINOIS" "Illinois Department of Public Health"
 * #IL ^property[0].code = #type
-* #IL ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #IL ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #IL ^property[+].code = #state
 * #IL ^property[=].valueCoding = $system-usps#IL
 * #IN "INDIANA" "Indiana State Department of Health"
 * #IN ^property[0].code = #type
-* #IN ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #IN ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #IN ^property[+].code = #state
 * #IN ^property[=].valueCoding = $system-usps#IN
 * #KS "KANSAS" "Kansas Department of Health and Environment"
 * #KS ^property[0].code = #type
-* #KS ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #KS ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #KS ^property[+].code = #state
 * #KS ^property[=].valueCoding = $system-usps#KS
 * #KY "KENTUCKY" "Kentucky Cabinet for Health and Family Services"
 * #KY ^property[0].code = #type
-* #KY ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #KY ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #KY ^property[+].code = #state
 * #KY ^property[=].valueCoding = $system-usps#KY
 * #LA "LOUISIANA" "Louisiana Department of Health and Hospitals"
 * #LA ^property[0].code = #type
-* #LA ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #LA ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #LA ^property[+].code = #state
 * #LA ^property[=].valueCoding = $system-usps#LA
 * #LAC "CALIFORNIA" "Los Angeles County Department of Public Health"
 * #LAC ^property[0].code = #type
-* #LAC ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-county
+* #LAC ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#COUNTY
 * #LAC ^property[+].code = #state
 * #LAC ^property[=].valueCoding = $system-usps#CA
 * #LAC ^property[+].code = #postalcode
@@ -2083,82 +2083,82 @@ Description: "This example code system describes jurisdictions that require publ
 * #LAC ^property[=].valueString = #93599
 * #MA "MASSACHUSETTS" "Massachusetts Department of Health and Human Services"
 * #MA ^property[0].code = #type
-* #MA ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #MA ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #MA ^property[+].code = #state
 * #MA ^property[=].valueCoding = $system-usps#MA
 * #MD "MARYLAND" "Maryland Department of Health and Mental Hygiene"
 * #MD ^property[0].code = #type
-* #MD ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #MD ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #MD ^property[+].code = #state
 * #MD ^property[=].valueCoding = $system-usps#MD
 * #ME "MAINE" "Maine Department of Health and Human Services"
 * #ME ^property[0].code = #type
-* #ME ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #ME ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #ME ^property[+].code = #state
 * #ME ^property[=].valueCoding = $system-usps#ME
 * #MI "MICHIGAN" "Michigan Department of Community Health"
 * #MI ^property[0].code = #type
-* #MI ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #MI ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #MI ^property[+].code = #state
 * #MI ^property[=].valueCoding = $system-usps#MI
 * #MN "MINNESOTA" "Minnesota Department of Health"
 * #MN ^property[0].code = #type
-* #MN ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #MN ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #MN ^property[+].code = #state
 * #MN ^property[=].valueCoding = $system-usps#MN
 * #MO "MISSOURI" "Missouri State Department of Health and Senior Services"
 * #MO ^property[0].code = #type
-* #MO ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #MO ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #MO ^property[+].code = #state
 * #MO ^property[=].valueCoding = $system-usps#MO
 * #MS "MISSISSIPPI" "Mississippi State Department of Health"
 * #MS ^property[0].code = #type
-* #MS ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #MS ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #MS ^property[+].code = #state
 * #MS ^property[=].valueCoding = $system-usps#MS
 * #MT "MONTANA" "Montana Department of Public Health and Human Services"
 * #MT ^property[0].code = #type
-* #MT ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #MT ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #MT ^property[+].code = #state
 * #MT ^property[=].valueCoding = $system-usps#MT
 * #NC "NORTH_CAROLINA" "North Carolina Department of Health and Human Services"
 * #NC ^property[0].code = #type
-* #NC ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #NC ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #NC ^property[+].code = #state
 * #NC ^property[=].valueCoding = $system-usps#NC
 * #ND "NORTH_DAKOTA" "North Dakota Department of Health"
 * #ND ^property[0].code = #type
-* #ND ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #ND ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #ND ^property[+].code = #state
 * #ND ^property[=].valueCoding = $system-usps#ND
 * #NE "NEBRASKA" "Nebraska Department of Health and Human Services"
 * #NE ^property[0].code = #type
-* #NE ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #NE ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #NE ^property[+].code = #state
 * #NE ^property[=].valueCoding = $system-usps#NE
 * #NH "NEW_HAMPSHIRE" "New Hampshire Department of Health and Human Services"
 * #NH ^property[0].code = #type
-* #NH ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #NH ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #NH ^property[+].code = #state
 * #NH ^property[=].valueCoding = $system-usps#NH
 * #NJ "NEW_JERSEY" "New Jersey Department of Health and Senior Services"
 * #NJ ^property[0].code = #type
-* #NJ ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #NJ ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #NJ ^property[+].code = #state
 * #NJ ^property[=].valueCoding = $system-usps#NJ
 * #NM "NEW_MEXICO" "New Mexico Department of Health"
 * #NM ^property[0].code = #type
-* #NM ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #NM ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #NM ^property[+].code = #state
 * #NM ^property[=].valueCoding = $system-usps#NM
 * #NV "NEVADA" "Nevada State Health Division"
 * #NV ^property[0].code = #type
-* #NV ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #NV ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #NV ^property[+].code = #state
 * #NV ^property[=].valueCoding = $system-usps#NV
 * #NY "NEW_YORK" "New York State Department of Health"
 * #NY ^property[0].code = #type
-* #NY ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #NY ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #NY ^property[+].code = #state
 * #NY ^property[=].valueCoding = $system-usps#NY
 * #NY ^property[+].code = #postalcode
@@ -2171,7 +2171,7 @@ Description: "This example code system describes jurisdictions that require publ
 * #NY ^property[=].valueString = #11416
 * #NYC "NEW_YORK" "New York City Department of Health and Mental Hygiene"
 * #NYC ^property[0].code = #type
-* #NYC ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-city
+* #NYC ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#CITY
 * #NYC ^property[+].code = #state
 * #NYC ^property[=].valueCoding = $system-usps#NY
 * #NYC ^property[+].code = #postalcode
@@ -2800,17 +2800,17 @@ Description: "This example code system describes jurisdictions that require publ
 * #NYC ^property[=].valueString = #11697
 * #OH "OHIO" "Ohio Department of Health"
 * #OH ^property[0].code = #type
-* #OH ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #OH ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #OH ^property[+].code = #state
 * #OH ^property[=].valueCoding = $system-usps#OH
 * #OK "OKLAHOMA" "Oklahoma State Department of Health"
 * #OK ^property[0].code = #type
-* #OK ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #OK ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #OK ^property[+].code = #state
 * #OK ^property[=].valueCoding = $system-usps#OK
 * #OR "OREGON" "Oregon Health Authority"
 * #OR ^property[0].code = #type
-* #OR ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #OR ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #OR ^property[+].code = #state
 * #OR ^property[=].valueCoding = $system-usps#OR
 * #OR ^property[+].code = #postalcode
@@ -2865,37 +2865,37 @@ Description: "This example code system describes jurisdictions that require publ
 * #OR ^property[=].valueString = #97028
 * #PA "PENNSYLVANIA" "Pennsylvania Department of Health"
 * #PA ^property[0].code = #type
-* #PA ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #PA ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #PA ^property[+].code = #state
 * #PA ^property[=].valueCoding = $system-usps#PA
 * #PHL "PENNSYLVANIA" "City of Philadelphia Department of Public Health"
 * #PHL ^property[0].code = #type
-* #PHL ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-city
+* #PHL ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#CITY
 * #PHL ^property[+].code = #state
 * #PHL ^property[=].valueCoding = $system-usps#PA
 * #PR "PUERTO_RICO" "Puerto Rico"
 * #PR ^property[0].code = #type
-* #PR ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #PR ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #PR ^property[+].code = #state
 * #PR ^property[=].valueCoding = $system-usps#PR
 * #RI "RHODE_ISLAND" "Rhode Island Department of Health"
 * #RI ^property[0].code = #type
-* #RI ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #RI ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #RI ^property[+].code = #state
 * #RI ^property[=].valueCoding = $system-usps#RI
 * #SC "SOUTH_CAROLINA" "South Carolina Department of Health and Environmental Control"
 * #SC ^property[0].code = #type
-* #SC ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #SC ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #SC ^property[+].code = #state
 * #SC ^property[=].valueCoding = $system-usps#SC
 * #SD "SOUTH_DAKOTA" "South Dakota Department of Health"
 * #SD ^property[0].code = #type
-* #SD ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #SD ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #SD ^property[+].code = #state
 * #SD ^property[=].valueCoding = $system-usps#SD
 * #SDC "CALIFORNIA" "San Diego County Public Health Services"
 * #SDC ^property[0].code = #type
-* #SDC ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-county
+* #SDC ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#COUNTY
 * #SDC ^property[+].code = #state
 * #SDC ^property[=].valueCoding = $system-usps#CA
 * #SDC ^property[+].code = #postalcode
@@ -3280,58 +3280,58 @@ Description: "This example code system describes jurisdictions that require publ
 * #SDC ^property[=].valueString = #92199
 * #SF "CALIFORNIA" "San Francisco"
 * #SF ^property[0].code = #type
-* #SF ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-city
+* #SF ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#CITY
 * #SF ^property[+].code = #state
 * #SF ^property[=].valueCoding = $system-usps#CA
 * #SN "NEVADA" "Southern Nevada Health District (SNHD)"
 * #SN ^property[0].code = #type
-* #SN ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-district
+* #SN ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#DISTRICT
 * #SN ^property[+].code = #state
 * #SN ^property[=].valueCoding = $system-usps#NV
 * #STC "VIRGIN_ISLANDS" "Saint Croix (Test)"
 * #STC ^property[0].code = #type
-* #STC ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-county
+* #STC ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#COUNTY
 * #STC ^property[+].code = #state
 * #STC ^property[=].valueCoding = $system-usps#VI
 * #STC ^property[+].code = #postalcode
 * #STC ^property[=].valueString = #00850
 * #STJ "VIRGIN_ISLANDS" "Saint John (Test)"
 * #STJ ^property[0].code = #type
-* #STJ ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-county
+* #STJ ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#COUNTY
 * #STJ ^property[+].code = #state
 * #STJ ^property[=].valueCoding = $system-usps#VI
 * #STJ ^property[+].code = #postalcode
 * #STJ ^property[=].valueString = #00830
 * #TN "TENNESSEE" "Tennessee Department of Health"
 * #TN ^property[0].code = #type
-* #TN ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #TN ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #TN ^property[+].code = #state
 * #TN ^property[=].valueCoding = $system-usps#TN
 * #TX "TEXAS" "Texas Department of State Health Services"
 * #TX ^property[0].code = #type
-* #TX ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #TX ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #TX ^property[+].code = #state
 * #TX ^property[=].valueCoding = $system-usps#TX
 * #UT "UTAH" "Utah Department of Health"
 * #UT ^property[0].code = #type
-* #UT ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #UT ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #UT ^property[+].code = #state
 * #UT ^property[=].valueCoding = $system-usps#UT
 * #VA "VIRGINIA" "Virginia Department of Health"
 * #VA ^property[0].code = #type
-* #VA ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #VA ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #VA ^property[+].code = #state
 * #VA ^property[=].valueCoding = $system-usps#VA
 * #VI "VIRGIN_ISLANDS" "Virgin Islands Department of Health (Test)"
 * #VI ^property[0].code = #type
-* #VI ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #VI ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #VI ^property[+].code = #state
 * #VI ^property[=].valueCoding = $system-usps#VI
 * #VI ^property[+].code = #postalcode
 * #VI ^property[=].valueString = #00830
 * #VT "VERMONT" "Vermont Department of Health"
 * #VT ^property[0].code = #type
-* #VT ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #VT ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #VT ^property[+].code = #state
 * #VT ^property[=].valueCoding = $system-usps#VT
 * #VT ^property[+].code = #postalcode
@@ -3390,21 +3390,21 @@ Description: "This example code system describes jurisdictions that require publ
 * #VT ^property[=].valueString = #05401
 * #WA "WASHINGTON" "Washington State Department of Health"
 * #WA ^property[0].code = #type
-* #WA ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #WA ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #WA ^property[+].code = #state
 * #WA ^property[=].valueCoding = $system-usps#WA
 * #WI "WISCONSIN" "Wisconsin Department of Health Services"
 * #WI ^property[0].code = #type
-* #WI ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #WI ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #WI ^property[+].code = #state
 * #WI ^property[=].valueCoding = $system-usps#WI
 * #WV "WEST_VIRGINIA" "West Virginia Department of Health and Human Resources, Bureau for Public Health"
 * #WV ^property[0].code = #type
-* #WV ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #WV ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #WV ^property[+].code = #state
 * #WV ^property[=].valueCoding = $system-usps#WV
 * #WY "WYOMING" "Wyoming Department of Health"
 * #WY ^property[0].code = #type
-* #WY ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#pha-state
+* #WY ^property[=].valueCoding = http://example.org/fhir/CodeSystem/codesystem-ersd-jurisdiction-types-example#STATE
 * #WY ^property[+].code = #state
 * #WY ^property[=].valueCoding = $system-usps#WY
