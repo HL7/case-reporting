@@ -17,7 +17,7 @@ The CodeSystem is structured as follows:
       "property": [
         {
           "code": "type",
-          "valueCode": "STATE"
+          "valueCode": "pha-state"
         },
         {
           "code": "state",
@@ -32,7 +32,7 @@ The CodeSystem is structured as follows:
       "property": [
         {
           "code": "type",
-          "valueCode": "STATE"
+          "valueCode": "pha-state"
         },
         {
           "code": "state",
@@ -55,7 +55,7 @@ The CodeSystem is structured as follows:
       "property": [
         {
           "code": "type",
-          "valueCode": "COUNTY"
+          "valueCode": "pha-county"
         },
         {
           "code": "state",
@@ -74,7 +74,7 @@ The CodeSystem is structured as follows:
       "property": [
         {
           "code": "type",
-          "valueCode": "COUNTY"
+          "valueCode": "pha-county"
         },
         {
           "code": "state",

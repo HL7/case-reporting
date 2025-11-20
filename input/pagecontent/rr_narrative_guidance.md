@@ -46,7 +46,7 @@ Normative guidance in the profiles includes data specification, order, and some 
 
 The following sections include further details on how narrative text can be constructed to meet the goals of communicating with largely clinical audiences. There are example templates for the possible combinations of reportability determinations that need to be accommodated in the Reportablity Response and example visualizations.
 
-Variables that represent coded data found elsewhere in the Reportabilty Response will be enclosed with angle brackets with a link to the relevant element, like this: &lt;[variable](reportability_response_narrative_guidance.html#narrative-construction-guidance)&gt;
+Variables that represent coded data found elsewhere in the Reportabilty Response will be enclosed with angle brackets with a link to the relevant element, like this: &lt;[variable](rr_narrative_guidance.html#narrative-construction-guidance)&gt;
 
 ## eICR Processed with No Warnings or Errors
 

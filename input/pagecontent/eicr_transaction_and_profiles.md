@@ -2,7 +2,7 @@
 
 The eICR transaction involves the transmission of data identified by a Council of State and Territorial Epidemiologists Task Force as being important to a multi-condition, multi-jurisdiction case report.
 
-eICR documents will usually be automatically initiated by matching EHR data against trigger codes. Note that matching with trigger codes is only an indication of a potentially reportable event. Additional rules processing is required to determine reportability based on the policies and regulatory requirements of the jurisdiction of residence and jurisdiction of care of the initiating event. Whether a specific initiated event is reportable is communicated through the [Reportability Response](reportability_response_narrative_guidance.html).
+eICR documents will usually be automatically initiated by matching EHR data against trigger codes. Note that matching with trigger codes is only an indication of a potentially reportable event. Additional rules processing is required to determine reportability based on the policies and regulatory requirements of the jurisdiction of residence and jurisdiction of care of the initiating event. Whether a specific initiated event is reportable is communicated through the [Reportability Response](rr_narrative_guidance.html).
 
 The following figure illustrates automatic initiation by trigger matching:
 
