@@ -5,7 +5,7 @@ Description: "Set of endpoint connection types"
 * ^meta.profile = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-expandedvalueset"
 
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/valueset-warning"
-* ^extension[=].valueMarkdown = "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
+* ^extension[=].valueMarkdown = "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated."
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-steward"
 * ^extension[=].valueContactDetail.name = "CSTE Steward"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-author"
@@ -21,6 +21,8 @@ Description: "Set of endpoint connection types"
 * ^jurisdiction.text = "United States of America"
 * ^purpose = "Define the set of supported endpoint connection types."
 * ^expansion.timestamp = "2020-10-14T17:39:10-06:00"
+* ^expansion.parameter.name = "system-version"
+* ^expansion.parameter.valueString = "2.1.1"
 * ^expansion.contains[0].system = $system-endpoint-connection-type
 * ^expansion.contains[=].code = #ihe-xcpd
 * ^expansion.contains[=].display = "IHE XCPD"

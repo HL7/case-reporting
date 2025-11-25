@@ -15,8 +15,8 @@ Description: "HIV Infection (ARV Boosters [CYP3A4 Inhibitor]) (RXNORM)"
 * ^experimental = true
 * ^publisher = "eCR"
 * ^useContext[0].code = http://terminology.hl7.org/CodeSystem/usage-context-type#focus
-* ^useContext[=].valueCodeableConcept = $sct#76981000119106
-* ^useContext[=].valueCodeableConcept.text = "Human immunodeficiency virus (HIV) infection category B1 (disorder)"
+* ^useContext[=].valueCodeableConcept = $sct#86406008
+* ^useContext[=].valueCodeableConcept.text = "Human immunodeficiency virus infection (disorder)"
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#reporting
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#triggering
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#priority

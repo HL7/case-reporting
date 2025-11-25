@@ -2,7 +2,6 @@ Alias: $loinc = http://loinc.org
 Alias: $sct = http://snomed.info/sct
 Alias: $cpt = http://www.ama-assn.org/go/cpt
 Alias: $v3-ParticipationType = http://terminology.hl7.org/CodeSystem/v3-ParticipationType
-Alias: $endpoint-connection-type = http://terminology.hl7.org/CodeSystem/endpoint-connection-type
 Alias: $cvx = http://hl7.org/fhir/sid/cvx
 Alias: $library-type = http://terminology.hl7.org/CodeSystem/library-type
 Alias: $v3-RoleCode = http://terminology.hl7.org/CodeSystem/v3-RoleCode

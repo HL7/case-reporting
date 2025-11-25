@@ -22,7 +22,6 @@ Description: "Acanthamoeba Disease [Keratitis] (Disorders) (SNOMED)"
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#priority
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#routine
 
-* $sct#127631000119105 "Corneal ulcer due to acanthamoeba (disorder)"
 * $sct#15693201000119102 "Keratitis of bilateral eyes caused by Acanthamoeba (disorder)"
 * $sct#15693241000119100 "Keratitis of left eye caused by Acanthamoeba (disorder)"
 * $sct#15693281000119105 "Keratitis of right eye caused by Acanthamoeba (disorder)"
@@ -35,9 +34,6 @@ Description: "Acanthamoeba Disease [Keratitis] (Disorders) (SNOMED)"
 
 * ^expansion.timestamp = "2022-04-05T10:06:43-04:00"
 * ^expansion.contains[0].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "Provisional_2022-01-10"
-* ^expansion.contains[=].code = #127631000119105
-* ^expansion.contains[+].system = "http://snomed.info/sct"
 * ^expansion.contains[=].version = "Provisional_2022-01-10"
 * ^expansion.contains[=].code = #15693201000119102
 * ^expansion.contains[+].system = "http://snomed.info/sct"

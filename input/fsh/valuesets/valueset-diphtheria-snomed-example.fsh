@@ -37,7 +37,6 @@ Description: "Diphtheria (Disorders) (SNOMED)"
 * $sct#26117009 "Diphtheritic myocarditis (disorder)"
 * $sct#276197005 "Infection caused by Corynebacterium diphtheriae (disorder)"
 * $sct#3419005 "Faucial diphtheria (disorder)"
-* $sct#397428000 "Diphtheria (disorder)"
 * $sct#397430003 "Diphtheria caused by Corynebacterium diphtheriae (disorder)"
 * $sct#48278001 "Diphtheritic cystitis (disorder)"
 * $sct#50215002 "Laryngeal diphtheria (disorder)"
@@ -92,9 +91,6 @@ Description: "Diphtheria (Disorders) (SNOMED)"
 * ^expansion.contains[+].system = "http://snomed.info/sct"
 * ^expansion.contains[=].version = "Provisional_2022-01-10"
 * ^expansion.contains[=].code = #3419005
-* ^expansion.contains[+].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "Provisional_2022-01-10"
-* ^expansion.contains[=].code = #397428000
 * ^expansion.contains[+].system = "http://snomed.info/sct"
 * ^expansion.contains[=].version = "Provisional_2022-01-10"
 * ^expansion.contains[=].code = #397430003

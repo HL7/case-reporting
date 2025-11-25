@@ -24,7 +24,6 @@ Description: "Dengue Virus Infection (Organism or Substance in Lab Results)"
 
 * $sct#121020003 "Antigen of Dengue virus (substance)"
 * $sct#121182007 "Deoxyribonucleic acid of Dengue virus (substance)"
-* $sct#121192004 "Dengue virus types 1-4 ribonucleic acid (substance)"
 * $sct#243604005 "Dengue virus subgroup (organism)"
 * $sct#34348001 "Dengue virus (organism)"
 * $sct#36700002 "Dengue virus, type 4 (organism)"
@@ -44,9 +43,6 @@ Description: "Dengue Virus Infection (Organism or Substance in Lab Results)"
 * ^expansion.contains[+].system = "http://snomed.info/sct"
 * ^expansion.contains[=].version = "Provisional_2022-01-10"
 * ^expansion.contains[=].code = #121182007
-* ^expansion.contains[+].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "Provisional_2022-01-10"
-* ^expansion.contains[=].code = #121192004
 * ^expansion.contains[+].system = "http://snomed.info/sct"
 * ^expansion.contains[=].version = "Provisional_2022-01-10"
 * ^expansion.contains[=].code = #243604005

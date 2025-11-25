@@ -35,9 +35,6 @@ Description: "Purpose: Clinical Focus - This set of values contains diagnoses or
 * ^expansion.contains[=].code = #B60.13
 * ^expansion.contains[+].system = "http://snomed.info/sct"
 * ^expansion.contains[=].version = "Provisional_2022-01-10"
-* ^expansion.contains[=].code = #127631000119105
-* ^expansion.contains[+].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "Provisional_2022-01-10"
 * ^expansion.contains[=].code = #15693201000119102
 * ^expansion.contains[+].system = "http://snomed.info/sct"
 * ^expansion.contains[=].version = "Provisional_2022-01-10"
@@ -92,15 +89,6 @@ Description: "Purpose: Clinical Focus - This set of values contains diagnoses or
 * ^expansion.contains[=].code = #T57.0X4S
 * ^expansion.contains[+].system = "http://snomed.info/sct"
 * ^expansion.contains[=].version = "Provisional_2022-01-10"
-* ^expansion.contains[=].code = #212516009
-* ^expansion.contains[+].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "Provisional_2022-01-10"
-* ^expansion.contains[=].code = #216792005
-* ^expansion.contains[+].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "Provisional_2022-01-10"
-* ^expansion.contains[=].code = #216794006
-* ^expansion.contains[+].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "Provisional_2022-01-10"
 * ^expansion.contains[=].code = #216795007
 * ^expansion.contains[+].system = "http://snomed.info/sct"
 * ^expansion.contains[=].version = "Provisional_2022-01-10"
@@ -129,9 +117,6 @@ Description: "Purpose: Clinical Focus - This set of values contains diagnoses or
 * ^expansion.contains[+].system = "http://snomed.info/sct"
 * ^expansion.contains[=].version = "Provisional_2022-01-10"
 * ^expansion.contains[=].code = #403745008
-* ^expansion.contains[+].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "Provisional_2022-01-10"
-* ^expansion.contains[=].code = #418685002
 * ^expansion.contains[+].system = "http://snomed.info/sct"
 * ^expansion.contains[=].version = "Provisional_2022-01-10"
 * ^expansion.contains[=].code = #62210001
@@ -195,9 +180,6 @@ Description: "Purpose: Clinical Focus - This set of values contains diagnoses or
 * ^expansion.contains[+].system = "http://snomed.info/sct"
 * ^expansion.contains[=].version = "Provisional_2022-01-10"
 * ^expansion.contains[=].code = #3419005
-* ^expansion.contains[+].system = "http://snomed.info/sct"
-* ^expansion.contains[=].version = "Provisional_2022-01-10"
-* ^expansion.contains[=].code = #397428000
 * ^expansion.contains[+].system = "http://snomed.info/sct"
 * ^expansion.contains[=].version = "Provisional_2022-01-10"
 * ^expansion.contains[=].code = #397430003
