@@ -40,7 +40,7 @@ Description: "Eastern Equine Encephalitis Virus Disease (Tests for Eastern Equin
 * $loinc#43329-2 "Eastern equine encephalitis virus Ab [Titer] in Serum by Complement fixation"
 * $loinc#5134-2 "Eastern equine encephalitis virus Ab [Units/volume] in Serum"
 * $loinc#7860-0 "Eastern equine encephalitis virus IgG Ab [Units/volume] in Serum"
-* $loinc#95654-0 "Eastern equine encephalitis virus Ab [Titer] in Specimen by Neutralization test"
+* $loinc#95654-0 "Eastern equine encephalitis virus neutralizing antibody [Titer] in Specimen by Neutralization test"
 * $loinc#10898-5 "Eastern equine encephalitis virus IgM Ab [Titer] in Serum by Immunofluorescence"
 * $loinc#10899-3 "Eastern equine encephalitis virus IgM Ab [Titer] in Cerebral spinal fluid by Immunofluorescence"
 * $loinc#13229-0 "Eastern equine encephalitis virus IgM Ab [Units/volume] in Cerebral spinal fluid"

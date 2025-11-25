@@ -31,7 +31,7 @@ Description: "Powassan Virus Disease (Tests for Powassan Virus Antibody [Quantit
 * $loinc#42973-8 "Powassan virus IgG Ab [Titer] in Specimen"
 * $loinc#42974-6 "Powassan virus IgG Ab [Titer] in Serum"
 * $loinc#42975-3 "Powassan virus Ab [Titer] in Serum"
-* $loinc#95647-4 "Powassan virus Ab [Titer] in Specimen by Neutralization test"
+* $loinc#95647-4 "Powassan virus neutralizing antibody [Titer] in Specimen by Neutralization test"
 * $loinc#30179-6 "Powassan virus IgM Ab [Titer] in Specimen by Immunofluorescence"
 * $loinc#31575-4 "Powassan virus IgM Ab [Units/volume] in Serum"
 * $loinc#31576-2 "Powassan virus IgM Ab [Units/volume] in Specimen"
