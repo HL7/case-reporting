@@ -21,7 +21,7 @@ Description: "Purpose: Clinical Focus - This set of values contains diagnoses or
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#priority
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#routine
 * ^purpose = "Diagnoses or problems documented in a clinical record."
-* ^compose.include[0].valueSet = "ValueSet/2.16.840.1.113762.1.4.1146.1506-example"
+* ^compose.include[0].valueSet = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1506-example"
 * ^compose.include[+].valueSet = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1505-example"
 * ^compose.include[+].valueSet = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1508-example"
 * ^compose.include[+].valueSet = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1507-example"
