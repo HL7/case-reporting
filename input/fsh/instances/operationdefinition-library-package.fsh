@@ -7,7 +7,7 @@ Usage: #definition
 * version = "2.1.0"
 * name = "LibraryPackaging"
 * title = "Library Packaging"
-* status = #draft
+* status = #active
 * kind = #operation
 * date = "2021-07-26T09:29:23+11:00"
 * publisher = "HL7 Public Health Work Group"

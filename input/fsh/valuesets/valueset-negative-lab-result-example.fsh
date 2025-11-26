@@ -8,7 +8,7 @@ Description: "missing description"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-author"
 * ^extension[=].valueContactDetail.name = "eCR"
 * ^url = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1034-example"
-* ^version = "0.1.0"
+* ^version = "1.0.0"
 * ^status = #active
 * ^experimental = true
 * ^publisher = "Council of State and Territorial Epidemiologists Steward"

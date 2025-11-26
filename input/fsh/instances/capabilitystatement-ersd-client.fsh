@@ -19,7 +19,7 @@ Usage: #definition
 * version = "1.0.0"
 * name = "CapabilityStatement_eRSD_Client"
 * title = "Capability Statement eRSD Client"
-* status = #draft
+* status = #active
 * experimental = false
 * date = "2019-08-23"
 * publisher = "HL7 Public Health Work Group"

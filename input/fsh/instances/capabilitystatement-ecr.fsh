@@ -18,7 +18,7 @@ Usage: #definition
 * fhirVersion = #4.0.1
 * format[0] = #application/xml
 * format[+] = #application/json
-* implementationGuide = "http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7-fhir-us-ecr"
+* implementationGuide = "http://hl7.org/fhir/us/ecr/ImplementationGuide/hl7.fhir.us.ecr"
 * rest[0].mode = #server
 * rest[=].documentation = "This section describes the expected capabilities for the server participating in eCR exchange."
 * rest[=].resource[0].type = #Composition
@@ -71,7 +71,7 @@ Usage: #definition
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-pregnancy-outcome-observation"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-pregnancy-status-observation"
-* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-postpartum-status"
+* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-is-postpartum"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-summary"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation"
