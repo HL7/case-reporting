@@ -21,8 +21,8 @@ valueset "Suspected Disorder Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSe
 valueset "Chlamydia Laboratory Result Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-example'
 
 // Supplemental (or operational) value sets used in suspected reportability determination logic
-valueset "Indeterminate or Equivocal Lab Result Value": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1035'
-valueset "Negative or Undetected Lab Result Value": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1034'
+valueset "Indeterminate or Equivocal Lab Result Value": 'http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1035-example'
+valueset "Negative or Undetected Lab Result Value": 'http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1034-example'
 
 code "eICRComposition": '55751-2' from "LOINC"
 

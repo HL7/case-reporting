@@ -7,7 +7,7 @@ Description: "missing description"
 * ^extension[=].valueContactDetail.name = "eCR"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-author"
 * ^extension[=].valueContactDetail.name = "eCR"
-* ^url = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1034-example"
+* ^url = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1034-example"
 * ^version = "0.1.0"
 * ^status = #active
 * ^experimental = true

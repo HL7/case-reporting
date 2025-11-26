@@ -1,10 +1,6 @@
 ### IG Defined Value Sets
 
 * [eCR MessageHeader Event](ValueSet-valueset-ecr-messageheader-event.html)
-* [US Public Health Pregnancy Status](ValueSet-us-ph-pregnancy-status.html) 
-* [US Public Health PlanDefinition Action](ValueSet-us-ph-plandefinition-action.html)  
-* [US Public Health Message Types](ValueSet-us-ph-message-types-valueset.html) 
-* [US Public Health TriggerDefinition NamedEvent](ValueSet-us-ph-triggerdefinition-namedevent.html) 
 
 ### HL7 Defined Value Sets
 

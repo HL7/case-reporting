@@ -231,7 +231,7 @@ Jurisdiction determination is a complex process, but a suitable determination al
 
 To support local determination of jurisdiction, we need, for each jurisdiction, a unique identifier, a description, whether the jurisdiction is a state or local jurisdiction, and what the state and configured zipcodes are for that jurisdiction:
 
-The [Jurisdiction Types](CodeSystem-ersd-jurisdiction-types.html) CodeSystem defines the following jurisdiction types:
+The [Jurisdiction Types](CodeSystem-codesystem-ersd-jurisdiction-types-example.html) CodeSystem defines the following jurisdiction types:
 BURROUGH,
 CITY,
 COUNTY,

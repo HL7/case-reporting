@@ -97,7 +97,7 @@ The concept code is formatted in uppercase to improve query results.  It represe
 
 The concept definition represents the name of the jurisdiction, for example the name of a Public Health Agency, state or county.
 
-The concept property valueCode with `code: "type"` indicates the type of the jurisdiction.  Available types are drawn from the [eRSD Jurisdiction Types](CodeSystem-ersd-jurisdiction-types.html) CodeSystem.
+The concept property valueCode with `code: "type"` indicates the type of the jurisdiction.  Available types are drawn from the [eRSD Jurisdiction Types](CodeSystem-codesystem-ersd-jurisdiction-types-example.html) CodeSystem.
 
 The concept property valueCode with `code: "state"` contains the state code from the US Core ValueSet for state codes ([USPS Two Letter Alphabetic Codes](http://hl7.org/fhir/us/core/ValueSet-us-core-usps-state.html)).
 

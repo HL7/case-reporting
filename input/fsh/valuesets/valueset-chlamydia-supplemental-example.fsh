@@ -1,13 +1,13 @@
-ValueSet: ValueSetChlamydiaExample
-Id: valueset-chlamydia-example
-Title: "Example Chlamydia Lab Obs Test Name Triggers for Public Health Reporting"
+ValueSet: ValueSetChlamydiaSupplementalExample
+Id: valueset-chlamydia-supplemental-example
+Title: "Example Chlamydia Supplemental Value Set for Public Health Reporting"
 Description: "This example set of values contains laboratory observations test names that represent that the patient may have the potentially reportable condition of Chlamydia regardless of the clinical presentation of the condition"
 * ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-supplemental-valueset"
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/valueset-steward"
 * ^extension[=].valueContactDetail.name = "CSTE Steward"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-author"
 * ^extension[=].valueContactDetail.name = "CSTE Author"
-* ^url = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-example"
+* ^url = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-supplemental-example"
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:2.16.840.1.113762.1.4.1146.1057.1"
 * ^version = "1.0.0"

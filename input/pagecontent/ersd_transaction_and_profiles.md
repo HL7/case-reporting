@@ -1,6 +1,6 @@
 ### electronic Reporting and Surveillance Distribution (eRSD) Transaction and Profiles
 
-The eRSD transaction includes a constrained FHIR PlanDefinition resource profile and a family of actions. It supports the distribution of reporting guidance and parameters, trigger code value sets, and more complex reporting rules and clinician / reporter support resources. This work seeks to align with developing public health guidelines that cover the same conditions. The PlanDefinition includes guidance for the overall orchestration of electronic case reporting. Each member of the family of actions defined in the [US Public Health PlanDefinition Action Codes](CodeSystem-us-ph-codesystem-plandefinition-actions.html) code system aligns with what may be different healthcare information systems or modules involved in reporting. The narrative elements of this profile will be used to help structure and guide implementation until EHRs have the ability to automatically consume them.
+The eRSD transaction includes a constrained FHIR PlanDefinition resource profile and a family of actions. It supports the distribution of reporting guidance and parameters, trigger code value sets, and more complex reporting rules and clinician / reporter support resources. This work seeks to align with developing public health guidelines that cover the same conditions. The PlanDefinition includes guidance for the overall orchestration of electronic case reporting. Each member of the family of actions defined in the [US Public Health PlanDefinition Action Codes]({{site.data.fhir.ver.hl7fhirusphlibrary}}/CodeSystem-us-ph-codesystem-plandefinition-actions.html) code system aligns with what may be different healthcare information systems or modules involved in reporting. The narrative elements of this profile will be used to help structure and guide implementation until EHRs have the ability to automatically consume them.
 
 The distribution of case reporting specifications involves two systems, the Implementing System (typically an Electronic Health Record (EHR)) and the Specification Repository, a repository that manages reporting specifications and the versions of those specifications over time:
 
@@ -64,7 +64,7 @@ Each of these are discussed in more detail in the following sections.
 
 ##### Events
 
-Events are represented with the `trigger` element, using the `named-event` trigger type and bound to the [US Public Health TriggerDefinition Named Event](ValueSet-us-ph-triggerdefinition-namedevent.html) value set. In addition, since the `name` element of the trigger definition is a `uri`, the eRSD profile uses the [US Public Health Named Event Type Extension]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-named-eventtype-extension.html) to provide complete binding information for the value set, as illustrated in the eRSDPlanDefinition example:
+Events are represented with the `trigger` element, using the `named-event` trigger type and bound to the [US Public Health TriggerDefinition Named Event]({{site.data.fhir.ver.hl7fhirusphlibrary}}/ValueSet-us-ph-valueset-triggerdefinition-namedevent.html) value set. In addition, since the `name` element of the trigger definition is a `uri`, the eRSD profile uses the [US Public Health Named Event Type Extension]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-named-eventtype-extension.html) to provide complete binding information for the value set, as illustrated in the eRSDPlanDefinition example:
 
 <pre><code>&lt;trigger id=&quot;encounter-start&quot;&gt;
   &lt;extension url=&quot;http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-named-eventtype-extension&quot;&gt;
@@ -263,7 +263,7 @@ The eRSD Supplemental Library is composed of the library-executable-rule-filters
 * [eRSD Supplemental Library Example](Library-library-ersd-supplemental-library-example.html)
 * [library-executable-rule-filters Library](Library-library-executable-rule-filters.html)
 * [Supplemental Value Set Library Example](Library-library-us-ph-supplemental-valueset-library-example.html)
-* [Jurisdictions CodeSystem Example](CodeSystem-ersd-jurisdictions-example.html)
+* [Jurisdictions CodeSystem Example](CodeSystem-codesystem-ersd-jurisdictions-example.html)
 
 #### Packaging and Distribution
 

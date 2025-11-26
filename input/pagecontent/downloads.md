@@ -35,3 +35,7 @@ The following package file includes an NPM package file used by many of the FHIR
 ### IP Statements
 
 {% lang-fragment ip-statements.xhtml %}
+
+### Expansion Parameters
+
+{% lang-fragment expansion-params.xhtml %}

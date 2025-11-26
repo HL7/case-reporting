@@ -15,17 +15,17 @@ Description: "Purpose: Clinical Focus - This set of values contains CVX,RXNORM,S
 * ^experimental = true
 * ^publisher = "eCR"
 * ^useContext[0].code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
-* ^useContext[0].valueReference.reference = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"
+* ^useContext[0].valueReference.reference = "PlanDefinition/plandefinition-ersd-instance-example"
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#reporting
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#triggering
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#priority
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#routine
 * ^purpose = "Prescription drugs names used in observations documented in a clinical record."
-* ^compose.include[0].valueSet = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1601-example"
-* ^compose.include[+].valueSet = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1600-example"
-* ^compose.include[+].valueSet = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1603-example"
-* ^compose.include[+].valueSet = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1602-example"
-* ^compose.include[+].valueSet = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1082-example"
+* ^compose.include[0].valueSet = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1601-example"
+* ^compose.include[+].valueSet = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1600-example"
+* ^compose.include[+].valueSet = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1603-example"
+* ^compose.include[+].valueSet = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1602-example"
+* ^compose.include[+].valueSet = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1082-example"
 * ^expansion.timestamp = "2022-04-05T10:06:43-04:00"
 * ^expansion.contains[0].system = "http://www.nlm.nih.gov/research/umls/rxnorm"
 * ^expansion.contains[=].version = "2022-01"

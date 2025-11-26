@@ -1,5 +1,5 @@
-ValueSet: ValueSetChlamydiaLabObsTestNameExample
-Id: valueset-chlamydia-lab-obs-test-name-example
+ValueSet: ValueSetChlamydiaTriggeringExample
+Id: valueset-chlamydia-triggering-example
 Title: "Example Chlamydia Lab Obs Test Name Triggers for Public Health Reporting"
 Description: "This example set of values contains laboratory observations test names that represent that the patient may have the potentially reportable condition of Chlamydia regardless of the clinical presentation of the condition"
 * ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-triggering-valueset"

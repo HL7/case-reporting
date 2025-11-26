@@ -7,7 +7,7 @@ Description: "Eastern Equine Encephalitis Virus Disease (Tests for Eastern Equin
 * ^extension[=].valueContactDetail.name = "CSTE Author"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-steward"
 * ^extension[=].valueContactDetail.name = "CSTE Steward"
-* ^url = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1181-example"
+* ^url = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1181-example"
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:2.16.840.1.113762.1.4.1146.1181"
 * ^version = "1.0.0"

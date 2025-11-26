@@ -15,17 +15,17 @@ Description: "Purpose: Clinical Focus - This set of values contains laboratory o
 * ^experimental = true
 * ^publisher = "eCR"
 * ^useContext[0].code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
-* ^useContext[0].valueReference.reference = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"
+* ^useContext[0].valueReference.reference = "PlanDefinition/plandefinition-ersd-instance-example"
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#reporting
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#triggering
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#priority
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#routine
 * ^purpose = "Laboratory test names used in observations documented in a clinical record."
-* ^compose.include[0].valueSet = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1182-example"
-* ^compose.include[+].valueSet = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1181-example"
-* ^compose.include[+].valueSet = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.480-example"
-* ^compose.include[+].valueSet = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1184-example"
-* ^compose.include[+].valueSet = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.481-example"
+* ^compose.include[0].valueSet = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1182-example"
+* ^compose.include[+].valueSet = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1181-example"
+* ^compose.include[+].valueSet = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.480-example"
+* ^compose.include[+].valueSet = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1184-example"
+* ^compose.include[+].valueSet = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.481-example"
 * ^expansion.timestamp = "2022-04-05T10:06:43-04:00"
 * ^expansion.contains[0].system = "http://loinc.org"
 * ^expansion.contains[=].version = "Provisional_2021-12-30"

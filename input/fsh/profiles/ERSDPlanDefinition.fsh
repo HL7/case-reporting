@@ -6,12 +6,14 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * . ^short = "eRSD - electronic Reporting and Surveillance Distribution"
 * . ^definition = "Defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician."
 
-* extension MS
-* extension ^slicing.discriminator.type = #value
-* extension ^slicing.discriminator.path = "url"
-* extension ^slicing.rules = #open
-* extension ^definition = "Defines variables for the PlanDefinition."
-* extension contains Variable named variable 0..* MS
+// * extension MS
+// * extension ^slicing.discriminator.type = #value
+// * extension ^slicing.discriminator.path = "url"
+// * extension ^slicing.rules = #open
+// * extension ^definition = "Defines variables for the PlanDefinition."
+* extension contains http://hl7.org/fhir/StructureDefinition/variable named variable 0..* MS
+* extension[variable] ^short = "Defines variables for the PlanDefinition."
+* extension[variable] ^definition = "Defines variables for the PlanDefinition."
 * action 7.. MS
 * action ^slicing.discriminator.type = #value
 * action ^slicing.discriminator.path = "id"

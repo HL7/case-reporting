@@ -24,9 +24,9 @@ Usage: #definition
 * entry[=].resource = valueset-ostc-example
 * entry[+].fullUrl = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-sdtc-example"
 * entry[=].resource = valueset-sdtc-example
-* entry[+].fullUrl = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-example"
-* entry[=].resource = valueset-chlamydia-example
-* entry[+].fullUrl = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1035-example"
+* entry[+].fullUrl = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-supplemental-example"
+* entry[=].resource = valueset-chlamydia-supplemental-example
+* entry[+].fullUrl = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1035-example"
 * entry[=].resource = 2.16.840.1.113762.1.4.1146.1035-example
-* entry[+].fullUrl = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1034-example"
+* entry[+].fullUrl = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1034-example"
 * entry[=].resource = 2.16.840.1.113762.1.4.1146.1034-example

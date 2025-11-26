@@ -15,14 +15,14 @@ Description: "Purpose: Clinical Focus - This set of values contains suspected di
 * ^experimental = true
 * ^publisher = "eCR"
 * ^useContext[0].code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
-* ^useContext[0].valueReference.reference = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"
+* ^useContext[0].valueReference.reference = "PlanDefinition/plandefinition-ersd-instance-example"
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#reporting
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#triggering
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#priority
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#routine
 * ^purpose = "Suspected diagnoses or problems documented in a clinical record."
-* ^compose.include[0].valueSet = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1439-example"
-* ^compose.include[+].valueSet = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1436-example"
-* ^compose.include[+].valueSet = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1435-example"
-* ^compose.include[+].valueSet = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1446-example"
-* ^compose.include[+].valueSet = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1438-example"
+* ^compose.include[0].valueSet = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1439-example"
+* ^compose.include[+].valueSet = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1436-example"
+* ^compose.include[+].valueSet = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1435-example"
+* ^compose.include[+].valueSet = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1446-example"
+* ^compose.include[+].valueSet = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1438-example"
