@@ -5,8 +5,8 @@ Description: "An example eRSD Specification Bundle"
 Usage: #definition
 * type = #collection
 * timestamp = "2022-04-05T10:06:42.482-04:00"
-* entry[0].fullUrl = "http://hl7.org/fhir/us/ecr/Library/library-specification"
-* entry[=].resource = library-specification
+* entry[0].fullUrl = "http://example.org/fhir/us/ecr/Library/library-us-ph-specification-library-example"
+* entry[=].resource = library-us-ph-specification-library-example
 * entry[+].fullUrl = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"
 * entry[=].resource = plandefinition-ersd-instance-example
 * entry[+].fullUrl = "http://hl7.org/fhir/us/ecr/Library/library-rctc-example"

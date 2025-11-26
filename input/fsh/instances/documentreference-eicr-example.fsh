@@ -1,6 +1,6 @@
 Instance: documentreference-eicr-example
 InstanceOf: $USCoreDocumentReferenceProfile
-Usage: #inline
+Usage: #example
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:uuid:db734647-fc99-424c-a864-7e3cda82e703"
 * identifier.system = "urn:oid:2.16.840.1.113883.19.5.99999.19"

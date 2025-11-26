@@ -23,6 +23,6 @@ Usage: #example
 * purpose = "Purpose of library"
 * effectivePeriod.start = "2020-11-01"
 * relatedArtifact[planDefinition].type = #composed-of
-* relatedArtifact[planDefinition].resource = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"
+* relatedArtifact[planDefinition].resource = "PlanDefinition/plandefinition-ersd-instance-example"
 * relatedArtifact[triggeringValueSetLibrary].type = #composed-of
-* relatedArtifact[triggeringValueSetLibrary].resource = "http://hl7.org/fhir/us/ecr/Library/library-rctc-example"
+* relatedArtifact[triggeringValueSetLibrary].resource = "Library/library-rctc-example"

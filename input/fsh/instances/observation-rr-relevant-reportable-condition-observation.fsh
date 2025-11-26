@@ -9,5 +9,7 @@ Usage: #example
 * code.text = "Condition"
 * subject.reference = "Patient/patient-ecr-eve-everywoman"
 * subject.display = "Eve Everywoman"
+* effectiveDateTime = "2025-07-02"
+* performer.display = "Acme Platform"
 * valueCodeableConcept = $sct#3928002 "Zika virus disease (disorder)"
 * hasMember.reference = "Observation/observation-rr-reportability-information-observation"
