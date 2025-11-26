@@ -7,6 +7,7 @@ Description: "This example set of values contains laboratory test names for orde
 * ^extension[=].valueContactDetail.name = "CSTE Steward"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-author"
 * ^extension[=].valueContactDetail.name = "CSTE Author"
+* ^url = "http://example.org/fhir/us/ecr/ValueSet/valueset-lab-order-test-triggers-example"
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:2.16.840.1.113762.1.4.1146.1056.1"
 * ^version = "1.0.0"

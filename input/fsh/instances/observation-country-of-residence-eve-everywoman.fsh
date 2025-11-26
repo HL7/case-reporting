@@ -4,6 +4,7 @@ Title: "Country of Residence Observation Example: Eve Everywoman"
 Description: "Example of Country of Residence Observation"
 Usage: #example
 * status = #final
+* category[us-core] = http://terminology.hl7.org/CodeSystem/observation-category#social-history "Social History"
 * code = $loinc#77983-5 "Country of usual residence"
 * subject.reference = "Patient/patient-ecr-eve-everywoman"
 * subject.display = "Eve Everywoman"

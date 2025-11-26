@@ -16,7 +16,6 @@ Description: "This profile represents reportability information based on the PHA
     RRExternalResourceExtension named externalResourceExtension 0..* MS
 * extension[externalResourceExtension] ^short = "External resources pertaining to the condition"
 * extension[externalResourceExtension] ^definition = "External resources such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources."
-* status = #final (exactly)
 * status MS
 * code MS
 * code from RRVS_LocationRelevance_eCR (required)

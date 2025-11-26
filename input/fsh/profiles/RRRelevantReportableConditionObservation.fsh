@@ -15,7 +15,6 @@ Description: "This profile represents a relevant reportable condition."
 * extension[externalResourceExtension] ^definition = "External resources such as a text guidance, link to access forms for additional reporting needs, additional testing and/or laboratory testing needs, treatment and/or prevention resources, Public Health Agency contact information and general additional resources."
 * extension[supportingInformation] ^short = "The supportingInformation Extension is used to reference supporting information contained in other resources"
 * extension[supportingInformation] ^min = 0
-* status = #final (exactly)
 * code MS
 * code.coding MS
 * code.coding ^slicing.discriminator.type = #value

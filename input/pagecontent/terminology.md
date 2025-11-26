@@ -1,7 +1,3 @@
-### IG Defined Value Sets
-
-* [eCR MessageHeader Event](ValueSet-valueset-ecr-messageheader-event.html)
-
 ### HL7 Defined Value Sets
 
 * [Document RelationshipType](http://hl7.org/fhir/ValueSet/document-relationship-type|4.0.1)

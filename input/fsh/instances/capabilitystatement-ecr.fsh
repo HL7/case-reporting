@@ -197,7 +197,7 @@ Usage: #definition
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-eicr-processing-status-observation"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-pregnancy-outcome-observation"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-pregnancy-status-observation"
-* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-postpartum-status"
+* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-is-postpartum"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-summary"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation"

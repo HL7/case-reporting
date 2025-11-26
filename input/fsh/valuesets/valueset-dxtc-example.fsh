@@ -1,13 +1,13 @@
-ValueSet: ValueSetDiagnosisProblemTriggersforPublicHealthReporting
+ValueSet: ValueSetDXTCExample
 Id: valueset-dxtc-example
-Title: "Diagnosis Problem Triggers for Public Health Reporting"
+Title: "Example DXTC for Public Health Reporting"
 Description: "Purpose: Clinical Focus - This set of values contains diagnoses or problems that represent that the patient may have a potentially reportable condition. For example, these may be diagnoses recorded in an EHR problem list and diagnosis codes used for billing for the encounter. Purpose: Data Element Scope - Diagnoses or problems documented in a clinical record. Purpose: Inclusion Criteria - See individual value sets. Purpose: Exclusion Criteria - See individual value sets. Note - Includes codes from selected value sets used in the Reportable Condition Knowledge Management System (RCKMS) reporting logic. RCKMS value sets in VSAC are for informational use only. When implementing trigger codes for electronic case reporting, use the Reportable Condition Trigger Codes (RCTC) file."
 * ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-triggering-valueset"
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-author"
 * ^extension[=].valueContactDetail.name = "CSTE Author"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-steward"
 * ^extension[=].valueContactDetail.name = "CSTE Steward"
-* ^url = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"
+* ^url = "http://example.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:2.16.840.1.113762.1.4.1146.627"
 * ^version = "1.0.0"

@@ -1,13 +1,13 @@
-ValueSet: ValueSetMedicationsTriggersforPublicHealthReporting
+ValueSet: ValueSetMRTCExample
 Id: valueset-mrtc-example
-Title: "Medications Triggers for Public Health Reporting"
+Title: "Example MRTC Triggers for Public Health Reporting"
 Description: "Purpose: Clinical Focus - This set of values contains CVX,RXNORM,SNOMED medication codes that may represent that the patient may have a potentially reportable condition. These pertain to medications administered and medications prescribed, where the medication, coded in CVX,RXNORM,SNOMED, may be indicative of a reportable condition. Purpose: Data Element Scope - Prescription drugs names used in observations documented in a clinical record. Purpose: Inclusion Criteria - See individual value sets. Purpose: Exclusion Criteria - See individual value sets. Note - Includes codes from selected value sets used in the Reportable Condition Knowledge Management System (RCKMS) reporting logic. RCKMS value sets in VSAC are for informational use only. When implementing trigger codes for electronic case reporting, use the Reportable Condition Trigger Codes (RCTC) file."
 * ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-triggering-valueset"
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-author"
 * ^extension[=].valueContactDetail.name = "CSTE Author"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-steward"
 * ^extension[=].valueContactDetail.name = "CSTE Steward"
-* ^url = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"
+* ^url = "http://example.org/fhir/us/ecr/ValueSet/valueset-mrtc-example"
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:2.16.840.1.113762.1.4.1146.1060"
 * ^version = "1.0.0"

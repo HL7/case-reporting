@@ -48,7 +48,7 @@ Description: "Hepatitis C Virus Infection (Organism or Substance in Lab Results)
 * $sct#603432004 "Hepatitis C virus subtype 4d (organism)"
 * $sct#603433009 "Hepatitis C virus subtype 4e (organism)"
 * $sct#62944002 "Hepatitis C virus (organism)"
-* $sct#711331006 "Polymerase chain reaction test for Hepatitis C positive"
+* $sct#711331006 "Hepatitis C detected by polymerase chain reaction (finding)"
 * $sct#726592002 "Antigen of Hepatitis C virus core (substance)"
 * $sct#781245007 "Hepatitis C virus genotype 4h (organism)"
 * $sct#781276001 "Hepatitis C virus genotype 3c (organism)"

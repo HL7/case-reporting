@@ -19,7 +19,7 @@ Description: "missing description"
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#routine
 
 * $sct#131194007 "Non-Reactive (qualifier value)"
-* $sct#168230009 "Sample direct microscopy no organism seen"
+* $sct#168230009 "Specimen direct microscopy no organism seen (finding)"
 * $sct#17621005 "Normal (qualifier value)"
 * $sct#23506009 "Normal flora (finding)"
 * $sct#260385009 "Negative (qualifier value)"

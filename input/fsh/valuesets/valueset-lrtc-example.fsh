@@ -1,13 +1,13 @@
-ValueSet: ValueSetLabObsTestTriggersforPublicHealthReporting
+ValueSet: ValueSetLRTCExample
 Id: valueset-lrtc-example
-Title: "Lab Obs Test Triggers for Public Health Reporting"
+Title: "Example LRTC Triggers for Public Health Reporting"
 Description: "Purpose: Clinical Focus - This set of values contains laboratory observation test names that may represent that the patient may have a potentially reportable condition. These pertain to resulted laboratory reports, where the lab test name, coded in LOINC, is specific to a reportable condition. Purpose: Data Element Scope - Laboratory test names used in observations documented in a clinical record. Purpose: Inclusion Criteria - See individual value sets. Purpose: Exclusion Criteria - See individual value sets. Note - Includes codes from selected value sets used in the Reportable Condition Knowledge Management System (RCKMS) reporting logic. RCKMS value sets in VSAC are for informational use only. When implementing trigger codes for electronic case reporting, use the Reportable Condition Trigger Codes (RCTC) file."
 * ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-triggering-valueset"
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-author"
 * ^extension[=].valueContactDetail.name = "CSTE Author"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-steward"
 * ^extension[=].valueContactDetail.name = "CSTE Steward"
-* ^url = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example"
+* ^url = "http://example.org/fhir/us/ecr/ValueSet/valueset-lrtc-example"
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:2.16.840.1.113762.1.4.1146.1057"
 * ^version = "1.0.0"

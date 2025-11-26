@@ -322,7 +322,7 @@ Description: "This Composition profile represents an electronic initial case rep
 * section[sliceImmunizationsSection].entry[sliceUSCoreImmunization].extension contains EICRTriggerCodeFlagExtension named sliceTriggerImmunization 0..1 MS
 * section[sliceImmunizationsSection].entry[sliceUSCoreImmunization].extension[sliceTriggerImmunization] ^short = "eICR Trigger Code Flag"
 * section[sliceImmunizationsSection].entry[sliceUSCoreImmunization].extension[sliceTriggerImmunization] ^definition = "A flag to indicate that the **target** reference represents a triggering event and caused the eCR to be generated."
-* section[sliceImmunizationsSection].entry[sliceVaccineCredentialsPatientAssertion] only Reference(EICRVaccineCredentialPatientAssertion)
+* section[sliceImmunizationsSection].entry[sliceVaccineCredentialsPatientAssertion] only Reference(USPublicHealthVaccineCredentialPatientAssertion)
 * section[sliceImmunizationsSection].entry[sliceVaccineCredentialsPatientAssertion] ^sliceName = "sliceVaccineCredentialsPatientAssertion"
 * section[sliceImmunizationsSection].entry[sliceVaccineCredentialsPatientAssertion] ^mustSupport = true
 * section[sliceProceduresSection] ^short = "This section describes all interventional, surgical, diagnostic, or therapeutic procedures or treatments pertinent to the patient historically at the time the document is generated."

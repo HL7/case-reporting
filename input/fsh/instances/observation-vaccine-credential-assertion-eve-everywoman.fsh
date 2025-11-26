@@ -1,7 +1,7 @@
 Instance: observation-vaccine-credential-assertion-eve-everywoman
-InstanceOf: EICRVaccineCredentialPatientAssertion
+InstanceOf: USPublicHealthVaccineCredentialPatientAssertion
 Title: "Observation - Vaccine Credential Patient Assertion for Eve Everywoman"
-Description: "Example of an eICR Vaccine Credential Patient Assertion observation indicating immunization status reported for patient Eve Everywoman."
+Description: "Example of a US Public Health Vaccine Credential Patient Assertion observation indicating immunization status reported for patient Eve Everywoman."
 Usage: #example
 * status = #final
 * code = $loinc#11370-4 "Immunization status - Reported"
