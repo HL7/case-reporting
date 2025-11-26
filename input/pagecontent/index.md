@@ -1,3 +1,11 @@
+<div markdown="1" class="note-to-balloters">
+* This ballot version of the IG references a snapshot of the CI Build of the soon-to-be-published [US Public Health Profiles Library (US PH Library)](https://build.fhir.org/ig/HL7/fhir-us-ph-library/en/). Prior to publication of this IG, the reference will change to the published version of the US PH Library.
+* *Questions for Balloters*
+  * Question 1
+  * Question 2 
+
+</div>
+
 ### Overview
 
 # Introduction and Purpose
