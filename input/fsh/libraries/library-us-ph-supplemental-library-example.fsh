@@ -23,6 +23,7 @@ Usage: #example
 * purpose = "Purpose of library"
 * effectivePeriod.start = "2020-11-01"
 * relatedArtifact[computableLibrary].type = #composed-of
-* relatedArtifact[computableLibrary].resource = "http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters"
+* relatedArtifact[computableLibrary].resource = "http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters-example"
 * relatedArtifact[supplementalValueSetLibrary].type = #composed-of
-* relatedArtifact[supplementalValueSetLibrary].resource = "http://hl7.org/fhir/us/ecr/Library/library-us-ph-supplemental-valueset-library-example"
+// * relatedArtifact[supplementalValueSetLibrary].resource = "http://hl7.org/fhir/us/ecr/Library/library-us-ph-supplemental-valueset-library-example"
+* relatedArtifact[supplementalValueSetLibrary].resource = $library-us-ph-supplemental-valueset-library-example

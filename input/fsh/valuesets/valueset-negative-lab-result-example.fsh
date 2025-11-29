@@ -3,14 +3,13 @@ Id: 2.16.840.1.113762.1.4.1146.1034-example
 Title: "Negative or Undetected Lab Result Value"
 Description: "missing description"
 * ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-supplemental-valueset"
-* ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/valueset-steward"
+
+* ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-author"
 * ^extension[=].valueContactDetail.name = "eCR"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-author"
-* ^extension[=].valueContactDetail.name = "eCR"
-* ^url = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1034-example"
-* ^version = "1.0.0"
-* ^status = #active
-* ^experimental = true
+* ^url = "http://example.org/fhir/us/ecr/ValueSet/2.16.840.1.113762.1.4.1146.1034-example"
+
+* insert rsValueSetRequired
+
 * ^publisher = "Council of State and Territorial Epidemiologists Steward"
 
 * ^useContext[0].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#reporting

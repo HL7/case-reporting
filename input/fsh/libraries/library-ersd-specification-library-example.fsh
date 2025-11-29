@@ -1,6 +1,6 @@
 Instance: library-ersd-specification-library-example
 InstanceOf: USPublicHealthSpecificationLibrary
-Title: "Library - eRSD Specification Library"
+// Title: "Library - eRSD Specification Library"
 Description: "Example of a US Public Health Specification Library containing eRSD PlanDefinition and RCTC ValueSet Library for electronic case reporting specification."
 Usage: #example
 * url = "http://hl7.org/fhir/us/ecr/Library/library-ersd-specification-library-example"
@@ -8,7 +8,7 @@ Usage: #example
 * identifier.value = "urn:oid:2.16.840.1.114222.4.11.11111.6"
 * version = "2020-11-01"
 * name = "ERSDSpecificationLibraryExample"
-* title = "eRSD Specification Library Example"
+* title = "Library - eRSD Specification Library"
 * status = #active
 * experimental = true
 * type = $library-type#asset-collection
@@ -23,6 +23,8 @@ Usage: #example
 * purpose = "Purpose of library"
 * effectivePeriod.start = "2020-11-01"
 * relatedArtifact[planDefinition].type = #composed-of
-* relatedArtifact[planDefinition].resource = "PlanDefinition/plandefinition-ersd-instance-example"
+// * relatedArtifact[planDefinition].resource = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"
+* relatedArtifact[planDefinition].resource = $plandefinition-ersd-instance-example
 * relatedArtifact[triggeringValueSetLibrary].type = #composed-of
-* relatedArtifact[triggeringValueSetLibrary].resource = "Library/library-rctc-example"
+// * relatedArtifact[triggeringValueSetLibrary].resource = "http://hl7.org/fhir/us/ecr/Library/library-rctc-example"
+* relatedArtifact[triggeringValueSetLibrary].resource = $library-rctc-example

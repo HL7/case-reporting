@@ -3,24 +3,24 @@ Id: valueset-medications-triggers-example
 Title: "Example Medications Triggers for Public Health Reporting"
 Description: "This example set of values contains CVX, RXNORM,and SNOMED medication codes that may represent that the patient may have a potentially reportable condition. These pertain to medications administered and medications prescribed, where the medication, coded in CVX,RXNORM,SNOMED, may be indicative of a reportable condition."
 * ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-triggering-valueset"
-* ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/valueset-steward"
-* ^extension[=].valueContactDetail.name = "CSTE Steward"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-author"
-* ^extension[=].valueContactDetail.name = "CSTE Author"
+
+
+* ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-author"
+* ^extension[=].valueContactDetail.name = "ValueSet Author"
 * ^url = "http://example.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example"
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:2.16.840.1.113762.1.4.1146.1060.1"
-* ^version = "1.0.0"
-* ^status = #active
-* ^experimental = true
+
+
+* insert rsValueSetRequired
 * ^date = "2018-08-01"
 * ^publisher = "{site.data.fhir.ig.publisher}"
 * ^useContext[0].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#reporting "Reporting"
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#triggering "Triggering"
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#priority "Priority"
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#routine "Routine"
-* ^jurisdiction = urn:iso:std:iso:3166#US "United States of America"
-* ^jurisdiction.text = "United States of America"
+
+
 * ^purpose = "Prescription drugs names used in observations documented in a clinical record."
 * $rxnorm#809002 "Carbidopa 10 MG / Levodopa 100 MG Disintegrating Oral Tablet [Parcopa]"
 * $rxnorm#476515 "Carbidopa 25 MG / Levodopa 250 MG Disintegrating Oral Tablet"

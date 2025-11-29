@@ -1,6 +1,5 @@
 Instance: library-us-ph-supplemental-valueset-library-example
 InstanceOf: USPublicHealthSupplementalValuesetLibrary
-Title: "Library - US Public Health Supplemental ValueSet Library"
 Description: "Example of a US Public Health Supplemental ValueSet Library containing supplemental ValueSets for public health reporting."
 Usage: #example
 * url = "http://hl7.org/fhir/us/ecr/Library/library-us-ph-supplemental-valueset-library-example"
@@ -8,7 +7,7 @@ Usage: #example
 * identifier.value = "urn:oid:2.16.840.1.114222.4.11.11111.3"
 * version = "2020-11-01"
 * name = "USPHSupplementalValueSetLibraryExample"
-* title = "US Public Health Supplemental ValueSet Library Example"
+* title = "Library - US Public Health Supplemental ValueSet Library"
 * status = #active
 * experimental = true
 * type = $library-type#asset-collection
@@ -23,4 +22,4 @@ Usage: #example
 * purpose = "Purpose of library"
 * effectivePeriod.start = "2020-11-01"
 * relatedArtifact[USPHValueSet].type = #composed-of
-* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-supplemental-example"
+* relatedArtifact[=].resource = $valueset-chlamydia-supplemental-example

@@ -1,5 +1,5 @@
 Instance: observation-blood-pressure-eve-everywoman
-InstanceOf: $USCoreBloodPressureProfile
+InstanceOf: $us-core-blood-pressure
 Title: "Observation - Blood Pressure for Eve Everywoman"
 Description: "Example of a US Core Vital Signs observation documenting blood pressure measurements (systolic 109 mmHg, diastolic 44 mmHg) for patient Eve Everywoman."
 Usage: #example

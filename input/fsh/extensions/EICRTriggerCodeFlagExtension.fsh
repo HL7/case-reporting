@@ -13,9 +13,9 @@ Context: Composition.section.entry, Encounter.diagnosis
     triggerCodeValueSet 1..1 and
     triggerCodeValueSetVersion 1..1 and
     triggerCode 1..1
-* extension[triggerCodeValueSet] ^short = "RCTC value set OID"
-* extension[triggerCodeValueSet] ^definition = "RCTC value set OID"
-* extension[triggerCodeValueSet].value[x] only oid
+* extension[triggerCodeValueSet] ^short = "RCTC value set OID (as a string)"
+* extension[triggerCodeValueSet] ^definition = "RCTC value set OID (as a string)"
+* extension[triggerCodeValueSet].value[x] only string
 * extension[triggerCodeValueSetVersion] ^short = "RCTC value set version"
 * extension[triggerCodeValueSetVersion] ^definition = "RCTC value set version"
 * extension[triggerCodeValueSetVersion].value[x] 1..

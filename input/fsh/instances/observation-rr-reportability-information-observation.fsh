@@ -5,25 +5,35 @@ Description: "Example of a Reportability Response (RR) Reportability Information
 Usage: #example
 * extension[0].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-determination-of-reportability-extension"
 * extension[=].valueCodeableConcept = urn:oid:2.16.840.1.114222.4.5.274#RRVS1 "Reportable"
+
 * extension[+].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-determination-of-reportability-reason-extension"
 * extension[=].valueString = "A reason why the condition is reportable"
+
 * extension[+].url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-determination-of-reportability-rule-extension"
 * extension[=].valueString = "Description of rule used in reportability determination"
+
 * extension[+].url = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension"
 * extension[=].valueReference.reference = "DocumentReference/documentreference-add-reporting-needs-pdf"
-* extension[+].url = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension"
-* extension[=].valueReference.reference = "DocumentReference/documentreference-add-reporting-needs-pdf"
+
+// * extension[+].url = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension"
+// * extension[=].valueReference.reference = "DocumentReference/documentreference-add-reporting-needs-pdf"
+
 * extension[+].url = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-external-resource-extension"
 * extension[=].valueReference.reference = "DocumentReference/documentreference-zika-follow-up-pdf"
+
 * status = #final
 * code = urn:oid:2.16.840.1.114222.4.5.274#RRVS5 "Patient home address"
 * subject.reference = "Patient/patient-ecr-eve-everywoman"
 * subject.display = "Eve Everywoman"
+* effectiveDateTime = "2025-07-02"
 * performer[0].reference = "Organization/organization-rr-rules-authoring-agency-haw"
 * performer[=].display = "Health Authority West Rules Authoring Agency"
+
 * performer[+].reference = "Organization/organization-rr-routing-entity-haw"
 * performer[=].display = "Health Authority West Routing Entity"
+
 * performer[+].reference = "Organization/organization-rr-responsible-agency-haw"
 * performer[=].display = "Health Authority West Routing Entity"
+
 * component.code = urn:oid:2.16.840.1.114222.4.5.232#RR4 "Timeframe to report (urgency)"
 * component.valueQuantity = 24 'H' "H"

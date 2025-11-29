@@ -3,13 +3,15 @@ Id: valueset-chlamydia-triggering-example
 Title: "Example Chlamydia Lab Obs Test Name Triggers for Public Health Reporting"
 Description: "This example set of values contains laboratory observations test names that represent that the patient may have the potentially reportable condition of Chlamydia regardless of the clinical presentation of the condition"
 * ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-triggering-valueset"
-// * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/valueset-steward"
-// * ^extension[=].valueContactDetail.name = "CSTE Steward"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-author"
-* ^extension[=].valueContactDetail.name = "CSTE Author"
+// 
+
+* ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-author"
+* ^extension[=].valueContactDetail.name = "ValueSet Author"
+* ^url = "http://example.org/fhir/us/ecr/ValueSet/valueset-chlamydia-triggering-example"
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:2.16.840.1.113762.1.4.1146.1057.2"
-* ^experimental = true
+* insert rsValueSetRequired
+
 * ^publisher = "Example Steward"
 
 * ^useContext[0].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#reporting "Reporting"

@@ -3,7 +3,7 @@ InstanceOf: USPublicHealthSpecificationLibrary
 Title: "Library - US Public Health Specification Library"
 Description: "Example of a US Public Health Specification Library containing PlanDefinition and ValueSet Library for public health reporting specifications."
 Usage: #example
-* url = "http://example.org/fhir/us/ecr/Library/library-us-ph-specification-library-example"
+* url = "http://hl7.org/fhir/us/ecr/Library/library-us-ph-specification-library-example"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:oid:2.16.840.1.114222.4.11.11111.1"
 * version = "2020-11-01"
@@ -23,6 +23,7 @@ Usage: #example
 * purpose = "Purpose of library"
 * effectivePeriod.start = "2020-11-01"
 * relatedArtifact[planDefinition].type = #composed-of
-* relatedArtifact[planDefinition].resource = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"
+// * relatedArtifact[planDefinition].resource = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"
+* relatedArtifact[planDefinition].resource = $plandefinition-ersd-instance-example
 * relatedArtifact[triggeringValueSetLibrary].type = #composed-of
 * relatedArtifact[triggeringValueSetLibrary].resource = "http://hl7.org/fhir/us/ecr/Library/library-rctc-example"

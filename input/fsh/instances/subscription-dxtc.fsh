@@ -5,6 +5,6 @@ Description: "Example of a Subscription resource for monitoring Diagnosis Proble
 Usage: #example
 * status = #active
 * reason = "Example subscription for Diagnosis_Problem trigger codes. Review http://hl7.org/fhir/subscription.html and modify status, channel, endpoint, etc. before using"
-* criteria = "Condition?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example"
+* criteria = "Condition?code:in=http://example.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example"
 * channel.type = #email
 * channel.endpoint = "mailto:nobody@example.org"

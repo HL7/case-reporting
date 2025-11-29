@@ -6,36 +6,36 @@ One approach for this is using the current FHIR R4 Subscription model, where a u
 ## Topics:
 **Diagnosis_Problem**
 
-`Condition?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example`
+`Condition?code:in=http://example.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example`
 
 **Organism_Substance**
 
-`Condition?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-organism-substance-triggers-example`
+`Condition?code:in=http://example.org/fhir/us/ecr/ValueSet/valueset-organism-substance-triggers-example`
 
 **Lab Order Test**
 
-`ServiceRequest?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-lab-order-test-triggers-example`
+`ServiceRequest?code:in=http://example.org/fhir/us/ecr/ValueSet/valueset-lab-order-test-triggers-example`
 
 **Lab Obs Test Name**
 
-`Observation?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-lrtc-example`
+`Observation?code:in=http://example.org/fhir/us/ecr/ValueSet/valueset-lrtc-example`
 
 **Medications**
 
-`MedicationAdministration?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example`
+`MedicationAdministration?code:in=http://example.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example`
 
-`MedicationDispense?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example`
+`MedicationDispense?code:in=http://example.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example`
 
-`MedicationRequest?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example`
+`MedicationRequest?code:in=http://example.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example`
 
-`MedicationStatement?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example`
+`MedicationStatement?code:in=http://example.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example`
 
 **Immunization**
 
-`Immunization?vaccineCode:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example`
+`Immunization?vaccineCode:in=http://example.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example`
 
 **Suspected_Disorder**
 
-`Condition?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-suspected-disorder-triggers-example`
-`MedicationRequest?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example`
-`Observation?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-lab-order-test-triggers-example`
+`Condition?code:in=http://example.org/fhir/us/ecr/ValueSet/valueset-suspected-disorder-triggers-example`
+`MedicationRequest?code:in=http://example.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example`
+`Observation?code:in=http://example.org/fhir/us/ecr/ValueSet/valueset-lab-order-test-triggers-example`

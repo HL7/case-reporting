@@ -1,4 +1,4 @@
-library library-executable-rule-filters version '2.1.0'
+library library-executable-rule-filters-example version '2.1.0'
 
 using FHIR version '4.0.1'
 
@@ -9,20 +9,20 @@ codesystem "UsageContext": 'http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-usage-co
 codesystem "JurisdictionsList": 'http://hl7.org/fhir/us/ecr/CodeSystem/ersd-jurisdictions-example'
 
 // Overall triggering value sets, groupings of all condition-specific value sets, grouped by representation in the information model
-valueset "Diagnosis Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example'
-valueset "Medication Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example'
-valueset "Laboratory Order Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lab-order-test-triggers-example'
-valueset "Laboratory Result Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-lab-obs-test-name-triggers-example'
-valueset "Organism Substance Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-organism-substance-triggers-example'
-valueset "Procedure Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-procedure-triggers-example'
-valueset "Suspected Disorder Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-suspected-disorder-triggers-example'
+valueset "Diagnosis Trigger Codes": 'http://example.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example'
+valueset "Medication Trigger Codes": 'http://example.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example'
+valueset "Laboratory Order Trigger Codes": 'http://example.org/fhir/us/ecr/ValueSet/valueset-lab-order-test-triggers-example'
+valueset "Laboratory Result Trigger Codes": 'http://example.org/fhir/us/ecr/ValueSet/valueset-lab-obs-test-name-triggers-example'
+valueset "Organism Substance Trigger Codes": 'http://example.org/fhir/us/ecr/ValueSet/valueset-organism-substance-triggers-example'
+valueset "Procedure Trigger Codes": 'http://example.org/fhir/us/ecr/ValueSet/valueset-procedure-triggers-example'
+valueset "Suspected Disorder Trigger Codes": 'http://example.org/fhir/us/ecr/ValueSet/valueset-suspected-disorder-triggers-example'
 
 // Condition-specific triggering codes, these would be listed for each condition
-valueset "Chlamydia Laboratory Result Trigger Codes": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-example'
+valueset "Chlamydia Laboratory Result Trigger Codes": 'http://example.org/fhir/us/ecr/ValueSet/valueset-chlamydia-example'
 
 // Supplemental (or operational) value sets used in suspected reportability determination logic
-valueset "Indeterminate or Equivocal Lab Result Value": 'http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1035-example'
-valueset "Negative or Undetected Lab Result Value": 'http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1034-example'
+valueset "Indeterminate or Equivocal Lab Result Value": 'http://example.org/fhir/us/ecr/ValueSet/2.16.840.1.113762.1.4.1146.1035-example'
+valueset "Negative or Undetected Lab Result Value": 'http://example.org/fhir/us/ecr/ValueSet/2.16.840.1.113762.1.4.1146.1034-example'
 
 code "eICRComposition": '55751-2' from "LOINC"
 

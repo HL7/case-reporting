@@ -4,16 +4,16 @@ Title: "Enterococcus faecium or E. faecalis (Organism or Substance in Lab Result
 Description: "Enterococcus faecium or E. faecalis (Organism or Substance in Lab Results)"
 * ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-triggering-valueset"
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-author"
-* ^extension[=].valueContactDetail.name = "CSTE Author"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/valueset-steward"
-* ^extension[=].valueContactDetail.name = "CSTE Steward"
-* ^url = "http://example.org/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1469-example"
+* ^extension[=].valueContactDetail.name = "ValueSet Author"
+
+
+* ^url = "http://example.org/fhir/us/ecr/ValueSet/2.16.840.1.113762.1.4.1146.1469-example"
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:2.16.840.1.113762.1.4.1146.1469"
-* ^version = "1.0.0"
-* ^status = #active
-* ^experimental = true
-* ^publisher = "eCR"
+
+
+* insert rsValueSetRequired
+* ^publisher = "ValueSet Steward/Publisher"
 * ^useContext[0].code = http://terminology.hl7.org/CodeSystem/usage-context-type#focus
 * ^useContext[=].valueCodeableConcept = $sct#406575008
 * ^useContext[=].valueCodeableConcept.text = "Infection caused by vancomycin resistant enterococcus (disorder)"

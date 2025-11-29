@@ -91,7 +91,7 @@ The triggering value sets will include any number of focus useContext slices to 
   &lt;type value=&quot;Condition&quot;/&gt;
   &lt;codeFilter&gt;
     &lt;path value=&quot;code&quot;/&gt;
-    &lt;valueSet value=&quot;http://hl7.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example&quot;/&gt;
+    &lt;valueSet value=&quot;http://example.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example&quot;/&gt;
   &lt;/codeFilter&gt;
 &lt;/input&gt;</code></pre>
 
@@ -233,11 +233,11 @@ The suspected reportability criteria are also represented with the `condition` e
   &lt;valueExpression&gt;
     &lt;language value=&quot;text/cql-identifier&quot;/&gt;
     &lt;expression value=&quot;Is Reportable&quot;/&gt;
-    &lt;reference value=&quot;http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters|2.1.0&quot;/&gt;
+    &lt;reference value=&quot;http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters-example|2.1.0&quot;/&gt;
   &lt;/valueExpression&gt;
 &lt;/extension&gt;</code></pre>
 
-This extension indicates that the `Is Reportable` expression of the [library-executable-rule-filters](Library-library-executable-rule-filters.html) library should be used to evaluate whether the event is suspected reportable.
+This extension indicates that the `Is Reportable` expression of the [library-executable-rule-filters-example](Library-library-executable-rule-filters-example.html) library should be used to evaluate whether the event is suspected reportable.
 
 For a complete description of the logic used to determine suspected reportability, refer to the [Rule Filter Generation](rule_filter_generation.html) topic.
 
@@ -245,11 +245,11 @@ For a detailed discussion of how jurisdiction is determined, see the [Jurisdicti
 
 For a detailed discussion of how this code system is structured, see the [Jurisdictions Code System Description](ersd_jurisdictions_codesystem_description.html) topic.
 
-The eRSD Supplemental Library is composed of the library-executable-rule-filters library and the Supplemental Value Set library, which contains any additional value sets and code systems (including the Jurisdictions code system) beyond the RCTC value sets that are required by the library-executable-rule-filters logic:
+The eRSD Supplemental Library is composed of the library-executable-rule-filters-example library and the Supplemental Value Set library, which contains any additional value sets and code systems (including the Jurisdictions code system) beyond the RCTC value sets that are required by the library-executable-rule-filters-example logic:
 
 <pre><code>&lt;relatedArtifact&gt;
   &lt;type value=&quot;composed-of&quot;/&gt;
-  &lt;resource value=&quot;http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters&quot;/&gt;
+  &lt;resource value=&quot;http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters-example&quot;/&gt;
 &lt;/relatedArtifact&gt;
 &lt;relatedArtifact&gt;
   &lt;type value=&quot;composed-of&quot;/&gt;
@@ -261,7 +261,7 @@ The eRSD Supplemental Library is composed of the library-executable-rule-filters
 &lt;/relatedArtifact&gt;</code></pre>
 
 * [eRSD Supplemental Library Example](Library-library-ersd-supplemental-library-example.html)
-* [library-executable-rule-filters Library](Library-library-executable-rule-filters.html)
+* [library-executable-rule-filters-example Library](Library-library-executable-rule-filters-example.html)
 * [Supplemental Value Set Library Example](Library-library-us-ph-supplemental-valueset-library-example.html)
 * [Jurisdictions CodeSystem Example](CodeSystem-codesystem-ersd-jurisdictions-example.html)
 

@@ -16,7 +16,7 @@ Usage: #example
 * participant.individual.display = "Henry Seven, MD"
 * period.start = "2018-04-01T10:00:00-05:00"
 * diagnosis[0].extension.extension[0].url = "triggerCodeValueSet"
-* diagnosis[=].extension.extension[=].valueOid = "urn:oid:2.16.840.1.114222.4.11.7508"
+* diagnosis[=].extension.extension[=].valueString = "urn:oid:2.16.840.1.114222.4.11.7508"
 * diagnosis[=].extension.extension[+].url = "triggerCodeValueSetVersion"
 * diagnosis[=].extension.extension[=].valueString = "12/12/2018"
 * diagnosis[=].extension.extension[+].url = "triggerCode"
