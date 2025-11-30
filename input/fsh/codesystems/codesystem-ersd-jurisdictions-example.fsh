@@ -3,7 +3,7 @@ Id: codesystem-ersd-jurisdictions-example
 Title: "eRSD Jurisdictions Example"
 Description: "This example code system describes jurisdictions that require public health reporting."
 * ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-codesystem"
-* ^url = "http://example.org/fhir/us/ecr/CodeSystem/codesystem-ersd-jurisdictions-example"
+* ^url = "http://hl7.org/fhir/us/ecr/CodeSystem/codesystem-ersd-jurisdictions-example"
 
 * insert rsCodeSystemRequired
 

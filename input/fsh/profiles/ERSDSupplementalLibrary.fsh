@@ -5,10 +5,10 @@ Title: "eRSD Supplemental Library"
 Description: "Defines the asset-collection library containing the eRSD supplemental assets."
 * . ^short = "eRSD Supplemental Library"
 
-* relatedArtifact MS
-* relatedArtifact ^slicing.discriminator.type = #profile
-* relatedArtifact ^slicing.discriminator.path = "resource.resolve()"
-* relatedArtifact ^slicing.rules = #open
+// * relatedArtifact MS
+// * relatedArtifact ^slicing.discriminator.type = #profile
+// * relatedArtifact ^slicing.discriminator.path = "resource.resolve()"
+// * relatedArtifact ^slicing.rules = #open
 * relatedArtifact contains sliceJurisdictionsCodeSystem 1..1 MS
 * relatedArtifact[sliceJurisdictionsCodeSystem] ^short = "Jurisdiction CodeSystem"
 * relatedArtifact[sliceJurisdictionsCodeSystem] ^definition = "Jurisdictions CodeSystem"

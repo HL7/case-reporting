@@ -15,7 +15,8 @@ Description: "Purpose: Clinical Focus - This set of values contains diagnoses or
 * ^publisher = "ValueSet Steward/Publisher"
 * ^useContext[0].code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 // * ^useContext[0].valueReference.reference = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example"
-* ^useContext[0].valueReference.reference = "PlanDefinition/plandefinition-ersd-instance-example"
+// * ^useContext[0].valueReference.reference = "PlanDefinition/plandefinition-ersd-instance-example"
+* ^useContext[0].valueReference = Reference(PlanDefinition/plandefinition-ersd-instance-example)
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#reporting
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#triggering
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#priority

@@ -17,7 +17,7 @@
         </tr>
         <tr>
             <td>Whole IG</td>
-            <td>Move the US Public Health Profile Library profiles out of this IG. Align with, depend on, and update references and examples to the analogous profiles in the latest version of the US Public Health Profiles Library <a href="https://build.fhir.org/ig/HL7/fhir-us-ph-library/en/index.html">US Public Health Profiles Library 2.0.0</a> Note: The ballot version depends on a snapshot of the USPHPL, this will be updated to the published version before publication of this IG.</td>
+            <td>Remove the US Public Health Profile Library profiles from this IG. Align with, depend on, and update references and examples to the analogous profiles in the latest version of the US Public Health Profiles Library <a href="https://build.fhir.org/ig/HL7/fhir-us-ph-library/en/index.html">US Public Health Profiles Library 2.0.0</a> Note: The ballot version depends on a snapshot of the USPHPL, this will be updated to the published version before publication of this IG.</td>
         </tr>
         <tr>
             <td>Whole IG</td>
@@ -25,7 +25,11 @@
         </tr>
         <tr>
             <td>Procedure Triggers</td>
-            <td>Remove Procedure Trigger profiles</a></td>
+            <td>Remove Procedure Trigger profiles</td>
+        </tr>
+        <tr>
+            <td>Organism / Susceptibilty Result Matching</td>
+            <td>Add profiles to allow susceptibility testing result to match the organisms tested</td>
         </tr>
     </tbody>
 </table>

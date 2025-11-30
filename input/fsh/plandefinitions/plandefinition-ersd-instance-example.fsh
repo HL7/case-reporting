@@ -51,6 +51,8 @@ Usage: #example
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].description = "This action represents the check for suspected disorder reportability to create the patients eICR."
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].textEquivalent = "Check Trigger Codes based on Suspected Reportable Value set."
 * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#check-trigger-codes
+
+//
 // * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition.kind = #applicability
 // * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition.expression.extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-alternativeExpression"
 // * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition.expression.extension.valueExpression.language = #text/cql-identifier
@@ -78,8 +80,12 @@ Usage: #example
 // * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example"
 // * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].relatedAction.actionId = "create-eicr"
 // * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].relatedAction.relationship = #before-start
+//
+
 * action[checkSuspectedDisorder].action[continueCheckReportable].id = "continue-check-reportable"
 * action[checkSuspectedDisorder].action[continueCheckReportable].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#evaluate-condition
+
+//
 // * action[checkSuspectedDisorder].action[continueCheckReportable].condition.kind = #applicability
 // * action[checkSuspectedDisorder].action[continueCheckReportable].condition.expression.extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-alternativeExpression"
 // * action[checkSuspectedDisorder].action[continueCheckReportable].condition.expression.extension.valueExpression.language = #text/cql-identifier
@@ -91,6 +97,8 @@ Usage: #example
 // * action[checkSuspectedDisorder].action[continueCheckReportable].relatedAction.relationship = #before-start
 // * action[checkSuspectedDisorder].action[continueCheckReportable].relatedAction.offsetDuration.comparator = #<=
 // * action[checkSuspectedDisorder].action[continueCheckReportable].relatedAction.offsetDuration = 6 'h'
+//
+
 * action[checkReportable].id = "check-reportable"
 * action[checkReportable].description = "This action represents the check for suspected reportability of the eICR."
 * action[checkReportable].textEquivalent = "Check Reportability and setup jobs for future reportability checks."
@@ -99,6 +107,8 @@ Usage: #example
 * action[checkReportable].action[isEncounterReportable].description = "This action represents the check for reportability to create the patients eICR."
 * action[checkReportable].action[isEncounterReportable].textEquivalent = "Check Trigger Codes based on RCTC Value sets."
 * action[checkReportable].action[isEncounterReportable].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#check-trigger-codes
+
+//
 // * action[checkReportable].action[isEncounterReportable].condition.kind = #applicability
 // * action[checkReportable].action[isEncounterReportable].condition.expression.extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-alternativeExpression"
 // * action[checkReportable].action[isEncounterReportable].condition.expression.extension.valueExpression.language = #text/cql-identifier
@@ -186,8 +196,12 @@ Usage: #example
 // * action[checkReportable].action[isEncounterReportable].input[=].codeFilter.valueSet = "http://example.org/fhir/us/ecr/ValueSet/valueset-organism-substance-triggers-example"
 // * action[checkReportable].action[isEncounterReportable].relatedAction.actionId = "create-eicr"
 // * action[checkReportable].action[isEncounterReportable].relatedAction.relationship = #before-start
+//
+
 * action[checkReportable].action[checkUpdateEicr].id = "check-update-eicr"
 * action[checkReportable].action[checkUpdateEicr].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#evaluate-condition
+
+//
 // * action[checkReportable].action[checkUpdateEicr].condition.kind = #applicability
 // * action[checkReportable].action[checkUpdateEicr].condition.expression.extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-alternativeExpression"
 // * action[checkReportable].action[checkUpdateEicr].condition.expression.extension.valueExpression.language = #text/cql-identifier
@@ -202,13 +216,17 @@ Usage: #example
 // * action[checkReportable].action[checkUpdateEicr].input.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
 // * action[checkReportable].action[checkUpdateEicr].relatedAction.actionId = "create-eicr"
 // * action[checkReportable].action[checkUpdateEicr].relatedAction.relationship = #before-start
+//
+
 * action[checkReportable].action[encounterInProgress].id = "is-encounter-in-progress"
 * action[checkReportable].action[encounterInProgress].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#evaluate-condition
+
+//
 // * action[checkReportable].action[encounterInProgress].condition.kind = #applicability
 // * action[checkReportable].action[encounterInProgress].condition.expression.extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-alternativeExpression"
 // * action[checkReportable].action[encounterInProgress].condition.expression.extension.valueExpression.language = #text/cql-identifier
 // * action[checkReportable].action[encounterInProgress].condition.expression.extension.valueExpression.expression = "Is Encounter In Progress and Within Normal Reporting Duration or 72h or less after end of encounter?"
-// * action[checkReportable].action[encounterInProgress].condition.expression.extension.valueExpression.reference = "http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters-example
+// * action[checkReportable].action[encounterInProgress].condition.expression.extension.valueExpression.reference = "http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters-example"
 // * action[checkReportable].action[encounterInProgress].condition.expression.language = #text/fhirpath
 // * action[checkReportable].action[encounterInProgress].condition.expression.expression = "%inprogressencounter.where(status = 'in-progress' and period.start + 1 day * %normalReportingDuration >= now() or (status = 'finished' and period.end + 72 hours >= now())).exists()"
 // * action[checkReportable].action[encounterInProgress].input.id = "inprogressencounter"
@@ -219,8 +237,12 @@ Usage: #example
 // * action[checkReportable].action[encounterInProgress].relatedAction.relationship = #before-start
 // * action[checkReportable].action[encounterInProgress].relatedAction.offsetDuration.comparator = #<=
 // * action[checkReportable].action[encounterInProgress].relatedAction.offsetDuration = 6 'h'
+//
+
 * action[checkReportable].action[encounterComplete].id = "is-encounter-completed"
 * action[checkReportable].action[encounterComplete].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#complete-reporting
+
+//
 // * action[checkReportable].action[encounterComplete].condition.kind = #applicability
 // * action[checkReportable].action[encounterComplete].condition.expression.extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-alternativeExpression"
 // * action[checkReportable].action[encounterComplete].condition.expression.extension.valueExpression.language = #text/cql-identifier
@@ -232,6 +254,8 @@ Usage: #example
 // * action[checkReportable].action[encounterComplete].input.extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-relateddata-extension"
 // * action[checkReportable].action[encounterComplete].input.extension.valueString = "encounter"
 // * action[checkReportable].action[encounterComplete].input.type = #Encounter
+//
+
 * action[createEicr].id = "create-eicr"
 * action[createEicr].description = "This action represents the creation of the eICR. It subsequently calls validate."
 * action[createEicr].textEquivalent = "Create eICR"
@@ -240,7 +264,11 @@ Usage: #example
 * action[createEicr].input[=].extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-relateddata-extension"
 * action[createEicr].input[=].extension.valueString = "patient"
 * action[createEicr].input[=].type = #Patient
+
+//
 // * action[createEicr].input[=].profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+//
+
 * action[createEicr].input[=].profile = $us-core-patient
 * action[createEicr].input[+].id = "conditiondata"
 * action[createEicr].input[=].extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-relateddata-extension"
