@@ -29,4 +29,4 @@ Usage: #example
 * relatedArtifact[supplementalValueSetLibrary].resource = "http://hl7.org/fhir/us/ecr/Library/library-us-ph-supplemental-valueset-library-example"
 // * relatedArtifact[supplementalValueSetLibrary].resource = $library-us-ph-supplemental-valueset-library-example
 * relatedArtifact[sliceJurisdictionsCodeSystem].type = #composed-of
-* relatedArtifact[sliceJurisdictionsCodeSystem].resource = "http://example.org/fhir/us/ecr/CodeSystem/codesystem-ersd-jurisdictions-example"
+* relatedArtifact[sliceJurisdictionsCodeSystem].resource = "http://hl7.org/fhir/us/ecr/CodeSystem/codesystem-ersd-jurisdictions-example"

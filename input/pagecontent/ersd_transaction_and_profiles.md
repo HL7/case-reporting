@@ -91,7 +91,7 @@ The triggering value sets will include any number of focus useContext slices to 
   &lt;type value=&quot;Condition&quot;/&gt;
   &lt;codeFilter&gt;
     &lt;path value=&quot;code&quot;/&gt;
-    &lt;valueSet value=&quot;http://example.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example&quot;/&gt;
+    &lt;valueSet value=&quot;http://hl7.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example&quot;/&gt;
   &lt;/codeFilter&gt;
 &lt;/input&gt;</code></pre>
 

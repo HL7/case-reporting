@@ -32,7 +32,7 @@ Usage: #example
 * relatedArtifact[=].resource = "http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type"
 * relatedArtifact[+].type = #depends-on
 * relatedArtifact[=].display = "Code system JurisdictionsList"
-* relatedArtifact[=].resource = "http://example.org/fhir/us/ecr/CodeSystem/codesystem-ersd-jurisdictions-example"
+* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/CodeSystem/codesystem-ersd-jurisdictions-example"
 * relatedArtifact[+].type = #depends-on
 * relatedArtifact[=].display = "Value set Diagnosis Trigger Codes"
 * relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example"

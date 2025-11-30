@@ -9,12 +9,12 @@ Below is an example of a PlanDefinition action's input property with a default F
 ```xml
 <input id="conditions">
     <extension url="http://hl7.org/fhir/StructureDefinition/cqf-fhirQueryPattern">
-        <valueString value="Condition?code:in=http://example.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example&patient=Patient/{{context.patientId}}" />
+        <valueString value="Condition?code:in=http://hl7.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example&patient=Patient/{{context.patientId}}" />
     </extension>
     <type value="Condition"/>
     <codeFilter>
         <path value="code"/>
-        <valueSet value="http://example.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example"/>
+        <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example"/>
     </codeFilter>
 </input>
 ```

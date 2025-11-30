@@ -193,7 +193,7 @@ Usage: #example
 // * action[checkReportable].action[isEncounterReportable].input[=].extension.valueString = "diagnosticOrders"
 // * action[checkReportable].action[isEncounterReportable].input[=].type = #DiagnosticReport
 // * action[checkReportable].action[isEncounterReportable].input[=].codeFilter.path = "code"
-// * action[checkReportable].action[isEncounterReportable].input[=].codeFilter.valueSet = "http://example.org/fhir/us/ecr/ValueSet/valueset-organism-substance-triggers-example"
+// * action[checkReportable].action[isEncounterReportable].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-organism-substance-triggers-example"
 // * action[checkReportable].action[isEncounterReportable].relatedAction.actionId = "create-eicr"
 // * action[checkReportable].action[isEncounterReportable].relatedAction.relationship = #before-start
 //
