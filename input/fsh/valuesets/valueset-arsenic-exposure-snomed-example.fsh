@@ -23,6 +23,8 @@ Description: "Arsenic Exposure and Toxicity (Disorders) (SNOMED)"
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#priority
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#routine
 
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
+
 * $sct#216795007 "Accidental poisoning caused by arsenic fumes (disorder)"
 * $sct#241770003 "Trivalent arsenic compound causing toxic effect (disorder)"
 * $sct#241771004 "Pentavalent arsenic compound causing toxic effect (disorder)"
