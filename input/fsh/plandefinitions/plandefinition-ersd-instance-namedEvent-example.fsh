@@ -4,7 +4,7 @@ Title: "eRSD PlanDefinition Instance NamedEvent Example"
 Description: "This PlanDefinition is a simplified duplicate of the eRSD PlanDefinition Instance created for the purposes of demonstrating by example the usage of the US Public Health Named Event extension."
 Usage: #example
 * url = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-namedEvent-example"
-* version = "2.1.0"
+* insert rsVersion
 * name = "PlanDefinition_eRSD_Instance_namedEvent_Example"
 * title = "eRSD PlanDefinition Instance NamedEvent Example"
 * type = $plan-definition-type#workflow-definition "Workflow Definition"

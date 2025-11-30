@@ -6,7 +6,7 @@ Usage: #example
 * url = "http://hl7.org/fhir/us/ecr/Library/library-us-ph-supplemental-library-example"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:oid:2.16.840.1.114222.4.11.11111.2"
-* version = "2020-11-01"
+* insert rsVersion
 * name = "USPHSupplementalLibraryExample"
 * title = "US Public Health Supplemental Library Example"
 * status = #active
@@ -25,5 +25,5 @@ Usage: #example
 * relatedArtifact[computableLibrary].type = #composed-of
 * relatedArtifact[computableLibrary].resource = "http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters-example"
 * relatedArtifact[supplementalValueSetLibrary].type = #composed-of
-// * relatedArtifact[supplementalValueSetLibrary].resource = "http://hl7.org/fhir/us/ecr/Library/library-us-ph-supplemental-valueset-library-example"
-* relatedArtifact[supplementalValueSetLibrary].resource = $library-us-ph-supplemental-valueset-library-example
+* relatedArtifact[supplementalValueSetLibrary].resource = "http://hl7.org/fhir/us/ecr/Library/library-us-ph-supplemental-valueset-library-example"
+// * relatedArtifact[supplementalValueSetLibrary].resource = $library-us-ph-supplemental-valueset-library-example

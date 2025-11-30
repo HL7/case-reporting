@@ -5,7 +5,7 @@ Usage: #example
 * url = "http://hl7.org/fhir/us/ecr/Library/library-us-ph-supplemental-valueset-library-example"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:oid:2.16.840.1.114222.4.11.11111.3"
-* version = "2020-11-01"
+* insert rsVersion
 * name = "USPHSupplementalValueSetLibraryExample"
 * title = "Library - US Public Health Supplemental ValueSet Library"
 * status = #active
@@ -22,4 +22,4 @@ Usage: #example
 * purpose = "Purpose of library"
 * effectivePeriod.start = "2020-11-01"
 * relatedArtifact[USPHValueSet].type = #composed-of
-* relatedArtifact[=].resource = $valueset-chlamydia-supplemental-example
+* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-supplemental-example"

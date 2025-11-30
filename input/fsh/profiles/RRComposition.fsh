@@ -119,7 +119,7 @@ Description: "This Composition profile represents the Reportability Response tha
 * section[sliceRRSummarySection].entry contains 
     sliceRRSummary 1..1 MS and
     sliceRRCondition 1..* MS
-* section[sliceRRSummarySection].entry[sliceRRSummary] only Reference(RRSummary)
+* section[sliceRRSummarySection].entry[sliceRRSummary] only Reference(RRSummaryObservation)
 * section[sliceRRSummarySection].entry[sliceRRSummary] ^short = "RR Summary"
 * section[sliceRRSummarySection].entry[sliceRRCondition] only Reference(RRRelevantReportableConditionObservation)
 * section[sliceRRSummarySection].entry[sliceRRCondition] ^sliceName = "sliceRRCondition"

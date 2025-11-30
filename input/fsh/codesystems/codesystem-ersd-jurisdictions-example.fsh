@@ -5,14 +5,13 @@ Description: "This example code system describes jurisdictions that require publ
 * ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-codesystem"
 * ^url = "http://example.org/fhir/us/ecr/CodeSystem/codesystem-ersd-jurisdictions-example"
 
-* ^version = "{{site.data.fhir.igVer}}"
-* ^experimental = true
+* insert rsCodeSystemRequired
 
 * ^caseSensitive = false
 * ^content = #complete
 
 * ^property[0].extension.url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
-* ^property[=].extension.valueCanonical = "http://example.org/fhir/us/ecr/ValueSet/valueset-ersd-jurisdiction-types-example"
+* ^property[=].extension.valueCanonical = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-ersd-jurisdiction-types-example"
 * ^property[=].code = #type
 // * ^property[=].uri = "http://example.org/fhir/us/ecr/CodeSystem/codesystem-properties-example#type"
 * ^property[=].description = "Type of public health jurisdiction."

@@ -17,4 +17,4 @@ Usage: #example
 * purpose = "Purpose of library"
 * effectivePeriod.start = "2020-11-01"
 * relatedArtifact[USPHValueSet].type = #composed-of
-* relatedArtifact[USPHValueSet].resource = "http://example.org/fhir/us/ecr/ValueSet/valueset-us-ph-example"
+* relatedArtifact[USPHValueSet].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-us-ph-example"

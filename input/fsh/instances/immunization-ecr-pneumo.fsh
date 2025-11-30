@@ -1,5 +1,5 @@
 Instance: immunization-ecr-pneumo
-InstanceOf: $us-core-immunization
+InstanceOf: us-core-immunization
 Title: "Immunization - Pneumococcal Vaccine for Eve Everywoman"
 Description: "Example of a US Core Immunization documenting the administration of pneumococcal polysaccharide PPV23 vaccine to patient Eve Everywoman."
 Usage: #example

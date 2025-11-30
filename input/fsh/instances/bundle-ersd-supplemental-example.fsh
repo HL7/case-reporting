@@ -10,7 +10,7 @@ Usage: #definition
 * entry[=].resource = library-executable-rule-filters-example
 * entry[+].fullUrl = "http://hl7.org/fhir/us/ecr/Library/library-us-ph-supplemental-valueset-library-example"
 * entry[=].resource = library-us-ph-supplemental-valueset-library-example
-* entry[+].fullUrl = "http://hl7.org/fhir/us/ecr/CodeSystem/codesystem-ersd-jurisdictions-example"
+* entry[+].fullUrl = "http://example.org/fhir/us/ecr/CodeSystem/codesystem-ersd-jurisdictions-example"
 * entry[=].resource = codesystem-ersd-jurisdictions-example
 * entry[+].fullUrl = "http://example.org/fhir/us/ecr/ValueSet/valueset-dxtc-example"
 * entry[=].resource = valueset-dxtc-example

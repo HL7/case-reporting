@@ -1,7 +1,7 @@
 Profile: RRRulesAuthoringAgencyOrganization
 Parent: USPublicHealthOrganization
 Id: rr-rules-authoring-agency-organization
-Title: "Rules Authoring Agency Organization"
+Title: "RRRules Authoring Agency Organization"
 Description: "This Organization profile represents the Rules Authoring Agency which is the originator of the rules that are being executed in decision support to determine reportability."
 * . ^short = "Rules Authoring Agency"
 * . ^definition = "The Rules Authoring Agency profile is based on the eCR Organization profile and sets the type to 'Rules Authoring Agency'. The Rules Authoring Agency is whose rules are being executed in decision support to determine reportability. This may be a State or Local PHA. In the majority of cases the Rules Authoring Agency will be the same as the Responsible Agency. Usually, a Local Public Health Agency will inherit rules from its relevant State agency, but a Local agency can adopt, replace or supplement relevant state rules."

@@ -7,7 +7,7 @@ Description: "Enterococcus gallinarum or E. casseliflavus/E. flavescens (Organis
 * ^extension[=].valueContactDetail.name = "ValueSet Author"
 
 
-* ^url = "http://example.org/fhir/us/ecr/ValueSet/2.16.840.1.113762.1.4.1146.1468-example"
+* ^url = "http://hl7.org/fhir/us/ecr/ValueSet/2.16.840.1.113762.1.4.1146.1468-example"
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:2.16.840.1.113762.1.4.1146.1468"
 

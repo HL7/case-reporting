@@ -1,5 +1,5 @@
 Instance: documentreference-rr-one-cond-one-pha
-InstanceOf: $us-core-documentreference
+InstanceOf: us-core-documentreference
 Usage: #example
 * status = #current
 * type = $loinc#88085-6 "Reportability response report Document Public health"

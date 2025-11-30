@@ -6,7 +6,7 @@ Usage: #example
 * extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-receiver-address-extension"
 * extension.valueReference.reference = "Endpoint/endpoint-ecr-ymca"
 * url = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-us-public-health-example"
-* version = "2.1.0"
+* insert rsVersion
 * name = "PlanDefinitionUSPublicHealthExample"
 * title = "PlanDefinition US Public Health Example"
 * type = $plan-definition-type#workflow-definition "Workflow Definition"

@@ -1,7 +1,7 @@
 canonical: http://hl7.org/fhir/us/ecr
 fhirVersion: 4.0.1
 title: "Electronic Case Reporting (eCR)"
-releaseLabel: STU 3 - Ballot
+releaseLabel: STU 3 Ballot
 FSHOnly: false
 applyExtensionMetadataToRoot: false
 id: hl7.fhir.us.ecr
@@ -35,10 +35,6 @@ dependencies:
     version: 0.12.0
     uri: http://fhir.org/packages/us.cdc.phinvads/ImplementationGuide/us.cdc.phinvads
     id: uscdcphinvads
-  # hl7.fhir.us.vr-common-library:
-  #   version: 1.0.0
-  #   uri: http://hl7.org/fhir/us/vr-common-library/ImplementationGuide/hl7.fhir.us.vr-common-library
-  #   id: hl7fhirusvrcommonlibrary
   hl7.fhir.us.bfdr:
     version: 2.0.0
     uri: http://hl7.org/fhir/us/bfdr/ImplementationGuide/hl7.fhir.us.bfdr
@@ -47,10 +43,6 @@ dependencies:
     version: 1.3.0
     uri: http://hl7.org/fhir/us/odh/ImplementationGuide/hl7.fhir.us.odh
     id: hl7fhirusodh
-  # hl7.fhir.uv.bulkdata:
-  #   version: 1.1.0
-  #   uri: http://hl7.org/fhir/uv/bulkdata/ImplementationGuide/hl7.fhir.uv.bulkdata
-  #   id: hl7fhiruvbulkdata
   hl7.fhir.us.ph-library:
     version: current
     uri: http://hl7.org/fhir/us/ph-library/ImplementationGuide/hl7.fhir.us.ph-library
@@ -72,10 +64,8 @@ parameters:
      - http://example.org/fhir/us/ecr/CodeSystem/codesystem-ersd-jurisdiction-types-example
      - http://example.org/fhir/us/ecr/ValueSet/valueset-ersd-jurisdiction-types-example
      - http://example.org/fhir/us/ecr/CodeSystem/codesystem-ersd-jurisdictions-example
-     - http://example.org/fhir/us/ecr/ValueSet/valueset-us-ph-example
-     - http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-example
-    #  - http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters-example
      - http://example.org/fhir/us/ecr/CodeSystem/codesystem-properties-example
+
 instanceOptions:
   manualSliceOrdering: true
 
@@ -154,98 +144,98 @@ pages:
     title: Downloads
   
   
-resources:
-  ValueSet/2.16.840.1.113762.1.4.1146.6-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.408-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.409-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.480-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.481-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.528-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.761-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.762-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1034-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1035-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1082-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1181-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1182-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1184-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1223-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1435-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1436-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1438-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1439-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1446-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1468-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1469-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1505-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1506-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1507-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1508-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1600-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1601-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1602-example:
-    exampleBoolean: true
-  ValueSet/2.16.840.1.113762.1.4.1146.1603-example:
-    exampleBoolean: true
-  ValueSet/valueset-chlamydia-supplemental-example:
-    exampleBoolean: true
-  ValueSet/valueset-chlamydia-triggering-example:
-    exampleBoolean: true
-  ValueSet/valueset-diagnosis-problem-triggers-example:
-    exampleBoolean: true
-  ValueSet/valueset-dxtc-example:
-    exampleBoolean: true
-  ValueSet/valueset-ersd-jurisdiction-types-example:
-    exampleBoolean: true
-  ValueSet/valueset-lab-obs-test-name-triggers-example:
-    exampleBoolean: true
-  ValueSet/valueset-lab-order-test-triggers-example:
-    exampleBoolean: true
-  ValueSet/valueset-lotc-example:
-    exampleBoolean: true
-  ValueSet/valueset-lrtc-example:
-    exampleBoolean: true
-  ValueSet/valueset-medications-triggers-example:
-    exampleBoolean: true
-  ValueSet/valueset-mrtc-example:
-    exampleBoolean: true
-  ValueSet/valueset-organism-substance-triggers-example:
-    exampleBoolean: true
-  ValueSet/valueset-ostc-example:
-    exampleBoolean: true
-  ValueSet/valueset-procedure-triggers-example:
-    exampleBoolean: true
-  ValueSet/valueset-sdtc-example:
-    exampleBoolean: true
-  ValueSet/valueset-suspected-disorder-triggers-example:
-    exampleBoolean: true
-  ValueSet/valueset-us-ph-example:
-    exampleBoolean: true
+# resources:
+#   ValueSet/2.16.840.1.113762.1.4.1146.6-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.408-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.409-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.480-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.481-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.528-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.761-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.762-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1034-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1035-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1082-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1181-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1182-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1184-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1223-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1435-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1436-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1438-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1439-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1446-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1468-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1469-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1505-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1506-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1507-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1508-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1600-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1601-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1602-example:
+#     exampleBoolean: true
+#   ValueSet/2.16.840.1.113762.1.4.1146.1603-example:
+#     exampleBoolean: true
+#   ValueSet/valueset-chlamydia-supplemental-example:
+#     exampleBoolean: true
+#   ValueSet/valueset-chlamydia-triggering-example:
+#     exampleBoolean: true
+#   ValueSet/valueset-diagnosis-problem-triggers-example:
+#     exampleBoolean: true
+#   ValueSet/valueset-dxtc-example:
+#     exampleBoolean: true
+#   ValueSet/valueset-ersd-jurisdiction-types-example:
+#     exampleBoolean: true
+#   ValueSet/valueset-lab-obs-test-name-triggers-example:
+#     exampleBoolean: true
+#   ValueSet/valueset-lab-order-test-triggers-example:
+#     exampleBoolean: true
+#   ValueSet/valueset-lotc-example:
+#     exampleBoolean: true
+#   ValueSet/valueset-lrtc-example:
+#     exampleBoolean: true
+#   ValueSet/valueset-medications-triggers-example:
+#     exampleBoolean: true
+#   ValueSet/valueset-mrtc-example:
+#     exampleBoolean: true
+#   ValueSet/valueset-organism-substance-triggers-example:
+#     exampleBoolean: true
+#   ValueSet/valueset-ostc-example:
+#     exampleBoolean: true
+#   ValueSet/valueset-procedure-triggers-example:
+#     exampleBoolean: true
+#   ValueSet/valueset-sdtc-example:
+#     exampleBoolean: true
+#   ValueSet/valueset-suspected-disorder-triggers-example:
+#     exampleBoolean: true
+#   ValueSet/valueset-us-ph-example:
+#     exampleBoolean: true

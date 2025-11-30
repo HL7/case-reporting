@@ -1,5 +1,5 @@
 Instance: observation-country-of-residence-eve-everywoman
-InstanceOf: EICRCountryOfResidence
+InstanceOf: EICRCountryOfResidenceObservation
 Title: "Country of Residence Observation Example: Eve Everywoman"
 Description: "Example of Country of Residence Observation"
 Usage: #example

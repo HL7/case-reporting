@@ -1,5 +1,5 @@
 Instance: observation-rr-summary
-InstanceOf: RRSummary
+InstanceOf: RRSummaryObservation
 Title: "Observation - RR Summary"
 Description: "Example of a Reportability Response (RR) Summary observation providing summary information about electronic case reporting submission and reportability determination for Zika virus disease."
 Usage: #example

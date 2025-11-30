@@ -8,7 +8,7 @@ Usage: #example
 // * meta.profile[+] = "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-xml-library"
 // * meta.profile[+] = "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library"
 * url = "http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters-example"
-* version = "2.1.0"
+* insert rsVersion
 * name = "LibraryExecutableRuleFilters"
 * title = "Rule Filters"
 * status = #active
@@ -32,39 +32,40 @@ Usage: #example
 * relatedArtifact[=].resource = "http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type"
 * relatedArtifact[+].type = #depends-on
 * relatedArtifact[=].display = "Code system JurisdictionsList"
-* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/CodeSystem/codesystem-ersd-jurisdictions-example"
+* relatedArtifact[=].resource = "http://example.org/fhir/us/ecr/CodeSystem/codesystem-ersd-jurisdictions-example"
 * relatedArtifact[+].type = #depends-on
 * relatedArtifact[=].display = "Value set Diagnosis Trigger Codes"
-* relatedArtifact[=].resource = "http://example.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example"
+* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example"
 * relatedArtifact[+].type = #depends-on
 * relatedArtifact[=].display = "Value set Medication Trigger Codes"
-* relatedArtifact[=].resource = "http://example.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example"
+* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example"
 * relatedArtifact[+].type = #depends-on
 * relatedArtifact[=].display = "Value set Laboratory Order Trigger Codes"
-* relatedArtifact[=].resource = "http://example.org/fhir/us/ecr/ValueSet/valueset-lab-order-test-triggers-example"
+* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lab-order-test-triggers-example"
 * relatedArtifact[+].type = #depends-on
 * relatedArtifact[=].display = "Value set Laboratory Result Trigger Codes"
-* relatedArtifact[=].resource = "http://example.org/fhir/us/ecr/ValueSet/valueset-lab-obs-test-name-triggers-example"
+* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lab-obs-test-name-triggers-example"
 * relatedArtifact[+].type = #depends-on
 * relatedArtifact[=].display = "Value set Organism Substance Trigger Codes"
-* relatedArtifact[=].resource = "http://example.org/fhir/us/ecr/ValueSet/valueset-organism-substance-triggers-example"
+* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-organism-substance-triggers-example"
 * relatedArtifact[+].type = #depends-on
 * relatedArtifact[=].display = "Value set Procedure Trigger Codes"
-* relatedArtifact[=].resource = "http://example.org/fhir/us/ecr/ValueSet/valueset-procedure-triggers-example"
+* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-procedure-triggers-example"
 * relatedArtifact[+].type = #depends-on
 * relatedArtifact[=].display = "Value set Suspected Disorder Trigger Codes"
-* relatedArtifact[=].resource = "http://example.org/fhir/us/ecr/ValueSet/valueset-suspected-disorder-triggers-example"
+* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-suspected-disorder-triggers-example"
 * relatedArtifact[+].type = #depends-on
 * relatedArtifact[=].display = "Value set Chlamydia Laboratory Result Trigger Codes"
-* relatedArtifact[=].resource = "http://example.org/fhir/us/ecr/ValueSet/valueset-chlamydia-supplemental-example"
+* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-supplemental-example"
 * relatedArtifact[+].type = #depends-on
 * relatedArtifact[=].display = "Value set Indeterminate or Equivocal Lab Result Value"
-// * relatedArtifact[=].resource = "http://example.org/fhir/us/ecr/ValueSet/2.16.840.1.113762.1.4.1146.1035-example"
-// * relatedArtifact[=].resource = "ValueSet/2.16.840.1.113762.1.4.1146.1035-example"
+// * relatedArtifact[=].resource = "hl7.org/2.16.840.1.113762.1.4.1146.1035-example"
+// * relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/2.16.840.1.113762.1.4.1146.1035-example"
 * relatedArtifact[=].resource = $2.16.840.1.113762.1.4.1146.1035-example
 * relatedArtifact[+].type = #depends-on
 * relatedArtifact[=].display = "Value set Negative or Undetected Lab Result Value"
 * relatedArtifact[=].resource = $2.16.840.1.113762.1.4.1146.1034-example
+// * relatedArtifact[=].resource = http://hl7.org/fhir/us/ecr/ValueSet/2.16.840.1.113762.1.4.1146.1034-example
 * parameter[0].name = #"Triggering Encounter"
 * parameter[=].use = #in
 * parameter[=].min = 0
@@ -278,7 +279,7 @@ Usage: #example
 * dataRequirement[=].mustSupport[+] = "value"
 * dataRequirement[=].mustSupport[+] = "status"
 * dataRequirement[=].codeFilter.path = "code"
-* dataRequirement[=].codeFilter.valueSet = "http://example.org/fhir/us/ecr/ValueSet/valueset-chlamydia-supplemental-example"
+* dataRequirement[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-supplemental-example"
 * dataRequirement[+].type = #Observation
 * dataRequirement[=].profile = "http://hl7.org/fhir/StructureDefinition/Observation"
 * dataRequirement[=].mustSupport[0] = "value"
@@ -323,12 +324,12 @@ Usage: #example
 * dataRequirement[=].profile = "http://hl7.org/fhir/StructureDefinition/Condition"
 * dataRequirement[=].mustSupport = "code"
 * dataRequirement[=].codeFilter.path = "code"
-* dataRequirement[=].codeFilter.valueSet = "http://example.org/fhir/us/ecr/ValueSet/valueset-suspected-disorder-triggers-example"
+* dataRequirement[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-suspected-disorder-triggers-example"
 * dataRequirement[+].type = #MedicationRequest
 * dataRequirement[=].profile = "http://hl7.org/fhir/StructureDefinition/MedicationRequest"
 * dataRequirement[=].mustSupport = "medication"
 * dataRequirement[=].codeFilter.path = "medication"
-* dataRequirement[=].codeFilter.valueSet = "http://example.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example"
+* dataRequirement[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example"
 * dataRequirement[+].type = #Composition
 * dataRequirement[=].profile = "http://hl7.org/fhir/StructureDefinition/Composition"
 * dataRequirement[=].mustSupport = "type"
@@ -357,7 +358,7 @@ Usage: #example
 * dataRequirement[=].mustSupport[+] = "value"
 * dataRequirement[=].mustSupport[+] = "status"
 * dataRequirement[=].codeFilter.path = "code"
-* dataRequirement[=].codeFilter.valueSet = "http://example.org/fhir/us/ecr/ValueSet/valueset-chlamydia-supplemental-example"
+* dataRequirement[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-supplemental-example"
 * dataRequirement[+].type = #Encounter
 * dataRequirement[=].profile = "http://hl7.org/fhir/StructureDefinition/Encounter"
 * dataRequirement[=].mustSupport[0] = "period"
@@ -389,7 +390,7 @@ Usage: #example
 * dataRequirement[=].mustSupport[+] = "value"
 * dataRequirement[=].mustSupport[+] = "status"
 * dataRequirement[=].codeFilter.path = "code"
-* dataRequirement[=].codeFilter.valueSet = "http://example.org/fhir/us/ecr/ValueSet/valueset-chlamydia-supplemental-example"
+* dataRequirement[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-chlamydia-supplemental-example"
 * content[0].contentType = #text/cql
 * content[=].data = "bGlicmFyeSBSdWxlRmlsdGVycyB2ZXJzaW9uICcyLjEuMCcKCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnCgppbmNsdWRlIEZISVJIZWxwZXJzIHZlcnNpb24gJzQuMC4xJwoKY29kZXN5c3RlbSAiTE9JTkMiOiAnaHR0cDovL2xvaW5jLm9yZycKY29kZXN5c3RlbSAiVXNhZ2VDb250ZXh0IjogJ2h0dHA6Ly9obDcub3JnL2ZoaXIvdXMvZWNyL0NvZGVTeXN0ZW0vdXMtcGgtdXNhZ2UtY29udGV4dC10eXBlJwpjb2Rlc3lzdGVtICJKdXJpc2RpY3Rpb25zTGlzdCI6ICdodHRwOi8vaGw3Lm9yZy9maGlyL3VzL2Vjci9Db2RlU3lzdGVtL2Vyc2QtanVyaXNkaWN0aW9ucy1leGFtcGxlJwoKLy8gT3ZlcmFsbCB0cmlnZ2VyaW5nIHZhbHVlIHNldHMsIGdyb3VwaW5ncyBvZiBhbGwgY29uZGl0aW9uLXNwZWNpZmljIHZhbHVlIHNldHMsIGdyb3VwZWQgYnkgcmVwcmVzZW50YXRpb24gaW4gdGhlIGluZm9ybWF0aW9uIG1vZGVsCnZhbHVlc2V0ICJEaWFnbm9zaXMgVHJpZ2dlciBDb2RlcyI6ICdodHRwOi8vaGw3Lm9yZy9maGlyL3VzL2Vjci9WYWx1ZVNldC92YWx1ZXNldC1keHRjLWV4YW1wbGUnCnZhbHVlc2V0ICJNZWRpY2F0aW9uIFRyaWdnZXIgQ29kZXMiOiAnaHR0cDovL2hsNy5vcmcvZmhpci91cy9lY3IvVmFsdWVTZXQvdmFsdWVzZXQtbXJ0Yy1leGFtcGxlJwp2YWx1ZXNldCAiTGFib3JhdG9yeSBPcmRlciBUcmlnZ2VyIENvZGVzIjogJ2h0dHA6Ly9obDcub3JnL2ZoaXIvdXMvZWNyL1ZhbHVlU2V0L3ZhbHVlc2V0LWxvdGMtZXhhbXBsZScKdmFsdWVzZXQgIkxhYm9yYXRvcnkgUmVzdWx0IFRyaWdnZXIgQ29kZXMiOiAnaHR0cDovL2hsNy5vcmcvZmhpci91cy9lY3IvVmFsdWVTZXQvdmFsdWVzZXQtbHJ0Yy1leGFtcGxlJwp2YWx1ZXNldCAiT3JnYW5pc20gU3Vic3RhbmNlIFRyaWdnZXIgQ29kZXMiOiAnaHR0cDovL2hsNy5vcmcvZmhpci91cy9lY3IvVmFsdWVTZXQvdmFsdWVzZXQtb3N0Yy1leGFtcGxlJwp2YWx1ZXNldCAiUHJvY2VkdXJlIFRyaWdnZXIgQ29kZXMiOiAnaHR0cDovL2hsNy5vcmcvZmhpci91cy9lY3IvVmFsdWVTZXQvdmFsdWVzZXQtcGN0Yy1leGFtcGxlJwp2YWx1ZXNldCAiU3VzcGVjdGVkIERpc29yZGVyIFRyaWdnZXIgQ29kZXMiOiAnaHR0cDovL2hsNy5vcmcvZmhpci91cy9lY3IvVmFsdWVTZXQvdmFsdWVzZXQtc2R0Yy1leGFtcGxlJwoKLy8gQ29uZGl0aW9uLXNwZWNpZmljIHRyaWdnZXJpbmcgY29kZXMsIHRoZXNlIHdvdWxkIGJlIGxpc3RlZCBmb3IgZWFjaCBjb25kaXRpb24KdmFsdWVzZXQgIkNobGFteWRpYSBMYWJvcmF0b3J5IFJlc3VsdCBUcmlnZ2VyIENvZGVzIjogJ2h0dHA6Ly9obDcub3JnL2ZoaXIvdXMvZWNyL1ZhbHVlU2V0L3ZhbHVlc2V0LWNobGFteWRpYS1leGFtcGxlJwoKLy8gU3VwcGxlbWVudGFsIChvciBvcGVyYXRpb25hbCkgdmFsdWUgc2V0cyB1c2VkIGluIHN1c3BlY3RlZCByZXBvcnRhYmlsaXR5IGRldGVybWluYXRpb24gbG9naWMKdmFsdWVzZXQgIkluZGV0ZXJtaW5hdGUgb3IgRXF1aXZvY2FsIExhYiBSZXN1bHQgVmFsdWUiOiAnaHR0cDovL2N0cy5ubG0ubmloLmdvdi9maGlyL1ZhbHVlU2V0LzIuMTYuODQwLjEuMTEzNzYyLjEuNC4xMTQ2LjEwMzUnCnZhbHVlc2V0ICJOZWdhdGl2ZSBvciBVbmRldGVjdGVkIExhYiBSZXN1bHQgVmFsdWUiOiAnaHR0cDovL2N0cy5ubG0ubmloLmdvdi9maGlyL1ZhbHVlU2V0LzIuMTYuODQwLjEuMTEzNzYyLjEuNC4xMTQ2LjEwMzQnCgpjb2RlICJlSUNSQ29tcG9zaXRpb24iOiAnNTU3NTEtMicgZnJvbSAiTE9JTkMiCgpwYXJhbWV0ZXIgIlRyaWdnZXJpbmcgRW5jb3VudGVyIiBFbmNvdW50ZXIKcGFyYW1ldGVyICJub3JtYWxSZXBvcnRpbmdEdXJhdGlvbiIgZGVmYXVsdCAxNCBkYXlzCgpjb250ZXh0IFBhdGllbnQKCmRlZmluZSAiQ2hsYW15ZGlhIFRlc3QgUmVzdWx0cyI6CiAgW09ic2VydmF0aW9uOiAiQ2hsYW15ZGlhIExhYm9yYXRvcnkgUmVzdWx0IFRyaWdnZXIgQ29kZXMiXSBPCiAgICB3aGVyZSBPLnN0YXR1cyBpbiB7ICdyZWdpc3RlcmVkJywgJ3ByZWxpbWluYXJ5JywgJ2ZpbmFsJywgJ2FtZW5kZWQnLCAnY29ycmVjdGVkJyB9CgpkZWZpbmUgIlRyaWdnZXJpbmcgRW5jb3VudGVycyI6CiAgW0VuY291bnRlcl0gRQoKZGVmaW5lICJFbmNvdW50ZXIgTG9jYXRpb24gUmVmZXJlbmNlcyI6CiAgZmxhdHRlbigiVHJpZ2dlcmluZyBFbmNvdW50ZXJzIiBUcmlnZ2VyaW5nRW5jb3VudGVyCiAgICByZXR1cm4gVHJpZ2dlcmluZ0VuY291bnRlci5sb2NhdGlvbi5sb2NhdGlvbikKCmRlZmluZSAiTG9jYXRpb25zIE1hdGNoaW5nIEVuY291bnRlciBMb2NhdGlvbiBSZWZlcmVuY2VzIjoKICBbTG9jYXRpb25dIExvY2F0aW9uCiAgICB3aGVyZSBleGlzdHMgKAogICAgICAgICJFbmNvdW50ZXIgTG9jYXRpb24gUmVmZXJlbmNlcyIgTG9jYXRpb25SZWZlcmVuY2UKICAgICAgICAgIHdoZXJlICgnTG9jYXRpb24vJyArIExvY2F0aW9uLmlkKSB+IExvY2F0aW9uUmVmZXJlbmNlLnJlZmVyZW5jZQogICAgICApCgpkZWZpbmUgIkVuY291bnRlciBMb2NhdGlvbiBBZGRyZXNzIjoKICAiTG9jYXRpb25zIE1hdGNoaW5nIEVuY291bnRlciBMb2NhdGlvbiBSZWZlcmVuY2VzIiBBZGRyZXNzCiAgICByZXR1cm4gVHVwbGUgeyBzdGF0ZTogQWRkcmVzcy5hZGRyZXNzLnN0YXRlLCAgcG9zdGFsQ29kZTogQWRkcmVzcy5hZGRyZXNzLnBvc3RhbENvZGUgfQoKZGVmaW5lICJQYXRpZW50IEFkZHJlc3MiOgogIFBhdGllbnQuYWRkcmVzcyBQQQogIHJldHVybiBUdXBsZSB7IHN0YXRlOiBQQS5zdGF0ZSwgcG9zdGFsQ29kZTogUEEucG9zdGFsQ29kZSB9CgpkZWZpbmUgIkp1cmlzZGljdGlvbnMiOgogIGZsYXR0ZW4oW0NvZGVTeXN0ZW1dIEMKICAgIHJldHVybiBDLmNvbmNlcHQgQ3B0CiAgICAgIHJldHVybiBUdXBsZSB7IGp1cmlzZGljdGlvbkNvZGU6IENwdC5jb2RlLAogICAgICAgIGRlZmluaXRpb246IENwdC5kZWZpbml0aW9uLAogICAgICAgIGp1cmlzZGljdGlvblR5cGU6IENwdC5wcm9wZXJ0eSBQIHdoZXJlIFAuY29kZT0ndHlwZScgcmV0dXJuIFAudmFsdWUgYXMgRkhJUi5zdHJpbmcsCiAgICAgICAgc3RhdGVDb2RlOiBDcHQucHJvcGVydHkgUCB3aGVyZSBQLmNvZGUgPSAnc3RhdGUnIHJldHVybiBQLnZhbHVlIGFzIEZISVIuY29kZSwKICAgICAgICBwb3N0YWxDb2RlOiBDcHQucHJvcGVydHkgUCB3aGVyZSBQLmNvZGUgPSAncG9zdGFsY29kZScgcmV0dXJuIFAudmFsdWUgYXMgRkhJUi5jb2RlCiAgICAgICAgfSkKCmRlZmluZSAiRW5jb3VudGVyIEFkZHJlc3MgUG9zdGFsIENvZGUgaXMgaW4gSnVyaXNkaWN0aW9uIENvZGVzIjoKICAiSnVyaXNkaWN0aW9ucyIgSgogICAgd2l0aCAiRW5jb3VudGVyIExvY2F0aW9uIEFkZHJlc3MiIExvY2F0aW9uQWRkcmVzcwogICAgICBzdWNoIHRoYXQgTG9jYXRpb25BZGRyZXNzLnBvc3RhbENvZGUgaW4gSi5wb3N0YWxDb2RlCgpkZWZpbmUgIkVuY291bnRlciBBZGRyZXNzIFN0YXRlIGlzIGluIEp1cmlzZGljdGlvbiBDb2RlcyI6CiAgICAiSnVyaXNkaWN0aW9ucyIgSgogICAgICB3aXRoICJFbmNvdW50ZXIgTG9jYXRpb24gQWRkcmVzcyIgTG9jYXRpb25BZGRyZXNzCiAgICAgICAgc3VjaCB0aGF0IExvY2F0aW9uQWRkcmVzcy5zdGF0ZSBpbiBKLnN0YXRlQ29kZQogICAgICAgICAgYW5kICdTVEFURScgaW4gSi5qdXJpc2RpY3Rpb25UeXBlCgpkZWZpbmUgIlBhdGllbnQgQWRkcmVzcyBQb3N0YWwgQ29kZSBpcyBpbiBKdXJpc2RpY3Rpb24gQ29kZXMiOgogICJKdXJpc2RpY3Rpb25zIiBKCiAgICB3aXRoICJQYXRpZW50IEFkZHJlc3MiIFBBCiAgICAgIHN1Y2ggdGhhdCBQQS5wb3N0YWxDb2RlIGluIEoucG9zdGFsQ29kZQoKZGVmaW5lICJQYXRpZW50IEFkZHJlc3MgU3RhdGUgaXMgaW4gSnVyaXNkaWN0aW9uIENvZGVzIjoKIkp1cmlzZGljdGlvbnMiIEoKICB3aXRoICJQYXRpZW50IEFkZHJlc3MiIFBBCiAgICBzdWNoIHRoYXQgKFBBLnN0YXRlLnZhbHVlIGluIEouc3RhdGVDb2RlCiAgICAgIGFuZCAnU1RBVEUnIGluIEouanVyaXNkaWN0aW9uVHlwZSkKCmRlZmluZSAiQWRkcmVzcyBFeGlzdHMgaW4gSnVyaXNkaWN0aW9uIENvZGVzIjoKICBleGlzdHMgKAogICAgIkVuY291bnRlciBBZGRyZXNzIFN0YXRlIGlzIGluIEp1cmlzZGljdGlvbiBDb2RlcyIKICAgICAgdW5pb24gIkVuY291bnRlciBBZGRyZXNzIFBvc3RhbCBDb2RlIGlzIGluIEp1cmlzZGljdGlvbiBDb2RlcyIKICAgICAgICB1bmlvbiAiUGF0aWVudCBBZGRyZXNzIFN0YXRlIGlzIGluIEp1cmlzZGljdGlvbiBDb2RlcyIKICAgICAgICAgIHVuaW9uICJQYXRpZW50IEFkZHJlc3MgUG9zdGFsIENvZGUgaXMgaW4gSnVyaXNkaWN0aW9uIENvZGVzIgogICAgKQoKZGVmaW5lIGZ1bmN0aW9uIEVuY291bnRlckFkZHJlc3NKdXJpc2RpY3Rpb25zKCk6CiAgaWYgZXhpc3RzICgiRW5jb3VudGVyIEFkZHJlc3MgUG9zdGFsIENvZGUgaXMgaW4gSnVyaXNkaWN0aW9uIENvZGVzIikKICAgIHRoZW4gIkVuY291bnRlciBBZGRyZXNzIFBvc3RhbCBDb2RlIGlzIGluIEp1cmlzZGljdGlvbiBDb2RlcyIKICAgICAgZWxzZSAiRW5jb3VudGVyIEFkZHJlc3MgU3RhdGUgaXMgaW4gSnVyaXNkaWN0aW9uIENvZGVzIgoKZGVmaW5lIGZ1bmN0aW9uIFBhdGllbnRBZGRyZXNzSnVyaXNkaWN0aW9ucygpOgogIGlmIGV4aXN0cyAoIlBhdGllbnQgQWRkcmVzcyBQb3N0YWwgQ29kZSBpcyBpbiBKdXJpc2RpY3Rpb24gQ29kZXMiKQogICAgdGhlbiAiUGF0aWVudCBBZGRyZXNzIFBvc3RhbCBDb2RlIGlzIGluIEp1cmlzZGljdGlvbiBDb2RlcyIKICAgICAgZWxzZSAiUGF0aWVudCBBZGRyZXNzIFN0YXRlIGlzIGluIEp1cmlzZGljdGlvbiBDb2RlcyIKCmRlZmluZSAiSnVyaXNkaWN0aW9uIENvZGVzIFJlbGV2YW50IHRvIEVuY291bnRlciBBZGRyZXNzZXMiOgogIEVuY291bnRlckFkZHJlc3NKdXJpc2RpY3Rpb25zKCkKCmRlZmluZSAiSnVyaXNkaWN0aW9uIENvZGVzIFJlbGV2YW50IHRvIFBhdGllbnQgQWRkcmVzc2VzIjoKICBQYXRpZW50QWRkcmVzc0p1cmlzZGljdGlvbnMoKQoKZGVmaW5lICJJbmRldGVybWluYXRlIENobGFteWRpYSBUZXN0IFJlc3VsdHMiOgogICJDaGxhbXlkaWEgVGVzdCBSZXN1bHRzIiBPCiAgICBsZXQgb3JnYW5pemF0aW9uOiBbT3JnYW5pemF0aW9uXQogICAgd2hlcmUgKAogICAgICAoCiAgICAgICAgZXhpc3RzICgKICAgICAgICAgICAgTy5pbnRlcnByZXRhdGlvbiBpbnRlcnByZXRhdGlvbkNvbmNlcHQKICAgICAgICAgICAgICB3aGVyZSBpbnRlcnByZXRhdGlvbkNvbmNlcHQgYXMgQ29kZWFibGVDb25jZXB0IGluICJJbmRldGVybWluYXRlIG9yIEVxdWl2b2NhbCBMYWIgUmVzdWx0IFZhbHVlIgogICAgICAgICkKICAgICAgICAgIG9yIE8udmFsdWUgYXMgQ29kZWFibGVDb25jZXB0IGluICJJbmRldGVybWluYXRlIG9yIEVxdWl2b2NhbCBMYWIgUmVzdWx0IFZhbHVlIgogICAgICApCiAgICAgICAgYW5kICJBZGRyZXNzIEV4aXN0cyBpbiBKdXJpc2RpY3Rpb24gQ29kZXMiCiAgICApCgpkZWZpbmUgIk5lZ2F0aXZlIENobGFteWRpYSBUZXN0IFJlc3VsdHMiOgogICJDaGxhbXlkaWEgVGVzdCBSZXN1bHRzIiBPCiAgICBsZXQgb3JnYW5pemF0aW9uOiBbT3JnYW5pemF0aW9uXQogICAgd2hlcmUgKAogICAgICAoCiAgICAgICAgZXhpc3RzICgKICAgICAgICAgICAgTy5pbnRlcnByZXRhdGlvbiBpbnRlcnByZXRhdGlvbkNvbmNlcHQKICAgICAgICAgICAgICB3aGVyZSBpbnRlcnByZXRhdGlvbkNvbmNlcHQgYXMgQ29kZWFibGVDb25jZXB0IGluICJOZWdhdGl2ZSBvciBVbmRldGVjdGVkIExhYiBSZXN1bHQgVmFsdWUiCiAgICAgICAgKQogICAgICAgICAgb3IgTy52YWx1ZSBhcyBDb2RlYWJsZUNvbmNlcHQgaW4gIk5lZ2F0aXZlIG9yIFVuZGV0ZWN0ZWQgTGFiIFJlc3VsdCBWYWx1ZSIKICAgICAgKQogICAgICAgIGFuZCAiQWRkcmVzcyBFeGlzdHMgaW4gSnVyaXNkaWN0aW9uIENvZGVzIgogICAgKQoKZGVmaW5lICJSZXBvcnRhYmxlIFRyaWdnZXJpbmcgQ29kZXMiOgogIGZsYXR0ZW4gKCJJbmRldGVybWluYXRlIENobGFteWRpYSBUZXN0IFJlc3VsdHMiIE8gcmV0dXJuIE8uY29kZS5jb2RpbmcpCiAgICB1bmlvbiBmbGF0dGVuICgiTmVnYXRpdmUgQ2hsYW15ZGlhIFRlc3QgUmVzdWx0cyIgTyByZXR1cm4gTy5jb2RlLmNvZGluZykKICAgIC8vIC4uLiByZXBvcnRhYmxlIHRyaWdnZXJpbmcgY29kZXMgZm9yIG90aGVyIGNvbmRpdGlvbnMKCmRlZmluZSAiSXMgRW5jb3VudGVyIFdpdGhpbiBOb3JtYWwgUmVwb3J0aW5nIER1cmF0aW9uPyI6CiAgIkN1cnJlbnQgRW5jb3VudGVyIER1cmF0aW9uIigiRW5jb3VudGVyIEluIENvbnRleHQiKSA8PSAibm9ybWFsUmVwb3J0aW5nRHVyYXRpb24iCgpkZWZpbmUgIklzIEVuY291bnRlciBSZXBvcnRhYmxlIGFuZCBXaXRoaW4gTm9ybWFsIFJlcG9ydGluZyBEdXJhdGlvbj8iOgogIGV4aXN0cyAoCiAgICAiUmVwb3J0YWJsZSBUcmlnZ2VyaW5nIENvZGVzIgogICAgICBleGNlcHQgIkV4aXN0aW5nIFJlcG9ydGFibGUgVHJpZ2dlcmluZyBDb2RlcyIKICApCiAgICBhbmQgIklzIEVuY291bnRlciBXaXRoaW4gTm9ybWFsIFJlcG9ydGluZyBEdXJhdGlvbj8iCgpkZWZpbmUgIkV4aXN0aW5nIFJlcG9ydGFibGUgVHJpZ2dlcmluZyBDb2RlcyI6CiAgZmxhdHRlbiAoCiAgICAiZUlDUiBDb21wb3NpdGlvbnMiIEMKICAgICAgcmV0dXJuCiAgICAgICAgQy5zZWN0aW9uLmVudHJ5LmV4dGVuc2lvbiBFCiAgICAgICAgICB3aGVyZSBFLnVybCA9ICdodHRwOi8vaGw3Lm9yZy9maGlyL3VzL2Vjci9TdHJ1Y3R1cmVEZWZpbml0aW9uL2VpY3ItdHJpZ2dlci1jb2RlLWZsYWctZXh0ZW5zaW9uJwogICAgICAgICAgICByZXR1cm4gKHNpbmdsZXRvbiBmcm9tIChFLmV4dGVuc2lvbiBTRSB3aGVyZSBTRS51cmwgPSAndHJpZ2dlckNvZGUnKSkudmFsdWUgYXMgQ29kaW5nCiAgKQoKZGVmaW5lIGZ1bmN0aW9uICJDdXJyZW50IEVuY291bnRlciBEdXJhdGlvbiIoZW5jb3VudGVyIEVuY291bnRlcik6CiAgUXVhbnRpdHkgewogICAgdmFsdWU6IGRlY2ltYWwgewogICAgICB2YWx1ZTogZHVyYXRpb24gaW4gZGF5cyBiZXR3ZWVuIGVuY291bnRlci5wZXJpb2Quc3RhcnQgYW5kIENvYWxlc2NlKGVuY291bnRlci5wZXJpb2QuZW5kLnZhbHVlLCBOb3coKSkKICAgIH0sCiAgICB1bml0OiBzdHJpbmcgeyB2YWx1ZTogJ2RheXMnIH0KICB9CgpkZWZpbmUgIkVuY291bnRlciBJbiBDb250ZXh0IjoKICBpZiAiVHJpZ2dlcmluZyBFbmNvdW50ZXIiIGlzIG5vdCBudWxsCiAgICB0aGVuICJUcmlnZ2VyaW5nIEVuY291bnRlciIKICAgICAgZWxzZSBzaW5nbGV0b24gZnJvbSAiVHJpZ2dlcmluZyBFbmNvdW50ZXJzIgoKZGVmaW5lICJJcyBFbmNvdW50ZXIgTG9uZ2VyIFRoYW4gTm9ybWFsIFJlcG9ydGluZyBEdXJhdGlvbj8iOgogICJDdXJyZW50IEVuY291bnRlciBEdXJhdGlvbiIoIkVuY291bnRlciBJbiBDb250ZXh0IikgPiAibm9ybWFsUmVwb3J0aW5nRHVyYXRpb24iCgpkZWZpbmUgIklzIEVuY291bnRlciBJbiBQcm9ncmVzcyI6CiAgIkVuY291bnRlciBJbiBDb250ZXh0Ii5zdGF0dXMgfiAnaW4tcHJvZ3Jlc3MnCgpkZWZpbmUgIklzIEVuY291bnRlciBDb21wbGV0ZSI6CiAgIkVuY291bnRlciBJbiBDb250ZXh0Ii5zdGF0dXMgfiAnZmluaXNoZWQnCgpkZWZpbmUgIklzIEVuY291bnRlciBJbiBQcm9ncmVzcyBhbmQgV2l0aGluIE5vcm1hbCBSZXBvcnRpbmcgRHVyYXRpb24gb3IgNzJoIG9yIGxlc3MgYWZ0ZXIgZW5kIG9mIGVuY291bnRlcj8iOgogICgKICAgICJJcyBFbmNvdW50ZXIgSW4gUHJvZ3Jlc3MiCiAgICAgIGFuZCAiSXMgRW5jb3VudGVyIFdpdGhpbiBOb3JtYWwgUmVwb3J0aW5nIER1cmF0aW9uPyIKICApCiAgICBvciAobm90IElzTnVsbCgiVHJpZ2dlcmluZyBFbmNvdW50ZXIiKSBhbmQgIlRyaWdnZXJpbmcgRW5jb3VudGVyIi5wZXJpb2QuZW5kIDcyIGhvdXJzIG9yIGxlc3MgYmVmb3JlIE5vdygpKQogICAgb3IgKGV4aXN0cyAoIlRyaWdnZXJpbmcgRW5jb3VudGVycyIpIGFuZCBzaW5nbGV0b24gZnJvbSAiVHJpZ2dlcmluZyBFbmNvdW50ZXJzIi5wZXJpb2QuZW5kIDcyIGhvdXJzIG9yIGxlc3MgYmVmb3JlIE5vdygpKQoKZGVmaW5lICJlSUNSIENvbXBvc2l0aW9ucyI6CiAgW0NvbXBvc2l0aW9uIDogImVJQ1JDb21wb3NpdGlvbiJdCgpkZWZpbmUgIk1vc3QgcmVjZW50IGVJQ1Igc2VudCBvdmVyIDcyIGhvdXJzIGFnbz8iOgogIGlmICJNb3N0IHJlY2VudCBlSUNSIiBpcyBub3QgbnVsbAogICAgdGhlbiAiTW9zdCByZWNlbnQgZUlDUiIuZGF0ZSA3MiBob3VycyBvciBtb3JlIGJlZm9yZSBOb3coKQogICAgZWxzZSBmYWxzZQoKZGVmaW5lICJNb3N0IHJlY2VudCBlSUNSIjoKICBGaXJzdCAoCiAgICAiZUlDUiBDb21wb3NpdGlvbnMiIGVJQ1JzCiAgICAgIHNvcnQgYnkgZGF0ZSBkZXNjCiAgKQoKZGVmaW5lICJTdXNwZWN0ZWQgRGlzb3JkZXIgVGVzdCBSZXN1bHRzIjoKICBbT2JzZXJ2YXRpb25dIE8KICAgIHdoZXJlIE8uc3RhdHVzIGluIHsgJ3JlZ2lzdGVyZWQnLCAncHJlbGltaW5hcnknLCAnZmluYWwnLCAnYW1lbmRlZCcsICdjb3JyZWN0ZWQnIH0KICAgICAgYW5kIE8udmFsdWUgYXMgQ29kZWFibGVDb25jZXB0IGluICJMYWJvcmF0b3J5IE9yZGVyIFRyaWdnZXIgQ29kZXMiCgpkZWZpbmUgIlN1c3BlY3RlZCBEaXNvcmRlcnMiOgogIFtDb25kaXRpb246ICJTdXNwZWN0ZWQgRGlzb3JkZXIgVHJpZ2dlciBDb2RlcyJdCiAgICB1bmlvbiBbTWVkaWNhdGlvblJlcXVlc3Q6ICJNZWRpY2F0aW9uIFRyaWdnZXIgQ29kZXMiXQogICAgdW5pb24gIlN1c3BlY3RlZCBEaXNvcmRlciBUZXN0IFJlc3VsdHMiCgpkZWZpbmUgIklzIFN1c3BlY3RlZCBEaXNvcmRlcj8iOgogIGV4aXN0cyAoCiAgICAiU3VzcGVjdGVkIERpc29yZGVycyIKICApCg=="
 * content[+].contentType = #application/elm+json

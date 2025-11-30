@@ -74,10 +74,9 @@ Can't find 'http://example.org/epi/disease/zika/Supplemental_data_form.pdf' in t
 Can't find 'http://example.org/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf' in the bundle (Bundle.entry[20].resource.content[0].attachment.url)
 Can't find 'http://example.org/epi/disease/zika/outbreakinfo.pdf' in the bundle (Bundle.entry[21].resource.content[0].attachment.url)
 
-# 13: This is just a code system example and is not meant for actual use 
-This property has only a code ('type') and not a URI, so it has no clearly defined meaning in the terminology ecosystem
-This property has only a code ('state') and not a URI, so it has no clearly defined meaning in the terminology ecosystem
-This property has only a code ('postalcode') and not a URI, so it has no clearly defined meaning in the terminology ecosystem
+#13 Inherited from base profile
+epd-1: Parameter 1 is inherently a collection, and so the expression 'supersetOf' may fail, create an error, or return false if there is more than one item in the parameter value (supersetOf(extension('http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-named-eventtype-extension').value.coding.code))
+A definition could not be found for Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt'
 
 # 14: Pinned - all correct
 Pinned the version of http://hl7.org/fhir/StructureDefinition/cqf-fhirQueryPattern to 5.2.0 from choices of 5.1.0 (hl7.fhir.uv.extensions.r4#5.1.0), 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0)
@@ -112,6 +111,7 @@ Pinned the version of http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLoca
 Pinned the version of http://hl7.org/fhir/us/ecr/Library/library-rctc-example to 3.0.0-ballot from choices of 2019-06-17 (hl7.fhir.us.ecr#3.0.0-ballot), 3.0.0-ballot (hl7.fhir.us.ecr#3.0.0-ballot)
 Pinned the version of http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters-example to 3.0.0-ballot from choices of 2.1.0 (hl7.fhir.us.ecr#3.0.0-ballot), 3.0.0-ballot (hl7.fhir.us.ecr#3.0.0-ballot)
 
+
 # 15: Waiting on approval for variance request: https://jira.hl7.org/browse/FHIR-53543
 US FHIR Usage rules require that all profiles on Observation derive from one of the base US profiles. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
@@ -141,5 +141,10 @@ WARNING: Bundle/bundle-rr-document-one-cond-one-pha: Bundle.entry[18].resource/*
 WARNING: Bundle/bundle-rr-document-one-cond-one-pha: Bundle.entry[17].resource: Best Practice Recommendation: In general, all observations should have a subject
 WARNING: Bundle/bundle-rr-document-one-cond-one-pha: Bundle.entry[18].resource: Best Practice Recommendation: In general, all observations should have a subject
 
-#21 This is a DocumentReference example that is referencing a CDA document that uses an oid for the system of one of it's identifiers
+# 21 This is a DocumentReference example that is referencing a CDA document that uses an oid for the system of one of it's identifiers
 No definition could be found for URL value 'urn:oid:2.16.840.1.113883.19.5.99999.19'
+
+# 22: This is just a code system example and is not meant for actual use 
+This property has only a code ('type') and not a URI, so it has no clearly defined meaning in the terminology ecosystem
+This property has only a code ('state') and not a URI, so it has no clearly defined meaning in the terminology ecosystem
+This property has only a code ('postalcode') and not a URI, so it has no clearly defined meaning in the terminology ecosystem

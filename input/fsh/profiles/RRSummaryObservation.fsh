@@ -1,7 +1,7 @@
-Profile: RRSummary
+Profile: RRSummaryObservation
 Parent: Observation
-Id: rr-summary
-Title: "RR Summary"
+Id: rr-summary-observation
+Title: "RR Summary Observation"
 Description: "This profile contains a detailed textual description of the reportable condition(s), including actions the provider needs to take, any supplemental information that may be required, and where the initial case report was sent."
 * . ^short = "Reportability Response Summary"
 * . ^definition = "This profile contains a detailed textual description of the reportable condition(s), including actions the provider needs to take, any supplemental information that may be required, and where the initial case report was sent."

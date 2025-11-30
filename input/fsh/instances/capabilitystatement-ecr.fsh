@@ -73,7 +73,7 @@ Usage: #definition
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-pregnancy-status-observation"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-is-postpartum"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation"
-* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-summary"
+* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-summary-observation"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation"
 * rest[=].resource[=].interaction[0].code = #create
 * rest[=].resource[=].interaction[=].documentation = "Allows creation of Observation instances"
@@ -199,7 +199,7 @@ Usage: #definition
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-pregnancy-status-observation"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-is-postpartum"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-relevant-reportable-condition-observation"
-* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-summary"
+* rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-summary-observation"
 * rest[=].resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/ecr/StructureDefinition/rr-reportability-information-observation"
 * rest[=].resource[=].interaction[0].code = #create
 * rest[=].resource[=].interaction[=].documentation = "Allows creation of Observation instances"

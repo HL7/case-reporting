@@ -5,8 +5,7 @@ Description: "This example code system describes the possible types of jurisdict
 * ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-codesystem"
 * ^url = "http://example.org/fhir/us/ecr/CodeSystem/codesystem-ersd-jurisdiction-types-example"
 
-* ^version = "{{site.data.fhir.igVer}}"
-* ^experimental = true
+* insert rsCodeSystemRequired
 
 * ^caseSensitive = true
 * ^content = #complete

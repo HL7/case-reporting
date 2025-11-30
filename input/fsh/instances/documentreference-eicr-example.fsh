@@ -1,5 +1,5 @@
 Instance: documentreference-eicr-example
-InstanceOf: $us-core-documentreference
+InstanceOf: us-core-documentreference
 Usage: #example
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:uuid:db734647-fc99-424c-a864-7e3cda82e703"

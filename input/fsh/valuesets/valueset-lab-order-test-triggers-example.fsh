@@ -7,7 +7,7 @@ Description: "This example set of values contains laboratory test names for orde
 
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-author"
 * ^extension[=].valueContactDetail.name = "ValueSet Author"
-* ^url = "http://example.org/fhir/us/ecr/ValueSet/valueset-lab-order-test-triggers-example"
+* ^url = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lab-order-test-triggers-example"
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:2.16.840.1.113762.1.4.1146.1056.1"
 

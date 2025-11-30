@@ -1,7 +1,7 @@
-Profile: EICRCountryOfResidence
+Profile: EICRCountryOfResidenceObservation
 Parent: USCoreSimpleObservationProfile
-Id: eicr-country-of-residence
-Title: "eICR Country of Residence"
+Id: eicr-country-of-residence-observation
+Title: "eICR Country of Residence Observation"
 Description: "This Observation profile represents the patient's country of usual residence."
 * . ^short = "eICR Country of Residence"
 

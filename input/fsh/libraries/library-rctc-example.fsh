@@ -5,7 +5,7 @@ Usage: #example
 * url = "http://hl7.org/fhir/us/ecr/Library/library-rctc-example"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:oid:2.16.840.1.114222.4.11.7508"
-* version = "2019-06-17"
+* insert rsVersion
 * name = "Reportable_Condition_Trigger_Codes"
 * title = "Library - Reportable Condition Trigger Codes (RCTC)"
 * status = #active
@@ -22,14 +22,14 @@ Usage: #example
 * purpose = "Triggers for initiating decision support for electronic case reports"
 * effectivePeriod.start = "2019-11-01"
 * relatedArtifact[USPHValueSet].type = #composed-of
-* relatedArtifact[=].resource = "http://example.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example"
+* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example"
 * relatedArtifact[+].type = #composed-of
-* relatedArtifact[=].resource = "http://example.org/fhir/us/ecr/ValueSet/valueset-organism-substance-triggers-example"
+* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-organism-substance-triggers-example"
 * relatedArtifact[+].type = #composed-of
-* relatedArtifact[=].resource = "http://example.org/fhir/us/ecr/ValueSet/valueset-lab-order-test-triggers-example"
+* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lab-order-test-triggers-example"
 * relatedArtifact[+].type = #composed-of
-* relatedArtifact[=].resource = "http://example.org/fhir/us/ecr/ValueSet/valueset-lab-obs-test-name-triggers-example"
+* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lab-obs-test-name-triggers-example"
 * relatedArtifact[+].type = #composed-of
-* relatedArtifact[=].resource = "http://example.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example"
+* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example"
 * relatedArtifact[+].type = #composed-of
-* relatedArtifact[=].resource = "http://example.org/fhir/us/ecr/ValueSet/valueset-suspected-disorder-triggers-example"
+* relatedArtifact[=].resource = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-suspected-disorder-triggers-example"

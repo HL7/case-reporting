@@ -1,11 +1,11 @@
 Profile: EICRComposition
 Parent: USPublicHealthComposition
 Id: eicr-composition
-Title: "Electronic Initial Case Report Composition"
-Description: "This Composition profile represents an electronic initial case report (eICR). It is based on and further constrains the US Public Health Composition."
+Title: "eICR Composition"
+Description: "This Composition profile represents an Electronic Initial Case Report (eICR). It is based on and further constrains the US Public Health Composition."
 * . MS
 * . ^short = "eICR Composition Profile"
-* . ^definition = "This Composition profile represents an electronic initial case report (eICR). It is based on and further constrains the US Public Health Composition."
+* . ^definition = "This Composition profile represents an Electronic Initial Case Report (eICR). It is based on and further constrains the US Public Health Composition."
 
 // * extension 2.. MS
 // * extension ^slicing.discriminator.type = #value
@@ -221,7 +221,7 @@ Description: "This Composition profile represents an electronic initial case rep
 * section[sliceResultsSection].entry ^slicing.rules = #open
 * section[sliceResultsSection].entry contains
     sliceUSPHLabResultObservation 0..* MS and
-    sliceUSCoreObservationResults 0..* MS
+    sliceOrganismDetectedObservation 0..* MS
 * section[sliceResultsSection].entry[sliceUSPHLabResultObservation] only Reference(USPublicHealthLaboratoryResultObservation)
 * section[sliceResultsSection].entry[sliceUSPHLabResultObservation] ^sliceName = "sliceUSPHLabResultObservation"
 * section[sliceResultsSection].entry[sliceUSPHLabResultObservation] ^definition = "The eICR Trigger Code Flag (extension) is present for a laboratory result, based on a trigger code match of either the lab test (observation.code) to the eRSD PlanDefinition Lab Obs Test Name Trigger or the lab test result (observation.value) to the eRSD PlanDefinition Organism Substance Trigger."
@@ -235,8 +235,21 @@ Description: "This Composition profile represents an electronic initial case rep
 * section[sliceResultsSection].entry[sliceUSPHLabResultObservation].extension[sliceTriggerUSPHLabResultObservation] ^short = "eICR Trigger Code Flag"
 * section[sliceResultsSection].entry[sliceUSPHLabResultObservation].extension[sliceTriggerUSPHLabResultObservation] ^definition = "A flag to indicate that the **target** reference represents one or more (lab result observations can contain hasMember) triggering events and caused the eCR to be generated."
 
+* section[sliceResultsSection].entry[sliceOrganismDetectedObservation] only Reference(EICROrganismDetectedObservation)
+* section[sliceResultsSection].entry[sliceOrganismDetectedObservation] ^sliceName = "sliceOrganismDetectedObservation"
+* section[sliceResultsSection].entry[sliceOrganismDetectedObservation] ^definition = "The eICR Trigger Code Flag (extension) is present for a laboratory result, based on a trigger code match of either the lab test (observation.code) to the eRSD PlanDefinition Lab Obs Test Name Trigger or the lab test result (observation.value) to the eRSD PlanDefinition Organism Substance Trigger."
+* section[sliceResultsSection].entry[sliceOrganismDetectedObservation] ^mustSupport = true
+* section[sliceResultsSection].entry[sliceOrganismDetectedObservation].extension MS
+* section[sliceResultsSection].entry[sliceOrganismDetectedObservation].extension ^slicing.discriminator.type = #value
+* section[sliceResultsSection].entry[sliceOrganismDetectedObservation].extension ^slicing.discriminator.path = "url"
+* section[sliceResultsSection].entry[sliceOrganismDetectedObservation].extension ^slicing.rules = #open
+* section[sliceResultsSection].entry[sliceOrganismDetectedObservation].extension contains 
+    EICRTriggerCodeFlagExtension named sliceTriggerEICROrganismDetectedObservation 0..* MS
+* section[sliceResultsSection].entry[sliceOrganismDetectedObservation].extension[sliceTriggerEICROrganismDetectedObservation] ^short = "eICR Trigger Code Flag"
+* section[sliceResultsSection].entry[sliceOrganismDetectedObservation].extension[sliceTriggerEICROrganismDetectedObservation] ^definition = "A flag to indicate that the **target** reference represents one or more (lab result observations can contain hasMember) triggering events and caused the eCR to be generated."
+
 * section[slicePlanOfTreatmentSection] ^short = "Plan of Treatment Section"
-* section[slicePlanOfTreatmentSection] ^definition = "This section, contains data that define pending orders, interventions, encounters, services, and procedures for the patient. It is limited to prospective, unfulfilled, or incomplete orders and requests only. All active, incomplete, or pending orders, appointments, referrals, procedures, services, or any other pending event of clinical significance to the current care of the patient should be listed. "
+* section[slicePlanOfTreatmentSection] ^definition = "This section contains data that define pending orders, interventions, encounters, services, and procedures for the patient. It is limited to prospective, unfulfilled, or incomplete orders and requests only. All active, incomplete, or pending orders, appointments, referrals, procedures, services, or any other pending event of clinical significance to the current care of the patient should be listed. "
 * section[slicePlanOfTreatmentSection].code 1.. MS
 * section[slicePlanOfTreatmentSection].code = $loinc#18776-5
 * section[slicePlanOfTreatmentSection].code ^short = "Plan of Treatment code"
@@ -413,7 +426,7 @@ Description: "This Composition profile represents an electronic initial case rep
 * section[sliceSocialHistorySection].entry[sliceExposureContactInformation] ^short = "Exposure Information entry"
 * section[sliceSocialHistorySection].entry[sliceExposureContactInformation] ^definition = "Exposure Information entry"
 * section[sliceSocialHistorySection].entry[sliceExposureContactInformation] ^mustSupport = true
-* section[sliceSocialHistorySection].entry[sliceCountryOfResidence] only Reference(EICRCountryOfResidence)
+* section[sliceSocialHistorySection].entry[sliceCountryOfResidence] only Reference(EICRCountryOfResidenceObservation)
 * section[sliceSocialHistorySection].entry[sliceCountryOfResidence] ^sliceName = "sliceCountryOfResidence"
 * section[sliceSocialHistorySection].entry[sliceCountryOfResidence] ^short = "Country of residence entry"
 * section[sliceSocialHistorySection].entry[sliceCountryOfResidence] ^mustSupport = true
