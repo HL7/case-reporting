@@ -3,7 +3,7 @@ Id: codesystem-ersd-jurisdiction-types-example
 Title: "eRSD Jurisdiction Types Example"
 Description: "This example code system describes the possible types of jurisdictions that require public health reporting."
 * ^meta.profile = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-codesystem"
-* ^url = "http://example.org/fhir/us/ecr/CodeSystem/codesystem-ersd-jurisdiction-types-example"
+* ^url = "http://hl7.org/fhir/us/ecr/CodeSystem/codesystem-ersd-jurisdiction-types-example"
 
 * insert rsCodeSystemRequired
 

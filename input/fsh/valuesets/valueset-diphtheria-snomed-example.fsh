@@ -22,6 +22,8 @@ Description: "Diphtheria (Disorders) (SNOMED)"
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#priority
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#routine
 
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
+
 * $sct#1086051000119107 "Cardiomyopathy due to diphtheria (disorder)"
 * $sct#1086061000119109 "Diphtheria radiculomyelitis (disorder)"
 * $sct#1086071000119103 "Diphtheria tubulointerstitial nephropathy (disorder)"
