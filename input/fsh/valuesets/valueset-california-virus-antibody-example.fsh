@@ -22,6 +22,8 @@ Description: "California Serogroup Virus Diseases (Tests for California Serogrou
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#priority
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#routine
 
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
+
 * $loinc#10904-1 "La Crosse virus IgG Ab [Titer] in Serum by Immunofluorescence"
 * $loinc#17036-5 "La Crosse virus Ab [Titer] in Serum"
 * $loinc#17037-3 "La Crosse virus Ab [Titer] in Cerebral spinal fluid"

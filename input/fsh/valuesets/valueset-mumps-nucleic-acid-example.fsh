@@ -21,6 +21,8 @@ Description: "Mumps (Test Panels for mumps virus Nucleic Acid)"
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#priority
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#routine
 
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
+
 * $loinc#85808-4 "Mumps virus RNA and SH gene panel - Specimen by NAA with probe detection"
 * $loinc#93750-8 "Mumps virus RNA and N gene panel - Specimen"
 

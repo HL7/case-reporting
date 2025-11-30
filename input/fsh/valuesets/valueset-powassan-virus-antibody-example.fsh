@@ -19,6 +19,7 @@ Description: "Powassan Virus Disease (Tests for Powassan Virus Antibody [Quantit
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#triggering
 * ^useContext[+].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context-type#priority
 * ^useContext[=].valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-usage-context#routine
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
 
 * $loinc#29564-2 "Powassan virus IgG Ab [Titer] in Serum by Immunofluorescence"
 * $loinc#30177-0 "Powassan virus IgG Ab [Titer] in Specimen by Immunofluorescence"
