@@ -124,7 +124,7 @@ Pinned the version of http://hl7.org/fhir/us/core/ValueSet/us-core-discharge-dis
 US FHIR Usage rules require that all profiles on Observation derive from one of the base US profiles. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
 # 16: us-ph-patient is based on and further constrains us-core-patient so multiple matches are expected
-Found multiple matching profiles for Patient/patient-ecr-eve-everywoman among choices: http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0, http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-patient|2.0.0
+Found multiple matching profiles for Patient/patient-ecr-eve-everywoman among choices: http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0, http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-patient|2.0.0-snapshot
 
 # 17: Inherited from US Core Organization
 The slice 'CLIA' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
@@ -162,3 +162,9 @@ INFORMATION: Bundle/bundle-ersd-supplemental-example: Bundle.entry[3].resource/*
 INFORMATION: Bundle/bundle-ersd-supplemental-example: Bundle.entry[3].resource: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/codesystem-ersd-jurisdiction-types-example: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/codesystem-ersd-jurisdictions-example: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# 24 US PH Reporting Bundle defines a specific entry slice - examples show slices that are not defined in the profile - not matching is expected behavior
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-reporting-bundle|2.0.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice) 
+
+# 24 US PH Document Bundle defines a specific entry slice - examples show slices that are not defined in the profile - not matching is expected behavior
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-document-bundle|2.0.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
