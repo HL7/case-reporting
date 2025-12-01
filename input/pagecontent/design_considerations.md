@@ -1,4 +1,4 @@
-#### Overall Design
+### Overall Design
 
 The Electronic Case Reporting (eCR) standards; the electronic Initial Case Report (eICR) and the Reportability Response (RR), support two broad approaches to eCR.
 
@@ -17,7 +17,7 @@ Without more complex reporting rules that are distributable to, and executable i
 
 &nbsp;
 
-#### Using the eRSD
+### Using the eRSD
 
 FHIR enables several capabilities for eCR. Because reportable events occur in healthcare without PHA knowledge and because PHAs do not have the authority to receive these data until they are deemed reportable, eCR utilizes an unsolicited push transaction, FHIR messaging, and flexibility in multi-network transport to report data to state and local agencies. There is also a transaction for "electronic Reporting & Surveillance Distribution (eRSD)." The eRSD includes Reportable Condition Trigger Code (RCTC) trigger code value sets and other reporting guidance from public health to healthcare to support reporting from EHRs.
 
@@ -75,3 +75,16 @@ eICRs shared from EHR interface are not definitively reportable. There are compl
         </tr>
     </tbody>
 </table>
+
+### 5.8	Relevant Time Period for Retrieving Data
+
+| **Data**            | **Time Period**                         |
+| ------------------- | --------------------------------------- |
+| Occupation          | Data capturing during current encounter |
+| Immunization        | Full history                            |
+| Pregnancy           | Past year                               |
+| Vital Signs         | Current encounter                       |
+| Travel History      | Past year                               |
+| Problems/Conditions | Current encounter                       |
+| Medications         | Current encounter                       |
+| Procedures          | Current encounter                       |
