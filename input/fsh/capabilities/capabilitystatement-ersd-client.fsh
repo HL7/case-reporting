@@ -16,12 +16,12 @@ The eRSD Client **MAY**:
 - Support fetching and reading Subscription resources associated with a Person."""
 Usage: #definition
 * url = "http://hl7.org/fhir/us/ecr/CapabilityStatement/capabilitystatement-ersd-client"
-* version = "1.0.0"
+* insert rsVersion
 * name = "CapabilityStatement_eRSD_Client"
 * title = "Capability Statement eRSD Client"
 * status = #active
 * experimental = false
-* date = "2019-08-23"
+// * date = "2025-12-01"
 * publisher = "HL7 Public Health Work Group"
 * description = "This section describes the expected capabilities of a client consuming eRSD resources including the Reportable Conditions Trigger Codes (RCTC).\n\n#### Conformance requirements for an eRSD Client\n\nThe eRSD Client **SHALL**:\n\n- Support fetching the eRSD Bundle using the supported RESTful interactions.\n- Support processing PlanDefinition and ValueSet resources that are included in the Bundle.\n\nThe eRSD Client **MAY**:\n\n- Support fetching and reading a Person resource.\n- Support fetching and reading Subscription resources associated with a Person."
 * jurisdiction = urn:iso:std:iso:3166#US "United States of America"

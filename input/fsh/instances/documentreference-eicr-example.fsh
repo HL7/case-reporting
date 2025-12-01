@@ -1,5 +1,7 @@
 Instance: documentreference-eicr-example
 InstanceOf: us-core-documentreference
+Title: "eICR Example DocumentReference - Electronic Initial Case Report"
+Description: "Example of US Core DocumentReference profile: Electronic Initial Case Report (eICR)"
 Usage: #example
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:uuid:db734647-fc99-424c-a864-7e3cda82e703"

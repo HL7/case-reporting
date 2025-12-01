@@ -4,12 +4,12 @@ Title: "eCR CapabilityStatement"
 Description: "This resource defines the expected capabilities for both client and server participating in eCR exchange"
 Usage: #definition
 * url = "http://hl7.org/fhir/us/ecr/CapabilityStatement/capabilitystatement-ecr"
-* version = "1.0.0"
+* insert rsVersion
 * name = "CapabilityStatement_eCR"
 * title = "Capability Statement eCR"
 * status = #active
 * experimental = false
-* date = "2019-06-25"
+// * date = "2025-12-01"
 * publisher = "HL7 Public Health Work Group"
 * description = "This resource defines the expected capabilities for both client and server participating in eCR exchange."
 * jurisdiction = urn:iso:std:iso:3166#US "United States of America"

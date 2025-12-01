@@ -33,7 +33,7 @@ The contents of each of these specifications at a high level are:
         * Triggering Value Sets [us-ph-triggering-valueset]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-triggering-valueset.html)
 
 * Supplemental Library [ersd-supplemental-library](StructureDefinition-ersd-supplemental-library.html)
-    * Computable Library - Library containing the rules logic [us-ph-computable-library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-computable-library.html)
+    * Computable Library - Library containing the rules logic [CQLLibrary]({{site.data.fhir.ver.hl7fhiruvcql}}/StructureDefinition-cql-library.html)
     * Supplemental Value Set Library - List of additional value sets required for evaluation of rules logic [us-ph-supplemental-valueset-library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-valueset-library.html)
         * Supplemental Value Sets - Value sets referenced by rules logic [us-ph-supplemental-valueset]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-valueset.html)
     * Jurisidictions - List of jurisdications and their configurations [us-ph-codesystem]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-codesystem.html)
@@ -217,9 +217,9 @@ The eRSD Specification library is composed of the eRSD Plan Definition and the R
 
 Triggering value sets and metadata can be used for EHR implementations whether they are FHIR-based or not.
 
-The [ComputableValueSet]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-computable-valueset.html) profile describes the requirements for computable representation of value set membership criteria, ensuring that value sets using this profile selectively support only one technique for defining the content of expansions.
+The [CRMIComputableValueset]({{site.data.fhir.ver.hl7fhiruvcrmi}}/StructureDefinition-crmi-computablevalueset.html) profile describes the requirements for computable representation of value set membership criteria, ensuring that value sets using this profile selectively support only one technique for defining the content of expansions.
 
-The [ExecutableValueSet]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-executable-valueset.html) profile provides support for including a persisted point-in-time expansion that SHALL conform to the chosen compositional style for the value set. The included point-in-time expansion can then be used by FHIR implementations that do not have a FHIR terminology service capable of evaluating the value set in real-time with an $expand operation. It also provides all the concepts needed in the expansion so that a complete code system resource is not required.
+The [CRMIExpandedValueSet]({{site.data.fhir.ver.hl7fhiruvcrmi}}/StructureDefinition-crmi-expandedvalueset.html) profile provides support for including a persisted point-in-time expansion that SHALL conform to the chosen compositional style for the value set. The included point-in-time expansion can then be used by FHIR implementations that do not have a FHIR terminology service capable of evaluating the value set in real-time with an $expand operation. It also provides all the concepts needed in the expansion so that a complete code system resource is not required.
 
 The ValueSets in the RCTC Library are distributed conforming to both these profiles, enabling systems to make use of expansions, or recalculate expansions based on the computable value set definition if necessary.
 
@@ -227,7 +227,7 @@ The ValueSets in the RCTC Library are distributed conforming to both these profi
 
 The supplemental level of integration enables sites to participate in the suspected reportability determination by considering additional elements of the event data such as status, lab values, and jurisdiction configuration.
 
-The suspected reportability criteria are also represented with the `condition` element, but using the [US Public Health Alternative Expression]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-alternative-expression-extension.html) to provide the CQL expression for suspected reportability:
+The suspected reportability criteria are also represented with the `condition` element, but using the [CQF Alternative Expression Extension](http://hl7.org/fhir/extensions/StructureDefinition-cqf-alternativeExpression.html) to provide the CQL expression for suspected reportability:
 
 <pre><code>&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/cqf-alternativeExpression&quot;&gt;
   &lt;valueExpression&gt;
@@ -289,5 +289,5 @@ When packaging as a Bundle, the expectation is that the Bundle would include the
 
 #### Extensions
 <ul>
-  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-usagewarning-extension.html">US Public Health Usage Warning Extension</a></li>
+  <li><a href="http://hl7.org/fhir/extensions/StructureDefinition-valueset-warning.html">ValueSet Warning Extension</a></li>
 </ul>
