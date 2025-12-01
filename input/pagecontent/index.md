@@ -5,7 +5,12 @@
     1. Continue using only the ODH profiles
     1. Use both the US Core and the ODH profiles
     1. Change to using only the US Core profiles
-  * Aborted Medications: Should aborted medications be disallowed in the eICR?
+  * Aborted Medications: 
+    1. Should aborted medications be disallowed in the eCR?
+  * Pregnancy Intent:
+    1. Should the [C-CDA Pregnancy Intent Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-observation-pregnancyintent.html) be included in the eCR, and, if included, what specific public health utility or use cases would it support?
+  * Vital Signs:
+    1. What guidance should be given on the relevant time period/filter for vital signs included/sent in the eICR?
 
 </div>
 
