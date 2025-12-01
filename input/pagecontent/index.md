@@ -10,6 +10,7 @@
   * Pregnancy Intent:
     1. Should the [C-CDA Pregnancy Intent Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-observation-pregnancyintent.html) be included in the eCR, and, if included, what specific public health utility or use cases would it support?
   * Vital Signs:
+    1. What vital signs are most pertinent?
     1. What guidance should be given on the relevant time period/filter for vital signs included/sent in the eICR?
 
 </div>
