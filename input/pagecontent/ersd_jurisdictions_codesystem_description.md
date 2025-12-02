@@ -99,7 +99,7 @@ The concept definition represents the name of the jurisdiction, for example the 
 
 The concept property valueCode with `code: "type"` indicates the type of the jurisdiction.  Available types are drawn from the [eRSD Jurisdiction Types](CodeSystem-codesystem-ersd-jurisdiction-types-example.html) CodeSystem.
 
-The concept property valueCode with `code: "state"` contains the state code from the US Core ValueSet for state codes ([USPS Two Letter Alphabetic Codes](http://hl7.org/fhir/us/core/ValueSet-us-core-usps-state.html)).
+The concept property valueCode with `code: "state"` contains the state code from the US Core ValueSet for state codes ([USPS Two Letter Alphabetic Codes]({{site.data.fhir.ver.hl7fhiruscore}}/ValueSet-us-core-usps-state.html)).
 
 The concept property valueCode with `code: "postalcode"` represents postal codes that report to the specified jurisdiction. If no postal code has been specified, this property will not be included rather than containing a valueCode of `(null)`.
 

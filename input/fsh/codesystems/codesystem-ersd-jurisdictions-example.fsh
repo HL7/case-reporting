@@ -18,7 +18,7 @@ Description: "This example code system describes jurisdictions that require publ
 * ^property[=].type = #Coding
 
 * ^property[+].extension.url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
-* ^property[=].extension.valueCanonical = $valueset-us-core-usps-state
+* ^property[=].extension.valueCanonical = $ValuesetUSCoreUspsState
 * ^property[=].code = #state
 // * ^property[=].uri = "http://example.org/fhir/us/ecr/CodeSystem/codesystem-properties-example#state"
 * ^property[=].description = "USPS Two Letter Alphabetic Codes."
