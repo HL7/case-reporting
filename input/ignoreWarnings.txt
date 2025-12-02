@@ -31,7 +31,7 @@ This element does not match any known slice defined in the profile http://hl7.or
 # 04: The html in this text is escaped and is desired behavior
 The markdown contains content that appears to be an embedded HTML tag starting at '<h'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour
 
-# 05 US PH Document Bundle defines a specific entry slice - examples show slices that are not defined in the profile - not matching is expected behavior
+# 05: US PH Document Bundle defines a specific entry slice - examples show slices that are not defined in the profile - not matching is expected behavior
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-document-bundle|2.0.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # 06: This error is in inherited content from the Extensions Pack (http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-variable-definitions.html). It's a bad link to a ballot version of the SDC IG.
@@ -58,7 +58,7 @@ Can't find 'http://example.org/epi/disease/zika/Supplemental_data_form.pdf' in t
 Can't find 'http://example.org/epi/diseases/zika/Zika_Virus_Testing_Guidance.pdf' in the bundle (Bundle.entry[20].resource.content[0].attachment.url)
 Can't find 'http://example.org/ymca/software/' in the bundle (Bundle.entry[2].resource.url)
 
-# 13 Inherited from base profile
+# 13: Inherited from base profile
 epd-1: Parameter 1 is inherently a collection, and so the expression 'supersetOf' may fail, create an error, or return false if there is more than one item in the parameter value (supersetOf(extension('http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-named-eventtype-extension').value.coding.code))
 A definition could not be found for Canonical URL 'http://www.rfc-editor.org/bcp/bcp13.txt'
 
@@ -111,10 +111,10 @@ The discriminator type 'pattern' is deprecated in R5+. For future compatibility,
 # 18: This error is coming from the URL checking but is in inherited content. The link is valid, but is to published content in the currently published CRMI spec
 ERROR: PlanDefinition.extension: The reference http://hl7.org/fhir/ValueSet/version-algorithm could not be resolved
 
-# 19 These are all in nested Bundles, the IG Publisher is not generating narrative for nested Bundles
+# 19: These are all in nested Bundles, the IG Publisher is not generating narrative for nested Bundles
 Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 
-# 20 These Observations are technical and about the processing status of a received eICR and do not need a subject
+# 20: These Observations are technical and about the processing status of a received eICR and do not need a subject
 WARNING: Observation/observation-rr-eicr-processing-status: Observation: Best Practice Recommendation: In general, all observations should have a subject
 WARNING: Observation/observation-rr-eicr-processing-status-reason: Observation: Best Practice Recommendation: In general, all observations should have a subject
 WARNING: Bundle/bundle-rr-document-one-cond-one-pha: Bundle.entry[17].resource/*Observation/observation-rr-eicr-processing-status*/: Best Practice Recommendation: In general, all observations should have a subject
@@ -123,7 +123,7 @@ WARNING: Bundle/bundle-rr-document-one-cond-one-pha: Bundle.entry[18].resource/*
 WARNING: Bundle/bundle-rr-document-one-cond-one-pha: Bundle.entry[17].resource: Best Practice Recommendation: In general, all observations should have a subject
 WARNING: Bundle/bundle-rr-document-one-cond-one-pha: Bundle.entry[18].resource: Best Practice Recommendation: In general, all observations should have a subject
 
-# 21 This is a DocumentReference example that is referencing a CDA document that uses an oid for the system of one of it's identifiers
+# 21: This is a DocumentReference example that is referencing a CDA document that uses an oid for the system of one of it's identifiers
 No definition could be found for URL value 'urn:oid:2.16.840.1.113883.19.5.99999.19'
 
 # 22: This is just a code system example and is not meant for actual use 
@@ -131,14 +131,18 @@ This property has only a code ('type') and not a URI, so it has no clearly defin
 This property has only a code ('state') and not a URI, so it has no clearly defined meaning in the terminology ecosystem
 This property has only a code ('postalcode') and not a URI, so it has no clearly defined meaning in the terminology ecosystem
 
-# 23 All code systems in the IG are example codes systems (and have the -example suffix). There is an issue with using example.org in urls for instances that are used in slices, as the urls have to resolve to be able to be checked for slicing validation (see: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Slicing.20Validation.20Errors/with/291386863)
+# 23: All code systems in the IG are example codes systems (and have the -example suffix). There is an issue with using example.org in urls for instances that are used in slices, as the urls have to resolve to be able to be checked for slicing validation (see: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Slicing.20Validation.20Errors/with/291386863)
 INFORMATION: Bundle/bundle-ersd-supplemental-example: Bundle.entry[3].resource/*CodeSystem/codesystem-ersd-jurisdictions-example*/: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: Bundle/bundle-ersd-supplemental-example: Bundle.entry[3].resource: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/codesystem-ersd-jurisdiction-types-example: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/codesystem-ersd-jurisdictions-example: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# 24 US PH Reporting Bundle defines a specific entry slice - examples show slices that are not defined in the profile - not matching is expected behavior
+# 24: US PH Reporting Bundle defines a specific entry slice - examples show slices that are not defined in the profile - not matching is expected behavior
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-reporting-bundle|2.0.0-snapshot (this may not be a problem, but you should check that it's not intended to match a slice) 
 
-# 25 - We will investigate adding conformance clauses before publication
+# 25: We will investigate adding conformance clauses before publication
 The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause
+
+# 26: Both of these are inherited from the parent DocumentReference (either US Core or base)
+The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-minValueSet|5.2.0 is deprecated
+The slice 'uscore' on path 'DocumentReference.category' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
