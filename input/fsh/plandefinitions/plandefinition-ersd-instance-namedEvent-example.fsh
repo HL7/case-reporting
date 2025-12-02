@@ -1,6 +1,6 @@
 Instance: plandefinition-ersd-instance-namedEvent-example
 InstanceOf: PlanDefinition
-Title: "eRSD PlanDefinition Instance NamedEvent Example"
+Title: "PlanDefinition Instance NamedEvent Example"
 Description: "This PlanDefinition is a simplified duplicate of the eRSD PlanDefinition Instance created for the purposes of demonstrating by example the usage of the US Public Health Named Event extension."
 Usage: #example
 * url = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-namedEvent-example"
@@ -21,7 +21,12 @@ Usage: #example
 * action.textEquivalent = "Start the reporting workflow in response to an encounter-start event"
 * action.code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#initiate-reporting-workflow "Initiate a reporting workflow"
 * action.trigger.id = "encounter-start"
+
 * action.trigger.extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-named-eventtype-extension"
 * action.trigger.extension.valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-triggerdefinition-namedevents#encounter-start "Indicates the start of an encounter"
+
+* action.trigger.extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-named-eventtype-extension"
+* action.trigger.extension.valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-triggerdefinition-namedevents#encounter-start "Indicates the start of an encounter"
+
 * action.trigger.type = #named-event
 * action.trigger.name = "encounter-start"

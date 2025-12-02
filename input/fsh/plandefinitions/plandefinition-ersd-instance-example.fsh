@@ -1,5 +1,5 @@
 Instance: plandefinition-ersd-instance-example
-InstanceOf: http://hl7.org/fhir/us/ecr/StructureDefinition/ersd-plandefinition
+InstanceOf: ERSDPlanDefinition
 Title: "eRSD PlanDefinition Instance Example"
 Description: "An example eRSD PlanDefinition"
 Usage: #example
