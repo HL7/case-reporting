@@ -1,5 +1,5 @@
 Instance: documentreference-rr-one-cond-one-pha
-InstanceOf: USCoreDocumentReferenceProfile
+InstanceOf: $USCoreDocumentReferenceProfile
 Title: "RR One Condition One PHA DocumentReference"
 Description: "Example of US Core Document Reference Profile: RR One Condition One PHA"
 Usage: #example

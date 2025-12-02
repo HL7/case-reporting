@@ -42,7 +42,7 @@ Alias: $us-core-encounter = http://hl7.org/fhir/us/core/StructureDefinition/us-c
 Alias: $us-core-medicationrequest = http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest
 Alias: $us-core-procedure = http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure
 Alias: $us-core-diagnosticreport-lab = http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
-Alias: $us-core-documentreference = http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference
+Alias: $USCoreDocumentReferenceProfile = http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0
 Alias: $us-core-servicerequest = http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest
 Alias: $system-endpoint-connection-type = http://terminology.hl7.org/CodeSystem/endpoint-connection-type
 
