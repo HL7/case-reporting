@@ -6,7 +6,7 @@ Usage: #example
 * status = #final
 * category[us-core] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory "Laboratory"
 * category[us-core].text = "Laboratory"
-* code = $loinc#630-4 "Meropenem [Susceptibility]"
+* code = $loinc#18943-1 "Meropenem [Susceptibility]"
 * subject.reference = "Patient/patient-ecr-eve-everywoman"
 * subject.display = "Eve Everywoman"
 * effectiveDateTime = "2025-03-07"
