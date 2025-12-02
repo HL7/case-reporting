@@ -30,6 +30,7 @@ Alias: $system-usps = https://www.usps.com/
 Alias: $valueset-us-core-usps-state = http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state
 Alias: $USCoreBloodPressureProfile = http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure|6.1.0
 Alias: $us-core-immunization = http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization
+Alias: $USCoreImmunizationProfile = http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization|6.1.0
 Alias: $us-core-location = http://hl7.org/fhir/us/core/StructureDefinition/us-core-location
 Alias: $USCorePractitionerProfile = http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0
 Alias: $us-core-practitionerrole = http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole
