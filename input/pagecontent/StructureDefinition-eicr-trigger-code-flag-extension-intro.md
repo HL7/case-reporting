@@ -2,21 +2,19 @@ It contains the trigger code which is the same as the trigger code in the resour
 
 It is available for use in the following places:
 
-* eICR Encounter
-  * flags a code contained in Condition.code (eICR Condition) which is contained in Encounter.diagnosis (eICR Encounter) - diagnosis
+* [eICR Encounter](StructureDefinition-eicr-encounter.html)
+  * flags a code contained in Condition.code [US Public Health Condition Encounter Diagnosis]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-condition-encounter-diagnosis.html) which is contained in Encounter.diagnosis [eICR Encounter](StructureDefinition-eicr-encounter.html) - diagnosis
 * Problem Section entry
-  * flags a code contained in Condition.code (eICR Condition) - diagnosis
+  * flags a code contained in Condition.code ([US Public Health Condition Problems and Health Concerns]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-condition-problems-health-concerns.html)) - diagnosis
 * Plan of Treatment Section entry
-  * flags a code contained in ServiceRequest.code (eICR ServiceRequest) - test being requested
+  * flags a code contained in ServiceRequest.code [eICR ServiceRequest](StructureDefinition-eicr-servicerequest.html) - test being requested
 * Results Section entry
   * flags codes contained in:
-    * Observation.code (US Core Laboratory Result Observation Profile code) - test performed/battery or panel name
-    * Observation.value (US Core Laboratory Result Observation Profile value) - test result
-    * Observation.code referenced in containing Observation.hasMember (US Core Laboratory Result Observation Profile code) - member of panel test performed
-    * Observation.value referenced in containing Observation.hasMember (US Core Laboratory Result Observation Profile value) - member of panel test result
+    * Observation.code [US Public Health Laboratory Result Observation Profile code]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-lab-result-observation.html) - test performed/battery or panel name
+    * Observation.value [US Public Health Laboratory Result Observation Profile code]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-lab-result-observation.html) - test result
+    * Observation.code referenced in containing Observation.hasMember [US Public Health Laboratory Result Observation Profile code]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-lab-result-observation.html) - member of panel test performed
+    * Observation.value referenced in containing Observation.hasMember [US Public Health Laboratory Result Observation Profile code]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-lab-result-observation.html) - member of panel test result
 * Medications Section entry
-  * flags a code contained in MedicationAdministration.medicationCodeableConcept - medication
+  * flags a code contained in MedicationAdministration.medicationCodeableConcept [US Public Health MedicationAdministration]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-medicationadministration.html) - medication
 * Immunization Section entry
-  * flags a code contained in US Core Immunization (Immunization.vaccineCode) - vaccine
-* Procedures Section entry
-  * flags a code contained in US Core Procedure (Procedure.code) - procedure
+  * flags a code contained in [US Core Immunization]({{site.data.fhir.ver.hl7fhiruscore}}/StructureDefinition-us-core-immunization.html) (Immunization.vaccineCode) - vaccine
