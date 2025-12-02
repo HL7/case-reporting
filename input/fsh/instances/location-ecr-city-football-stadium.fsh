@@ -1,5 +1,5 @@
 Instance: location-ecr-city-football-stadium
-InstanceOf: us-core-location
+InstanceOf: USCoreLocation
 Title: "Location - City Football Stadium"
 Description: "Example of a US Core Location representing a sports stadium where potential disease exposure may have occurred."
 Usage: #example

@@ -1,5 +1,5 @@
 Instance: practitioner-us-core-henry-seven
-InstanceOf: us-core-practitioner
+InstanceOf: USCorePractitionerProfile
 Title: "Practitioner - Dr. Henry Seven"
 Description: "Example of a US Core Practitioner representing Dr. Henry Seven, M.D., a physician at Salem Medical Center."
 Usage: #example

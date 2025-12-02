@@ -305,7 +305,7 @@ Description: "This Composition profile represents an Electronic Initial Case Rep
 * section[sliceImmunizationsSection].entry contains
     sliceUSCoreImmunization 0..* MS and
     sliceVaccineCredentialsPatientAssertion 0..* MS
-* section[sliceImmunizationsSection].entry[sliceUSCoreImmunization] only Reference($us-core-immunization)
+* section[sliceImmunizationsSection].entry[sliceUSCoreImmunization] only Reference(USCoreImmunizationProfile)
 * section[sliceImmunizationsSection].entry[sliceUSCoreImmunization] ^sliceName = "sliceUSCoreImmunization"
 * section[sliceImmunizationsSection].entry[sliceUSCoreImmunization] ^short = "Immunization entry"
 * section[sliceImmunizationsSection].entry[sliceUSCoreImmunization] ^definition = "The eICR Trigger Code Flag (extension) is present for an Immunization, based on a trigger code match of the vaccine (Immunization.vaccineCode) to the eRSD PlanDefinition Immunizations Trigger."

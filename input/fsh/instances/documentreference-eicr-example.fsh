@@ -1,5 +1,5 @@
 Instance: documentreference-eicr-example
-InstanceOf: us-core-documentreference
+InstanceOf: USCoreDocumentReferenceProfile
 Title: "eICR Example DocumentReference - Electronic Initial Case Report"
 Description: "Example of US Core DocumentReference profile: Electronic Initial Case Report (eICR)"
 Usage: #example
