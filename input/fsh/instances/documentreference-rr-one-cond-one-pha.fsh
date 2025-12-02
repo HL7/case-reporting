@@ -1,5 +1,7 @@
 Instance: documentreference-rr-one-cond-one-pha
 InstanceOf: us-core-documentreference
+Title: "RR One Condition One PHA DocumentReference"
+Description: "Example of US Core Document Reference Profile: RR One Condition One PHA"
 Usage: #example
 * status = #current
 * type = $loinc#88085-6 "Reportability response report Document Public health"
