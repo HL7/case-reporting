@@ -25,7 +25,7 @@ Description: "This example set of values contains suspected diagnoses or problem
 * ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * http://hl7.org/fhir/sid/icd-10-cm#A01 "Typhoid and paratyphoid fevers"
 * http://hl7.org/fhir/sid/icd-10-cm#A01.0 "Typhoid fever"
-* $sct#12591000132100 "Suspected SARS (severe acute respiratory syndrome)"
+* $sct#12591000132100 "Severe acute respiratory syndrome suspected (situation)"
 * $sct#12601000132105 "Probable severe acute respiratory syndrome (situation)"
 * $sct#722545003 "Rabies suspected (situation)"
 * $sct#722546002 "Probable rabies (situation)"
