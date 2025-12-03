@@ -27,7 +27,7 @@ Description: "This example set of values contains suspected diagnoses or problem
 * http://hl7.org/fhir/sid/icd-10-cm#A01.0 "Typhoid fever"
 * $sct#12591000132100 "Suspected severe acute respiratory syndrome (situation)"
 * $sct#12601000132105 "Probable severe acute respiratory syndrome (situation)"
-* $sct#722545003 "Suspected rabies (situation)"
+* $sct#722545003 "Rabies suspected (situation)"
 * $sct#722546002 "Probable rabies (situation)"
 * $sct#772147001 "Botulism suspected (situation)"
 * $sct#772150003 "Diphtheria suspected (situation)"
