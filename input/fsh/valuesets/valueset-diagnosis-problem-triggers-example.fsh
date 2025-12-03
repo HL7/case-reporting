@@ -29,4 +29,4 @@ Description: "This example set of values contains diagnoses or problems that rep
 * $sct#1086991000119103 "Gonococcal abscess of brain (disorder)"
 * $sct#1087051000119109 "Gonococcal osteomyelitis (disorder)"
 * $sct#1087061000119106 "Gonococcal pneumonia (disorder)"
-* $sct#1092371000119103 "Salmonella pyelonephritis (disorder)"
+* $sct#1092371000119103 "Pyelonephritis caused by Salmonella (disorder)"
