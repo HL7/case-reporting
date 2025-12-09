@@ -76,15 +76,47 @@ eICRs shared from EHR interface are not definitively reportable. There are compl
     </tbody>
 </table>
 
-### 5.8	Relevant Time Period for Retrieving Data
+### Relevant Time Period for Retrieving Data
 
-| **Data**            | **Time Period**                         |
-| ------------------- | --------------------------------------- |
-| Occupation          | Data capturing during current encounter |
-| Immunization        | Full history                            |
-| Pregnancy           | Past year                               |
-| Vital Signs         | Current encounter                       |
-| Travel History      | Past year                               |
-| Problems/Conditions | Current encounter                       |
-| Medications         | Current encounter                       |
-| Procedures          | Current encounter                       |
+<table border="1">
+  <thead>
+    <tr style="background-color:#DCDCDC">
+      <th style="text-align: center; vertical-align: middle;">Data</th>
+      <th style="text-align: center; vertical-align: middle;">Time Period</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Occupation</td>
+      <td>Data capturing during current encounter</td>
+    </tr>
+    <tr>
+      <td>Immunization</td>
+      <td>Full history</td>
+    </tr>
+    <tr>
+      <td>Pregnancy</td>
+      <td>Past year</td>
+    </tr>
+    <tr>
+      <td>Vital Signs</td>
+      <td>Current encounter</td>
+    </tr>
+    <tr>
+      <td>Travel History</td>
+      <td>Past year</td>
+    </tr>
+    <tr>
+      <td>Problems/Conditions</td>
+      <td>Current encounter</td>
+    </tr>
+    <tr>
+      <td>Medications</td>
+      <td>Current encounter</td>
+    </tr>
+    <tr>
+      <td>Procedures</td>
+      <td>Current encounter</td>
+    </tr>
+  </tbody>
+</table>

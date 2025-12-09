@@ -31,6 +31,11 @@
             <td>Organism / Susceptibilty Result Matching</td>
             <td>Add profiles to allow susceptibility testing result to match the organisms tested</td>
         </tr>
+        <tr>
+            <td>Design Considerations</td>
+            <td>Add section on relevant time period for retrieving data</td>
+        </tr>
+        https://build.fhir.org/ig/HL7/case-reporting/en/design_considerations.html#58-relevant-time-period-for-retrieving-data
     </tbody>
 </table>
 
