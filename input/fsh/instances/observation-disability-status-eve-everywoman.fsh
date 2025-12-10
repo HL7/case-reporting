@@ -1,6 +1,6 @@
 Instance: observation-disability-status-eve-everywoman
 InstanceOf: USPublicHealthDisabilityStatus
-Title: "Disability Status Example: Eve Everywoman"
+Title: "Observation - Disability Status for Eve Everywoman"
 Description: "Example of Disability Status Profile (Eve Everywoman)"
 Usage: #example
 * status = #final

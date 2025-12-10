@@ -33,9 +33,13 @@
         </tr>
         <tr>
             <td>Design Considerations</td>
-            <td>Add section on relevant time period for retrieving data</td>
+            <td>Add <a href="design_considerations.html#58-relevant-time-period-for-retrieving-data">Relevant Time Period for Retrieving Data</a></td>
         </tr>
-        https://build.fhir.org/ig/HL7/case-reporting/en/design_considerations.html#58-relevant-time-period-for-retrieving-data
+        <tr>
+            <td>Artifact Overview</td>
+            <td>Add an <a href="artifact-overview.html">Artifact Overview</a> page</td>
+        </tr>
+        
     </tbody>
 </table>
 
@@ -43,8 +47,8 @@
 |---------|----------|
 | [FHIR-38836](https://jira.hl7.org/browse/FHIR-38836) | Updated example id and url values in eRSD Specification Bundle example |
 
-### Second Techincal Correction - STU 2.1.2 (2.1.2)
 
+### Second Techincal Correction - STU 2.1.2 (2.1.2)
 
 |JIRA Ticket|Ticket Description|
 |---------|----------|

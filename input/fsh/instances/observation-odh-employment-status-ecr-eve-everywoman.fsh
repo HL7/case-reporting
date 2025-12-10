@@ -1,6 +1,6 @@
 Instance: observation-odh-employment-status-ecr-eve-everywoman
 InstanceOf: EmploymentStatus
-Title: "ODH Employment Status Example: observation-odh-employment-status-ecr-eve-everywoman"
+Title: "Observation - ODH Employment Status for Eve Everywoman"
 Description: "Example of ODH Employment Status profile (Eve Everywoman)"
 Usage: #example
 * status = #final

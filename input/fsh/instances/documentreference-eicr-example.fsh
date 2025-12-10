@@ -1,6 +1,6 @@
 Instance: documentreference-eicr-example
 InstanceOf: $USCoreDocumentReferenceProfile
-Title: "eICR Example DocumentReference - Electronic Initial Case Report"
+Title: "DocumentReference - Electronic Initial Case Report"
 Description: "Example of US Core DocumentReference profile: Electronic Initial Case Report (eICR)"
 Usage: #example
 * masterIdentifier.system = "urn:ietf:rfc:3986"
