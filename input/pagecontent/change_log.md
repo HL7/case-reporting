@@ -33,7 +33,7 @@
         </tr>
         <tr>
             <td>Design Considerations</td>
-            <td>Add <a href="design_considerations.html#58-relevant-time-period-for-retrieving-data">Relevant Time Period for Retrieving Data</a></td>
+            <td>Add <a href="design_considerations.html#relevant-time-period-for-retrieving-data">Relevant Time Period for Retrieving Data</a></td>
         </tr>
         <tr>
             <td>Artifact Overview</td>

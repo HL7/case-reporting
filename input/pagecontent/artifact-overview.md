@@ -113,7 +113,7 @@
  * [RR eICR Processing Status Example: observation-rr-eicr-processing-status](Observation-observation-rr-eicr-processing-status.html)
  * [RR eICR Processing Status Reason Example: observation-rr-eicr-processing-status-reason](Observation-observation-rr-eicr-processing-status-reason.html)
 
- #### Examples: eICR Entities
+#### Examples: eICR Entities
 
  * [Location - City Football Stadium](Location-location-ecr-city-football-stadium.html)
  * [Location - Salem Medical Center Clinic Building A](Location-location-ecr-salem-medical-center.html)
@@ -180,7 +180,7 @@
  * [Anthrax Vaccine (RXNORM)](ValueSet-2.16.840.1.113762.1.4.1146.1082-example.html)
  * [Arsenic Exposure and Toxicity (Disorders)(ICD10CM)](ValueSet-2.16.840.1.113762.1.4.1146.1508-example.html)
  * [Arsenic Exposure and Toxicity (Disorders)(SNOMED)](ValueSet-2.16.840.1.113762.1.4.1146.1507-example.html)
- * [California Serogroup Virus Diseases (Tests for California Serogroup Virus Antibody \[Quantitative\])](ValueSet-2.16.840.1.113762.1.4.1146.1184code.html)
+ * [California Serogroup Virus Diseases (Tests for California Serogroup Virus Antibody \[Quantitative\])](ValueSet-2.16.840.1.113762.1.4.1146.1184.html)
  * [COVID\_19 (Tests for SARS\_CoV\_2 by Culture and Identification Method)](ValueSet-2.16.840.1.113762.1.4.1146.1223-example.html)
  * [Dengue Virus Infection (Organism or Substance in Lab Results)](ValueSet-2.16.840.1.113762.1.4.1146.528-example.html)
  * [Diphtheria (Disorders)(SNOMED)](ValueSet-2.16.840.1.113762.1.4.1146.6-example.html)
