@@ -87,23 +87,19 @@ eICRs shared from EHR interface are not definitively reportable. There are compl
   </thead>
   <tbody>
     <tr>
-      <td>Occupation</td>
-      <td>Data capturing during current encounter</td>
-    </tr>
-    <tr>
       <td>Immunization</td>
       <td>Full history</td>
     </tr>
     <tr>
-      <td>Pregnancy</td>
-      <td>Past year</td>
-    </tr>
-    <tr>
-      <td>Vital Signs</td>
+      <td>Medications</td>
       <td>Current encounter</td>
     </tr>
     <tr>
-      <td>Travel History</td>
+      <td>Occupation</td>
+      <td>Data capturing during current encounter</td>
+    </tr>
+    <tr>
+      <td>Pregnancy</td>
       <td>Past year</td>
     </tr>
     <tr>
@@ -111,11 +107,19 @@ eICRs shared from EHR interface are not definitively reportable. There are compl
       <td>Current encounter</td>
     </tr>
     <tr>
-      <td>Medications</td>
+      <td>Procedures</td>
       <td>Current encounter</td>
     </tr>
     <tr>
-      <td>Procedures</td>
+      <td>Results</td>
+      <td>Current encounter</td>
+    </tr>
+    <tr>
+      <td>Travel History</td>
+      <td>Past year</td>
+    </tr>
+    <tr>
+      <td>Vital Signs</td>
       <td>Current encounter</td>
     </tr>
   </tbody>
