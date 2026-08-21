@@ -19,6 +19,9 @@ Usage: #example
 * description = "Example of an eRSD PlanDefinition demonstrating the use of the US Public Health RelatedData Extension for linking related resources."
 * jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 * jurisdiction.text = "United States of America"
+* relatedArtifact[triggeringValueSetLibrary].type = #depends-on
+* relatedArtifact[triggeringValueSetLibrary].label = "RCTC Value Set Library of Trigger Codes"
+* relatedArtifact[triggeringValueSetLibrary].resource = "http://hl7.org/fhir/us/ecr/Library/library-rctc-example"
 * action[encounterStart].id = "start-workflow"
 * action[encounterStart].description = "This action represents the start of the reporting workflow in response to the encounter-start event."
 * action[encounterStart].textEquivalent = "Start the reporting workflow in response to an encounter-start event"
@@ -191,7 +194,7 @@ Usage: #example
 // * action[checkReportable].action[checkUpdateEicr].condition.expression.expression = "%last-eicr.last().entry.first().resource.date < now() - 72 hours"
 // * action[checkReportable].action[checkUpdateEicr].input.id = "last-eicr"
 // * action[checkReportable].action[checkUpdateEicr].input.extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-relateddata-extension"
-// * action[checkReportable].action[checkUpdateEicr].input.extension.valueString = "eicr-report"
+// * action[checkReportable].action[checkUpdateEicr].input.extension.valueString = "eicrreport"
 // * action[checkReportable].action[checkUpdateEicr].input.type = #Bundle
 // * action[checkReportable].action[checkUpdateEicr].input.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
 // * action[checkReportable].action[checkUpdateEicr].relatedAction.actionId = "create-eicr"
@@ -289,7 +292,7 @@ Usage: #example
 * action[createEicr].input[=].extension.valueString = "diagnosticOrders"
 * action[createEicr].input[=].type = #DiagnosticReport
 * action[createEicr].input[=].profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab"
-* action[createEicr].output.id = "eicr-report"
+* action[createEicr].output.id = "eicrreport"
 * action[createEicr].output.type = #Bundle
 * action[createEicr].output.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
 * action[createEicr].relatedAction.actionId = "validate-eicr"
@@ -300,10 +303,10 @@ Usage: #example
 * action[validateEicr].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#validate-report
 * action[validateEicr].input.id = "generated-eicr-report"
 * action[validateEicr].input.extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-relateddata-extension"
-* action[validateEicr].input.extension.valueString = "eicr-report"
+* action[validateEicr].input.extension.valueString = "eicrreport"
 * action[validateEicr].input.type = #Bundle
 * action[validateEicr].input.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
-* action[validateEicr].output.id = "valid-eicr-report"
+* action[validateEicr].output.id = "valideicrreport"
 * action[validateEicr].output.type = #Bundle
 * action[validateEicr].output.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
 * action[validateEicr].relatedAction.actionId = "route-and-send-eicr"
@@ -314,10 +317,10 @@ Usage: #example
 * action[routeAndSendEicr].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#submit-report
 * action[routeAndSendEicr].input.id = "validated-eicr-report"
 * action[routeAndSendEicr].input.extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-relateddata-extension"
-* action[routeAndSendEicr].input.extension.valueString = "valid-eicr-report"
+* action[routeAndSendEicr].input.extension.valueString = "valideicrreport"
 * action[routeAndSendEicr].input.type = #Bundle
 * action[routeAndSendEicr].input.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
-* action[routeAndSendEicr].output.id = "submitted-eicr-report"
+* action[routeAndSendEicr].output.id = "submittedeicrreport"
 * action[routeAndSendEicr].output.type = #Bundle
 * action[routeAndSendEicr].output.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle"
 * action[encounterModified].id = "encounter-modified"

@@ -20,9 +20,9 @@ Usage: #example
 * jurisdiction = urn:iso:std:iso:3166#US "United States of America"
 * jurisdiction.text = "United States of America"
 * effectivePeriod.start = "2020-12-01"
-* relatedArtifact.type = #depends-on
-* relatedArtifact.label = "RCTC Value Set Library of Trigger Codes"
-* relatedArtifact.resource = "http://hl7.org/fhir/us/ecr/Library/library-rctc-example"
+* relatedArtifact[triggeringValueSetLibrary].type = #depends-on
+* relatedArtifact[triggeringValueSetLibrary].label = "RCTC Value Set Library of Trigger Codes"
+* relatedArtifact[triggeringValueSetLibrary].resource = "http://hl7.org/fhir/us/ecr/Library/library-rctc-example"
 * action[encounterStart].id = "start-workflow"
 * action[encounterStart].description = "This action represents the start of the reporting workflow in response to the encounter-start event."
 * action[encounterStart].textEquivalent = "Start the reporting workflow in response to an encounter-start event"

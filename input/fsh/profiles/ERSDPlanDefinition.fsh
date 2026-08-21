@@ -6,20 +6,38 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * . ^short = "eRSD - electronic Reporting and Surveillance Distribution"
 * . ^definition = "Defines the logic and rules around determining: whether or not a condition is reportable to public health, which jurisdiction(s) is/are responsible, which jurisdiction(s) need to be notified, and if the condition is reportable, gives timing information, next steps and condition information to the clinician."
 
-// * extension MS
-// * extension ^slicing.discriminator.type = #value
-// * extension ^slicing.discriminator.path = "url"
-// * extension ^slicing.rules = #open
-// * extension ^definition = "Defines variables for the PlanDefinition."
+* extension MS
+* extension ^slicing.discriminator.type = #value
+* extension ^slicing.discriminator.path = "url"
+* extension ^slicing.rules = #open
+* extension ^definition = "Defines variables for the PlanDefinition."
 * extension contains http://hl7.org/fhir/StructureDefinition/variable named variable 0..* MS
 * extension[variable] ^short = "Defines variables for the PlanDefinition."
 * extension[variable] ^definition = "Defines variables for the PlanDefinition."
+* effectivePeriod MS
+* effectivePeriod ^short = "When the eRSD specification is expected to be in use."
+* effectivePeriod ^definition = "The period during which this specification is expected to be in use. The start date indicates when the specification takes effect."
+* relatedArtifact 1..* MS
+* relatedArtifact ^slicing.discriminator.type = #value
+* relatedArtifact ^slicing.discriminator.path = "type"
+* relatedArtifact ^slicing.rules = #open
+* relatedArtifact contains triggeringValueSetLibrary 1..1 MS
+* relatedArtifact[triggeringValueSetLibrary] ^short = "The RCTC value set library this specification was authored against."
+* relatedArtifact[triggeringValueSetLibrary] ^definition = "A dependency on the Reportable Conditions Trigger Codes (RCTC) value set library. The reference SHOULD be version-pinned, so that it is unambiguous which trigger code content this specification was authored against."
+* relatedArtifact[triggeringValueSetLibrary].type = #depends-on (exactly)
+* relatedArtifact[triggeringValueSetLibrary].resource 1.. MS
 * action 8.. MS
 * action ^slicing.discriminator.type = #value
 * action ^slicing.discriminator.path = "id"
 * action ^slicing.ordered = true
 * action ^slicing.rules = #open
-// * action.code 0..1 MS
+* action.code 0..1 MS
+// The binding below is intentionally left disabled until the action codes used by the
+// eRSD are added to the bound code system. Six of the nine codes in use
+// (check-trigger-codes, evaluate-condition, complete-reporting, create-report,
+// validate-report, submit-report) are absent from
+// us-ph-codesystem-plandefinition-actions in both hl7.fhir.us.ph-library#2.0.0-snapshot
+// and hl7.fhir.us.ecr#2.1.1. Re-enable once the terminology is resolved.
 // * action.code from USPublicHealthPlanDefinitionAction (extensible)
 // * action.code ^binding.description = "The set of actions that can be used to create plan definition"
 * action.input.extension MS
@@ -61,6 +79,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[encounterStart].trigger ^short = "When the \"start\" action should be triggered."
 * action[encounterStart].trigger ^definition = "When the \"start\" action should be triggered."
 * action[encounterStart].trigger.extension ..*
+// Disabled: redundant type constraint, retained for reference.
 //* action[encounterStart].trigger.extension only Extension
 * action[encounterStart].trigger.extension ^slicing.discriminator.type = #value
 * action[encounterStart].trigger.extension ^slicing.discriminator.path = "url"
@@ -120,6 +139,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
     continueCheckReportable 1..1 MS and
     terminateLateEncounter 1..1 MS and
     isLateEncounterCompleted 1..1 MS
+// Disabled: redundant type constraint, retained for reference.
 //* action[checkForImmediateReporting].action[isEncounterImmediatelyReportable] only BackboneElement
 * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].id 1.. MS
 * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].id = "is-encounter-immediately-reportable" (exactly)
@@ -135,6 +155,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input.id ^definition = "The id of the input requirement, allowing the data to be referenced via a context variable named '%[id]'"
 * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].relatedAction.actionId = "create-eicr" (exactly)
 * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].relatedAction.relationship = #before-start (exactly)
+// Disabled: redundant type constraint, retained for reference.
 //* action[checkForImmediateReporting].action[continueCheckReportable] only BackboneElement
 * action[checkForImmediateReporting].action[continueCheckReportable].id 1.. MS
 * action[checkForImmediateReporting].action[continueCheckReportable].id = "continue-check-reportable" (exactly)
@@ -192,6 +213,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
     terminateEncounter 1..1 MS and
     terminateAmbEncounter 1..1 MS and
     encounterComplete 1..1 MS
+// Disabled: redundant type constraint, retained for reference.
 //* action[checkReportable].action[isEncounterReportable] only BackboneElement
 * action[checkReportable].action[isEncounterReportable].id 1.. MS
 * action[checkReportable].action[isEncounterReportable].id = "is-encounter-reportable" (exactly)
@@ -206,6 +228,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[checkReportable].action[isEncounterReportable].input.id ^definition = "The id of the input requirement, allowing the data to be referenced via a context variable named `%[id]`"
 * action[checkReportable].action[isEncounterReportable].relatedAction.actionId = "create-eicr" (exactly)
 * action[checkReportable].action[isEncounterReportable].relatedAction.relationship = #before-start (exactly)
+// Disabled: redundant type constraint, retained for reference.
 //* action[checkReportable].action[checkUpdateEicr] only BackboneElement
 * action[checkReportable].action[checkUpdateEicr].id 1.. MS
 * action[checkReportable].action[checkUpdateEicr].id = "check-update-eicr" (exactly)
@@ -216,6 +239,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[checkReportable].action[checkUpdateEicr].condition.expression.language = #text/fhirpath (exactly)
 * action[checkReportable].action[checkUpdateEicr].relatedAction.actionId = "create-eicr" (exactly)
 * action[checkReportable].action[checkUpdateEicr].relatedAction.relationship = #before-start (exactly)
+// Disabled: redundant type constraint, retained for reference.
 //* action[checkReportable].action[encounterInProgress] only BackboneElement
 * action[checkReportable].action[encounterInProgress].id 1.. MS
 * action[checkReportable].action[encounterInProgress].id = "is-encounter-in-progress" (exactly)
@@ -282,6 +306,14 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[createEicr].id = "create-eicr" (exactly)
 * action[createEicr].description = "This action represents the creation of the eICR. It subsequently calls validate." (exactly)
 * action[createEicr].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#create-report
+* action[createEicr].output 1..1 MS
+* action[createEicr].output ^short = "The eICR document bundle produced by this action."
+* action[createEicr].output ^definition = "Defines the output of the action, the created eICR. The output is consumed as the input of the next action in the sequence."
+* action[createEicr].output.id 1..1 MS
+* action[createEicr].output.type 1..1 MS
+* action[createEicr].output.type = #Bundle (exactly)
+* action[createEicr].output.profile 1..1 MS
+* action[createEicr].output.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle" (exactly)
 * action[createEicr].relatedAction 1..1 MS
 * action[createEicr].relatedAction.actionId = "validate-eicr" (exactly)
 * action[createEicr].relatedAction.relationship = #before-start (exactly)
@@ -291,6 +323,14 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[validateEicr].id = "validate-eicr" (exactly)
 * action[validateEicr].description = "This action represents the validation of the eICR. It subsequently calls route-and-send." (exactly)
 * action[validateEicr].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#validate-report
+* action[validateEicr].output 1..1 MS
+* action[validateEicr].output ^short = "The eICR document bundle produced by this action."
+* action[validateEicr].output ^definition = "Defines the output of the action, the validated eICR. The output is consumed as the input of the next action in the sequence."
+* action[validateEicr].output.id 1..1 MS
+* action[validateEicr].output.type 1..1 MS
+* action[validateEicr].output.type = #Bundle (exactly)
+* action[validateEicr].output.profile 1..1 MS
+* action[validateEicr].output.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle" (exactly)
 * action[validateEicr].relatedAction 1..1 MS
 * action[validateEicr].relatedAction.actionId = "route-and-send-eicr" (exactly)
 * action[validateEicr].relatedAction.relationship = #before-start (exactly)
@@ -305,6 +345,14 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[routeAndSendEicr].textEquivalent 1.. MS
 * action[routeAndSendEicr].textEquivalent = "Route and send eICR" (exactly)
 * action[routeAndSendEicr].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#submit-report
+* action[routeAndSendEicr].output 1..1 MS
+* action[routeAndSendEicr].output ^short = "The eICR document bundle produced by this action."
+* action[routeAndSendEicr].output ^definition = "Defines the output of the action, the submitted eICR. The output is consumed as the input of the next action in the sequence."
+* action[routeAndSendEicr].output.id 1..1 MS
+* action[routeAndSendEicr].output.type 1..1 MS
+* action[routeAndSendEicr].output.type = #Bundle (exactly)
+* action[routeAndSendEicr].output.profile 1..1 MS
+* action[routeAndSendEicr].output.profile = "http://hl7.org/fhir/us/ecr/StructureDefinition/eicr-document-bundle" (exactly)
 * action[encounterModified] ^short = "Encounter modified code"
 * action[encounterModified] ^definition = "Defines the \"encounter-modified\" action"
 * action[encounterModified].id 1.. MS
@@ -326,6 +374,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[encounterModified].trigger ^short = "When the \"encounter-modified\" action should be triggered."
 * action[encounterModified].trigger ^definition = "When the \"encounter-modified\" action should be triggered."
 * action[encounterModified].trigger.extension ..*
+// Disabled: redundant type constraint, retained for reference.
 //* action[encounterModified].trigger.extension only Extension
 * action[encounterModified].trigger.extension ^slicing.discriminator.type = #value
 * action[encounterModified].trigger.extension ^slicing.discriminator.path = "url"
