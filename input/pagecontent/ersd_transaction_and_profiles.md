@@ -4,7 +4,10 @@ The eRSD transaction includes a constrained FHIR PlanDefinition resource profile
 
 The distribution of case reporting specifications involves two systems, the Implementing System (typically an Electronic Health Record (EHR)) and the Specification Repository, a repository that manages reporting specifications and the versions of those specifications over time:
 
-<img style="width:100%" src="ersd-transaction-system-overview.png"/>
+<figure>
+  <img style="max-width:100%" src="ersd-transaction-system-overview.png" alt="Overview of the systems involved in distributing eRSD specifications: a Specification Repository publishing to one or more Implementing Systems."/>
+  <figcaption>Figure 1: Systems involved in eRSD distribution</figcaption>
+</figure>
 
 Conceptually, there are three transactions involved in the distribution of eRSD specifications:
 
@@ -44,7 +47,10 @@ Subsequent sections describe each of these specification components in more deta
 
 The following diagram illustrates the general process for electronic Case Reporting as triggered from a patient encounter, highlighting each of the components involved in describing the process:
 
-<img style="width:100%" src="eicr-triggering-and-transmission-guidance-components.png"/>
+<figure>
+  <img style="max-width:100%" src="eicr-triggering-and-transmission-guidance-components.png" alt="The components involved in describing the electronic case reporting process, from encounter events through triggering criteria to report transmission."/>
+  <figcaption>Figure 2: Components of the eCR triggering and transmission process</figcaption>
+</figure>
 
 The components involved in representing the reporting process are:
 
@@ -56,7 +62,10 @@ The components involved in representing the reporting process are:
 
 These components are represented using different elements of the PlanDefinition resource, as generally outlined in the following:
 
-<img style="width:100%" src="ersd-plandefinition-structure.png"/>
+<figure>
+  <img style="max-width:100%" src="ersd-plandefinition-structure.png" alt="How the components of the reporting process map onto elements of the PlanDefinition resource: trigger, input, action, relatedAction and condition."/>
+  <figcaption>Figure 3: Mapping process components onto PlanDefinition elements</figcaption>
+</figure>
 
 Events are represented with the `trigger` element; Triggering Criteria are represented using the `input` data criteria; Parameters are represented using `offset` in `relatedAction` elements; Process steps are represented using the `action` element and the relationships between them are represented with the `relatedAction` element; and finally, Suspected Reportability Criteria are represented with the `condition` element.
 
@@ -66,20 +75,21 @@ Each of these are discussed in more detail in the following sections.
 
 Events are represented with the `trigger` element, using the `named-event` trigger type and bound to the [US Public Health TriggerDefinition Named Event]({{site.data.fhir.ver.hl7fhirusphlibrary}}/ValueSet-us-ph-valueset-triggerdefinition-namedevent.html) value set. In addition, since the `name` element of the trigger definition is a `uri`, the eRSD profile uses the [US Public Health Named Event Type Extension]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-named-eventtype-extension.html) to provide complete binding information for the value set, as illustrated in the eRSDPlanDefinition example:
 
-<pre><code>&lt;trigger id=&quot;encounter-start&quot;&gt;
-  &lt;extension url=&quot;http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-named-eventtype-extension&quot;&gt;
-    &lt;valueCodeableConcept&gt;
-      &lt;coding&gt;
-        &lt;system value=&quot;http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-triggerdefinition-namedevents&quot;/&gt;
-        &lt;code value=&quot;encounter-start&quot;/&gt;
-        &lt;display value=&quot;Indicates the start of an encounter&quot;/&gt;
-      &lt;/coding&gt;
-    &lt;/valueCodeableConcept&gt;
-  &lt;/extension&gt;
-  &lt;type value=&quot;named-event&quot;/&gt;
-  &lt;name value=&quot;encounter-start&quot;/&gt;
-&lt;/trigger&gt;
-</code></pre>
+```xml
+<trigger id="encounter-start">
+  <extension url="http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-named-eventtype-extension">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-triggerdefinition-namedevents"/>
+        <code value="encounter-start"/>
+        <display value="Indicates the start of an encounter"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <type value="named-event"/>
+  <name value="encounter-start"/>
+</trigger>
+```
 
 ##### Triggering Criteria
 
@@ -87,13 +97,15 @@ Triggering criteria are specified by a combination of the `input` data elements,
 
 The triggering value sets will include any number of focus useContext slices to indicate which conditions the triggering codes are associated with. Each value set corresponds to a different type of information that may contain events that are triggers for potentially reportable events. The categories of information are mapped to FHIR resources using the `input` element. For example, the reportable conditions value set is mapped to the `Condition` resource:
 
-<pre><code>&lt;input id=&quot;conditions&quot;&gt;
-  &lt;type value=&quot;Condition&quot;/&gt;
-  &lt;codeFilter&gt;
-    &lt;path value=&quot;code&quot;/&gt;
-    &lt;valueSet value=&quot;http://hl7.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example&quot;/&gt;
-  &lt;/codeFilter&gt;
-&lt;/input&gt;</code></pre>
+```xml
+<input id="conditions">
+  <type value="Condition"/>
+  <codeFilter>
+    <path value="code"/>
+    <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example"/>
+  </codeFilter>
+</input>
+```
 
 > Note to implementers: The logic used throughout the reporting workflow definition assumes the data provided as input is valid. For example, an Encounter with a status of in-progress is assumed to have a period element with a start date specified. Implementations may account for differences in the way the clinical system represents encounter information by adjusting the data using context in the reporting application to meet these assumptions.
 
@@ -157,23 +169,23 @@ Full triggering timing can be described using the suggested parameters below fro
 
 **Parameter A** – The time from the start of the patient encounter to when the first eICR is constructed and sent. This eICR should include multiple triggers if they are identified.
 
-- Example - <u>1 hour</u> after the encounter begins, EHR data matches a code in the eRSD diagnosis data trigger code set and other EHR data matches a code in the eRSD lab result trigger code set. Both of these trigger codes should be recorded in the appropriate eICR trigger code template and the eICR should be transmitted out.
+- Example - 1 hour after the encounter begins, EHR data matches a code in the eRSD diagnosis data trigger code set and other EHR data matches a code in the eRSD lab result trigger code set. Both of these trigger codes should be recorded in the appropriate eICR trigger code template and the eICR should be transmitted out.
 
 **Parameter B** - The time period from a previous trigger code check to subsequent checking for new trigger code matches in a longer encounter. New trigger code matches do not include matches on an eRSD trigger code that have already been used to generate an eICR for that encounter.
 
-- Example - <u>12 hours</u> after there was a trigger code match, the EHR data is checked against the eRSD trigger code sets again. If a new match is found (not a match against the same eRSD trigger code as had been already matched in that encounter) then a new eICR is generated that includes all of the new trigger codes that have been matched.
+- Example - 12 hours after there was a trigger code match, the EHR data is checked against the eRSD trigger code sets again. If a new match is found (not a match against the same eRSD trigger code as had been already matched in that encounter) then a new eICR is generated that includes all of the new trigger codes that have been matched.
 
 **Parameter C** - The time period from the send of previous eICRs to the send of an updated eICR during a longer encounter.
 
-- Example - <u>72 hours</u> after a previous eICR was sent, there have been no new trigger code matches, but a new eICR is created and transmitted because there had been a match in the encounter previously and there is a need for public health to receive updated data about the patient.
+- Example - 72 hours after a previous eICR was sent, there have been no new trigger code matches, but a new eICR is created and transmitted because there had been a match in the encounter previously and there is a need for public health to receive updated data about the patient.
 
 **Parameter D** – The time period after the encounter ends through which trigger code checks and eICR updates should still occur.
 
-- Example - For <u>72 hours</u> after the encounter ends, trigger code checks and / or updated eICR transmissions should still occur.
+- Example - For 72 hours after the encounter ends, trigger code checks and / or updated eICR transmissions should still occur.
 
 **Parameter E** - The normal reporting duration for the encounter. While an encounter is in progress and within the the normal reporting duration reportability will continue to be checked. Once the encounter has extended beyond the normal reporting duration, it will only be reported on in response to an 'encounter-modified' trigger.
 
-- Example - For <u>2 weeks</u> after the encounter begins and while it is still in progress, continue to check for suspected reportability. Otherwise, once the encounter has extended beyond <u>2 weeks</u>, check for reportability and report only if the encounter has been modified.
+- Example - For 2 weeks after the encounter begins and while it is still in progress, continue to check for suspected reportability. Otherwise, once the encounter has extended beyond 2 weeks, check for reportability and report only if the encounter has been modified.
 
 > Note to implementers: The offset durations specified in related actions here are _relative_ durations, in that they contain a comparator to indicate that the action should be completed _at most X_. This allows implementations to support scheduling these actions during non-peak times to minimize load on the clinical system.
 
@@ -187,13 +199,15 @@ The first level is generally termed `triggering` and is supported by the `trigge
 
 The triggering level is represented using the `condition` element of the `check-reportable` action:
 
-<pre><code>&lt;condition&gt;
-  &lt;kind value=&quot;applicability&quot;/&gt;
-  &lt;expression&gt;
-    &lt;extension snipped/&gt;
-    &lt;language value=&quot;text/fhirpath&quot;/&gt;
-    &lt;expression value=&quot;%conditions.exists() or %encounters.exists() or %immunizations.exists() or %procedures.exists() or %procedureOrders.exists() or %labOrders.exists() or %labTests.exists() or %labResults.exists() or %medicationAdministrations.exists() or %medicationOrders.exists() or %medicationDispenses.exists()&quot;/&gt;&lt;/expression&gt;
-&lt;/condition&gt;</code></pre>
+```xml
+<condition>
+  <kind value="applicability"/>
+  <expression>
+    <extension snipped/>
+    <language value="text/fhirpath"/>
+    <expression value="%conditions.exists() or %encounters.exists() or %immunizations.exists() or %procedures.exists() or %procedureOrders.exists() or %labOrders.exists() or %labTests.exists() or %labResults.exists() or %medicationAdministrations.exists() or %medicationOrders.exists() or %medicationDispenses.exists()"/></expression>
+</condition>
+```
 
 This level uses a [FHIRPath](http://hl7.org/fhirpath) to test for existence of data in any of the `input` categories. Each `input` element is accessed by an _environment variable_ using the `%` syntax in FHIRPath.
 
@@ -201,14 +215,16 @@ The eRSD specification is delivered as an _asset collection library_ (a Library 
 
 The eRSD Specification library is composed of the eRSD Plan Definition and the RCTC Library, a Value Set library that conforms to the [US Public Health Triggering Value Set Library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-triggering-valueset-library.html) profile:
 
-<pre><code>&lt;relatedArtifact&gt;
-  &lt;type value=&quot;composed-of&quot;/&gt;
-  &lt;resource value=&quot;http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-us-public-health-example&quot;/&gt;
-&lt;/relatedArtifact&gt;
-&lt;relatedArtifact&gt;
-  &lt;type value=&quot;composed-of&quot;/&gt;
-  &lt;resource value=&quot;http://hl7.org/fhir/us/ecr/Library/library-rctc-example&quot;/&gt;
-&lt;/relatedArtifact&gt;</code></pre>
+```xml
+<relatedArtifact>
+  <type value="composed-of"/>
+  <resource value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-us-public-health-example"/>
+</relatedArtifact>
+<relatedArtifact>
+  <type value="composed-of"/>
+  <resource value="http://hl7.org/fhir/us/ecr/Library/library-rctc-example"/>
+</relatedArtifact>
+```
 
 * [eRSD Specification Library Example](Library-library-ersd-specification-library-example.html)
 * [eRSD PlanDefinition Instance Example](PlanDefinition-plandefinition-ersd-instance-example.html)
@@ -229,13 +245,15 @@ The supplemental level of integration enables sites to participate in the suspec
 
 The suspected reportability criteria are also represented with the `condition` element, but using the [CQF Alternative Expression Extension](http://hl7.org/fhir/extensions/StructureDefinition-cqf-alternativeExpression.html) to provide the CQL expression for suspected reportability:
 
-<pre><code>&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/cqf-alternativeExpression&quot;&gt;
-  &lt;valueExpression&gt;
-    &lt;language value=&quot;text/cql-identifier&quot;/&gt;
-    &lt;expression value=&quot;Is Reportable&quot;/&gt;
-    &lt;reference value=&quot;http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters-example|2.1.0&quot;/&gt;
-  &lt;/valueExpression&gt;
-&lt;/extension&gt;</code></pre>
+```xml
+<extension url="http://hl7.org/fhir/StructureDefinition/cqf-alternativeExpression">
+  <valueExpression>
+    <language value="text/cql-identifier"/>
+    <expression value="Is Reportable"/>
+    <reference value="http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters-example|2.1.0"/>
+  </valueExpression>
+</extension>
+```
 
 This extension indicates that the `Is Reportable` expression of the [library-executable-rule-filters-example](Library-library-executable-rule-filters-example.html) library should be used to evaluate whether the event is suspected reportable.
 
@@ -247,18 +265,20 @@ For a detailed discussion of how this code system is structured, see the [Jurisd
 
 The eRSD Supplemental Library is composed of the library-executable-rule-filters-example library and the Supplemental Value Set library, which contains any additional value sets and code systems (including the Jurisdictions code system) beyond the RCTC value sets that are required by the library-executable-rule-filters-example logic:
 
-<pre><code>&lt;relatedArtifact&gt;
-  &lt;type value=&quot;composed-of&quot;/&gt;
-  &lt;resource value=&quot;http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters-example&quot;/&gt;
-&lt;/relatedArtifact&gt;
-&lt;relatedArtifact&gt;
-  &lt;type value=&quot;composed-of&quot;/&gt;
-  &lt;resource value=&quot;http://hl7.org/fhir/us/ecr/Library/library-us-ph-supplemental-valueset-library-example&quot;/&gt;
-&lt;/relatedArtifact&gt;
-&lt;relatedArtifact&gt;
-  &lt;type value=&quot;composed-of&quot;/&gt;
-  &lt;resource value=&quot;http://hl7.org/fhir/us/ecr/CodeSystem/ersd-jurisdictions-example&quot;/&gt;
-&lt;/relatedArtifact&gt;</code></pre>
+```xml
+<relatedArtifact>
+  <type value="composed-of"/>
+  <resource value="http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters-example"/>
+</relatedArtifact>
+<relatedArtifact>
+  <type value="composed-of"/>
+  <resource value="http://hl7.org/fhir/us/ecr/Library/library-us-ph-supplemental-valueset-library-example"/>
+</relatedArtifact>
+<relatedArtifact>
+  <type value="composed-of"/>
+  <resource value="http://hl7.org/fhir/us/ecr/CodeSystem/ersd-jurisdictions-example"/>
+</relatedArtifact>
+```
 
 * [eRSD Supplemental Library Example](Library-library-ersd-supplemental-library-example.html)
 * [library-executable-rule-filters-example Library](Library-library-executable-rule-filters-example.html)
@@ -275,19 +295,15 @@ When packaging as a Bundle, the expectation is that the Bundle would include the
 * [Supplemental (i.e. Rules Logic) Bundle](Bundle-bundle-ersd-supplemental-example.html)
 
 #### Profiles
-<ul>
-  <li><a href="StructureDefinition-ersd-plandefinition.html">eRSD PlanDefinition</a></li>
-  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-specification-library.html">US Public Health Specification Library</a></li>
-  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-library.html">US Public Health Supplemental Library</a></li>
-  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-valueset.html">US Public Health Supplemental ValueSet</a></li>  
-  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-valueset-library.html">US Public Health Supplemental ValueSet Library</a></li>  
-  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-triggering-valueset.html">US Public Health Triggering ValueSet</a></li>
-  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-triggering-valueset-library.html">US Public Health Triggering ValueSet Library</a></li>
-  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-valueset-library.html">US Public Health ValueSet Library</a></li>
-  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-valueset.html">US Public Health ValueSet</a></li>
-</ul>
+* [eRSD PlanDefinition](StructureDefinition-ersd-plandefinition.html)
+* [US Public Health Specification Library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-specification-library.html)
+* [US Public Health Supplemental Library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-library.html)
+* [US Public Health Supplemental ValueSet]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-valueset.html)
+* [US Public Health Supplemental ValueSet Library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-valueset-library.html)
+* [US Public Health Triggering ValueSet]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-triggering-valueset.html)
+* [US Public Health Triggering ValueSet Library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-triggering-valueset-library.html)
+* [US Public Health ValueSet Library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-valueset-library.html)
+* [US Public Health ValueSet]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-valueset.html)
 
 #### Extensions
-<ul>
-  <li><a href="http://hl7.org/fhir/extensions/StructureDefinition-valueset-warning.html">ValueSet Warning Extension</a></li>
-</ul>
+* [ValueSet Warning Extension](http://hl7.org/fhir/extensions/StructureDefinition-valueset-warning.html)
