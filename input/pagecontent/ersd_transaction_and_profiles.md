@@ -104,51 +104,45 @@ Process is represented using the `action` elements of the PlanDefinition. A Plan
 To support a broad variety of use cases, the PlanDefinition resource provides a flexible mechanism for representing processes. To facilitate implementation, the US Public Health PlanDefinition profile introduces constraints that limit the set of elements that can be used to:
 
 1. The PlanDefinition is of type `workflow-definition`, to indicate process semantics apply
-1. The only "trigger" element is specified on the "start" action as the "named-event" "encounter-start".
+1. Trigger elements are specified only on the actions that initiate a reporting workflow, using the `named-event` type
 1. Relationships between actions are always expressed using a relatedAction element in the forward direction (so the relationship is "before-start").
 1. All timings are expressed using the "offsetDuration" element of the relatedAction, simplifying timing representation throughout.
 1. All repetition is expressed through recursive related actions, rather than trying to express the periodicity using a timing structure.
 
-The eRSD PlanDefinition uses these structures to introduce a "loop" for the creation and submission of reports for a suspected reportable event:
+The eRSD PlanDefinition uses these structures to introduce a "loop" for the creation and submission of reports for a suspected reportable event. The following table describes each action, the code that identifies it, what causes it to run, and what it invokes next. Indented rows are child actions of the action above them.
 
-* start-workflow
-    - trigger: encounter-start
-    - action: check-suspected-disorder in "A" hours
+| Action | Code | Runs when | Invokes next |
+| --- | --- | --- | --- |
+| `start-workflow` | `initiate-reporting-workflow` | `encounter-start` event | `check-for-immediate-reporting`, after "A" |
+| `check-for-immediate-reporting` | `execute-reporting-workflow` | invoked by `start-workflow` | — |
+| &nbsp;&nbsp;`is-encounter-immediately-reportable` | `check-trigger-codes` | suspected disorder, lab order or diagnostic order matches | `create-eicr` |
+| &nbsp;&nbsp;`continue-check-reportable` | `evaluate-condition` | encounter in progress and within the reporting duration | `check-reportable`, after "B" |
+| &nbsp;&nbsp;`terminate-late-encounter` | `terminate-reporting-workflow` | encounter has passed its reporting window | — |
+| &nbsp;&nbsp;`is-late-encounter-completed` | `complete-reporting` | encounter finished after its window had elapsed | — |
+| `check-reportable` | `execute-reporting-workflow` | invoked by the check loop | — |
+| &nbsp;&nbsp;`is-encounter-reportable` | `check-trigger-codes` | encounter data matches the trigger code value sets | `create-eicr` |
+| &nbsp;&nbsp;`check-update-eicr` | `evaluate-condition` | more than "C" since the last eICR was sent | `create-eicr` |
+| &nbsp;&nbsp;`is-encounter-in-progress` | `evaluate-condition` | inpatient encounter still in progress | `check-reportable`, after "B" |
+| &nbsp;&nbsp;`is-amb-encounter-in-progress` | `evaluate-condition` | ambulatory encounter still in progress | `check-reportable`, after "B" |
+| &nbsp;&nbsp;`terminate-encounter` | `terminate-reporting-workflow` | inpatient encounter past its window | — |
+| &nbsp;&nbsp;`terminate-amb-encounter` | `terminate-reporting-workflow` | ambulatory encounter past its window | — |
+| &nbsp;&nbsp;`is-encounter-completed` | `complete-reporting` | encounter finished | — |
+| `create-eicr` | `create-report` | invoked when reportability is determined | `validate-eicr` |
+| `validate-eicr` | `validate-report` | invoked by `create-eicr` | `route-and-send-eicr` |
+| `route-and-send-eicr` | `submit-report` | invoked by `validate-eicr` | — |
+| `encounter-modified` | `initiate-reporting-workflow` | `encounter-modified` event | `is-modified-encounter-reportable` |
+| `is-modified-encounter-reportable` | `check-trigger-codes` | modified encounter data matches the trigger code value sets | `create-eicr` |
 
-* check-suspected-disorder
-    - if is-encounter-suspected-disorder, create-eicr
-    - if continue-check-reportable, check-reportable in "B" hours
+Three aspects of this structure are worth drawing out, because they are not evident from the table alone.
 
-* check-reportable
-    - if is-encounter-reportable, create-eicr
-    - if check-update-eicr, create-eicr
-    - if is-encounter-in-progress, check-reportable in "B" hours
+**The reporting loop.** `check-reportable` re-invokes itself through `is-encounter-in-progress` or `is-amb-encounter-in-progress`, with a delay of "B", for as long as the encounter remains in progress and within its reporting duration. This recursion is how periodic re-checking is expressed, rather than a timing structure.
 
-* create-eicr
-    - action: validate-eicr
+**Ambulatory and inpatient encounters follow separate paths.** Ambulatory, virtual and home health encounters (`AMB`, `VR`, `HH`) use the ambulatory reporting duration, while inpatient, emergency and observation encounters (`IMP`, `EMER`, `OBSENC`) use the normal reporting duration. The two paths have their own in-progress and termination actions so that a short ambulatory encounter is not re-checked on an inpatient cadence.
 
-* validate-eicr
-    - route-and-send-eicr
+**Termination and completion are explicit.** The `terminate-*` actions end the reporting workflow for an encounter that has passed its reporting window, and the `complete-reporting` actions record that an encounter finished. Together these let an implementing system stop scheduling checks for an encounter that can no longer produce a report, rather than relying on implicit completion.
 
-* encounter-modified
-    - trigger: encounter-modified
-    - create-eicr
+The `create-eicr` action involves the marshaling of FHIR resources needed to create the eICR profile included in this standard, and produces an eICR document bundle as its `output`. That output is consumed as the `input` of `validate-eicr`, which validates the created eICR against the appropriate profiles and validation rules, and in turn passes it to `route-and-send-eicr`. The `route-and-send-eicr` action involves the transmission of the eICR to either a third party platform, a Public Health Agency (PHA), or a Health Information Exchange or Health Data Network on the way to a PHA.
 
-The `start-workflow` action is initiated by an `encounter-start` event, and specifies that `check-reportable` should be called in "A" hours.
-
-The `check-suspected-disorder` action checks the encounter against a suspected disorders value set, and if a match is found, calls the `create-eicr` action immediately. If the encounter is in progress and still within the normal reporting duration ("E"), or less than "D" hours have elapsed since the encounter end, `check-reportable` is called.
-
-The `check-reportable` action checks for suspected reportability and whether or not the encounter is within the normal reporting duration ("E"), and if true, calls the `create-eicr` action. If an eICR has not been sent for over "C" hours, then `create-eicr` is called. If the encounter is still in progress, `check-reportable` is called again with a delay of "B" hours and this continues until more than "D" hours have elapsed since the encounter end.
-
-The `create-eicr` action involves the marshaling of FHIR resources needed to create the eICR profile included in this standard. It calls the `validate-eicr` action.
-
-The `validate-eicr` action involves validating the created eICR conforms with all appropriate profiles and validation rules. It calls the `route-and-send-eicr` action.
-
-The `route-and-send-eicr` action involves the transmission of the eICR to either a third party platform, a Public Health Agency (PHA), or a Health information Exchange or Health Data Network on the way to a PHA.
-
-The `encounter-modified` action is initiated by an 'encounter-modified' event, and specifies that if the encounter has extended beyond the normal reporting duration ("E") `create-eicr` should be called.
-
-> Note to implementers: The workflow described here provides a minimally complete representation of the required reporting events. However, implementations may wish to extend this functionality to support implementation-level tracking details such as workflow status. For example, the addition of an 'is-encounter-completed' action that can be used to explicitly track when an encounter completes, rather than the implicit completion represented here.
 
 ##### Parameters
 Because of variability in accumulation of data at the start of a patient encounter, the EHR implementer should implement a time-based delay in generating and sending the first encounter eICR to allow time for required data to be captured within the patient chart. This will ensure the eICR is better populated before sending and will reduce the number of case reports that are sent for a single patient encounter.

@@ -14,7 +14,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * extension contains http://hl7.org/fhir/StructureDefinition/variable named variable 0..* MS
 * extension[variable] ^short = "Defines variables for the PlanDefinition."
 * extension[variable] ^definition = "Defines variables for the PlanDefinition."
-* action 7.. MS
+* action 8.. MS
 * action ^slicing.discriminator.type = #value
 * action ^slicing.discriminator.path = "id"
 * action ^slicing.ordered = true
@@ -33,12 +33,13 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action.relatedAction.offsetDuration ^definition = "The duration quantity may include a comparator, indicating how the offset should be applied. For example, <= 1 hour, meaning that the offset should be no more than 1 hour. This allows systems flexibility in scheduling the actions to isolate reporting activities to off hours."
 * action contains
     encounterStart 1..1 MS and
-    checkSuspectedDisorder 1..1 MS and
+    checkForImmediateReporting 1..1 MS and
     checkReportable 1..1 MS and
     createEicr 1..1 MS and
     validateEicr 1..1 MS and
     routeAndSendEicr 1..1 MS and
-    encounterModified 1..1 MS
+    encounterModified 1..1 MS and
+    isModifiedEncounterReportable 1..1 MS
 * action[encounterStart] ^short = "Encounter start code"
 * action[encounterStart] ^definition = "Defines the \"start\" action"
 * action[encounterStart].id 1.. MS
@@ -90,7 +91,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[encounterStart].trigger.name = "encounter-start" (exactly)
 * action[encounterStart].trigger.name ^definition = "The name of the event, encounter-start in this case. For any action invoked as a result of this trigger, the triggering encounter is accessible via the context variable `%encounter`"
 * action[encounterStart].relatedAction 1..1 MS
-* action[encounterStart].relatedAction.actionId = "check-suspected-disorder" (exactly)
+* action[encounterStart].relatedAction.actionId = "check-for-immediate-reporting" (exactly)
 * action[encounterStart].relatedAction.relationship = #before-start (exactly)
 * action[encounterStart].relatedAction.offsetDuration 0..1
 * action[encounterStart].relatedAction.offsetDuration only Duration
@@ -98,55 +99,78 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[encounterStart].relatedAction.offsetDuration ^example.valueDuration.value = 1
 * action[encounterStart].relatedAction.offsetDuration ^example.valueDuration.unit = "h"
 
-* action[checkSuspectedDisorder] ^short = "Check suspected disorder"
-* action[checkSuspectedDisorder] ^definition = "Defines the \"check-suspected-disorder\" action"
-* action[checkSuspectedDisorder].id 1.. MS
-* action[checkSuspectedDisorder].id = "check-suspected-disorder" (exactly)
-* action[checkSuspectedDisorder].description 1.. MS
-* action[checkSuspectedDisorder].description = "This action represents the start of the check suspected disorder reporting workflow in response to the encounter-start event." (exactly)
-* action[checkSuspectedDisorder].description ^short = "Description of the check for suspected disorders action."
-* action[checkSuspectedDisorder].description ^definition = "Description of the check for suspected disorders action."
-* action[checkSuspectedDisorder].code 1..1 MS
-* action[checkSuspectedDisorder].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#execute-reporting-workflow
-* action[checkSuspectedDisorder].code ^short = "Code for the \"check-suspected-disorder\" action."
-* action[checkSuspectedDisorder].code ^definition = "The US-PH-PlanDefinition-Action code for the \"check-suspected-disorder\" action."
-* action[checkSuspectedDisorder].action 2..
-* action[checkSuspectedDisorder].action ^slicing.discriminator.type = #value
-* action[checkSuspectedDisorder].action ^slicing.discriminator.path = "id"
-* action[checkSuspectedDisorder].action ^slicing.rules = #open
-* action[checkSuspectedDisorder].action contains
-    isEncounterSuspectedDisorder 1..1 MS and
-    continueCheckReportable 1..1 MS
-//* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder] only BackboneElement
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].id 1.. MS
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].id = "is-encounter-suspected-disorder" (exactly)
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].code 1.. MS
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#check-trigger-codes
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition 0..* MS
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition.kind = #applicability (exactly)
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition.expression 1.. MS
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition.expression.language = #text/fhirpath (exactly)
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input 0..* MS
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input ^definition = "Defines input data requirements for the action. Required data is accessible via a context variable named '%[id]' using the 'id' of the input data requirement"
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input.id 1..1 MS
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input.id ^definition = "The id of the input requirement, allowing the data to be referenced via a context variable named '%[id]'"
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].relatedAction.actionId = "create-eicr" (exactly)
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].relatedAction.relationship = #before-start (exactly)
-//* action[checkSuspectedDisorder].action[continueCheckReportable] only BackboneElement
-* action[checkSuspectedDisorder].action[continueCheckReportable].id 1.. MS
-* action[checkSuspectedDisorder].action[continueCheckReportable].id = "continue-check-reportable" (exactly)
-* action[checkSuspectedDisorder].action[continueCheckReportable].code 1..
-* action[checkSuspectedDisorder].action[continueCheckReportable].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#evaluate-condition
-* action[checkSuspectedDisorder].action[continueCheckReportable].condition.kind = #applicability (exactly)
-* action[checkSuspectedDisorder].action[continueCheckReportable].condition.expression 1.. MS
-* action[checkSuspectedDisorder].action[continueCheckReportable].condition.expression.language = #text/fhirpath (exactly)
-* action[checkSuspectedDisorder].action[continueCheckReportable].relatedAction.actionId = "check-reportable" (exactly)
-* action[checkSuspectedDisorder].action[continueCheckReportable].relatedAction.relationship = #before-start (exactly)
-* action[checkSuspectedDisorder].action[continueCheckReportable].relatedAction.offsetDuration 0..1
-* action[checkSuspectedDisorder].action[continueCheckReportable].relatedAction.offsetDuration only Duration
-* action[checkSuspectedDisorder].action[continueCheckReportable].relatedAction.offsetDuration ^example.label = "Wait 6 hours before next action."
-* action[checkSuspectedDisorder].action[continueCheckReportable].relatedAction.offsetDuration ^example.valueDuration.value = 6
-* action[checkSuspectedDisorder].action[continueCheckReportable].relatedAction.offsetDuration ^example.valueDuration.unit = "h"
+* action[checkForImmediateReporting] ^short = "Check for immediate reporting"
+* action[checkForImmediateReporting] ^definition = "Defines the \"check-for-immediate-reporting\" action, which checks for immediately reportable evidence and schedules the subsequent reportability checks."
+* action[checkForImmediateReporting].id 1.. MS
+* action[checkForImmediateReporting].id = "check-for-immediate-reporting" (exactly)
+* action[checkForImmediateReporting].description 1.. MS
+* action[checkForImmediateReporting].description = "This action represents the start of the check suspected disorder reporting workflow in response to the encounter-start event." (exactly)
+* action[checkForImmediateReporting].description ^short = "Description of the check for immediate reporting action."
+* action[checkForImmediateReporting].description ^definition = "Description of the check for immediate reporting action."
+* action[checkForImmediateReporting].code 1..1 MS
+* action[checkForImmediateReporting].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#execute-reporting-workflow
+* action[checkForImmediateReporting].code ^short = "Code for the \"check-for-immediate-reporting\" action."
+* action[checkForImmediateReporting].code ^definition = "The US-PH-PlanDefinition-Action code for the \"check-for-immediate-reporting\" action."
+* action[checkForImmediateReporting].action 4..
+* action[checkForImmediateReporting].action ^slicing.discriminator.type = #value
+* action[checkForImmediateReporting].action ^slicing.discriminator.path = "id"
+* action[checkForImmediateReporting].action ^slicing.rules = #open
+* action[checkForImmediateReporting].action contains
+    isEncounterImmediatelyReportable 1..1 MS and
+    continueCheckReportable 1..1 MS and
+    terminateLateEncounter 1..1 MS and
+    isLateEncounterCompleted 1..1 MS
+//* action[checkForImmediateReporting].action[isEncounterImmediatelyReportable] only BackboneElement
+* action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].id 1.. MS
+* action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].id = "is-encounter-immediately-reportable" (exactly)
+* action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].code 1.. MS
+* action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#check-trigger-codes
+* action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].condition 0..* MS
+* action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].condition.kind = #applicability (exactly)
+* action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].condition.expression 1.. MS
+* action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].condition.expression.language = #text/fhirpath (exactly)
+* action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input 0..* MS
+* action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input ^definition = "Defines input data requirements for the action. Required data is accessible via a context variable named '%[id]' using the 'id' of the input data requirement"
+* action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input.id 1..1 MS
+* action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input.id ^definition = "The id of the input requirement, allowing the data to be referenced via a context variable named '%[id]'"
+* action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].relatedAction.actionId = "create-eicr" (exactly)
+* action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].relatedAction.relationship = #before-start (exactly)
+//* action[checkForImmediateReporting].action[continueCheckReportable] only BackboneElement
+* action[checkForImmediateReporting].action[continueCheckReportable].id 1.. MS
+* action[checkForImmediateReporting].action[continueCheckReportable].id = "continue-check-reportable" (exactly)
+* action[checkForImmediateReporting].action[continueCheckReportable].code 1..
+* action[checkForImmediateReporting].action[continueCheckReportable].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#evaluate-condition
+* action[checkForImmediateReporting].action[continueCheckReportable].condition.kind = #applicability (exactly)
+* action[checkForImmediateReporting].action[continueCheckReportable].condition.expression 1.. MS
+* action[checkForImmediateReporting].action[continueCheckReportable].condition.expression.language = #text/fhirpath (exactly)
+* action[checkForImmediateReporting].action[continueCheckReportable].relatedAction.actionId = "check-reportable" (exactly)
+* action[checkForImmediateReporting].action[continueCheckReportable].relatedAction.relationship = #before-start (exactly)
+* action[checkForImmediateReporting].action[continueCheckReportable].relatedAction.offsetDuration 0..1
+* action[checkForImmediateReporting].action[continueCheckReportable].relatedAction.offsetDuration only Duration
+* action[checkForImmediateReporting].action[continueCheckReportable].relatedAction.offsetDuration ^example.label = "Wait 6 hours before next action."
+* action[checkForImmediateReporting].action[continueCheckReportable].relatedAction.offsetDuration ^example.valueDuration.value = 6
+* action[checkForImmediateReporting].action[continueCheckReportable].relatedAction.offsetDuration ^example.valueDuration.unit = "h"
+
+* action[checkForImmediateReporting].action[terminateLateEncounter] ^short = "Terminate a late encounter"
+* action[checkForImmediateReporting].action[terminateLateEncounter] ^definition = "Terminates the reporting workflow for an encounter that is still in progress beyond the normal reporting duration, or that ended more than the post-encounter grace period ago."
+* action[checkForImmediateReporting].action[terminateLateEncounter].id 1.. MS
+* action[checkForImmediateReporting].action[terminateLateEncounter].id = "terminate-late-encounter" (exactly)
+* action[checkForImmediateReporting].action[terminateLateEncounter].code 1..
+* action[checkForImmediateReporting].action[terminateLateEncounter].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#terminate-reporting-workflow
+* action[checkForImmediateReporting].action[terminateLateEncounter].condition 0..* MS
+* action[checkForImmediateReporting].action[terminateLateEncounter].condition.kind = #applicability (exactly)
+* action[checkForImmediateReporting].action[terminateLateEncounter].condition.expression 1.. MS
+* action[checkForImmediateReporting].action[terminateLateEncounter].condition.expression.language = #text/fhirpath (exactly)
+* action[checkForImmediateReporting].action[isLateEncounterCompleted] ^short = "Late encounter completed"
+* action[checkForImmediateReporting].action[isLateEncounterCompleted] ^definition = "Records completion of reporting for an encounter that finished after its reporting window had elapsed. Ambulatory encounters use the ambulatory reporting duration; inpatient encounters use the normal reporting duration."
+* action[checkForImmediateReporting].action[isLateEncounterCompleted].id 1.. MS
+* action[checkForImmediateReporting].action[isLateEncounterCompleted].id = "is-late-encounter-completed" (exactly)
+* action[checkForImmediateReporting].action[isLateEncounterCompleted].code 1..
+* action[checkForImmediateReporting].action[isLateEncounterCompleted].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#complete-reporting
+* action[checkForImmediateReporting].action[isLateEncounterCompleted].condition 0..* MS
+* action[checkForImmediateReporting].action[isLateEncounterCompleted].condition.kind = #applicability (exactly)
+* action[checkForImmediateReporting].action[isLateEncounterCompleted].condition.expression 1.. MS
+* action[checkForImmediateReporting].action[isLateEncounterCompleted].condition.expression.language = #text/fhirpath (exactly)
 * action[checkReportable] ^short = "Check the encounter for reportability"
 * action[checkReportable] ^definition = "Defines the checking of the encounter for reportability."
 * action[checkReportable].id 1.. MS
@@ -156,7 +180,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[checkReportable].description ^definition = "Description of the Periodic Update of eICR action within the eICR action."
 * action[checkReportable].code 1..
 * action[checkReportable].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#execute-reporting-workflow
-* action[checkReportable].action 4..
+* action[checkReportable].action 7..
 * action[checkReportable].action ^slicing.discriminator.type = #value
 * action[checkReportable].action ^slicing.discriminator.path = "id"
 * action[checkReportable].action ^slicing.rules = #open
@@ -164,6 +188,9 @@ Description: "This PlanDefinition profile defines the logic and rules around det
     isEncounterReportable 1..1 MS and
     checkUpdateEicr 1..1 MS and
     encounterInProgress 1..1 MS and
+    ambEncounterInProgress 1..1 MS and
+    terminateEncounter 1..1 MS and
+    terminateAmbEncounter 1..1 MS and
     encounterComplete 1..1 MS
 //* action[checkReportable].action[isEncounterReportable] only BackboneElement
 * action[checkReportable].action[isEncounterReportable].id 1.. MS
@@ -214,6 +241,41 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[checkReportable].action[encounterComplete].condition.expression 1.. MS
 * action[checkReportable].action[encounterComplete].condition.expression.language = #text/fhirpath (exactly)
 
+
+* action[checkReportable].action[ambEncounterInProgress] ^short = "Ambulatory encounter in progress"
+* action[checkReportable].action[ambEncounterInProgress] ^definition = "Continues the reportability check loop for an ambulatory encounter that is still in progress and within the ambulatory reporting duration."
+* action[checkReportable].action[ambEncounterInProgress].id 1.. MS
+* action[checkReportable].action[ambEncounterInProgress].id = "is-amb-encounter-in-progress" (exactly)
+* action[checkReportable].action[ambEncounterInProgress].code 1..
+* action[checkReportable].action[ambEncounterInProgress].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#evaluate-condition
+* action[checkReportable].action[ambEncounterInProgress].condition 0..* MS
+* action[checkReportable].action[ambEncounterInProgress].condition.kind = #applicability (exactly)
+* action[checkReportable].action[ambEncounterInProgress].condition.expression 1.. MS
+* action[checkReportable].action[ambEncounterInProgress].condition.expression.language = #text/fhirpath (exactly)
+* action[checkReportable].action[ambEncounterInProgress].relatedAction.actionId = "check-reportable" (exactly)
+* action[checkReportable].action[ambEncounterInProgress].relatedAction.relationship = #before-start (exactly)
+* action[checkReportable].action[ambEncounterInProgress].relatedAction.offsetDuration 0..1
+* action[checkReportable].action[ambEncounterInProgress].relatedAction.offsetDuration only Duration
+* action[checkReportable].action[terminateEncounter] ^short = "Terminate an inpatient encounter"
+* action[checkReportable].action[terminateEncounter] ^definition = "Terminates the reporting workflow for an inpatient, emergency or observation encounter that has passed the normal reporting duration or the post-encounter grace period."
+* action[checkReportable].action[terminateEncounter].id 1.. MS
+* action[checkReportable].action[terminateEncounter].id = "terminate-encounter" (exactly)
+* action[checkReportable].action[terminateEncounter].code 1..
+* action[checkReportable].action[terminateEncounter].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#terminate-reporting-workflow
+* action[checkReportable].action[terminateEncounter].condition 0..* MS
+* action[checkReportable].action[terminateEncounter].condition.kind = #applicability (exactly)
+* action[checkReportable].action[terminateEncounter].condition.expression 1.. MS
+* action[checkReportable].action[terminateEncounter].condition.expression.language = #text/fhirpath (exactly)
+* action[checkReportable].action[terminateAmbEncounter] ^short = "Terminate an ambulatory encounter"
+* action[checkReportable].action[terminateAmbEncounter] ^definition = "Terminates the reporting workflow for an ambulatory, virtual or home health encounter that has passed the ambulatory reporting duration or the post-encounter grace period."
+* action[checkReportable].action[terminateAmbEncounter].id 1.. MS
+* action[checkReportable].action[terminateAmbEncounter].id = "terminate-amb-encounter" (exactly)
+* action[checkReportable].action[terminateAmbEncounter].code 1..
+* action[checkReportable].action[terminateAmbEncounter].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#terminate-reporting-workflow
+* action[checkReportable].action[terminateAmbEncounter].condition 0..* MS
+* action[checkReportable].action[terminateAmbEncounter].condition.kind = #applicability (exactly)
+* action[checkReportable].action[terminateAmbEncounter].condition.expression 1.. MS
+* action[checkReportable].action[terminateAmbEncounter].condition.expression.language = #text/fhirpath (exactly)
 * action[createEicr] ^short = "Create the eICR"
 * action[createEicr] ^definition = "Defines the \"create-eicr\" action"
 * action[createEicr].id 1.. MS
@@ -292,9 +354,24 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[encounterModified].trigger.type = #named-event (exactly)
 * action[encounterModified].trigger.name = "encounter-modified" (exactly)
 * action[encounterModified].trigger.name ^definition = "The name of the event, encounter-start in this case. For any action invoked as a result of this trigger, the triggering encounter is accessible via the context variable `%encounter`"
-* action[encounterModified].action.condition.kind = #applicability (exactly)
-* action[encounterModified].action.condition.expression 1.. MS
-* action[encounterModified].action.condition.expression.language = #text/fhirpath (exactly)
 * action[encounterModified].relatedAction 1..1 MS
-* action[encounterModified].relatedAction.actionId = "create-eicr" (exactly)
+* action[encounterModified].relatedAction.actionId = "is-modified-encounter-reportable" (exactly)
 * action[encounterModified].relatedAction.relationship = #before-start (exactly)
+
+* action[isModifiedEncounterReportable] ^short = "Check a modified encounter for reportability"
+* action[isModifiedEncounterReportable] ^definition = "Checks a modified encounter against the trigger code value sets. Invoked by the \"encounter-modified\" action and, when reportable, invokes \"create-eicr\"."
+* action[isModifiedEncounterReportable].id 1.. MS
+* action[isModifiedEncounterReportable].id = "is-modified-encounter-reportable" (exactly)
+* action[isModifiedEncounterReportable].code 1..
+* action[isModifiedEncounterReportable].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#check-trigger-codes
+* action[isModifiedEncounterReportable].condition 0..* MS
+* action[isModifiedEncounterReportable].condition ^short = "Applicability condition for the modified-encounter reportability check."
+* action[isModifiedEncounterReportable].condition.kind = #applicability (exactly)
+* action[isModifiedEncounterReportable].condition.expression 1.. MS
+* action[isModifiedEncounterReportable].condition.expression.language = #text/fhirpath (exactly)
+* action[isModifiedEncounterReportable].description 1.. MS
+* action[isModifiedEncounterReportable].input 0..* MS
+* action[isModifiedEncounterReportable].input.id 1..1 MS
+* action[isModifiedEncounterReportable].relatedAction 1..1 MS
+* action[isModifiedEncounterReportable].relatedAction.actionId = "create-eicr" (exactly)
+* action[isModifiedEncounterReportable].relatedAction.relationship = #before-start (exactly)

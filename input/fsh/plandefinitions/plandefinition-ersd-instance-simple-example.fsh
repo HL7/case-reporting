@@ -36,49 +36,63 @@ Usage: #example
 * action[encounterStart].input[=].extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-fhirQueryPattern"
 * action[encounterStart].input[=].extension.valueString = "Encounter/{{context.encounterId}}"
 * action[encounterStart].input[=].type = #Encounter
-* action[encounterStart].relatedAction.actionId = "check-suspected-disorder"
+* action[encounterStart].relatedAction.actionId = "check-for-immediate-reporting"
 * action[encounterStart].relatedAction.relationship = #before-start
 * action[encounterStart].relatedAction.offsetDuration = 1 'h'
-* action[checkSuspectedDisorder].id = "check-suspected-disorder"
-* action[checkSuspectedDisorder].description = "This action represents the start of the check suspected disorder reporting workflow in response to the encounter-start event."
-* action[checkSuspectedDisorder].textEquivalent = "Check suspected disorders for immediate reportability and setup jobs for future reportability checks."
-* action[checkSuspectedDisorder].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#execute-reporting-workflow
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].id = "is-encounter-suspected-disorder"
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].description = "This action represents the check for suspected disorder reportability to create the patients eICR."
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].textEquivalent = "Check Trigger Codes based on Suspected Reportable Value set."
-* action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#check-trigger-codes
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition.kind = #applicability
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition.expression.language = #text/fhirpath
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].condition.expression.expression = "%modifiedConditions.exists() or %modifiedLabResults.exists() or %modifiedMedicationOrders.exists()"
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input[0].id = "modifiedConditions"
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input[=].extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-fhirQueryPattern"
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input[=].extension.valueString = "Condition?patient=Patient/{{context.patientId}}"
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input[=].type = #Condition
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input[=].codeFilter.path = "code"
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-suspected-disorder-triggers-example"
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input[+].id = "modifiedLabResults"
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input[=].extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-fhirQueryPattern"
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input[=].extension.valueString = "Observation?patient=Patient/{{context.patientId}}"
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input[=].type = #Observation
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input[=].codeFilter.path = "value"
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lab-order-test-triggers-example"
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input[+].id = "modifiedMedicationOrders"
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input[=].extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-fhirQueryPattern"
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input[=].extension.valueString = "MedicationRequest?patient=Patient/{{context.patientId}}"
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input[=].type = #MedicationRequest
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input[=].codeFilter.path = "medication"
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example"
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].relatedAction.actionId = "create-eicr"
-// * action[checkSuspectedDisorder].action[isEncounterSuspectedDisorder].relatedAction.relationship = #before-start
-* action[checkSuspectedDisorder].action[continueCheckReportable].id = "continue-check-reportable"
-* action[checkSuspectedDisorder].action[continueCheckReportable].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#evaluate-condition
-// * action[checkSuspectedDisorder].action[continueCheckReportable].condition.kind = #applicability
-// * action[checkSuspectedDisorder].action[continueCheckReportable].condition.expression.language = #text/fhirpath
-// * action[checkSuspectedDisorder].action[continueCheckReportable].condition.expression.expression = "%encounter.where((status = 'in-progress' and period.start + %normalReportingDuration < now()) or status = 'finished' and period.end <= now() - 72 hours)"
-// * action[checkSuspectedDisorder].action[continueCheckReportable].relatedAction.actionId = "check-reportable"
-// * action[checkSuspectedDisorder].action[continueCheckReportable].relatedAction.relationship = #before-start
-// * action[checkSuspectedDisorder].action[continueCheckReportable].relatedAction.offsetDuration.comparator = #<=
-// * action[checkSuspectedDisorder].action[continueCheckReportable].relatedAction.offsetDuration = 6 'h'
+* action[checkForImmediateReporting].id = "check-for-immediate-reporting"
+* action[checkForImmediateReporting].description = "This action represents the start of the check suspected disorder reporting workflow in response to the encounter-start event."
+* action[checkForImmediateReporting].textEquivalent = "Check suspected disorders for immediate reportability and setup jobs for future reportability checks."
+* action[checkForImmediateReporting].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#execute-reporting-workflow
+* action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].id = "is-encounter-immediately-reportable"
+* action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].description = "This action represents the check for suspected disorder reportability to create the patients eICR."
+* action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].textEquivalent = "Check Trigger Codes based on Suspected Reportable Value set."
+* action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#check-trigger-codes
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].condition.kind = #applicability
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].condition.expression.language = #text/fhirpath
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].condition.expression.expression = "%modifiedConditions.exists() or %modifiedLabResults.exists() or %modifiedMedicationOrders.exists()"
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input[0].id = "modifiedConditions"
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input[=].extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-fhirQueryPattern"
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input[=].extension.valueString = "Condition?patient=Patient/{{context.patientId}}"
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input[=].type = #Condition
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input[=].codeFilter.path = "code"
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-suspected-disorder-triggers-example"
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input[+].id = "modifiedLabResults"
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input[=].extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-fhirQueryPattern"
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input[=].extension.valueString = "Observation?patient=Patient/{{context.patientId}}"
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input[=].type = #Observation
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input[=].codeFilter.path = "value"
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lab-order-test-triggers-example"
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input[+].id = "modifiedMedicationOrders"
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input[=].extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-fhirQueryPattern"
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input[=].extension.valueString = "MedicationRequest?patient=Patient/{{context.patientId}}"
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input[=].type = #MedicationRequest
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input[=].codeFilter.path = "medication"
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-medications-triggers-example"
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].relatedAction.actionId = "create-eicr"
+// * action[checkForImmediateReporting].action[isEncounterImmediatelyReportable].relatedAction.relationship = #before-start
+* action[checkForImmediateReporting].action[continueCheckReportable].id = "continue-check-reportable"
+* action[checkForImmediateReporting].action[continueCheckReportable].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#evaluate-condition
+* action[checkForImmediateReporting].action[terminateLateEncounter].id = "terminate-late-encounter"
+* action[checkForImmediateReporting].action[terminateLateEncounter].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#terminate-reporting-workflow
+// NOTE: condition and relatedAction are commented out on nested child actions below.
+// PlanDefinition.action.action is a contentReference, so the validator does not honour
+// profile constraints beneath it and rejects these elements as not allowed. The same
+// workaround is applied to the pre-existing nested actions in this file.
+// * action[checkForImmediateReporting].action[terminateLateEncounter].condition.kind = #applicability
+// * action[checkForImmediateReporting].action[terminateLateEncounter].condition.expression.language = #text/fhirpath
+// * action[checkForImmediateReporting].action[terminateLateEncounter].condition.expression.expression = "%terminatedencounter.where(((status = 'in-progress' or status = 'arrived') and %encounterStartDate + 1 day * %normalReportingDuration < now()) or (status = 'finished' and %encounterEndDate + 72 hours < now())).select(true)"
+* action[checkForImmediateReporting].action[isLateEncounterCompleted].id = "is-late-encounter-completed"
+* action[checkForImmediateReporting].action[isLateEncounterCompleted].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#complete-reporting
+// * action[checkForImmediateReporting].action[isLateEncounterCompleted].condition.kind = #applicability
+// * action[checkForImmediateReporting].action[isLateEncounterCompleted].condition.expression.language = #text/fhirpath
+// * action[checkForImmediateReporting].action[isLateEncounterCompleted].condition.expression.expression = "%lateCompletedEncounter.exists(status = 'finished')"
+// * action[checkForImmediateReporting].action[continueCheckReportable].condition.kind = #applicability
+// * action[checkForImmediateReporting].action[continueCheckReportable].condition.expression.language = #text/fhirpath
+// * action[checkForImmediateReporting].action[continueCheckReportable].condition.expression.expression = "%encounter.where((status = 'in-progress' and period.start + %normalReportingDuration < now()) or status = 'finished' and period.end <= now() - 72 hours)"
+// * action[checkForImmediateReporting].action[continueCheckReportable].relatedAction.actionId = "check-reportable"
+// * action[checkForImmediateReporting].action[continueCheckReportable].relatedAction.relationship = #before-start
+// * action[checkForImmediateReporting].action[continueCheckReportable].relatedAction.offsetDuration.comparator = #<=
+// * action[checkForImmediateReporting].action[continueCheckReportable].relatedAction.offsetDuration = 6 'h'
 * action[checkReportable].id = "check-reportable"
 * action[checkReportable].description = "This action represents the check for suspected reportability of the eICR."
 * action[checkReportable].textEquivalent = "Check Reportability and setup jobs for future reportability checks."
@@ -197,6 +211,23 @@ Usage: #example
 // * action[checkReportable].action[encounterInProgress].relatedAction.offsetDuration = 6 'h'
 * action[checkReportable].action[encounterComplete].id = "is-encounter-completed"
 * action[checkReportable].action[encounterComplete].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#complete-reporting
+* action[checkReportable].action[ambEncounterInProgress].id = "is-amb-encounter-in-progress"
+* action[checkReportable].action[ambEncounterInProgress].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#evaluate-condition
+// * action[checkReportable].action[ambEncounterInProgress].condition.kind = #applicability
+// * action[checkReportable].action[ambEncounterInProgress].condition.expression.language = #text/fhirpath
+// * action[checkReportable].action[ambEncounterInProgress].condition.expression.expression = "%ambinprogressencounter.where((status = 'in-progress' or status = 'arrived') and %encounterStartDate + 1 day * %ambulatoryReportingDuration >= now()).exists() and %ambinprogressencounter.where(class.code='AMB' or class.code='VR' or class.code='HH').exists()"
+// * action[checkReportable].action[ambEncounterInProgress].relatedAction.actionId = "check-reportable"
+// * action[checkReportable].action[ambEncounterInProgress].relatedAction.relationship = #before-start
+* action[checkReportable].action[terminateEncounter].id = "terminate-encounter"
+* action[checkReportable].action[terminateEncounter].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#terminate-reporting-workflow
+// * action[checkReportable].action[terminateEncounter].condition.kind = #applicability
+// * action[checkReportable].action[terminateEncounter].condition.expression.language = #text/fhirpath
+// * action[checkReportable].action[terminateEncounter].condition.expression.expression = "%termencounter.where(((status = 'in-progress' or status = 'arrived') and %encounterStartDate + 1 day * %normalReportingDuration < now()) or (status = 'finished' and %encounterEndDate + 72 hours < now())).exists() and %termencounter.where(class.code='IMP' or class.code='EMER' or class.code='OBSENC').exists()"
+* action[checkReportable].action[terminateAmbEncounter].id = "terminate-amb-encounter"
+* action[checkReportable].action[terminateAmbEncounter].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#terminate-reporting-workflow
+// * action[checkReportable].action[terminateAmbEncounter].condition.kind = #applicability
+// * action[checkReportable].action[terminateAmbEncounter].condition.expression.language = #text/fhirpath
+// * action[checkReportable].action[terminateAmbEncounter].condition.expression.expression = "%termambencounter.where(((status = 'in-progress' or status = 'arrived') and %encounterStartDate + 1 day * %ambulatoryReportingDuration < now()) or (status = 'finished' and %encounterEndDate + 72 hours < now())).exists() and %termambencounter.where(class.code='AMB' or class.code='VR' or class.code='HH').exists()"
 // * action[checkReportable].action[encounterComplete].condition.kind = #applicability
 // * action[checkReportable].action[encounterComplete].condition.expression.language = #text/fhirpath
 // * action[checkReportable].action[encounterComplete].condition.expression.expression = "%completedEncounter.exists(status = 'finished')"
@@ -301,5 +332,15 @@ Usage: #example
 * action[encounterModified].condition.kind = #applicability
 * action[encounterModified].condition.expression.language = #text/fhirpath
 * action[encounterModified].condition.expression.expression = "%encounter.where(period.start + %normalReportingDuration < now())"
-* action[encounterModified].relatedAction.actionId = "create-eicr"
+* action[encounterModified].relatedAction.actionId = "is-modified-encounter-reportable"
 * action[encounterModified].relatedAction.relationship = #before-start
+
+* action[isModifiedEncounterReportable].id = "is-modified-encounter-reportable"
+* action[isModifiedEncounterReportable].description = "This action represents the check for reportability to create the patients eICR."
+* action[isModifiedEncounterReportable].textEquivalent = "Check Trigger Codes based on RCTC Value sets."
+* action[isModifiedEncounterReportable].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#check-trigger-codes
+* action[isModifiedEncounterReportable].condition.kind = #applicability
+* action[isModifiedEncounterReportable].condition.expression.language = #text/fhirpath
+* action[isModifiedEncounterReportable].condition.expression.expression = "%modifiedConditions.exists() or %modifiedEncounterDiagnoses.exists() or %modifiedLabOrders.exists() or %modifiedLabResults.exists() or %modifiedImmunizations.exists()"
+* action[isModifiedEncounterReportable].relatedAction.actionId = "create-eicr"
+* action[isModifiedEncounterReportable].relatedAction.relationship = #before-start
