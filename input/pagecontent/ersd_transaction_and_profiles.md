@@ -1,3 +1,15 @@
+<!--
+Style conventions for the eRSD pages. Please keep to these when editing:
+  * Code samples use fenced blocks with a language tag (```xml, ```json, ```cql).
+    Do not hand-escape markup inside <pre><code> blocks.
+  * Use markdown for lists and links rather than raw <ul>/<li>/<a> HTML.
+  * Images are wrapped in <figure> with descriptive alt text and a numbered
+    <figcaption>, and use max-width:100% rather than width:100%.
+  * Reference material (parameters, value sets, actions) is presented as a table
+    rather than as parallel prose paragraphs.
+  * Callouts use a blockquote opening "> Note to implementers:".
+  * Headings go no deeper than five levels (#####), matching the rest of this IG.
+-->
 ### electronic Reporting and Surveillance Distribution (eRSD) Transaction and Profiles
 
 The eRSD transaction includes a constrained FHIR PlanDefinition resource profile and a family of actions. It supports the distribution of reporting guidance and parameters, trigger code value sets, and more complex reporting rules and clinician / reporter support resources. This work seeks to align with developing public health guidelines that cover the same conditions. The PlanDefinition includes guidance for the overall orchestration of electronic case reporting. Each member of the family of actions defined in the [US Public Health PlanDefinition Action Codes]({{site.data.fhir.ver.hl7fhirusphlibrary}}/CodeSystem-us-ph-codesystem-plandefinition-actions.html) code system aligns with what may be different healthcare information systems or modules involved in reporting. The narrative elements of this profile will be used to help structure and guide implementation until EHRs have the ability to automatically consume them.
@@ -5,7 +17,7 @@ The eRSD transaction includes a constrained FHIR PlanDefinition resource profile
 The distribution of case reporting specifications involves two systems, the Implementing System (typically an Electronic Health Record (EHR)) and the Specification Repository, a repository that manages reporting specifications and the versions of those specifications over time:
 
 <figure>
-  <img style="max-width:100%" src="ersd-transaction-system-overview.png" alt="Overview of the systems involved in distributing eRSD specifications: a Specification Repository publishing to one or more Implementing Systems."/>
+  <img style="max-width:100%" src="ersd-transaction-system-overview.png" alt="Two boxes, an Implementing System (EHR) on the left and a Specification Repository on the right, connected by three arrows: Notification from the repository to the implementing system, Request from the implementing system to the repository, and Response back from the repository."/>
   <figcaption>Figure 1: Systems involved in eRSD distribution</figcaption>
 </figure>
 
@@ -52,6 +64,8 @@ The following diagram illustrates the general process for electronic Case Report
   <figcaption>Figure 2: Components of the eCR triggering and transmission process</figcaption>
 </figure>
 
+The timing parameters labelled "A" through "E" in the diagram above are defined in the [Parameters](#parameters) section below.
+
 The components involved in representing the reporting process are:
 
 * **Events** Clinical workflow events such as encounter start and end
@@ -60,14 +74,35 @@ The components involved in representing the reporting process are:
 * **Parameters** Parameters for varying timings of the process steps
 * **Suspected Reportability Criteria** Additional criteria that are evaluated to determine suspected reportability
 
-These components are represented using different elements of the PlanDefinition resource, as generally outlined in the following:
+These components are represented using different elements of the PlanDefinition resource:
 
-<figure>
-  <img style="max-width:100%" src="ersd-plandefinition-structure.png" alt="How the components of the reporting process map onto elements of the PlanDefinition resource: trigger, input, action, relatedAction and condition."/>
-  <figcaption>Figure 3: Mapping process components onto PlanDefinition elements</figcaption>
-</figure>
+| Component | Represented by |
+| --- | --- |
+| Events | `action.trigger`, using the `named-event` trigger type |
+| Triggering Criteria | `action.input`, with a `codeFilter` naming the triggering value set |
+| Process | `action`, nested to form a hierarchy, with `action.relatedAction` expressing the dependency between one step and the next |
+| Parameters | `action.relatedAction.offsetDuration`, together with the PlanDefinition-level `variable` extensions that supply the durations |
+| Suspected Reportability Criteria | `action.condition` |
 
-Events are represented with the `trigger` element; Triggering Criteria are represented using the `input` data criteria; Parameters are represented using `offset` in `relatedAction` elements; Process steps are represented using the `action` element and the relationships between them are represented with the `relatedAction` element; and finally, Suspected Reportability Criteria are represented with the `condition` element.
+An action therefore takes the following general shape, with each element carrying one of the components above:
+
+```xml
+<action>
+  <id value="..."/>                    <!-- identifies this step -->
+  <code value="..."/>                  <!-- the kind of step this is -->
+  <trigger>...</trigger>               <!-- Events -->
+  <condition>...</condition>           <!-- Suspected Reportability Criteria -->
+  <input>...</input>                   <!-- Triggering Criteria -->
+  <relatedAction>                      <!-- Process, with Parameters carried on the offset -->
+    <actionId value="..."/>
+    <relationship value="before-start"/>
+    <offsetDuration .../>
+  </relatedAction>
+  <action>...</action>                 <!-- nested child steps -->
+</action>
+```
+
+Not every action uses every element: `trigger` appears only on the actions that initiate a workflow in response to an event, `condition` and `input` on the actions that evaluate reportability, and `relatedAction` on any action that hands off to another.
 
 Each of these are discussed in more detail in the following sections.
 
@@ -94,6 +129,8 @@ Events are represented with the `trigger` element, using the `named-event` trigg
 ##### Triggering Criteria
 
 Triggering criteria are specified by a combination of the `input` data elements, and the Reportable Condition Triggering Codes (RCTC) Value Set Library. Note carefully that the RCTC Value Sets included in this IG are examples to illustrate the structure and typical content of the Value Sets.
+
+> Note to implementers: canonical URLs shown in the examples on this page use the `hl7.org/fhir/us/ecr/...-example` form and are illustrative only. The specification distributed in production uses `ersd.aimsplatform.org` canonicals for its own artifacts and `cts.nlm.nih.gov` canonicals for the trigger code value sets.
 
 The triggering value sets will include any number of focus useContext slices to indicate which conditions the triggering codes are associated with. Each value set corresponds to a different type of information that may contain events that are triggers for potentially reportable events. The categories of information are mapped to FHIR resources using the `input` element. For example, the reportable conditions value set is mapped to the `Condition` resource:
 
@@ -195,7 +232,7 @@ To facilitate implementation, there are two levels of suspected reportability de
 
 The first level is generally termed `triggering` and is supported by the `triggering` profiles, while the second level is generally termed `supplemental` and is supported by the `supplemental` profiles.
 
-###### Triggering eRSD Specification
+##### Triggering eRSD Specification
 
 The triggering level is represented using the `condition` element of the `check-reportable` action:
 
@@ -239,7 +276,7 @@ The [CRMIExpandedValueSet]({{site.data.fhir.ver.hl7fhiruvcrmi}}/StructureDefinit
 
 The ValueSets in the RCTC Library are distributed conforming to both these profiles, enabling systems to make use of expansions, or recalculate expansions based on the computable value set definition if necessary.
 
-###### Supplemental eRSD Specification
+##### Supplemental eRSD Specification
 
 The supplemental level of integration enables sites to participate in the suspected reportability determination by considering additional elements of the event data such as status, lab values, and jurisdiction configuration.
 
@@ -296,6 +333,7 @@ When packaging as a Bundle, the expectation is that the Bundle would include the
 
 #### Profiles
 * [eRSD PlanDefinition](StructureDefinition-ersd-plandefinition.html)
+* [eRSD Supplemental Library](StructureDefinition-ersd-supplemental-library.html)
 * [US Public Health Specification Library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-specification-library.html)
 * [US Public Health Supplemental Library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-library.html)
 * [US Public Health Supplemental ValueSet]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-valueset.html)
