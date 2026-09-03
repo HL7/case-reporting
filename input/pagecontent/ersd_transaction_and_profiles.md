@@ -143,6 +143,21 @@ Three aspects of this structure are worth drawing out, because they are not evid
 
 The `create-eicr` action involves the marshaling of FHIR resources needed to create the eICR profile included in this standard, and produces an eICR document bundle as its `output`. That output is consumed as the `input` of `validate-eicr`, which validates the created eICR against the appropriate profiles and validation rules, and in turn passes it to `route-and-send-eicr`. The `route-and-send-eicr` action involves the transmission of the eICR to either a third party platform, a Public Health Agency (PHA), or a Health Information Exchange or Health Data Network on the way to a PHA.
 
+**Data gathered by `create-eicr`.** The `create-eicr` action carries a set of `input` data requirements that define the data an implementing system gathers in order to construct the eICR. Each input has an `id`, a resource `type`, and a default FHIR query supplied by the FHIR query pattern extension, and each is addressable within the action as a `%` variable using its `id`. The categories below reflect the specification currently in production; see the [eICR Data Elements](eicr_data_elements.html) topic for the corresponding eICR content.
+
+| Category | Inputs |
+| --- | --- |
+| Core clinical | `patientdata`, `encounterdata`, `conditiondata` (problem list), `encounterDiagnosesData` (encounter diagnosis), `procdata` |
+| Medications | `mrdata` (orders), `medAdmdata`, `medStatementdata`, `medDispensedata` |
+| Immunizations | `immzdata` |
+| Laboratory and diagnostics | `labOrderdata`, `labResultdata`, `diagnosticOrderdata`, `diagnosticResultdata` |
+| Occupational data (ODH) | `odhData-loinc`, `odhData-snomed` |
+| Pregnancy | `pregnancyObservations`, `pregnancyConditions`, `pregnancy-status`, `lmp-data`, `postpartum-status`, `pregnancy-outcome` |
+| Social and contextual | `travelData-snomed`, `homeless-data`, `disability-data`, `nationality-data`, `residency-data`, `vaccine-cred-data` |
+| Vital signs | `vitals-data`, scoped to the encounter |
+
+Most inputs carry a query that selects by patient, and several narrow it further by category or by a specific set of codes. Where an input's query names another input rather than a search string, it reuses that input's result set instead of issuing a separate query.
+
 
 ##### Parameters
 Because of variability in accumulation of data at the start of a patient encounter, the EHR implementer should implement a time-based delay in generating and sending the first encounter eICR to allow time for required data to be captured within the patient chart. This will ensure the eICR is better populated before sending and will reduce the number of case reports that are sent for a single patient encounter.
