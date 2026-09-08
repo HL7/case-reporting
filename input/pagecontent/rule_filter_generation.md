@@ -1,3 +1,5 @@
+> **Status note:** the rule filters described on this page form part of the supplemental eRSD specification, which is not included in the eRSD package currently distributed in production. This page describes the intended approach and is retained for that purpose. The reportability logic that *is* distributed today is carried directly on the eRSD PlanDefinition and is described under [Triggering Refinements](ersd_transaction_and_profiles.html).
+
 This document details the generation of CQL rule filters
 
 ### Overview
@@ -8,7 +10,7 @@ The general structure of the reportability decision is organized by condition. F
 
 ### Reportable Condition Trigger Categories
 
-Condition-specific criteria are expressed in terms of data elements and characterized using standard terminologies. These condition-specific criteria terminologies are collected into value sets in the following six categories:
+Condition-specific criteria are expressed in terms of data elements and characterized using standard terminologies. These condition-specific criteria terminologies are collected into value sets by category. The six categories shown below were those defined when this approach was written; the specification currently distributed defines nine grouping value sets, described under [Triggering Criteria](ersd_transaction_and_profiles.html). The examples that follow illustrate the rule filter approach rather than the current set of categories:
 
 ```cql
 valueset "Example Diagnosis/Problem Triggers": 'http://hl7.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example'

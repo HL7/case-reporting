@@ -1,3 +1,5 @@
+> **Status note:** the jurisdictions code system described on this page forms part of the supplemental eRSD specification, which is not included in the eRSD package currently distributed in production. This page describes the intended approach and is retained for that purpose.
+
 This document provides instructions for how to use the eRSD Jurisdictions CodeSystem with CQL queries to identify relevant jurisdictions for a Patient and Encounter.
 
 ### Overview

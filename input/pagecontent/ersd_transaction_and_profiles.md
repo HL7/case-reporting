@@ -225,6 +225,8 @@ The ValueSets in the RCTC Library are distributed conforming to both these profi
 
 ###### Supplemental eRSD Specification
 
+> **Status note:** the supplemental eRSD specification described in this section is not included in the eRSD package currently distributed in production, which contains the specification library, the trigger code library, the PlanDefinition and the triggering value sets. The material is retained here because it describes the intended approach for extending reportability determination beyond triggering codes, and may be distributed in a future release. Implementations should not expect to obtain these resources from a current eRSD package.
+
 The supplemental level of integration enables sites to participate in the suspected reportability determination by considering additional elements of the event data such as status, lab values, and jurisdiction configuration.
 
 The suspected reportability criteria are also represented with the `condition` element, but using the [CQF Alternative Expression Extension](http://hl7.org/fhir/extensions/StructureDefinition-cqf-alternativeExpression.html) to provide the CQL expression for suspected reportability:
@@ -238,6 +240,8 @@ The suspected reportability criteria are also represented with the `condition` e
 &lt;/extension&gt;</code></pre>
 
 This extension indicates that the `Is Reportable` expression of the [library-executable-rule-filters-example](Library-library-executable-rule-filters-example.html) library should be used to evaluate whether the event is suspected reportable.
+
+In the specification currently distributed, every action condition carries a FHIRPath expression together with an alternative CQL expression of this form. The CQL library those alternative expressions reference is not included in the distributed package, so for the current release the FHIRPath expression is the one an implementation evaluates, and the CQL identifier serves to name the equivalent logic rather than to locate it.
 
 For a complete description of the logic used to determine suspected reportability, refer to the [Rule Filter Generation](rule_filter_generation.html) topic.
 
