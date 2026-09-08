@@ -3,10 +3,42 @@ InstanceOf: ERSDPlanDefinition
 Title: "eRSD PlanDefinition Instance Simple Example"
 Description: "An example eRSD PlanDefinition"
 Usage: #example
-* extension.url = "http://hl7.org/fhir/StructureDefinition/variable"
-* extension.valueExpression.name = "normalReportingDuration"
-* extension.valueExpression.language = #text/fhirpath
-* extension.valueExpression.expression = "2 weeks"
+* extension[0].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* extension[=].valueExpression.name = "normalReportingDuration"
+* extension[=].valueExpression.language = #text/fhirpath
+* extension[=].valueExpression.expression = "14"
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* extension[=].valueExpression.name = "ambulatoryReportingDuration"
+* extension[=].valueExpression.language = #text/fhirpath
+* extension[=].valueExpression.expression = "1"
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* extension[=].valueExpression.name = "dxTimeboxDuration"
+* extension[=].valueExpression.language = #text/fhirpath
+* extension[=].valueExpression.expression = "30"
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* extension[=].valueExpression.name = "labTimeboxDuration"
+* extension[=].valueExpression.language = #text/fhirpath
+* extension[=].valueExpression.expression = "30"
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* extension[=].valueExpression.name = "extendedTimeboxDuration"
+* extension[=].valueExpression.language = #text/fhirpath
+* extension[=].valueExpression.expression = "365"
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* extension[=].valueExpression.name = "negativeLabResultValueSet"
+* extension[=].valueExpression.language = #text/fhirpath
+* extension[=].valueExpression.expression = "'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1034'"
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* extension[=].valueExpression.name = "encounterStartDate"
+* extension[=].valueExpression.language = #text/fhirpath
+* extension[=].valueExpression.expression = "{{context.encounterStartDate}}"
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* extension[=].valueExpression.name = "encounterEndDate"
+* extension[=].valueExpression.language = #text/fhirpath
+* extension[=].valueExpression.expression = "{{context.encounterEndDate}}"
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/variable"
+* extension[=].valueExpression.name = "lastReportSubmissionDate"
+* extension[=].valueExpression.language = #text/fhirpath
+* extension[=].valueExpression.expression = "{{context.lastReportSubmissionDate}}"
 * url = "http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-ersd-instance-simple-example"
 * insert rsVersion
 * name = "PlanDefinition_eRSD_Instance_Simple_Example"
@@ -345,5 +377,33 @@ Usage: #example
 * action[isModifiedEncounterReportable].condition.kind = #applicability
 * action[isModifiedEncounterReportable].condition.expression.language = #text/fhirpath
 * action[isModifiedEncounterReportable].condition.expression.expression = "%modifiedConditions.exists() or %modifiedEncounterDiagnoses.exists() or %modifiedLabOrders.exists() or %modifiedLabResults.exists() or %modifiedImmunizations.exists()"
+* action[isModifiedEncounterReportable].input[0].id = "modifiedConditions"
+* action[isModifiedEncounterReportable].input[=].extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-fhirQueryPattern"
+* action[isModifiedEncounterReportable].input[=].extension.valueString = "Condition?patient=Patient/{{context.patientId}}&category=problem-list-item"
+* action[isModifiedEncounterReportable].input[=].type = #Condition
+* action[isModifiedEncounterReportable].input[=].codeFilter.path = "code"
+* action[isModifiedEncounterReportable].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example"
+* action[isModifiedEncounterReportable].input[+].id = "modifiedEncounterDiagnoses"
+* action[isModifiedEncounterReportable].input[=].extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-fhirQueryPattern"
+* action[isModifiedEncounterReportable].input[=].extension.valueString = "Condition?patient=Patient/{{context.patientId}}&category=encounter-diagnosis"
+* action[isModifiedEncounterReportable].input[=].type = #Condition
+* action[isModifiedEncounterReportable].input[=].codeFilter.path = "code"
+* action[isModifiedEncounterReportable].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example"
+* action[isModifiedEncounterReportable].input[+].id = "modifiedLabOrders"
+* action[isModifiedEncounterReportable].input[=].extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-fhirQueryPattern"
+* action[isModifiedEncounterReportable].input[=].extension.valueString = "ServiceRequest?patient=Patient/{{context.patientId}}"
+* action[isModifiedEncounterReportable].input[=].type = #ServiceRequest
+* action[isModifiedEncounterReportable].input[=].codeFilter.path = "code"
+* action[isModifiedEncounterReportable].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lab-order-test-triggers-example"
+* action[isModifiedEncounterReportable].input[+].id = "modifiedLabResults"
+* action[isModifiedEncounterReportable].input[=].extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-fhirQueryPattern"
+* action[isModifiedEncounterReportable].input[=].extension.valueString = "Observation?patient=Patient/{{context.patientId}}"
+* action[isModifiedEncounterReportable].input[=].type = #Observation
+* action[isModifiedEncounterReportable].input[=].codeFilter.path = "code"
+* action[isModifiedEncounterReportable].input[=].codeFilter.valueSet = "http://hl7.org/fhir/us/ecr/ValueSet/valueset-lab-obs-test-name-triggers-example"
+* action[isModifiedEncounterReportable].input[+].id = "modifiedImmunizations"
+* action[isModifiedEncounterReportable].input[=].extension.url = "http://hl7.org/fhir/StructureDefinition/cqf-fhirQueryPattern"
+* action[isModifiedEncounterReportable].input[=].extension.valueString = "Immunization?patient=Patient/{{context.patientId}}"
+* action[isModifiedEncounterReportable].input[=].type = #Immunization
 * action[isModifiedEncounterReportable].relatedAction.actionId = "create-eicr"
 * action[isModifiedEncounterReportable].relatedAction.relationship = #before-start

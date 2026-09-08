@@ -178,6 +178,9 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[checkForImmediateReporting].action[terminateLateEncounter].id = "terminate-late-encounter" (exactly)
 * action[checkForImmediateReporting].action[terminateLateEncounter].code 1..
 * action[checkForImmediateReporting].action[terminateLateEncounter].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#terminate-reporting-workflow
+// A condition is required in practice, but cannot be stated as 1..* here: nested action
+// constraints are not honoured (contentReference), so requiring it only produces an
+// expression-less stub in conforming instances.
 * action[checkForImmediateReporting].action[terminateLateEncounter].condition 0..* MS
 * action[checkForImmediateReporting].action[terminateLateEncounter].condition.kind = #applicability (exactly)
 * action[checkForImmediateReporting].action[terminateLateEncounter].condition.expression 1.. MS
@@ -286,6 +289,9 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[checkReportable].action[terminateEncounter].id = "terminate-encounter" (exactly)
 * action[checkReportable].action[terminateEncounter].code 1..
 * action[checkReportable].action[terminateEncounter].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#terminate-reporting-workflow
+// A condition is required in practice, but cannot be stated as 1..* here: nested action
+// constraints are not honoured (contentReference), so requiring it only produces an
+// expression-less stub in conforming instances.
 * action[checkReportable].action[terminateEncounter].condition 0..* MS
 * action[checkReportable].action[terminateEncounter].condition.kind = #applicability (exactly)
 * action[checkReportable].action[terminateEncounter].condition.expression 1.. MS
@@ -296,6 +302,9 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[checkReportable].action[terminateAmbEncounter].id = "terminate-amb-encounter" (exactly)
 * action[checkReportable].action[terminateAmbEncounter].code 1..
 * action[checkReportable].action[terminateAmbEncounter].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#terminate-reporting-workflow
+// A condition is required in practice, but cannot be stated as 1..* here: nested action
+// constraints are not honoured (contentReference), so requiring it only produces an
+// expression-less stub in conforming instances.
 * action[checkReportable].action[terminateAmbEncounter].condition 0..* MS
 * action[checkReportable].action[terminateAmbEncounter].condition.kind = #applicability (exactly)
 * action[checkReportable].action[terminateAmbEncounter].condition.expression 1.. MS
@@ -413,7 +422,7 @@ Description: "This PlanDefinition profile defines the logic and rules around det
 * action[isModifiedEncounterReportable].id = "is-modified-encounter-reportable" (exactly)
 * action[isModifiedEncounterReportable].code 1..
 * action[isModifiedEncounterReportable].code = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-plandefinition-actions#check-trigger-codes
-* action[isModifiedEncounterReportable].condition 0..* MS
+* action[isModifiedEncounterReportable].condition 1..* MS
 * action[isModifiedEncounterReportable].condition ^short = "Applicability condition for the modified-encounter reportability check."
 * action[isModifiedEncounterReportable].condition.kind = #applicability (exactly)
 * action[isModifiedEncounterReportable].condition.expression 1.. MS
