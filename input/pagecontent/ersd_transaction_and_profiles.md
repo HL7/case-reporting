@@ -99,15 +99,15 @@ The RCTC library is organised as a set of grouping value sets, each correspondin
 
 | Code | Category | Primary code systems | Role in the workflow |
 | --- | --- | --- | --- |
-| `dxtc` | Diagnosis and problem | ICD-10-CM, SNOMED CT | Matched against problem list entries, encounter diagnoses, and encounter reason |
+| `dxtc` | Diagnosis and problem | SNOMED CT, ICD-10-CM | Matched against problem list entries, encounter diagnoses, and encounter reason |
 | `ostc` | Organism and substance | SNOMED CT | Matched against laboratory result *values* |
 | `lotc` | Laboratory order test | LOINC | Matched against laboratory orders, laboratory tests and diagnostic orders |
-| `lrtc` | Laboratory observation result | LOINC, SNOMED CT | Matched against laboratory and diagnostic results |
+| `lrtc` | Laboratory observation result | LOINC | Matched against laboratory and diagnostic results |
 | `mrtc` | Medication | RxNorm | Matched against medication requests, administrations and statements |
-| `sdtc` | Suspected disorder | ICD-10-CM, SNOMED CT | Drives the immediate reportability check at the start of an encounter |
-| `artc` | All-results trigger codes | — | Identifies conditions that remain reportable even when the result is negative |
-| `eltc` | Extended timing threshold | — | Identifies conditions that use an extended evidence window |
-| `iztc` | Immunization | CVX | Matched against immunizations |
+| `sdtc` | Suspected disorder | SNOMED CT | Drives the immediate reportability check at the start of an encounter |
+| `artc` | All-results trigger codes | LOINC | Identifies conditions that remain reportable even when the result is negative |
+| `eltc` | Extended timing threshold | LOINC, SNOMED CT, ICD-10-CM | Identifies conditions that use an extended evidence window; its membership spans laboratory test names, diagnosis codes and problem codes for the same set of conditions |
+| `iztc` | Immunization | CVX, RxNorm | Matched against immunizations |
 
 Each grouper is referenced from the `codeFilter` of the `input` data requirements on the reportability check actions, and the reference is version-pinned so that it is unambiguous which release of the trigger codes an action was authored against. A single check action draws on several groupers at once; for example the main reportability check matches problem list entries and encounter diagnoses against `dxtc`, laboratory orders against `lotc`, results against `lrtc`, result values against `ostc`, medications against `mrtc` and immunizations against `iztc`, and additionally selects the subsets governed by `artc` and `eltc` so that the refinements described below can be applied to them.
 
@@ -125,7 +125,7 @@ The presence of a code from a triggering value set is the starting point for rep
 
 **Refuted and entered-in-error diagnoses do not trigger.** A Condition whose `verificationStatus` is `refuted` or `entered-in-error` is excluded from consideration.
 
-**Evidence has an age limit.** Diagnosis and problem list evidence older than `dxTimeboxDuration`, and laboratory evidence older than `labTimeboxDuration`, no longer trigger a report. Conditions in the `eltc` value set use `extendedTimeboxDuration` instead, to accommodate conditions with a longer latency between exposure and diagnosis. Evidence with no date at all is not excluded by these limits.
+**Evidence has an age limit.** Diagnosis and problem list evidence older than `dxTimeboxDuration`, and laboratory evidence older than `labTimeboxDuration`, no longer trigger a report. Conditions in the `eltc` value set use `extendedTimeboxDuration` in place of both `dxTimeboxDuration` and `labTimeboxDuration`, so the longer window applies to diagnosis and problem list evidence as well as to laboratory evidence. This accommodates conditions with a longer latency between exposure and diagnosis. Evidence with no date at all is not excluded by these limits.
 
 **Immunizations can trigger.** `Immunization.vaccineCode` is checked against the `iztc` value set alongside the other categories of evidence.
 
