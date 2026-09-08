@@ -41,7 +41,7 @@
 #### Profiles: Electronic Reporting and Surveillance Distribution (eRSD)
 
  * [eRSD PlanDefinition](StructureDefinition-ersd-plandefinition.html)
- * [eRSD Supplemental Library](StructureDefinition-ersd-supplemental-library.html)
+ * [eRSD Supplemental Library](StructureDefinition-ersd-supplemental-library.html) (supplemental — not currently distributed)
 
 #### Profiles: Extensions
   
@@ -132,18 +132,18 @@
 
  * [Library - Reportable Condition Trigger Codes (RCTC)](Library-library-rctc-example.html)
  * [Library - US Public Health Specification Library](Library-library-us-ph-specification-library-example.html)
- * [Library - US Public Health Supplemental Library](Library-library-us-ph-supplemental-library-example.html)
- * [Library - US Public Health Supplemental ValueSet Library](Library-library-us-ph-supplemental-valueset-library-example.html)
+ * [Library - US Public Health Supplemental Library](Library-library-us-ph-supplemental-library-example.html) (supplemental — not currently distributed)
+ * [Library - US Public Health Supplemental ValueSet Library](Library-library-us-ph-supplemental-valueset-library-example.html) (supplemental — not currently distributed)
  * [Library - US Public Health ValueSet Library](Library-library-us-ph-valueset-library-example.html)
  * [Library - eRSD Specification Library](Library-library-ersd-specification-library-example.html)
- * [Library - eRSD Supplemental Library](Library-library-ersd-supplemental-library-example.html)
+ * [Library - eRSD Supplemental Library](Library-library-ersd-supplemental-library-example.html) (supplemental — not currently distributed)
  * [Library Packaging](OperationDefinition-operationdefinition-library-package.html)
  * [PlanDefinition - eRSD Instance with RelatedData Extension](PlanDefinition-plandefinition-ersd-instance-relateddata-extension-example.html)
  * [PlanDefinition Instance NamedEvent Example](PlanDefinition-plandefinition-ersd-instance-namedEvent-example.html)
  * [eRSD PlanDefinition Instance Example](PlanDefinition-plandefinition-ersd-instance-example.html)
  * [eRSD PlanDefinition Instance Simple Example](PlanDefinition-plandefinition-ersd-instance-simple-example.html)
  * [eRSD Specification Bundle Example](Bundle-bundle-ersd-specification-example.html)
- * [eRSD Supplemental Bundle Example](Bundle-bundle-ersd-supplemental-example.html)
+ * [eRSD Supplemental Bundle Example](Bundle-bundle-ersd-supplemental-example.html) (supplemental — not currently distributed)
 
 #### Examples: Subscription
 
@@ -190,7 +190,7 @@
  * [Enterococcus gallinarum or E. casseliflavus/E. flavescens (Organism or Substance in Lab Results)](ValueSet-2.16.840.1.113762.1.4.1146.1468-example.html)
  * [Example Chlamydia Lab Obs Test Name Triggers for Public Health Reporting](ValueSet-valueset-chlamydia-triggering-example.html)
  * [eRSD ValueSet - Jurisdiction Types Example](ValueSet-valueset-ersd-jurisdiction-types-example.html)
- * [Example Chlamydia Supplemental Value Set for Public Health Reporting](ValueSet-valueset-chlamydia-supplemental-example.html)
+ * [Example Chlamydia Supplemental Value Set for Public Health Reporting](ValueSet-valueset-chlamydia-supplemental-example.html) (supplemental — not currently distributed)
  * [Example DXTC for Public Health Reporting](ValueSet-valueset-dxtc-example.html)
  * [Example Diagnosis Problem Triggers for Public Health Reporting](ValueSet-valueset-diagnosis-problem-triggers-example.html)
  * [Example LOTC Triggers for Public Health Reporting](ValueSet-valueset-lotc-example.html)
@@ -204,7 +204,7 @@
  * [Example Procedure Triggers for Public Health Reporting](ValueSet-valueset-procedure-triggers-example.html)
  * [Example SDTC Triggers for Public Health Reporting](ValueSet-valueset-sdtc-example.html)
  * [Example Suspected Disorder Triggers for Public Health Reporting](ValueSet-valueset-suspected-disorder-triggers-example.html)
- * [Executable Rule Filters Example Library](Library-library-executable-rule-filters-example.html)
+ * [Executable Rule Filters Example Library](Library-library-executable-rule-filters-example.html) (supplemental — not currently distributed)
  * [HIV Infection (ARV Attachment Inhibitors)(RXNORM)](ValueSet-2.16.840.1.113762.1.4.1146.1603-example.html)
  * [HIV Infection (ARV Boosters \[CYP3A4 Inhibitor\])(RXNORM)](ValueSet-2.16.840.1.113762.1.4.1146.1601-example.html)
  * [HIV Infection (ARV Integrase Strand Transfer Inhibitors \[INSTIs\])(RXNORM)](ValueSet-2.16.840.1.113762.1.4.1146.1600-example.html)
