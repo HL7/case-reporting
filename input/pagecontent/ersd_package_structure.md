@@ -10,24 +10,26 @@ An eRSD package is a Bundle containing a small number of conformance resources a
 
 | Layer | Resource | Canonical URL | Role |
 | --- | --- | --- | --- |
-| 0 | `Bundle` | none — a transport wrapper | Container for the release, with a `type` of `collection` |
+| 0 | `Bundle` | none — a transport wrapper | Container for the release. A package distributed as a file is a `collection`; a package obtained from a server operation may use another type |
 | 1 | `Library` | `http://ersd.aimsplatform.org/fhir/Library/ersd-specification` | The specification library; the entry point to the package |
 | 2a | `PlanDefinition` | `http://ersd.aimsplatform.org/fhir/PlanDefinition/us-ecr-specification` | The reporting workflow, its timing and its triggering logic |
 | 2b | `Library` | `http://ersd.aimsplatform.org/fhir/Library/rctc` | The RCTC library; an index of the grouping value sets |
 | 3 | `ValueSet` | `http://ersd.aimsplatform.org/fhir/ValueSet/{code}` | Grouping value sets, one per category of triggering information |
-| 4 | `ValueSet` | `http://cts.nlm.nih.gov/fhir/ValueSet/...` | Leaf value sets, holding the trigger codes themselves |
+| 4 | `ValueSet` | most under `http://cts.nlm.nih.gov/fhir/ValueSet/`, some under the eRSD base | Leaf value sets, holding the trigger codes themselves |
 
 #### Navigating the Package
 
-**Start from the specification library, located by canonical URL.** The specification library at layer 1 is the entry point: its `relatedArtifact` entries lead to everything else in the package. Locate it by matching on its canonical URL. Do not rely on the position of resources within the Bundle; the order of entries is not part of the specification and should not be depended upon.
+**Start from the specification library, located by canonical URL.** The specification library at layer 1 is the entry point to the package. Locate it by matching on its canonical URL. Do not rely on the position of resources within the Bundle; the order of entries is not part of the specification and should not be depended upon. Its `relatedArtifact` entries are the route to the rest of the package, in the two ways described below.
 
-**Distinguish the two libraries by canonical URL.** A package contains two `Library` resources, and both have a `type` of `asset-collection`. They are told apart by their canonical URL, not by their type or their position: the specification library ends in `/Library/ersd-specification`, and the RCTC library ends in `/Library/rctc`.
+**Distinguish the libraries by canonical URL.** A specification package contains two `Library` resources, and both have a `type` of `asset-collection`. (Other eRSD packages may contain more; a supplemental package carries additional libraries of its own.) They are told apart by their canonical URL, not by their type or their position: the specification library ends in `/Library/ersd-specification`, and the RCTC library ends in `/Library/rctc`.
 
 **Use `composed-of` to traverse and `depends-on` to check membership.** The specification library carries `relatedArtifact` entries of both types. Entries of type `composed-of` identify its direct components — the PlanDefinition and the RCTC library. Entries of type `depends-on` additionally cover everything those components depend upon in turn, which makes them a convenient flat list for answering whether a given artifact belongs to the release, but not a way to understand how the artifacts relate to one another.
 
 **Resolve versioned references on both URL and version.** References between artifacts in the package are generally version-pinned, taking the form `http://ersd.aimsplatform.org/fhir/ValueSet/dxtc|3.2.0`. Where a version is present it is part of the reference: resolve on the URL *and* the version, and do not substitute a different version that happens to be present in the package. Where no version is present, match on the URL alone.
 
-**Resolve groupers to leaves through `compose.include.valueSet`.** A grouping value set does not enumerate codes directly. It references leaf value sets through `compose.include.valueSet`, and the trigger codes are found in the leaf, in `compose.include.concept.code`, with the code system given by `compose.include.system` on the enclosing element. To enumerate the trigger codes for a category, resolve each of the grouper's referenced leaves and collect their concepts.
+**Resolve groupers to leaves through `compose.include.valueSet`.** A grouping value set does not enumerate codes directly; it references leaf value sets. Within a leaf, each `compose.include` element carries a `system` naming the code system, and a set of `concept` entries whose `code` values are the trigger codes; the `system` applies to every concept in that same `include` element. Leaf value sets are also distributed with a persisted expansion, so the codes may equally be read from `expansion.contains`, which is the more convenient path for a consumer that does not intend to re-expand. To enumerate the trigger codes for a category, resolve each of the grouper's referenced leaves and collect their codes by either route.
+
+**Do not use the canonical URL to tell a grouper from a leaf.** Most leaf value sets sit under the terminology server's base URL and the grouping value sets under the eRSD base, but this does not hold in general: provisional value sets are published under the eRSD base and are leaves. The reliable test is the content of `compose.include` — a grouper references other value sets through `valueSet`, a leaf enumerates codes through `concept`.
 
 #### Profiles by Layer
 
@@ -43,7 +45,7 @@ The resources in a package do not all conform to the same profiles, and the diff
 
 #### Scale
 
-An eRSD package is dominated by value sets, and implementations should be prepared for that. The release distributed at the time of writing contains 1,591 Bundle entries: two libraries, one PlanDefinition, and 1,588 value sets. Of those value sets, nine are grouping value sets and the remainder are leaves.
+An eRSD package is dominated by value sets, and implementations should be prepared for that. Release 3.2.0 contains 1,591 Bundle entries: two libraries, one PlanDefinition, and 1,588 value sets, of which nine are grouping value sets and the remainder are leaves. These figures describe one release and will change with each; they are given to indicate the order of magnitude an implementation should expect rather than as a fixed expectation.
 
 #### Specification Library Metadata
 
