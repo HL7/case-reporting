@@ -1,20 +1,3 @@
-<div markdown="1" class="note-to-balloters">
-* This ballot version of the IG references a snapshot of the CI Build of the soon-to-be-published [US Public Health Profiles Library (US PH Library)](https://build.fhir.org/ig/HL7/fhir-us-ph-library/en/). Prior to publication of this IG, the reference will change to the published version of the US PH Library.
-* __Questions for Balloters__
-  * Occupation & Industry: US Core 6.1.0 contains the [US Core Occupation Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-observation-occupation.html) that implements the US Core Data for Interoperability (USCDI) Occupation and Occupation Industry requirements. Currently eCR uses the [Occupational Data for Health (ODH)](http://build.fhir.org/ig/HL7/us-odh/) profiles. Going forward should eCR:
-    1. Continue using only the ODH profiles
-    1. Use both the US Core and the ODH profiles
-    1. Change to using only the US Core profiles
-  * Aborted Medications: 
-    1. Should aborted medications be disallowed in the eCR?
-  * Pregnancy Intent:
-    1. Should the [C-CDA Pregnancy Intent Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-observation-pregnancyintent.html) be included in the eCR, and, if included, what specific public health utility or use cases would it support?
-  * Vital Signs:
-    1. What vital signs are most pertinent?
-    1. What guidance should be given on the relevant time period/filter for vital signs included/sent in the eICR?
-
-</div>
-
 ### Overview
 
 # Introduction and Purpose

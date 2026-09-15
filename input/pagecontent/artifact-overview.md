@@ -138,7 +138,6 @@
  * [Library - eRSD Specification Library](Library-library-ersd-specification-library-example.html)
  * [Library - eRSD Supplemental Library](Library-library-ersd-supplemental-library-example.html)
  * [Library Packaging](OperationDefinition-operationdefinition-library-package.html)
- * [PlanDefinition - eRSD Instance with RelatedData Extension](PlanDefinition-plandefinition-ersd-instance-relateddata-extension-example.html)
  * [PlanDefinition Instance NamedEvent Example](PlanDefinition-plandefinition-ersd-instance-namedEvent-example.html)
  * [eRSD PlanDefinition Instance Example](PlanDefinition-plandefinition-ersd-instance-example.html)
  * [eRSD PlanDefinition Instance Simple Example](PlanDefinition-plandefinition-ersd-instance-simple-example.html)
