@@ -95,7 +95,7 @@ The triggering value sets will include any number of focus useContext slices to 
   &lt;/codeFilter&gt;
 &lt;/input&gt;</code></pre>
 
-The RCTC library is organised as a set of grouping value sets, each corresponding to one category of information in the eRSD information model. The specification currently in production distributes the following groupers, under the base `http://ersd.aimsplatform.org/fhir/ValueSet/`:
+The RCTC library is organised as a set of grouping value sets, each corresponding to one category of information in the eRSD information model. The following groupers are defined, under the base `http://ersd.aimsplatform.org/fhir/ValueSet/`:
 
 | Code | Category | Primary code systems | Role in the workflow |
 | --- | --- | --- | --- |
@@ -111,13 +111,13 @@ The RCTC library is organised as a set of grouping value sets, each correspondin
 
 Each grouper is referenced from the `codeFilter` of the `input` data requirements on the reportability check actions, and the reference is version-pinned so that it is unambiguous which release of the trigger codes an action was authored against. A single check action draws on several groupers at once; for example the main reportability check matches problem list entries and encounter diagnoses against `dxtc`, laboratory orders against `lotc`, results against `lrtc`, result values against `ostc`, medications against `mrtc` and immunizations against `iztc`, and additionally selects the subsets governed by `artc` and `eltc` so that the refinements described below can be applied to them.
 
-**Provisional value sets.** Trigger codes for an emerging condition may need to be distributed before the corresponding value set has completed formal review. These are published as provisional value sets, carrying the literal string `PROVISIONAL` as their `version` and a `status` of `draft` rather than a date-stamped version. Grouper references resolve them in the same way as any other value set, so no special handling is required beyond accepting the non-numeric version. A provisional value set is replaced by a date-versioned equivalent once review completes.
+**Provisional value sets.** Trigger codes for an emerging condition may need to be distributed before the corresponding value set has completed formal review. These are published as provisional value sets, carrying the literal string `PROVISIONAL` as their `version` in place of a date-stamped version. Grouper references resolve them in the same way as any other value set, so no special handling is required beyond accepting the non-numeric version. A provisional value set is replaced by a date-versioned equivalent once review completes.
 
 > Note to implementers: The logic used throughout the reporting workflow definition assumes the data provided as input is valid. For example, an Encounter with a status of in-progress is assumed to have a period element with a start date specified. Implementations may account for differences in the way the clinical system represents encounter information by adjusting the data using context in the reporting application to meet these assumptions.
 
 ##### Triggering Refinements
 
-The presence of a code from a triggering value set is the starting point for reportability, not the whole of it. The specification currently in production applies a number of additional constraints, which exist to improve the precision of triggering and to reduce the volume of case reports that carry no new information for public health. Implementations that evaluate the conditions in the PlanDefinition will apply these automatically; implementations that reproduce the triggering logic themselves should account for them.
+The presence of a code from a triggering value set is the starting point for reportability, not the whole of it. The specification applies a number of additional constraints, which exist to improve the precision of triggering and to reduce the volume of case reports that carry no new information for public health. Implementations that evaluate the conditions in the PlanDefinition will apply these automatically; implementations that reproduce the triggering logic themselves should account for them.
 
 **Negative laboratory results do not trigger.** A laboratory result whose value or interpretation is coded as SNOMED CT `260385009` (Negative) or `260415000` (Not detected), or whose value is text containing "negative" or "not detected", does not on its own cause a report to be generated.
 
