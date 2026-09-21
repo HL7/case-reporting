@@ -236,7 +236,7 @@ The triggering level is represented using the `condition` element of the `check-
 
 This level uses a [FHIRPath](http://hl7.org/fhirpath) to test for existence of data in any of the `input` categories. Each `input` element is accessed by an _environment variable_ using the `%` syntax in FHIRPath.
 
-The eRSD specification is delivered as an _asset collection library_ (a Library resource with a type of `asset-collection`) conforming to the [US Public Health Specification Library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-specification-library.html) profile.
+The eRSD specification is delivered as an _asset collection library_ (a Library resource with a type of `asset-collection`) conforming to the [US Public Health Specification Library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-specification-library.html) profile. The specification currently in production additionally conforms to the [CRMI Manifest Library]({{site.data.fhir.ver.hl7fhiruvcrmi}}/StructureDefinition-crmi-manifestlibrary.html) profile, which is described under [CRMI Alignment](#crmi-alignment) below.
 
 The eRSD Specification library is composed of the eRSD Plan Definition and the RCTC Library, a Value Set library that conforms to the [US Public Health Triggering Value Set Library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-triggering-valueset-library.html) profile:
 
@@ -312,6 +312,18 @@ When packaging as a Bundle, the Bundle contains the specification library, the r
 
 * [Specification (i.e. Triggering) Bundle](Bundle-bundle-ersd-specification-example.html)
 * [Supplemental (i.e. Rules Logic) Bundle](Bundle-bundle-ersd-supplemental-example.html)
+
+##### CRMI Alignment
+
+The eRSD release is produced using the operations and conventions defined by the [Canonical Resource Management Infrastructure (CRMI)]({{site.data.fhir.ver.hl7fhiruvcrmi}}) implementation guide. Several characteristics of the distributed package follow from that and are described here so they are not mistaken for eRSD-specific behaviour.
+
+**The specification library is a CRMI manifest.** In addition to the US Public Health Specification Library profile, the root library conforms to [CRMI Manifest Library]({{site.data.fhir.ver.hl7fhiruvcrmi}}/StructureDefinition-crmi-manifestlibrary.html). A manifest library is the authoritative statement of what constitutes a release: its `relatedArtifact` entries name every artifact in the package, version-pinned, so a consumer can determine exactly which versions were released together without inspecting the bundle. Entries of type `composed-of` identify the direct components of the specification, while entries of type `depends-on` additionally cover the artifacts those components in turn depend upon.
+
+**Expansion parameters are carried on the manifest.** The manifest carries the `cqf-expansionParameters` and `cqf-inputParameters` extensions, which reference contained `Parameters` resources associated with the value set expansion. The parameters referenced by `cqf-inputParameters` contain the version pinnings explicitly specified by the content authors at authoring time. The parameters referenced by `cqf-expansionParameters` include those author-specified pinnings as well as any additional pinnings determined and applied by the `$release` operation, together with the expansion settings used for the release. This distinction matters to implementations that re-expand the value sets rather than using the expansions as distributed. Re-expanding against different code system versions or with different settings can produce a different set of codes and therefore different triggering behaviour. Implementations that re-expand the value sets should use the parameters referenced by `cqf-expansionParameters` to reproduce the expansion used for the released content.
+
+**The release label distinguishes the release from the artifact version.** Released artifacts carry the `artifact-releaseLabel` extension. This identifies the release the artifact was published as part of, and is distinct from the artifact's own `version`; the two are not required to match, and in production they do not.
+
+**Releases follow the CRMI artifact lifecycle.** An eRSD release is drafted, then released, then packaged, using the CRMI [$draft]({{site.data.fhir.ver.hl7fhiruvcrmi}}/OperationDefinition-crmi-draft.html), [$release]({{site.data.fhir.ver.hl7fhiruvcrmi}}/OperationDefinition-crmi-release.html) and [$package]({{site.data.fhir.ver.hl7fhiruvcrmi}}/OperationDefinition-crmi-package.html) operations. A specification must record its approval before it can be released, by way of an `approvalDate`; CRMI defines an [$approve]({{site.data.fhir.ver.hl7fhiruvcrmi}}/OperationDefinition-crmi-approve.html) operation for this, though the date may equally be set directly. Two consequences are visible in the distributed package. During authoring the artifacts carry a `draft` status and a version suffixed to mark them as such; released artifacts carry `active` status and a clean version. And `$release` is what resolves the version-pinned `relatedArtifact` entries described above, which is why those references are pinned in a released package even where the authoring source left them unversioned.
 
 #### Profiles
 <ul>
