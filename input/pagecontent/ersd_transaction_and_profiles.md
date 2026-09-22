@@ -1,10 +1,25 @@
+<!--
+Style conventions for the eRSD pages. Please keep to these when editing:
+  * Code samples use fenced blocks with a language tag (```xml, ```json, ```cql).
+    Do not hand-escape markup inside <pre><code> blocks.
+  * Use markdown for lists and links rather than raw <ul>/<li>/<a> HTML.
+  * Images are wrapped in <figure> with descriptive alt text and a numbered
+    <figcaption>, and use max-width:100% rather than width:100%.
+  * Reference material (parameters, value sets, actions) is presented as a table
+    rather than as parallel prose paragraphs.
+  * Callouts use a blockquote opening "> Note to implementers:".
+  * Headings go no deeper than five levels (#####), matching the rest of this IG.
+-->
 ### electronic Reporting and Surveillance Distribution (eRSD) Transaction and Profiles
 
 The eRSD transaction includes a constrained FHIR PlanDefinition resource profile and a family of actions. It supports the distribution of reporting guidance and parameters, trigger code value sets, and more complex reporting rules and clinician / reporter support resources. This work seeks to align with developing public health guidelines that cover the same conditions. The PlanDefinition includes guidance for the overall orchestration of electronic case reporting. Each member of the family of actions defined in the [US Public Health PlanDefinition Action Codes]({{site.data.fhir.ver.hl7fhirusphlibrary}}/CodeSystem-us-ph-codesystem-plandefinition-actions.html) code system aligns with what may be different healthcare information systems or modules involved in reporting. The narrative elements of this profile will be used to help structure and guide implementation until EHRs have the ability to automatically consume them.
 
 The distribution of case reporting specifications involves two systems, the Implementing System (typically an Electronic Health Record (EHR)) and the Specification Repository, a repository that manages reporting specifications and the versions of those specifications over time:
 
-<img style="width:100%" src="ersd-transaction-system-overview.png"/>
+<figure>
+  <img style="max-width:100%" src="ersd-transaction-system-overview.png" alt="Two boxes, an Implementing System (EHR) on the left and a Specification Repository on the right, connected by three arrows: Notification from the repository to the implementing system, Request from the implementing system to the repository, and Response back from the repository."/>
+  <figcaption>Figure 1: Systems involved in eRSD distribution</figcaption>
+</figure>
 
 Conceptually, there are three transactions involved in the distribution of eRSD specifications:
 
@@ -44,7 +59,12 @@ Subsequent sections describe each of these specification components in more deta
 
 The following diagram illustrates the general process for electronic Case Reporting as triggered from a patient encounter, highlighting each of the components involved in describing the process:
 
-<img style="width:100%" src="eicr-triggering-and-transmission-guidance-components.png"/>
+<figure>
+  <img style="max-width:100%" src="eicr-triggering-and-transmission-guidance-components.png" alt="The components involved in describing the electronic case reporting process, from encounter events through triggering criteria to report transmission."/>
+  <figcaption>Figure 2: Components of the eCR triggering and transmission process</figcaption>
+</figure>
+
+The timing parameters labelled "A" through "E" in the diagram above are defined in the [Parameters](#parameters) section below.
 
 The components involved in representing the reporting process are:
 
@@ -54,11 +74,35 @@ The components involved in representing the reporting process are:
 * **Parameters** Parameters for varying timings of the process steps
 * **Suspected Reportability Criteria** Additional criteria that are evaluated to determine suspected reportability
 
-These components are represented using different elements of the PlanDefinition resource, as generally outlined in the following:
+These components are represented using different elements of the PlanDefinition resource:
 
-<img style="width:100%" src="ersd-plandefinition-structure.png"/>
+| Component | Represented by |
+| --- | --- |
+| Events | `action.trigger`, using the `named-event` trigger type |
+| Triggering Criteria | `action.input`, with a `codeFilter` naming the triggering value set |
+| Process | `action`, nested to form a hierarchy, with `action.relatedAction` expressing the dependency between one step and the next |
+| Parameters | `action.relatedAction.offsetDuration`, together with the PlanDefinition-level `variable` extensions that supply the durations |
+| Suspected Reportability Criteria | `action.condition` |
 
-Events are represented with the `trigger` element; Triggering Criteria are represented using the `input` data criteria; Parameters are represented using `offset` in `relatedAction` elements; Process steps are represented using the `action` element and the relationships between them are represented with the `relatedAction` element; and finally, Suspected Reportability Criteria are represented with the `condition` element.
+An action therefore takes the following general shape, with each element carrying one of the components above:
+
+```xml
+<action>
+  <id value="..."/>                    <!-- identifies this step -->
+  <code value="..."/>                  <!-- the kind of step this is -->
+  <trigger>...</trigger>               <!-- Events -->
+  <condition>...</condition>           <!-- Suspected Reportability Criteria -->
+  <input>...</input>                   <!-- Triggering Criteria -->
+  <relatedAction>                      <!-- Process, with Parameters carried on the offset -->
+    <actionId value="..."/>
+    <relationship value="before-start"/>
+    <offsetDuration .../>
+  </relatedAction>
+  <action>...</action>                 <!-- nested child steps -->
+</action>
+```
+
+Not every action uses every element: `trigger` appears only on the actions that initiate a workflow in response to an event, `condition` and `input` on the actions that evaluate reportability, and `relatedAction` on any action that hands off to another.
 
 Each of these are discussed in more detail in the following sections.
 
@@ -66,34 +110,39 @@ Each of these are discussed in more detail in the following sections.
 
 Events are represented with the `trigger` element, using the `named-event` trigger type and bound to the [US Public Health TriggerDefinition Named Event]({{site.data.fhir.ver.hl7fhirusphlibrary}}/ValueSet-us-ph-valueset-triggerdefinition-namedevent.html) value set. In addition, since the `name` element of the trigger definition is a `uri`, the eRSD profile uses the [US Public Health Named Event Type Extension]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-named-eventtype-extension.html) to provide complete binding information for the value set, as illustrated in the eRSDPlanDefinition example:
 
-<pre><code>&lt;trigger id=&quot;encounter-start&quot;&gt;
-  &lt;extension url=&quot;http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-named-eventtype-extension&quot;&gt;
-    &lt;valueCodeableConcept&gt;
-      &lt;coding&gt;
-        &lt;system value=&quot;http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-triggerdefinition-namedevents&quot;/&gt;
-        &lt;code value=&quot;encounter-start&quot;/&gt;
-        &lt;display value=&quot;Indicates the start of an encounter&quot;/&gt;
-      &lt;/coding&gt;
-    &lt;/valueCodeableConcept&gt;
-  &lt;/extension&gt;
-  &lt;type value=&quot;named-event&quot;/&gt;
-  &lt;name value=&quot;encounter-start&quot;/&gt;
-&lt;/trigger&gt;
-</code></pre>
+```xml
+<trigger id="encounter-start">
+  <extension url="http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-named-eventtype-extension">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://hl7.org/fhir/us/ecr/CodeSystem/us-ph-triggerdefinition-namedevents"/>
+        <code value="encounter-start"/>
+        <display value="Indicates the start of an encounter"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <type value="named-event"/>
+  <name value="encounter-start"/>
+</trigger>
+```
 
 ##### Triggering Criteria
 
 Triggering criteria are specified by a combination of the `input` data elements, and the Reportable Condition Triggering Codes (RCTC) Value Set Library. Note carefully that the RCTC Value Sets included in this IG are examples to illustrate the structure and typical content of the Value Sets.
 
+> Note to implementers: canonical URLs shown in the examples on this page use the `hl7.org/fhir/us/ecr/...-example` form and are illustrative only. The specification distributed in production uses `ersd.aimsplatform.org` canonicals for its own artifacts and `cts.nlm.nih.gov` canonicals for the trigger code value sets.
+
 The triggering value sets will include any number of focus useContext slices to indicate which conditions the triggering codes are associated with. Each value set corresponds to a different type of information that may contain events that are triggers for potentially reportable events. The categories of information are mapped to FHIR resources using the `input` element. For example, the reportable conditions value set is mapped to the `Condition` resource:
 
-<pre><code>&lt;input id=&quot;conditions&quot;&gt;
-  &lt;type value=&quot;Condition&quot;/&gt;
-  &lt;codeFilter&gt;
-    &lt;path value=&quot;code&quot;/&gt;
-    &lt;valueSet value=&quot;http://hl7.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example&quot;/&gt;
-  &lt;/codeFilter&gt;
-&lt;/input&gt;</code></pre>
+```xml
+<input id="conditions">
+  <type value="Condition"/>
+  <codeFilter>
+    <path value="code"/>
+    <valueSet value="http://hl7.org/fhir/us/ecr/ValueSet/valueset-diagnosis-problem-triggers-example"/>
+  </codeFilter>
+</input>
+```
 
 The RCTC library is organised as a set of grouping value sets, each corresponding to one category of information in the eRSD information model. The following groupers are defined, under the base `http://ersd.aimsplatform.org/fhir/ValueSet/`:
 
@@ -222,17 +271,19 @@ To facilitate implementation, there are two levels of suspected reportability de
 
 The first level is generally termed `triggering` and is supported by the `triggering` profiles, while the second level is generally termed `supplemental` and is supported by the `supplemental` profiles.
 
-###### Triggering eRSD Specification
+##### Triggering eRSD Specification
 
 The triggering level is represented using the `condition` element of the `check-reportable` action:
 
-<pre><code>&lt;condition&gt;
-  &lt;kind value=&quot;applicability&quot;/&gt;
-  &lt;expression&gt;
-    &lt;extension snipped/&gt;
-    &lt;language value=&quot;text/fhirpath&quot;/&gt;
-    &lt;expression value=&quot;%conditions.exists() or %encounters.exists() or %immunizations.exists() or %procedures.exists() or %procedureOrders.exists() or %labOrders.exists() or %labTests.exists() or %labResults.exists() or %medicationAdministrations.exists() or %medicationOrders.exists() or %medicationDispenses.exists()&quot;/&gt;&lt;/expression&gt;
-&lt;/condition&gt;</code></pre>
+```xml
+<condition>
+  <kind value="applicability"/>
+  <expression>
+    <extension snipped/>
+    <language value="text/fhirpath"/>
+    <expression value="%conditions.exists() or %encounters.exists() or %immunizations.exists() or %procedures.exists() or %procedureOrders.exists() or %labOrders.exists() or %labTests.exists() or %labResults.exists() or %medicationAdministrations.exists() or %medicationOrders.exists() or %medicationDispenses.exists()"/></expression>
+</condition>
+```
 
 This level uses a [FHIRPath](http://hl7.org/fhirpath) to test for existence of data in any of the `input` categories. Each `input` element is accessed by an _environment variable_ using the `%` syntax in FHIRPath.
 
@@ -240,14 +291,16 @@ The eRSD specification is delivered as an _asset collection library_ (a Library 
 
 The eRSD Specification library is composed of the eRSD Plan Definition and the RCTC Library, a Value Set library that conforms to the [US Public Health Triggering Value Set Library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-triggering-valueset-library.html) profile:
 
-<pre><code>&lt;relatedArtifact&gt;
-  &lt;type value=&quot;composed-of&quot;/&gt;
-  &lt;resource value=&quot;http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-us-public-health-example&quot;/&gt;
-&lt;/relatedArtifact&gt;
-&lt;relatedArtifact&gt;
-  &lt;type value=&quot;composed-of&quot;/&gt;
-  &lt;resource value=&quot;http://hl7.org/fhir/us/ecr/Library/library-rctc-example&quot;/&gt;
-&lt;/relatedArtifact&gt;</code></pre>
+```xml
+<relatedArtifact>
+  <type value="composed-of"/>
+  <resource value="http://hl7.org/fhir/us/ecr/PlanDefinition/plandefinition-us-public-health-example"/>
+</relatedArtifact>
+<relatedArtifact>
+  <type value="composed-of"/>
+  <resource value="http://hl7.org/fhir/us/ecr/Library/library-rctc-example"/>
+</relatedArtifact>
+```
 
 * [eRSD Specification Library Example](Library-library-ersd-specification-library-example.html)
 * [eRSD PlanDefinition Instance Example](PlanDefinition-plandefinition-ersd-instance-example.html)
@@ -262,19 +315,21 @@ The [CRMIExpandedValueSet]({{site.data.fhir.ver.hl7fhiruvcrmi}}/StructureDefinit
 
 The value sets distributed in an eRSD package provide both a computable definition and a persisted expansion, so that a system may use the expansion as distributed or recalculate it from the definition. In the specification currently in production the grouping value sets conform to the [US Public Health Triggering ValueSet]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-triggering-valueset.html) profile, and the leaf value sets that hold the trigger codes conform to [ShareableValueSet]({{site.data.fhir.path}}shareablevalueset.html) together with the computable and publishable value set profiles defined by the CQF Measures implementation guide. Alignment of these value sets with the CRMI profiles described above is intended, but has not yet been made; implementations should validate against the profiles the value sets actually declare.
 
-###### Supplemental eRSD Specification
+##### Supplemental eRSD Specification
 
 The supplemental level of integration enables sites to participate in the suspected reportability determination by considering additional elements of the event data such as status, lab values, and jurisdiction configuration.
 
 The suspected reportability criteria are also represented with the `condition` element, but using the [CQF Alternative Expression Extension](http://hl7.org/fhir/extensions/StructureDefinition-cqf-alternativeExpression.html) to provide the CQL expression for suspected reportability:
 
-<pre><code>&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/cqf-alternativeExpression&quot;&gt;
-  &lt;valueExpression&gt;
-    &lt;language value=&quot;text/cql-identifier&quot;/&gt;
-    &lt;expression value=&quot;Is Reportable&quot;/&gt;
-    &lt;reference value=&quot;http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters-example|2.1.0&quot;/&gt;
-  &lt;/valueExpression&gt;
-&lt;/extension&gt;</code></pre>
+```xml
+<extension url="http://hl7.org/fhir/StructureDefinition/cqf-alternativeExpression">
+  <valueExpression>
+    <language value="text/cql-identifier"/>
+    <expression value="Is Reportable"/>
+    <reference value="http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters-example|2.1.0"/>
+  </valueExpression>
+</extension>
+```
 
 This extension indicates that the `Is Reportable` expression of the [library-executable-rule-filters-example](Library-library-executable-rule-filters-example.html) library should be used to evaluate whether the event is suspected reportable.
 
@@ -286,18 +341,20 @@ For a detailed discussion of how this code system is structured, see the [Jurisd
 
 The eRSD Supplemental Library is composed of the library-executable-rule-filters-example library and the Supplemental Value Set library, which contains any additional value sets and code systems (including the Jurisdictions code system) beyond the RCTC value sets that are required by the library-executable-rule-filters-example logic:
 
-<pre><code>&lt;relatedArtifact&gt;
-  &lt;type value=&quot;composed-of&quot;/&gt;
-  &lt;resource value=&quot;http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters-example&quot;/&gt;
-&lt;/relatedArtifact&gt;
-&lt;relatedArtifact&gt;
-  &lt;type value=&quot;composed-of&quot;/&gt;
-  &lt;resource value=&quot;http://hl7.org/fhir/us/ecr/Library/library-us-ph-supplemental-valueset-library-example&quot;/&gt;
-&lt;/relatedArtifact&gt;
-&lt;relatedArtifact&gt;
-  &lt;type value=&quot;composed-of&quot;/&gt;
-  &lt;resource value=&quot;http://hl7.org/fhir/us/ecr/CodeSystem/ersd-jurisdictions-example&quot;/&gt;
-&lt;/relatedArtifact&gt;</code></pre>
+```xml
+<relatedArtifact>
+  <type value="composed-of"/>
+  <resource value="http://hl7.org/fhir/us/ecr/Library/library-executable-rule-filters-example"/>
+</relatedArtifact>
+<relatedArtifact>
+  <type value="composed-of"/>
+  <resource value="http://hl7.org/fhir/us/ecr/Library/library-us-ph-supplemental-valueset-library-example"/>
+</relatedArtifact>
+<relatedArtifact>
+  <type value="composed-of"/>
+  <resource value="http://hl7.org/fhir/us/ecr/CodeSystem/ersd-jurisdictions-example"/>
+</relatedArtifact>
+```
 
 * [eRSD Supplemental Library Example](Library-library-ersd-supplemental-library-example.html)
 * [library-executable-rule-filters-example Library](Library-library-executable-rule-filters-example.html)
@@ -326,19 +383,16 @@ The eRSD release is produced using the operations and conventions defined by the
 **Releases follow the CRMI artifact lifecycle.** An eRSD release is drafted, then released, then packaged, using the CRMI [$draft]({{site.data.fhir.ver.hl7fhiruvcrmi}}/OperationDefinition-crmi-draft.html), [$release]({{site.data.fhir.ver.hl7fhiruvcrmi}}/OperationDefinition-crmi-release.html) and [$package]({{site.data.fhir.ver.hl7fhiruvcrmi}}/OperationDefinition-crmi-package.html) operations. A specification must record its approval before it can be released, by way of an `approvalDate`; CRMI defines an [$approve]({{site.data.fhir.ver.hl7fhiruvcrmi}}/OperationDefinition-crmi-approve.html) operation for this, though the date may equally be set directly. Two consequences are visible in the distributed package. During authoring the artifacts carry a `draft` status and a version suffixed to mark them as such; released artifacts carry `active` status and a clean version. And `$release` is what resolves the version-pinned `relatedArtifact` entries described above, which is why those references are pinned in a released package even where the authoring source left them unversioned.
 
 #### Profiles
-<ul>
-  <li><a href="StructureDefinition-ersd-plandefinition.html">eRSD PlanDefinition</a></li>
-  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-specification-library.html">US Public Health Specification Library</a></li>
-  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-library.html">US Public Health Supplemental Library</a></li>
-  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-valueset.html">US Public Health Supplemental ValueSet</a></li>  
-  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-valueset-library.html">US Public Health Supplemental ValueSet Library</a></li>  
-  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-triggering-valueset.html">US Public Health Triggering ValueSet</a></li>
-  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-triggering-valueset-library.html">US Public Health Triggering ValueSet Library</a></li>
-  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-valueset-library.html">US Public Health ValueSet Library</a></li>
-  <li><a href="{{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-valueset.html">US Public Health ValueSet</a></li>
-</ul>
+* [eRSD PlanDefinition](StructureDefinition-ersd-plandefinition.html)
+* [eRSD Supplemental Library](StructureDefinition-ersd-supplemental-library.html)
+* [US Public Health Specification Library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-specification-library.html)
+* [US Public Health Supplemental Library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-library.html)
+* [US Public Health Supplemental ValueSet]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-valueset.html)
+* [US Public Health Supplemental ValueSet Library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-supplemental-valueset-library.html)
+* [US Public Health Triggering ValueSet]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-triggering-valueset.html)
+* [US Public Health Triggering ValueSet Library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-triggering-valueset-library.html)
+* [US Public Health ValueSet Library]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-valueset-library.html)
+* [US Public Health ValueSet]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-valueset.html)
 
 #### Extensions
-<ul>
-  <li><a href="http://hl7.org/fhir/extensions/StructureDefinition-valueset-warning.html">ValueSet Warning Extension</a></li>
-</ul>
+* [ValueSet Warning Extension](http://hl7.org/fhir/extensions/StructureDefinition-valueset-warning.html)
