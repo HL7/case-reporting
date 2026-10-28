@@ -438,12 +438,12 @@ Description: "This Composition profile represents an Electronic Initial Case Rep
 * section[slicePregnancySection] ^short = "Pregnancy Section"
 * section[slicePregnancySection] ^definition = "The Pregnancy Section contains a patient's current and past pregnancy history information."
 * section[slicePregnancySection].code 1.. MS
-* section[slicePregnancySection].code = $loinc#90767-5
-* section[slicePregnancySection].code ^short = "Pregnancy summary Document code"
-* section[slicePregnancySection].code ^definition = "Pregnancy summary Document code"
+* section[slicePregnancySection].code = $loinc#10162-6
+* section[slicePregnancySection].code ^short = "History of pregnancies Narrative code"
+* section[slicePregnancySection].code ^definition = "History of pregnancies Narrative code (NOTE: this code has changed from the previous Pregnancy Summary Document | 90767-5 to align with the maternal health data community)"
 * section[slicePregnancySection].text 1..1 MS
-* section[slicePregnancySection].text ^short = "Pregnancy summary Document narrative"
-* section[slicePregnancySection].text ^definition = "Pregnancy summary Document narrative"
+* section[slicePregnancySection].text ^short = "History of pregnancies Narrative"
+* section[slicePregnancySection].text ^definition = "History of pregnancies Narrative"
 * section[slicePregnancySection].entry 1.. MS
 * section[slicePregnancySection].entry ^slicing.discriminator.type = #profile
 * section[slicePregnancySection].entry ^slicing.discriminator.path = "resolve()"
