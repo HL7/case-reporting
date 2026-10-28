@@ -13,7 +13,7 @@ Prominent among these purposes is to implement public health reporting rules tha
 
 Without more complex reporting rules that are distributable to, and executable in, healthcare most PHAs will not use approach #1. Hence, these approaches are principally represented by either "Remote Rules" or "Local Rules" in the following diagram.
 
-<table><tr><td><img src="ReportingDesignPattern.jpg" alt="Reporting Design Pattern" class="figure-img-portrait img-responsive img-rounded center-block" /></td></tr></table>
+<table><tr><td><img src="ReportingDesignPattern.png" alt="Reporting Design Pattern" class="figure-img-portrait img-responsive img-rounded center-block" /></td></tr></table>
 
 &nbsp;
 
