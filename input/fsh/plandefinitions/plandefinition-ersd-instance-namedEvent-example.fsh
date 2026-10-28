@@ -25,8 +25,5 @@ Usage: #example
 * action.trigger.extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-named-eventtype-extension"
 * action.trigger.extension.valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-triggerdefinition-namedevents#encounter-start "Indicates the start of an encounter"
 
-* action.trigger.extension.url = "http://hl7.org/fhir/us/ph-library/StructureDefinition/us-ph-named-eventtype-extension"
-* action.trigger.extension.valueCodeableConcept = http://hl7.org/fhir/us/ph-library/CodeSystem/us-ph-codesystem-triggerdefinition-namedevents#encounter-start "Indicates the start of an encounter"
-
 * action.trigger.type = #named-event
 * action.trigger.name = "encounter-start"
