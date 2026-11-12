@@ -12,6 +12,8 @@ Style conventions for the eRSD pages. Please keep to these when editing:
 -->
 ### electronic Reporting and Surveillance Distribution (eRSD) Transaction and Profiles
 
+**What this specification does and does not define:** The eRSD specification is designed to support the delivery of a variety of public health reporting programs. It defines the *structure* and *process* for delivering a reporting program's specification to implementing systems: the PlanDefinition that describes the reporting workflow, the libraries and value sets that accompany it, and the packaging and distribution of those artifacts. It does not define the *content* of any particular reporting program. The Reportable Conditions Trigger Codes (RCTC) are one example. This guide specifies how trigger codes are organized and delivered, but the codes themselves are maintained outside this guide. Any RCTC value sets that appear in the examples here are illustrative only.
+
 The eRSD transaction includes a constrained FHIR PlanDefinition resource profile and a family of actions. It supports the distribution of reporting guidance and parameters, trigger code value sets, and more complex reporting rules and clinician / reporter support resources. This work seeks to align with developing public health guidelines that cover the same conditions. The PlanDefinition includes guidance for the overall orchestration of electronic case reporting. Each member of the family of actions defined in the [US Public Health PlanDefinition Action Codes]({{site.data.fhir.ver.hl7fhirusphlibrary}}/CodeSystem-us-ph-codesystem-plandefinition-actions.html) code system aligns with what may be different healthcare information systems or modules involved in reporting. The narrative elements of this profile will be used to help structure and guide implementation until EHRs have the ability to automatically consume them.
 
 The distribution of case reporting specifications involves two systems, the Implementing System (typically an Electronic Health Record (EHR)) and the Specification Repository, a repository that manages reporting specifications and the versions of those specifications over time:
@@ -64,7 +66,7 @@ The following diagram illustrates the general process for electronic Case Report
   <figcaption>Figure 2: Components of the eCR triggering and transmission process</figcaption>
 </figure>
 
-The timing parameters labelled "A" through "E" in the diagram above are defined in the [Parameters](#parameters) section below.
+The timing parameters labeled "A" through "E" in the diagram above are defined in the [Parameters](#parameters) section below.
 
 The components involved in representing the reporting process are:
 
@@ -128,7 +130,7 @@ Events are represented with the `trigger` element, using the `named-event` trigg
 
 ##### Triggering Criteria
 
-Triggering criteria are specified by a combination of the `input` data elements, and the Reportable Condition Triggering Codes (RCTC) Value Set Library. Note carefully that the RCTC Value Sets included in this IG are examples to illustrate the structure and typical content of the Value Sets.
+Triggering criteria are specified by a combination of the input data elements and one or more triggering value set libraries. This specification does not prescribe which terminology or reporting program supplies the triggering content, so a reporting program may define its criteria using other value sets or code systems. The Reportable Condition Trigger Codes (RCTC) Value Set Library is used throughout this guide as the worked example. Note carefully that the RCTC value sets included in this IG are examples to illustrate the structure and typical content of triggering value sets, not a definition of the RCTC itself.
 
 > Note to implementers: canonical URLs shown in the examples on this page use the `hl7.org/fhir/us/ecr/...-example` form and are illustrative only. The specification distributed in production uses `ersd.aimsplatform.org` canonicals for its own artifacts and `cts.nlm.nih.gov` canonicals for the trigger code value sets.
 
@@ -143,8 +145,7 @@ The triggering value sets will include any number of focus useContext slices to 
   </codeFilter>
 </input>
 ```
-
-The RCTC library is organised as a set of grouping value sets, each corresponding to one category of information in the eRSD information model. The following groupers are defined, under the base `http://ersd.aimsplatform.org/fhir/ValueSet/`:
+As an illustration of how a triggering library can be organised, the RCTC library is structured as a set of grouping value sets, each corresponding to one category of information. The RCTC defines the following groupers, under the base `http://ersd.aimsplatform.org/fhir/ValueSet/`:
 
 | Code | Category | Primary code systems | Role in the workflow |
 | --- | --- | --- | --- |
@@ -153,12 +154,12 @@ The RCTC library is organised as a set of grouping value sets, each correspondin
 | `lotc` | Laboratory order test | LOINC | Matched against laboratory orders, laboratory tests and diagnostic orders |
 | `lrtc` | Laboratory observation result | LOINC | Matched against laboratory and diagnostic results |
 | `mrtc` | Medication | RxNorm | Matched against medication requests, administrations and statements |
-| `sdtc` | Suspected disorder | SNOMED CT | Drives the immediate reportability check at the start of an encounter |
-| `artc` | All-results trigger codes | LOINC | Identifies conditions that remain reportable even when the result is negative |
-| `eltc` | Extended timing threshold | LOINC, SNOMED CT, ICD-10-CM | Identifies conditions that use an extended evidence window; its membership spans laboratory test names, diagnosis codes and problem codes for the same set of conditions |
+| `sdtc` | Suspected disorder | SNOMED CT | Drives the immediate reportability check at the start of an encounter. Matched against problem list entries and encounter diagnoses |
+| `artc` | All-results trigger codes | LOINC | Identifies conditions that remain reportable even when the result is negative. Matched against laboratory tests |
+| `eltc` | Extended timing threshold | LOINC, SNOMED CT, ICD-10-CM | Identifies conditions that use an extended evidence window; its membership spans laboratory test names, diagnosis codes and problem codes for the same set of conditions. |
 | `iztc` | Immunization | CVX, RxNorm | Matched against immunizations |
 
-Each grouper is referenced from the `codeFilter` of the `input` data requirements on the reportability check actions, and the reference is version-pinned so that it is unambiguous which release of the trigger codes an action was authored against. A single check action draws on several groupers at once; for example the main reportability check matches problem list entries and encounter diagnoses against `dxtc`, laboratory orders against `lotc`, results against `lrtc`, result values against `ostc`, medications against `mrtc` and immunizations against `iztc`, and additionally selects the subsets governed by `artc` and `eltc` so that the refinements described below can be applied to them.
+In the RCTC, each grouper is referenced from the `codeFilter` of the `input` data requirements on the reportability check actions, and the reference is version-pinned so that it is unambiguous which release of the trigger codes an action was authored against. A single check action draws on several groupers at once; for example the main reportability check matches problem list entries and encounter diagnoses against `dxtc`, laboratory orders against `lotc`, results against `lrtc`, result values against `ostc`, medications against `mrtc` and immunizations against `iztc`, and additionally selects the subsets governed by `artc` and `eltc` so that the refinements described below can be applied to them.
 
 **Provisional value sets.** Trigger codes for an emerging condition may need to be distributed before the corresponding value set has completed formal review. These are published as provisional value sets, carrying the literal string `PROVISIONAL` as their `version` in place of a date-stamped version. Grouper references resolve them in the same way as any other value set, so no special handling is required beyond accepting the non-numeric version. A provisional value set is replaced by a date-versioned equivalent once review completes.
 
@@ -174,7 +175,7 @@ The presence of a code from a triggering value set is the starting point for rep
 
 **Refuted and entered-in-error diagnoses do not trigger.** A Condition whose `verificationStatus` is `refuted` or `entered-in-error` is excluded from consideration.
 
-**Evidence has an age limit.** Diagnosis and problem list evidence older than `dxTimeboxDuration`, and laboratory evidence older than `labTimeboxDuration`, no longer trigger a report. Conditions in the `eltc` value set use `extendedTimeboxDuration` in place of both `dxTimeboxDuration` and `labTimeboxDuration`, so the longer window applies to diagnosis and problem list evidence as well as to laboratory evidence. This accommodates conditions with a longer latency between exposure and diagnosis. Evidence with no date at all is not excluded by these limits.
+**Evidence has an age limit, measured from the start of the encounter.** The age of evidence is calculated relative to the start date of the triggering Encounter (`encounterStartDate`), not the date on which the reportability check is run. Diagnosis and problem list evidence whose onset is earlier than `dxTimeboxDuration` before the encounter start date, and laboratory evidence whose effective date is earlier than `labTimeboxDuration` before the encounter start date, no longer triggers a report. Conditions in the `eltc` value set use `extendedTimeboxDuration` in place of both `dxTimeboxDuration` and `labTimeboxDuration`, so the longer window applies to diagnosis and problem list evidence as well as to laboratory evidence. This accommodates conditions with a longer latency between exposure and diagnosis. Evidence with no date at all is not excluded by these limits.
 
 **Immunizations can trigger.** `Immunization.vaccineCode` is checked against the `iztc` value set alongside the other categories of evidence.
 
@@ -224,6 +225,8 @@ Three aspects of this structure are worth drawing out, because they are not evid
 
 **Termination and completion are explicit.** The `terminate-*` actions end the reporting workflow for an encounter that has passed its reporting window, and the `complete-reporting` actions record that an encounter finished. Together these let an implementing system stop scheduling checks for an encounter that can no longer produce a report, rather than relying on implicit completion.
 
+**Updating modified encounters.** The encounter-modified action is initiated by an `encounter-modified` event, and specifies that if the encounter has extended beyond the normal reporting duration ("E") `create-eicr` should be called.
+
 The `create-eicr` action involves the marshaling of FHIR resources needed to create the eICR profile included in this standard, and produces an eICR document bundle as its `output`. That output is consumed as the `input` of `validate-eicr`, which validates the created eICR against the appropriate profiles and validation rules, and in turn passes it to `route-and-send-eicr`. The `route-and-send-eicr` action involves the transmission of the eICR to either a third party platform, a Public Health Agency (PHA), or a Health Information Exchange or Health Data Network on the way to a PHA.
 
 **Data gathered by `create-eicr`.** The `create-eicr` action carries a set of `input` data requirements that define the data an implementing system gathers in order to construct the eICR. Each input has an `id`, a resource `type`, and a default FHIR query supplied by the FHIR query pattern extension, and each is addressable within the action as a `%` variable using its `id`. The categories below reflect the specification currently in production; see the [eICR Data Elements](eicr_data_elements.html) topic for the corresponding eICR content.
@@ -241,16 +244,76 @@ The `create-eicr` action involves the marshaling of FHIR resources needed to cre
 
 Most inputs carry a query that selects by patient, and several narrow it further by category or by a specific set of codes. Where an input's query names another input rather than a search string, it reuses that input's result set instead of issuing a separate query.
 
+##### Parameters
+
+Because of variability in accumulation of data at the start of a patient encounter, the EHR implementer should implement a time-based delay in generating and sending the first encounter eICR to allow time for required data to be captured within the patient chart. This will ensure the eICR is better populated before sending and will reduce the number of case reports that are sent for a single patient encounter.
+
+Full triggering timing can be described using the parameters below. These are the configuration points of the eRSD, and are the parameters labelled in the diagram above. The values given are examples derived from the most up-to-date values from the eRSD PlanDefinition available at the time of publication of this guide. How the parameters are represented is described under [Representing parameters in the PlanDefinition](#representing-parameters-in-the-plandefinition).
+
+**Parameter A** – The time from the start of the patient encounter to when the first eICR is constructed and sent. This eICR should include multiple triggers if they are identified.
+
+* Example - 1 hour after the encounter begins, EHR data matches a code in the eRSD diagnosis data trigger code set and other EHR data matches a code in the eRSD lab result trigger code set. Both of these trigger codes should be recorded in the appropriate eICR trigger code template and the eICR should be transmitted out.
+
+**Parameter B** – The time period from a previous trigger code check to subsequent checking for new trigger code matches. Implementers should ensure that new trigger code matches do not include matches on any eRSD trigger codes that have already been used to generate an eICR for that encounter; standalone PlanDefinition logic goes not account for this. The interval may differ by type of encounter: for example, a longer interval may apply to ambulatory, virtual and home health encounters than to inpatient, emergency and observation encounters.
+
+* Example - 6 hours after there was a trigger code match in an inpatient encounter, the EHR data is checked against the eRSD trigger code sets again. If a new match is found (not a match against the same eRSD trigger code as had been already matched in that encounter) then a new eICR is generated that includes all of the new trigger codes that have been matched. For an ambulatory encounter, the same applies with an interval of 72 hours.
+
+**Parameter C** – The time period from the send of previous eICRs to the send of an updated eICR during a longer encounter.
+
+* Example - 72 hours after a previous eICR was sent, there have been no new trigger code matches, but a new eICR is created and transmitted because there had been a match in the encounter previously and there is a need for public health to receive updated data about the patient.
+
+**Parameter D** – The time period after the encounter ends or the normal reporting duration for the encounter (Parameter E) through which trigger code checks and eICR updates should still occur.
+
+* Example - For 72 hours after the encounter ends, trigger code checks and / or updated eICR transmissions should still occur.
+
+**Parameter E** – The normal reporting duration for the encounter. While an encounter is in progress and within the normal reporting duration, reportability will continue to be checked. Once the encounter ends or has extended beyond the normal reporting duration (E) plus the encounter grace period (D), it will only be reported on in response to an 'encounter-modified' trigger. The normal reporting duration may differ by type of encounter: for example, a shorter duration may apply to ambulatory, virtual and home health encounters than to inpatient, emergency and observation encounters.
+
+* Example - For 2 weeks after an inpatient encounter begins and while it is still in progress, continue to check for suspected reportability. Otherwise, once the encounter has extended beyond 2 weeks, and the 72 hour encounter grace period (D) completes, check for reportability and report only if and encounter-modified trigger is used. For an ambulatory encounter, the same applies with a duration of 1 day.
+
+###### Additional parameters
+
+In addition to timing parameters A through E, the triggering criteria may be refined by the following configuration points. Their effect on reportability is described under [Triggering Refinements](#triggering-refinements).
+
+* **Diagnosis evidence window** – How far before the start of the encounter diagnosis and problem list evidence may fall and still trigger a report.
+  * Example - 30 days before the encounter start date.
+* **Laboratory evidence window** – How far before the start of the encounter laboratory evidence may fall and still trigger a report.
+  * Example - 30 days before the encounter start date.
+* **Extended evidence window** – The window applied in place of the two above for conditions identified as having an extended timing threshold, to accommodate a longer latency between exposure and diagnosis.
+  * Example - 365 days before the encounter start date.
+* **Negative result values** – The set of laboratory result values treated as negative, which on their own do not trigger a report, subject to the exceptions described under Triggering Refinements.
+
+> Note to implementers: The offset durations specified in related actions here are _relative_ durations, in that they contain a comparator to indicate that the action should be completed _at most X_. This allows implementations to support scheduling these actions during non-peak times to minimize load on the clinical system.
+
+###### Representing parameters in the PlanDefinition
+
+The eRSD PlanDefinition represents the parameters above as follows. Parameters A and B are carried as the `offsetDuration` of a related action. The remaining parameters are carried as `variable` extensions on the PlanDefinition and are referenced from the action conditions. The example values shown are those used in the PlanDefinition examples in this guide; a reporting program supplies its own values.
+
+| Parameter | Example value | Representation in the PlanDefinition |
+| --- | --- | --- |
+| A | 1 hour | `offsetDuration` of `start-workflow` |
+| B | 6 hours (inpatient, emergency, observation); 72 hours (ambulatory, virtual, home health) | `offsetDuration` of the related action that re-invokes `check-reportable` |
+| C | 72 hours | `eicrUpdateInterval` (hours) |
+| D | 72 hours | `postEncounterGracePeriod` (hours) |
+| E (inpatient, emergency, observation) | 14 days | `normalReportingDuration` (days) |
+| E (ambulatory, virtual, home health) | 1 day | `ambulatoryReportingDuration` (days) |
+| Diagnosis evidence window | 30 days | `dxTimeboxDuration` (days) |
+| Laboratory evidence window | 30 days | `labTimeboxDuration` (days) |
+| Extended evidence window | 365 days | `extendedTimeboxDuration` (days) |
+| Negative result values | value set | `negativeLabResultValueSet` |
+
+The PlanDefinition also declares `encounterStartDate`, `encounterEndDate` and `lastReportSubmissionDate` as variables. These are not parameters but values supplied from the context of the triggering encounter, and are used by the action conditions to evaluate the parameters above.
+
+> Note to implementers: in the PlanDefinition the duration variables are defined as plain integers rather than as quantities, and are converted to a duration where they are used. Unless stated otherwise the integer is a number of days, as in `%encounterStartDate + 1 day * %normalReportingDuration`. The exceptions are `eicrUpdateInterval` and `postEncounterGracePeriod`, which are a number of hours, as in `%encounterEndDate + 1 hour * %postEncounterGracePeriod`. An implementation reading these variables should expect a number, not a quantity with a unit, and should apply the unit documented for that variable.
 
 ##### Parameters
 Because of variability in accumulation of data at the start of a patient encounter, the EHR implementer should implement a time-based delay in generating and sending the first encounter eICR to allow time for required data to be captured within the patient chart. This will ensure the eICR is better populated before sending and will reduce the number of case reports that are sent for a single patient encounter.
 
 Timings are carried on the PlanDefinition itself as `variable` extensions, and are referenced from the action conditions and from the `offsetDuration` of related actions. Earlier versions of this guide described these timings as parameters "A" through "E"; that mapping is retained below for continuity with the diagram above.
 
-| Variable | Value in production | Formerly | Meaning |
+| Variable | Value | Formerly | Meaning |
 | --- | --- | --- | --- |
 | `normalReportingDuration` | 14 days | "E" | The reporting duration for an inpatient, emergency or observation encounter. While the encounter is in progress and within this duration, reportability continues to be checked. |
-| `ambulatoryReportingDuration` | 1 day | — | The equivalent duration for an ambulatory, virtual or home health encounter. |
+| `ambulatoryReportingDuration` | 1 day | "E" | The equivalent duration for an ambulatory, virtual or home health encounter. |
 | `dxTimeboxDuration` | 30 days | — | How old diagnosis and problem list evidence may be and still trigger a report. |
 | `labTimeboxDuration` | 30 days | — | How old laboratory evidence may be and still trigger a report. |
 | `extendedTimeboxDuration` | 365 days | — | The evidence window applied in place of the two above for conditions in the `eltc` value set. |
@@ -281,7 +344,27 @@ The triggering level is represented using the `condition` element of the `check-
   <expression>
     <extension snipped/>
     <language value="text/fhirpath"/>
-    <expression value="%conditions.exists() or %encounters.exists() or %immunizations.exists() or %procedures.exists() or %procedureOrders.exists() or %labOrders.exists() or %labTests.exists() or %labResults.exists() or %medicationAdministrations.exists() or %medicationOrders.exists() or %medicationDispenses.exists()"/></expression>
+    <expression value="
+    (
+        // Encounter is still within the normal reporting duration
+        %encounterStartDate + 1 day * %normalReportingDuration >= now()
+        )
+        and
+        (
+        // Conditions with valid verification status and diagnosis timebox filtering
+        %conditions.where(
+            verificationStatus.coding.code.value
+            .where(matches('^(entered-in-error|refuted)$'))
+            .exists().not()
+            and (
+                onset is null
+                or (onset as FHIR.dateTime) >= %encounterStartDate - 1 day * %dxTimeboxDuration
+                or (onset as FHIR.Period).start >= %encounterStartDate - 1 day * %dxTimeboxDuration
+            )
+        ).exists()
+        snipped...
+    )"/>
+    </expression>
 </condition>
 ```
 
