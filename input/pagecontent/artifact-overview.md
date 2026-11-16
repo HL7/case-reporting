@@ -56,6 +56,7 @@
 #### Examples: eICR Bundles & Compositions 
  * [Bundle - eCR Message for Zika Case](Bundle-bundle-ecr-message-zika.html)
  * [Bundle - eICR Document for Zika Case](Bundle-bundle-eicr-document-zika.html)
+ * [Composition - Alternately Initiated eICR for Zika Case](Composition-composition-eicr-zika-alternate-initiation.html)
  * [Composition - Manually Initiated eICR for Zika Case](Composition-composition-eicr-zika-manual-initiation.html)
  * [Composition - eICR for Pertussis and Zika Case](Composition-composition-eicr-pertussis-zika.html)
  * [Composition - eICR for Zika Case](Composition-composition-eicr-zika.html)

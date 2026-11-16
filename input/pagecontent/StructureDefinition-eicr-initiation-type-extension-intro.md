@@ -1,5 +1,9 @@
-When code is set to PHC1464, it indicates either:
-* the eICR was manually initiated by an action of the provider of care because they suspect there may be a reportable condition
-* a code leading to the automatic creation of an eICR had been previously entered-in-error and has now been corrected
+This extension indicates that the eICR was initiated other than by an automatic trigger code match. It is absent from automatically (trigger code) initiated eICRs. See [Initiation of eICR Documents](eicr_transaction_and_profiles.html#initiation-of-eicr-documents) for a comparison of the three types of initiation and how to populate each.
 
-When code is set to PHC2235, it indicates that the eICR was initiated by automated, forced reporting. Unlike eICRs manually initiated by a provider, PHC2235 will be routed only to the public health agency of the jurisdiction of care unless another reportable condition is found. The eICR could also contain RCTC trigger codes.
+When code is set to **PHC1464 (Manually Initiated eICR)**, it indicates that the eICR was manually initiated by an action of the provider of care because they suspect there may be a reportable condition. Manually initiated eICRs are force reported to all involved PHAs regardless of reportability determinations.
+
+PHC1464 is also used as a correction mechanism: where a code that led to the automatic creation of an eICR had been entered in error and has now been corrected, set the Initiation Type to PHC1464 and set the verificationStatus or status of the corrected resource to entered-in-error. This is not an initiation type in its own right; it reuses the manual initiation code so that the corrected eICR is routed to the involved PHAs.
+
+When code is set to **PHC2235 (Alternately Initiated eICR)**, it indicates that the eICR was initiated by the EHR or healthcare site through "programmed-in" logic to meet a transient reporting need (for example, reporting to a registry), rather than by a provider or by a trigger code match. Unlike manually initiated eICRs, PHC2235 eICRs are routed only to the PHA of the jurisdiction in which care was provided, unless public health decision support also finds another reportable condition. The eICR may also contain RCTC trigger code flags if the EHR ran trigger matching.
+
+In both cases the reason for the initiation is recorded in the [US Public Health Initiation Reason extension]({{site.data.fhir.ver.hl7fhirusphlibrary}}/StructureDefinition-us-ph-initiation-reason-extension.html).

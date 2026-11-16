@@ -28,6 +28,10 @@
             <td>Add the <a href="StructureDefinition-eicr-organism-isolate-specimen.html">eICR Organism Isolate Specimen</a> profile (a derived isolate linked to its clinical specimen through Specimen.parent). The eICR Organism Susceptibility Observation now requires a reference to the isolate specimen so each susceptibility result is self-contained; the eICR Organism Detected Observation keeps the hasMember grouping, references the clinical specimen, and now requires the organism name (value[x] 1..1, CodeableConcept or string). Add guidance on populating Observation.specimen to the three profiles, and add urine and isolate Specimen examples.</td>
         </tr>
         <tr>
+            <td>eICR Transaction and Profiles / RR Transaction and Profiles / RR Narrative Guidance</td>
+            <td>Add an <a href="eicr_transaction_and_profiles.html#initiation-of-eicr-documents">Initiation of eICR Documents</a> section (trigger code, manual, and alternate initiation; routing; how to populate; scenarios), replacing the initiation matrix image with a table. Add an Alternately Initiated eICR Composition example. Add Reportability Response Subject and Summary narrative text, a worked example, and receiver routing guidance for alternately initiated eICRs, aligned with the CDA RR IG.</td>
+        </tr>
+        <tr>
             <td>Design Considerations</td>
             <td>Add <a href="design_considerations.html#provenance">Provenance</a> guidance: use Provenance to represent how case report data was generated, curated, or automated; treat security, tag, and process labels as discovery signals rather than a substitute for Provenance; and retrieve reported data with its Provenance using a FHIR search with _revinclude=Provenance:target, consistent with US Core.</td>
         </tr>
@@ -63,6 +67,7 @@
 | [FHIR-54420](https://jira.hl7.org/browse/FHIR-54420) | Bound eICR Organism Susceptibility Observation.code (extensible) to the new VSAC Antimicrobial Susceptibility Test Codes value set (2.16.840.1.113762.1.4.1280.3) |
 | [FHIR-54283](https://jira.hl7.org/browse/FHIR-54283) | Added Provenance guidance to Design Considerations: recommend Provenance for representing how case report data was generated, curated, or automated; metadata indicators as discovery signals; and _revinclude=Provenance:target search for retrieving reported data with its Provenance |
 | [FHIR-54303](https://jira.hl7.org/browse/FHIR-54303) | Added a statement to the Conventions section that the conformance verbs SHALL, SHOULD, and MAY are defined in the FHIR Conformance Rules, with a link |
+| [FHIR-59002](https://jira.hl7.org/browse/FHIR-59002) | Added guidance on alternate initiation: an Initiation of eICR Documents section comparing trigger code, manual, and alternate initiation with routing rules, population guidance, and scenarios; an alternately initiated eICR example; and Reportability Response narrative and receiver guidance for alternately initiated eICRs, aligned with the CDA RR IG |
 
 
 ### STU 3 - Ballot (3.0.0)

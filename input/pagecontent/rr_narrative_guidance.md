@@ -64,7 +64,11 @@ Variables that represent coded data found elsewhere in the Reportabilty Response
 
 (for any circumstance where the eICR was **manually initiated**)
 
-> Public Health Reporting Communication: Manually initiated report was submitted to public heath
+> Public Health Reporting Communication: Manually initiated report was submitted to public health
+
+(for any circumstance where the eICR was **alternately initiated**)
+
+> Public Health Reporting Communication: Alternately initiated report was submitted to public health
 
 
 ### [Reportability Response Summary](StructureDefinition-rr-composition-definitions.html#Composition.section:sliceRRSummarySection)
@@ -77,6 +81,10 @@ Variables that represent coded data found elsewhere in the Reportabilty Response
 **(if eICR was manually initiated)**
 
 > The initial report was manually initiated by a provider. It was sent to: "&lt;[routing entity name](StructureDefinition-rr-routing-entity-organization.html#Organization.name)&gt;", "&lt;[routing entity name](StructureDefinition-rr-routing-entity-organization.html#Organization.name)&gt;".
+
+**(if eICR was alternately initiated)**
+
+> The initial report was alternately initiated by your organization's electronic health record system. It was sent to: "&lt;[routing entity name](StructureDefinition-rr-routing-entity-organization.html#Organization.name)&gt;", "&lt;[routing entity name](StructureDefinition-rr-routing-entity-organization.html#Organization.name)&gt;".
 
 
 > *(include and repeat for each* [Relevant Reportable Condition Observation](StructureDefinition-rr-relevant-reportable-condition-observation.html) contained in the RR Composition). Each determiniation should be its own paragraph in the narrative.
@@ -410,6 +418,7 @@ The examples below provide example text for *Providers / Reporters* for these ty
 11. One Reportable Condition with Multiple Routing Entities
 12. Fatal Error – eICR Not Processed
 13. Decision Support Timeout – eICR Not Processed
+14. Alternately initiated eICR with no reporting criteria matched for One PHA
 14. One Juridiction Not Found (warning)
 15. One Reporting Specifications Not Found (warning)
 16. One No Rule Met and One Jurisdiction Not Found
@@ -913,3 +922,17 @@ The examples below provide example text for *Providers / Reporters* for these ty
 > A determination of reportability for a triffered condition could not be made for "Virgin Islands Department of Health (Test)". This may be becuase it is not on the list of reportable conditions for the relevant Public Health Agency, or the information provided at the time of this report does not meet reporting criteria, or not all data needed to confirm reportability were available.
 > 
 > The facility address in this eICR could not be processed. Additional reporting may be necessary.
+
+
+----------
+
+*Example 14* - Example Reportability Response text for an Alternately initiated eICR with no reporting criteria matched for One PHA
+
+> **Subject:**
+>
+> Public Health Reporting Communication: Alternately initiated report was submitted to public health.
+>
+> **Summary:**
+>
+> Your organization electronically submitted an initial case report to determine if reporting to public health is needed for a patient.
+> The initial report was alternately initiated by your organization's electronic health record system. It was sent to "State Department of Health".
