@@ -126,7 +126,8 @@ Usage: #example
 * section[slicePastMedicalHistorySection].title = "Past Medical History Section"
 * section[slicePastMedicalHistorySection].code = $loinc#11348-0 "History of Past illness note"
 * section[slicePastMedicalHistorySection].text.status = #generated
-* section[slicePastMedicalHistorySection].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"><tr><td style=\"font-weight: bold\">title</td><td><div title=\"title\">Past Medical History Section</div></td></tr><tr><td style=\"font-weight: bold\">code</td><td><ul style=\"list-style:none; padding-left:0; margin:0 0;\"><li><ul style=\"list-style:none; padding-left:0; margin:0 0;\"><li><div title=\"display\">Past Medical History Narrative</div> ( <div title=\"code\">11348-0</div> ) </li><li><div title=\"system\"><a href=\"http://loinc.org\">http://loinc.org</a></div></li></ul></li></ul></td></tr><tr><td class=\"text-no-entries\" colspan=\"2\" lang=\"en-US\"><p>Past medical history</p></td></tr></table></div>"
+* section[slicePastMedicalHistorySection].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>No known past medical history.</p></div>"
+* section[slicePastMedicalHistorySection].emptyReason = http://terminology.hl7.org/CodeSystem/list-empty-reason#nilknown "Nil Known"
 * section[sliceReviewOfSystemsSection].title = "Review of Systems Section"
 * section[sliceReviewOfSystemsSection].code = $loinc#10187-3 "Review of systems Narrative - Reported"
 * section[sliceReviewOfSystemsSection].text.status = #generated

@@ -52,6 +52,9 @@ Description: "This Composition profile represents an Electronic Initial Case Rep
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #open
+* section.emptyReason MS
+* section.emptyReason ^short = "Why the section is empty (e.g., no known medications)"
+* section.emptyReason ^definition = "Used to state that a section has no content, for example \"No known medications\" or \"No immunizations\". A section with an emptyReason SHALL NOT contain entries (FHIR invariant cmp-2). The section narrative (text) should also state that there is no content and why. This applies to every section, including optional sections, so that the absence of information can be explicitly conveyed rather than implied by omitting the section."
 * section contains
     sliceReasonForVisitSection 1..1 MS and
     sliceChiefComplaintSection 1..1 MS and
@@ -272,7 +275,7 @@ Description: "This Composition profile represents an Electronic Initial Case Rep
 * section[slicePlanOfTreatmentSection].text 1.. MS
 * section[slicePlanOfTreatmentSection].text ^short = "Plan of Treatment narrative"
 * section[slicePlanOfTreatmentSection].text ^definition = "Plan of Treatment narrative"
-* section[slicePlanOfTreatmentSection].entry 1.. MS
+* section[slicePlanOfTreatmentSection].entry MS
 * section[slicePlanOfTreatmentSection].entry ^slicing.discriminator.type = #profile
 * section[slicePlanOfTreatmentSection].entry ^slicing.discriminator.path = "resolve()"
 * section[slicePlanOfTreatmentSection].entry ^slicing.rules = #open
@@ -313,7 +316,7 @@ Description: "This Composition profile represents an Electronic Initial Case Rep
 * section[sliceImmunizationsSection].text 1.. MS
 * section[sliceImmunizationsSection].text ^short = "Immunizations narrative"
 * section[sliceImmunizationsSection].text ^definition = "Immunizations narrative"
-* section[sliceImmunizationsSection].entry 1.. MS
+* section[sliceImmunizationsSection].entry MS
 * section[sliceImmunizationsSection].entry ^slicing.discriminator.type = #profile
 * section[sliceImmunizationsSection].entry ^slicing.discriminator.path = "resolve()"
 * section[sliceImmunizationsSection].entry ^slicing.rules = #open
@@ -345,7 +348,7 @@ Description: "This Composition profile represents an Electronic Initial Case Rep
 * section[sliceProceduresSection].text 1.. MS
 * section[sliceProceduresSection].text ^short = "Procedures Section narrative"
 * section[sliceProceduresSection].text ^definition = "Procedures Section narrative"
-* section[sliceProceduresSection].entry 1.. MS
+* section[sliceProceduresSection].entry MS
 * section[sliceProceduresSection].entry ^slicing.discriminator.type = #profile
 * section[sliceProceduresSection].entry ^slicing.discriminator.path = "resolve()"
 * section[sliceProceduresSection].entry ^slicing.rules = #open
@@ -459,7 +462,7 @@ Description: "This Composition profile represents an Electronic Initial Case Rep
 * section[slicePregnancySection].text 1..1 MS
 * section[slicePregnancySection].text ^short = "History of pregnancies Narrative"
 * section[slicePregnancySection].text ^definition = "History of pregnancies Narrative"
-* section[slicePregnancySection].entry 1.. MS
+* section[slicePregnancySection].entry MS
 * section[slicePregnancySection].entry ^slicing.discriminator.type = #profile
 * section[slicePregnancySection].entry ^slicing.discriminator.path = "resolve()"
 * section[slicePregnancySection].entry ^slicing.rules = #open

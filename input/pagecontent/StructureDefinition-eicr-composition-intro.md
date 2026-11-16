@@ -67,3 +67,9 @@ Where a trigger occurs outside of an encounter and Encounter.class is set to “
         </tr>
     </tbody>
 </table>
+
+### Stating that a section has no content
+
+Every section, whether required or optional, can explicitly state that there is nothing to report (for example, "No known medications", "No immunizations", or "No past medical history"). To do so, include the section with its code and narrative text describing the absence, populate Composition.section.emptyReason with a code from the [List Empty Reasons]({{site.data.fhir.path}}valueset-list-empty-reason.html) value set (for example, nilknown, notasked, withheld, or unavailable), and do not include any entry. A section with an emptyReason SHALL NOT contain entries (FHIR invariant cmp-2). No section in this profile requires an entry, so this pattern can be used for all of them.
+
+Omitting an optional section means no information is being conveyed about that topic; including the section with an emptyReason means it is known that there is no content. See the Past Medical History Section in the [Zika Composition example](Composition-composition-eicr-zika.html).

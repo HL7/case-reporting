@@ -29,6 +29,10 @@
         </tr>
         <tr>
             <td>eICR Composition</td>
+            <td>Allow every section, including optional sections, to state that it has no content: section.emptyReason is Must Support with guidance, and the Plan of Treatment, Immunizations, Procedures, and Pregnancy Sections no longer require an entry.</td>
+        </tr>
+        <tr>
+            <td>eICR Composition</td>
             <td>Admission Medications Section entries now reference the US Public Health MedicationAdministration profile (instead of the base MedicationAdministration resource) and may also reference MedicationStatement and the US Core MedicationRequest profile. Medications Section entries likewise now reference the US Public Health MedicationAdministration profile.</td>
         </tr>
         <tr>
@@ -51,6 +55,7 @@
 | [FHIR-54349](https://jira.hl7.org/browse/FHIR-54349) | Bound eICR Organism Susceptibility Observation.interpretation to the v3 ObservationInterpretationSusceptibility value set; left value[x] unconstrained to allow numeric or textual MIC results |
 | [FHIR-54350](https://jira.hl7.org/browse/FHIR-54350) | Added guidance to the eICR Organism Susceptibility Observation (and the related Organism Detected Observation and Organism Isolate Specimen profiles) on populating Observation.specimen: susceptibility observations reference the isolate Specimen, which references the original specimen through Specimen.parent, per the Diagnostics module Microbiology guidance |
 | [FHIR-54347](https://jira.hl7.org/browse/FHIR-54347) | Made eICR Organism Detected Observation.value[x] required (1..1) and constrained it to CodeableConcept or string |
+| [FHIR-54302](https://jira.hl7.org/browse/FHIR-54302) | Ensured every eICR Composition section, including optional sections, can state that it has no content (section.emptyReason, no sections require an entry), with guidance and an example |
 
 
 ### STU 3 - Ballot (3.0.0)
