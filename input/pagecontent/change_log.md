@@ -1,3 +1,28 @@
+### STU 3 (3.0.0)
+
+
+#### Changes
+
+<table border="1">
+    <thead>
+       <tr style="background-color:#DCDCDC">
+            <th style="text-align: center; vertical-align: middle;">Artifact</th>
+            <th style="text-align: center; vertical-align: middle;">Change Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>eICR Composition</td>
+            <td>Add optional Admission Diagnosis Section and Discharge Diagnosis Section slices to align the eICR Composition sections with the CDA eICR R3.1 document sections</td>
+        </tr>
+    </tbody>
+</table>
+
+|JIRA Ticket|Ticket Description|
+|---------|----------|
+| [FHIR-56276](https://jira.hl7.org/browse/FHIR-56276) | Added Admission Diagnosis Section and Discharge Diagnosis Section to the eICR Composition so its sections match the CDA eICR IG |
+
+
 ### STU 3 - Ballot (3.0.0)
 
 

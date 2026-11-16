@@ -69,6 +69,8 @@ Description: "This Composition profile represents an Electronic Initial Case Rep
     slicePregnancySection 0..1 MS and
     sliceEmergencyOutbreakInformationSection 0..1 MS and
     slicePastMedicalHistorySection 0..1 MS and
+    sliceAdmissionDiagnosisSection 0..1 MS and
+    sliceDischargeDiagnosisSection 0..1 MS and
     sliceReviewOfSystemsSection 0..1 MS and
     sliceCareTeamsSection 0..1 MS and
     sliceReportabilityResponseInformationSection 0..1 MS
@@ -511,6 +513,48 @@ Description: "This Composition profile represents an Electronic Initial Case Rep
 * section[slicePastMedicalHistorySection].entry[sliceUSCoreCondition] ^short = "US Core Condition entry"
 * section[slicePastMedicalHistorySection].entry[sliceUSCoreCondition] ^definition = "US Core Condition"
 * section[slicePastMedicalHistorySection].entry[sliceUSCoreCondition] ^mustSupport = true
+
+* section[sliceAdmissionDiagnosisSection] ^short = "Admission Diagnosis Section"
+* section[sliceAdmissionDiagnosisSection] ^definition = "This section contains a narrative description of the problems or diagnoses identified by the clinician at the time of the patient's admission. This section may contain coded entries which represent the admitting diagnoses."
+* section[sliceAdmissionDiagnosisSection].code 1.. MS
+* section[sliceAdmissionDiagnosisSection].code = $loinc#46241-6
+* section[sliceAdmissionDiagnosisSection].code ^short = "Admission Diagnosis Section code"
+* section[sliceAdmissionDiagnosisSection].code ^definition = "Admission Diagnosis Section code"
+* section[sliceAdmissionDiagnosisSection].text 1.. MS
+* section[sliceAdmissionDiagnosisSection].text ^short = "Admission Diagnosis Section narrative"
+* section[sliceAdmissionDiagnosisSection].text ^definition = "Admission Diagnosis Section narrative"
+* section[sliceAdmissionDiagnosisSection].entry MS
+* section[sliceAdmissionDiagnosisSection].entry ^slicing.discriminator.type = #profile
+* section[sliceAdmissionDiagnosisSection].entry ^slicing.discriminator.path = "resolve()"
+* section[sliceAdmissionDiagnosisSection].entry ^slicing.rules = #open
+* section[sliceAdmissionDiagnosisSection].entry contains
+    sliceAdmissionDiagnosis 0..* MS
+* section[sliceAdmissionDiagnosisSection].entry[sliceAdmissionDiagnosis] only Reference(USPublicHealthConditionEncounterDiagnosis)
+* section[sliceAdmissionDiagnosisSection].entry[sliceAdmissionDiagnosis] ^sliceName = "sliceAdmissionDiagnosis"
+* section[sliceAdmissionDiagnosisSection].entry[sliceAdmissionDiagnosis] ^short = "Admission Diagnosis entry"
+* section[sliceAdmissionDiagnosisSection].entry[sliceAdmissionDiagnosis] ^definition = "A problem or diagnosis identified by the clinician at the time of the patient's admission."
+* section[sliceAdmissionDiagnosisSection].entry[sliceAdmissionDiagnosis] ^mustSupport = true
+
+* section[sliceDischargeDiagnosisSection] ^short = "Discharge Diagnosis Section"
+* section[sliceDischargeDiagnosisSection] ^definition = "This section represents problems or diagnoses present at the time of discharge which occurred during the hospitalization. Problems that need ongoing tracking should also be included in the Problem Section."
+* section[sliceDischargeDiagnosisSection].code 1.. MS
+* section[sliceDischargeDiagnosisSection].code = $loinc#11535-2
+* section[sliceDischargeDiagnosisSection].code ^short = "Discharge Diagnosis Section code"
+* section[sliceDischargeDiagnosisSection].code ^definition = "Discharge Diagnosis Section code"
+* section[sliceDischargeDiagnosisSection].text 1.. MS
+* section[sliceDischargeDiagnosisSection].text ^short = "Discharge Diagnosis Section narrative"
+* section[sliceDischargeDiagnosisSection].text ^definition = "Discharge Diagnosis Section narrative"
+* section[sliceDischargeDiagnosisSection].entry MS
+* section[sliceDischargeDiagnosisSection].entry ^slicing.discriminator.type = #profile
+* section[sliceDischargeDiagnosisSection].entry ^slicing.discriminator.path = "resolve()"
+* section[sliceDischargeDiagnosisSection].entry ^slicing.rules = #open
+* section[sliceDischargeDiagnosisSection].entry contains
+    sliceDischargeDiagnosis 0..* MS
+* section[sliceDischargeDiagnosisSection].entry[sliceDischargeDiagnosis] only Reference(USPublicHealthConditionEncounterDiagnosis)
+* section[sliceDischargeDiagnosisSection].entry[sliceDischargeDiagnosis] ^sliceName = "sliceDischargeDiagnosis"
+* section[sliceDischargeDiagnosisSection].entry[sliceDischargeDiagnosis] ^short = "Discharge Diagnosis entry"
+* section[sliceDischargeDiagnosisSection].entry[sliceDischargeDiagnosis] ^definition = "A problem or diagnosis present at the time of discharge which occurred during the hospitalization."
+* section[sliceDischargeDiagnosisSection].entry[sliceDischargeDiagnosis] ^mustSupport = true
 
 * section[sliceReviewOfSystemsSection] ^short = "Review of Systems Section"
 * section[sliceReviewOfSystemsSection] ^definition = "The Review of Systems Section contains a relevant collection of symptoms and functions systematically gathered by a clinician. It includes symptoms the patient is currently experiencing, some of which were not elicited during the history of present illness, as well as a potentially large number of pertinent negatives, for example, symptoms that the patient denied experiencing."
