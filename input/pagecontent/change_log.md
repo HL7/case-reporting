@@ -62,6 +62,7 @@
 | [FHIR-54302](https://jira.hl7.org/browse/FHIR-54302) | Ensured every eICR Composition section, including optional sections, can state that it has no content (section.emptyReason, no sections require an entry), with guidance and an example |
 | [FHIR-54420](https://jira.hl7.org/browse/FHIR-54420) | Bound eICR Organism Susceptibility Observation.code (extensible) to the new VSAC Antimicrobial Susceptibility Test Codes value set (2.16.840.1.113762.1.4.1280.3) |
 | [FHIR-54283](https://jira.hl7.org/browse/FHIR-54283) | Added Provenance guidance to Design Considerations: recommend Provenance for representing how case report data was generated, curated, or automated; metadata indicators as discovery signals; and _revinclude=Provenance:target search for retrieving reported data with its Provenance |
+| [FHIR-54303](https://jira.hl7.org/browse/FHIR-54303) | Added a statement to the Conventions section that the conformance verbs SHALL, SHOULD, and MAY are defined in the FHIR Conformance Rules, with a link |
 
 
 ### STU 3 - Ballot (3.0.0)
