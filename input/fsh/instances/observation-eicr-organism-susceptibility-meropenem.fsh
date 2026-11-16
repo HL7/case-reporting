@@ -1,7 +1,7 @@
 Instance: observation-eicr-organism-susceptibility-meropenem
 InstanceOf: EICROrganismSusceptibilityObservation
 Title: "Observation - Meropenem Susceptibility for Eve Everywoman"
-Description: "Example of an eICR Organism Susceptibility observation documenting meropenem susceptibility for patient Eve Everywoman."
+Description: "Example of an eICR Organism Susceptibility observation documenting meropenem susceptibility for patient Eve Everywoman, with a minimum inhibitory concentration (MIC) result and a Susceptible interpretation."
 Usage: #example
 * status = #final
 * category[us-core] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory "Laboratory"
@@ -13,3 +13,4 @@ Usage: #example
 * performer.reference = "Organization/organization-ecr-acme-laboratory"
 * valueString = "<0.25"
 * interpretation = $v3-ObservationInterpretation#S "Susceptible"
+* specimen = Reference(Specimen/specimen-eicr-klebsiella-oxytoca-isolate) "Klebsiella oxytoca isolate"

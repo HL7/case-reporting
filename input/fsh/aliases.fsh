@@ -8,6 +8,7 @@ Alias: $v3-RoleCode = http://terminology.hl7.org/CodeSystem/v3-RoleCode
 Alias: $rxnorm = http://www.nlm.nih.gov/research/umls/rxnorm
 Alias: $PHOccupationCDCCensus2010 = http://terminology.hl7.org/CodeSystem/PHOccupationCDCCensus2010
 Alias: $PHIndustryCDCCensus2010 = http://terminology.hl7.org/CodeSystem/PHIndustryCDCCensus2010
+Alias: $PHOccupationalDataForHealthODH = http://terminology.hl7.org/CodeSystem/PHOccupationalDataForHealthODH
 Alias: $v3-ObservationInterpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
 Alias: $v2-0532 = http://terminology.hl7.org/CodeSystem/v2-0532
 Alias: $v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203

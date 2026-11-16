@@ -3,6 +3,8 @@ This profile describes the content requirements for the eICR including:
 * patient pregnancy status
 * patient work information
     * current occupation, current industry, current employer name, phone, and address, occupational exposure ([Past or Present Job](http://hl7.org/fhir/us/odh/StructureDefinition/odh-PastOrPresentJob))
+    * current occupation and current industry, constrained to the USCDI data elements ([US Core Observation Occupation Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-observation-occupation.html))
+        * Note: Either the Occupational Data for Health (ODH) Past or Present Job profile or the US Core Observation Occupation Profile may be used to convey current occupation and industry. ODH supports additional occupation-related data beyond USCDI and preserves continuity for existing implementations; US Core provides a simpler path for new implementers. Both point to the same underlying occupation and industry value sets.
         * Note: An Occupational Hazard is a source of potential harm to one’s health that may be encountered at work. An Occupational Exposure is a known interaction with an occupational hazard in a way that increases the risk of harm.
     * usual occupation, usual industry ([Usual Work](http://hl7.org/fhir/us/odh/StructureDefinition/odh-UsualWork))
 * patient travel history

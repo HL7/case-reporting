@@ -101,6 +101,8 @@ Usage: #example
 * section[sliceSocialHistorySection].entry[=].display = "eICR Travel History: Eve Everywoman 2018-01"
 * section[sliceSocialHistorySection].entry[+].reference = "Observation/observation-odh-usual-work-eve-everywoman"
 * section[sliceSocialHistorySection].entry[=].display = "ODH Usual Work Example"
+* section[sliceSocialHistorySection].entry[+].reference = "Observation/observation-us-core-occupation-eve-everywoman"
+* section[sliceSocialHistorySection].entry[=].display = "US Core Observation Occupation Example"
 * section[sliceSocialHistorySection].entry[+].reference = "Observation/observation-disability-status-eve-everywoman"
 * section[sliceSocialHistorySection].entry[=].display = "US Public Health Disability Status Example"
 * section[sliceSocialHistorySection].entry[+].reference = "Observation/observation-us-ph-exposure-contact-info-football-game"

@@ -13,4 +13,5 @@ Usage: #example
 * performer.reference = "Organization/organization-ecr-acme-laboratory"
 * valueCodeableConcept = $sct#40886007 "Klebsiella oxytoca"
 * interpretation = $v3-ObservationInterpretation#A "Abnormal"
+* specimen = Reference(Specimen/specimen-eicr-urine-eve-everywoman) "Urine specimen"
 * hasMember[susceptibilityObservation] = Reference(Observation/observation-eicr-organism-susceptibility-meropenem) "Meropenem Susceptibility Observation"

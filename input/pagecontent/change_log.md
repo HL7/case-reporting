@@ -15,12 +15,42 @@
             <td>eICR Composition</td>
             <td>Add optional Admission Diagnosis Section and Discharge Diagnosis Section slices to align the eICR Composition sections with the CDA eICR R3.1 document sections</td>
         </tr>
+        <tr>
+            <td>Background and Use Cases</td>
+            <td>Add a <a href="background_and_use_cases.html">Background and Use Cases</a> page containing the background, scope, use case flow, assumptions, pre- and post-conditions, actors and roles, and eICR and Reportability Response scenarios previously only available in Volume 1 of the CDA eICR and CDA RR IGs</td>
+        </tr>
+        <tr>
+            <td>eICR Composition</td>
+            <td>Support both the Occupational Data for Health (ODH) Past or Present Job profile and the US Core Observation Occupation Profile for current occupation and industry in the Social History Section (the ODH Past or Present Job entry slice is renamed to Occupation and accepts either profile). Add a US Core Occupation example.</td>
+        </tr>
+        <tr>
+            <td>Organism / Susceptibility Result Matching</td>
+            <td>Add the <a href="StructureDefinition-eicr-organism-isolate-specimen.html">eICR Organism Isolate Specimen</a> profile (a derived isolate linked to its clinical specimen through Specimen.parent). The eICR Organism Susceptibility Observation now requires a reference to the isolate specimen so each susceptibility result is self-contained; the eICR Organism Detected Observation keeps the hasMember grouping, references the clinical specimen, and now requires the organism name (value[x] 1..1, CodeableConcept or string). Add guidance on populating Observation.specimen to the three profiles, and add urine and isolate Specimen examples.</td>
+        </tr>
+        <tr>
+            <td>eICR Composition</td>
+            <td>Admission Medications Section entries now reference the US Public Health MedicationAdministration profile (instead of the base MedicationAdministration resource) and may also reference MedicationStatement and the US Core MedicationRequest profile. Medications Section entries likewise now reference the US Public Health MedicationAdministration profile.</td>
+        </tr>
+        <tr>
+            <td>eICR Organism Susceptibility Observation</td>
+            <td>Bind interpretation (required) to the <a href="http://terminology.hl7.org/ValueSet/v3-ObservationInterpretationSusceptibility">v3 ObservationInterpretationSusceptibility</a> value set. The value data type remains unconstrained so that numeric or textual MIC results can be reported.</td>
+        </tr>
     </tbody>
 </table>
 
 |JIRA Ticket|Ticket Description|
 |---------|----------|
 | [FHIR-56276](https://jira.hl7.org/browse/FHIR-56276) | Added Admission Diagnosis Section and Discharge Diagnosis Section to the eICR Composition so its sections match the CDA eICR IG |
+| [FHIR-54720](https://jira.hl7.org/browse/FHIR-54720) | Copied the background and use case explanatory material from Volume 1 of the CDA eICR and CDA RR IGs into a new Background and Use Cases page so the IG is self-contained |
+| [FHIR-54591](https://jira.hl7.org/browse/FHIR-54591) | Retained the ODH occupation profiles and added support for the US Core Observation Occupation Profile in the eICR Composition Social History Section |
+| [FHIR-54422](https://jira.hl7.org/browse/FHIR-54422) | Retained the ODH occupation profiles and added support for the US Core Observation Occupation Profile in the eICR Composition Social History Section (same resolution as FHIR-54591) |
+| [FHIR-54295](https://jira.hl7.org/browse/FHIR-54295) | Retained the ODH occupation profiles and added support for the US Core Observation Occupation Profile in the eICR Composition Social History Section (same resolution as FHIR-54591) |
+| [FHIR-54439](https://jira.hl7.org/browse/FHIR-54439) | Kept hasMember modelling for organism susceptibility and added a derived eICR Organism Isolate Specimen (Specimen.parent) that each susceptibility observation references, following the Diagnostics module linking pattern |
+| [FHIR-54348](https://jira.hl7.org/browse/FHIR-54348) | Aligned organism susceptibility modelling with the FHIR R5 Diagnostics module pattern: hasMember linking from the organism detected observation and a derived eICR Organism Isolate Specimen linked to the original specimen through Specimen.parent (same resolution as FHIR-54439) |
+| [FHIR-54424](https://jira.hl7.org/browse/FHIR-54424) | Admission Medications Section entries changed to the US Public Health MedicationAdministration profile, with MedicationStatement and US Core MedicationRequest also allowed; Medications Section entries also changed to the US Public Health MedicationAdministration profile |
+| [FHIR-54349](https://jira.hl7.org/browse/FHIR-54349) | Bound eICR Organism Susceptibility Observation.interpretation to the v3 ObservationInterpretationSusceptibility value set; left value[x] unconstrained to allow numeric or textual MIC results |
+| [FHIR-54350](https://jira.hl7.org/browse/FHIR-54350) | Added guidance to the eICR Organism Susceptibility Observation (and the related Organism Detected Observation and Organism Isolate Specimen profiles) on populating Observation.specimen: susceptibility observations reference the isolate Specimen, which references the original specimen through Specimen.parent, per the Diagnostics module Microbiology guidance |
+| [FHIR-54347](https://jira.hl7.org/browse/FHIR-54347) | Made eICR Organism Detected Observation.value[x] required (1..1) and constrained it to CodeableConcept or string |
 
 
 ### STU 3 - Ballot (3.0.0)

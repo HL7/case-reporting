@@ -174,11 +174,24 @@ Description: "This Composition profile represents an Electronic Initial Case Rep
 * section[sliceAdmissionMedicationsSection].entry ^slicing.discriminator.path = "resolve()"
 * section[sliceAdmissionMedicationsSection].entry ^slicing.rules = #open
 * section[sliceAdmissionMedicationsSection].entry contains
-    sliceMedication 0..* MS
-* section[sliceAdmissionMedicationsSection].entry[sliceMedication] only Reference(MedicationAdministration)
-* section[sliceAdmissionMedicationsSection].entry[sliceMedication] ^sliceName = "sliceMedication"
-* section[sliceAdmissionMedicationsSection].entry[sliceMedication] ^short = "Admission Medication entry"
-* section[sliceAdmissionMedicationsSection].entry[sliceMedication] ^mustSupport = true
+    sliceMedicationAdministration 0..* MS and
+    sliceMedicationStatement 0..* MS and
+    sliceMedicationRequest 0..* MS
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationAdministration] only Reference(USPublicHealthMedicationAdministration)
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationAdministration] ^sliceName = "sliceMedicationAdministration"
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationAdministration] ^short = "Admission Medication Administration entry"
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationAdministration] ^definition = "A medication administered to the patient prior to or at the time of admission to the facility."
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationAdministration] ^mustSupport = true
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationStatement] only Reference(MedicationStatement)
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationStatement] ^sliceName = "sliceMedicationStatement"
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationStatement] ^short = "Admission Medication Statement entry"
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationStatement] ^definition = "A record of a medication the patient was taking prior to or at the time of admission to the facility, for example as reported by the patient or reconciled from an external medication list."
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationStatement] ^mustSupport = true
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] only Reference(USCoreMedicationRequestProfile)
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] ^sliceName = "sliceMedicationRequest"
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] ^short = "Admission Medication Request entry"
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] ^definition = "A medication ordered or prescribed for the patient prior to or at the time of admission to the facility."
+* section[sliceAdmissionMedicationsSection].entry[sliceMedicationRequest] ^mustSupport = true
 
 * section[sliceMedicationsSection] ^short = "Medications Section"
 * section[sliceMedicationsSection] ^definition = "The Medications Section contains a patient's current medications and pertinent medication history. At a minimum, the currently active medications are listed. An entire medication history is an option."
@@ -195,7 +208,7 @@ Description: "This Composition profile represents an Electronic Initial Case Rep
 * section[sliceMedicationsSection].entry ^slicing.rules = #open
 * section[sliceMedicationsSection].entry contains
     sliceMedicationAdministration 0..* MS
-* section[sliceMedicationsSection].entry[sliceMedicationAdministration] only Reference(MedicationAdministration)
+* section[sliceMedicationsSection].entry[sliceMedicationAdministration] only Reference(USPublicHealthMedicationAdministration)
 * section[sliceMedicationsSection].entry[sliceMedicationAdministration] ^sliceName = "sliceMedicationAdministration"
 * section[sliceMedicationsSection].entry[sliceMedicationAdministration] ^short = "Medication Administration entry"
 * section[sliceMedicationsSection].entry[sliceMedicationAdministration] ^definition = "The eICR Trigger Code Flag (extension) is present for an MedicationAdministration, based on a trigger code match of the medication (MedicationAdministration.medicationCodeableConcept) to the eRSD PlanDefinition Medications Trigger."
@@ -385,7 +398,7 @@ Description: "This Composition profile represents an Electronic Initial Case Rep
 * section[sliceSocialHistorySection].entry ^slicing.rules = #open
 * section[sliceSocialHistorySection].entry contains
     sliceCharacteristicsOfHomeEnvironment 0..* MS and
-    sliceODHPastOrPresentJob 0..* MS and
+    sliceOccupation 0..* MS and
     sliceODHUsualWork 0..* MS and
     sliceODHEmploymentStatus 0..* MS and
     sliceTravelHistory 0..* MS and
@@ -398,11 +411,11 @@ Description: "This Composition profile represents an Electronic Initial Case Rep
 * section[sliceSocialHistorySection].entry[sliceCharacteristicsOfHomeEnvironment] ^short = "Characteristics of Home Environment"
 * section[sliceSocialHistorySection].entry[sliceCharacteristicsOfHomeEnvironment] ^definition = "If the patient is homeless, complete as much address information as possible (city, zip, county, etc.) and use the Characteristics of Home Environment profile to indicate that the patient is homeless."
 * section[sliceSocialHistorySection].entry[sliceCharacteristicsOfHomeEnvironment] ^mustSupport = true
-* section[sliceSocialHistorySection].entry[sliceODHPastOrPresentJob] only Reference(PastOrPresentJob)
-* section[sliceSocialHistorySection].entry[sliceODHPastOrPresentJob] ^sliceName = "sliceODHPastOrPresentJob"
-* section[sliceSocialHistorySection].entry[sliceODHPastOrPresentJob] ^short = "ODH Past or Present Job entry"
-* section[sliceSocialHistorySection].entry[sliceODHPastOrPresentJob] ^definition = "ODH Past or Present Job entry"
-* section[sliceSocialHistorySection].entry[sliceODHPastOrPresentJob] ^mustSupport = true
+* section[sliceSocialHistorySection].entry[sliceOccupation] only Reference(PastOrPresentJob or USCoreObservationOccupationProfile)
+* section[sliceSocialHistorySection].entry[sliceOccupation] ^sliceName = "sliceOccupation"
+* section[sliceSocialHistorySection].entry[sliceOccupation] ^short = "Occupation entry (ODH Past or Present Job or US Core Observation Occupation)"
+* section[sliceSocialHistorySection].entry[sliceOccupation] ^definition = "The patient's current or past occupation and industry. Either the Occupational Data for Health (ODH) Past or Present Job profile or the US Core Observation Occupation profile may be used. The ODH profile supports additional occupation-related data (employer, job title, work classification, supervisory level, job duties, occupational hazards, work schedule) beyond the USCDI occupation and industry data elements constrained by US Core. Both profiles use the same LOINC codes and point to the same underlying occupation and industry value sets."
+* section[sliceSocialHistorySection].entry[sliceOccupation] ^mustSupport = true
 * section[sliceSocialHistorySection].entry[sliceODHUsualWork] only Reference(UsualWork)
 * section[sliceSocialHistorySection].entry[sliceODHUsualWork] ^sliceName = "sliceODHUsualWork"
 * section[sliceSocialHistorySection].entry[sliceODHUsualWork] ^short = "ODH Usual Work entry"

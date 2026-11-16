@@ -4,7 +4,9 @@ This section defines the specific requirements for systems wishing to conform to
 ### Context
 
 #### Pre-reading
-Before reading this implementation guide, implementers should first be familiar with two other key portions of the specification:
+Before reading this implementation guide, implementers should first be familiar with three other key portions of the specification:
+
+* The [Background and Use Cases](background_and_use_cases.html) page provides the background, scope, use case flow, assumptions, actors and roles, and scenarios for electronic case reporting.
 
 * The pages listed under the Transaction Profiles tab provide the context and general process flow enabled by the formal specification.
 

@@ -51,6 +51,8 @@ Usage: #example
 * entry[=].resource = organization-ecr-acme-laboratory
 * entry[+].fullUrl = "http://example.org/fhir/us/ecr/Observation/observation-odh-usual-work-eve-everywoman"
 * entry[=].resource = observation-odh-usual-work-eve-everywoman
+* entry[+].fullUrl = "http://example.org/fhir/us/ecr/Observation/observation-us-core-occupation-eve-everywoman"
+* entry[=].resource = observation-us-core-occupation-eve-everywoman
 * entry[+].fullUrl = "http://example.org/fhir/us/ecr/Location/location-ecr-salem-medical-center"
 * entry[=].resource = location-ecr-salem-medical-center
 * entry[+].fullUrl = "http://example.org/fhir/us/ecr/Location/location-ecr-city-football-stadium"
