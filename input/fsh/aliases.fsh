@@ -27,6 +27,7 @@ Alias: $iso3166-1-2 = http://hl7.org/fhir/ValueSet/iso3166-1-2
 Alias: $v3-ServiceDeliveryLocationRoleType = http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType
 Alias: $condition-code = http://hl7.org/fhir/ValueSet/condition-code
 Alias: $2.16.840.1.113762.1.4.1021.32 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1021.32
+Alias: $2.16.840.1.113762.1.4.1280.3 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1280.3
 Alias: $system-usps = https://www.usps.com/
 Alias: $ValuesetUSCoreUspsState = http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state|6.1.0
 Alias: $USCoreBloodPressureProfile = http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure|6.1.0

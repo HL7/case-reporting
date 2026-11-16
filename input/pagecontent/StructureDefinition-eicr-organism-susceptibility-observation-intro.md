@@ -16,7 +16,9 @@ For organism susceptibility:
 
 This makes each susceptibility observation self-contained: the isolate identifies what was tested, and following Specimen.parent identifies the source specimen, body site, and collection details.
 
-### Value and interpretation
+### Code, value, and interpretation
+
+Observation.code is bound (extensible) to the [Antimicrobial Susceptibility Test Codes](http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1280.3) value set (VSAC OID 2.16.840.1.113762.1.4.1280.3) rather than the much broader US Core laboratory test codes, so that only susceptibility tests are used.
 
 Observation.value[x] is not constrained to a single data type. Minimum inhibitory concentration (MIC) results reported against LOINC MIC susceptibility codes may be numeric (Quantity) or textual (string); other susceptibility methods may report a coded (CodeableConcept) result.
 

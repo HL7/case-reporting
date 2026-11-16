@@ -37,7 +37,7 @@
         </tr>
         <tr>
             <td>eICR Organism Susceptibility Observation</td>
-            <td>Bind interpretation (required) to the <a href="http://terminology.hl7.org/ValueSet/v3-ObservationInterpretationSusceptibility">v3 ObservationInterpretationSusceptibility</a> value set. The value data type remains unconstrained so that numeric or textual MIC results can be reported.</td>
+            <td>Bind code (extensible) to the new VSAC <a href="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1280.3">Antimicrobial Susceptibility Test Codes</a> value set instead of the broad US Core laboratory test codes. Bind interpretation (required) to the <a href="http://terminology.hl7.org/ValueSet/v3-ObservationInterpretationSusceptibility">v3 ObservationInterpretationSusceptibility</a> value set. The value data type remains unconstrained so that numeric or textual MIC results can be reported.</td>
         </tr>
     </tbody>
 </table>
@@ -56,6 +56,7 @@
 | [FHIR-54350](https://jira.hl7.org/browse/FHIR-54350) | Added guidance to the eICR Organism Susceptibility Observation (and the related Organism Detected Observation and Organism Isolate Specimen profiles) on populating Observation.specimen: susceptibility observations reference the isolate Specimen, which references the original specimen through Specimen.parent, per the Diagnostics module Microbiology guidance |
 | [FHIR-54347](https://jira.hl7.org/browse/FHIR-54347) | Made eICR Organism Detected Observation.value[x] required (1..1) and constrained it to CodeableConcept or string |
 | [FHIR-54302](https://jira.hl7.org/browse/FHIR-54302) | Ensured every eICR Composition section, including optional sections, can state that it has no content (section.emptyReason, no sections require an entry), with guidance and an example |
+| [FHIR-54420](https://jira.hl7.org/browse/FHIR-54420) | Bound eICR Organism Susceptibility Observation.code (extensible) to the new VSAC Antimicrobial Susceptibility Test Codes value set (2.16.840.1.113762.1.4.1280.3) |
 
 
 ### STU 3 - Ballot (3.0.0)

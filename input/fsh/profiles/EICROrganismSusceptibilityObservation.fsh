@@ -6,7 +6,9 @@ Description: "This Observation profile is used to report organism susceptibility
 
 * . ^short = "eICR Organism Susceptibility Observation"
 
+* code from $2.16.840.1.113762.1.4.1280.3 (extensible)
 * code ^short = "Susceptibility Test"
+* code ^definition = "The antimicrobial susceptibility test performed, bound (extensible) to the Antimicrobial Susceptibility Test Codes value set (VSAC OID 2.16.840.1.113762.1.4.1280.3), which limits the broad US Core laboratory test codes to susceptibility tests."
 * subject only Reference(USPublicHealthPatient)
 * value[x] ^short = "Susceptibility Test Result"
 * value[x] ^definition = "The result of the susceptibility test. The data type is not constrained: minimum inhibitory concentration (MIC) results reported against LOINC MIC susceptibility codes may be numeric (Quantity, which may carry a comparator such as <=) or textual (string, for example \"<0.25\"), while other susceptibility methods may report a coded (CodeableConcept) result."
