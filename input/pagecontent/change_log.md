@@ -28,6 +28,10 @@
             <td>Add the <a href="StructureDefinition-eicr-organism-isolate-specimen.html">eICR Organism Isolate Specimen</a> profile (a derived isolate linked to its clinical specimen through Specimen.parent). The eICR Organism Susceptibility Observation now requires a reference to the isolate specimen so each susceptibility result is self-contained; the eICR Organism Detected Observation keeps the hasMember grouping, references the clinical specimen, and now requires the organism name (value[x] 1..1, CodeableConcept or string). Add guidance on populating Observation.specimen to the three profiles, and add urine and isolate Specimen examples.</td>
         </tr>
         <tr>
+            <td>Design Considerations</td>
+            <td>Add <a href="design_considerations.html#provenance">Provenance</a> guidance: use Provenance to represent how case report data was generated, curated, or automated; treat security, tag, and process labels as discovery signals rather than a substitute for Provenance; and retrieve reported data with its Provenance using a FHIR search with _revinclude=Provenance:target, consistent with US Core.</td>
+        </tr>
+        <tr>
             <td>eICR Composition</td>
             <td>Allow every section, including optional sections, to state that it has no content: section.emptyReason is Must Support with guidance, and the Plan of Treatment, Immunizations, Procedures, and Pregnancy Sections no longer require an entry.</td>
         </tr>
@@ -57,6 +61,7 @@
 | [FHIR-54347](https://jira.hl7.org/browse/FHIR-54347) | Made eICR Organism Detected Observation.value[x] required (1..1) and constrained it to CodeableConcept or string |
 | [FHIR-54302](https://jira.hl7.org/browse/FHIR-54302) | Ensured every eICR Composition section, including optional sections, can state that it has no content (section.emptyReason, no sections require an entry), with guidance and an example |
 | [FHIR-54420](https://jira.hl7.org/browse/FHIR-54420) | Bound eICR Organism Susceptibility Observation.code (extensible) to the new VSAC Antimicrobial Susceptibility Test Codes value set (2.16.840.1.113762.1.4.1280.3) |
+| [FHIR-54283](https://jira.hl7.org/browse/FHIR-54283) | Added Provenance guidance to Design Considerations: recommend Provenance for representing how case report data was generated, curated, or automated; metadata indicators as discovery signals; and _revinclude=Provenance:target search for retrieving reported data with its Provenance |
 
 
 ### STU 3 - Ballot (3.0.0)

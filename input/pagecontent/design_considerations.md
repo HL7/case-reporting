@@ -124,3 +124,39 @@ eICRs shared from EHR interface are not definitively reportable. There are compl
     </tr>
   </tbody>
 </table>
+
+### Provenance
+
+#### Representing how case report data was generated
+
+Case report data may be generated, curated, or automated in several ways: an eICR may be automatically initiated by trigger code matching, manually initiated by a provider, assembled by an intermediary, or produced with the assistance of decision support or AI-based tools. Public health systems and downstream consumers need to be able to determine how reported data came to be.
+
+The [Provenance]({{site.data.fhir.path}}provenance.html) resource, constrained by the [US Core Provenance Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-provenance.html), is the recommended mechanism for representing how case report data was generated, curated, or automated. Senders SHOULD include Provenance when data was created or transformed by an automated process, decision support, or AI-assisted generation, or when it was curated from another source. In a Provenance resource:
+
+* Provenance.target references the resource(s) the provenance applies to: the eICR or Reportability Response Composition, the document Bundle, or individual clinical resources (for example, Observations or Conditions) contained in the document.
+* Provenance.agent identifies who or what was responsible, using the US Core participant types (for example, author, assembler, or transmitter) and referencing the Practitioner, PractitionerRole, Organization, or Device (such as the EHR or decision support software) involved.
+* Provenance.activity and Provenance.recorded describe what was done and when.
+
+Provenance resources MAY be included as entries in the eICR Document Bundle and the Reportability Response Document Bundle alongside the resources they describe.
+
+#### Metadata indicators are discovery signals, not a substitute for Provenance
+
+Metadata on a resource such as security labels (Resource.meta.security), tags (Resource.meta.tag), or process labels, including those defined by the [AI Transparency IG](https://hl7.org/fhir/uv/aitransparency/), can signal that a resource was generated or modified in a particular way and that provenance exists. These indicators SHOULD be treated as discovery signals that prompt a consumer to look for the associated Provenance. They are not a substitute for Provenance itself, which carries the detail of what was done, by whom or what, and when.
+
+#### Provenance discovery and retrieval
+
+Where reported data is made available through a FHIR server (for example, by a public health intermediary, a shared services platform, or an EHR), a FHIR search using `_revinclude=Provenance:target` is the recommended and supported mechanism for public health systems to retrieve reported data and its associated Provenance together. This is consistent with US Core, which requires servers to support `_revinclude=Provenance:target` on the searches for its profiled resources.
+
+For example, to retrieve the Observations reported for a patient together with their Provenance:
+
+```
+GET [base]/Observation?patient={id}&_revinclude=Provenance:target
+```
+
+To retrieve an eICR Composition together with its Provenance:
+
+```
+GET [base]/Composition?patient={id}&type=http://loinc.org|55751-2&_revinclude=Provenance:target
+```
+
+The search result Bundle contains the matching resources (search mode "match") and the Provenance resources whose target references them (search mode "include"). Where data is received as a document Bundle rather than retrieved by search, consumers should look for Provenance entries within the Bundle whose target references the Composition or the contained resources.
