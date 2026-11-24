@@ -262,13 +262,13 @@ Full triggering timing can be described using the parameters below. These are th
 
 * Example - 72 hours after a previous eICR was sent, there have been no new trigger code matches, but a new eICR is created and transmitted because there had been a match in the encounter previously and there is a need for public health to receive updated data about the patient.
 
-**Parameter D** – The time period after the encounter ends or the normal reporting duration for the encounter (Parameter E) through which trigger code checks and eICR updates should still occur.
+**Parameter D** – The duration for which trigger code checks and eICR updates should continue after either the encounter ends or the encounter's applicable normal reporting duration (Parameter E) expires. The Parameter D period begins when the first of these two events occurs.
 
 * Example - For 72 hours after the encounter ends, trigger code checks and / or updated eICR transmissions should still occur.
 
-**Parameter E** – The normal reporting duration for the encounter. While an encounter is in progress and within the normal reporting duration, reportability will continue to be checked. Once the encounter ends or has extended beyond the normal reporting duration (E) plus the encounter grace period (D), it will only be reported on in response to an 'encounter-modified' trigger. The normal reporting duration may differ by type of encounter: for example, a shorter duration may apply to ambulatory, virtual and home health encounters than to inpatient, emergency and observation encounters.
+**Parameter E** – The normal reporting duration for an encounter, which is determined by encounter type. Two durations are defined: the normal reporting duration (`normalReportingDuration`), which applies to inpatient, emergency, and observation encounters; and the ambulatory reporting duration (`ambulatoryReportingDuration`), which applies to ambulatory, virtual, and home health encounters. While an encounter is in progress and within its applicable normal reporting duration, reportability will continue to be checked. Once the encounter ends or its applicable normal reporting duration expires, the Parameter D period begins. After that period expires, reportability will only be checked and reported in response to an 'encounter-modified' trigger.
 
-* Example - For 2 weeks after an inpatient encounter begins and while it is still in progress, continue to check for suspected reportability. Otherwise, once the encounter has extended beyond 2 weeks, and the 72 hour encounter grace period (D) completes, check for reportability and report only if and encounter-modified trigger is used. For an ambulatory encounter, the same applies with a duration of 1 day.
+* Example - For an inpatient encounter, use a normal reporting duration of 2 weeks. While the encounter is in progress and within those 2 weeks, continue to check for suspected reportability. If the encounter ends before the 2 weeks expire, the 72-hour encounter grace period (D) begins when the encounter ends. If the encounter is still in progress after 2 weeks, the 72-hour grace period begins when the 2 weeks expire. Once the grace period expires, check for reportability and report only in response to an 'encounter-modified' trigger. For an ambulatory encounter, the same approach applies, using an ambulatory reporting duration of 1 day.
 
 ###### Additional parameters
 
@@ -293,40 +293,21 @@ The eRSD PlanDefinition represents the parameters above as follows. Parameters A
 | A | 1 hour | `offsetDuration` of `start-workflow` |
 | B | 6 hours (inpatient, emergency, observation); 72 hours (ambulatory, virtual, home health) | `offsetDuration` of the related action that re-invokes `check-reportable` |
 | C | 72 hours | `eicrUpdateInterval` (hours) |
-| D | 72 hours | `postEncounterGracePeriod` (hours) |
+| D (inpatient, emergency, observation) | 72 hours | `normalPostEncounterGracePeriod` (hours) |
+| D (ambulatory, virtual, home health) | 72 hours | `ambulatoryPostEncounterGracePeriod` (hours) |
 | E (inpatient, emergency, observation) | 14 days | `normalReportingDuration` (days) |
 | E (ambulatory, virtual, home health) | 1 day | `ambulatoryReportingDuration` (days) |
 | Diagnosis evidence window | 30 days | `dxTimeboxDuration` (days) |
 | Laboratory evidence window | 30 days | `labTimeboxDuration` (days) |
 | Extended evidence window | 365 days | `extendedTimeboxDuration` (days) |
 | Negative result values | value set | `negativeLabResultValueSet` |
+| Start of triggering encounter | supplied by context | `encounterStartDate` |
+| End of triggering encounter | supplied by context | `encounterEndDate` |
+| When an eICR was last submitted for this encounter | supplied by context | `lastReportSubmissionDate` |
 
 The PlanDefinition also declares `encounterStartDate`, `encounterEndDate` and `lastReportSubmissionDate` as variables. These are not parameters but values supplied from the context of the triggering encounter, and are used by the action conditions to evaluate the parameters above.
 
 > Note to implementers: in the PlanDefinition the duration variables are defined as plain integers rather than as quantities, and are converted to a duration where they are used. Unless stated otherwise the integer is a number of days, as in `%encounterStartDate + 1 day * %normalReportingDuration`. The exceptions are `eicrUpdateInterval` and `postEncounterGracePeriod`, which are a number of hours, as in `%encounterEndDate + 1 hour * %postEncounterGracePeriod`. An implementation reading these variables should expect a number, not a quantity with a unit, and should apply the unit documented for that variable.
-
-##### Parameters
-Because of variability in accumulation of data at the start of a patient encounter, the EHR implementer should implement a time-based delay in generating and sending the first encounter eICR to allow time for required data to be captured within the patient chart. This will ensure the eICR is better populated before sending and will reduce the number of case reports that are sent for a single patient encounter.
-
-Timings are carried on the PlanDefinition itself as `variable` extensions, and are referenced from the action conditions and from the `offsetDuration` of related actions. Earlier versions of this guide described these timings as parameters "A" through "E"; that mapping is retained below for continuity with the diagram above.
-
-| Variable | Value | Formerly | Meaning |
-| --- | --- | --- | --- |
-| `normalReportingDuration` | 14 days | "E" | The reporting duration for an inpatient, emergency or observation encounter. While the encounter is in progress and within this duration, reportability continues to be checked. |
-| `ambulatoryReportingDuration` | 1 day | "E" | The equivalent duration for an ambulatory, virtual or home health encounter. |
-| `dxTimeboxDuration` | 30 days | — | How old diagnosis and problem list evidence may be and still trigger a report. |
-| `labTimeboxDuration` | 30 days | — | How old laboratory evidence may be and still trigger a report. |
-| `extendedTimeboxDuration` | 365 days | — | The evidence window applied in place of the two above for conditions in the `eltc` value set. |
-| `negativeLabResultValueSet` | canonical | — | The value set of result values treated as negative. |
-| `encounterStartDate` | supplied by context | — | The start of the triggering encounter. |
-| `encounterEndDate` | supplied by context | — | The end of the triggering encounter. |
-| `lastReportSubmissionDate` | supplied by context | — | When an eICR was last submitted for this encounter. |
-
-Not every timing is carried as a variable. Parameters "A" and "B" are expressed as the `offsetDuration` of a related action: "A", the delay between the start of the encounter and the first reportability check, is one hour; "B", the interval before the reportability check repeats while an encounter remains in progress, is at most six hours for an inpatient encounter and at most 72 hours for an ambulatory one. Parameters "C" and "D" — the interval before an updated eICR is sent when nothing new has triggered, and the window after the encounter ends during which checks continue — are currently fixed at 72 hours in the action conditions themselves and are not configurable.
-
-> Note to implementers: the duration variables are defined as plain integers rather than as quantities, and are converted to a duration where they are used, in the form `%encounterStartDate + 1 day * %normalReportingDuration`. An implementation reading these variables should expect a number of days, not a quantity with a unit.
-
-> Note to implementers: The offset durations specified in related actions here are _relative_ durations, in that they contain a comparator to indicate that the action should be completed _at most X_. This allows implementations to support scheduling these actions during non-peak times to minimize load on the clinical system.
 
 ##### Suspected Reportability Criteria
 
