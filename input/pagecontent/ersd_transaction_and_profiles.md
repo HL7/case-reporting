@@ -62,10 +62,10 @@ Subsequent sections describe each of these specification components in more deta
 The following diagram illustrates the general process for electronic Case Reporting as triggered from a patient encounter, highlighting each of the components involved in describing the process:
 
 <figure>
-  <img style="max-width:100%" src="eicr-triggering-and-transmission-guidance-components.png" alt="The components involved in describing the electronic case reporting process, from encounter events through triggering criteria to report transmission."/>
+  <img style="max-width:100%" src="ecr-triggering-timing.svg" alt="The components involved in describing the electronic case reporting process, from encounter events through triggering criteria to report transmission."/>
   <figcaption>Figure 2: Components of the eCR triggering and transmission process</figcaption>
 </figure>
-
+<br>
 The timing parameters labeled "A" through "E" in the diagram above are defined in the [Parameters](#parameters) section below.
 
 The components involved in representing the reporting process are:

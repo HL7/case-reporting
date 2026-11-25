@@ -1,0 +1,290 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1300" width="1500" height="1300" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif">
+  <title>eICR Triggering and Transmission Timing</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2F6DB5"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7A8699"/>
+    </marker>
+    <marker id="arrowTeal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00796B"/>
+    </marker>
+    <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8C6D00"/>
+    </marker>
+    <style>
+      .title { font-size: 34px; font-weight: 700; fill: #111; }
+      .band { fill: #F4F6FA; stroke: #D5DBE5; stroke-width: 1.5; }
+      .bandIP { fill: #EEF7F5; stroke: #A9D3CC; stroke-width: 1.5; }
+      .bandAMB { fill: #FBF6E6; stroke: #E0CF96; stroke-width: 1.5; }
+      .bandLabel { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; fill: #5A6577; }
+      .flow { stroke: #2F6DB5; stroke-width: 3; fill: none; }
+      .flowDash { stroke: #2F6DB5; stroke-width: 3; fill: none; stroke-dasharray: 8 7; }
+      .elapsed { stroke: #7A8699; stroke-width: 3; fill: none; stroke-dasharray: 3 5; }
+      .bus { stroke: #7A8699; stroke-width: 2.5; fill: none; }
+      .event { fill: #fff; stroke: #4E8A3E; stroke-width: 4; }
+      .eventText { font-size: 16px; font-weight: 700; fill: #3C6E2F; }
+      .eventSm { font-size: 12.5px; font-weight: 700; fill: #3C6E2F; }
+      .encBar { stroke: #A6CC98; stroke-width: 8; stroke-linecap: round; }
+      .endLine { stroke: #4E8A3E; stroke-width: 2; stroke-dasharray: 4 4; }
+      .greenNote { font-size: 13px; fill: #3C6E2F; font-weight: 600; }
+      .check { fill: #fff; stroke: #002060; stroke-width: 3; }
+      .checkHead { font-size: 18px; font-weight: 700; fill: #002060; }
+      .body { font-size: 15px; fill: #222; }
+      .crit { font-size: 15px; fill: #C00000; font-weight: 600; }
+      .small { font-size: 13px; fill: #5A6577; }
+      .pill { fill: #fff; stroke: #7030A0; stroke-width: 2.5; }
+      .pillText { font-size: 16px; font-weight: 700; fill: #7030A0; }
+      .param { fill: #7030A0; font-weight: 700; }
+      .badge { fill: #002060; }
+      .badgeText { font-size: 15px; font-weight: 700; fill: #fff; }
+      .proc { fill: #EAF2FB; stroke: #2F6DB5; stroke-width: 2.5; }
+      .procText { font-size: 15px; font-weight: 600; fill: #1F4F86; }
+      .laneHead { fill: #fff; stroke-width: 2; }
+      .bracket { stroke: #7030A0; stroke-width: 2; fill: none; }
+      .bracketDash { stroke: #7030A0; stroke-width: 2; fill: none; stroke-dasharray: 5 5; opacity: 0.75; }
+      .th { font-size: 14px; font-weight: 700; fill: #fff; }
+      .td { font-size: 14px; fill: #222; }
+      .tdMono { font-size: 12.5px; fill: #44506A; font-family: Menlo, Consolas, monospace; }
+      .ip { fill: #00796B; }
+      .amb { fill: #8C6D00; }
+      .legendText { font-size: 18px; font-weight: 700; }
+    </style>
+  </defs>
+
+  <rect width="1500" height="1300" fill="#fff"/>
+  <text x="40" y="56" class="title">eICR Triggering and Transmission Timing</text>
+
+  <!-- ============ ROW 1: ALL ENCOUNTERS ============ -->
+  <rect x="90" y="85" width="1380" height="245" rx="10" class="band"/>
+  <text x="108" y="108" class="bandLabel">ALL ENCOUNTERS — SAME TIMING REGARDLESS OF ENCOUNTER CLASS</text>
+
+  <circle cx="165" cy="220" r="38" class="event"/>
+  <text x="165" y="226" text-anchor="middle" class="eventText">Start</text>
+  <text x="165" y="282" text-anchor="middle" class="small">Encounter start</text>
+
+  <line x1="205" y1="220" x2="338" y2="220" class="flow" marker-end="url(#arrow)"/>
+  <rect x="221" y="204" width="96" height="32" rx="16" class="pill"/>
+  <text x="269" y="226" text-anchor="middle" class="pillText">A = 1 h</text>
+  <text x="269" y="258" text-anchor="middle" class="small">delay after start</text>
+
+  <rect x="342" y="145" width="262" height="150" rx="10" class="check"/>
+  <circle cx="368" cy="172" r="14" class="badge"/>
+  <text x="368" y="177" text-anchor="middle" class="badgeText">1</text>
+  <text x="390" y="178" class="checkHead">Immediate check</text>
+  <text x="360" y="208" class="body">Suspected disorder</text>
+  <text x="360" y="230" class="crit">trigger code match?</text>
+  <text x="360" y="252" class="body">→ create &amp; send eICR</text>
+  <text x="360" y="280" class="small">Then schedules check 2</text>
+
+  <line x1="604" y1="220" x2="806" y2="220" class="flow" marker-end="url(#arrow)"/>
+  <rect x="648" y="204" width="114" height="32" rx="16" class="pill"/>
+  <text x="705" y="226" text-anchor="middle" class="pillText">B1 ≤ 6 h</text>
+  <text x="705" y="258" text-anchor="middle" class="small">first follow-up only,</text>
+  <text x="705" y="276" text-anchor="middle" class="small">all encounter classes</text>
+
+  <rect x="810" y="145" width="300" height="150" rx="10" class="check"/>
+  <circle cx="836" cy="172" r="14" class="badge"/>
+  <text x="836" y="177" text-anchor="middle" class="badgeText">2</text>
+  <text x="858" y="178" class="checkHead">Reportability check</text>
+  <text x="828" y="208" class="body">New <tspan class="crit">trigger code match</tspan>?</text>
+  <text x="844" y="228" class="body">→ create &amp; send eICR</text>
+  <text x="828" y="256" class="body">Last eICR sent ≥ <tspan class="param">C</tspan> (72 h) ago?</text>
+  <text x="844" y="276" class="body">→ send updated eICR</text>
+
+  <line x1="1110" y1="220" x2="1166" y2="220" class="flow" marker-end="url(#arrow)"/>
+  <polygon points="1290,152 1410,220 1290,288 1170,220" class="proc"/>
+  <text x="1290" y="206" text-anchor="middle" class="procText">Schedule next</text>
+  <text x="1290" y="225" text-anchor="middle" class="procText">check 2 by</text>
+  <text x="1290" y="244" text-anchor="middle" class="procText">encounter class</text>
+
+  <!-- Bus from decision to lanes -->
+  <polyline points="1290,288 1290,345 60,345 60,725" class="bus"/>
+  <line x1="60" y1="425" x2="106" y2="425" stroke="#00796B" stroke-width="3" marker-end="url(#arrowTeal)"/>
+  <line x1="60" y1="725" x2="106" y2="725" stroke="#8C6D00" stroke-width="3" marker-end="url(#arrowGold)"/>
+
+  <!-- ============ LANE: INPATIENT & OTHER (top = 360) ============ -->
+  <g>
+    <rect x="90" y="360" width="1380" height="280" rx="10" class="bandIP"/>
+    <rect x="110" y="380" width="180" height="240" rx="8" class="laneHead" stroke="#00796B"/>
+    <rect x="110" y="380" width="180" height="8" rx="3" fill="#00796B"/>
+    <text x="200" y="420" text-anchor="middle" font-size="18" font-weight="700" class="ip">Inpatient &amp; other</text>
+    <text x="200" y="448" text-anchor="middle" class="body">Encounters not in an</text>
+    <text x="200" y="468" text-anchor="middle" class="body">ambulatory class</text>
+    <text x="200" y="498" text-anchor="middle" class="small">(e.g. inpatient, emergency)</text>
+    <circle cx="140" cy="590" r="13" class="badge"/>
+    <text x="140" y="595" text-anchor="middle" class="badgeText" font-size="13">2</text>
+    <text x="160" y="595" class="small">= re-run check 2</text>
+
+    <!-- check track y=425 -->
+    <line x1="330" y1="425" x2="440" y2="425" class="elapsed"/>
+    <line x1="330" y1="415" x2="330" y2="435" stroke="#7A8699" stroke-width="2"/>
+    <text x="385" y="405" text-anchor="middle" class="small">A + B1</text>
+    <circle cx="460" cy="425" r="18" class="badge"/><text x="460" y="431" text-anchor="middle" class="badgeText">2</text>
+    <line x1="480" y1="425" x2="598" y2="425" class="flow" marker-end="url(#arrow)"/>
+    <rect x="487" y="409" width="104" height="32" rx="16" class="pill"/>
+    <text x="539" y="431" text-anchor="middle" class="pillText">B2 ≤ 6 h</text>
+    <circle cx="620" cy="425" r="18" class="badge"/><text x="620" y="431" text-anchor="middle" class="badgeText">2</text>
+    <line x1="640" y1="425" x2="758" y2="425" class="flow" marker-end="url(#arrow)"/>
+    <rect x="647" y="409" width="104" height="32" rx="16" class="pill"/>
+    <text x="699" y="431" text-anchor="middle" class="pillText">B2 ≤ 6 h</text>
+    <circle cx="780" cy="425" r="18" class="badge"/><text x="780" y="431" text-anchor="middle" class="badgeText">2</text>
+    <line x1="800" y1="425" x2="918" y2="425" class="flowDash" marker-end="url(#arrow)"/>
+    <text x="860" y="405" text-anchor="middle" class="small">B2 repeats…</text>
+    <circle cx="940" cy="425" r="18" class="badge"/><text x="940" y="431" text-anchor="middle" class="badgeText">2</text>
+    <line x1="960" y1="425" x2="1078" y2="425" class="flow" marker-end="url(#arrow)"/>
+    <rect x="967" y="409" width="104" height="32" rx="16" class="pill"/>
+    <text x="1019" y="431" text-anchor="middle" class="pillText">B2 ≤ 6 h</text>
+    <circle cx="1100" cy="425" r="18" class="badge"/><text x="1100" y="431" text-anchor="middle" class="badgeText">2</text>
+    <line x1="1120" y1="425" x2="1306" y2="425" class="flowDash" marker-end="url(#arrow)"/>
+    <text x="1213" y="405" text-anchor="middle" class="small">B2 repeats…</text>
+    <rect x="1310" y="397" width="145" height="56" rx="8" class="proc"/>
+    <text x="1382" y="421" text-anchor="middle" class="procText">Stop</text>
+    <text x="1382" y="440" text-anchor="middle" class="small">workflow ends</text>
+    <text x="1382" y="472" text-anchor="middle" class="small">when D elapses, or E</text>
+    <text x="1382" y="488" text-anchor="middle" class="small">is reached in progress</text>
+
+    <!-- encounter track y=500 -->
+    <line x1="330" y1="500" x2="860" y2="500" class="encBar"/>
+    <text x="595" y="488" text-anchor="middle" class="greenNote">encounter in progress</text>
+    <line x1="860" y1="474" x2="860" y2="412" class="endLine"/>
+    <circle cx="330" cy="500" r="22" class="event"/><text x="330" y="505" text-anchor="middle" class="eventSm">Start</text>
+    <circle cx="860" cy="500" r="22" class="event"/><text x="860" y="505" text-anchor="middle" class="eventSm">End</text>
+    <text x="892" y="505" class="greenNote">Encounter end — checks continue across it</text>
+
+    <!-- E row y=545 -->
+    <path d="M330,537 v8 H860" class="bracket"/>
+    <path d="M860,545 H1060 v-8" class="bracketDash"/>
+    <rect x="530" y="530" width="130" height="30" rx="15" class="pill"/>
+    <text x="595" y="551" text-anchor="middle" class="pillText">E = 14 days</text>
+    <text x="1068" y="550" class="small">← E maximum: if the encounter ends first, E is cut short at End</text>
+    <text x="595" y="576" text-anchor="middle" class="small">max reporting duration from encounter start (includes A + B1)</text>
+
+    <!-- D row y=600 -->
+    <path d="M860,592 v8 H1300 v-8" class="bracket"/>
+    <rect x="1020" y="585" width="120" height="30" rx="15" class="pill"/>
+    <text x="1080" y="606" text-anchor="middle" class="pillText">D = 72 h</text>
+    <text x="1080" y="630" text-anchor="middle" class="small">post-encounter grace period, from encounter end</text>
+  </g>
+
+  <!-- ============ LANE: AMBULATORY (top = 660) ============ -->
+  <g>
+    <rect x="90" y="660" width="1380" height="280" rx="10" class="bandAMB"/>
+    <rect x="110" y="680" width="180" height="240" rx="8" class="laneHead" stroke="#8C6D00"/>
+    <rect x="110" y="680" width="180" height="8" rx="3" fill="#8C6D00"/>
+    <text x="200" y="720" text-anchor="middle" font-size="18" font-weight="700" class="amb">Ambulatory</text>
+    <text x="200" y="748" text-anchor="middle" class="body">Encounter class</text>
+    <text x="200" y="768" text-anchor="middle" class="body">AMB, VR, or HH</text>
+    <text x="200" y="798" text-anchor="middle" class="small">(ambulatory, virtual, home)</text>
+    <circle cx="140" cy="890" r="13" class="badge"/>
+    <text x="140" y="895" text-anchor="middle" class="badgeText" font-size="13">2</text>
+    <text x="160" y="895" class="small">= re-run check 2</text>
+
+    <!-- check track y=725 -->
+    <line x1="330" y1="725" x2="440" y2="725" class="elapsed"/>
+    <line x1="330" y1="715" x2="330" y2="735" stroke="#7A8699" stroke-width="2"/>
+    <text x="385" y="705" text-anchor="middle" class="small">A + B1</text>
+    <circle cx="460" cy="725" r="18" class="badge"/><text x="460" y="731" text-anchor="middle" class="badgeText">2</text>
+    <line x1="480" y1="725" x2="1078" y2="725" class="flow" marker-end="url(#arrow)"/>
+    <rect x="788" y="709" width="124" height="32" rx="16" class="pill"/>
+    <text x="850" y="731" text-anchor="middle" class="pillText">B2 ≤ 72 h</text>
+    <circle cx="1100" cy="725" r="18" class="badge"/><text x="1100" y="731" text-anchor="middle" class="badgeText">2</text>
+    <line x1="1120" y1="725" x2="1306" y2="725" class="flowDash" marker-end="url(#arrow)"/>
+    <text x="1213" y="705" text-anchor="middle" class="small">next B2 falls after D</text>
+    <rect x="1310" y="697" width="145" height="56" rx="8" class="proc"/>
+    <text x="1382" y="721" text-anchor="middle" class="procText">Stop</text>
+    <text x="1382" y="740" text-anchor="middle" class="small">workflow ends</text>
+    <text x="1382" y="772" text-anchor="middle" class="small">when D elapses, or E</text>
+    <text x="1382" y="788" text-anchor="middle" class="small">is reached in progress</text>
+
+    <!-- encounter track y=800 -->
+    <line x1="330" y1="800" x2="640" y2="800" class="encBar"/>
+    <text x="485" y="788" text-anchor="middle" class="greenNote">encounter in progress</text>
+    <line x1="640" y1="774" x2="640" y2="712" class="endLine"/>
+    <circle cx="330" cy="800" r="22" class="event"/><text x="330" y="805" text-anchor="middle" class="eventSm">Start</text>
+    <circle cx="640" cy="800" r="22" class="event"/><text x="640" y="805" text-anchor="middle" class="eventSm">End</text>
+    <text x="672" y="805" class="greenNote">Encounter end — the single B2 wait spans it</text>
+
+    <!-- E row y=845 -->
+    <path d="M330,837 v8 H640" class="bracket"/>
+    <path d="M640,845 H740 v-8" class="bracketDash"/>
+    <rect x="425" y="830" width="120" height="30" rx="15" class="pill"/>
+    <text x="485" y="851" text-anchor="middle" class="pillText">E = 1 day</text>
+    <text x="748" y="850" class="small">← E maximum: if the encounter ends first, E is cut short at End</text>
+    <text x="485" y="876" text-anchor="middle" class="small">max reporting duration from start (includes A + B1)</text>
+
+    <!-- D row y=900 -->
+    <path d="M640,892 v8 H1300 v-8" class="bracket"/>
+    <rect x="910" y="885" width="120" height="30" rx="15" class="pill"/>
+    <text x="970" y="906" text-anchor="middle" class="pillText">D = 72 h</text>
+    <text x="970" y="930" text-anchor="middle" class="small">post-encounter grace period, from encounter end</text>
+  </g>
+
+  <!-- ============ PARAMETER TABLE ============ -->
+  <g transform="translate(90,965)">
+    <rect x="0" y="0" width="1380" height="30" fill="#7030A0" rx="4"/>
+    <rect x="550" y="0" width="150" height="30" fill="#00796B"/>
+    <rect x="700" y="0" width="150" height="30" fill="#8C6D00"/>
+    <text x="14" y="20" class="th">Param</text>
+    <text x="90" y="20" class="th">Controls</text>
+    <text x="562" y="20" class="th">Inpatient &amp; other</text>
+    <text x="712" y="20" class="th">Ambulatory</text>
+    <text x="862" y="20" class="th">Defined in (PlanDefinition action / RuleFilters parameter)</text>
+
+    <rect x="0" y="30" width="1380" height="26" fill="#F7F2FB"/>
+    <text x="14" y="48" class="pillText" font-size="15">A</text>
+    <text x="90" y="48" class="td">Delay from encounter start to the immediate check (1)</text>
+    <text x="562" y="48" class="td">1 h</text><text x="712" y="48" class="td">1 h</text>
+    <text x="862" y="48" class="tdMono">start-workflow</text>
+
+    <text x="14" y="74" class="pillText" font-size="15">B1</text>
+    <text x="90" y="74" class="td">Delay from immediate check (1) to the first reportability check (2)</text>
+    <text x="562" y="74" class="td">≤ 6 h</text><text x="712" y="74" class="td">≤ 6 h</text>
+    <text x="862" y="74" class="tdMono">continue-check-reportable</text>
+
+    <rect x="0" y="82" width="1380" height="26" fill="#F7F2FB"/>
+    <text x="14" y="100" class="pillText" font-size="15">B2</text>
+    <text x="90" y="100" class="td">Delay between each subsequent reportability check (2)</text>
+    <text x="562" y="100" class="td ip" font-weight="700">≤ 6 h</text><text x="712" y="100" class="td amb" font-weight="700">≤ 72 h</text>
+    <text x="862" y="100" class="tdMono">is-encounter-in-progress / is-amb-encounter-in-progress</text>
+
+    <text x="14" y="126" class="pillText" font-size="15">C</text>
+    <text x="90" y="126" class="td">Minimum time since the last eICR before an updated eICR is sent</text>
+    <text x="562" y="126" class="td">72 h</text><text x="712" y="126" class="td">72 h</text>
+    <text x="862" y="126" class="tdMono">eicrUpdateInterval</text>
+
+    <rect x="0" y="134" width="1380" height="26" fill="#F7F2FB"/>
+    <text x="14" y="152" class="pillText" font-size="15">D</text>
+    <text x="90" y="152" class="td">Post-encounter grace period (checks continue after encounter end)</text>
+    <text x="562" y="152" class="td">72 h</text><text x="712" y="152" class="td">72 h</text>
+    <text x="862" y="152" class="tdMono">normal- / ambulatoryPostEncounterGracePeriod</text>
+
+    <text x="14" y="178" class="pillText" font-size="15">E</text>
+    <text x="90" y="178" class="td">Maximum reporting duration from encounter start</text>
+    <text x="562" y="178" class="td ip" font-weight="700">14 days</text><text x="712" y="178" class="td amb" font-weight="700">1 day</text>
+    <text x="862" y="178" class="tdMono">normal- / ambulatoryReportingDuration</text>
+
+    <line x1="0" y1="186" x2="1380" y2="186" stroke="#7030A0" stroke-width="1.5"/>
+    <text x="0" y="208" class="small">Bold values differ by encounter class and use that lane’s colour. Values shown are eRSD defaults; the eRSD sets the actual values. Not to scale.</text>
+  </g>
+
+  <!-- ============ LEGEND ============ -->
+  <g transform="translate(90,1222)">
+    <rect x="0" y="-16" width="20" height="20" fill="#4E8A3E"/>
+    <text x="30" y="2" class="legendText" fill="#4E8A3E">Events</text>
+    <rect x="140" y="-16" width="20" height="20" fill="#C00000"/>
+    <text x="170" y="2" class="legendText" fill="#C00000">Triggering criteria</text>
+    <rect x="380" y="-16" width="20" height="20" fill="#7030A0"/>
+    <text x="410" y="2" class="legendText" fill="#7030A0">Parameters</text>
+    <rect x="560" y="-16" width="20" height="20" fill="#2F6DB5"/>
+    <text x="590" y="2" class="legendText" fill="#2F6DB5">Process (actions, delays, loops)</text>
+    <rect x="930" y="-16" width="20" height="20" fill="#002060"/>
+    <text x="960" y="2" class="legendText" fill="#002060">Suspected reportability criteria</text>
+
+    <rect x="0" y="24" width="20" height="20" fill="#00796B"/>
+    <text x="30" y="42" class="legendText" fill="#00796B">Inpatient &amp; other encounters</text>
+    <rect x="380" y="24" width="20" height="20" fill="#8C6D00"/>
+    <text x="410" y="42" class="legendText" fill="#8C6D00">Ambulatory encounters</text>
+  </g>
+</svg>
