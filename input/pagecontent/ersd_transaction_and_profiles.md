@@ -250,25 +250,29 @@ Because of variability in accumulation of data at the start of a patient encount
 
 Full triggering timing can be described using the parameters below. These are the configuration points of the eRSD, and are the parameters labelled in the diagram above. The values given are examples derived from the most up-to-date values from the eRSD PlanDefinition available at the time of publication of this guide. How the parameters are represented is described under [Representing parameters in the PlanDefinition](#representing-parameters-in-the-plandefinition).
 
-**Parameter A** – The time from the start of the patient encounter to when the first eICR is constructed and sent. This eICR should include multiple triggers if they are identified.
+**Parameter A** – The time from the start of the patient encounter to the first trigger code check (the immediate check). If trigger codes match at this check, the first eICR is constructed and sent. This eICR should include multiple triggers if they are identified. Whether or not a match is found, the immediate check schedules the first follow-up check (Parameter B1).
 
 * Example - 1 hour after the encounter begins, EHR data matches a code in the eRSD diagnosis data trigger code set and other EHR data matches a code in the eRSD lab result trigger code set. Both of these trigger codes should be recorded in the appropriate eICR trigger code template and the eICR should be transmitted out.
 
-**Parameter B** – The time period from a previous trigger code check to subsequent checking for new trigger code matches. Implementers should ensure that new trigger code matches do not include matches on any eRSD trigger codes that have already been used to generate an eICR for that encounter; standalone PlanDefinition logic goes not account for this. The interval may differ by type of encounter: for example, a longer interval may apply to ambulatory, virtual and home health encounters than to inpatient, emergency and observation encounters.
+**Parameter B1** – The maximum time from the immediate check (Parameter A) to the first follow-up check for new trigger code matches. B1 applies only to this first follow-up and is the same for all encounter types. The encounter type is not taken into account until the follow-up check has run.
 
-* Example - 6 hours after there was a trigger code match in an inpatient encounter, the EHR data is checked against the eRSD trigger code sets again. If a new match is found (not a match against the same eRSD trigger code as had been already matched in that encounter) then a new eICR is generated that includes all of the new trigger codes that have been matched. For an ambulatory encounter, the same applies with an interval of 72 hours.
+* Example - Within 6 hours after the immediate check, the EHR data is checked against the eRSD trigger code sets again. This applies to every encounter, inpatient or ambulatory, whether or not the immediate check found a match.
+
+**Parameter B2** – The maximum time from one follow-up check to the next, repeated for as long as checking continues (see Parameters D and E). Unlike B1, B2 depends on the type of encounter: one interval applies to inpatient, emergency and observation encounters, and a longer interval applies to ambulatory, virtual and home health encounters. For every follow-up check, whether reached through B1 or B2, implementers should ensure that new trigger code matches do not include matches on any eRSD trigger codes that have already been used to generate an eICR for that encounter; standalone PlanDefinition logic does not account for this.
+
+* Example - For an inpatient encounter, within 6 hours after the previous check, the EHR data is checked against the eRSD trigger code sets again. If a new match is found (not a match against the same eRSD trigger code as had been already matched in that encounter) then a new eICR is generated that includes all of the new trigger codes that have been matched. For an ambulatory encounter, the same applies with an interval of 72 hours. Because the ambulatory reporting duration (Parameter E) is 1 day, a single 72-hour B2 interval will usually extend past the end of the encounter. A typical ambulatory encounter is therefore checked once after B1 and once more after B2, with the second check falling within the grace period (Parameter D).
 
 **Parameter C** – The time period from the send of previous eICRs to the send of an updated eICR during a longer encounter.
 
 * Example - 72 hours after a previous eICR was sent, there have been no new trigger code matches, but a new eICR is created and transmitted because there had been a match in the encounter previously and there is a need for public health to receive updated data about the patient.
 
-**Parameter D** – The duration for which trigger code checks and eICR updates should continue after either the encounter ends or the encounter's applicable normal reporting duration (Parameter E) expires. The Parameter D period begins when the first of these two events occurs.
+**Parameter D** – The duration, measured from the end of the encounter, for which trigger code checks and eICR updates should continue after the encounter ends.
 
 * Example - For 72 hours after the encounter ends, trigger code checks and / or updated eICR transmissions should still occur.
 
-**Parameter E** – The normal reporting duration for an encounter, which is determined by encounter type. Two durations are defined: the normal reporting duration (`normalReportingDuration`), which applies to inpatient, emergency, and observation encounters; and the ambulatory reporting duration (`ambulatoryReportingDuration`), which applies to ambulatory, virtual, and home health encounters. While an encounter is in progress and within its applicable normal reporting duration, reportability will continue to be checked. Once the encounter ends or its applicable normal reporting duration expires, the Parameter D period begins. After that period expires, reportability will only be checked and reported in response to an 'encounter-modified' trigger.
+**Parameter E** – The normal reporting duration for an encounter, which is determined by encounter type. Two durations are defined: the normal reporting duration (`normalReportingDuration`), which applies to inpatient, emergency, and observation encounters; and the ambulatory reporting duration (`ambulatoryReportingDuration`), which applies to ambulatory, virtual, and home health encounters. Parameter E is measured from the start of the encounter, so the time covered by Parameters A and B1 counts toward it. While an encounter is in progress and within its applicable normal reporting duration, reportability will continue to be checked. If the encounter ends first, the Parameter D period begins at the end of the encounter. If the encounter is still in progress when its applicable normal reporting duration expires, the reporting workflow is terminated. After the workflow ends, reportability will only be checked and reported in response to an 'encounter-modified' trigger.
 
-* Example - For an inpatient encounter, use a normal reporting duration of 2 weeks. While the encounter is in progress and within those 2 weeks, continue to check for suspected reportability. If the encounter ends before the 2 weeks expire, the 72-hour encounter grace period (D) begins when the encounter ends. If the encounter is still in progress after 2 weeks, the 72-hour grace period begins when the 2 weeks expire. Once the grace period expires, check for reportability and report only in response to an 'encounter-modified' trigger. For an ambulatory encounter, the same approach applies, using an ambulatory reporting duration of 1 day.
+* Example - For an inpatient encounter, use a normal reporting duration of 2 weeks. While the encounter is in progress and within those 2 weeks, continue to check for suspected reportability. If the encounter ends before the 2 weeks expire, the 72-hour encounter grace period (D) begins when the encounter ends. If the encounter is still in progress after 2 weeks, reporting for the encounter stops at that point. After that, check for reportability and report only in response to an 'encounter-modified' trigger. For an ambulatory encounter, the same approach applies, using an ambulatory reporting duration of 1 day.
 
 ###### Additional parameters
 
@@ -286,12 +290,14 @@ In addition to timing parameters A through E, the triggering criteria may be ref
 
 ###### Representing parameters in the PlanDefinition
 
-The eRSD PlanDefinition represents the parameters above as follows. Parameters A and B are carried as the `offsetDuration` of a related action. The remaining parameters are carried as `variable` extensions on the PlanDefinition and are referenced from the action conditions. The example values shown are those used in the PlanDefinition examples in this guide; a reporting program supplies its own values.
+The eRSD PlanDefinition represents the parameters above as follows. Parameters A, B1 and B2 are carried as the `offsetDuration` of a related action. The remaining parameters are carried as `variable` extensions on the PlanDefinition and are referenced from the action conditions. The example values shown are those used in the PlanDefinition examples in this guide; a reporting program supplies its own values.
 
 | Parameter | Example value | Representation in the PlanDefinition |
 | --- | --- | --- |
 | A | 1 hour | `offsetDuration` of `start-workflow` |
-| B | 6 hours (inpatient, emergency, observation); 72 hours (ambulatory, virtual, home health) | `offsetDuration` of the related action that re-invokes `check-reportable` |
+| B1 | 6 hours (all encounter types) | `offsetDuration` of `continue-check-reportable` (within `check-for-immediate-reporting`), the related action that first invokes `check-reportable` |
+| B2 (inpatient, emergency, observation) | 6 hours | `offsetDuration` of `is-encounter-in-progress` (within `check-reportable`), the related action that re-invokes `check-reportable` |
+| B2 (ambulatory, virtual, home health) | 72 hours | `offsetDuration` of `is-amb-encounter-in-progress` (within `check-reportable`), the related action that re-invokes `check-reportable` |
 | C | 72 hours | `eicrUpdateInterval` (hours) |
 | D (inpatient, emergency, observation) | 72 hours | `normalPostEncounterGracePeriod` (hours) |
 | D (ambulatory, virtual, home health) | 72 hours | `ambulatoryPostEncounterGracePeriod` (hours) |
@@ -300,7 +306,6 @@ The eRSD PlanDefinition represents the parameters above as follows. Parameters A
 | Diagnosis evidence window | 30 days | `dxTimeboxDuration` (days) |
 | Laboratory evidence window | 30 days | `labTimeboxDuration` (days) |
 | Extended evidence window | 365 days | `extendedTimeboxDuration` (days) |
-| Negative result values | value set | `negativeLabResultValueSet` |
 | Start of triggering encounter | supplied by context | `encounterStartDate` |
 | End of triggering encounter | supplied by context | `encounterEndDate` |
 | When an eICR was last submitted for this encounter | supplied by context | `lastReportSubmissionDate` |
